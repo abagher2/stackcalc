@@ -1,0 +1,3316 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An applied guide to SMPTE drop-frame timecode, optical depth of field, exposure values, and acoustic decibel summing on the StackCalc 24.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/manuals/domains/04-sc24-cinema-broadcast/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>SC-24 Cinema Optics, Broadcast Timecode & Sound Handbook - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/brutalist.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/ecommerce.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  <meta property="og:site_name" content="StackCalc32">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SC-24 Cinema Optics, Broadcast Timecode &amp; Sound Handbook">
+  <meta property="og:description" content="An applied guide to SMPTE drop-frame timecode, optical depth of field, exposure values, and acoustic decibel summing on the StackCalc 24.">
+  <meta property="og:url" content="https://www.stackcalc.io/manuals/domains/04-sc24-cinema-broadcast/">
+  <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SC-24 Cinema Optics, Broadcast Timecode &amp; Sound Handbook">
+  <meta name="twitter:description" content="An applied guide to SMPTE drop-frame timecode, optical depth of field, exposure values, and acoustic decibel summing on the StackCalc 24.">
+  <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                      tiny5: ['Tiny5', 'Terminus', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sc-24-cinema-optics-broadcast-timecode-sound-handbook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SC-24 Cinema Optics, Broadcast Timecode & Sound Handbook
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="../../../learning-lab/" class="brutalist-button-header">LEARNING LAB</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../products/" class="md-tabs__link">
+          
+  
+  Catalog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../curriculum/" class="md-tabs__link">
+          
+  
+  Curriculum & Standards
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Books & Reference Manuals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-tabs__link">
+        
+  
+    
+  
+  Build Logs ↗
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../privacy/" class="md-tabs__link">
+          
+  
+  Legal & Support
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Catalog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Catalog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SC-32 Scientific Calculator
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SC-32 Scientific Calculator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Assembly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operational Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-elementary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Elementary Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From Blocks to the Stack (SC-6 Book)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fraction Studio Towers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Fraction Studio Towers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prime-factor-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prime Factor Studio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/place-value/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Place Value Studio & Regrouping Trays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Classroom Planetary Clock
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Classroom Planetary Clock
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ten Frames & Counters
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Ten Frames & Counters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/counting-tiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Counting & Array Tiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math Domino Studio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Math Domino Studio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/quest-scoreboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Quest Scoreboard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algebra Boxes & Tiles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Algebra Boxes & Tiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Probability Dice & Spinner
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Probability Dice & Spinner
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/unit-circle-volvelle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unit Circle & Trig Volvelle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/stands-and-pouches/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stands & Pouches
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/curriculum-and-decks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Curriculum & Decks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../printables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Makerspace 3D Print Kits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../downloads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Download Center (PDFs & 3MFs)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Curriculum & Standards
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Curriculum & Standards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Curriculum Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/sc6-elementary-companion-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Companion Workbook (253 Problems)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/sc32-scientific-companion-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-32 Companion Casebook (339 Problems)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/big-ideas-middle-school-sc6-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Big Ideas Middle School Catch-Up (SC-6)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/alignment-matrix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standards Alignment Matrix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/worksheets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Printable Student Worksheets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/teacher-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teacher Facilitator Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Answer Key (Books 2A–5)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/rpn-elementary-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPN Elementary Power Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/uil-competition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Competitive STEM & Speed Calculation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Books & Reference Manuals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Books & Reference Manuals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Official Manuals & Reference Books ($16)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From Blocks to the Stack (SC-6 Book)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bestseller-rubric-and-editorial-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bestseller Rubric & Editorial Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../critical-editorial-review-and-school-adoption/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Editorial Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agent & OpenAPI Spec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mac & iOS Apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../press/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Press & Editorial Kit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../etsy-publishing-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing & Sourcing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shipping-and-packaging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shipping & Packaging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exam-compliance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Compliance & Proctor Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_11">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2026/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2026
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_12">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/3d-printing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Printing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/cad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CAD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/education/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Education
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/kicad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KiCad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/manufacturing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/mathematics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mathematics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/pcb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pedagogy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/product-design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/rpn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/swift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Swift
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/watchos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    watchOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build Logs ↗
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Legal & Support
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Legal & Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terms of Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Replacement Parts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-when-light-and-sound-become-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. When Light and Sound Become Numbers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. When Light and Sound Become Numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-not-just-use-a-phone-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Not Just Use a Phone App?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-core-concepts-how-cinematographers-and-sound-engineers-think" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Core Concepts: How Cinematographers and Sound Engineers Think
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Core Concepts: How Cinematographers and Sound Engineers Think">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept-1-the-01-color-mystery-smpte-drop-frame-timecode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept 1: The 0.1% Color Mystery (SMPTE Drop-Frame Timecode)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concept-2-the-slippery-edge-of-focus-depth-of-field-hyperfocal-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept 2: The Slippery Edge of Focus (Depth of Field &amp; Hyperfocal Distance)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept 2: The Slippery Edge of Focus (Depth of Field & Hyperfocal Distance)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyperfocal-distance-h" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyperfocal Distance (\(H\))
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concept-3-the-decibel-mystery-acoustic-summation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept 3: The Decibel Mystery &amp; Acoustic Summation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept 3: The Decibel Mystery & Acoustic Summation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-two-sound-sources-dboplus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Two Sound Sources (\(dB\oplus\))
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-real-world-field-walkthroughs" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Real-World Field Walkthroughs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Real-World Field Walkthroughs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-case-1-editing-a-2-hour-live-concert-cinematographycom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Field Case 1: Editing a 2-Hour Live Concert (Cinematography.com)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Field Case 1: Editing a 2-Hour Live Concert (Cinematography.com)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-solve-it-on-the-sc-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Solve It on the SC-24
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-case-2-deep-focus-landscape-cinematography-rcinematography" class="md-nav__link">
+    <span class="md-ellipsis">
+      Field Case 2: Deep-Focus Landscape Cinematography (r/cinematography)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Field Case 2: Deep-Focus Landscape Cinematography (r/cinematography)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-Step Mechanics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-try-it-yourself-practice-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Try It Yourself: Practice Problems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Try It Yourself: Practice Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-1-acoustic-decibel-summing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem 1: Acoustic Decibel Summing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-2-neutral-density-nd-filter-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem 2: Neutral Density (ND) Filter Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-3-sound-delay-tower-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem 3: Sound Delay Tower Alignment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="sc-24-cinema-optics-broadcast-timecode-sound-handbook">SC-24 Cinema Optics, Broadcast Timecode &amp; Sound Handbook</h1>
+<blockquote>
+<p><strong>Who this is for:</strong> Anyone who loves photography, filmmaking, or audio production and wants to understand the exact mathematical physics connecting lenses, camera sensors, decibels, and broadcast video sync.</p>
+</blockquote>
+<hr />
+<h2 id="1-when-light-and-sound-become-numbers">1. When Light and Sound Become Numbers</h2>
+<p>Every motion picture you have ever watched is an optical illusion. A projector or screen flashes twenty-four still photographs in front of your eyes every second. Because of the human brain's persistence of vision, our visual cortex fuses those discrete snapshots into the seamless illusion of continuous motion.</p>
+<p>Our ears, by contrast, are far more sensitive to time. While our eyes are easily fooled by 24 frames a second, our hearing can detect an acoustic echo or phase delay of just a few milliseconds.</p>
+<p>On a professional movie set or live broadcast production, these two worlds of physics—photons hitting camera sensors and sound waves striking microphones—must be synchronized down to the microsecond. A film crew operates under relentless pressure:
+- When the sun is setting during "magic hour," the light drops by an entire exposure stop every five minutes.
+- If a camera operator chooses the wrong f-stop, an actor leaning forward by two inches blurs completely out of focus.
+- If a live sports broadcast drifts by a few frames, audio loses lip-sync, and the transmission misses satellite commercial break windows.</p>
+<p>The <strong>StackCalc 24 (SC-24)</strong> puts frame-accurate SMPTE timecode arithmetic, optical depth-of-field geometry, Exposure Value (<span class="arithmatex">\(EV\)</span>) lighting photometrics, and acoustic decibel summing onto a fast, dedicated RPN stack.</p>
+<h3 id="why-not-just-use-a-phone-app">Why Not Just Use a Phone App?</h3>
+<ul>
+<li><strong>The Magic Hour Window:</strong> When racing against fading daylight on an exterior film set, every minute costs thousands of dollars in crew wages. Unlocking a phone, squinting against glare, and tapping through menus wastes precious light. The SC-24 lets a 1st AC (Focus Puller) or Director of Photography calculate hyperfocal distances and neutral density filter factors in two tactile clicks.</li>
+<li><strong>Set Discipline &amp; Silence:</strong> Phone screens illuminate dark cinema sets and notifications distract actors during rehearsals. The SC-24 is a silent, non-radiating tool designed for professional working environments.</li>
+<li><strong>Frame-Accurate Arithmetic:</strong> Standard calculators work in base-10 decimals, but film and broadcast video operate in mixed radices: 24 frames per second for film, 25 fps for European TV, and <span class="arithmatex">\(29.97\text{ fps}\)</span> for North American broadcast. Trying to add <code>01:14:22:18</code> to <code>00:45:10:12</code> on a decimal calculator requires endless manual conversions.</li>
+</ul>
+<hr />
+<h2 id="2-core-concepts-how-cinematographers-and-sound-engineers-think">2. Core Concepts: How Cinematographers and Sound Engineers Think</h2>
+<h3 id="concept-1-the-01-color-mystery-smpte-drop-frame-timecode">Concept 1: The 0.1% Color Mystery (SMPTE Drop-Frame Timecode)</h3>
+<p>Timecode is the universal coordinate system of media:</p>
+<div class="arithmatex">\[\mathbf{HH:MM:SS:FF} \quad (\text{Hours : Minutes : Seconds : Frames})\]</div>
+<p>Why does North American television run at the bizarre rate of <strong><span class="arithmatex">\(29.97\text{ frames per second}\)</span></strong> instead of an even <span class="arithmatex">\(30.00\)</span>?</p>
+<p>In the 1940s, black-and-white television ran at exactly <span class="arithmatex">\(30\text{ fps}\)</span>. But in 1953, when color television was invented, engineers discovered that the new high-frequency color subcarrier (<span class="arithmatex">\(3.58\text{ MHz}\)</span>) caused electrical interference with the audio carrier wave. To eliminate this interference, the broadcast industry decided to slow down the television frame rate by exactly <strong><span class="arithmatex">\(0.1\%\)</span></strong>:</p>
+<div class="arithmatex">\[\text{Color Framerate} = \frac{30}{1.001} \approx 29.97002997\text{ fps}\]</div>
+<p>This tiny <span class="arithmatex">\(0.1\%\)</span> difference creates a giant headache:
+- At <span class="arithmatex">\(30\text{ fps}\)</span>, 108,000 frames equal exactly 1 hour of wall-clock time.
+- At <span class="arithmatex">\(29.97\text{ fps}\)</span>, 108,000 frames take <strong>1 hour, 3 seconds, and 18 frames</strong>!</p>
+<p>Over an hour of broadcast, video drifts nearly <span class="arithmatex">\(3.6\text{ seconds}\)</span> behind the wall clock. To fix this, the Society of Motion Picture and Television Engineers (SMPTE) created <strong>Drop-Frame Timecode (DF)</strong>:
+- Every minute, the timecode counter <strong>skips frame numbers 00 and 01</strong>.
+- <strong>Exception:</strong> To prevent over-correcting, it does <em>not</em> skip frames on minute numbers ending in zero (minutes 00, 10, 20, 30, 40, 50).</p>
+<p>No actual video frames are deleted; only the numerical labels are dropped so the timecode display stays locked to real-world clocks. The SC-24 handles this drop-frame arithmetic automatically.</p>
+<h3 id="concept-2-the-slippery-edge-of-focus-depth-of-field-hyperfocal-distance">Concept 2: The Slippery Edge of Focus (Depth of Field &amp; Hyperfocal Distance)</h3>
+<p>A camera lens can only bring one exact distance into sharp mathematical focus. Points closer or farther away project onto the camera sensor as small, blurred discs of light called <strong>Circles of Confusion (<span class="arithmatex">\(CoC\)</span>)</strong>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>              Lens
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>             |      |
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    ---------\      /------------------- Sensor Plane
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>              \    /
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>               \  /  Focal Point
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                \/
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                /\   Blur Circle (Circle of Confusion)
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    -----------/  \---------------------
+</span></code></pre></div>
+<p>As long as the circle of confusion is smaller than the human eye can distinguish at a standard viewing distance (roughly <span class="arithmatex">\(0.03\text{ mm}\)</span> on a Full Frame sensor, or <span class="arithmatex">\(0.02\text{ mm}\)</span> on Super 35mm cinema), the image appears tack-sharp. The region where blur is imperceptible is the <strong>Depth of Field (DOF)</strong>.</p>
+<h4 id="hyperfocal-distance-h">Hyperfocal Distance (<span class="arithmatex">\(H\)</span>)</h4>
+<p>If you focus a lens on infinity, half the light is wasted on stars, and nearby foreground objects blur.</p>
+<p>If you instead focus at the <strong>Hyperfocal Distance (<span class="arithmatex">\(H\)</span>)</strong>, everything from <strong>half that distance (<span class="arithmatex">\(H/2\)</span>) all the way to infinity</strong> remains in sharp focus:</p>
+<div class="arithmatex">\[H \approx \frac{f^2}{N \cdot c}\]</div>
+<p>where <span class="arithmatex">\(f\)</span> is focal length (in mm), <span class="arithmatex">\(N\)</span> is f-stop number, and <span class="arithmatex">\(c\)</span> is circle of confusion (in mm).</p>
+<h3 id="concept-3-the-decibel-mystery-acoustic-summation">Concept 3: The Decibel Mystery &amp; Acoustic Summation</h3>
+<p>Why is human hearing logarithmic rather than linear?</p>
+<p>If you hear one person talking at a dinner table, and a second person speaks at the exact same volume, your ear does <em>not</em> perceive the room as twice as loud. To sound twice as loud to a human ear, sound energy must increase by roughly <strong>ten times</strong>!</p>
+<p>Sound engineers measure acoustic pressure on a logarithmic decibel scale:</p>
+<div class="arithmatex">\[L_p = 20 \log_{10}\left(\frac{P}{P_0}\right) \quad [\text{dBSPL}]\]</div>
+<p>where <span class="arithmatex">\(P_0 = 20\,\mu\text{Pa}\)</span> is the quietest sound a human ear can detect.</p>
+<h4 id="adding-two-sound-sources-dboplus">Adding Two Sound Sources (<span class="arithmatex">\(dB\oplus\)</span>)</h4>
+<p>If a guitar amplifier produces <span class="arithmatex">\(90\text{ dBSPL}\)</span>, and a second identical amplifier is turned on producing <span class="arithmatex">\(90\text{ dBSPL}\)</span>, what is the total volume?</p>
+<p>You cannot add decibels directly (<span class="arithmatex">\(90 + 90 \ne 180\)</span>). You must convert back to linear power, add the energies, and take the logarithm again:</p>
+<div class="arithmatex">\[L_{\Sigma} = 10 \log_{10}\left(10^{90/10} + 10^{90/10}\right) = 10 \log_{10}(2 \times 10^9) = 90 + 3.01 \approx \mathbf{93\text{ dBSPL}}\]</div>
+<p><strong>Two identical uncorrelated sound sources always add exactly <span class="arithmatex">\(+3\text{ dB}\)</span>.</strong> The SC-24 features a dedicated <code>[dB⊕]</code> key that sums sound levels in one step.</p>
+<hr />
+<h2 id="3-real-world-field-walkthroughs">3. Real-World Field Walkthroughs</h2>
+<h3 id="field-case-1-editing-a-2-hour-live-concert-cinematographycom">Field Case 1: Editing a 2-Hour Live Concert (<code>Cinematography.com</code>)</h3>
+<p>A post-production editor is assembling two live camera reels recorded at <span class="arithmatex">\(29.97\text{ fps}\)</span> Drop-Frame:
+- Reel 1 Duration: <code>01:14:28:12</code>
+- Reel 2 Duration: <code>00:52:45:20</code>
+What is the exact combined running time of the broadcast cut?</p>
+<h4 id="how-to-solve-it-on-the-sc-24">How to Solve It on the SC-24</h4>
+<ol>
+<li>Set framerate to <span class="arithmatex">\(29.97\text{ DF}\)</span> using softkey <code>[ TC ]</code>.</li>
+<li>Enter Reel 1: <code>01142812</code> <code>[ENTER]</code>.</li>
+<li>Enter Reel 2: <code>00524520</code> <code>[+]</code>.</li>
+<li>Register <span class="arithmatex">\(X\)</span> displays: <strong><code>02:07:14:02</code></strong> (2 hours, 7 minutes, 14 seconds, and 2 frames).
+The editor knows the exact master duration without manually tracking dropped frames.</li>
+</ol>
+<hr />
+<h3 id="field-case-2-deep-focus-landscape-cinematography-rcinematography">Field Case 2: Deep-Focus Landscape Cinematography (<code>r/cinematography</code>)</h3>
+<p>A filmmaker is shooting an exterior scene with a <span class="arithmatex">\(35\text{mm}\)</span> lens on a Full Frame cinema sensor (<span class="arithmatex">\(c = 0.030\text{ mm}\)</span>) at <span class="arithmatex">\(f/8\)</span>.
+1. What is the hyperfocal distance?
+2. If the lens is focused at the hyperfocal distance, how close can an actor stand to the camera and still remain sharp?</p>
+<h4 id="step-by-step-mechanics">Step-by-Step Mechanics</h4>
+<ol>
+<li><strong>Compute Hyperfocal Distance:</strong></li>
+<li>Formula: <span class="arithmatex">\(H = \frac{f^2}{N \cdot c} = \frac{35^2}{8 \times 0.030} = \frac{1225}{0.24} = 5{,}104\text{ mm} \approx \mathbf{5.10\text{ meters}}\)</span> (<span class="arithmatex">\(16.7\text{ feet}\)</span>).</li>
+<li>On the SC-24: <code>35</code> <code>[x²]</code> <code>8</code> <code>[÷]</code> <code>0.03</code> <code>[÷]</code> <span class="arithmatex">\(\to\)</span> <strong><code>5104 mm</code></strong>.</li>
+<li><strong>Compute Minimum Sharp Distance:</strong></li>
+<li>Near limit <span class="arithmatex">\(= H / 2 = 5.10 / 2 = \mathbf{2.55\text{ meters}}\)</span> (<span class="arithmatex">\(8.4\text{ feet}\)</span>).</li>
+<li>Everything from <span class="arithmatex">\(8.4\text{ feet}\)</span> out to the distant mountains on the horizon will be in focus.</li>
+</ol>
+<hr />
+<h2 id="4-try-it-yourself-practice-problems">4. Try It Yourself: Practice Problems</h2>
+<h3 id="problem-1-acoustic-decibel-summing">Problem 1: Acoustic Decibel Summing</h3>
+<p>At a live concert, three uncorrelated noise sources are measured at the soundboard:
+- Main PA: <span class="arithmatex">\(96\text{ dBSPL}\)</span>
+- Crowd cheering: <span class="arithmatex">\(92\text{ dBSPL}\)</span>
+- Stage monitor bleed: <span class="arithmatex">\(88\text{ dBSPL}\)</span>
+Calculate the total combined sound pressure level at the mixing console using <code>[dB⊕]</code>.
+<em>(Solution: <span class="arithmatex">\(10^{9.6} + 10^{9.2} + 10^{8.8} = 3.981 \times 10^9 + 1.585 \times 10^9 + 0.631 \times 10^9 = 6.197 \times 10^9\)</span>. <span class="arithmatex">\(10 \log_{10}(6.197 \times 10^9) = \mathbf{97.92\text{ dBSPL}}\)</span>.)</em></p>
+<h3 id="problem-2-neutral-density-nd-filter-selection">Problem 2: Neutral Density (ND) Filter Selection</h3>
+<p>A cinematographer is filming outdoors at ISO 100 with a shutter speed of <span class="arithmatex">\(1/50\text{ second}\)</span>. A light meter reading indicates an Exposure Value of <span class="arithmatex">\(EV = 15\)</span> (which requires <span class="arithmatex">\(f/16\)</span> for proper exposure).
+However, the director wants a shallow depth of field at <strong><span class="arithmatex">\(f/2.0\)</span></strong> (an increase of 6 full stops of light: <span class="arithmatex">\(f/16 \to 11 \to 8 \to 5.6 \to 4 \to 2.8 \to 2\)</span>).
+What optical density (<span class="arithmatex">\(OD\)</span>) neutral density filter is required to cut 6 stops of light?
+<em>(Solution: Each stop is <span class="arithmatex">\(0.3\text{ OD}\)</span>. <span class="arithmatex">\(6\text{ stops} \times 0.3 = \mathbf{1.8\text{ ND}}\)</span> (an ND64 filter, transmitting only <span class="arithmatex">\(1/64 = 1.56\%\)</span> of light).)</em></p>
+<h3 id="problem-3-sound-delay-tower-alignment">Problem 3: Sound Delay Tower Alignment</h3>
+<p>At an outdoor music festival, a secondary speaker delay tower is positioned <span class="arithmatex">\(175\text{ feet}\)</span> away from the main stage. The air temperature is <span class="arithmatex">\(20^\circ\text{C}\)</span> (speed of sound <span class="arithmatex">\(c \approx 1{,}125\text{ ft/s}\)</span>).
+Calculate the required delay in milliseconds to sync the speakers.
+<em>(Solution: <span class="arithmatex">\(\text{Time} = \frac{175\text{ ft}}{1125\text{ ft/s}} = 0.1555\text{ seconds} = \mathbf{155.6\text{ milliseconds}}\)</span>.)</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/ecommerce.js"></script>
+      
+    
+  </body>
+</html>

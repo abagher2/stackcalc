@@ -1,0 +1,3464 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Gauss's 1801 recovery of Ceres, Galton's Quincunx, Bessel's degrees of freedom, linearized curve fitting, Student's t-inference, Poisson rare events, and Bayesian diagnostics on the StackCalc SC-32.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/manuals/sc32/09-statistics-curve-fitting/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Chapter 9: Least Squares, Small Samples & the Geometry of Uncertainty | Thinking in the Stack (SC-32) - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/brutalist.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/ecommerce.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  
+  <meta name="robots" content="noindex, nofollow">
+  
+  
+  
+  
+  
+  <meta property="og:site_name" content="StackCalc32">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chapter 9: Least Squares, Small Samples &amp; the Geometry of Uncertainty | Thinking in the Stack (SC-32)">
+  <meta property="og:description" content="Gauss&#39;s 1801 recovery of Ceres, Galton&#39;s Quincunx, Bessel&#39;s degrees of freedom, linearized curve fitting, Student&#39;s t-inference, Poisson rare events, and Bayesian diagnostics on the StackCalc SC-32.">
+  <meta property="og:url" content="https://www.stackcalc.io/manuals/sc32/09-statistics-curve-fitting/">
+  <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chapter 9: Least Squares, Small Samples &amp; the Geometry of Uncertainty | Thinking in the Stack (SC-32)">
+  <meta name="twitter:description" content="Gauss&#39;s 1801 recovery of Ceres, Galton&#39;s Quincunx, Bessel&#39;s degrees of freedom, linearized curve fitting, Student&#39;s t-inference, Poisson rare events, and Bayesian diagnostics on the StackCalc SC-32.">
+  <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                      tiny5: ['Tiny5', 'Terminus', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-9-least-squares-small-samples-the-geometry-of-uncertainty" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 9: Least Squares, Small Samples & the Geometry of Uncertainty | Thinking in the Stack (SC-32)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="../../../learning-lab/" class="brutalist-button-header">LEARNING LAB</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../products/" class="md-tabs__link">
+          
+  
+  Catalog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../curriculum/" class="md-tabs__link">
+          
+  
+  Curriculum & Standards
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Books & Reference Manuals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-tabs__link">
+        
+  
+    
+  
+  Build Logs ↗
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../privacy/" class="md-tabs__link">
+          
+  
+  Legal & Support
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Catalog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Catalog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SC-32 Scientific Calculator
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SC-32 Scientific Calculator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Assembly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operational Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-elementary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Elementary Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From Blocks to the Stack (SC-6 Book)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fraction Studio Towers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Fraction Studio Towers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prime-factor-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prime Factor Studio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/place-value/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Place Value Studio & Regrouping Trays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Classroom Planetary Clock
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Classroom Planetary Clock
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ten Frames & Counters
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Ten Frames & Counters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/counting-tiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Counting & Array Tiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math Domino Studio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Math Domino Studio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/quest-scoreboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Quest Scoreboard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algebra Boxes & Tiles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Algebra Boxes & Tiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Probability Dice & Spinner
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Probability Dice & Spinner
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/unit-circle-volvelle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unit Circle & Trig Volvelle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/stands-and-pouches/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stands & Pouches
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/curriculum-and-decks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Curriculum & Decks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../printables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Makerspace 3D Print Kits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../downloads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Download Center (PDFs & 3MFs)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Curriculum & Standards
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Curriculum & Standards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Curriculum Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/sc6-elementary-companion-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Companion Workbook (253 Problems)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/sc32-scientific-companion-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-32 Companion Casebook (339 Problems)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/big-ideas-middle-school-sc6-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Big Ideas Middle School Catch-Up (SC-6)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/alignment-matrix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standards Alignment Matrix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/worksheets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Printable Student Worksheets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/teacher-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teacher Facilitator Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Answer Key (Books 2A–5)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/rpn-elementary-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPN Elementary Power Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/uil-competition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Competitive STEM & Speed Calculation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Books & Reference Manuals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Books & Reference Manuals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Official Manuals & Reference Books ($16)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From Blocks to the Stack (SC-6 Book)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bestseller-rubric-and-editorial-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bestseller Rubric & Editorial Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../critical-editorial-review-and-school-adoption/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Editorial Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agent & OpenAPI Spec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mac & iOS Apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../press/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Press & Editorial Kit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../etsy-publishing-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing & Sourcing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shipping-and-packaging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shipping & Packaging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exam-compliance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Compliance & Proctor Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_11">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2026/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2026
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_12">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/3d-printing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Printing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/cad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CAD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/education/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Education
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/kicad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KiCad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/manufacturing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/mathematics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mathematics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/pcb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pedagogy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/product-design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/rpn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/swift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Swift
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/watchos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    watchOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build Logs ↗
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Legal & Support
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Legal & Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terms of Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Replacement Parts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-gausss-least-squares-the-bean-machine-linearized-curve-fitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 Gauss's Least Squares, the Bean Machine &amp; Linearized Curve Fitting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1 Gauss's Least Squares, the Bean Machine & Linearized Curve Fitting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#911-the-bean-machine-and-the-central-limit-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1.1 The Bean Machine and the Central Limit Theorem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#912-bessels-n-1-correction-degrees-of-freedom-shift-invariant-conditioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1.2 Bessel's \(n - 1\) Correction, Degrees of Freedom &amp; Shift-Invariant Conditioning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#913-regression-to-the-mean-pearson-correlation-the-four-regression-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1.3 Regression to the Mean, Pearson Correlation &amp; the Four Regression Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#914-enzyme-saturation-kinetics-spectrophotometric-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1.4 Enzyme Saturation Kinetics &amp; Spectrophotometric Calibration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-small-sample-inference-rare-events-diagnostic-uncertainty" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Small-Sample Inference, Rare Events &amp; Diagnostic Uncertainty
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2 Small-Sample Inference, Rare Events & Diagnostic Uncertainty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#921-leverage-error-propagation-the-weibull-bathtub-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.1 Leverage, Error Propagation &amp; the Weibull Bathtub Curve
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#922-statistical-inference-rare-events-experimental-uncertainty" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.2 Statistical Inference, Rare Events &amp; Experimental Uncertainty
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-six-sufficient-statistics-calibration-and-inference-on-the-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3 Six Sufficient Statistics: Calibration and Inference on the Stack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3 Six Sufficient Statistics: Calibration and Inference on the Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#931-univariate-weighted-accumulation-sensor-fusion-and-six-sigma-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3.1 Univariate &amp; Weighted Accumulation: Sensor Fusion and Six Sigma Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#932-bivariate-linear-calibration-pressure-transducers-and-workinghotelling-bands" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3.2 Bivariate Linear Calibration: Pressure Transducers and Working–Hotelling Bands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#933-spectrophotometric-inverse-prediction-nonparametric-rank-correlation" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3.3 Spectrophotometric Inverse Prediction &amp; Nonparametric Rank Correlation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#934-bell-curves-small-sample-t-tests-survival-odds" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3.4 Bell Curves, Small-Sample \(t\)-Tests &amp; Survival Odds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#935-coordinate-transformed-curve-fitting-power-laws-kinetics-activation-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3.5 Coordinate-Transformed Curve Fitting: Power Laws, Kinetics &amp; Activation Energy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#936-try-it-on-the-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3.6 Try It on the Stack
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="chapter-9-least-squares-small-samples-the-geometry-of-uncertainty">Chapter 9: Least Squares, Small Samples &amp; the Geometry of Uncertainty</h1>
+<p>On the night of January 1, 1801, the Italian astronomer and Theatine priest Giuseppe Piazzi peered through his vertical Ramsden circle telescope at the Palermo Observatory in Sicily. While compiling a precision star catalog in the constellation Taurus, Piazzi noticed a faint, uncataloged eighth-magnitude point of light near Mayer 87. The next night, it had shifted slightly retrograde against the background stars. Whereas deterministic algebra and calculus treat the numbers entering an equation as exact, every measurement in an observatory or laboratory is perturbed by random thermal, mechanical, and human noise.</p>
+<p>Across a forty-one-day span in January and early February 1801 (recording twenty-four nights of right-ascension and declination sightings), Piazzi tracked the slowly moving object before falling ill just as it drifted into the daytime glare of the Sun. Piazzi had discovered Ceres, the largest body in the asteroid belt between Mars and Jupiter and the gravitational bridge specified by the Titius–Bode planetary spacing law. Yet Piazzi had observed Ceres across barely three degrees of sky—less than one percent of its full heliocentric orbit—and every telescope reading was perturbed by atmospheric refraction, pendulum clock drift, micrometer graduation error, and human visual response time. When Europe's leading astronomers attempted to compute Ceres's elliptical orbit by selecting three observations and treating them as geometrically exact, their orbital elements diverged across the sky.</p>
+<h2 id="91-gausss-least-squares-the-bean-machine-linearized-curve-fitting">9.1 Gauss's Least Squares, the Bean Machine &amp; Linearized Curve Fitting</h2>
+<p>In Brunswick and Göttingen, Carl Friedrich Gauss, then twenty-four, read Piazzi's published sightings in Franz Xaver von Zach's journal <em>Monatliche Correspondenz</em> and approached the recovery problem from a different premise. Where earlier astronomers selected three observations, forced a rigid conic section through them, and discarded the remaining twenty-one nights, Gauss analyzed how random observational errors behave in the aggregate and how all of Piazzi's noisy sightings could be combined so that positive and negative random errors cancel one another.</p>
+<p>Over three months in the autumn of 1801, Gauss united his eight-parameter geometry of conic orbits with two mathematical principles that founded modern statistical inference <em>(<a href="../appendix-e-annotated-bibliography/#cite-gauss1809">Gauss, 1809</a>)</em>: the <em>Method of Least Squares</em>, which identifies the most probable trajectory through an overdetermined cloud of noisy measurements as the unique curve that minimizes the sum of the squared residuals, and the <em>Gaussian Law of Error</em> (the normal probability distribution), under which small, independent random disturbances cluster symmetrically around the true physical value according to the exponential-square density <span class="arithmatex">\(e^{-z^2/2}\)</span>.</p>
+<p>On December 31, 1801, astronomers verified Ceres in the exact patch of sky in Virgo predicted by Gauss's least-squares calculation, within half a degree of his ephemeris. Gauss had proved that combining an ensemble of noisy measurements through six sufficient accumulators (<span class="arithmatex">\(\Sigma x, \Sigma y, \Sigma x^2, \Sigma y^2, \Sigma xy, n\)</span>) extracts a physical signal far more accurate than any single instrument reading.</p>
+<h3 id="911-the-bean-machine-and-the-central-limit-theorem">9.1.1 The Bean Machine and the Central Limit Theorem</h3>
+<p>Gauss's bell-shaped error curve recurs across the physical, biological, and information sciences, governing astronomical micrometer residuals, the stature of biological populations, thermal agitation of electrons in a resistor, and the diameters of precision-ground steel shafts.</p>
+<p>A tabletop mechanical apparatus—the <em>quincunx</em> or bean machine—makes the emergence of Gauss's normal curve visible. The device consists of a vertical glazed frame with a funnel at the top, twelve staggered horizontal rows of pins in the middle (arranged like the five-spot <em>quincunx</em> pattern on a die), and a row of narrow vertical compartments along the bottom. When a thousand lead shot pellets are poured into the top funnel, each pellet cascades downward through the staggered pins. At each of the <span class="arithmatex">\(m = 12\)</span> rows, a falling pellet encounters an independent <span class="arithmatex">\(50/50\)</span> binary deflection: bounce Left (<span class="arithmatex">\(L\)</span>) or bounce Right (<span class="arithmatex">\(R\)</span>).</p>
+<p>As the thousand pellets settle into the vertical compartments at the bottom, the lead shot traces the smooth, symmetric bell profile of Gauss's normal curve.</p>
+<p>This geometric profile follows from counting the combinatorial paths through the pin lattice. For a pellet to land in Slot <span class="arithmatex">\(0\)</span> at the far left edge, it must bounce Left twelve times in succession (<span class="arithmatex">\(LLLLLLLLLLLL\)</span>), which represents only <span class="arithmatex">\(\binom{12}{0} = 1\text{ path}\)</span> out of <span class="arithmatex">\(2^{12} = 4,096\)</span> possible trajectories (probability <span class="arithmatex">\(\approx 0.024\%\)</span>). To land in Slot <span class="arithmatex">\(1\)</span>, where a pellet bounces Right at any one of the twelve rows and Left at the other eleven, there are <span class="arithmatex">\(\binom{12}{1} = 12\)</span> paths. By the time a pellet reaches Slot <span class="arithmatex">\(6\)</span> at the center—six Left bounces and six Right bounces in any order—there are <span class="arithmatex">\(\binom{12}{6} = \mathbf{924}\)</span> distinct combinatorial paths (<span class="arithmatex">\(\approx 22.56\%\)</span> of all trajectories) converging on that central compartment.</p>
+<p>Galton's bean machine is a physical realization of the <strong>Central Limit Theorem</strong>: whenever a macroscopic observable <span class="arithmatex">\(x\)</span> is perturbed by the sum of a large number of small, independent random disturbances—spindle bearing vibrations, atmospheric turbulence cells, or discrete thermal carrier collisions—its distribution clusters around the population mean <span class="arithmatex">\(\mu = \mathbb{E}[X]\)</span> with horizontal spread set by the population standard deviation <span class="arithmatex">\(\sigma = \sqrt{\mathbb{E}[(X - \mu)^2]}\)</span>. Measuring how many standard deviations <span class="arithmatex">\(x\)</span> sits above or below <span class="arithmatex">\(\mu\)</span> defines the dimensionless <em>standardized score</em> <span class="arithmatex">\(z = \frac{x - \mu}{\sigma}\)</span> and yields the Gaussian Normal Probability Density Function (PDF) <span class="arithmatex">\(f(x; \mu, \sigma)\)</span> and unit normal curve <span class="arithmatex">\(\phi(z)\)</span>:</p>
+<div class="arithmatex">\[f(x; \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} \exp\left( -\frac{(x - \mu)^2}{2\sigma^2} \right), \qquad \phi(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2 / 2} \tag{Eq. 9.1}\]</div>
+<p>The negative quadratic exponent <span class="arithmatex">\(-\frac{(x-\mu)^2}{2\sigma^2} = -\frac{1}{2}z^2\)</span> makes the probability height fall off symmetrically as the square of the distance from the central peak <span class="arithmatex">\(x = \mu\)</span>, while the prefactor <span class="arithmatex">\(\frac{1}{\sigma\sqrt{2\pi}}\)</span> scales the peak height so the total probability area under the curve from <span class="arithmatex">\(-\infty\)</span> to <span class="arithmatex">\(+\infty\)</span> equals <span class="arithmatex">\(1\)</span>. Geometrically, the standard deviation <span class="arithmatex">\(\sigma\)</span> is the exact horizontal distance from the central peak <span class="arithmatex">\(x = \mu\)</span> to the two points of inflection <span class="arithmatex">\(x = \mu \pm \sigma\)</span> where <span class="arithmatex">\(f''(x) = 0\)</span> and the bell curve reverses curvature from concave down to concave up. Integrating the area under the unit normal density from <span class="arithmatex">\(-\infty\)</span> to <span class="arithmatex">\(z\)</span> gives the cumulative distribution function <span class="arithmatex">\(\Phi(z) = \frac{1}{2} + \frac{1}{\sqrt{2\pi}}\int_0^z e^{-t^2/2}\,dt\)</span>, establishing the Empirical Rule (<span class="arithmatex">\(68.27\%\text{–}95.45\%\text{–}99.73\%\)</span>) for the fraction of observations falling within <span class="arithmatex">\(\pm 1\sigma\)</span>, <span class="arithmatex">\(\pm 2\sigma\)</span>, and <span class="arithmatex">\(\pm 3\sigma\)</span> of the mean.</p>
+<h3 id="912-bessels-n-1-correction-degrees-of-freedom-shift-invariant-conditioning">9.1.2 Bessel's <span class="arithmatex">\(n - 1\)</span> Correction, Degrees of Freedom &amp; Shift-Invariant Conditioning</h3>
+<p>When a sample of <span class="arithmatex">\(n\)</span> components is drawn from a manufacturing cell, or <span class="arithmatex">\(n\)</span> repeated sensor readings <span class="arithmatex">\(x_1, x_2, \dots, x_n\)</span> are logged in a calibration laboratory, the center of gravity of the observations is the arithmetic sample mean <span class="arithmatex">\(\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i\)</span> (alongside the vertical mean <span class="arithmatex">\(\bar{y} = \frac{1}{n}\sum_{i=1}^n y_i\)</span> for bivariate pairs, or the weighted mean <span class="arithmatex">\(\bar{x}_w = \frac{\sum w_k x_k}{\sum w_k}\)</span> when each observation <span class="arithmatex">\(x_k\)</span> carries an unequal precision weight <span class="arithmatex">\(w_k &gt; 0\)</span>).</p>
+<p>To quantify the dispersion of those <span class="arithmatex">\(n\)</span> observations around their sample mean, statistical theory distinguishes between two standard deviation estimators: the population standard deviation <span class="arithmatex">\(\sigma_x\)</span> (along with <span class="arithmatex">\(\sigma_y\)</span>), which divides the sum of squared deviations by the total count <span class="arithmatex">\(n\)</span>, and the sample standard deviation <span class="arithmatex">\(s_x\)</span> (along with <span class="arithmatex">\(s_y\)</span>), which divides by <span class="arithmatex">\(n - 1\)</span>:</p>
+<div class="arithmatex">\[\sigma_x = \sqrt{\frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n}}, \qquad s_x = \sqrt{\frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}} = \sqrt{\frac{\Sigma x^2 - \frac{(\Sigma x)^2}{n}}{n - 1}} \tag{Eq. 9.2}\]</div>
+<p>When estimating the unknown variance <span class="arithmatex">\(\sigma^2\)</span> of an underlying population from a finite sample of size <span class="arithmatex">\(n\)</span>, dividing by <span class="arithmatex">\(n - 1\)</span> rather than <span class="arithmatex">\(n\)</span> corrects for the degree of freedom consumed by the sample mean <span class="arithmatex">\(\bar{x}\)</span>.</p>
+<p>The limiting physical case of a single observation (<span class="arithmatex">\(n = 1\)</span>) makes the degrees-of-freedom loss concrete: when a single bearing shaft is pulled from a lathe and its diameter is micrometered at <span class="arithmatex">\(x_1 = 25.02\text{ mm}\)</span>, the sample average <span class="arithmatex">\(\bar{x}\)</span> of that solitary reading is <span class="arithmatex">\(25.02\text{ mm}\)</span>, and the residual deviation of the point from its own mean is zero (<span class="arithmatex">\(x_1 - \bar{x} = 0\)</span>). A single observation contains zero geometric information about process spread, because measuring a distance requires at least two points (and with <span class="arithmatex">\(n = 0\)</span> observations, even the sample mean <span class="arithmatex">\(\frac{\Sigma x}{n} = \frac{0}{0}\)</span> is undefined). The denominator <span class="arithmatex">\(\frac{0}{1 - 1} = \frac{0}{0}\)</span> reflects this physical indeterminacy whenever <span class="arithmatex">\(n &lt; 2\)</span>.</p>
+<p>For any sample of <span class="arithmatex">\(n\)</span> independent observations drawn from a population whose <em>true</em> center is <span class="arithmatex">\(\mu\)</span> and true variance is <span class="arithmatex">\(\sigma^2\)</span>, the same algebraic mechanism applies. Because the true population mean <span class="arithmatex">\(\mu\)</span> is unknown to the experimenter, squared deviations must be measured around the sample's own centroid <span class="arithmatex">\(\bar{x}\)</span>. By Gauss's least-squares identity, adding and subtracting <span class="arithmatex">\(\bar{x}\)</span> inside <span class="arithmatex">\((x_i - \mu)^2 = [(x_i - \bar{x}) + (\bar{x} - \mu)]^2\)</span> and summing over <span class="arithmatex">\(i = 1, \dots, n\)</span> (noting that the cross-term <span class="arithmatex">\(2(\bar{x} - \mu)\sum(x_i - \bar{x})\)</span> vanishes) partitions the true sum of squares into two orthogonal pieces:</p>
+<div class="arithmatex">\[\sum_{i=1}^n (x_i - \mu)^2 = \sum_{i=1}^n (x_i - \bar{x})^2 + n(\bar{x} - \mu)^2 \implies \sum_{i=1}^n (x_i - \bar{x})^2 = \sum_{i=1}^n (x_i - \mu)^2 - n(\bar{x} - \mu)^2 \tag{Eq. 9.3}\]</div>
+<p>Under the mathematical expectation <span class="arithmatex">\(\mathbb{E}[\cdot]\)</span> across all random samples of size <span class="arithmatex">\(n\)</span>, each individual term <span class="arithmatex">\(\mathbb{E}[(x_i - \mu)^2]\)</span> equals <span class="arithmatex">\(\sigma^2\)</span> (summing to <span class="arithmatex">\(n\sigma^2\)</span>), while the variance of the sample mean itself is <span class="arithmatex">\(\mathbb{E}[(\bar{x} - \mu)^2] = \frac{\sigma^2}{n}\)</span>, so the subtracted penalty has expectation <span class="arithmatex">\(n\left(\frac{\sigma^2}{n}\right) = \sigma^2\)</span>:</p>
+<div class="arithmatex">\[\mathbb{E}\!\left[\sum_{i=1}^n (x_i - \bar{x})^2\right] = n\sigma^2 - n\left(\frac{\sigma^2}{n}\right) = (n - 1)\sigma^2 \tag{Eq. 9.4}\]</div>
+<p>Because the sample average <span class="arithmatex">\(\bar{x}\)</span> dynamically centers itself inside the <span class="arithmatex">\(n\)</span> sampled points, those sample points always cluster closer to their own sample mean <span class="arithmatex">\(\bar{x}\)</span> than to the true population center <span class="arithmatex">\(\mu\)</span> by an expected squared deficit of exactly <span class="arithmatex">\(1\cdot\sigma^2\)</span>. Equivalently, because the <span class="arithmatex">\(n\)</span> residual deviations <span class="arithmatex">\((x_1 - \bar{x}), \dots, (x_n - \bar{x})\)</span> are constrained by the linear conservation equation <span class="arithmatex">\(\sum_{i=1}^n (x_i - \bar{x}) = 0\)</span>, only <span class="arithmatex">\(n - 1\)</span> of the residuals can vary independently (<span class="arithmatex">\(n - 1\)</span> degrees of freedom); once the first <span class="arithmatex">\(n - 1\)</span> deviations are known, the <span class="arithmatex">\(n\)</span>-th deviation is fixed. Dividing by <span class="arithmatex">\(n - 1\)</span> (Bessel's Correction) removes that downward bias so that <span class="arithmatex">\(\mathbb{E}[s_x^2] = \sigma^2\)</span>.</p>
+<p>From a numerical-analysis standpoint, because streaming one-pass algorithms evaluate sample variance via <span class="arithmatex">\(\Sigma x^2 - (\Sigma x)^2/n\)</span>, feeding raw measurements that have a tiny spread around a huge baseline offset—such as ten optical frequency readings near <span class="arithmatex">\(193,414,500\text{ MHz}\)</span> varying only in the hundredths column—forces the subtraction of two nearly equal 16-digit numbers <span class="arithmatex">\((\Sigma x^2)\)</span> and <span class="arithmatex">\((\Sigma x)^2/n\)</span>. By the <strong>shift-invariance identity of variance</strong>, <span class="arithmatex">\(\operatorname{Var}(X - c) = \operatorname{Var}(X)\)</span> (since shifting every datum by a constant reference <span class="arithmatex">\(c\)</span> shifts the mean to <span class="arithmatex">\(\bar{x} - c\)</span> while leaving every difference <span class="arithmatex">\((x_i - c) - (\bar{x} - c) = x_i - \bar{x}\)</span> unchanged), subtracting the leading constant offset <span class="arithmatex">\(c = 193,414,500\)</span> before accumulating preserves all fifteen significant digits of floating-point precision and halves the number of arithmetic operations per observation.</p>
+<h3 id="913-regression-to-the-mean-pearson-correlation-the-four-regression-models">9.1.3 Regression to the Mean, Pearson Correlation &amp; the Four Regression Models</h3>
+<p>When Gauss's least-squares method is applied to pairs of noisy measurements <span class="arithmatex">\((x_k, y_k)\)</span>—such as when comparing parent and offspring heights or calibrating a noisy sensor against a reference stimulus—a geometric contraction emerges across the elliptical cloud of data pairs.</p>
+<p>Whenever two noisy variables <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> share an imperfect linear correlation <span class="arithmatex">\(|r| &lt; 1\)</span>, extreme observations in <span class="arithmatex">\(X\)</span> (which combine true underlying value with a positive random fluctuation) are accompanied on average by standardized responses <span class="arithmatex">\(\hat{z}_y = r z_x\)</span>, or <span class="arithmatex">\(\frac{\hat{y} - \bar{y}}{s_y} = r \left(\frac{x - \bar{x}}{s_x}\right)\)</span>, that lie closer to the population center <span class="arithmatex">\((\bar{x}, \bar{y})\)</span>. If <span class="arithmatex">\(r = \frac{2}{3}\)</span>, an observation four units above the mean in <span class="arithmatex">\(X\)</span> predicts a response only two and two-thirds units above the mean in <span class="arithmatex">\(Y\)</span>, while an observation four units below the mean in <span class="arithmatex">\(X\)</span> predicts a response closer to the centroid <span class="arithmatex">\((\bar{x}, \bar{y})\)</span>. Because extreme fluctuations contract proportionally toward the centroid by the factor <span class="arithmatex">\(r\)</span>, fitting a least-squares model curve to bivariate data is called <em>regression</em>.</p>
+<p><img alt="Figure 9.1: Gauss's method of least squares minimizing squared vertical residuals and the Gaussian normal probability distribution." src="../../../assets/manuals/sc32_concept_gauss_least_squares.png" /></p>
+<blockquote>
+<p><strong>Physical CPA Studio Bridge (<code>Book 4 Unit 07</code> — Fair-Weight Polyhedral Dice &amp; 84.0 mm Comparator):</strong><br />
+In the companion <strong>StackCalc High School &amp; STEM Lab (<em>Book 4, Unit 07</em>)</strong>, students generate empirical sampling distributions using the volume-equalized <strong>Fair-Weight Polyhedral Dice (<code>d4–d20</code>)</strong> and 10-sector probability spinner, then stack physical residual bars inside the <strong><span class="arithmatex">\(84.0\text{ mm}\)</span> Comparator Tray</strong> before logging bivariate pairs into the statistical accumulators. Seeing how shifting a physical line away from the sample centroid <span class="arithmatex">\((\bar{x}, \bar{y})\)</span> inflates the squared residual squares makes Gauss's least-squares equations tactile and self-evident.</p>
+</blockquote>
+<p>Gauss's least-squares straight line <span class="arithmatex">\(\hat{y} = m x + b\)</span> (<strong>Figure 9.1</strong>) through <span class="arithmatex">\(n\)</span> bivariate observations <span class="arithmatex">\((x_1, y_1), (x_2, y_2), \dots, (x_n, y_n)\)</span> minimizes the sum of squared vertical residuals <span class="arithmatex">\(S(m, b) = \sum_{k=1}^n [y_k - (m x_k + b)]^2\)</span>. Setting the partial derivatives <span class="arithmatex">\(\frac{\partial S}{\partial b} = -2\sum(y_k - m x_k - b) = 0\)</span> and <span class="arithmatex">\(\frac{\partial S}{\partial m} = -2\sum x_k(y_k - m x_k - b) = 0\)</span> expresses the best-fit slope <span class="arithmatex">\(m\)</span>, vertical intercept <span class="arithmatex">\(b\)</span>, and <strong>Pearson product-moment correlation coefficient</strong> <span class="arithmatex">\(r \in [-1, +1]\)</span> in terms of the sample standard deviations <span class="arithmatex">\(s_x, s_y\)</span> and the <em>sample covariance</em> <span class="arithmatex">\(s_{xy} = \frac{1}{n-1}\sum_{k=1}^n (x_k - \bar{x})(y_k - \bar{y})\)</span> <em>(<a href="../appendix-e-annotated-bibliography/#cite-gauss1809">Gauss, 1809</a>)</em>:</p>
+<div class="arithmatex">\[\text{Slope } m = \frac{n \Sigma xy - \Sigma x \, \Sigma y}{n \Sigma x^2 - (\Sigma x)^2} = \frac{s_{xy}}{s_x^2} = r \frac{s_y}{s_x}, \qquad \text{Intercept } b = \bar{y} - m \bar{x} = \frac{\Sigma y - m \Sigma x}{n} \tag{Eq. 9.5}\]</div>
+<div class="arithmatex">\[\text{Pearson Correlation } r = \frac{n \Sigma xy - \Sigma x \, \Sigma y}{\sqrt{\left[ n \Sigma x^2 - (\Sigma x)^2 \right] \left[ n \Sigma y^2 - (\Sigma y)^2 \right]}} = \frac{s_{xy}}{s_x s_y} \tag{Eq. 9.6}\]</div>
+<p>Both <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(r\)</span> are driven by the sample covariance <span class="arithmatex">\(s_{xy}\)</span> (<span class="arithmatex">\(n\Sigma xy - \Sigma x\,\Sigma y = n(n-1)s_{xy}\)</span>), which turns positive when above-average <span class="arithmatex">\(x_k\)</span> pairs with above-average <span class="arithmatex">\(y_k\)</span> and negative when one rises as the other falls. Normalizing <span class="arithmatex">\(s_{xy}\)</span> by the horizontal variance <span class="arithmatex">\(s_x^2\)</span> gives the physical rate of change <span class="arithmatex">\(m = s_{xy}/s_x^2\)</span> (in units of <span class="arithmatex">\(\Delta y / \Delta x\)</span>), while <span class="arithmatex">\(b = \bar{y} - m\bar{x}\)</span> anchors the line through the data centroid <span class="arithmatex">\((\bar{x}, \bar{y})\)</span>.</p>
+<p>Normalizing <span class="arithmatex">\(s_{xy}\)</span> instead by the geometric mean of the horizontal and vertical spreads (<span class="arithmatex">\(s_x s_y\)</span>) strips away physical units entirely, leaving Pearson's <span class="arithmatex">\(r = s_{xy}/(s_x s_y)\)</span> as a dimensionless measure of linear alignment in <span class="arithmatex">\([-1, +1]\)</span>: <span class="arithmatex">\(r = +1\)</span> denotes an exact positive linear law, <span class="arithmatex">\(r = -1\)</span> an exact negative linear law, and <span class="arithmatex">\(r = 0\)</span> zero linear covariance, while the coefficient of determination <span class="arithmatex">\(R^2 = r^2 \in [0, 1]\)</span> measures the exact fraction of total vertical variance <span class="arithmatex">\(\sum(y_k - \bar{y})^2\)</span> explained by the linear predictor <span class="arithmatex">\(\hat{y} = mx + b\)</span>. By the normal equations, a unique non-vertical line exists if and only if at least two entered <span class="arithmatex">\((x_k, y_k)\)</span> pairs have distinct horizontal coordinates (<span class="arithmatex">\(\sigma_x &gt; 0\)</span>); if all points share the identical <span class="arithmatex">\(x\)</span>-coordinate, they stack in a vertical column where <span class="arithmatex">\(n\Sigma x^2 - (\Sigma x)^2 = n^2\sigma_x^2\)</span> vanishes.</p>
+<p>In streaming least-squares estimation, the individual coordinates <span class="arithmatex">\((x_k, y_k)\)</span> never need to be stored in an expanding table: the sample means, Bessel variances, covariance, slope <span class="arithmatex">\(m\)</span>, intercept <span class="arithmatex">\(b\)</span>, and correlation <span class="arithmatex">\(r\)</span> are determined by six running sufficient statistics: <span class="arithmatex">\(\Sigma x, \Sigma y, \Sigma x^2, \Sigma y^2, \Sigma xy,\)</span> and <span class="arithmatex">\(n\)</span>. Once a transducer is calibrated across reference standards, forward prediction evaluates the expected response <span class="arithmatex">\(\hat{y} = mx_0 + b\)</span> at a known stimulus <span class="arithmatex">\(x_0\)</span>, while inverse prediction inverts the calibration line <span class="arithmatex">\(\hat{x} = (y_0 - b)/m\)</span> (whenever <span class="arithmatex">\(m \ne 0\)</span>) to recover an unknown physical stimulus from a measured sensor output <span class="arithmatex">\(y_0\)</span>.</p>
+<p>Because a least-squares line is estimated from a finite sample of <span class="arithmatex">\(n\)</span> noisy pairs—leaving a vertical <em>residual standard error</em> <span class="arithmatex">\(s_e = \sqrt{\frac{1}{n-2}\sum (y_k - \hat{y}_k)^2}\)</span> around the line with <span class="arithmatex">\(n - 2\)</span> degrees of freedom and a two-sided Student-<span class="arithmatex">\(t\)</span> critical multiplier <span class="arithmatex">\(t_{\alpha/2,\,n-2}\)</span>—the fitted line carries sampling uncertainty in both its centroid height <span class="arithmatex">\(\bar{y}\)</span> and its tilt <span class="arithmatex">\(m\)</span>. Combining those independent error sources gives the pointwise confidence half-width <span class="arithmatex">\(E_{\text{mean}}(x_0)\)</span> for the <em>mean regression line</em> <span class="arithmatex">\(\mathbb{E}[Y \mid x_0]\)</span> and the wider prediction half-width <span class="arithmatex">\(E_{\text{pred}}(x_0)\)</span> for a <em>single future measurement</em> <span class="arithmatex">\(y_{\text{new}}\)</span> at <span class="arithmatex">\(x_0\)</span>:</p>
+<div class="arithmatex">\[E_{\text{mean}}(x_0) = t_{\alpha/2,\,n-2}\,s_e\sqrt{\frac{1}{n} + \frac{(x_0 - \bar{x})^2}{(n-1)s_x^2}}, \qquad E_{\text{pred}}(x_0) = t_{\alpha/2,\,n-2}\,s_e\sqrt{1 + \frac{1}{n} + \frac{(x_0 - \bar{x})^2}{(n-1)s_x^2}} \tag{Eq. 9.7}\]</div>
+<p>Three independent variance contributions add inside the square root (each scaled by <span class="arithmatex">\(s_e^2\)</span>): <span class="arithmatex">\(\frac{1}{n}\)</span> captures the vertical uncertainty in the center height <span class="arithmatex">\(\bar{y}\)</span> of the data cloud; <span class="arithmatex">\(\frac{(x_0 - \bar{x})^2}{(n-1)s_x^2}\)</span> captures the lever-arm tilt uncertainty from the slope <span class="arithmatex">\(m\)</span>, which vanishes right at the centroid waist <span class="arithmatex">\(x_0 = \bar{x}\)</span> and flares outward into a Working–Hotelling hyperbola as <span class="arithmatex">\(x_0\)</span> moves toward the horizontal extremes; and the extra <span class="arithmatex">\(+1\)</span> in <span class="arithmatex">\(E_{\text{pred}}(x_0)\)</span> adds the baseline scatter <span class="arithmatex">\(1 \cdot s_e^2\)</span> of a single new observation around the true regression line.</p>
+<p>A linear least-squares engine also fits strongly curved physical laws whenever a smooth coordinate change straightens the curve. Across experimental science and engineering, four standard two-parameter regression models (linear, logarithmic, exponential, and power-law)—together with reciprocal and hyperbolic saturation laws—invert via logarithmic or reciprocal mappings: taking the natural logarithm <span class="arithmatex">\(\ln(\cdot)\)</span> converts multiplication and exponentiation into addition, and taking the reciprocal <span class="arithmatex">\(1/(\cdot)\)</span> turns a saturation ceiling into a linear intercept, transforming the curved trajectory into a line <span class="arithmatex">\(Y' = m X' + b\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Curve Model Family</th>
+<th style="text-align: left;">Governing Physical Equation</th>
+<th style="text-align: left;">Coordinate Transformation (<span class="arithmatex">\(Y', X'\)</span>)</th>
+<th style="text-align: left;">Linearized Equation (<span class="arithmatex">\(Y' = m X' + b\)</span>)</th>
+<th style="text-align: left;">Parameter Recovery from Slope <span class="arithmatex">\(m\)</span> &amp; Intercept <span class="arithmatex">\(b\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Linear</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(y = m x + b\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(Y' = y,\quad X' = x\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(y = m x + b\)</span></td>
+<td style="text-align: left;">Slope <span class="arithmatex">\(= m\)</span>, Intercept <span class="arithmatex">\(= b\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Logarithmic</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(y = b + m \ln x\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(Y' = y,\quad X' = \ln x\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(y = m (\ln x) + b\)</span></td>
+<td style="text-align: left;">Scale <span class="arithmatex">\(= m\)</span>, Offset <span class="arithmatex">\(= b\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Exponential</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(y = a e^{m x}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(Y' = \ln y,\quad X' = x\)</span> <em>(Semi-Log)</em></td>
+<td style="text-align: left;"><span class="arithmatex">\(\ln y = m x + \ln a\)</span></td>
+<td style="text-align: left;">Rate <span class="arithmatex">\(= m\)</span>, Initial <span class="arithmatex">\(a = e^b\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Power</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(y = a x^m\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(Y' = \ln y,\quad X' = \ln x\)</span> <em>(Log-Log)</em></td>
+<td style="text-align: left;"><span class="arithmatex">\(\ln y = m \ln x + \ln a\)</span></td>
+<td style="text-align: left;">Exponent <span class="arithmatex">\(= m\)</span>, Scale <span class="arithmatex">\(a = e^b\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Reciprocal</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\frac{1}{y} = m x + b\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(Y' = 1/y,\quad X' = x\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(y^{-1} = m x + b\)</span></td>
+<td style="text-align: left;">Rate <span class="arithmatex">\(= m\)</span>, Ceiling <span class="arithmatex">\(y_0 = 1/b\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>6. Hyperbolic</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(y = \frac{V_{\max} x}{K_m + x}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(Y' = 1/y,\quad X' = 1/x\)</span> <em>(Lineweaver–Burk)</em></td>
+<td style="text-align: left;"><span class="arithmatex">\(\frac{1}{y} = \frac{K_m}{V_{\max}}\frac{1}{x} + \frac{1}{V_{\max}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(V_{\max} = 1/b\)</span>, <span class="arithmatex">\(K_m = m \cdot V_{\max}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Across science and engineering, these six coordinate transformations linearize integrated-circuit transistor doubling <em>(<a href="../appendix-e-annotated-bibliography/#cite-moore1965">Moore, 1965</a>)</em>, the barometric altitude formula <span class="arithmatex">\(P(h) = P_0 e^{-h/H}\)</span>, radioactive decay <span class="arithmatex">\(A(t) = A_0 e^{-\lambda t}\)</span>, the Arrhenius chemical activation law <span class="arithmatex">\(k = A e^{-E_a/(RT)}\)</span> (<span class="arithmatex">\(\ln k\)</span> against <span class="arithmatex">\(1/T\)</span>), and wind-turbine Betz cubic power scaling <span class="arithmatex">\(P = k v^3\)</span> (<span class="arithmatex">\(\ln P\)</span> against <span class="arithmatex">\(\ln v\)</span>).</p>
+<h3 id="914-enzyme-saturation-kinetics-spectrophotometric-calibration">9.1.4 Enzyme Saturation Kinetics &amp; Spectrophotometric Calibration</h3>
+<p>In biochemistry and analytical chemistry, nonlinear saturation curves and exponential optical attenuation reduce to linear calibration models in transformed coordinates.</p>
+<p>Under steady-state enzyme kinetics (<span class="arithmatex">\(E + S \underset{k_{-1}}{\overset{k_1}{\rightleftharpoons}} ES \overset{k_{\text{cat}}}{\longrightarrow} E + P\)</span>), the initial catalytic reaction velocity <span class="arithmatex">\(v_0\)</span> follows a rectangular hyperbola across substrate molarity <span class="arithmatex">\([S]\)</span> governed by the Michaelis–Menten equation, which straightens into a line when inverted on both axes:</p>
+<div class="arithmatex">\[v_0 = \frac{V_{\max}[S]}{K_m + [S]}, \qquad \frac{1}{v_0} = \left(\frac{K_m}{V_{\max}}\right)\frac{1}{[S]} + \frac{1}{V_{\max}} \tag{Eq. 9.8}\]</div>
+<p>The saturation ceiling <span class="arithmatex">\(V_{\max} = k_{\text{cat}}[E]_{\text{total}}\)</span> represents the maximum turnover velocity when every catalytic site is occupied, while the Michaelis affinity constant <span class="arithmatex">\(K_m = (k_{-1} + k_{\text{cat}})/k_1\)</span> marks the exact substrate concentration at which reaction velocity reaches half of that ceiling (<span class="arithmatex">\(v_0 = \frac{1}{2}V_{\max}\)</span>). At trace substrate levels (<span class="arithmatex">\([S] \ll K_m\)</span>), catalytic sites sit mostly vacant and reaction rate scales linearly with substrate as apparent first-order kinetics <span class="arithmatex">\(v_0 \approx (V_{\max}/K_m)[S]\)</span>; at high substrate excess (<span class="arithmatex">\([S] \gg K_m\)</span>), every active site is occupied and <span class="arithmatex">\(v_0\)</span> plateaus asymptotically at the zero-order ceiling <span class="arithmatex">\(V_{\max}\)</span>. For an assay with <span class="arithmatex">\(V_{\max} = 140\text{ }\mu\text{M/min}\)</span> and <span class="arithmatex">\(K_m = 5\text{ mM}\)</span> evaluated at <span class="arithmatex">\([S] = 15\text{ mM}\)</span> (three times <span class="arithmatex">\(K_m\)</span>), dividing <span class="arithmatex">\(V_{\max}[S] = 2,100\)</span> by <span class="arithmatex">\(K_m + [S] = 20\text{ mM}\)</span> yields an initial velocity of <span class="arithmatex">\(v_0 = \mathbf{105\text{ }\mu\text{M/min}}\)</span> (exactly <span class="arithmatex">\(\frac{3}{4}V_{\max}\)</span>).</p>
+<p>To extract <span class="arithmatex">\(V_{\max}\)</span> and <span class="arithmatex">\(K_m\)</span> from experimental rate measurements via linear regression, taking the reciprocal of both sides (the Lineweaver–Burk double-reciprocal transformation) inverts the saturation hyperbola into a straight line of <span class="arithmatex">\(Y' = 1/v_0\)</span> against <span class="arithmatex">\(X' = 1/[S]\)</span>, with vertical intercept <span class="arithmatex">\(b = 1/V_{\max}\)</span> and slope <span class="arithmatex">\(m = K_m / V_{\max}\)</span>. When very low substrate readings carry large relative measurement noise—since <span class="arithmatex">\(\Delta(1/v_0) \approx -\Delta v_0 / v_0^2\)</span> amplifies small-velocity errors—analysts cross-check using a regression of <span class="arithmatex">\(v_0\)</span> against <span class="arithmatex">\(v_0/[S]\)</span> or <span class="arithmatex">\([S]/v_0 = \frac{1}{V_{\max}}[S] + \frac{K_m}{V_{\max}}\)</span>, which weights high-signal measurements more evenly across the concentration range.</p>
+<p>Often the substrate or product concentration <span class="arithmatex">\([S]\)</span> in such kinetic assays is measured optically via the <strong>Beer–Lambert Law</strong>. Monochromatic light of incident intensity <span class="arithmatex">\(I_0\)</span> passing through an absorbing medium of molar concentration <span class="arithmatex">\(c\)</span> and cuvette path length <span class="arithmatex">\(b = \ell\)</span> suffers exponential photon attenuation <span class="arithmatex">\(I = I_0 10^{-A}\)</span>, because each infinitesimal slice <span class="arithmatex">\(dx\)</span> absorbs a constant fraction of the photons entering it (<span class="arithmatex">\(dI / I = -\ln(10)\varepsilon c\,dx\)</span>), governed by the wavelength-specific molar absorptivity coefficient <span class="arithmatex">\(\varepsilon\)</span>. Laboratory spectrophotometry linearizes the exponential attenuation law <span class="arithmatex">\(I = I_0 10^{-\varepsilon b c}\)</span> into a straight least-squares calibration line by taking the negative base-10 logarithm of optical transmittance <span class="arithmatex">\(T = I/I_0\)</span> to define dimensionless decadic absorbance <span class="arithmatex">\(A\)</span>:</p>
+<div class="arithmatex">\[I = I_0 10^{-A} \quad \Longleftrightarrow \quad A = -\log_{10}\left(\frac{I}{I_0}\right) = \varepsilon b c \qquad (\text{with path length } b = \ell) \tag{Eq. 9.9}\]</div>
+<p>Just as double-reciprocal inversion (<span class="arithmatex">\(1/v_0\)</span> vs. <span class="arithmatex">\(1/[S]\)</span>) and log-log transformation (<span class="arithmatex">\(\ln y\)</span> vs. <span class="arithmatex">\(\ln x\)</span>) straighten hyperbolic and power-law kinetics, logging a series of reference concentrations <span class="arithmatex">\(c_k\)</span> and measured absorbances <span class="arithmatex">\(A_k\)</span> fits the calibration line <span class="arithmatex">\(A = (\varepsilon b)c + A_{\text{blank}}\)</span> with slope <span class="arithmatex">\(m = \varepsilon b\)</span> and reagent-blank intercept <span class="arithmatex">\(b_0 = A_{\text{blank}}\)</span>. In an enzymatic <span class="arithmatex">\(\text{NADH}\)</span> assay monitored at <span class="arithmatex">\(\lambda = 340\text{ nm}\)</span> with molar absorptivity <span class="arithmatex">\(\varepsilon = 6,220\text{ L}\cdot\text{mol}^{-1}\cdot\text{cm}^{-1}\)</span> across a standard <span class="arithmatex">\(b = \ell = 1\text{ cm}\)</span> quartz cuvette at concentration <span class="arithmatex">\(c = 8.5 \times 10^{-5}\text{ mol/L}\)</span>, the linear product <span class="arithmatex">\(\varepsilon b c\)</span> gives an absorbance of <span class="arithmatex">\(A \approx \mathbf{0.529}\)</span> (well within the <span class="arithmatex">\(A \in [0.1, 1.5]\)</span> spectrophotometric window where stray light and shot noise are minimized), corresponding to an exponentially attenuated transmittance fraction of <span class="arithmatex">\(T = I/I_0 \approx 10^{-0.529} \approx \mathbf{0.296}\)</span> (<span class="arithmatex">\(29.6\%\)</span> transmitted light).</p>
+<hr />
+<h2 id="92-small-sample-inference-rare-events-diagnostic-uncertainty">9.2 Small-Sample Inference, Rare Events &amp; Diagnostic Uncertainty</h2>
+<p>Classical Gaussian error theory assumes hundreds or thousands of observations (<span class="arithmatex">\(n \to \infty\)</span>), where the Bessel sample standard deviation <span class="arithmatex">\(s_x\)</span> has converged so closely to the true population parameter <span class="arithmatex">\(\sigma\)</span> that replacing <span class="arithmatex">\(\sigma\)</span> with <span class="arithmatex">\(s_x\)</span> inside <span class="arithmatex">\(z = \frac{\bar{x} - \mu}{\sigma / \sqrt{n}}\)</span> introduces negligible error.</p>
+<p>In destructive aerospace metallurgy, semiconductor pilot runs, clinical pharmacology, and industrial quality control, however, testing thousands of specimens is rarely possible; engineers routinely work with small experimental batches of <span class="arithmatex">\(n = 4\)</span> to <span class="arithmatex">\(10\)</span> samples. When <span class="arithmatex">\(n\)</span> is small, the sample standard deviation <span class="arithmatex">\(s_x\)</span> fluctuates randomly from batch to batch alongside the sample mean <span class="arithmatex">\(\bar{x}\)</span>. Whenever a small random sample happens by chance to cluster tightly together, <span class="arithmatex">\(s_x\)</span> underestimates <span class="arithmatex">\(\sigma\)</span> and inflates the quotient <span class="arithmatex">\(t = \frac{\bar{x} - \mu}{s_x / \sqrt{n}}\)</span>, causing extreme tail values to occur far more often than Gauss's unit normal distribution predicts.</p>
+<p>Published in 1908 by William Sealy Gosset ("Student"), orthogonal spherical geometry in <span class="arithmatex">\(n\)</span>-dimensional space accounts for the joint random fluctuation of <span class="arithmatex">\(\bar{x}\)</span> and <span class="arithmatex">\(s_x\)</span> across <span class="arithmatex">\(\nu = n - 1\)</span> degrees of freedom (normalized to unit total probability area by Euler's Gamma function <span class="arithmatex">\(\Gamma(x) = \int_0^\infty u^{x-1}e^{-u}\,du\)</span>, the continuous extension of the factorial satisfying <span class="arithmatex">\(\Gamma(k+1) = k!\)</span>) to yield the small-sample probability density of <strong>Student's <span class="arithmatex">\(t\)</span>-distribution</strong> <em>(<a href="../appendix-e-annotated-bibliography/#cite-student1908">Student, 1908</a>)</em>:</p>
+<div class="arithmatex">\[f_\nu(t) = \frac{\Gamma\!\left(\frac{\nu + 1}{2}\right)}{\sqrt{\nu\pi}\,\Gamma\!\left(\frac{\nu}{2}\right)}\left(1 + \frac{t^2}{\nu}\right)^{-\frac{\nu + 1}{2}} \tag{Eq. 9.10}\]</div>
+<p>The leading Gamma-function ratio normalizes the central peak so the integral over <span class="arithmatex">\((-\infty, +\infty)\)</span> equals <span class="arithmatex">\(1\)</span>, while the algebraic factor <span class="arithmatex">\(\left(1 + \frac{t^2}{\nu}\right)^{-(\nu+1)/2}\)</span> governs the heavy tails: unlike the Gaussian density <span class="arithmatex">\(e^{-z^2/2}\)</span>, whose tails decay super-exponentially, Student's <span class="arithmatex">\(t\)</span>-density decays as a power law <span class="arithmatex">\(|t|^{-(\nu + 1)}\)</span> to protect small-sample inference against lucky tight clusters in <span class="arithmatex">\(s_x\)</span> (reducing at <span class="arithmatex">\(\nu = 1\)</span> to the Cauchy–Lorentz resonance curve <span class="arithmatex">\(\frac{1}{\pi(1+t^2)}\)</span> and converging smoothly back to the Gaussian bell curve <span class="arithmatex">\(\frac{1}{\sqrt{2\pi}}e^{-t^2/2}\)</span> as <span class="arithmatex">\(\nu \to \infty\)</span> via the compound-interest limit <span class="arithmatex">\(\lim_{\nu\to\infty}(1 + t^2/\nu)^{-\nu/2} = e^{-t^2/2}\)</span>).</p>
+<p>To test whether the observed sample means <span class="arithmatex">\(\bar{x}_1\)</span> and <span class="arithmatex">\(\bar{x}_2\)</span> of two small independent experimental groups of sizes <span class="arithmatex">\(n_1\)</span> and <span class="arithmatex">\(n_2\)</span> and Bessel standard deviations <span class="arithmatex">\(s_1\)</span> and <span class="arithmatex">\(s_2\)</span> differ significantly (as in ultimate tensile strength coupons of two candidate aerospace titanium alloys), Student's Two-Sample <span class="arithmatex">\(t\)</span>-Test first combines the two sample variances into a <em>pooled standard deviation</em> <span class="arithmatex">\(s_p\)</span> weighted by their respective degrees of freedom (<span class="arithmatex">\(\nu_1 = n_1 - 1\)</span> and <span class="arithmatex">\(\nu_2 = n_2 - 1\)</span>, yielding <span class="arithmatex">\(\nu = n_1 + n_2 - 2\)</span> total degrees of freedom):</p>
+<div class="arithmatex">\[s_p = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}, \qquad t = \frac{\bar{x}_1 - \bar{x}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \tag{Eq. 9.11}\]</div>
+<p>Summing the squared deviations <span class="arithmatex">\((n_1 - 1)s_1^2 + (n_2 - 1)s_2^2\)</span> from both groups and dividing by the combined degrees of freedom <span class="arithmatex">\(n_1 + n_2 - 2\)</span> forms the pooled variance <span class="arithmatex">\(s_p^2\)</span>. The test statistic <span class="arithmatex">\(t\)</span> then acts as a <strong>signal-to-noise ratio</strong>, comparing the observed separation between the two group averages (<span class="arithmatex">\(\bar{x}_1 - \bar{x}_2\)</span>) against the standard error <span class="arithmatex">\(s_p\sqrt{1/n_1 + 1/n_2}\)</span> expected from random sampling noise alone. When the two groups have markedly unequal variances (<span class="arithmatex">\(s_1^2 \ne s_2^2\)</span>), the Welch–Satterthwaite unpooled statistic <span class="arithmatex">\(t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}\)</span> replaces the pooled standard error; for <em>paired</em> before-and-after measurements <span class="arithmatex">\((x_{1,k}, x_{2,k})\)</span> on the same <span class="arithmatex">\(n\)</span> specimens, accumulating the pairwise differences <span class="arithmatex">\(d_k = x_{1,k} - x_{2,k}\)</span> eliminates specimen-to-specimen baseline variance and evaluates the single-sample paired ratio <span class="arithmatex">\(t = \frac{\bar{d}}{s_d / \sqrt{n}}\)</span> with <span class="arithmatex">\(\nu = n - 1\)</span> degrees of freedom.</p>
+<h3 id="921-leverage-error-propagation-the-weibull-bathtub-curve">9.2.1 Leverage, Error Propagation &amp; the Weibull Bathtub Curve</h3>
+<p>Three geometric properties of least-squares projection and fatigue survival govern uncertainty analysis and hardware reliability.</p>
+<p>First, every least-squares regression line <span class="arithmatex">\(\hat{y} = mx + b\)</span> passes through the centroid <span class="arithmatex">\((\bar{x}, \bar{y})\)</span> of the data cloud (<span class="arithmatex">\(\bar{y} = m\bar{x} + b\)</span>), acting like a rigid mechanical beam balanced on a pin fulcrum at <span class="arithmatex">\((\bar{x}, \bar{y})\)</span> and tethered by vertical Hookean springs of stiffness <span class="arithmatex">\(k\)</span> to each observation <span class="arithmatex">\((x_i, y_i)\)</span>. Because torque equals force times lever arm <span class="arithmatex">\(|x_i - \bar{x}|\)</span>, any datum near the horizontal extremes exerts high <em>statistical leverage</em> <span class="arithmatex">\(h_{ii} = \frac{1}{n} + \frac{(x_i - \bar{x})^2}{(n-1)s_x^2}\)</span> on the fitted slope <span class="arithmatex">\(m\)</span> (often called the <em>hat-value</em> because it measures how strongly an observation at <span class="arithmatex">\(x_i\)</span> pulls the fitted "hat" curve <span class="arithmatex">\(\hat{y}\)</span>). In the degenerate two-point case (<span class="arithmatex">\(n = 2\)</span>), each endpoint carries maximum leverage <span class="arithmatex">\(h_{11} = h_{22} = 1\)</span>, forcing the least-squares line to pass <em>exactly</em> through both points (<span class="arithmatex">\(r = \pm 1\)</span>) with secant slope <span class="arithmatex">\(m = \frac{y_2 - y_1}{x_2 - x_1}\)</span> and turning linear regression into an exact two-point forward and inverse linear interpolator for engineering steam, psychrometric, and standard-atmosphere lookup tables.</p>
+<p>Once <span class="arithmatex">\(\hat{y} = mx + b\)</span> is fitted across <span class="arithmatex">\(n\)</span> pairs, the remaining vertical scatter around the line is measured by the residual standard error <span class="arithmatex">\(s_e = \sqrt{\frac{1}{n-2}\sum_{i=1}^n (y_i - \hat{y}_i)^2}\)</span>, where <span class="arithmatex">\(n - 2\)</span> reflects the two degrees of freedom consumed in estimating both <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(b\)</span>. By the Pythagorean orthogonality of the least-squares projection, the total sum of squares <span class="arithmatex">\((n-1)s_y^2\)</span> decomposes into the explained regression fraction <span class="arithmatex">\(r^2\)</span> and the unexplained residual fraction <span class="arithmatex">\((1 - r^2)\)</span>, allowing <span class="arithmatex">\(s_e\)</span> and the standard error of the slope <span class="arithmatex">\(\text{SE}(m) = \frac{s_e}{s_x\sqrt{n-1}}\)</span> to be evaluated from the statistical summary quantities without re-scanning the <span class="arithmatex">\(n\)</span> points:</p>
+<div class="arithmatex">\[s_e = s_y \sqrt{\frac{n - 1}{n - 2}\left(1 - r^2\right)}, \qquad t_{\text{slope}} = \frac{m}{\text{SE}(m)} = \frac{r\sqrt{n - 2}}{\sqrt{1 - r^2}} \tag{Eq. 9.12}\]</div>
+<p>Early pocket calculators compressed an entire dataset into six sufficient summary sums (<span class="arithmatex">\(\Sigma x, \Sigma y, \Sigma x^2, \Sigma y^2, \Sigma xy, n\)</span>) to compute means, Bessel standard deviations, and linear regression lines in six memory words, but they discarded the individual points <span class="arithmatex">\((x_k, y_k)\)</span> the moment they were summed. If an experimenter later needed to plot the scatter cloud on a graphical canvas to check for curvature, or audit which specific measurement caused an unexpected outlier residual, the raw observations were gone. Retaining the individual sample values alongside the six sufficient statistics bridges classical summary accumulation and visual exploratory data analysis, allowing both algebraic moment queries and direct inspection or scatter plotting of the underlying points.</p>
+<p>Second, when two noisy measurements <span class="arithmatex">\(X \pm \sigma_X\)</span> and <span class="arithmatex">\(Y \pm \sigma_Y\)</span> (with linear correlation <span class="arithmatex">\(r\)</span>) are combined through a differentiable physical formula <span class="arithmatex">\(Z = g(X, Y)\)</span>, a small perturbation <span class="arithmatex">\(dX\)</span> or <span class="arithmatex">\(dY\)</span> shifts the output by Gauss's first-order Taylor differential <span class="arithmatex">\(dZ = \frac{\partial g}{\partial X}dX + \frac{\partial g}{\partial Y}dY\)</span>. Here the partial derivatives <span class="arithmatex">\(\frac{\partial g}{\partial X}\)</span> and <span class="arithmatex">\(\frac{\partial g}{\partial Y}\)</span> are the local <em>sensitivity amplification factors</em>—the slopes measuring how strongly the calculated output <span class="arithmatex">\(Z\)</span> responds to small wiggles in <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> respectively. Squaring <span class="arithmatex">\(dZ\)</span> and averaging across the measurement noise yields the general <strong>Law of Error Propagation</strong> for the output variance <span class="arithmatex">\(\sigma_Z^2\)</span>:</p>
+<div class="arithmatex">\[\sigma_Z^2 \approx \left(\frac{\partial g}{\partial X}\right)^2 \sigma_X^2 + \left(\frac{\partial g}{\partial Y}\right)^2 \sigma_Y^2 + 2\left(\frac{\partial g}{\partial X}\right)\left(\frac{\partial g}{\partial Y}\right) r\,\sigma_X \sigma_Y \tag{Eq. 9.13}\]</div>
+<p>Each input variance <span class="arithmatex">\(\sigma_X^2\)</span> and <span class="arithmatex">\(\sigma_Y^2\)</span> is weighted by the square of its local sensitivity slope, while the cross-term <span class="arithmatex">\(2\left(\frac{\partial g}{\partial X}\right)\left(\frac{\partial g}{\partial Y}\right)r\sigma_X\sigma_Y\)</span> adds or subtracts their covariance interaction whenever noise in <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> is correlated (<span class="arithmatex">\(r \ne 0\)</span>). For uncorrelated sums and differences <span class="arithmatex">\(Z = X \pm Y\)</span> (where <span class="arithmatex">\(\frac{\partial g}{\partial X} = 1,\; \frac{\partial g}{\partial Y} = \pm 1,\; r = 0\)</span>), absolute uncertainties add in quadrature (<span class="arithmatex">\(\sigma_Z = \sqrt{\sigma_X^2 + \sigma_Y^2}\)</span>, matching the Euclidean hypotenuse of a right triangle with legs <span class="arithmatex">\(\sigma_X\)</span> and <span class="arithmatex">\(\sigma_Y\)</span>); for products and quotients <span class="arithmatex">\(Z = X^a Y^b\)</span>, <em>relative</em> uncertainties add in quadrature: <span class="arithmatex">\(\frac{\sigma_Z}{|Z|} = \sqrt{\left(a\frac{\sigma_X}{X}\right)^2 + \left(b\frac{\sigma_Y}{Y}\right)^2}\)</span>. When <span class="arithmatex">\(m\)</span> independent sensors of unequal noise variances <span class="arithmatex">\(\sigma_1^2, \dots, \sigma_m^2\)</span> measure the same physical quantity <span class="arithmatex">\(\mu\)</span>, the Gauss–Markov minimum-variance unbiased estimator weights each reading inversely by its error variance (<span class="arithmatex">\(w_i = 1/\sigma_i^2\)</span>), yielding the weighted mean <span class="arithmatex">\(\bar{x}_w\)</span> with combined fused uncertainty <span class="arithmatex">\(\sigma_{\text{fused}} = 1/\sqrt{\sum w_i}\)</span>.</p>
+<p>Third, while radioactive decay and photon arrivals are memoryless, mechanical ball bearings, aircraft wing spars, and ceramic capacitors accumulate sub-surface cyclic fatigue damage as operating hours <span class="arithmatex">\(t\)</span> increase. Derived from weakest-link extreme-value theory, the two-parameter <strong>Weibull survival distribution</strong> <span class="arithmatex">\(R(t)\)</span> <em>(<a href="../appendix-e-annotated-bibliography/#cite-weibull1951">Weibull, 1951</a>)</em> and instantaneous failure hazard rate <span class="arithmatex">\(h(t) = -\frac{d}{dt}\ln R(t)\)</span> unify all three stages of the reliability bathtub curve via characteristic scale life <span class="arithmatex">\(\eta\)</span> (the age at which <span class="arithmatex">\(e^{-1} \approx 36.79\%\)</span> of units survive) and dimensionless shape modulus <span class="arithmatex">\(\beta\)</span>:</p>
+<div class="arithmatex">\[R(t) = \exp\left[ -\left(\frac{t}{\eta}\right)^\beta \right], \qquad h(t) = \frac{\beta}{\eta}\left(\frac{t}{\eta}\right)^{\beta - 1} \tag{Eq. 9.14}\]</div>
+<p>When <span class="arithmatex">\(\beta &lt; 1\)</span> (infant mortality / burn-in), latent manufacturing defects fail early and <span class="arithmatex">\(h(t)\)</span> decreases with age; when <span class="arithmatex">\(\beta = 1\)</span> (random external shocks), <span class="arithmatex">\(h(t) = 1/\eta\)</span> is constant and recovers the memoryless exponential law <span class="arithmatex">\(R(t) = e^{-t/\eta}\)</span>; when <span class="arithmatex">\(\beta &gt; 1\)</span> (fatigue wear-out), <span class="arithmatex">\(h(t)\)</span> accelerates with age. Inverting <span class="arithmatex">\(R(t_{p}) = 1 - p\)</span> gives the <span class="arithmatex">\(B_{10}\)</span> bearing rating life <span class="arithmatex">\(t_{0.1} = \eta [-\ln(0.9)]^{1/\beta}\)</span> at which <span class="arithmatex">\(90\%\)</span> of a fleet survives, while taking the double natural logarithm <span class="arithmatex">\(\ln[-\ln R(t)] = \beta \ln t - \beta \ln \eta\)</span> linearizes empirical survival curves into a straight regression line.</p>
+<h3 id="922-statistical-inference-rare-events-experimental-uncertainty">9.2.2 Statistical Inference, Rare Events &amp; Experimental Uncertainty</h3>
+<p>The transition from describing a finite dataset to predicting the behavior of an unseen physical process unites discrete probability, industrial quality control, and Bayesian inverse inference into a single quantitative framework.</p>
+<p>When <span class="arithmatex">\(n\)</span> independent, identically distributed binary trials each succeed with probability <span class="arithmatex">\(p \in [0, 1]\)</span> and fail with probability <span class="arithmatex">\(q = 1 - p\)</span>, any specific ordered sequence of <span class="arithmatex">\(k\)</span> successes and <span class="arithmatex">\(n - k\)</span> failures occurs with product probability <span class="arithmatex">\(p^k(1 - p)^{n-k}\)</span>, and the binomial coefficient <span class="arithmatex">\(\binom{n}{k} = \frac{n!}{k!(n-k)!}\)</span> counts how many distinct trajectories share that exact tally, with mean <span class="arithmatex">\(\mu = np\)</span> and variance <span class="arithmatex">\(\sigma^2 = np(1 - p)\)</span>. In semiconductor yield auditing, if a wafer fabrication step carries a per-die defect probability of <span class="arithmatex">\(p = 0.25\)</span> across <span class="arithmatex">\(n = 10\)</span> test dies, there are <span class="arithmatex">\(\binom{10}{3} = 120\)</span> distinct combinations of <span class="arithmatex">\(k = 3\)</span> defective dies, and multiplying <span class="arithmatex">\(120 \times 0.25^3 \times 0.75^7\)</span> gives a binomial probability of <span class="arithmatex">\(P(X = 3) \approx \mathbf{0.25}\)</span> (<span class="arithmatex">\(25\%\)</span>).</p>
+<p>As the number of opportunities <span class="arithmatex">\(n\)</span> in the binomial law grows large while the probability <span class="arithmatex">\(p\)</span> of an event in any single micro-interval shrinks toward zero at a constant average arrival rate <span class="arithmatex">\(\lambda = np\)</span>, the binomial probability <span class="arithmatex">\(\binom{n}{k}p^k(1-p)^{n-k}\)</span> converges to the <strong>Poisson distribution</strong> of rare, memoryless events:</p>
+<div class="arithmatex">\[P_{\text{binom}}(X = k) = \binom{n}{k} p^k (1 - p)^{n - k} \;\xrightarrow[\lambda = np]{n \to \infty}\; P_{\text{Poisson}}(X = k) = \frac{\lambda^k e^{-\lambda}}{k!} \tag{Eq. 9.15}\]</div>
+<p>Because a memoryless Poisson process has variance equal to its mean (<span class="arithmatex">\(\sigma^2 = \mu = \lambda\)</span>), its root-mean-square fluctuation scales as <span class="arithmatex">\(\sqrt{\lambda}\)</span>—the fundamental origin of photon shot noise in optical detectors, radioactive count scatter, cosmic-ray SRAM bit flips, and unscheduled packet arrivals at a network switch. For an avalanche photodiode receiving an average of <span class="arithmatex">\(\lambda = 4.2\text{ photons/ms}\)</span>, the probability of detecting exactly <span class="arithmatex">\(k = 3\)</span> photons in a one-millisecond gate is <span class="arithmatex">\(4.2^3 e^{-4.2} / 3! \approx 74.088 \times 0.015 / 6 \approx \mathbf{0.185}\)</span> (<span class="arithmatex">\(18.5\%\)</span>).</p>
+<p>When a scientist or quality engineer tests whether an empirical histogram of observed counts <span class="arithmatex">\(O_1, O_2, \dots, O_k\)</span> across <span class="arithmatex">\(k\)</span> categories obeys a hypothesized binomial, Poisson, or Gaussian distribution with expected counts <span class="arithmatex">\(E_1, E_2, \dots, E_k\)</span> (and <span class="arithmatex">\(p\)</span> distribution parameters such as <span class="arithmatex">\(\lambda\)</span>, <span class="arithmatex">\(\mu\)</span>, or <span class="arithmatex">\(\sigma\)</span> estimated from the sample itself), the <strong>Chi-Square (<span class="arithmatex">\(\chi^2\)</span>) Goodness-of-Fit Test</strong> sums the squared count discrepancies normalized by each cell's expected variance <span class="arithmatex">\(E_i\)</span> across <span class="arithmatex">\(\nu = k - 1 - p\)</span> degrees of freedom:</p>
+<div class="arithmatex">\[\chi^2 = \sum_{i=1}^{k} \frac{(O_i - E_i)^2}{E_i}, \qquad \nu = k - 1 - p \tag{Eq. 9.16}\]</div>
+<p>Dividing each squared count discrepancy <span class="arithmatex">\((O_i - E_i)^2\)</span> by that cell's expected Poisson variance <span class="arithmatex">\(E_i\)</span> places high-count and low-count categories on an equal standardized scale, while the degrees of freedom <span class="arithmatex">\(\nu = k - 1 - p\)</span> deduct one constraint for the fixed total sample size <span class="arithmatex">\(\sum O_i = \sum E_i = N\)</span> and <span class="arithmatex">\(p\)</span> constraints for the fitted parameters.</p>
+<p>In industrial manufacturing, statistical process control separates natural, random <em>common-cause</em> noise from actionable <em>assignable-cause</em> mechanical faults. Adjusting a stable lathe after every random common-cause fluctuation (<em>tampering</em>) doubles output variance, while <span class="arithmatex">\(\pm 3\sigma_{\bar{x}}\)</span> Shewhart control limits isolate genuine tool wear or fixture slip. To bound the population mean within a confidence margin <span class="arithmatex">\(E\)</span> using the two-sided normal critical multiplier <span class="arithmatex">\(z_{\alpha/2}\)</span> (<span class="arithmatex">\(z_{0.025} \approx 1.96\)</span> for <span class="arithmatex">\(95\%\)</span> confidence), and to compare a machine's natural sample spread <span class="arithmatex">\(s\)</span> and process center <span class="arithmatex">\(\bar{x}\)</span> against engineering blueprint tolerances—the Upper and Lower Specification Limits (<span class="arithmatex">\(\text{USL}\)</span> and <span class="arithmatex">\(\text{LSL}\)</span>)—Six Sigma metrology pairs the potential capability index <span class="arithmatex">\(C_p\)</span> with the off-center capability index <span class="arithmatex">\(C_{pk}\)</span>:</p>
+<div class="arithmatex">\[E = z_{\alpha/2}\frac{s}{\sqrt{n}}, \qquad C_p = \frac{\text{USL} - \text{LSL}}{6s}, \qquad C_{pk} = \min\left(\frac{\text{USL} - \bar{x}}{3s},\; \frac{\bar{x} - \text{LSL}}{3s}\right) \tag{Eq. 9.17}\]</div>
+<p>Think of driving a car of width <span class="arithmatex">\(6s\)</span> (the <span class="arithmatex">\(\pm 3s\)</span> natural spread encompassing <span class="arithmatex">\(99.73\%\)</span> of parts) through a garage doorway of total tolerance width <span class="arithmatex">\(\text{USL} - \text{LSL}\)</span>. The potential capability <span class="arithmatex">\(C_p = \frac{\text{USL} - \text{LSL}}{6s}\)</span> compares the doorway width against the <span class="arithmatex">\(6s\)</span> car width—telling you whether the car <em>could</em> fit if steered dead center—whereas the actual capability <span class="arithmatex">\(C_{pk}\)</span> takes the distance from the off-center process mean <span class="arithmatex">\(\bar{x}\)</span> to the <em>nearer</em> doorway wall (<span class="arithmatex">\(\text{USL} - \bar{x}\)</span> or <span class="arithmatex">\(\bar{x} - \text{LSL}\)</span>) and divides by the <span class="arithmatex">\(3s\)</span> half-car width to measure how close the fender is to scraping the nearer wall.</p>
+<p>Because the standard error of the mean shrinks as <span class="arithmatex">\(s/\sqrt{n}\)</span> in <span class="arithmatex">\(E = z_{\alpha/2}\frac{s}{\sqrt{n}}\)</span>, quadrupling the sample size <span class="arithmatex">\(n\)</span> is required to halve the uncertainty margin <span class="arithmatex">\(E\)</span> (for <span class="arithmatex">\(n = 49\)</span> alloy tensile specimens with <span class="arithmatex">\(s = 8.4\text{ MPa}\)</span> and <span class="arithmatex">\(95\%\)</span> normal quantile <span class="arithmatex">\(z_{0.025} \approx 1.96\)</span>, the standard error is <span class="arithmatex">\(8.4 / 7 = 1.2\text{ MPa}\)</span> and the <span class="arithmatex">\(95\%\)</span> confidence half-width is <span class="arithmatex">\(E \approx \mathbf{2.352\text{ MPa}}\)</span>). In precision grinding where <span class="arithmatex">\(\text{USL} = 10.05\text{ mm}\)</span>, <span class="arithmatex">\(\text{LSL} = 9.95\text{ mm}\)</span>, <span class="arithmatex">\(\bar{x} = 10.01\text{ mm}\)</span>, and <span class="arithmatex">\(s = 0.01\text{ mm}\)</span>, the distance to the nearer upper boundary is <span class="arithmatex">\(\text{USL} - \bar{x} = 0.04\text{ mm}\)</span>, yielding <span class="arithmatex">\(C_{pk} = 0.04 / (3 \times 0.01) \approx \mathbf{1.333}\)</span>, which meets the <span class="arithmatex">\(\pm 4\sigma\)</span> (<span class="arithmatex">\(63\text{ ppm}\)</span> defect rate) industrial acceptance benchmark.</p>
+<p>Finally, when an automated inspection station or clinical assay screens for a true underlying condition <span class="arithmatex">\(A\)</span> (such as a sub-surface crack, occurring with prior prevalence <span class="arithmatex">\(P(A)\)</span> while defect-free parts <span class="arithmatex">\(A'\)</span> make up the complement <span class="arithmatex">\(P(A') = 1 - P(A)\)</span>) and flags a part with a positive alarm <span class="arithmatex">\(B\)</span>, interpreting that alarm requires inverting the detector's true-positive sensitivity <span class="arithmatex">\(P(B \mid A)\)</span> and false-positive rate <span class="arithmatex">\(P(B \mid A')\)</span> via <strong>Bayes's Theorem</strong>:</p>
+<div class="arithmatex">\[P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B \mid A)P(A) + P(B \mid A')P(A')} \tag{Eq. 9.18}\]</div>
+<p>Bayes's fraction divides the true-alarm rate <span class="arithmatex">\(P(B \mid A)P(A)\)</span>—the fraction of all parts that are both genuinely defective and trigger an alarm—by the total alarm rate <span class="arithmatex">\(P(B \mid A)P(A) + P(B \mid A')P(A')\)</span>, which pools true alarms with the false alarms generated by the defect-free majority. This ratio exposes the counterintuitive <em>base-rate fallacy</em>: when ultrasonic non-destructive testing screens turbine blades for a rare sub-surface crack of prior prevalence <span class="arithmatex">\(P(A) = 0.01\)</span> (<span class="arithmatex">\(P(A') = 0.99\)</span>) using a detector with <span class="arithmatex">\(99\%\)</span> true-positive sensitivity (<span class="arithmatex">\(P(B \mid A) = 0.99\)</span>) and a <span class="arithmatex">\(5\%\)</span> false-positive rate (<span class="arithmatex">\(P(B \mid A') = 0.05\)</span>), true-positive alarms occur across <span class="arithmatex">\(0.99 \times 1\% = 0.99\%\)</span> of all blades, while false alarms from the vast defect-free population occur across <span class="arithmatex">\(0.05 \times 99\% = 4.95\%\)</span> of all blades. Dividing <span class="arithmatex">\(0.99\%\)</span> by the total alarm rate <span class="arithmatex">\(0.99\% + 4.95\% = 5.94\%\)</span> reveals that a flagged blade has only a <span class="arithmatex">\(P(A \mid B) \approx \mathbf{16.7\%}\)</span> posterior probability of carrying an actual crack until confirmed by a secondary orthogonal scan.</p>
+<hr />
+<h2 id="93-six-sufficient-statistics-calibration-and-inference-on-the-stack">9.3 Six Sufficient Statistics: Calibration and Inference on the Stack</h2>
+<p>An entire dataset of <span class="arithmatex">\(n\)</span> paired observations <span class="arithmatex">\((x_k, y_k)\)</span> reduces without loss of linear-regression information to six running sums (<span class="arithmatex">\(\Sigma x, \Sigma y, \Sigma x^2, \Sigma y^2, \Sigma xy, n\)</span>). Because those six first- and second-order moments form a complete set of sufficient statistics for Gaussian means, Bessel variances, and linear least squares, the SC-32 links the live four-register stack (<code>X, Y, Z, T</code>) to six 64-bit hardware accumulators in indirect memory—sample count <span class="arithmatex">\(n\)</span> (<code>R28</code>), linear totals <span class="arithmatex">\(\Sigma x\)</span> (<code>R29</code>) and <span class="arithmatex">\(\Sigma y\)</span> (<code>R30</code>), sums of squares <span class="arithmatex">\(\Sigma x^2\)</span> (<code>R31</code>) and <span class="arithmatex">\(\Sigma y^2\)</span> (<code>R32</code>), and cross-product <span class="arithmatex">\(\Sigma xy\)</span> (<code>R33</code>)—so means, standard deviations, and inverse calibration estimates can be queried without re-entering data arrays:</p>
+<ol>
+<li><strong>Resetting, Logging, &amp; Inspecting Observations (<code>[↰] [CLEAR]</code>, <code>[Σ+]</code>, <code>[↰] [Σ-]</code>, <code>[↰] [REGS]</code>):</strong> Pressing <code>[↰] [CLEAR]</code> offers <code>[CLSTAT]</code> (<code>[CLΣ]</code>) to zero all six statistical registers (<code>R28</code>–<code>R33</code>) and clear the raw data log. When logging a bivariate observation <span class="arithmatex">\((x_k, y_k)\)</span>, placing the vertical response <span class="arithmatex">\(y_k\)</span> into Register <span class="arithmatex">\(Y\)</span> and the horizontal predictor <span class="arithmatex">\(x_k\)</span> into Register <span class="arithmatex">\(X\)</span> before pressing <code>[Σ+]</code> aligns the display registers <span class="arithmatex">\((Y, X)\)</span> with the <span class="arithmatex">\((y, x)\)</span> axes of the coordinate plane, displays the updated sample count <span class="arithmatex">\(n\)</span> in Register <span class="arithmatex">\(X\)</span> with stack lift disabled (leaving the prior <code>LASTX</code> register undisturbed), and records up to 50 individual sample values in <code>DATA0</code>–<code>DATA49</code> (indirect slots <code>R40</code>–<code>R89</code>, inspectable read-only via <code>[↰] [REGS]</code> <span class="arithmatex">\(\to\)</span> <code>DATA</code>, and plotted in the companion app via <code>[↱] [PLOT]</code> when <code>Σ+</code> data is present with no stored equations; <code>PLOT</code> is excluded from physical hardware firmware by design for examination compliance).</li>
+<li><strong>Statistical Softkey Menus (<code>[↱] [SUMS]</code>, <code>[↱] [x̄,ȳ]</code>, <code>[↱] [s,σ]</code>, <code>[↱] [L.R.]</code>):</strong> Accessed via Right Shift <code>[↱]</code> across the top scientific row—<code>[↱] [SUMS]</code> on <code>[Σ+]</code>, <code>[↱] [x̄,ȳ]</code> on <code>[yˣ]</code>, <code>[↱] [s,σ]</code> on <code>[1/x]</code>, and <code>[↱] [L.R.]</code> on <code>[LN]</code>—the four statistical menus remap the six top-row softkey slots (<code>Slot 1</code> through <code>Slot 6</code>):</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Sub-Menu</th>
+<th style="text-align: left;">Physical Key</th>
+<th style="text-align: center;"><code>Slot 1</code></th>
+<th style="text-align: center;"><code>Slot 2</code></th>
+<th style="text-align: center;"><code>Slot 3</code></th>
+<th style="text-align: center;"><code>Slot 4</code></th>
+<th style="text-align: center;"><code>Slot 5</code></th>
+<th style="text-align: center;"><code>Slot 6</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Sums (<code>[↱] [SUMS]</code>)</strong></td>
+<td style="text-align: left;"><code>[Σ+]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\Sigma x\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\Sigma y\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\Sigma x^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\Sigma y^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\Sigma xy\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(n\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Means (<code>[↱] [x̄,ȳ]</code>)</strong></td>
+<td style="text-align: left;"><code>[yˣ]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\bar{x}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\bar{y}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\bar{x}_w\)</span></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Std Dev (<code>[↱] [s,σ]</code>)</strong></td>
+<td style="text-align: left;"><code>[1/x]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(s_x\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(s_y\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\sigma_x\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\sigma_y\)</span></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Regression (<code>[↱] [L.R.]</code>)</strong></td>
+<td style="text-align: left;"><code>[LN]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\hat{y}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\hat{x}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(r\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(m\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(b\)</span></td>
+<td style="text-align: center;">—</td>
+</tr>
+</tbody>
+</table>
+<p>If a keystroke slip on the sixth data pair <span class="arithmatex">\((x = 15, y = 3.5)\)</span> transposes <span class="arithmatex">\(y\)</span> into <span class="arithmatex">\((x = 15, y = 5.3)\)</span> when the sample count is <span class="arithmatex">\(n = 6\)</span>, staging <span class="arithmatex">\((Y = 5.3, X = 15)\)</span> and pressing <code>Σ-</code> (left-shifted on <code>Σ+</code>) removes the erroneous point from all six accumulators (decrementing <span class="arithmatex">\(n\)</span> to <span class="arithmatex">\(5\)</span>) so the corrected pair <span class="arithmatex">\((Y = 3.5, X = 15)\)</span> can be spliced in with <code>Σ+</code> without disturbing the first five observations. Following <strong>HP-32SII</strong> statistical stack-lift semantics <em>(<a href="../appendix-e-annotated-bibliography/#cite-hp32sii1991">HP, 1991</a>)</em>, <code>[Σ+]</code> and <code>[↰] [Σ-]</code> leave stack lift <strong>disabled</strong> when writing the sample count <span class="arithmatex">\(n\)</span> into Register <span class="arithmatex">\(X\)</span>. Consequently, the first statistical softkey tapped immediately after <code>[Σ+]</code>—whether <code>x̄</code>, <code>ȳ</code>, or <code>x̄w</code> in <code>x̄,ȳ</code>, <code>sx</code>, <code>sy</code>, <code>σx</code>, or <code>σy</code> in <code>s,σ</code>, <code>r</code>, <code>m</code>, or <code>b</code> in <code>L.R.</code>, or any accumulator in <code>SUMS</code>—<strong>overwrites</strong> the sample count <span class="arithmatex">\(n\)</span> in Register <span class="arithmatex">\(X\)</span> and <strong>enables</strong> stack lift. Tapping a second statistical softkey (such as <code>ȳ</code> right after <code>x̄</code>, or <code>sy</code> right after <code>sx</code>) then lifts the first statistic into Register <span class="arithmatex">\(Y\)</span> and places the second statistic in Register <span class="arithmatex">\(X\)</span>, while <code>[ŷ]</code> and <code>[x̂]</code> consume the stimulus <span class="arithmatex">\(x_0\)</span> or response <span class="arithmatex">\(y_0\)</span> in Register <span class="arithmatex">\(X\)</span> to return the linear prediction <span class="arithmatex">\(\hat{y}(x_0)\)</span> or <span class="arithmatex">\(\hat{x}(y_0)\)</span> in Register <span class="arithmatex">\(X\)</span>.</p>
+<h3 id="931-univariate-weighted-accumulation-sensor-fusion-and-six-sigma-control">9.3.1 Univariate &amp; Weighted Accumulation: Sensor Fusion and Six Sigma Control</h3>
+<p>In observatory astrometry and shop-floor metrology, these weighted-mean and process-capability estimators feed into subsequent stack arithmetic.</p>
+<p>For inverse-variance weighted sensor fusion (<span class="arithmatex">\(\bar{x}_w = \Sigma xy / \Sigma y\)</span>), three observatory instruments measure an astrometric parallax angle—<span class="arithmatex">\(x_1 = 10\text{ mas}\)</span>, <span class="arithmatex">\(x_2 = 25\text{ mas}\)</span>, and <span class="arithmatex">\(x_3 = 45\text{ mas}\)</span>—with inverse-variance precision weights <span class="arithmatex">\(w_i = 1/\sigma_i^2\)</span> equal to <span class="arithmatex">\(w_1 = 40\)</span>, <span class="arithmatex">\(w_2 = 60\)</span>, and <span class="arithmatex">\(w_3 = 20\text{ mas}^{-2}\)</span>. Clearing the accumulators and loading each weight <span class="arithmatex">\(w_i\)</span> into Register <span class="arithmatex">\(Y\)</span> and measurement <span class="arithmatex">\(x_i\)</span> into Register <span class="arithmatex">\(X\)</span> before accumulating stores <span class="arithmatex">\(\Sigma(w_i x_i) = 2,800\)</span> inside <code>R33</code> (<span class="arithmatex">\(\Sigma xy\)</span>) and <span class="arithmatex">\(\Sigma w_i = 120\)</span> inside <code>R30</code> (<span class="arithmatex">\(\Sigma y\)</span>). Querying <span class="arithmatex">\(\bar{x}_w\)</span> from the means menu returns the minimum-variance fused estimate <span class="arithmatex">\(\bar{x}_w = \frac{\Sigma xy}{\Sigma y} = \frac{2800}{120} \approx \mathbf{23.333\text{ mas}}\)</span>, while querying <span class="arithmatex">\(\Sigma y\)</span> from the sums menu recalls the combined precision weight <span class="arithmatex">\(\mathbf{120\text{ mas}^{-2}}\)</span>, whose reciprocal square root gives the fused standard error <span class="arithmatex">\(\sigma_{\text{fused}} = 1/\sqrt{120} \approx \mathbf{0.091\text{ mas}}\)</span>.</p>
+<p>In a CNC grinding cell producing bearing shafts specified at <span class="arithmatex">\(25 \pm 0.1\text{ mm}\)</span> (<span class="arithmatex">\(\text{LSL} = 24.9\text{ mm}\)</span>, <span class="arithmatex">\(\text{USL} = 25.1\text{ mm}\)</span>), accumulating ten measured shaft diameters (<span class="arithmatex">\(25.02, 25.04, 25.01, 25.03, 25.05, 25.02, 25, 25.04, 25.03,\)</span> and <span class="arithmatex">\(25.06\text{ mm}\)</span>) yields a sample mean of <span class="arithmatex">\(\bar{x} = \mathbf{25.03\text{ mm}}\)</span> and a Bessel sample standard deviation of <span class="arithmatex">\(s_x \approx \mathbf{0.018\text{ mm}}\)</span> (or, by shift-invariance <span class="arithmatex">\(s_{x-c} = s_x\)</span>, accumulating only the hundredths of a millimeter <span class="arithmatex">\(2, 4, 1, 3, 5, 2, 0, 4, 3, 6\)</span> yields <span class="arithmatex">\(\bar{d} = 3\)</span> and <span class="arithmatex">\(s_d \approx 1.826\)</span>, corresponding to the unrounded <span class="arithmatex">\(s_x = s_d / 100 \approx 1.826 \times 10^{-2}\text{ mm}\)</span> in Register <span class="arithmatex">\(X\)</span>, in half the keystrokes while avoiding floating-point cancellation). Dividing the <span class="arithmatex">\(0.2\text{ mm}\)</span> tolerance width by <span class="arithmatex">\(6s_x\)</span> (using the unrounded <span class="arithmatex">\(s_x\)</span> in Register <span class="arithmatex">\(X\)</span>) gives a potential capability of <span class="arithmatex">\(C_p \approx \mathbf{1.826}\)</span>, while comparing <span class="arithmatex">\(\bar{x} = 25.03\text{ mm}\)</span> against the closer upper limit <span class="arithmatex">\(\text{USL} = 25.1\text{ mm}\)</span> via <span class="arithmatex">\((\text{USL} - \bar{x})/(3s_x)\)</span> gives <span class="arithmatex">\(C_{pk} \approx \mathbf{1.278}\)</span>.</p>
+<p>That divergence between <span class="arithmatex">\(C_p \approx 1.826\)</span> and <span class="arithmatex">\(C_{pk} \approx 1.278\)</span> provides an immediate shop-floor diagnosis: the lathe spindle is mechanically tight enough for Six Sigma production (<span class="arithmatex">\(C_p &gt; 1.33\)</span>), but thermal tool growth has shifted the process center <span class="arithmatex">\(+0.03\text{ mm}\)</span> toward the upper limit, which calls for a <span class="arithmatex">\(-0.03\text{ mm}\)</span> tool-offset compensation rather than a spindle rebuild. For a Shewhart <span class="arithmatex">\(\bar{X}\)</span>-chart centered at <span class="arithmatex">\(\bar{\bar{X}} = 50\text{ mm}\)</span> with subgroup range <span class="arithmatex">\(\bar{R} = 0.4\text{ mm}\)</span> and <span class="arithmatex">\(n = 5\)</span> subgroup factor <span class="arithmatex">\(A_2 \approx 0.577\)</span>, the control half-width is <span class="arithmatex">\(A_2\bar{R} \approx 0.231\text{ mm}\)</span>, placing the Lower and Upper Control Limits at <span class="arithmatex">\(\text{LCL} \approx \mathbf{49.769\text{ mm}}\)</span> and <span class="arithmatex">\(\text{UCL} \approx \mathbf{50.231\text{ mm}}\)</span> (where recalling the preserved last operand recovers the half-width <span class="arithmatex">\(0.231\)</span> after subtracting from <span class="arithmatex">\(50\)</span> so doubling and adding steps straight from <span class="arithmatex">\(\text{LCL}\)</span> to <span class="arithmatex">\(\text{UCL}\)</span>).</p>
+<h3 id="932-bivariate-linear-calibration-pressure-transducers-and-workinghotelling-bands">9.3.2 Bivariate Linear Calibration: Pressure Transducers and Working–Hotelling Bands</h3>
+<p>The four dead-weight calibration points of a piezoresistive pressure sensor—<span class="arithmatex">\(10\text{ kPa}\)</span> at <span class="arithmatex">\(1.25\text{ V}\)</span>, <span class="arithmatex">\(20\text{ kPa}\)</span> at <span class="arithmatex">\(2.45\text{ V}\)</span>, <span class="arithmatex">\(30\text{ kPa}\)</span> at <span class="arithmatex">\(3.8\text{ V}\)</span>, and <span class="arithmatex">\(40\text{ kPa}\)</span> at <span class="arithmatex">\(4.95\text{ V}\)</span>—establish the standard bivariate <span class="arithmatex">\((Y = y_k,\; X = x_k)\)</span> entry and linear regression workflow on the stack:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>[CLΣ] 1.25 [ENTER] 10 [Σ+]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.25\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: left;">Clear accumulators; log Point 1 (<span class="arithmatex">\(10\text{ kPa}, 1.25\text{ V};\; n = 1\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>2.45 [ENTER] 20 [Σ+]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.25\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.45\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2\)</span></td>
+<td style="text-align: left;">Log Point 2 (<span class="arithmatex">\(20\text{ kPa}, 2.45\text{ V};\; n = 2\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>3.8 [ENTER] 30 [Σ+]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.25\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.45\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.8\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3\)</span></td>
+<td style="text-align: left;">Log Point 3 (<span class="arithmatex">\(30\text{ kPa}, 3.8\text{ V};\; n = 3\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>4.95 [ENTER] 40 [Σ+]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.45\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.8\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4.95\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4\)</span></td>
+<td style="text-align: left;">Log Point 4 (<span class="arithmatex">\(40\text{ kPa}, 4.95\text{ V};\; n = 4\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[↱] [L.R.] [m]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.45\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.8\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4.95\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(0.125\)</span></strong></td>
+<td style="text-align: left;">Slope <span class="arithmatex">\(m \approx 0.125\text{ V/kPa}\)</span> overwrites <span class="arithmatex">\(n = 4\)</span> in <span class="arithmatex">\(X\)</span> (lift neutral after <code>Σ+</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>25 [↱] [L.R.] [ŷ] 4 [↱] [L.R.] [x̂]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(4.95\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.125\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.113\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(32.129\)</span></strong></td>
+<td style="text-align: left;">Forward <span class="arithmatex">\(\hat{y}(25) \approx 3.113\text{ V}\)</span> in <span class="arithmatex">\(Y\)</span>; inverse <span class="arithmatex">\(\hat{x}(4) \approx 32.129\text{ kPa}\)</span> in <span class="arithmatex">\(X\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Once those four pairs are committed, the six accumulators hold <span class="arithmatex">\(\Sigma x = 100\)</span>, <span class="arithmatex">\(\Sigma y = 12.45\)</span>, <span class="arithmatex">\(\Sigma x^2 = 3,000\)</span>, <span class="arithmatex">\(\Sigma y^2 \approx 46.508\)</span>, <span class="arithmatex">\(\Sigma xy = 373.5\)</span>, and <span class="arithmatex">\(n = 4\)</span>. Querying the linear regression menu yields a transducer sensitivity slope of <span class="arithmatex">\(m \approx \mathbf{0.125\text{ V/kPa}}\)</span>, a zero-pressure intercept of <span class="arithmatex">\(b = \mathbf{0\text{ V}}\)</span>, and a Pearson correlation of <span class="arithmatex">\(r \approx \mathbf{1}\)</span> (<span class="arithmatex">\(R^2 \approx 0.999\)</span>, explaining <span class="arithmatex">\(99.9\%\)</span> of variance). Evaluating forward prediction <span class="arithmatex">\(\hat{y}\)</span> at <span class="arithmatex">\(x_0 = 25\text{ kPa}\)</span> forecasts a sensor output of <span class="arithmatex">\(\approx \mathbf{3.113\text{ V}}\)</span>, and evaluating inverse prediction <span class="arithmatex">\(\hat{x}\)</span> at a measured output of <span class="arithmatex">\(y_0 = 4\text{ V}\)</span> lifts <span class="arithmatex">\(3.113\text{ V}\)</span> into Register <span class="arithmatex">\(Y\)</span> while recovering the unknown line pressure <span class="arithmatex">\(\approx \mathbf{32.129\text{ kPa}}\)</span> in Register <span class="arithmatex">\(X\)</span>.</p>
+<p>At the four-point transducer centroid waist <span class="arithmatex">\(x_0 = \bar{x} = 25\text{ kPa}\)</span>, where the <span class="arithmatex">\((x_0 - \bar{x})^2\)</span> tilt term of the Working–Hotelling hyperbolic envelope vanishes, the residual standard error <span class="arithmatex">\(s_e \approx 0.058\text{ V}\)</span> and two-sided Student-<span class="arithmatex">\(t\)</span> critical quantile <span class="arithmatex">\(t_{0.025, 2} \approx 4.303\)</span> give a mean-line confidence margin of <span class="arithmatex">\(E_{\text{mean}} = t_{0.025,2} \cdot s_e / \sqrt{4} \approx \mathbf{0.125\text{ V}}\)</span> (<span class="arithmatex">\(3.113 \pm 0.125\text{ V}\)</span>), while <span class="arithmatex">\(E_{\text{pred}} = t_{0.025,2} \cdot s_e \sqrt{1 + 1/4} = \sqrt{5}\,E_{\text{mean}}\)</span> gives the single-observation prediction margin <span class="arithmatex">\(E_{\text{pred}} \approx \mathbf{0.28\text{ V}}\)</span> (<span class="arithmatex">\(3.113 \pm 0.28\text{ V}\)</span>).</p>
+<p>Because any two points determine an exact secant line with <span class="arithmatex">\(r = \pm 1\)</span>, logging two adjacent saturated-steam table rows (<span class="arithmatex">\(T_1 = 110^\circ\text{C}\)</span> at <span class="arithmatex">\(P_1 = 143.27\text{ kPa}\)</span> and <span class="arithmatex">\(T_2 = 120^\circ\text{C}\)</span> at <span class="arithmatex">\(P_2 = 198.53\text{ kPa}\)</span>) with <span class="arithmatex">\((Y = P,\; X = T)\)</span> turns <span class="arithmatex">\(\hat{y}\)</span> and <span class="arithmatex">\(\hat{x}\)</span> into a reusable two-point table interpolator: querying <span class="arithmatex">\(\hat{y}\)</span> at <span class="arithmatex">\(T = 114^\circ\text{C}\)</span> interpolates <span class="arithmatex">\(P = \mathbf{165.374\text{ kPa}}\)</span>, while querying <span class="arithmatex">\(\hat{x}\)</span> at <span class="arithmatex">\(P = 180\text{ kPa}\)</span> inverts the table to <span class="arithmatex">\(T \approx \mathbf{116.647^\circ\text{C}}\)</span> without re-entering the table bounds.</p>
+<h3 id="933-spectrophotometric-inverse-prediction-nonparametric-rank-correlation">9.3.3 Spectrophotometric Inverse Prediction &amp; Nonparametric Rank Correlation</h3>
+<p>In analytical and environmental chemistry, inverse regression (<span class="arithmatex">\(\hat{x}\)</span>) applies to Beer–Lambert UV-Vis spectrophotometry (<span class="arithmatex">\(A = \varepsilon b C + A_{\text{blank}}\)</span>). When a water-quality chemist calibrates a <span class="arithmatex">\(b = 1\text{ cm}\)</span> cuvette at <span class="arithmatex">\(\lambda = 510\text{ nm}\)</span> across four iron(II)–phenanthroline standards—<span class="arithmatex">\(C_1 = 1\text{ mg/L}\)</span> (<span class="arithmatex">\(A_1 = 0.198\)</span>), <span class="arithmatex">\(C_2 = 2\text{ mg/L}\)</span> (<span class="arithmatex">\(A_2 = 0.395\)</span>), <span class="arithmatex">\(C_3 = 3\text{ mg/L}\)</span> (<span class="arithmatex">\(A_3 = 0.594\)</span>), and <span class="arithmatex">\(C_4 = 4\text{ mg/L}\)</span> (<span class="arithmatex">\(A_4 = 0.791\)</span>)—accumulation of each <span class="arithmatex">\((A_i, C_i)\)</span> pair confirms Beer's law linearity (<span class="arithmatex">\(r \approx \mathbf{1}\)</span>, absorptivity slope <span class="arithmatex">\(m \approx \mathbf{0.198\text{ L/mg}}\)</span>, blank offset <span class="arithmatex">\(b_0 \approx \mathbf{0}\)</span>) and inverts an unknown groundwater sample's absorbance <span class="arithmatex">\(A_{\text{unk}} = 0.465\)</span> to <span class="arithmatex">\(\hat{C} \approx \mathbf{2.351\text{ mg/L}}\)</span>.</p>
+<p>When variables are ordinal rankings or follow a monotonic nonlinear relationship, Spearman's rank correlation coefficient <span class="arithmatex">\(r_s = 1 - \frac{6\sum d_i^2}{n(n^2 - 1)}\)</span> evaluates Pearson's correlation across the integer ranks <span class="arithmatex">\((R_{x,i}, R_{y,i})\)</span> with rank discrepancies <span class="arithmatex">\(d_i = R_{x,i} - R_{y,i}\)</span>. Across <span class="arithmatex">\(n = 5\)</span> ceramic coatings ranked on Mohs scratch hardness versus wear lifetime with rank differences <span class="arithmatex">\(d = (1, -1, 2, -1, -1)\)</span>, the squared discrepancies sum to <span class="arithmatex">\(\sum d_i^2 = 1 + 1 + 4 + 1 + 1 = 8\)</span>—well below the uncorrelated expectation <span class="arithmatex">\(n(n^2 - 1)/6 = 20\)</span> (<span class="arithmatex">\(r_s = 0\)</span>) and the antipodal reversal sum <span class="arithmatex">\(n(n^2 - 1)/3 = 40\)</span> (<span class="arithmatex">\(r_s = -1\)</span>). Dividing the numerator <span class="arithmatex">\(6\sum d_i^2 = 48\)</span> by <span class="arithmatex">\(n(n^2 - 1) = 5(24) = 120\)</span> isolates the discordance penalty <span class="arithmatex">\(0.4\)</span>, and subtracting from unity yields Spearman's rank correlation <span class="arithmatex">\(r_s = \mathbf{+0.6}\)</span>.</p>
+<h3 id="934-bell-curves-small-sample-t-tests-survival-odds">9.3.4 Bell Curves, Small-Sample <span class="arithmatex">\(t\)</span>-Tests &amp; Survival Odds</h3>
+<p>For the Gaussian Normal PDF <span class="arithmatex">\(f(x; \mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}}\exp\!\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)\)</span> at <span class="arithmatex">\(x = 115\)</span> with <span class="arithmatex">\(\mu = 100\)</span> and <span class="arithmatex">\(\sigma = 15\)</span> (<span class="arithmatex">\(z = +1\)</span>, one standard deviation above the mean), postfix evaluation parks the intermediate exponential factor in the upper registers <span class="arithmatex">\(Z\)</span> and <span class="arithmatex">\(T\)</span> while the lower registers build the normalization denominator. First, squaring the deviation <span class="arithmatex">\((115 - 100)^2 = 225\)</span>, dividing by <span class="arithmatex">\(2\sigma^2 = 450\)</span>, and exponentiating <span class="arithmatex">\(-0.5\)</span> leaves the unnormalized bell height <span class="arithmatex">\(e^{-0.5} \approx 0.607\)</span> in Register <span class="arithmatex">\(X\)</span>. Staging <span class="arithmatex">\(\sigma = 15\)</span>, <span class="arithmatex">\(2\)</span>, and <span class="arithmatex">\(\pi\)</span> then lifts <span class="arithmatex">\(e^{-0.5}\)</span> into Registers <span class="arithmatex">\(Z\)</span> and <span class="arithmatex">\(T\)</span> while <span class="arithmatex">\(\sigma\sqrt{2\pi} \approx 37.599\)</span> forms in Register <span class="arithmatex">\(X\)</span>, so a single division delivers <span class="arithmatex">\(f(115; 100, 15) \approx \mathbf{0.016}\)</span> (and multiplying by <span class="arithmatex">\(\sigma = 15\)</span> recovers the unit normal height <span class="arithmatex">\(\phi(1) \approx \mathbf{0.242}\)</span>, <strong>Figure 9.2</strong>).</p>
+<p><img alt="Figure 9.2: Evaluating the standard normal probability density height φ(1) ≈ 0.242 on the SC-32 transflective display." src="../../../assets/manuals/screenshots/sc32_normal_pdf_eqn.png" /></p>
+<p>To evaluate the cumulative normal integral <span class="arithmatex">\(\Phi(1) = 0.5 + \frac{1}{\sqrt{2\pi}}\int_0^{1} e^{-t^2/2}\,dt\)</span> via numerical quadrature, recall that the left half of the symmetric bell curve from <span class="arithmatex">\(-\infty\)</span> to <span class="arithmatex">\(0\)</span> encloses an exact area of <span class="arithmatex">\(0.5\)</span>. Integrating the unnormalized kernel <span class="arithmatex">\(e^{-x^2/2}\)</span> from <span class="arithmatex">\(a = 0\)</span> to <span class="arithmatex">\(b = 1\)</span> yields <span class="arithmatex">\(\approx 0.856\)</span>; dividing by <span class="arithmatex">\(\sqrt{2\pi} \approx 2.507\)</span> isolates the half-bell area <span class="arithmatex">\(\approx 0.341\)</span> from the mean to <span class="arithmatex">\(+1\sigma\)</span>, and adding <span class="arithmatex">\(0.5\)</span> gives <span class="arithmatex">\(\Phi(1) \approx \mathbf{0.841}\)</span> (<span class="arithmatex">\(84.1\%\)</span>, while doubling the central slice <span class="arithmatex">\(2 \times 0.341 \approx \mathbf{0.683}\)</span> confirms the <span class="arithmatex">\(\pm 1\sigma\)</span> Empirical Rule of <span class="arithmatex">\(68.27\%\)</span>).</p>
+<p>In Student's Two-Sample <span class="arithmatex">\(t\)</span>-Test (<span class="arithmatex">\(\nu = n_1 + n_2 - 2 = 16\)</span>) comparing Titanium Alloy A (<span class="arithmatex">\(n_1 = 8\)</span> coupons, <span class="arithmatex">\(\bar{x}_1 = 450\text{ MPa}\)</span>, <span class="arithmatex">\(s_1 = 12.5\text{ MPa}\)</span>) against Alloy B (<span class="arithmatex">\(n_2 = 10\)</span> coupons, <span class="arithmatex">\(\bar{x}_2 = 468\text{ MPa}\)</span>, <span class="arithmatex">\(s_2 = 14\text{ MPa}\)</span>), Alloy A's sum of squared deviations <span class="arithmatex">\((n_1 - 1)s_1^2 = 7(12.5^2) = 1,093.75\text{ MPa}^2\)</span> combines with Alloy B's <span class="arithmatex">\((n_2 - 1)s_2^2 = 9(14^2) = 1,764\text{ MPa}^2\)</span> to form <span class="arithmatex">\(2,857.75\text{ MPa}^2\)</span>. Dividing by <span class="arithmatex">\(\nu = 16\)</span> and taking the square root yields the pooled standard deviation <span class="arithmatex">\(s_p \approx \mathbf{13.365\text{ MPa}}\)</span> (weighted <span class="arithmatex">\(9:7\)</span> toward the larger 10-coupon batch). Multiplying <span class="arithmatex">\(s_p\)</span> by <span class="arithmatex">\(\sqrt{1/8 + 1/10} \approx 0.474\)</span> gives the two-sample standard error <span class="arithmatex">\(\text{SE} \approx \mathbf{6.339\text{ MPa}}\)</span>, and dividing the mean difference <span class="arithmatex">\(\bar{x}_1 - \bar{x}_2 = -18\text{ MPa}\)</span> by <span class="arithmatex">\(\text{SE}\)</span> yields <span class="arithmatex">\(t \approx \mathbf{-2.839}\)</span>, which exceeds the two-sided <span class="arithmatex">\(95\%\)</span> critical threshold <span class="arithmatex">\(t_{0.025, 16} \approx 2.12\)</span> in magnitude and confirms that Alloy B's higher tensile strength is statistically significant.</p>
+<p>For a high-speed spindle bearing operating at <span class="arithmatex">\(t = 3,000\text{ hr}\)</span> with Weibull characteristic life <span class="arithmatex">\(\eta = 5,000\text{ hr}\)</span> and wear-out shape modulus <span class="arithmatex">\(\beta = 1.8 &gt; 1\)</span>, the normalized age is <span class="arithmatex">\(t/\eta = 0.6\)</span>, its Weibull hazard power is <span class="arithmatex">\((0.6)^{1.8} \approx 0.399\)</span>, and the survival probability is <span class="arithmatex">\(R(3,000) \approx \exp(-0.399) \approx \mathbf{0.671}\)</span> (<span class="arithmatex">\(67.1\%\)</span> survival, or <span class="arithmatex">\(32.9\%\)</span> cumulative failure risk).</p>
+<h3 id="935-coordinate-transformed-curve-fitting-power-laws-kinetics-activation-energy">9.3.5 Coordinate-Transformed Curve Fitting: Power Laws, Kinetics &amp; Activation Energy</h3>
+<p>Under the log-log transformation (<span class="arithmatex">\(\ln P = m\ln v + \ln k\)</span>) for the wind-turbine power law <span class="arithmatex">\(P = kv^m\)</span> across four wind-tunnel test points—<span class="arithmatex">\((v_1 = 4\text{ m/s}, P_1 = 16\text{ kW})\)</span>, <span class="arithmatex">\((6, 54)\)</span>, <span class="arithmatex">\((8, 128)\)</span>, and <span class="arithmatex">\((10, 250)\)</span>—both output power <span class="arithmatex">\(P\)</span> and wind speed <span class="arithmatex">\(v\)</span> transform via the natural logarithm on the stack before accumulating each pair. Because executing a unary operator like the natural logarithm or reciprocal terminates digit entry and arms automatic stack lift, typing the horizontal coordinate <span class="arithmatex">\(v_i\)</span> after taking <span class="arithmatex">\(\ln P_i\)</span> lifts <span class="arithmatex">\(\ln P_i\)</span> into Register <span class="arithmatex">\(Y\)</span>, so taking <span class="arithmatex">\(\ln v_i\)</span> and accumulating logs the transformed pair <span class="arithmatex">\((\ln v_i, \ln P_i)\)</span> with no intervening <code>ENTER</code> keystroke. Across those four wind-tunnel points, querying the regression slope recovers the exact Betz cubic exponent <span class="arithmatex">\(m = \mathbf{3}\)</span>, while exponentiating the intercept <span class="arithmatex">\(b \approx -1.386\)</span> recovers the aerodynamic scale constant <span class="arithmatex">\(k = e^b = \mathbf{0.25\text{ kW/(m/s)}^3}\)</span>, forecasting <span class="arithmatex">\(P(12) = 0.25 \times 12^3 = \mathbf{432\text{ kW}}\)</span> at <span class="arithmatex">\(v = 12\text{ m/s}\)</span>.</p>
+<p>In a double-reciprocal Lineweaver–Burk enzyme assay (<span class="arithmatex">\(1/v_0\)</span> vs. <span class="arithmatex">\(1/[S]\)</span>) across four substrate-velocity pairs <span class="arithmatex">\(([S]_k, v_k)\)</span> of <span class="arithmatex">\((2\text{ mM}, 0.182\text{ }\mu\text{M/min})\)</span>, <span class="arithmatex">\((4, 0.286)\)</span>, <span class="arithmatex">\((8, 0.4)\)</span>, and <span class="arithmatex">\((16, 0.471)\)</span>, inverting each reaction velocity <span class="arithmatex">\(v_k\)</span> and substrate molarity <span class="arithmatex">\([S]_k\)</span> into its reciprocal prior to accumulation yields a reciprocal intercept of <span class="arithmatex">\(b = 1/V_{\max} \approx 1.576\)</span> (<span class="arithmatex">\(V_{\max} = 1/b \approx \mathbf{0.635\text{ }\mu\text{M/min}}\)</span>) and a slope of <span class="arithmatex">\(m = K_m/V_{\max} \approx 7.798\)</span>, recovering the half-saturation Michaelis constant <span class="arithmatex">\(K_m = m \cdot V_{\max} \approx \mathbf{4.948\text{ mM}}\)</span>.</p>
+<p>Semi-log radioactive decay fits (<span class="arithmatex">\(\ln A(t)\)</span> against untransformed time <span class="arithmatex">\(t\)</span>) extract the decay constant <span class="arithmatex">\(\lambda = -m\)</span> (<span class="arithmatex">\(\lambda \approx \mathbf{0.116\text{ hr}^{-1}}\)</span> and clinical half-life <span class="arithmatex">\(t_{1/2} = \ln 2 / \lambda \approx \mathbf{6\text{ hr}}\)</span> for technetium-99m) and initial activity <span class="arithmatex">\(A_0 = e^b\)</span>, while pairing <span class="arithmatex">\(\ln k\)</span> with reciprocal absolute temperature <span class="arithmatex">\(1/T\)</span> linearizes the Arrhenius chemical rate law <span class="arithmatex">\(k = A\exp(-E_a / RT)\)</span> so that multiplying the negated slope <span class="arithmatex">\(-m = E_a / R\)</span> by the universal gas constant <span class="arithmatex">\(R \approx 8.314\text{ J/(mol}\cdot\text{K)}\)</span> recovers the molar activation energy barrier <span class="arithmatex">\(E_a\)</span>.</p>
+<h3 id="936-try-it-on-the-stack">9.3.6 Try It on the Stack</h3>
+<ol>
+<li><strong>Michaelis–Menten Enzyme Velocity via Last-Argument Reuse:</strong> For an enzyme assay with <span class="arithmatex">\(V_{\max} = 120\,\mu\text{M/min}\)</span> and <span class="arithmatex">\(K_m = 4.2\text{ mM}\)</span> at substrate concentration <span class="arithmatex">\(c = 8.5\text{ mM}\)</span>, evaluate <span class="arithmatex">\(v_0 = \frac{V_{\max}c}{K_m + c}\)</span> by forming <span class="arithmatex">\(120 \times 8.5 = 1,020\)</span>, recalling <span class="arithmatex">\(c = 8.5\)</span> via <code>LASTX</code> to add <span class="arithmatex">\(K_m = 4.2\)</span>, and dividing. <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\(v_0 \approx \mathbf{80.315\,\mu\text{M/min}}\)</span>.)</em></li>
+<li><strong>Poisson Rare-Event Arrival Probability:</strong> Evaluate the Poisson probability <span class="arithmatex">\(P(X = 6) = \frac{\lambda^6 e^{-\lambda}}{6!}\)</span> for an optical receiver averaging <span class="arithmatex">\(\lambda = 4.5\text{ photons/gate}\)</span> by raising <span class="arithmatex">\(\lambda = 4.5\)</span> to the <span class="arithmatex">\(6\text{th}\)</span> power, recalling <span class="arithmatex">\(6\)</span> from <code>LASTX</code> to take its factorial <span class="arithmatex">\(6! = 720\)</span> and divide, and multiplying by <span class="arithmatex">\(e^{-4.5}\)</span>. <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\(P(X = 6) \approx \mathbf{0.128}\)</span>, or <span class="arithmatex">\(12.812\%\)</span>.)</em></li>
+<li><strong>Symmetric <span class="arithmatex">\(95\%\)</span> Confidence Interval Bounds:</strong> For a sample mean <span class="arithmatex">\(\bar{x} = 84.625\text{ MPa}\)</span> with standard error <span class="arithmatex">\(s_{\bar{x}} = 1.35\text{ MPa}\)</span> and normal quantile <span class="arithmatex">\(z = 1.96\)</span>, subtract the margin <span class="arithmatex">\(E = 1.96 \times 1.35 = 2.646\text{ MPa}\)</span> from <span class="arithmatex">\(\bar{x}\)</span> to obtain the lower confidence bound, then restore <span class="arithmatex">\(E\)</span> via <code>LASTX</code>, double it, and add to step to the upper bound. <em>(Verified Register <span class="arithmatex">\(X\)</span> results: lower bound <span class="arithmatex">\(\mathbf{81.979\text{ MPa}}\)</span> and upper bound <span class="arithmatex">\(\mathbf{87.271\text{ MPa}}\)</span>.)</em></li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/ecommerce.js"></script>
+      
+    
+  </body>
+</html>

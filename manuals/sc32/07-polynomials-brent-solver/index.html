@@ -1,0 +1,3424 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Geometric completion of the square, the 1535 Milan cubic contest, Horner's nested evaluation, and Richard Brent's hybrid root solver on the StackCalc SC-32.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/manuals/sc32/07-polynomials-brent-solver/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Chapter 7: Polynomial Evaluation, Cardano's Cubic & Brent's Root-Finder | Thinking in the Stack (SC-32) - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/brutalist.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/ecommerce.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  
+  <meta name="robots" content="noindex, nofollow">
+  
+  
+  
+  
+  
+  <meta property="og:site_name" content="StackCalc32">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chapter 7: Polynomial Evaluation, Cardano&#39;s Cubic &amp; Brent&#39;s Root-Finder | Thinking in the Stack (SC-32)">
+  <meta property="og:description" content="Geometric completion of the square, the 1535 Milan cubic contest, Horner&#39;s nested evaluation, and Richard Brent&#39;s hybrid root solver on the StackCalc SC-32.">
+  <meta property="og:url" content="https://www.stackcalc.io/manuals/sc32/07-polynomials-brent-solver/">
+  <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chapter 7: Polynomial Evaluation, Cardano&#39;s Cubic &amp; Brent&#39;s Root-Finder | Thinking in the Stack (SC-32)">
+  <meta name="twitter:description" content="Geometric completion of the square, the 1535 Milan cubic contest, Horner&#39;s nested evaluation, and Richard Brent&#39;s hybrid root solver on the StackCalc SC-32.">
+  <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                      tiny5: ['Tiny5', 'Terminus', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-7-polynomial-evaluation-cardanos-cubic-brents-root-finder" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 7: Polynomial Evaluation, Cardano's Cubic & Brent's Root-Finder | Thinking in the Stack (SC-32)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="../../../learning-lab/" class="brutalist-button-header">LEARNING LAB</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../products/" class="md-tabs__link">
+          
+  
+  Catalog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../curriculum/" class="md-tabs__link">
+          
+  
+  Curriculum & Standards
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Books & Reference Manuals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-tabs__link">
+        
+  
+    
+  
+  Build Logs ↗
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../privacy/" class="md-tabs__link">
+          
+  
+  Legal & Support
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Catalog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Catalog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SC-32 Scientific Calculator
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SC-32 Scientific Calculator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Assembly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operational Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-elementary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Elementary Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From Blocks to the Stack (SC-6 Book)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fraction Studio Towers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Fraction Studio Towers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prime-factor-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prime Factor Studio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/place-value/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Place Value Studio & Regrouping Trays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Classroom Planetary Clock
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Classroom Planetary Clock
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ten Frames & Counters
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Ten Frames & Counters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/counting-tiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Counting & Array Tiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math Domino Studio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Math Domino Studio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/quest-scoreboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Quest Scoreboard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algebra Boxes & Tiles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Algebra Boxes & Tiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Probability Dice & Spinner
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Probability Dice & Spinner
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/unit-circle-volvelle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unit Circle & Trig Volvelle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/stands-and-pouches/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stands & Pouches
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/curriculum-and-decks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Curriculum & Decks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../printables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Makerspace 3D Print Kits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../downloads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Download Center (PDFs & 3MFs)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Curriculum & Standards
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Curriculum & Standards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Curriculum Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/sc6-elementary-companion-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Companion Workbook (253 Problems)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/sc32-scientific-companion-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-32 Companion Casebook (339 Problems)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/big-ideas-middle-school-sc6-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Big Ideas Middle School Catch-Up (SC-6)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/alignment-matrix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standards Alignment Matrix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/worksheets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Printable Student Worksheets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/teacher-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teacher Facilitator Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Answer Key (Books 2A–5)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/rpn-elementary-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPN Elementary Power Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/uil-competition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Competitive STEM & Speed Calculation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Books & Reference Manuals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Books & Reference Manuals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Official Manuals & Reference Books ($16)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From Blocks to the Stack (SC-6 Book)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bestseller-rubric-and-editorial-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bestseller Rubric & Editorial Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../critical-editorial-review-and-school-adoption/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Editorial Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agent & OpenAPI Spec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mac & iOS Apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../press/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Press & Editorial Kit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../etsy-publishing-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing & Sourcing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shipping-and-packaging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shipping & Packaging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exam-compliance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Compliance & Proctor Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_11">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2026/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2026
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_12">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/3d-printing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Printing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/cad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CAD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/education/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Education
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/kicad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KiCad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/manufacturing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/mathematics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mathematics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/pcb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pedagogy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/product-design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/rpn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/swift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Swift
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/watchos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    watchOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build Logs ↗
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Legal & Support
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Legal & Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terms of Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Replacement Parts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-closed-form-polynomials-vietes-identities-horners-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Closed-Form Polynomials, Viète's Identities &amp; Horner's Scheme
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 Closed-Form Polynomials, Viète's Identities & Horner's Scheme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711-catastrophic-cancellation-in-the-quadratic-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1.1 Catastrophic Cancellation in the Quadratic Formula
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#712-the-1535-milanese-cubic-contest-cardanos-formula-casus-irreducibilis" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1.2 The 1535 Milanese Cubic Contest, Cardano's Formula &amp; Casus Irreducibilis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#713-vietes-trigonometric-trisection-ferraris-quartic" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1.3 Viète's Trigonometric Trisection &amp; Ferrari's Quartic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#714-evaluating-polynomials-from-the-inside-out-horners-nested-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1.4 Evaluating Polynomials from the Inside Out: Horner's Nested Scheme
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-iterative-root-finding-implicit-physical-laws" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Iterative Root-Finding &amp; Implicit Physical Laws
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 Iterative Root-Finding & Implicit Physical Laws">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#721-richard-brents-1973-hybrid-root-finding-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2.1 Richard Brent's 1973 Hybrid Root-Finding Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#722-multiple-root-conditioning-and-polynomial-deflation-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2.2 Multiple-Root Conditioning and Polynomial Deflation Order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#723-bracketing-false-poles-residual-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2.3 Bracketing, False Poles &amp; Residual Verification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#724-implicit-transcendental-equations-in-fluid-friction-orbital-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2.4 Implicit Transcendental Equations in Fluid Friction &amp; Orbital Mechanics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-hunting-roots-on-the-four-register-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Hunting Roots on the Four-Register Stack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 Hunting Roots on the Four-Register Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-horners-nested-evaluation-t-register-flooding" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3.1 Horner's Nested Evaluation &amp; T-Register Flooding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#732-cardanos-analytical-cubic-quadratic-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3.2 Cardano's Analytical Cubic &amp; Quadratic Solver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#733-taming-transcendental-equations-by-bracketed-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3.3 Taming Transcendental Equations by Bracketed Iteration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#734-practical-root-finding-strategy-residual-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3.4 Practical Root-Finding Strategy &amp; Residual Verification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#735-try-it-on-the-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3.5 Try It on the Stack
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="chapter-7-polynomial-evaluation-cardanos-cubic-brents-root-finder">Chapter 7: Polynomial Evaluation, Cardano's Cubic &amp; Brent's Root-Finder</h1>
+<p>In early 1535 in Venice and Milan, a public mathematical duel turned the inversion of equations into a high-stakes contest of livelihoods and honor <em>(<a href="../appendix-e-annotated-bibliography/#cite-cardano1545">Cardano, 1545</a>)</em>. Around 1515, Bologna mathematics professor Scipione del Ferro had discovered how to solve the "depressed" cubic <span class="arithmatex">\(t^3 + pt = q\)</span> (a third-degree equation with no <span class="arithmatex">\(t^2\)</span> term) and entrusted the manuscript on his deathbed in 1526 to his student Antonio Maria Fior. When Fior boasted that he alone could solve cubic equations, he challenged the Venetian mathematician Niccolò Fontana (<strong>Tartaglia</strong>): each contestant deposited thirty cubic problems with a notary and was given fifty days to solve the rival's list. On the night of February 12, 1535, eight days before the deadline, Tartaglia cracked the general reduction by dissecting a three-dimensional cube of side <span class="arithmatex">\((u - v)\)</span> into smaller blocks, solving all thirty of Fior's problems within two hours while Fior failed to solve a single one of his.</p>
+<p>Inverting a polynomial required a sixteenth-century breakthrough because, unlike forward arithmetic, running a physical design problem backward (where an unknown dimension, launch angle, or flow friction <span class="arithmatex">\(x\)</span> must make a governing law balance to zero) places the unknown <span class="arithmatex">\(x\)</span> in multiple incompatible powers at once, so no single division or root extraction can isolate it. On al-Khwarizmi's quadratic benchmark,</p>
+<div class="arithmatex">\[x^2 + 10x = 39 \tag{Eq. 7.1}\]</div>
+<p>interpreting <span class="arithmatex">\(x^2\)</span> as a physical square of side <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(10x\)</span> as the area of an attached rectangle folds multiple powers of <span class="arithmatex">\(x\)</span> into a single power—the opening step in an algebraic arc that ran from completing the square and Cardano's 1545 <em>Ars Magna</em> <em>(<a href="../appendix-e-annotated-bibliography/#cite-cardano1545">Cardano, 1545</a>)</em> to the fifth-degree radical barrier and Richard Brent's 1973 hybrid root-finding algorithm <em>(<a href="../appendix-e-annotated-bibliography/#cite-brent1973">Brent, 1973</a>)</em>.</p>
+<h2 id="71-closed-form-polynomials-vietes-identities-horners-scheme">7.1 Closed-Form Polynomials, Viète's Identities &amp; Horner's Scheme</h2>
+<p>To find the positive root <span class="arithmatex">\(x\)</span> when <span class="arithmatex">\(x^2 + 10x = 39\)</span>, split the linear coefficient <span class="arithmatex">\(10\)</span> into two equal halves (<span class="arithmatex">\(10/2 = 5\)</span>) and add the square of that half-coefficient (<span class="arithmatex">\(5^2 = 25\)</span>) to both sides of the equation (<strong>Figure 7.1</strong>). Adding <span class="arithmatex">\(25\)</span> completes the binomial square <span class="arithmatex">\((x + 5)^2\)</span> on the left and balances <span class="arithmatex">\(39 + 25 = 64\)</span> on the right:</p>
+<div class="arithmatex">\[(x + 5)^2 = 39 + 25 = 64 = 8^2 \implies x + 5 = \pm 8 \implies \mathbf{x_1 = 3}, \quad \mathbf{x_2 = -13} \tag{Eq. 7.2}\]</div>
+<p><img alt="Figure 7.1: Geometric completion of the square on x² + 10x = 39 and Richard Brent's hybrid root-hunting bracket." src="../../../assets/manuals/sc32_concept_khwarizmi_brent.png" /></p>
+<p>When the square is completed on the general quadratic equation <span class="arithmatex">\(a x^2 + b x + c = 0\)</span>—or when the equation is divided through by <span class="arithmatex">\(a\)</span> to form the reduced monic quadratic <span class="arithmatex">\(x^2 + 2px + q = 0\)</span> in terms of the half-linear coefficient <span class="arithmatex">\(p = \frac{b}{2a}\)</span> and constant ratio <span class="arithmatex">\(q = \frac{c}{a}\)</span>—it yields both the classical <em>quadratic formula</em> and its <em>single-entry half-linear form</em>, where <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> each appear only once:</p>
+<div class="arithmatex">\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} = -p \pm \sqrt{p^2 - q} \qquad \left(p = \frac{b}{2a},\;\; q = \frac{c}{a}\right) \tag{Eq. 7.3}\]</div>
+<p>In factored form, <span class="arithmatex">\(a(x - r_1)(x - r_2) = ax^2 - a(r_1 + r_2)x + a r_1 r_2 = 0\)</span> links the roots <span class="arithmatex">\((r_1, r_2)\)</span> to the polynomial coefficients through <em>Viète's identities</em> without solving for the individual roots at all:</p>
+<div class="arithmatex">\[r_1 + r_2 = -\frac{b}{a}, \qquad r_1 r_2 = \frac{c}{a}, \qquad \frac{1}{r_1} + \frac{1}{r_2} = \frac{r_1 + r_2}{r_1 r_2} = -\frac{b}{c}, \qquad r_1^2 + r_2^2 = (r_1 + r_2)^2 - 2r_1 r_2 = \left(\frac{b}{a}\right)^2 - \frac{2c}{a} \tag{Eq. 7.4}\]</div>
+<p>Whenever an engineering analysis or mathematics competition asks for a symmetric combination of the roots—such as their sum, product, reciprocal sum, or sum of squares—Viète's identities resolve the answer by inspection: on <span class="arithmatex">\(2x^2 - 7x + 4 = 0\)</span>, the roots satisfy <span class="arithmatex">\(r_1 + r_2 = \mathbf{3.5}\)</span>, <span class="arithmatex">\(r_1 r_2 = \mathbf{2}\)</span>, reciprocal sum <span class="arithmatex">\(\frac{1}{r_1} + \frac{1}{r_2} = \frac{7}{4} = \mathbf{1.75}\)</span>, and squared sum <span class="arithmatex">\(r_1^2 + r_2^2 = 3.5^2 - 2(2) = \mathbf{8.25}\)</span> without extracting any square roots.</p>
+<h3 id="711-catastrophic-cancellation-in-the-quadratic-formula">7.1.1 Catastrophic Cancellation in the Quadratic Formula</h3>
+<p>In finite-precision floating-point arithmetic, the classical quadratic formula <span class="arithmatex">\(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\)</span> exhibits a severe numerical instability whenever <span class="arithmatex">\(b^2\)</span> is much larger than <span class="arithmatex">\(4ac\)</span> (<span class="arithmatex">\(b^2 \gg |4ac|\)</span>).</p>
+<p>When <span class="arithmatex">\(b &gt; 0\)</span> and <span class="arithmatex">\(4ac\)</span> is tiny compared to <span class="arithmatex">\(b^2\)</span>, the radical <span class="arithmatex">\(\sqrt{b^2 - 4ac}\)</span> is nearly equal to <span class="arithmatex">\(b\)</span>. Evaluating the root with the plus sign (<span class="arithmatex">\(-b + \sqrt{b^2 - 4ac}\)</span>) subtracts two nearly equal numbers and cancels up to half or more of a floating-point register's significant digits through <em>catastrophic cancellation</em>. Avoiding this loss of significance requires never subtracting <span class="arithmatex">\(\sqrt{b^2 - 4ac}\)</span> from a number of the same sign.</p>
+<p>Instead, we introduce the sign function <span class="arithmatex">\(\operatorname{sgn}(b)\)</span> (which equals <span class="arithmatex">\(+1\)</span> when <span class="arithmatex">\(b \ge 0\)</span> and <span class="arithmatex">\(-1\)</span> when <span class="arithmatex">\(b &lt; 0\)</span>) to form the <em>Citardauq</em> ("Quadratic" spelled backward) intermediate quantity <span class="arithmatex">\(q\)</span>, and then extract the larger-magnitude root <span class="arithmatex">\(x_1 = q/a\)</span> and the smaller-magnitude root <span class="arithmatex">\(x_2 = c/q\)</span> via Viète's root-product identity <span class="arithmatex">\(x_1 x_2 = \frac{c}{a}\)</span>:</p>
+<div class="arithmatex">\[q = -\frac{1}{2}\Big(b + \operatorname{sgn}(b)\sqrt{b^2 - 4ac}\Big), \qquad x_1 = \frac{q}{a}, \qquad x_2 = \frac{c}{q} \tag{Eq. 7.5}\]</div>
+<p>Multiplying the radical <span class="arithmatex">\(\sqrt{b^2 - 4ac}\)</span> by <span class="arithmatex">\(\operatorname{sgn}(b)\)</span> guarantees that <span class="arithmatex">\(\operatorname{sgn}(b)\sqrt{b^2 - 4ac}\)</span> always carries the exact same algebraic sign as <span class="arithmatex">\(b\)</span>, so the two terms inside the parentheses always <em>add</em> in magnitude instead of canceling. Because <span class="arithmatex">\(q\)</span> is formed by pure magnitude addition, both <span class="arithmatex">\(x_1 = q/a\)</span> and <span class="arithmatex">\(x_2 = c/q\)</span> retain every guard digit of precision even when <span class="arithmatex">\(b^2\)</span> exceeds <span class="arithmatex">\(4ac\)</span> by ten orders of magnitude. On the benchmark <span class="arithmatex">\(x^2 + 10x - 39 = 0\)</span> (<span class="arithmatex">\(a = 1, b = 10, c = -39\)</span>), the discriminant <span class="arithmatex">\(\Delta = b^2 - 4ac = 256\)</span> has square root <span class="arithmatex">\(16\)</span>, so <span class="arithmatex">\(q = -\frac{1}{2}(10 + 16) = \mathbf{-13}\)</span> (<span class="arithmatex">\(x_1 = q/a\)</span>) and <span class="arithmatex">\(x_2 = c/q = -39 / (-13) = \mathbf{3}\)</span>.</p>
+<p>Quadratic equations govern two inverse problems in mechanics and forensic engineering: inverse ballistic trajectories and highway stopping distance reconstruction. Forward ballistics projects where a shell lands when its launch angle <span class="arithmatex">\(\theta\)</span> is already known; the inverse ballistic problem fixes the target coordinates <span class="arithmatex">\((x, y)\)</span> on an elevated ridge at horizontal range <span class="arithmatex">\(x\)</span> and vertical elevation <span class="arithmatex">\(y\)</span>, given a known muzzle speed <span class="arithmatex">\(v_0\)</span> and downward gravitational acceleration <span class="arithmatex">\(g \approx 9.81\text{ m/s}^2\)</span>, and solves backward for the required launch angle <span class="arithmatex">\(\theta\)</span>. Were the shell fired horizontally in vacuum without gravity, it would climb along the straight line-of-sight tangent <span class="arithmatex">\(x\tan\theta\)</span>; over flight time <span class="arithmatex">\(t = \frac{x}{v_0\cos\theta}\)</span>, however, gravity pulls the shell downward by <span class="arithmatex">\(\frac{1}{2}gt^2 = \left(\frac{gx^2}{2v_0^2}\right)\sec^2\theta\)</span>, where the baseline vertical drop <span class="arithmatex">\(d_g = \frac{gx^2}{2v_0^2}\)</span> is the distance the projectile would fall if fired horizontally at speed <span class="arithmatex">\(v_0\)</span>. Substituting the trigonometric identity <span class="arithmatex">\(\sec^2\theta = 1 + \tan^2\theta\)</span> into the parabolic trajectory <span class="arithmatex">\(y = x\tan\theta - \frac{gx^2}{2v_0^2}\sec^2\theta\)</span> converts the unknown launch slope <span class="arithmatex">\(u = \tan\theta\)</span> into a quadratic equation:</p>
+<div class="arithmatex">\[\left(\frac{gx^2}{2v_0^2}\right) u^2 - x u + \left(y + \frac{gx^2}{2v_0^2}\right) = 0 \tag{Eq. 7.6}\]</div>
+<p>Tilting the barrel steeper increases the flight time across range <span class="arithmatex">\(x\)</span> and amplifies gravitational drop through the quadratic term <span class="arithmatex">\(\frac{gx^2}{2v_0^2} u^2\)</span>, while the linear term <span class="arithmatex">\(-xu\)</span> tracks the straight line-of-sight climb and the constant term <span class="arithmatex">\(\left(y + \frac{gx^2}{2v_0^2}\right)\)</span> combines the ridge elevation <span class="arithmatex">\(y\)</span> with the baseline gravity drop <span class="arithmatex">\(d_g\)</span>. Whenever the target lies within range, the two positive roots give the gunner two distinct paths to the same coordinates: a flat, fast direct-fire trajectory (<span class="arithmatex">\(\theta_1 = \arctan u_1\)</span>) and a high, plunging mortar arc (<span class="arithmatex">\(\theta_2 = \arctan u_2\)</span>) that descends from above.</p>
+<p>A similar quadratic governs highway braking and reaction stopping distance. When a driver spots a hazard on the highway, the vehicle of mass <span class="arithmatex">\(m\)</span> travels at its initial speed <span class="arithmatex">\(v_0\)</span> during the human perception-reaction time <span class="arithmatex">\(t_r\)</span>, covering a linear reaction distance <span class="arithmatex">\(d_{\text{react}} = v_0 t_r\)</span>. Once the brakes lock, tire-pavement friction (with coefficient <span class="arithmatex">\(\mu\)</span> and normal weight <span class="arithmatex">\(mg\)</span>) exerts a constant retarding force <span class="arithmatex">\(\mu mg\)</span>; to bring the vehicle to a halt, the linear friction work <span class="arithmatex">\(\mu m g\,d_{\text{brake}}\)</span> must absorb the entire translational kinetic energy <span class="arithmatex">\(\frac{1}{2}mv_0^2\)</span>, which makes the braking distance <span class="arithmatex">\(d_{\text{brake}} = \frac{v_0^2}{2\mu g}\)</span> scale with the <em>square</em> of initial speed <span class="arithmatex">\(v_0\)</span> while vehicle mass <span class="arithmatex">\(m\)</span> cancels out. Summing reaction and braking distances gives the total stopping distance <span class="arithmatex">\(d = v_0 t_r + \frac{v_0^2}{2\mu g}\)</span>. When crash investigators measure the total stopping distance <span class="arithmatex">\(d\)</span> at the scene, reconstructing the vehicle's unknown initial speed <span class="arithmatex">\(v_0\)</span> requires clearing the denominator <span class="arithmatex">\(2\mu g\)</span> to extract the positive root of the monic quadratic:</p>
+<div class="arithmatex">\[v_0^2 + (2\mu g t_r)\, v_0 - 2\mu g d = 0 \tag{Eq. 7.7}\]</div>
+<p>Clearing the denominator <span class="arithmatex">\(2\mu g\)</span> pits the quadratic kinetic-energy braking term <span class="arithmatex">\(v_0^2\)</span> and the linear human-reaction term <span class="arithmatex">\((2\mu g t_r)v_0\)</span> against the scaled stopping distance <span class="arithmatex">\(2\mu g d\)</span>, isolating the pre-braking speed as the unique positive root <span class="arithmatex">\(v_0 = -\mu g t_r + \sqrt{(\mu g t_r)^2 + 2\mu g d}\)</span>.</p>
+<h3 id="712-the-1535-milanese-cubic-contest-cardanos-formula-casus-irreducibilis">7.1.2 The 1535 Milanese Cubic Contest, Cardano's Formula &amp; Casus Irreducibilis</h3>
+<p>Fior had set all thirty of his 1535 challenge problems as variations of del Ferro's single depressed form <span class="arithmatex">\(t^3 + pt = q\)</span>; Tartaglia had posed several different families of cubics, including <span class="arithmatex">\(t^3 + pt^2 = q\)</span>. Expanding the binomial cube <span class="arithmatex">\((u - v)^3\)</span> and regrouping its terms yields the algebraic identity:</p>
+<div class="arithmatex">\[(u - v)^3 + 3uv(u - v) = u^3 - v^3 \tag{Eq. 7.8}\]</div>
+<p>Tartaglia saw that setting <span class="arithmatex">\(t = u - v\)</span>, <span class="arithmatex">\(3uv = p\)</span>, and <span class="arithmatex">\(u^3 - v^3 = -q\)</span> reduces the depressed cubic <span class="arithmatex">\(t^3 + pt + q = 0\)</span> to a <em>quadratic equation in <span class="arithmatex">\(u^3\)</span></em>.</p>
+<p>News of Tartaglia's victory reached the Milanese physician and algebraist Gerolamo Cardano, who persuaded Tartaglia in 1539 to share his rule (encoded in a twenty-five-line poem). Cardano then combined Tartaglia's rule with his own discovery that <em>any</em> full cubic <span class="arithmatex">\(A x^3 + B x^2 + C x + D = 0\)</span> can be stripped of its quadratic <span class="arithmatex">\(x^2\)</span> term by translating the coordinate origin to the curve's point of inflection via <span class="arithmatex">\(x = t - \frac{B}{3A}\)</span>. Geometrically, every cubic curve is an S-shaped wave that bends concave-down on one side and concave-up on the other, switching concavity at a unique central balance point where the second derivative <span class="arithmatex">\(6Ax + 2B\)</span> vanishes (<span class="arithmatex">\(x = -\frac{B}{3A}\)</span>). Sliding the horizontal coordinate axis to that inflection point centers the S-curve symmetrically so the quadratic <span class="arithmatex">\(t^2\)</span> term cancels out, leaving only the depressed slope parameter <span class="arithmatex">\(p\)</span> and vertical inflection offset <span class="arithmatex">\(q\)</span>:</p>
+<div class="arithmatex">\[t^3 + p t + q = 0, \qquad p = \frac{3AC - B^2}{3A^2}, \qquad q = \frac{27A^2D - 9ABC + 2B^3}{27A^3} \tag{Eq. 7.9}\]</div>
+<p>Centering the cubic at <span class="arithmatex">\(t = 0\)</span> gives <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> a direct geometric meaning: the linear coefficient <span class="arithmatex">\(p\)</span> is the exact slope of the cubic right at its inflection center (which must be negative, <span class="arithmatex">\(p &lt; 0\)</span>, for the S-curve to turn backward and form a local hill and valley), while the constant term <span class="arithmatex">\(q\)</span> is the vertical height of that inflection point above or below the horizontal axis. Cardano and his pupil Lodovico Ferrari, who soon discovered how to solve the fourth-degree <em>quartic equation</em> by reducing it to a resolvent cubic, now possessed the complete analytical solution to every polynomial up to degree four. After inspecting Scipione del Ferro's posthumous papers in Bologna and verifying that del Ferro had discovered the depressed cubic formula twenty years before Tartaglia, Cardano published the complete cubic and quartic solutions in his 1545 treatise <em>Ars Magna</em> <em>(<a href="../appendix-e-annotated-bibliography/#cite-cardano1545">Cardano, 1545</a>)</em>, crediting both del Ferro and Tartaglia.</p>
+<p>Solving Tartaglia's simultaneous conditions <span class="arithmatex">\(u^3 - v^3 = -q\)</span> and <span class="arithmatex">\(u^3(-v^3) = -(p/3)^3\)</span> via the quadratic formula yields <span class="arithmatex">\(u^3 = -\frac{q}{2} + \sqrt{\Delta}\)</span> and <span class="arithmatex">\(-v^3 = -\frac{q}{2} - \sqrt{\Delta}\)</span>, governed by the <em>cubic discriminant</em> <span class="arithmatex">\(\Delta = \left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3\)</span>. Taking the cube roots to recover <span class="arithmatex">\(t = u - v\)</span> produces <strong>Cardano's cubic formula</strong>, inside which appeared an algebraic paradox that forced the recognition of complex numbers:</p>
+<div class="arithmatex">\[t = \sqrt[3]{-\frac{q}{2} + \sqrt{\Delta}} + \sqrt[3]{-\frac{q}{2} - \sqrt{\Delta}}, \qquad \Delta = \left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3 \tag{Eq. 7.10}\]</div>
+<p>The two cube-root radicals in Cardano's formula are Tartaglia's <span class="arithmatex">\(u\)</span> and <span class="arithmatex">\(-v\)</span>, while the cubic discriminant <span class="arithmatex">\(\Delta\)</span> pits the squared half-offset <span class="arithmatex">\((q/2)^2\)</span> against the cubed third-slope <span class="arithmatex">\((p/3)^3\)</span> to govern the nature of the three roots across three distinct regimes. When <span class="arithmatex">\(\Delta &gt; 0\)</span>, the vertical offset <span class="arithmatex">\(q\)</span> shifts the inflection center far enough above or below the axis that the S-shaped cubic crosses the horizontal axis only once, yielding <em>one real root</em> and <em>two complex conjugate roots</em> formed by rotating <span class="arithmatex">\(u = \sqrt[3]{-q/2 + \sqrt{\Delta}}\)</span> and <span class="arithmatex">\(-v = \sqrt[3]{-q/2 - \sqrt{\Delta}}\)</span> by the cube roots of unity <span class="arithmatex">\(\omega = -\frac{1}{2} + i\frac{\sqrt{3}}{2}\)</span> and <span class="arithmatex">\(\omega^2\)</span>. When <span class="arithmatex">\(\Delta = 0\)</span>, the hilltop or valley floor grazes the horizontal axis tangentially and produces <em>three real roots with at least one repeated root</em>, as in the critically damped RLC filter polynomial <span class="arithmatex">\(s^3 + 12s^2 + 45s + 50 = (s+2)(s+5)^2 = 0\)</span> with a repeated double root at <span class="arithmatex">\(s = -5\)</span>.</p>
+<p>When <span class="arithmatex">\(\Delta &lt; 0\)</span>, the regime known as <em>casus irreducibilis</em>, <span class="arithmatex">\(p\)</span> is negative enough that <span class="arithmatex">\((p/3)^3\)</span> outweighs <span class="arithmatex">\((q/2)^2\)</span>, so the S-curve's hill and valley straddle the horizontal axis and cross it three times to produce <em>three distinct real roots</em> (as in <span class="arithmatex">\((x-1)(x-2)(x-3) = x^3 - 6x^2 + 11x - 6 = 0\)</span>), yet the discriminant <span class="arithmatex">\(\Delta\)</span> under the square root is negative. Extracting those three real numbers from Cardano's formula requires passing through the complex plane and taking the cube root of a complex number <span class="arithmatex">\(r e^{i\theta}\)</span> by De Moivre's angle trisection <span class="arithmatex">\(r^{1/3}[\cos(\theta/3) + i\sin(\theta/3)]\)</span>, where the imaginary parts of the two conjugate cube roots cancel to zero.</p>
+<h3 id="713-vietes-trigonometric-trisection-ferraris-quartic">7.1.3 Viète's Trigonometric Trisection &amp; Ferrari's Quartic</h3>
+<p>The complex radicals of <em>casus irreducibilis</em> can be bypassed through trigonometry, because the depressed cubic <span class="arithmatex">\(t^3 + pt + q = 0\)</span> (when <span class="arithmatex">\(\Delta &lt; 0\)</span>, so <span class="arithmatex">\(p &lt; 0\)</span>) shares the algebraic structure of the trigonometric triple-angle identity for cosine:</p>
+<div class="arithmatex">\[\cos(3\theta) = 4\cos^3\theta - 3\cos\theta \implies \cos^3\theta - \frac{3}{4}\cos\theta - \frac{1}{4}\cos(3\theta) = 0 \tag{Eq. 7.11}\]</div>
+<p>Scaling the unknown as <span class="arithmatex">\(t = 2\sqrt{-p/3}\,\cos\theta\)</span> (<em>Viète's trigonometric solution</em>) matches the depressed cubic to the triple-angle cosine identity term-for-term and expresses all three real roots <span class="arithmatex">\(t_0, t_1, t_2\)</span> in closed form without complex square roots:</p>
+<div class="arithmatex">\[t_k = 2\sqrt{-\frac{p}{3}} \cos\left(\frac{1}{3}\arccos\left(\frac{3q}{2p}\sqrt{-\frac{3}{p}}\right) - \frac{2\pi k}{3}\right), \qquad k = 0, 1, 2 \tag{Eq. 7.12}\]</div>
+<p>Geometrically, the outer amplitude factor <span class="arithmatex">\(2\sqrt{-p/3}\)</span> sets the horizontal width of the cubic's S-bend between its local extrema; the inner inverse cosine <span class="arithmatex">\(\arccos\!\left(\frac{3q}{2p}\sqrt{-3/p}\right)\)</span> measures the phase angle set by the vertical offset <span class="arithmatex">\(q\)</span> relative to the hilltop height; and dividing that angle by <span class="arithmatex">\(3\)</span> while stepping <span class="arithmatex">\(k = 0, 1, 2\)</span> by <span class="arithmatex">\(\frac{2\pi k}{3}\)</span> (<span class="arithmatex">\(120^\circ\)</span>) trisects the angle on the unit circle and projects the three <span class="arithmatex">\(120^\circ\)</span>-spaced vertices of an inscribed equilateral triangle onto the horizontal real axis.</p>
+<p>For a fourth-degree <em>quartic equation</em> (such as <span class="arithmatex">\(x^4 + 6x^2 + 36 = 60x\)</span>), Lodovico Ferrari discovered how to factor the quartic into two quadratics by introducing an adjustable auxiliary parameter <span class="arithmatex">\(y\)</span> that turns the equation into a difference of two squares. First, shifting the horizontal coordinate removes the cubic <span class="arithmatex">\(x^3\)</span> term to leave the <em>depressed quartic</em> <span class="arithmatex">\(x^4 + px^2 + qx + r = 0\)</span> with quadratic coefficient <span class="arithmatex">\(p\)</span>, linear tilt <span class="arithmatex">\(q\)</span>, and constant term <span class="arithmatex">\(r\)</span>. Moving <span class="arithmatex">\(px^2 + qx + r\)</span> to the right side, completing the square on the left as <span class="arithmatex">\((x^2 + \frac{p}{2})^2\)</span>, and inserting an <em>auxiliary variable <span class="arithmatex">\(y\)</span></em> inside the left-hand square yields:</p>
+<div class="arithmatex">\[\left(x^2 + \frac{p}{2} + y\right)^2 = (p + 2y)x^2 - qx + \left(\frac{p^2}{4} - r + py + y^2\right) \tag{Eq. 7.13}\]</div>
+<p>The left-hand side is already a perfect square for <em>every</em> choice of <span class="arithmatex">\(y\)</span>, while the right-hand side is an ordinary <em>quadratic in <span class="arithmatex">\(x\)</span></em> with <span class="arithmatex">\(x^2\)</span>-coefficient <span class="arithmatex">\(A = (p + 2y)\)</span>, <span class="arithmatex">\(x\)</span>-coefficient <span class="arithmatex">\(B = -q\)</span>, and constant term <span class="arithmatex">\(C = \left(\frac{p^2}{4} - r + py + y^2\right)\)</span>. We are free to choose <span class="arithmatex">\(y\)</span> so that this right-hand quadratic also becomes a perfect square <span class="arithmatex">\((mx + n)^2\)</span>—which happens whenever its quadratic discriminant <span class="arithmatex">\(B^2 - 4AC\)</span> equals zero:</p>
+<div class="arithmatex">\[q^2 - 4(p + 2y)\left(y^2 + py + \frac{p^2}{4} - r\right) = 0 \tag{Eq. 7.14}\]</div>
+<p>Multiplying out <span class="arithmatex">\((p + 2y)\)</span> by the quadratic in <span class="arithmatex">\(y\)</span> makes this condition a <em>third-degree cubic equation</em> in <span class="arithmatex">\(y\)</span>—the <em>resolvent cubic</em>—which Cardano's cubic formula solves in closed form. Once one root <span class="arithmatex">\(y_1\)</span> of the resolvent cubic is found, the right-hand side locks into <span class="arithmatex">\((mx + n)^2\)</span>, turning the quartic into the difference of two squares <span class="arithmatex">\((x^2 + \frac{p}{2} + y_1)^2 - (mx + n)^2 = 0\)</span>, which splits into the two quadratic equations <span class="arithmatex">\(x^2 + \frac{p}{2} + y_1 = \pm(mx + n)\)</span> to yield all four roots.</p>
+<p>For any cubic (<span class="arithmatex">\(A x^3 + B x^2 + C x + D = 0\)</span>) with roots <span class="arithmatex">\(r_1, r_2, r_3\)</span>, Viète's root-coefficient formulas verify the roots without substituting each value back into the polynomial. Expanding <span class="arithmatex">\(A(x - r_1)(x - r_2)(x - r_3) = A x^3 - A(r_1 + r_2 + r_3)x^2 + A(r_1 r_2 + r_2 r_3 + r_3 r_1)x - A r_1 r_2 r_3\)</span> and matching coefficients term by term yields the <em>sum of roots</em> (<em>trace</em>), <em>pairwise product sum</em>, and <em>product of roots</em> (<em>determinant</em>):</p>
+<div class="arithmatex">\[r_1 + r_2 + r_3 = -\frac{B}{A}, \qquad r_1 r_2 + r_2 r_3 + r_3 r_1 = +\frac{C}{A}, \qquad r_1 \cdot r_2 \cdot r_3 = -\frac{D}{A} \tag{Eq. 7.15}\]</div>
+<p>On our benchmark cubic <span class="arithmatex">\(x^3 - 6x^2 + 11x - 6 = 0\)</span> with roots <span class="arithmatex">\(1, 2, 3\)</span>, summing the three real parts gives the trace <span class="arithmatex">\(1 + 2 + 3 = 6 = -(-6)/1\)</span>, their pairwise product sum is <span class="arithmatex">\(1(2) + 2(3) + 3(1) = 11 = +11/1\)</span>, and their determinant product is <span class="arithmatex">\(1 \times 2 \times 3 = 6 = -(-6)/1\)</span>. In any <em>depressed cubic</em> <span class="arithmatex">\(t^3 + pt + q = 0\)</span> (where <span class="arithmatex">\(B = 0\)</span>), the three roots always sum to zero (<span class="arithmatex">\(t_1 + t_2 + t_3 = 0\)</span>), because the coordinate shift <span class="arithmatex">\(x = t - \frac{B}{3A}\)</span> places the origin at the centroid of the three roots.</p>
+<p>That chain of radical reductions stops permanently after the degree-4 quartic, and no general radical formula exists for a degree-5 <em>quintic equation</em> (<span class="arithmatex">\(Ax^5 + Bx^4 + Cx^3 + Dx^2 + Ex + F = 0\)</span>). For a degree-2 quadratic, the resolvent has degree 1; for a degree-3 cubic, Tartaglia's resolvent has degree 2; for a degree-4 quartic, Ferrari's resolvent has degree 3. In each case, the auxiliary equation has <em>lower</em> degree than the original polynomial. When the same permutation method is applied to a degree-5 quintic, however, the resolvent equation jumps <em>up</em> to degree 6 (with <span class="arithmatex">\(5!/2 = 60\)</span> alternating permutations).</p>
+<p>By the <em>Abel–Ruffini and Galois theorem</em>, this barrier is structural and absolute. For degrees <span class="arithmatex">\(n = 2, 3, 4\)</span>, the permutation group <span class="arithmatex">\(S_n\)</span> of the roots decomposes into commutative cyclic quotients ("solvable groups") that correspond to extracting <span class="arithmatex">\(k\)</span>-th roots <span class="arithmatex">\(\sqrt[k]{\phantom{x}}\)</span>. For <span class="arithmatex">\(n \ge 5\)</span>, however, the alternating group <span class="arithmatex">\(A_5\)</span>, which is isomorphic to the <span class="arithmatex">\(60\)</span> rotational symmetries of a regular icosahedron, is a <em>simple non-abelian group</em> that cannot be factored into cyclic steps. No general radical formula in <span class="arithmatex">\(+, -, \times, \div\)</span>, and <span class="arithmatex">\(\sqrt[n]{\phantom{x}}\)</span> can exist for degree 5 or higher.</p>
+<h3 id="714-evaluating-polynomials-from-the-inside-out-horners-nested-scheme">7.1.4 Evaluating Polynomials from the Inside Out: Horner's Nested Scheme</h3>
+<p>Before solving a polynomial equation <span class="arithmatex">\(P(x) = 0\)</span>, one needs an efficient, numerically stable method to evaluate <span class="arithmatex">\(P(x)\)</span> at any argument <span class="arithmatex">\(x = x_0\)</span>, illustrated by the general fourth-degree quartic polynomial:</p>
+<div class="arithmatex">\[P(x) = a_4 x^4 + a_3 x^3 + a_2 x^2 + a_1 x + a_0 \tag{Eq. 7.16}\]</div>
+<p>When <span class="arithmatex">\(P(x)\)</span> is evaluated term by term as written (<span class="arithmatex">\(x^4\)</span> multiplied by <span class="arithmatex">\(a_4\)</span>, plus <span class="arithmatex">\(x^3\)</span> multiplied by <span class="arithmatex">\(a_3\)</span>, plus <span class="arithmatex">\(x^2\)</span> multiplied by <span class="arithmatex">\(a_2\)</span>, and so on), it repeats power computations unnecessarily (<span class="arithmatex">\(4 + 3 + 2 + 1 = 10\)</span> multiplications, or three separate exponentiations). Worse, near a root where large positive and negative power terms nearly cancel, computing <span class="arithmatex">\(a_n x^n\)</span> separately magnifies floating-point rounding error.</p>
+<p>Recursive factoring of <span class="arithmatex">\(x\)</span> from the inside out transforms the polynomial into <em>Horner's nested scheme</em>:</p>
+<div class="arithmatex">\[P(x) = a_4 x^4 + a_3 x^3 + a_2 x^2 + a_1 x + a_0 = \Big(\big((a_4 x + a_3)x + a_2\big)x + a_1\Big)x + a_0 \tag{Eq. 7.17}\]</div>
+<p>In <em>Horner's nested scheme</em>, every explicit exponent vanishes. To evaluate any degree-<span class="arithmatex">\(n\)</span> polynomial at <span class="arithmatex">\(x_0\)</span>, you start with the leading coefficient <span class="arithmatex">\(b_n = a_n\)</span> and repeat a two-step linear recurrence <span class="arithmatex">\(b_k = b_{k+1} x_0 + a_k\)</span> exactly <span class="arithmatex">\(n\)</span> times, multiplying the running value by <span class="arithmatex">\(x_0\)</span> and adding the next coefficient <span class="arithmatex">\(a_k\)</span>.</p>
+<p>Across the four nested stages of a quartic <span class="arithmatex">\(P(x_0) = (((a_4 x_0 + a_3)x_0 + a_2)x_0 + a_1)x_0 + a_0\)</span>, the running accumulator starts with <span class="arithmatex">\(b_4 = a_4\)</span>, multiplies by <span class="arithmatex">\(x_0\)</span>, and adds <span class="arithmatex">\(a_3\)</span> in the first stage to form <span class="arithmatex">\(b_3 = a_4 x_0 + a_3\)</span>; multiplies <span class="arithmatex">\(b_3\)</span> by <span class="arithmatex">\(x_0\)</span> and adds <span class="arithmatex">\(a_2\)</span> in the second stage to form <span class="arithmatex">\(b_2 = b_3 x_0 + a_2\)</span>; multiplies <span class="arithmatex">\(b_2\)</span> by <span class="arithmatex">\(x_0\)</span> and adds <span class="arithmatex">\(a_1\)</span> in the third stage to form <span class="arithmatex">\(b_1 = b_2 x_0 + a_1\)</span>; and finally multiplies <span class="arithmatex">\(b_1\)</span> by <span class="arithmatex">\(x_0\)</span> and adds <span class="arithmatex">\(a_0\)</span> to reach the remainder <span class="arithmatex">\(b_0 = b_1 x_0 + a_0 = P(x_0)\)</span>. This recurrence requires four multiplications, four additions, zero powers, and zero temporary variables.</p>
+<p>Each intermediate value <span class="arithmatex">\((b_4, b_3, b_2, b_1)\)</span> produced at each step of Horner's recurrence has direct algebraic meaning: they are the exact coefficients of the cubic quotient polynomial <span class="arithmatex">\(Q(x)\)</span> obtained by <em>Horner synthetic division</em> when dividing <span class="arithmatex">\(P(x)\)</span> by <span class="arithmatex">\((x - x_0)\)</span>:</p>
+<div class="arithmatex">\[P(x) = (x - x_0)\,Q(x) + b_0 = (x - x_0)\left(b_4 x^3 + b_3 x^2 + b_2 x + b_1\right) + P(x_0) \tag{Eq. 7.18}\]</div>
+<p>This Polynomial Remainder Theorem identity <span class="arithmatex">\(P(x) = (x - x_0)Q(x) + P(x_0)\)</span> provides polynomial deflation, simultaneous derivative evaluation, and suppression of catastrophic cancellation near multiple roots. Once one exact root <span class="arithmatex">\(r_1\)</span> of a polynomial is found (where the remainder <span class="arithmatex">\(P(r_1) = 0\)</span>), the intermediate numbers generated during Horner's evaluation at <span class="arithmatex">\(r_1\)</span> supply the deflated degree-<span class="arithmatex">\((n-1)\)</span> quotient polynomial <span class="arithmatex">\(Q(x) = P(x)/(x - r_1)\)</span>, which reduces a fourth-degree quartic to a cubic or a cubic to a quadratic. Differentiating <span class="arithmatex">\(P(x) = (x - x_0)Q(x) + P(x_0)\)</span> with respect to <span class="arithmatex">\(x\)</span> by the product rule yields:</p>
+<div class="arithmatex">\[P'(x) = Q(x) + (x - x_0)Q'(x) \implies P'(x_0) = Q(x_0) \tag{Eq. 7.19}\]</div>
+<p>A second Horner pass on the intermediate coefficients evaluates the quotient polynomial <span class="arithmatex">\(Q(x)\)</span> at <span class="arithmatex">\(x_0\)</span> and therefore gives the exact derivative <span class="arithmatex">\(P'(x_0)\)</span> without a separate symbolic derivative formula. In computational thermodynamics and flight-control engineering—where computers evaluate standard-atmosphere pressure-altitude curves <span class="arithmatex">\(P(h) = a_3 h^3 + a_2 h^2 + a_1 h + a_0\)</span> and NASA Glenn molar heat-capacity fits <span class="arithmatex">\(C_p(T)/R = a_0 + a_1 T + a_2 T^2 + a_3 T^3 + a_4 T^4\)</span>—nested Horner evaluation also suppresses cancellation near repeated roots (such as <span class="arithmatex">\(s = -5\)</span> in the critically damped RLC filter) by updating the local factor <span class="arithmatex">\((s + 5)\)</span> at each step without subtracting large, independently rounded powers <span class="arithmatex">\(s^3\)</span> and <span class="arithmatex">\(12s^2\)</span>.</p>
+<p>Nested factoring also simplifies rational formulas and symmetric high-degree equations across physics. In a silicon photovoltaic cell, the <strong>Fill Factor</strong> <span class="arithmatex">\(FF\)</span> measures how "square" the current-voltage curve is—defined as the ratio of maximum usable electrical power <span class="arithmatex">\(P_{\max}\)</span> to the theoretical rectangle product of open-circuit voltage <span class="arithmatex">\(V_{\text{oc}}\)</span> and short-circuit current <span class="arithmatex">\(I_{\text{sc}}\)</span>. Although the maximum power point satisfies a transcendental diode equation that cannot be inverted in closed form, dividing <span class="arithmatex">\(V_{\text{oc}}\)</span> by the junction's thermal voltage <span class="arithmatex">\(V_T = k_B T / q\)</span> (<span class="arithmatex">\(\approx 25.85\text{ mV}\)</span> at <span class="arithmatex">\(300\text{ K}\)</span>) defines the dimensionless normalized open-circuit voltage <span class="arithmatex">\(v_{\text{oc}} = V_{\text{oc}} / V_T\)</span> and yields Martin Green's accurate rational-logarithmic expression for <span class="arithmatex">\(FF\)</span>:</p>
+<div class="arithmatex">\[\text{Fill Factor } FF = \frac{v_{\text{oc}} - \ln(v_{\text{oc}} + 0.72)}{v_{\text{oc}} + 1} \tag{Eq. 7.20}\]</div>
+<p>As the normalized open-circuit voltage <span class="arithmatex">\(v_{\text{oc}}\)</span> grows large compared to the thermal scale <span class="arithmatex">\(V_T\)</span>, the leading fraction <span class="arithmatex">\(\frac{v_{\text{oc}}}{v_{\text{oc}} + 1}\)</span> approaches an ideal square curve (<span class="arithmatex">\(FF \to 1\)</span>), while subtracting <span class="arithmatex">\(\ln(v_{\text{oc}} + 0.72)\)</span> before dividing by <span class="arithmatex">\(v_{\text{oc}} + 1\)</span> accounts for the voltage rounded off at the exponential diode knee near maximum power. Likewise, when two coupled undamped spring-mass pendulums with stiffness matrix <span class="arithmatex">\(\mathbf{K}\)</span> and mass matrix <span class="arithmatex">\(\mathbf{M}\)</span> vibrate harmonically at natural angular frequency <span class="arithmatex">\(\omega\)</span>, the characteristic eigenvalue equation <span class="arithmatex">\(\det(\mathbf{K} - \omega^2\mathbf{M}) = 0\)</span> expands into a biquadratic polynomial containing only even powers of frequency (<span class="arithmatex">\(a \omega^4 + b \omega^2 + c = 0\)</span>), which reduces immediately to a quadratic in the squared frequency <span class="arithmatex">\(u = \omega^2\)</span> whose positive square roots <span class="arithmatex">\(\omega = \sqrt{u}\)</span> give the two normal-mode vibration frequencies.</p>
+<hr />
+<h2 id="72-iterative-root-finding-implicit-physical-laws">7.2 Iterative Root-Finding &amp; Implicit Physical Laws</h2>
+<p>Once a polynomial reaches degree five (such as <span class="arithmatex">\(x^5 - x - 1 = 0\)</span>) or a physical conservation law combines algebraic powers <span class="arithmatex">\(x\)</span> with sines, cosines, exponentials, and logarithms in a <em>transcendental equation</em>, no symbolic manipulation can isolate the unknown on one side of the equals sign.</p>
+<p>When symbolic algebra cannot invert <span class="arithmatex">\(f(x)\)</span> to solve <span class="arithmatex">\(f(x^*) = 0\)</span>, numerical root-finding relies on two contrasting strategies: interval bisection and local tangent or secant extrapolation. When a continuous curve <span class="arithmatex">\(f(x)\)</span> lies below the axis at <span class="arithmatex">\(x = a\)</span> with <span class="arithmatex">\(f(a) &lt; 0\)</span> and above it at <span class="arithmatex">\(x = b\)</span> with <span class="arithmatex">\(f(b) &gt; 0\)</span>, so that <span class="arithmatex">\(f(a)\cdot f(b) &lt; 0\)</span>, the <em>Intermediate Value Theorem</em> guarantees that the curve crosses <span class="arithmatex">\(y = 0\)</span> at least once inside the <em>bracket</em> <span class="arithmatex">\([a, b]\)</span>.</p>
+<p>The <em>Bisection Method</em> evaluates the function at the midpoint <span class="arithmatex">\(m = \frac{1}{2}(a + b)\)</span>, inspects its sign, and discards whichever half does not contain the sign change. Every step halves the uncertainty and gains <span class="arithmatex">\(1\text{ binary bit}\)</span> of precision per step (linear convergence, order <span class="arithmatex">\(p = 1\)</span>). After <span class="arithmatex">\(40\)</span> bisections, the bracket shrinks by <span class="arithmatex">\(2^{-40} \approx 10^{-12}\)</span>, though requiring <span class="arithmatex">\(40\)</span> to <span class="arithmatex">\(50\)</span> evaluations makes bisection slow.</p>
+<p>To accelerate convergence on smooth curves (such as the cubic benchmark <span class="arithmatex">\(x^3 - 2x - 5 = 0\)</span> near <span class="arithmatex">\(x_0 = 2\)</span>), the <em>Newton–Raphson method</em> evaluates both the residual height <span class="arithmatex">\(f(x_n)\)</span> of the curve above or below the horizontal axis at the current guess <span class="arithmatex">\(x_n\)</span> and the local tangent slope <span class="arithmatex">\(f'(x_n)\)</span>, stepping along that tangent line to where it crosses <span class="arithmatex">\(y = 0\)</span> at <span class="arithmatex">\(x_{n+1}\)</span>:</p>
+<div class="arithmatex">\[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \tag{Eq. 7.21}\]</div>
+<p>Dividing the vertical residual height <span class="arithmatex">\(f(x_n)\)</span> by the local tangent slope <span class="arithmatex">\(f'(x_n)\)</span> (rise over run) recovers the horizontal run <span class="arithmatex">\(\Delta x = f(x_n)/f'(x_n)\)</span> needed to slide down the tangent line to its <span class="arithmatex">\(x\)</span>-axis intercept <span class="arithmatex">\(x_{n+1}\)</span>. Near a simple root, the Newton-Raphson method is <em>quadratically convergent</em> (<span class="arithmatex">\(p = 2\)</span>) and doubles the number of accurate decimal digits on every step (<span class="arithmatex">\(1 \to 2 \to 4 \to 8 \to 16\text{ digits}\)</span>). When the analytic derivative <span class="arithmatex">\(f'(x)\)</span> is unavailable, replacing the tangent slope with the <em>Secant Chord</em> through the last two iterates yields superlinear convergence at the <em>golden-ratio exponent</em> <span class="arithmatex">\(p = \phi = \frac{1+\sqrt{5}}{2} \approx 1.618\)</span>.</p>
+<p>The vulnerability of Newton-Raphson and the Secant Method lies in the slope denominator <span class="arithmatex">\(f'(x_n)\)</span> (or <span class="arithmatex">\(f(x_n) - f(x_{n-1})\)</span>). Whenever an iterate lands near a local extremum, an inflection plateau, or a horizontal asymptote where the slope flattens out (<span class="arithmatex">\(f'(x_n) \approx 0\)</span>), the nearly horizontal tangent line projects the next estimate <span class="arithmatex">\(x_{n+1}\)</span> far outside the region of interest or into an oscillatory cycle.</p>
+<p>When an equation can be rearranged into the self-referential form <span class="arithmatex">\(x = g(x)\)</span>, the <strong>Contraction Mapping Theorem</strong> guarantees that repeatedly feeding the output back into the function (<span class="arithmatex">\(x_{n+1} = g(x_n)\)</span>) spirals or staircases into a unique fixed point <span class="arithmatex">\(x^* = g(x^*)\)</span> whenever the local slope satisfies <span class="arithmatex">\(|g'(x^*)| &lt; 1\)</span>. In radian mode, iterating <span class="arithmatex">\(x_{n+1} = \cos(x_n)\)</span> from any starting value traces a converging cobweb spiral (<code>1</code>, <code>0.54</code>, <code>0.858</code>, <code>0.654</code>, <span class="arithmatex">\(\dots\)</span>) to the universal transcendental <strong>Dottie number</strong> <span class="arithmatex">\(x^* = \cos(x^*) \approx \mathbf{0.739\text{ rad}}\)</span> (where <span class="arithmatex">\(|\sin(0.739)| \approx 0.674 &lt; 1\)</span>), while a self-similar infinite nested radical <span class="arithmatex">\(x = \sqrt{c + \sqrt{c + \sqrt{c + \dots}}}\)</span> satisfies the fixed-point relation <span class="arithmatex">\(x = \sqrt{c + x} \implies x^2 - x - c = 0\)</span> with positive root <span class="arithmatex">\(x = \frac{1 + \sqrt{1 + 4c}}{2}\)</span> (so <span class="arithmatex">\(\sqrt{6 + \sqrt{6 + \dots}} = \mathbf{3}\)</span> and <span class="arithmatex">\(\sqrt{1 + \sqrt{1 + \dots}} = \varphi \approx \mathbf{1.618}\)</span>). Whenever <span class="arithmatex">\(|g'(x^*)| &gt; 1\)</span>, however, direct fixed-point iteration repels away from the root, so a bracketed root-finder must be applied to <span class="arithmatex">\(f(x) = g(x) - x = 0\)</span>.</p>
+<h3 id="721-richard-brents-1973-hybrid-root-finding-algorithm">7.2.1 Richard Brent's 1973 Hybrid Root-Finding Algorithm</h3>
+<p>In 1973, Richard P. Brent demonstrated in <em>Algorithms for Minimization Without Derivatives</em> <em>(<a href="../appendix-e-annotated-bibliography/#cite-brent1973">Brent, 1973</a>)</em> how to combine the guaranteed bracketing of Bisection with the superlinear convergence of Interpolation so that the solver achieves rapid convergence on smooth curves, requires no derivatives, and never diverges outside its bracket. This hybrid bracketing philosophy was soon adapted for scientific pocket calculators <em>(<a href="../appendix-e-annotated-bibliography/#cite-kahan1979">Kahan, 1979</a>; <a href="../appendix-e-annotated-bibliography/#cite-hp15c1982">HP, 1982</a>; <a href="../appendix-e-annotated-bibliography/#cite-evett1983">Evett et al., 1983</a>; <a href="../appendix-e-annotated-bibliography/#cite-hp32sii1991">HP, 1991</a>)</em>, pairing derivative-free bracketing with post-convergence residual diagnostics.</p>
+<p>Brent's hybrid root-finding algorithm combines inverse quadratic interpolation with five acceptance tests. Given three distinct points <span class="arithmatex">\((a, f(a))\)</span>, <span class="arithmatex">\((b, f(b))\)</span>, and <span class="arithmatex">\((c, f(c))\)</span> near the root, fitting an ordinary upright parabola <span class="arithmatex">\(y = P(x)\)</span> can fail whenever its vertex turns around before reaching the <span class="arithmatex">\(x\)</span>-axis and yields no real roots.</p>
+<p>To avoid that failure, Brent reverses the roles of the axes and fits <span class="arithmatex">\(x\)</span> sideways as a <em>Lagrange quadratic polynomial of <span class="arithmatex">\(y\)</span></em> (<span class="arithmatex">\(x = P(y)\)</span>) passing through the three inverted pairs <span class="arithmatex">\((f(a), a)\)</span>, <span class="arithmatex">\((f(b), b)\)</span>, and <span class="arithmatex">\((f(c), c)\)</span>, then evaluates that sideways parabola right at the horizontal axis <span class="arithmatex">\(y = 0\)</span> to obtain the next root estimate <span class="arithmatex">\(x_{\text{IQI}}\)</span>:</p>
+<div class="arithmatex">\[x_{\text{IQI}} = \frac{a f(b) f(c)}{(f(a)-f(b))(f(a)-f(c))} + \frac{b f(a) f(c)}{(f(b)-f(a))(f(b)-f(c))} + \frac{c f(a) f(b)}{(f(c)-f(a))(f(c)-f(b))} \tag{Eq. 7.22}\]</div>
+<p>Each bracket coordinate <span class="arithmatex">\(a, b,\)</span> or <span class="arithmatex">\(c\)</span> is weighted by the product of the residuals at the <em>other</em> two points divided by the pairwise residual differences. As the best estimate <span class="arithmatex">\(b\)</span> closes in on the true root so that <span class="arithmatex">\(f(b) \to 0\)</span>, the factor <span class="arithmatex">\(f(b)\)</span> in the first and third terms drives the weights on <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(c\)</span> toward zero while the middle weight <span class="arithmatex">\(\frac{f(a)f(c)}{(f(b)-f(a))(f(b)-f(c))}\)</span> approaches <span class="arithmatex">\(1\)</span>, locking <span class="arithmatex">\(x_{\text{IQI}}\)</span> onto the root crossing. At <span class="arithmatex">\(y = 0\)</span>, a sideways parabola always yields a single unique real number <span class="arithmatex">\(x_{\text{IQI}}\)</span> and converges at order <span class="arithmatex">\(p \approx 1.839\)</span>, nearly doubling the number of significant digits per step.</p>
+<p>To guard against wild extrapolations, the algorithm keeps the root enclosed inside a contracting sign-change bracket <span class="arithmatex">\([a, b]\)</span> where <span class="arithmatex">\(f(a)f(b) \le 0\)</span>. Whenever Secant or Inverse Quadratic Interpolation proposes a trial step <span class="arithmatex">\(s\)</span>, five acceptance conditions verify that <span class="arithmatex">\(s\)</span> falls inside the interior three-quarter window <span class="arithmatex">\(\left(\frac{3a+b}{4}, b\right)\)</span> and that consecutive steps contract the bracket by at least half every two iterations. If an interpolated step attempts to leave the bracket or stalls on a flat plateau, the algorithm rejects the interpolation and executes a bisection step <span class="arithmatex">\(m = \frac{1}{2}(a + b)\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Root-Finding Algorithm</th>
+<th style="text-align: center;">Convergence Order (<span class="arithmatex">\(p\)</span>)</th>
+<th style="text-align: center;">Derivative <span class="arithmatex">\(f'(x)\)</span> Required</th>
+<th style="text-align: center;">Bracket Guarantee</th>
+<th style="text-align: left;">Behavior Near Flat Slopes (<span class="arithmatex">\(f'(x) \approx 0\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Bisection</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Yes (Guaranteed)</td>
+<td style="text-align: left;">Steady (<span class="arithmatex">\(1\text{ bit/step}\)</span>), immune to slope traps</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Newton-Raphson</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(2\)</span></td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: left;">Catastrophic divergence when <span class="arithmatex">\(f'(x) \approx 0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Secant Chord</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(\approx 1.618\)</span> (<span class="arithmatex">\(\phi\)</span>)</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: left;">Can fling iterates far outside the search region</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Brent's Hybrid Method</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(\approx 1.839\)</span></td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;"><strong>Yes (Guaranteed)</strong></td>
+<td style="text-align: left;"><strong>Instant bisection fallback; zero divergence</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="722-multiple-root-conditioning-and-polynomial-deflation-order">7.2.2 Multiple-Root Conditioning and Polynomial Deflation Order</h3>
+<p>When a curve grazes the horizontal axis tangentially without crossing it at a non-zero slope, floating-point root accuracy is bounded by the local curvature of the root, much like a shoreline where a coastal hillside meets sea level (<span class="arithmatex">\(y = 0\)</span>) while tiny ocean ripples of height <span class="arithmatex">\(\varepsilon_{\text{mach}} \approx 10^{-16}\)</span> lap against the shore. Where a steep cliff plunges straight into the sea at a <em>simple root</em> (<span class="arithmatex">\(f'(x^*) \ne 0\)</span>), a vertical ripple of size <span class="arithmatex">\(\varepsilon_{\text{mach}}\)</span> shifts the horizontal waterline by at most <span class="arithmatex">\(\Delta x \approx \frac{\varepsilon_{\text{mach}}}{|f'(x^*)|}\)</span>. Where a flat sandy beach grazes sea level tangentially like a parabolic trough at an <em><span class="arithmatex">\(m\)</span>-fold repeated root</em> <span class="arithmatex">\(f(x) \approx c(x - x^*)^m\)</span> with leading curvature coefficient <span class="arithmatex">\(c\)</span>, however, setting <span class="arithmatex">\(|c||\Delta x|^m \approx \varepsilon_{\text{mach}}\)</span> shows that the same vertical ripple washes the waterline across a much wider horizontal uncertainty band <span class="arithmatex">\(\Delta x\)</span>:</p>
+<div class="arithmatex">\[\Delta x \approx \left(\frac{\varepsilon_{\text{mach}}}{|c|}\right)^{1/m} \tag{Eq. 7.23}\]</div>
+<p>Because the fractional exponent <span class="arithmatex">\(1/m\)</span> extracts the <span class="arithmatex">\(m\)</span>-th root of the tiny ratio <span class="arithmatex">\(\varepsilon_{\text{mach}}/|c|\)</span>, higher multiplicity <span class="arithmatex">\(m\)</span> dramatically widens the dead zone: for a double tangent root (<span class="arithmatex">\(m = 2\)</span>, as in <span class="arithmatex">\((x - 3)^2 = 0\)</span>), the horizontal uncertainty widens to the square root of machine epsilon (<span class="arithmatex">\(\varepsilon_{\text{mach}}^{1/2} \approx 10^{-8}\)</span>), where half the digits of precision are lost to floating-point rounding noise; for a triple root (<span class="arithmatex">\(m = 3\)</span>), precision drops to <span class="arithmatex">\(\varepsilon_{\text{mach}}^{1/3} \approx 10^{-5}\)</span>.</p>
+<p>In polynomial deflation, dividing a high-degree polynomial <span class="arithmatex">\(P(x)\)</span> to <span class="arithmatex">\(Q(x) = P(x)/(x - r_1)\)</span> by removing its <em>largest</em> root <span class="arithmatex">\(|r_1|\)</span> first contaminates the lower coefficients of <span class="arithmatex">\(Q(x)\)</span> with rounding errors and perturbs the remaining roots. Deflating roots in <em>increasing order of magnitude</em> (<span class="arithmatex">\(|r_1| \le |r_2| \le \dots\)</span>) preserves coefficient accuracy, and solving the derivative <span class="arithmatex">\(f'(x) = 0\)</span> at an even-multiplicity tangent minimum restores simple-root conditioning.</p>
+<h3 id="723-bracketing-false-poles-residual-verification">7.2.3 Bracketing, False Poles &amp; Residual Verification</h3>
+<p>An automatic root-finder operates as a two-phase bracketing search followed by a post-convergence residual audit. In the first phase, if two initial guesses <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> already straddle a sign change (<span class="arithmatex">\(f(a)\cdot f(b) \le 0\)</span>), the interval <span class="arithmatex">\([a, b]\)</span> locks in as the starting bracket. When given only a single seed <span class="arithmatex">\(x_0\)</span>, or two guesses on the same side of the axis where <span class="arithmatex">\(f(a)\cdot f(b) &gt; 0\)</span>, an outward search generates a companion probe (<span class="arithmatex">\(\Delta = 0.1|x_0|\)</span> for <span class="arithmatex">\(|x_0| &lt; 1\)</span>, or <span class="arithmatex">\(\Delta = 0.1\)</span> for <span class="arithmatex">\(|x_0| \ge 1\)</span>) and advances outward for up to <span class="arithmatex">\(50\)</span> steps using clamped secant steps, or expanding by the <em>golden ratio</em> <span class="arithmatex">\(\phi \approx 1.618\)</span> whenever the slope is flat. Along the way, the search retracts any probe that steps outside the domain of <span class="arithmatex">\(\ln x\)</span> or <span class="arithmatex">\(\sqrt{x}\)</span>, and it detects even-multiplicity tangent roots like <span class="arithmatex">\((x - 2)^2 = 0\)</span> whenever <span class="arithmatex">\(|b - a| &lt; 10^{-12}\)</span> and <span class="arithmatex">\(|f(b)| &lt; 10^{-7}\)</span>.</p>
+<p>In the second phase, once a sign change <span class="arithmatex">\(f(a)\cdot f(b) \le 0\)</span> is bracketed, the solver applies Brent's guarded <em>Inverse Quadratic Interpolation</em> (IQI) or <em>Secant Chord</em> step, falling back to a <em>Bisection</em> step <span class="arithmatex">\(m = \frac{1}{2}(a + b)\)</span> whenever an interpolated step fails the interior-window or contraction checks, and terminating once <span class="arithmatex">\(|f(b)| \le 10^{-13}\)</span> or the half-bracket width reaches machine tolerance <span class="arithmatex">\(\text{tol} = 2\varepsilon_{\text{mach}}|b| + \frac{1}{2}\cdot 10^{-12}\)</span>.</p>
+<p>Three mathematical conditions can prevent a real-axis search from bracketing a sign change. First, on <strong>positive-definite or negative-definite curves</strong> (such as <span class="arithmatex">\(f(x) = x^2 + 4 = 0\)</span>, whose roots <span class="arithmatex">\(\pm 2i\)</span> are imaginary, or <span class="arithmatex">\(f(x) = e^x + 1 = 0\)</span>), <span class="arithmatex">\(f(x) &gt; 0\)</span> for every real <span class="arithmatex">\(x\)</span>, so no sign change exists anywhere on the real line. Second, when an <strong>initial seed is separated from the root by an asymptote or domain wall</strong> (such as <span class="arithmatex">\(\ln x\)</span> or <span class="arithmatex">\(\sqrt{f}\)</span> in Colebrook's friction law), seeding far from the physical regime can cause outward probes to bounce repeatedly off the <span class="arithmatex">\(x \le 0\)</span> boundary unless two explicit bracket guesses <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> are chosen inside the valid domain. Third, at an <strong>even-multiplicity tangent root</strong> (such as <span class="arithmatex">\(f(x) = (x - 3)^4 = 0\)</span>), the curve touches <span class="arithmatex">\(y = 0\)</span> without crossing (<span class="arithmatex">\(f(a)\cdot f(b) \ge 0\)</span> everywhere); if coarse outward probes step over the tangent point, solving the derivative equation <span class="arithmatex">\(f'(x) = 0\)</span> (where the tangent extremum becomes a simple odd-multiplicity crossing) restores guaranteed sign-change bracketing.</p>
+<p>The function residual <span class="arithmatex">\(f(x^*)\)</span> at the converged point <span class="arithmatex">\(x^*\)</span> distinguishes a genuine root from a discontinuous pole. If an initial bracket straddles a <em>vertical asymptote</em> (<em>discontinuous pole</em>) where the curve jumps from <span class="arithmatex">\(-\infty\)</span> to <span class="arithmatex">\(+\infty\)</span> (such as <span class="arithmatex">\(f(x) = \tan x\)</span> across <span class="arithmatex">\(x = \pi/2\)</span> or <span class="arithmatex">\(f(x) = \frac{1}{x - 2}\)</span> across <span class="arithmatex">\(x = 2\)</span>), the opposite signs <span class="arithmatex">\(f(a)\cdot f(b) &lt; 0\)</span> on either side of the discontinuity cause bisection to contract around the pole <span class="arithmatex">\(x = 2\)</span>. Checking the residual <span class="arithmatex">\(f(x^*)\)</span> at the reported coordinate separates the two cases: at a <em>true root</em>, the residual vanishes (<span class="arithmatex">\(|f(x^*)| \le 10^{-12}\)</span>); at a <em>false pole</em>, the residual explodes (<span class="arithmatex">\(|f(x^*)| \gg 1\)</span> or undefined division by zero).</p>
+<p>In multi-stage engineering workflows, a solved root <span class="arithmatex">\(x^*\)</span> is rarely the final number on the page: an orbital mission planner solves Kepler's equation for the eccentric anomaly <span class="arithmatex">\(E^*\)</span> in order to substitute <span class="arithmatex">\(E^*\)</span> into the focal radius <span class="arithmatex">\(r = a(1 - e\cos E^*)\)</span>, and a hydraulic engineer solves Colebrook's equation for the friction factor <span class="arithmatex">\(f^*\)</span> in order to multiply <span class="arithmatex">\(f^*\)</span> by the dynamic velocity head <span class="arithmatex">\(\frac{L}{D}\frac{v^2}{2g}\)</span> already waiting on the stack. Traditional single-line root-finders return three diagnostic outputs at once—the root <span class="arithmatex">\(x^*\)</span> in <span class="arithmatex">\(X\)</span>, the previous iterate in <span class="arithmatex">\(Y\)</span>, and the function residual <span class="arithmatex">\(f(x^*)\)</span> in <span class="arithmatex">\(Z\)</span>—which overwrites three levels of the stack and destroys any intermediate constants parked in Registers <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(Z\)</span>. On the SC-32, the root-finder lifts the stack by one level to place <span class="arithmatex">\(x^*\)</span> into Register <span class="arithmatex">\(X\)</span> while preserving the starting seed and two prior stack levels above it, and evaluates the stored equation on demand when a residual pole audit <span class="arithmatex">\(f(x^*)\)</span> is needed.</p>
+<h3 id="724-implicit-transcendental-equations-in-fluid-friction-orbital-mechanics">7.2.4 Implicit Transcendental Equations in Fluid Friction &amp; Orbital Mechanics</h3>
+<p>When a physical question runs in reverse to solve for an internal state variable instead of the output on the left-hand side, conservation laws that were explicit in the forward direction turn into coupled polynomial or transcendental equations.</p>
+<p>The van der Waals real-gas law exhibits this structural shift when inverted. An ideal gas of molar volume <span class="arithmatex">\(V_m\)</span> at absolute temperature <span class="arithmatex">\(T\)</span> and universal gas constant <span class="arithmatex">\(R\)</span> obeys <span class="arithmatex">\(P V_m = RT\)</span>, ignoring both the cohesive attraction between nearby molecules (parameterized by the van der Waals constant <span class="arithmatex">\(a\)</span>, which pulls molecules together and reduces wall pressure by <span class="arithmatex">\(\frac{a}{V_m^2}\)</span>) and the finite hard-sphere volume occupied by the molecules themselves (the excluded covolume <span class="arithmatex">\(b\)</span>, which shrinks the free container space to <span class="arithmatex">\(V_m - b\)</span>). When <span class="arithmatex">\(V_m\)</span> and <span class="arithmatex">\(T\)</span> are already known, the van der Waals equation of state <span class="arithmatex">\(\left(P + \frac{a}{V_m^2}\right)(V_m - b) = RT\)</span> yields the pressure <span class="arithmatex">\(P = \frac{RT}{V_m - b} - \frac{a}{V_m^2}\)</span> by a direct arithmetic sequence.</p>
+<p>In chemical process design, however, a gauge on the pipeline fixes the operating pressure <span class="arithmatex">\(P\)</span> and temperature <span class="arithmatex">\(T\)</span>, and the engineer must solve backward for the unknown molar volume <span class="arithmatex">\(V_m\)</span> (or the dimensionless <strong>compressibility factor</strong> <span class="arithmatex">\(Z = \frac{P V_m}{RT}\)</span>, which equals <span class="arithmatex">\(1\)</span> for an ideal gas). Because intermolecular attraction <span class="arithmatex">\(\frac{a}{V_m^2}\)</span> depends on the inverse square of volume while covolume exclusion <span class="arithmatex">\((V_m - b)\)</span> is linear in volume, clearing the denominator multiplies <span class="arithmatex">\(V_m^2\)</span> by <span class="arithmatex">\((V_m - b)\)</span> and turns the inverse problem into the <strong>Cubic Virial Equation of State</strong> (with dimensionless attraction <span class="arithmatex">\(A = \frac{a P}{(RT)^2}\)</span> and dimensionless covolume <span class="arithmatex">\(B = \frac{b P}{RT}\)</span>):</p>
+<div class="arithmatex">\[Z^3 - (1 + B)Z^2 + A Z - A B = 0 \qquad \Longleftrightarrow \qquad P V_m^3 - (P b + R T)V_m^2 + a V_m - a b = 0 \tag{Eq. 7.24}\]</div>
+<p>Multiplying the cohesive pressure <span class="arithmatex">\(\frac{a}{V_m^2}\)</span> across <span class="arithmatex">\((V_m - b)V_m^2\)</span> introduces the linear <span class="arithmatex">\(+a V_m\)</span> and constant <span class="arithmatex">\(-ab\)</span> terms alongside the ideal-gas and covolume compression terms <span class="arithmatex">\(P V_m^3 - (Pb + RT)V_m^2\)</span>. Above the critical temperature, this cubic has one real gas root (<span class="arithmatex">\(\Delta &gt; 0\)</span>); below the critical temperature inside the two-phase vapor-liquid dome (<span class="arithmatex">\(\Delta &lt; 0\)</span>), it exhibits three distinct real roots where the smallest root represents the dense liquid phase, the middle root is the mechanically unstable <em>spinodal inflection</em> (an unphysical S-bend slope where pressure would rise as volume expands, causing the fluid to separate spontaneously into droplets and vapor), and the largest root represents the saturated vapor phase, so Cardano and Viète's analytical cubic solution is needed to extract all three phases together.</p>
+<p>An analogous forward-versus-inverse asymmetry governs elliptical orbital mechanics. When a spacecraft's angular position (true anomaly <span class="arithmatex">\(\nu\)</span>) along its elliptical orbit is known, evaluating the focal conic radius <span class="arithmatex">\(r(\nu) = \frac{a(1 - e^2)}{1 + e\cos\nu}\)</span> is an explicit trigonometric calculation. Reversing the problem poses the fundamental timing relationship of astrodynamics: given the clock time <span class="arithmatex">\(t\)</span> elapsed since perihelion passage (which fixes the uniform <em>mean anomaly</em> <span class="arithmatex">\(M = \frac{2\pi t}{T}\)</span> across orbital period <span class="arithmatex">\(T\)</span>), determining where the body lies along its elliptical orbit. Projecting the ellipse of eccentricity <span class="arithmatex">\(e\)</span> onto its circumscribing auxiliary circle of radius <span class="arithmatex">\(a\)</span> defines the geometric <em>eccentric anomaly</em> <span class="arithmatex">\(E\)</span>, and equating the swept focal sector area to the elapsed fraction of the orbital period yields <strong>Kepler's Transcendental Anomaly Equation</strong>:</p>
+<div class="arithmatex">\[M - E + e\sin E = 0 \qquad \Longleftrightarrow \qquad E - e\sin E = M \tag{Eq. 7.25}\]</div>
+<p>The eccentric anomaly <span class="arithmatex">\(E\)</span> appears simultaneously as a linear algebraic arc (<span class="arithmatex">\(E\)</span>, from the auxiliary circular sector area <span class="arithmatex">\(\frac{1}{2}a^2 E\)</span>) and inside a trigonometric sine (<span class="arithmatex">\(e\sin E\)</span>, from the focal offset triangle <span class="arithmatex">\(\frac{1}{2}a(ae)\sin E\)</span> subtracted when the central body sits at the focus instead of the geometric center). Because no sequence of algebraic operations or inverse trigonometric functions can combine a linear arc and its sine to isolate <span class="arithmatex">\(E\)</span>, inverting time into orbital position requires an iterative root-finder.</p>
+<p>A third fundamental feedback trap governs fluid friction in pipelines of length <span class="arithmatex">\(L\)</span>, internal diameter <span class="arithmatex">\(D\)</span>, and gravitational acceleration <span class="arithmatex">\(g\)</span>, where friction along the wall causes a pressure head loss <span class="arithmatex">\(h_f = f\frac{L}{D}\frac{v^2}{2g}\)</span> proportional to the dimensionless Darcy–Weisbach friction factor <span class="arithmatex">\(f\)</span>. The flow regime is governed by the dimensionless <strong>Reynolds number</strong> <span class="arithmatex">\(\text{Re} = \frac{\rho v D}{\mu}\)</span>—the ratio of fluid inertial momentum (fluid density <span class="arithmatex">\(\rho\)</span> times mean flow speed <span class="arithmatex">\(v\)</span> times pipe diameter <span class="arithmatex">\(D\)</span>) to viscous shear damping (dynamic viscosity <span class="arithmatex">\(\mu\)</span>). When a viscous liquid flows slowly in the smooth <em>laminar</em> regime (<span class="arithmatex">\(\text{Re} &lt; 2,300\)</span>), parabolic viscous shear integrates to an <em>explicit</em> law where the friction factor is <span class="arithmatex">\(f = 64/\text{Re}\)</span>. Once a municipal water main, petroleum pipeline, or rocket propellant feedline enters the high-speed <em>turbulent</em> regime (<span class="arithmatex">\(\text{Re} &gt; 4,000\)</span>), however, chaotic eddies scrub against the microscopic roughness peaks <span class="arithmatex">\(\varepsilon\)</span> of the pipe wall, cushioned only by a thin viscous sublayer whose thickness <span class="arithmatex">\(\delta_v \propto \frac{D}{\text{Re}\sqrt{f}}\)</span> shrinks as wall shear stress (and thus <span class="arithmatex">\(\sqrt{f}\)</span> itself) grows. Combining smooth-wall turbulent boundary-layer scaling with rough-pipe resistance yields the implicit <strong>Colebrook–White Equation</strong> <em>(<a href="../appendix-e-annotated-bibliography/#cite-colebrook1939">Colebrook, 1939</a>)</em> for the Darcy–Weisbach friction factor <span class="arithmatex">\(f\)</span>:</p>
+<div class="arithmatex">\[\frac{1}{\sqrt{f}} = -2 \log_{10} \left( \frac{\varepsilon / D}{3.7} + \frac{2.51}{\text{Re}\sqrt{f}} \right) \tag{Eq. 7.26}\]</div>
+<p>Two competing drag mechanisms add together inside the logarithm: the <strong>rough-wall turbulent limit</strong> <span class="arithmatex">\(\frac{\varepsilon/D}{3.7}\)</span>, governed by the relative wall roughness height <span class="arithmatex">\(\varepsilon/D\)</span> protruding into the core flow at high Reynolds numbers, and the <strong>smooth-wall viscous sublayer limit</strong> <span class="arithmatex">\(\frac{2.51}{\text{Re}\sqrt{f}}\)</span>, governed by viscous shear across the thin laminar cushion at the wall. Because the friction factor <span class="arithmatex">\(f\)</span> feeds back into the sublayer thickness inside the logarithm, <span class="arithmatex">\(\sqrt{f}\)</span> is trapped on both sides of the equation, requiring bracketed root-finding to isolate the turbulent friction factor in municipal pipeline and hydraulic network design.</p>
+<hr />
+<h2 id="73-hunting-roots-on-the-four-register-stack">7.3 Hunting Roots on the Four-Register Stack</h2>
+<p>On the SC-32, closed-form polynomial equations of degree two or three (<code>POLY</code>) are separated from higher-degree and transcendental conservation laws (<code>EQN</code> and <code>SOLVE</code>) so neither requires manual iteration loops.</p>
+<p>When the governing relation is a cubic (<span class="arithmatex">\(Ax^3 + Bx^2 + Cx + D = 0\)</span>) or quadratic (<span class="arithmatex">\(Bx^2 + Cx + D = 0\)</span>) with numerical coefficients, the dedicated <strong>Polynomial Solver (<code>POLY</code>)</strong> activates a five-button softkey bar to accept coefficients without <code>STO</code> or <code>RCL</code>, and executes the polynomial when you press <code>[XEQ]</code>:</p>
+<ol>
+<li><strong>Opening the Polynomial Workspace &amp; Softkey Bar:</strong> Pressing <code>[↱] [POLY]</code> (the right-shifted function on the <code>[XEQ]</code> key) displays the template <code>Ax^3 + Bx^2 + Cx + D</code> across the top of the LCD and presents the five softkeys:
+   $<span class="arithmatex">\(\mathtt{[A]} \quad \mathtt{[B]} \quad \mathtt{[C]} \quad \mathtt{[D]} \quad \mathtt{[CLR]}\)</span>$</li>
+<li><strong>Default of Zero &amp; Clearing Previous Coefficients (<code>CLR</code>):</strong> Every unassigned coefficient slot (<code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>) <strong>defaults to <code>0</code></strong>. If variables <code>A</code> through <code>D</code> already hold values from an earlier calculation, they pre-populate the workspace on entry; tapping the fifth softkey (<code>CLR</code>) clears all four coefficient slots (<code>POLY CLR</code>), removes their assignment markers, and resets every slot back to its default of <code>0</code>.</li>
+<li><strong>Entering Coefficients via Softkeys (<code>A•</code>, <code>B•</code>, <code>C•</code>, <code>D•</code>):</strong> Type a coefficient's numerical value into Register <span class="arithmatex">\(X\)</span> (tapping <code>[+/-]</code> for a negative coefficient) and tap the corresponding softkey (<code>A</code> for <span class="arithmatex">\(x^3\)</span>, <code>B</code> for <span class="arithmatex">\(x^2\)</span>, <code>C</code> for <span class="arithmatex">\(x\)</span>, or <code>D</code> for the constant term) directly, with no need for <code>[STO]</code> or <code>[RCL]</code>. The softkey label gains a bullet dot (<code>A•</code>, <code>B•</code>, <code>C•</code>, <code>D•</code>) to mark which terms have been set. Because unassigned slots default to <code>0</code>, you never need to enter <code>0</code> for missing powers—and to solve a <strong>quadratic equation</strong> (<span class="arithmatex">\(Bx^2 + Cx + D = 0\)</span>), you leave <code>A</code> unassigned at its <code>0</code> default, enter the <span class="arithmatex">\(x^2\)</span>, <span class="arithmatex">\(x\)</span>, and constant coefficients into softkeys <code>B</code>, <code>C</code>, and <code>D</code>, and press <code>[XEQ]</code>.</li>
+<li><strong>Executing (<code>[XEQ]</code>) &amp; Reading All Roots:</strong> Pressing <code>[XEQ]</code> while in <code>POLY</code> mode (or any equation variable mode) dispatches to the Cardano–Viète cubic solver (when <span class="arithmatex">\(A \ne 0\)</span>) or the quadratic solver (when <span class="arithmatex">\(A = 0\)</span> and <span class="arithmatex">\(B \ne 0\)</span>). The display presents a multi-line summary of all roots together (<code>r1:</code>, <code>r2:</code>, <code>r3:</code>, <strong>Figure 7.2</strong>), places the primary root <span class="arithmatex">\(r_1\)</span> onto the stack (<code>Register Y = Real</code>, <code>Register X = Imag</code>), and records all roots as <code>(Real, Imag)</code> pairs in the <code>[↰] [REGS]</code> viewer (left-shifted on <code>[0]</code>, under <code>STO</code> slots <code>R1</code>–<code>R6</code> and indirect registers <code>R34</code>–<code>R39</code>).</li>
+<li><strong>Symbolic Equation Bank (<code>[↱] [EQN]</code>), Function Selection (<code>FN=</code>), &amp; Brent's Root-Finder (<code>[↱] [SOLVE]</code>):</strong> When higher-degree or transcendental terms rule out closed-form extraction, press <code>[↱] [EQN]</code> (right-shifted on <code>[STO]</code>), tap <code>NEW</code>, and press a letter (<code>A</code>–<code>Z</code>) to record <span class="arithmatex">\(f(x) = \text{LHS} - \text{RHS}\)</span> in RPN using <code>[RCL]</code> + letter, pressing <code>[↱] [EQN]</code> again to save (within the editor, you can also insert <code>LBL</code>/<code>RTN</code> via left/right-shift on <code>[+]</code>, step between stored equations with <code>[↰] [↓]</code>/<code>[↰] [↑]</code> on <code>[7]</code>/<code>[8]</code>, and scroll long formulas with right-shifted <code>SCRL</code> on <code>[RCL]</code>). Pre-select the equation via <code>FN=</code> (left-shifted on <code>[XEQ]</code>) or select it after pressing <code>[↱] [SOLVE]</code> (right-shifted on <code>[7]</code>), tapping its softkey, and pressing the unknown variable's letter at <code>SOLVE _</code> (or tapping its variable softkey; typing a value and tapping a variable softkey stores that parameter directly). The calculator prompts (<code>A?</code>, <code>B?</code> <span class="arithmatex">\(\to\)</span> value + <code>[ENTER]</code> or <code>[XEQ]</code>) for unassigned parameters, seeds Brent's solver from <span class="arithmatex">\(x_0\)</span> (defaulting to <span class="arithmatex">\(0\)</span>) to bracket a sign change, and <strong>lifts the stack</strong> by one level to push <span class="arithmatex">\(x^*\)</span> into Register <span class="arithmatex">\(X\)</span> (moving the starting seed into <span class="arithmatex">\(Y\)</span> and lifting prior <span class="arithmatex">\(Y \to Z\)</span> and <span class="arithmatex">\(Z \to T\)</span>); storing <span class="arithmatex">\(x^*\)</span> and pressing <code>[XEQ]</code> evaluates the residual <span class="arithmatex">\(f(x^*)\)</span> in Register <span class="arithmatex">\(X\)</span>.</li>
+</ol>
+<p><img alt="Figure 7.2: Cubic polynomial x^3 - 6x^2 + 11x - 6 = 0 solved via POLY" src="../../../assets/manuals/screenshots/sc32_poly_solver.png" /></p>
+<h3 id="731-horners-nested-evaluation-t-register-flooding">7.3.1 Horner's Nested Evaluation &amp; T-Register Flooding</h3>
+<p>For the fourth-degree polynomial <span class="arithmatex">\(P(x) = 4x^4 - 3x^3 + 2x^2 - 5x + 7 = (((4x - 3)x + 2)x - 5)x + 7\)</span> evaluated at <span class="arithmatex">\(x_0 = 2.5\)</span>, where synthetic division yields <span class="arithmatex">\(P(x) = (x - 2.5)(4x^3 + 7x^2 + 19.5x + 43.75) + 116.375\)</span>, the four-register stack supports two execution patterns depending on whether <span class="arithmatex">\(x_0 = 2.5\)</span> is keyed at each stage or dispensed from Register <span class="arithmatex">\(T\)</span>. When <span class="arithmatex">\(x_0 = 2.5\)</span> is keyed at each stage, the Horner synthetic-division coefficients accumulate sequentially in Register <span class="arithmatex">\(X\)</span>: <span class="arithmatex">\(b_3 = 4(2.5) - 3 = \mathbf{7}\)</span>, <span class="arithmatex">\(b_2 = 7(2.5) + 2 = \mathbf{19.5}\)</span>, <span class="arithmatex">\(b_1 = 19.5(2.5) - 5 = \mathbf{43.75}\)</span>, and finally the remainder <span class="arithmatex">\(b_0 = P(2.5) = 43.75(2.5) + 7 = \mathbf{116.375}\)</span>.</p>
+<p>To avoid keying <span class="arithmatex">\(2.5\)</span> four separate times—or re-typing an irrational evaluation point like <span class="arithmatex">\(x \approx 2.718\)</span>—three presses of <code>ENTER</code> fill all four registers <span class="arithmatex">\((T, Z, Y, X)\)</span> with <span class="arithmatex">\(x_0\)</span> and turn Register <span class="arithmatex">\(T\)</span> into an automatic constant dispenser. Every time multiplication consumes the copy of <span class="arithmatex">\(x_0\)</span> in Register <span class="arithmatex">\(Y\)</span> and drops the stack, Register <span class="arithmatex">\(T\)</span> clones a fresh copy of <span class="arithmatex">\(x_0 = 2.5\)</span> downward into Register <span class="arithmatex">\(Z\)</span>, reaching <span class="arithmatex">\(\mathbf{116.375}\)</span> without re-typing <span class="arithmatex">\(2.5\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>2.5 [ENTER] [ENTER] [ENTER]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: left;">Flood stack <span class="arithmatex">\((T, Z, Y, X)\)</span> with <span class="arithmatex">\(x_0 = 2.5\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>4 [×] 3 [-]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(7\)</span></td>
+<td style="text-align: left;">First Horner stage <span class="arithmatex">\(b_3 = 4(2.5) - 3 = 7\)</span>; <span class="arithmatex">\(T\)</span> clones <span class="arithmatex">\(2.5\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[×] 2 [+]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(19.5\)</span></td>
+<td style="text-align: left;">Second Horner stage <span class="arithmatex">\(b_2 = 7(2.5) + 2 = 19.5\)</span>; <span class="arithmatex">\(T\)</span> clones <span class="arithmatex">\(2.5\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[×] 5 [-]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(43.75\)</span></td>
+<td style="text-align: left;">Third Horner stage <span class="arithmatex">\(b_1 = 19.5(2.5) - 5 = 43.75\)</span>; <span class="arithmatex">\(T\)</span> clones <span class="arithmatex">\(2.5\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[×] 7 [+]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.5\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(116.375\)</span></strong></td>
+<td style="text-align: left;">Final remainder <span class="arithmatex">\(b_0 = P(2.5) = 43.75(2.5) + 7 = \mathbf{116.375}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>T-register replication also evaluates the rational-logarithmic solar-cell fill factor <span class="arithmatex">\(FF = \frac{v_{\text{oc}} - \ln(v_{\text{oc}} + 0.72)}{v_{\text{oc}} + 1}\)</span> at <span class="arithmatex">\(v_{\text{oc}} = 25.145\)</span> after entering <span class="arithmatex">\(25.145\)</span> only once: flooding the four stack registers with <span class="arithmatex">\(v_{\text{oc}}\)</span> supplies one copy for <span class="arithmatex">\(\ln(v_{\text{oc}} + 0.72)\)</span>, a second waiting copy in Register <span class="arithmatex">\(Y\)</span> to subtract that logarithm and form the numerator <span class="arithmatex">\(\approx 21.892\)</span>, and a third copy replicated from Register <span class="arithmatex">\(T\)</span> to form the denominator <span class="arithmatex">\(v_{\text{oc}} + 1 = 26.145\)</span> and resolve <span class="arithmatex">\(FF \approx \mathbf{0.837}\)</span>.</p>
+<p>To solve a monic quadratic <span class="arithmatex">\(x^2 + 2px + q = 0\)</span> via the single-entry half-linear formula <span class="arithmatex">\(r_{1,2} = -p \pm \sqrt{p^2 - q}\)</span> on the stack—such as the coupled-oscillator biquadratic <span class="arithmatex">\(u^2 - 10u + 9 = 0\)</span> (<span class="arithmatex">\(u = \omega^2\)</span>, where <span class="arithmatex">\(-p = 5\)</span> and <span class="arithmatex">\(q = 9\)</span>)—duplicating <span class="arithmatex">\(-p = 5\)</span> into Register <span class="arithmatex">\(Y\)</span>, squaring <span class="arithmatex">\(5^2 = 25\)</span>, subtracting <span class="arithmatex">\(q = 9\)</span>, and taking the square root places <span class="arithmatex">\(\sqrt{p^2 - q} = 4\)</span> in Register <span class="arithmatex">\(X\)</span> with <span class="arithmatex">\(-p = 5\)</span> waiting in Register <span class="arithmatex">\(Y\)</span>. Adding yields the first root <span class="arithmatex">\(u_1 = 5 + 4 = \mathbf{9}\)</span> (<span class="arithmatex">\(\omega_1 = \mathbf{3}\)</span>) while saving <span class="arithmatex">\(\sqrt{p^2 - q} = 4\)</span> in <code>LASTX</code>, so recalling <code>LASTX</code>, doubling (<span class="arithmatex">\(8\)</span>), and subtracting yields the second root <span class="arithmatex">\(u_2 = 9 - 8 = \mathbf{1}\)</span> (<span class="arithmatex">\(\omega_2 = \mathbf{1}\)</span>) without re-typing <span class="arithmatex">\(p\)</span> or <span class="arithmatex">\(q\)</span>.</p>
+<hr />
+<h3 id="732-cardanos-analytical-cubic-quadratic-solver">7.3.2 Cardano's Analytical Cubic &amp; Quadratic Solver</h3>
+<p>On our <em>casus irreducibilis</em> benchmark <span class="arithmatex">\((x - 1)(x - 2)(x - 3) = x^3 - 6x^2 + 11x - 6 = 0\)</span> (<span class="arithmatex">\(\Delta &lt; 0\)</span>), the <code>POLY</code> softkey sequence proceeds in three steps:</p>
+<ol>
+<li>Open the <code>POLY</code> workspace (<code>Ax^3 + Bx^2 + Cx + D</code>), and tap the fifth softkey (<code>CLR</code>) if any softkey labels already carry a bullet (<code>•</code>).</li>
+<li>Key <code>1</code> and tap the first softkey <code>A</code> (<code>A•</code> appears); key <code>-6</code> and tap the second softkey <code>B</code> (<code>B•</code>); key <code>11</code> and tap the third softkey <code>C</code> (<code>C•</code>); key <code>-6</code> and tap the fourth softkey <code>D</code> (<code>D•</code>).</li>
+<li>Press <code>XEQ</code>.</li>
+</ol>
+<p>The solver evaluates Cardano's depressed cubic via complex polar cube-root trisection <span class="arithmatex">\(r^{1/3}[\cos(\theta/3) + i\sin(\theta/3)]\)</span> (algebraically equivalent to Viète's cosine trisection when <span class="arithmatex">\(\Delta &lt; 0\)</span>), projects the three cube-root branches onto the real axis, and sorts all three real roots in ascending order: the display lists <code>r1: 1</code>, <code>r2: 2</code>, and <code>r3: 3</code> (<strong>Figure 7.2</strong>), places the primary root <span class="arithmatex">\(r_1 = \mathbf{1}\)</span> in Register <span class="arithmatex">\(Y\)</span> (with its imaginary part <span class="arithmatex">\(\mathbf{0}\)</span> in Register <span class="arithmatex">\(X\)</span>), and stores all three roots across <code>REGS</code> slots <code>R34</code>–<code>R35</code> (<span class="arithmatex">\(r_1 = 1 + 0i\)</span>), <code>R36</code>–<code>R37</code> (<span class="arithmatex">\(r_2 = 2 + 0i\)</span>), and <code>R38</code>–<code>R39</code> (<span class="arithmatex">\(r_3 = 3 + 0i\)</span>). In the positive-discriminant regime (<span class="arithmatex">\(\Delta &gt; 0\)</span>), a cubic with complex conjugate roots, as in <span class="arithmatex">\(x^3 - x^2 + x - 1 = (x - 1)(x^2 + 1) = 0\)</span>, crosses the horizontal axis only once at <span class="arithmatex">\(r_1 = 1\)</span>, placing <span class="arithmatex">\(r_1 = 1 + 0i\)</span> in <span class="arithmatex">\((Y, X)\)</span> and storing the pure imaginary conjugate roots <span class="arithmatex">\(r_{2,3} = 0 \pm 1i\)</span> in <code>REGS</code> slots <code>R36</code>–<code>R37</code> and <code>R38</code>–<code>R39</code>.</p>
+<p>When a steel bridge joint or aircraft wing root is pulled, compressed, and twisted in three dimensions, rotating a small test cube inside the metal always reveals three mutually perpendicular axes along which sideways shearing forces vanish, leaving only pure tension or compression. Finding those three <em>principal stresses</em> <span class="arithmatex">\(\sigma_3 \le \sigma_2 \le \sigma_1\)</span> requires solving a three-real-root cubic (<span class="arithmatex">\(\Delta \le 0\)</span>) whose coefficients are the coordinate-independent stress invariants <span class="arithmatex">\(I_1, I_2,\)</span> and <span class="arithmatex">\(I_3\)</span>.</p>
+<p>For the 3D principal stress cubic (<span class="arithmatex">\(\lambda^3 - 70\lambda^2 + 1175\lambda - 5750 = 0\)</span>) of a structural steel element with tensor invariants <span class="arithmatex">\(I_1 = 70\text{ MPa}\)</span>, <span class="arithmatex">\(I_2 = 1175\text{ MPa}^2\)</span>, and <span class="arithmatex">\(I_3 = 5750\text{ MPa}^3\)</span>, entering <span class="arithmatex">\((A = 1,\; B = -70,\; C = 1175,\; D = -5750)\)</span> into the four softkeys and pressing <code>XEQ</code> displays all three stresses together (<code>r1: 10</code>, <code>r2: 11.972</code>, <code>r3: 48.028</code>) and places the minor principal stress <span class="arithmatex">\(\sigma_3 = \mathbf{10\text{ MPa}}\)</span> in Register <span class="arithmatex">\(Y\)</span> (with <span class="arithmatex">\(0\)</span> in Register <span class="arithmatex">\(X\)</span>), while the intermediate stress <span class="arithmatex">\(\sigma_2 \approx \mathbf{11.972\text{ MPa}}\)</span> and major principal stress <span class="arithmatex">\(\sigma_1 \approx \mathbf{48.028\text{ MPa}}\)</span> appear as <code>r2</code> and <code>r3</code> (and in <code>REGS</code> slots <code>R36</code> and <code>R38</code>). Halving the difference between the major and minor principal stresses yields the <em>Tresca maximum shear stress</em> <span class="arithmatex">\(\tau_{\max} = \frac{1}{2}(\sigma_1 - \sigma_3) \approx \mathbf{19.014\text{ MPa}}\)</span>.</p>
+<p>Because any unassigned softkey defaults to <code>0</code>, depressed cubics and quadratic equations require even fewer entries. On the floating-sphere buoyancy cubic for a solid oak marine buoy of radius <span class="arithmatex">\(R = 0.5\text{ m}\)</span> (<span class="arithmatex">\(1\text{ m}\)</span> diameter) and specific gravity <span class="arithmatex">\(\rho_s/\rho_w = 0.65\)</span>, balancing submerged spherical-cap volume against displaced water weight yields <span class="arithmatex">\(h^3 - 3Rh^2 + 4(\rho_s/\rho_w)R^3 = h^3 - 1.5h^2 + 0.325 = 0\)</span>, which has no linear <span class="arithmatex">\(h\)</span> term. After tapping <code>CLR</code>, you enter only <span class="arithmatex">\(A = 1\)</span>, <span class="arithmatex">\(B = -1.5\)</span>, and <span class="arithmatex">\(D = 0.325\)</span> on the softkeys (with softkey <code>C</code> left untouched at its default of <code>0</code>) and press <code>XEQ</code> to read the physical waterline draft <span class="arithmatex">\(h \approx \mathbf{0.601\text{ m}}\)</span> as <code>r2</code> (<span class="arithmatex">\(\approx 60.1\%\)</span> submerged), while the algebraic companion roots <span class="arithmatex">\(\approx -0.412\text{ m}\)</span> and <span class="arithmatex">\(\approx 1.311\text{ m}\)</span> lie outside the physical sphere <span class="arithmatex">\([0, 1\text{ m}]\)</span>.</p>
+<p>On the inverse ballistic quadratic <span class="arithmatex">\(360.367 u^2 - 1200u + 510.367 \approx 0\)</span> for an elevated target at range <span class="arithmatex">\(x = 1,200\text{ m}\)</span> and height <span class="arithmatex">\(y = 150\text{ m}\)</span> (<span class="arithmatex">\(v_0 = 140\text{ m/s}, g = 9.81\text{ m/s}^2\)</span>), leaving <code>A</code> at its <code>0</code> default and assigning <span class="arithmatex">\(B = 360.367\)</span>, <span class="arithmatex">\(C = -1200\)</span>, and <span class="arithmatex">\(D = 510.367\)</span> extracts both roots upon pressing <code>XEQ</code>. Taking the arctangent of the two positive slope roots returns both the low direct-fire angle <span class="arithmatex">\(\theta_1 \approx \mathbf{26.59^\circ}\)</span> and the high plunging mortar arc <span class="arithmatex">\(\theta_2 \approx \mathbf{70.535^\circ}\)</span>.</p>
+<hr />
+<h3 id="733-taming-transcendental-equations-by-bracketed-iteration">7.3.3 Taming Transcendental Equations by Bracketed Iteration</h3>
+<p>A comparison of the iterative equation solver (<code>EQN</code> and <code>SOLVE</code>) with the closed-form polynomial solver (<code>POLY</code>) on two physical cubics contrasts bracketed root-finding with analytical extraction. On Newton's cubic benchmark <span class="arithmatex">\(x^3 - 2x - 5 = 0\)</span>, hand-evaluating Cardano's formula requires the sum of two nested cube roots <span class="arithmatex">\(\sqrt[3]{\frac{5}{2} + \sqrt{\frac{643}{108}}} + \sqrt[3]{\frac{5}{2} - \sqrt{\frac{643}{108}}}\)</span>. Entering the residual <span class="arithmatex">\(f(x) = (x^2 - 2)x - 5\)</span> in Horner nested form and storing the starting seed <span class="arithmatex">\(x_0 = 2\)</span> (where <span class="arithmatex">\(f(2) = -1 &lt; 0\)</span> and <span class="arithmatex">\(f(3) = +16 &gt; 0\)</span>) expands an outward sign-change bracket around <span class="arithmatex">\(x_0 = 2\)</span> and converges to <span class="arithmatex">\(x^* \approx \mathbf{2.095}\)</span> in Register <span class="arithmatex">\(X\)</span> with a machine-zero residual <span class="arithmatex">\(|f(x^*)| &lt; 10^{-15}\)</span>.</p>
+<p>For carbon dioxide (<span class="arithmatex">\(\text{CO}_2\)</span>, <span class="arithmatex">\(a = 3.59\text{ L}^2\cdot\text{atm/mol}^2\)</span>, <span class="arithmatex">\(b = 0.043\text{ L/mol}\)</span>) compressed to <span class="arithmatex">\(P = 50\text{ atm}\)</span> at <span class="arithmatex">\(T = 300\text{ K}\)</span> (<span class="arithmatex">\(RT = 24.618\text{ L}\cdot\text{atm/mol}\)</span>), the van der Waals real-gas equation of state <span class="arithmatex">\(\left(P + \frac{a}{V^2}\right)(V - b) = RT\)</span> clears the <span class="arithmatex">\(V^2\)</span> denominator to form the expanded cubic <span class="arithmatex">\(50V^3 - 26.768V^2 + 3.59V - 0.154 = 0\)</span>. Both the cubic polynomial solver and Brent's root-finder (seeded at the ideal-gas volume <span class="arithmatex">\(V_{\text{ideal}} = RT/P \approx 0.492\text{ L/mol}\)</span> on the unexpanded van der Waals residual) find the real molar volume <span class="arithmatex">\(V_m \approx \mathbf{0.359\text{ L/mol}}\)</span>—<span class="arithmatex">\(27\%\)</span> smaller in molar volume (<span class="arithmatex">\(37\%\)</span> denser) than the ideal-gas estimate, corresponding to a compressibility factor <span class="arithmatex">\(Z = P V_m / RT \approx \mathbf{0.729}\)</span>.</p>
+<p>On coupled transcendental conservation laws, Brent's solver resolves the unknowns from their equation residuals. For Kepler's elliptical orbital anomaly <span class="arithmatex">\(E - e\sin E - M = 0\)</span> on an Earth-observation satellite with orbital eccentricity <span class="arithmatex">\(e = 0.25\)</span> at mean anomaly <span class="arithmatex">\(M = 1.2\text{ rad}\)</span> in radian mode, <span class="arithmatex">\(|\sin E| \le 1\)</span> guarantees that the physical root lies inside <span class="arithmatex">\([M - e,\; M + e] = [0.95,\; 1.45]\text{ rad}\)</span>; seeding <span class="arithmatex">\(E_0 = 1.2\)</span> converges to <span class="arithmatex">\(E^* \approx \mathbf{1.448\text{ rad}}\)</span> (<span class="arithmatex">\(\approx 82.971^\circ\)</span>) in five iterations.</p>
+<p>In fluid pipelines and nonlinear circuits, bracketed iteration isolates implicit operating points without divergence. Evaluating the Colebrook–White turbulent pipe friction residual <span class="arithmatex">\(g(f) = \frac{1}{\sqrt{f}} + 2\log_{10}\!\left(\frac{\varepsilon/D}{3.7} + \frac{2.51}{\text{Re}\sqrt{f}}\right) = 0\)</span> at Reynolds number <span class="arithmatex">\(\text{Re} = 100,000\)</span> and relative roughness <span class="arithmatex">\(\varepsilon/D = 0.001\)</span> by seeding <span class="arithmatex">\(f_0 = 0.02\)</span> inside the physical Moody turbulent regime <span class="arithmatex">\([0.008, 0.08]\)</span> lifts <span class="arithmatex">\(0.02\)</span> into Register <span class="arithmatex">\(Y\)</span> and converges to <span class="arithmatex">\(f^* \approx \mathbf{0.022}\)</span> in Register <span class="arithmatex">\(X\)</span>.</p>
+<p>On the silicon diode load-line residual <span class="arithmatex">\(f(V) = 5 - 10^{-9}(e^{V/V_T} - 1) - V = 0\)</span> (<span class="arithmatex">\(V_s = 5\text{ V}\)</span>, <span class="arithmatex">\(I_s R = 10^{-9}\text{ V}\)</span>, <span class="arithmatex">\(V_T \approx 0.026\text{ V}\)</span>)—where an unguarded Newton step from <span class="arithmatex">\(V_0 = 0\text{ V}\)</span> shoots along the flat tangent to <span class="arithmatex">\(+5\text{ V}\)</span> (<span class="arithmatex">\(e^{5 / V_T} \approx 10^{84}\)</span>)—a starting guess near the silicon turn-on knee at <span class="arithmatex">\(V_0 = 0.65\text{ V}\)</span> converges safely to <span class="arithmatex">\(V_D^* \approx \mathbf{0.577\text{ V}}\)</span> (<span class="arithmatex">\(I_D \approx 4.423\text{ mA}\)</span>).</p>
+<p>When <span class="arithmatex">\(Q = 20\text{ m}^3/\text{s}\)</span> (<span class="arithmatex">\(Q^2 = 400\)</span>) of floodwater rushes through a trapezoidal concrete spillway of bottom width <span class="arithmatex">\(b = 3\text{ m}\)</span> and side slopes <span class="arithmatex">\(z = 2\)</span>, the critical depth <span class="arithmatex">\(y_c\)</span> (<span class="arithmatex">\(\text{Fr} = 1\)</span>) crosses the degree-4 radical barrier to form the sixth-degree polynomial <span class="arithmatex">\(f(y) = 400(3 + 4y) - 9.81(3y + 2y^2)^3 = 0\)</span>, where seeding at <span class="arithmatex">\(y_0 = 1\text{ m}\)</span> converges to <span class="arithmatex">\(y_c^* \approx \mathbf{1.251\text{ m}}\)</span>.</p>
+<p>Bracketed root-finding also selects distinct physical branches when a conservation law admits multiple solutions on opposite sides of a singularity or throat. In compressible gas dynamics, the De Laval rocket nozzle area–Mach relation <span class="arithmatex">\(\frac{1}{M}\left(\frac{1 + 0.2M^2}{1.2}\right)^3 - 2.5 = 0\)</span> for an expansion area ratio <span class="arithmatex">\(A/A^* = 2.5\)</span> and specific-heat ratio <span class="arithmatex">\(\gamma = 1.4\)</span> admits two physical flow regimes separated by the <span class="arithmatex">\(M^* = 1\)</span> sonic throat. Seeding above the throat (<span class="arithmatex">\(M_0 = 2.5\)</span> in <span class="arithmatex">\([1.05, 4]\)</span>) locks Brent's solver onto the accelerating supersonic exhaust branch <span class="arithmatex">\(M_{\text{sup}} \approx \mathbf{2.443}\)</span>; seeding below the throat (<span class="arithmatex">\(M_0 = 0.2\)</span> in <span class="arithmatex">\([0.05, 0.95]\)</span>) isolates the decelerating subsonic venturi diffuser branch <span class="arithmatex">\(M_{\text{sub}} \approx \mathbf{0.24}\)</span>.</p>
+<h3 id="734-practical-root-finding-strategy-residual-verification">7.3.4 Practical Root-Finding Strategy &amp; Residual Verification</h3>
+<p>To verify how a single Newton–Raphson step <span class="arithmatex">\(E_1 = E_0 - \frac{E_0 - e\sin E_0 - M}{1 - e\cos E_0}\)</span> refines an orbital anomaly estimate on the four-register stack, flood the stack <span class="arithmatex">\((T, Z, Y, X)\)</span> with the upper bracket endpoint <span class="arithmatex">\(E_0 = M + e = 1.45\text{ rad}\)</span> in radian mode. Evaluating <span class="arithmatex">\(0.25\sin(1.45)\)</span> and subtracting from the waiting copy of <span class="arithmatex">\(E_0\)</span> in Register <span class="arithmatex">\(Y\)</span> followed by <span class="arithmatex">\(M = 1.2\)</span> isolates the residual <span class="arithmatex">\(f(1.45) \approx 1.822 \times 10^{-3}\text{ rad}\)</span> in Register <span class="arithmatex">\(X\)</span>; dividing by the slope <span class="arithmatex">\(f'(1.45) = 1 - 0.25\cos(1.45) \approx 0.97\)</span> to form the step <span class="arithmatex">\(\Delta E \approx 1.878 \times 10^{-3}\text{ rad}\)</span> and subtracting from the copy of <span class="arithmatex">\(E_0\)</span> dispensed by Register <span class="arithmatex">\(T\)</span> reaches <span class="arithmatex">\(E_1 \approx \mathbf{1.448\text{ rad}}\)</span> without re-entering <span class="arithmatex">\(E_0\)</span>. When an equation is already a contraction mapping <span class="arithmatex">\(x = g(x)\)</span> (<span class="arithmatex">\(|g'(x^*)| &lt; 1\)</span>), applying <span class="arithmatex">\(g\)</span> repeatedly to Register <span class="arithmatex">\(X\)</span>—pressing cosine in radian mode to watch <span class="arithmatex">\(x_{n+1} = \cos(x_n)\)</span> spiral into the Dottie fixed point <span class="arithmatex">\(x^* \approx \mathbf{0.739\text{ rad}}\)</span>, or flooding Register <span class="arithmatex">\(T\)</span> with <span class="arithmatex">\(c = 6\)</span> and repeating addition and square root to watch <span class="arithmatex">\(\sqrt{6 + \sqrt{6 + \dots}}\)</span> converge to <span class="arithmatex">\(\mathbf{3}\)</span>—visualizes fixed-point convergence before handing stiffer residuals <span class="arithmatex">\(g(x) - x = 0\)</span> to Brent's solver.</p>
+<p>After the root-finder terminates, storing the converged root estimate <span class="arithmatex">\(x^*\)</span> into the equation's target variable and pressing <code>XEQ</code> to evaluate the stored equation performs the residual audit <span class="arithmatex">\(f(x^*)\)</span>, where a genuine root yields <span class="arithmatex">\(|f(x^*)| \le 10^{-12}\)</span> while an accidental vertical asymptote or pole exposes itself with <span class="arithmatex">\(|f(x^*)| \gg 1\)</span>.</p>
+<p>Three algebraic habits reinforce polynomial and transcendental root-finding. First, when <code>POLY</code> displays <code>r1, r2, r3</code> of <span class="arithmatex">\(Ax^3 + Bx^2 + Cx + D = 0\)</span> (and stores their real and imaginary parts in <code>REGS</code> <code>STO</code> slots <code>R34</code>–<code>R39</code>), Viète's identities provide an immediate checksum: summing the three real parts equals <span class="arithmatex">\(-B/A\)</span> (<span class="arithmatex">\(10 + 11.972 + 48.028 = \mathbf{70}\)</span>), multiplying three real roots equals <span class="arithmatex">\(-D/A\)</span> (<span class="arithmatex">\(\mathbf{5750}\)</span>), and when <span class="arithmatex">\(r_{2,3} = \alpha \pm i\beta\)</span> are complex conjugates, converting <span class="arithmatex">\((\beta, \alpha)\)</span> to polar form extracts <span class="arithmatex">\(|r_2| = \sqrt{\alpha^2 + \beta^2}\)</span> so <span class="arithmatex">\(r_1 |r_2|^2 = r_1(\alpha^2 + \beta^2) = -D/A\)</span>. Second, when an equation has multiple roots across physical regimes—such as subsonic versus supersonic Mach branches across the <span class="arithmatex">\(M^* = 1\)</span> throat—an initial seed <span class="arithmatex">\(x_0\)</span> inside the target regime (<span class="arithmatex">\(M_0 = 0.2\)</span> or <span class="arithmatex">\(M_0 = 2.5\)</span>) locks Brent's solver inside that branch. Third, storing a known root <span class="arithmatex">\(r_1\)</span> in Variable <span class="arithmatex">\(A\)</span> (deflating in order <span class="arithmatex">\(|r_1| \le |r_2|\)</span>) and dividing the residual in <code>EQN</code> by <span class="arithmatex">\((X - A)\)</span> forms <span class="arithmatex">\(g(x) = \frac{f(x)}{x - r_1}\)</span> so a subsequent solver pass cannot fall back into <span class="arithmatex">\(r_1\)</span>.</p>
+<h3 id="735-try-it-on-the-stack">7.3.5 Try It on the Stack</h3>
+<ol>
+<li><strong>Standard Atmosphere Pressure Polynomial via <span class="arithmatex">\(T\)</span>-Flooding:</strong> Flood <span class="arithmatex">\((T, Z, Y, X)\)</span> with altitude <span class="arithmatex">\(h = 8.435\text{ km}\)</span> and evaluate <span class="arithmatex">\(P(h) = ((-0.025h + 0.95)h - 12)h + 101.325\text{ kPa}\)</span> without re-typing <span class="arithmatex">\(h\)</span>. <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\(P \approx \mathbf{52.693\text{ kPa}}\)</span>.)</em></li>
+<li><strong>Depressed Cubic &amp; Viète Root-Power Sum in <code>POLY</code>:</strong> Clear <code>POLY</code> slots to <span class="arithmatex">\(0\)</span>, enter <span class="arithmatex">\(A = 1\)</span>, <span class="arithmatex">\(C = -7\)</span>, and <span class="arithmatex">\(D = 6\)</span> (leaving <span class="arithmatex">\(B\)</span> at <span class="arithmatex">\(0\)</span>) for <span class="arithmatex">\(x^3 - 7x + 6 = 0\)</span>, execute, and verify <span class="arithmatex">\(r_1^2 + r_2^2 + r_3^2 = (B/A)^2 - 2(C/A) = \mathbf{14}\)</span>. <em>(Verified roots: <span class="arithmatex">\(r_1 = \mathbf{-3}\)</span>, <span class="arithmatex">\(r_2 = \mathbf{1}\)</span>, <span class="arithmatex">\(r_3 = \mathbf{2}\)</span>, with <span class="arithmatex">\((-3)^2 + 1^2 + 2^2 = \mathbf{14}\)</span>.)</em></li>
+<li><strong>Quadratic Golden-Ratio Root Extraction:</strong> In <code>POLY</code>, clear slots so <span class="arithmatex">\(A = 0\)</span>, assign <span class="arithmatex">\(B = 1\)</span>, <span class="arithmatex">\(C = -1\)</span>, and <span class="arithmatex">\(D = -1\)</span> for <span class="arithmatex">\(x^2 - x - 1 = 0\)</span>, and execute to obtain both roots. <em>(Verified roots: <span class="arithmatex">\(r_1 \approx \mathbf{-0.618}\)</span> and <span class="arithmatex">\(r_2 \approx \mathbf{1.618}\)</span>.)</em></li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/ecommerce.js"></script>
+      
+    
+  </body>
+</html>

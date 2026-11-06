@@ -1655,45 +1655,60 @@ body.ecommerce-mode .md-main .md-grid {
   flex-shrink: 0;
 }
 
-/* Canonical Hardware Finishes from render_blender_hardware.py */
+/* Canonical Hardware Finishes from MATERIAL_AND_MARKING_SPEC.md (Rev 3.3) */
+.chip-cosmos {
+  background: #28334A; /* Sunlu Midnight PLA 2.0+ */
+  border: 2px solid #38BDF8; /* Champion White/Cyan Accent */
+}
+
+.chip-pureblack {
+  background: #101114; /* Technical Matte Black PLA */
+  border: 2px solid #52525B; /* Tactical Neutral Border */
+}
+
+.chip-grayscale {
+  background: #101114; /* Technical Matte Black PLA */
+  border: 2px solid #94999E; /* Tactile Light Gray TPU Accent */
+}
+
+.chip-synthwave {
+  background: linear-gradient(135deg, #695CC7 0%, #1D1C1B 100%); /* Purple+Black Dual Silk PLA */
+  border: 2px solid #C084FC; /* Iridescent Silk Accent */
+}
+
+.chip-earthtone {
+  background: #4A2E1B; /* Sunlu Coffee Brown PLA */
+  border: 2px solid #E9B44C; /* Warm Ochre Shift Accent */
+}
+
+.chip-pureblackwhite {
+  background: linear-gradient(135deg, #F8F9FA 50%, #101114 50%); /* White PETG + Black PLA */
+  border: 2px solid #E2E8F0; /* Clean Lab Modular Two-Tone */
+}
+
 .chip-stealth {
-  background: #121316;
-  border: 2px solid #0F62FE; /* Azure key accent */
+  background: #121316; /* Technical Matte Black PLA */
+  border: 2px solid #028CE3; /* Cobalt Azure TPU key accent */
+}
+
+.chip-voyager {
+  background: linear-gradient(135deg, #4B4E54 50%, #28334A 50%); /* Space Gray + Midnight PLA */
+  border: 2px solid #94A3B8; /* Deep-Space Aerospace Accent */
+}
+
+.chip-avionics {
+  background: #4B4E54; /* Elegoo Space Gray PLA */
+  border: 2px solid #CBD5E1; /* Cockpit Avionics Slate Accent */
+}
+
+.chip-pioneer {
+  background: #3B1F17; /* Sunlu Dark Chestnut PLA */
+  border: 2px solid #E87722; /* Corvallis 1988 Amber Accent */
 }
 
 .chip-retro {
   background: #F5F4F0; /* Ivory / Polar White PLA */
   border: 2px solid #8C6239; /* Antique bronze foil */
-}
-
-.chip-voyager {
-  background: linear-gradient(135deg, rgba(234, 234, 234, 0.85) 0%, #0B1528 100%);
-  border: 2px solid #38BDF8;
-}
-
-.chip-supernova {
-  background: linear-gradient(135deg, #BC2726 0%, #C49449 60%, #FFEA9F 100%);
-  border: 1px solid #FFEA9F;
-}
-
-.chip-deepspace {
-  background: linear-gradient(135deg, #685BC7 0%, #1DAA27 50%, #1729AB 100%);
-  border: 1px solid #685BC7;
-}
-
-.chip-synthwave {
-  background: linear-gradient(135deg, #685BC7 0%, #3E125C 70%, #1D1C1B 100%);
-  border: 1px solid #685BC7;
-}
-
-.chip-arcade {
-  background: linear-gradient(135deg, #BC2726 0%, #1729AB 60%, #4DA8FF 100%);
-  border: 1px solid #4DA8FF;
-}
-
-.chip-clearlab {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, #181A1B 100%);
-  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .te-swatch-name {

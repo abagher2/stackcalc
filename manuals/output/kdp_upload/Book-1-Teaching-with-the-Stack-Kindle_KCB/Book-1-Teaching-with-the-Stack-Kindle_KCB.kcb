@@ -1,0 +1,38 @@
+{
+   "book_state": {
+      "book_fl_type": 0,
+      "book_input_type": 1,
+      "book_reading_direction": 1,
+      "book_reading_option": 0,
+      "book_target_type": 1,
+      "book_virtual_panelmovement": 0
+   },
+   "content_hash": {
+      "resources/book.kdf": "92a741752d0860661ddc093733d85539",
+      "resources/res/rsrc0": "ce62b4e23a1ab128b4cff58337a5e4fa"
+   },
+   "metadata": {
+      "book_path": "resources",
+      "edited_tool_versions": [
+         "1.105.0.0"
+      ],
+      "format": "yj",
+      "global_styling": true,
+      "id": "425577f3-6370-4ad8-ae67-64803098fa49",
+      "log_path": "",
+      "platform": "mac",
+      "quality_report": "",
+      "source_path": [
+         ""
+      ],
+      "tool_name": "KC",
+      "tool_version": "1.105.0.0"
+   },
+   "tool_data": {
+      "cache_path": "resources/.cache",
+      "created_on": "2026-Nov-05 00:30:00",
+      "last_modified_time": "2026-Nov-05 00:30:00",
+      "link_extract_choice": false,
+      "link_notification_preference": true
+   }
+}

@@ -1,0 +1,276 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="6.0in" height="4.0in" viewBox="0 0 1200 800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+      .font-mono { font-family: 'Space Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .card-title { font-size: 24px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
+      .card-subtitle { font-size: 15px; font-weight: 400; fill: #475569; }
+      .section-hdr { font-size: 16px; font-weight: 700; fill: #0f172a; letter-spacing: 0.6px; text-transform: uppercase; }
+      .th { font-size: 14px; font-weight: 700; fill: #475569; text-transform: uppercase; }
+      .footer-txt { font-size: 13.5px; font-weight: 400; fill: #475569; }
+    </style>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect x="0" y="0" width="1200" height="800" fill="#ffffff" />
+
+  <!-- Outer Card Frame (4x6 Aspect Ratio, 3mm corner radius) -->
+  <rect x="10" y="10" width="1180" height="780" rx="12" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
+  <rect x="18" y="18" width="1164" height="764" rx="8" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
+
+  <!-- Top Header Panel -->
+  <rect x="25" y="25" width="1150" height="84" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.2" />
+  
+  <!-- StackCalc Brand Logo Badge -->
+  <g transform="translate(36, 36)">
+    <rect x="0" y="0" width="52" height="52" rx="7" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.3" />
+    <rect x="10" y="11" width="32" height="5" rx="1.5" fill="#0f172a" />
+    <rect x="13" y="19" width="26" height="5" rx="1.5" fill="#0f172a" opacity="0.85" />
+    <rect x="16" y="27" width="20" height="5" rx="1.5" fill="#0f172a" opacity="0.70" />
+    <rect x="19" y="35" width="14" height="5" rx="1.5" fill="#0f172a" opacity="0.55" />
+  </g>
+
+  <!-- Box Button Icon Badge -->
+  
+    <g transform="translate(98, 36)" data-macro="{{icon:button_place_value}}">
+      <rect x="0" y="0" width="52" height="52" rx="7" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
+      <g transform="translate(4.16, 4.16) scale(0.4368)">
+        <path d="M 1.578125 0 L 1.578125 -3.03125 L 6.34375 -3.03125 L 6.34375 -15.21875 L 5.90625 -15.21875 L 4.3125 -9.453125 L 1.296875 -9.453125 L 1.296875 -9.75 L 3.3125 -16.796875 L 9.5 -16.796875 L 9.5 -3.03125 L 13.6875 -3.03125 L 13.6875 0 Z M 1.578125 0 " transform="translate(28, 59)" fill="#0f172a" fill-rule="nonzero" /><path d="M 1.5625 0 L 1.5625 -3.3125 C 1.5625 -4.476562 1.785156 -5.425781 2.234375 -6.15625 C 2.691406 -6.894531 3.34375 -7.476562 4.1875 -7.90625 C 5.039062 -8.332031 6.035156 -8.671875 7.171875 -8.921875 C 8.023438 -9.117188 8.675781 -9.347656 9.125 -9.609375 C 9.582031 -9.878906 9.898438 -10.1875 10.078125 -10.53125 C 10.253906 -10.882812 10.34375 -11.296875 10.34375 -11.765625 C 10.34375 -12.429688 10.097656 -12.988281 9.609375 -13.4375 C 9.117188 -13.882812 8.441406 -14.109375 7.578125 -14.109375 C 6.671875 -14.109375 5.941406 -13.832031 5.390625 -13.28125 C 4.847656 -12.726562 4.578125 -11.960938 4.578125 -10.984375 L 4.578125 -9.9375 L 1.421875 -9.9375 L 1.421875 -11.28125 C 1.421875 -12.332031 1.660156 -13.300781 2.140625 -14.1875 C 2.628906 -15.082031 3.328125 -15.796875 4.234375 -16.328125 C 5.140625 -16.867188 6.222656 -17.140625 7.484375 -17.140625 C 8.828125 -17.140625 9.945312 -16.890625 10.84375 -16.390625 C 11.738281 -15.890625 12.40625 -15.238281 12.84375 -14.4375 C 13.289062 -13.644531 13.515625 -12.800781 13.515625 -11.90625 L 13.515625 -11.609375 C 13.515625 -10.222656 13.117188 -9.0625 12.328125 -8.125 C 11.535156 -7.1875 10.242188 -6.507812 8.453125 -6.09375 C 7.441406 -5.875 6.664062 -5.628906 6.125 -5.359375 C 5.59375 -5.097656 5.226562 -4.800781 5.03125 -4.46875 C 4.832031 -4.144531 4.734375 -3.757812 4.734375 -3.3125 L 4.734375 -3.03125 L 13.375 -3.03125 L 13.375 0 Z M 1.5625 0 " transform="translate(42.688, 59)" fill="#0f172a" fill-rule="nonzero" /><path d="M 7.578125 0.34375 C 6.316406 0.34375 5.222656 0.078125 4.296875 -0.453125 C 3.367188 -0.984375 2.648438 -1.679688 2.140625 -2.546875 C 1.640625 -3.410156 1.390625 -4.351562 1.390625 -5.375 L 1.390625 -6.390625 L 4.5625 -6.390625 L 4.5625 -5.515625 C 4.5625 -4.753906 4.8125 -4.09375 5.3125 -3.53125 C 5.820312 -2.96875 6.5625 -2.6875 7.53125 -2.6875 C 8.382812 -2.6875 9.035156 -2.90625 9.484375 -3.34375 C 9.941406 -3.789062 10.171875 -4.359375 10.171875 -5.046875 C 10.171875 -5.796875 9.925781 -6.34375 9.4375 -6.6875 C 8.957031 -7.03125 8.335938 -7.203125 7.578125 -7.203125 L 5.71875 -7.203125 L 5.71875 -12.1875 L 9.890625 -13.34375 L 9.890625 -13.78125 L 1.53125 -13.78125 L 1.53125 -16.796875 L 12.484375 -16.796875 L 12.484375 -11.515625 L 8.015625 -10.21875 L 8.015625 -9.796875 L 8.59375 -9.796875 C 9.394531 -9.796875 10.15625 -9.625 10.875 -9.28125 C 11.601562 -8.945312 12.195312 -8.441406 12.65625 -7.765625 C 13.113281 -7.097656 13.34375 -6.253906 13.34375 -5.234375 L 13.34375 -4.9375 C 13.34375 -3.945312 13.125 -3.050781 12.6875 -2.25 C 12.25 -1.457031 11.597656 -0.828125 10.734375 -0.359375 C 9.878906 0.109375 8.828125 0.34375 7.578125 0.34375 Z M 7.578125 0.34375 " transform="translate(57.376, 59)" fill="#0f172a" fill-rule="nonzero" /><path d="M 100 50 L 100 81.65625 C 100 86.9375 100 89.578125 99.101562 92.421875 C 97.972656 95.527344 95.527344 97.972656 92.421875 99.101562 C 89.578125 100 86.9375 100 81.65625 100 L 18.34375 100 C 13.0625 100 10.421875 100 7.578125 99.101562 C 4.472656 97.972656 2.027344 95.527344 0.898438 92.421875 C 0 89.578125 0 86.9375 0 81.65625 L 0 18.34375 C 0 13.0625 0 10.421875 0.898438 7.578125 C 2.027344 4.472656 4.472656 2.027344 7.578125 0.898438 C 10.421875 0 13.0625 0 18.34375 0 L 81.65625 0 C 86.9375 0 89.578125 0 92.421875 0.898438 C 95.527344 2.027344 97.972656 4.472656 99.101562 7.578125 C 100 10.421875 100 13.0625 100 18.34375 Z M 96.5 50 L 96.5 83.507812 C 96.5 87.246094 96.5 89.117188 95.863281 91.132812 C 95.0625 93.332031 93.332031 95.0625 91.132812 95.863281 C 89.117188 96.5 87.246094 96.5 83.507812 96.5 L 16.492188 96.5 C 12.753906 96.5 10.882812 96.5 8.867188 95.863281 C 6.667969 95.0625 4.9375 93.332031 4.136719 91.132812 C 3.5 89.117188 3.5 87.246094 3.5 83.507812 L 3.5 16.492188 C 3.5 12.753906 3.5 10.882812 4.136719 8.867188 C 4.9375 6.667969 6.667969 4.9375 8.867188 4.136719 C 10.882812 3.5 12.753906 3.5 16.492188 3.5 L 83.507812 3.5 C 87.246094 3.5 89.117188 3.5 91.132812 4.136719 C 93.332031 4.9375 95.0625 6.667969 95.863281 8.867188 C 96.5 10.882812 96.5 12.753906 96.5 16.492188 Z M 96.5 50 " fill="#0f172a" fill-rule="evenodd" /><path d="M 85 50 L 85 59.828125 C 85 62.46875 85 63.789062 84.550781 65.210938 C 83.984375 66.761719 82.761719 67.984375 81.210938 68.550781 C 79.789062 69 78.46875 69 75.828125 69 L 24.171875 69 C 21.53125 69 20.210938 69 18.789062 68.550781 C 17.238281 67.984375 16.015625 66.761719 15.449219 65.210938 C 15 63.789062 15 62.46875 15 59.828125 L 15 40.171875 C 15 37.53125 15 36.210938 15.449219 34.789062 C 16.015625 33.238281 17.238281 32.015625 18.789062 31.449219 C 20.210938 31 21.53125 31 24.171875 31 L 75.828125 31 C 78.46875 31 79.789062 31 81.210938 31.449219 C 82.761719 32.015625 83.984375 33.238281 84.550781 34.789062 C 85 36.210938 85 37.53125 85 40.171875 Z M 82 50 L 82 61.414062 C 82 62.734375 82 63.394531 81.773438 64.105469 C 81.492188 64.882812 80.882812 65.492188 80.105469 65.773438 C 79.394531 66 78.734375 66 77.414062 66 L 22.585938 66 C 21.265625 66 20.605469 66 19.894531 65.773438 C 19.117188 65.492188 18.507812 64.882812 18.226562 64.105469 C 18 63.394531 18 62.734375 18 61.414062 L 18 38.585938 C 18 37.265625 18 36.605469 18.226562 35.894531 C 18.507812 35.117188 19.117188 34.507812 19.894531 34.226562 C 20.605469 34 21.265625 34 22.585938 34 L 77.414062 34 C 78.734375 34 79.394531 34 80.105469 34.226562 C 80.882812 34.507812 81.492188 35.117188 81.773438 35.894531 C 82 36.605469 82 37.265625 82 38.585938 Z M 82 50 " fill="#0f172a" fill-rule="evenodd" />
+      </g>
+    </g>
+    
+
+  <!-- Header Typography -->
+  <text x="165" y="55" class="font-mono card-title">PLACE VALUE STUDIO &amp; REGROUPING TRAYS</text>
+  <text x="165" y="74" class="font-sans card-subtitle">Dual Whole Number &amp; Decimal Activity Trays with Base-Ten Regrouping Tokens</text>
+  <text x="165" y="93" class="font-mono" font-size="12.5px" font-weight="700" fill="#0284c7">SERIES 1 • CARD 12 / 12 • DOMAIN: POSITIONAL BASE-10 &amp; REGROUPING</text>
+
+  <!-- Top-Right SKU Badges -->
+  <g transform="translate(975, 36)">
+    <rect x="0" y="0" width="190" height="28" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+    <text x="95" y="19" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#0f172a">CARD 12 / 12 • PLACE-01</text>
+    
+    <rect x="0" y="34" width="190" height="26" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.2" />
+    <text x="95" y="52" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#059669">MATHEMATICAL GUIDE</text>
+  </g>
+
+  <!-- COLUMN 1: CONCEPT & PROOF (Width: 390) -->
+  <g transform="translate(25, 120)">
+    <rect x="0" y="0" width="390" height="585" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="390" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="16" y="23" class="font-mono section-hdr">1. CONCEPT &amp; GEOMETRIC PROOF</text>
+
+    <!-- Headline -->
+    <text x="16" y="52" class="font-mono" font-size="14.5px" font-weight="700" fill="#0284c7">POSITIONAL BASE-10 NOTATION &amp; REGROUPING</text>
+
+    <!-- Concept lines -->
+    <text x="16" y="66" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">A digit's value depends on its place</text>
+    <text x="16" y="86" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">column: d_k × 10^k.</text>
+    <text x="16" y="106" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">Addition: Trade 10 units for 1 Carry block</text>
+    <text x="16" y="126" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">(+1) one column left.</text>
+    <text x="16" y="146" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">Subtraction: Borrow 1 from left column for</text>
+    <text x="16" y="166" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">a (10) Trade block.</text>
+    <text x="16" y="186" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">Dual 5x2 trays connect whole numbers</text>
+    <text x="16" y="206" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">directly to decimals!</text>
+
+    <!-- Datum Box -->
+    <g transform="translate(12, 236)">
+      <rect x="0" y="0" width="366" height="154" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#0f172a">CALIBRATED 19.00 MM POSITIONAL GRID</text>
+    </g>
+    <text x="24" y="272" class="font-mono" font-size="13.5px" fill="#475569">• Digit Tile: 19.00 × 19.00 × 7.00 mm (1U)</text>
+    <text x="24" y="290" class="font-mono" font-size="13.5px" fill="#475569">with 1.85mm detent</text>
+    <text x="24" y="308" class="font-mono" font-size="13.5px" fill="#475569">• Whole Tray: 10,000, 1000, 100, 10, 1</text>
+    <text x="24" y="326" class="font-mono" font-size="13.5px" fill="#475569">(Inner 5×2 Tray #1)</text>
+    <text x="24" y="344" class="font-mono" font-size="13.5px" fill="#475569">• Decimal Tray: 0.1, 0.01, 0.001, 10⁻⁴,</text>
+    <text x="24" y="362" class="font-mono" font-size="13.5px" fill="#475569">10⁻⁵ (Inner 5×2 Tray #2)</text>
+
+    <!-- Proof Diagram Box -->
+    <g transform="translate(12, 402)">
+      <rect x="0" y="0" width="366" height="173" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      
+      <text x="14" y="22" class="font-mono" font-size="14px" font-weight="700" fill="#0f172a">PLACE VALUE REGROUPING: 347 + 285 = 632</text>
+      <g transform="translate(18, 38)">
+        <rect x="0" y="0" width="190" height="82" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.5" />
+        <line x1="47.5" y1="0" x2="47.5" y2="82" stroke="#0f172a" stroke-width="1" />
+        <line x1="95" y1="0" x2="95" y2="82" stroke="#0f172a" stroke-width="1" />
+        <line x1="142.5" y1="0" x2="142.5" y2="82" stroke="#0f172a" stroke-width="1" />
+        <line x1="0" y1="24" x2="190" y2="24" stroke="#0f172a" stroke-width="1" />
+
+        <text x="23.75" y="16" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#475569">THOU</text>
+        <text x="71.25" y="16" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#475569">HUND</text>
+        <text x="118.75" y="16" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#475569">TENS</text>
+        <text x="166.25" y="16" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#475569">ONES</text>
+
+        <!-- Carry Block in Tens -->
+        <rect x="108" y="28" width="22" height="13" rx="2" fill="#0284c7" />
+        <text x="119" y="39" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#FFFFFF">+1</text>
+
+        <!-- Digit blocks Operand A -->
+        <text x="71.25" y="55" class="font-mono" font-size="16px" font-weight="700" text-anchor="middle" fill="#0f172a">3</text>
+        <text x="118.75" y="55" class="font-mono" font-size="16px" font-weight="700" text-anchor="middle" fill="#0f172a">4</text>
+        <text x="166.25" y="55" class="font-mono" font-size="16px" font-weight="700" text-anchor="middle" fill="#0f172a">7</text>
+
+        <!-- Digit blocks Operand B -->
+        <text x="71.25" y="74" class="font-mono" font-size="16px" font-weight="700" text-anchor="middle" fill="#475569">2</text>
+        <text x="118.75" y="74" class="font-mono" font-size="16px" font-weight="700" text-anchor="middle" fill="#475569">8</text>
+        <text x="166.25" y="74" class="font-mono" font-size="16px" font-weight="700" text-anchor="middle" fill="#475569">5</text>
+      </g>
+
+      <text x="215" y="56" class="font-mono" font-size="14px" font-weight="700" fill="#059669">REGROUPING TOKENS</text>
+      <text x="215" y="74" class="font-sans" font-size="13px" fill="#475569">Trade 10 Ones for 1 Ten</text>
+      <text x="215" y="92" class="font-sans" font-size="13px" fill="#475569">7 + 5 = 12 → 2 ones, +1 carry</text>
+      <text x="215" y="114" class="font-mono" font-size="13.5px" font-weight="700" fill="#0284c7">Dual 6x2 Trays:</text>
+      <text x="215" y="132" class="font-sans" font-size="12.5px" fill="#475569">Whole: Thousands to Ones</text>
+      <text x="215" y="148" class="font-sans" font-size="12.5px" fill="#475569">Decimal: Ones to Thousandths</text>
+
+    </g>
+  </g>
+
+  <!-- COLUMN 2: PARTS INVENTORY (Width: 450) -->
+  <g transform="translate(425, 120)">
+    <rect x="0" y="0" width="450" height="585" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="450" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="16" y="23" class="font-mono section-hdr">2. KIT PARTS INVENTORY (56 PIECES)</text>
+
+    <!-- Table Header -->
+    <text x="14" y="52" class="font-mono th">COMPONENT</text>
+    <text x="180" y="52" class="font-mono th">QTY</text>
+    <text x="215" y="52" class="font-mono th">SPEC</text>
+    <text x="436" y="52" class="font-mono th" text-anchor="end">COLOR</text>
+    <line x1="12" y1="58" x2="438" y2="58" stroke="#cbd5e1" stroke-width="1" />
+
+    
+      <text x="14" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">White Digits (0–9)</text>
+      <text x="180" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">22x</text>
+      <text x="215" y="64" class="font-mono" font-size="12.5px" fill="#0f172a">4×0, 2×1–9</text>
+      <text x="436" y="64" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
+      <line x1="12" y1="69" x2="438" y2="69" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Blue Digits (0–9)</text>
+      <text x="180" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">22x</text>
+      <text x="215" y="86" class="font-mono" font-size="12.5px" fill="#0f172a">4×0, 2×1–9</text>
+      <text x="436" y="86" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Blue-Gray</text>
+      <line x1="12" y1="91" x2="438" y2="91" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Carry &amp; Borrow Tokens</text>
+      <text x="180" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">8x</text>
+      <text x="215" y="108" class="font-mono" font-size="12.5px" fill="#0f172a">4×, 4×</text>
+      <text x="436" y="108" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Glow Yellow</text>
+      <line x1="12" y1="113" x2="438" y2="113" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Whole Numbers Tray</text>
+      <text x="180" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="130" class="font-mono" font-size="12.5px" fill="#0f172a">Inner 5×2</text>
+      <text x="436" y="130" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Blue-Gray</text>
+      <line x1="12" y1="135" x2="438" y2="135" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Decimal Numbers Tray</text>
+      <text x="180" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="152" class="font-mono" font-size="12.5px" fill="#0f172a">Inner 5×2</text>
+      <text x="436" y="152" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Blue-Gray</text>
+      <line x1="12" y1="157" x2="438" y2="157" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">3x1 Storage Bin</text>
+      <text x="180" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="174" class="font-mono" font-size="12.5px" fill="#0f172a">49.0 mm</text>
+      <text x="436" y="174" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
+      <line x1="12" y1="179" x2="438" y2="179" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="196" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">[123] Docking Lid</text>
+      <text x="180" y="196" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="196" class="font-mono" font-size="12.5px" fill="#0f172a">Docking Lid</text>
+      <text x="436" y="196" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
+      <line x1="12" y1="201" x2="438" y2="201" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+
+    <!-- Total Pieces Summary -->
+    <text x="14" y="234" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">TOTAL: 44 Digit Tiles + 8 (+1/10) Tokens + 2</text>
+    <text x="14" y="250" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">Inner 5x2 Trays + Box + Lid = 56 Parts</text>
+
+    <!-- Palette Box -->
+    <g transform="translate(12, 276)">
+      <rect x="0" y="0" width="426" height="190" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#0f172a">SYMMETRIC 2-COLOR OPERAND &amp; REGROUPING PALETTE</text>
+    </g>
+    <text x="24" y="312" class="font-sans" font-size="13.5px" fill="#475569">• PLA White (Set A, 22x): 4x '0' + 2x each of '1'–'9'</text>
+    <text x="24" y="330" class="font-sans" font-size="13.5px" fill="#475569">+ Box + Lid.</text>
+    <text x="24" y="348" class="font-sans" font-size="13.5px" fill="#475569">• Slate Blue-Gray (Set B, 22x): 4x '0' + 2x each of</text>
+    <text x="24" y="366" class="font-sans" font-size="13.5px" fill="#475569">'1'–'9'.</text>
+    <text x="24" y="384" class="font-sans" font-size="13.5px" fill="#475569">• Slate Blue-Gray (2x Inner Trays): 5×2 Whole &amp;</text>
+    <text x="24" y="402" class="font-sans" font-size="13.5px" fill="#475569">Decimal Trays.</text>
+    <text x="24" y="420" class="font-sans" font-size="13.5px" fill="#475569">• Glow Yellow / Red (8x): 4x (+1) Carry + 4x (10)</text>
+    <text x="24" y="438" class="font-sans" font-size="13.5px" fill="#475569">Borrow tokens.</text>
+  </g>
+
+  <!-- COLUMN 3: WHY KEEP CARD (Width: 290) -->
+  <g transform="translate(885, 120)">
+    <rect x="0" y="0" width="290" height="585" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="290" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="14" y="23" class="font-mono section-hdr">3. PACK-UP &amp; SUPPORT</text>
+
+    <!-- Reason 1: Pack-Up -->
+    <g transform="translate(12, 44)">
+      <rect x="0" y="0" width="266" height="136" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#d97706">✓ 10-SECOND PACK-UP</text>
+    </g>
+    <text x="24" y="82" class="font-sans" font-size="13px" fill="#475569">Stack 4 blocks in Cols 0–4 (0–9),</text>
+    <text x="24" y="100" class="font-sans" font-size="13px" fill="#475569">stack 6 blocks in Col 5 (+1, 10, &amp;</text>
+    <text x="24" y="118" class="font-sans" font-size="13px" fill="#475569">extra 0s = 52 blocks total), nest the</text>
+    <text x="24" y="136" class="font-sans" font-size="13px" fill="#475569">2 inner 5x2 trays over Cols 0–4</text>
+    <text x="24" y="154" class="font-sans" font-size="13px" fill="#475569">(leaving Col 5 for easy finger grip)</text>
+
+    <!-- Reason 2: Guarantee -->
+    <g transform="translate(12, 190)">
+      <rect x="0" y="0" width="266" height="138" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="13.5px" font-weight="700" fill="#059669">✓ NO LOST PIECE GUARANTEE</text>
+      <text x="12" y="40" class="font-sans" font-size="13px" fill="#475569">Classrooms lose pieces. Every single</text>
+      <text x="12" y="58" class="font-sans" font-size="13px" fill="#475569">math component is permanently</text>
+      <text x="12" y="76" class="font-sans" font-size="13px" fill="#475569">stocked for single replacements.</text>
+      <rect x="12" y="90" width="242" height="36" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8" />
+      <text x="133" y="106" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0284c7">stackcalc.io/parts</text>
+      <text x="133" y="120" class="font-sans" font-size="11px" text-anchor="middle" fill="#475569">Order replacements anytime</text>
+    </g>
+
+    <!-- Reason 3: Reverse Lesson Guide -->
+    <g transform="translate(12, 338)">
+      <rect x="0" y="0" width="266" height="84" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">✓ HANDS-ON TUTORIAL</text>
+      <text x="12" y="38" class="font-sans" font-size="12.5px" fill="#475569">Flip over for 5-step concrete</text>
+      <text x="12" y="54" class="font-sans" font-size="12.5px" fill="#475569">lesson &amp; live 3D Video QR!</text>
+      <text x="12" y="72" class="font-sans" font-size="12px" font-weight="700" fill="#0f172a">Keep stored inside box lid!</text>
+    </g>
+
+    <!-- Fundamental Theorem Box -->
+    <g transform="translate(12, 432)">
+      <rect x="0" y="0" width="266" height="88" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="18" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">FUNDAMENTAL THEOREM</text>
+      <text x="12" y="36" class="font-sans" font-size="12px" fill="#475569">
+        <tspan x="12" dy="0">Every real number has a unique</tspan><tspan x="12" dy="16">base-10 positional</tspan><tspan x="12" dy="16">representation.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Footer Bar -->
+  <g transform="translate(25, 715)">
+    <rect x="0" y="0" width="1150" height="60" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    
+    <g transform="translate(20, 24)">
+      <text x="0" y="0" class="font-mono" font-size="13.5px" font-weight="700" fill="#0f172a">STACKCALC ARCHIVAL INSTRUMENT LABS</text>
+      <text x="0" y="18" class="font-sans footer-txt">Designed in Mountain View, California • Non-Toxic BPA-Free • Classroom Lab Stations: stackcalc.io/schools</text>
+    </g>
+
+    <g transform="translate(880, 24)">
+      <text x="0" y="0" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">OFFICIAL REFILL PORTAL</text>
+      <text x="0" y="18" class="font-mono" font-size="14.5px" font-weight="700" fill="#0284c7">stackcalc.io/parts</text>
+    </g>
+  </g>
+  <metadata id="stackcalc-book-macro-manifest" data-kit="PLACE-01">
+    <stackcalc-macros>
+      <macro-ref token="{{blocks:sc6_elementary_hero}}" kind="blocks" id="sc6_elementary_hero" png="sc6-elementary-hero.png" svg="sc6-elementary-hero.png" scene="Tools/rendering/render_product_stills.py::render_sc6_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{seq:refcard_base10_ex1}}" res-token="{{res:refcard_base10_ex1}}" stack-token="{{res:refcard_base10_ex1:stack}}" kind="sequence" id="refcard_base10_ex1" model="sc6" expanded-seq="8 [ENTER] 2 [+] 5 [+] [▦]" res="15" stack="T:0|Z:0|Y:0|X:15" />
+      <macro-ref token="{{icon:button_place_value}}" kind="icon" id="button_place_value" svg="Education/scad/lib/icons/button_place_value.svg" scad="Education/scad/place_value_box.scad" key="PV" model="sc6" />
+    </stackcalc-macros>
+  </metadata>
+</svg>

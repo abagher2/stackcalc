@@ -1,0 +1,3306 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An applied guide to molecular weight parsing, solution molarity, buffer design, and spectrophotometry on the StackCalc 60.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/manuals/domains/06-sc60-chemistry-wetlab/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>SC-60 Wet-Lab Chemistry, Stoichiometry & Spectroscopy Handbook - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/brutalist.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/ecommerce.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  <meta property="og:site_name" content="StackCalc32">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SC-60 Wet-Lab Chemistry, Stoichiometry &amp; Spectroscopy Handbook">
+  <meta property="og:description" content="An applied guide to molecular weight parsing, solution molarity, buffer design, and spectrophotometry on the StackCalc 60.">
+  <meta property="og:url" content="https://www.stackcalc.io/manuals/domains/06-sc60-chemistry-wetlab/">
+  <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SC-60 Wet-Lab Chemistry, Stoichiometry &amp; Spectroscopy Handbook">
+  <meta name="twitter:description" content="An applied guide to molecular weight parsing, solution molarity, buffer design, and spectrophotometry on the StackCalc 60.">
+  <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                      tiny5: ['Tiny5', 'Terminus', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sc-60-wet-lab-chemistry-stoichiometry-spectroscopy-handbook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SC-60 Wet-Lab Chemistry, Stoichiometry & Spectroscopy Handbook
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="../../../learning-lab/" class="brutalist-button-header">LEARNING LAB</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../products/" class="md-tabs__link">
+          
+  
+  Catalog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../curriculum/" class="md-tabs__link">
+          
+  
+  Curriculum & Standards
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Books & Reference Manuals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-tabs__link">
+        
+  
+    
+  
+  Build Logs ↗
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../privacy/" class="md-tabs__link">
+          
+  
+  Legal & Support
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Catalog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Catalog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SC-32 Scientific Calculator
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SC-32 Scientific Calculator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Assembly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operational Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-elementary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Elementary Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From Blocks to the Stack (SC-6 Book)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fraction Studio Towers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Fraction Studio Towers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prime-factor-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prime Factor Studio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/place-value/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Place Value Studio & Regrouping Trays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Classroom Planetary Clock
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Classroom Planetary Clock
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ten Frames & Counters
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Ten Frames & Counters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/counting-tiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Counting & Array Tiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math Domino Studio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Math Domino Studio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/quest-scoreboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Quest Scoreboard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algebra Boxes & Tiles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Algebra Boxes & Tiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Probability Dice & Spinner
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Probability Dice & Spinner
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/unit-circle-volvelle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unit Circle & Trig Volvelle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/stands-and-pouches/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stands & Pouches
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/curriculum-and-decks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Curriculum & Decks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../printables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Makerspace 3D Print Kits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../downloads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Download Center (PDFs & 3MFs)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Curriculum & Standards
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Curriculum & Standards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Curriculum Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/sc6-elementary-companion-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Companion Workbook (253 Problems)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/sc32-scientific-companion-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-32 Companion Casebook (339 Problems)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/big-ideas-middle-school-sc6-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Big Ideas Middle School Catch-Up (SC-6)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/alignment-matrix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standards Alignment Matrix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/worksheets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Printable Student Worksheets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/teacher-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teacher Facilitator Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Answer Key (Books 2A–5)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/rpn-elementary-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPN Elementary Power Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/uil-competition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Competitive STEM & Speed Calculation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Books & Reference Manuals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Books & Reference Manuals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Official Manuals & Reference Books ($16)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From Blocks to the Stack (SC-6 Book)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bestseller-rubric-and-editorial-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bestseller Rubric & Editorial Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../critical-editorial-review-and-school-adoption/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Editorial Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agent & OpenAPI Spec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mac & iOS Apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../press/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Press & Editorial Kit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../etsy-publishing-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing & Sourcing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shipping-and-packaging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shipping & Packaging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exam-compliance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Compliance & Proctor Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_11">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2026/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2026
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_12">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/3d-printing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Printing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/cad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CAD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/education/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Education
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/kicad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KiCad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/manufacturing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/mathematics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mathematics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/pcb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pedagogy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/product-design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/rpn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/swift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Swift
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/watchos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    watchOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build Logs ↗
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Legal & Support
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Legal & Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terms of Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Replacement Parts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-counting-what-you-cannot-see" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Counting What You Cannot See
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Counting What You Cannot See">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-not-just-use-a-phone-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Not Just Use a Phone App?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-core-concepts-how-chemists-think" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Core Concepts: How Chemists Think
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Core Concepts: How Chemists Think">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept-1-the-molecular-bridge-molarity-mass-prep" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept 1: The Molecular Bridge (Molarity &amp; Mass Prep)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concept-2-the-conservation-of-molecules-serial-dilution-c_1-v_1-c_2-v_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept 2: The Conservation of Molecules (Serial Dilution: \(C_1 V_1 = C_2 V_2\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concept-3-the-chemical-shock-absorber-ph-buffers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept 3: The Chemical Shock Absorber (pH &amp; Buffers)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept 3: The Chemical Shock Absorber (pH & Buffers)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-pure-water-fails-as-a-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Pure Water Fails as a Buffer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concept-4-counting-molecules-with-light-beer-lambert-law" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept 4: Counting Molecules with Light (Beer-Lambert Law)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-real-world-field-walkthroughs" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Real-World Field Walkthroughs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Real-World Field Walkthroughs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-case-1-formulating-a-phosphate-buffer-rchempros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Field Case 1: Formulating a Phosphate Buffer (r/Chempros)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Field Case 1: Formulating a Phosphate Buffer (r/Chempros)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-solve-it-on-the-sc-60" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Solve It on the SC-60
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-case-2-serial-dilution-from-a-5text-m-stock-rchemistry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Field Case 2: Serial Dilution from a \(5\text{ M}\) Stock (r/chemistry)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Field Case 2: Serial Dilution from a \(5\text{ M}\) Stock (r/chemistry)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-Step Mechanics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-try-it-yourself-practice-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Try It Yourself: Practice Problems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Try It Yourself: Practice Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-1-molecular-weight-of-glucose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem 1: Molecular Weight of Glucose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-2-beer-lambert-concentration-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem 2: Beer-Lambert Concentration Check
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-3-ideal-gas-volume-at-standard-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem 3: Ideal Gas Volume at Standard Temperature
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="sc-60-wet-lab-chemistry-stoichiometry-spectroscopy-handbook">SC-60 Wet-Lab Chemistry, Stoichiometry &amp; Spectroscopy Handbook</h1>
+<blockquote>
+<p><strong>Who this is for:</strong> Anyone who has taken general chemistry and wants to understand how bench scientists, biochemists, and pharmaceutical researchers turn chemical formulas into exact recipes on a laboratory balance.</p>
+</blockquote>
+<hr />
+<h2 id="1-counting-what-you-cannot-see">1. Counting What You Cannot See</h2>
+<p>Imagine you want to react one molecule of citric acid with three molecules of sodium bicarbonate.</p>
+<p>The chemical equation looks tidy on paper:
+$<span class="arithmatex">\(\text{C}_6\text{H}_8\text{O}_7 + 3\,\text{NaHCO}_3 \to \text{Na}_3\text{C}_6\text{H}_5\text{O}_7 + 3\,\text{H}_2\text{O} + 3\,\text{CO}_2\)</span>$</p>
+<p>The ratio is simple: <span class="arithmatex">\(1\text{ to }3\)</span>. But when you walk into the laboratory, you face an immediate physical barrier: <strong>molecules are far too tiny to see or count.</strong> You cannot pick up individual molecules with micro-tweezers and drop them into a beaker. The only tool you have to measure chemicals on the lab bench is an analytical balance that measures mass in <strong>grams</strong>.</p>
+<p>How do you translate an exact count of trillions of invisible molecules into a pile of white powder on a glass weighing dish?</p>
+<p>The bridge between the atomic world and the human world is the <strong>Mole</strong>: a quantity defined by Avogadro's constant (<span class="arithmatex">\(6.022 \times 10^{23}\)</span> particles). By summing the atomic weights of each element on the periodic table, chemists calculate the <strong>Molecular Weight (<span class="arithmatex">\(MW\)</span>)</strong> in grams per mole.</p>
+<p>Once you leave the dry balance and dissolve powders into liquid beakers, chemistry becomes a world of concentrations, dilutions, and logarithmic pH scales. A researcher formulating a buffer or synthesizing a medicine must navigate:
+- Calculating exact mass for target molarities (<span class="arithmatex">\(m = C \cdot V \cdot MW\)</span>).
+- Diluting concentrated chemical stocks (<span class="arithmatex">\(C_1 V_1 = C_2 V_2\)</span>).
+- Designing biochemical buffers that keep delicate proteins from denaturing.
+- Measuring how much light a solution absorbs to determine its purity.</p>
+<p>The <strong>StackCalc 60 (SC-60)</strong> puts an IUPAC molecular weight tokenizer, Henderson-Hasselbalch buffer solver, serial dilution calculator, and the Beer-Lambert spectrophotometry law directly into a chemical 4-level RPN stack.</p>
+<h3 id="why-not-just-use-a-phone-app">Why Not Just Use a Phone App?</h3>
+<ul>
+<li><strong>The Nitrile Glove and Chemical Hazard Barrier:</strong> In an active chemistry or biology lab, researchers wear disposable nitrile gloves exposed to concentrated acids, organic solvents (like chloroform or DMSO), and mutagenic DNA stains (like ethidium bromide). Touching a personal glass smartphone with contaminated gloves violates laboratory biosafety standards and transfers toxic compounds to personal items and the home. The SC-60 is an IP-rated, solvent-resistant laboratory instrument designed to live next to the balance and be wiped down with ethanol or bleach.</li>
+<li><strong>The Hydrate Mass Trap:</strong> Many common laboratory salts absorb water molecules into their crystal lattice. For example, anhydrous copper sulfate (<span class="arithmatex">\(\text{CuSO}_4\)</span>) has a molar mass of <span class="arithmatex">\(159.61\text{ g/mol}\)</span>, while copper sulfate pentahydrate (<span class="arithmatex">\(\text{CuSO}_4 \cdot 5\text{H}_2\text{O}\)</span>) has a molar mass of <span class="arithmatex">\(249.68\text{ g/mol}\)</span>—a massive <span class="arithmatex">\(56\%\)</span> difference! If a student reads a protocol calling for <span class="arithmatex">\(\text{CuSO}_4\)</span> and weighs the pentahydrate without compensating for the water weight, the solution is severely under-concentrated, ruining weeks of research. The SC-60’s formula tokenizer computes exact hydrate stoichiometries directly on the screen.</li>
+</ul>
+<hr />
+<h2 id="2-core-concepts-how-chemists-think">2. Core Concepts: How Chemists Think</h2>
+<h3 id="concept-1-the-molecular-bridge-molarity-mass-prep">Concept 1: The Molecular Bridge (Molarity &amp; Mass Prep)</h3>
+<p>A solution’s concentration is measured in <strong>Molarity (<span class="arithmatex">\(M\)</span>)</strong>: the number of moles of solute dissolved in one liter of total solution:</p>
+<div class="arithmatex">\[\text{Molarity } (C) = \frac{\text{Moles } (n)}{\text{Volume in Liters } (V)} \quad \left[\frac{\text{mol}}{\text{L}}\right]\]</div>
+<p>To prepare a solution of known concentration <span class="arithmatex">\(C\)</span> and volume <span class="arithmatex">\(V\)</span>, the mass of solid chemical powder to weigh on the balance is:</p>
+<div class="arithmatex">\[\text{Mass } (m) = C \cdot V \cdot MW \quad [\text{grams}]\]</div>
+<p>For example, to make <span class="arithmatex">\(500\text{ mL}\)</span> (<span class="arithmatex">\(0.50\text{ L}\)</span>) of a <span class="arithmatex">\(0.20\text{ M}\)</span> sodium chloride (<span class="arithmatex">\(\text{NaCl}\)</span>, <span class="arithmatex">\(MW = 58.44\text{ g/mol}\)</span>) solution:
+$<span class="arithmatex">\(m = 0.20 \text{ mol/L} \times 0.50 \text{ L} \times 58.44 \text{ g/mol} = \mathbf{5.844\text{ grams}}\)</span>$</p>
+<p>On the SC-60, you type the formula <code>NaCl</code> into the tokenizer to retrieve its molecular weight (<span class="arithmatex">\(58.44\)</span>), multiply by volume and concentration on the stack, and read the required mass in grams instantly.</p>
+<h3 id="concept-2-the-conservation-of-molecules-serial-dilution-c_1-v_1-c_2-v_2">Concept 2: The Conservation of Molecules (Serial Dilution: <span class="arithmatex">\(C_1 V_1 = C_2 V_2\)</span>)</h3>
+<p>In laboratories, chemicals are rarely prepared from raw powders every day. Instead, labs keep concentrated <strong>stock solutions</strong> on the shelf (e.g. <span class="arithmatex">\(5.0\text{ M } \text{NaCl}\)</span> or <span class="arithmatex">\(10\times\text{ PBS buffer}\)</span>).</p>
+<p>When you take a small pipette volume of stock solution (<span class="arithmatex">\(V_1\)</span>) and add pure water to reach a larger final volume (<span class="arithmatex">\(V_2\)</span>), the <em>concentration</em> drops, but the <strong>total number of solute molecules remains strictly unchanged</strong>:</p>
+<div class="arithmatex">\[\text{Moles of Solute} = C_1 \cdot V_1 = C_2 \cdot V_2\]</div>
+<div class="arithmatex">\[\text{Required Pipette Volume } V_1 = \frac{C_2 \cdot V_2}{C_1}\]</div>
+<p>The SC-60 features a dedicated <code>[C₁V₁]</code> softkey that solves for any of the four dilution variables in one step.</p>
+<h3 id="concept-3-the-chemical-shock-absorber-ph-buffers">Concept 3: The Chemical Shock Absorber (pH &amp; Buffers)</h3>
+<p>In 1909, Danish biochemist S.P.L. Sørensen was studying why beer fermentation fluctuated wildly between batches at the Carlsberg brewery. He discovered that enzymes function only within extremely narrow ranges of free hydrogen ion concentration <span class="arithmatex">\([H^+]\)</span>. Because <span class="arithmatex">\([H^+]\)</span> can range from <span class="arithmatex">\(1\text{ mol/L}\)</span> down to <span class="arithmatex">\(0.00000000000001\text{ mol/L}\)</span>, Sørensen invented the negative logarithmic <strong>pH scale</strong>:</p>
+<div class="arithmatex">\[pH = -\log_{10}[H^+] \iff [H^+] = 10^{-pH}\]</div>
+<p>Every unit change on the pH scale represents a <strong>tenfold multiplication</strong> in acidity.</p>
+<h4 id="why-pure-water-fails-as-a-buffer">Why Pure Water Fails as a Buffer</h4>
+<p>Pure water at <span class="arithmatex">\(pH = 7.0\)</span> has virtually zero buffering capacity. If you add a single drop of strong hydrochloric acid to a liter of unbuffered water, the pH plunges from <span class="arithmatex">\(7.0\)</span> down to <span class="arithmatex">\(4.0\)</span>, instantly destroying delicate biological proteins.</p>
+<p>To maintain a stable pH, chemists use a <strong>Buffer</strong>: a mixture of a weak acid (<span class="arithmatex">\(HA\)</span>) and its conjugate base salt (<span class="arithmatex">\(A^-\)</span>). When acid is added, the conjugate base absorbs the protons; when base is added, the weak acid donates protons.</p>
+<p>The equilibrium pH of a buffer is governed by the famous <strong>Henderson-Hasselbalch equation</strong>:</p>
+<div class="arithmatex">\[pH = pK_a + \log_{10}\left(\frac{[A^-]}{[HA]}\right)\]</div>
+<p>where <span class="arithmatex">\(pK_a = -\log_{10}(K_a)\)</span> is the acid dissociation constant (the pH at which the acid is exactly half-dissociated).</p>
+<p>The SC-60’s <code>[BUFF]</code> workspace automatically calculates the exact mass ratio of weak acid to conjugate base needed to hit any target pH.</p>
+<h3 id="concept-4-counting-molecules-with-light-beer-lambert-law">Concept 4: Counting Molecules with Light (Beer-Lambert Law)</h3>
+<p>How do you measure the concentration of a clear, colorless protein or drug dissolved in water without evaporating the liquid?</p>
+<p>You shine a beam of monochromatic light through the vial in a spectrophotometer and measure how much light emerges on the other side.</p>
+<p>The <strong>Beer-Lambert Law</strong> states that the fraction of light absorbed (<strong>Absorbance, <span class="arithmatex">\(A\)</span></strong>) is directly proportional to the concentration (<span class="arithmatex">\(c\)</span>) of the absorbing molecules and the path length (<span class="arithmatex">\(b\)</span>, standard <span class="arithmatex">\(1.0\text{ cm}\)</span> quartz cuvette):</p>
+<div class="arithmatex">\[A = -\log_{10}\left(\frac{\%T}{100}\right) = \varepsilon \cdot b \cdot c\]</div>
+<p>where <span class="arithmatex">\(\varepsilon\)</span> (epsilon) is the molar absorptivity coefficient of the substance at that specific wavelength. By measuring absorbance on the SC-60, you calculate unknown solution concentrations instantly.</p>
+<hr />
+<h2 id="3-real-world-field-walkthroughs">3. Real-World Field Walkthroughs</h2>
+<h3 id="field-case-1-formulating-a-phosphate-buffer-rchempros">Field Case 1: Formulating a Phosphate Buffer (<code>r/Chempros</code>)</h3>
+<p>A biochemist needs to prepare <span class="arithmatex">\(1.0\text{ Liter}\)</span> of a <span class="arithmatex">\(0.10\text{ M}\)</span> Sodium Phosphate Buffer at physiological <span class="arithmatex">\(pH = 7.40\)</span>.
+- Conjugate Acid: Monobasic Sodium Phosphate (<span class="arithmatex">\(\text{NaH}_2\text{PO}_4\)</span>, <span class="arithmatex">\(MW = 119.98\text{ g/mol}\)</span>, <span class="arithmatex">\(pK_a = 7.20\)</span>).
+- Conjugate Base: Dibasic Sodium Phosphate (<span class="arithmatex">\(\text{Na}_2\text{HPO}_4\)</span>, <span class="arithmatex">\(MW = 141.96\text{ g/mol}\)</span>).
+How many grams of each dry salt must be weighed on the balance?</p>
+<h4 id="how-to-solve-it-on-the-sc-60">How to Solve It on the SC-60</h4>
+<ol>
+<li><strong>Find the Base-to-Acid Ratio via Henderson-Hasselbalch:</strong>
+   $<span class="arithmatex">\(pH - pK_a = 7.40 - 7.20 = 0.20\)</span>$
+   $<span class="arithmatex">\(\frac{[\text{Base}]}{[\text{Acid}]} = 10^{0.20} \approx \mathbf{1.585}\)</span>$</li>
+<li><strong>Determine Molar Proportions:</strong></li>
+<li>Total concentration <span class="arithmatex">\(= [\text{Acid}] + [\text{Base}] = 0.10\text{ M}\)</span>.</li>
+<li><span class="arithmatex">\([\text{Acid}] \times (1 + 1.585) = 0.10 \implies [\text{Acid}] = \frac{0.10}{2.585} = \mathbf{0.0387\text{ M}}\)</span>.</li>
+<li><span class="arithmatex">\([\text{Base}] = 0.10 - 0.0387 = \mathbf{0.0613\text{ M}}\)</span>.</li>
+<li><strong>Calculate Masses to Weigh for 1.0 Liter:</strong></li>
+<li>Acid (<span class="arithmatex">\(\text{NaH}_2\text{PO}_4\)</span>): <span class="arithmatex">\(0.0387\text{ mol} \times 119.98\text{ g/mol} = \mathbf{4.64\text{ grams}}\)</span>.</li>
+<li>Base (<span class="arithmatex">\(\text{Na}_2\text{HPO}_4\)</span>): <span class="arithmatex">\(0.0613\text{ mol} \times 141.96\text{ g/mol} = \mathbf{8.70\text{ grams}}\)</span>.
+Weigh out <span class="arithmatex">\(4.64\text{ g}\)</span> of monobasic and <span class="arithmatex">\(8.70\text{ g}\)</span> of dibasic salt, dissolve in <span class="arithmatex">\(800\text{ mL}\)</span> pure water, and dilute to <span class="arithmatex">\(1.0\text{ L}\)</span> to achieve exactly pH 7.40!</li>
+</ol>
+<hr />
+<h3 id="field-case-2-serial-dilution-from-a-5text-m-stock-rchemistry">Field Case 2: Serial Dilution from a <span class="arithmatex">\(5\text{ M}\)</span> Stock (<code>r/chemistry</code>)</h3>
+<p>A biology lab has a stock bottle of <span class="arithmatex">\(5.0\text{ M } \text{NaCl}\)</span>. A protocol requires <span class="arithmatex">\(250\text{ mL}\)</span> of a physiological saline solution (<span class="arithmatex">\(0.154\text{ M } \text{NaCl}\)</span>).
+What volume of stock solution should be pipetted into a <span class="arithmatex">\(250\text{ mL}\)</span> volumetric flask?</p>
+<h4 id="step-by-step-mechanics">Step-by-Step Mechanics</h4>
+<ol>
+<li>Use <span class="arithmatex">\(C_1 V_1 = C_2 V_2\)</span>:
+   $<span class="arithmatex">\(V_1 = \frac{C_2 \cdot V_2}{C_1} = \frac{0.154\text{ M} \times 250\text{ mL}}{5.0\text{ M}}\)</span>$</li>
+<li>On the SC-60 stack:</li>
+<li><code>0.154</code> <code>[ENTER]</code> <code>250</code> <code>[×]</code> <code>5.0</code> <code>[÷]</code></li>
+<li>Register <span class="arithmatex">\(X\)</span> displays: <strong><code>7.70 mL</code></strong>.</li>
+<li>Pipette <span class="arithmatex">\(7.70\text{ mL}\)</span> of the <span class="arithmatex">\(5\text{ M}\)</span> stock solution into the flask and add distilled water up to the <span class="arithmatex">\(250\text{ mL}\)</span> mark.</li>
+</ol>
+<hr />
+<h2 id="4-try-it-yourself-practice-problems">4. Try It Yourself: Practice Problems</h2>
+<h3 id="problem-1-molecular-weight-of-glucose">Problem 1: Molecular Weight of Glucose</h3>
+<p>Glucose has the chemical formula <span class="arithmatex">\(\text{C}_6\text{H}_{12}\text{O}_6\)</span>.
+Using standard IUPAC atomic weights (<span class="arithmatex">\(C = 12.011\)</span>, <span class="arithmatex">\(H = 1.008\)</span>, <span class="arithmatex">\(O = 15.999\)</span>), calculate the molecular weight of glucose.
+<em>(Solution: <span class="arithmatex">\(6(12.011) + 12(1.008) + 6(15.999) = 72.066 + 12.096 + 95.994 = \mathbf{180.156\text{ g/mol}}\)</span>.)</em></p>
+<h3 id="problem-2-beer-lambert-concentration-check">Problem 2: Beer-Lambert Concentration Check</h3>
+<p>A biochemist measures the light absorbance of a protein solution in a <span class="arithmatex">\(1.0\text{-cm}\)</span> cuvette at <span class="arithmatex">\(280\text{ nm}\)</span>.
+The spectrophotometer reads an absorbance <span class="arithmatex">\(A = 0.650\)</span>. The protein’s extinction coefficient is <span class="arithmatex">\(\varepsilon = 45{,}000\text{ M}^{-1}\text{cm}^{-1}\)</span>.
+Calculate the molar concentration <span class="arithmatex">\(c = A / (\varepsilon \cdot b)\)</span>.
+<em>(Solution: <span class="arithmatex">\(c = 0.650 / (45000 \times 1.0) = \mathbf{1.444 \times 10^{-5}\text{ M}} = \mathbf{14.44\,\mu\text{M}}\)</span>.)</em></p>
+<h3 id="problem-3-ideal-gas-volume-at-standard-temperature">Problem 3: Ideal Gas Volume at Standard Temperature</h3>
+<p>A reaction generates <span class="arithmatex">\(0.25\text{ moles}\)</span> of carbon dioxide gas at <span class="arithmatex">\(25^\circ\text{C}\)</span> (<span class="arithmatex">\(298.15\text{ K}\)</span>) and <span class="arithmatex">\(1.0\text{ atmosphere}\)</span> of pressure.
+Using the Ideal Gas Constant <span class="arithmatex">\(R = 0.08206\text{ L}\cdot\text{atm}/(\text{mol}\cdot\text{K})\)</span>, calculate the gas volume in liters: <span class="arithmatex">\(V = nRT / P\)</span>.
+<em>(Solution: <span class="arithmatex">\(V = (0.25 \times 0.08206 \times 298.15) / 1.0 = \mathbf{6.115\text{ Liters}}\)</span>.)</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/ecommerce.js"></script>
+      
+    
+  </body>
+</html>

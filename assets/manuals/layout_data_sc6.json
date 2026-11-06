@@ -15,7 +15,7 @@
       "blueAction" : "power",
       "blueBitmapIdentifier" : "operation.31",
       "blueLabel" : "𝑦ˣ",
-      "blueLatex" : "y^x",
+      "blueLatex" : "y^{\\,x}",
       "col" : 0,
       "cx" : 7.25,
       "cy" : 56.025000000000006,
@@ -33,7 +33,7 @@
       "yellowAction" : "sqrt",
       "yellowBitmapIdentifier" : "operation.34",
       "yellowLabel" : "√𝑥",
-      "yellowLatex" : "\\sqrt{x}"
+      "yellowLatex" : "\\sqrt{\\,x\\,}"
     },
     {
       "alphaLabel" : "",
@@ -65,7 +65,7 @@
       "blueAction" : "xRootY",
       "blueBitmapIdentifier" : "operation.32",
       "blueLabel" : "ˣ√𝑦",
-      "blueLatex" : "\\sqrt[x]{y}",
+      "blueLatex" : "\\sqrt[x]{\\,y\\,}",
       "col" : 2,
       "cx" : 30.25,
       "cy" : 56.025000000000006,
@@ -106,7 +106,7 @@
       "yellowAction" : "exp10",
       "yellowBitmapIdentifier" : "operation.29",
       "yellowLabel" : "10ˣ",
-      "yellowLatex" : "10^x"
+      "yellowLatex" : "10^{\\,x}"
     },
     {
       "alphaLabel" : "",
@@ -261,7 +261,7 @@
       "primaryAction" : "toggleSign",
       "primaryBitmapIdentifier" : "operation.27",
       "primaryLabel" : "+\/-",
-      "primaryLatex" : "+\\!\/\\!-",
+      "primaryLatex" : "+\\,\/\\,-",
       "row" : 1,
       "w" : 7,
       "yellowAction" : "e",
@@ -339,7 +339,7 @@
       "primaryAction" : "statAdd",
       "primaryBitmapIdentifier" : "operation.109",
       "primaryLabel" : "Σ+",
-      "primaryLatex" : "\\Sigma+",
+      "primaryLatex" : "\\Sigma\\,+",
       "row" : 2,
       "w" : 7,
       "yellowAction" : "statSub",
@@ -596,6 +596,7 @@
       "isShiftBlue" : false,
       "isShiftYellow" : true,
       "primaryAction" : "shiftYellow",
+      "primaryBitmapIdentifier" : "operation.129",
       "primaryLabel" : "f",
       "row" : 5,
       "w" : 8.6,
@@ -698,6 +699,7 @@
       "isShiftBlue" : true,
       "isShiftYellow" : false,
       "primaryAction" : "shiftBlue",
+      "primaryBitmapIdentifier" : "operation.130",
       "primaryLabel" : "g",
       "row" : 6,
       "w" : 8.6,
@@ -951,7 +953,6 @@
       "B",
       "C",
       "D",
-      "EXEC",
       "CLR"
     ],
     "PROB" : [

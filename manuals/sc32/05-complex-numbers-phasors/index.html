@@ -1,0 +1,3369 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The geometry of the complex plane, Euler's identity, roots of unity, alternating-current phasors, RLC resonance, operational amplifiers, and RF transmission lines on the four-register SC-32 complex stack.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/manuals/sc32/05-complex-numbers-phasors/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Chapter 5: Complex Numbers, Euler's Identity & Alternating-Current Phasors | Thinking in the Stack (SC-32) - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/brutalist.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/ecommerce.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  
+  <meta name="robots" content="noindex, nofollow">
+  
+  
+  
+  
+  
+  <meta property="og:site_name" content="StackCalc32">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chapter 5: Complex Numbers, Euler&#39;s Identity &amp; Alternating-Current Phasors | Thinking in the Stack (SC-32)">
+  <meta property="og:description" content="The geometry of the complex plane, Euler&#39;s identity, roots of unity, alternating-current phasors, RLC resonance, operational amplifiers, and RF transmission lines on the four-register SC-32 complex stack.">
+  <meta property="og:url" content="https://www.stackcalc.io/manuals/sc32/05-complex-numbers-phasors/">
+  <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chapter 5: Complex Numbers, Euler&#39;s Identity &amp; Alternating-Current Phasors | Thinking in the Stack (SC-32)">
+  <meta name="twitter:description" content="The geometry of the complex plane, Euler&#39;s identity, roots of unity, alternating-current phasors, RLC resonance, operational amplifiers, and RF transmission lines on the four-register SC-32 complex stack.">
+  <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                      tiny5: ['Tiny5', 'Terminus', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-5-complex-numbers-eulers-identity-alternating-current-phasors" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 5: Complex Numbers, Euler's Identity & Alternating-Current Phasors | Thinking in the Stack (SC-32)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="../../../learning-lab/" class="brutalist-button-header">LEARNING LAB</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../products/" class="md-tabs__link">
+          
+  
+  Catalog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../curriculum/" class="md-tabs__link">
+          
+  
+  Curriculum & Standards
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Books & Reference Manuals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-tabs__link">
+        
+  
+    
+  
+  Build Logs ↗
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../privacy/" class="md-tabs__link">
+          
+  
+  Legal & Support
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Catalog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Catalog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SC-32 Scientific Calculator
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SC-32 Scientific Calculator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Assembly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operational Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-elementary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Elementary Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From Blocks to the Stack (SC-6 Book)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fraction Studio Towers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Fraction Studio Towers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prime-factor-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prime Factor Studio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/place-value/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Place Value Studio & Regrouping Trays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Classroom Planetary Clock
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Classroom Planetary Clock
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ten Frames & Counters
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Ten Frames & Counters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/counting-tiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Counting & Array Tiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math Domino Studio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Math Domino Studio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/quest-scoreboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Quest Scoreboard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algebra Boxes & Tiles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Algebra Boxes & Tiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Probability Dice & Spinner
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Probability Dice & Spinner
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/unit-circle-volvelle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unit Circle & Trig Volvelle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/stands-and-pouches/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stands & Pouches
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/curriculum-and-decks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Curriculum & Decks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../printables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Makerspace 3D Print Kits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../downloads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Download Center (PDFs & 3MFs)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Curriculum & Standards
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Curriculum & Standards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Curriculum Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/sc6-elementary-companion-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Companion Workbook (253 Problems)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/sc32-scientific-companion-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-32 Companion Casebook (339 Problems)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/big-ideas-middle-school-sc6-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Big Ideas Middle School Catch-Up (SC-6)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/alignment-matrix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standards Alignment Matrix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/worksheets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Printable Student Worksheets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/teacher-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teacher Facilitator Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Answer Key (Books 2A–5)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/rpn-elementary-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPN Elementary Power Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/uil-competition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Competitive STEM & Speed Calculation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Books & Reference Manuals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Books & Reference Manuals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Official Manuals & Reference Books ($16)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From Blocks to the Stack (SC-6 Book)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bestseller-rubric-and-editorial-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bestseller Rubric & Editorial Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../critical-editorial-review-and-school-adoption/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Editorial Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agent & OpenAPI Spec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mac & iOS Apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../press/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Press & Editorial Kit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../etsy-publishing-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing & Sourcing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shipping-and-packaging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shipping & Packaging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exam-compliance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Compliance & Proctor Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_11">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2026/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2026
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_12">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/3d-printing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Printing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/cad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CAD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/education/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Education
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/kicad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KiCad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/manufacturing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/mathematics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mathematics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/pcb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pedagogy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/product-design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/rpn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/swift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Swift
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/watchos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    watchOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build Logs ↗
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Legal & Support
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Legal & Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terms of Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Replacement Parts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-orthogonal-rotation-in-the-complex-plane-eulers-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Orthogonal Rotation in the Complex Plane &amp; Euler's Identity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 Orthogonal Rotation in the Complex Plane & Euler's Identity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-conjugates-rotations-and-overflow-safe-division" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.1 Conjugates, Rotations, and Overflow-Safe Division
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512-complex-eigenvalues-in-damped-springs-and-skyscrapers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.2 Complex Eigenvalues in Damped Springs and Skyscrapers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513-eulers-formula-and-the-three-phase-roots-of-unity" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.3 Euler's Formula and the Three-Phase Roots of Unity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#514-principal-branch-cuts-and-conformal-airfoil-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.4 Principal Branch Cuts and Conformal Airfoil Mapping
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-alternating-current-phasors-resonance-wave-reflection" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Alternating-Current Phasors, Resonance &amp; Wave Reflection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Alternating-Current Phasors, Resonance & Wave Reflection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521-rotating-phasors-and-the-complex-impedance-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.1 Rotating Phasors and the Complex Impedance Plane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#522-tuning-a-radio-tank-resonance-and-the-quality-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.2 Tuning a Radio Tank: Resonance and the Quality Factor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#523-real-watts-reactive-vars-and-the-power-triangle" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.3 Real Watts, Reactive VARs, and the Power Triangle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#524-negative-feedback-amplifiers-and-loudspeaker-crossovers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.4 Negative-Feedback Amplifiers and Loudspeaker Crossovers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#525-coaxial-transmission-lines-and-the-complex-reflection-coefficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.5 Coaxial Transmission Lines and the Complex Reflection Coefficient
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-computing-in-two-dimensions-across-four-registers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Computing in Two Dimensions Across Four Registers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 Computing in Two Dimensions Across Four Registers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#531-pairing-two-complex-numbers-across-four-registers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3.1 Pairing Two Complex Numbers Across Four Registers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#532-polar-phasors-three-phase-neutral-and-analytic-continuation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3.2 Polar Phasors, Three-Phase Neutral, and Analytic Continuation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#533-balancing-industrial-motors-and-matching-rf-antennas" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3.3 Balancing Industrial Motors and Matching RF Antennas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#534-try-it-on-the-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3.4 Try It on the Stack
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="chapter-5-complex-numbers-eulers-identity-alternating-current-phasors">Chapter 5: Complex Numbers, Euler's Identity &amp; Alternating-Current Phasors</h1>
+<p>In August 1893, at the International Electrical Congress in Chicago, Charles Proteus Steinmetz presented a paper that resolved the central mathematical bottleneck of the electrical age: <em>"Complex Quantities and Their Use in Electrical Engineering"</em> <em>(<a href="../appendix-e-annotated-bibliography/#cite-steinmetz1893">Steinmetz, 1893</a>)</em>. Whereas a static survey triangle sits fixed in a two-dimensional plane, alternating-current (AC) power grids, mechanical vibrations, and radio waves spin continuously in time. As high-voltage AC transmission lines expanded across long distances, engineers faced a formidable barrier: while direct-current (DC) networks obeyed scalar Ohm's law (<span class="arithmatex">\(V = I \cdot R\)</span>), alternating current oscillating at frequency <span class="arithmatex">\(f\)</span> shifted voltage and current out of phase by <span class="arithmatex">\(\pm 90^\circ\)</span> across inductive coils and capacitive plates, turning every multi-branch circuit calculation into a system of coupled linear differential equations.</p>
+<p>Steinmetz recognized that the key to turning AC calculus back into simple algebra had been hiding for centuries inside the square root of negative one, <span class="arithmatex">\(\sqrt{-1}\)</span>. Because the square of any non-zero real number is positive (<span class="arithmatex">\(+3 \times +3 = +9\)</span> and <span class="arithmatex">\(-3 \times -3 = +9\)</span>), no point on the one-dimensional real number line has a negative square, leading René Descartes in 1637 to dismiss such roots as <em>"imaginary"</em> <em>(<a href="../appendix-e-annotated-bibliography/#cite-descartes1637">Descartes, 1637</a>)</em>. Even when sixteenth-century algebraists solved the real cubic equation <span class="arithmatex">\(x^3 = 15x + 4\)</span> (whose positive real root is <span class="arithmatex">\(x = 4\)</span>, since <span class="arithmatex">\(4^3 = 64 = 15(4) + 4\)</span>), the closed-form cubic formula forced the calculation through conjugate radicals containing <span class="arithmatex">\(\sqrt{-121} = 11\sqrt{-1}\)</span>:</p>
+<div class="arithmatex">\[x = \sqrt[3]{2 + \sqrt{-121}} + \sqrt[3]{2 - \sqrt{-121}} = (2 + \sqrt{-1}) + (2 - \sqrt{-1}) = 4 \tag{Eq. 5.1}\]</div>
+<p>To reach a real root from real coefficients required stepping off the real line into a perpendicular dimension—and as Steinmetz demonstrated in Chicago, that two-dimensional plane is the natural coordinate system of every oscillating wave and alternating current.</p>
+<h2 id="51-orthogonal-rotation-in-the-complex-plane-eulers-identity">5.1 Orthogonal Rotation in the Complex Plane &amp; Euler's Identity</h2>
+<p>The perpendicular direction of <span class="arithmatex">\(\sqrt{-1}\)</span> follows from the geometry of multiplication along the real line, where multiplying by <span class="arithmatex">\(-1\)</span> acts as a continuous rotation in the plane. For a unit vector at the origin <span class="arithmatex">\(0\)</span> directed along the positive real axis toward <span class="arithmatex">\(+1\)</span> (<span class="arithmatex">\(0^\circ\)</span>), multiplying by <span class="arithmatex">\(-1\)</span> preserves its unit length while rotating its heading by <span class="arithmatex">\(180^\circ\)</span> to point along the negative real axis toward <span class="arithmatex">\(-1\)</span>. Multiplying by <span class="arithmatex">\(-1\)</span> a second time rotates the vector by a further <span class="arithmatex">\(180^\circ\)</span>, completing a <span class="arithmatex">\(360^\circ\)</span> revolution back to <span class="arithmatex">\(+1\)</span>:</p>
+<div class="arithmatex">\[(-1) \times (-1) = +1 \quad \Longleftrightarrow \quad 180^\circ + 180^\circ = 360^\circ \tag{Eq. 5.2}\]</div>
+<p>Multiplication by <span class="arithmatex">\(-1\)</span> acts as a <span class="arithmatex">\(180^\circ\)</span> half-turn, which defines <span class="arithmatex">\(i = \sqrt{-1}\)</span> as a <span class="arithmatex">\(90^\circ\)</span> counterclockwise quarter-turn. Starting at <span class="arithmatex">\(i^0 = +1\)</span> along the positive real axis at <span class="arithmatex">\(0^\circ\)</span>, a single multiplication by <span class="arithmatex">\(i\)</span> rotates the vector <span class="arithmatex">\(90^\circ\)</span> counterclockwise onto the perpendicular vertical axis at <span class="arithmatex">\(+i\)</span>. A second multiplication (<span class="arithmatex">\(i \times i = i^2 = -1\)</span>) rotates the vector by a second <span class="arithmatex">\(90^\circ\)</span> quarter-turn (<span class="arithmatex">\(90^\circ + 90^\circ = 180^\circ\)</span>) onto the negative real axis at <span class="arithmatex">\(-1\)</span>; two <span class="arithmatex">\(90^\circ\)</span> rotations compose into a <span class="arithmatex">\(180^\circ\)</span> reversal, which is the geometric meaning of <span class="arithmatex">\(i^2 = -1\)</span>. A third quarter-turn (<span class="arithmatex">\(i^3 = -i\)</span>) directs the vector along the negative vertical axis at <span class="arithmatex">\(270^\circ\)</span>, and a fourth quarter-turn (<span class="arithmatex">\(i^4 = +1\)</span>) completes the <span class="arithmatex">\(360^\circ\)</span> cycle back to <span class="arithmatex">\(+1\)</span>.</p>
+<p>A <em>complex number</em> <span class="arithmatex">\(z = a + bi\)</span> therefore specifies a point or vector in the two-dimensional <em>Complex Plane</em> (<em>Argand Diagram</em>) through a displacement of <span class="arithmatex">\(a\)</span> units along the horizontal Real axis and <span class="arithmatex">\(b\)</span> units along the perpendicular vertical Imaginary axis (<strong>Figure 5.1</strong>).</p>
+<p><img alt="Figure 5.1: Multiplying by i as a 90-degree counterclockwise rotation in the Argand plane, paired with Steinmetz's AC impedance phasor triangle." src="../../../assets/manuals/sc32_concept_argand_phasor.png" /></p>
+<h3 id="511-conjugates-rotations-and-overflow-safe-division">5.1.1 Conjugates, Rotations, and Overflow-Safe Division</h3>
+<p>Because a complex number <span class="arithmatex">\(z = a + bi\)</span> is an ordered pair <span class="arithmatex">\((a, b)\)</span> on a two-dimensional plane, every arithmetic operation has a direct geometric meaning in terms of vector translation, scaling, and rotation.</p>
+<p>Under complex addition and subtraction, two complex vectors <span class="arithmatex">\(z_1 = a + bi\)</span> and <span class="arithmatex">\(z_2 = c + di\)</span> combine by head-to-tail translation, summing their horizontal components and vertical components independently:</p>
+<div class="arithmatex">\[(a + bi) + (c + di) = (a + c) + (b + d)i \tag{Eq. 5.3}\]</div>
+<p>Under complex multiplication, expanding the binomial product <span class="arithmatex">\((a + bi)(c + di)\)</span> with <span class="arithmatex">\(i^2 = -1\)</span> groups the two real terms <span class="arithmatex">\(ac\)</span> and <span class="arithmatex">\(i^2 bd = -bd\)</span> along the horizontal axis and the two cross-terms <span class="arithmatex">\(adi\)</span> and <span class="arithmatex">\(bci\)</span> along the vertical axis, so <span class="arithmatex">\((3 + 4i)(1 - 2i) = (3 + 8) + (-6 + 4)i = \mathbf{11 - 2i}\)</span>:</p>
+<div class="arithmatex">\[(a + bi)(c + di) = (ac - bd) + (ad + bc)i \tag{Eq. 5.4}\]</div>
+<p>Complex reciprocals and division rely on reflection across the real axis. Every complex number <span class="arithmatex">\(z = c + di\)</span> has a reflection twin called its <em>complex conjugate</em>, <span class="arithmatex">\(z^* = c - di\)</span>, formed by negating the imaginary component. If <span class="arithmatex">\(z\)</span> lies at angle <span class="arithmatex">\(+\theta\)</span> relative to the positive real axis, <span class="arithmatex">\(z^*\)</span> lies at <span class="arithmatex">\(-\theta\)</span>; multiplying <span class="arithmatex">\(z\)</span> by its conjugate <span class="arithmatex">\(z^*\)</span> cancels their opposite angles (<span class="arithmatex">\(\theta - \theta = 0^\circ\)</span>) and yields the nonnegative real squared modulus <span class="arithmatex">\(|z|^2 = c^2 + d^2\)</span>:</p>
+<div class="arithmatex">\[(c + di)(c - di) = c^2 - d^2 i^2 = c^2 + d^2 \tag{Eq. 5.5}\]</div>
+<p>For a complex quotient <span class="arithmatex">\(\frac{a + bi}{c + di}\)</span>, multiplying numerator and denominator by the denominator's conjugate <span class="arithmatex">\(c - di\)</span> reduces the denominator to the real scalar <span class="arithmatex">\(c^2 + d^2\)</span>:</p>
+<div class="arithmatex">\[\frac{a + bi}{c + di} = \frac{(a + bi)(c - di)}{c^2 + d^2} = \left(\frac{ac + bd}{c^2 + d^2}\right) + \left(\frac{bc - ad}{c^2 + d^2}\right)i \tag{Eq. 5.6}\]</div>
+<p>In finite-precision IEEE-754 floating-point arithmetic, unscaled evaluation of the algebraic quotient <span class="arithmatex">\(\frac{(ac+bd) + i(bc-ad)}{c^2+d^2}\)</span> fails whenever <span class="arithmatex">\(|c|\)</span> or <span class="arithmatex">\(|d|\)</span> exceeds the square root of the overflow threshold (<span class="arithmatex">\(\sqrt{\Omega_{\max}} \approx 1.34 \times 10^{154}\)</span>) or falls below the square root of the normal underflow threshold (<span class="arithmatex">\(\approx 1.49 \times 10^{-154}\)</span>). Even when the quotient <span class="arithmatex">\(\frac{3 \times 10^{200} + 4 \times 10^{200}i}{3 \times 10^{200} + 4 \times 10^{200}i} = 1 + 0i\)</span> equals unity, squaring <span class="arithmatex">\(c^2 + d^2 = 25 \times 10^{400}\)</span> overflows an unscaled divider.</p>
+<p>To prevent premature overflow above <span class="arithmatex">\(10^{154}\)</span> or underflow below <span class="arithmatex">\(10^{-154}\)</span>, complex division and reciprocals on the SC-32 pivot on the larger denominator component:</p>
+<div class="arithmatex">\[\frac{a + bi}{c + di} = \begin{cases} \dfrac{a + b(d/c)}{c + d(d/c)} + i\,\dfrac{b - a(d/c)}{c + d(d/c)} &amp; \text{if } |c| \ge |d|, \\[10pt] \dfrac{a(c/d) + b}{c(c/d) + d} + i\,\dfrac{b(c/d) - a}{c(c/d) + d} &amp; \text{if } |d| &gt; |c|. \end{cases} \tag{Eq. 5.7}\]</div>
+<p>By forming the smaller-over-larger ratio <span class="arithmatex">\(r = d/c\)</span> or <span class="arithmatex">\(r = c/d\)</span> so that <span class="arithmatex">\(|r| \le 1\)</span> (Robert L. Smith's 1962 scaling algorithm), every intermediate product remains bounded within the exponent range of the operands. Dividing <span class="arithmatex">\((3 + 4i) \times 10^{200}\)</span> by <span class="arithmatex">\((3 - 4i) \times 10^{200}\)</span> evaluates to <span class="arithmatex">\(-0.28 + 0.96i\)</span> without intermediate exponent overflow.</p>
+<p>For any nonzero <span class="arithmatex">\(z = a + bi \ne 0\)</span>, the complex square root avoids subtractive cancellation in the half-angle radical <span class="arithmatex">\(\sqrt{\frac{|z| + a}{2}}\)</span> when <span class="arithmatex">\(a &lt; 0\)</span> and <span class="arithmatex">\(|b| \ll |a|\)</span> by evaluating the larger root component first from the scaled hypotenuse <span class="arithmatex">\(|z| = \operatorname{hypot}(a, b)\)</span> and recovering the smaller component by division (where the branch-cut sign <span class="arithmatex">\(\sigma(b) = +1\)</span> for <span class="arithmatex">\(b \ge 0\)</span> and <span class="arithmatex">\(-1\)</span> for <span class="arithmatex">\(b &lt; 0\)</span> maps the negative real axis <span class="arithmatex">\(b = 0,\; a &lt; 0\)</span> onto the positive imaginary axis <span class="arithmatex">\(+i\sqrt{|a|}\)</span>):</p>
+<div class="arithmatex">\[\sqrt{a + bi} = \begin{cases} \sqrt{\dfrac{|z| + a}{2}} + i\,\dfrac{b}{2\sqrt{(|z| + a)/2}} &amp; \text{if } a \ge 0, \\[10pt] \dfrac{|b|}{2\sqrt{(|z| - a)/2}} + i\,\sigma(b)\sqrt{\dfrac{|z| - a}{2}} &amp; \text{if } a &lt; 0. \end{cases} \tag{Eq. 5.8}\]</div>
+<h3 id="512-complex-eigenvalues-in-damped-springs-and-skyscrapers">5.1.2 Complex Eigenvalues in Damped Springs and Skyscrapers</h3>
+<p>This orthogonal separation between the real and imaginary axes characterizes linear damped oscillators across mechanical and structural engineering, from vehicle suspension struts to tuned mass dampers in tall buildings.</p>
+<p>When a mass <span class="arithmatex">\(m\)</span> coupled to a spring of stiffness <span class="arithmatex">\(k\)</span> and a viscous damper of coefficient <span class="arithmatex">\(c\)</span> is displaced from equilibrium, the balance of forces gives the homogeneous differential equation <span class="arithmatex">\(m\ddot{x} + c\dot{x} + kx = 0\)</span>. Substituting an exponential trial solution <span class="arithmatex">\(x(t) = e^{\lambda t}\)</span> produces the quadratic characteristic equation <span class="arithmatex">\(m\lambda^2 + c\lambda + k = 0\)</span>, whose roots are the system's <em>eigenvalues</em>:</p>
+<div class="arithmatex">\[\lambda = -\frac{c}{2m} \pm \sqrt{\left(\frac{c}{2m}\right)^2 - \frac{k}{m}} = -\alpha \pm i\omega_d \tag{Eq. 5.9}\]</div>
+<p>Whenever the restoring stiffness exceeds the damping threshold (<span class="arithmatex">\(k/m &gt; (c/2m)^2\)</span>), the discriminant is negative and the eigenvalues form a complex conjugate pair <span class="arithmatex">\(\lambda = -\alpha \pm i\omega_d\)</span>. The two axes of the complex plane separate the two physical processes acting in the oscillator. Along the real axis, the attenuation rate <span class="arithmatex">\(-\alpha = -c/(2m)\)</span> measures irreversible energy dissipation: viscous fluid forced through the damper orifices resists motion in phase with velocity and converts mechanical kinetic energy into heat, so the oscillation envelope decays exponentially as <span class="arithmatex">\(e^{-\alpha t}\)</span>.</p>
+<p>Along the vertical Imaginary axis, the damped natural frequency <span class="arithmatex">\(\pm i\omega_d\)</span> measures lossless quadrature energy exchange: the spring and mass dissipate no heat, exchanging kinetic energy in the moving mass (<span class="arithmatex">\(\frac{1}{2}mv^2\)</span>, which peaks at the equilibrium crossing) with potential energy in the strained spring (<span class="arithmatex">\(\frac{1}{2}kx^2\)</span>, which peaks at the turning points) <span class="arithmatex">\(90^\circ\)</span> out of phase at angular frequency <span class="arithmatex">\(\omega_d = \sqrt{k/m - \alpha^2}\)</span>. In the undamped limit (<span class="arithmatex">\(c \to 0\)</span>), the real part <span class="arithmatex">\(-\alpha\)</span> vanishes, the eigenvalues lie on the imaginary axis (<span class="arithmatex">\(\lambda = \pm i\sqrt{k/m}\)</span>), and the oscillation persists at constant amplitude. At the critical damping threshold <span class="arithmatex">\(c_{\text{crit}} = 2\sqrt{mk}\)</span>, the imaginary part <span class="arithmatex">\(\omega_d\)</span> vanishes and the displaced mass returns to equilibrium without oscillation.</p>
+<h3 id="513-eulers-formula-and-the-three-phase-roots-of-unity">5.1.3 Euler's Formula and the Three-Phase Roots of Unity</h3>
+<p>For an imaginary argument <span class="arithmatex">\(z = i\theta\)</span>, the exponential function <span class="arithmatex">\(e^z\)</span> connects continuous exponential scaling along the real line (<span class="arithmatex">\(e^x\)</span>) to circular rotation around the unit circle (<span class="arithmatex">\(\cos\theta, \sin\theta\)</span>) through <strong>Euler's formula</strong>:</p>
+<div class="arithmatex">\[e^{i\theta} = \cos\theta + i\sin\theta \tag{Eq. 5.10}\]</div>
+<p>Exponential functions and circular trigonometric functions are orthogonal cross-sections of a single analytic function <span class="arithmatex">\(e^z\)</span> in the complex plane: along the real axis <span class="arithmatex">\(e^z\)</span> scales exponentially in magnitude, and along the imaginary axis <span class="arithmatex">\(e^z\)</span> rotates at unit radius around the origin.</p>
+<p>The unit-circle trajectory of <span class="arithmatex">\(e^{i\theta}\)</span> follows independently from differential kinematics and from power-series expansion. In differential kinematics, when a state variable <span class="arithmatex">\(z(t)\)</span> evolves at a real growth rate <span class="arithmatex">\(k\)</span>, its velocity vector <span class="arithmatex">\(dz/dt = k \cdot z\)</span> is collinear with the position vector <span class="arithmatex">\(z\)</span>, driving the trajectory radially outward or inward along a straight ray from the origin. Replacing the real rate <span class="arithmatex">\(k\)</span> with the imaginary rate <span class="arithmatex">\(i\omega\)</span> gives the differential equation:</p>
+<div class="arithmatex">\[\frac{dz}{dt} = i\omega z \tag{Eq. 5.11}\]</div>
+<p>Because multiplication by <span class="arithmatex">\(i\)</span> rotates any complex vector by <span class="arithmatex">\(90^\circ\)</span> counterclockwise, the velocity vector <span class="arithmatex">\(dz/dt\)</span> of <span class="arithmatex">\(z(t) = e^{i\omega t}\)</span> is at every instant perpendicular (<span class="arithmatex">\(90^\circ\)</span>) to the radius vector <span class="arithmatex">\(z(t)\)</span>, identical to the tangential velocity of uniform circular motion. Because a velocity orthogonal to the radius performs zero radial work and changes the radial distance at rate <span class="arithmatex">\(\frac{d}{dt}|z|^2 = 0\)</span>, the modulus remains invariant at <span class="arithmatex">\(|e^{i\theta}| = 1\)</span> for all real <span class="arithmatex">\(\theta\)</span>, while the point traces the unit circle with horizontal projection <span class="arithmatex">\(\cos\theta\)</span> and vertical projection <span class="arithmatex">\(i\sin\theta\)</span>.</p>
+<p>Algebraically, substituting <span class="arithmatex">\(x = i\theta\)</span> into the Maclaurin series for <span class="arithmatex">\(e^x\)</span> and reducing the powers <span class="arithmatex">\(i^2 = -1\)</span>, <span class="arithmatex">\(i^3 = -i\)</span>, and <span class="arithmatex">\(i^4 = +1\)</span> separates the real even-power terms from the imaginary odd-power terms to recover the Maclaurin series for cosine and sine:</p>
+<div class="arithmatex">\[e^{i\theta} = \underbrace{\left(1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!} - \frac{\theta^6}{6!} + \dots\right)}_{\cos\theta} + i\underbrace{\left(\theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \frac{\theta^7}{7!} + \dots\right)}_{\sin\theta} = \cos\theta + i\sin\theta \tag{Eq. 5.12}\]</div>
+<p>At a half-revolution <span class="arithmatex">\(\theta = \pi\text{ radians}\)</span> (<span class="arithmatex">\(180^\circ\)</span>), where <span class="arithmatex">\(\cos\pi = -1\)</span> and <span class="arithmatex">\(\sin\pi = 0\)</span>, Euler's formula gives <span class="arithmatex">\(e^{i\pi} = -1\)</span>, or in homogeneous form:</p>
+<div class="arithmatex">\[e^{i\pi} + 1 = 0 \tag{Eq. 5.13}\]</div>
+<p>which links the additive identity <span class="arithmatex">\(0\)</span>, the multiplicative identity <span class="arithmatex">\(1\)</span>, the circle constant <span class="arithmatex">\(\pi\)</span>, the base of natural logarithms <span class="arithmatex">\(e\)</span>, and the imaginary unit <span class="arithmatex">\(i\)</span>. At the principal quarter-turn <span class="arithmatex">\(\theta = \pi/2\)</span>, where <span class="arithmatex">\(i = e^{i\pi/2}\)</span>, raising <span class="arithmatex">\(i\)</span> to the <span class="arithmatex">\(i\)</span>-th power yields the principal real value <span class="arithmatex">\(i^i = \left(e^{i\pi/2}\right)^i = e^{i^2 \pi/2} = e^{-\pi/2} \approx 0.208\)</span> (with general multivalued branches <span class="arithmatex">\(e^{-(\pi/2 + 2\pi k)}\)</span> for <span class="arithmatex">\(k \in \mathbb{Z}\)</span>).</p>
+<p>By Euler's formula, any nonzero complex number <span class="arithmatex">\(z = x + iy\)</span> can be expressed in <em>polar form</em> through its Euclidean modulus <span class="arithmatex">\(r = |z| = \sqrt{x^2 + y^2}\)</span> and its principal argument <span class="arithmatex">\(\theta = \operatorname{atan2}(y, x)\)</span>:</p>
+<div class="arithmatex">\[z = x + iy = r(\cos\theta + i\sin\theta) = r e^{i\theta} = r\angle\theta \tag{Eq. 5.14}\]</div>
+<p>Whereas two-dimensional vector conversions place the horizontal coordinate <span class="arithmatex">\(x\)</span> and radial magnitude <span class="arithmatex">\(r\)</span> in Register <span class="arithmatex">\(X\)</span>, algebraic complex arithmetic writes a complex number in top-to-bottom reading order as <span class="arithmatex">\(z = a + bi\)</span>, pairing the real projection <span class="arithmatex">\(a = \operatorname{Re}(z)\)</span> in the upper register of a two-line pair (<span class="arithmatex">\(Y\)</span> or <span class="arithmatex">\(T\)</span>) and the imaginary projection <span class="arithmatex">\(b = \operatorname{Im}(z)\)</span> in the lower register (<span class="arithmatex">\(X\)</span> or <span class="arithmatex">\(Z\)</span>)—so the lower pair is swapped whenever converting between a complex number <span class="arithmatex">\((Y = a,\; X = b)\)</span> and the polar vector <span class="arithmatex">\((Y = b,\; X = a) \leftrightarrow (Y = \theta,\; X = r)\)</span>.</p>
+<p>In polar form <span class="arithmatex">\(z = r e^{i\theta}\)</span>, multiplication, division, and exponentiation follow from the laws of exponents. Multiplying two complex numbers <span class="arithmatex">\(z_1 z_2 = (r_1 e^{i\theta_1})(r_2 e^{i\theta_2}) = (r_1 r_2) e^{i(\theta_1 + \theta_2)}\)</span> multiplies their moduli and adds their phase angles; dividing two complex numbers <span class="arithmatex">\(z_1 / z_2 = (r_1 / r_2) e^{i(\theta_1 - \theta_2)}\)</span> divides their moduli and subtracts their phase angles. Raising <span class="arithmatex">\(z = r e^{i\theta}\)</span> to the <span class="arithmatex">\(n\)</span>-th power yields <em>de Moivre's theorem</em>, <span class="arithmatex">\((r e^{i\theta})^n = r^n e^{in\theta}\)</span>:</p>
+<div class="arithmatex">\[\left[r(\cos\theta + i\sin\theta)\right]^n = r^n\left(\cos(n\theta) + i\sin(n\theta)\right) \tag{Eq. 5.15}\]</div>
+<p>Geometrically, raising a complex number to the <span class="arithmatex">\(n\)</span>-th power raises its modulus to <span class="arithmatex">\(r^n\)</span> while multiplying its argument by <span class="arithmatex">\(n\)</span>. Inverting de Moivre's relation to extract an <span class="arithmatex">\(n\)</span>-th root <span class="arithmatex">\(\sqrt[n]{z}\)</span> explains why an <span class="arithmatex">\(n\)</span>-th degree polynomial equation has <span class="arithmatex">\(n\)</span> roots in the complex plane. Because adding integer multiples of a full revolution <span class="arithmatex">\(2k\pi\)</span> (<span class="arithmatex">\(360^\circ k\)</span>) leaves a complex number unchanged (<span class="arithmatex">\(\theta + 2k\pi\)</span>), dividing the angle by <span class="arithmatex">\(n\)</span> produces <span class="arithmatex">\(n\)</span> distinct roots spaced at equal angular intervals of <span class="arithmatex">\(2\pi/n\)</span> around a circle of radius <span class="arithmatex">\(r^{1/n}\)</span>:</p>
+<div class="arithmatex">\[\sqrt[n]{z} = r^{1/n} \left[\cos\left(\frac{\theta + 2k\pi}{n}\right) + i\sin\left(\frac{\theta + 2k\pi}{n}\right)\right], \qquad k = 0, 1, \dots, n-1 \tag{Eq. 5.16}\]</div>
+<p>Even the square root of <span class="arithmatex">\(i\)</span> (<span class="arithmatex">\(\sqrt{i}\)</span>) requires no new class of numbers outside the complex plane: because <span class="arithmatex">\(i = 1\angle 90^\circ\)</span> has modulus <span class="arithmatex">\(1\)</span> and argument <span class="arithmatex">\(90^\circ\)</span>, its principal square root has modulus <span class="arithmatex">\(\sqrt{1} = 1\)</span> and half the angle, <span class="arithmatex">\(45^\circ\)</span> (<span class="arithmatex">\(\pi/4\text{ rad}\)</span>), which lies in the complex plane at <span class="arithmatex">\(\cos 45^\circ + i\sin 45^\circ = \frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2} \approx 0.707 + 0.707i\)</span>.</p>
+<p>On the real line, the cubic equation <span class="arithmatex">\(z^3 = 1\)</span> has only the single root <span class="arithmatex">\(1\)</span> (and <span class="arithmatex">\(z^3 = -8\)</span> has only the real root <span class="arithmatex">\(-2\)</span> alongside the complex conjugate roots <span class="arithmatex">\(1 \pm i\sqrt{3}\)</span>). In the complex plane, the three cube roots of unity (<span class="arithmatex">\(z^3 = 1 = e^{i\cdot 2k\pi}\)</span>) lie <span class="arithmatex">\(360^\circ / 3 = 120^\circ\)</span> apart at the vertices of an equilateral triangle inscribed in the unit circle:</p>
+<div class="arithmatex">\[1 = 1\angle 0^\circ, \qquad a = 1\angle 120^\circ = -\frac{1}{2} + i\frac{\sqrt{3}}{2}, \qquad a^2 = 1\angle 240^\circ = -\frac{1}{2} - i\frac{\sqrt{3}}{2} \tag{Eq. 5.17}\]</div>
+<p>Because those three unit vectors are spaced symmetrically at <span class="arithmatex">\(0^\circ\)</span>, <span class="arithmatex">\(120^\circ\)</span>, and <span class="arithmatex">\(240^\circ\)</span>, their vector sum vanishes (<span class="arithmatex">\(1 + a + a^2 = 0\)</span>). This <span class="arithmatex">\(120^\circ\)</span> three-phase symmetry is the operating principle of polyphase AC power transmission: in a balanced three-phase network with phase currents displaced by <span class="arithmatex">\(0^\circ, 120^\circ,\)</span> and <span class="arithmatex">\(240^\circ\)</span>, the instantaneous return currents sum to <span class="arithmatex">\(1 + a + a^2 = 0\)</span> at the neutral node, allowing three conductors to transmit polyphase power without a fourth return wire.</p>
+<h3 id="514-principal-branch-cuts-and-conformal-airfoil-mapping">5.1.4 Principal Branch Cuts and Conformal Airfoil Mapping</h3>
+<p>Euler's exponential relations extend the circular trigonometric functions analytically to arbitrary complex arguments <span class="arithmatex">\(z = x + iy\)</span>. For a real angle <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(\sin x\)</span> and <span class="arithmatex">\(\cos x\)</span> are bounded within <span class="arithmatex">\([-1, +1]\)</span>; combining <span class="arithmatex">\(e^{ix} = \cos x + i\sin x\)</span> and <span class="arithmatex">\(e^{-ix} = \cos x - i\sin x\)</span> defines cosine and sine across the entire complex plane:</p>
+<div class="arithmatex">\[\cos z = \frac{e^{iz} + e^{-iz}}{2}, \qquad \sin z = \frac{e^{iz} - e^{-iz}}{2i} \tag{Eq. 5.18}\]</div>
+<p>When a complex argument <span class="arithmatex">\(z = x + iy\)</span> is evaluated, multiplying the imaginary term <span class="arithmatex">\(iy\)</span> by <span class="arithmatex">\(i\)</span> inside <span class="arithmatex">\(e^{\pm i(x+iy)} = e^{\mp y}e^{\pm ix}\)</span> converts the vertical coordinate <span class="arithmatex">\(y\)</span> into real exponential scaling factors <span class="arithmatex">\(\frac{e^y + e^{-y}}{2}\)</span> and <span class="arithmatex">\(\frac{e^y - e^{-y}}{2}\)</span>:</p>
+<div class="arithmatex">\[\sin(x + iy) = \sin x \left(\frac{e^y + e^{-y}}{2}\right) + i \cos x \left(\frac{e^y - e^{-y}}{2}\right), \qquad \cos(x + iy) = \cos x \left(\frac{e^y + e^{-y}}{2}\right) - i \sin x \left(\frac{e^y - e^{-y}}{2}\right) \tag{Eq. 5.19}\]</div>
+<p>Even when <span class="arithmatex">\(e^{|y|}\)</span> drives the magnitudes of <span class="arithmatex">\(\sin z\)</span> and <span class="arithmatex">\(\cos z\)</span> well past <span class="arithmatex">\([-1, +1]\)</span>, <em>analytic continuation</em> preserves the Pythagorean identity <span class="arithmatex">\(\sin^2 z + \cos^2 z = 1\)</span> across the complex plane. For multivalued inverse and fractional-power functions—such as the complex natural logarithm <span class="arithmatex">\(\operatorname{Ln}(\mathbf{z}) = \ln|\mathbf{z}| + i\operatorname{Arg}(\mathbf{z})\)</span>, the complex square root <span class="arithmatex">\(\sqrt{\mathbf{z}} = \sqrt{|\mathbf{z}|}\,e^{i\operatorname{Arg}(\mathbf{z})/2}\)</span>, and general complex powers <span class="arithmatex">\(\mathbf{z}^{\mathbf{w}} = e^{\mathbf{w}\operatorname{Ln}(\mathbf{z})}\)</span>—the SC-32 places a principal branch cut along the negative real axis <span class="arithmatex">\((-\infty, 0)\)</span> just as cartographers place the International Date Line along the <span class="arithmatex">\(180^\circ\)</span> meridian so every point has one unambiguous principal angle <span class="arithmatex">\(\operatorname{Arg}(\mathbf{z}) \in (-\pi, \pi]\)</span>.</p>
+<p>This convention guarantees that the complex square root always maps into the closed right half-plane <span class="arithmatex">\(\operatorname{Re}(\sqrt{\mathbf{z}}) \ge 0\)</span> (with <span class="arithmatex">\(\sqrt{-4 + 0i} = 0 + 2i\)</span> on the upper boundary of the cut, and <span class="arithmatex">\(\operatorname{Ln}(-5 + 0i) = \ln 5 + i\pi \approx 1.609 + 3.142i\)</span>), while a Nyquist contour crossing the negative real axis <span class="arithmatex">\((-\infty, 0)\)</span> exhibits a <span class="arithmatex">\(2\pi\)</span> phase transition between <span class="arithmatex">\(+\pi\)</span> and <span class="arithmatex">\(-\pi\)</span>.</p>
+<p>Holomorphic complex functions also define <em>conformal mappings</em>: at every point where <span class="arithmatex">\(f'(z) \ne 0\)</span>, a complex mapping <span class="arithmatex">\(w = f(z)\)</span> acts like an angle-preserving mathematical lens that transforms solutions of Laplace's equation (<span class="arithmatex">\(\nabla^2\phi = 0\)</span>) around a simple shape into exact solutions around a complex shape. Evaluating the sum of a complex coordinate <span class="arithmatex">\(z\)</span> on an offset circle (passing through the critical point <span class="arithmatex">\(z = +c\)</span> and enclosing <span class="arithmatex">\(z = -c\)</span>) and its scaled reciprocal <span class="arithmatex">\(c^2/z\)</span> defines the <em>Joukowsky airfoil transformation</em>:</p>
+<div class="arithmatex">\[\zeta = z + \frac{c^2}{z} \tag{Eq. 5.20}\]</div>
+<p>This rational complex map (<span class="arithmatex">\(\mathbf{z} + c^2 \cdot \frac{1}{\mathbf{z}}\)</span>) transforms the offset circle into an airfoil profile through three geometric effects: at the critical point <span class="arithmatex">\(z = +c\)</span>, where the derivative <span class="arithmatex">\(d\zeta/dz = 1 - c^2/z^2\)</span> vanishes, the smooth circular boundary folds into a sharp trailing edge at <span class="arithmatex">\(\zeta = +2c\)</span>; on the opposite side of the circle extending slightly beyond <span class="arithmatex">\(z = -c\)</span>, the boundary rounds into a blunt leading edge; and displacing the circle's center slightly above the real axis introduces camber along the chord line. Because <span class="arithmatex">\(\zeta = z + c^2/z\)</span> is conformal everywhere exterior to the circle, it maps the potential-flow streamlines around a spinning cylinder onto the airflow around the cambered wing: requiring smooth flow off the sharp trailing edge fixes the wing's aerodynamic vortex <em>circulation</em> <span class="arithmatex">\(\Gamma\)</span> (the line integral of tangential velocity around the profile), which interacts with the freestream air density <span class="arithmatex">\(\rho_\infty\)</span> and freestream airspeed <span class="arithmatex">\(V_\infty\)</span> to generate aerodynamic lift per unit wingspan <span class="arithmatex">\(L' = \rho_\infty V_\infty \Gamma\)</span> under the <em>Kutta–Joukowsky Lift Theorem</em>.</p>
+<hr />
+<h2 id="52-alternating-current-phasors-resonance-wave-reflection">5.2 Alternating-Current Phasors, Resonance &amp; Wave Reflection</h2>
+<p>In an alternating-current circuit operating at frequency <span class="arithmatex">\(f = 60\text{ Hz}\)</span> (angular frequency <span class="arithmatex">\(\omega = 2\pi f\)</span>), inductors and capacitors displace voltage and current by <span class="arithmatex">\(\pm 90^\circ\)</span>. Track the instantaneous charge <span class="arithmatex">\(q(t)\)</span> stored on a capacitor's plates as current <span class="arithmatex">\(i(t) = \frac{dq}{dt}\)</span> sloshes back and forth through a series loop of inductance <span class="arithmatex">\(L\)</span>, resistance <span class="arithmatex">\(R\)</span>, and capacitance <span class="arithmatex">\(C\)</span> driven by an alternating source of peak voltage <span class="arithmatex">\(V_0\)</span> and initial phase angle <span class="arithmatex">\(\phi\)</span>. In the resistor, Ohm's law produces a voltage drop <span class="arithmatex">\(R i = R\frac{dq}{dt}\)</span> directly in phase with the current. In the inductor (such as a transformer winding or motor coil), Faraday's law induces a voltage proportional to the current slew rate, <span class="arithmatex">\(v_L(t) = L \frac{di}{dt} = L\frac{d^2 q}{dt^2}\)</span>; because <span class="arithmatex">\(\frac{d}{dt}\sin(\omega t) = \omega\cos(\omega t) = \omega\sin(\omega t + 90^\circ)\)</span>, inductor voltage peaks <span class="arithmatex">\(90^\circ\)</span> ahead of current. In the capacitor (such as parallel dielectric plates or underground cable insulation), the voltage across the plates is proportional to the accumulated charge, <span class="arithmatex">\(v_C(t) = \frac{1}{C}q(t)\)</span>, so capacitor voltage lags <span class="arithmatex">\(90^\circ\)</span> behind charging current <span class="arithmatex">\(i_C = C\frac{dv_C}{dt}\)</span>. Summing those three voltage drops around the loop via Kirchhoff's voltage law yields a second-order linear differential equation with sinusoidal forcing:</p>
+<div class="arithmatex">\[L \frac{d^2 q}{dt^2} + R \frac{dq}{dt} + \frac{1}{C} q = V_0 \cos(\omega t + \phi) \tag{Eq. 5.21}\]</div>
+<p>Each passive element in that loop mirrors a mechanical counterpart: <span class="arithmatex">\(L\frac{d^2 q}{dt^2}\)</span> acts like magnetic <em>inertia</em> opposing any sudden change in current (<span class="arithmatex">\(d^2q/dt^2\)</span>), <span class="arithmatex">\(R\frac{dq}{dt}\)</span> acts like viscous <em>friction</em> dissipating heat in proportion to current velocity (<span class="arithmatex">\(dq/dt\)</span>), and <span class="arithmatex">\(\frac{1}{C}q\)</span> acts like an elastic <em>spring</em> whose restoring voltage grows with displaced charge <span class="arithmatex">\(q\)</span>. Steinmetz's 1893 insight was that because multiplication by <span class="arithmatex">\(j = \sqrt{-1}\)</span> rotates a vector by <span class="arithmatex">\(+90^\circ\)</span> in the complex plane, Euler's complex exponential <span class="arithmatex">\(e^{j\omega t}\)</span> turns time differentiation into algebraic multiplication by <span class="arithmatex">\(j\omega\)</span>, converting that entire differential equation into one line of complex algebra.</p>
+<h3 id="521-rotating-phasors-and-the-complex-impedance-plane">5.2.1 Rotating Phasors and the Complex Impedance Plane</h3>
+<p>In a linear AC network driven at a single angular frequency <span class="arithmatex">\(\omega\)</span>, every steady-state voltage and current oscillates at that same angular frequency <span class="arithmatex">\(\omega\)</span>. To avoid carrying explicit <span class="arithmatex">\(\cos(\omega t + \theta)\)</span> time functions through differential equations, Steinmetz represented each sinusoid by a complex number—a <em>phasor</em>—scaled by its root-mean-square amplitude (<span class="arithmatex">\(|\mathbf{V}| = V_0/\sqrt{2}\)</span>, eliminating the factor of <span class="arithmatex">\(\frac{1}{2}\)</span> so AC power laws <span class="arithmatex">\(P = |\mathbf{I}|^2 R\)</span> and <span class="arithmatex">\(\mathbf{S} = \mathbf{V}\mathbf{I}^*\)</span> match DC Ohm's and Joule's laws) and initial phase angle relative to a common reference.</p>
+<p>When a rotating complex exponential <span class="arithmatex">\(e^{j\omega t}\)</span> is differentiated with respect to time (where electrical engineering denotes the imaginary unit by <span class="arithmatex">\(j = \sqrt{-1}\)</span> to reserve <span class="arithmatex">\(i\)</span> for electrical current), the phasor is multiplied by <span class="arithmatex">\(j\omega\)</span>:</p>
+<div class="arithmatex">\[\frac{d}{dt}\left(e^{j\omega t}\right) = j\omega e^{j\omega t} \tag{Eq. 5.22}\]</div>
+<p>Time differentiation becomes algebraic multiplication by <span class="arithmatex">\(j\omega\)</span> (a <span class="arithmatex">\(+90^\circ\)</span> rotation scaled by <span class="arithmatex">\(\omega\)</span>), while time integration becomes division by <span class="arithmatex">\(j\omega\)</span> (a <span class="arithmatex">\(-90^\circ\)</span> rotation, since <span class="arithmatex">\(1/j = -j\)</span>).</p>
+<p>Under this phasor transformation, the three passive circuit elements map onto the axes of the complex impedance plane. Resistors (<span class="arithmatex">\(R\)</span>) lie along the positive horizontal Real axis as <span class="arithmatex">\(\mathbf{Z}_R = R + j0\,\Omega\)</span>, introducing <span class="arithmatex">\(0^\circ\)</span> phase shift and converting electrical energy irreversibly into heat. Inductors (<span class="arithmatex">\(L\)</span>) lie along the positive vertical Imaginary axis as <span class="arithmatex">\(\mathbf{Z}_L = +j X_L = +j\omega L\,\Omega\)</span>, introducing a <span class="arithmatex">\(+90^\circ\)</span> voltage phase lead as magnetic field energy cycles losslessly between the coil and the source. Capacitors (<span class="arithmatex">\(C\)</span>) lie along the negative vertical Imaginary axis as <span class="arithmatex">\(\mathbf{Z}_C = -j X_C = -j\frac{1}{\omega C}\,\Omega\)</span>, introducing a <span class="arithmatex">\(-90^\circ\)</span> voltage phase lag as electrostatic field energy cycles losslessly between the plates and the source.</p>
+<p>For a series RLC branch, the total <em>complex impedance</em> <span class="arithmatex">\(\mathbf{Z}\)</span> is the vector sum of real resistance and net imaginary reactance:</p>
+<div class="arithmatex">\[\mathbf{Z} = R + j(X_L - X_C) = R + j\left(\omega L - \frac{1}{\omega C}\right) \tag{Eq. 5.23}\]</div>
+<p>With complex phasors, AC Ohm's law takes the multiplicative form <span class="arithmatex">\(\mathbf{V} = \mathbf{I} \cdot \mathbf{Z}\)</span>, series impedances add component-wise (<span class="arithmatex">\(\mathbf{Z}_{\text{series}} = \mathbf{Z}_1 + \mathbf{Z}_2\)</span>), and the scalar parallel-resistance law <span class="arithmatex">\(R_1 \parallel R_2 = \frac{1}{1/R_1 + 1/R_2}\)</span> extends to two-dimensional phasors. Parallel AC branches combine either by summing their reciprocal <em>complex admittances</em> (<span class="arithmatex">\(\mathbf{Y} = 1/\mathbf{Z} = G + jB\)</span>, with conductance <span class="arithmatex">\(G\)</span> and susceptance <span class="arithmatex">\(B\)</span> in Siemens; inverting a high-reactance choke <span class="arithmatex">\(\mathbf{Z} = 0.5 + j120\,\Omega\)</span> gives susceptance <span class="arithmatex">\(B \approx -8.333\text{ mS}\)</span>) or via the reciprocal-sum complex parallel relation <em>(<a href="../appendix-e-annotated-bibliography/#cite-horowitz2015">Horowitz &amp; Hill, 2015</a>)</em>:</p>
+<div class="arithmatex">\[\mathbf{Z}_{\text{parallel}} = \mathbf{Z}_1 \parallel \mathbf{Z}_2 = \frac{1}{\frac{1}{\mathbf{Z}_1} + \frac{1}{\mathbf{Z}_2}} = \frac{\mathbf{Z}_1 \mathbf{Z}_2}{\mathbf{Z}_1 + \mathbf{Z}_2} \tag{Eq. 5.24}\]</div>
+<h3 id="522-tuning-a-radio-tank-resonance-and-the-quality-factor">5.2.2 Tuning a Radio Tank: Resonance and the Quality Factor</h3>
+<p>Because inductive reactance points along <span class="arithmatex">\(+j\)</span> and capacitive reactance points along <span class="arithmatex">\(-j\)</span>, sweeping the excitation frequency <span class="arithmatex">\(f\)</span> across an RLC network produces a sharp phase transition where the opposing reactive elements balance and cancel to zero. Below resonance (<span class="arithmatex">\(f &lt; f_0\)</span>), capacitive reactance <span class="arithmatex">\(X_C = 1/(2\pi f C)\)</span> exceeds inductive reactance <span class="arithmatex">\(X_L = 2\pi f L\)</span>, so the net reactance is negative and current leads applied voltage; above resonance (<span class="arithmatex">\(f &gt; f_0\)</span>), <span class="arithmatex">\(X_L &gt; X_C\)</span>, so the net reactance is positive and current lags voltage.</p>
+<p>In a power-supply filter choke and coupling capacitor (<span class="arithmatex">\(R = 50\,\Omega, L = 0.05\text{ H}, C = 10 \times 10^{-6}\text{ F}\)</span>) driven at the full-wave rectified ripple frequency <span class="arithmatex">\(f = 120\text{ Hz}\)</span> (<span class="arithmatex">\(\omega \approx 753.982\text{ rad/s}\)</span>), the inductive reactance <span class="arithmatex">\(X_L \approx 37.699\,\Omega\)</span> and capacitive reactance <span class="arithmatex">\(X_C \approx 132.629\,\Omega\)</span> partially cancel along the imaginary axis to leave a net capacitive reactance <span class="arithmatex">\(X_L - X_C \approx -94.93\,\Omega\)</span>. Combining that reactive leg in quadrature with <span class="arithmatex">\(R = 50\,\Omega\)</span> yields the total scalar impedance and phase angle:</p>
+<div class="arithmatex">\[Z = \sqrt{R^2 + \left(2 \pi f L - \frac{1}{2 \pi f C}\right)^2} \approx \mathbf{107.293\,\Omega}, \qquad \theta = \arctan\!\left(\frac{X_L - X_C}{R}\right) \approx \mathbf{-62.224^\circ} \tag{Eq. 5.25}\]</div>
+<p>A series RLC resonator of inductance <span class="arithmatex">\(L\)</span>, capacitance <span class="arithmatex">\(C\)</span>, and winding resistance <span class="arithmatex">\(R\)</span> exchanges energy harmonically between its magnetic flux field (<span class="arithmatex">\(\frac{1}{2}LI^2\)</span>) and its dielectric electric field (<span class="arithmatex">\(\frac{1}{2}CV^2\)</span>) at the natural resonant frequency <span class="arithmatex">\(f_0\)</span> where <span class="arithmatex">\(X_L = X_C\)</span>:</p>
+<div class="arithmatex">\[f_0 = \frac{1}{2 \pi \sqrt{L C}}, \qquad Q = \frac{1}{R} \sqrt{\frac{L}{C}} = \frac{\omega_0 L}{R} = \frac{f_0}{\Delta f_{-3\text{dB}}} \tag{Eq. 5.26}\]</div>
+<p>Because <span class="arithmatex">\(f_0\)</span> varies inversely with the geometric mean <span class="arithmatex">\(\sqrt{LC}\)</span>, sweeping a variable air-dielectric tuning capacitor across a four-to-one capacitance ratio (<span class="arithmatex">\(C_{\max} / C_{\min} = 4\)</span>) tunes an AM broadcast or HF communications receiver across a two-to-one frequency octave (<span class="arithmatex">\(f_{\max} / f_{\min} = 2\)</span>). For a radio-frequency series resonator of <span class="arithmatex">\(L = 10\text{ mH}\)</span> (<span class="arithmatex">\(10 \times 10^{-3}\text{ H}\)</span>) paired with <span class="arithmatex">\(C = 100\text{ pF}\)</span> (<span class="arithmatex">\(100 \times 10^{-12}\text{ F}\)</span>), the characteristic time scale is <span class="arithmatex">\(\sqrt{LC} = 1\,\mu\text{s}\)</span>, placing the resonant carrier frequency at <span class="arithmatex">\(f_0 \approx \mathbf{159,154.943\text{ Hz}}\)</span> (<span class="arithmatex">\(\approx 159.155\text{ kHz}\)</span>).</p>
+<p>How sharply that series RLC resonator discriminates between a desired station at <span class="arithmatex">\(f_0\)</span> and an adjacent interferer is governed by the dimensionless <em>quality factor</em> <span class="arithmatex">\(Q\)</span>. Defined as <span class="arithmatex">\(2\pi\)</span> times the ratio of peak electromagnetic energy stored in the reactive fields to the thermal energy dissipated per cycle in the series resistance <span class="arithmatex">\(R\)</span>, the series quality factor equals the characteristic surge impedance <span class="arithmatex">\(Z_{\text{char}} = \sqrt{L/C}\)</span> divided by <span class="arithmatex">\(R\)</span> (for a parallel tank with shunt resistance <span class="arithmatex">\(R_p\)</span>, <span class="arithmatex">\(Q_p = R_p / \sqrt{L/C}\)</span>).</p>
+<p>In the frequency domain, <span class="arithmatex">\(Q\)</span> sets the spectral selectivity: the half-power (<span class="arithmatex">\(-3\text{ dB}\)</span>) passband width between the two frequencies <span class="arithmatex">\(f_1, f_2\)</span> where <span class="arithmatex">\(|\mathbf{Z}| = \sqrt{2}\,R\)</span> is <span class="arithmatex">\(\Delta f_{-3\text{dB}} = f_0 / Q\)</span>. At exact series resonance <span class="arithmatex">\(f_0\)</span> where <span class="arithmatex">\(X_L\)</span> and <span class="arithmatex">\(X_C\)</span> cancel in the loop impedance (<span class="arithmatex">\(\mathbf{I}_0 = \mathbf{V}_s / R\)</span>), the reactive voltage developed across the inductor (<span class="arithmatex">\(V_L = I_0 X_L = Q V_s\)</span>) and capacitor (<span class="arithmatex">\(V_C = I_0 X_C = Q V_s\)</span>) is magnified to <span class="arithmatex">\(Q\)</span> times the applied source voltage <span class="arithmatex">\(V_s\)</span>. For an intermediate-frequency series selectivity coil (<span class="arithmatex">\(R = 8\,\Omega, L = 2.5\text{ mH}, C = 47\text{ nF}\)</span>), the surge impedance <span class="arithmatex">\(\sqrt{L/C} \approx 230.633\,\Omega\)</span> divided by <span class="arithmatex">\(R = 8\,\Omega\)</span> yields <span class="arithmatex">\(Q \approx \mathbf{28.829}\)</span>, magnifying a <span class="arithmatex">\(10\text{ V}\)</span> RF drive into <span class="arithmatex">\(\approx 288.291\text{ V}\)</span> across the series capacitor.</p>
+<p>To track signal power across cascaded filters and amplifiers, the <em>decibel</em> (<span class="arithmatex">\(\text{dB}\)</span>) expresses power and voltage ratios on a base-<span class="arithmatex">\(10\)</span> logarithmic scale:</p>
+<div class="arithmatex">\[\text{dB} = 10 \log_{10}\left(\frac{P_2}{P_1}\right) = 20 \log_{10}\left(\frac{V_2}{V_1}\right) \tag{Eq. 5.27}\]</div>
+<p>Because electrical power across a matched impedance <span class="arithmatex">\(Z_0\)</span> scales quadratically with RMS voltage (<span class="arithmatex">\(P = V^2 / Z_0\)</span>), substituting <span class="arithmatex">\(P_2 / P_1 = (V_2 / V_1)^2\)</span> into <span class="arithmatex">\(10\log_{10}(P_2/P_1)\)</span> brings the exponent of <span class="arithmatex">\(2\)</span> out front to form the voltage-ratio rule <span class="arithmatex">\(20\log_{10}(V_2 / V_1)\)</span>. Mapping power ratios through <span class="arithmatex">\(10\log_{10}(\cdot)\)</span> converts long chains of cascaded RF amplifier stages, mixer conversion losses, and coaxial attenuations from multiplications into additions and subtractions: doubling power adds <span class="arithmatex">\(\approx +3.01\text{ dB}\)</span>, quadrupling power (or doubling voltage) adds <span class="arithmatex">\(\approx +6.021\text{ dB}\)</span>, and every tenfold decade of power adds <span class="arithmatex">\(+10\text{ dB}\)</span>. When referenced to <span class="arithmatex">\(P_1 = 1\text{ mW}\)</span> (<span class="arithmatex">\(0.001\text{ W}\)</span>), absolute power is expressed in <span class="arithmatex">\(\text{dBm} = 10\log_{10}(P / 1\text{ mW})\)</span>. Driving a transmitter final stage from an exciter input of <span class="arithmatex">\(P_1 = 0.025\text{ W}\)</span> (<span class="arithmatex">\(25\text{ mW}\)</span>, or <span class="arithmatex">\(\approx +13.979\text{ dBm}\)</span>) to an output of <span class="arithmatex">\(P_2 = 120\text{ W}\)</span> represents a linear power ratio of <span class="arithmatex">\(4,800\times\)</span>, corresponding to a power gain of <span class="arithmatex">\(\approx \mathbf{36.812\text{ dB}}\)</span> and an output level of <span class="arithmatex">\(\approx \mathbf{+50.792\text{ dBm}}\)</span>.</p>
+<h3 id="523-real-watts-reactive-vars-and-the-power-triangle">5.2.3 Real Watts, Reactive VARs, and the Power Triangle</h3>
+<p>Complex phasor representation also resolves why industrial plants containing large induction motors draw high line currents from utility feeders while registering lower real power consumption on wattmeters.</p>
+<p>When an AC source delivers an RMS voltage phasor <span class="arithmatex">\(\mathbf{V} = |\mathbf{V}|\angle\theta_v\)</span> and an RMS current phasor <span class="arithmatex">\(\mathbf{I} = |\mathbf{I}|\angle\theta_i\)</span> to an inductive load <span class="arithmatex">\(\mathbf{Z} = R + jX_L = |\mathbf{Z}|\angle\theta\)</span> (where <span class="arithmatex">\(\theta = \theta_v - \theta_i\)</span> is the phase lag of current behind voltage), the phase-invariant power product requires complex conjugation. Multiplying <span class="arithmatex">\(\mathbf{V}\)</span> by <span class="arithmatex">\(\mathbf{I}\)</span> without conjugation sums their phase angles (<span class="arithmatex">\(\theta_v + \theta_i\)</span>), which varies with the arbitrary choice of time origin <span class="arithmatex">\(t = 0\)</span>. Defining <em>complex apparent power</em> <span class="arithmatex">\(\mathbf{S}\)</span> (in Volt-Amperes, VA) as the product of the voltage phasor <span class="arithmatex">\(\mathbf{V}\)</span> and the complex conjugate of the current phasor, <span class="arithmatex">\(\mathbf{I}^* = |\mathbf{I}|\angle(-\theta_i)\)</span>, isolates the physical phase difference <span class="arithmatex">\(\theta = \theta_v - \theta_i\)</span>:</p>
+<div class="arithmatex">\[\mathbf{S} = \mathbf{V} \cdot \mathbf{I}^* = |\mathbf{V}||\mathbf{I}|\angle(\theta_v - \theta_i) = |\mathbf{S}|\cos\theta + j|\mathbf{S}|\sin\theta = P + jQ \tag{Eq. 5.28}\]</div>
+<p>This complex product defines the right-angled <em>Power Triangle</em> <span class="arithmatex">\(\mathbf{S} = P + jQ\)</span> in the complex plane. The horizontal real leg is the <em>real (active) power</em> <span class="arithmatex">\(P = |\mathbf{V}||\mathbf{I}|\cos\theta = |\mathbf{I}|^2 R\)</span> (in Watts, <span class="arithmatex">\(\text{W}\)</span>), representing the rate at which electrical energy is converted into mechanical shaft work (such as lathe spindles, hoists, and pumps) or dissipated as heat; the dimensionless cosine ratio <span class="arithmatex">\(\text{PF} = \cos\theta = P / |\mathbf{S}|\)</span> is the <em>power factor</em>.</p>
+<p>The vertical imaginary leg is the <em>reactive (quadrature) power</em> <span class="arithmatex">\(Q = |\mathbf{V}||\mathbf{I}|\sin\theta = |\mathbf{I}|^2 X\)</span> (in Volt-Amperes Reactive, <span class="arithmatex">\(\text{VAR}\)</span>), measuring the peak rate of lossless energy oscillation twice per AC cycle between the generator and the magnetic fields of inductive loads (<span class="arithmatex">\(Q &gt; 0\)</span>) or the electric fields of capacitive loads (<span class="arithmatex">\(Q &lt; 0\)</span>). Although reactive power performs zero net work over a complete cycle, utility transmission lines must carry the associated quadrature current, incurring real <span class="arithmatex">\(I^2 R_{\text{line}}\)</span> resistive losses in the distribution grid.</p>
+<p>Across the power triangle, the hypotenuse represents the <em>apparent power</em> <span class="arithmatex">\(|\mathbf{S}| = \sqrt{P^2 + Q^2} = |\mathbf{V}||\mathbf{I}|\)</span> (in Volt-Amperes, <span class="arithmatex">\(\text{VA}\)</span>); because substation transformers and alternators must be insulated for total voltage <span class="arithmatex">\(|\mathbf{V}|\)</span> and sized to conduct total current <span class="arithmatex">\(|\mathbf{I}|\)</span> regardless of phase angle, power equipment is rated in <span class="arithmatex">\(\text{kVA}\)</span> or <span class="arithmatex">\(\text{MVA}\)</span>, not kilowatts. Industrial facilities eliminate quadrature line current through <em>power factor correction</em>. Because an induction motor draws lagging reactive power <span class="arithmatex">\(+jQ_L\)</span>, connecting a shunt capacitor bank of equal and opposite leading reactive power <span class="arithmatex">\(-jQ_C = -jQ_L\)</span> (with capacitance <span class="arithmatex">\(C = \frac{Q_L}{2\pi f |\mathbf{V}|^2}\)</span>) in parallel across the load bus supplies the oscillating magnetic energy locally, canceling the imaginary component <span class="arithmatex">\(j(Q_L - Q_C) = 0\)</span> so the utility feeder sees a resistive load at unity power factor (<span class="arithmatex">\(\cos 0^\circ = 1\)</span>).</p>
+<p>In low-power RF communications, acoustic transducers, and instrumentation, the design objective shifts from minimizing transmission losses to extracting the maximum real power <span class="arithmatex">\(P_{\text{load}}\)</span> from a source with fixed internal Thévenin impedance <span class="arithmatex">\(\mathbf{Z}_{\text{source}} = R_s + jX_s\)</span>. Terminating the source with a load <span class="arithmatex">\(\mathbf{Z}_{\text{load}} = R_L + jX_L\)</span> produces loop current magnitude <span class="arithmatex">\(|\mathbf{I}| = \frac{|\mathbf{V}_s|}{\sqrt{(R_s + R_L)^2 + (X_s + X_L)^2}}\)</span> and real load power:</p>
+<div class="arithmatex">\[P_{\text{load}} = |\mathbf{I}|^2 R_L = \frac{|\mathbf{V}_s|^2 R_L}{(R_s + R_L)^2 + (X_s + X_L)^2} \tag{Eq. 5.29}\]</div>
+<p>Because <span class="arithmatex">\((X_s + X_L)^2 \ge 0\)</span> in the denominator, real power is maximized for any <span class="arithmatex">\(R_L\)</span> by choosing the load reactance equal and opposite to the source reactance (<span class="arithmatex">\(X_L = -X_s\)</span>), canceling the net series reactance to zero. Differentiating the remaining resistive ratio <span class="arithmatex">\(\frac{R_L}{(R_s + R_L)^2}\)</span> with respect to <span class="arithmatex">\(R_L\)</span> shows that maximum power occurs when <span class="arithmatex">\(R_L = R_s\)</span>. Combining both conditions (<span class="arithmatex">\(R_L = R_s\)</span> and <span class="arithmatex">\(X_L = -X_s\)</span>) yields the <em>Complex Conjugate Maximum Power Transfer Theorem</em>:</p>
+<div class="arithmatex">\[\mathbf{Z}_{\text{load}} = R_s - jX_s = \mathbf{Z}_{\text{source}}^* \tag{Eq. 5.30}\]</div>
+<p>Maximum real power transfer occurs when the load impedance equals the complex conjugate of the source impedance, delivering <span class="arithmatex">\(P_{\max} = \frac{|\mathbf{V}_s|^2}{4 R_s}\)</span>.</p>
+<h3 id="524-negative-feedback-amplifiers-and-loudspeaker-crossovers">5.2.4 Negative-Feedback Amplifiers and Loudspeaker Crossovers</h3>
+<p>Active analog signal processing and electroacoustic loudspeaker crossovers rely on negative feedback and complex transfer functions <span class="arithmatex">\(H(j\omega) = \mathbf{V}_{\text{out}} / \mathbf{V}_{\text{in}}\)</span> to shape amplitude and phase across frequency <em>(<a href="../appendix-e-annotated-bibliography/#cite-horowitz2015">Horowitz &amp; Hill, 2015</a>)</em>. Feeding a fraction <span class="arithmatex">\(\beta = \frac{R_g}{R_f + R_g}\)</span> of an amplifier's output back in opposition to its input reduces the closed-loop voltage gain of a high-gain differential amplifier (<span class="arithmatex">\(A_{\text{OL}} \gg 10^5\)</span>) to:</p>
+<div class="arithmatex">\[A_{\text{CL}}(j f) = \frac{A_{\text{OL}}(j f)}{1 + \beta A_{\text{OL}}(j f)} \approx \frac{1}{\beta} = 1 + \frac{R_f}{R_g}, \qquad A_{v,\text{inv}} = -\frac{R_f}{R_{\text{in}}} \tag{Eq. 5.31}\]</div>
+<p>A resistive divider of feedback resistor <span class="arithmatex">\(R_f\)</span> and ground or input resistor <span class="arithmatex">\(R_g, R_{\text{in}}\)</span> forces the inverting input to track the non-inverting input (a <em>virtual short</em>), pinning the low-frequency closed-loop voltage gain solely to precision passive resistor ratios while suppressing harmonic distortion and thermal gain drift by the loop-gain factor <span class="arithmatex">\(1 + \beta A_{\text{OL}}\)</span>.</p>
+<p>To guarantee phase stability against high-frequency oscillation, an internally compensated operational amplifier includes an internal Miller capacitor that introduces a dominant first-order complex pole at corner frequency <span class="arithmatex">\(f_p\)</span>, rolling off the open-loop complex gain at <span class="arithmatex">\(-20\text{ dB/decade}\)</span> with a <span class="arithmatex">\(-90^\circ\)</span> quadrature lag, <span class="arithmatex">\(A_{\text{OL}}(j f) = \frac{A_0}{1 + j(f / f_p)} \approx -j\,\frac{\text{GBWP}}{f}\)</span> for <span class="arithmatex">\(f \gg f_p\)</span>, where <span class="arithmatex">\(\text{GBWP} = A_0 f_p\)</span> is the amplifier's <em>unity-gain bandwidth product</em>. Substituting this open-loop roll-off into the closed-loop feedback equation yields the complex closed-loop frequency response:</p>
+<div class="arithmatex">\[A_{\text{CL}}(j f) = \frac{A_{v,\text{non}}}{1 + j\left(f / f_{-3\text{dB}}\right)}, \qquad \text{where } f_{-3\text{dB}} = \frac{\text{GBWP}}{A_{v,\text{non}}} \tag{Eq. 5.32}\]</div>
+<p>The product of closed-loop noise gain <span class="arithmatex">\(A_{v,\text{non}}\)</span> and <span class="arithmatex">\(-3\text{ dB}\)</span> corner frequency <span class="arithmatex">\(f_{-3\text{dB}}\)</span> remains invariant at <span class="arithmatex">\(\text{GBWP}\)</span>: trading for <span class="arithmatex">\(10\times\)</span> higher voltage gain reduces the passband width tenfold. For a non-inverting precision instrumentation stage with <span class="arithmatex">\(R_f = 90\text{ k}\Omega, R_g = 10\text{ k}\Omega\)</span>, and <span class="arithmatex">\(\text{GBWP} = 10\text{ MHz}\)</span>, the DC closed-loop gain is <span class="arithmatex">\(A_{v,\text{non}} = 1 + 90/10 = \mathbf{10}\)</span> (<span class="arithmatex">\(20\text{ dB}\)</span>) and the passband corner is <span class="arithmatex">\(f_{-3\text{dB}} = \mathbf{1\text{ MHz}}\)</span>, where the denominator <span class="arithmatex">\(1 + j1\)</span> places the complex closed-loop gain at <span class="arithmatex">\(10/(1 + j) = \mathbf{5 - 5i}\)</span> (<span class="arithmatex">\(|A_{\text{CL}}| \approx 7.071\)</span>, or <span class="arithmatex">\(\approx 17\text{ dB}\)</span> at <span class="arithmatex">\(-45^\circ\)</span>).</p>
+<p>Complex impedance algebra also governs electroacoustic loudspeaker crossovers and impedance-compensation networks <em>(<a href="../appendix-e-annotated-bibliography/#cite-horowitz2015">Horowitz &amp; Hill, 2015</a>)</em>. A moving-coil loudspeaker driver is not a flat <span class="arithmatex">\(8\,\Omega\)</span> resistance: the copper voice coil wound around the magnet pole piece introduces series inductance (<span class="arithmatex">\(Z_1 = R + j\omega L\)</span>) that causes the driver impedance to rise at high audio frequencies. At a single operating frequency, wiring a conjugate branch <span class="arithmatex">\(Z_2 = R - jX\)</span> in parallel cancels the opposite susceptances <span class="arithmatex">\(\mp jX / (R^2 + X^2)\)</span> to leave a real equivalent resistance <span class="arithmatex">\(Z_{\text{eq}} = \frac{R^2 + X^2}{2R}\)</span>; across the full audio band, wiring a <em>Zobel (Boucherot) RC compensation cell</em> <span class="arithmatex">\(Z_{\text{Zobel}} = R - j/( \omega C) = R - j(R^2 / X_L)\)</span> with <span class="arithmatex">\(C = L / R^2\)</span> in parallel with <span class="arithmatex">\(R + jX_L\)</span> produces a constant resistive load <span class="arithmatex">\(Z_{\text{eq}} = \frac{(R + jX_L)(R - jR^2/X_L)}{2R + j(X_L - R^2/X_L)} = R\)</span> at every frequency <span class="arithmatex">\(\omega\)</span>.</p>
+<p>In multi-way loudspeaker design, dividing the audio spectrum between a low-frequency woofer and a high-frequency tweeter requires matching both amplitude and phase at the crossover angular frequency <span class="arithmatex">\(\omega_c\)</span>. Measuring signal frequency <span class="arithmatex">\(\omega\)</span> relative to <span class="arithmatex">\(\omega_c\)</span> defines the normalized complex frequency variable <span class="arithmatex">\(s = j\omega/\omega_c\)</span>, in terms of which a maximally flat second-order Butterworth low-pass filter has transfer function <span class="arithmatex">\(H(s) = \frac{1}{s^2 + \sqrt{2}s + 1}\)</span>. At the exact crossover frequency (<span class="arithmatex">\(\omega = \omega_c\)</span>, so <span class="arithmatex">\(s = j\)</span>), the quadratic term <span class="arithmatex">\(s^2 = j^2 = -1\)</span> and the <span class="arithmatex">\(+1\)</span> constant in the denominator cancel one another:</p>
+<div class="arithmatex">\[H_{\text{Butter2}}(j) = \frac{1}{(-1 + 1) + j\sqrt{2}} = \frac{1}{j\sqrt{2}} = -\frac{j}{\sqrt{2}} \approx 0 - 0.707j \quad (-3.01\text{ dB}, \text{ phase } -90^\circ) \tag{Eq. 5.33}\]</div>
+<p>If a single second-order Butterworth low-pass filter feeds the woofer and its high-pass complement <span class="arithmatex">\(\frac{s^2}{s^2 + \sqrt{2}s + 1}\)</span> feeds the tweeter, the low-pass output lags by <span class="arithmatex">\(-90^\circ\)</span> (<span class="arithmatex">\(-j/\sqrt{2}\)</span>) at crossover while the high-pass output leads by <span class="arithmatex">\(+90^\circ\)</span> (<span class="arithmatex">\(+j/\sqrt{2}\)</span>). Because <span class="arithmatex">\(-90^\circ\)</span> and <span class="arithmatex">\(+90^\circ\)</span> differ by <span class="arithmatex">\(180^\circ\)</span>, the two acoustic outputs sum to zero at the crossover frequency when connected with identical polarity.</p>
+<p>Two second-order Butterworth sections cascaded in series form a fourth-order <em>Linkwitz–Riley</em> (LR4) crossover, squaring the complex transfer function at the crossover frequency:</p>
+<div class="arithmatex">\[H_{\text{LR4}}(j) = \left[H_{\text{Butter2}}(j)\right]^2 = \left(-\frac{j}{\sqrt{2}}\right)^2 = \frac{j^2}{2} = -0.5 + 0j \quad (-6.02\text{ dB}, \text{ phase } -180^\circ) \tag{Eq. 5.34}\]</div>
+<p>At crossover, both the low-pass and high-pass outputs have magnitude <span class="arithmatex">\(|H| = 0.5\)</span> (<span class="arithmatex">\(-6.02\text{ dB}\)</span>) and identical phase (<span class="arithmatex">\(-180^\circ\)</span>), so their acoustic outputs sum in phase to unit magnitude (<span class="arithmatex">\(|-0.5 + (-0.5)| = 1\)</span>, or <span class="arithmatex">\(0\text{ dB}\)</span> all-pass response).</p>
+<h3 id="525-coaxial-transmission-lines-and-the-complex-reflection-coefficient">5.2.5 Coaxial Transmission Lines and the Complex Reflection Coefficient</h3>
+<p>In the radio and microwave bands where the signal wavelength <span class="arithmatex">\(\lambda = c/f\)</span> is comparable to or shorter than the interconnecting conductors, a coaxial cable or microstrip trace can no longer be treated as a single lumped wire. Instead, every meter of cable acts as a distributed ladder network combining per-unit-length series conductor resistance <span class="arithmatex">\(R'\)</span> and magnetic inductance <span class="arithmatex">\(L'\)</span> into a series impedance <span class="arithmatex">\(Z' = R' + j\omega L'\)</span>, alongside per-unit-length shunt dielectric leakage conductance <span class="arithmatex">\(G'\)</span> and shunt capacitance <span class="arithmatex">\(C'\)</span> into a shunt admittance <span class="arithmatex">\(Y' = G' + j\omega C'\)</span>. Taking the complex square root of the series-impedance-to-shunt-admittance ratio defines the cable's <em>characteristic impedance</em> <span class="arithmatex">\(Z_0\)</span>:</p>
+<div class="arithmatex">\[Z_0 = \sqrt{\frac{R' + j\omega L'}{G' + j\omega C'}} \tag{Eq. 5.35}\]</div>
+<p>Dividing the series voltage drop per unit current (<span class="arithmatex">\(R' + j\omega L'\)</span>) by the shunt current leaked per unit voltage across the dielectric (<span class="arithmatex">\(G' + j\omega C'\)</span>) gives <span class="arithmatex">\(Z_0\)</span> the dimensions of ohms (<span class="arithmatex">\(\Omega\)</span>), approaching the lossless surge impedance <span class="arithmatex">\(\sqrt{L'/C'}\)</span> at radio frequencies where <span class="arithmatex">\(R' \ll \omega L'\)</span> and <span class="arithmatex">\(G' \ll \omega C'\)</span>. Much like light partially reflecting off a pane of glass or an ocean wave rebounding off a seawall, when a forward electromagnetic wave propagating along a feedline of characteristic impedance <span class="arithmatex">\(Z_0 = 50\,\Omega\)</span> encounters an antenna whose complex load impedance <span class="arithmatex">\(\mathbf{Z}_L = R_L + jX_L\)</span> differs from <span class="arithmatex">\(Z_0\)</span>, continuity of voltage and current at the junction forces part of the wave to echo backward down the cable. That reflected wave is quantified by three linked mismatch metrics: the complex <em>voltage reflection coefficient</em> <span class="arithmatex">\(\mathbf{\Gamma}\)</span> (denoted <span class="arithmatex">\(S_{11}\)</span> in scattering-parameter measurements), the <em>Voltage Standing Wave Ratio</em> (<span class="arithmatex">\(\text{VSWR}\)</span>), and the decibel <em>Return Loss</em> (<span class="arithmatex">\(\text{RL}_{\text{dB}}\)</span>):</p>
+<div class="arithmatex">\[\mathbf{\Gamma} = \frac{\mathbf{Z}_L - Z_0}{\mathbf{Z}_L + Z_0}, \qquad \text{VSWR} = \frac{1 + |\mathbf{\Gamma}|}{1 - |\mathbf{\Gamma}|}, \qquad \text{RL}_{\text{dB}} = -20\log_{10}|\mathbf{\Gamma}| \tag{Eq. 5.36}\]</div>
+<p>Normalizing the impedance step <span class="arithmatex">\(\mathbf{Z}_L - Z_0\)</span> against the total impedance sum <span class="arithmatex">\(\mathbf{Z}_L + Z_0\)</span> maps every passive load (<span class="arithmatex">\(R_L \ge 0\)</span>) onto the unit disk <span class="arithmatex">\(|\mathbf{\Gamma}| \le 1\)</span>—the coordinate disk of the <em>Smith Chart</em>. When the antenna matches the cable (<span class="arithmatex">\(Z_L = Z_0\)</span>), the discontinuity <span class="arithmatex">\(\mathbf{Z}_L - Z_0\)</span> vanishes (<span class="arithmatex">\(\mathbf{\Gamma} = 0\)</span>, <span class="arithmatex">\(\text{VSWR} = 1\)</span>) and <span class="arithmatex">\(100\%\)</span> of the transmitter's power radiates into space, whereas a shorted line (<span class="arithmatex">\(Z_L = 0 \implies \mathbf{\Gamma} = -1\)</span>) or an open-circuited line (<span class="arithmatex">\(Z_L \to \infty \implies \mathbf{\Gamma} = +1\)</span>) reflects the entire wave backward (<span class="arithmatex">\(\text{VSWR} \to \infty\)</span>).</p>
+<p>As a backward echo of relative amplitude <span class="arithmatex">\(|\mathbf{\Gamma}|\)</span> travels against the forward wave of unit amplitude <span class="arithmatex">\(1\)</span>, the two counter-propagating waves interfere along the cable: where crest meets crest in phase, their voltages add constructively to a standing-wave anti-node of <span class="arithmatex">\(1 + |\mathbf{\Gamma}|\)</span>, and a quarter-wavelength away where crest meets trough out of phase, they subtract destructively to a voltage node of <span class="arithmatex">\(1 - |\mathbf{\Gamma}|\)</span>. That interference pattern makes <span class="arithmatex">\(\text{VSWR}\)</span> the direct ratio of peak-to-minimum standing voltage along the line, while <span class="arithmatex">\(\text{RL}_{\text{dB}} = -20\log_{10}|\mathbf{\Gamma}|\)</span> measures how many decibels weaker the reflected echo is than the forward wave. To match a resistive antenna load <span class="arithmatex">\(Z_L\)</span> to a transmission line <span class="arithmatex">\(Z_0\)</span> without reflection, an RF designer inserts a quarter-wavelength (<span class="arithmatex">\(\lambda/4\)</span>) transformer section whose characteristic impedance is the geometric mean <span class="arithmatex">\(Z_{\text{line}} = \sqrt{Z_0 Z_L}\)</span>, mapping the input impedance to <span class="arithmatex">\(Z_{\text{in}} = Z_{\text{line}}^2 / Z_L = Z_0\)</span> in exact analogy to a quarter-wave optical anti-reflection coating of refractive index <span class="arithmatex">\(n_{\text{film}} = \sqrt{n_{\text{air}} n_{\text{glass}}}\)</span>.</p>
+<hr />
+<h2 id="53-computing-in-two-dimensions-across-four-registers">5.3 Computing in Two Dimensions Across Four Registers</h2>
+<p>In the tradition of the pocket complex arithmetic of the <strong>HP-15C</strong> <em>(<a href="../appendix-e-annotated-bibliography/#cite-evett1983">Evett et al., 1983</a>; <a href="../appendix-e-annotated-bibliography/#cite-hp15c1982">HP, 1982</a>)</em> and the complex prefix architecture of the <strong>HP-32SII</strong> <em>(<a href="../appendix-e-annotated-bibliography/#cite-hp32sii1991">HP, 1991</a>)</em>, the four-line StackCalc SC-32 pairs <span class="arithmatex">\((Y = \text{Real}, X = \text{Imag})\)</span> and <span class="arithmatex">\((T = \text{Real}_2, Z = \text{Imag}_2)\)</span> across the display so complex impedances multiply, invert, and combine in parallel across the four registers:</p>
+<ol>
+<li><strong>Entering Complex Numbers Across <span class="arithmatex">\((Y, X)\)</span> and <span class="arithmatex">\((T, Z)\)</span>:</strong> Keying the real part <span class="arithmatex">\(a\)</span>, <code>[ENTER]</code>, and the imaginary part <span class="arithmatex">\(b\)</span> places the horizontal Real projection <span class="arithmatex">\(a\)</span> on Line <span class="arithmatex">\(Y\)</span> and the vertical Imaginary projection <span class="arithmatex">\(b\)</span> on Line <span class="arithmatex">\(X\)</span> (<span class="arithmatex">\(\mathbf{z}_1 = Y + Xi\)</span>). A second complex number <span class="arithmatex">\(c + di\)</span> (<code>c [ENTER] d</code>) lifts the first operand into Registers <span class="arithmatex">\((T = a,\; Z = b)\)</span> while the second operand occupies <span class="arithmatex">\((Y = c,\; X = d)\)</span>, holding both complex vectors on screen together.</li>
+<li><strong>The Transient <code>[↰] [CMPLX]</code> Prefix:</strong> Left-shifted <code>[↰] [CMPLX]</code> on <code>[STO]</code> illuminates the transient <code>CMPLX</code> annunciator for the next operation without locking the calculator into a separate mode.</li>
+<li><strong>Unary vs. Dyadic Complex Operations:</strong> Prefixing a unary key (<code>[1/x]</code>, <code>[↰] [x²]</code>, <code>[√x]</code>, <code>[eˣ]</code>, <code>[↰] [10ˣ]</code>, <code>[LN]</code>, <code>[↰] [LOG]</code>, <code>[SIN]</code>, <code>[COS]</code>, <code>[TAN]</code>, or <code>[+/-]</code>) with <code>[↰] [CMPLX]</code> transforms only the lower pair <span class="arithmatex">\((Y, X)\)</span> in place while leaving any second complex vector in <span class="arithmatex">\((T, Z)\)</span> untouched. Prefixing a dyadic key (<code>[+]</code>, <code>[-]</code>, <code>[×]</code>, <code>[÷]</code>, <code>[yˣ]</code>, <code>[↰] [ˣ√y]</code>, or <code>[x∥y]</code>) with <code>[↰] [CMPLX]</code> combines <span class="arithmatex">\(\mathbf{z}_2 = T + Zi\)</span> and <span class="arithmatex">\(\mathbf{z}_1 = Y + Xi\)</span>, writes the complex result to <span class="arithmatex">\((Y = \text{Real},\; X = \text{Imag})\)</span>, and drops the real stack by two levels (replicating <span class="arithmatex">\(T\)</span> into both <span class="arithmatex">\(T\)</span> and <span class="arithmatex">\(Z\)</span> in <code>4-LVL</code> mode).</li>
+<li><strong>Inspecting Complex Pairs (<code>CMPLX SHOW</code>), Polar Bridging (<code>[x⇄y]</code> + <code>[↰] [▸θ,r]</code>/<code>[↱] [▸y,x]</code>), &amp; Expanding to Four Complex Levels (<code>8-LVL</code>):</strong> The sequence <code>[↰] [CMPLX]</code> <code>[↱] [SHOW]</code> (right-shifted on <code>[ENTER]</code>) formats <span class="arithmatex">\((Y, X)\)</span> at full precision as a single complex expression <code>a + bi</code> across the screen (and <code>[↰] [CMPLX]</code> followed by <code>[↰] [REGS]</code>, left-shifted on <code>0</code>, switches the register browser to complex-pair mode); exchanging <span class="arithmatex">\((Y, X)\)</span> via <code>[x⇄y]</code> aligns complex <span class="arithmatex">\((Y = \text{Real},\; X = \text{Imag})\)</span> with polar/rectangular <code>[↰] [▸θ,r]</code> and <code>[↱] [▸y,x]</code> <span class="arithmatex">\((Y = y,\; X = x)\)</span>. Whenever a multi-branch AC network requires holding three or four complex phasors at once, <code>[↱] [FLAGS]</code> <span class="arithmatex">\(\to\)</span> <code>STACK</code> <span class="arithmatex">\(\to\)</span> <code>8-LVL</code> expands the real stack to eight registers (<span class="arithmatex">\(R_1\text{--}R_8\)</span>), creating a four-level complex stack.</li>
+</ol>
+<h3 id="531-pairing-two-complex-numbers-across-four-registers">5.3.1 Pairing Two Complex Numbers Across Four Registers</h3>
+<p>Within each adjacent register pair, the upper line holds the real projection <span class="arithmatex">\(\operatorname{Re}(\mathbf{z})\)</span> and the lower line holds the imaginary projection <span class="arithmatex">\(\operatorname{Im}(\mathbf{z})\)</span>:</p>
+<div class="arithmatex">\[\mathbf{z} = Y + X i \tag{Eq. 5.37}\]</div>
+<p>Complex trigonometric and exponential operations always evaluate in natural analytic radians regardless of the scalar angular setting. Whereas single-line calculators either stored imaginary components in a hidden parallel stack accessed via a swap key or required toggling registers to peek at the real part in Register <span class="arithmatex">\(Y\)</span>, the SC-32's four-line LCD displays both <span class="arithmatex">\(\operatorname{Re}(\mathbf{z}_1)\)</span> in Register <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(\operatorname{Im}(\mathbf{z}_1)\)</span> in Register <span class="arithmatex">\(X\)</span> alongside <span class="arithmatex">\(\mathbf{z}_2 = T + Zi\)</span> in <span class="arithmatex">\((T, Z)\)</span>.</p>
+<p>In the Joukowsky conformal airfoil mapping <span class="arithmatex">\(\zeta = z + 1/z\)</span> at the offset cylinder coordinate <span class="arithmatex">\(z = 1.1 + 0.2i\)</span>, a unary complex transformation in <span class="arithmatex">\((Y, X)\)</span> combines with a second complex vector waiting in <span class="arithmatex">\((T, Z)\)</span>. Because unary complex operators leave the upper pair <span class="arithmatex">\((T, Z)\)</span> undisturbed, loading <span class="arithmatex">\(z = 1.1 + 0.2i\)</span> into both <span class="arithmatex">\((T, Z)\)</span> and <span class="arithmatex">\((Y, X)\)</span> and invoking the unary complex reciprocal inverts only the lower pair <span class="arithmatex">\((Y, X) \to 0.88 - 0.16i\)</span> while the original coordinate <span class="arithmatex">\(z = 1.1 + 0.2i\)</span> remains in <span class="arithmatex">\((T, Z)\)</span>. Complex addition then sums the two vectors to reach the cambered wing coordinate <span class="arithmatex">\((Y = 1.98,\; X = 0.04)\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>1.1 [ENTER] 0.2 [ENTER] 1.1 [ENTER] 0.2</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.2\)</span></td>
+<td style="text-align: left;">Cylinder point <span class="arithmatex">\(z = 1.1 + 0.2i\)</span> in both <span class="arithmatex">\((T, Z)\)</span> and <span class="arithmatex">\((Y, X)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[↰] [CMPLX] [1/x]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.88\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-0.16\)</span></td>
+<td style="text-align: left;">Unary reciprocal <span class="arithmatex">\(1/z = 0.88 - 0.16i\)</span> in <span class="arithmatex">\((Y, X)\)</span>; <span class="arithmatex">\(z\)</span> stays in <span class="arithmatex">\((T, Z)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[↰] [CMPLX] [+]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.1\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(1.98\)</span></strong></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(0.04\)</span></strong></td>
+<td style="text-align: left;">Airfoil point <span class="arithmatex">\(\zeta = z + 1/z = 1.98 + 0.04i\)</span> (2-level drop replicates <span class="arithmatex">\(T \to Z\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<p>This separation between the lower pair <span class="arithmatex">\((Y, X)\)</span> and the upper pair <span class="arithmatex">\((T, Z)\)</span> likewise simplifies damped mechanical eigenvalues and hypersonic re-entry plasma physics. For an underdamped mechanical shock-absorber suspension (<span class="arithmatex">\(m = 2\text{ kg}\)</span>, viscous damping <span class="arithmatex">\(c = 8\text{ N}\cdot\text{s/m}\)</span>, and spring stiffness <span class="arithmatex">\(k = 50\text{ N/m}\)</span>, where <span class="arithmatex">\(\omega_0^2 = k/m = 25\text{ s}^{-2}\)</span>), the horizontal energy-dissipation rate <span class="arithmatex">\(-\alpha = -c/(2m) = -2\text{ s}^{-1}\)</span> and the vertical damped ringing frequency <span class="arithmatex">\(\omega_d = \sqrt{\omega_0^2 - \alpha^2} = \sqrt{21} \approx 4.583\text{ rad/s}\)</span> assemble across the lower pair <span class="arithmatex">\((Y = -2,\; X \approx 4.583)\)</span>.</p>
+<p>When a spacecraft re-enters the atmosphere at hypersonic speed, shock heating ionizes the surrounding air into a sheath of free electrons with natural <em>electron plasma frequency</em> <span class="arithmatex">\(\omega_p\)</span> that scatter against neutral gas molecules at <em>collision frequency</em> <span class="arithmatex">\(\nu\)</span>; as a telemetry radio wave of angular frequency <span class="arithmatex">\(\omega\)</span> traverses the ionized sheath, the Drude–Lorentz complex relative permittivity <span class="arithmatex">\(\epsilon_r = 1 - \frac{\omega_p^2}{\omega(\omega - j\nu)}\)</span> governs propagation—where the subtracted plasma ratio turns the real part of <span class="arithmatex">\(\epsilon_r\)</span> negative and triggers total radio blackout whenever the plasma density is high enough that <span class="arithmatex">\(\omega_p &gt; \omega\)</span>, while the collision term <span class="arithmatex">\(-j\nu\)</span> in the denominator introduces an imaginary conductive loss that absorbs radio energy. At normalized <span class="arithmatex">\(\omega_p = 1, \omega = 2, \nu = 0.5\)</span> (just above blackout recovery where <span class="arithmatex">\(\omega &gt; \omega_p\)</span>), inverting the collision denominator <span class="arithmatex">\(\omega(\omega - j\nu) = 4 - i\)</span> in place on <span class="arithmatex">\((Y, X)\)</span> into <span class="arithmatex">\(\approx 0.235 + 0.059i\)</span>, negating it, and adding the unit vacuum reference <span class="arithmatex">\(1 + 0i\)</span> resolves the complex relative permittivity <span class="arithmatex">\(\epsilon_r \approx \mathbf{0.765 - 0.059i}\)</span>.</p>
+<h3 id="532-polar-phasors-three-phase-neutral-and-analytic-continuation">5.3.2 Polar Phasors, Three-Phase Neutral, and Analytic Continuation</h3>
+<p>Because the complex exponential and complex natural logarithm are unary complex functions, they transform a complex argument <span class="arithmatex">\(\mathbf{z} = x + iy\)</span> in place across <span class="arithmatex">\((Y, X)\)</span> according to <span class="arithmatex">\(e^{x + iy} = e^x\cos y + i e^x\sin y\)</span> without disturbing Registers <span class="arithmatex">\(Z\)</span> and <span class="arithmatex">\(T\)</span>. Placing the real growth rate <span class="arithmatex">\(x = 0\)</span> in Register <span class="arithmatex">\(Y\)</span> and the radian angle <span class="arithmatex">\(y = \pi\)</span> in Register <span class="arithmatex">\(X\)</span> evaluates <span class="arithmatex">\(e^{0 + i\pi}\)</span> in place to <span class="arithmatex">\(Y = -1\)</span> and <span class="arithmatex">\(X = \sin\pi \approx 1.225 \times 10^{-16}\)</span> in full floating-point precision, which rounds to <code>0</code> under fixed-decimal formatting. Adding the unit real vector <span class="arithmatex">\(1 + 0i\)</span> across all four registers collapses the pair to <span class="arithmatex">\((Y = 0,\; X \approx 1.225 \times 10^{-16})\)</span> to verify Euler's five-constant identity <span class="arithmatex">\(e^{i\pi} + 1 = 0\)</span>, while applying the complex natural logarithm to <span class="arithmatex">\(-1 + 0i\)</span> inverts it onto the upper lip of the negative-real branch cut at <span class="arithmatex">\(\operatorname{Ln}(-1) \approx 0 + 3.142i\)</span>.</p>
+<p>To convert between rectangular complex coordinates and polar phasors, the Euclidean polar and rectangular conversion keys expect vertical <span class="arithmatex">\(y\)</span> in Register <span class="arithmatex">\(Y\)</span> and horizontal <span class="arithmatex">\(x\)</span> in Register <span class="arithmatex">\(X\)</span>, while complex format places Real (<span class="arithmatex">\(x\)</span>) in Register <span class="arithmatex">\(Y\)</span> and Imaginary (<span class="arithmatex">\(y\)</span>) in Register <span class="arithmatex">\(X\)</span> in top-to-bottom reading order <span class="arithmatex">\(a + bi\)</span>. Exchanging Registers <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> bridges complex <span class="arithmatex">\((Y = \text{Real}, X = \text{Imag})\)</span> and polar <span class="arithmatex">\((Y = \theta, X = r)\)</span> coordinates: swapping Registers <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> before converting <span class="arithmatex">\(3 + 4i\)</span> to polar places magnitude <span class="arithmatex">\(r = 5\)</span> in Register <span class="arithmatex">\(X\)</span> and angle <span class="arithmatex">\(\theta \approx 53.13^\circ\)</span> in Degrees mode (<span class="arithmatex">\(\approx 0.927\text{ rad}\)</span> in Radians mode) in Register <span class="arithmatex">\(Y\)</span>, and swapping after converting back to rectangular avoids the <em>complementary angle trap</em>, where converting <span class="arithmatex">\((Y = \text{Real}, X = \text{Imag})\)</span> without swapping first computes <span class="arithmatex">\(\operatorname{atan2}(\text{Real}, \text{Imag}) = 90^\circ - \theta\)</span>.</p>
+<p>In Degrees mode, pairing polar-to-rectangular conversion with register exchange verifies three-phase neutral cancellation <span class="arithmatex">\(1 + a + a^2 = 0\)</span> for the cube roots of unity <span class="arithmatex">\(a = 1\angle 120^\circ \approx -0.5 + 0.866i\)</span> and <span class="arithmatex">\(a^2 = 1\angle 240^\circ \approx -0.5 - 0.866i\)</span>. Converting <span class="arithmatex">\((120^\circ, 1)\)</span> to rectangular coordinates and exchanging Registers <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> places <span class="arithmatex">\(a \approx -0.5 + 0.866i\)</span> in <span class="arithmatex">\((Y, X)\)</span>; converting <span class="arithmatex">\((240^\circ, 1)\)</span> and exchanging Registers <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> lifts <span class="arithmatex">\(a\)</span> into <span class="arithmatex">\((T, Z)\)</span> while placing <span class="arithmatex">\(a^2 \approx -0.5 - 0.866i\)</span> in <span class="arithmatex">\((Y, X)\)</span>. Complex addition cancels their opposite imaginary parts <span class="arithmatex">\(\pm 0.866i\)</span> to form <span class="arithmatex">\(a + a^2 = -1 + 0i\)</span>, and adding the reference phasor <span class="arithmatex">\(1 + 0i\)</span> confirms <span class="arithmatex">\(1 + a + a^2 = \mathbf{0 + 0i}\)</span>.</p>
+<p>The complex square-root and complex power operations evaluate de Moivre's fractional and complex powers across the stack. Taking the principal square root of <span class="arithmatex">\(0 + 1i\)</span> bisects the <span class="arithmatex">\(90^\circ\)</span> (<span class="arithmatex">\(\pi/2\text{ rad}\)</span>) angle to <span class="arithmatex">\(45^\circ\)</span> in place at <span class="arithmatex">\(\approx 0.707 + 0.707i\)</span>; raising <span class="arithmatex">\(-8 + 0i\)</span> in <span class="arithmatex">\((T, Z)\)</span> to the exact rational power <span class="arithmatex">\(1/3 + 0i\)</span> in <span class="arithmatex">\((Y, X)\)</span> lands on the principal branch cube root <span class="arithmatex">\(8^{1/3}e^{i\pi/3} = 1 + i\sqrt{3} \approx 1 + 1.732i\)</span>; and raising a complex base <span class="arithmatex">\(\mathbf{z}_2 = 1 + i\)</span> in <span class="arithmatex">\((T, Z)\)</span> to a complex exponent <span class="arithmatex">\(\mathbf{z}_1 = 1 - i\)</span> in <span class="arithmatex">\((Y, X)\)</span> evaluates <span class="arithmatex">\((1 + i)^{(1 - i)} = e^{(1-i)\ln(1+i)} \approx 2.808 + 1.318i\)</span>.</p>
+<p>Unary complex trigonometric functions evaluated in <span class="arithmatex">\((Y, X)\)</span> before combining across all four registers also verify the analytic continuation of <span class="arithmatex">\(\sin^2 z + \cos^2 z = 1\)</span> outside <span class="arithmatex">\([-1, +1]\)</span> at <span class="arithmatex">\(z = 1 + 2i\)</span>. Computing <span class="arithmatex">\(\sin(1 + 2i) \approx 3.166 + 1.96i\)</span> and squaring it in place on <span class="arithmatex">\((Y, X)\)</span> produces <span class="arithmatex">\((\sin z)^2 \approx 6.182 + 12.407i\)</span>, while computing <span class="arithmatex">\(\cos(1 + 2i) \approx 2.033 - 3.052i\)</span> and squaring it in <span class="arithmatex">\((Y, X)\)</span> to <span class="arithmatex">\((\cos z)^2 \approx -5.182 - 12.407i\)</span> shifts <span class="arithmatex">\((\sin z)^2\)</span> into <span class="arithmatex">\((T, Z)\)</span>, where complex addition cancels the opposite imaginary parts <span class="arithmatex">\(\pm 12.407i\)</span> and confirms <span class="arithmatex">\(\sin^2(1+2i) + \cos^2(1+2i) = \mathbf{1 + 0i}\)</span>.</p>
+<h3 id="533-balancing-industrial-motors-and-matching-rf-antennas">5.3.3 Balancing Industrial Motors and Matching RF Antennas</h3>
+<p>In steady-state AC circuit analysis, series impedances add across the four-register complex stack while parallel branches combine through complex reciprocals or the dyadic complex parallel operator. When an inductive branch <span class="arithmatex">\(\mathbf{Z}_1 = 8 + 4i\,\Omega\)</span> and a capacitive branch <span class="arithmatex">\(\mathbf{Z}_2 = 4 - 8i\,\Omega\)</span> are connected in series, their resistances and reactances sum component by component to <span class="arithmatex">\(\mathbf{Z}_{\text{total}} = 12 - 4i\,\Omega\)</span>, and multiplying <span class="arithmatex">\((3 + 4i)(1 - 2i)\)</span> across <span class="arithmatex">\((T, Z)\)</span> and <span class="arithmatex">\((Y, X)\)</span> yields <span class="arithmatex">\(\mathbf{11 - 2i}\)</span>.</p>
+<p>On an industrial AC plant floor, a motor winding of inductive impedance <span class="arithmatex">\(\mathbf{Z}_m = 50 + 80i\,\Omega\)</span> partially compensated by a series tuning capacitor <span class="arithmatex">\(\mathbf{Z}_C = 0 - 50i\,\Omega\)</span> across a <span class="arithmatex">\(\mathbf{V} = 120 + 0i\text{ V}_{\text{rms}}\)</span> (<span class="arithmatex">\(60\text{ Hz}\)</span>) feeder gives a net series load impedance <span class="arithmatex">\(\mathbf{Z} = \mathbf{Z}_m + \mathbf{Z}_C = 50 + 30i\,\Omega\)</span>. Dividing the source phasor <span class="arithmatex">\(\mathbf{V} = 120 + 0i\text{ V}\)</span> in <span class="arithmatex">\((T, Z)\)</span> by <span class="arithmatex">\(\mathbf{Z} = 50 + 30i\,\Omega\)</span> in <span class="arithmatex">\((Y, X)\)</span> yields the lagging line current <span class="arithmatex">\(\mathbf{I} \approx 1.765 - 1.059i\text{ A}\)</span>. Negating the imaginary part of <span class="arithmatex">\(\mathbf{I}\)</span> in Register <span class="arithmatex">\(X\)</span> forms the conjugate current <span class="arithmatex">\(\mathbf{I}^* \approx 1.765 + 1.059i\text{ A}\)</span>, and multiplying by <span class="arithmatex">\(\mathbf{V} = 120 + 0i\text{ V}\)</span> resolves the complex apparent power <span class="arithmatex">\(\mathbf{S} = \mathbf{V}\mathbf{I}^* \approx \mathbf{211.765\text{ W} + 127.059i\text{ VAR}}\)</span> across <span class="arithmatex">\((Y, X)\)</span> (apparent magnitude <span class="arithmatex">\(|\mathbf{S}| \approx 246.958\text{ VA}\)</span> at phase angle <span class="arithmatex">\(\theta \approx 30.964^\circ\)</span>, or a lagging power factor <span class="arithmatex">\(\text{PF} = \cos\theta \approx 0.857\)</span>). Dividing the reactive power <span class="arithmatex">\(Q \approx 127.059\text{ VAR}\)</span> in Register <span class="arithmatex">\(X\)</span> by <span class="arithmatex">\(2\pi f V^2 = 2\pi(60)(120^2)\)</span> while real power <span class="arithmatex">\(P \approx 211.765\text{ W}\)</span> remains in Register <span class="arithmatex">\(Y\)</span> then sizes the shunt power-factor-correction capacitor bank at <span class="arithmatex">\(C \approx \mathbf{23.405\,\mu\text{F}}\)</span>.</p>
+<p>When two branches are wired in parallel (<span class="arithmatex">\(\mathbf{Z}_1 = 20 + 15i\,\Omega \parallel \mathbf{Z}_2 = 10 - 25i\,\Omega\)</span>), inverting <span class="arithmatex">\(\mathbf{Z}_1\)</span> produces branch admittance <span class="arithmatex">\(\mathbf{Y}_1 = 0.032 - 0.024i\,\text{S}\)</span> and inverting <span class="arithmatex">\(\mathbf{Z}_2\)</span> produces <span class="arithmatex">\(\mathbf{Y}_2 \approx 0.014 + 0.034i\,\text{S}\)</span>; summing the admittances to <span class="arithmatex">\(\mathbf{Y}_{\text{parallel}} \approx 0.046 + 0.01i\,\text{S}\)</span> and re-inverting—or combining <span class="arithmatex">\(\mathbf{Z}_1\)</span> and <span class="arithmatex">\(\mathbf{Z}_2\)</span> with the complex parallel operator—yields the equivalent parallel impedance <span class="arithmatex">\(\mathbf{Z}_{\text{parallel}} = \mathbf{20.75 - 4.75i\,\Omega}\)</span>. In a symmetric conjugate parallel network (<span class="arithmatex">\(Z_1 = 3 + 4i\,\Omega \parallel Z_2 = 3 - 4i\,\Omega\)</span>), the opposite susceptances <span class="arithmatex">\(\mp 0.16i\,\text{S}\)</span> cancel, doubling the real conductance <span class="arithmatex">\(G = 0.12\,\text{S}\)</span> to <span class="arithmatex">\(0.24\,\text{S}\)</span> for a resistive single-frequency load of <span class="arithmatex">\(1/0.24 \approx \mathbf{4.167\,\Omega}\)</span>, while a broadband Zobel Boucherot cell <span class="arithmatex">\(Z_{\text{Zobel}} = R - j(R^2/X_L) = 3 - 2.25i\,\Omega\)</span> in parallel with <span class="arithmatex">\(3 + 4i\,\Omega\)</span> restores the driver's nominal resistance <span class="arithmatex">\(R = \mathbf{3\,\Omega}\)</span>.</p>
+<p>On a four-arm Thévenin AC impedance bridge <span class="arithmatex">\(Z_{\text{th}} = (Z_A \parallel Z_C) + (Z_B \parallel Z_D)\)</span> with <span class="arithmatex">\(Z_A = 10 + 20i\,\Omega\)</span>, <span class="arithmatex">\(Z_C = 20 + 0i\,\Omega\)</span>, <span class="arithmatex">\(Z_B = 30 - 10i\,\Omega\)</span>, and <span class="arithmatex">\(Z_D = 0 - 25i\,\Omega\)</span>, activating the 8-level stack (<span class="arithmatex">\(R_1\text{--}R_8\)</span>, labeled <span class="arithmatex">\(X, Y, Z, 4, 5, 6, 7, T\)</span>) lets the first parallel branch <span class="arithmatex">\(Z_{AC} \approx 10.769 + 6.154i\,\Omega\)</span> shift up into levels <span class="arithmatex">\((R_6, R_5)\)</span> while the second parallel branch <span class="arithmatex">\(Z_{BD} \approx 8.824 - 14.706i\,\Omega\)</span> is evaluated, dropping back into <span class="arithmatex">\((R_4, Z)\)</span> so a final complex addition resolves <span class="arithmatex">\(Z_{\text{th}} \approx \mathbf{19.593 - 8.552i\,\Omega}\)</span>.</p>
+<p>In an inverting operational-amplifier active RC stage where a virtual-ground summing node sets the closed-loop voltage gain to <span class="arithmatex">\(A_v = -\mathbf{Z}_f / \mathbf{Z}_{\text{in}}\)</span>, dividing feedback impedance <span class="arithmatex">\(\mathbf{Z}_f = 5000 - 5000i\,\Omega\)</span> in <span class="arithmatex">\((T, Z)\)</span> by input impedance <span class="arithmatex">\(\mathbf{Z}_{\text{in}} = 1000 - 1000i\,\Omega\)</span> in <span class="arithmatex">\((Y, X)\)</span> and negating the complex quotient confirms a phase-matched closed-loop gain of <span class="arithmatex">\(A_v = -5 + 0i\)</span>.</p>
+<p>Finally, in RF transmission-line analysis, when a <span class="arithmatex">\(Z_0 = 50\,\Omega\)</span> coaxial cable is terminated by a dipole antenna of impedance <span class="arithmatex">\(\mathbf{Z}_L = 75 + 40i\,\Omega\)</span>, loading the impedance mismatch <span class="arithmatex">\(\mathbf{Z}_L - Z_0 = 25 + 40i\)</span> into <span class="arithmatex">\((T, Z)\)</span> and the impedance sum <span class="arithmatex">\(\mathbf{Z}_L + Z_0 = 125 + 40i\)</span> into <span class="arithmatex">\((Y, X)\)</span> lets complex division resolve the reflection coefficient <span class="arithmatex">\(\mathbf{\Gamma} \approx \mathbf{0.274 + 0.232i}\)</span>. Exchanging Registers <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> and converting to polar form extracts the reflection magnitude <span class="arithmatex">\(|\mathbf{\Gamma}| \approx \mathbf{0.359}\)</span> in Register <span class="arithmatex">\(X\)</span> (<span class="arithmatex">\(\approx 12.9\%\)</span> reflected power, return loss <span class="arithmatex">\(\text{RL} = -20\log_{10}|\mathbf{\Gamma}| \approx \mathbf{8.888\text{ dB}}\)</span>) and phase angle <span class="arithmatex">\(\theta \approx 0.702\text{ rad}\)</span> (<span class="arithmatex">\(\approx 40.25^\circ\)</span>) in Register <span class="arithmatex">\(Y\)</span>, from which the standing-wave ratio <span class="arithmatex">\(\text{VSWR} = \frac{1 + |\mathbf{\Gamma}|}{1 - |\mathbf{\Gamma}|}\)</span> resolves to <span class="arithmatex">\(\approx \mathbf{2.122}\)</span>. For a lossy line with distributed series impedance <span class="arithmatex">\(Z' = 0.1 + 2.5i\,\Omega/\text{m}\)</span> in <span class="arithmatex">\((T, Z)\)</span> and shunt admittance <span class="arithmatex">\(Y' = 10^{-6} + 10^{-3}i\,\text{S/m}\)</span> in <span class="arithmatex">\((Y, X)\)</span>, complex division (<span class="arithmatex">\(Z'/Y' \approx 2500.098 - 97.5i\,\Omega^2\)</span>) followed by the complex square root extracts the characteristic impedance <span class="arithmatex">\(Z_0 = \sqrt{Z'/Y'} \approx \mathbf{50.01 - 0.975i\,\Omega}\)</span>.</p>
+<h3 id="534-try-it-on-the-stack">5.3.4 Try It on the Stack</h3>
+<ol>
+<li><strong>Zobel Boucherot Loudspeaker Compensation Cell:</strong> Load the inductive voice-coil branch <span class="arithmatex">\(\mathbf{Z}_{\text{driver}} = 6 + 8i\,\Omega\)</span> into Registers <span class="arithmatex">\((T, Z)\)</span> and its Zobel RC compensation cell <span class="arithmatex">\(\mathbf{Z}_{\text{Zobel}} = R - j(R^2 / X_L) = 6 - 4.5i\,\Omega\)</span> into Registers <span class="arithmatex">\((Y, X)\)</span>, and combine them in parallel using the complex parallel operator to verify that the reactive rise cancels to the nominal voice-coil resistance <span class="arithmatex">\(R = 6\,\Omega\)</span>. <em>(Verified stack result: resistive <span class="arithmatex">\(Y = \mathbf{6\,\Omega}\)</span> and <span class="arithmatex">\(X = \mathbf{0\,\Omega}\)</span>.)</em></li>
+<li><strong>Euler's Principal Real Value of <span class="arithmatex">\(i^i\)</span>:</strong> Stage <span class="arithmatex">\(\mathbf{z}_2 = 0 + 1i\)</span> in <span class="arithmatex">\((T, Z)\)</span> and <span class="arithmatex">\(\mathbf{z}_1 = 0 + 1i\)</span> in <span class="arithmatex">\((Y, X)\)</span>, and invoke the complex power operator to verify that the principal branch of the imaginary unit raised to the imaginary unit equals the real constant <span class="arithmatex">\(e^{-\pi/2}\)</span>. <em>(Verified stack result: <span class="arithmatex">\(Y \approx \mathbf{0.208}\)</span> and <span class="arithmatex">\(X = \mathbf{0}\)</span>.)</em></li>
+<li><strong>Quarter-Wave Antenna Matching Transformer:</strong> Compute the characteristic impedance <span class="arithmatex">\(Z_{\text{line}} = \sqrt{Z_0 Z_L}\)</span> required to match a <span class="arithmatex">\(Z_0 = 50\,\Omega\)</span> coaxial transmitter feedline to a resistive <span class="arithmatex">\(Z_L = 112.5\,\Omega\)</span> loop antenna without standing-wave reflections. <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\(Z_{\text{line}} = \mathbf{75\,\Omega}\)</span>.)</em></li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/ecommerce.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,254 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="6.0in" height="4.0in" viewBox="0 0 1200 800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+      .font-mono { font-family: 'Space Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .card-title { font-size: 24px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
+      .card-subtitle { font-size: 15px; font-weight: 400; fill: #475569; }
+      .section-hdr { font-size: 16px; font-weight: 700; fill: #0f172a; letter-spacing: 0.6px; text-transform: uppercase; }
+      .th { font-size: 14px; font-weight: 700; fill: #475569; text-transform: uppercase; }
+      .footer-txt { font-size: 13.5px; font-weight: 400; fill: #475569; }
+    </style>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect x="0" y="0" width="1200" height="800" fill="#ffffff" />
+
+  <!-- Outer Card Frame (4x6 Aspect Ratio, 3mm corner radius) -->
+  <rect x="10" y="10" width="1180" height="780" rx="12" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
+  <rect x="18" y="18" width="1164" height="764" rx="8" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
+
+  <!-- Top Header Panel -->
+  <rect x="25" y="25" width="1150" height="84" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.2" />
+  
+  <!-- StackCalc Brand Logo Badge -->
+  <g transform="translate(36, 36)">
+    <rect x="0" y="0" width="52" height="52" rx="7" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.3" />
+    <rect x="10" y="11" width="32" height="5" rx="1.5" fill="#0f172a" />
+    <rect x="13" y="19" width="26" height="5" rx="1.5" fill="#0f172a" opacity="0.85" />
+    <rect x="16" y="27" width="20" height="5" rx="1.5" fill="#0f172a" opacity="0.70" />
+    <rect x="19" y="35" width="14" height="5" rx="1.5" fill="#0f172a" opacity="0.55" />
+  </g>
+
+  <!-- Box Button Icon Badge -->
+  
+    <g transform="translate(98, 36)" data-macro="{{icon:button_quiz}}">
+      <rect x="0" y="0" width="52" height="52" rx="7" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
+      <g transform="translate(4.16, 4.16) scale(0.4368)">
+        <path d="M 8.25 -8.0625 L 8.25 -11.328125 C 8.25 -12.316406 8.582031 -13.144531 9.25 -13.8125 C 9.925781 -14.476562 10.753906 -14.8125 11.734375 -14.8125 L 12.46875 -14.8125 C 13.550781 -14.8125 14.398438 -15.160156 15.015625 -15.859375 C 15.640625 -16.554688 15.953125 -17.453125 15.953125 -18.546875 C 15.953125 -19.609375 15.582031 -20.503906 14.84375 -21.234375 C 14.113281 -21.972656 13.117188 -22.34375 11.859375 -22.34375 C 10.484375 -22.34375 9.414062 -21.890625 8.65625 -20.984375 C 7.90625 -20.085938 7.53125 -19.046875 7.53125 -17.859375 L 7.53125 -16.265625 L 2.515625 -16.265625 L 2.515625 -18.3125 C 2.515625 -19.832031 2.878906 -21.265625 3.609375 -22.609375 C 4.347656 -23.953125 5.421875 -25.039062 6.828125 -25.875 C 8.234375 -26.707031 9.9375 -27.125 11.9375 -27.125 C 13.726562 -27.125 15.300781 -26.738281 16.65625 -25.96875 C 18.019531 -25.195312 19.078125 -24.160156 19.828125 -22.859375 C 20.585938 -21.554688 20.96875 -20.09375 20.96875 -18.46875 L 20.96875 -18.234375 C 20.96875 -16.867188 20.695312 -15.597656 20.15625 -14.421875 C 19.613281 -13.242188 18.828125 -12.285156 17.796875 -11.546875 C 16.773438 -10.816406 15.539062 -10.453125 14.09375 -10.453125 C 13.382812 -10.453125 13.03125 -10.070312 13.03125 -9.3125 L 13.03125 -8.0625 Z M 10.671875 0.53125 C 9.691406 0.53125 8.84375 0.179688 8.125 -0.515625 C 7.414062 -1.210938 7.0625 -2.066406 7.0625 -3.078125 C 7.0625 -4.085938 7.414062 -4.941406 8.125 -5.640625 C 8.84375 -6.335938 9.691406 -6.6875 10.671875 -6.6875 C 11.660156 -6.6875 12.507812 -6.335938 13.21875 -5.640625 C 13.925781 -4.941406 14.28125 -4.085938 14.28125 -3.078125 C 14.28125 -2.066406 13.925781 -1.210938 13.21875 -0.515625 C 12.507812 0.179688 11.660156 0.53125 10.671875 0.53125 Z M 10.671875 0.53125 " transform="translate(38, 64)" fill="#0f172a" fill-rule="nonzero" /><path d="M 100 50 L 100 81.65625 C 100 86.9375 100 89.578125 99.101562 92.421875 C 97.972656 95.527344 95.527344 97.972656 92.421875 99.101562 C 89.578125 100 86.9375 100 81.65625 100 L 18.34375 100 C 13.0625 100 10.421875 100 7.578125 99.101562 C 4.472656 97.972656 2.027344 95.527344 0.898438 92.421875 C 0 89.578125 0 86.9375 0 81.65625 L 0 18.34375 C 0 13.0625 0 10.421875 0.898438 7.578125 C 2.027344 4.472656 4.472656 2.027344 7.578125 0.898438 C 10.421875 0 13.0625 0 18.34375 0 L 81.65625 0 C 86.9375 0 89.578125 0 92.421875 0.898438 C 95.527344 2.027344 97.972656 4.472656 99.101562 7.578125 C 100 10.421875 100 13.0625 100 18.34375 Z M 96.5 50 L 96.5 83.507812 C 96.5 87.246094 96.5 89.117188 95.863281 91.132812 C 95.0625 93.332031 93.332031 95.0625 91.132812 95.863281 C 89.117188 96.5 87.246094 96.5 83.507812 96.5 L 16.492188 96.5 C 12.753906 96.5 10.882812 96.5 8.867188 95.863281 C 6.667969 95.0625 4.9375 93.332031 4.136719 91.132812 C 3.5 89.117188 3.5 87.246094 3.5 83.507812 L 3.5 16.492188 C 3.5 12.753906 3.5 10.882812 4.136719 8.867188 C 4.9375 6.667969 6.667969 4.9375 8.867188 4.136719 C 10.882812 3.5 12.753906 3.5 16.492188 3.5 L 83.507812 3.5 C 87.246094 3.5 89.117188 3.5 91.132812 4.136719 C 93.332031 4.9375 95.0625 6.667969 95.863281 8.867188 C 96.5 10.882812 96.5 12.753906 96.5 16.492188 Z M 96.5 50 " fill="#0f172a" fill-rule="evenodd" /><path d="M 82 50 C 82 67.671875 67.671875 82 50 82 C 32.328125 82 18 67.671875 18 50 C 18 32.328125 32.328125 18 50 18 C 67.671875 18 82 32.328125 82 50 Z M 77.800781 50 C 77.800781 65.351562 65.351562 77.800781 50 77.800781 C 34.644531 77.800781 22.199219 65.351562 22.199219 50 C 22.199219 34.644531 34.644531 22.199219 50 22.199219 C 65.351562 22.199219 77.800781 34.644531 77.800781 50 Z M 77.800781 50 " fill="#0f172a" fill-rule="evenodd" />
+      </g>
+    </g>
+    
+
+  <!-- Header Typography -->
+  <text x="165" y="55" class="font-mono card-title">SC-6 QUEST SCOREBOARD &amp; +10 TOKEN KIT</text>
+  <text x="165" y="74" class="font-sans card-subtitle">Daily Multi-Method Mastery Scoreboard (Sockets 1–10, 100 &amp; ? Badge)</text>
+  <text x="165" y="93" class="font-mono" font-size="12.5px" font-weight="700" fill="#0284c7">SERIES 1 • CARD 10 / 12 • DOMAIN: MULTI-METHOD MASTERY &amp; DAILY FLUENCY</text>
+
+  <!-- Top-Right SKU Badges -->
+  <g transform="translate(975, 36)">
+    <rect x="0" y="0" width="190" height="28" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+    <text x="95" y="19" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#0f172a">CARD 10 / 12 • QUEST-01</text>
+    
+    <rect x="0" y="34" width="190" height="26" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.2" />
+    <text x="95" y="52" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#059669">MATHEMATICAL GUIDE</text>
+  </g>
+
+  <!-- COLUMN 1: CONCEPT & PROOF (Width: 390) -->
+  <g transform="translate(25, 120)">
+    <rect x="0" y="0" width="390" height="585" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="390" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="16" y="23" class="font-mono section-hdr">1. CONCEPT &amp; GEOMETRIC PROOF</text>
+
+    <!-- Headline -->
+    <text x="16" y="52" class="font-mono" font-size="14.5px" font-weight="700" fill="#0284c7">ONE PROBLEM. MULTIPLE WAYS. SCORE YOUR MASTERY.</text>
+
+    <!-- Concept lines -->
+    <text x="16" y="66" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">Confidence grows by solving in multiple</text>
+    <text x="16" y="86" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">ways.</text>
+    <text x="16" y="106" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">Reward each approach with tactile score</text>
+    <text x="16" y="126" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">tokens:</text>
+    <text x="16" y="146" class="font-sans" font-size="15px" font-weight="700" fill="#0284c7">   1 Block = +10 (1st Way) • 2 Blocks =</text>
+    <text x="16" y="166" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">+20 (2nd Way)</text>
+    <text x="16" y="186" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">Stacking a 2nd token rewards a 2nd</text>
+    <text x="16" y="206" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">solution method!</text>
+
+    <!-- Datum Box -->
+    <g transform="translate(12, 236)">
+      <rect x="0" y="0" width="366" height="154" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#0f172a">UNIVERSAL +10 QUARTER-BLOCK DATUM</text>
+    </g>
+    <text x="24" y="272" class="font-mono" font-size="13.5px" fill="#475569">• Token: Universal +10 Block =</text>
+    <text x="24" y="290" class="font-mono" font-size="13.5px" fill="#475569">10.25×10.25×7.0mm</text>
+    <text x="24" y="308" class="font-mono" font-size="13.5px" fill="#475569">• 1st Way: Seat 1 token in socket 1–10</text>
+    <text x="24" y="326" class="font-mono" font-size="13.5px" fill="#475569">(+10 pts)</text>
+    <text x="24" y="344" class="font-mono" font-size="13.5px" fill="#475569">• 2nd Way: Stack 2nd token on top (+20 pts</text>
+    <text x="24" y="362" class="font-mono" font-size="13.5px" fill="#475569">total)</text>
+
+    <!-- Proof Diagram Box -->
+    <g transform="translate(12, 402)">
+      <rect x="0" y="0" width="366" height="173" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      
+      <text x="14" y="22" class="font-mono" font-size="14px" font-weight="700" fill="#0f172a">LID SOCKETS 1–10 &amp; 100: 1 BLOCK = +10, 2 STACKED = +20</text>
+      <g transform="translate(20, 38)">
+        <rect x="0" y="0" width="180" height="98" rx="5" fill="#ffffff" stroke="#0f172a" stroke-width="1.5" />
+        <rect x="10" y="10" width="28" height="28" rx="4" fill="#cbd5e1" opacity="0.3" stroke="#0f172a" stroke-width="1.2" />
+        <circle cx="24" cy="24" r="10" fill="none" stroke="#0284c7" stroke-width="1.5" />
+        <text x="24" y="29" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0284c7">?</text>
+
+        <rect x="46" y="10" width="20" height="20" rx="2" fill="#0284c7" stroke="#0f172a" stroke-width="1" />
+        <text x="56" y="24" class="font-mono" font-size="9px" font-weight="700" text-anchor="middle" fill="#FFFFFF">+10</text>
+        <rect x="72" y="10" width="20" height="20" rx="2" fill="#059669" stroke="#0f172a" stroke-width="1.2" />
+        <text x="82" y="24" class="font-mono" font-size="9px" font-weight="700" text-anchor="middle" fill="#FFFFFF">+20</text>
+        <rect x="98" y="10" width="20" height="20" rx="2" fill="none" stroke="#cbd5e1" stroke-width="1" />
+        <rect x="124" y="10" width="20" height="20" rx="2" fill="none" stroke="#cbd5e1" stroke-width="1" />
+        <rect x="148" y="10" width="24" height="24" rx="2" fill="#d97706" stroke="#0f172a" stroke-width="1.2" />
+        <text x="160" y="26" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#FFFFFF">100</text>
+
+        <text x="56" y="44" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">1</text>
+        <text x="82" y="44" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">2</text>
+        <text x="108" y="44" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#475569">3</text>
+        <text x="134" y="44" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#475569">4</text>
+
+        <text x="12" y="68" class="font-mono" font-size="11.5px" font-weight="700" fill="#0284c7">1st Way = 1 Block (+10 pts)</text>
+        <text x="12" y="86" class="font-mono" font-size="11.5px" font-weight="700" fill="#059669">2nd Way = 2 Stacked (+20 pts)</text>
+      </g>
+
+      <text x="215" y="56" class="font-mono" font-size="14.5px" font-weight="700" fill="#059669">+10 TOKENS</text>
+      <text x="215" y="76" class="font-sans" font-size="13px" fill="#475569">• 1 Block = +10 pts</text>
+      <text x="215" y="94" class="font-sans" font-size="13px" fill="#475569">• 2 Stacked = +20 pts</text>
+      <text x="215" y="118" class="font-mono" font-size="13.5px" font-weight="700" fill="#0284c7">100 Mastery Tower:</text>
+      <text x="215" y="136" class="font-sans" font-size="13px" fill="#475569">Trade 10 blocks into Socket 100</text>
+      <text x="215" y="154" class="font-sans" font-size="13px" fill="#475569">Matches SC-6 [↰][C] (?) Quiz</text>
+
+    </g>
+  </g>
+
+  <!-- COLUMN 2: PARTS INVENTORY (Width: 450) -->
+  <g transform="translate(425, 120)">
+    <rect x="0" y="0" width="450" height="585" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="450" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="16" y="23" class="font-mono section-hdr">2. KIT PARTS INVENTORY (62 PIECES)</text>
+
+    <!-- Table Header -->
+    <text x="14" y="52" class="font-mono th">COMPONENT</text>
+    <text x="180" y="52" class="font-mono th">QTY</text>
+    <text x="215" y="52" class="font-mono th">SPEC</text>
+    <text x="436" y="52" class="font-mono th" text-anchor="end">COLOR</text>
+    <line x1="12" y1="58" x2="438" y2="58" stroke="#cbd5e1" stroke-width="1" />
+
+    
+      <text x="14" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">1st-Way Tokens</text>
+      <text x="180" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">30x</text>
+      <text x="215" y="64" class="font-mono" font-size="12.5px" fill="#0f172a">10.25 mm</text>
+      <text x="436" y="64" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Red+Gold Silk</text>
+      <line x1="12" y1="69" x2="438" y2="69" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">2nd-Way Tokens</text>
+      <text x="180" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">30x</text>
+      <text x="215" y="86" class="font-mono" font-size="12.5px" fill="#0f172a">10.25 mm</text>
+      <text x="436" y="86" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Glow Yellow</text>
+      <line x1="12" y1="91" x2="438" y2="91" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">3x1 Storage Bin</text>
+      <text x="180" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="108" class="font-mono" font-size="12.5px" fill="#0f172a">49.0 mm</text>
+      <text x="436" y="108" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
+      <line x1="12" y1="113" x2="438" y2="113" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Scoreboard Lid</text>
+      <text x="180" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="130" class="font-mono" font-size="12.5px" fill="#0f172a">Scoreboard</text>
+      <text x="436" y="130" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
+      <line x1="12" y1="135" x2="438" y2="135" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+
+    <!-- Total Pieces Summary -->
+    <text x="14" y="168" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">TOTAL: 60 Universal +10 Tokens + 7U Bin +</text>
+    <text x="14" y="184" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">Lid = 62 Parts</text>
+
+    <!-- Palette Box -->
+    <g transform="translate(12, 210)">
+      <rect x="0" y="0" width="426" height="172" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#0f172a">DUAL-TONE +10 TOKEN PALETTE</text>
+    </g>
+    <text x="24" y="246" class="font-sans" font-size="13.5px" fill="#475569">• Interchangeable Tokens: All 60 quarter-blocks are</text>
+    <text x="24" y="264" class="font-sans" font-size="13.5px" fill="#475569">+10 pts.</text>
+    <text x="24" y="282" class="font-sans" font-size="13.5px" fill="#475569">• Red+Gold Silk (30x): Seat for 1st Way solution (+10</text>
+    <text x="24" y="300" class="font-sans" font-size="13.5px" fill="#475569">pts).</text>
+    <text x="24" y="318" class="font-sans" font-size="13.5px" fill="#475569">• Glow-in-the-Dark Yellow (30x): Stack on top for 2nd</text>
+    <text x="24" y="336" class="font-sans" font-size="13.5px" fill="#475569">Way (+20 pts)!</text>
+    <text x="24" y="354" class="font-sans" font-size="13.5px" fill="#475569">• High Visibility: Easy to tally scores at a glance.</text>
+  </g>
+
+  <!-- COLUMN 3: WHY KEEP CARD (Width: 290) -->
+  <g transform="translate(885, 120)">
+    <rect x="0" y="0" width="290" height="585" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="290" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="14" y="23" class="font-mono section-hdr">3. PACK-UP &amp; SUPPORT</text>
+
+    <!-- Reason 1: Pack-Up -->
+    <g transform="translate(12, 44)">
+      <rect x="0" y="0" width="266" height="136" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#d97706">✓ 10-SECOND PACK-UP</text>
+    </g>
+    <text x="24" y="82" class="font-sans" font-size="13px" fill="#475569">Sweep all 60 universal +10 tokens</text>
+    <text x="24" y="100" class="font-sans" font-size="13px" fill="#475569">directly into the open 3x1x7U bin, lay</text>
+    <text x="24" y="118" class="font-sans" font-size="13px" fill="#475569">this reference card on top, and snap</text>
+    <text x="24" y="136" class="font-sans" font-size="13px" fill="#475569">the Scoreboard Lid shut for silent,</text>
+    <text x="24" y="154" class="font-sans" font-size="13px" fill="#475569">zero-rattle classroom storage.</text>
+
+    <!-- Reason 2: Guarantee -->
+    <g transform="translate(12, 190)">
+      <rect x="0" y="0" width="266" height="138" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="13.5px" font-weight="700" fill="#059669">✓ NO LOST PIECE GUARANTEE</text>
+      <text x="12" y="40" class="font-sans" font-size="13px" fill="#475569">Classrooms lose pieces. Every single</text>
+      <text x="12" y="58" class="font-sans" font-size="13px" fill="#475569">math component is permanently</text>
+      <text x="12" y="76" class="font-sans" font-size="13px" fill="#475569">stocked for single replacements.</text>
+      <rect x="12" y="90" width="242" height="36" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8" />
+      <text x="133" y="106" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0284c7">stackcalc.io/parts</text>
+      <text x="133" y="120" class="font-sans" font-size="11px" text-anchor="middle" fill="#475569">Order replacements anytime</text>
+    </g>
+
+    <!-- Reason 3: Reverse Lesson Guide -->
+    <g transform="translate(12, 338)">
+      <rect x="0" y="0" width="266" height="84" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">✓ HANDS-ON TUTORIAL</text>
+      <text x="12" y="38" class="font-sans" font-size="12.5px" fill="#475569">Flip over for 5-step concrete</text>
+      <text x="12" y="54" class="font-sans" font-size="12.5px" fill="#475569">lesson &amp; live 3D Video QR!</text>
+      <text x="12" y="72" class="font-sans" font-size="12px" font-weight="700" fill="#0f172a">Keep stored inside box lid!</text>
+    </g>
+
+    <!-- Fundamental Theorem Box -->
+    <g transform="translate(12, 432)">
+      <rect x="0" y="0" width="266" height="88" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="18" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">FUNDAMENTAL THEOREM</text>
+      <text x="12" y="36" class="font-sans" font-size="12px" fill="#475569">
+        <tspan x="12" dy="0">Solving one problem in two</tspan><tspan x="12" dy="16">independent ways builds deeper</tspan><tspan x="12" dy="16">mastery than solving ten by</tspan><tspan x="12" dy="16">rote.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Footer Bar -->
+  <g transform="translate(25, 715)">
+    <rect x="0" y="0" width="1150" height="60" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    
+    <g transform="translate(20, 24)">
+      <text x="0" y="0" class="font-mono" font-size="13.5px" font-weight="700" fill="#0f172a">STACKCALC ARCHIVAL INSTRUMENT LABS</text>
+      <text x="0" y="18" class="font-sans footer-txt">Designed in Mountain View, California • Non-Toxic BPA-Free • Classroom Lab Stations: stackcalc.io/schools</text>
+    </g>
+
+    <g transform="translate(880, 24)">
+      <text x="0" y="0" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">OFFICIAL REFILL PORTAL</text>
+      <text x="0" y="18" class="font-mono" font-size="14.5px" font-weight="700" fill="#0284c7">stackcalc.io/parts</text>
+    </g>
+  </g>
+  <metadata id="stackcalc-book-macro-manifest" data-kit="QUEST-01">
+    <stackcalc-macros>
+      <macro-ref token="{{blocks:sc6_elementary_hero}}" kind="blocks" id="sc6_elementary_hero" png="sc6-elementary-hero.png" svg="sc6-elementary-hero.png" scene="Tools/rendering/render_product_stills.py::render_sc6_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{seq:refcard_base10_ex1}}" res-token="{{res:refcard_base10_ex1}}" stack-token="{{res:refcard_base10_ex1:stack}}" kind="sequence" id="refcard_base10_ex1" model="sc6" expanded-seq="8 [ENTER] 2 [+] 5 [+] [▦]" res="15" stack="T:0|Z:0|Y:0|X:15" />
+      <macro-ref token="{{icon:button_quiz}}" kind="icon" id="button_quiz" svg="Education/scad/lib/icons/button_quiz.svg" scad="Education/scad/quest_scoreboard_box.scad" key="?" model="sc6" />
+    </stackcalc-macros>
+  </metadata>
+</svg>

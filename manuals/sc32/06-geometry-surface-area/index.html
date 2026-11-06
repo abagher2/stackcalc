@@ -1,0 +1,3417 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Galileo's Square-Cube Law, planar mensuration, cross-sectional volume slices, spherical shells, and 3D rotational inertia on the StackCalc SC-32.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/manuals/sc32/06-geometry-surface-area/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Chapter 6: The Square-Cube Law, Solid Geometry & Three-Dimensional Space | Thinking in the Stack (SC-32) - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/brutalist.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/ecommerce.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  
+  <meta name="robots" content="noindex, nofollow">
+  
+  
+  
+  
+  
+  <meta property="og:site_name" content="StackCalc32">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chapter 6: The Square-Cube Law, Solid Geometry &amp; Three-Dimensional Space | Thinking in the Stack (SC-32)">
+  <meta property="og:description" content="Galileo&#39;s Square-Cube Law, planar mensuration, cross-sectional volume slices, spherical shells, and 3D rotational inertia on the StackCalc SC-32.">
+  <meta property="og:url" content="https://www.stackcalc.io/manuals/sc32/06-geometry-surface-area/">
+  <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chapter 6: The Square-Cube Law, Solid Geometry &amp; Three-Dimensional Space | Thinking in the Stack (SC-32)">
+  <meta name="twitter:description" content="Galileo&#39;s Square-Cube Law, planar mensuration, cross-sectional volume slices, spherical shells, and 3D rotational inertia on the StackCalc SC-32.">
+  <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                      tiny5: ['Tiny5', 'Terminus', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-6-the-square-cube-law-solid-geometry-three-dimensional-space" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 6: The Square-Cube Law, Solid Geometry & Three-Dimensional Space | Thinking in the Stack (SC-32)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="../../../learning-lab/" class="brutalist-button-header">LEARNING LAB</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../products/" class="md-tabs__link">
+          
+  
+  Catalog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../curriculum/" class="md-tabs__link">
+          
+  
+  Curriculum & Standards
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Books & Reference Manuals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-tabs__link">
+        
+  
+    
+  
+  Build Logs ↗
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../privacy/" class="md-tabs__link">
+          
+  
+  Legal & Support
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Catalog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Catalog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SC-32 Scientific Calculator
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SC-32 Scientific Calculator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Assembly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operational Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-elementary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Elementary Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From Blocks to the Stack (SC-6 Book)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fraction Studio Towers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Fraction Studio Towers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prime-factor-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prime Factor Studio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/place-value/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Place Value Studio & Regrouping Trays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Classroom Planetary Clock
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Classroom Planetary Clock
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ten Frames & Counters
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Ten Frames & Counters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/counting-tiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Counting & Array Tiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math Domino Studio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Math Domino Studio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/quest-scoreboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Quest Scoreboard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algebra Boxes & Tiles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Algebra Boxes & Tiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Probability Dice & Spinner
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Probability Dice & Spinner
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/unit-circle-volvelle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unit Circle & Trig Volvelle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/stands-and-pouches/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stands & Pouches
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/curriculum-and-decks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Curriculum & Decks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../printables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Makerspace 3D Print Kits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../downloads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Download Center (PDFs & 3MFs)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Curriculum & Standards
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Curriculum & Standards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Curriculum Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/sc6-elementary-companion-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Companion Workbook (253 Problems)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/sc32-scientific-companion-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-32 Companion Casebook (339 Problems)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/big-ideas-middle-school-sc6-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Big Ideas Middle School Catch-Up (SC-6)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/alignment-matrix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standards Alignment Matrix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/worksheets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Printable Student Worksheets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/teacher-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teacher Facilitator Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Answer Key (Books 2A–5)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/rpn-elementary-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPN Elementary Power Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/uil-competition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Competitive STEM & Speed Calculation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Books & Reference Manuals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Books & Reference Manuals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Official Manuals & Reference Books ($16)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From Blocks to the Stack (SC-6 Book)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bestseller-rubric-and-editorial-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bestseller Rubric & Editorial Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../critical-editorial-review-and-school-adoption/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Editorial Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agent & OpenAPI Spec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mac & iOS Apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../press/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Press & Editorial Kit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../etsy-publishing-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing & Sourcing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shipping-and-packaging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shipping & Packaging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exam-compliance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Compliance & Proctor Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_11">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2026/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2026
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_12">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/3d-printing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Printing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/cad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CAD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/education/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Education
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/kicad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KiCad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/manufacturing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/mathematics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mathematics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/pcb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pedagogy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/product-design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/rpn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/swift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Swift
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/watchos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    watchOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build Logs ↗
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Legal & Support
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Legal & Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terms of Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Replacement Parts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-galileos-squarecube-scaling-planar-mensuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Galileo's Square–Cube Scaling &amp; Planar Mensuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1 Galileo's Square–Cube Scaling & Planar Mensuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611-the-thermal-wall-surface-area-l2-vs-volume-l3" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1.1 The Thermal Wall: Surface Area (\(L^2\)) vs. Volume (\(L^3\))
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#612-circular-sectors-annuli-regular-polygons" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1.2 Circular Sectors, Annuli &amp; Regular Polygons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#613-ellipse-perimeters-earths-equatorial-bulge" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1.3 Ellipse Perimeters &amp; Earth's Equatorial Bulge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#614-semiperimeter-area-incircles-the-shoelace-determinant" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1.4 Semiperimeter Area, Incircles &amp; the Shoelace Determinant
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-cavalieris-principle-three-dimensional-solids-rotational-inertia" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Cavalieri's Principle, Three-Dimensional Solids &amp; Rotational Inertia
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 Cavalieri's Principle, Three-Dimensional Solids & Rotational Inertia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621-spherical-shells-geodesy-additive-manufacturing" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2.1 Spherical Shells, Geodesy &amp; Additive Manufacturing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622-euclidean-distance-helical-coils-weighted-centroids" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2.2 Euclidean Distance, Helical Coils &amp; Weighted Centroids
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#623-geometric-symmetry-mass-distribution-classical-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2.3 Geometric Symmetry, Mass Distribution &amp; Classical Mechanics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-geometry-in-four-registers-from-parcel-boundaries-to-flywheels" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Geometry in Four Registers: From Parcel Boundaries to Flywheels
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3 Geometry in Four Registers: From Parcel Boundaries to Flywheels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#631-planar-cross-sections-surveyed-triangles" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.1 Planar Cross-Sections &amp; Surveyed Triangles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#632-accumulating-composite-surface-areas-solid-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.2 Accumulating Composite Surface Areas &amp; Solid Volumes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#633-three-dimensional-centroids-flywheels-torsional-shafts" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.3 Three-Dimensional Centroids, Flywheels &amp; Torsional Shafts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#634-try-it-on-the-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.4 Try It on the Stack
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="chapter-6-the-square-cube-law-solid-geometry-three-dimensional-space">Chapter 6: The Square-Cube Law, Solid Geometry &amp; Three-Dimensional Space</h1>
+<p>In 1638, while confined under house arrest at his villa in Arcetri outside Florence, Galileo Galilei opened the modern science of strength of materials in his final treatise, <em>Two New Sciences</em> (<em>Discorsi e dimostrazioni matematiche intorno a due nuove scienze</em>) <em>(<a href="../appendix-e-annotated-bibliography/#cite-galilei1638">Galilei, 1638</a>)</em>. Galileo had been struck by a puzzle from the Venetian Arsenal: when Renaissance shipwrights doubled every linear timber dimension of a wooden naval hull from a scale model to a full-sized galleon, the larger vessel cracked on its launch ways under its own dead weight. Extruding flat two-dimensional cross-sections into solid three-dimensional matter exposes a structural divergence between second-power surface area and third-power volume, now known as the <em>Square-Cube Law</em>. When a cylindrical rocket tank of radius <span class="arithmatex">\(r\)</span> and wall thickness <span class="arithmatex">\(t\)</span> holds gas at internal pressure <span class="arithmatex">\(P\)</span>, the outward pressure load <span class="arithmatex">\(Pr\)</span> per unit length is borne by the metal wall of thickness <span class="arithmatex">\(t\)</span>, creating a circumferential hoop stress <span class="arithmatex">\(\sigma_\theta = Pr/t\)</span>; if a cryogenic stage doubles every linear tank dimension at fixed wall thickness <span class="arithmatex">\(t\)</span>, its internal propellant capacity octuples (<span class="arithmatex">\(2^3 = 8\)</span>) while its hoop stress <span class="arithmatex">\(\sigma_\theta = Pr/t\)</span> doubles with <span class="arithmatex">\(r\)</span>.</p>
+<h2 id="61-galileos-squarecube-scaling-planar-mensuration">6.1 Galileo's Square–Cube Scaling &amp; Planar Mensuration</h2>
+<p>When any three-dimensional solid—such as a cantilever bridge girder, a thin-walled cryogenic pressure vessel, a biological skeleton, or a silicon microprocessor—has every linear dimension (length, width, and height) scaled by a dimensionless multiplier <span class="arithmatex">\(\ell\)</span>, its surface area <span class="arithmatex">\(A\)</span> grows with the square of <span class="arithmatex">\(\ell\)</span> and its enclosed volume <span class="arithmatex">\(V\)</span> grows with the cube of <span class="arithmatex">\(\ell\)</span> (using <span class="arithmatex">\(\propto\)</span> for <em>"is proportional to"</em>):</p>
+<div class="arithmatex">\[L \longrightarrow \ell L, \qquad A \propto \ell^2, \qquad V \propto \ell^3, \qquad \frac{A}{V} \propto \frac{\ell^2}{\ell^3} = \frac{1}{\ell} \tag{Eq. 6.1}\]</div>
+<p>As the linear dimensions of a structural beam or machine casing scale by <span class="arithmatex">\(\ell\)</span>, its cross-sectional and exterior surface area multiply by <span class="arithmatex">\(\ell^2\)</span>, while its enclosed volume and gravitational mass multiply by <span class="arithmatex">\(\ell^3\)</span>, dividing the specific area-to-volume ratio <span class="arithmatex">\(A/V\)</span> by <span class="arithmatex">\(\ell\)</span>. Tensile and compressive load capacity depend on <em>cross-sectional area</em> (<span class="arithmatex">\(A \propto \ell^2\)</span>): when an axial force <span class="arithmatex">\(F\)</span> pulls or presses on a column, that load is distributed across the interatomic bonds spanning the cross-sectional area <span class="arithmatex">\(A\)</span> to produce an axial normal stress <span class="arithmatex">\(\sigma = F/A\)</span>, and convective or radiative heat rejection likewise scales with <em>exposed surface area</em> (<span class="arithmatex">\(A \propto \ell^2\)</span>). Self-weight, kinetic energy storage, and volumetric heat generation, however, scale with <em>enclosed volume</em> (<span class="arithmatex">\(V \propto \ell^3\)</span>).</p>
+<p>If a structural frame or organism is scaled up geometrically by <span class="arithmatex">\(\ell = 10\)</span>, its load-bearing cross-sections multiply by <span class="arithmatex">\(10^2 = 100\)</span> while its dead weight multiplies by <span class="arithmatex">\(10^3 = 1,000\)</span>, subjecting every square millimeter of bone or steel to tenfold specific stress (<span class="arithmatex">\(\sigma \propto \ell^3 / \ell^2 = \ell\)</span>). Because terminal velocity in air occurs where gravitational weight (<span class="arithmatex">\(\propto \ell^3\)</span>) balances quadratic aerodynamic drag (<span class="arithmatex">\(\propto A v^2 \propto \ell^2 v^2\)</span>), impact velocity scales as <span class="arithmatex">\(v_{\text{term}} \propto \sqrt{\ell}\)</span>. Consequently, large structures cannot remain geometrically similar to small prototypes: just as Galileo showed that large vertebrates require disproportionately thick columnar limbs, a civil engineer scaling a <span class="arithmatex">\(1:50\)</span> wind-tunnel bridge model up to full span must replace solid bars with hollow box girders and wide-flange I-beams that concentrate material far from the neutral axis.</p>
+<h3 id="611-the-thermal-wall-surface-area-l2-vs-volume-l3">6.1.1 The Thermal Wall: Surface Area (<span class="arithmatex">\(L^2\)</span>) vs. Volume (<span class="arithmatex">\(L^3\)</span>)</h3>
+<p>The inverse scaling <span class="arithmatex">\(A/V \propto 1/\ell\)</span> also governs thermal survival across biology and modern electronics. Inside a high-performance microprocessor, billions of nanometer-scale transistors switch at gigahertz frequencies and produce localized thermal flux exceeding <span class="arithmatex">\(100\text{ W/cm}^2\)</span>, a power density approaching the heat flux inside a nuclear reactor core. To carry that thermal power <span class="arithmatex">\(\dot{Q}\)</span> away into a moving fluid, a cooling system relies on the convective heat-transfer coefficient <span class="arithmatex">\(h\)</span> of the moving airstream or liquid coolant, the exposed boundary surface area <span class="arithmatex">\(A_{\text{surface}}\)</span> in contact with the fluid, and the temperature excess of the hot solid wall <span class="arithmatex">\(T_{\text{solid}}\)</span> above the surrounding fluid <span class="arithmatex">\(T_{\text{ambient}}\)</span>, as governed by Newton's Law of Cooling <em>(<a href="../appendix-e-annotated-bibliography/#cite-incropera2007">Incropera et al., 2007</a>)</em>:</p>
+<div class="arithmatex">\[\dot{Q} = h \cdot A_{\text{surface}} \cdot (T_{\text{solid}} - T_{\text{ambient}}) \tag{Eq. 6.2}\]</div>
+<p>The temperature gap <span class="arithmatex">\((T_{\text{solid}} - T_{\text{ambient}})\)</span> drives heat outward at a flux of <span class="arithmatex">\(h\)</span> watts per square meter per kelvin, and <span class="arithmatex">\(A_{\text{surface}}\)</span> integrates that flux across the entire exterior skin. Because internal heat generation scales with enclosed volume (<span class="arithmatex">\(\propto \ell^3\)</span>) while convective heat removal <span class="arithmatex">\(\dot{Q}\)</span> is limited by the exposed surface area <span class="arithmatex">\(A_{\text{surface}}\)</span> (<span class="arithmatex">\(\propto \ell^2\)</span>), scaling up any heat-producing machine or organism causes volume-generated heat (<span class="arithmatex">\(L^3\)</span>) to outpace the surface area (<span class="arithmatex">\(L^2\)</span>) available to shed it, forcing the wall temperature <span class="arithmatex">\(T_{\text{solid}}\)</span> upward into a thermal bottleneck. In warm-blooded biology, this scaling contrasts metabolic torpor in hummingbirds with vascular radiators in elephants. A <span class="arithmatex">\(3\text{-gram}\)</span> ruby-throated hummingbird (<span class="arithmatex">\(\ell \approx 2\text{ cm}\)</span>) has a high surface-area-to-volume ratio (<span class="arithmatex">\(A/V \propto 1/\ell\)</span>). It loses body heat across its skin so rapidly relative to its small thermal mass that its heart must beat <span class="arithmatex">\(1,200\text{ times per minute}\)</span> by day, and it must enter deep hypothermic <em>torpor</em> at night to avoid starving before dawn.</p>
+<p>At the opposite extreme, a <span class="arithmatex">\(5,000\text{-kilogram}\)</span> African elephant (<span class="arithmatex">\(\ell \approx 200\text{ cm}\)</span>, a <span class="arithmatex">\(100\times\)</span> linear scale-up over the hummingbird) generates <span class="arithmatex">\(100^3 = 1,000,000\times\)</span> the internal metabolic heat while possessing only <span class="arithmatex">\(100^2 = 10,000\times\)</span> the skin surface area. With <span class="arithmatex">\(1/100\text{th}\)</span> the relative cooling area, an elephant would overheat if evolution had not departed from geometric similarity by equipping it with thin, vascularized ear-fins that act as biological radiators.</p>
+<p>A silicon CPU package faces the same thermal constraint, which engineers resolve with extruded pin-fin arrays. An unmachined aluminum block offers little surface area; extruding it into dozens of thin parallel fins cuts volume and mass while multiplying the exposed convective boundary area <span class="arithmatex">\(A_{\text{surface}}\)</span> by <span class="arithmatex">\(300\%\)</span> to <span class="arithmatex">\(2,500\%\)</span>. This geometry overcomes Galileo's Square-Cube Law by folding additional surface area into the same footprint.</p>
+<p>In real-world mechanical design, aerospace enclosures, heat sinks, and structural castings are never isolated cubes. They are bounded by dozens of planar walls, sloped frustum roofs, cylindrical bosses, and cutout apertures. Auditing the total cooling area or structural weight of a composite solid is therefore an accounting ledger problem: summing the areas of every exterior rectangular wall, circular boss, and trapezoidal facet while deducting the areas of drilled mounting holes and window cutouts.</p>
+<h3 id="612-circular-sectors-annuli-regular-polygons">6.1.2 Circular Sectors, Annuli &amp; Regular Polygons</h3>
+<p>Every three-dimensional cross-section or enclosure boundary begins with two-dimensional planar figures, ranging from rectangles, triangles, trapezoids, and circles to circular sectors, circular segments, ellipses, parabolic arches, and regular <span class="arithmatex">\(n\)</span>-gons. Factoring differences of squares (<span class="arithmatex">\(R^2 - r^2 = (R - r)(R + r)\)</span>) and exploiting geometric symmetry simplify these planar formulas and preserve numerical precision.</p>
+<p>The <em>circular annulus</em> is the flat ring formed by a pipe flange gasket, a thrust washer, or a hollow cylindrical wall bounded by outer radius <span class="arithmatex">\(R\)</span> and inner bore radius <span class="arithmatex">\(r\)</span>. Evaluating <span class="arithmatex">\(\pi R^2 - \pi r^2\)</span> term by term multiplies by <span class="arithmatex">\(\pi\)</span> twice and loses significant digits when the wall is thin (<span class="arithmatex">\(R \approx r\)</span>), because squaring two nearly equal radii and subtracting them cancels their leading digits. Factoring the difference of squares eliminates both the duplicate multiplication and the near-cancellation:</p>
+<div class="arithmatex">\[A_{\text{annulus}} = \pi(R^2 - r^2) = \pi(R - r)(R + r) = 2\pi \left(\frac{R + r}{2}\right)(R - r) \tag{Eq. 6.3}\]</div>
+<p>Geometrically, this factored form says that if you snip a circular ring and unroll it, its exact area equals its <em>average circumference</em> <span class="arithmatex">\(2\pi R_{\text{mean}}\)</span> multiplied by its <em>radial wall thickness</em> <span class="arithmatex">\(t = R - r\)</span>. For a steel pipe flange annulus with outer radius <span class="arithmatex">\(R = 15\text{ cm}\)</span> and bore radius <span class="arithmatex">\(r = 10\text{ cm}\)</span>, the factored product <span class="arithmatex">\(\pi(5)(25)\)</span> yields <span class="arithmatex">\(A_{\text{ann}} \approx \mathbf{392.699\text{ cm}^2}\)</span>.</p>
+<p>When an angular wedge of central angle <span class="arithmatex">\(\theta\)</span> (measured in radians, where <span class="arithmatex">\(\theta = \theta_{\text{deg}} \cdot \pi/180\)</span> is the ratio of rim arc length <span class="arithmatex">\(s\)</span> to radius <span class="arithmatex">\(r\)</span>) is sliced from a disk of radius <span class="arithmatex">\(r\)</span>, its curved outer rim has arc length <span class="arithmatex">\(s = r\theta\)</span> and the pizza-slice wedge forms a <strong>circular sector</strong> of area <span class="arithmatex">\(A_{\text{sector}}\)</span>. Snapping a straight secant chord across the two outer corners of that wedge splits the sector into an inner isosceles triangle (whose two radial legs <span class="arithmatex">\(r\)</span> meet at angle <span class="arithmatex">\(\theta\)</span>) and an outer bowed <strong>circular segment</strong> of area <span class="arithmatex">\(A_{\text{segment}}\)</span>—the crescent-shaped cap bounded by the circular arc and the straight chord (such as a milled shaft keyway flat, an arched optical aperture, or the liquid cross-section in a horizontal cylindrical tank):</p>
+<div class="arithmatex">\[s = r\theta, \qquad A_{\text{sector}} = \frac{1}{2}rs = \frac{1}{2}r^2\theta, \qquad A_{\text{segment}} = \frac{1}{2}r^2(\theta - \sin\theta) \qquad (\theta \text{ in radians}) \tag{Eq. 6.4}\]</div>
+<p>Treating the sector as a radial fan of curved base <span class="arithmatex">\(s = r\theta\)</span> and height <span class="arithmatex">\(r\)</span> gives the half-base-times-height area <span class="arithmatex">\(A_{\text{sector}} = \frac{1}{2}rs = \frac{1}{2}r^2\theta\)</span>. Subtracting the inner isosceles triangle of base <span class="arithmatex">\(r\)</span> and altitude <span class="arithmatex">\(r\sin\theta\)</span> (area <span class="arithmatex">\(\frac{1}{2}r^2\sin\theta\)</span>) from that full wedge leaves <span class="arithmatex">\(A_{\text{segment}} = \frac{1}{2}r^2(\theta - \sin\theta)\)</span> for the bowed cap beyond the chord. On a circular sector cam of radius <span class="arithmatex">\(r = 12\text{ cm}\)</span> and central angle <span class="arithmatex">\(\theta = 60^\circ = \pi/3 \approx 1.047\text{ rad}\)</span>, the arc length is <span class="arithmatex">\(s \approx \mathbf{12.566\text{ cm}}\)</span> and the sector area is <span class="arithmatex">\(A_{\text{sec}} \approx \mathbf{75.398\text{ cm}^2}\)</span>. For an arched cylindrical vault window of radius <span class="arithmatex">\(r = 8\text{ m}\)</span> subtending a central chord angle <span class="arithmatex">\(\theta = 1.25\text{ rad}\)</span>, subtracting the sine from the radian angle and scaling by <span class="arithmatex">\(\frac{1}{2}r^2 = 32\text{ m}^2\)</span> yields the circular segment area <span class="arithmatex">\(A_{\text{seg}} = 32(1.25 - \sin 1.25) \approx \mathbf{9.632\text{ m}^2}\)</span>.</p>
+<p>Every regular <span class="arithmatex">\(n\)</span>-sided polygon of side length <span class="arithmatex">\(s\)</span> decomposes into <span class="arithmatex">\(n\)</span> congruent isosceles triangles radiating from its center, each with central apex angle <span class="arithmatex">\(2\pi/n\)</span>. Dropping a perpendicular altitude from the center to the midpoint of one side <span class="arithmatex">\(s\)</span> bisects that wedge into two right triangles with apex half-angle <span class="arithmatex">\(\pi/n\)</span> and opposite leg <span class="arithmatex">\(s/2\)</span>. In that right triangle, the adjacent leg is the <strong>inradius</strong> or apothem <span class="arithmatex">\(r_{\text{in}}\)</span> (the radius of the inscribed circle, and half the wrench distance across flats when <span class="arithmatex">\(n\)</span> is even), the hypotenuse from center to vertex is the <strong>circumradius</strong> <span class="arithmatex">\(R_{\text{out}}\)</span> (the radius of the circumscribed circle), and summing all <span class="arithmatex">\(n\)</span> wedges yields the <strong>polygon area</strong> <span class="arithmatex">\(A_n\)</span>:</p>
+<div class="arithmatex">\[r_{\text{in}} = \frac{s}{2}\cot\left(\frac{\pi}{n}\right), \qquad R_{\text{out}} = \frac{s}{2\sin(\pi/n)}, \qquad A_n = \frac{1}{2}(n s)\,r_{\text{in}} = \frac{1}{4}n s^2\cot\left(\frac{\pi}{n}\right) \tag{Eq. 6.5}\]</div>
+<p>Multiplying the half-side <span class="arithmatex">\(s/2\)</span> by <span class="arithmatex">\(\cot(\pi/n)\)</span> projects the opposite leg onto the adjacent apothem <span class="arithmatex">\(r_{\text{in}}\)</span>, while dividing <span class="arithmatex">\(s/2\)</span> by <span class="arithmatex">\(\sin(\pi/n)\)</span> stretches it along the radial hypotenuse <span class="arithmatex">\(R_{\text{out}}\)</span>; summing the <span class="arithmatex">\(n\)</span> radial triangles of area <span class="arithmatex">\(\frac{1}{2}s\,r_{\text{in}}\)</span> then equates the polygon area <span class="arithmatex">\(A_n\)</span> to half the perimeter <span class="arithmatex">\(ns\)</span> times the apothem <span class="arithmatex">\(r_{\text{in}}\)</span>. For a regular hexagon (<span class="arithmatex">\(n = 6,\; \pi/6 = 30^\circ\)</span>), the dimensionless area multiplier is <span class="arithmatex">\(\frac{6}{4}\cot(30^\circ) = \frac{3\sqrt{3}}{2} \approx 2.598\)</span>; across a regular hexagonal flange of side length <span class="arithmatex">\(s = 5\text{ cm}\)</span>, <span class="arithmatex">\(\cot(30^\circ) = \sqrt{3} \approx 1.732\)</span> yields apothem <span class="arithmatex">\(r_{\text{in}} \approx \mathbf{4.33\text{ cm}}\)</span> and area <span class="arithmatex">\(A_6 = \frac{3\sqrt{3}}{2}(25) \approx \mathbf{64.952\text{ cm}^2}\)</span>. When an instrument cover or structural gusset is a <em>regular octagon</em> (<span class="arithmatex">\(n = 8\)</span>) of side length <span class="arithmatex">\(s\)</span>, <span class="arithmatex">\(\cot(\pi/8) = \cot(22.5^\circ) = 1 + \sqrt{2} = \delta_S \approx 2.414\)</span>—the classical <em>silver ratio</em>, which satisfies <span class="arithmatex">\(\delta_S^2 = 2\delta_S + 1\)</span> and <span class="arithmatex">\(1/\delta_S = \delta_S - 2 = \sqrt{2} - 1\)</span>—so its area follows directly from square dissection without a trigonometric lookup. A regular octagon is a bounding square of width <span class="arithmatex">\((1 + \sqrt{2})s = \delta_S s\)</span> that has had four <span class="arithmatex">\(45^\circ\text{–}45^\circ\text{–}90^\circ\)</span> right-isosceles corner triangles of leg <span class="arithmatex">\(s/\sqrt{2}\)</span> clipped off its four corners:</p>
+<div class="arithmatex">\[A = (1 + \sqrt{2})^2 s^2 - 4\left(\frac{1}{4}s^2\right) = (3 + 2\sqrt{2})s^2 - s^2 = 2(1 + \sqrt{2})s^2 = 2\delta_S s^2 \approx 4.828 \, s^2 \tag{Eq. 6.6}\]</div>
+<p>Each clipped corner triangle removes <span class="arithmatex">\(\frac{1}{2}(s/\sqrt{2})^2 = \frac{1}{4}s^2\)</span>, so all four corners together deduct <span class="arithmatex">\(s^2\)</span> from the bounding square area <span class="arithmatex">\((3 + 2\sqrt{2})s^2\)</span> to leave <span class="arithmatex">\(2(1 + \sqrt{2})s^2 = 2\delta_S s^2\)</span>.</p>
+<h3 id="613-ellipse-perimeters-earths-equatorial-bulge">6.1.3 Ellipse Perimeters &amp; Earth's Equatorial Bulge</h3>
+<p>In classical geometry, the <em>area</em> of an ellipse and its <em>perimeter</em> differ sharply in analytical complexity. Because an ellipse with semi-major axis <span class="arithmatex">\(a\)</span> and semi-minor axis <span class="arithmatex">\(b\)</span> is a circle of radius <span class="arithmatex">\(b\)</span> stretched along one axis by the factor <span class="arithmatex">\(a/b\)</span>, its area scales by that same factor: <span class="arithmatex">\(A = \pi b^2 \cdot (a/b) = \pi a b\)</span> (for an elliptical inspection port with <span class="arithmatex">\(a = 250\text{ mm},\; b = 150\text{ mm}\)</span>, multiplying <span class="arithmatex">\(\pi a b\)</span> yields <span class="arithmatex">\(A \approx \mathbf{117,809.725\text{ mm}^2}\)</span>). Yet if you ask for the <em>perimeter</em> (circumference) <span class="arithmatex">\(P\)</span> of that same ellipse, no closed-form expression in elementary functions exists anywhere in mathematics: setting up the arc-length integral <span class="arithmatex">\(\int \sqrt{dx^2 + dy^2}\)</span> leads to an irreducible <em>complete elliptic integral of the second kind</em>, <span class="arithmatex">\(P = 4a E(e)\)</span>, governed by the eccentricity <span class="arithmatex">\(e = \sqrt{1 - b^2/a^2}\)</span>.</p>
+<p>To approximate the perimeter <span class="arithmatex">\(P\)</span> algebraically, Srinivasa Ramanujan parameterized the departure from circularity by the dimensionless symmetric flattening ratio <span class="arithmatex">\(h = (a - b)^2 / (a + b)^2\)</span>:</p>
+<div class="arithmatex">\[h = \frac{(a - b)^2}{(a + b)^2}, \qquad P \approx \pi (a + b) \left[ 1 + \frac{3h}{10 + \sqrt{4 - 3h}} \right] \tag{Eq. 6.7}\]</div>
+<p>When <span class="arithmatex">\(a = b\)</span>, the parameter <span class="arithmatex">\(h\)</span> vanishes and the leading factor <span class="arithmatex">\(\pi(a + b)\)</span> recovers the exact circumference <span class="arithmatex">\(2\pi a\)</span> of a circle with mean radius <span class="arithmatex">\((a + b)/2\)</span>; as the ellipse elongates (<span class="arithmatex">\(h &gt; 0\)</span>), the rational-radical correction <span class="arithmatex">\(\frac{3h}{10 + \sqrt{4 - 3h}}\)</span> stretches that baseline circumference to track the elliptic integral. A power-series expansion of the complete elliptic integral for the perimeter of an ellipse in terms of <span class="arithmatex">\(h\)</span> gives <span class="arithmatex">\(P = \pi(a+b)\left[1 + \frac{1}{4}h + \frac{1}{64}h^2 + \frac{1}{256}h^3 + \frac{25}{16384}h^4 + \frac{49}{65536}h^5 + \dots\right]\)</span>. Expanding the nested radical in a Taylor series, <span class="arithmatex">\(\frac{3h}{10 + \sqrt{4 - 3h}} = \frac{1}{4}h + \frac{1}{64}h^2 + \frac{1}{256}h^3 + \frac{25}{16384}h^4 + \frac{45}{65536}h^5 + \dots\)</span>, matches the exact elliptic integral through the <span class="arithmatex">\(h^1, h^2, h^3\)</span>, and <span class="arithmatex">\(h^4\)</span> terms (<span class="arithmatex">\(\frac{25}{16384}h^4\)</span>), first differing at the <span class="arithmatex">\(h^5\)</span> coefficient (<span class="arithmatex">\(\frac{45}{65536}h^5\)</span> vs. <span class="arithmatex">\(\frac{49}{65536}h^5\)</span>) by just <span class="arithmatex">\(\frac{4}{65536} = \frac{1}{16384}h^5\)</span>. For an elliptical cam with <span class="arithmatex">\(a = 10\text{ cm}\)</span> and <span class="arithmatex">\(b = 5\text{ cm}\)</span> (<span class="arithmatex">\(h = 1/9 \approx 0.111\)</span>), evaluating <span class="arithmatex">\(3h / (10 + \sqrt{4 - 3h})\)</span> and scaling by <span class="arithmatex">\(\pi(a + b) = 15\pi\text{ cm}\)</span> yields <span class="arithmatex">\(P \approx \mathbf{48.442\text{ cm}}\)</span>, matching the exact elliptic integral to nine significant digits.</p>
+<p>That axial difference <span class="arithmatex">\((a - b)\)</span> between semi-major and semi-minor axes also governs the shape of rotating planets. Because the Earth rotates once every <span class="arithmatex">\(23\text{ hours } 56\text{ minutes}\)</span>, centrifugal acceleration forces ocean and mantle outward at the equator and deforms our planet from a sphere into an <em>oblate spheroid</em> with equatorial semi-major axis <span class="arithmatex">\(a\)</span> and polar semi-minor axis <span class="arithmatex">\(b\)</span>. Geodesists express this polar compression by the dimensionless <em>flattening</em> <span class="arithmatex">\(f\)</span> and its reciprocal <span class="arithmatex">\(1/f\)</span>:</p>
+<div class="arithmatex">\[f = \frac{a - b}{a} = 1 - \frac{b}{a}, \qquad \frac{1}{f} = \frac{a}{a - b} = \frac{1}{1 - b/a} \tag{Eq. 6.8}\]</div>
+<p>Expressing the equatorial-minus-polar radial bulge <span class="arithmatex">\((a - b)\)</span> as a fraction of the equatorial radius <span class="arithmatex">\(a\)</span> defines <span class="arithmatex">\(f\)</span>, while its reciprocal <span class="arithmatex">\(1/f\)</span> counts how many times that bulge fits into Earth's equatorial radius. Because the Mississippi River flows southward toward Earth's equatorial bulge, its mouth at the Gulf of Mexico sits roughly four miles <em>farther</em> from the center of the Earth than its headwaters at Lake Itasca.</p>
+<h3 id="614-semiperimeter-area-incircles-the-shoelace-determinant">6.1.4 Semiperimeter Area, Incircles &amp; the Shoelace Determinant</h3>
+<p>When a surveyor in the field measures the three boundary lengths <span class="arithmatex">\((a, b, c)\)</span> of a triangular parcel using a steel tape or laser rangefinder, finding the parcel's area from <span class="arithmatex">\(A = \frac{1}{2}bh\)</span> would normally require solving for an interior angle via the Law of Cosines and then taking a sine to find the perpendicular altitude <span class="arithmatex">\(h\)</span>. <strong>Heron's semiperimeter formula</strong> bypasses trigonometry by defining the <em>semiperimeter</em> <span class="arithmatex">\(s\)</span> as half the triangle's perimeter:</p>
+<div class="arithmatex">\[s = \frac{a + b + c}{2}, \qquad A = \sqrt{s(s - a)(s - b)(s - c)} \tag{Eq. 6.9}\]</div>
+<p>Each factor <span class="arithmatex">\((s - a)\)</span>, <span class="arithmatex">\((s - b)\)</span>, and <span class="arithmatex">\((s - c)\)</span> measures how much half the perimeter exceeds a single side, which means the radicand contains a built-in physical check: by the Euclidean <em>triangle inequality</em>, the sum of any two sides of a real triangle must exceed the third (<span class="arithmatex">\(a + b &gt; c\)</span>, which means <span class="arithmatex">\(s &gt; c\)</span> and <span class="arithmatex">\((s - c) &gt; 0\)</span>). If a misread blueprint specifies three lengths that cannot possibly close into a triangle—say <span class="arithmatex">\(3, 4\)</span>, and <span class="arithmatex">\(9\)</span>, where <span class="arithmatex">\(s = 8\)</span> and <span class="arithmatex">\((s - 9) = -1 &lt; 0\)</span>—the factor <span class="arithmatex">\((s - c)\)</span> turns negative and the negative radicand exposes the impossible geometry.</p>
+<p>For any <em>cyclic quadrilateral</em> (a four-sided figure inscribed in a circle) with sides <span class="arithmatex">\((a, b, c, d)\)</span> and semiperimeter <span class="arithmatex">\(s = (a + b + c + d)/2\)</span>, <strong>Brahmagupta's formula</strong> gives the enclosed area as <span class="arithmatex">\(A = \sqrt{(s - a)(s - b)(s - c)(s - d)}\)</span>. Letting the fourth side shrink to a point (<span class="arithmatex">\(d \to 0\)</span>) reduces that four-factor radical to Heron's triangle formula <span class="arithmatex">\(A = \sqrt{s(s - a)(s - b)(s - c)}\)</span>.</p>
+<p>The semiperimeter <span class="arithmatex">\(s\)</span> also governs the inscribed circle of a triangle. Dropping an <em>incircle</em> of radius <span class="arithmatex">\(r\)</span> inside any triangle so that it touches all three sides tangentially, and drawing lines from the incenter to the three vertices, partitions the triangle into three smaller triangles of heights <span class="arithmatex">\(r\)</span> and bases <span class="arithmatex">\(a, b, c\)</span>, whose areas sum to <span class="arithmatex">\(\frac{1}{2}ar + \frac{1}{2}br + \frac{1}{2}cr = \left(\frac{a+b+c}{2}\right)r = s \cdot r\)</span>. Thus, for <em>every</em> triangle:</p>
+<div class="arithmatex">\[A = r \cdot s \implies r = \frac{A}{s} \tag{Eq. 6.10}\]</div>
+<p>Dividing the enclosed area <span class="arithmatex">\(A\)</span> by the semiperimeter <span class="arithmatex">\(s\)</span> therefore yields the inscribed circle radius <span class="arithmatex">\(r\)</span> of <em>any</em> triangle. When the triangle happens to be a <em>right triangle</em> with orthogonal legs <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> and hypotenuse <span class="arithmatex">\(c = \sqrt{a^2 + b^2}\)</span>, the tangent segments around the <span class="arithmatex">\(90^\circ\)</span> corner simplify <span class="arithmatex">\(r = A/s\)</span> into the linear relation <span class="arithmatex">\(r = \frac{a + b - c}{2}\)</span>: because the two tangent segments at the right angle form a square of side <span class="arithmatex">\(r\)</span>, the remaining segments <span class="arithmatex">\((a - r)\)</span> and <span class="arithmatex">\((b - r)\)</span> fold onto the hypotenuse so that <span class="arithmatex">\((a - r) + (b - r) = c\)</span>.</p>
+<p>When a parcel's corners are specified by Cartesian survey coordinates <span class="arithmatex">\((x_1, y_1)\)</span> and <span class="arithmatex">\((x_2, y_2)\)</span> relative to an origin monument, the <em>Shoelace Theorem</em> multiplies diagonally across a two-column coordinate table (<span class="arithmatex">\(x_1 y_2\)</span> downward-right minus <span class="arithmatex">\(y_1 x_2\)</span> upward-right) in a criss-cross pattern like lacing a boot. That cross-product gives the signed parallelogram area spanned by the two vectors as the <span class="arithmatex">\(2 \times 2\)</span> determinant <span class="arithmatex">\(D = \det\begin{bmatrix} x_1 &amp; y_1 \\ x_2 &amp; y_2 \end{bmatrix} = x_1 y_2 - y_1 x_2\)</span>, whose half-magnitude <span class="arithmatex">\(A = \frac{1}{2}|D|\)</span> is the enclosed triangle area. When a surveyor needs to locate the exact intersection corner <span class="arithmatex">\((x, y)\)</span> where two straight property boundary lines <span class="arithmatex">\(a_1 x + b_1 y = c_1\)</span> and <span class="arithmatex">\(a_2 x + b_2 y = c_2\)</span> cross—defined by their normal coefficients <span class="arithmatex">\((a_1, b_1)\)</span> and <span class="arithmatex">\((a_2, b_2)\)</span> and right-hand offset constants <span class="arithmatex">\((c_1, c_2)\)</span>—that same <span class="arithmatex">\(2 \times 2\)</span> determinant solves the simultaneous linear system via <strong>Cramer's Rule</strong>:</p>
+<div class="arithmatex">\[D = a_1 b_2 - b_1 a_2, \qquad x = \frac{D_x}{D} = \frac{c_1 b_2 - b_1 c_2}{a_1 b_2 - b_1 a_2}, \qquad y = \frac{D_y}{D} = \frac{a_1 c_2 - c_1 a_2}{a_1 b_2 - b_1 a_2} \tag{Eq. 6.11}\]</div>
+<p>Geometrically, the determinant <span class="arithmatex">\(D = a_1 b_2 - b_1 a_2\)</span> measures the signed parallelogram area spanned by the two line normals—vanishing (<span class="arithmatex">\(D = 0\)</span>) whenever the boundary lines run parallel and never meet—while <span class="arithmatex">\(D_x = c_1 b_2 - b_1 c_2\)</span> and <span class="arithmatex">\(D_y = a_1 c_2 - c_1 a_2\)</span> substitute the offset constants <span class="arithmatex">\((c_1, c_2)\)</span> for the <span class="arithmatex">\(x\)</span>- or <span class="arithmatex">\(y\)</span>-coefficients, expressing each intersection coordinate as a ratio of two parallelogram areas.</p>
+<hr />
+<h2 id="62-cavalieris-principle-three-dimensional-solids-rotational-inertia">6.2 Cavalieri's Principle, Three-Dimensional Solids &amp; Rotational Inertia</h2>
+<p>If twenty coins are stacked into a vertical cylinder on a desk and then nudged sideways so the column leans over or curves into an S-shape, the total volume of the stack does not change by a single cubic millimeter. <em>Cavalieri's Principle</em> states that if two solids have the same total height, and if slicing them parallel to their bases at <em>every</em> height <span class="arithmatex">\(z\)</span> reveals cross-sections of identical area <span class="arithmatex">\(A(z)\)</span> (or a constant ratio of areas), then their total volumes must be identical (or stand in that same ratio).</p>
+<p>When a solid of total vertical height <span class="arithmatex">\(h\)</span> has a horizontal cross-sectional area <span class="arithmatex">\(A(z)\)</span> that varies as any linear, quadratic, or cubic function of height <span class="arithmatex">\(z\)</span>, its exact volume <span class="arithmatex">\(V\)</span> follows from just three parallel horizontal slices—the bottom base area <span class="arithmatex">\(A_{\text{bottom}}\)</span> at <span class="arithmatex">\(z = 0\)</span>, the mid-height cross-section <span class="arithmatex">\(A_{\text{mid}}\)</span> halfway up at <span class="arithmatex">\(z = h/2\)</span>, and the top roof area <span class="arithmatex">\(A_{\text{top}}\)</span> at <span class="arithmatex">\(z = h\)</span>—via <em>Simpson's Universal Prismoidal Formula</em> (<strong>Figure 6.1</strong>):</p>
+<div class="arithmatex">\[V = \frac{h}{6}\left(A_{\text{bottom}} + 4A_{\text{mid}} + A_{\text{top}}\right) = h \left(\frac{A_{\text{bottom}} + 4A_{\text{mid}} + A_{\text{top}}}{6}\right) \tag{Eq. 6.12}\]</div>
+<p><img alt="Figure 6.1: Galileo's square-cube scaling law and Simpson's universal prismoidal three-slice volume formula." src="../../../assets/manuals/sc32_concept_cavalieri_simpson.png" /></p>
+<p>Weighting the bottom base, the mid-height slice, and the top roof in the <span class="arithmatex">\(1 : 4 : 1\)</span> ratio forms an effective average cross-section <span class="arithmatex">\(\frac{1}{6}(A_{\text{bottom}} + 4A_{\text{mid}} + A_{\text{top}})\)</span> across <span class="arithmatex">\(1 + 4 + 1 = 6\)</span> parts of weight—assigning two-thirds weight (<span class="arithmatex">\(\frac{4}{6}\)</span>) to the midsection <span class="arithmatex">\(A_{\text{mid}}\)</span> where the bulk of the solid resides—and multiplying that average area by the total height <span class="arithmatex">\(h\)</span> yields the exact volume <span class="arithmatex">\(V\)</span>. Cavalieri's Principle and Simpson's three-slice rule unify the classical volume formulas of solid geometry. When any pyramid or cone is sliced horizontally at distance <span class="arithmatex">\(z\)</span> below its apex, its linear dimensions grow linearly with <span class="arithmatex">\(z/h\)</span>, so its cross-sectional area grows <em>quadratically</em> as <span class="arithmatex">\(A(z) = A_{\text{base}}(z/h)^2\)</span>. Because the average value of <span class="arithmatex">\((z/h)^2\)</span> from <span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(h\)</span> is <span class="arithmatex">\(\frac{1}{3}\)</span> (which also follows from dissecting a cube into three identical square pyramids meeting at one corner), <em>every</em> cone or pyramid encloses one-third the volume of its bounding prism or cylinder, <span class="arithmatex">\(V = \frac{1}{3}A_{\text{base}}h\)</span>, whether its base is a circle, a square, an octagon, or an ellipse (<span class="arithmatex">\(A_{\text{base}} = \pi ab\)</span>, where <span class="arithmatex">\(V = \frac{1}{3}\pi abh\)</span>). Likewise, a <em>paraboloid of revolution</em> whose radius grows as <span class="arithmatex">\(r(z) \propto \sqrt{z}\)</span> has cross-sectional area <span class="arithmatex">\(A(z) \propto z\)</span>, whose average from <span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(h\)</span> is one-half (<span class="arithmatex">\(V = \frac{1}{2}\pi r^2 h\)</span>).</p>
+<p>By Cavalieri's slice principle, a sphere of radius <span class="arithmatex">\(r\)</span> inscribed inside a right circular cylinder of radius <span class="arithmatex">\(r\)</span> and height <span class="arithmatex">\(h = 2r\)</span> encloses two-thirds (<span class="arithmatex">\(\frac{2}{3}\)</span>) of the cylinder's volume. When the top hemisphere of radius <span class="arithmatex">\(r\)</span> is placed beside a cylinder of radius <span class="arithmatex">\(r\)</span> and height <span class="arithmatex">\(r\)</span> that has had an inverted <span class="arithmatex">\(45^\circ\)</span> cone (<span class="arithmatex">\(r_{\text{cone}}(z) = z\)</span>) carved out of its center, and both solids are sliced at height <span class="arithmatex">\(z\)</span> above the equator, the Pythagorean theorem shows that the hemisphere's slice is a disk of radius <span class="arithmatex">\(\sqrt{r^2 - z^2}\)</span> and area <span class="arithmatex">\(\pi(r^2 - z^2)\)</span>.</p>
+<p>At the same height <span class="arithmatex">\(z\)</span>, the punctured cylinder's slice is an annulus of outer radius <span class="arithmatex">\(r\)</span> and inner hole radius <span class="arithmatex">\(z\)</span>, whose area is also <span class="arithmatex">\(\pi(r^2 - z^2)\)</span>. Because every horizontal slice matches in area, the hemisphere's volume equals the cylinder minus the cone: <span class="arithmatex">\(\pi r^3 - \frac{1}{3}\pi r^3 = \frac{2}{3}\pi r^3\)</span>. Doubling for both hemispheres gives <span class="arithmatex">\(V_{\text{sphere}} = \frac{4}{3}\pi r^3 = \frac{2}{3}(2\pi r^3) = \frac{2}{3}V_{\text{cylinder}}\)</span>; decomposing the sphere into radial pyramids of height <span class="arithmatex">\(r\)</span> and base areas summing to <span class="arithmatex">\(A_{\text{sphere}}\)</span> (<span class="arithmatex">\(V_{\text{sphere}} = \frac{1}{3}r A_{\text{sphere}}\)</span>) then establishes that its surface area <span class="arithmatex">\(A_{\text{sphere}} = 4\pi r^2\)</span> is likewise <span class="arithmatex">\(\frac{2}{3}\)</span> of the cylinder's total area (<span class="arithmatex">\(2\pi r^2 + 2\pi r(2r) = 6\pi r^2\)</span>).</p>
+<p>When two equal circular cylinders of radius <span class="arithmatex">\(r\)</span> intersect at a <span class="arithmatex">\(90^\circ\)</span> right angle, as in a high-pressure refinery cross-joint or a groin vault, the common volume forms a <strong>Steinmetz bicylinder</strong>. Slicing the bicylinder horizontally at height <span class="arithmatex">\(z\)</span>, where both cylinders have half-width <span class="arithmatex">\(\sqrt{r^2 - z^2}\)</span>, produces a <em>square</em> cross-section of side <span class="arithmatex">\(2\sqrt{r^2 - z^2}\)</span> and area <span class="arithmatex">\(4(r^2 - z^2)\)</span>; an inscribed sphere's slice is a <em>circle</em> of area <span class="arithmatex">\(\pi(r^2 - z^2)\)</span>. At every slice from bottom to top, the bicylinder's square slice is <span class="arithmatex">\(\frac{4}{\pi}\)</span> times the sphere's circular slice, so by Cavalieri's Principle <span class="arithmatex">\(\pi\)</span> cancels out of the volume.</p>
+<p>A second <span class="arithmatex">\(\pi\)</span>-free solid is the <strong>cylindrical ungula (hoof)</strong>—the wedge formed when a right circular cylinder of radius <span class="arithmatex">\(r\)</span> is sliced by an inclined plane passing through a base diameter at angle <span class="arithmatex">\(\alpha\)</span> (reaching rim height <span class="arithmatex">\(h = r\tan\alpha\)</span>), whose vertical slices perpendicular to the diameter are right triangles integrating to <span class="arithmatex">\(\frac{2}{3}r^2 h\)</span>:</p>
+<div class="arithmatex">\[V_{\text{bicylinder}} = \frac{16}{3} r^3, \qquad A_{\text{bicylinder}} = 16 r^2, \qquad V_{\text{ungula}} = \frac{2}{3}r^2 h = \frac{2}{3}r^3\tan\alpha \tag{Eq. 6.13}\]</div>
+<p>Even though both solids are bounded by curved cylindrical walls, neither volume contains <span class="arithmatex">\(\pi\)</span>. For <span class="arithmatex">\(r = 6\text{ cm}\)</span> and <span class="arithmatex">\(\alpha = 45^\circ\)</span> (<span class="arithmatex">\(h = 6\text{ cm}\)</span>), the ungula encloses <span class="arithmatex">\(V_{\text{ungula}} = \mathbf{144\text{ cm}^3}\)</span> and the bicylinder encloses <span class="arithmatex">\(V_{\text{bicylinder}} = \mathbf{1,152\text{ cm}^3}\)</span>.</p>
+<p>When a cone or pyramid is sliced flat at height <span class="arithmatex">\(h\)</span> before reaching its apex, with bottom radius <span class="arithmatex">\(R\)</span> (or base area <span class="arithmatex">\(A_1\)</span>) and top radius <span class="arithmatex">\(r\)</span> (or top area <span class="arithmatex">\(A_2\)</span>), the resulting frustum has volume <span class="arithmatex">\(V_{\text{pyr,frust}} = \frac{h}{3}(A_1 + A_2 + \sqrt{A_1 A_2})\)</span> and <span class="arithmatex">\(V_{\text{cone,frust}} = \frac{1}{3}\pi h(R^2 + Rr + r^2)\)</span>. Physically, the frustum's volume equals its height <span class="arithmatex">\(h\)</span> multiplied by the <em>arithmetic average of three areas</em>: the bottom base <span class="arithmatex">\(A_1 = \pi R^2\)</span>, the top base <span class="arithmatex">\(A_2 = \pi r^2\)</span>, and their <em>geometric mean</em> <span class="arithmatex">\(\sqrt{A_1 A_2} = \pi Rr\)</span>. On a concrete bridge-pier pyramidal frustum with <span class="arithmatex">\(A_1 = 36\text{ m}^2,\; A_2 = 16\text{ m}^2\)</span>, and <span class="arithmatex">\(h = 9\text{ m}\)</span>, the three areas <span class="arithmatex">\(36\)</span>, <span class="arithmatex">\(16\)</span>, and <span class="arithmatex">\(\sqrt{36 \times 16} = 24\text{ m}^2\)</span> combine with <span class="arithmatex">\(\frac{h}{3} = 3\text{ m}\)</span> to yield <span class="arithmatex">\(V = \mathbf{228\text{ m}^3}\)</span>.</p>
+<p>In the volume (<span class="arithmatex">\(V = 2\pi^2 R r^2\)</span>) and surface area (<span class="arithmatex">\(A = 4\pi^2 R r\)</span>) of a <em>torus</em>—an O-ring gasket with major orbit radius <span class="arithmatex">\(R\)</span> and minor tube cross-section radius <span class="arithmatex">\(r\)</span> (<span class="arithmatex">\(R \ge r\)</span>)—the constant <span class="arithmatex">\(\pi\)</span> appears <em>squared</em> (<span class="arithmatex">\(\pi^2 \approx 9.87\)</span>) because two orthogonal circles are multiplied together. By <strong>Pappus's Centroid Theorems</strong>, when a planar curve of arc length <span class="arithmatex">\(L\)</span> or a planar region of area <span class="arithmatex">\(A_{\text{cross}}\)</span> is revolved around a coplanar external axis that does not intersect the curve or region, the surface area swept out equals <span class="arithmatex">\(L\)</span> multiplied by the circumference <span class="arithmatex">\(2\pi R_{\text{cm,arc}}\)</span> traveled by the curve's arc-length centroid, and the enclosed volume equals <span class="arithmatex">\(A_{\text{cross}}\)</span> multiplied by the circumference <span class="arithmatex">\(2\pi R_{\text{cm,area}}\)</span> traveled by the region's area centroid:</p>
+<div class="arithmatex">\[A = L \cdot \left(2\pi R_{\text{cm,arc}}\right), \qquad V = A_{\text{cross}} \cdot \left(2\pi R_{\text{cm,area}}\right) \tag{Eq. 6.14}\]</div>
+<p>For a torus, the generating circle has circumference <span class="arithmatex">\(L = 2\pi r\)</span> and disk area <span class="arithmatex">\(A_{\text{cross}} = \pi r^2\)</span>, while its centroid travels a circle of length <span class="arithmatex">\(2\pi R\)</span>, yielding <span class="arithmatex">\(A = 4\pi^2 R r\)</span> and <span class="arithmatex">\(V = 2\pi^2 R r^2\)</span> without evaluating an integral. For an O-ring with <span class="arithmatex">\(R = 45\text{ mm}\)</span> and <span class="arithmatex">\(r = 3.5\text{ mm}\)</span>, <span class="arithmatex">\(A \approx \mathbf{6,217.851\text{ mm}^2}\)</span> and <span class="arithmatex">\(V = A \cdot r / 2 \approx \mathbf{10,881.239\text{ mm}^3}\)</span>.</p>
+<p>Two-dimensional space admits infinitely many regular polygons, yet three-dimensional space permits only five regular convex polyhedra: the 4-faced tetrahedron, 6-faced cube, 8-faced octahedron, 12-faced dodecahedron, and 20-faced icosahedron (for an icosahedral crystal of edge <span class="arithmatex">\(a = 18\text{ mm}\)</span>, <span class="arithmatex">\(V = \frac{5(3+\sqrt{5})}{12}a^3 \approx \mathbf{12,723.645\text{ mm}^3}\)</span>). The volume coefficient <span class="arithmatex">\(\frac{\sqrt{2}}{12}a^3\)</span> of a regular tetrahedron of edge length <span class="arithmatex">\(a\)</span> follows from inscribing it inside a cube of edge length <span class="arithmatex">\(c = a/\sqrt{2}\)</span> (so each face diagonal has length <span class="arithmatex">\(\sqrt{2}c = a\)</span>). The space outside the tetrahedron consists of four right-angled corner pyramids, each having three mutually perpendicular legs of length <span class="arithmatex">\(c\)</span> and volume <span class="arithmatex">\(\frac{1}{3}\left(\frac{1}{2}c^2\right)c = \frac{1}{6}c^3\)</span>. Slicing off those four corners removes <span class="arithmatex">\(4 \times \frac{1}{6} = \frac{2}{3}\)</span> of the cube, so the central tetrahedron retains <span class="arithmatex">\(1 - \frac{2}{3} = \frac{1}{3}\)</span> of the cube's volume: <span class="arithmatex">\(V = \frac{1}{3}c^3 = \frac{1}{3}\left(\frac{a}{\sqrt{2}}\right)^3 = \frac{\sqrt{2}}{12}a^3\)</span>.</p>
+<p>Every convex polyhedron with <span class="arithmatex">\(V\)</span> vertices, <span class="arithmatex">\(E\)</span> edges, and <span class="arithmatex">\(F\)</span> faces satisfies <strong>Euler's polyhedral invariant</strong>:</p>
+<div class="arithmatex">\[V - E + F = 2 \tag{Eq. 6.15}\]</div>
+<p>When a polyhedron's wireframe is projected radially onto a rubber sphere, punctured through one face, and flattened onto a plane, this topological invariant becomes visible: removing each edge merges two faces (<span class="arithmatex">\(\Delta E = -1, \Delta F = -1\)</span>, which preserves <span class="arithmatex">\(V - E + F\)</span>), and contracting a tree of <span class="arithmatex">\(V\)</span> vertices and <span class="arithmatex">\(V - 1\)</span> edges to a single point yields <span class="arithmatex">\(1 - 0 + 1 = 2\)</span>. At every vertex of a convex polyhedron, at least <span class="arithmatex">\(3\)</span> faces must meet, and their flat corner angles must sum to <em>less than <span class="arithmatex">\(360^\circ\)</span></em> so the faces fold into a 3D corner instead of lying flat. Equilateral triangles (<span class="arithmatex">\(60^\circ\)</span>) allow <span class="arithmatex">\(3, 4,\)</span> or <span class="arithmatex">\(5\)</span> faces per vertex (tetrahedron, octahedron, icosahedron); squares (<span class="arithmatex">\(90^\circ\)</span>) allow <span class="arithmatex">\(3\)</span> (cube); and regular pentagons (<span class="arithmatex">\(108^\circ\)</span>) allow <span class="arithmatex">\(3\)</span> (dodecahedron). At six sides, three regular hexagons meet at <span class="arithmatex">\(3 \times 120^\circ = 360^\circ\)</span> and lie flat in a plane, precluding any regular polyhedron with six or more sides per face.</p>
+<h3 id="621-spherical-shells-geodesy-additive-manufacturing">6.2.1 Spherical Shells, Geodesy &amp; Additive Manufacturing</h3>
+<p>Curved shells and planetary surfaces follow three additional mensuration laws for spherical caps, spherical triangles, and triaxial ellipsoids. In petrochemical refineries, liquefied gases are stored inside spherical <em>Hortonsphere</em> tanks of radius <span class="arithmatex">\(R\)</span> because a sphere resists internal pressure with uniform membrane tension (half the hoop stress of a cylinder of equal radius). When an ultrasonic sensor measures liquid depth <span class="arithmatex">\(h\)</span> at the bottom of the sphere, integrating horizontal disk slices of squared radius <span class="arithmatex">\(r^2(z) = R^2 - (R-z)^2 = 2Rz - z^2\)</span> from <span class="arithmatex">\(z = 0\)</span> to <span class="arithmatex">\(h\)</span> gives the <em>spherical cap volume</em> <span class="arithmatex">\(V_{\text{cap}}\)</span>, while the curved exterior shell of height <span class="arithmatex">\(h\)</span> forms a <em>spherical dome</em> of surface area <span class="arithmatex">\(A_{\text{dome}}\)</span>, and slicing the sphere between two parallel planes of radii <span class="arithmatex">\(r_1\)</span> and <span class="arithmatex">\(r_2\)</span> separated by vertical thickness <span class="arithmatex">\(h\)</span> encloses the <em>spherical zone volume</em> <span class="arithmatex">\(V_{\text{zone}}\)</span>:</p>
+<div class="arithmatex">\[V_{\text{cap}} = \frac{1}{3}\pi h^2(3R - h), \qquad A_{\text{dome}} = 2\pi R h, \qquad V_{\text{zone}} = \frac{\pi h}{6}\left(3r_1^2 + 3r_2^2 + h^2\right) \tag{Eq. 6.16}\]</div>
+<p>Expanding the cap volume as <span class="arithmatex">\(V_{\text{cap}} = \pi R h^2 - \frac{1}{3}\pi h^3\)</span> shows how the spherical-curvature taper <span class="arithmatex">\(-\frac{1}{3}\pi h^3\)</span> trims the leading paraboloid approximation <span class="arithmatex">\(\pi R h^2\)</span>. By <strong>Archimedes' hat-box projection</strong>, the curved surface area <span class="arithmatex">\(A_{\text{dome}} = (2\pi R)h\)</span> of any spherical cap or zone depends <em>only</em> on the sphere's radius <span class="arithmatex">\(R\)</span> and the vertical slice height <span class="arithmatex">\(h\)</span>: as a horizontal ring at latitude <span class="arithmatex">\(\theta\)</span> approaches the pole, its horizontal radius <span class="arithmatex">\(R\cos\theta\)</span> shrinks by <span class="arithmatex">\(\cos\theta\)</span> while its sloped meridian width <span class="arithmatex">\(dz/\cos\theta\)</span> stretches by the reciprocal <span class="arithmatex">\(1/\cos\theta\)</span>, canceling at every latitude so the dome has the exact same area as a band of height <span class="arithmatex">\(h\)</span> on the circumscribing cylinder of circumference <span class="arithmatex">\(2\pi R\)</span>.</p>
+<p>Splitting the zone volume into <span class="arithmatex">\(V_{\text{zone}} = \frac{1}{2}\pi(r_1^2 + r_2^2)h + \frac{1}{6}\pi h^3\)</span> likewise separates the average of the two flat end-cap cylinders, <span class="arithmatex">\(\frac{1}{2}(\pi r_1^2 + \pi r_2^2)h\)</span>, from the outward spherical bulge <span class="arithmatex">\(\frac{1}{6}\pi h^3 = \frac{4}{3}\pi(h/2)^3\)</span>—the exact volume of a complete sphere of diameter <span class="arithmatex">\(h\)</span>. For a spherical cap of <span class="arithmatex">\(R = 10\text{ cm}\)</span> and depth <span class="arithmatex">\(h = 3\text{ cm}\)</span>, <span class="arithmatex">\(V_{\text{cap}} \approx \mathbf{254.469\text{ cm}^3}\)</span> and <span class="arithmatex">\(A_{\text{dome}} \approx \mathbf{188.496\text{ cm}^2}\)</span>; for a spherical zone with <span class="arithmatex">\(r_1 = 8\text{ cm}, r_2 = 6\text{ cm}, h = 4\text{ cm}\)</span>, <span class="arithmatex">\(V_{\text{zone}} \approx \mathbf{661.829\text{ cm}^3}\)</span>.</p>
+<p>On a flat plane, the interior angles of every triangle sum to <span class="arithmatex">\(180^\circ\)</span> (<span class="arithmatex">\(\pi\text{ rad}\)</span>), whether the triangle is drawn on a postage stamp or across a field. On a curved sphere of radius <span class="arithmatex">\(R\)</span>, however, great-circle paths bow outward, and the interior angles <span class="arithmatex">\((\alpha, \beta, \gamma)\)</span> of a <em>spherical triangle</em> <em>always</em> sum to more than <span class="arithmatex">\(180^\circ\)</span>. Starting at the North Pole, walking south to the Equator along the Prime Meridian, turning <span class="arithmatex">\(90^\circ\)</span> west along the Equator to <span class="arithmatex">\(90^\circ\text{ W}\)</span>, and turning <span class="arithmatex">\(90^\circ\)</span> north back to the North Pole traces a spherical triangle with three <span class="arithmatex">\(90^\circ\)</span> right angles (<span class="arithmatex">\(\alpha + \beta + \gamma = 270^\circ\)</span>) enclosing one-eighth of the globe (<span class="arithmatex">\(\frac{1}{8}\cdot 4\pi R^2 = \frac{\pi}{2}R^2\)</span>).</p>
+<p>That angle sum and the enclosed surface area are locked together by <strong>Girard's Theorem</strong> on intersecting great circles. When two great circles slice through opposite poles at a dihedral wedge angle <span class="arithmatex">\(\theta_{\text{rad}}\)</span> (in radians), they carve the sphere into crescent-shaped orange-peel wedges called <em>spherical lunes</em>; because a full <span class="arithmatex">\(2\pi\text{ rad}\)</span> revolution sweeps out the entire sphere area <span class="arithmatex">\(4\pi R^2\)</span>, a lune of dihedral angle <span class="arithmatex">\(\theta_{\text{rad}}\)</span> encloses the fraction <span class="arithmatex">\(\frac{\theta_{\text{rad}}}{2\pi}(4\pi R^2)\)</span>, or <span class="arithmatex">\(A_{\text{lune}} = 2R^2\theta_{\text{rad}}\)</span>. Overlaying the three lune pairs covering the three corner angles <span class="arithmatex">\((\alpha, \beta, \gamma)\)</span> of a spherical triangle covers the entire sphere once while triple-covering the triangle itself and its antipodal twin, proving that the <em>spherical excess</em> <span class="arithmatex">\(E_{\text{rad}} = (\alpha + \beta + \gamma) - \pi\)</span> (the radian amount by which the three corner angles exceed <span class="arithmatex">\(180^\circ\)</span>) is directly proportional to the triangle's area <span class="arithmatex">\(A_{\text{triangle}}\)</span>:</p>
+<div class="arithmatex">\[E_{\text{rad}} = (\alpha^\circ + \beta^\circ + \gamma^\circ - 180^\circ)\frac{\pi}{180^\circ}, \qquad A_{\text{triangle}} = R^2 E_{\text{rad}} \tag{Eq. 6.17}\]</div>
+<p>Converting the degree excess above <span class="arithmatex">\(180^\circ\)</span> into radians <span class="arithmatex">\(E_{\text{rad}}\)</span> and scaling by <span class="arithmatex">\(R^2\)</span> turns angle measurements directly into surface area: on a sphere of known radius <span class="arithmatex">\(R\)</span>, a surveyor can determine the area of a continental triangle from its three corner angles alone without taping any boundary length.</p>
+<p>Just as the perimeter of a 2D ellipse has no elementary closed form, the surface area <span class="arithmatex">\(A\)</span> of a 3D <em>triaxial ellipsoid</em> with three unequal semi-axes <span class="arithmatex">\((a, b, c)\)</span> (whose enclosed volume is <span class="arithmatex">\(V_{\text{ellipsoid}} = \frac{4}{3}\pi abc\)</span>, and whose three perpendicular coordinate-plane shadow projections are ellipses of areas <span class="arithmatex">\(\pi ab\)</span>, <span class="arithmatex">\(\pi ac\)</span>, and <span class="arithmatex">\(\pi bc\)</span>) requires incomplete elliptic integrals. <strong>Knud Thomsen's power-mean formula</strong> combines the three pairwise semi-axis shadow products <span class="arithmatex">\((ab, ac, bc)\)</span> using an exponent <span class="arithmatex">\(p \approx 1.608\)</span>:</p>
+<div class="arithmatex">\[A \approx 4\pi \left(\frac{(ab)^p + (ac)^p + (bc)^p}{3}\right)^{1/p} \qquad (p \approx 1.608) \tag{Eq. 6.18}\]</div>
+<p>Where a sphere of radius <span class="arithmatex">\(R\)</span> has surface area <span class="arithmatex">\(4\pi R^2\)</span>, Knud Thomsen's formula replaces the single squared radius <span class="arithmatex">\(R^2\)</span> with the <span class="arithmatex">\(p\)</span>-power average of the three perpendicular semi-axis products <span class="arithmatex">\(ab\)</span>, <span class="arithmatex">\(ac\)</span>, and <span class="arithmatex">\(bc\)</span>—raising each product to the power <span class="arithmatex">\(p \approx 1.608\)</span>, averaging the three terms inside the brackets, and extracting the <span class="arithmatex">\(1/p\)</span> root to restore dimensions of area before scaling by <span class="arithmatex">\(4\pi\)</span>. This single expression approximates the exact elliptic surface integral to within <span class="arithmatex">\(1.06\%\)</span> across all aspect ratios (for an ellipsoid with semi-axes <span class="arithmatex">\(a = 6\text{ cm},\; b = 4\text{ cm},\; c = 3\text{ cm}\)</span>, <span class="arithmatex">\(V_{\text{ellipsoid}} \approx \mathbf{301.593\text{ cm}^3}\)</span> and <span class="arithmatex">\(A \approx \mathbf{231.28\text{ cm}^2}\)</span>).</p>
+<p>Finally, surface area and enclosed volume govern mass estimation in aerospace sandwich-composite panels and lattice-core additive manufacturing. Unlike a solid casting of material density <span class="arithmatex">\(\rho\)</span> that is <span class="arithmatex">\(100\%\)</span> dense throughout, a lightweight structural enclosure—like the trabecular bone of an avian wing—is a <em>composite shell-and-core structure</em> of total mass <span class="arithmatex">\(m_{\text{part}}\)</span>, pairing a solid exterior skin of area <span class="arithmatex">\(A_{\text{surface}}\)</span> and thickness <span class="arithmatex">\(t_{\text{shell}}\)</span> with a porous lattice core that fills the remaining interior volume <span class="arithmatex">\(V_{\text{interior}} = V_{\text{total}} - A_{\text{surface}}t_{\text{shell}}\)</span> at relative infill fraction <span class="arithmatex">\(f_{\text{infill}}\)</span>:</p>
+<div class="arithmatex">\[m_{\text{part}} = \rho \left( A_{\text{surface}} \cdot t_{\text{shell}} + V_{\text{interior}} \cdot f_{\text{infill}} \right) \tag{Eq. 6.19}\]</div>
+<p>Summing the solid skin volume <span class="arithmatex">\(A_{\text{surface}} t_{\text{shell}}\)</span> and the effective lattice volume <span class="arithmatex">\(V_{\text{interior}} f_{\text{infill}}\)</span> before multiplying by material density <span class="arithmatex">\(\rho\)</span> shows why surface area dominates lightweight part weight. For thin-walled instrument housings and aerospace fairings, more than half of the structural mass resides in the exterior skin (<span class="arithmatex">\(A_{\text{surface}} \cdot t_{\text{shell}}\)</span>) rather than in the cellular core: on a composite housing with <span class="arithmatex">\(A_{\text{surface}} = 150\text{ cm}^2\)</span>, skin thickness <span class="arithmatex">\(t_{\text{shell}} = 0.12\text{ cm}\)</span>, total bounding volume <span class="arithmatex">\(V_{\text{total}} = 98\text{ cm}^3\)</span>, and <span class="arithmatex">\(f_{\text{infill}} = 20\%\)</span> core lattice density molded from polycarbonate-carbon resin (<span class="arithmatex">\(\rho = 1.25\text{ g/cm}^3\)</span>), the solid skin volume <span class="arithmatex">\(18\text{ cm}^3\)</span> and cellular core volume <span class="arithmatex">\(0.2(98 - 18) = 16\text{ cm}^3\)</span> combine to <span class="arithmatex">\(34\text{ cm}^3\)</span>, yielding a finished structural mass of <span class="arithmatex">\(m_{\text{part}} = \mathbf{42.5\text{ g}}\)</span>.</p>
+<h3 id="622-euclidean-distance-helical-coils-weighted-centroids">6.2.2 Euclidean Distance, Helical Coils &amp; Weighted Centroids</h3>
+<p>Once the surface area and volume of a three-dimensional body are established, spatial analysis turns to Euclidean distance, helical wire length, and center of mass. On a flat sheet of paper, the distance between two points <span class="arithmatex">\((x_1, y_1)\)</span> and <span class="arithmatex">\((x_2, y_2)\)</span> with coordinate steps <span class="arithmatex">\(\Delta x = x_2 - x_1\)</span> and <span class="arithmatex">\(\Delta y = y_2 - y_1\)</span> follows the 2D Pythagorean theorem <span class="arithmatex">\(r = \sqrt{\Delta x^2 + \Delta y^2}\)</span>. Stepping out of the flat plane by rising an elevation <span class="arithmatex">\(\Delta z = z_2 - z_1\)</span> perpendicular to the floor forms a second right triangle from the floor diagonal <span class="arithmatex">\(r = \sqrt{\Delta x^2 + \Delta y^2}\)</span> and the vertical rise <span class="arithmatex">\(\Delta z\)</span>, whose hypotenuse is the straight-line <em>3D Euclidean distance</em> <span class="arithmatex">\(d\)</span>:</p>
+<div class="arithmatex">\[d = \sqrt{r^2 + \Delta z^2} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2} \tag{Eq. 6.20}\]</div>
+<p>Geometrically, this 3D distance decomposes into two orthogonal right triangles in succession: first finding the diagonal shadow <span class="arithmatex">\(r_{xy} = \sqrt{\Delta x^2 + \Delta y^2}\)</span> across the floor, and then tilting up from that floor diagonal by the vertical height <span class="arithmatex">\(\Delta z\)</span> to reach the 3D corner. For a displacement of <span class="arithmatex">\((\Delta x, \Delta y, \Delta z) = (3, 4, 12)\text{ m}\)</span>, the horizontal legs <span class="arithmatex">\((3, 4)\text{ m}\)</span> form a floor diagonal of <span class="arithmatex">\(r_{xy} = \sqrt{3^2 + 4^2} = 5\text{ m}\)</span> (at floor azimuth <span class="arithmatex">\(\approx 53.13^\circ\)</span>), and pairing that <span class="arithmatex">\(5\text{ m}\)</span> floor diagonal with the vertical rise <span class="arithmatex">\(\Delta z = 12\text{ m}\)</span> produces the 3D spatial diagonal <span class="arithmatex">\(d = \sqrt{5^2 + 12^2} = \mathbf{13\text{ m}}\)</span> at an elevation angle of <span class="arithmatex">\(\phi \approx \mathbf{67.38^\circ}\)</span>.</p>
+<p>That three-component Pythagorean sum also gives the small-taper active-coil wire blank length <span class="arithmatex">\(L\)</span> required to wind a <em>tapered conical compression spring</em> with bottom radius <span class="arithmatex">\(R_1\)</span>, top radius <span class="arithmatex">\(R_2\)</span>, mean radius <span class="arithmatex">\(R_m = \frac{1}{2}(R_1 + R_2)\)</span>, axial height <span class="arithmatex">\(h\)</span>, and <span class="arithmatex">\(N\)</span> active coils (prior to squared-and-ground end turns):</p>
+<div class="arithmatex">\[L \approx \sqrt{(2\pi N R_m)^2 + h^2 + (R_1 - R_2)^2} \tag{Eq. 6.21}\]</div>
+<p>Unrolling the conical helix resolves the wire path into three locally orthogonal displacements whose squares add under the radical: <span class="arithmatex">\(N\)</span> circumferential turns of unrolled length <span class="arithmatex">\(2\pi N R_m\)</span> at the mean radius, the vertical axial climb <span class="arithmatex">\(h\)</span>, and the inward radial taper <span class="arithmatex">\(R_1 - R_2\)</span> from base to top.</p>
+<p>In three-dimensional tracking, when a deep-space radar or robotic gimbal follows a target along the 3D displacement vector <span class="arithmatex">\(\vec{V} = (\Delta x, \Delta y, \Delta z)\)</span> at total slant range <span class="arithmatex">\(d = |\vec{V}| = \sqrt{\Delta x^2 + \Delta y^2 + \Delta z^2}\)</span>, the orientation of the beam in space is fixed by the three inclination angles <span class="arithmatex">\(\alpha, \beta,\)</span> and <span class="arithmatex">\(\gamma\)</span> measured between <span class="arithmatex">\(\vec{V}\)</span> and the positive <span class="arithmatex">\(x\)</span>-, <span class="arithmatex">\(y\)</span>-, and <span class="arithmatex">\(z\)</span>-axes. Projecting the slant range <span class="arithmatex">\(d\)</span> onto each coordinate axis gives <span class="arithmatex">\(\Delta x = d\cos\alpha\)</span>, <span class="arithmatex">\(\Delta y = d\cos\beta\)</span>, and <span class="arithmatex">\(\Delta z = d\cos\gamma\)</span>, so dividing each coordinate step by the range <span class="arithmatex">\(d\)</span> produces the three <em>direction cosines</em> <span class="arithmatex">\((\cos\alpha, \cos\beta, \cos\gamma) = \left(\frac{\Delta x}{d}, \frac{\Delta y}{d}, \frac{\Delta z}{d}\right)\)</span>—the components of the 3D unit pointing vector <span class="arithmatex">\(\hat{u} = \vec{V}/d\)</span>:</p>
+<div class="arithmatex">\[\cos^2\alpha + \cos^2\beta + \cos^2\gamma = \left(\frac{\Delta x}{d}\right)^2 + \left(\frac{\Delta y}{d}\right)^2 + \left(\frac{\Delta z}{d}\right)^2 = 1 \tag{Eq. 6.22}\]</div>
+<p>Dividing both sides of the 3D Pythagorean equation <span class="arithmatex">\(\Delta x^2 + \Delta y^2 + \Delta z^2 = d^2\)</span> by <span class="arithmatex">\(d^2\)</span> normalizes the three squared axial projections so they sum to <span class="arithmatex">\(1\)</span>, which guarantees that the tip of the unit pointing vector <span class="arithmatex">\(\hat{u}\)</span> always lies on a unit sphere of radius <span class="arithmatex">\(1\)</span> and that any two direction angles determine the third.</p>
+<p>The balance point of an asymmetric airplane wing, a welded I-beam girder, or a multi-stage rocket follows from static torque equilibrium. When a body is assembled from <span class="arithmatex">\(N\)</span> components with masses (or cross-sectional areas) <span class="arithmatex">\(m_1, m_2, \dots, m_N\)</span> centered at positions <span class="arithmatex">\(x_1, x_2, \dots, x_N\)</span>, each piece exerts a gravitational torque (first moment) <span class="arithmatex">\(m_k x_k\)</span> about the origin. The composite <em>center of mass</em> (<em>centroid</em>) <span class="arithmatex">\(\bar{x}_{\text{cm}}\)</span> is the exact location where a single support fulcrum balances all those torques, defined as the <em>mass-weighted mean</em> of the coordinates:</p>
+<div class="arithmatex">\[\bar{x}_{\text{cm}} = \frac{m_1 x_1 + m_2 x_2 + \dots + m_N x_N}{m_1 + m_2 + \dots + m_N} = \frac{\sum_{k=1}^N m_k x_k}{\sum_{k=1}^N m_k} \tag{Eq. 6.23}\]</div>
+<p>Summing the individual first-moment torques <span class="arithmatex">\(m_k x_k\)</span> of all <span class="arithmatex">\(N\)</span> components and dividing by the total assembled mass <span class="arithmatex">\(\sum m_k\)</span> locates the unique coordinate <span class="arithmatex">\(\bar{x}_{\text{cm}}\)</span> where concentrating the entire mass produces the same gravitational torque as the distributed parts.</p>
+<h3 id="623-geometric-symmetry-mass-distribution-classical-mechanics">6.2.3 Geometric Symmetry, Mass Distribution &amp; Classical Mechanics</h3>
+<p>In linear motion, a <span class="arithmatex">\(10\text{-kilogram}\)</span> steel block requires the same force to accelerate whether it is shaped like a compact cannonball or a thin bicycle wheel. Across classical mechanics, orbital astrodynamics, and structural engineering, however, the cross-sectional and radial geometry of cylinders, spheres, and structural beams governs how matter stores rotational kinetic energy, escapes planetary gravity, resists shaft torsion, and withstands elastic bending.</p>
+<p>When a rigid body spins about an axis at angular velocity <span class="arithmatex">\(\omega\)</span> (in radians per second, <span class="arithmatex">\(\text{rad/s}\)</span>), a particle of mass <span class="arithmatex">\(m\)</span> at perpendicular radial distance <span class="arithmatex">\(r\)</span> from the axis sweeps along a circle at tangential speed <span class="arithmatex">\(v = r\omega\)</span>, turning inward with centripetal acceleration <span class="arithmatex">\(a_c = v^2 / r = \omega^2 r\)</span>. Substituting <span class="arithmatex">\(v = r\omega\)</span> into the translational kinetic energy <span class="arithmatex">\(K = \frac{1}{2}mv^2\)</span> groups the mass and its squared lever arm into the quantity <span class="arithmatex">\(mr^2\)</span>, whose sum (or integral <span class="arithmatex">\(I = \int r^2\,dm\)</span>) across the entire body defines the <em>rotational moment of inertia</em> <span class="arithmatex">\(I\)</span> and the <em>rotational kinetic energy</em> <span class="arithmatex">\(E_{\text{rot}}\)</span>:</p>
+<div class="arithmatex">\[K = \frac{1}{2} m v^2 = \frac{1}{2} m (r\omega)^2 = \frac{1}{2} \left(m r^2\right) \omega^2, \qquad E_{\text{rot}} = \frac{1}{2}I\omega^2 \tag{Eq. 6.24}\]</div>
+<p>The rotational moment of inertia <span class="arithmatex">\(I = \int r^2\,dm\)</span> (<span class="arithmatex">\(\text{kg}\cdot\text{m}^2\)</span>) plays the exact role of mass in linear motion while angular speed <span class="arithmatex">\(\omega\)</span> plays the role of velocity, giving rotational kinetic energy <span class="arithmatex">\(E_{\text{rot}} = \frac{1}{2}I\omega^2\)</span> and angular momentum <span class="arithmatex">\(L = I \omega\)</span> (for an energy-storage flywheel of <span class="arithmatex">\(I = 4.25\text{ kg}\cdot\text{m}^2\)</span> spinning at <span class="arithmatex">\(\omega = 150\text{ rad/s}\)</span>, <span class="arithmatex">\(E_{\text{rot}} = \mathbf{47,812.5\text{ J}}\)</span>). Because the radial distance <span class="arithmatex">\(r\)</span> is <em>squared</em>, moving a kilogram of mass twice as far from the rotation axis makes it <em>four times</em> harder to spin up or slow down. When a figure skater pulls her extended arms inward, cutting her effective radius <span class="arithmatex">\(r\)</span> in half reduces <span class="arithmatex">\(I \propto r^2\)</span> by roughly a factor of three or four; because angular momentum <span class="arithmatex">\(L = I\omega\)</span> is conserved on frictionless ice, her spin rate <span class="arithmatex">\(\omega\)</span> triples.</p>
+<p>For homogeneous bodies of total mass <span class="arithmatex">\(M\)</span> and outer radius <span class="arithmatex">\(R\)</span> (or length <span class="arithmatex">\(L\)</span>, or bounded between inner bore radius <span class="arithmatex">\(r_1\)</span> and outer radius <span class="arithmatex">\(r_2\)</span> for a hollow cylinder, and between inner radius <span class="arithmatex">\(R_1\)</span> and outer radius <span class="arithmatex">\(R_2\)</span> for a hollow spherical shell), integrating <span class="arithmatex">\(r^2\,dm\)</span> across the solid cross-section yields the standard form <span class="arithmatex">\(I = k M R^2\)</span> (or <span class="arithmatex">\(k M L^2\)</span>), where the dimensionless shape factor <span class="arithmatex">\(k\)</span> measures how strongly the geometry concentrates mass away from the rotation axis:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Homogeneous Rigid Body</th>
+<th style="text-align: left;">Axis Orientation</th>
+<th style="text-align: center;">Inertia Formula <span class="arithmatex">\(I\)</span></th>
+<th style="text-align: center;">Shape Factor <span class="arithmatex">\(k\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Thin Cylindrical Hoop / Rim</strong></td>
+<td style="text-align: left;">Symmetry axis</td>
+<td style="text-align: center;"><span class="arithmatex">\(M R^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Thin Spherical Shell</strong></td>
+<td style="text-align: left;">Any diameter</td>
+<td style="text-align: center;"><span class="arithmatex">\(\dfrac{2}{3}M R^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\dfrac{2}{3} \approx 0.667\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Thick-Walled Hollow Cylinder</strong></td>
+<td style="text-align: left;">Symmetry axis</td>
+<td style="text-align: center;"><span class="arithmatex">\(\dfrac{1}{2}M(r_1^2 + r_2^2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\dfrac{1}{2}\left(1 + \dfrac{r_1^2}{r_2^2}\right)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Solid Circular Cylinder / Disk</strong></td>
+<td style="text-align: left;">Symmetry axis</td>
+<td style="text-align: center;"><span class="arithmatex">\(\dfrac{1}{2}M R^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\dfrac{1}{2} = 0.5\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Solid Sphere</strong></td>
+<td style="text-align: left;">Any diameter</td>
+<td style="text-align: center;"><span class="arithmatex">\(\dfrac{2}{5}M R^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\dfrac{2}{5} = 0.4\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Thick-Walled Spherical Shell</strong></td>
+<td style="text-align: left;">Any diameter</td>
+<td style="text-align: center;"><span class="arithmatex">\(\dfrac{2}{5}M\dfrac{R_2^5 - R_1^5}{R_2^3 - R_1^3}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\dfrac{2}{5}\dfrac{1 - (R_1/R_2)^5}{1 - (R_1/R_2)^3}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Slender Uniform Rod (Length <span class="arithmatex">\(L\)</span>)</strong></td>
+<td style="text-align: left;">Transverse through CM</td>
+<td style="text-align: center;"><span class="arithmatex">\(\dfrac{1}{12}M L^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\dfrac{1}{12} \approx 0.083\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Slender Uniform Rod (Length <span class="arithmatex">\(L\)</span>)</strong></td>
+<td style="text-align: left;">Transverse through end pivot</td>
+<td style="text-align: center;"><span class="arithmatex">\(\dfrac{1}{3}M L^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\dfrac{1}{3} \approx 0.333\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>A solid circular cylinder (<span class="arithmatex">\(I = \frac{1}{2}MR^2\)</span>) averages <span class="arithmatex">\(r^2\)</span> over disk rings <span class="arithmatex">\(dA = 2\pi r\,dr\)</span>, while a solid sphere (<span class="arithmatex">\(I = \frac{2}{5}MR^2\)</span>) tapers toward its poles so that more of its volume lies closer to the spin axis; if a solid cylinder and a solid sphere roll down an inclined plane from rest, the sphere converts a smaller fraction of its potential energy into rotational spin and always wins the race. A mechanical punch-press flywheel, by contrast, concentrates over three-quarters of its cast iron into a thick outer rim supported by a thin inner web so that nearly <span class="arithmatex">\(90\%\)</span> of its rotational inertia comes from the outer rim. In three dimensions, a thick-walled deep-ocean bathysphere bounded by inner radius <span class="arithmatex">\(R_1\)</span> and outer radius <span class="arithmatex">\(R_2\)</span> integrates <span class="arithmatex">\(r^2\,dm\)</span> across concentric spherical shells to scale with the fifth-power difference <span class="arithmatex">\(I_{\text{shell}} = \frac{2}{5}M\frac{R_2^5 - R_1^5}{R_2^3 - R_1^3}\)</span>.</p>
+<p>At the planetary scale, spherical volume <span class="arithmatex">\(V = \frac{4}{3}\pi R^3\)</span>, mean planetary density <span class="arithmatex">\(\rho\)</span>, and Newton's universal gravitational constant <span class="arithmatex">\(G \approx 6.674 \times 10^{-11}\text{ m}^3/(\text{kg}\cdot\text{s}^2)\)</span> govern gravitational binding and <strong>orbital escape energy</strong>. By the gravitational shell theorem, a spherical planet of radius <span class="arithmatex">\(R\)</span> and mass <span class="arithmatex">\(M = \frac{4}{3}\pi R^3 \rho\)</span> attracts an exterior spacecraft of mass <span class="arithmatex">\(m\)</span> with force <span class="arithmatex">\(G M m / R^2\)</span> as if all planetary mass were concentrated at its center. Setting that inward gravitational pull <span class="arithmatex">\(G M m / R^2\)</span> equal to the required centripetal force <span class="arithmatex">\(m v_{\text{orb}}^2 / R\)</span> defines low-altitude circular orbital speed <span class="arithmatex">\(v_{\text{orb}}\)</span>, while equating the spacecraft's kinetic energy <span class="arithmatex">\(\frac{1}{2}m v_{\text{esc}}^2\)</span> to the depth of the gravitational potential well <span class="arithmatex">\(G M m / R\)</span> defines the parabolic <strong>escape velocity</strong> <span class="arithmatex">\(v_{\text{esc}}\)</span>:</p>
+<div class="arithmatex">\[v_{\text{orb}} = \sqrt{\frac{G M}{R}}, \qquad v_{\text{esc}} = \sqrt{\frac{2 G M}{R}} = \sqrt{2}\,v_{\text{orb}} = R\sqrt{\frac{8\pi}{3}G\rho} \tag{Eq. 6.25}\]</div>
+<p>Canceling the spacecraft mass <span class="arithmatex">\(m\)</span> leaves both speeds governed solely by the ratio of the planetary gravitational parameter <span class="arithmatex">\(GM\)</span> to the surface radius <span class="arithmatex">\(R\)</span>. A satellite in circular orbit at <span class="arithmatex">\(v_{\text{orb}} = \sqrt{GM/R}\)</span> already carries kinetic energy <span class="arithmatex">\(\frac{1}{2}mv_{\text{orb}}^2 = \frac{1}{2}\frac{GMm}{R}\)</span>, half the gravitational binding energy <span class="arithmatex">\(\frac{GMm}{R}\)</span> needed to climb to infinity, so multiplying its orbital speed by <span class="arithmatex">\(\sqrt{2}\)</span> doubles its kinetic energy and breaks it free of the planet. Substituting <span class="arithmatex">\(M = \frac{4}{3}\pi R^3\rho\)</span> into <span class="arithmatex">\(\sqrt{2GM/R}\)</span> cancels one power of <span class="arithmatex">\(R\)</span> against <span class="arithmatex">\(R^3\)</span> and pulls <span class="arithmatex">\(R = \sqrt{R^2}\)</span> outside the radical: because enclosed mass grows with volume (<span class="arithmatex">\(R^3\)</span>) while surface distance grows linearly (<span class="arithmatex">\(R\)</span>), escape velocity scales linearly with planetary radius (<span class="arithmatex">\(v_{\text{esc}} \propto R\sqrt{\rho}\)</span>), so doubling a rocky world's radius at constant density quadruples its surface escape energy.</p>
+<p>When a rigid body of total mass <span class="arithmatex">\(M\)</span> and center-of-mass inertia <span class="arithmatex">\(I_{\text{cm}}\)</span> pivots about an axis displaced by perpendicular distance <span class="arithmatex">\(d\)</span> from its center of mass, one need not re-integrate <span class="arithmatex">\(\int r^2\,dm\)</span> from scratch. Because the cross-term in <span class="arithmatex">\((r_{\text{cm}} + d)^2 = r_{\text{cm}}^2 + 2d\,r_{\text{cm}} + d^2\)</span> vanishes around the centroid (<span class="arithmatex">\(\int r_{\text{cm}}\,dm = 0\)</span>), the <em>Parallel-Axis Theorem</em> adds the point-mass transfer term <span class="arithmatex">\(M d^2\)</span> to yield the displaced inertia <span class="arithmatex">\(I_{\text{parallel}}\)</span>:</p>
+<div class="arithmatex">\[I_{\text{parallel}} = I_{\text{cm}} + M d^2 \tag{Eq. 6.26}\]</div>
+<p>Adding the orbital transfer term <span class="arithmatex">\(Md^2\)</span>—the inertia of the entire mass <span class="arithmatex">\(M\)</span> revolving at distance <span class="arithmatex">\(d\)</span> around the new pivot—to the centroidal inertia <span class="arithmatex">\(I_{\text{cm}}\)</span> shifts the rotation axis in a single step. If the pivot of a slender robotic arm link of mass <span class="arithmatex">\(m\)</span> and length <span class="arithmatex">\(L\)</span> moves from its midpoint (<span class="arithmatex">\(I_{\text{cm}} = \frac{1}{12}mL^2\)</span>) to its shoulder joint (<span class="arithmatex">\(d = L/2\)</span>), the parallel-axis term adds <span class="arithmatex">\(m(L/2)^2 = \frac{1}{4}mL^2 = 3I_{\text{cm}}\)</span>, quadrupling the rotational inertia to <span class="arithmatex">\(I_{\text{pivot}} = \frac{1}{3}mL^2\)</span>.</p>
+<p>The same <span class="arithmatex">\(r^2\)</span> geometric weighting governs the elastic strength of drive shafts and structural beams when cross-sectional area <span class="arithmatex">\(dA\)</span> replaces mass <span class="arithmatex">\(dm\)</span>. When a circular steel shaft of length <span class="arithmatex">\(L\)</span> and material shear modulus of rigidity <span class="arithmatex">\(G\)</span> (in pascals, measuring the atomic lattice's stiffness against shearing distortion) twists through a total angle <span class="arithmatex">\(\theta\)</span> (in radians) under engine torque <span class="arithmatex">\(T\)</span>, elastic shear strain grows linearly with radial distance <span class="arithmatex">\(\rho\)</span> from the centerline. As a result, the core metal near <span class="arithmatex">\(\rho \approx 0\)</span> carries almost no torque while adding dead weight, whereas the peak shear stress <span class="arithmatex">\(\tau_{\max}\)</span> occurs at the outermost surface radius <span class="arithmatex">\(R_o\)</span>.</p>
+<p>Torsional stiffness grows with the <em>fourth power</em> of radius because radial distance <span class="arithmatex">\(\rho\)</span> reinforces a concentric ring of metal in three ways at once: a ring at twice the radius has twice the circumference (<span class="arithmatex">\(dA = 2\pi\rho\,d\rho \propto \rho\)</span>), it twists through twice the shear strain so it develops twice the restoring shear stress (<span class="arithmatex">\(\tau \propto \rho\)</span>), and that stress acts at twice the lever arm (<span class="arithmatex">\(\rho\)</span>) about the centerline. Multiplying circumference, shear stress, and lever arm together (<span class="arithmatex">\(\rho \times \rho \times \rho\,d\rho = \rho^3\,d\rho\)</span>) and integrating across a solid shaft of radius <span class="arithmatex">\(r\)</span> (or a hollow tubular shaft from inner bore radius <span class="arithmatex">\(R_i\)</span> to outer radius <span class="arithmatex">\(R_o\)</span>) yields the fourth-power <strong>area polar moment of inertia</strong> <span class="arithmatex">\(J\)</span> (<span class="arithmatex">\(\text{m}^4\)</span>), which governs both the outer-fiber shear stress <span class="arithmatex">\(\tau_{\max}\)</span> and the end-to-end twist angle <span class="arithmatex">\(\theta\)</span>:</p>
+<div class="arithmatex">\[J_{\text{solid}} = \frac{\pi r^4}{2}, \qquad J_{\text{hollow}} = \frac{\pi}{2}\left(R_o^4 - R_i^4\right), \qquad \tau_{\max} = \frac{T R_o}{J}, \qquad \theta = \frac{T L}{G J} \tag{Eq. 6.27}\]</div>
+<p>Subtracting the fourth power of the inner bore <span class="arithmatex">\(R_i^4\)</span> from <span class="arithmatex">\(R_o^4\)</span> in <span class="arithmatex">\(J_{\text{hollow}}\)</span> removes the low-leverage core while keeping nearly all the outer rim's stiffness—which is why hollow bamboo stalks, avian wing bones, and tubular bicycle frames resist twisting nearly as well as solid rods of the same diameter at a fraction of the weight. Increasing the polar moment <span class="arithmatex">\(J\)</span> directly reduces both the outer-fiber shear stress <span class="arithmatex">\(\tau_{\max} = TR_o/J\)</span> driven by torque <span class="arithmatex">\(T\)</span> at the surface radius <span class="arithmatex">\(R_o\)</span> and the end-to-end twist angle <span class="arithmatex">\(\theta = TL/(GJ)\)</span> accumulated along shaft length <span class="arithmatex">\(L\)</span> against torsional rigidity <span class="arithmatex">\(GJ\)</span>. For a solid steel automotive half-shaft of radius <span class="arithmatex">\(r = 0.025\text{ m}\)</span>, length <span class="arithmatex">\(L = 1.2\text{ m}\)</span>, and shear modulus <span class="arithmatex">\(G = 79.3\times 10^9\text{ Pa}\)</span> under torque <span class="arithmatex">\(T = 450\text{ N}\cdot\text{m}\)</span>, <span class="arithmatex">\(J \approx \mathbf{6.136\times 10^{-7}\text{ m}^4}\)</span> yields <span class="arithmatex">\(\tau_{\max} \approx \mathbf{18.335\text{ MPa}}\)</span> and <span class="arithmatex">\(\theta \approx \mathbf{0.011\text{ rad}}\)</span> (<span class="arithmatex">\(\approx 0.636^\circ\)</span>).</p>
+<p>Under classical elastic beam flexure theory, when a horizontal rectangular beam of width <span class="arithmatex">\(b\)</span> and depth <span class="arithmatex">\(h\)</span>—or a symmetric wide-flange I-beam of outer flange width <span class="arithmatex">\(B\)</span>, total depth <span class="arithmatex">\(H\)</span>, central web thickness <span class="arithmatex">\(t_w\)</span>, and inner web clear height <span class="arithmatex">\(h_w\)</span>—carries a bending moment <span class="arithmatex">\(M_{\text{bend}}\)</span>, longitudinal fibers at vertical distance <span class="arithmatex">\(y\)</span> from the central neutral axis experience axial bending stress <span class="arithmatex">\(\sigma(y) = M_{\text{bend}} y / I_x\)</span>. Integrating <span class="arithmatex">\(y^2\,dA\)</span> across the section defines the planar <strong>second moment of area</strong> <span class="arithmatex">\(I_x\)</span> (<span class="arithmatex">\(\text{m}^4\)</span>) and the peak outer-fiber bending stress <span class="arithmatex">\(\sigma_{\max}\)</span> at the extreme top and bottom surfaces <span class="arithmatex">\(y = H/2\)</span>:</p>
+<div class="arithmatex">\[I_{x,\text{rect}} = \frac{1}{12} b h^3, \qquad I_{x,\text{I-beam}} = \frac{1}{12}\left(B H^3 - (B - t_w)h_w^3\right), \qquad \sigma_{\max} = \frac{M_{\text{bend}}(H/2)}{I_x} \tag{Eq. 6.28}\]</div>
+<p>Bending resistance in a rectangular section (<span class="arithmatex">\(I_{x,\text{rect}} = \frac{1}{12}bh^3\)</span>) grows linearly with beam width <span class="arithmatex">\(b\)</span> but with the <em>cube</em> of vertical depth <span class="arithmatex">\(h^3\)</span>, while the wide-flange I-beam formula deducts the two recessed side channels of combined width <span class="arithmatex">\((B - t_w)\)</span> and height <span class="arithmatex">\(h_w\)</span> from the outer <span class="arithmatex">\(B \times H\)</span> bounding box to counter the bending moment <span class="arithmatex">\(M_{\text{bend}}\)</span> at the extreme fiber distance <span class="arithmatex">\(H/2\)</span>. Because bending stiffness scales with <span class="arithmatex">\(h^3\)</span> at fixed width (and with the <em>square</em> of the aspect ratio <span class="arithmatex">\((h/b)^2\)</span> when a fixed <span class="arithmatex">\(b \times h\)</span> rectangular cross-section is rotated <span class="arithmatex">\(90^\circ\)</span>), turning a <span class="arithmatex">\(4:1\)</span> timber joist (nominal <span class="arithmatex">\(2\times 8\)</span>) on edge makes it <span class="arithmatex">\(4^2 = 16\)</span> times stiffer than laying it flat. Rolling structural steel into a wide-flange I-beam carves away the low-moment material near the neutral axis (<span class="arithmatex">\(y \approx 0\)</span>) to concentrate cross-sectional area into the top and bottom flanges at <span class="arithmatex">\(y = \pm H/2\)</span>, the structural twin of a cast-iron flywheel rim.</p>
+<hr />
+<h2 id="63-geometry-in-four-registers-from-parcel-boundaries-to-flywheels">6.3 Geometry in Four Registers: From Parcel Boundaries to Flywheels</h2>
+<p>When planar, volumetric, and inertial formulas are evaluated from their inner dimensional core outward on the four-register stack, they avoid redundant radius entry across two operational patterns:</p>
+<ol>
+<li><strong>Single-Solid Factoring &amp; Hypotenuse Projection (<code>[↰] [▸θ,r]</code>):</strong> For a single geometric primitive (such as the annular pipe flange, the silver-ratio octagon, Heron's triangle, the frustum polynomial <span class="arithmatex">\(R^2 + Rr + r^2\)</span>, or the hollow drive shaft's fourth-power polar inertia <span class="arithmatex">\(J = \frac{\pi}{2}(R_o^4 - R_i^4)\)</span>), factoring common multipliers (such as <code>[↱] [π]</code>, <span class="arithmatex">\(\frac{1}{3}\pi h\)</span>, or <span class="arithmatex">\(\frac{3\sqrt{3}}{2}\)</span>) to the outside lets the inner dimensional core accumulate inside Register <span class="arithmatex">\(X\)</span> while Registers <span class="arithmatex">\(Z\)</span> and <span class="arithmatex">\(T\)</span> remain untouched. Whenever a right triangle or 3D slant height requires <span class="arithmatex">\(\sqrt{a^2 + b^2}\)</span>, staging <span class="arithmatex">\((Y = a,\; X = b)\)</span> and pressing <code>[↰] [▸θ,r]</code> (left-shifted on <code>4</code>) computes the hypotenuse in Register <span class="arithmatex">\(X\)</span> without squaring each leg separately.</li>
+<li><strong>Composite Surface-Area &amp; Centroid Ledger (<code>[Σ+]</code>, <code>[↰] [Σ-]</code>, <code>[↱] [SUMS]</code>, and <code>[↱] [x̄,ȳ]</code>):</strong> When auditing a multi-face casting or welded beam, clearing the statistical registers (<code>[↰] [CLEAR]</code> <span class="arithmatex">\(\to\)</span> <code>CLSTAT</code>, which resets all six accumulators to <code>0</code>) turns <code>[Σ+]</code> and <code>[↰] [Σ-]</code> (left-shifted on <code>[Σ+]</code>) into an additive and subtractive blueprint ledger. Evaluating each face group in Register <span class="arithmatex">\(X\)</span> and pressing <code>[Σ+]</code> (or <code>[↰] [Σ-]</code> to deduct a drilled cutout) increments the item counter <span class="arithmatex">\(n\)</span> on screen while summing net area in <span class="arithmatex">\(\Sigma x\)</span> (recalled via <code>[↱] [SUMS]</code>, right-shifted on <code>[Σ+]</code>, followed by the first softkey <code>Σx</code>). Staging each sub-mass <span class="arithmatex">\(m_k\)</span> (or sub-area <span class="arithmatex">\(A_k\)</span>) in Register <span class="arithmatex">\(Y\)</span> and its coordinate <span class="arithmatex">\(y_k\)</span> in Register <span class="arithmatex">\(X\)</span> before pressing <code>[Σ+]</code> prepares the first-moment ratio <span class="arithmatex">\(\bar{y} = \Sigma xy / \Sigma y\)</span>, which is evaluated by pressing <code>[↱] [x̄,ȳ]</code> (right-shifted on <code>[yˣ]</code>) and tapping the third softkey (<code>x̄w</code>).</li>
+</ol>
+<h3 id="631-planar-cross-sections-surveyed-triangles">6.3.1 Planar Cross-Sections &amp; Surveyed Triangles</h3>
+<p>This inside-out ordering keeps every intermediate result of planar ring, polygon, and geodetic sections within Registers <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(X\)</span>. On a high-pressure ASME B16.5 neoprene flange gasket (<span class="arithmatex">\(A = \pi(R^2 - r^2)\)</span>) with outer radius <span class="arithmatex">\(R = 85\text{ mm}\)</span> and inner bore radius <span class="arithmatex">\(r = 50\text{ mm}\)</span>, deferring the <span class="arithmatex">\(\pi\)</span> multiplier avoids scaling both radii separately: squaring <span class="arithmatex">\(R^2 = 7,225\text{ mm}^2\)</span> in Register <span class="arithmatex">\(X\)</span>, squaring <span class="arithmatex">\(r^2 = 2,500\text{ mm}^2\)</span> (which lifts <span class="arithmatex">\(R^2\)</span> into Register <span class="arithmatex">\(Y\)</span>), subtracting to collapse the net radial span <span class="arithmatex">\(4,725\text{ mm}^2\)</span> back into Register <span class="arithmatex">\(X\)</span>, and multiplying by <span class="arithmatex">\(\pi\)</span> last yields <span class="arithmatex">\(A \approx \mathbf{14,844.025\text{ mm}^2}\)</span> (<span class="arithmatex">\(\approx 148.44\text{ cm}^2\)</span>).</p>
+<p>Across a regular octagonal instrument bezel (<span class="arithmatex">\(A = 2(1 + \sqrt{2})s^2\)</span>) of side length <span class="arithmatex">\(s = 65\text{ mm}\)</span>, constructing twice the silver ratio <span class="arithmatex">\(2(1 + \sqrt{2}) \approx 4.828\)</span> in Register <span class="arithmatex">\(X\)</span> first, squaring <span class="arithmatex">\(65^2 = 4,225\text{ mm}^2\)</span> (lifting <span class="arithmatex">\(2\delta_S\)</span> into Register <span class="arithmatex">\(Y\)</span>), and multiplying yields <span class="arithmatex">\(A \approx \mathbf{20,400.105\text{ mm}^2}\)</span>. On the WGS-84 terrestrial semi-axes <span class="arithmatex">\(a = 6,378.137\text{ km}\)</span> and <span class="arithmatex">\(b \approx 6,356.752\text{ km}\)</span>, subtracting <span class="arithmatex">\(b\)</span> from <span class="arithmatex">\(a\)</span> isolates the 3-decimal equatorial bulge <span class="arithmatex">\((a - b) \approx 21.385\text{ km}\)</span> before dividing into <span class="arithmatex">\(a\)</span> to return the reciprocal flattening <span class="arithmatex">\(1/f \approx \mathbf{298.253}\)</span> (matching the official WGS-84 defining flattening <span class="arithmatex">\(1/f \approx 298.257\)</span> when full sub-meter semi-minor precision is retained).</p>
+<p>Heron's semiperimeter formula <span class="arithmatex">\(A = \sqrt{s(s-a)(s-b)(s-c)}\)</span>, which on paper appears to need four registers for <span class="arithmatex">\(s, (s-a), (s-b),\)</span> and <span class="arithmatex">\((s-c)\)</span> at once, runs as a Register-<span class="arithmatex">\(X\)</span> accumulator once the semiperimeter <span class="arithmatex">\(s = (a+b+c)/2\)</span> is stored in Variable <span class="arithmatex">\(S\)</span>. On a surveyed triangular gusset parcel with boundary lengths <span class="arithmatex">\(a = 13\text{ m}\)</span>, <span class="arithmatex">\(b = 14\text{ m}\)</span>, and <span class="arithmatex">\(c = 15\text{ m}\)</span>, storing <span class="arithmatex">\(s = (13 + 14 + 15)/2 = 21\text{ m}\)</span> in Variable <span class="arithmatex">\(S\)</span>, multiplying the three excess factors <span class="arithmatex">\((21 - 13) \times (21 - 14) \times (21 - 15) = 8 \times 7 \times 6 = 336\text{ m}^3\)</span> in place, and scaling by <span class="arithmatex">\(s = 21\text{ m}\)</span> before taking the square root yields the exact parcel area <span class="arithmatex">\(A = \sqrt{7,056} = \mathbf{84\text{ m}^2}\)</span>, while dividing by <span class="arithmatex">\(S\)</span> returns the exact inscribed circle radius <span class="arithmatex">\(r = A/s = 84/21 = \mathbf{4\text{ m}}\)</span>.</p>
+<p>On a right-angled structural channel with orthogonal legs <span class="arithmatex">\(a = 15\text{ cm}\)</span> and <span class="arithmatex">\(b = 20\text{ cm}\)</span>, evaluating the linear tangent relation <span class="arithmatex">\(r = \frac{a + b - c}{2}\)</span> on <span class="arithmatex">\((Y, X)\)</span> uses rectangular-to-polar conversion as a Pythagorean hypotenuse finder (<span class="arithmatex">\(c = \sqrt{a^2 + b^2}\)</span>): converting <span class="arithmatex">\((15, 20)\)</span> to polar form places the hypotenuse <span class="arithmatex">\(c = 25\text{ cm}\)</span> in Register <span class="arithmatex">\(X\)</span> (and angle <span class="arithmatex">\(\approx 36.87^\circ\)</span> in Register <span class="arithmatex">\(Y\)</span>); keying <span class="arithmatex">\(15\)</span> and <span class="arithmatex">\(20\)</span> and adding them to form the leg sum <span class="arithmatex">\(a + b = 35\text{ cm}\)</span> lifts <span class="arithmatex">\(c = 25\text{ cm}\)</span> into Register <span class="arithmatex">\(Z\)</span> on entry and drops it back into Register <span class="arithmatex">\(Y\)</span> on addition, so exchanging Registers <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> before subtracting and halving returns the cooling-pipe inradius <span class="arithmatex">\(r = \mathbf{5\text{ cm}}\)</span>.</p>
+<p>When survey corners or intersecting boundary lines are given in Cartesian coordinates, the <span class="arithmatex">\(2 \times 2\)</span> determinant <span class="arithmatex">\(D = x_1 y_2 - y_1 x_2\)</span> from the Shoelace Theorem and Cramer's Rule evaluates across three registers: for two parcel vectors <span class="arithmatex">\((x_1, y_1) = (18, 4)\text{ m}\)</span> and <span class="arithmatex">\((x_2, y_2) = (6, 15)\text{ m}\)</span>, multiplying the primary diagonal <span class="arithmatex">\(18 \times 15 = 270\text{ m}^2\)</span> in Register <span class="arithmatex">\(X\)</span> and forming the secondary diagonal <span class="arithmatex">\(4 \times 6 = 24\text{ m}^2\)</span> across Registers <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(X\)</span> (which lifts <span class="arithmatex">\(270\)</span> to Register <span class="arithmatex">\(Z\)</span> and drops it back to Register <span class="arithmatex">\(Y\)</span>) yields the signed parallelogram determinant <span class="arithmatex">\(D = 270 - 24 = \mathbf{246\text{ m}^2}\)</span> and enclosed triangle area <span class="arithmatex">\(A = \frac{1}{2}D = \mathbf{123\text{ m}^2}\)</span>—the same two-product difference that resolves Cramer's intersection coordinates <span class="arithmatex">\((x, y) = (D_x/D,\; D_y/D)\)</span> for two survey lines <span class="arithmatex">\(a_1 x + b_1 y = c_1\)</span> and <span class="arithmatex">\(a_2 x + b_2 y = c_2\)</span>.</p>
+<h3 id="632-accumulating-composite-surface-areas-solid-volumes">6.3.2 Accumulating Composite Surface Areas &amp; Solid Volumes</h3>
+<p>For a three-dimensional enclosure or finned casting bounded by many polygon groups, the statistical accumulator replaces manual scratchpad variables with a running ledger. Clearing the statistical registers zeros all six accumulators (<span class="arithmatex">\(\Sigma x = 0,\; n = 0\)</span>); evaluating the area <span class="arithmatex">\(A_k\)</span> of each face or opposing face pair in Register <span class="arithmatex">\(X\)</span> and accumulating it (or subtracting to deduct a milled window aperture or cooling bore) adds <span class="arithmatex">\(A_k\)</span> into <span class="arithmatex">\(\Sigma x\)</span> and replaces Register <span class="arithmatex">\(X\)</span> with the integer face-group counter <span class="arithmatex">\(n\)</span>; and recalling <span class="arithmatex">\(\Sigma x\)</span> brings the net surface area back into Register <span class="arithmatex">\(X\)</span>.</p>
+<p>On a <span class="arithmatex">\(10 \times 5 \times 4\text{ cm}\)</span> rectangular prism, this ledger groups the six exterior walls into three opposing pairs—<span class="arithmatex">\(2 \times 10 \times 5 = 100\text{ cm}^2\)</span> (<span class="arithmatex">\(n = 1\)</span>), <span class="arithmatex">\(2 \times 10 \times 4 = 80\text{ cm}^2\)</span> (<span class="arithmatex">\(n = 2\)</span>), and <span class="arithmatex">\(2 \times 5 \times 4 = 40\text{ cm}^2\)</span> (<span class="arithmatex">\(n = 3\)</span>)—so recalling <span class="arithmatex">\(\Sigma x\)</span> returns the total surface area <span class="arithmatex">\(\Sigma x = \mathbf{220\text{ cm}^2}\)</span> in Register <span class="arithmatex">\(X\)</span> while the face-pair counter <span class="arithmatex">\(n = 3\)</span> sits in the <code>n</code> register (<strong>Figure 6.2</strong>). Likewise, on the StackCalc SC-32 rectangular chassis (<span class="arithmatex">\(L = 148\text{ mm}\)</span>, <span class="arithmatex">\(W = 80\text{ mm}\)</span>, <span class="arithmatex">\(H = 14.5\text{ mm}\)</span>) for an additive-manufacturing shell takeoff, accumulating top and bottom (<span class="arithmatex">\(2 \times 148 \times 80 = 23,680\text{ mm}^2,\; n = 1\)</span>), side walls (<span class="arithmatex">\(2 \times 148 \times 14.5 = 4,292\text{ mm}^2,\; n = 2\)</span>), and end caps (<span class="arithmatex">\(2 \times 80 \times 14.5 = 2,320\text{ mm}^2,\; n = 3\)</span>) recalls <span class="arithmatex">\(\Sigma x = \mathbf{30,292\text{ mm}^2}\)</span>.</p>
+<p><img alt="Figure 6.2: Accumulating the three opposing face pairs (100, 80, and 40 cm²) of a 10 × 5 × 4 cm rectangular prism via Σ+ and recalling the total surface area Σx = 220 from the SUMS softkey menu while the face-pair counter n = 3 lifts into Register Y." src="../../../assets/manuals/screenshots/sc32_surface_area_sigma.png" /></p>
+<p>Because each accumulation step increments the face counter <span class="arithmatex">\(n\)</span> in Register <span class="arithmatex">\(X\)</span> while building the running total inside <span class="arithmatex">\(\Sigma x\)</span>, complex multi-step castings and thermal radiators can be audited by stepping around the blueprint. On a stepped cast-iron machine bracket (<span class="arithmatex">\(n = 6\)</span> face groups) where a base block (<span class="arithmatex">\(120 \times 80 \times 30\text{ mm}\)</span>) is surmounted by a centered boss (<span class="arithmatex">\(60 \times 40 \times 25\text{ mm}\)</span>), subtracting the <span class="arithmatex">\(60 \times 40\text{ mm}\)</span> boss footprint from the base roof and adding the boss roof back is redundant: viewed from above, the boss roof plus the surrounding ledge form one uninterrupted <span class="arithmatex">\(120 \times 80 = 9,600\text{ mm}^2\)</span> top projection, so accumulating the bottom base (<span class="arithmatex">\(9,600\text{ mm}^2\)</span>), long base walls (<span class="arithmatex">\(7,200\text{ mm}^2\)</span>), short base ends (<span class="arithmatex">\(4,800\text{ mm}^2\)</span>), long boss walls (<span class="arithmatex">\(3,000\text{ mm}^2\)</span>), short boss ends (<span class="arithmatex">\(2,000\text{ mm}^2\)</span>), and top projection (<span class="arithmatex">\(9,600\text{ mm}^2\)</span>) yields <span class="arithmatex">\(\Sigma x = \mathbf{36,200\text{ mm}^2}\)</span>.</p>
+<p>Across an 8-fin extruded aluminum CPU heat sink (<span class="arithmatex">\(n = 4\)</span> face groups) where <span class="arithmatex">\(8\)</span> vertical cooling fins (<span class="arithmatex">\(100\text{ mm}\)</span> long, <span class="arithmatex">\(35\text{ mm}\)</span> tall, <span class="arithmatex">\(2\text{ mm}\)</span> thick) rise from a <span class="arithmatex">\(100 \times 100\text{ mm}\)</span> square base plate, accumulating the <span class="arithmatex">\(16\)</span> fin sidewalls (<span class="arithmatex">\(56,000\text{ mm}^2\)</span>), the <span class="arithmatex">\(8\)</span> fin top tips (<span class="arithmatex">\(1,600\text{ mm}^2\)</span>), the valley floor between fins (<span class="arithmatex">\(8,400\text{ mm}^2\)</span>), and the bottom mounting plate (<span class="arithmatex">\(10,000\text{ mm}^2\)</span>) totals <span class="arithmatex">\(\Sigma x = \mathbf{76,000\text{ mm}^2}\)</span>—a <span class="arithmatex">\(\mathbf{3.8\times}\)</span> total area gain and a <span class="arithmatex">\(\mathbf{6.6\times}\)</span> gain on the active air-cooled top face.</p>
+<p>For a regular right square pyramid of base side <span class="arithmatex">\(s = 12\text{ mm}\)</span> and altitude <span class="arithmatex">\(h = 8\text{ mm}\)</span>, the right triangle formed by <span class="arithmatex">\(h = 8\text{ mm}\)</span> and base apothem <span class="arithmatex">\(s/2 = 6\text{ mm}\)</span> has a <span class="arithmatex">\(6\text{–}8\text{–}10\)</span> slant height of <span class="arithmatex">\(l = \sqrt{8^2 + 6^2} = 10\text{ mm}\)</span>; multiplying <span class="arithmatex">\(l = 10\text{ mm}\)</span> by the four half-bases <span class="arithmatex">\(2s = 24\text{ mm}\)</span> and adding the square base <span class="arithmatex">\(12^2 = 144\text{ mm}^2\)</span> gives total surface area <span class="arithmatex">\(A = 384\text{ mm}^2\)</span> in Register <span class="arithmatex">\(X\)</span>, and dividing by the volume <span class="arithmatex">\(V = \frac{1}{3}s^2 h = 384\text{ mm}^3\)</span> confirms <span class="arithmatex">\(A/V = \mathbf{1\text{ mm}^{-1}}\)</span>.</p>
+<p>Each single-solid volume and curved-shell formula from Cavalieri's principle unfolds as a one-dimensional sequence inside Register <span class="arithmatex">\(X\)</span>, using Register <span class="arithmatex">\(Y\)</span> only transiently as terms combine. For an aerodynamic elliptic nose cone of semi-axes <span class="arithmatex">\(a = 24\text{ mm}\)</span> and <span class="arithmatex">\(b = 15\text{ mm}\)</span> and axial length <span class="arithmatex">\(h = 50\text{ mm}\)</span>, Cavalieri's one-third cone factor (<span class="arithmatex">\(V = \frac{1}{3}\pi abh = 6,000\pi\text{ mm}^3\)</span>) evaluates by forming the bounding box product <span class="arithmatex">\(a \cdot b \cdot h = 18,000\text{ mm}^3\)</span> in Register <span class="arithmatex">\(X\)</span> and scaling by <span class="arithmatex">\(\pi / 3\)</span> to return <span class="arithmatex">\(V \approx \mathbf{18,849.556\text{ mm}^3}\)</span>. On the Steinmetz bicylinder where two equal circular pipes of radius <span class="arithmatex">\(r = 15\text{ mm}\)</span> intersect at right angles, the <span class="arithmatex">\(\frac{4}{\pi}\)</span> slice ratio has already canceled <span class="arithmatex">\(\pi\)</span>, so evaluating <span class="arithmatex">\(V = \frac{16}{3}r^3 = \frac{16}{3}(3,375)\)</span> delivers the rational volume <span class="arithmatex">\(\mathbf{18,000\text{ mm}^3}\)</span>, while <span class="arithmatex">\(A = 16r^2 = 16(225)\)</span> gives the curved intersection surface area <span class="arithmatex">\(\mathbf{3,600\text{ mm}^2}\)</span>.</p>
+<p>In a conical grain hopper of bottom radius <span class="arithmatex">\(R = 1.8\text{ m}\)</span>, top throat radius <span class="arithmatex">\(r = 0.4\text{ m}\)</span>, and height <span class="arithmatex">\(h = 2.5\text{ m}\)</span>, the frustum polynomial <span class="arithmatex">\(R^2 + Rr + r^2\)</span> avoids re-entering radii: squaring <span class="arithmatex">\(R^2 = 3.24\text{ m}^2\)</span> in Register <span class="arithmatex">\(X\)</span> preserves <span class="arithmatex">\(1.8\)</span> in <code>LASTX</code> to form the geometric-mean cross-product <span class="arithmatex">\(Rr = 0.72\text{ m}^2\)</span>, which in turn preserves <span class="arithmatex">\(0.4\)</span> to square <span class="arithmatex">\(r^2 = 0.16\text{ m}^2\)</span>, summing all three terms into <span class="arithmatex">\(4.12\text{ m}^2\)</span> before scaling by <span class="arithmatex">\(\frac{2.5\pi}{3}\)</span> to yield <span class="arithmatex">\(V \approx \mathbf{10.786\text{ m}^3}\)</span>.</p>
+<p>On prismatic machine stock, a hollow hexagonal brass bar (<span class="arithmatex">\(S = 20\text{ mm}\)</span> outer flat-to-corner side, <span class="arithmatex">\(s = 8\text{ mm}\)</span> inner hexagonal bore side, length <span class="arithmatex">\(L = 150\text{ mm}\)</span>) pairs <span class="arithmatex">\((20^2 - 8^2) = 336\text{ mm}^2\)</span> with the hexagon constant <span class="arithmatex">\(\frac{3\sqrt{3}}{2} \approx 2.598\)</span> and extrudes along <span class="arithmatex">\(L\)</span> to yield <span class="arithmatex">\(V \approx \mathbf{130,943.04\text{ mm}^3}\)</span> (<span class="arithmatex">\(\approx 130.943\text{ cm}^3\)</span>), while an inscribed regular tetrahedron of edge <span class="arithmatex">\(a = 50\text{ mm}\)</span> encloses <span class="arithmatex">\(V = \frac{\sqrt{2}}{12}a^3 \approx \mathbf{14,731.391\text{ mm}^3}\)</span>.</p>
+<p>Across a geodetic triangulation network on the curved Earth (<span class="arithmatex">\(R = 6,371\text{ km}\)</span>) with measured interior angles <span class="arithmatex">\(\alpha = 82.5^\circ\)</span>, <span class="arithmatex">\(\beta = 68.2^\circ\)</span>, and <span class="arithmatex">\(\gamma = 44.7^\circ\)</span>, subtracting <span class="arithmatex">\(180^\circ\)</span> from the angle sum <span class="arithmatex">\(195.4^\circ\)</span> isolates the spherical excess <span class="arithmatex">\(E = 15.4^\circ\)</span> (<span class="arithmatex">\(E_{\text{rad}} \approx 0.269\text{ rad}\)</span>), which scales by <span class="arithmatex">\(R^2 = 6,371^2\text{ km}^2\)</span> to give the spherical triangle area <span class="arithmatex">\(A = R^2 E_{\text{rad}} \approx \mathbf{10,909,712.316\text{ km}^2}\)</span>.</p>
+<h3 id="633-three-dimensional-centroids-flywheels-torsional-shafts">6.3.3 Three-Dimensional Centroids, Flywheels &amp; Torsional Shafts</h3>
+<p>In three-dimensional kinematics and structural mechanics, the stack alternates between single-register Pythagorean reductions and four-register composite audits. When a tapered conical compression spring has base radius <span class="arithmatex">\(R_1 = 30\text{ mm}\)</span>, top radius <span class="arithmatex">\(R_2 = 10\text{ mm}\)</span> (mean radius <span class="arithmatex">\(R_m = 20\text{ mm}\)</span>), axial height <span class="arithmatex">\(h = 60\text{ mm}\)</span>, and <span class="arithmatex">\(N = 6\text{ active coils}\)</span>, summing the circumferential wrap <span class="arithmatex">\((2\pi N R_m)^2 \approx (753.982\text{ mm})^2\)</span>, the squared axial climb <span class="arithmatex">\(60^2 = 3,600\text{ mm}^2\)</span>, and the squared radial taper <span class="arithmatex">\(20^2 = 400\text{ mm}^2\)</span> before taking the square root yields a developed wire blank of <span class="arithmatex">\(\approx \mathbf{756.63\text{ mm}}\)</span>.</p>
+<p>When a radar tracks an ascending launch vehicle at <span class="arithmatex">\(\vec{V} = (850, 1100, 550)\text{ m}\)</span>, dividing each Cartesian component by the 3D Euclidean range <span class="arithmatex">\(D = |\vec{V}| \approx 1,494.992\text{ m}\)</span> places all three direction cosines <span class="arithmatex">\((\cos\alpha, \cos\beta, \cos\gamma) \approx (0.569, 0.736, 0.368)\)</span> across Registers <span class="arithmatex">\((Z, Y, X)\)</span>, corresponding to a zenith angle <span class="arithmatex">\(\gamma \approx \mathbf{68.414^\circ}\)</span>.</p>
+<p>The composite centroid (and homogeneous elastic neutral axis) <span class="arithmatex">\(\bar{y} = \frac{\sum m_i y_i}{\sum m_i}\)</span> of an asymmetric welded steel I-beam girder built from three uniform-grade plates—a bottom flange of <span class="arithmatex">\(m_1 = 40\text{ kg}\)</span> centered at height <span class="arithmatex">\(y_1 = 10\text{ mm}\)</span>, a vertical web of <span class="arithmatex">\(m_2 = 60\text{ kg}\)</span> at <span class="arithmatex">\(y_2 = 160\text{ mm}\)</span>, and a top flange of <span class="arithmatex">\(m_3 = 30\text{ kg}\)</span> at <span class="arithmatex">\(y_3 = 310\text{ mm}\)</span>—engages all four stack registers alongside the statistical accumulators. After clearing the statistical registers, loading each plate's mass <span class="arithmatex">\(m_i\)</span> into Register <span class="arithmatex">\(Y\)</span> and its centroid height <span class="arithmatex">\(y_i\)</span> into Register <span class="arithmatex">\(X\)</span> before accumulating lifts the three plate masses <span class="arithmatex">\((40, 60, 30\text{ kg})\)</span> into Registers <span class="arithmatex">\((T, Z, Y)\)</span> while Register <span class="arithmatex">\(X\)</span> counts <span class="arithmatex">\(n = 1, 2, 3\)</span>, and evaluating the weighted mean divides <span class="arithmatex">\(\Sigma xy / \Sigma y\)</span> to return <span class="arithmatex">\(\bar{y} \approx \mathbf{148.462\text{ mm}}\)</span>.</p>
+<p>Rotational moments of inertia (<span class="arithmatex">\(I = \int r^2\,dm\)</span>) and polar shaft stiffness map the geometric shape factors and the parallel-axis transfer term onto the stack. On an <span class="arithmatex">\(85\text{-kg}\)</span> cast-iron punch-press flywheel assembled from a thick outer rim (<span class="arithmatex">\(M_{\text{rim}} = 65\text{ kg}\)</span>, <span class="arithmatex">\(r_1 = 0.28\text{ m}\)</span>, <span class="arithmatex">\(r_2 = 0.35\text{ m}\)</span>) and a web disk (<span class="arithmatex">\(M_{\text{web}} = 20\text{ kg}\)</span>, <span class="arithmatex">\(R = 0.28\text{ m}\)</span>), summing <span class="arithmatex">\(I_{\text{rim}} = \frac{1}{2}M_{\text{rim}}(r_1^2 + r_2^2) \approx 6.529\text{ kg}\cdot\text{m}^2\)</span> and <span class="arithmatex">\(I_{\text{web}} = \frac{1}{2}M_{\text{web}}R^2 = 0.784\text{ kg}\cdot\text{m}^2\)</span> yields <span class="arithmatex">\(I_{\text{total}} \approx \mathbf{7.313\text{ kg}\cdot\text{m}^2}\)</span> (with the outer rim supplying <span class="arithmatex">\(\approx \mathbf{89.3\%}\)</span> of the inertia). Shifting the pivot of a robotic arm link (<span class="arithmatex">\(m = 3.5\text{ kg}\)</span>, <span class="arithmatex">\(L = 0.8\text{ m}\)</span>) by <span class="arithmatex">\(d = L/2 = 0.4\text{ m}\)</span> adds <span class="arithmatex">\(md^2 = 0.56\text{ kg}\cdot\text{m}^2\)</span> to <span class="arithmatex">\(I_{\text{cm}} = \frac{1}{12}mL^2 \approx 0.187\text{ kg}\cdot\text{m}^2\)</span> to reach <span class="arithmatex">\(I_{\text{pivot}} \approx \mathbf{0.747\text{ kg}\cdot\text{m}^2}\)</span>.</p>
+<p>On a thick-walled titanium bathysphere hull (<span class="arithmatex">\(R_2 = 1.1\text{ m}\)</span>, <span class="arithmatex">\(R_1 = 0.98\text{ m}\)</span>, <span class="arithmatex">\(M = 7,347.74\text{ kg}\)</span> at nominal <span class="arithmatex">\(\rho \approx 4,500\text{ kg/m}^3\)</span>), evaluating <span class="arithmatex">\(I_{\text{shell}} = \frac{2}{5}M\frac{R_2^5 - R_1^5}{R_2^3 - R_1^3} \approx \mathbf{5,327.581\text{ kg}\cdot\text{m}^2}\)</span> engages all four registers as <span class="arithmatex">\((R_2^5 - R_1^5) \approx 0.707\text{ m}^5\)</span> rides into <span class="arithmatex">\((T, Z, Y)\)</span> while <span class="arithmatex">\((R_2^3 - R_1^3) \approx 0.39\text{ m}^3\)</span> forms in <span class="arithmatex">\(X\)</span>. Across a hollow steel drive shaft (<span class="arithmatex">\(R_o = 40\text{ mm}\)</span>, <span class="arithmatex">\(R_i = 35\text{ mm}\)</span>), the polar moment <span class="arithmatex">\(J = \frac{\pi}{2}(R_o^4 - R_i^4) \approx \mathbf{1,664,062.359\text{ mm}^4}\)</span> retains <span class="arithmatex">\(41.38\%\)</span> of a solid bar's torsional stiffness using <span class="arithmatex">\(23.44\%\)</span> of the steel, limiting outer-fiber shear stress at <span class="arithmatex">\(T = 2,500\text{ N}\cdot\text{m}\)</span> (<span class="arithmatex">\(2.5\times 10^6\text{ N}\cdot\text{mm}\)</span>) to <span class="arithmatex">\(\tau_{\max} \approx \mathbf{60.094\text{ MPa}}\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>1.1 [ENTER] 5 [yˣ] 0.98 [ENTER] 5 [yˣ] [-]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.707\)</span></td>
+<td style="text-align: left;">Bathysphere fifth-power difference <span class="arithmatex">\((R_2^5 - R_1^5) \approx 0.707\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1.1 [ENTER] 3 [yˣ] 0.98 [ENTER] 3 [yˣ] [-] [÷]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.707\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.707\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.707\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.813\)</span></td>
+<td style="text-align: left;">Divide by cubic difference <span class="arithmatex">\((R_2^3 - R_1^3) \approx 0.39\)</span> to form <span class="arithmatex">\(\approx 1.813\text{ m}^2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>7347.74 [×] 2 [×] 5 [÷]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.707\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.707\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.707\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(5327.581\)</span></strong></td>
+<td style="text-align: left;">Scale by <span class="arithmatex">\(\frac{2}{5}M\)</span> for bathysphere inertia <span class="arithmatex">\(I \approx 5,327.581\text{ kg}\cdot\text{m}^2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>40 [ENTER] 4 [yˣ] 35 [ENTER] 4 [yˣ] [-] [↱] [π] [×] 2 [÷]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(5327.581\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(5327.581\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(5327.581\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(1664062.359\)</span></strong></td>
+<td style="text-align: left;">Hollow shaft polar moment <span class="arithmatex">\(J = \frac{\pi}{2}(R_o^4 - R_i^4)\text{ mm}^4\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>2500000 [ENTER] 40 [×] [x⇄y] [÷]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(5327.581\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(5327.581\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(5327.581\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(60.094\)</span></strong></td>
+<td style="text-align: left;">Outer-fiber shear stress at <span class="arithmatex">\(T = 2,500\text{ N}\cdot\text{m}\)</span> (<span class="arithmatex">\(\tau_{\max} \approx 60.094\text{ MPa}\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="634-try-it-on-the-stack">6.3.4 Try It on the Stack</h3>
+<ol>
+<li><strong>Hexagonal M16 Bolt Head Mass:</strong> Compute the mass of a regular hexagonal steel bolt head of flat-to-corner side <span class="arithmatex">\(s = 10\text{ mm}\)</span>, height <span class="arithmatex">\(h = 12\text{ mm}\)</span>, and density <span class="arithmatex">\(\rho = 7.85\text{ g/cm}^3\)</span> (<span class="arithmatex">\(7.85 \times 10^{-3}\text{ g/mm}^3\)</span>) using <span class="arithmatex">\(m = \frac{3\sqrt{3}}{2}s^2 h \rho\)</span>. <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\(m \approx \mathbf{24.474\text{ g}}\)</span>.)</em></li>
+<li><strong>Closed-End Cylinder Total Surface Area:</strong> Evaluate the total surface area <span class="arithmatex">\(A = 2\pi r(r + h)\)</span> of a hydraulic accumulator cylinder of radius <span class="arithmatex">\(r = 25\text{ mm}\)</span> and length <span class="arithmatex">\(h = 80\text{ mm}\)</span> by forming <span class="arithmatex">\(2\pi\)</span> and multiplying by <span class="arithmatex">\(r = 25\)</span>, recovering <span class="arithmatex">\(r = 25\)</span> via <code>LASTX</code> to add <span class="arithmatex">\(h = 80\)</span>, and multiplying. <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\(A \approx \mathbf{16,493.361\text{ mm}^2}\)</span>.)</em></li>
+<li><strong>3D Euclidean Range via Chained Polar Conversions:</strong> Convert <span class="arithmatex">\((1.8, 2.4)\)</span> to polar coordinates to form the horizontal hypotenuse <span class="arithmatex">\(\sqrt{1.8^2 + 2.4^2} = 3\)</span> in Register <span class="arithmatex">\(X\)</span>, then stage <span class="arithmatex">\(z = 4\)</span> and convert to polar coordinates a second time to obtain the 3D space diagonal <span class="arithmatex">\(\sqrt{1.8^2 + 2.4^2 + 4^2}\)</span>. <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\(D = \mathbf{5\text{ m}}\)</span>.)</em></li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/ecommerce.js"></script>
+      
+    
+  </body>
+</html>

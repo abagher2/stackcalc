@@ -6612,7 +6612,7 @@
   "curr_ch20_exemplar": {
     "kind": "exemplar",
     "model": "sc32",
-    "seq": "{{key:POLY}} 1 {{key:A}} 7 {{key:B}} 12 {{key:C}} 0 {{key:D}} {{key:EXEC}}",
+    "seq": "{{key:POLY}} 1 {{key:A}} 7 {{key:B}} 12 {{key:C}} 0 {{key:D}} {{key:XEQ}}",
     "expected": -3.0,
     "ans_str": "Roots -3, -4; Factors (x+3)(x+4)",
     "prompt": "Singapore Dimensions Grade 8A Chapter 5: Factor x² + 7x + 12 on the stage and verify roots with [POLY]."
@@ -6620,7 +6620,7 @@
   "curr_ch20_A1": {
     "kind": "worksheet",
     "model": "sc32",
-    "seq": "{{key:POLY}} 1 {{key:A}} 5 {{key:B}} 6 {{key:C}} 0 {{key:D}} {{key:EXEC}}",
+    "seq": "{{key:POLY}} 1 {{key:A}} 5 {{key:B}} 6 {{key:C}} 0 {{key:D}} {{key:XEQ}}",
     "expected": -2.0,
     "ans_str": "Roots -2, -3; (x+2)(x+3)",
     "prompt": "Singapore Dimensions Grade 8A Chapter 5 A1: Factor x² + 5x + 6 via [POLY]."
@@ -6628,7 +6628,7 @@
   "curr_ch20_A2": {
     "kind": "worksheet",
     "model": "sc32",
-    "seq": "{{key:POLY}} 1 {{key:A}} 1 {{key:+/-}} {{key:B}} 6 {{key:+/-}} {{key:C}} 0 {{key:D}} {{key:EXEC}}",
+    "seq": "{{key:POLY}} 1 {{key:A}} 1 {{key:+/-}} {{key:B}} 6 {{key:+/-}} {{key:C}} 0 {{key:D}} {{key:XEQ}}",
     "expected": 3.0,
     "ans_str": "Roots 3, -2; (x-3)(x+2)",
     "prompt": "Singapore Dimensions Grade 8A Chapter 5 A2: Factor x² - x - 6 via [POLY]."
@@ -6636,7 +6636,7 @@
   "curr_ch20_A3": {
     "kind": "worksheet",
     "model": "sc32",
-    "seq": "{{key:POLY}} 1 {{key:A}} 0 {{key:B}} 16 {{key:+/-}} {{key:C}} 0 {{key:D}} {{key:EXEC}}",
+    "seq": "{{key:POLY}} 1 {{key:A}} 0 {{key:B}} 16 {{key:+/-}} {{key:C}} 0 {{key:D}} {{key:XEQ}}",
     "expected": 4.0,
     "ans_str": "Roots 4, -4; (x-4)(x+4)",
     "prompt": "Singapore Dimensions Grade 8A Chapter 5 A3: Difference of squares: x² - 16 via [POLY]."
@@ -6644,7 +6644,7 @@
   "curr_ch20_A4": {
     "kind": "worksheet",
     "model": "sc32",
-    "seq": "{{key:POLY}} 1 {{key:A}} 6 {{key:B}} 9 {{key:C}} 0 {{key:D}} {{key:EXEC}}",
+    "seq": "{{key:POLY}} 1 {{key:A}} 6 {{key:B}} 9 {{key:C}} 0 {{key:D}} {{key:XEQ}}",
     "expected": -3.0,
     "ans_str": "Double root -3; (x+3)²",
     "prompt": "Singapore Dimensions Grade 8A Chapter 5 A4: Double root: x² + 6x + 9 via [POLY]."
@@ -7743,7 +7743,7 @@
     "seq": "4 {{key:ENTER}} 6 {{key:×}}",
     "expected": 24.0,
     "ans_str": "24 cubes",
-    "prompt": "Bridges in Mathematics Grade 3 Unit 2: Show 4 groups of 6 cubes on the baseplate. Find total."
+    "prompt": "Bridges in Mathematics Grade 3 Unit 2: Show 4 groups of 6 cubes in the Array Studio. Find total."
   },
   "curr_ch37_A1": {
     "kind": "worksheet",
@@ -8675,15 +8675,15 @@
   },
   "curr_ch50_exemplar": {
     "kind": "exemplar",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "15 {{key:+/-}} {{key:ENTER}} 8 {{key:+}}",
     "expected": -7.0,
     "ans_str": "-7",
-    "prompt": "Big Ideas Math Grade 7 Chapter 1: Calculate -15 + 8 on the SC-32 scientific stack."
+    "prompt": "Big Ideas Math Grade 7 Chapter 1: Calculate -15 + 8 on the RPN stack."
   },
   "curr_ch50_A1": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "24 {{key:+/-}} {{key:ENTER}} 15 {{key:+}}",
     "expected": -9.0,
     "ans_str": "-9",
@@ -8691,7 +8691,7 @@
   },
   "curr_ch50_A2": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "18 {{key:+/-}} {{key:ENTER}} 14 {{key:-}}",
     "expected": -32.0,
     "ans_str": "-32",
@@ -8699,7 +8699,7 @@
   },
   "curr_ch50_A3": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "12.5 {{key:ENTER}} 20 {{key:-}}",
     "expected": -7.5,
     "ans_str": "-7.5",
@@ -8707,7 +8707,7 @@
   },
   "curr_ch50_A4": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "3.5 {{key:+/-}} {{key:ENTER}} 4.5 {{key:+/-}} {{key:+}}",
     "expected": -8.0,
     "ans_str": "-8.0",
@@ -8715,7 +8715,7 @@
   },
   "curr_ch50_B1": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "28 {{key:+/-}} {{key:ENTER}} 16 {{key:+}}",
     "expected": -12.0,
     "ans_str": "-12",
@@ -8723,7 +8723,7 @@
   },
   "curr_ch50_B2": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "15 {{key:+/-}} {{key:ENTER}} 17 {{key:-}}",
     "expected": -32.0,
     "ans_str": "-32",
@@ -8731,7 +8731,7 @@
   },
   "curr_ch50_B3": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "14.5 {{key:ENTER}} 25 {{key:-}}",
     "expected": -10.5,
     "ans_str": "-10.5",
@@ -8739,7 +8739,7 @@
   },
   "curr_ch50_B4": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "4.5 {{key:+/-}} {{key:ENTER}} 5.5 {{key:+/-}} {{key:+}}",
     "expected": -10.0,
     "ans_str": "-10.0",
@@ -8747,15 +8747,15 @@
   },
   "curr_ch51_exemplar": {
     "kind": "exemplar",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "8 {{key:+/-}} {{key:ENTER}} 6 {{key:+/-}} {{key:×}}",
     "expected": 48.0,
     "ans_str": "48",
-    "prompt": "Big Ideas Math Grade 7 Chapter 2: Multiply (-8) × (-6) on the SC-32 stack."
+    "prompt": "Big Ideas Math Grade 7 Chapter 2: Multiply (-8) × (-6) on the RPN stack."
   },
   "curr_ch51_A1": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "9 {{key:+/-}} {{key:ENTER}} 4 {{key:×}}",
     "expected": -36.0,
     "ans_str": "-36",
@@ -8763,7 +8763,7 @@
   },
   "curr_ch51_A2": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "7 {{key:+/-}} {{key:ENTER}} 8 {{key:+/-}} {{key:×}}",
     "expected": 56.0,
     "ans_str": "56",
@@ -8771,7 +8771,7 @@
   },
   "curr_ch51_A3": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "54 {{key:+/-}} {{key:ENTER}} 6 {{key:÷}}",
     "expected": -9.0,
     "ans_str": "-9",
@@ -8779,7 +8779,7 @@
   },
   "curr_ch51_A4": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "45 {{key:+/-}} {{key:ENTER}} 5 {{key:+/-}} {{key:÷}}",
     "expected": 9.0,
     "ans_str": "9",
@@ -8787,7 +8787,7 @@
   },
   "curr_ch51_B1": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "8 {{key:+/-}} {{key:ENTER}} 5 {{key:×}}",
     "expected": -40.0,
     "ans_str": "-40",
@@ -8795,7 +8795,7 @@
   },
   "curr_ch51_B2": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "6 {{key:+/-}} {{key:ENTER}} 9 {{key:+/-}} {{key:×}}",
     "expected": 54.0,
     "ans_str": "54",
@@ -8803,7 +8803,7 @@
   },
   "curr_ch51_B3": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "48 {{key:+/-}} {{key:ENTER}} 6 {{key:÷}}",
     "expected": -8.0,
     "ans_str": "-8",
@@ -8811,7 +8811,7 @@
   },
   "curr_ch51_B4": {
     "kind": "worksheet",
-    "model": "sc32",
+    "model": "sc6",
     "seq": "63 {{key:+/-}} {{key:ENTER}} 7 {{key:+/-}} {{key:÷}}",
     "expected": 9.0,
     "ans_str": "9",
@@ -9180,7 +9180,7 @@
   "curr_ch57_exemplar": {
     "kind": "exemplar",
     "model": "sc32",
-    "seq": "{{key:POLY}} 1 {{key:A}} 5 {{key:B}} 6 {{key:C}} 0 {{key:D}} {{key:EXEC}}",
+    "seq": "{{key:POLY}} 1 {{key:A}} 5 {{key:B}} 6 {{key:C}} 0 {{key:D}} {{key:XEQ}}",
     "expected": -2.0,
     "ans_str": "Roots: x1 = -2.0000, x2 = -3.0000",
     "prompt": "Big Ideas Math Algebra 1 Chapter 7: Factor x² + 5x + 6 using algebra tiles and find roots on SC-32 [POLY] mode."
@@ -9188,7 +9188,7 @@
   "curr_ch57_A1": {
     "kind": "worksheet",
     "model": "sc32",
-    "seq": "{{key:POLY}} 1 {{key:A}} 7 {{key:B}} 12 {{key:C}} 0 {{key:D}} {{key:EXEC}}",
+    "seq": "{{key:POLY}} 1 {{key:A}} 7 {{key:B}} 12 {{key:C}} 0 {{key:D}} {{key:XEQ}}",
     "expected": -3.0,
     "ans_str": "x1 = -3, x2 = -4",
     "prompt": "Big Ideas Math Algebra 1 Chapter 7 A1: Find roots of x² + 7x + 12 = 0 using [POLY]."
@@ -9196,7 +9196,7 @@
   "curr_ch57_A2": {
     "kind": "worksheet",
     "model": "sc32",
-    "seq": "{{key:POLY}} 1 {{key:A}} 5 {{key:+/-}} {{key:B}} 6 {{key:C}} 0 {{key:D}} {{key:EXEC}}",
+    "seq": "{{key:POLY}} 1 {{key:A}} 5 {{key:+/-}} {{key:B}} 6 {{key:C}} 0 {{key:D}} {{key:XEQ}}",
     "expected": 2.0,
     "ans_str": "x1 = 2, x2 = 3",
     "prompt": "Big Ideas Math Algebra 1 Chapter 7 A2: Find roots of x² - 5x + 6 = 0 using [POLY]."
@@ -9204,7 +9204,7 @@
   "curr_ch57_A3": {
     "kind": "worksheet",
     "model": "sc32",
-    "seq": "{{key:POLY}} 1 {{key:A}} 0 {{key:B}} 4 {{key:+/-}} {{key:C}} 0 {{key:D}} {{key:EXEC}}",
+    "seq": "{{key:POLY}} 1 {{key:A}} 0 {{key:B}} 4 {{key:+/-}} {{key:C}} 0 {{key:D}} {{key:XEQ}}",
     "expected": 2.0,
     "ans_str": "x1 = 2, x2 = -2",
     "prompt": "Big Ideas Math Algebra 1 Chapter 7 A3: Find roots of x² - 4 = 0 using [POLY]."
@@ -9212,7 +9212,7 @@
   "curr_ch57_A4": {
     "kind": "worksheet",
     "model": "sc32",
-    "seq": "{{key:POLY}} 1 {{key:A}} 4 {{key:B}} 4 {{key:C}} 0 {{key:D}} {{key:EXEC}}",
+    "seq": "{{key:POLY}} 1 {{key:A}} 4 {{key:B}} 4 {{key:C}} 0 {{key:D}} {{key:XEQ}}",
     "expected": -2.0,
     "ans_str": "x1 = -2 (Repeated)",
     "prompt": "Big Ideas Math Algebra 1 Chapter 7 A4: Find roots of x² + 4x + 4 = 0 (perfect square)."
@@ -9220,7 +9220,7 @@
   "curr_ch57_B1": {
     "kind": "worksheet",
     "model": "sc32",
-    "seq": "{{key:POLY}} 1 {{key:A}} 6 {{key:B}} 8 {{key:C}} 0 {{key:D}} {{key:EXEC}}",
+    "seq": "{{key:POLY}} 1 {{key:A}} 6 {{key:B}} 8 {{key:C}} 0 {{key:D}} {{key:XEQ}}",
     "expected": -2.0,
     "ans_str": "x1 = -2, x2 = -4",
     "prompt": "Big Ideas Math Algebra 1 Chapter 7 B1: Find roots of x² + 6x + 8 = 0 using [POLY]."
@@ -9228,7 +9228,7 @@
   "curr_ch57_B2": {
     "kind": "worksheet",
     "model": "sc32",
-    "seq": "{{key:POLY}} 1 {{key:A}} 6 {{key:+/-}} {{key:B}} 8 {{key:C}} 0 {{key:D}} {{key:EXEC}}",
+    "seq": "{{key:POLY}} 1 {{key:A}} 6 {{key:+/-}} {{key:B}} 8 {{key:C}} 0 {{key:D}} {{key:XEQ}}",
     "expected": 2.0,
     "ans_str": "x1 = 2, x2 = 4",
     "prompt": "Big Ideas Math Algebra 1 Chapter 7 B2: Find roots of x² - 6x + 8 = 0 using [POLY]."
@@ -9236,7 +9236,7 @@
   "curr_ch57_B3": {
     "kind": "worksheet",
     "model": "sc32",
-    "seq": "{{key:POLY}} 1 {{key:A}} 0 {{key:B}} 9 {{key:+/-}} {{key:C}} 0 {{key:D}} {{key:EXEC}}",
+    "seq": "{{key:POLY}} 1 {{key:A}} 0 {{key:B}} 9 {{key:+/-}} {{key:C}} 0 {{key:D}} {{key:XEQ}}",
     "expected": 3.0,
     "ans_str": "x1 = 3, x2 = -3",
     "prompt": "Big Ideas Math Algebra 1 Chapter 7 B3: Find roots of x² - 9 = 0 using [POLY]."
@@ -9244,7 +9244,7 @@
   "curr_ch57_B4": {
     "kind": "worksheet",
     "model": "sc32",
-    "seq": "{{key:POLY}} 1 {{key:A}} 6 {{key:B}} 9 {{key:C}} 0 {{key:D}} {{key:EXEC}}",
+    "seq": "{{key:POLY}} 1 {{key:A}} 6 {{key:B}} 9 {{key:C}} 0 {{key:D}} {{key:XEQ}}",
     "expected": -3.0,
     "ans_str": "x1 = -3 (Repeated)",
     "prompt": "Big Ideas Math Algebra 1 Chapter 7 B4: Find roots of x² + 6x + 9 = 0 (perfect square)."

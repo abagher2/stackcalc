@@ -371,7 +371,7 @@ function initStickyBuyBar() {
     };
     const titleText = titleMap[rawTitle] || (rawTitle.length > 20 ? rawTitle.slice(0, 18) + '...' : rawTitle);
     const priceText = priceEl ? priceEl.textContent.trim() : '$89.00';
-    const btnHref = primaryBtn.getAttribute('href') || 'https://www.etsy.com/shop/StackCalc';
+    const btnHref = primaryBtn.getAttribute('href') || 'https://stackcalcmath.etsy.com';
 
     bar.innerHTML = `
       <div class="ec-sticky-info">

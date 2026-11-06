@@ -1,0 +1,1239 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11in" height="8.5in" viewBox="0 0 2200 1700">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+      .font-mono { font-family: 'Space Mono', monospace, -apple-system, sans-serif; }
+    </style>
+  </defs>
+  
+  <!-- Sheet Base Canvas (11.0 x 8.5 in US Letter Landscape) -->
+  <rect x="0" y="0" width="2200" height="1700" fill="#ffffff" />
+
+  <!-- Quadrant 1 (Top-Left): Side A (Front In-Box Guide) -->
+  <g transform="translate(35, 45)">
+    <svg width="1030" height="770" viewBox="0 0 1200 800">
+      
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+      .font-mono { font-family: 'Space Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .card-title { font-size: 24px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
+      .card-subtitle { font-size: 15px; font-weight: 400; fill: #475569; }
+      .section-hdr { font-size: 16px; font-weight: 700; fill: #0f172a; letter-spacing: 0.6px; text-transform: uppercase; }
+      .th { font-size: 14px; font-weight: 700; fill: #475569; text-transform: uppercase; }
+      .footer-txt { font-size: 13.5px; font-weight: 400; fill: #475569; }
+    </style>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect x="0" y="0" width="1200" height="800" fill="#ffffff" />
+
+  <!-- Outer Card Frame (4x6 Aspect Ratio, 3mm corner radius) -->
+  <rect x="10" y="10" width="1180" height="780" rx="12" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
+  <rect x="18" y="18" width="1164" height="764" rx="8" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
+
+  <!-- Top Header Panel -->
+  <rect x="25" y="25" width="1150" height="84" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.2" />
+  
+  <!-- StackCalc Brand Logo Badge -->
+  <g transform="translate(36, 36)">
+    <rect x="0" y="0" width="52" height="52" rx="7" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.3" />
+    <rect x="10" y="11" width="32" height="5" rx="1.5" fill="#0f172a" />
+    <rect x="13" y="19" width="26" height="5" rx="1.5" fill="#0f172a" opacity="0.85" />
+    <rect x="16" y="27" width="20" height="5" rx="1.5" fill="#0f172a" opacity="0.70" />
+    <rect x="19" y="35" width="14" height="5" rx="1.5" fill="#0f172a" opacity="0.55" />
+  </g>
+
+  <!-- Box Button Icon Badge -->
+  
+    <g transform="translate(98, 36)" data-macro="{{icon:button_prime}}">
+      <rect x="0" y="0" width="52" height="52" rx="7" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
+      <g transform="translate(4.16, 4.16) scale(0.4368)">
+        <path d="M 100 50 L 100 81.65625 C 100 86.9375 100 89.578125 99.101562 92.421875 C 97.972656 95.527344 95.527344 97.972656 92.421875 99.101562 C 89.578125 100 86.9375 100 81.65625 100 L 18.34375 100 C 13.0625 100 10.421875 100 7.578125 99.101562 C 4.472656 97.972656 2.027344 95.527344 0.898438 92.421875 C 0 89.578125 0 86.9375 0 81.65625 L 0 18.34375 C 0 13.0625 0 10.421875 0.898438 7.578125 C 2.027344 4.472656 4.472656 2.027344 7.578125 0.898438 C 10.421875 0 13.0625 0 18.34375 0 L 81.65625 0 C 86.9375 0 89.578125 0 92.421875 0.898438 C 95.527344 2.027344 97.972656 4.472656 99.101562 7.578125 C 100 10.421875 100 13.0625 100 18.34375 Z M 96.5 50 L 96.5 83.507812 C 96.5 87.246094 96.5 89.117188 95.863281 91.132812 C 95.0625 93.332031 93.332031 95.0625 91.132812 95.863281 C 89.117188 96.5 87.246094 96.5 83.507812 96.5 L 16.492188 96.5 C 12.753906 96.5 10.882812 96.5 8.867188 95.863281 C 6.667969 95.0625 4.9375 93.332031 4.136719 91.132812 C 3.5 89.117188 3.5 87.246094 3.5 83.507812 L 3.5 16.492188 C 3.5 12.753906 3.5 10.882812 4.136719 8.867188 C 4.9375 6.667969 6.667969 4.9375 8.867188 4.136719 C 10.882812 3.5 12.753906 3.5 16.492188 3.5 L 83.507812 3.5 C 87.246094 3.5 89.117188 3.5 91.132812 4.136719 C 93.332031 4.9375 95.0625 6.667969 95.863281 8.867188 C 96.5 10.882812 96.5 12.753906 96.5 16.492188 Z M 96.5 50 " fill="#0f172a" fill-rule="evenodd" /><path d="M 47.398438 45.359375 L 52.601562 45.359375 L 52.601562 31.441406 L 47.398438 31.441406 Z M 47.398438 45.359375 " fill="#0f172a" fill-rule="nonzero" /><path d="M 48.023438 43.671875 L 28.222656 66.871094 L 32.175781 70.246094 L 51.976562 47.046875 Z M 48.023438 43.671875 " fill="#0f172a" fill-rule="nonzero" /><path d="M 47.964844 46.980469 L 66.445312 70.179688 L 70.515625 66.941406 L 52.035156 43.738281 Z M 47.964844 46.980469 " fill="#0f172a" fill-rule="nonzero" /><path d="M 52.5 45.5 C 52.5 46.878906 51.378906 48 50 48 C 48.621094 48 47.5 46.878906 47.5 45.5 C 47.5 44.121094 48.621094 43 50 43 C 51.378906 43 52.5 44.121094 52.5 45.5 Z M 52.5 45.5 " fill="#0f172a" fill-rule="nonzero" /><path d="M 56 31.5 C 56 34.8125 53.3125 37.5 50 37.5 C 46.6875 37.5 44 34.8125 44 31.5 C 44 28.1875 46.6875 25.5 50 25.5 C 53.3125 25.5 56 28.1875 56 31.5 Z M 56 31.5 " fill="#0f172a" fill-rule="nonzero" /><path d="M 36 68.5 C 36 71.8125 33.3125 74.5 30 74.5 C 26.6875 74.5 24 71.8125 24 68.5 C 24 65.1875 26.6875 62.5 30 62.5 C 33.3125 62.5 36 65.1875 36 68.5 Z M 36 68.5 " fill="#0f172a" fill-rule="nonzero" /><path d="M 75 68.5 C 75 72.089844 72.089844 75 68.5 75 C 64.910156 75 62 72.089844 62 68.5 C 62 64.910156 64.910156 62 68.5 62 C 72.089844 62 75 64.910156 75 68.5 Z M 75 68.5 " fill="#0f172a" fill-rule="nonzero" />
+      </g>
+    </g>
+    
+
+  <!-- Header Typography -->
+  <text x="165" y="55" class="font-mono card-title">PRIME FACTOR STUDIO — IN-BOX USER GUIDE</text>
+  <text x="165" y="74" class="font-sans card-subtitle">Kinesthetic Number Theory, 4-3-3-2 Eratosthenes {2,3,5,7} Set &amp; 12-Socket Lid Tray</text>
+  <text x="165" y="93" class="font-mono" font-size="12.5px" font-weight="700" fill="#0284c7">SERIES 1 • CARD 05 / 12 • DOMAIN: FUNDAMENTAL THEOREM OF ARITHMETIC</text>
+
+  <!-- Top-Right SKU Badges -->
+  <g transform="translate(975, 36)">
+    <rect x="0" y="0" width="190" height="28" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+    <text x="95" y="19" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#0f172a">CARD 05 / 12 • PRIME-01</text>
+    
+    <rect x="0" y="34" width="190" height="26" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.2" />
+    <text x="95" y="52" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#059669">MATHEMATICAL GUIDE</text>
+  </g>
+
+  <!-- COLUMN 1: CONCEPT & PROOF (Width: 390) -->
+  <g transform="translate(25, 120)">
+    <rect x="0" y="0" width="390" height="585" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="390" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="16" y="23" class="font-mono section-hdr">1. CONCEPT &amp; GEOMETRIC PROOF</text>
+
+    <!-- Headline -->
+    <text x="16" y="52" class="font-mono" font-size="14.5px" font-weight="700" fill="#0284c7">FEEL THE PRIMES. MULTIPLY WITH HEIGHT.</text>
+
+    <!-- Concept lines -->
+    <text x="16" y="66" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">Standard base-10 counting blocks add</text>
+    <text x="16" y="86" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">lengths (1+1=2).</text>
+    <text x="16" y="106" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">Prime Factor blocks are logarithmically</text>
+    <text x="16" y="126" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">proportional:</text>
+    <text x="16" y="146" class="font-sans" font-size="15px" font-weight="700" fill="#0284c7">   log(a × b) = log(a) + log(b)</text>
+    <text x="16" y="166" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">Stacking blocks in a tower multiplies</text>
+    <text x="16" y="186" class="font-sans" font-size="15px" font-weight="400" fill="#0f172a">their numbers!</text>
+
+    <!-- Datum Box -->
+    <g transform="translate(12, 216)">
+      <rect x="0" y="0" width="366" height="136" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#0f172a">CALIBRATED LOGARITHMIC DATUM</text>
+    </g>
+    <text x="24" y="252" class="font-mono" font-size="13.5px" fill="#475569">• Unit Datum: Block [2] = 1U = 7.00 mm</text>
+    <text x="24" y="270" class="font-mono" font-size="13.5px" fill="#475569">visible height</text>
+    <text x="24" y="288" class="font-mono" font-size="13.5px" fill="#475569">• Log Modulus: K_log = 23.2535 mm / decade</text>
+    <text x="24" y="306" class="font-mono" font-size="13.5px" fill="#475569">• Prime Formula: h_vis(p) = K_log ×</text>
+    <text x="24" y="324" class="font-mono" font-size="13.5px" fill="#475569">log10(p)</text>
+
+    <!-- Proof Diagram Box -->
+    <g transform="translate(12, 364)">
+      <rect x="0" y="0" width="366" height="211" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      
+      <text x="14" y="22" class="font-mono" font-size="14.5px" font-weight="700" fill="#0f172a">VISUAL PROOF: TOWER 12 = [2] + [2] + [3]</text>
+      <!-- Ruler -->
+      <line x1="45" y1="36" x2="45" y2="165" stroke="#0f172a" stroke-width="1.8" />
+      <line x1="38" y1="160" x2="45" y2="160" stroke="#0f172a" stroke-width="1.5" />
+      <text x="35" y="164" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">1</text>
+      <line x1="38" y1="138" x2="45" y2="138" stroke="#0f172a" stroke-width="1.5" />
+      <text x="35" y="142" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">2</text>
+      <line x1="38" y1="120" x2="45" y2="120" stroke="#0f172a" stroke-width="1.5" />
+      <text x="35" y="124" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">3</text>
+      <line x1="38" y1="108" x2="45" y2="108" stroke="#0f172a" stroke-width="1.5" />
+      <text x="35" y="112" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">4</text>
+      <line x1="38" y1="90" x2="45" y2="90" stroke="#0f172a" stroke-width="1.5" />
+      <text x="35" y="94" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">6</text>
+      <line x1="35" y1="58" x2="45" y2="58" stroke="#059669" stroke-width="2.5" />
+      <text x="32" y="62" class="font-mono" font-size="14px" font-weight="700" text-anchor="end" fill="#059669">12</text>
+
+      <!-- Blocks -->
+      <rect x="70" y="138" width="60" height="22" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="1.4" />
+      <text x="100" y="154" class="font-mono" font-size="14px" font-weight="700" text-anchor="middle" fill="#0f172a">[ 2 ]</text>
+      <rect x="70" y="116" width="60" height="22" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="1.4" />
+      <text x="100" y="132" class="font-mono" font-size="14px" font-weight="700" text-anchor="middle" fill="#0f172a">[ 2 ]</text>
+      <rect x="70" y="58" width="60" height="58" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="1.4" />
+      <text x="100" y="92" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#0f172a">[ 3 ]</text>
+
+      <line x1="70" y1="58" x2="48" y2="58" stroke="#059669" stroke-width="2" stroke-dasharray="3,2" />
+      <polygon points="46,58 52,54 52,62" fill="#059669" />
+
+      <!-- Annotations -->
+      <text x="145" y="66" class="font-mono" font-size="14.5px" font-weight="700" fill="#059669">▲ SUMMIT = 12</text>
+      <text x="145" y="86" class="font-mono" font-size="13.5px" fill="#475569">2 × 2 × 3 = 12</text>
+      <text x="145" y="104" class="font-mono" font-size="13.5px" fill="#475569">Visible: 25.09 mm</text>
+      <text x="145" y="128" class="font-mono" font-size="14px" font-weight="700" fill="#0284c7">Commutative:</text>
+      <text x="145" y="146" class="font-sans" font-size="13px" fill="#475569">[3]+[2]+[2] = same height!</text>
+
+    </g>
+  </g>
+
+  <!-- COLUMN 2: PARTS INVENTORY (Width: 450) -->
+  <g transform="translate(425, 120)">
+    <rect x="0" y="0" width="450" height="585" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="450" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="16" y="23" class="font-mono section-hdr">2. KIT PARTS INVENTORY (45 PIECES)</text>
+
+    <!-- Table Header -->
+    <text x="14" y="52" class="font-mono th">COMPONENT</text>
+    <text x="180" y="52" class="font-mono th">QTY</text>
+    <text x="215" y="52" class="font-mono th">SPEC</text>
+    <text x="436" y="52" class="font-mono th" text-anchor="end">COLOR</text>
+    <line x1="12" y1="58" x2="438" y2="58" stroke="#cbd5e1" stroke-width="1" />
+
+    
+      <text x="14" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [2]</text>
+      <text x="180" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">24x</text>
+      <text x="215" y="64" class="font-mono" font-size="12.5px" fill="#0f172a">7.00 mm</text>
+      <text x="436" y="64" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Matte Blue</text>
+      <line x1="12" y1="69" x2="438" y2="69" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [3]</text>
+      <text x="180" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">9x</text>
+      <text x="215" y="86" class="font-mono" font-size="12.5px" fill="#0f172a">11.10 mm</text>
+      <text x="436" y="86" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Muted Red</text>
+      <line x1="12" y1="91" x2="438" y2="91" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [5]</text>
+      <text x="180" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">6x</text>
+      <text x="215" y="108" class="font-mono" font-size="12.5px" fill="#0f172a">16.25 mm</text>
+      <text x="436" y="108" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
+      <line x1="12" y1="113" x2="438" y2="113" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Prime Block [7]</text>
+      <text x="180" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">4x</text>
+      <text x="215" y="130" class="font-mono" font-size="12.5px" fill="#0f172a">19.65 mm</text>
+      <text x="436" y="130" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Tan</text>
+      <line x1="12" y1="135" x2="438" y2="135" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">7U Stepped Box</text>
+      <text x="180" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="152" class="font-mono" font-size="12.5px" fill="#0f172a">56.4 mm</text>
+      <text x="436" y="152" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Gray</text>
+      <line x1="12" y1="157" x2="438" y2="157" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+      <text x="14" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">12-Socket Lid</text>
+      <text x="180" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="174" class="font-mono" font-size="12.5px" fill="#0f172a">125.5×42.0mm</text>
+      <text x="436" y="174" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
+      <line x1="12" y1="179" x2="438" y2="179" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+
+
+    <!-- Total Pieces Summary -->
+    <text x="14" y="212" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">TOTAL: 43 Pure Prime Blocks (4-3-3-2 Layout)</text>
+    <text x="14" y="228" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">+ 7U Box + Stage Lid = 45 Parts</text>
+
+    <!-- Palette Box -->
+    <g transform="translate(12, 254)">
+      <rect x="0" y="0" width="426" height="190" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#0f172a">SLANT 3D PRODUCTION PALETTE</text>
+    </g>
+    <text x="24" y="290" class="font-sans" font-size="13.5px" fill="#475569">• PLA Matte Blue: 24x Prime [2] (4 columns × 6 blocks</text>
+    <text x="24" y="308" class="font-sans" font-size="13.5px" fill="#475569">= 42.0mm).</text>
+    <text x="24" y="326" class="font-sans" font-size="13.5px" fill="#475569">• PLA Matte Muted Red: 9x Prime [3] (3 columns × 3</text>
+    <text x="24" y="344" class="font-sans" font-size="13.5px" fill="#475569">blocks + 8.71mm riser).</text>
+    <text x="24" y="362" class="font-sans" font-size="13.5px" fill="#475569">• PLA White: 6x Prime [5] (3 columns × 2 blocks +</text>
+    <text x="24" y="380" class="font-sans" font-size="13.5px" fill="#475569">9.49mm riser) &amp; Stage Lid.</text>
+    <text x="24" y="398" class="font-sans" font-size="13.5px" fill="#475569">• PLA Tan: 4x Prime [7] (2 cols × 2 blocks + 2.70mm</text>
+    <text x="24" y="416" class="font-sans" font-size="13.5px" fill="#475569">riser) • PLA Gray: 7U Box.</text>
+  </g>
+
+  <!-- COLUMN 3: WHY KEEP CARD (Width: 290) -->
+  <g transform="translate(885, 120)">
+    <rect x="0" y="0" width="290" height="585" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="290" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="14" y="23" class="font-mono section-hdr">3. PACK-UP &amp; SUPPORT</text>
+
+    <!-- Reason 1: Pack-Up -->
+    <g transform="translate(12, 44)">
+      <rect x="0" y="0" width="266" height="136" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#d97706">✓ 10-SECOND PACK-UP</text>
+    </g>
+    <text x="24" y="82" class="font-sans" font-size="13px" fill="#475569">Stand all 43 prime blocks in the</text>
+    <text x="24" y="100" class="font-sans" font-size="13px" fill="#475569">4-3-3-2 stepped floor sockets (4 cols</text>
+    <text x="24" y="118" class="font-sans" font-size="13px" fill="#475569">of [2], 3 cols of [3], 3 cols of [5],</text>
+    <text x="24" y="136" class="font-sans" font-size="13px" fill="#475569">2 cols of [7]). All 12 columns level</text>
+    <text x="24" y="154" class="font-sans" font-size="13px" fill="#475569">at the 42.0mm (2⁶=64) waterline. Snap</text>
+
+    <!-- Reason 2: Guarantee -->
+    <g transform="translate(12, 190)">
+      <rect x="0" y="0" width="266" height="138" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="13.5px" font-weight="700" fill="#059669">✓ NO LOST PIECE GUARANTEE</text>
+      <text x="12" y="40" class="font-sans" font-size="13px" fill="#475569">Classrooms lose pieces. Every single</text>
+      <text x="12" y="58" class="font-sans" font-size="13px" fill="#475569">math component is permanently</text>
+      <text x="12" y="76" class="font-sans" font-size="13px" fill="#475569">stocked for single replacements.</text>
+      <rect x="12" y="90" width="242" height="36" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8" />
+      <text x="133" y="106" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0284c7">stackcalc.io/parts</text>
+      <text x="133" y="120" class="font-sans" font-size="11px" text-anchor="middle" fill="#475569">Order replacements anytime</text>
+    </g>
+
+    <!-- Reason 3: Reverse Lesson Guide -->
+    <g transform="translate(12, 338)">
+      <rect x="0" y="0" width="266" height="84" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="20" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">✓ HANDS-ON TUTORIAL</text>
+      <text x="12" y="38" class="font-sans" font-size="12.5px" fill="#475569">Flip over for 5-step concrete</text>
+      <text x="12" y="54" class="font-sans" font-size="12.5px" fill="#475569">lesson &amp; live 3D Video QR!</text>
+      <text x="12" y="72" class="font-sans" font-size="12px" font-weight="700" fill="#0f172a">Keep stored inside box lid!</text>
+    </g>
+
+    <!-- Fundamental Theorem Box -->
+    <g transform="translate(12, 432)">
+      <rect x="0" y="0" width="266" height="88" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      <text x="12" y="18" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">FUNDAMENTAL THEOREM</text>
+      <text x="12" y="36" class="font-sans" font-size="12px" fill="#475569">
+        <tspan x="12" dy="0">Every integer &gt; 1 has a unique</tspan><tspan x="12" dy="16">prime factorization</tspan><tspan x="12" dy="16">decomposition.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Footer Bar -->
+  <g transform="translate(25, 715)">
+    <rect x="0" y="0" width="1150" height="60" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    
+    <g transform="translate(20, 24)">
+      <text x="0" y="0" class="font-mono" font-size="13.5px" font-weight="700" fill="#0f172a">STACKCALC ARCHIVAL INSTRUMENT LABS</text>
+      <text x="0" y="18" class="font-sans footer-txt">Designed in Mountain View, California • Non-Toxic BPA-Free • Classroom Lab Stations: stackcalc.io/schools</text>
+    </g>
+
+    <g transform="translate(880, 24)">
+      <text x="0" y="0" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">OFFICIAL REFILL PORTAL</text>
+      <text x="0" y="18" class="font-mono" font-size="14.5px" font-weight="700" fill="#0284c7">stackcalc.io/parts</text>
+    </g>
+  </g>
+  <metadata id="stackcalc-book-macro-manifest" data-kit="PRIME-01">
+    <stackcalc-macros>
+      <macro-ref token="{{blocks:prime_studio_comparator_stage}}" kind="blocks" id="prime_studio_comparator_stage" png="prime_studio_comparator_stage.png" svg="prime_studio_comparator_stage.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_comparator_stage.scad" scad="book_prime_comparator_stage.scad" scad-sources="Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_3_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:prime_lcm_gcd_venn}}" kind="blocks" id="prime_lcm_gcd_venn" png="prime_lcm_gcd_venn.png" svg="prime_lcm_gcd_venn.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_lcm_gcd_venn.scad" scad="book_prime_lcm_gcd_venn.scad" scad-sources="Education/scad/prime_lcm_gcd_assembly.scad,Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:prime_studio_commutativity}}" kind="blocks" id="prime_studio_commutativity" png="prime_studio_commutativity.png" svg="prime_studio_commutativity.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_studio_commutativity.scad" scad="book_prime_studio_commutativity.scad" scad-sources="Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:sc6_elementary_hero}}" kind="blocks" id="sc6_elementary_hero" png="sc6-elementary-hero.png" svg="sc6-elementary-hero.png" scene="Tools/rendering/render_product_stills.py::render_sc6_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{blocks:sc32_hero_keynote}}" kind="blocks" id="sc32_hero_keynote" png="sc32-hero-keynote.png" svg="sc32-hero-keynote.png" scene="Tools/rendering/render_product_stills.py::render_sc32_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{seq:refcard_prime01_ex1}}" res-token="{{res:refcard_prime01_ex1}}" stack-token="{{res:refcard_prime01_ex1:stack}}" kind="sequence" id="refcard_prime01_ex1" model="sc6" expanded-seq="12 [g] [FACT] 18 [g] [FACT]" res="18" stack="T:0|Z:0|Y:12|X:18" />
+      <macro-ref token="{{seq:refcard_prime01_ex2}}" res-token="{{res:refcard_prime01_ex2}}" stack-token="{{res:refcard_prime01_ex2:stack}}" kind="sequence" id="refcard_prime01_ex2" model="sc6" expanded-seq="12 [ENTER] 18 [GCF] 12 [ENTER] 18 [f] [LCM]" res="36" stack="T:0|Z:0|Y:6|X:36" />
+      <macro-ref token="{{seq:refcard_prime01_ex3}}" res-token="{{res:refcard_prime01_ex3}}" stack-token="{{res:refcard_prime01_ex3:stack}}" kind="sequence" id="refcard_prime01_ex3" model="sc6" expanded-seq="2 [ENTER] 3 [×] 5 [×] [g] [FACT]" res="30" stack="T:0|Z:0|Y:0|X:30" />
+      <macro-ref token="{{icon:button_prime}}" kind="icon" id="button_prime" svg="Education/scad/lib/icons/button_prime.svg" scad="Education/scad/prime_studio_box.scad" key="FACT" model="sc6" />
+    </stackcalc-macros>
+  </metadata>
+
+    </svg>
+  </g>
+
+  <!-- Quadrant 2 (Top-Right): Side B (Back Lesson Guide & Video QR) -->
+  <g transform="translate(1135, 45)">
+    <svg width="1030" height="770" viewBox="0 0 1200 800">
+      
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+      .font-mono { font-family: 'Space Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .card-title { font-size: 22px; font-weight: 700; fill: #0f172a; letter-spacing: -0.5px; }
+      .card-subtitle { font-size: 14.5px; font-weight: 400; fill: #475569; }
+      .section-hdr { font-size: 15.5px; font-weight: 700; fill: #0f172a; letter-spacing: 0.6px; text-transform: uppercase; }
+      .footer-txt { font-size: 13.5px; font-weight: 400; fill: #475569; }
+    </style>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect x="0" y="0" width="1200" height="800" fill="#ffffff" />
+
+  <!-- Outer Card Frame (4x6 Aspect Ratio, 3mm corner radius) -->
+  <rect x="10" y="10" width="1180" height="780" rx="12" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
+  <rect x="18" y="18" width="1164" height="764" rx="8" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,4" opacity="0.6" />
+
+  <!-- Top Header Panel -->
+  <rect x="25" y="25" width="1150" height="84" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="1.2" />
+  
+  <!-- StackCalc Brand Logo Badge -->
+  <g transform="translate(36, 36)">
+    <rect x="0" y="0" width="52" height="52" rx="7" fill="#ffffff" stroke="#0f172a" stroke-width="1.3" />
+    <rect x="10" y="11" width="32" height="5" rx="1.5" fill="#0f172a" />
+    <rect x="13" y="19" width="26" height="5" rx="1.5" fill="#0f172a" opacity="0.85" />
+    <rect x="16" y="27" width="20" height="5" rx="1.5" fill="#0f172a" opacity="0.70" />
+    <rect x="19" y="35" width="14" height="5" rx="1.5" fill="#0f172a" opacity="0.55" />
+  </g>
+
+  <!-- Header Typography -->
+  <text x="100" y="55" class="font-mono card-title">LESSON GUIDE: HOW TO FIND THE LEAST COMMON MULTIPLE (LCM)</text>
+  <text x="100" y="74" class="font-sans card-subtitle">Step-by-Step Hands-On Tutorial: Finding LCM(12, 18) = 36 &amp; The Law of Conservation of Primes</text>
+  <text x="100" y="93" class="font-mono" font-size="12.5px" font-weight="700" fill="#0284c7">SERIES 1 • CARD 05 OF 12 • DOMAIN: FUNDAMENTAL THEOREM OF ARITHMETIC</text>
+
+  <!-- Top-Right Badges -->
+  <g transform="translate(975, 36)">
+    <rect x="0" y="0" width="190" height="28" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+    <text x="95" y="19" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#0f172a">CARD 05 / 12 • PRIME-01</text>
+    
+    <rect x="0" y="34" width="190" height="26" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+    <text x="95" y="52" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">LESSON TUTORIAL</text>
+  </g>
+
+  <!-- LEFT COLUMN: VIDEO QR & STANDARDS (Width: 320) -->
+  <g transform="translate(25, 120)">
+    <rect x="0" y="0" width="320" height="585" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="0" y="0" width="320" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="16" y="23" class="font-mono section-hdr">SCAN FOR 3D VIDEO DEMO</text>
+
+    <!-- QR Code Box -->
+    <rect x="25" y="44" width="270" height="195" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="70.0" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="75.45" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="97.27" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="217.27" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="239.09" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="52.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="57.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="57.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="57.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="57.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="57.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="57.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="162.73" y="57.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="57.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="57.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="57.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="57.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="57.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="119.09" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="135.45" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="62.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="119.09" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="151.82" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="162.73" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="68.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="135.45" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="151.82" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="73.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="79.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="79.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="119.09" y="79.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="79.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="79.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="135.45" y="79.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="79.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="79.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="162.73" y="79.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="79.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="79.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="79.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="79.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="75.45" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="97.27" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="135.45" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="217.27" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="239.09" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="84.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="90.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="90.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="90.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="135.45" y="90.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="90.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="162.73" y="90.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="90.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="90.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="97.27" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="108.18" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="135.45" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="162.73" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="184.55" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="239.09" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="95.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="75.45" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="119.09" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="135.45" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="217.27" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="101.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="75.45" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="97.27" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="108.18" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="119.09" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="184.55" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="206.36" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="217.27" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="106.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="119.09" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="135.45" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="151.82" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="217.27" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="112.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="117.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="75.45" y="117.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="117.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="117.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="117.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="119.09" y="117.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="162.73" y="117.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="117.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="117.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="117.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="217.27" y="117.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="117.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="117.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="122.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="122.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="97.27" y="122.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="108.18" y="122.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="122.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="151.82" y="122.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="122.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="122.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="122.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="122.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="217.27" y="122.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="122.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="239.09" y="122.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="75.45" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="108.18" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="217.27" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="128.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="97.27" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="119.09" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="151.82" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="184.55" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="206.36" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="133.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="97.27" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="108.18" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="135.45" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="184.55" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="206.36" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="139.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="75.45" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="97.27" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="108.18" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="119.09" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="135.45" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="151.82" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="184.55" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="144.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="150.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="150.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="150.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="150.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="150.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="151.82" y="150.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="150.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="150.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="206.36" y="150.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="150.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="217.27" y="150.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="150.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="150.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="239.09" y="150.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="75.45" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="97.27" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="108.18" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="119.09" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="151.82" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="162.73" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="206.36" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="155.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="161.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="161.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="97.27" y="161.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="161.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="108.18" y="161.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="119.09" y="161.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="161.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="161.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="162.73" y="161.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="161.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="184.55" y="161.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="161.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="161.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="161.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="161.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="75.45" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="97.27" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="162.73" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="184.55" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="206.36" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="166.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="97.27" y="172.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="172.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="172.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="172.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="172.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="172.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="184.55" y="172.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="172.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="206.36" y="172.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="172.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="217.27" y="172.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="172.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="239.09" y="172.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="172.0" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="75.45" y="177.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="177.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="108.18" y="177.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="119.09" y="177.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="177.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="135.45" y="177.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="177.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="177.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="177.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="177.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="177.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="239.09" y="177.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="177.45" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="97.27" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="108.18" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="162.73" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="206.36" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="217.27" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="239.09" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="182.91" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="188.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="119.09" y="188.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="188.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="188.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="151.82" y="188.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="188.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="188.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="188.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="188.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="188.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="239.09" y="188.36" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="75.45" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="97.27" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="119.09" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="184.55" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="193.82" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="135.45" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="151.82" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="184.55" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="228.18" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="239.09" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="199.27" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="184.55" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="206.36" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="217.27" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="204.73" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="119.09" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="135.45" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="151.82" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="162.73" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="184.55" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="217.27" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="210.18" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="151.82" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="162.73" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="206.36" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="217.27" y="215.64" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="146.36" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="151.82" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="157.27" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="162.73" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="179.09" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="190.0" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="200.91" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="217.27" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="244.55" y="221.09" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="70.0" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="75.45" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="80.91" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="86.36" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="91.82" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="97.27" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="102.73" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="113.64" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="124.55" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="130.0" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="135.45" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="140.91" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="162.73" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="168.18" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="173.64" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="184.55" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="195.45" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="211.82" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="222.73" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+<rect x="233.64" y="226.55" width="5.5" height="5.5" fill="#0f172a" />
+
+    <!-- Callout under QR -->
+    <text x="160" y="258" class="font-mono" font-size="14.5px" font-weight="700" text-anchor="middle" fill="#0f172a">OPEN CAMERA &amp; SCAN</text>
+    <text x="160" y="276" class="font-mono" font-size="13.5px" font-weight="700" text-anchor="middle" fill="#0284c7">stackcalc.io/products/prime-studio/</text>
+    <text x="160" y="293" class="font-sans" font-size="12px" text-anchor="middle" fill="#475569">Zero app install • iPad &amp; Chromebook</text>
+
+    <!-- Curricular Alignment Box -->
+    <g transform="translate(14, 308)">
+      <rect x="0" y="0" width="292" height="120" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      <text x="14" y="20" class="font-mono" font-size="13.5px" font-weight="700" fill="#0f172a">CURRICULAR ALIGNMENT</text>
+      <text x="14" y="30" class="font-mono" font-size="11.5px" fill="#475569">• CCSS 6.NS.B.4 (LCM &amp; GCD)</text>
+      <text x="14" y="50" class="font-mono" font-size="11.5px" fill="#475569">• CCSS 4.OA.B.4 (Factor Pairs)</text>
+      <text x="14" y="70" class="font-mono" font-size="11.5px" fill="#475569">• TEKS 111.26.B.6.7.A (Prime Factor...)</text>
+      <text x="14" y="104" class="font-mono" font-size="12.5px" font-weight="700" fill="#059669">Grades 4–9 Math &amp; Pre-Algebra</text>
+    </g>
+
+    <!-- Mathematical Inquiry Box -->
+    <g transform="translate(14, 440)">
+      <rect x="0" y="0" width="292" height="132" rx="6" fill="#f0f9ff" stroke="#0284c7" stroke-width="1" />
+      <text x="14" y="22" class="font-mono" font-size="14px" font-weight="700" fill="#0369a1">💡 GUIDING INQUIRY</text>
+      <text x="14" y="46" class="font-sans" font-size="13.5px" fill="#0f172a">
+        <tspan x="14" dy="0">Which prime blocks are shared by</tspan><tspan x="14" dy="20">both towers, and which blocks</tspan><tspan x="14" dy="20">are unique to one tower?</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- RIGHT AREA: 5-STEP LESSON TUTORIAL (Width: 815) -->
+  <g transform="translate(360, 120)">
+    
+    <!-- STEP 1 CARD -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="398" height="142" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+      <rect x="0" y="0" width="398" height="32" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      <circle cx="18" cy="16" r="10" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
+      <text x="18" y="20" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#0f172a">1</text>
+      <text x="36" y="21" class="font-mono" font-size="14px" font-weight="700" fill="#0f172a">STEP 1: FACTOR &amp; BUILD TOWERS 12 &amp; 18</text>
+      <text x="16" y="54" class="font-sans" font-size="14px" fill="#0f172a">Decompose numbers 12 and 18 into prime</text>
+      <text x="16" y="73" class="font-sans" font-size="14px" fill="#0f172a">building blocks:</text>
+      <text x="16" y="92" class="font-sans" font-size="14px" fill="#0f172a">• Tower 12: Stack [2] + [2] + [3]  (2 × 2</text>
+      <text x="16" y="111" class="font-sans" font-size="14px" fill="#0f172a">× 3 = 12)</text>
+      <text x="16" y="130" class="font-sans" font-size="14px" fill="#0f172a">• Tower 18: Stack [2] + [3] + [3]  (2 × 3</text>
+      <text x="16" y="149" class="font-sans" font-size="14px" fill="#0f172a">× 3 = 18)</text>
+      <text x="16" y="168" class="font-sans" font-size="14px" fill="#0f172a">Seat each tower in the 12-socket lid tray.</text>
+      <text x="16" y="187" class="font-sans" font-size="14px" fill="#0f172a">Their summits</text>
+      <text x="16" y="206" class="font-sans" font-size="14px" fill="#0f172a">measure 25.10 mm (Tower 12) and 29.20 mm</text>
+      <text x="16" y="225" class="font-sans" font-size="14px" fill="#0f172a">(Tower 18)!</text>
+    </g>
+
+    <!-- STEP 2 CARD -->
+    <g transform="translate(417, 0)">
+      <rect x="0" y="0" width="398" height="142" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+      <rect x="0" y="0" width="398" height="32" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      <circle cx="18" cy="16" r="10" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
+      <text x="18" y="20" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#0f172a">2</text>
+      <text x="36" y="21" class="font-mono" font-size="14px" font-weight="700" fill="#0f172a">STEP 2: FIND SHARED OVERLAP (THE GCD)</text>
+      <text x="16" y="54" class="font-sans" font-size="14px" fill="#0f172a">Stand Tower 12 and Tower 18 side-by-side.</text>
+      <text x="16" y="73" class="font-sans" font-size="14px" fill="#0f172a">Identify the blocks they share in common</text>
+      <text x="16" y="92" class="font-sans" font-size="14px" fill="#0f172a">(intersection):</text>
+      <text x="16" y="111" class="font-sans" font-size="14px" fill="#0f172a">• Tower 12 has: [2], [2], [3] | Tower 18</text>
+      <text x="16" y="130" class="font-sans" font-size="14px" fill="#0f172a">has: [2], [3], [3]</text>
+      <text x="16" y="149" class="font-sans" font-size="14px" fill="#0f172a">Shared Overlap: Exactly one [2] and one</text>
+      <text x="16" y="168" class="font-sans" font-size="14px" fill="#0f172a">[3]!</text>
+      <text x="16" y="187" class="font-sans" font-size="14px" fill="#0f172a">Assemble GCD Tower: [2] + [3] = 6 (Summit:</text>
+      <text x="16" y="206" class="font-sans" font-size="14px" fill="#0f172a">18.10 mm).</text>
+    </g>
+
+    <!-- STEPS 3 & 4 CARD -->
+    <g transform="translate(0, 154)">
+      <rect x="0" y="0" width="815" height="136" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+      <rect x="0" y="0" width="815" height="32" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      <circle cx="18" cy="16" r="10" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
+      <text x="18" y="20" class="font-mono" font-size="10.5px" font-weight="700" text-anchor="middle" fill="#0f172a">3-4</text>
+      <text x="36" y="21" class="font-mono section-hdr">STEPS 3 &amp; 4: ASSEMBLE THE LCM TOWER</text>
+      <text x="16" y="54" class="font-sans" font-size="14px" font-weight="700" fill="#0284c7">3. TAKE PRIME UNION: Take highest power of each prime: two [2]s, two [3]s.</text>
+      <text x="16" y="73" class="font-sans" font-size="14px" font-weight="700" fill="#059669">4. STACK LCM TOWER: [2] + [2] + [3] + [3] = 36 (Summit: 36.20 mm)!</text>
+      <text x="16" y="92" class="font-sans" font-size="14px" font-weight="700" fill="#0284c7">Calculator Verification: Press Factor Tree Icon ([PRIME] / [g][FACT]) and run 12 [ENTER]</text>
+      <text x="16" y="111" class="font-sans" font-size="14px" font-weight="700" fill="#0284c7">18 [GCF] 12 [ENTER] 18 [f] [LCM] → 36.</text>
+    </g>
+
+    <!-- STEP 5: CORE MATHEMATICAL PRINCIPLE -->
+    <g transform="translate(0, 302)">
+      <rect x="0" y="0" width="815" height="130" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.3" />
+      <rect x="0" y="0" width="815" height="30" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      <circle cx="18" cy="15" r="10" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
+      <text x="18" y="19" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#0f172a">5</text>
+      <text x="36" y="20" class="font-mono" font-size="14.5px" font-weight="700" fill="#166534">CORE PRINCIPLE: CONSERVATION OF PRIMES: A × B = GCD × LCM</text>
+      <text x="16" y="54" class="font-sans" font-size="14px" fill="#0f172a">Multiply Tower 12 and Tower 18: you have three [2]s and three [3]s. Look at your GCD Tower</text>
+      <text x="16" y="73" class="font-sans" font-size="14px" fill="#0f172a">([2], [3]) and your LCM Tower ([2]², [3]²): together they contain the EXACT same prime</text>
+      <text x="16" y="92" class="font-sans" font-size="14px" fill="#0f172a">blocks!</text>
+      <text x="16" y="111" class="font-sans" font-size="14px" fill="#0f172a">Therefore: A × B = GCD(A, B) × LCM(A, B) = 6 × 36 = 216!</text>
+    </g>
+
+    <!-- EXTENSION INVESTIGATION -->
+    <g transform="translate(0, 444)">
+      <rect x="0" y="0" width="815" height="141" rx="8" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.2" stroke-dasharray="4,3" />
+      <rect x="0" y="0" width="815" height="28" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      <text x="16" y="19" class="font-mono" font-size="14.5px" font-weight="700" fill="#0369a1">★ EXTENSION INVESTIGATION: FIND LCM(8, 12)</text>
+      <text x="16" y="54" class="font-sans" font-size="14px" fill="#0f172a">Build Tower 8: [2]+[2]+[2] and Tower 12: [2]+[2]+[3]. Prime union takes three [2]s and one</text>
+      <text x="16" y="73" class="font-sans" font-size="14px" fill="#0f172a">[3] → LCM = 24 (32.10mm)! (Scan QR for 3D animated solution!)</text>
+      <text x="16" y="122" class="font-mono" font-size="13px" font-weight="700" fill="#059669">
+        → Assemble with physical blocks, then scan QR code for 3D animated solution.
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Footer Bar -->
+  <g transform="translate(25, 715)">
+    <rect x="0" y="0" width="1150" height="60" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    
+    <g transform="translate(20, 24)">
+      <text x="0" y="0" class="font-mono" font-size="13.5px" font-weight="700" fill="#0f172a">STACKCALC ARCHIVAL INSTRUMENT LABS</text>
+      <text x="0" y="18" class="font-sans footer-txt">Interactive Mathematics Manipulative Ecosystem • Mountain View, CA • BPA-Free</text>
+    </g>
+
+    <g transform="translate(880, 24)">
+      <text x="0" y="0" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">PARTS &amp; REFILL PORTAL</text>
+      <text x="0" y="18" class="font-mono" font-size="14.5px" font-weight="700" fill="#0284c7">stackcalc.io/parts</text>
+    </g>
+  </g>
+  <metadata id="stackcalc-book-macro-manifest" data-kit="PRIME-01">
+    <stackcalc-macros>
+      <macro-ref token="{{blocks:prime_studio_comparator_stage}}" kind="blocks" id="prime_studio_comparator_stage" png="prime_studio_comparator_stage.png" svg="prime_studio_comparator_stage.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_comparator_stage.scad" scad="book_prime_comparator_stage.scad" scad-sources="Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_3_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:prime_lcm_gcd_venn}}" kind="blocks" id="prime_lcm_gcd_venn" png="prime_lcm_gcd_venn.png" svg="prime_lcm_gcd_venn.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_lcm_gcd_venn.scad" scad="book_prime_lcm_gcd_venn.scad" scad-sources="Education/scad/prime_lcm_gcd_assembly.scad,Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:prime_studio_commutativity}}" kind="blocks" id="prime_studio_commutativity" png="prime_studio_commutativity.png" svg="prime_studio_commutativity.svg" scene="Education/tools/generate_book_diagrams.py::book_prime_studio_commutativity.scad" scad="book_prime_studio_commutativity.scad" scad-sources="Education/scad/prime_studio_box.scad,Education/scad/prime_studio_parts.scad" stls="Education/build/stl/components/prime_box_lid.stl,Education/build/stl/components/prime_block_2_1.stl,Education/build/stl/components/prime_block_5_1.stl" />
+      <macro-ref token="{{blocks:sc6_elementary_hero}}" kind="blocks" id="sc6_elementary_hero" png="sc6-elementary-hero.png" svg="sc6-elementary-hero.png" scene="Tools/rendering/render_product_stills.py::render_sc6_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{blocks:sc32_hero_keynote}}" kind="blocks" id="sc32_hero_keynote" png="sc32-hero-keynote.png" svg="sc32-hero-keynote.png" scene="Tools/rendering/render_product_stills.py::render_sc32_calculator" scad="Hardware/designs/assembly_award.scad" scad-sources="Hardware/designs/chassis_award.scad,Hardware/designs/unified_faceplate_award.scad,Hardware/designs/tpu_membrane_award.scad,Hardware/designs/top_cap_award.scad" stls="scratch/stl/chassis_award.stl,scratch/stl/unified_faceplate_award.stl,scratch/stl/tpu_membrane_award.stl,scratch/stl/top_cap_award.stl" />
+      <macro-ref token="{{seq:refcard_prime01_ex1}}" res-token="{{res:refcard_prime01_ex1}}" stack-token="{{res:refcard_prime01_ex1:stack}}" kind="sequence" id="refcard_prime01_ex1" model="sc6" expanded-seq="12 [g] [FACT] 18 [g] [FACT]" res="18" stack="T:0|Z:0|Y:12|X:18" />
+      <macro-ref token="{{seq:refcard_prime01_ex2}}" res-token="{{res:refcard_prime01_ex2}}" stack-token="{{res:refcard_prime01_ex2:stack}}" kind="sequence" id="refcard_prime01_ex2" model="sc6" expanded-seq="12 [ENTER] 18 [GCF] 12 [ENTER] 18 [f] [LCM]" res="36" stack="T:0|Z:0|Y:6|X:36" />
+      <macro-ref token="{{seq:refcard_prime01_ex3}}" res-token="{{res:refcard_prime01_ex3}}" stack-token="{{res:refcard_prime01_ex3:stack}}" kind="sequence" id="refcard_prime01_ex3" model="sc6" expanded-seq="2 [ENTER] 3 [×] 5 [×] [g] [FACT]" res="30" stack="T:0|Z:0|Y:0|X:30" />
+      <macro-ref token="{{icon:button_prime}}" kind="icon" id="button_prime" svg="Education/scad/lib/icons/button_prime.svg" scad="Education/scad/prime_studio_box.scad" key="FACT" model="sc6" />
+    </stackcalc-macros>
+  </metadata>
+
+    </svg>
+  </g>
+
+  <!-- Crop / Trim Tick Marks for Side A & Side B (Optional 135x90mm Scissors / Rotary Trim) -->
+  <g stroke="#cbd5e1" stroke-width="1.0">
+    <!-- Top-Left Side A -->
+    <line x1="20" y1="45" x2="35" y2="45" />
+    <line x1="35" y1="30" x2="35" y2="45" />
+    <!-- Top-Right Side A -->
+    <line x1="1065" y1="45" x2="1080" y2="45" />
+    <line x1="1065" y1="30" x2="1065" y2="45" />
+    <!-- Bottom-Left Side A -->
+    <line x1="20" y1="815" x2="35" y2="815" />
+    <line x1="35" y1="815" x2="35" y2="830" />
+    <!-- Bottom-Right Side A -->
+    <line x1="1065" y1="815" x2="1080" y2="815" />
+    <line x1="1065" y1="815" x2="1065" y2="830" />
+
+    <!-- Top-Left Side B -->
+    <line x1="1120" y1="45" x2="1135" y2="45" />
+    <line x1="1135" y1="30" x2="1135" y2="45" />
+    <!-- Top-Right Side B -->
+    <line x1="2165" y1="45" x2="2180" y2="45" />
+    <line x1="2165" y1="30" x2="2165" y2="45" />
+    <!-- Bottom-Left Side B -->
+    <line x1="1120" y1="815" x2="1135" y2="815" />
+    <line x1="1135" y1="815" x2="1135" y2="830" />
+    <!-- Bottom-Right Side B -->
+    <line x1="2165" y1="815" x2="2180" y2="815" />
+    <line x1="2165" y1="815" x2="2165" y2="830" />
+  </g>
+
+  <!-- Subtle Center Hairline Guides (Zero Text, Neutral Gray) -->
+  <line x1="15" y1="850" x2="2185" y2="850" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="6,6" />
+  <line x1="1100" y1="15" x2="1100" y2="1685" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="6,6" />
+
+  <!-- Quadrant 3 (Bottom-Left): Pedagogy & Architecture -->
+  <g transform="translate(35, 880)">
+    <rect x="0" y="0" width="1030" height="770" rx="12" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8" />
+    
+    <!-- Header -->
+    <rect x="20" y="20" width="990" height="60" rx="8" fill="#0f172a" />
+    <text x="40" y="58" class="font-mono" font-size="18px" font-weight="700" fill="#38bdf8">STACKCALC STEM PEDAGOGY &amp; PHYSICAL COMPUTING</text>
+    <text x="680" y="58" class="font-mono" font-size="12px" font-weight="700" fill="#10b981">CONCRETE • REPRESENTATIONAL • ABSTRACT</text>
+
+    <!-- 3 Columns -->
+    <g transform="translate(30, 105)">
+      <rect x="0" y="0" width="295" height="350" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      <rect x="15" y="15" width="220" height="26" rx="4" fill="#0284c7" />
+      <text x="125" y="32" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#ffffff">1. TACTILE CONCRETE</text>
+      <text x="18" y="68" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">7.00mm 1U PITCH</text>
+      <text x="18" y="82" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Every physical block dimension is</tspan><tspan x="18" dy="11">locked to an exact integer ratio,</tspan><tspan x="18" dy="11">providing tactile feedback of</tspan><tspan x="18" dy="11">quantity.</tspan></text>
+      <text x="18" y="136" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">MOTOR KINESTHETIC</text>
+      <text x="18" y="150" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Sliding, stacking, and interlocking</tspan><tspan x="18" dy="11">builds spatial memory and intuitive</tspan><tspan x="18" dy="11">number sense before symbols appear.</tspan></text>
+      <text x="18" y="193" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">CONSERVATION OF QUANTITY</text>
+      <text x="18" y="207" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Mass, area, and volume remain</tspan><tspan x="18" dy="11">invariant regardless of how blocks are</tspan><tspan x="18" dy="11">grouped or rotated.</tspan></text>
+      <text x="18" y="250" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">SELF-CORRECTING</text>
+      <text x="18" y="264" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Precision mechanical detents seat</tspan><tspan x="18" dy="11">flush only when arithmetic identities</tspan><tspan x="18" dy="11">and geometric proofs are correct.</tspan></text>
+      <text x="18" y="307" class="font-mono" font-size="10px" font-weight="700" fill="#0284c7">CCSS.MATH.PRACTICE.MP5</text>
+      <text x="18" y="321" class="font-mono" font-size="8.3px" fill="#64748b"><tspan x="18" dy="0">Use appropriate tools strategically.</tspan></text>
+    </g>
+
+    <g transform="translate(365, 105)">
+      <rect x="0" y="0" width="295" height="350" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      <rect x="15" y="15" width="220" height="26" rx="4" fill="#0284c7" />
+      <text x="125" y="32" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#ffffff">2. HARDWARE RPN STACK</text>
+      <text x="18" y="68" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">POSTFIX ARITHMETIC</text>
+      <text x="18" y="82" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">[ARG 1] [ENTER] [ARG 2] [OP]. Zero</tspan><tspan x="18" dy="11">operator ambiguity, zero parentheses,</tspan><tspan x="18" dy="11">and zero hidden precedence rules.</tspan></text>
+      <text x="18" y="125" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">X, Y, Z, T REGISTERS</text>
+      <text x="18" y="139" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Every intermediate result is visible</tspan><tspan x="18" dy="11">on the display stack. What is stacked</tspan><tspan x="18" dy="11">on the desk is preserved in memory.</tspan></text>
+      <text x="18" y="182" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">DIGITAL TWIN OF TOWERS</text>
+      <text x="18" y="196" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Physically stacking blocks onto a</tspan><tspan x="18" dy="11">stage lid directly mirrors pushing</tspan><tspan x="18" dy="11">values into the digital stack</tspan><tspan x="18" dy="11">registers.</tspan></text>
+      <text x="18" y="250" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">STEP-BY-STEP REASONING</text>
+      <text x="18" y="264" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Students observe each operator execute</tspan><tspan x="18" dy="11">in real time, making compound</tspan><tspan x="18" dy="11">calculations completely transparent.</tspan></text>
+      <text x="18" y="307" class="font-mono" font-size="10px" font-weight="700" fill="#0284c7">CCSS.MATH.PRACTICE.MP1</text>
+      <text x="18" y="321" class="font-mono" font-size="8.3px" fill="#64748b"><tspan x="18" dy="0">Make sense of problems &amp;amp;</tspan><tspan x="18" dy="11">persevere.</tspan></text>
+    </g>
+
+    <g transform="translate(700, 105)">
+      <rect x="0" y="0" width="295" height="350" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      <rect x="15" y="15" width="220" height="26" rx="4" fill="#059669" />
+      <text x="125" y="32" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#ffffff">3. LEARNING CONTINUUM</text>
+      <text x="18" y="68" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">GRADES K–2: FOUNDATION</text>
+      <text x="18" y="82" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Ten-Frames, Number Rack &amp;amp; Dominoes</tspan><tspan x="18" dy="11">for subitizing, counting, 5-and-10</tspan><tspan x="18" dy="11">anchors, and place value fluency.</tspan></text>
+      <text x="18" y="125" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">GRADES 3–5: FRACTIONS</text>
+      <text x="18" y="139" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Fraction bars, prime factorization</tspan><tspan x="18" dy="11">towers, time gears, and discrete</tspan><tspan x="18" dy="11">combinatorics with probability dice.</tspan></text>
+      <text x="18" y="182" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">GRADES 6–12: ADVANCED</text>
+      <text x="18" y="196" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Algebraic factoring rails, unit circle</tspan><tspan x="18" dy="11">volvelles, complex numbers, and</tspan><tspan x="18" dy="11">professional scientific RPN workflows.</tspan></text>
+      <text x="18" y="239" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">DIFFERENTIATED TIERS</text>
+      <text x="18" y="253" class="font-mono" font-size="8.3px" fill="#475569"><tspan x="18" dy="0">Tactile physical manipulates bridge</tspan><tspan x="18" dy="11">English language learners, visual</tspan><tspan x="18" dy="11">learners, and accelerated STEM</tspan><tspan x="18" dy="11">students.</tspan></text>
+      <text x="18" y="307" class="font-mono" font-size="10px" font-weight="700" fill="#059669">CCSS.MATH.PRACTICE.MP4</text>
+      <text x="18" y="321" class="font-mono" font-size="8.3px" fill="#64748b"><tspan x="18" dy="0">Model with mathematics.</tspan></text>
+    </g>
+
+    <!-- Bottom Feature Callout -->
+    <g transform="translate(30, 480)">
+      <rect x="0" y="0" width="965" height="255" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      <rect x="18" y="16" width="310" height="26" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      <text x="173" y="33" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#0f172a">CLASSROOM CARE &amp; SANITIZATION</text>
+      <text x="20" y="66" class="font-mono" font-size="9.8px" font-weight="700" fill="#0284c7">1. FOOD-SAFE RECYCLED POLYMERS:</text>
+      <text x="20" y="80" class="font-mono" font-size="8.4px" fill="#475569"><tspan x="20" dy="0">Manufactured from high-purity virgin polymer (PLA / PETG). Non-toxic, odorless, BPA-free,</tspan><tspan x="20" dy="11">and compliant with RoHS, EN71-3, and ASTM F963 safety standards.</tspan></text>
+      <text x="20" y="112" class="font-mono" font-size="9.8px" font-weight="700" fill="#059669">2. CLASSROOM CLEANING &amp;amp; DISINFECTION:</text>
+      <text x="20" y="126" class="font-mono" font-size="8.4px" fill="#475569"><tspan x="20" dy="0">Wash blocks in warm water with mild liquid dish soap (up to 55°C / 130°F) or wipe with</tspan><tspan x="20" dy="11">standard classroom disinfectant wipes. Allow to air dry flat before storage.</tspan></text>
+      <text x="20" y="158" class="font-mono" font-size="9.8px" font-weight="700" fill="#d97706">3. MODULAR STORAGE DETENTS:</text>
+      <text x="20" y="172" class="font-mono" font-size="8.4px" fill="#475569"><tspan x="20" dy="0">Stackable 3x1 and 3x3 stage lids feature multi-axis detents tested to 10,000+ opening</tspan><tspan x="20" dy="11">cycles. Trays pack rattle-free for classroom mobile cart transport.</tspan></text>
+      <text x="20" y="204" class="font-mono" font-size="9.8px" font-weight="700" fill="#0f172a">4. SOCRATIC CLASSROOM DISCUSSION:</text>
+      <text x="20" y="218" class="font-mono" font-size="8.4px" fill="#475569"><tspan x="20" dy="0">Encourage students to physically construct models to test hypotheses before executing</tspan><tspan x="20" dy="11">calculator calculations: "What invariant property did your physical model prove?"</tspan></text>
+    </g>
+  </g>
+
+  <!-- Quadrant 4 (Bottom-Right): QC & In-Box Specification -->
+  <g transform="translate(1135, 880)">
+    <rect x="0" y="0" width="1030" height="770" rx="12" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8" />
+    
+    <!-- Header -->
+    <rect x="20" y="20" width="990" height="60" rx="8" fill="#0f172a" />
+    <text x="40" y="58" class="font-mono" font-size="18px" font-weight="700" fill="#38bdf8">PRIME-01: IN-BOX SPECIFICATION &amp; QC AUDIT</text>
+    <text x="820" y="58" class="font-mono" font-size="12px" font-weight="700" fill="#f59e0b">CALIFORNIA LAB QC</text>
+
+    <!-- Content Sections -->
+    <g transform="translate(30, 105)">
+      <!-- Left Column: Verification Checklist -->
+      <rect x="0" y="0" width="470" height="630" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      <text x="20" y="32" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">CALIFORNIA LAB QC AUDIT CHECKLIST</text>
+      <line x1="20" y1="42" x2="450" y2="42" stroke="#e2e8f0" stroke-width="1" />
+      
+      <text x="20" y="68" class="font-mono" font-size="9.5px" font-weight="700" fill="#059669">[✓] MITUTOYO DIGITAL CALIPER DATUM:</text>
+      <text x="20" y="82" class="font-mono" font-size="8.2px" fill="#475569"><tspan x="20" dy="0">All block dimensions conform to ±0.05 mm tolerance</tspan><tspan x="20" dy="11">across universal 7.00 mm 1U visible height system.</tspan></text>
+      <text x="20" y="112" class="font-mono" font-size="9.5px" font-weight="700" fill="#059669">[✓] 1.85 MM RETENTION SOCKET INTERFERENCE:</text>
+      <text x="20" y="126" class="font-mono" font-size="8.2px" fill="#475569"><tspan x="20" dy="0">Stacking plugs seat flush with 0.15 mm diametral</tspan><tspan x="20" dy="11">interference for zero-wobble tower verticality.</tspan></text>
+      <text x="20" y="156" class="font-mono" font-size="9.5px" font-weight="700" fill="#059669">[✓] ZERO-RATTLE DETENT LOCK:</text>
+      <text x="20" y="170" class="font-mono" font-size="8.2px" fill="#475569"><tspan x="20" dy="0">Multi-axis lid detents lock securely over 3x1 bin</tspan><tspan x="20" dy="11">perimeter rim. Audible snap with 1.4 N retention.</tspan></text>
+      <text x="20" y="200" class="font-mono" font-size="9.5px" font-weight="700" fill="#059669">[✓] CONTINUOUS 360° MICRO-FLUTING &amp;amp; SEAM TRAP:</text>
+      <text x="20" y="214" class="font-mono" font-size="8.2px" fill="#475569"><tspan x="20" dy="0">2.0 mm pitch, 0.50 mm flutes. Slicer seam locked into</tspan><tspan x="20" dy="11">rear-left corner seam trap notch.</tspan></text>
+      <text x="20" y="244" class="font-mono" font-size="9.5px" font-weight="700" fill="#059669">[✓] FOOD-SAFE RECYCLED POLYMER:</text>
+      <text x="20" y="258" class="font-mono" font-size="8.2px" fill="#475569"><tspan x="20" dy="0">100% virgin PLA / PETG. RoHS and EN71-3 compliant,</tspan><tspan x="20" dy="11">non-toxic, odorless, child-safe.</tspan></text>
+      <text x="20" y="288" class="font-mono" font-size="9.5px" font-weight="700" fill="#059669">[✓] IN-BOX COLLATERAL PLACEMENT:</text>
+      <text x="20" y="302" class="font-mono" font-size="8.2px" fill="#475569"><tspan x="20" dy="0">Place this reference card inside the box lid or inside</tspan><tspan x="20" dy="11">the storage tray.</tspan></text>
+
+      <line x1="20" y1="344" x2="450" y2="344" stroke="#e2e8f0" stroke-width="1" />
+      <text x="20" y="368" class="font-mono" font-size="11px" font-weight="700" fill="#0284c7">RPN HARDWARE COMPATIBILITY</text>
+      <text x="20" y="388" class="font-mono" font-size="8.8px" fill="#475569">• Compatible with StackCalc SC-6 (Early STEM)</text>
+      <text x="20" y="406" class="font-mono" font-size="8.8px" fill="#475569">• Compatible with StackCalc SC-32 (Scientific RPN)</text>
+      <text x="20" y="424" class="font-mono" font-size="8.8px" fill="#475569">• Zero parentheses, zero operator precedence errors</text>
+      <text x="20" y="442" class="font-mono" font-size="8.8px" fill="#475569">• Physical towers are the exact digital twin of the stack!</text>
+
+      <line x1="20" y1="458" x2="450" y2="458" stroke="#e2e8f0" stroke-width="1" />
+      <text x="20" y="480" class="font-mono" font-size="10.5px" font-weight="700" fill="#0f172a">TOTAL KIT INVENTORY: 45 PIECES</text>
+      <text x="20" y="500" class="font-mono" font-size="8.8px" fill="#64748b">Verified by Assembly Tech &amp; Machine Vision at Packing Bench.</text>
+      <text x="20" y="520" class="font-mono" font-size="9px" font-weight="700" fill="#059669">Inspection Pass • Mountain View, CA</text>
+    </g>
+
+    <!-- Right Column: Support & District Procurement -->
+    <g transform="translate(530, 105)">
+      <rect x="0" y="0" width="470" height="630" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      
+      <!-- Guarantee Box -->
+      <g transform="translate(20, 20)">
+        <rect x="0" y="0" width="430" height="160" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.2" />
+        <text x="20" y="32" class="font-mono" font-size="12px" font-weight="700" fill="#166534">LIFETIME REPLACEMENT GUARANTEE</text>
+        <text x="20" y="52" class="font-mono" font-size="9.5px" font-weight="700" fill="#059669">NO LOST PIECE LEFT BEHIND™</text>
+        <text x="20" y="74" class="font-mono" font-size="8.3px" fill="#475569">
+          <tspan x="20" dy="0">Classrooms lose blocks. We understand. Every</tspan><tspan x="20" dy="12">individual manipulative block has a permanent part</tspan><tspan x="20" dy="12">number. Visit stackcalc.io/parts to order exact</tspan><tspan x="20" dy="12">replacement pieces with same-day dispatch</tspan><tspan x="20" dy="12">($1.99–$2.99/piece).</tspan>
+        </text>
+        <text x="20" y="145" class="font-mono" font-size="9.5px" font-weight="700" fill="#166534">PORTAL: stackcalc.io/parts</text>
+      </g>
+
+      <!-- District Procurement Box -->
+      <g transform="translate(20, 205)">
+        <rect x="0" y="0" width="430" height="175" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+        <text x="20" y="32" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">DISTRICT &amp; CLASSROOM PROCUREMENT</text>
+        <text x="20" y="54" class="font-mono" font-size="9px" fill="#475569">• Net-30 Invoicing for US Public &amp; Private School Districts.</text>
+        <text x="20" y="74" class="font-mono" font-size="9px" fill="#475569">• Volume Classroom Bundles (10-packs &amp; 30-packs).</text>
+        <text x="20" y="94" class="font-mono" font-size="9px" fill="#475569">• Free Teacher Activity Books &amp; Lesson Blueprints.</text>
+        <text x="20" y="114" class="font-mono" font-size="9px" fill="#475569">• Title I STEM &amp; Carl D. Perkins Grant eligible.</text>
+        <text x="20" y="136" class="font-mono" font-size="9px" fill="#475569">Email: procurement@stackcalc.io</text>
+        <text x="20" y="156" class="font-mono" font-size="9.5px" font-weight="700" fill="#0284c7">stackcalc.io/schools</text>
+      </g>
+
+      <!-- 3D Video Demonstration Portal -->
+      <g transform="translate(20, 405)">
+        <rect x="0" y="0" width="430" height="205" rx="6" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.2" />
+        <text x="20" y="32" class="font-mono" font-size="12px" font-weight="700" fill="#0369a1">3D INTERACTIVE VIDEO DEMOS</text>
+        <text x="20" y="54" class="font-mono" font-size="9px" fill="#475569">Scan the QR code on the back of this card (Side B) to access:</text>
+        <text x="20" y="78" class="font-mono" font-size="9px" fill="#475569">• 60fps 3D animated walkthrough of each lesson</text>
+        <text x="20" y="98" class="font-mono" font-size="9px" fill="#475569">• Interactive web 3D model with explode view</text>
+        <text x="20" y="118" class="font-mono" font-size="9px" fill="#475569">• Step-by-step calculator keystroke simulations</text>
+        <text x="20" y="138" class="font-mono" font-size="9px" fill="#475569">• Printable student worksheets and answer keys</text>
+        <text x="20" y="165" class="font-mono" font-size="9px" font-weight="700" fill="#0284c7">VIDEOS: stackcalc.io/products</text>
+        <text x="20" y="188" class="font-mono" font-size="8.5px" fill="#64748b">Designed &amp; Engineered in Mountain View, California</text>
+      </g>
+    </g>
+  </g>
+</svg>

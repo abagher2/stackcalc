@@ -1,0 +1,3494 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Shannon's switching algebra and information theory, the 36-bit two's-complement word, silicon scaling laws, and combinatorial keyspaces on the StackCalc SC-32.">
+      
+      
+        <meta name="author" content="StackCalc Engineering">
+      
+      
+        <link rel="canonical" href="https://www.stackcalc.io/manuals/sc32/10-computer-science-bases/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/stackcalc-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Chapter 10: Boolean Logic, Two's Complement & the 36-Bit Word | Thinking in the Stack (SC-32) - StackCalc32</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/brutalist.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/ecommerce.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  
+  <meta name="robots" content="noindex, nofollow">
+  
+  
+  
+  
+  
+  <meta property="og:site_name" content="StackCalc32">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chapter 10: Boolean Logic, Two&#39;s Complement &amp; the 36-Bit Word | Thinking in the Stack (SC-32)">
+  <meta property="og:description" content="Shannon&#39;s switching algebra and information theory, the 36-bit two&#39;s-complement word, silicon scaling laws, and combinatorial keyspaces on the StackCalc SC-32.">
+  <meta property="og:url" content="https://www.stackcalc.io/manuals/sc32/10-computer-science-bases/">
+  <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chapter 10: Boolean Logic, Two&#39;s Complement &amp; the 36-Bit Word | Thinking in the Stack (SC-32)">
+  <meta name="twitter:description" content="Shannon&#39;s switching algebra and information theory, the 36-bit two&#39;s-complement word, silicon scaling laws, and combinatorial keyspaces on the StackCalc SC-32.">
+  <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
+  <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      charcoal: '#181A1B',
+                      pitch: '#000000',
+                      icyblue: '#E2E6EE',
+                      mask: '#CBD1DC',
+                      accentCyan: '#32ADE6',
+                      accentOrange: '#FF9F0A',
+                      accentAmber: '#FFBF00'
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'],
+                      mono: ['Space Mono', 'monospace'],
+                      terminus: ['Terminus', 'Space Mono', 'monospace'],
+                      tiny5: ['Tiny5', 'Terminus', 'monospace'],
+                  }
+              }
+          }
+      }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-10-boolean-logic-twos-complement-the-36-bit-word" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            StackCalc32
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 10: Boolean Logic, Two's Complement & the 36-Bit Word | Thinking in the Stack (SC-32)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="../../../learning-lab/" class="brutalist-button-header">LEARNING LAB</a>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../products/" class="md-tabs__link">
+          
+  
+  Catalog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../curriculum/" class="md-tabs__link">
+          
+  
+  Curriculum & Standards
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Books & Reference Manuals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-tabs__link">
+        
+  
+    
+  
+  Build Logs ↗
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../privacy/" class="md-tabs__link">
+          
+  
+  Legal & Support
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+      <svg width="28" height="35" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
+    <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
+    <rect class="stack-rect" x="2" y="12" width="28" height="7" rx="2" stroke="#E2E6EE" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="21" width="28" height="7" rx="2" stroke="#94A3B8" stroke-width="2"/>
+    <rect class="stack-rect" x="2" y="30" width="28" height="7" rx="2" stroke="#FF4400" stroke-width="2"/>
+</svg>
+    </a>
+    StackCalc32
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Catalog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Catalog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Directory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SC-32 Scientific Calculator
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SC-32 Scientific Calculator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Assembly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc32-calculator/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operational Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-elementary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Elementary Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From Blocks to the Stack (SC-6 Book)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fraction Studio Towers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Fraction Studio Towers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/fraction-studio/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/prime-factor-studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prime Factor Studio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/place-value/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Place Value Studio & Regrouping Trays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Classroom Planetary Clock
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Classroom Planetary Clock
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/classroom-clock/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ten Frames & Counters
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Ten Frames & Counters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/ten-frames/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/counting-tiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Counting & Array Tiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math Domino Studio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Math Domino Studio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/math-dominoes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/quest-scoreboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Quest Scoreboard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algebra Boxes & Tiles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            Algebra Boxes & Tiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/algebra-boxes/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Probability Dice & Spinner
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            Probability Dice & Spinner
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/dice-and-spinner/lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classroom Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/unit-circle-volvelle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unit Circle & Trig Volvelle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/stands-and-pouches/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stands & Pouches
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/curriculum-and-decks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Curriculum & Decks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../printables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Makerspace 3D Print Kits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../downloads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Download Center (PDFs & 3MFs)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Curriculum & Standards
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Curriculum & Standards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Curriculum Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/sc6-elementary-companion-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-6 Companion Workbook (253 Problems)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/sc32-scientific-companion-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SC-32 Companion Casebook (339 Problems)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/big-ideas-middle-school-sc6-workbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Big Ideas Middle School Catch-Up (SC-6)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/alignment-matrix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standards Alignment Matrix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/worksheets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Printable Student Worksheets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/teacher-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teacher Facilitator Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Master Answer Key (Books 2A–5)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/rpn-elementary-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPN Elementary Power Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../curriculum/uil-competition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Competitive STEM & Speed Calculation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Books & Reference Manuals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Books & Reference Manuals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Official Manuals & Reference Books ($16)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/sc6-book/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From Blocks to the Stack (SC-6 Book)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bestseller-rubric-and-editorial-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bestseller Rubric & Editorial Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../critical-editorial-review-and-school-adoption/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Critical Editorial Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agent & OpenAPI Spec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware & Rubric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ios_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mac & iOS Apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../press/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Press & Editorial Kit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../etsy-publishing-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing & Sourcing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shipping-and-packaging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shipping & Packaging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exam-compliance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exam Compliance & Proctor Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_11">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2026/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2026
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_12">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/3d-printing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Printing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/cad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CAD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/education/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Education
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/kicad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KiCad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/manufacturing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/mathematics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mathematics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/pcb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/pedagogy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pedagogy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Performance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/product-design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/rpn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/swift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Swift
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/watchos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    watchOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build Logs ↗
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Legal & Support
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Legal & Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terms of Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../parts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Replacement Parts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#101-positional-radices-boolean-switching-algebra-the-36-bit-word" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1 Positional Radices, Boolean Switching Algebra &amp; the 36-Bit Word
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.1 Positional Radices, Boolean Switching Algebra & the 36-Bit Word">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1011-building-binary-adders-universal-gates-carry-lookahead-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1.1 Building Binary Adders, Universal Gates &amp; Carry-Lookahead Trees
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1012-powers-of-two-in-disguise-hexadecimal-gray-codes-ascii" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1.2 Powers of Two in Disguise: Hexadecimal, Gray Codes &amp; ASCII
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1013-the-36-bit-word-architecture-hardware-boundary-guards" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1.3 The 36-Bit Word Architecture &amp; Hardware Boundary Guards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1014-twos-complement-odometer-arithmetic-bitwise-masks-euclids-ladder" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1.4 Two's-Complement Odometer Arithmetic, Bitwise Masks &amp; Euclid's Ladder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102-information-theory-channel-capacity-silicon-scaling-laws" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 Information Theory, Channel Capacity &amp; Silicon Scaling Laws
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.2 Information Theory, Channel Capacity & Silicon Scaling Laws">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1021-nyquist-sampling-shannonhartley-capacity-hamming-error-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2.1 Nyquist Sampling, Shannon–Hartley Capacity &amp; Hamming Error Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1022-the-physics-and-scaling-laws-of-silicon-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2.2 The Physics and Scaling Laws of Silicon Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1023-speaking-to-silicon-control-registers-fault-masks-clock-dividers" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2.3 Speaking to Silicon: Control Registers, Fault Masks &amp; Clock Dividers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103-word-cleavage-bit-packing-combinatorial-keyspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3 Word Cleavage, Bit Packing &amp; Combinatorial Keyspaces
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.3 Word Cleavage, Bit Packing & Combinatorial Keyspaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1031-euclidean-word-cleavage-number-theoretic-ladders-on-the-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3.1 Euclidean Word Cleavage &amp; Number-Theoretic Ladders on the Stack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1032-combinatorial-state-spaces-birthday-bound-collision-sizing" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3.2 Combinatorial State Spaces &amp; Birthday-Bound Collision Sizing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1033-unpacking-multi-byte-network-words-ipv4-cidr-subnets-flash-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3.3 Unpacking Multi-Byte Network Words: IPv4 CIDR Subnets &amp; Flash Pages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1034-bit-field-shift-and-merge-packing-rgb565-pixels-gpio-masks" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3.4 Bit-Field Shift-and-Merge Packing: RGB565 Pixels &amp; GPIO Masks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1035-ieee-754-floating-point-bit-unpacking-checksums-endianness" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3.5 IEEE-754 Floating-Point Bit Unpacking, Checksums &amp; Endianness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1036-try-it-on-the-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3.6 Try It on the Stack
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="chapter-10-boolean-logic-twos-complement-the-36-bit-word">Chapter 10: Boolean Logic, Two's Complement &amp; the 36-Bit Word</h1>
+<p>In the summer of 1937, twenty-one-year-old MIT master's student Claude Elwood Shannon stood in the basement of MIT's electrical engineering department tending Vannevar Bush's Differential Analyzer alongside hundreds of brass gears and electromechanical telephone relays <em>(<a href="../appendix-e-annotated-bibliography/#cite-shannon1938">Shannon, 1938</a>)</em>. That hundred-ton mechanical analog computer used spinning steel shafts, wheel-and-disc integrators, and mechanical torque amplifiers to integrate differential equations through physical rotation. Beneath the display glass of a digital calculator, however, a silicon processor contains no continuous slide-rule scales or spinning shafts—only microscopic switches that are either ON or OFF.</p>
+<p>Every time a physicist or ballistician brought a new system of differential equations to the MIT laboratory, Shannon had to configure two distinct subsystems: the continuous mechanical shafts of the differential analyzer, and a complex switching panel of over one hundred electromechanical telephone relays that controlled its clutches, limit switches, and safety interlocks. How could an array of two-state switches represent signed integers, floating-point mantissas, and error-corrected messages?</p>
+<h2 id="101-positional-radices-boolean-switching-algebra-the-36-bit-word">10.1 Positional Radices, Boolean Switching Algebra &amp; the 36-Bit Word</h2>
+<p>While wiring those telephone relays in series and in parallel, Shannon recognized the exact algebraic structure of two-valued Boolean logic over <span class="arithmatex">\(\{0, 1\}\)</span>. If a proposition or signal line is true (asserted), it carries the value <span class="arithmatex">\(1\)</span>; if it is false (unasserted), it carries the value <span class="arithmatex">\(0\)</span>. Combining two statements with logical conjunction (<code>AND</code>) behaves like algebraic multiplication (<span class="arithmatex">\(1 \cdot 1 = 1\)</span>, while <span class="arithmatex">\(1 \cdot 0 = 0 \cdot 1 = 0 \cdot 0 = 0\)</span>); combining them with inclusive disjunction (<code>OR</code>) behaves like saturating addition (<span class="arithmatex">\(1 + 0 = 1\)</span> and <span class="arithmatex">\(1 + 1 = 1\)</span>, governed by the idempotent laws <span class="arithmatex">\(A + A = A\)</span> and <span class="arithmatex">\(A \cdot A = A\)</span>); and negating a statement with <code>NOT</code> inverts <span class="arithmatex">\(1 \leftrightarrow 0\)</span> (<span class="arithmatex">\(\overline{1} = 0,\; \overline{0} = 1\)</span>), linked by De Morgan's duality identities:</p>
+<div class="arithmatex">\[\overline{A \cdot B} = \overline{A} + \overline{B}, \qquad \overline{A + B} = \overline{A} \cdot \overline{B} \tag{Eq. 10.1}\]</div>
+<p>Before the racks of clicking telephone relays in the MIT basement, Shannon established the exact mathematical isomorphism between physical switching networks and Boolean algebra. Two relay contacts wired in <em>series</em> conduct electrical current only if Switch A is closed <code>AND</code> Switch B is closed (<span class="arithmatex">\(A \cdot B\)</span>). Two contacts wired in <em>parallel</em> conduct current if Switch A is closed <code>OR</code> Switch B is closed (<span class="arithmatex">\(A + B\)</span>). A normally closed relay contact that opens when its electromagnet coil is energized acts as a physical <code>NOT</code> inverter (<span class="arithmatex">\(\overline{A}\)</span>). Every open or closed switch was a physical realization of two-valued Boolean algebra—and because any integer can be represented in base-2 binary digits using only the symbols <span class="arithmatex">\(1\)</span> and <span class="arithmatex">\(0\)</span>, networks of logical switches could add, subtract, compare, and store numbers electronically.</p>
+<p>In his 1937 MIT master's thesis, <em>A Symbolic Analysis of Relay and Switching Circuits</em> <em>(<a href="../appendix-e-annotated-bibliography/#cite-shannon1938">Shannon, 1938</a>)</em>, Shannon proved that any logical decision or arithmetic rule can be synthesized from binary switching gates. Eleven years later, in his 1948 Bell Laboratories paper <em>A Mathematical Theory of Communication</em>, Shannon completed this digital revolution by proving that all communication and computation can be measured in binary digits—<strong>bits</strong>—governed by laws of source entropy and channel capacity. Every microprocessor, memory array, packet router, and spacecraft guidance computer built since traces its digital architecture to Shannon's unification of binary numbers, Boolean algebra, and electrical switching circuits.</p>
+<h3 id="1011-building-binary-adders-universal-gates-carry-lookahead-trees">10.1.1 Building Binary Adders, Universal Gates &amp; Carry-Lookahead Trees</h3>
+<p>A digital logic circuit performs integer arithmetic in silicon by adding single binary bits <span class="arithmatex">\(A \in \{0, 1\}\)</span> and <span class="arithmatex">\(B \in \{0, 1\}\)</span>. When adding <span class="arithmatex">\(A + B\)</span> in base <span class="arithmatex">\(2\)</span>, the circuit produces a two-bit result consisting of a Carry bit <span class="arithmatex">\(C_{\text{out}}\)</span> (weighted in the twos column, <span class="arithmatex">\(2^1 = 2\)</span>) and a Sum bit <span class="arithmatex">\(S\)</span> (weighted in the ones column, <span class="arithmatex">\(2^0 = 1\)</span>). When <span class="arithmatex">\(A = 0\)</span> and <span class="arithmatex">\(B = 0\)</span>, the binary sum is <span class="arithmatex">\(00_2\)</span> (<span class="arithmatex">\(C_{\text{out}} = 0,\; S = 0\)</span>); when <span class="arithmatex">\(A = 0, B = 1\)</span> or <span class="arithmatex">\(A = 1, B = 0\)</span>, the sum is <span class="arithmatex">\(01_2\)</span> (<span class="arithmatex">\(C_{\text{out}} = 0,\; S = 1\)</span>); and when <span class="arithmatex">\(A = 1\)</span> and <span class="arithmatex">\(B = 1\)</span>, the binary sum is <span class="arithmatex">\(1 + 1 = 2_{10} = 10_2\)</span>, generating a carry into the <span class="arithmatex">\(2^1\)</span> column (<span class="arithmatex">\(C_{\text{out}} = 1\)</span>) while wrapping the <span class="arithmatex">\(2^0\)</span> sum column back to <span class="arithmatex">\(0\)</span> (<span class="arithmatex">\(S = 0\)</span>).</p>
+<p>Those two output columns map one-to-one onto elementary Boolean gates:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Input Bit <span class="arithmatex">\(A\)</span></th>
+<th style="text-align: center;">Input Bit <span class="arithmatex">\(B\)</span></th>
+<th style="text-align: center;">Carry Bit <span class="arithmatex">\(C_{\text{out}}\)</span> (<span class="arithmatex">\(2^1\)</span> Column)</th>
+<th style="text-align: center;">Sum Bit <span class="arithmatex">\(S\)</span> (<span class="arithmatex">\(2^0\)</span> Column)</th>
+<th style="text-align: left;">Boolean Gate Synthesis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: left;">Neither switch closed <span class="arithmatex">\(\implies 00_2 = 0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: left;">Odd parity (<code>XOR</code> <span class="arithmatex">\(= 1\)</span>, <code>AND</code> <span class="arithmatex">\(= 0\)</span>) <span class="arithmatex">\(\implies 01_2 = 1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: left;">Odd parity (<code>XOR</code> <span class="arithmatex">\(= 1\)</span>, <code>AND</code> <span class="arithmatex">\(= 0\)</span>) <span class="arithmatex">\(\implies 01_2 = 1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: left;">Both closed (<code>AND</code> <span class="arithmatex">\(= 1\)</span>, <code>XOR</code> <span class="arithmatex">\(= 0\)</span>) <span class="arithmatex">\(\implies 10_2 = 2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The Carry column is <code>1</code> <em>if and only if</em> both <span class="arithmatex">\(A\)</span> <code>AND</code> <span class="arithmatex">\(B\)</span> are <code>1</code> (<span class="arithmatex">\(C_{\text{out}} = A \cdot B\)</span>). The Sum column is <code>1</code> <em>if and only if</em> <span class="arithmatex">\(A\)</span> or <span class="arithmatex">\(B\)</span> is <code>1</code>, but not both, which matches the truth table of the Exclusive-OR (<code>XOR</code>, <span class="arithmatex">\(S = A \oplus B = A\overline{B} + \overline{A}B\)</span>, addition modulo <span class="arithmatex">\(2\)</span>) gate. Wiring one <code>XOR</code> gate and one <code>AND</code> gate side by side across the same two input wires forms a physical <em>Half-Adder</em>.</p>
+<p>To add multi-bit binary words column by column from right to left, each bit position <span class="arithmatex">\(k\)</span> above Bit <span class="arithmatex">\(0\)</span> must add three binary wires: the two operand bits <span class="arithmatex">\(A_k\)</span> and <span class="arithmatex">\(B_k\)</span> plus an incoming carry bit <span class="arithmatex">\(C_{\text{in}}\)</span> arriving from column <span class="arithmatex">\(k - 1\)</span>. A first half-adder combines <span class="arithmatex">\(A_k\)</span> and <span class="arithmatex">\(B_k\)</span> into a local carry-generate signal <span class="arithmatex">\(G_k = A_k \cdot B_k\)</span> (meaning column <span class="arithmatex">\(k\)</span> creates a carry of its own even if <span class="arithmatex">\(C_{\text{in}} = 0\)</span>) and a carry-propagate parity signal <span class="arithmatex">\(P_k = A_k \oplus B_k\)</span> (meaning exactly one of <span class="arithmatex">\(A_k, B_k\)</span> is <code>1</code>, so an incoming carry <span class="arithmatex">\(C_{\text{in}} = 1\)</span> will pass through to the next column). Cascading a second half-adder to fold <span class="arithmatex">\(C_{\text{in}}\)</span> into <span class="arithmatex">\(P_k\)</span> and joining both carry paths with an <code>OR</code> gate forms a <em>Full-Adder</em> with sum output <span class="arithmatex">\(S_k\)</span> and carry output <span class="arithmatex">\(C_{\text{out}}\)</span>:</p>
+<div class="arithmatex">\[S_k = A_k \oplus B_k \oplus C_{\text{in}}, \qquad C_{\text{out}} = (A_k \cdot B_k) + \bigl(C_{\text{in}} \cdot (A_k \oplus B_k)\bigr) \tag{Eq. 10.2}\]</div>
+<p>The three-way <code>XOR</code> chain <span class="arithmatex">\(A_k \oplus B_k \oplus C_{\text{in}}\)</span> asserts <span class="arithmatex">\(S_k = 1\)</span> whenever an odd number of input wires (<span class="arithmatex">\(1\)</span> or <span class="arithmatex">\(3\)</span>) are high, while <span class="arithmatex">\(C_{\text{out}}\)</span> goes high either when column <span class="arithmatex">\(k\)</span> generates a carry internally (<span class="arithmatex">\(A_k \cdot B_k = 1\)</span>) or when an incoming carry <span class="arithmatex">\(C_{\text{in}} = 1\)</span> arrives across an odd-parity pair (<span class="arithmatex">\(A_k \oplus B_k = 1\)</span>). In a simple 36-bit <em>ripple-carry adder</em>, a carry born at Bit <span class="arithmatex">\(0\)</span> must ripple sequentially through all <span class="arithmatex">\(36\)</span> full-adders before Bit <span class="arithmatex">\(35\)</span> settles. Expanding the recurrence <span class="arithmatex">\(C_{k+1} = G_k + P_k C_k\)</span> into a parallel <em>Carry-Lookahead Adder</em> (CLA) tree computes all <span class="arithmatex">\(36\)</span> carries in <span class="arithmatex">\(O(\log_2 w)\)</span> gate levels so a 36-bit arithmetic logic unit (ALU) adds ten-digit integers in a single clock cycle.</p>
+<p>A silicon foundry does not need to fabricate separate <code>AND</code>, <code>OR</code>, <code>NOT</code>, and <code>XOR</code> transistor cells. By De Morgan's duality laws, either the <strong><code>NAND</code> gate</strong> (<span class="arithmatex">\(A \uparrow B = \overline{A \cdot B}\)</span>) or the <strong><code>NOR</code> gate</strong> (<span class="arithmatex">\(A \downarrow B = \overline{A + B}\)</span>) is <em>functionally complete</em>, so every Boolean function and adder circuit can be built from a single gate type (<code>NOT A</code> <span class="arithmatex">\(= A \uparrow A\)</span>, <code>A AND B</code> <span class="arithmatex">\(= (A \uparrow B) \uparrow (A \uparrow B)\)</span>, and <code>A OR B</code> <span class="arithmatex">\(= (A \uparrow A) \uparrow (B \uparrow B)\)</span>).</p>
+<p>Aerospace engineers used this universality to build the Block II Apollo Guidance Computer out of <span class="arithmatex">\(5,600\)</span> identical 3-input <code>NOR</code> integrated circuits, so that a single hyper-reliable silicon component could be radiation-screened and flight-qualified across the spacecraft. In hexadecimal arithmetic across a 16-bit register mask (<code>FFFFh</code>), De Morgan's complement duality <span class="arithmatex">\(\overline{A + B} = \overline{A} \cdot \overline{B}\)</span> holds nibble by nibble: for two disjoint bitmasks <span class="arithmatex">\(A = \mathtt{0F00h}\)</span> and <span class="arithmatex">\(B = \mathtt{003Ch}\)</span>, their bitwise union is <span class="arithmatex">\(A \mid B = \mathtt{0F3Ch}\)</span>, and inverting against <code>FFFFh</code> (<code>FFFFh - 0F3Ch</code>) yields <span class="arithmatex">\(\overline{A \mid B} = \mathtt{F0C3h}\)</span>, equal to the intersection of their individual complements <span class="arithmatex">\(\overline{A} = \mathtt{F0FFh}\)</span> and <span class="arithmatex">\(\overline{B} = \mathtt{FFC3h}\)</span> (<code>F0FFh - 003Ch = F0C3h</code>).</p>
+<h3 id="1012-powers-of-two-in-disguise-hexadecimal-gray-codes-ascii">10.1.2 Powers of Two in Disguise: Hexadecimal, Gray Codes &amp; ASCII</h3>
+<p>The integer <code>255</code> takes four distinct written forms across the standard positional bases—<code>255</code> in decimal, <code>11111111b</code> in binary, <code>377o</code> in octal, and <code>FFh</code> in hexadecimal—even though all four character strings represent the identical binary bit pattern in hardware.</p>
+<p>In positional notation, the decimal integer <span class="arithmatex">\(1,042_{10}\)</span> (Decimal, radix <span class="arithmatex">\(b = 10\)</span>) is a polynomial in powers of <span class="arithmatex">\(10\)</span> that evaluates from the most significant digit downward by Horner's nested recurrence:</p>
+<div class="arithmatex">\[1,042_{10} = 1 \times 10^3 + 0 \times 10^2 + 4 \times 10^1 + 2 \times 10^0 = ((1 \times 10 + 0) \times 10 + 4) \times 10 + 2 \tag{Eq. 10.3}\]</div>
+<p>Base <span class="arithmatex">\(10\)</span> reflects ten-finger counting, not a requirement of arithmetic. Building an electronic circuit that reliably distinguishes ten intermediate analog voltage levels (<span class="arithmatex">\(0\text{ V}, 0.5\text{ V}, 1\text{ V}, \dots, 4.5\text{ V}\)</span>) is vulnerable to thermal drift, cosmic-ray charge injection, and resistor aging. Instead, digital circuits operate bistably between two saturated states: cutoff OFF (<span class="arithmatex">\(0\)</span>) and saturation ON (<span class="arithmatex">\(1\)</span>). In Binary (radix <span class="arithmatex">\(b = 2\)</span>), each column <span class="arithmatex">\(k\)</span> from right to left carries positional weight <span class="arithmatex">\(2^k\)</span> (<span class="arithmatex">\(2^0 = 1,\; 2^1 = 2,\; 2^2 = 4,\; 2^3 = 8,\; 2^4 = 16,\; \dots\)</span>):</p>
+<div class="arithmatex">\[1,042_{10} = 1,024 + 16 + 2 = 1 \times 2^{10} + 1 \times 2^4 + 1 \times 2^1 = 10000010010_2 \tag{Eq. 10.4}\]</div>
+<p>Although base-2 binary matches bistable transistor hardware, inspecting a 36-bit binary word like <code>000011000000101010000000101000101101b</code> overwhelms human visual working memory. Computer architects compress raw binary bit strings into compact human-readable notation without dividing by <span class="arithmatex">\(10\)</span> by adopting radices that are exact integer powers of two: Octal (<code>OCT</code>, base <span class="arithmatex">\(b = 8 = 2^3\)</span>) and Hexadecimal (<code>HEX</code>, base <span class="arithmatex">\(b = 16 = 2^4\)</span>).</p>
+<p>Because <span class="arithmatex">\(8 = 2^3\)</span>, each octal digit (<code>0</code> through <code>7</code>) represents an exact 3-bit triad (<code>000</code> through <code>111</code>), so converting between binary and octal requires only partitioning the bit string into 3-bit groups from right to left. Because <span class="arithmatex">\(16 = 2^4\)</span>, each hexadecimal digit represents an exact 4-bit nibble (<code>0000</code> through <code>1111</code>), using digits <code>0</code>–<code>9</code> for values <span class="arithmatex">\(0\)</span>–<span class="arithmatex">\(9\)</span> and the letters <code>A</code> (<span class="arithmatex">\(10\)</span>), <code>B</code> (<span class="arithmatex">\(11\)</span>), <code>C</code> (<span class="arithmatex">\(12\)</span>), <code>D</code> (<span class="arithmatex">\(13\)</span>), <code>E</code> (<span class="arithmatex">\(14\)</span>), and <code>F</code> (<span class="arithmatex">\(15\)</span>) for the remaining six patterns. Two hexadecimal digits side by side (<code>00h</code> through <code>FFh</code>) pack an exact 8-bit byte (<span class="arithmatex">\(2^8 = 256\)</span> values from <span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(255\)</span>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Decimal (<code>DEC</code>)</th>
+<th style="text-align: center;">4-Bit Binary Nibble (<code>BIN</code>)</th>
+<th style="text-align: center;">Octal (<code>OCT</code>)</th>
+<th style="text-align: center;">Hexadecimal (<code>HEX</code>)</th>
+<th style="text-align: left;">Positional Power Decomposition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0000b</code></td>
+<td style="text-align: center;"><code>0o</code></td>
+<td style="text-align: center;"><code>0h</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(0\)</span> (all 4 nibble bits OFF)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>5</code></td>
+<td style="text-align: center;"><code>0101b</code></td>
+<td style="text-align: center;"><code>5o</code></td>
+<td style="text-align: center;"><code>5h</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(4 + 1 = 2^2 + 2^0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>7</code></td>
+<td style="text-align: center;"><code>0111b</code></td>
+<td style="text-align: center;"><code>7o</code></td>
+<td style="text-align: center;"><code>7h</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(4 + 2 + 1 = 2^3 - 1\)</span> (maximum 3-bit octal triad)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>8</code></td>
+<td style="text-align: center;"><code>1000b</code></td>
+<td style="text-align: center;"><code>10o</code></td>
+<td style="text-align: center;"><code>8h</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(2^3\)</span> (carries into second octal column)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>10</code></td>
+<td style="text-align: center;"><code>1010b</code></td>
+<td style="text-align: center;"><code>12o</code></td>
+<td style="text-align: center;"><code>Ah</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(8 + 2 = 2^3 + 2^1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>12</code></td>
+<td style="text-align: center;"><code>1100b</code></td>
+<td style="text-align: center;"><code>14o</code></td>
+<td style="text-align: center;"><code>Ch</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(8 + 4 = 2^3 + 2^2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>15</code></td>
+<td style="text-align: center;"><code>1111b</code></td>
+<td style="text-align: center;"><code>17o</code></td>
+<td style="text-align: center;"><code>Fh</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(8 + 4 + 2 + 1 = 2^4 - 1\)</span> (all 4 nibble bits ON)</td>
+</tr>
+</tbody>
+</table>
+<p>Hexadecimal reduces binary bit inspection to immediate visual translation. When inspecting the 16-bit hexadecimal word <code>3C6Ah</code>, the four nibbles expand from left to right as <code>3h</code> <span class="arithmatex">\(= 2 + 1 = \mathtt{0011}\)</span>, <code>Ch</code> (<span class="arithmatex">\(12_{10}\)</span>) <span class="arithmatex">\(= 8 + 4 = \mathtt{1100}\)</span>, <code>6h</code> <span class="arithmatex">\(= 4 + 2 = \mathtt{0110}\)</span>, and <code>Ah</code> (<span class="arithmatex">\(10_{10}\)</span>) <span class="arithmatex">\(= 8 + 2 = \mathtt{1010}\)</span>, concatenating to <code>0011 1100 0110 1010b</code>.</p>
+<p>When converting into or out of an arbitrary positional radix <span class="arithmatex">\(b\)</span> (such as base-<span class="arithmatex">\(12\)</span> duodecimal, base-<span class="arithmatex">\(36\)</span> alphanumeric serial codes, or base-<span class="arithmatex">\(60\)</span> sexagesimal), two dual mathematical algorithms apply. First, <strong>Horner's forward recurrence</strong> expands any <span class="arithmatex">\(m\)</span>-digit string <span class="arithmatex">\((d_{m-1} d_{m-2}\dots d_1 d_0)_b\)</span> into decimal as <span class="arithmatex">\(((d_{m-1} b + d_{m-2})b + \cdots + d_1)b + d_0\)</span> by multiplying by <span class="arithmatex">\(b\)</span> and adding the next digit from left to right. Second, <strong>repeated Euclidean division</strong> converts a decimal integer <span class="arithmatex">\(N\)</span> into base <span class="arithmatex">\(b\)</span>: since <span class="arithmatex">\(N = Q_0 \cdot b + d_0\)</span>, dividing <span class="arithmatex">\(N\)</span> by <span class="arithmatex">\(b\)</span> extracts the least-significant digit <span class="arithmatex">\(d_0 = N \bmod b\)</span> as the remainder and leaves the reduced quotient <span class="arithmatex">\(Q_0 = \lfloor N / b \rfloor\)</span> for the next division. Dividing the decimal serial ID <span class="arithmatex">\(44,255_{10}\)</span> twice by <span class="arithmatex">\(36\)</span> peels off remainders <span class="arithmatex">\(d_0 = 11\)</span> (<code>'B'</code>), <span class="arithmatex">\(d_1 = 5\)</span> (<code>'5'</code>), and final quotient <span class="arithmatex">\(d_2 = 34\)</span> (<code>'Y'</code>), encoding <span class="arithmatex">\(44,255 = 34 \times 36^2 + 5 \times 36^1 + 11 \times 36^0 = \mathbf{\mathtt{Y5B}_{36}}\)</span>.</p>
+<p>Standard positional binary has a physical hazard on electromechanical rotary shaft encoders: when a shaft rotates across the midpoint from <span class="arithmatex">\(7_{10}\)</span> (<code>0111b</code>) to <span class="arithmatex">\(8_{10}\)</span> (<code>1000b</code>), all four binary brushes must switch at once. If the mechanical contacts toggle microseconds apart, the encoder transiently outputs spurious codes like <code>1111b</code> (<span class="arithmatex">\(15\)</span>) or <code>0000b</code> (<span class="arithmatex">\(0\)</span>). The <strong>Reflected Binary Code</strong> (Gray code) eliminates this hazard by ordering the <span class="arithmatex">\(2^n\)</span> binary words so that adjacent integers differ in <strong>exactly one bit position</strong> (unit Hamming distance, <span class="arithmatex">\(d_H = 1\)</span>—the same unit-distance ordering <code>00, 01, 11, 10</code> used on the rows and columns of Karnaugh logic maps). Writing <span class="arithmatex">\(B \gg 1 = \lfloor B / 2 \rfloor\)</span> for a 1-bit logical right shift of a standard binary integer <span class="arithmatex">\(B\)</span> and indexing individual bit columns by <span class="arithmatex">\(k\)</span> from right to left, binary-to-Gray encoding and Gray-to-binary decoding follow a pair of reciprocal <code>XOR</code> identities:</p>
+<div class="arithmatex">\[G = B \oplus (B \gg 1) = B \oplus \lfloor B / 2 \rfloor, \qquad B_k = G_k \oplus B_{k+1} \tag{Eq. 10.5}\]</div>
+<p>Shifting <span class="arithmatex">\(B\)</span> right by one bit slides each upper bit <span class="arithmatex">\(B_{k+1}\)</span> into column <span class="arithmatex">\(k\)</span>, so the bitwise <code>XOR</code> sets Gray bit <span class="arithmatex">\(G_k = B_k \oplus B_{k+1}\)</span> to <code>1</code> whenever adjacent binary bits <span class="arithmatex">\(B_{k+1}\)</span> and <span class="arithmatex">\(B_k\)</span> differ. When <span class="arithmatex">\(B\)</span> increments by <span class="arithmatex">\(1\)</span>, binary addition flips a trailing run of <code>1</code>s to <code>0</code>s and turns the single <code>0</code> immediately above them into a <code>1</code>; every interior bit pair inside that carry chain keeps the same neighbor-difference state, so only the top boundary bit changes in <span class="arithmatex">\(G\)</span>. Conversely, XORing each Gray bit <span class="arithmatex">\(G_k\)</span> with the already-recovered higher binary bit <span class="arithmatex">\(B_{k+1}\)</span> from most-significant bit downward unwraps those neighbor differences back into positional binary. At the transition <span class="arithmatex">\(7_{10} \to 8_{10}\)</span>, <span class="arithmatex">\(7_{10} = \mathtt{0111b}\)</span> maps to <span class="arithmatex">\(G(7) = \mathtt{0111b} \oplus \mathtt{0011b} = \mathtt{0100b}\)</span> (<code>4h</code>), while <span class="arithmatex">\(8_{10} = \mathtt{1000b}\)</span> maps to <span class="arithmatex">\(G(8) = \mathtt{1000b} \oplus \mathtt{0100b} = \mathtt{1100b}\)</span> (<code>Ch</code>), changing only Bit 3 (<code>0100b</code> to <code>1100b</code>) with zero transient ambiguity.</p>
+<p>The <strong>American Standard Code for Information Interchange (ASCII)</strong> likewise aligns its 7-bit character table (<code>00h</code>–<code>7Fh</code>) on power-of-two bit boundaries. Every ASCII decimal numeral <code>'0'</code> through <code>'9'</code> (<code>30h</code> through <code>39h</code>) packs the high nibble <code>3h</code> (<code>0011b</code>) above its exact 4-bit Binary-Coded Decimal (BCD) value <code>0h</code>–<code>9h</code>, so subtracting <code>30h</code> (or taking the remainder modulo <code>10h</code>) strips the ASCII prefix to yield the raw integer <span class="arithmatex">\(0\)</span>–<span class="arithmatex">\(9\)</span>. Uppercase Latin letters (<code>'A'</code>–<code>'Z'</code> = <code>41h</code>–<code>5Ah</code>) and lowercase letters (<code>'a'</code>–<code>'z'</code> = <code>61h</code>–<code>7Ah</code>) sit at identical alphabet offsets (<code>1h</code> through <code>1Ah</code>) separated solely by <strong>Bit 5</strong> (<span class="arithmatex">\(2^5 = 32_{10} = \mathtt{20h}\)</span>): adding <code>20h</code> converts <code>'A'</code> (<code>41h</code>) to <code>'a'</code> (<code>61h</code>), subtracting <code>20h</code> folds <code>'z'</code> (<code>7Ah</code>) back to <code>'Z'</code> (<code>5Ah</code>), and subtracting <code>40h</code> maps uppercase letters onto control codes (<code>'C' - 40h = 03h</code>, <code>Ctrl-C</code>).</p>
+<h3 id="1013-the-36-bit-word-architecture-hardware-boundary-guards">10.1.3 The 36-Bit Word Architecture &amp; Hardware Boundary Guards</h3>
+<p>While commodity microprocessors organize registers in multiples of 8-bit bytes (32 or 64 bits wide), scientific mainframes (such as the IBM 7090 and DEC PDP-10) and the HP-32SII standardized on the <strong>36-bit word</strong> for its number-theoretic divisibility and ten-digit decimal range.</p>
+<p>In arithmetic, <span class="arithmatex">\(36 = 2^2 \times 3^2\)</span> is a highly composite integer divisible by <span class="arithmatex">\(1, 2, 3, 4, 6, 9, 12,\)</span> and <span class="arithmatex">\(18\)</span>. A 32-bit word divides evenly into eight 4-bit hexadecimal nibbles (<span class="arithmatex">\(32 = 8 \times 4\)</span>) but leaves a 2-bit orphan when grouped into 3-bit octal triads (<span class="arithmatex">\(32 = 10 \times 3 + 2\)</span>); a 36-bit word is the smallest practical computer word that divides with <em>zero remainder</em> into both <strong>twelve 3-bit octal digits</strong> (<span class="arithmatex">\(36 = 12 \times 3\)</span>) and <strong>nine 4-bit hexadecimal nibbles</strong> (<span class="arithmatex">\(36 = 9 \times 4\)</span>), as well as two symmetric 18-bit half-words (<span class="arithmatex">\(36 = 2 \times 18\)</span>) or six 6-bit alphanumeric characters (<span class="arithmatex">\(36 = 6 \times 6\)</span>).</p>
+<p>A signed 32-bit two's-complement integer also overflows at <span class="arithmatex">\(+2^{31} - 1 = +2,147,483,647\)</span> (fewer than ten full decimal digits, and unable to hold an unsigned 32-bit IPv4 broadcast address <code>0xFFFFFFFF</code> <span class="arithmatex">\(= 4,294,967,295\)</span> without colliding with Sign Bit 31 and turning negative as <span class="arithmatex">\(-1\)</span>). A 36-bit integer word, by contrast, places its <code>MSB</code> sign boundary four bit positions higher at <strong>Bit 35</strong> (<code>0</code> for non-negative integers <span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(+2^{35}-1\)</span>, <code>1</code> for negative integers <span class="arithmatex">\(-2^{35}\)</span> to <span class="arithmatex">\(-1\)</span>). Every 32-bit unsigned memory address, IPv4 netmask (<code>0xFFFFFFFF</code>), or IEEE-754 single-precision word sits inside <strong>Bits 31–0</strong> as a non-negative integer, while the three upper headroom bits (<strong>Bits 34–32</strong>, providing <span class="arithmatex">\(8\times\)</span> capacity above 32 bits) absorb left-shifts, 16-bit and 32-bit checksum carries, and Euclidean division without premature sign-bit truncation:</p>
+<div class="arithmatex">\[\text{Signed 36-Bit Range: } -2^{35} = -34,359,738,368 \;\;(\mathtt{800000000h}) \;\;\text{to}\;\; +2^{35}-1 = +34,359,738,367 \;\;(\mathtt{7FFFFFFFFh}) \tag{Eq. 10.6}\]</div>
+<h3 id="1014-twos-complement-odometer-arithmetic-bitwise-masks-euclids-ladder">10.1.4 Two's-Complement Odometer Arithmetic, Bitwise Masks &amp; Euclid's Ladder</h3>
+<p>Because a silicon register contains only bistable switches that are <code>1</code> (ON) or <code>0</code> (OFF), representing signed negative integers requires encoding the algebraic sign inside the bit pattern itself.</p>
+<p>Early computer architectures tried two preliminary encodings: <em>Sign-Magnitude</em> (reserving the leftmost bit as a <span class="arithmatex">\(\pm\)</span> sign flag while leaving the lower bits as ordinary magnitude) and <em>One's Complement</em> (inverting every bit to negate a number, <span class="arithmatex">\(\overline{X}\)</span>). Both schemes suffer from two hardware drawbacks: they create two distinct bit patterns for zero (<code>+0</code> and <code>-0</code>, requiring extra comparator gates to test <span class="arithmatex">\(X = 0\)</span>), and adding a positive number to a negative number requires either switching between separate adder and subtractor circuits or wiring an end-around carry loop.</p>
+<p>Modular arithmetic over the ring <span class="arithmatex">\(\mathbb{Z}/2^w\mathbb{Z}\)</span> resolves both flaws so that an ordinary binary adder combines positive and negative integers through the same gate network. On a 4-digit mechanical bicycle odometer set to <code>0000</code> miles, modular wrap-around encodes negative values without a separate sign wheel. Riding forward <span class="arithmatex">\(1\text{ mile}\)</span> advances the rightmost wheel to <code>0001</code>; rolling the wheel backward one mile from <code>0000</code> (<span class="arithmatex">\(0 - 1 = -1\)</span>) wraps all four number wheels backward one click from <code>0</code> to <code>9</code> so the window reads <code>9999</code>. Rolling backward two miles (<span class="arithmatex">\(-2\)</span>) reads <code>9998</code>, and rolling backward three miles (<span class="arithmatex">\(-3\)</span>) reads <code>9997</code> (<span class="arithmatex">\(10^4 - 3\)</span>).</p>
+<p>From <code>9997</code> (representing <span class="arithmatex">\(-3\)</span>), riding forward <span class="arithmatex">\(5\text{ miles}\)</span> (<span class="arithmatex">\(+5\)</span>) advances the wheels through <code>9998</code>, <code>9999</code>, <code>0000</code> (where the fifth-digit carry <code>1</code> spills off the left end of the 4-digit window), <code>0001</code>, and finally <code>0002</code>. By encoding <span class="arithmatex">\(-3\)</span> as <span class="arithmatex">\(10^4 - 3 = 9997\)</span>, ordinary forward addition (<span class="arithmatex">\(9997 + 0005 = \cancel{1}0002 \equiv \mathbf{0002} \pmod{10^4}\)</span>) computes <span class="arithmatex">\((-3) + 5 = +2\)</span> with zero subtraction circuitry.</p>
+<p>In binary hardware, that odometer wrap-around is <strong>Two's Complement</strong> arithmetic <em>(<a href="../appendix-e-annotated-bibliography/#cite-parker2019">Parker, 2019</a>)</em>. On a 36-bit binary odometer (<code>000000000h</code> in nine-nibble hexadecimal), rolling forward from <code>000000000h</code> (<span class="arithmatex">\(0\)</span>) counts upward through all positive 36-bit integers up to <code>7FFFFFFFFh</code> (<span class="arithmatex">\(+2^{35} - 1 = +34,359,738,367\)</span>), where Bit 35 is <code>0</code> and all 35 lower bits are <code>1</code>. Adding <code>1</code> to <code>7FFFFFFFFh</code> propagates a ripple carry through all 35 lower bits into Bit 35 (<code>800000000h</code>), crossing the signed 36-bit overflow seam (<span class="arithmatex">\(-2^{35}\)</span> in a wrapped 36-bit register, or <span class="arithmatex">\(+34,359,738,368\)</span> in an unclipped 64-bit accumulator). Rolling backward one click from <code>0</code> (<span class="arithmatex">\(0 - 1 = -1\)</span>) turns every bit to <code>1</code> (<code>FFFFFFFFFh</code> across a 36-bit mask). Because adding any integer <span class="arithmatex">\(X\)</span> to its bitwise logical inverse <span class="arithmatex">\(\overline{X}\)</span> (<code>NOT X</code>, where every <code>0</code> flips to <code>1</code> and every <code>1</code> flips to <code>0</code>) produces a <code>1</code> in every column (<code>FFFFFFFFFh</code> <span class="arithmatex">\(\equiv -1\)</span>), the exact additive inverse <span class="arithmatex">\(-X\)</span> is obtained by inverting every bit and adding <span class="arithmatex">\(1\)</span>:</p>
+<div class="arithmatex">\[X + \overline{X} = \mathtt{FFFFFFFFFh} \equiv -1 \pmod{2^{36}} \quad \Longrightarrow \quad -X = \overline{X} + 1, \qquad Y - X = Y + \overline{X} + 1 \tag{Eq. 10.7}\]</div>
+<p>Across a 32-bit unsigned word (<code>FFFFFFFFh</code>), the bitwise <code>NOT</code> of <span class="arithmatex">\(5\)</span> is <span class="arithmatex">\(\overline{5} = \mathtt{FFFFFFFFh} - \mathtt{5h} = \mathtt{FFFFFFFAh}\)</span>, and adding <span class="arithmatex">\(1\)</span> yields the 32-bit two's-complement representation of <span class="arithmatex">\(-5\)</span> as <span class="arithmatex">\(\mathtt{FFFFFFFBh}\)</span>. In silicon, an adder becomes a subtractor when the subtrahend <span class="arithmatex">\(X\)</span> passes through <code>XOR</code> inverter gates controlled by a Subtract line and the initial carry-in bit is asserted (<span class="arithmatex">\(C_{\text{in}} = 1\)</span>).</p>
+<p>In elementary arithmetic, dividing <span class="arithmatex">\(12,345\)</span> by <span class="arithmatex">\(16\)</span> produces an integer quotient of <span class="arithmatex">\(771\)</span> and an integer remainder of <span class="arithmatex">\(9\)</span>, governed by Euclidean Division (<span class="arithmatex">\(N = Q \cdot D + R\)</span>, with <span class="arithmatex">\(0 \le R &lt; D\)</span>). In computer science, dividing a binary integer <span class="arithmatex">\(N\)</span> by a power of two <span class="arithmatex">\(D = 2^k\)</span> via Euclidean division cleaves the binary word in two at bit boundary <span class="arithmatex">\(k\)</span>: the integer quotient <span class="arithmatex">\(Q = \lfloor N / 2^k \rfloor\)</span> performs a logical right bit-shift (<span class="arithmatex">\(N \gg k\)</span>) that slides all upper bits from Bit <span class="arithmatex">\(k\)</span> downward to Bit <span class="arithmatex">\(0\)</span> while discarding the lower <span class="arithmatex">\(k\)</span> bits, and the integer remainder <span class="arithmatex">\(R = N \bmod 2^k\)</span> performs a bitwise <code>AND</code> low-bit mask (<span class="arithmatex">\(N \ \&amp; \ (2^k - 1)\)</span>) that isolates the exact, unshifted value of the lower <span class="arithmatex">\(k\)</span> bits (Bits <span class="arithmatex">\(k-1\)</span> down to <span class="arithmatex">\(0\)</span>).</p>
+<p>Repeated Euclidean division also computes the Greatest Common Divisor <span class="arithmatex">\(\operatorname{GCD}(a, b)\)</span> of two integers. When a digital signal processor runs one clock domain at <span class="arithmatex">\(a = 1,071\text{ MHz}\)</span> and another at <span class="arithmatex">\(b = 462\text{ MHz}\)</span>, any common divisor of <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> also divides the remainder <span class="arithmatex">\(R = a \bmod b\)</span> from Euclidean division. Stepping down Euclid's Remainder Ladder (<span class="arithmatex">\(1071 = 2 \times 462 + 147 \longrightarrow 462 = 3 \times 147 + 21 \longrightarrow 147 = 7 \times 21 + 0\)</span>) reveals the last non-zero remainder <span class="arithmatex">\(\operatorname{GCD}(1071, 462) = \mathbf{21}\)</span>, while the Least Common Multiple <span class="arithmatex">\(\operatorname{LCM}(a, b) = \frac{|a \cdot b|}{\operatorname{GCD}(a, b)} = \mathbf{23,562}\)</span> determines the exact phase-realignment cycle of the two clocks.</p>
+<p>In modular congruence arithmetic (<span class="arithmatex">\(a \equiv b \pmod m\)</span>), Euclidean remainders satisfy the multiplicative rule <em>(<a href="../appendix-e-annotated-bibliography/#cite-gauss1809">Gauss, 1809</a>)</em>: <span class="arithmatex">\((a \cdot b) \bmod m = ((a \bmod m)(b \bmod m)) \bmod m\)</span>. Combined with binary exponentiation by squaring, modular reduction extracts the exact trailing decimal digits (<span class="arithmatex">\(m = 10^k\)</span>) or cryptographic residue of a giant power <span class="arithmatex">\(a^n\)</span> without overflowing a 36-bit integer or 53-bit significand: to find the last three digits of <span class="arithmatex">\(7^8 = 5,764,801\)</span> modulo <span class="arithmatex">\(m = 1,000\)</span>, squaring <span class="arithmatex">\(7^2 = 49\)</span>, squaring again to <span class="arithmatex">\(49^2 = 2,401 \equiv 401 \pmod{1,000}\)</span>, and squaring the reduced residue <span class="arithmatex">\(401^2 = 160,801 \equiv \mathbf{801} \pmod{1,000}\)</span> keeps every intermediate value below <span class="arithmatex">\(10^6\)</span>.</p>
+<hr />
+<h2 id="102-information-theory-channel-capacity-silicon-scaling-laws">10.2 Information Theory, Channel Capacity &amp; Silicon Scaling Laws</h2>
+<p>Eleven years after his 1937 switching thesis, Claude Shannon published <em>A Mathematical Theory of Communication</em> (1948) at Bell Telephone Laboratories, proving that information itself is a measurable physical quantity governed by probability and thermodynamics. Whenever a discrete source emits symbols from an alphabet <span class="arithmatex">\(\{x_1, x_2, \dots, x_m\}\)</span> with probabilities <span class="arithmatex">\(p_1, p_2, \dots, p_m\)</span>, the average information content per symbol is <strong>Shannon's Source Entropy</strong> <span class="arithmatex">\(H(X) = -\sum_{i=1}^m p_i \log_2 p_i\)</span> (in bits per symbol). When a biased binary telemetry sensor emits normal status frames with probability <span class="arithmatex">\(p_1 = 0.75\)</span> and fault frames with probability <span class="arithmatex">\(p_2 = 0.25\)</span>, its source entropy is <span class="arithmatex">\(H(X) = -(0.75\ln 0.75 + 0.25\ln 0.25)/\ln 2 \approx \mathbf{0.811\text{ bits/symbol}}\)</span>, establishing that lossless prefix coding can compress the stream by <span class="arithmatex">\(\approx 18.9\%\)</span> below <span class="arithmatex">\(1\text{ bit/symbol}\)</span> without losing any telemetry events.</p>
+<h3 id="1021-nyquist-sampling-shannonhartley-capacity-hamming-error-control">10.2.1 Nyquist Sampling, Shannon–Hartley Capacity &amp; Hamming Error Control</h3>
+<p>Continuous analog waveforms and discrete digital codes transmitted over a copper wire, an optical fiber, or a deep-space radio link are linked by three fundamental conservation laws of bandwidth, thermal noise, and geometric distance.</p>
+<p>An ideal low-pass communication channel of analog bandwidth <span class="arithmatex">\(B\)</span> can transmit at most <span class="arithmatex">\(2B\)</span> independent pulse samples per second without intersymbol interference. By the <strong>Nyquist–Shannon Sampling Theorem</strong>, reconstructing a bandlimited analog signal containing frequencies up to <span class="arithmatex">\(f_{\max}\)</span> without loss of information requires an analog-to-digital converter (ADC) to sample at a clock rate <span class="arithmatex">\(f_s\)</span> strictly above twice the highest frequency component, defining the Nyquist folding boundary <span class="arithmatex">\(f_{\text{Nyquist}}\)</span> and the aliased frequency <span class="arithmatex">\(f_{\text{alias}}\)</span> whenever an input signal <span class="arithmatex">\(f_{\text{sig}}\)</span> is beat against the nearest integer multiple <span class="arithmatex">\(k f_s\)</span> of the sampling clock:</p>
+<div class="arithmatex">\[f_s &gt; 2 f_{\max}, \qquad f_{\text{Nyquist}} = \frac{f_s}{2}, \qquad f_{\text{alias}} = \bigl|f_{\text{sig}} - k f_s\bigr| \tag{Eq. 10.8}\]</div>
+<p>Whenever an analog sensor signal contains a high-frequency vibration component <span class="arithmatex">\(f_{\text{sig}}\)</span> above the Nyquist folding boundary <span class="arithmatex">\(f_s / 2\)</span>—the electronic counterpart of the cinema wagon-wheel strobe effect—discrete sampling cannot distinguish rapid forward phase rotation from a slower beat against the nearest harmonic <span class="arithmatex">\(k f_s\)</span>, folding the tone across <span class="arithmatex">\(f_{\text{Nyquist}}\)</span> into the baseband as a phantom low-frequency alias <span class="arithmatex">\(f_{\text{alias}} = |f_{\text{sig}} - k f_s|\)</span> (for example, sampling a <span class="arithmatex">\(f_{\text{sig}} = 700\text{ Hz}\)</span> turbine blade harmonic on a <span class="arithmatex">\(f_s = 1,000\text{ Hz}\)</span> data-acquisition channel folds it across <span class="arithmatex">\(f_{\text{Nyquist}} = 500\text{ Hz}\)</span> with <span class="arithmatex">\(k = 1\)</span> to masquerade as a <span class="arithmatex">\(f_{\text{alias}} = |700 - 1,000| = \mathbf{300\text{ Hz}}\)</span> oscillation).</p>
+<p>Random thermal agitation of electrons in a receiver at absolute temperature <span class="arithmatex">\(T\)</span> (with Boltzmann's constant <span class="arithmatex">\(k_B \approx 1.381 \times 10^{-23}\text{ J/K}\)</span>) generates a white thermal noise power floor <span class="arithmatex">\(N = k_B T B\)</span> across bandwidth <span class="arithmatex">\(B\)</span>, limiting how many distinguishable voltage levels (bits per sample) a received signal of power <span class="arithmatex">\(S\)</span> (often specified in decibels as <span class="arithmatex">\(\text{SNR}_{\text{dB}} = 10\log_{10}(S/N)\)</span>) can carry before adjacent levels blur together. In his 1948 paper, Shannon solved this problem via high-dimensional sphere-packing geometry, proving the <strong>Shannon–Hartley Channel Capacity Theorem</strong> for the maximum error-free bit rate <span class="arithmatex">\(C\)</span>:</p>
+<div class="arithmatex">\[C = B \log_2\left(1 + \frac{S}{N}\right) = \frac{B \ln(1 + S/N)}{\ln 2}, \qquad \frac{S}{N} = 10^{\text{SNR}_{\text{dB}} / 10} \tag{Eq. 10.9}\]</div>
+<p>Total received power combines the signal <span class="arithmatex">\(S\)</span> with independent thermal noise <span class="arithmatex">\(N\)</span>, giving a total-to-noise power ratio of <span class="arithmatex">\(\frac{S + N}{N} = 1 + \frac{S}{N}\)</span> (and a root-mean-square voltage ratio of <span class="arithmatex">\(\sqrt{1 + S/N}\)</span>), so <span class="arithmatex">\(\log_2(1 + S/N)\)</span> counts how many binary bits of resolution can be packed into each cycle of bandwidth <span class="arithmatex">\(B\)</span> without noise spheres overlapping. Across any channel of bandwidth <span class="arithmatex">\(B\)</span> and linear signal-to-noise ratio <span class="arithmatex">\(S/N\)</span>, there exists an error-correcting code capable of transmitting <span class="arithmatex">\(C\)</span> bits per second with arbitrarily small error probability, and no physical modulation scheme can ever exceed <span class="arithmatex">\(C\)</span>. Because bandwidth <span class="arithmatex">\(B\)</span> scales capacity linearly outside the logarithm while signal power <span class="arithmatex">\(S\)</span> sits trapped inside <span class="arithmatex">\(\log_2(1 + S/N)\)</span>, spacecraft telemetry links and spread-spectrum radios trade wider RF bandwidth for exponentially lower transmit power, approaching the ultimate thermodynamic Shannon limit of energy per bit to noise spectral density <span class="arithmatex">\(E_b / N_0 = \ln 2 \approx 0.693\)</span> (<span class="arithmatex">\(\approx -1.59\text{ dB}\)</span>) as <span class="arithmatex">\(B \to \infty\)</span>. On a <span class="arithmatex">\(B = 20\text{ MHz}\)</span> wireless channel operating at linear <span class="arithmatex">\(S/N = 31\)</span> (<span class="arithmatex">\(\approx 14.91\text{ dB}\)</span>), the spectral efficiency is <span class="arithmatex">\(\log_2(1 + 31) = \log_2(32) = 5\text{ bits/(s}\cdot\text{Hz)}\)</span>, establishing a maximum error-free channel capacity of <span class="arithmatex">\(C = 20\text{ MHz} \times 5 = \mathbf{100\text{ Mbps}}\)</span>.</p>
+<p>To approach Shannon's capacity limit in hardware, error-correcting codes separate valid <span class="arithmatex">\(n\)</span>-bit codewords in binary space by their <strong>Hamming distance</strong> <span class="arithmatex">\(d_H(A, B) = \operatorname{popcount}(A \oplus B)\)</span>—the number of bit positions in which two words differ. Achieving single-bit error detection requires minimum codeword distance <span class="arithmatex">\(d_{\min} = 2\)</span>; achieving <strong>Single-Error Correction (<code>SEC</code>)</strong> requires <span class="arithmatex">\(d_{\min} = 3\)</span> so every single-bit error lies inside a unique unit sphere around its true codeword; and adding an overall parity bit yields <span class="arithmatex">\(d_{\min} = 4\)</span> (<strong>Single-Error Correction, Double-Error Detection, <code>SEC-DED</code></strong>), the standard of <code>ECC</code> server DRAM (<span class="arithmatex">\(64\)</span> data bits + <span class="arithmatex">\(8\)</span> parity bits <span class="arithmatex">\(= 72\text{ bits}\)</span>). In the Hamming <span class="arithmatex">\((7, 4)\)</span> code, three parity bits <span class="arithmatex">\((p_1, p_2, p_4)\)</span> occupy the power-of-two bit positions <span class="arithmatex">\(1, 2,\)</span> and <span class="arithmatex">\(4\)</span>, while four data bits <span class="arithmatex">\((d_3, d_5, d_6, d_7)\)</span> occupy the composite positions <span class="arithmatex">\(3, 5, 6,\)</span> and <span class="arithmatex">\(7\)</span>, forming three overlapping even-parity syndrome checks <span class="arithmatex">\((s_1, s_2, s_4)\)</span>:</p>
+<div class="arithmatex">\[s_1 = p_1 \oplus d_3 \oplus d_5 \oplus d_7, \qquad s_2 = p_2 \oplus d_3 \oplus d_6 \oplus d_7, \qquad s_4 = p_4 \oplus d_5 \oplus d_6 \oplus d_7 \tag{Eq. 10.10}\]</div>
+<p>Each parity equation XORs the exact subset of codeword positions whose 3-bit binary index <span class="arithmatex">\(j \in \{1,\dots,7\}\)</span> has that power-of-two bit set: <span class="arithmatex">\(s_1\)</span> checks all positions with Bit <span class="arithmatex">\(0\)</span> (<span class="arithmatex">\(2^0 = 1\)</span>) set (<span class="arithmatex">\(1 = 001_2,\; 3 = 011_2,\; 5 = 101_2,\; 7 = 111_2\)</span>), <span class="arithmatex">\(s_2\)</span> checks all positions with Bit <span class="arithmatex">\(1\)</span> (<span class="arithmatex">\(2^1 = 2\)</span>) set (<span class="arithmatex">\(2 = 010_2,\; 3 = 011_2,\; 6 = 110_2,\; 7 = 111_2\)</span>), and <span class="arithmatex">\(s_4\)</span> checks all positions with Bit <span class="arithmatex">\(2\)</span> (<span class="arithmatex">\(2^2 = 4\)</span>) set (<span class="arithmatex">\(4 = 100_2,\; 5 = 101_2,\; 6 = 110_2,\; 7 = 111_2\)</span>). Consequently, a single cosmic-ray bit flip at position <span class="arithmatex">\(j\)</span> spoils only the parity checks whose powers of two sum to <span class="arithmatex">\(j\)</span> (for example, position <span class="arithmatex">\(5 = 4 + 1\)</span> trips <span class="arithmatex">\(s_4 = 1\)</span> and <span class="arithmatex">\(s_1 = 1\)</span> while leaving <span class="arithmatex">\(s_2 = 0\)</span>), so the 3-bit <strong>syndrome</strong> <span class="arithmatex">\(S = (s_4 s_2 s_1)_2\)</span> directly spells out the binary address <span class="arithmatex">\(j\)</span> of the corrupted bit. If the valid codeword for data nibble <code>1011b</code> is <code>1010101b</code> (<code>55h</code>) and Bit 5 flips to <code>0</code> (<code>1000101b</code> <span class="arithmatex">\(= \mathtt{45h}\)</span>), the syndrome evaluates to <span class="arithmatex">\(S = (101)_2 = \mathbf{5}\)</span>, identifying Bit 5 (<code>55h - 45h = 10h</code> <span class="arithmatex">\(= 2^{5-1}\)</span>) so adding <code>10h</code> restores <code>55h</code> in a single operation.</p>
+<p>Whereas Hamming ECC guards parallel memory buses against independent single-bit flips, serial networks (<code>Ethernet</code>, <code>PCIe</code>, <code>CAN bus</code>, <code>USB</code>) guard against multi-bit <em>burst errors</em> using a <strong>Cyclic Redundancy Check (<code>CRC</code>)</strong>. A CRC treats an <span class="arithmatex">\(m\)</span>-bit frame as a polynomial <span class="arithmatex">\(M(x)\)</span> over the two-element Galois field <span class="arithmatex">\(\operatorname{GF}(2)\)</span>—where each bit is a polynomial coefficient and addition is carry-free <code>XOR</code>—and appends the <span class="arithmatex">\(r\)</span>-bit remainder <span class="arithmatex">\(R(x) = \bigl(M(x)\cdot x^r\bigr) \bmod G(x)\)</span> modulo an irreducible generator polynomial <span class="arithmatex">\(G(x)\)</span>.</p>
+<h3 id="1022-the-physics-and-scaling-laws-of-silicon-architecture">10.2.2 The Physics and Scaling Laws of Silicon Architecture</h3>
+<p>Beneath the abstract truth tables of Boolean gates lie four physical and architectural scaling laws—semiconductor junction electrodynamics, capacitive CMOS switching power, memory-hierarchy locality, and Amdahl's parallel bottleneck—that govern how Shannon's bits are switched and stored in silicon.</p>
+<p>At the transistor level, every solid-state switch relies on the <strong>Shockley Semiconductor Diode Law</strong>, derived from Boltzmann minority-carrier injection and diffusion across a <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(n\)</span> depletion region. When an external bias voltage <span class="arithmatex">\(V_D\)</span> is applied across a junction with reverse saturation drift current <span class="arithmatex">\(I_S\)</span> and emission ideality factor <span class="arithmatex">\(n \in [1, 2]\)</span> at absolute temperature <span class="arithmatex">\(T\)</span>, the electrostatic barrier competes against the characteristic thermal voltage <span class="arithmatex">\(V_T = k_B T / q\)</span> (Boltzmann's thermal energy <span class="arithmatex">\(k_B T\)</span> divided by the elementary electron charge <span class="arithmatex">\(q \approx 1.602 \times 10^{-19}\text{ C}\)</span>, or <span class="arithmatex">\(V_T \approx 25.852\text{ mV}\)</span> at room temperature <span class="arithmatex">\(T = 300\text{ K}\)</span>) to govern the net junction current <span class="arithmatex">\(I_D\)</span>:</p>
+<div class="arithmatex">\[I_D = I_S \left[\exp\left(\frac{V_D}{n V_T}\right) - 1\right], \qquad V_D = n V_T \ln\left(1 + \frac{I_D}{I_S}\right), \qquad V_T = \frac{k_B T}{q} \tag{Eq. 10.11}\]</div>
+<p>Applying a forward bias <span class="arithmatex">\(V_D &gt; 0\)</span> lowers the <span class="arithmatex">\(p\)</span>-<span class="arithmatex">\(n\)</span> junction potential barrier relative to the thermal energy scale <span class="arithmatex">\(n V_T\)</span>, allowing an exponentially growing population of thermally excited charge carriers to surmount the barrier and diffuse across the junction as <span class="arithmatex">\(I_S \exp(V_D / nV_T)\)</span>, while <span class="arithmatex">\(-I_S\)</span> subtracts the small reverse-saturation drift current that remains when <span class="arithmatex">\(V_D &lt; 0\)</span> raises the barrier and chokes off forward diffusion. Under forward bias (<span class="arithmatex">\(V_D \gg V_T\)</span>), carrier injection grows exponentially with a subthreshold slope of <span class="arithmatex">\(\ln(10) n V_T \approx 59.5\text{ mV}\)</span> per decade of current (<span class="arithmatex">\(n = 1\)</span>): at <span class="arithmatex">\(V_D = 0.65\text{ V}\)</span>, <span class="arithmatex">\(n = 1\)</span>, <span class="arithmatex">\(V_T \approx 25.85\text{ mV}\)</span>, and <span class="arithmatex">\(I_S = 10^{-12}\text{ A}\)</span>, the thermal ratio is <span class="arithmatex">\(V_D / (nV_T) \approx 25.145\)</span> and the Boltzmann factor <span class="arithmatex">\(10^{-12}[\exp(25.145) - 1]\)</span> yields a forward current of <span class="arithmatex">\(I_D \approx \mathbf{0.083\text{ A}}\)</span> (<span class="arithmatex">\(83.25\text{ mA}\)</span>). Biasing two matched silicon junctions at a fixed current-density ratio <span class="arithmatex">\(N = J_1 / J_2\)</span> generates a proportional-to-absolute-temperature voltage difference <span class="arithmatex">\(\Delta V_D = \frac{k_B T}{q}\ln N\)</span>, which forms the <span class="arithmatex">\(1.22\text{ V}\)</span> bandgap reference and thermal sensor inside every microprocessor die.</p>
+<p>Microprocessor clock speeds climbed exponentially from <span class="arithmatex">\(108\text{ kHz}\)</span> to nearly <span class="arithmatex">\(4\text{ GHz}\)</span> before encountering a thermal ceiling—the <strong>"Power Wall"</strong>—that forced computer architects to shift from single-thread frequency scaling to multi-core chips. In steady state, a complementary metal-oxide-semiconductor (CMOS) gate draws almost zero static current because either the pull-up PMOS network or the pull-down NMOS network is cut off. Whenever a logic node toggles across a clock cycle (<span class="arithmatex">\(0 \to 1 \to 0\)</span>), however, charging its parasitic load capacitance <span class="arithmatex">\(C\)</span> up to the supply voltage rail <span class="arithmatex">\(V_{DD}\)</span> draws a packet of energy <span class="arithmatex">\(C V_{DD}^2\)</span> from the power supply (half stored in the gate capacitor as <span class="arithmatex">\(\frac{1}{2}CV_{DD}^2\)</span> and dumped to ground on the <span class="arithmatex">\(1 \to 0\)</span> transition, and half dissipated as <span class="arithmatex">\(I^2 R\)</span> heat in the PMOS pull-up channel). Multiplying that per-cycle energy packet by the clock frequency <span class="arithmatex">\(f\)</span> and the average fraction of gates switching per cycle—the activity factor <span class="arithmatex">\(\alpha \in [0, 1]\)</span>—yields the <strong>CMOS Dynamic Switching Power Law</strong> for dynamic power dissipation <span class="arithmatex">\(P_{\text{dyn}}\)</span>:</p>
+<div class="arithmatex">\[P_{\text{dyn}} = \alpha C V_{DD}^2 f \tag{Eq. 10.12}\]</div>
+<p>Because the supply voltage <span class="arithmatex">\(V_{DD}\)</span> is squared while capacitance <span class="arithmatex">\(C\)</span>, activity <span class="arithmatex">\(\alpha\)</span>, and frequency <span class="arithmatex">\(f\)</span> enter linearly, dynamic power is acutely sensitive to supply rail voltage. Under classical MOSFET scaling, shrinking transistor dimensions by <span class="arithmatex">\(1/\kappa\)</span> allowed <span class="arithmatex">\(V_{DD}\)</span> to drop at the same rate, keeping power density constant as clock frequency <span class="arithmatex">\(f\)</span> climbed. Once <span class="arithmatex">\(V_{DD}\)</span> approached <span class="arithmatex">\(\sim 1\text{ V}\)</span>, however, the <span class="arithmatex">\(59.5\text{ mV/decade}\)</span> subthreshold leakage floor prevented further threshold-voltage reduction. Because <span class="arithmatex">\(P_{\text{dyn}}\)</span> scales <em>quadratically</em> with <span class="arithmatex">\(V_{DD}^2\)</span> (and roughly <em>cubically</em> with <span class="arithmatex">\(f\)</span> when raising frequency requires raising <span class="arithmatex">\(V_{DD}\)</span> to charge gates faster), pushing clock speeds past <span class="arithmatex">\(4\text{ GHz}\)</span> caused chip heat flux to exceed <span class="arithmatex">\(100\text{ W/cm}^2\)</span>. For a core with activity factor <span class="arithmatex">\(\alpha = 0.25\)</span>, switched capacitance <span class="arithmatex">\(C = 12\text{ nF}\)</span> (<span class="arithmatex">\(12 \times 10^{-9}\text{ F}\)</span>), supply rail <span class="arithmatex">\(V_{DD} = 1.1\text{ V}\)</span>, and clock rate <span class="arithmatex">\(f = 3.5\text{ GHz}\)</span>, the energy dissipated per active clock cycle is <span class="arithmatex">\(\alpha C V_{DD}^2 = 3.63\text{ nJ}\)</span>, resulting in <span class="arithmatex">\(P_{\text{dyn}} = 3.63\text{ nJ} \times 3.5\text{ GHz} = \mathbf{12.705\text{ W}}\)</span> per core.</p>
+<p>Once the CMOS power wall forced processors into parallel multi-core designs and deep cache hierarchies, two architectural performance equations governed system throughput. First, because off-chip main memory (<code>DRAM</code>) requires an access latency <span class="arithmatex">\(T_{\text{DRAM}}\)</span> that is hundreds of times slower than a processor clock cycle, CPUs place fast on-die static RAM caches in front of main memory: a Level-1 (<code>L1</code>) cache with hit probability <span class="arithmatex">\(h_1 \in [0, 1]\)</span> and access time <span class="arithmatex">\(T_1\)</span>, backed by a Level-2 (<code>L2</code>) cache with local hit probability <span class="arithmatex">\(h_2 \in [0, 1]\)</span> and access time <span class="arithmatex">\(T_2\)</span>. Second, when a software workload with parallelizable execution-time fraction <span class="arithmatex">\(p \in [0, 1]\)</span> and strictly sequential fraction <span class="arithmatex">\(1 - p\)</span> is distributed across <span class="arithmatex">\(N\)</span> symmetric processor cores, overall throughput is governed by <strong>Memory-Hierarchy Effective Access Time (<code>EAT</code>)</strong> <span class="arithmatex">\(T_{\text{eff}}\)</span> and <strong>Amdahl's Law of Parallel Speedup</strong> <span class="arithmatex">\(S(N)\)</span>:</p>
+<div class="arithmatex">\[T_{\text{eff}} = h_1 T_1 + (1 - h_1)\Bigl[h_2 T_2 + (1 - h_2)T_{\text{DRAM}}\Bigr], \qquad S(N) = \frac{1}{(1 - p) + \frac{p}{N}} \;\xrightarrow{N \to \infty}\; \frac{1}{1 - p} \tag{Eq. 10.13}\]</div>
+<p>Each memory request hits L1 with probability <span class="arithmatex">\(h_1\)</span> (paying only <span class="arithmatex">\(T_1\)</span>) and misses L1 with probability <span class="arithmatex">\(1 - h_1\)</span>; only that missed fraction enters the bracketed L2 stage, where it either hits L2 (<span class="arithmatex">\(h_2 T_2\)</span>) or misses both caches to pay the full off-chip penalty <span class="arithmatex">\((1 - h_2)T_{\text{DRAM}}\)</span>. Because off-chip main DRAM requires <span class="arithmatex">\(T_{\text{DRAM}} \approx 60\text{ ns}\)</span> while a <span class="arithmatex">\(3.5\text{ GHz}\)</span> core executes an instruction every <span class="arithmatex">\(\approx 0.286\text{ ns}\)</span>, processors exploit spatial and temporal locality via those cache tiers: if L1 responds in <span class="arithmatex">\(T_1 = 1\text{ ns}\)</span> with hit ratio <span class="arithmatex">\(h_1 = 0.92\)</span> (<span class="arithmatex">\(8\%\)</span> miss rate) and L2 responds in <span class="arithmatex">\(T_2 = 8\text{ ns}\)</span> with local hit ratio <span class="arithmatex">\(h_2 = 0.85\)</span> before falling back to <span class="arithmatex">\(T_{\text{DRAM}} = 60\text{ ns}\)</span>, the average L1 miss penalty inside the brackets is <span class="arithmatex">\(0.85(8) + 0.15(60) = 15.8\text{ ns}\)</span>, and the overall effective memory access time collapses from <span class="arithmatex">\(60\text{ ns}\)</span> down to <span class="arithmatex">\(T_{\text{eff}} = 0.92(1) + 0.08(15.8) = \mathbf{2.184\text{ ns}}\)</span>.</p>
+<p>Amdahl's speedup law compares normalized single-core runtime (<span class="arithmatex">\(1\)</span>) against the compressed parallel runtime <span class="arithmatex">\((1 - p) + p/N\)</span>, which adds the unshrinkable serial fraction <span class="arithmatex">\((1 - p)\)</span> (from I/O serialization, lock contention, or sequential reduction) to the parallel fraction <span class="arithmatex">\(p/N\)</span> shared across <span class="arithmatex">\(N\)</span> cores. Even as <span class="arithmatex">\(N \to \infty\)</span> drives <span class="arithmatex">\(p/N \to 0\)</span>, total runtime cannot shrink below <span class="arithmatex">\(1 - p\)</span>, bounding speedup above by the reciprocal of the serial bottleneck <span class="arithmatex">\(1 / (1 - p)\)</span> regardless of how many thousands of cores are added. For a workload that is <span class="arithmatex">\(p = 0.9\)</span> (<span class="arithmatex">\(90\%\)</span>) parallelizable across <span class="arithmatex">\(N = 16\)</span> cores (leaving a <span class="arithmatex">\(1 - p = 0.1\)</span> serial bottleneck), the parallelized fraction shrinks to <span class="arithmatex">\(0.9 / 16 \approx 0.056\)</span> while the serial <span class="arithmatex">\(0.1\)</span> remains fixed, yielding a 16-core speedup of <span class="arithmatex">\(S(16) = 1 / (0.1 + 0.9/16) = \mathbf{6.4\times}\)</span> (and an infinite-core asymptotic ceiling of <span class="arithmatex">\(S(\infty) = 1 / 0.1 = 10\times\)</span>, unless the parallel problem size scales up with <span class="arithmatex">\(N\)</span> as <span class="arithmatex">\(S_{\text{scaled}}(N) = (1 - p) + Np\)</span>).</p>
+<h3 id="1023-speaking-to-silicon-control-registers-fault-masks-clock-dividers">10.2.3 Speaking to Silicon: Control Registers, Fault Masks &amp; Clock Dividers</h3>
+<p>Memory-mapped microcontroller peripherals pack independent hardware control lines into a single register word so firmware can toggle general-purpose input/output (<code>GPIO</code>) pins, isolate telemetry fault masks, extract analog-to-digital converter (<code>ADC</code>) bit-fields via positional masks <span class="arithmatex">\(2^k\)</span>, and configure fractional baud-rate dividers without disturbing neighboring lines.</p>
+<p>When a 32-bit GPIO direction register holds <code>0x00001804</code> (where Pins 2 (<code>4h</code>), 11 (<code>800h</code>), and 12 (<code>1000h</code>) are configured as outputs while Pin 5 (<code>20h</code>) is currently an input (<code>0</code>)), adding the unasserted Bit 5 weight <span class="arithmatex">\(2^5 = \mathtt{20h}\)</span> performs a carry-free bitwise <code>OR</code> to yield <span class="arithmatex">\(\mathtt{1824h}\)</span> (<span class="arithmatex">\(6,180_{10}\)</span>). In the opposite direction, if a port output register holds <code>0x00000017</code> (<span class="arithmatex">\(0001\,0111_2\)</span>) with an active heartbeat line on Bit 2 (<code>4h</code>), subtracting <code>4h</code> performs a borrow-free <code>AND NOT</code> to clear Bit 2 to <span class="arithmatex">\(\mathtt{13h}\)</span> (<span class="arithmatex">\(19_{10}\)</span>), and adding <code>4h</code> back re-asserts <span class="arithmatex">\(\mathtt{17h}\)</span> (<span class="arithmatex">\(23_{10}\)</span>) without disturbing neighboring pins. Whenever a baseline register's asserted bits are a subset of an active status word, borrow-free subtraction likewise acts as an exact bitwise <code>XOR</code> difference mask: subtracting a nominal spacecraft baseline <code>0x5A50</code> from an active downlink status word <code>0x5F5A</code> strips away the nominal bits to isolate the newly tripped fault mask <span class="arithmatex">\(\mathtt{050Ah}\)</span> (<span class="arithmatex">\(1,290_{10}\)</span>), which renders in binary as <code>10100001010b</code> and pinpoints four tripped fault bits at positions 1, 3, 8, and 10.</p>
+<p>An interior multi-bit field or hardware clock divider splits apart through that same Euclidean cleavage. When a 16-bit ADC control register holds <code>0x3C6A</code> and packs a 4-bit oversampling selector in Bits 7–4 (<code>6h</code>), taking the remainder modulo <span class="arithmatex">\(2^8 = \mathtt{100h}\)</span> strips the upper byte <code>3Ch</code> to leave the lower byte <code>6Ah</code>, and integer division by <span class="arithmatex">\(2^4 = \mathtt{10h}\)</span> shifts Bits 7–4 down to Bit 0 to isolate <span class="arithmatex">\(\lfloor \mathtt{6Ah} / \mathtt{10h} \rfloor = \mathbf{\mathtt{6h}}\)</span>. In asynchronous serial <code>UART</code> transceivers, splitting a fractional baud-rate divisor <span class="arithmatex">\(D = f_{\text{clk}} / (8 \times \text{baud})\)</span> into its integer part and 64-step fractional part configures the 16-bit and 6-bit divider registers.</p>
+<hr />
+<h2 id="103-word-cleavage-bit-packing-combinatorial-keyspaces">10.3 Word Cleavage, Bit Packing &amp; Combinatorial Keyspaces</h2>
+<p>Four hardware subsystems on the SC-32 bring positional radices, single-keystroke Euclidean word cleavage, number theory, and discrete combinatorics onto the four-register stack:</p>
+<ol>
+<li><strong>Positional Radix Mode (<code>[↰] [BASE]</code>):</strong> Left-shifted <code>[↰] [BASE]</code> on <code>[×]</code> presents the softkeys <span class="arithmatex">\(\mathtt{[HEX]} \;\; \mathtt{[DEC]} \;\; \mathtt{[OCT]} \;\; \mathtt{[BIN]}\)</span>, where Decimal (<code>DEC</code>) is the default radix and tapping <code>HEX</code> (<code>[HEX]</code>, suffix <code>h</code>, <strong>Figure 10.1</strong>), <code>OCT</code> (<code>[OCT]</code>, suffix <code>o</code>), or <code>BIN</code> (<code>[BIN]</code>, suffix <code>b</code>) re-renders all four stack registers (<code>T, Z, Y, X</code>) in place within the HP-32SII signed 36-bit word bounds (<span class="arithmatex">\([-2^{35},\; +2^{35}-1] = [-34,359,738,368,\; +34,359,738,367]\)</span>, flagging <code>TOO BIG</code> when switching radix on larger decimal values) without altering their underlying values. Negative integers format in 64-bit two's-complement representation (<code>FFFFFFFFFFFFFFFFh</code> for <span class="arithmatex">\(-1\)</span>, or masked to a <span class="arithmatex">\(k\)</span>-bit unsigned field via Euclidean remainder <code>[↱] [÷R]</code> modulo <span class="arithmatex">\(2^k\)</span>, as with <code>10000h [↱] [÷R]</code> for 16 bits), and whenever Hexadecimal mode (<code>HEX</code>) is active, the six primary scientific keys across Row 1 (<code>[√x]</code>, <code>[eˣ]</code>, <code>[LN]</code>, <code>[yˣ]</code>, <code>[1/x]</code>, <code>[Σ+]</code>) map to the printed hexadecimal digits <code>A</code> through <code>F</code>.</li>
+<li><strong>Euclidean Quotient-and-Remainder Division (<code>[↱] [÷R]</code>):</strong> Bitwise shifts, masks, and modular reduction execute directly on the stack: placing any non-negative integer <span class="arithmatex">\(N\)</span> in Register <span class="arithmatex">\(Y\)</span> and a positive divisor <span class="arithmatex">\(M\)</span> (such as a bit boundary <span class="arithmatex">\(M = 2^k\)</span> or modulus <span class="arithmatex">\(M = 1,000\)</span>) in Register <span class="arithmatex">\(X\)</span> and pressing <code>[↱] [÷R]</code> (right-shifted on <code>[E]</code>) deposits the integer quotient <span class="arithmatex">\(\lfloor Y / X \rfloor\)</span> into Register <span class="arithmatex">\(X\)</span> and the remainder <span class="arithmatex">\(Y \bmod X\)</span> into Register <span class="arithmatex">\(Y\)</span> (so pressing <code>[↱] [÷R]</code> followed by <code>[x⇄y]</code> brings the modulo remainder <span class="arithmatex">\(Y \bmod X\)</span> into Register <span class="arithmatex">\(X\)</span>):</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Bit-Field / Masking Operation</th>
+<th style="text-align: center;">Mathematical Equivalent (<span class="arithmatex">\(M = 2^k\)</span>)</th>
+<th style="text-align: center;">Stack Input (<code>Y</code>, <code>X</code>)</th>
+<th style="text-align: left;">Result Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Left Shift (<span class="arithmatex">\(X \ll k\)</span>)</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(X \times 2^k\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(Y = X,\; X = 2^k\)</span></td>
+<td style="text-align: left;">Shifted word <span class="arithmatex">\(X \cdot 2^k\)</span> in <strong><code>X</code></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Right Shift (<span class="arithmatex">\(X \gg k\)</span>)</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(\lfloor X / 2^k \rfloor\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(Y = X,\; X = 2^k\)</span></td>
+<td style="text-align: left;">Upper bits <span class="arithmatex">\(\lfloor X / 2^k \rfloor\)</span> in <strong><code>X</code></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Low-Bit Mask (<span class="arithmatex">\(X \ \&amp; \ (2^k - 1)\)</span>)</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(X \bmod 2^k\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(Y = X,\; X = 2^k\)</span></td>
+<td style="text-align: left;">Low <span class="arithmatex">\(k\)</span> bits <span class="arithmatex">\(X \bmod 2^k\)</span> in <strong><code>Y</code></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>High-Bit Alignment (<span class="arithmatex">\(X \ \&amp; \ \sim(2^k - 1)\)</span>)</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(\lfloor X / 2^k \rfloor \times 2^k\)</span></td>
+<td style="text-align: center;">Quotient <span class="arithmatex">\(\times 2^k\)</span></td>
+<td style="text-align: left;">Aligned base address in <strong><code>X</code></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Set Disjoint Bit <span class="arithmatex">\(k\)</span> (<code>OR</code>)</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(X + 2^k\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(Y = X,\; X = 2^k\)</span></td>
+<td style="text-align: left;">Updated word in <strong><code>X</code></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Clear Set Bit <span class="arithmatex">\(k\)</span> (<code>AND NOT</code>)</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(X - 2^k\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(Y = X,\; X = 2^k\)</span></td>
+<td style="text-align: left;">Updated word in <strong><code>X</code></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>32-Bit Unsigned Complement (<code>NOT</code>)</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{FFFFFFFF}_{16} - X\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(Y = \mathtt{FFFFFFFFh},\; X\)</span></td>
+<td style="text-align: left;">Inverted 32-bit mask in <strong><code>X</code></strong></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>Number-Theoretic Parts (<code>[↱] [PARTS]</code>):</strong> Right-shifted <code>[↱] [PARTS]</code> on <code>[√x]</code> assigns <span class="arithmatex">\(\mathtt{[IP]} \;\; \mathtt{[FP]} \;\; \mathtt{[ABS]} \;\; \mathtt{[SGN]} \;\; \mathtt{[GCD]} \;\; \mathtt{[LCM]}\)</span> to the softkey strip, where <code>GCD</code> and <code>LCM</code> replace two integers across <span class="arithmatex">\((Y, X)\)</span> with their greatest common divisor or least common multiple.</li>
+<li><strong>Discrete Combinatorics &amp; Seeded Random Generation (<code>[↱] [PROB]</code>):</strong> Right-shifted <code>[↱] [PROB]</code> on <code>[eˣ]</code> opens <span class="arithmatex">\(\mathtt{[Cn,r]} \;\; \mathtt{[Pn,r]} \;\; \mathtt{[n!]} \;\; \mathtt{[RAND]} \;\; \mathtt{[SD]}\)</span>, evaluating unordered combinations <span class="arithmatex">\(\binom{n}{r}\)</span> and ordered permutations <span class="arithmatex">\(P(n, r)\)</span> from <span class="arithmatex">\((Y = n,\; X = r)\)</span>, while <code>RAND</code> pushes a uniform pseudo-random variate <span class="arithmatex">\(U \in [0, 1)\)</span> onto Register <span class="arithmatex">\(X\)</span> (with stack lift) and <code>SD</code> seeds the generator from the integer in Register <span class="arithmatex">\(X\)</span> (and drops the stack) to replay reproducible Monte Carlo sequences.</li>
+</ol>
+<p><img alt="Figure 10.1: Hexadecimal radix mode (HEX) displaying 8-bit unsigned all-ones masks FFh (255 in decimal) across Registers Y and X." src="../../../assets/manuals/screenshots/sc32_base_hex_logic.png" /></p>
+<h3 id="1031-euclidean-word-cleavage-number-theoretic-ladders-on-the-stack">10.3.1 Euclidean Word Cleavage &amp; Number-Theoretic Ladders on the Stack</h3>
+<p>On the two clock domains <span class="arithmatex">\(a = 1,071\text{ MHz}\)</span> and <span class="arithmatex">\(b = 462\text{ MHz}\)</span>, three Euclidean quotient-and-remainder steps (<code>÷R</code>) walk down Euclid's Remainder Ladder across Registers <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(X\)</span>: cleaving <span class="arithmatex">\(1,071\)</span> by <span class="arithmatex">\(462\)</span> leaves remainder <span class="arithmatex">\(R_1 = 147\)</span> in <span class="arithmatex">\(Y\)</span> and quotient <span class="arithmatex">\(Q_1 = 2\)</span> in <span class="arithmatex">\(X\)</span>; cleaving <span class="arithmatex">\(462\)</span> by <span class="arithmatex">\(147\)</span> leaves <span class="arithmatex">\(R_2 = 21\)</span> in <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(Q_2 = 3\)</span> in <span class="arithmatex">\(X\)</span>; and cleaving <span class="arithmatex">\(147\)</span> by <span class="arithmatex">\(21\)</span> leaves remainder <span class="arithmatex">\(0\)</span> in <span class="arithmatex">\(Y\)</span>, matching the <code>PARTS</code> softkeys <code>GCD</code> (<span class="arithmatex">\(\mathbf{21\text{ MHz}}\)</span>) and <code>LCM</code> (<span class="arithmatex">\(\mathbf{23,562}\)</span>).</p>
+<p>Greatest-common-divisor reduction and integer-part extraction also govern aspect-ratio normalization, public-key coprimality checks, and fractional baud-rate synthesis. To reduce a <span class="arithmatex">\(1920 \times 1080\)</span> display frame to its lowest aspect ratio, dividing both dimensions by <span class="arithmatex">\(\operatorname{GCD}(1920, 1080) = \mathbf{120}\)</span> yields <span class="arithmatex">\(\mathbf{16:9}\)</span>; in RSA public-key cryptography, checking <span class="arithmatex">\(\operatorname{GCD}(e, \varphi(n)) = \mathbf{1}\)</span> verifies that a candidate public exponent <span class="arithmatex">\(e = 65,537\)</span> is coprime to Euler's totient <span class="arithmatex">\(\varphi(n)\)</span>, and in modular exponentiation by squaring, following each square with Euclidean division and a register swap reduces the intermediate product modulo <span class="arithmatex">\(m\)</span> in place.</p>
+<p>In an embedded <code>UART</code> clocked at <span class="arithmatex">\(f_{\text{clk}} = 150\text{ MHz}\)</span> for <span class="arithmatex">\(115,200\text{ baud}\)</span> (<span class="arithmatex">\(8\times\)</span> oversampling divisor <span class="arithmatex">\(D = 150\times 10^6 / (8 \times 115,200) \approx 162.76\)</span>), isolating the integer part extracts the 16-bit integer divider <span class="arithmatex">\(\mathbf{162}\)</span> (<code>A2h</code>), while isolating the fractional part (<span class="arithmatex">\(\approx 0.76\)</span>) and multiplying by <span class="arithmatex">\(64\)</span> yields <span class="arithmatex">\(\approx 48.667 \to \mathbf{49}\)</span> (<code>31h</code>) for the 6-bit fractional divider.</p>
+<h3 id="1032-combinatorial-state-spaces-birthday-bound-collision-sizing">10.3.2 Combinatorial State Spaces &amp; Birthday-Bound Collision Sizing</h3>
+<p>When drawing <span class="arithmatex">\(r\)</span> items without replacement from <span class="arithmatex">\(n\)</span> distinct items (such as <span class="arithmatex">\(n = 16\)</span> hexadecimal digits <code>0</code>–<code>F</code> or <span class="arithmatex">\(n = 12\)</span> server racks), the counting law depends on whether the order of selection is significant. When order matters (for example, assigning <span class="arithmatex">\(r = 4\)</span> distinct hexadecimal nibbles to a 4-stage shift register), there are <span class="arithmatex">\(n\)</span> choices for the first slot, <span class="arithmatex">\(n - 1\)</span> for the second, down to <span class="arithmatex">\(n - r + 1\)</span> for the <span class="arithmatex">\(r\)</span>-th slot, which defines the ordered permutation:</p>
+<div class="arithmatex">\[P(n, r) = n(n - 1)\cdots(n - r + 1) = \frac{n!}{(n - r)!} \tag{Eq. 10.14}\]</div>
+<p>When order does not matter (for example, wiring every pair of <span class="arithmatex">\(r = 2\)</span> routers among <span class="arithmatex">\(n = 7\)</span> core nodes, yielding <span class="arithmatex">\(\binom{7}{2} = 21\)</span> links), dividing <span class="arithmatex">\(P(n, r)\)</span> by the <span class="arithmatex">\(r!\)</span> internal rearrangements of the chosen subset yields the binomial coefficient (obeying symmetry <span class="arithmatex">\(\binom{n}{r} = \binom{n}{n-r}\)</span> and Pascal's recurrence <span class="arithmatex">\(\binom{n}{r} = \binom{n-1}{r-1} + \binom{n-1}{r}\)</span>):</p>
+<div class="arithmatex">\[C(n, r) = \binom{n}{r} = \frac{P(n, r)}{r!} = \frac{n!}{r!\,(n - r)!} \tag{Eq. 10.15}\]</div>
+<p>When drawing <span class="arithmatex">\(L\)</span> independent symbols <em>with replacement</em> from an alphabet of <span class="arithmatex">\(A\)</span> equiprobable characters (such as a random passphrase of length <span class="arithmatex">\(L\)</span> over <span class="arithmatex">\(A = 62\)</span> alphanumeric characters or <span class="arithmatex">\(A = 2,048\)</span> BIP-39 mnemonic words), there are <span class="arithmatex">\(N = A^L\)</span> possible keys, corresponding to a Shannon cryptographic keyspace entropy of:</p>
+<div class="arithmatex">\[H = \log_2(A^L) = L \log_2 A = \frac{L \ln A}{\ln 2} \quad (\text{bits of entropy}) \tag{Eq. 10.16}\]</div>
+<p>Every additional bit of entropy <em>doubles</em> the brute-force search work required by an adversary (<span class="arithmatex">\(2^H\)</span> trial decryptions worst-case, <span class="arithmatex">\(2^{H-1}\)</span> on average). Thus a 56-bit DES key (<span class="arithmatex">\(2^{56} \approx 7.21 \times 10^{16}\)</span> keys) falls within hours to parallel hardware, while a 128-bit AES key (<span class="arithmatex">\(2^{128} \approx 3.4 \times 10^{38}\)</span> keys), a 12-word BIP-39 mnemonic seed (<span class="arithmatex">\(12 \times \log_2(2,048) = \mathbf{132\text{ bits}}\)</span>), or a 16-character random alphanumeric password (<span class="arithmatex">\(H = 16 \log_2 62 \approx \mathbf{95.267\text{ bits}}\)</span>, spanning <span class="arithmatex">\(62^{16} \approx \mathbf{4.767 \times 10^{28}\text{ keys}}\)</span>) remains computationally infeasible against exhaustive search.</p>
+<p>In Decimal mode, staging <span class="arithmatex">\(n\)</span> in Register <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(r\)</span> in Register <span class="arithmatex">\(X\)</span> evaluates discrete combinatorial state spaces from the probability menu: for a 12-drive storage array, selecting <span class="arithmatex">\(5\)</span> drives for an unordered RAID parity group yields <span class="arithmatex">\(\binom{12}{5} = \mathbf{792}\)</span> distinct drive subsets; ordering <span class="arithmatex">\(5\)</span> drives into a sequential failover chain multiplies by <span class="arithmatex">\(5! = 120\)</span> to yield <span class="arithmatex">\(P(12, 5) = \mathbf{95,040}\)</span> ordered routes. When Monte Carlo hardware verification requires a repeatable stream of uniform pseudo-random test vectors <span class="arithmatex">\(U_k \in [0, 1)\)</span>, seeding the generator from a known integer <span class="arithmatex">\(S_0\)</span> via <code>SD</code> guarantees that <code>RAND</code> replays the same sequence across every test bench.</p>
+<p>The ratio between sampling without replacement <span class="arithmatex">\(P(N, k)\)</span> and sampling with replacement <span class="arithmatex">\(N^k\)</span> governs the <strong>Birthday Paradox</strong>. When <span class="arithmatex">\(k\)</span> independent items (such as people in a room, TCP sequence numbers, or database records) are each assigned one of <span class="arithmatex">\(N\)</span> equally likely labels (such as <span class="arithmatex">\(N = 365\)</span> calendar days or <span class="arithmatex">\(N = 2^b\)</span> possible values of a <span class="arithmatex">\(b\)</span>-bit hash function), linear intuition suggests that a duplicate label becomes <span class="arithmatex">\(50\%\)</span> likely only when <span class="arithmatex">\(k\)</span> approaches <span class="arithmatex">\(N/2\)</span>. That linear estimate is far too large because a collision can occur across any of the <span class="arithmatex">\(\binom{k}{2} = \frac{k(k-1)}{2}\)</span> distinct pairs among the <span class="arithmatex">\(k\)</span> items—and <span class="arithmatex">\(\binom{k}{2}\)</span> grows <em>quadratically</em> with <span class="arithmatex">\(k\)</span>. Dividing the ordered permutation <span class="arithmatex">\(P(N, k)\)</span> by the <span class="arithmatex">\(N^k\)</span> unrestricted assignments and applying the first-order Taylor bound <span class="arithmatex">\(1 - x \approx e^{-x}\)</span> yields the Gaussian collision law and the square-root <strong>Birthday Bound</strong>:</p>
+<div class="arithmatex">\[P(\text{collision}) = 1 - \frac{P(N, k)}{N^k} \approx 1 - \exp\!\left(-\frac{k(k - 1)}{2N}\right), \qquad k_{50\%} \approx \sqrt{(2\ln 2)\,N} \approx 1.177\,\sqrt{N} \tag{Eq. 10.17}\]</div>
+<p>For <span class="arithmatex">\(N = 365\)</span> calendar days and <span class="arithmatex">\(k = 23\)</span> people (<span class="arithmatex">\(\binom{23}{2} = 253\text{ pairs}\)</span>), dividing <span class="arithmatex">\(P(365, 23) \approx 4.22 \times 10^{58}\)</span> by <span class="arithmatex">\(365^{23}\)</span> and subtracting from <span class="arithmatex">\(1\)</span> confirms that a shared birthday occurs with probability <span class="arithmatex">\(\approx 1 - 0.493 = 0.507\)</span> (<span class="arithmatex">\(\approx \mathbf{50.73\%}\)</span>). Across <span class="arithmatex">\(b\)</span>-bit digital identifiers (<span class="arithmatex">\(N = 2^b\)</span>), where the <span class="arithmatex">\(50\%\)</span> collision threshold scales as <span class="arithmatex">\(1.177 \times 2^{b/2}\)</span>, a 32-bit <code>CRC-32</code> or IPv4 packet ID (<span class="arithmatex">\(N = 2^{32} \approx 4.295 \times 10^9\)</span>) reaches a <span class="arithmatex">\(50\%\)</span> collision risk after just <span class="arithmatex">\(k_{50\%} \approx \sqrt{2\ln 2} \times 2^{16} \approx \mathbf{77,163}\)</span> frames, and a 64-bit block cipher initialization vector (<span class="arithmatex">\(N = 2^{64}\)</span>) reaches <span class="arithmatex">\(50\%\)</span> collision after <span class="arithmatex">\(k_{50\%} \approx 1.177 \times 2^{32} \approx \mathbf{5.06 \times 10^9}\)</span> blocks (~<span class="arithmatex">\(32\text{ GB}\)</span> of data). At 128 bits, a random <code>UUIDv4</code> (<span class="arithmatex">\(b = 122\)</span> random bits) requires <span class="arithmatex">\(k_{50\%} \approx \mathbf{2.71 \times 10^{18}}\)</span> UUIDs, and a 256-bit <code>SHA-256</code> digest (<span class="arithmatex">\(N = 2^{256} \approx 1.158 \times 10^{77}\)</span>) requires <span class="arithmatex">\(k_{50\%} \approx \mathbf{4.01 \times 10^{38}}\)</span> hashes before a random collision becomes <span class="arithmatex">\(50\%\)</span> likely.</p>
+<h3 id="1033-unpacking-multi-byte-network-words-ipv4-cidr-subnets-flash-pages">10.3.3 Unpacking Multi-Byte Network Words: IPv4 <code>CIDR</code> Subnets &amp; Flash Pages</h3>
+<p>In systems and network engineering, cleaving binary words at powers of two (<span class="arithmatex">\(2^k\)</span>) unpacks multi-byte network addresses, flash memory pages, and Base64 character streams across the four visible registers. Every IPv4 address <span class="arithmatex">\(A\)</span> on the Internet is an unsigned 32-bit integer written in dotted-quad decimal notation <span class="arithmatex">\(B_3.B_2.B_1.B_0\)</span> as four 8-bit octets (<code>0</code> to <code>255</code>, or <code>00h</code> to <code>FFh</code>), packed via Horner's radix-256 polynomial <span class="arithmatex">\(A = ((B_3 \cdot 256 + B_2)\cdot 256 + B_1)\cdot 256 + B_0\)</span>. Chaining three Euclidean divisions by <span class="arithmatex">\(256\)</span> on the 32-bit unsigned integer <span class="arithmatex">\(3,232,235,777\)</span> peels off the four base-256 octets one by one until all four dotted-quad numbers (<code>192.168.1.1</code>) sit together across Registers <span class="arithmatex">\(T, Z, Y,\)</span> and <span class="arithmatex">\(X\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>3232235777 [ENTER] 256 [↱] [÷R]</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><strong><code>1</code></strong></td>
+<td style="text-align: center;"><code>12625921</code></td>
+<td style="text-align: left;">Peel Octet 4 (<span class="arithmatex">\(B_0 = 1\)</span>) into <span class="arithmatex">\(Y\)</span>; upper 24-bit prefix in <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>256 [↱] [÷R]</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><strong><code>1</code></strong></td>
+<td style="text-align: center;"><strong><code>1</code></strong></td>
+<td style="text-align: center;"><code>49320</code></td>
+<td style="text-align: left;">Peel Octet 3 (<span class="arithmatex">\(B_1 = 1\)</span>) into <span class="arithmatex">\(Y\)</span>; upper 16-bit prefix in <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>256 [↱] [÷R]</code></td>
+<td style="text-align: center;"><strong><code>1</code></strong></td>
+<td style="text-align: center;"><strong><code>1</code></strong></td>
+<td style="text-align: center;"><strong><code>168</code></strong></td>
+<td style="text-align: center;"><strong><code>192</code></strong></td>
+<td style="text-align: left;">Peel Octet 2 (<span class="arithmatex">\(B_2 = 168\)</span>) in <span class="arithmatex">\(Y\)</span>, Octet 1 (<span class="arithmatex">\(B_3 = 192\)</span>) in <span class="arithmatex">\(X \implies \mathtt{192.168.1.1}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Once that power-of-two cleavage pattern is understood, any memory or network boundary splits the same way. For the byte address <span class="arithmatex">\(12,345 = 771 \times 16 + 9\)</span> (<code>0x3039</code>), cleaving by <span class="arithmatex">\(2^4 = 16\)</span> separates the 16-byte cache-line row index <span class="arithmatex">\(Q = \mathbf{771}\)</span> in Register <span class="arithmatex">\(X\)</span> from the intra-line byte offset <span class="arithmatex">\(R = \mathbf{9}\)</span> in Register <span class="arithmatex">\(Y\)</span>; cleaving that same byte address <span class="arithmatex">\(12,345\)</span> by <span class="arithmatex">\(2^8 = 256\)</span> for a SPI NOR flash chip splits the word at Bit 8 into Flash Page <span class="arithmatex">\(Q = \mathbf{48}\)</span> (<code>30h</code>) in Register <span class="arithmatex">\(X\)</span> and intra-page byte offset <span class="arithmatex">\(R = \mathbf{57}\)</span> (<code>39h</code>) in Register <span class="arithmatex">\(Y\)</span>.</p>
+<p>In Classless Inter-Domain Routing (<code>CIDR</code>), on a <code>/28</code> office VLAN subnet (<code>255.255.255.240</code>, where <span class="arithmatex">\(32 - 28 = 4\)</span> host bits define a block stride of <span class="arithmatex">\(2^4 = 16\)</span> addresses), cleaving host octet <code>205</code> by <code>16</code> places block index <span class="arithmatex">\(12\)</span> in Register <span class="arithmatex">\(X\)</span> and host offset <span class="arithmatex">\(13\)</span> in Register <span class="arithmatex">\(Y\)</span>, and multiplying <span class="arithmatex">\(12 \times 16\)</span> zeroes out the low 4 host bits to align to the <code>/28</code> network base ID <strong><code>192</code></strong> (while on a <code>/24</code> workstation address <code>192.168.10.45</code> <span class="arithmatex">\(= \mathtt{C0A80A2Dh}\)</span>, cleaving by <span class="arithmatex">\(2^8 = \mathtt{100h}\)</span> and multiplying back by <code>100h</code> aligns the network base to <code>C0A80A00h</code> and adding the host wildcard <code>FFh</code> yields the broadcast address <strong><code>C0A80AFFh</code></strong>).</p>
+<p><strong>Base64 encoding</strong> (RFC 4648) is the 24-bit four-register cousin of IPv4 unpacking. Welding three 8-bit ASCII bytes <code>"Man"</code> (<code>4D616Eh</code>) into a single 24-bit integer and cleaving it three times by <span class="arithmatex">\(2^6 = 64\)</span> (<span class="arithmatex">\(\mathtt{40h}\)</span>) peels off the four 6-bit Base64 character indices across all four stack registers (<span class="arithmatex">\(X = \mathtt{13h} = 19 \to \mathtt{'T'}\)</span>, <span class="arithmatex">\(Y = \mathtt{16h} = 22 \to \mathtt{'W'}\)</span>, <span class="arithmatex">\(Z = \mathtt{5h} = 5 \to \mathtt{'F'}\)</span>, and <span class="arithmatex">\(T = \mathtt{2Eh} = 46 \to \mathtt{'u'}\)</span>) to spell <strong><code>TWFu</code></strong>.</p>
+<h3 id="1034-bit-field-shift-and-merge-packing-rgb565-pixels-gpio-masks">10.3.4 Bit-Field Shift-and-Merge Packing: <code>RGB565</code> Pixels &amp; GPIO Masks</h3>
+<p>A microcontroller display framebuffer packs three Red, Green, and Blue brightness channels into a single 16-bit unsigned pixel word (<code>RGB565</code>), allocating 5 bits (<span class="arithmatex">\(R_5 \in [0, 31]\)</span>, <code>00h–1Fh</code>) to Red in Bits 15–11, 6 bits (<span class="arithmatex">\(G_6 \in [0, 63]\)</span>, <code>00h–3Fh</code>) to Green in Bits 10–5 (matching the human retina's peak photopic sensitivity to green), and 5 bits (<span class="arithmatex">\(B_5 \in [0, 31]\)</span>, <code>00h–1Fh</code>) to Blue in Bits 4–0:</p>
+<div class="arithmatex">\[\text{Pixel}_{16} = (R_5 \times \mathtt{800h}) + (G_6 \times \mathtt{20h}) + B_5 \tag{Eq. 10.18}\]</div>
+<p>In 16-bit <code>RGB565</code> display graphics, 5-bit Blue (<code>6h</code> <span class="arithmatex">\(= 6\)</span>), 6-bit Green (<code>15h</code> <span class="arithmatex">\(= 21\)</span>), and 5-bit Red (<code>1Fh</code> <span class="arithmatex">\(= 31\)</span>) staged across the stack in Hexadecimal mode shift Red left by 11 bits (<code>× 800h</code> <span class="arithmatex">\(\to \mathtt{F800h}\)</span>), swap Green into Register <span class="arithmatex">\(X\)</span> to shift left by 5 bits (<code>× 20h</code> <span class="arithmatex">\(\to \mathtt{2A0h}\)</span>), and merge all three disjoint bit lanes into the 16-bit pixel word <strong><code>FAA6h</code></strong> (<span class="arithmatex">\(64,166_{10}\)</span>). In the reverse direction, cleaving <strong><code>FAA6h</code></strong> at Bit 11 (<span class="arithmatex">\(2^{11} = \mathtt{800h}\)</span>) places the 11-bit remainder <code>6A6h</code> in Register <span class="arithmatex">\(Y\)</span> and the 5-bit Red quotient <code>1Fh</code> (<span class="arithmatex">\(31_{10}\)</span>) in Register <span class="arithmatex">\(X\)</span>, so swapping Registers <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> moves <code>6A6h</code> into Register <span class="arithmatex">\(X\)</span> (and <code>1Fh</code> into Register <span class="arithmatex">\(Y\)</span>, lifting to Register <span class="arithmatex">\(Z\)</span> when <code>20h</code> is entered) before cleaving by <span class="arithmatex">\(2^5 = \mathtt{20h}\)</span> to leave Red <code>1Fh</code> (<span class="arithmatex">\(31_{10}\)</span>) in Register <span class="arithmatex">\(Z\)</span>, Blue <code>6h</code> (<span class="arithmatex">\(6_{10}\)</span>) in Register <span class="arithmatex">\(Y\)</span>, and Green <code>15h</code> (<span class="arithmatex">\(21_{10}\)</span>) in Register <span class="arithmatex">\(X\)</span>. Because all four stack registers persist across radix changes, mixed-radix mask synthesis (for example, staging a hexadecimal register offset <code>3A7h</code> (<span class="arithmatex">\(935_{10}\)</span>), switching to octal (<code>1647o</code>) to add a UNIX permission mask <code>452o</code> (<span class="arithmatex">\(298_{10}\)</span>), and viewing the combined mask <code>2321o</code> as decimal <span class="arithmatex">\(\mathbf{1,233_{10}}\)</span> or hexadecimal <span class="arithmatex">\(\mathbf{\mathtt{4D1h}}\)</span>) requires no re-entry when switching bases.</p>
+<h3 id="1035-ieee-754-floating-point-bit-unpacking-checksums-endianness">10.3.5 IEEE-754 Floating-Point Bit Unpacking, Checksums &amp; Endianness</h3>
+<p>Multi-byte memory architectures follow either <strong>Big-Endian</strong> or <strong>Little-Endian</strong> byte ordering. Network protocols transmit bytes Big-Endian (<code>12345678h</code>, most-significant byte <code>12h</code> first), while x86, ARM, and RISC-V processors store bytes Little-Endian (<code>78563412h</code>, least-significant byte <code>78h</code> at the lowest memory address). Reversing the 32-bit Big-Endian word <code>0x12345678</code> into its Little-Endian mirror <code>0x78563412</code> (<code>BSWAP</code>) promotes Byte 0 (<code>78h</code> <span class="arithmatex">\(\times \mathtt{1000000h} = \mathtt{78000000h}\)</span>), Byte 1 (<code>56h</code> <span class="arithmatex">\(\times \mathtt{10000h} = \mathtt{560000h}\)</span>), and Byte 2 (<code>34h</code> <span class="arithmatex">\(\times \mathtt{100h} = \mathtt{3400h}\)</span>), and demotes Byte 3 (<span class="arithmatex">\(\lfloor \mathtt{12345678h} / \mathtt{1000000h}\rfloor = \mathtt{12h}\)</span>), summing to <strong><code>78563412h</code></strong>.</p>
+<p>When routers verify IPv4, TCP, and UDP packet integrity in flight, they use <strong>RFC 1071 16-bit one's-complement addition with end-around carry</strong> <em>(<a href="../appendix-e-annotated-bibliography/#cite-knuth1997">Knuth, 1997</a>)</em>. Because folding upper carries from Bit 16 back into Bit 0 makes 16-bit addition cyclically symmetric, Big-Endian and Little-Endian machines compute the same checksum without byte-swapping. For an IPv4 header whose ten 16-bit words sum to <code>2653Dh</code>, cleaving at <span class="arithmatex">\(2^{16} = \mathtt{10000h}\)</span> separates the upper carry quotient <code>2h</code> from the lower 16-bit sum <code>653Dh</code>, folding to <code>653Fh</code> (<code>653Dh + 2h</code>) and inverting against <code>FFFFh</code> (<code>FFFFh - 653Fh</code>) to yield the wire checksum <strong><code>9AC0h</code></strong>. That same two-register end-around carry implements a circular 1-bit left rotation (<code>ROL 1</code>) across an 8-bit register boundary (<span class="arithmatex">\(2^8 = \mathtt{100h}\)</span>): doubling <code>85h</code> (<span class="arithmatex">\(1000\,0101_2\)</span>) shifts the byte left to <code>10Ah</code>, cleaving by <code>100h</code> separates the low byte <code>0Ah</code> from the Bit 8 carry <code>1h</code>, and adding them folds the carry into Bit 0 to give <span class="arithmatex">\(\operatorname{ROL}_8(\mathtt{85h}, 1) = \mathbf{\mathtt{0Bh}}\)</span> (<span class="arithmatex">\(0000\,1011_2\)</span>).</p>
+<p>Finally, the <strong>IEEE-754 floating-point standard</strong> <em>(<a href="../appendix-e-annotated-bibliography/#cite-ieee754_2019">IEEE, 2019</a>; <a href="../appendix-e-annotated-bibliography/#cite-golub1996">Golub &amp; Van Loan, 1996</a>; <a href="../appendix-e-annotated-bibliography/#cite-parker2019">Parker, 2019</a>)</em> writes any normal non-zero real number <span class="arithmatex">\(x\)</span> in normalized base-2 scientific notation by slicing a fixed-width binary word into three contiguous bit-fields: a 1-bit sign flag <span class="arithmatex">\(S \in \{0, 1\}\)</span>, an unsigned biased exponent integer <span class="arithmatex">\(E\)</span> offset by a fixed midrange constant <span class="arithmatex">\(\text{bias}\)</span>, and a <span class="arithmatex">\(p\)</span>-bit unsigned fraction integer <span class="arithmatex">\(M \in [0, 2^p - 1]\)</span> representing the trailing binary digits after an implicit leading <code>1.</code> bit (whose least-significant step <span class="arithmatex">\(2^{-p}\)</span> defines the <strong>machine epsilon</strong> spacing <span class="arithmatex">\(\varepsilon_{\text{mach}}\)</span> between <span class="arithmatex">\(1\)</span> and the next representable floating-point number):</p>
+<div class="arithmatex">\[x = (-1)^S \times 2^{E - \text{bias}} \times \left(1 + \frac{M}{2^p}\right), \qquad \varepsilon_{\text{mach}} = 2^{-p} \tag{Eq. 10.19}\]</div>
+<p>Those three multiplicative fields separate sign, scale, and precision in hardware: <span class="arithmatex">\((-1)^S\)</span> sets the algebraic sign (<span class="arithmatex">\(+1\)</span> when <span class="arithmatex">\(S = 0\)</span>, <span class="arithmatex">\(-1\)</span> when <span class="arithmatex">\(S = 1\)</span>), the power-of-two factor <span class="arithmatex">\(2^{E - \text{bias}}\)</span> selects the binary octave window (allowing unsigned integer comparators to sort exponents directly without a separate exponent sign bit), and the significand factor <span class="arithmatex">\(1 + M/2^p = (1.M)_2\)</span> subdivides that octave into <span class="arithmatex">\(2^p\)</span> uniform steps of relative width <span class="arithmatex">\(\varepsilon_{\text{mach}} = 2^{-p}\)</span> while omitting the invariant leading <code>1.</code> bit from storage to gain one extra bit of precision. For 32-bit single precision (<code>binary32</code>, <span class="arithmatex">\(p = 23\)</span> explicit mantissa bits, <span class="arithmatex">\(\text{bias} = 127\)</span>), <span class="arithmatex">\(\varepsilon_{\text{mach}} = 2^{-23} \approx \mathbf{1.192 \times 10^{-7}}\)</span> (<span class="arithmatex">\(\sim 7.2\)</span> decimal digits); for 64-bit double precision (<code>binary64</code>, <span class="arithmatex">\(p = 52\)</span> explicit mantissa bits, <span class="arithmatex">\(\text{bias} = 1023\)</span>), <span class="arithmatex">\(\varepsilon_{\text{mach}} = 2^{-52} \approx \mathbf{2.22 \times 10^{-16}}\)</span> (<span class="arithmatex">\(\sim 15.95\)</span> decimal digits).</p>
+<p>A raw IEEE-754 floating-point word unpacks via the same two-step Euclidean cleavage as an <code>RGB565</code> pixel. Because the SC-32's signed 36-bit integer word places its sign boundary at Bit 35, any 32-bit unsigned bit pattern like <code>0xC0C80000</code> (<span class="arithmatex">\(3,234,332,672_{10}\)</span>, representing <code>binary32</code> <span class="arithmatex">\(-6.25_{10}\)</span>) sits inside Bits 31–0 as a non-negative integer. Cleaving <code>C0C80000h</code> first at Bit 23 (<span class="arithmatex">\(2^{23} = \mathtt{800000h}\)</span>) and then cleaving the upper 9-bit quotient (<code>181h</code>) at Bit 8 (<span class="arithmatex">\(2^8 = \mathtt{100h}\)</span>) deposits the 23-bit mantissa <code>480000h</code> (<span class="arithmatex">\(4,718,592 / 2^{23} \approx 0.563\)</span>, or <span class="arithmatex">\(\approx 1.563\)</span> with the hidden <code>1.</code>) into Register <span class="arithmatex">\(Z\)</span>, the 8-bit biased exponent <code>81h</code> (<span class="arithmatex">\(129_{10}\)</span>, so <span class="arithmatex">\(e = 129 - 127 = 2\)</span>) into Register <span class="arithmatex">\(Y\)</span>, and the sign bit <code>1h</code> into Register <span class="arithmatex">\(X\)</span>, verifying <span class="arithmatex">\((-1)^1 \times 2^2 \times (1 + 4,718,592 / 2^{23}) = \mathbf{-6.25}\)</span>.</p>
+<p>For the upper 32-bit word <code>0xC02AC000</code> of 64-bit <code>binary64</code> <span class="arithmatex">\(-13.375_{10}\)</span>, cleaving at <span class="arithmatex">\(2^{20} = \mathtt{100000h}\)</span> and <span class="arithmatex">\(2^{11} = \mathtt{800h}\)</span> isolates <span class="arithmatex">\(S = 1\)</span>, <span class="arithmatex">\(E = \mathtt{402h} = 1026\)</span> (<span class="arithmatex">\(e = 1026 - 1023 = 3\)</span>), and mantissa fraction <span class="arithmatex">\(\mathtt{AC000h} / 2^{20} \approx 0.672\)</span> to reconstruct <span class="arithmatex">\((-1)^1 \times 2^3 \times (1 + \mathtt{AC000h}/2^{20}) = \mathbf{-13.375}\)</span>.</p>
+<h3 id="1036-try-it-on-the-stack">10.3.6 Try It on the Stack</h3>
+<ol>
+<li><strong>Euclidean Quotient-and-Remainder Reconstruction &amp; Modular Exponentiation:</strong> In Decimal mode, cleave <span class="arithmatex">\(N = 250\)</span> by <span class="arithmatex">\(M = 16\)</span> using quotient-and-remainder division to place remainder <span class="arithmatex">\(R = 10\)</span> in Register <span class="arithmatex">\(Y\)</span> and quotient <span class="arithmatex">\(Q = 15\)</span> in Register <span class="arithmatex">\(X\)</span>, then restore <span class="arithmatex">\(M = 16\)</span> via <code>LASTX</code>, multiply by <span class="arithmatex">\(Q\)</span>, and add <span class="arithmatex">\(R\)</span> to reconstruct <span class="arithmatex">\(N = \mathbf{250}\)</span>; next, find the last three digits of <span class="arithmatex">\(7^8 \bmod 1,000\)</span> by squaring <span class="arithmatex">\(7 \to 49 \to 2,401\)</span>, cleaving by <span class="arithmatex">\(1,000\)</span> and swapping Registers <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> to isolate the remainder <span class="arithmatex">\(401\)</span>, squaring <span class="arithmatex">\(401 \to 160,801\)</span>, and cleaving by <span class="arithmatex">\(1,000\)</span> and swapping once more. <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(\mathbf{250}\)</span> and <span class="arithmatex">\(7^8 \bmod 1,000 = \mathbf{801}\)</span>.)</em></li>
+<li><strong>Unpacking a 16-Bit <code>RGB565</code> Pixel Word:</strong> In Hexadecimal mode, cleave the 16-bit color word <code>F38Eh</code> first at Bit 11 (<code>800h</code>), swap Registers <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> to bring the lower 11-bit remainder (<code>38Eh</code>) into Register <span class="arithmatex">\(X\)</span>, and then cleave at Bit 5 (<code>20h</code>) to separate all three color channels across Registers <span class="arithmatex">\((Z, Y, X)\)</span>. <em>(Verified stack result: Red <span class="arithmatex">\(Z = \mathbf{\mathtt{1Eh}}\)</span> (<span class="arithmatex">\(30_{10}\)</span>), Blue <span class="arithmatex">\(Y = \mathbf{\mathtt{Eh}}\)</span> (<span class="arithmatex">\(14_{10}\)</span>), and Green <span class="arithmatex">\(X = \mathbf{\mathtt{1Ch}}\)</span> (<span class="arithmatex">\(28_{10}\)</span>).)</em></li>
+<li><strong>End-Around Carry RFC 1071 Checksum Fold:</strong> In Hexadecimal mode, fold the 17-bit header accumulator sum <code>10000h</code> across the 16-bit boundary <code>10000h</code> via quotient-and-remainder division and addition (<span class="arithmatex">\(0 + 1 = \mathtt{1h}\)</span>), then subtract from the 16-bit all-ones mask <code>FFFFh</code> (by keying <code>FFFFh</code>, swapping Registers <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span>, and subtracting) to form <span class="arithmatex">\(\mathtt{FFFFh} - \mathtt{1h}\)</span>, the one's-complement wire checksum. <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\(\mathbf{\mathtt{FFFEh}}\)</span> (<span class="arithmatex">\(65,534_{10}\)</span>).)</em></li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/ecommerce.js"></script>
+      
+    
+  </body>
+</html>
