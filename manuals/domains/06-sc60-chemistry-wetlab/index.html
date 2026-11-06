@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An applied guide to molecular weight parsing, solution molarity, buffer design, and spectrophotometry on the StackCalc 60.">
+        <meta name="description" content="Three narrative chemistry and biochemistry chapters mastering IUPAC gravimetric stoichiometry, stock aliquot dilutions, Henderson-Hasselbalch buffers, Beer-Lambert spectrophotometry, Arrhenius kinetics, and centrifugation on the SC-60.">
       
       
         <meta name="author" content="StackCalc Engineering">
@@ -22,7 +22,7 @@
     
     
       
-        <title>SC-60 Wet-Lab Chemistry, Stoichiometry & Spectroscopy Handbook - StackCalc32</title>
+        <title>Unit VI: Stoichiometry, Chemical Equilibrium & Wet-Lab Analytics - StackCalc32</title>
       
     
     
@@ -67,13 +67,13 @@
   
   <meta property="og:site_name" content="StackCalc32">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="SC-60 Wet-Lab Chemistry, Stoichiometry &amp; Spectroscopy Handbook">
-  <meta property="og:description" content="An applied guide to molecular weight parsing, solution molarity, buffer design, and spectrophotometry on the StackCalc 60.">
+  <meta property="og:title" content="Unit VI: Stoichiometry, Chemical Equilibrium &amp; Wet-Lab Analytics">
+  <meta property="og:description" content="Three narrative chemistry and biochemistry chapters mastering IUPAC gravimetric stoichiometry, stock aliquot dilutions, Henderson-Hasselbalch buffers, Beer-Lambert spectrophotometry, Arrhenius kinetics, and centrifugation on the SC-60.">
   <meta property="og:url" content="https://www.stackcalc.io/manuals/domains/06-sc60-chemistry-wetlab/">
   <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SC-60 Wet-Lab Chemistry, Stoichiometry &amp; Spectroscopy Handbook">
-  <meta name="twitter:description" content="An applied guide to molecular weight parsing, solution molarity, buffer design, and spectrophotometry on the StackCalc 60.">
+  <meta name="twitter:title" content="Unit VI: Stoichiometry, Chemical Equilibrium &amp; Wet-Lab Analytics">
+  <meta name="twitter:description" content="Three narrative chemistry and biochemistry chapters mastering IUPAC gravimetric stoichiometry, stock aliquot dilutions, Henderson-Hasselbalch buffers, Beer-Lambert spectrophotometry, Arrhenius kinetics, and centrifugation on the SC-60.">
   <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -120,7 +120,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sc-60-wet-lab-chemistry-stoichiometry-spectroscopy-handbook" class="md-skip">
+        <a href="#unit-vi-stoichiometry-chemical-equilibrium-wet-lab-analytics" class="md-skip">
           Skip to content
         </a>
       
@@ -158,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SC-60 Wet-Lab Chemistry, Stoichiometry & Spectroscopy Handbook
+              Unit VI: Stoichiometry, Chemical Equilibrium & Wet-Lab Analytics
             
           </span>
         </div>
@@ -2914,209 +2914,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-counting-what-you-cannot-see" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Counting What You Cannot See
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Counting What You Cannot See">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-not-just-use-a-phone-app" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Not Just Use a Phone App?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-core-concepts-how-chemists-think" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Core Concepts: How Chemists Think
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Core Concepts: How Chemists Think">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#concept-1-the-molecular-bridge-molarity-mass-prep" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 1: The Molecular Bridge (Molarity &amp; Mass Prep)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concept-2-the-conservation-of-molecules-serial-dilution-c_1-v_1-c_2-v_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 2: The Conservation of Molecules (Serial Dilution: \(C_1 V_1 = C_2 V_2\))
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concept-3-the-chemical-shock-absorber-ph-buffers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 3: The Chemical Shock Absorber (pH &amp; Buffers)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Concept 3: The Chemical Shock Absorber (pH & Buffers)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-pure-water-fails-as-a-buffer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Pure Water Fails as a Buffer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concept-4-counting-molecules-with-light-beer-lambert-law" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 4: Counting Molecules with Light (Beer-Lambert Law)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-real-world-field-walkthroughs" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Real-World Field Walkthroughs
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Real-World Field Walkthroughs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#field-case-1-formulating-a-phosphate-buffer-rchempros" class="md-nav__link">
-    <span class="md-ellipsis">
-      Field Case 1: Formulating a Phosphate Buffer (r/Chempros)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Field Case 1: Formulating a Phosphate Buffer (r/Chempros)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-solve-it-on-the-sc-60" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to Solve It on the SC-60
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-case-2-serial-dilution-from-a-5text-m-stock-rchemistry" class="md-nav__link">
-    <span class="md-ellipsis">
-      Field Case 2: Serial Dilution from a \(5\text{ M}\) Stock (r/chemistry)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Field Case 2: Serial Dilution from a \(5\text{ M}\) Stock (r/chemistry)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step-mechanics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step-by-Step Mechanics
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-try-it-yourself-practice-problems" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Try It Yourself: Practice Problems
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Try It Yourself: Practice Problems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problem-1-molecular-weight-of-glucose" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem 1: Molecular Weight of Glucose
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problem-2-beer-lambert-concentration-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem 2: Beer-Lambert Concentration Check
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problem-3-ideal-gas-volume-at-standard-temperature" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem 3: Ideal Gas Volume at Standard Temperature
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -3130,111 +2927,881 @@
                   
 
 
-<h1 id="sc-60-wet-lab-chemistry-stoichiometry-spectroscopy-handbook">SC-60 Wet-Lab Chemistry, Stoichiometry &amp; Spectroscopy Handbook</h1>
-<blockquote>
-<p><strong>Who this is for:</strong> Anyone who has taken general chemistry and wants to understand how bench scientists, biochemists, and pharmaceutical researchers turn chemical formulas into exact recipes on a laboratory balance.</p>
-</blockquote>
+<h1 id="unit-vi-stoichiometry-chemical-equilibrium-wet-lab-analytics">Unit VI: Stoichiometry, Chemical Equilibrium &amp; Wet-Lab Analytics</h1>
+<p>In September 1860, at the First International Congress of Chemists in Karlsruhe, Germany, the Italian chemist Stanislao Cannizzaro distributed a printed pamphlet reviving the 1811 molecular hypothesis of his countryman Amedeo Avogadro: equal volumes of gases at the same temperature and pressure contain equal numbers of molecules, and elemental gases such as hydrogen, nitrogen, and oxygen travel as diatomic pairs (<span class="arithmatex">\(\text{H}_2, \text{N}_2, \text{O}_2\)</span>). Every chemical reaction proceeds between discrete integer counts of atoms and molecules—when citric acid neutralizes sodium bicarbonate in aqueous solution (<span class="arithmatex">\(\text{C}_6\text{H}_8\text{O}_7 + 3\,\text{NaHCO}_3 \longrightarrow \text{Na}_3\text{C}_6\text{H}_5\text{O}_7 + 3\,\text{H}_2\text{O} + 3\,\text{CO}_2\uparrow\)</span>), one molecule of citric acid reacts with three molecules of sodium bicarbonate—yet individual molecules measure roughly a nanometer across and weigh on the order of <span class="arithmatex">\(10^{-22}\text{ grams}\)</span>. By defining the <strong>mole</strong> (<span class="arithmatex">\(\text{mol}\)</span>, [g] [▸mol]) as <span class="arithmatex">\(N_A = 6.02214076 \times 10^{23}\)</span> elementary entities, Avogadro and Cannizzaro erected the stoichiometric bridge connecting integer chemical formulas ([FML], [Z], [f] [ION], [f] [w/w]) to macroscopic gram masses ([MW]) weighed on an analytical balance and dissolved to known Molarity ([f] [RXN], [f] [▸M], [g] [▸mM], [g] [▸g/L]) or diluted across volumetric glassware ([C₁V₁]).</p>
+<p>Half a century later in 1909 at the Carlsberg Laboratory in Copenhagen, Danish biochemist Søren Peder Lauritz Sørensen investigated how aqueous hydrogen-ion concentration governs the catalytic speed of malt and yeast enzymes during brewing. Because free proton concentrations <span class="arithmatex">\([\text{H}^+]\)</span> in water span fourteen orders of magnitude—from <span class="arithmatex">\(1.0\text{ mol/L}\)</span> in concentrated mineral acid down to <span class="arithmatex">\(10^{-14}\text{ mol/L}\)</span> in caustic alkali—plotting reaction rates against raw negative powers of ten obscured biochemical comparisons. Sørensen introduced the <em>pondus hydrogenii</em> scale ([pH] and [g] [pKₐ]), compressing exponential proton activity through the negative base-ten logarithm <span class="arithmatex">\(\text{pH} = -\log_{10}[\text{H}^+]\)</span>. Building on Sørensen's notation and Lawrence J. Henderson's 1908 study of carbonic-acid equilibria in blood plasma, Danish physician Karl Albert Hasselbalch cast the weak-acid dissociation law into logarithmic form in 1916, establishing the <strong>Henderson–Hasselbalch buffer equation</strong> ([BUF]) that pairs with volumetric titration stoichiometry ([f] [EQV]) at the wet-lab bench. Across domains, the Henderson–Hasselbalch logarithmic equilibrium <span class="arithmatex">\(\text{pH} = \text{p}K_a + \log_{10}([\text{A}^-]/[\text{HA}])\)</span> shares its exact mathematical structure with Walther Nernst's electrochemical cell potential ([g] [E°], <span class="arithmatex">\(E = E^\circ - (0.05916/n_e)\log_{10} Q\)</span>) and with the decibel gain and power ratios of Unit V.</p>
+<p>To count dissolved biomolecules without consuming or destroying the sample, German physicist August Beer proved in 1852 that monochromatic light traversing an absorbing solution attenuates exponentially with both solute concentration and optical path length, uniting Pierre Bouguer and Johann Heinrich Lambert's earlier absorption laws into the <strong>Beer–Lambert spectrophotometric equation</strong> ([εbc], [f] [%T]). Inside a quartz cuvette at <span class="arithmatex">\(280\text{ nm}\)</span>, aromatic tryptophan and tyrosine side chains cast a quantitative optical shadow proportional to protein molarity—obeying the same base-ten logarithmic attenuation law (<span class="arithmatex">\(A = -\log_{10}(I/I_0) = \varepsilon b c\)</span>) that governs neutral-density camera filters in Unit IV and RF transmission-line path loss in Unit V. Rounding out the physical-chemistry bench, the ideal gas equation ([PVT]), J. Willard Gibbs's 1876 free-energy criterion for reaction spontaneity and equilibrium ([f] [ΔG], [g] [Kₑq]), Walther Nernst's 1889 electrochemical potential ([g] [E°]), Svante Arrhenius's 1889 activation-energy rate law ([g] [Eₐ], paired with first-order half-life [g] [t½]), calorimetry ([f] [CAL]), and Theodor Svedberg's Nobel-winning centrifugal sedimentation equations ([g] [RCF]) link microscopic molecular energetics to laboratory instruments.</p>
+<p>To support both rapid benchtop checks and multi-variable analytical design, the <strong>SC-60</strong> provides three integrated architectural capabilities:
+1. <strong>Configurable Stack Depth ([4-LV], [8-LV], or [INF] Deep Stack via [g] [FLAGS]):</strong> Chemists can operate in the classic 4-level RPN stack (<code>T, Z, Y, X</code>) for fast two- and three-register operations, or enable [8-LV] / [INF] deep stack mode to hold dry salt weights, conjugate acid/base millimoles, stock concentrations, and temperature steps simultaneously without overwriting intermediate values.
+2. <strong>Dual-Mode Domain Keys (Quick-Access RPN Stack Shortcuts + Bidirectional Equation Solver Workspaces via [g] [SOLVE] / [XEQ]):</strong> Pressing a domain key such as [MW], [C₁V₁], [f] [RXN], [f] [EQV], [BUF], [εbc], [PVT], [f] [ΔG], [g] [E°], or [f] [CAL] directly on the RPN stack executes an immediate calculation using built-in 118-element IUPAC atomic weights and CODATA physical constants (<span class="arithmatex">\(R = 8.314462618\text{ J/(mol}\cdot\text{K)}\)</span>, <span class="arithmatex">\(F = 96{,}485.33\text{ C/mol}\)</span>, <span class="arithmatex">\(N_A = 6.02214076 \times 10^{23}\text{ mol}^{-1}\)</span>, <span class="arithmatex">\(k_B = 1.380649 \times 10^{-23}\text{ J/K}\)</span>, recalled directly via [f] [Nₐ], [g] [R], [f] [F], [f] [kB]) and wet-lab unit conversions ([f] [▸M], [g] [▸mM], [g] [▸g/L], [g] [▸mol], [g] [▸K], [f] [▸J], [g] [▸cal], [f] [▸atm], [g] [▸kPa]). Pressing [g] [SOLVE] (or [XEQ]) with a domain key opens its named <strong>Bidirectional Equation Solver Workspace</strong> (<code>W = N × M</code>, <code>N = C × V</code>, <code>C × V = D × U</code>, <code>A × V = B × U</code>, <code>A = E × B × C</code>, <code>P = K + LOG(A/H)</code>, <code>P × V = N × R × T</code>, <code>G = H - T × S</code>, <code>E = S - .059/N LOG Q</code>, <code>Q = M × C × T</code>) on Line 1 (<code>[LFU0]</code>–<code>[LFU5]</code>), where you bind any known parameters to the variable softkeys and solve backward for any unknown variable ([c], [A], [Q], or [T]).
+3. <strong>Domain Input Parsers ([FML]) &amp; Live Reference Ledgers ([g] [▦], [f] [ION]):</strong> Pressing [Z] with <span class="arithmatex">\(X = 0\)</span> (or pressing the [FML] softkey inside the [MW] workspace) activates the interactive chemical formula tokenizer (<code>FML: _</code>), which parses elemental symbols and stoichiometric subscripts directly into molar mass and elemental mass percentages ([f] [w/w]), while [g] [▦] and [f] [ION] surface polyatomic ion charges and formula weights right on the display.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Chapter</th>
+<th style="text-align: left;">Narrative Problem</th>
+<th style="text-align: left;">Mathematical Concepts</th>
+<th style="text-align: left;">SC-60 Keys &amp; Workspaces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Chapter 16</strong></td>
+<td style="text-align: left;">Preparing <span class="arithmatex">\(250\text{ mL}\)</span> of <span class="arithmatex">\(0.50\text{ M}\)</span> <span class="arithmatex">\(\text{NaCl}\)</span> and <span class="arithmatex">\(150\text{ mL}\)</span> of <span class="arithmatex">\(0.10\text{ M}\)</span> Tris from dry crystals and <span class="arithmatex">\(2.0\text{ M}\)</span> stock bottles, plus verifying a cofactor dilution by UV absorbance</td>
+<td style="text-align: left;">IUPAC molar mass, elemental [f] [w/w], hydrate lattices, gravimetric stoichiometry, <span class="arithmatex">\(C_1 V_1 = C_2 V_2\)</span> dilutions, serial-dilution error propagation</td>
+<td style="text-align: left;">[FML], [MW], [Z], [f] [ION], [f] [w/w], [g] [w/v], [f] [RXN], [C₁V₁], [εbc], [f] [▸M], [g] [▸mM], [g] [▸g/L], [g] [▸mol]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Chapter 17</strong></td>
+<td style="text-align: left;">Formulating a <span class="arithmatex">\(100\text{ mM}\)</span> conjugate buffer at <span class="arithmatex">\(\text{pH} = 7.40\)</span> against an acid spike and standardizing diprotic <span class="arithmatex">\(\text{H}_2\text{SO}_4\)</span></td>
+<td style="text-align: left;">Water autoionization, Sørensen [pH]/[g] [pKₐ], Henderson–Hasselbalch species partitioning, ionic-strength <span class="arithmatex">\(\text{p}K_a'\)</span> shifts, diprotic titrations</td>
+<td style="text-align: left;">[pH], [g] [pKₐ], [f] [10ˣ], [BUF], [f] [EQV]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Chapter 18</strong></td>
+<td style="text-align: left;">Measuring purified enzyme concentration at <span class="arithmatex">\(280\text{ nm}\)</span> (<span class="arithmatex">\(A = 0.680\)</span>), modeling Arrhenius acceleration and thermal ceilings, and setting rotor RPM for <span class="arithmatex">\(12{,}000 \times g\)</span></td>
+<td style="text-align: left;">Beer–Lambert absorbance, molar extinction, ideal gas law, Gibbs <span class="arithmatex">\(\Delta G\)</span> &amp; Nernst <span class="arithmatex">\(E\)</span>, Arrhenius activation kinetics, rotor RCF/RPM</td>
+<td style="text-align: left;">[εbc], [f] [%T], [PVT], [f] [ΔG], [g] [Kₑq], [g] [E°], [g] [Eₐ], [g] [t½], [g] [RCF], [f] [CAL], [f] [Nₐ], [g] [R], [f] [F], [f] [kB]</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="1-counting-what-you-cannot-see">1. Counting What You Cannot See</h2>
-<p>Imagine you want to react one molecule of citric acid with three molecules of sodium bicarbonate.</p>
-<p>The chemical equation looks tidy on paper:
-$<span class="arithmatex">\(\text{C}_6\text{H}_8\text{O}_7 + 3\,\text{NaHCO}_3 \to \text{Na}_3\text{C}_6\text{H}_5\text{O}_7 + 3\,\text{H}_2\text{O} + 3\,\text{CO}_2\)</span>$</p>
-<p>The ratio is simple: <span class="arithmatex">\(1\text{ to }3\)</span>. But when you walk into the laboratory, you face an immediate physical barrier: <strong>molecules are far too tiny to see or count.</strong> You cannot pick up individual molecules with micro-tweezers and drop them into a beaker. The only tool you have to measure chemicals on the lab bench is an analytical balance that measures mass in <strong>grams</strong>.</p>
-<p>How do you translate an exact count of trillions of invisible molecules into a pile of white powder on a glass weighing dish?</p>
-<p>The bridge between the atomic world and the human world is the <strong>Mole</strong>: a quantity defined by Avogadro's constant (<span class="arithmatex">\(6.022 \times 10^{23}\)</span> particles). By summing the atomic weights of each element on the periodic table, chemists calculate the <strong>Molecular Weight (<span class="arithmatex">\(MW\)</span>)</strong> in grams per mole.</p>
-<p>Once you leave the dry balance and dissolve powders into liquid beakers, chemistry becomes a world of concentrations, dilutions, and logarithmic pH scales. A researcher formulating a buffer or synthesizing a medicine must navigate:
-- Calculating exact mass for target molarities (<span class="arithmatex">\(m = C \cdot V \cdot MW\)</span>).
-- Diluting concentrated chemical stocks (<span class="arithmatex">\(C_1 V_1 = C_2 V_2\)</span>).
-- Designing biochemical buffers that keep delicate proteins from denaturing.
-- Measuring how much light a solution absorbs to determine its purity.</p>
-<p>The <strong>StackCalc 60 (SC-60)</strong> puts an IUPAC molecular weight tokenizer, Henderson-Hasselbalch buffer solver, serial dilution calculator, and the Beer-Lambert spectrophotometry law directly into a chemical 4-level RPN stack.</p>
-<h3 id="why-not-just-use-a-phone-app">Why Not Just Use a Phone App?</h3>
-<ul>
-<li><strong>The Nitrile Glove and Chemical Hazard Barrier:</strong> In an active chemistry or biology lab, researchers wear disposable nitrile gloves exposed to concentrated acids, organic solvents (like chloroform or DMSO), and mutagenic DNA stains (like ethidium bromide). Touching a personal glass smartphone with contaminated gloves violates laboratory biosafety standards and transfers toxic compounds to personal items and the home. The SC-60 is an IP-rated, solvent-resistant laboratory instrument designed to live next to the balance and be wiped down with ethanol or bleach.</li>
-<li><strong>The Hydrate Mass Trap:</strong> Many common laboratory salts absorb water molecules into their crystal lattice. For example, anhydrous copper sulfate (<span class="arithmatex">\(\text{CuSO}_4\)</span>) has a molar mass of <span class="arithmatex">\(159.61\text{ g/mol}\)</span>, while copper sulfate pentahydrate (<span class="arithmatex">\(\text{CuSO}_4 \cdot 5\text{H}_2\text{O}\)</span>) has a molar mass of <span class="arithmatex">\(249.68\text{ g/mol}\)</span>—a massive <span class="arithmatex">\(56\%\)</span> difference! If a student reads a protocol calling for <span class="arithmatex">\(\text{CuSO}_4\)</span> and weighs the pentahydrate without compensating for the water weight, the solution is severely under-concentrated, ruining weeks of research. The SC-60’s formula tokenizer computes exact hydrate stoichiometries directly on the screen.</li>
-</ul>
+<h1 id="chapter-16-weighing-the-buffer-and-cutting-the-stock-aliquot">Chapter 16: Weighing the Buffer and Cutting the Stock Aliquot</h1>
+<p>At eight o'clock on Monday morning in a protein crystallography laboratory, a research biochemist opens the protocol notebook to prepare the day's chromatography elution buffers before loading a purified enzyme column. Two foundational solutions are required at the bench: first, <span class="arithmatex">\(250\text{ mL}\)</span> (<span class="arithmatex">\(V = 0.250\text{ L}\)</span>) of <span class="arithmatex">\(C = 0.50\text{ M}\)</span> physiological sodium chloride (<span class="arithmatex">\(\text{NaCl}\)</span>) weighed from anhydrous crystalline reagent on the analytical balance ([MW], [g] [▸mol]); and second, <span class="arithmatex">\(150\text{ mL}\)</span> (<span class="arithmatex">\(V_2 = 0.150\text{ L}\)</span>) of <span class="arithmatex">\(C_2 = 0.10\text{ M}\)</span> Tris buffer—tris(hydroxymethyl)aminomethane, <span class="arithmatex">\(\text{C}_4\text{H}_{11}\text{NO}_3\)</span>—prepared both from dry crystals and by cutting an exact pipette aliquot <span class="arithmatex">\(V_1\)</span> from a concentrated <span class="arithmatex">\(C_1 = 2.0\text{ M}\)</span> sterile stock bottle ([C₁V₁]) without wasting a milliliter of stock reagent. Once the buffers are mixed, the biochemist also checks a diluted nicotinamide cofactor aliquot inside a <span class="arithmatex">\(b = 1.00\text{ cm}\)</span> quartz cuvette (<span class="arithmatex">\(\varepsilon = 6{,}600\text{ M}^{-1}\text{cm}^{-1}\)</span>, measured absorbance <span class="arithmatex">\(A = 0.845\)</span>) by solving the Beer–Lambert workspace ([εbc]) backward for its exact working concentration <span class="arithmatex">\(C\)</span>.</p>
+<p>Beside the sodium chloride bottle on the reagent shelf sits a jar of dibasic sodium phosphate heptahydrate (<span class="arithmatex">\(\text{Na}_2\text{HPO}_4 \cdot 7\text{H}_2\text{O}\)</span>). A novice technician who looks up the formula weight of anhydrous <span class="arithmatex">\(\text{Na}_2\text{HPO}_4\)</span> (<span class="arithmatex">\(141.958\text{ g/mol}\)</span>) and weighs that mass from the heptahydrate jar will shortchange the buffer's actual phosphate molarity by nearly half, because seven water molecules are locked inside every crystal unit cell on the balance pan (<span class="arithmatex">\(268.063\text{ g/mol}\)</span>). In quantitative wet-lab work, every gram weighed on the pan and every microliter aspirated into a pipette tip must account for the exact molecular formula of the reagent in hand.</p>
+<p>To complete the morning bench prep, the biochemist must execute three interconnected stoichiometric calculations: first, sum the IUPAC atomic weights ([Z], [FML], [f] [ION]) of <span class="arithmatex">\(\text{NaCl}\)</span>, Tris (<span class="arithmatex">\(\text{C}_4\text{H}_{11}\text{NO}_3\)</span>), and hydrated phosphate salts while auditing elemental mass percentages ([f] [w/w]); second, compute the exact dry reagent masses <span class="arithmatex">\(W\)</span> required for the <span class="arithmatex">\(250\text{ mL}\)</span> <span class="arithmatex">\(\text{NaCl}\)</span> and <span class="arithmatex">\(150\text{ mL}\)</span> Tris flasks ([MW], [f] [RXN], [g] [▸mol]); and third, determine the exact stock aliquot volume <span class="arithmatex">\(V_1\)</span> to pipette from the <span class="arithmatex">\(2.0\text{ M}\)</span> stock bottle ([C₁V₁]) and verify the cofactor dilution in the [εbc] Solver Workspace.</p>
 <hr />
-<h2 id="2-core-concepts-how-chemists-think">2. Core Concepts: How Chemists Think</h2>
-<h3 id="concept-1-the-molecular-bridge-molarity-mass-prep">Concept 1: The Molecular Bridge (Molarity &amp; Mass Prep)</h3>
-<p>A solution’s concentration is measured in <strong>Molarity (<span class="arithmatex">\(M\)</span>)</strong>: the number of moles of solute dissolved in one liter of total solution:</p>
-<div class="arithmatex">\[\text{Molarity } (C) = \frac{\text{Moles } (n)}{\text{Volume in Liters } (V)} \quad \left[\frac{\text{mol}}{\text{L}}\right]\]</div>
-<p>To prepare a solution of known concentration <span class="arithmatex">\(C\)</span> and volume <span class="arithmatex">\(V\)</span>, the mass of solid chemical powder to weigh on the balance is:</p>
-<div class="arithmatex">\[\text{Mass } (m) = C \cdot V \cdot MW \quad [\text{grams}]\]</div>
-<p>For example, to make <span class="arithmatex">\(500\text{ mL}\)</span> (<span class="arithmatex">\(0.50\text{ L}\)</span>) of a <span class="arithmatex">\(0.20\text{ M}\)</span> sodium chloride (<span class="arithmatex">\(\text{NaCl}\)</span>, <span class="arithmatex">\(MW = 58.44\text{ g/mol}\)</span>) solution:
-$<span class="arithmatex">\(m = 0.20 \text{ mol/L} \times 0.50 \text{ L} \times 58.44 \text{ g/mol} = \mathbf{5.844\text{ grams}}\)</span>$</p>
-<p>On the SC-60, you type the formula <code>NaCl</code> into the tokenizer to retrieve its molecular weight (<span class="arithmatex">\(58.44\)</span>), multiply by volume and concentration on the stack, and read the required mass in grams instantly.</p>
-<h3 id="concept-2-the-conservation-of-molecules-serial-dilution-c_1-v_1-c_2-v_2">Concept 2: The Conservation of Molecules (Serial Dilution: <span class="arithmatex">\(C_1 V_1 = C_2 V_2\)</span>)</h3>
-<p>In laboratories, chemicals are rarely prepared from raw powders every day. Instead, labs keep concentrated <strong>stock solutions</strong> on the shelf (e.g. <span class="arithmatex">\(5.0\text{ M } \text{NaCl}\)</span> or <span class="arithmatex">\(10\times\text{ PBS buffer}\)</span>).</p>
-<p>When you take a small pipette volume of stock solution (<span class="arithmatex">\(V_1\)</span>) and add pure water to reach a larger final volume (<span class="arithmatex">\(V_2\)</span>), the <em>concentration</em> drops, but the <strong>total number of solute molecules remains strictly unchanged</strong>:</p>
-<div class="arithmatex">\[\text{Moles of Solute} = C_1 \cdot V_1 = C_2 \cdot V_2\]</div>
-<div class="arithmatex">\[\text{Required Pipette Volume } V_1 = \frac{C_2 \cdot V_2}{C_1}\]</div>
-<p>The SC-60 features a dedicated <code>[C₁V₁]</code> softkey that solves for any of the four dilution variables in one step.</p>
-<h3 id="concept-3-the-chemical-shock-absorber-ph-buffers">Concept 3: The Chemical Shock Absorber (pH &amp; Buffers)</h3>
-<p>In 1909, Danish biochemist S.P.L. Sørensen was studying why beer fermentation fluctuated wildly between batches at the Carlsberg brewery. He discovered that enzymes function only within extremely narrow ranges of free hydrogen ion concentration <span class="arithmatex">\([H^+]\)</span>. Because <span class="arithmatex">\([H^+]\)</span> can range from <span class="arithmatex">\(1\text{ mol/L}\)</span> down to <span class="arithmatex">\(0.00000000000001\text{ mol/L}\)</span>, Sørensen invented the negative logarithmic <strong>pH scale</strong>:</p>
-<div class="arithmatex">\[pH = -\log_{10}[H^+] \iff [H^+] = 10^{-pH}\]</div>
-<p>Every unit change on the pH scale represents a <strong>tenfold multiplication</strong> in acidity.</p>
-<h4 id="why-pure-water-fails-as-a-buffer">Why Pure Water Fails as a Buffer</h4>
-<p>Pure water at <span class="arithmatex">\(pH = 7.0\)</span> has virtually zero buffering capacity. If you add a single drop of strong hydrochloric acid to a liter of unbuffered water, the pH plunges from <span class="arithmatex">\(7.0\)</span> down to <span class="arithmatex">\(4.0\)</span>, instantly destroying delicate biological proteins.</p>
-<p>To maintain a stable pH, chemists use a <strong>Buffer</strong>: a mixture of a weak acid (<span class="arithmatex">\(HA\)</span>) and its conjugate base salt (<span class="arithmatex">\(A^-\)</span>). When acid is added, the conjugate base absorbs the protons; when base is added, the weak acid donates protons.</p>
-<p>The equilibrium pH of a buffer is governed by the famous <strong>Henderson-Hasselbalch equation</strong>:</p>
-<div class="arithmatex">\[pH = pK_a + \log_{10}\left(\frac{[A^-]}{[HA]}\right)\]</div>
-<p>where <span class="arithmatex">\(pK_a = -\log_{10}(K_a)\)</span> is the acid dissociation constant (the pH at which the acid is exactly half-dissociated).</p>
-<p>The SC-60’s <code>[BUFF]</code> workspace automatically calculates the exact mass ratio of weak acid to conjugate base needed to hit any target pH.</p>
-<h3 id="concept-4-counting-molecules-with-light-beer-lambert-law">Concept 4: Counting Molecules with Light (Beer-Lambert Law)</h3>
-<p>How do you measure the concentration of a clear, colorless protein or drug dissolved in water without evaporating the liquid?</p>
-<p>You shine a beam of monochromatic light through the vial in a spectrophotometer and measure how much light emerges on the other side.</p>
-<p>The <strong>Beer-Lambert Law</strong> states that the fraction of light absorbed (<strong>Absorbance, <span class="arithmatex">\(A\)</span></strong>) is directly proportional to the concentration (<span class="arithmatex">\(c\)</span>) of the absorbing molecules and the path length (<span class="arithmatex">\(b\)</span>, standard <span class="arithmatex">\(1.0\text{ cm}\)</span> quartz cuvette):</p>
-<div class="arithmatex">\[A = -\log_{10}\left(\frac{\%T}{100}\right) = \varepsilon \cdot b \cdot c\]</div>
-<p>where <span class="arithmatex">\(\varepsilon\)</span> (epsilon) is the molar absorptivity coefficient of the substance at that specific wavelength. By measuring absorbance on the SC-60, you calculate unknown solution concentrations instantly.</p>
+<h2 id="atomic-weights-formula-stoichiometry-and-hydrated-crystals">Atomic Weights, Formula Stoichiometry, and Hydrated Crystals</h2>
+<p>Because laboratory balances measure mass in grams while chemical reactions proceed between integer counts of molecules, every wet-lab calculation begins by computing the mass of one Avogadro's number (<span class="arithmatex">\(N_A = 6.02214076 \times 10^{23}\text{ mol}^{-1}\)</span>, recalled via [f] [Nₐ]) of formula units.</p>
+<h3 id="iupac-standard-atomic-weights-and-gravimetric-mole-conversion">IUPAC Standard Atomic Weights and Gravimetric Mole Conversion</h3>
+<p>Each of the <span class="arithmatex">\(118\)</span> chemical elements in the periodic table is uniquely identified by its <strong>atomic number</strong> <span class="arithmatex">\(Z \in [1, 118]\)</span> ([Z])—the number of protons in its atomic nucleus—and characterized by its <strong>IUPAC Standard Atomic Weight</strong> <span class="arithmatex">\(A_Z\)</span> (in grams per mole, <span class="arithmatex">\(\text{g/mol}\)</span>, or Daltons, <span class="arithmatex">\(\text{Da}\)</span>), weighted across natural terrestrial isotopic abundances: Hydrogen (<span class="arithmatex">\(Z = 1, A_{\text{H}} = 1.008\)</span>), Carbon (<span class="arithmatex">\(Z = 6, A_{\text{C}} = 12.011\)</span>), Nitrogen (<span class="arithmatex">\(Z = 7, A_{\text{N}} = 14.007\)</span>), Oxygen (<span class="arithmatex">\(Z = 8, A_{\text{O}} = 15.999\)</span>), Sodium (<span class="arithmatex">\(Z = 11, A_{\text{Na}} = 22.990\)</span>), Phosphorus (<span class="arithmatex">\(Z = 15, A_{\text{P}} = 30.974\)</span>), Sulfur (<span class="arithmatex">\(Z = 16, A_{\text{S}} = 32.060\)</span>), Chlorine (<span class="arithmatex">\(Z = 17, A_{\text{Cl}} = 35.450\)</span>), Potassium (<span class="arithmatex">\(Z = 19, A_{\text{K}} = 39.098\)</span>), and Calcium (<span class="arithmatex">\(Z = 20, A_{\text{Ca}} = 40.078\)</span>). For any chemical compound whose formula unit ([FML]) contains <span class="arithmatex">\(\nu_i\)</span> atoms of element <span class="arithmatex">\(i\)</span> with atomic weight <span class="arithmatex">\(A_i\)</span>, summing the constituent atomic masses defines the compound's <strong>Molar Mass</strong> <span class="arithmatex">\(M\)</span> (in <span class="arithmatex">\(\text{g/mol}\)</span>), which converts between chemical amount <span class="arithmatex">\(n\)</span> in moles ([g] [▸mol]) and gravimetric mass <span class="arithmatex">\(W\)</span> in grams ([MW]):</p>
+<div class="arithmatex">\[M = \sum_{i} \nu_i A_i \quad \left[\frac{\text{g}}{\text{mol}}\right], \qquad W = n \times M \iff n = \frac{W}{M}\]</div>
+<p>In these expressions, <span class="arithmatex">\(\nu_i\)</span> is the integer stoichiometric subscript of element <span class="arithmatex">\(i\)</span> in the chemical formula, <span class="arithmatex">\(M\)</span> is the molar mass in <span class="arithmatex">\(\text{g/mol}\)</span>, <span class="arithmatex">\(n\)</span> is the chemical amount in moles (<span class="arithmatex">\(\text{mol}\)</span>), and <span class="arithmatex">\(W\)</span> is the physical mass in grams (<span class="arithmatex">\(\text{g}\)</span>) weighed on the balance pan.</p>
+<p>For crystalline sodium chloride (<span class="arithmatex">\(\text{NaCl}\)</span>, with <span class="arithmatex">\(\nu_{\text{Na}} = 1\)</span> and <span class="arithmatex">\(\nu_{\text{Cl}} = 1\)</span>), summing the IUPAC atomic weights gives <span class="arithmatex">\(M(\text{NaCl}) = 22.990 + 35.450 = \mathbf{58.440\text{ g/mol}}\)</span>. For Tris base (<span class="arithmatex">\(\text{C}_4\text{H}_{11}\text{NO}_3\)</span>, containing <span class="arithmatex">\(4\text{ C}\)</span>, <span class="arithmatex">\(11\text{ H}\)</span>, <span class="arithmatex">\(1\text{ N}\)</span>, and <span class="arithmatex">\(3\text{ O}\)</span>), the molar mass is:</p>
+<div class="arithmatex">\[M\left(\text{C}_4\text{H}_{11}\text{NO}_3\right) = 4(12.011) + 11(1.008) + 1(14.007) + 3(15.999) = 48.044 + 11.088 + 14.007 + 47.997 = \mathbf{121.136\text{ g/mol}}\]</div>
+<h3 id="elemental-mass-fractions-and-waters-of-crystallization-in-hydrates">Elemental Mass Fractions and Waters of Crystallization in Hydrates</h3>
+<p>When verifying elemental purity by combustion analysis or preparing trace-metal media, chemists evaluate the <strong>Elemental Mass Percentage</strong> <span class="arithmatex">\(\text{WT\%}_i\)</span> ([f] [w/w])—the percentage of one mole's total mass contributed by element <span class="arithmatex">\(i\)</span>. Furthermore, when an inorganic salt crystallizes from water as a <strong>hydrate</strong> (<span class="arithmatex">\(\text{Salt} \cdot k\,\text{H}_2\text{O}\)</span>) containing <span class="arithmatex">\(k\)</span> stoichiometric molecules of water (<span class="arithmatex">\(M(\text{H}_2\text{O}) = 2(1.008) + 15.999 = \mathbf{18.015\text{ g/mol}}\)</span>) locked inside its solid crystal lattice, those <span class="arithmatex">\(k\)</span> water molecules contribute directly to the gravimetric molar mass <span class="arithmatex">\(M_{\text{hydrate}}\)</span> on the balance pan before merging into the aqueous solvent upon dissolution:</p>
+<div class="arithmatex">\[\text{WT\%}_i = \frac{\nu_i A_i}{M} \times 100\%, \qquad M_{\text{hydrate}} = M_{\text{anhydrous}} + k \cdot M(\text{H}_2\text{O}) = M_{\text{anhydrous}} + 18.015\,k\]</div>
+<p>In sulfuric acid (<span class="arithmatex">\(\text{H}_2\text{SO}_4\)</span>, where <span class="arithmatex">\(M = 2(1.008) + 32.060 + 4(15.999) = \mathbf{98.072\text{ g/mol}}\)</span>), hydrogen accounts for <span class="arithmatex">\(\text{WT\%}_{\text{H}} = (2.016 / 98.072) \times 100\% = \mathbf{2.056\%}\)</span>, sulfur accounts for <span class="arithmatex">\(\mathbf{32.690\%}\)</span>, and oxygen accounts for <span class="arithmatex">\(\mathbf{65.254\%}\)</span>. In Tris base (<span class="arithmatex">\(\text{C}_4\text{H}_{11}\text{NO}_3, M = 121.136\text{ g/mol}\)</span>), carbon accounts for <span class="arithmatex">\(\text{WT\%}_{\text{C}} = (48.044 / 121.136) \times 100\% = \mathbf{39.661\%}\)</span> and nitrogen accounts for <span class="arithmatex">\(\text{WT\%}_{\text{N}} = (14.007 / 121.136) \times 100\% = \mathbf{11.563\%}\)</span>.</p>
+<p>Compare anhydrous dibasic sodium phosphate (<span class="arithmatex">\(\text{Na}_2\text{HPO}_4\)</span>), which has molar mass <span class="arithmatex">\(M_{\text{anhydrous}} = 2(22.990) + 1.008 + 30.974 + 4(15.999) = \mathbf{141.958\text{ g/mol}}\)</span>, against its crystalline heptahydrate (<span class="arithmatex">\(\text{Na}_2\text{HPO}_4 \cdot 7\text{H}_2\text{O}\)</span>), which adds <span class="arithmatex">\(7 \times 18.015 = 126.105\text{ g/mol}\)</span> of lattice water for a total molar mass of <span class="arithmatex">\(M_{\text{hydrate}} = 141.958 + 126.105 = \mathbf{268.063\text{ g/mol}}\)</span>. Because <span class="arithmatex">\(47.04\%\)</span> of the heptahydrate's weight on the balance pan is water of crystallization, delivering <span class="arithmatex">\(n = 0.100\text{ mol}\)</span> of phosphate ions requires weighing <span class="arithmatex">\(0.100 \times 268.063 = \mathbf{26.806\text{ g}}\)</span> of the heptahydrate crystal rather than <span class="arithmatex">\(14.196\text{ g}\)</span>.</p>
 <hr />
-<h2 id="3-real-world-field-walkthroughs">3. Real-World Field Walkthroughs</h2>
-<h3 id="field-case-1-formulating-a-phosphate-buffer-rchempros">Field Case 1: Formulating a Phosphate Buffer (<code>r/Chempros</code>)</h3>
-<p>A biochemist needs to prepare <span class="arithmatex">\(1.0\text{ Liter}\)</span> of a <span class="arithmatex">\(0.10\text{ M}\)</span> Sodium Phosphate Buffer at physiological <span class="arithmatex">\(pH = 7.40\)</span>.
-- Conjugate Acid: Monobasic Sodium Phosphate (<span class="arithmatex">\(\text{NaH}_2\text{PO}_4\)</span>, <span class="arithmatex">\(MW = 119.98\text{ g/mol}\)</span>, <span class="arithmatex">\(pK_a = 7.20\)</span>).
-- Conjugate Base: Dibasic Sodium Phosphate (<span class="arithmatex">\(\text{Na}_2\text{HPO}_4\)</span>, <span class="arithmatex">\(MW = 141.96\text{ g/mol}\)</span>).
-How many grams of each dry salt must be weighed on the balance?</p>
-<h4 id="how-to-solve-it-on-the-sc-60">How to Solve It on the SC-60</h4>
+<h2 id="solution-molarity-stock-dilutions-and-serial-pipetting-error">Solution Molarity, Stock Dilutions, and Serial Pipetting Error</h2>
+<p>Once the molar mass <span class="arithmatex">\(M\)</span> of a dry reagent is established, preparing working solutions at the wet-lab bench relies on the definition of volumetric molarity and the conservation of dissolved solute moles during dilution.</p>
+<h3 id="dissolving-dry-reagents-to-target-molarity">Dissolving Dry Reagents to Target Molarity</h3>
+<p>When a chemical amount <span class="arithmatex">\(n = W / M\)</span> (in moles) of solute is dissolved in solvent inside a calibrated volumetric flask and brought to a final total solution volume <span class="arithmatex">\(V\)</span> (in liters, <span class="arithmatex">\(\text{L}\)</span>, after the solid has dissolved so the solute's partial molar volume is included), the solution <strong>Molarity</strong> <span class="arithmatex">\(C\)</span> ([f] [RXN], [f] [▸M], [g] [▸mM], in moles per liter, <span class="arithmatex">\(\text{mol/L}\)</span> or <span class="arithmatex">\(\text{M}\)</span>, or mass concentration [g] [▸g/L]) and the required dry reagent mass <span class="arithmatex">\(W\)</span> (in grams) satisfy:</p>
+<div class="arithmatex">\[C = \frac{n}{V} = \frac{W}{M \cdot V} \iff n = C \cdot V \iff W = C \cdot V \cdot M\]</div>
+<p>Here <span class="arithmatex">\(C\)</span> is the target molar concentration in <span class="arithmatex">\(\text{mol/L}\)</span> (<span class="arithmatex">\(\text{M}\)</span>), <span class="arithmatex">\(V\)</span> is the final solution volume in liters (<span class="arithmatex">\(\text{L}\)</span>, where <span class="arithmatex">\(1\text{ mL} = 10^{-3}\text{ L}\)</span>), <span class="arithmatex">\(n\)</span> is the dissolved solute amount in moles, <span class="arithmatex">\(M\)</span> is the reagent molar mass in <span class="arithmatex">\(\text{g/mol}\)</span>, and <span class="arithmatex">\(W\)</span> is the dry mass in grams.</p>
+<p>For our morning chromatography prep:
+- <strong>Physiological Sodium Chloride Flask (<span class="arithmatex">\(V = 250\text{ mL} = 0.250\text{ L}\)</span> at <span class="arithmatex">\(C = 0.50\text{ M}\)</span>):</strong> The required chemical amount of <span class="arithmatex">\(\text{NaCl}\)</span> is <span class="arithmatex">\(n = C \cdot V = 0.50\text{ mol/L} \times 0.250\text{ L} = \mathbf{0.125\text{ mol}}\)</span> (computed via [f] [RXN]). Multiplying by <span class="arithmatex">\(M(\text{NaCl}) = 58.440\text{ g/mol}\)</span> gives a balance weight of <span class="arithmatex">\(W = 0.125 \times 58.440 = \mathbf{7.305\text{ g}}\)</span> (a mass concentration of <span class="arithmatex">\(7.305\text{ g} / 0.250\text{ L} = 29.22\text{ g/L}\)</span> via [g] [▸g/L]). If preparing a <span class="arithmatex">\(2.00\text{ M}\)</span> concentrated <span class="arithmatex">\(\text{NaCl}\)</span> stock in that same <span class="arithmatex">\(0.250\text{ L}\)</span> flask, <span class="arithmatex">\(n = 2.00 \times 0.250 = 0.500\text{ mol}\)</span> and <span class="arithmatex">\(W = 0.500 \times 58.440 = \mathbf{29.220\text{ g}}\)</span>.
+- <strong>Tris Working Buffer from Dry Crystals (<span class="arithmatex">\(V = 150\text{ mL} = 0.150\text{ L}\)</span> at <span class="arithmatex">\(C = 0.10\text{ M}\)</span>):</strong> The required chemical amount of Tris (<span class="arithmatex">\(\text{C}_4\text{H}_{11}\text{NO}_3\)</span>) is <span class="arithmatex">\(n = 0.10\text{ mol/L} \times 0.150\text{ L} = \mathbf{0.0150\text{ mol}}\)</span> (<span class="arithmatex">\(15.0\text{ mmol}\)</span>). Multiplying by <span class="arithmatex">\(M(\text{Tris}) = 121.136\text{ g/mol}\)</span> specifies a dry crystal weight of <span class="arithmatex">\(W = 0.0150 \times 121.136 \approx \mathbf{1.817\text{ g}}\)</span>.</p>
+<h3 id="solute-mole-conservation-and-serial-dilution-error-propagation">Solute Mole Conservation and Serial Dilution Error Propagation</h3>
+<p>In high-throughput biochemistry laboratories, weighing small milligram quantities of dry buffer salts for every assay introduces balance error and consumes setup time. Instead, researchers prepare concentrated sterile stock bottles (such as <span class="arithmatex">\(C_1 = 2.0\text{ M}\)</span> Tris or <span class="arithmatex">\(5.0\text{ M}\)</span> <span class="arithmatex">\(\text{NaCl}\)</span>) and pipette an aliquot of volume <span class="arithmatex">\(V_1\)</span> into a new volumetric vessel diluted with pure water to final volume <span class="arithmatex">\(V_2\)</span> and working concentration <span class="arithmatex">\(C_2\)</span>.</p>
+<p><img alt="Conservation of dissolved solute moles (n = C1 V1 = C2 V2) during quantitative aliquot dilution." src="../../assets/diagrams/domains/diagram_ch06_stock_dilution.png" /></p>
+<p>Because adding pure water introduces zero additional solute molecules, the total number of solute moles <span class="arithmatex">\(n_{\text{solute}}\)</span> aspirated in the stock aliquot <span class="arithmatex">\(V_1\)</span> equals the total number of solute moles present in the final diluted volume <span class="arithmatex">\(V_2\)</span>, establishing the <strong>Stock Dilution Conservation Law</strong> ([C₁V₁]):</p>
+<div class="arithmatex">\[n_{\text{solute}} = C_1 \cdot V_1 = C_2 \cdot V_2 \iff V_1 = \frac{C_2 \cdot V_2}{C_1}, \qquad V_{\text{solvent}} = V_2 - V_1\]</div>
+<p>In this bilateral conservation equation, <span class="arithmatex">\(C_1\)</span> and <span class="arithmatex">\(C_2\)</span> may be expressed in any matching concentration unit (<span class="arithmatex">\(\text{M}, \text{mM}, \mu\text{M}\)</span>, or <span class="arithmatex">\(\text{mg/mL}\)</span>) and <span class="arithmatex">\(V_1\)</span> and <span class="arithmatex">\(V_2\)</span> in any matching volume unit (<span class="arithmatex">\(\text{L}, \text{mL}\)</span>, or <span class="arithmatex">\(\mu\text{L}\)</span>), while <span class="arithmatex">\(V_{\text{solvent}}\)</span> is the volume of pure diluent added to bring the aliquot <span class="arithmatex">\(V_1\)</span> up to the mark <span class="arithmatex">\(V_2\)</span>.</p>
+<p>Why do analytical chemists prefer a single direct [C₁V₁] cut whenever the aliquot volume <span class="arithmatex">\(V_1\)</span> falls within a calibrated pipette's range, reserving multi-step serial dilutions for extreme <span class="arithmatex">\(10^4\times\)</span>–<span class="arithmatex">\(10^6\times\)</span> reductions? When a technician executes <span class="arithmatex">\(k\)</span> sequential dilutions using a micropipette whose relative volume delivery uncertainty at each transfer is <span class="arithmatex">\(\sigma_V / V\)</span>, independent random pipetting errors add in quadrature, causing the cumulative relative concentration uncertainty <span class="arithmatex">\(\sigma_{C_k} / C_k\)</span> after <span class="arithmatex">\(k\)</span> steps to grow as the square root of the step count:</p>
+<div class="arithmatex">\[\frac{\sigma_{C_k}}{C_k} \approx \sqrt{k}\,\left(\frac{\sigma_V}{V}\right)\]</div>
+<p>A 6-step serial dilution (<span class="arithmatex">\(k = 6\)</span>) with a <span class="arithmatex">\(\pm 1.5\%\)</span> micropipette inflates random concentration error by <span class="arithmatex">\(\sqrt{6} \times 1.5\% \approx \pm 3.67\%\)</span> (plus <span class="arithmatex">\(6\times\)</span> any systematic calibration bias), whereas cutting a single direct aliquot (<span class="arithmatex">\(k = 1\)</span>) from a gravimetrically weighed primary stock ([MW]) holds volumetric error to a single transfer.</p>
+<p>To prepare our <span class="arithmatex">\(V_2 = 150\text{ mL}\)</span> (<span class="arithmatex">\(0.150\text{ L}\)</span>) of <span class="arithmatex">\(C_2 = 0.10\text{ M}\)</span> Tris working solution from a <span class="arithmatex">\(C_1 = 2.0\text{ M}\)</span> stock bottle in a single step, the conserved solute amount is <span class="arithmatex">\(n_{\text{solute}} = 0.10\text{ M} \times 150\text{ mL} = 15.0\text{ mmol}\)</span> (<span class="arithmatex">\(0.0150\text{ mol}\)</span>), and the required stock aliquot volume is:</p>
+<div class="arithmatex">\[V_1 = \frac{0.10\text{ M} \times 150\text{ mL}}{2.0\text{ M}} = \mathbf{7.50\text{ mL}} \quad (0.00750\text{ L})\]</div>
+<p>Pipetting <span class="arithmatex">\(7.50\text{ mL}\)</span> of <span class="arithmatex">\(2.0\text{ M}\)</span> Tris stock into a calibrated vessel and adding <span class="arithmatex">\(V_{\text{solvent}} = 150.0 - 7.50 = \mathbf{142.50\text{ mL}}\)</span> of deionized water delivers the exact <span class="arithmatex">\(150\text{ mL}\)</span> of <span class="arithmatex">\(0.10\text{ M}\)</span> working buffer without touching the analytical balance.</p>
+<hr />
+<h2 id="weighing-dry-salts-and-solving-dilutions-on-the-sc-60">Weighing Dry Salts and Solving Dilutions on the SC-60</h2>
+<p>On the <strong>SC-60</strong>, interactive chemical formula parsing ([FML]), 118-element IUPAC atomic weight lookup ([Z]), polyatomic ion recall ([f] [ION]), elemental mass percentage auditing ([f] [w/w]), gravimetric mole-mass scaling ([MW], [g] [▸mol]), solution stoichiometry ([f] [RXN], [f] [▸M], [g] [▸mM], [g] [▸g/L]), and stock aliquot dilutions ([C₁V₁]) operate both as immediate RPN stack shortcuts and as bidirectional Equation Solver workspaces ([g] [SOLVE] / [XEQ]). When preparing multi-component buffers, switching the stack depth from [4-LV] to [8-LV] keeps every dry salt weight and stock volume on the stack simultaneously.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Key / Softkey</th>
+<th style="text-align: left;">RPN Stack Action</th>
+<th style="text-align: left;">Register Y</th>
+<th style="text-align: left;">Register X</th>
+<th style="text-align: left;">Solver Workspace ([g] [SOLVE] / [XEQ])</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[FML] (<code>0</code> [Z] or [LFU3] in [MW])</td>
+<td style="text-align: left;">Interactive Formula Tokenizer ([ALP], [NUM], [FML])</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Formula <code>FML:</code></td>
+<td style="text-align: left;">Computes <span class="arithmatex">\(M = \sum \nu_i A_i\)</span> (<span class="arithmatex">\(\text{g/mol}\)</span>); binds [M] in [MW]</td>
+</tr>
+<tr>
+<td style="text-align: left;">[Z] / [f] [ION]</td>
+<td style="text-align: left;">IUPAC Atomic Weight (<span class="arithmatex">\(Z \in [1,118]\)</span>) / Polyatomic Ion Ledger</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Atomic No. <span class="arithmatex">\(Z\)</span></td>
+<td style="text-align: left;">Returns <span class="arithmatex">\(A_Z\)</span> (<span class="arithmatex">\(\text{g/mol}\)</span>) or opens [f] [ION] reference</td>
+</tr>
+<tr>
+<td style="text-align: left;">[MW]</td>
+<td style="text-align: left;">Molar Mass Recall &amp; Gravimetric Workspace (<code>W = N × M</code>)</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Molar Mass <span class="arithmatex">\(M\)</span></td>
+<td style="text-align: left;"><code>MW</code>: [W], [N], [M], [FML] — solves for <span class="arithmatex">\(W\)</span>, <span class="arithmatex">\(N\)</span>, or <span class="arithmatex">\(M\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [w/w] / [g] [w/v]</td>
+<td style="text-align: left;">Elemental Mass Percentage <span class="arithmatex">\(\text{WT\%}_i = (\nu_i A_i / M) \times 100\%\)</span></td>
+<td style="text-align: left;">Total <span class="arithmatex">\(M\)</span></td>
+<td style="text-align: left;">Component Mass</td>
+<td style="text-align: left;">Evaluates mass fraction <code>% w/w</code> or <code>% w/v</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [RXN] ([f] [▸M], [g] [▸mM], [g] [▸g/L])</td>
+<td style="text-align: left;">Solution Stoichiometry <span class="arithmatex">\(n = C \times V\)</span> and unit conversions</td>
+<td style="text-align: left;">Molarity <span class="arithmatex">\(C\)</span> (<span class="arithmatex">\(\text{M}\)</span>)</td>
+<td style="text-align: left;">Volume <span class="arithmatex">\(V\)</span> (<span class="arithmatex">\(\text{L}\)</span>)</td>
+<td style="text-align: left;"><code>RXN</code>: [N], [c], [V] (<code>N = C × V</code>) — solves for <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\(C\)</span>, or <span class="arithmatex">\(V\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[C₁V₁]</td>
+<td style="text-align: left;">Stock Dilution <span class="arithmatex">\(V_1 = (C_2 V_2) / C_1\)</span> (<span class="arithmatex">\(Z=C_2, Y=V_2, X=C_1\)</span>)</td>
+<td style="text-align: left;">Volume <span class="arithmatex">\(V_2\)</span> or <span class="arithmatex">\(C_2 V_2\)</span></td>
+<td style="text-align: left;">Stock <span class="arithmatex">\(C_1\)</span></td>
+<td style="text-align: left;"><code>C1V1</code>: [c], [V], [D], [U] (<code>C × V = D × U</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[εbc]</td>
+<td style="text-align: left;">Beer–Lambert Absorbance <span class="arithmatex">\(A = \varepsilon b c\)</span> (<span class="arithmatex">\(Z=\varepsilon, Y=b, X=c\)</span>)</td>
+<td style="text-align: left;">Path <span class="arithmatex">\(b\)</span> (<span class="arithmatex">\(\text{cm}\)</span>)</td>
+<td style="text-align: left;">Conc <span class="arithmatex">\(c\)</span> (<span class="arithmatex">\(\text{M}\)</span>)</td>
+<td style="text-align: left;"><code>EBC</code>: [A], [E], [B], [c] (<code>A = E × B × C</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parsing-chemical-formulas-and-weighing-crystalline-reagents">Parsing Chemical Formulas and Weighing Crystalline Reagents</h3>
+<p>At the analytical balance, the biochemist first computes the required moles of <span class="arithmatex">\(\text{NaCl}\)</span> (<span class="arithmatex">\(n = 0.50\text{ M} \times 0.250\text{ L} = 0.125\text{ mol}\)</span> via [f] [RXN]), enters Formula Mode (<code>FML: _</code>) to parse <span class="arithmatex">\(\text{NaCl}\)</span> (<span class="arithmatex">\(58.440\text{ g/mol}\)</span>), and multiplies <span class="arithmatex">\(n \times M\)</span> (<code>[×]</code> or [W] in [MW]) to find the dry gram weight <span class="arithmatex">\(W_{\text{NaCl}}\)</span>; next, the biochemist computes the moles of Tris (<span class="arithmatex">\(n = 0.10\text{ M} \times 0.150\text{ L} = 0.015\text{ mol}\)</span>), parses <span class="arithmatex">\(\text{C}_4\text{H}_{11}\text{NO}_3\)</span> (<code>C4H11NO3</code>), and computes <span class="arithmatex">\(W_{\text{Tris}}\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>0.5</code> [ENTER] <code>0.25</code> [f] [RXN]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.125\)</span></td>
+<td style="text-align: left;">Compute <span class="arithmatex">\(\text{NaCl}\)</span> moles <span class="arithmatex">\(n = 0.50\text{ M} \times 0.250\text{ L} = 0.125\text{ mol}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[MW] [FML] <code>NaCl</code> [FML]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.125\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(58.44\)</span></td>
+<td style="text-align: left;">Parse <span class="arithmatex">\(\text{NaCl}\)</span> molar mass <span class="arithmatex">\(M = 58.440\text{ g/mol}\)</span>; <span class="arithmatex">\(n = 0.125\text{ mol}\)</span> in <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(7.305\)</span></td>
+<td style="text-align: left;">Evaluate <span class="arithmatex">\(\text{NaCl}\)</span> balance weight <span class="arithmatex">\(W_{\text{NaCl}} = 0.125 \times 58.440 = 7.305\text{ g}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.1</code> [ENTER] <code>0.15</code> [f] [RXN]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(7.305\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.015\)</span></td>
+<td style="text-align: left;">Compute Tris moles <span class="arithmatex">\(n = 0.10\text{ M} \times 0.150\text{ L} = 0.015\text{ mol}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[MW] [FML] <code>C4H11NO3</code> [FML]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(7.305\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.015\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(121.136\)</span></td>
+<td style="text-align: left;">Parse Tris (<span class="arithmatex">\(\text{C}_4\text{H}_{11}\text{NO}_3\)</span>) molar mass <span class="arithmatex">\(M = 121.136\text{ g/mol}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(7.305\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(1.817\)</span></strong></td>
+<td style="text-align: left;">Evaluate Tris balance weight <span class="arithmatex">\(W_{\text{Tris}} = 1.817\text{ g}\)</span>; <span class="arithmatex">\(W_{\text{NaCl}} = 7.305\text{ g}\)</span> in <span class="arithmatex">\(Y\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Both analytical balance weights sit side by side on the stack: <span class="arithmatex">\(\mathbf{7.305\text{ g}}\)</span> of <span class="arithmatex">\(\text{NaCl}\)</span> in Register <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(\mathbf{1.817\text{ g}}\)</span> of Tris in Register <span class="arithmatex">\(X\)</span>, while looking up Carbon (<span class="arithmatex">\(Z = 6\)</span>) via <code>6</code> [Z] and pressing [f] [w/w] recalls the carbon mass fraction of Tris (<span class="arithmatex">\(\mathbf{39.661\%}\)</span>) and [g] [▦] displays the reference ledger.</p>
+<h3 id="cutting-stock-aliquots-and-back-solving-unknown-concentration-in-the-solver-workspace">Cutting Stock Aliquots and Back-Solving Unknown Concentration in the Solver Workspace</h3>
+<p>Next, the biochemist verifies the molarity of a stock bottle prepared with <span class="arithmatex">\(0.50\text{ mol}\)</span> (<span class="arithmatex">\(29.220\text{ g}\)</span>) in <span class="arithmatex">\(0.25\text{ L}\)</span> ([÷] or [f] [RXN] workspace), and computes the exact aliquot volume <span class="arithmatex">\(V_1\)</span> of <span class="arithmatex">\(C_1 = 2.0\text{ M}\)</span> Tris stock required to prepare <span class="arithmatex">\(V_2 = 150\text{ mL}\)</span> at <span class="arithmatex">\(C_2 = 0.10\text{ M}\)</span> using [C₁V₁]:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>0.5</code> [ENTER] <code>0.25</code> [÷]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2\)</span></td>
+<td style="text-align: left;">Verify stock concentration <span class="arithmatex">\(C_1 = 0.50\text{ mol} / 0.25\text{ L} = 2.00\text{ M}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.1</code> [ENTER] <code>150</code> [ENTER] <code>2</code> [C₁V₁]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(7.5\)</span></td>
+<td style="text-align: left;">Solve required stock aliquot <span class="arithmatex">\(V_1 = (0.10 \times 150) / 2.0 = 7.50\text{ mL}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>150</code> [x⇄y] [-]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(142.5\)</span></strong></td>
+<td style="text-align: left;">Subtract <span class="arithmatex">\(7.50\text{ mL}\)</span> aliquot from <span class="arithmatex">\(150\text{ mL}\)</span> to find <span class="arithmatex">\(V_{\text{solvent}} = 142.50\text{ mL}\)</span> water</td>
+</tr>
+</tbody>
+</table>
+<p>To verify both the dilution and the chromogenic cofactor aliquot using the <strong>Bidirectional Equation Solver Workspaces</strong> ([g] [SOLVE] / [XEQ]):
+- Pressing [C₁V₁] (<code>C1V1: C × V = D × U</code>), binding <code>2</code> [c], <code>0.1</code> [D], and <code>150</code> [U], and pressing [g] [SOLVE] [V] directly solves for <span class="arithmatex">\(V_1 = \mathbf{7.50\text{ mL}}\)</span>.
+- Next, to verify the diluted cofactor concentration from its UV-Vis cuvette reading without rearranging the Beer–Lambert law by hand, the biochemist presses [εbc], opening the <code>EBC: A = E × B × C</code> workspace on Line 1:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Solver Action / Softkey</th>
+<th style="text-align: left;">Workspace Binding</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">Physical Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[εbc]</td>
+<td style="text-align: left;">Opens <code>EBC: A = E × B × C</code></td>
+<td style="text-align: center;"><code>0.0000</code></td>
+<td style="text-align: left;">Softkeys map to [A], [E], [B], [c] (<code>[LFU0]</code>–<code>[LFU3]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>6600</code> <span class="arithmatex">\(\to\)</span> [E] ([LFU1])</td>
+<td style="text-align: left;"><span class="arithmatex">\(\varepsilon = 6{,}600\text{ M}^{-1}\text{cm}^{-1}\)</span></td>
+<td style="text-align: center;"><code>6600</code></td>
+<td style="text-align: left;">Bind cofactor molar extinction coefficient at <span class="arithmatex">\(260\text{ nm}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1.00</code> <span class="arithmatex">\(\to\)</span> [B] ([LFU2])</td>
+<td style="text-align: left;"><span class="arithmatex">\(B = 1.00\text{ cm}\)</span></td>
+<td style="text-align: center;"><code>1.0000</code></td>
+<td style="text-align: left;">Bind standard <span class="arithmatex">\(1.00\text{ cm}\)</span> quartz cuvette path length</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.845</code> <span class="arithmatex">\(\to\)</span> [A] ([LFU0])</td>
+<td style="text-align: left;"><span class="arithmatex">\(A = 0.845\text{ AU}\)</span></td>
+<td style="text-align: center;"><code>0.8450</code></td>
+<td style="text-align: left;">Bind measured UV-Vis absorbance</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [SOLVE] <span class="arithmatex">\(\to\)</span> [c] ([LFU3])</td>
+<td style="text-align: left;">Solves <span class="arithmatex">\(C = A / (E \cdot B)\)</span></td>
+<td style="text-align: center;"><strong><code>1.2803e-4</code></strong></td>
+<td style="text-align: left;">Unknown cofactor molarity <span class="arithmatex">\(C = \mathbf{1.280 \times 10^{-4}\text{ M}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [▸mM]</td>
+<td style="text-align: left;">Unit conversion <span class="arithmatex">\(\text{M} \to \text{mM}\)</span></td>
+<td style="text-align: center;"><strong><code>0.1280</code></strong></td>
+<td style="text-align: left;">Express verified cofactor concentration as <span class="arithmatex">\(\mathbf{0.1280\text{ mM}}\)</span> (<span class="arithmatex">\(128.0\,\mu\text{M}\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="try-it-on-the-stack">Try It on the Stack</h3>
+<p>Practice chemical formula parsing, hydrate mass corrections, and stock aliquot dilutions on the stack with these three wet-lab preparation exercises:</p>
 <ol>
-<li><strong>Find the Base-to-Acid Ratio via Henderson-Hasselbalch:</strong>
-   $<span class="arithmatex">\(pH - pK_a = 7.40 - 7.20 = 0.20\)</span>$
-   $<span class="arithmatex">\(\frac{[\text{Base}]}{[\text{Acid}]} = 10^{0.20} \approx \mathbf{1.585}\)</span>$</li>
-<li><strong>Determine Molar Proportions:</strong></li>
-<li>Total concentration <span class="arithmatex">\(= [\text{Acid}] + [\text{Base}] = 0.10\text{ M}\)</span>.</li>
-<li><span class="arithmatex">\([\text{Acid}] \times (1 + 1.585) = 0.10 \implies [\text{Acid}] = \frac{0.10}{2.585} = \mathbf{0.0387\text{ M}}\)</span>.</li>
-<li><span class="arithmatex">\([\text{Base}] = 0.10 - 0.0387 = \mathbf{0.0613\text{ M}}\)</span>.</li>
-<li><strong>Calculate Masses to Weigh for 1.0 Liter:</strong></li>
-<li>Acid (<span class="arithmatex">\(\text{NaH}_2\text{PO}_4\)</span>): <span class="arithmatex">\(0.0387\text{ mol} \times 119.98\text{ g/mol} = \mathbf{4.64\text{ grams}}\)</span>.</li>
-<li>Base (<span class="arithmatex">\(\text{Na}_2\text{HPO}_4\)</span>): <span class="arithmatex">\(0.0613\text{ mol} \times 141.96\text{ g/mol} = \mathbf{8.70\text{ grams}}\)</span>.
-Weigh out <span class="arithmatex">\(4.64\text{ g}\)</span> of monobasic and <span class="arithmatex">\(8.70\text{ g}\)</span> of dibasic salt, dissolve in <span class="arithmatex">\(800\text{ mL}\)</span> pure water, and dilute to <span class="arithmatex">\(1.0\text{ L}\)</span> to achieve exactly pH 7.40!</li>
+<li><strong>Sulfuric Acid Stoichiometry and Hydrogen Mass Percentage:</strong> Parse sulfuric acid (<span class="arithmatex">\(\text{H}_2\text{SO}_4\)</span>) in Formula Mode (<code>[MW] [FML]</code>), compute the gram mass required for <span class="arithmatex">\(n = 0.250\text{ mol}\)</span>, and check the hydrogen mass percentage (<code>[MW] [FML] H2SO4 [FML] 0.25 [×] 1 [Z] [f] [w/w]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(M = \mathbf{98.072\text{ g/mol}}\)</span>, <span class="arithmatex">\(W = \mathbf{24.518\text{ g}}\)</span>, and <span class="arithmatex">\(\text{WT\%}_{\text{H}} \approx \mathbf{2.056\%}\)</span>.)</em></li>
+<li><strong>Glucose and Copper(II) Sulfate Pentahydrate Weighing:</strong> Parse D-glucose (<span class="arithmatex">\(\text{C}_6\text{H}_{12}\text{O}_6\)</span>) and find the mass for <span class="arithmatex">\(0.150\text{ mol}\)</span> (<code>[MW] [FML] C6H12O6 [FML] 0.15 [×]</code>). Next, look up Copper (<span class="arithmatex">\(Z = 29\)</span>), add the remaining pentahydrate atoms (<span class="arithmatex">\(\text{SO}_4 \cdot 5\text{H}_2\text{O} = \text{SO}_9\text{H}_{10}\)</span>), and find the mass for <span class="arithmatex">\(0.0800\text{ mol}\)</span> (<code>29 [Z] [MW] [FML] SO9H10 [FML] [+] 0.08 [×]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(W_{\text{glucose}} \approx \mathbf{27.023\text{ g}}\)</span> and <span class="arithmatex">\(W_{\text{CuSO}_4\cdot 5\text{H}_2\text{O}} \approx \mathbf{19.974\text{ g}}\)</span>.)</em></li>
+<li><strong>Normal Saline Aliquot from 5.0 M Stock:</strong> Determine the volume <span class="arithmatex">\(V_1\)</span> (in <span class="arithmatex">\(\text{mL}\)</span>) of <span class="arithmatex">\(C_1 = 5.0\text{ M}\)</span> <span class="arithmatex">\(\text{NaCl}\)</span> stock needed to prepare <span class="arithmatex">\(V_2 = 250\text{ mL}\)</span> of <span class="arithmatex">\(C_2 = 0.154\text{ M}\)</span> isotonic saline (<code>0.154 [ENTER] 250 [ENTER] 5 [C₁V₁]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\(V_1 = \mathbf{7.70\text{ mL}}\)</span> diluted with <span class="arithmatex">\(242.30\text{ mL}\)</span> water.)</em></li>
 </ol>
+<p>With our stock solutions and gravimetric salts weighed, we turn in Chapter 17 to the proton equilibria that keep biological macromolecules folded: formulating a <span class="arithmatex">\(\text{pH } 7.40\)</span> conjugate buffer against an acid spike and standardizing a diprotic acid titrant.</p>
 <hr />
-<h3 id="field-case-2-serial-dilution-from-a-5text-m-stock-rchemistry">Field Case 2: Serial Dilution from a <span class="arithmatex">\(5\text{ M}\)</span> Stock (<code>r/chemistry</code>)</h3>
-<p>A biology lab has a stock bottle of <span class="arithmatex">\(5.0\text{ M } \text{NaCl}\)</span>. A protocol requires <span class="arithmatex">\(250\text{ mL}\)</span> of a physiological saline solution (<span class="arithmatex">\(0.154\text{ M } \text{NaCl}\)</span>).
-What volume of stock solution should be pipetted into a <span class="arithmatex">\(250\text{ mL}\)</span> volumetric flask?</p>
-<h4 id="step-by-step-mechanics">Step-by-Step Mechanics</h4>
+<h1 id="chapter-17-holding-ph-740-against-an-acid-spike">Chapter 17: Holding pH 7.40 Against an Acid Spike</h1>
+<p>In the adjacent enzymology bay, a postdoctoral fellow is setting up a kinetic assay for a mammalian kinase whose catalytic histidine residue denatures if the reaction medium drifts more than a tenth of a <span class="arithmatex">\(\text{pH}\)</span> unit away from physiological <span class="arithmatex">\(\text{pH} = 7.40\)</span> ([pH]). During the thirty-minute phosphorylation reaction, ATP hydrolysis releases <span class="arithmatex">\(n_{\text{spike}} = 5.0\text{ mmol}\)</span> (<span class="arithmatex">\(0.0050\text{ mol}\)</span>) of free hydrogen ions (<span class="arithmatex">\(\text{H}^+\)</span>) per liter of assay volume. If that reaction were run in unbuffered physiological saline at <span class="arithmatex">\(\text{pH } 7.00\)</span> (<span class="arithmatex">\([\text{H}^+] = 10^{-7.0}\text{ M}\)</span>), releasing <span class="arithmatex">\(0.0050\text{ M}\)</span> of strong acid would drive the proton concentration up fifty-thousand-fold to <span class="arithmatex">\([\text{H}^+] = 0.0050\text{ M}\)</span>, crashing the solution acidity to <span class="arithmatex">\(\text{pH} = -\log_{10}(0.0050) = \mathbf{2.301}\)</span>—as acidic as lemon juice—and killing the enzyme within seconds.</p>
+<p>To absorb those released protons like a molecular shock absorber, the researcher formulates <span class="arithmatex">\(V = 1.00\text{ L}\)</span> of a <span class="arithmatex">\(C_{\text{total}} = 100\text{ mM}\)</span> (<span class="arithmatex">\(0.100\text{ M}\)</span>) conjugate sodium phosphate buffer (<span class="arithmatex">\(\text{H}_2\text{PO}_4^- / \text{HPO}_4^{2-}\)</span>, with thermodynamic second dissociation constant <span class="arithmatex">\(\text{p}K_{a2} = 7.20\)</span> at infinite dilution and apparent <span class="arithmatex">\(\text{p}K_a' = 6.86\)</span> at <span class="arithmatex">\(0.15\text{ M}\)</span> physiological ionic strength) poised at target <span class="arithmatex">\(\text{pH} = 7.40\)</span> ([BUF]), while also standardizing a diprotic sulfuric acid (<span class="arithmatex">\(\text{H}_2\text{SO}_4\)</span>) solution against primary-standard sodium hydroxide (<span class="arithmatex">\(\text{NaOH}\)</span>) at the burette ([f] [EQV]).</p>
+<p>How do we calculate the exact molar ratio and gram weights of weak acid (<span class="arithmatex">\(\text{NaH}_2\text{PO}_4\)</span>) and conjugate base (<span class="arithmatex">\(\text{Na}_2\text{HPO}_4\)</span>) needed to poise the buffer at <span class="arithmatex">\(\text{pH } 7.40\)</span>, prove how little the <span class="arithmatex">\(\text{pH}\)</span> shifts when the <span class="arithmatex">\(5.0\text{ mM}\)</span> acid spike hits the vessel, and account for diprotic proton stoichiometry at the titration equivalence point? Tracing the logarithmic laws of Sørensen, Henderson, and Hasselbalch establishes the governing relations before we solve both forward and inverse buffer formulations on the stack.</p>
+<hr />
+<h2 id="logarithmic-proton-activity-and-conjugate-buffer-equilibria">Logarithmic Proton Activity and Conjugate Buffer Equilibria</h2>
+<p>In aqueous biochemistry, water is far more than an inert background solvent; it is an amphoteric reactant that continuously transfers protons between its own molecules and dissolved weak acids and bases.</p>
+<h3 id="water-autoionization-and-sorensens-logarithmic-acidity-scale">Water Autoionization and Sorensen's Logarithmic Acidity Scale</h3>
+<p>Even in ultra-pure deionized water at <span class="arithmatex">\(25^\circ\text{C}\)</span>, a tiny fraction of water molecules undergo reversible autoionization (<span class="arithmatex">\(\text{H}_2\text{O} \rightleftharpoons \text{H}^+ + \text{OH}^-\)</span>), maintaining a constant thermodynamic ion product <span class="arithmatex">\(K_w = [\text{H}^+][\text{OH}^-] = 1.0 \times 10^{-14}\text{ M}^2\)</span> (so neutral water has <span class="arithmatex">\([\text{H}^+] = [\text{OH}^-] = 1.0 \times 10^{-7}\text{ M}\)</span>). Applying S. P. L. Sørensen's 1909 negative base-ten logarithm operator ([pH], inverted via [+/-] [f] [10ˣ]) maps exponential molar proton concentrations <span class="arithmatex">\([\text{H}^+]\)</span> and weak-acid dissociation constants <span class="arithmatex">\(K_a\)</span> ([g] [pKₐ]) onto linear additive scales:</p>
+<div class="arithmatex">\[\text{pH} = -\log_{10}[\text{H}^+] \iff [\text{H}^+] = 10^{-\text{pH}}, \qquad \text{p}K_a = -\log_{10} K_a \iff K_a = 10^{-\text{p}K_a}, \qquad \text{pH} + \text{pOH} = 14.00\]</div>
+<p>In these equations, <span class="arithmatex">\([\text{H}^+]\)</span> is the molar hydrogen-ion concentration (or thermodynamic activity) in <span class="arithmatex">\(\text{mol/L}\)</span>, and <span class="arithmatex">\(K_a\)</span> is the equilibrium acid dissociation constant for a weak acid <span class="arithmatex">\(\text{HA} \rightleftharpoons \text{H}^+ + \text{A}^-\)</span>. Because the scale is logarithmic with base ten, each <span class="arithmatex">\(1.00\text{-unit}\)</span> decrease in <span class="arithmatex">\(\text{pH}\)</span> represents a <strong>tenfold increase</strong> in free proton concentration <span class="arithmatex">\([\text{H}^+]\)</span>: a strong acid solution at <span class="arithmatex">\([\text{H}^+] = 0.0010\text{ M}\)</span> (<span class="arithmatex">\(10^{-3}\text{ M}\)</span>) has <span class="arithmatex">\(\text{pH} = \mathbf{3.00}\)</span>, while acetic acid with <span class="arithmatex">\(K_a = 1.75 \times 10^{-5}\)</span> has <span class="arithmatex">\(\text{p}K_a = -\log_{10}(1.75 \times 10^{-5}) \approx \mathbf{4.757}\)</span>.</p>
+<h3 id="the-henderson-hasselbalch-equation-and-conjugate-species-partitioning">The Henderson-Hasselbalch Equation and Conjugate Species Partitioning</h3>
+<p>When a weak acid <span class="arithmatex">\(\text{HA}\)</span> and its conjugate base salt <span class="arithmatex">\(\text{A}^-\)</span> coexist in solution at equilibrium, the law of mass action requires <span class="arithmatex">\(K_a = [\text{H}^+][\text{A}^-] / [\text{HA}]\)</span>. Solving for <span class="arithmatex">\([\text{H}^+] = K_a [\text{HA}] / [\text{A}^-]\)</span> and taking <span class="arithmatex">\(-\log_{10}\)</span> of both sides yields the <strong>Henderson–Hasselbalch Buffer Equation</strong> ([BUF]):</p>
+<div class="arithmatex">\[\text{pH} = \text{p}K_a + \log_{10}\left(\frac{[\text{A}^-]}{[\text{HA}]}\right) \iff r = \frac{[\text{A}^-]}{[\text{HA}]} = 10^{\text{pH} - \text{p}K_a}\]</div>
+<p>Here <span class="arithmatex">\([\text{A}^-]\)</span> is the molar concentration (or total moles in the same vessel volume <span class="arithmatex">\(V\)</span>) of the proton-accepting conjugate base, <span class="arithmatex">\([\text{HA}]\)</span> is the molar concentration (or moles) of the proton-donating weak acid, and <span class="arithmatex">\(r = [\text{A}^-] / [\text{HA}]\)</span> is the dimensionless conjugate base-to-acid ratio. Notice the structural unity across physical science: just as the Nernst equation shifts electrochemical cell voltage by <span class="arithmatex">\((2.3026 R T / n_e F) \log_{10}([\text{Ox}]/[\text{Red}])\)</span> (<span class="arithmatex">\(59.16\text{ mV}\)</span> per decade at <span class="arithmatex">\(25^\circ\text{C}\)</span>) and decibels measure <span class="arithmatex">\(10\log_{10}(P_2/P_1)\)</span>, the Henderson–Hasselbalch equation shifts chemical proton potential by <span class="arithmatex">\(1.00\text{ pH unit}\)</span> per decade change in the conjugate ratio <span class="arithmatex">\([\text{A}^-]/[\text{HA}]\)</span>.</p>
+<p><img alt="Weak-acid titration curve showing the Henderson-Hasselbalch buffer plateau centered at pH = pKa." src="../../assets/diagrams/domains/diagram_ch06_henderson_hasselbalch.png" /></p>
+<p>When a biochemist formulates a buffer of specified total concentration <span class="arithmatex">\(C_{\text{total}} = [\text{HA}] + [\text{A}^-]\)</span> at a target <span class="arithmatex">\(\text{pH}\)</span> using a weak acid of known <span class="arithmatex">\(\text{p}K_a\)</span>, the base-to-acid ratio <span class="arithmatex">\(r = 10^{\text{pH} - \text{p}K_a}\)</span> partitions the total buffer molarity into exact weak-acid and conjugate-base concentrations:</p>
+<div class="arithmatex">\[[\text{HA}] = \frac{C_{\text{total}}}{1 + r} = \frac{C_{\text{total}}}{1 + 10^{\text{pH} - \text{p}K_a}}, \qquad [\text{A}^-] = C_{\text{total}} - [\text{HA}] = \frac{r \cdot C_{\text{total}}}{1 + r}\]</div>
+<p>For our kinase assay's <span class="arithmatex">\(C_{\text{total}} = 0.100\text{ M}\)</span> (<span class="arithmatex">\(100\text{ mM}\)</span>) sodium phosphate buffer at <span class="arithmatex">\(\text{pH} = 7.40\)</span> using the standard thermodynamic <span class="arithmatex">\(\text{p}K_{a2} = 7.20\)</span>, the required base-to-acid ratio is:</p>
+<div class="arithmatex">\[r = \frac{[\text{HPO}_4^{2-}]}{[\text{H}_2\text{PO}_4^-]} = 10^{7.40 - 7.20} = 10^{0.20} \approx \mathbf{1.5849}\]</div>
+<p>Dividing <span class="arithmatex">\(C_{\text{total}} = 0.100\text{ M}\)</span> by <span class="arithmatex">\(1 + r = 2.5849\)</span> resolves the two individual species concentrations and their required gram masses for <span class="arithmatex">\(V = 1.00\text{ L}\)</span>:
+- <strong>Weak Acid (<span class="arithmatex">\(\text{NaH}_2\text{PO}_4, M = 119.976\text{ g/mol}\)</span>):</strong> <span class="arithmatex">\([\text{H}_2\text{PO}_4^-] = 0.100 / 2.5849 \approx \mathbf{0.03869\text{ M}}\)</span> (<span class="arithmatex">\(38.69\text{ mM}\)</span>), requiring <span class="arithmatex">\(W_{\text{acid}} = 0.03869 \times 119.976 \approx \mathbf{4.642\text{ g}}\)</span>.
+- <strong>Conjugate Base (<span class="arithmatex">\(\text{Na}_2\text{HPO}_4, M = 141.958\text{ g/mol}\)</span>):</strong> <span class="arithmatex">\([\text{HPO}_4^{2-}] = 0.100 - 0.03869 \approx \mathbf{0.06131\text{ M}}\)</span> (<span class="arithmatex">\(61.31\text{ mM}\)</span>), requiring <span class="arithmatex">\(W_{\text{base}} = 0.06131 \times 141.958 \approx \mathbf{8.703\text{ g}}\)</span>.</p>
+<p>When ionic-strength activity corrections at physiological salt concentration (<span class="arithmatex">\(I = 0.15\text{ M}\)</span>) lower phosphate's apparent dissociation constant to <span class="arithmatex">\(\text{p}K_a' = 6.86\)</span>, the required conjugate ratio at target <span class="arithmatex">\(\text{pH} = 7.40\)</span> rises to <span class="arithmatex">\(r' = 10^{7.40 - 6.86} = 10^{0.54} \approx \mathbf{3.4674}\)</span> (<span class="arithmatex">\([\text{H}_2\text{PO}_4^-] = 22.38\text{ mM}\)</span>, <span class="arithmatex">\([\text{HPO}_4^{2-}] = 77.62\text{ mM}\)</span>)—an inverse calculation that the [BUF] Solver Workspace handles directly.</p>
+<hr />
+<h2 id="buffer-capacity-against-acid-spikes-and-volumetric-titrations">Buffer Capacity Against Acid Spikes and Volumetric Titrations</h2>
+<p>Why does that mixture of <span class="arithmatex">\(38.69\text{ mM}\)</span> <span class="arithmatex">\(\text{H}_2\text{PO}_4^-\)</span> and <span class="arithmatex">\(61.31\text{ mM}\)</span> <span class="arithmatex">\(\text{HPO}_4^{2-}\)</span> hold <span class="arithmatex">\(\text{pH}\)</span> nearly invariant when strong acid is released into the assay? Because the conjugate base scavenges incoming free protons quantitatively before they can accumulate in the water!</p>
+<h3 id="stoichiometric-proton-neutralization-inside-a-conjugate-buffer">Stoichiometric Proton Neutralization Inside a Conjugate Buffer</h3>
+<p>When a strong acid spike of molar concentration <span class="arithmatex">\(\Delta C_{\text{H}^+}\)</span> (such as our kinase reaction's <span class="arithmatex">\(\Delta C_{\text{H}^+} = 5.0\text{ mM} = 0.0050\text{ M}\)</span> proton release) enters a conjugate buffer, the strong acid reacts to completion with the conjugate base (<span class="arithmatex">\(\text{HPO}_4^{2-} + \text{H}^+ \longrightarrow \text{H}_2\text{PO}_4^-\)</span>). Each mole of added <span class="arithmatex">\(\text{H}^+\)</span> converts one mole of conjugate base <span class="arithmatex">\(\text{A}^-\)</span> into one mole of weak acid <span class="arithmatex">\(\text{HA}\)</span>, shifting the Henderson–Hasselbalch ratio to:</p>
+<div class="arithmatex">\[\text{pH}_{\text{after acid}} = \text{p}K_a + \log_{10}\left(\frac{[\text{A}^-]_0 - \Delta C_{\text{H}^+}}{[\text{HA}]_0 + \Delta C_{\text{H}^+}}\right), \qquad \text{pH}_{\text{after base}} = \text{p}K_a + \log_{10}\left(\frac{[\text{A}^-]_0 + \Delta C_{\text{OH}^-}}{[\text{HA}]_0 - \Delta C_{\text{OH}^-}}\right)\]</div>
+<p>Substituting our initial phosphate concentrations (<span class="arithmatex">\([\text{A}^-]_0 = 61.31\text{ mM}\)</span> and <span class="arithmatex">\([\text{HA}]_0 = 38.69\text{ mM}\)</span>) and the <span class="arithmatex">\(\Delta C_{\text{H}^+} = 5.0\text{ mM}\)</span> acid spike gives the new concentrations <span class="arithmatex">\([\text{A}^-] = 61.31 - 5.0 = 56.31\text{ mM}\)</span> (<span class="arithmatex">\(0.05631\text{ M}\)</span>) and <span class="arithmatex">\([\text{HA}] = 38.69 + 5.0 = 43.69\text{ mM}\)</span> (<span class="arithmatex">\(0.04369\text{ M}\)</span>). The new base-to-acid ratio is <span class="arithmatex">\(r_{\text{new}} = 56.31 / 43.69 \approx \mathbf{1.2889}\)</span>, and the resulting solution <span class="arithmatex">\(\text{pH}\)</span> is:</p>
+<div class="arithmatex">\[\text{pH}_{\text{after}} = 7.20 + \log_{10}(1.2889) = 7.20 + 0.1102 \approx \mathbf{7.310}\]</div>
+<p>Instead of plunging <span class="arithmatex">\(4.7\text{ pH units}\)</span> from <span class="arithmatex">\(7.00\)</span> to <span class="arithmatex">\(2.30\)</span> as it would in unbuffered saline, the <span class="arithmatex">\(100\text{ mM}\)</span> phosphate buffer restricts the entire <span class="arithmatex">\(5.0\text{ mM}\)</span> acid spike to a gentle <span class="arithmatex">\(\Delta\text{pH} = 7.310 - 7.400 = \mathbf{-0.090\text{ pH units}}\)</span>, keeping the kinase active throughout the thirty-minute assay!</p>
+<h3 id="monoprotic-and-diprotic-equivalence-point-stoichiometry">Monoprotic and Diprotic Equivalence Point Stoichiometry</h3>
+<p>When an analytical chemist standardizes an acid or base by <strong>Volumetric Titration</strong> ([f] [EQV]), a burette dispenses a measured volume <span class="arithmatex">\(V_A\)</span> of titrant of known molarity <span class="arithmatex">\(C_A\)</span> (producing <span class="arithmatex">\(\nu_A\)</span> moles of <span class="arithmatex">\(\text{H}^+\)</span> or <span class="arithmatex">\(\text{OH}^-\)</span> per formula unit) into a sample volume <span class="arithmatex">\(V_B\)</span> of unknown molarity <span class="arithmatex">\(C_B\)</span> (accepting or donating <span class="arithmatex">\(\nu_B\)</span> equivalents per formula unit). At the stoichiometric <strong>equivalence point</strong>, total acid equivalents equal total base equivalents:</p>
+<div class="arithmatex">\[\nu_A \cdot C_A \cdot V_A = \nu_B \cdot C_B \cdot V_B \iff C_B = \left(\frac{\nu_A}{\nu_B}\right)\frac{C_A \cdot V_A}{V_B}\]</div>
+<p>For a <strong>monoprotic</strong> neutralization (<span class="arithmatex">\(\nu_A = \nu_B = 1\)</span>, such as <span class="arithmatex">\(\text{HCl} + \text{NaOH} \longrightarrow \text{NaCl} + \text{H}_2\text{O}\)</span>), equivalence simplifies to <span class="arithmatex">\(C_A V_A = C_B V_B\)</span>: if <span class="arithmatex">\(V_A = 24.50\text{ mL}\)</span> of <span class="arithmatex">\(C_A = 0.1000\text{ M}\)</span> standard <span class="arithmatex">\(\text{NaOH}\)</span> neutralizes a <span class="arithmatex">\(V_B = 25.00\text{ mL}\)</span> monoprotic acid sample, the acid molarity is <span class="arithmatex">\(C_B = (0.1000 \times 24.50) / 25.00 = \mathbf{0.0980\text{ M}}\)</span>.</p>
+<p>For a <strong>diprotic</strong> acid such as sulfuric acid (<span class="arithmatex">\(\text{H}_2\text{SO}_4 + 2\,\text{NaOH} \longrightarrow \text{Na}_2\text{SO}_4 + 2\,\text{H}_2\text{O}\)</span>), each mole of <span class="arithmatex">\(\text{H}_2\text{SO}_4\)</span> donates <span class="arithmatex">\(\nu_{\text{acid}} = 2\text{ moles}\)</span> of protons while each mole of <span class="arithmatex">\(\text{NaOH}\)</span> supplies <span class="arithmatex">\(\nu_{\text{base}} = 1\text{ mole}\)</span> of hydroxide ions. Consequently, neutralizing <span class="arithmatex">\(V_{\text{acid}} = 25.00\text{ mL}\)</span> of <span class="arithmatex">\(C_{\text{acid}} = 0.0500\text{ M}\)</span> diprotic <span class="arithmatex">\(\text{H}_2\text{SO}_4\)</span> (<span class="arithmatex">\(2 \times 0.0500 \times 25.00 = 2.500\text{ mmol}\)</span> of <span class="arithmatex">\(\text{H}^+\)</span> equivalents) with <span class="arithmatex">\(C_{\text{base}} = 0.1000\text{ M}\)</span> <span class="arithmatex">\(\text{NaOH}\)</span> requires an equivalence volume of <span class="arithmatex">\(V_{\text{base}} = 2.500 / 0.1000 = \mathbf{25.00\text{ mL}}\)</span>. Conversely, if <span class="arithmatex">\(V_{\text{base}} = 24.50\text{ mL}\)</span> of <span class="arithmatex">\(0.1000\text{ M}\)</span> <span class="arithmatex">\(\text{NaOH}\)</span> (<span class="arithmatex">\(2.450\text{ mmol}\text{ OH}^-\)</span>) brings a <span class="arithmatex">\(25.00\text{ mL}\)</span> sample of diprotic <span class="arithmatex">\(\text{H}_2\text{SO}_4\)</span> to its second phenolphthalein endpoint, the monoprotic equivalent concentration is <span class="arithmatex">\(0.0980\text{ N}\)</span> (normal) and the molar concentration of <span class="arithmatex">\(\text{H}_2\text{SO}_4\)</span> is half that value: <span class="arithmatex">\(C_{\text{H}_2\text{SO}_4} = 0.0980 / 2 = \mathbf{0.0490\text{ M}}\)</span>.</p>
+<hr />
+<h2 id="formulating-conjugate-buffers-and-standardizing-acids-on-the-sc-60">Formulating Conjugate Buffers and Standardizing Acids on the SC-60</h2>
+<p>On the <strong>SC-60</strong>, logarithmic acidity and dissociation keys ([pH], [g] [pKₐ], [+/-] [f] [10ˣ]), the Henderson–Hasselbalch buffer operator and workspace ([BUF]), formula gravimetric weighing ([FML], [MW]), and titration equivalence ([f] [EQV]) chain across the RPN stack so a researcher can design a conjugate buffer forward or backward and audit acid spikes or burette endpoints in seconds.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Key / Softkey</th>
+<th style="text-align: left;">RPN Stack Action</th>
+<th style="text-align: left;">Register Y</th>
+<th style="text-align: left;">Register X</th>
+<th style="text-align: left;">Solver Workspace ([g] [SOLVE] / [XEQ])</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[pH]</td>
+<td style="text-align: left;">Solution Acidity <span class="arithmatex">\(\text{pH} = -\log_{10}[\text{H}^+]\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="arithmatex">\([\text{H}^+]\)</span> (<span class="arithmatex">\(\text{M}\)</span>)</td>
+<td style="text-align: left;">Direct 1-key logarithmic evaluation</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [pKₐ]</td>
+<td style="text-align: left;">Acid Dissociation Index <span class="arithmatex">\(\text{p}K_a = -\log_{10} K_a\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Constant <span class="arithmatex">\(K_a\)</span></td>
+<td style="text-align: left;">Direct 1-key logarithmic evaluation</td>
+</tr>
+<tr>
+<td style="text-align: left;">[+/-] [f] [10ˣ]</td>
+<td style="text-align: left;">Antilog Concentration <span class="arithmatex">\([\text{H}^+] = 10^{-X}\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="arithmatex">\(\text{pH}\)</span> or <span class="arithmatex">\(\text{p}K_a\)</span></td>
+<td style="text-align: left;">Inverts [pH] and [g] [pKₐ] back to molarity or <span class="arithmatex">\(K_a\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[BUF]</td>
+<td style="text-align: left;">Henderson–Hasselbalch <span class="arithmatex">\(\text{pH} = \text{p}K_a + \log_{10}(X)\)</span></td>
+<td style="text-align: left;">Acid <span class="arithmatex">\(\text{p}K_a\)</span></td>
+<td style="text-align: left;">Ratio <span class="arithmatex">\([\text{A}^-] / [\text{HA}]\)</span></td>
+<td style="text-align: left;"><code>BUF</code>: [P], [K], [A], [h] (<code>P = K + LOG(A/H)</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [EQV]</td>
+<td style="text-align: left;">Titration Equivalence <span class="arithmatex">\(C_A V_A = C_B V_B\)</span> (<span class="arithmatex">\(Z=C_A, Y=V_A, X=V_B\)</span>)</td>
+<td style="text-align: left;">Volume <span class="arithmatex">\(V_A\)</span> or <span class="arithmatex">\(C_A V_A\)</span></td>
+<td style="text-align: left;">Sample <span class="arithmatex">\(V_B\)</span> or <span class="arithmatex">\(C_B\)</span></td>
+<td style="text-align: left;"><code>EQV</code>: [A], [V], [B], [U] (<code>A × V = B × U</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="partitioning-phosphate-buffer-masses-for-physiological-ph-740">Partitioning Phosphate Buffer Masses for Physiological pH 7.40</h3>
+<p>To formulate <span class="arithmatex">\(1.00\text{ L}\)</span> of the <span class="arithmatex">\(0.100\text{ M}\)</span> sodium phosphate buffer at <span class="arithmatex">\(\text{pH} = 7.40\)</span> (<span class="arithmatex">\(\text{p}K_a = 7.20\)</span>), the researcher confirms the base-to-acid ratio <span class="arithmatex">\(r = 10^{7.40 - 7.20} = 1.5849\)</span> (<code>7.2</code> [ENTER] <code>1.5849</code> [BUF] <span class="arithmatex">\(\to 7.400\)</span>), partitions <span class="arithmatex">\(0.100\text{ mol}\)</span> into <span class="arithmatex">\(n_{\text{acid}} = 0.03869\text{ mol}\)</span> of monobasic <span class="arithmatex">\(\text{NaH}_2\text{PO}_4\)</span> and <span class="arithmatex">\(n_{\text{base}} = 0.06131\text{ mol}\)</span> of dibasic <span class="arithmatex">\(\text{Na}_2\text{HPO}_4\)</span>, and converts both mole amounts directly into analytical balance gram weights via [FML] and [×] (or [W] in [MW]):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>0.03869</code> [ENTER]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0387\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0387\)</span></td>
+<td style="text-align: left;">Load monobasic weak-acid moles <span class="arithmatex">\(n_{\text{acid}} = 0.03869\text{ mol}\)</span> into Register <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[MW] [FML] <code>NaH2PO4</code> [FML]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0387\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(119.976\)</span></td>
+<td style="text-align: left;">Parse <span class="arithmatex">\(\text{NaH}_2\text{PO}_4\)</span> molar mass <span class="arithmatex">\(M = 119.976\text{ g/mol}\)</span> into Register <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4.642\)</span></td>
+<td style="text-align: left;">Compute monobasic <span class="arithmatex">\(\text{NaH}_2\text{PO}_4\)</span> mass <span class="arithmatex">\(W_{\text{acid}} = 4.642\text{ g}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.06131</code> [ENTER]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4.642\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0613\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0613\)</span></td>
+<td style="text-align: left;">Load dibasic conjugate-base moles <span class="arithmatex">\(n_{\text{base}} = 0.06131\text{ mol}\)</span> into Register <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[MW] [FML] <code>Na2HPO4</code> [FML]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4.642\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0613\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(141.958\)</span></td>
+<td style="text-align: left;">Parse <span class="arithmatex">\(\text{Na}_2\text{HPO}_4\)</span> molar mass <span class="arithmatex">\(M = 141.958\text{ g/mol}\)</span> into Register <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4.642\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(8.703\)</span></strong></td>
+<td style="text-align: left;">Compute dibasic <span class="arithmatex">\(\text{Na}_2\text{HPO}_4\)</span> mass <span class="arithmatex">\(W_{\text{base}} = 8.703\text{ g}\)</span>; <span class="arithmatex">\(W_{\text{acid}}\)</span> in <span class="arithmatex">\(Y\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Weighing <span class="arithmatex">\(\mathbf{4.642\text{ g}}\)</span> of <span class="arithmatex">\(\text{NaH}_2\text{PO}_4\)</span> and <span class="arithmatex">\(\mathbf{8.703\text{ g}}\)</span> of anhydrous <span class="arithmatex">\(\text{Na}_2\text{HPO}_4\)</span> and bringing the solution to <span class="arithmatex">\(1.00\text{ L}\)</span> poises the assay buffer at <span class="arithmatex">\(\text{pH } 7.400\)</span>.</p>
+<h3 id="evaluating-acid-spike-ph-shifts-and-back-solving-buffer-ratios-in-the-solver-workspace">Evaluating Acid-Spike pH Shifts and Back-Solving Buffer Ratios in the Solver Workspace</h3>
+<p>Next, the researcher verifies the buffer's <span class="arithmatex">\(\text{pH}\)</span> after the <span class="arithmatex">\(5.0\text{ mM}\)</span> (<span class="arithmatex">\(0.0050\text{ M}\)</span>) ATP-hydrolysis acid spike reduces <span class="arithmatex">\([\text{A}^-]\)</span> from <span class="arithmatex">\(61.31\text{ mM}\)</span> to <span class="arithmatex">\(56.31\text{ mM}\)</span> and raises <span class="arithmatex">\([\text{HA}]\)</span> from <span class="arithmatex">\(38.69\text{ mM}\)</span> to <span class="arithmatex">\(43.69\text{ mM}\)</span> ([BUF]), and standardizes the <span class="arithmatex">\(25.00\text{ mL}\)</span> sulfuric acid sample neutralized by <span class="arithmatex">\(24.50\text{ mL}\)</span> of <span class="arithmatex">\(0.1000\text{ M}\)</span> <span class="arithmatex">\(\text{NaOH}\)</span> ([f] [EQV]):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>7.2</code> [ENTER] <code>56.31</code> [ENTER] <code>43.69</code> [÷]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(7.2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.2889\)</span></td>
+<td style="text-align: left;">Compute post-spike ratio <span class="arithmatex">\([\text{A}^-]/[\text{HA}] = 56.31 / 43.69 = 1.2889\)</span>; <span class="arithmatex">\(\text{p}K_a\)</span> in <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[BUF]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(7.3102\)</span></td>
+<td style="text-align: left;">Evaluate post-spike buffer <span class="arithmatex">\(\text{pH} = 7.20 + \log_{10}(1.2889) = 7.310\)</span> (<span class="arithmatex">\(\Delta\text{pH} = -0.090\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.1</code> [ENTER] <code>24.5</code> [ENTER] <code>25</code> [f] [EQV]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(7.3102\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.098\)</span></td>
+<td style="text-align: left;">Evaluate acid normality <span class="arithmatex">\(N_B = (0.1000 \times 24.50) / 25.00 = 0.0980\text{ N}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>2</code> [÷]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(7.3102\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(0.049\)</span></strong></td>
+<td style="text-align: left;">Divide by <span class="arithmatex">\(\nu = 2\)</span> protons per <span class="arithmatex">\(\text{H}_2\text{SO}_4\)</span> for molarity <span class="arithmatex">\(C_{\text{H}_2\text{SO}_4} = 0.0490\text{ M}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>What if the researcher is given the target physiological <span class="arithmatex">\(\text{pH} = 7.40\)</span> and phosphate's ionic-strength-corrected dissociation constant <span class="arithmatex">\(\text{p}K_a' = 6.86\)</span> (or thermodynamic <span class="arithmatex">\(\text{p}K_a = 7.20\)</span>), and needs to <strong>solve backward</strong> for the required conjugate base-to-acid ratio <span class="arithmatex">\(A / H\)</span> without exponentiating by hand? Pressing [BUF] opens the <code>BUF: P = K + LOG(A/H)</code> workspace:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Solver Action / Softkey</th>
+<th style="text-align: left;">Workspace Binding</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">Physical Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[BUF]</td>
+<td style="text-align: left;">Opens <code>BUF: P = K + LOG(A/H)</code></td>
+<td style="text-align: center;"><code>0.0000</code></td>
+<td style="text-align: left;">Softkeys map to [P], [K], [A], [h] (<code>[LFU0]</code>–<code>[LFU3]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>7.40</code> <span class="arithmatex">\(\to\)</span> [P] ([LFU0])</td>
+<td style="text-align: left;"><span class="arithmatex">\(\text{pH} = 7.40\)</span></td>
+<td style="text-align: center;"><code>7.4000</code></td>
+<td style="text-align: left;">Bind target physiological buffer <span class="arithmatex">\(\text{pH}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>6.86</code> <span class="arithmatex">\(\to\)</span> [K] ([LFU1])</td>
+<td style="text-align: left;"><span class="arithmatex">\(\text{p}K_a' = 6.86\)</span></td>
+<td style="text-align: center;"><code>6.8600</code></td>
+<td style="text-align: left;">Bind apparent phosphate <span class="arithmatex">\(\text{p}K_a'\)</span> at <span class="arithmatex">\(0.15\text{ M}\)</span> ionic strength</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1.00</code> <span class="arithmatex">\(\to\)</span> [h] ([LFU3])</td>
+<td style="text-align: left;"><span class="arithmatex">\([\text{HA}] = 1.00\)</span> (normalized)</td>
+<td style="text-align: center;"><code>1.0000</code></td>
+<td style="text-align: left;">Set weak-acid reference to unity so [A] yields ratio <span class="arithmatex">\(A/H\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [SOLVE] <span class="arithmatex">\(\to\)</span> [A] ([LFU2])</td>
+<td style="text-align: left;">Solves <span class="arithmatex">\(A = H \cdot 10^{P - K}\)</span></td>
+<td style="text-align: center;"><strong><code>3.4674</code></strong></td>
+<td style="text-align: left;">Required conjugate base-to-acid ratio <span class="arithmatex">\(A/H = \mathbf{3.4674}\)</span> (or <span class="arithmatex">\(\mathbf{1.5849}\)</span> if <span class="arithmatex">\(K = 7.20\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="try-it-on-the-stack_1">Try It on the Stack</h3>
+<p>Strengthen your command of logarithmic acidity, Henderson–Hasselbalch buffers, and volumetric titrations with these three analytical exercises:</p>
 <ol>
-<li>Use <span class="arithmatex">\(C_1 V_1 = C_2 V_2\)</span>:
-   $<span class="arithmatex">\(V_1 = \frac{C_2 \cdot V_2}{C_1} = \frac{0.154\text{ M} \times 250\text{ mL}}{5.0\text{ M}}\)</span>$</li>
-<li>On the SC-60 stack:</li>
-<li><code>0.154</code> <code>[ENTER]</code> <code>250</code> <code>[×]</code> <code>5.0</code> <code>[÷]</code></li>
-<li>Register <span class="arithmatex">\(X\)</span> displays: <strong><code>7.70 mL</code></strong>.</li>
-<li>Pipette <span class="arithmatex">\(7.70\text{ mL}\)</span> of the <span class="arithmatex">\(5\text{ M}\)</span> stock solution into the flask and add distilled water up to the <span class="arithmatex">\(250\text{ mL}\)</span> mark.</li>
+<li><strong>Acetic Acid Dissociation and 10:1 Acetate Buffer:</strong> Compute <span class="arithmatex">\(\text{p}K_a\)</span> for acetic acid given <span class="arithmatex">\(K_a = 1.75 \times 10^{-5}\)</span> (<code>0.0000175 [g] [pKₐ]</code>), and evaluate the <span class="arithmatex">\(\text{pH}\)</span> of an acetate buffer (<span class="arithmatex">\(\text{p}K_a = 4.75\)</span>) prepared with a <span class="arithmatex">\(10 : 1\)</span> conjugate-base-to-acid ratio (<code>4.75 [ENTER] 10 [BUF]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(\text{p}K_a \approx \mathbf{4.757}\)</span> and <span class="arithmatex">\(\text{pH} = \mathbf{5.750}\)</span>.)</em></li>
+<li><strong>Back-Solving Tris Conjugate Base Molarity in the Buffer Solver:</strong> Using the [BUF] solver (<code>P = K + LOG(A/H)</code>), find the conjugate base concentration <span class="arithmatex">\([\text{A}^-]\)</span> required to poise a Tris buffer (<span class="arithmatex">\(\text{p}K_a = 8.06\)</span>) with weak acid concentration <span class="arithmatex">\([\text{HA}] = 0.050\text{ M}\)</span> at <span class="arithmatex">\(\text{pH} = 8.36\)</span> (<code>8.36 [P] 8.06 [K] 0.05 [h] [g] [SOLVE] [A]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\([\text{A}^-] \approx \mathbf{0.0998\text{ M}}\)</span>.)</em></li>
+<li><strong>Diprotic Sulfuric Acid Equivalence Volume:</strong> What volume <span class="arithmatex">\(V_{\text{NaOH}}\)</span> (in <span class="arithmatex">\(\text{mL}\)</span>) of <span class="arithmatex">\(0.1250\text{ M}\)</span> <span class="arithmatex">\(\text{NaOH}\)</span> is required to completely neutralize <span class="arithmatex">\(20.00\text{ mL}\)</span> of <span class="arithmatex">\(0.0750\text{ M}\)</span> diprotic <span class="arithmatex">\(\text{H}_2\text{SO}_4\)</span> (<span class="arithmatex">\(\nu = 2\)</span>)? (<code>2 [ENTER] 0.075 [×] 20 [ENTER] 0.125 [f] [EQV]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\(V_{\text{NaOH}} = \mathbf{24.00\text{ mL}}\)</span>.)</em></li>
 </ol>
+<p>Having stabilized our enzyme in a <span class="arithmatex">\(\text{pH } 7.40\)</span> conjugate buffer, we carry the sample to the UV-Vis spectrophotometer, temperature bath, and high-speed centrifuge in Chapter 18 to measure protein concentration with light, model thermal reaction kinetics, and spin down the precipitate.</p>
 <hr />
-<h2 id="4-try-it-yourself-practice-problems">4. Try It Yourself: Practice Problems</h2>
-<h3 id="problem-1-molecular-weight-of-glucose">Problem 1: Molecular Weight of Glucose</h3>
-<p>Glucose has the chemical formula <span class="arithmatex">\(\text{C}_6\text{H}_{12}\text{O}_6\)</span>.
-Using standard IUPAC atomic weights (<span class="arithmatex">\(C = 12.011\)</span>, <span class="arithmatex">\(H = 1.008\)</span>, <span class="arithmatex">\(O = 15.999\)</span>), calculate the molecular weight of glucose.
-<em>(Solution: <span class="arithmatex">\(6(12.011) + 12(1.008) + 6(15.999) = 72.066 + 12.096 + 95.994 = \mathbf{180.156\text{ g/mol}}\)</span>.)</em></p>
-<h3 id="problem-2-beer-lambert-concentration-check">Problem 2: Beer-Lambert Concentration Check</h3>
-<p>A biochemist measures the light absorbance of a protein solution in a <span class="arithmatex">\(1.0\text{-cm}\)</span> cuvette at <span class="arithmatex">\(280\text{ nm}\)</span>.
-The spectrophotometer reads an absorbance <span class="arithmatex">\(A = 0.650\)</span>. The protein’s extinction coefficient is <span class="arithmatex">\(\varepsilon = 45{,}000\text{ M}^{-1}\text{cm}^{-1}\)</span>.
-Calculate the molar concentration <span class="arithmatex">\(c = A / (\varepsilon \cdot b)\)</span>.
-<em>(Solution: <span class="arithmatex">\(c = 0.650 / (45000 \times 1.0) = \mathbf{1.444 \times 10^{-5}\text{ M}} = \mathbf{14.44\,\mu\text{M}}\)</span>.)</em></p>
-<h3 id="problem-3-ideal-gas-volume-at-standard-temperature">Problem 3: Ideal Gas Volume at Standard Temperature</h3>
-<p>A reaction generates <span class="arithmatex">\(0.25\text{ moles}\)</span> of carbon dioxide gas at <span class="arithmatex">\(25^\circ\text{C}\)</span> (<span class="arithmatex">\(298.15\text{ K}\)</span>) and <span class="arithmatex">\(1.0\text{ atmosphere}\)</span> of pressure.
-Using the Ideal Gas Constant <span class="arithmatex">\(R = 0.08206\text{ L}\cdot\text{atm}/(\text{mol}\cdot\text{K})\)</span>, calculate the gas volume in liters: <span class="arithmatex">\(V = nRT / P\)</span>.
-<em>(Solution: <span class="arithmatex">\(V = (0.25 \times 0.08206 \times 298.15) / 1.0 = \mathbf{6.115\text{ Liters}}\)</span>.)</em></p>
+<h1 id="chapter-18-reading-protein-concentration-through-a-quartz-cuvette">Chapter 18: Reading Protein Concentration Through a Quartz Cuvette</h1>
+<p>With the purified enzyme eluted in its <span class="arithmatex">\(\text{pH } 7.40\)</span> phosphate buffer, the biochemist pipettes a <span class="arithmatex">\(1.0\text{ mL}\)</span> sample into a fused-silica quartz cuvette of internal optical path length <span class="arithmatex">\(b = 1.00\text{ cm}\)</span> and slides it into a UV-Vis spectrophotometer set to <span class="arithmatex">\(\lambda = 280\text{ nm}\)</span>. At <span class="arithmatex">\(280\text{ nm}\)</span>, the conjugated indole rings of tryptophan and phenolic rings of tyrosine absorb ultraviolet photons strongly; based on the enzyme's amino-acid sequence, its molar extinction coefficient is <span class="arithmatex">\(\varepsilon_{280} = 42{,}500\text{ M}^{-1}\text{cm}^{-1}\)</span> (or <span class="arithmatex">\(45{,}000\text{ M}^{-1}\text{cm}^{-1}\)</span> for the wild-type variant). When the monochromator shutter opens, the detector reports an optical absorbance of <span class="arithmatex">\(A = 0.680\text{ AU}\)</span> ([εbc], [f] [%T]), allowing the biochemist to determine the exact molar concentration <span class="arithmatex">\(c\)</span> of the enzyme without destroying a single microgram of protein.</p>
+<p>Next, the researcher must run the catalytic assay across a <span class="arithmatex">\(10.0\text{ K}\)</span> temperature step—comparing the baseline reaction rate at standard room temperature <span class="arithmatex">\(T_1 = 298.15\text{ K}\)</span> (<span class="arithmatex">\(25.0^\circ\text{C}\)</span>) against body-temperature incubation at <span class="arithmatex">\(T_2 = 308.15\text{ K}\)</span> (<span class="arithmatex">\(35.0^\circ\text{C}\)</span>)—for an enzymatic pathway with activation energy barrier <span class="arithmatex">\(E_a = 52{,}000\text{ J/mol}\)</span> (<span class="arithmatex">\(52.0\text{ kJ/mol}\)</span>, [g] [Eₐ]), determine the maximum safe reactor temperature <span class="arithmatex">\(T_{\max}\)</span> before the rate triples (<span class="arithmatex">\(k_2/k_1 = 3.00\)</span>), and check the head-space gas pressure ([PVT]), Gibbs free energy and equilibrium constant ([f] [ΔG], [g] [Kₑq]), first-order half-life ([g] [t½]), and redox cofactor potential ([g] [E°]).</p>
+<p>Finally, once the assay finishes and trichloroacetic acid precipitates the protein, the protocol calls for pelleting the precipitate at a Relative Centrifugal Force of <span class="arithmatex">\(\text{RCF} = 12{,}000 \times g\)</span> ([g] [RCF]). Because the benchtop microcentrifuge rotor has a radial distance of <span class="arithmatex">\(r_{\text{cm}} = 9.5\text{ cm}\)</span> (or <span class="arithmatex">\(10.0\text{ cm}\)</span> in the floor rotor), the researcher must convert that gravitational field specification into exact spindle Revolutions Per Minute (<span class="arithmatex">\(\text{RPM}\)</span>). Tracing the physics of exponential photon attenuation, Boltzmann–Arrhenius thermal activation, and rotational dynamics provides the governing equations needed to solve all three analytical steps on the stack.</p>
+<hr />
+<h2 id="exponential-light-attenuation-and-the-beer-lambert-law">Exponential Light Attenuation and the Beer-Lambert Law</h2>
+<p>Why does optical absorbance scale linearly with molar concentration even though light intensity decays exponentially through a coloured or ultraviolet-absorbing liquid? Following a beam of photons slice by slice through the quartz cuvette reveals the origin of August Beer's 1852 law.</p>
+<h3 id="differential-photon-absorption-and-logarithmic-optical-density">Differential Photon Absorption and Logarithmic Optical Density</h3>
+<p>When a collimated beam of monochromatic light of incident intensity <span class="arithmatex">\(I_0\)</span> enters a transparent quartz cuvette of path length <span class="arithmatex">\(b\)</span> (in centimeters, standardized at <span class="arithmatex">\(b = 1.00\text{ cm}\)</span>) containing an absorbing solute at molar concentration <span class="arithmatex">\(c\)</span> (in <span class="arithmatex">\(\text{mol/L}\)</span> or <span class="arithmatex">\(\text{M}\)</span>), each infinitesimal fluid slice of thickness <span class="arithmatex">\(dx\)</span> absorbs a fraction of the local photon flux proportional to <span class="arithmatex">\(c\,dx\)</span>.</p>
+<p><img alt="Monochromatic light attenuation through an optical cuvette of pathlength b under the Beer-Lambert absorption law." src="../../assets/diagrams/domains/diagram_ch06_beer_lambert.png" /></p>
+<p>Integrating <span class="arithmatex">\(dI / I = -\alpha c\,dx\)</span> from <span class="arithmatex">\(x = 0\)</span> to <span class="arithmatex">\(x = b\)</span> shows that the emergent intensity <span class="arithmatex">\(I\)</span> and fractional <strong>Transmittance</strong> <span class="arithmatex">\(T = I / I_0 \in (0, 1]\)</span> decay exponentially with both path length <span class="arithmatex">\(b\)</span> and concentration <span class="arithmatex">\(c\)</span>. Defining <strong>Optical Absorbance</strong> <span class="arithmatex">\(A\)</span> ([f] [%T], in dimensionless Absorbance Units, <span class="arithmatex">\(\text{AU}\)</span>) as the negative base-ten logarithm of transmittance linearizes that exponential decay into the <strong>Beer–Lambert Law</strong> ([εbc]):</p>
+<div class="arithmatex">\[T = \frac{I}{I_0} = 10^{-A}, \qquad A = -\log_{10}(T) = -\log_{10}\left(\frac{I}{I_0}\right) = \varepsilon \cdot b \cdot c \iff c = \frac{A}{\varepsilon \cdot b}\]</div>
+<p>In this fundamental equation of analytical spectroscopy, <span class="arithmatex">\(T\)</span> is the dimensionless fractional transmittance, <span class="arithmatex">\(A\)</span> is the dimensionless optical absorbance, <span class="arithmatex">\(\varepsilon\)</span> is the compound's <strong>molar absorptivity</strong> (molar extinction coefficient) at the measurement wavelength in <span class="arithmatex">\(\text{M}^{-1}\text{cm}^{-1}\)</span> (<span class="arithmatex">\(\text{L}\cdot\text{mol}^{-1}\cdot\text{cm}^{-1}\)</span>), <span class="arithmatex">\(b\)</span> is the optical path length in <span class="arithmatex">\(\text{cm}\)</span>, and <span class="arithmatex">\(c\)</span> is the molar concentration in <span class="arithmatex">\(\text{M}\)</span> (<span class="arithmatex">\(\text{mol/L}\)</span>). Notice that <span class="arithmatex">\(A = -\log_{10}(I/I_0)\)</span> is identical to the optical density <span class="arithmatex">\(D\)</span> of a neutral-density camera filter in Unit IV (<span class="arithmatex">\(I/I_0 = 10^{-D} = 2^{-\text{stops}}\)</span>) and one-tenth of the decibel attenuation <span class="arithmatex">\(\text{dB} = -10\log_{10}(P/P_0)\)</span> along an RF transmission line in Unit V.</p>
+<h3 id="ultraviolet-protein-extinction-coefficients-and-stray-light-linearity">Ultraviolet Protein Extinction Coefficients and Stray-Light Linearity</h3>
+<p>Because <span class="arithmatex">\(A = -\log_{10}(T)\)</span>, each <span class="arithmatex">\(+1.000\text{ AU}\)</span> increase in absorbance corresponds to a tenfold reduction in transmitted light intensity:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Transmittance <span class="arithmatex">\(T = I/I_0\)</span></th>
+<th style="text-align: center;">Percent Transmittance (<span class="arithmatex">\(\%T\)</span>)</th>
+<th style="text-align: center;">Light Absorbed (<span class="arithmatex">\(\%\)</span>)</th>
+<th style="text-align: center;">Absorbance <span class="arithmatex">\(A\)</span> ([f] [%T])</th>
+<th style="text-align: left;">Analytical Instrument Regime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(1.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(100.0\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\text{ AU}\)</span></td>
+<td style="text-align: left;">Pure blank buffer baseline</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(0.500\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(50.0\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(50.0\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.3010\text{ AU}\)</span></td>
+<td style="text-align: left;">Optimal high-precision window</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(0.2089\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(20.89\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(79.11\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.6800\text{ AU}\)</span></td>
+<td style="text-align: left;">Optimal protein assay reading</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(0.100\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(10.0\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(90.0\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.0000\text{ AU}\)</span></td>
+<td style="text-align: left;">Upper linear standard range</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(0.010\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.0\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(99.0\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.0000\text{ AU}\)</span></td>
+<td style="text-align: left;">High optical density; dilute aliquot</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(0.001\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.1\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(99.9\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.0000\text{ AU}\)</span></td>
+<td style="text-align: left;">Detector stray-light saturation limit</td>
+</tr>
+</tbody>
+</table>
+<p>For our purified enzyme reading <span class="arithmatex">\(A = 0.680\text{ AU}\)</span> (<span class="arithmatex">\(T = 10^{-0.680} \approx 0.2089\)</span>, meaning <span class="arithmatex">\(79.11\%\)</span> of the <span class="arithmatex">\(280\text{ nm}\)</span> photons are absorbed across the <span class="arithmatex">\(b = 1.00\text{ cm}\)</span> quartz cuvette):
+- If the engineered enzyme has molar extinction coefficient <span class="arithmatex">\(\varepsilon = 42{,}500\text{ M}^{-1}\text{cm}^{-1}\)</span>, its molar concentration is <span class="arithmatex">\(c = 0.680 / (42{,}500 \times 1.00) = \mathbf{1.600 \times 10^{-5}\text{ M}}\)</span> (<span class="arithmatex">\(\mathbf{16.00\,\mu\text{M}}\)</span>).
+- If the wild-type variant with <span class="arithmatex">\(\varepsilon = 45{,}000\text{ M}^{-1}\text{cm}^{-1}\)</span> reads <span class="arithmatex">\(A = 0.680\text{ AU}\)</span> (or <span class="arithmatex">\(A = 0.650\text{ AU}\)</span>), its concentration is <span class="arithmatex">\(c = 0.680 / 45{,}000 \approx \mathbf{1.5111 \times 10^{-5}\text{ M}}\)</span> (<span class="arithmatex">\(15.11\,\mu\text{M}\)</span>, or <span class="arithmatex">\(\mathbf{1.4444 \times 10^{-5}\text{ M}}\)</span> at <span class="arithmatex">\(A = 0.650\text{ AU}\)</span>).</p>
+<hr />
+<h2 id="chemical-thermodynamics-arrhenius-kinetics-and-centrifugal-fields">Chemical Thermodynamics, Arrhenius Kinetics, and Centrifugal Fields</h2>
+<p>Once the enzyme concentration is quantified, physical chemistry governs how temperature accelerates its catalytic turnover, how free energy drives chemical and electrochemical equilibria, and how centrifugal fields sediment precipitated macromolecules.</p>
+<h3 id="ideal-gases-gibbs-free-energy-nernst-potentials-and-arrhenius-barriers">Ideal Gases, Gibbs Free Energy, Nernst Potentials, and Arrhenius Barriers</h3>
+<p>Across physical and biophysical chemistry, the universal gas constant <span class="arithmatex">\(R = 8.314462618\text{ J/(mol}\cdot\text{K)}\)</span> ([g] [R], equal to Avogadro's constant [f] [Nₐ] times Boltzmann's constant [f] [kB]) and Faraday's constant <span class="arithmatex">\(F = 96{,}485.33\text{ C/mol}\)</span> ([f] [F]) link thermal kinetic energy <span class="arithmatex">\(R T\)</span> (at absolute temperature <span class="arithmatex">\(T\)</span> in Kelvin, <span class="arithmatex">\(\text{K} = {^\circ\text{C}} + 273.15\)</span>, converted via [g] [▸K]) to five foundational state and rate equations:
+1. <strong>Ideal Gas Law ([PVT]):</strong> A gas of chemical amount <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(\text{mol}\)</span>) in volume <span class="arithmatex">\(V\)</span> (<span class="arithmatex">\(\text{L}\)</span>) exerts pressure <span class="arithmatex">\(P = n R T / V\)</span> (where <span class="arithmatex">\(n = 1.00\text{ mol}\)</span> at <span class="arithmatex">\(T = 298.15\text{ K}\)</span> in <span class="arithmatex">\(V = 24.79\text{ L}\)</span> exerts <span class="arithmatex">\(P \approx \mathbf{100.0\text{ kPa}}\)</span> or <span class="arithmatex">\(0.9869\text{ atm}\)</span>, convertible between [f] [▸atm] and [g] [▸kPa]).
+2. <strong>Gibbs Free Energy ([f] [ΔG]) and Equilibrium Constant ([g] [Kₑq]):</strong> Combining enthalpy change <span class="arithmatex">\(\Delta H\)</span> and entropy change <span class="arithmatex">\(\Delta S\)</span> defines <span class="arithmatex">\(\Delta G = \Delta H - T \Delta S\)</span> (convertible between [f] [▸J] and [g] [▸cal]), which determines the standard free-energy relation <span class="arithmatex">\(\Delta G^\circ = -R T \ln K_{\text{eq}}\)</span> ([g] [Kₑq]) and equilibrium constant <span class="arithmatex">\(K_{\text{eq}} = \exp(-\Delta G^\circ / R T)\)</span> at <span class="arithmatex">\(298.15\text{ K}\)</span> (<span class="arithmatex">\(R T \approx 2478.96\text{ J/mol}\)</span>).
+3. <strong>Nernst Electrochemical Potential ([g] [E°]):</strong> For a redox cell with standard potential <span class="arithmatex">\(E^\circ\)</span>, electron transfer count <span class="arithmatex">\(n_e\)</span>, and reaction quotient <span class="arithmatex">\(Q\)</span>, the operating voltage at <span class="arithmatex">\(298.15\text{ K}\)</span> is <span class="arithmatex">\(E = E^\circ - (0.05916 / n_e)\log_{10} Q\)</span>.</p>
+<p><img alt="Galvanic Zn-Cu Daniell cell schematic showing anode oxidation, cathode reduction, salt bridge, and Nernst potential." src="../../assets/diagrams/domains/diagram_ch06_galvanic_cell.png" /></p>
+<ol>
+<li><strong>Arrhenius Activation Rate Law ([g] [Eₐ]) and First-Order Half-Life ([g] [t½]):</strong> In 1889, Swedish physicist and chemist Svante Arrhenius showed that reactants must surmount an activation energy barrier <span class="arithmatex">\(E_a\)</span> (in <span class="arithmatex">\(\text{J/mol}\)</span>) to reach the transition state, so the rate constant <span class="arithmatex">\(k = A_{\text{freq}} \exp(-E_a / R T)\)</span> (whose Boltzmann factor <span class="arithmatex">\(\exp(-E_a / R T)\)</span> is evaluated directly by [g] [Eₐ], paired with first-order half-life <span class="arithmatex">\(t_{1/2} = \ln(2) / k\)</span>, [g] [t½]) grows exponentially with temperature. Comparing reaction rates <span class="arithmatex">\(k_1\)</span> and <span class="arithmatex">\(k_2\)</span> between two absolute temperatures <span class="arithmatex">\(T_1\)</span> and <span class="arithmatex">\(T_2\)</span> yields both the forward <strong>Arrhenius Acceleration Ratio</strong> and the inverse <strong>Temperature Ceiling</strong> <span class="arithmatex">\(T_2\)</span> for a maximum allowable rate ratio <span class="arithmatex">\(k_2 / k_1\)</span>:</li>
+</ol>
+<div class="arithmatex">\[\frac{k_2}{k_1} = \frac{\exp(-E_a / R T_2)}{\exp(-E_a / R T_1)} = \exp\left[\frac{E_a}{R}\left(\frac{1}{T_1} - \frac{1}{T_2}\right)\right] \iff \frac{1}{T_2} = \frac{1}{T_1} - \frac{R}{E_a}\ln\left(\frac{k_2}{k_1}\right)\]</div>
+<p>For our enzyme assay with activation barrier <span class="arithmatex">\(E_a = 52{,}000\text{ J/mol}\)</span> warmed across a <span class="arithmatex">\(10.0\text{ K}\)</span> interval from <span class="arithmatex">\(T_1 = 298.15\text{ K}\)</span> (<span class="arithmatex">\(25.0^\circ\text{C}\)</span>) to <span class="arithmatex">\(T_2 = 308.15\text{ K}\)</span> (<span class="arithmatex">\(35.0^\circ\text{C}\)</span>), the inverse-temperature factor is <span class="arithmatex">\((T_2 - T_1) / (T_1 T_2) = 10.0 / (298.15 \times 308.15) \approx 1.08844 \times 10^{-4}\text{ K}^{-1}\)</span>. Multiplying by <span class="arithmatex">\(E_a / R = 52{,}000 / 8.31446 \approx 6254.16\text{ K}\)</span> gives an exponent of <span class="arithmatex">\(0.68073\)</span>, so the catalytic turnover rate accelerates by:</p>
+<div class="arithmatex">\[\frac{k_2}{k_1} = \exp(0.68073) \approx \mathbf{1.9753\times}\]</div>
+<p>Conversely, if a chemical reactor or enzymatic bath must never exceed <span class="arithmatex">\(k_2 / k_1 = 3.00\times\)</span> its <span class="arithmatex">\(25.0^\circ\text{C}\)</span> (<span class="arithmatex">\(298.15\text{ K}\)</span>) baseline rate before thermal runaway or denaturation begins, solving the inverse Arrhenius equation gives <span class="arithmatex">\(1/T_2 = 1/298.15 - (8.31446 / 52{,}000)\ln(3.00) = 0.00335402 - 0.00017565 = 0.00317837\text{ K}^{-1}\)</span>, establishing a maximum safe temperature ceiling of <span class="arithmatex">\(T_2 = \mathbf{314.63\text{ K}}\)</span> (<span class="arithmatex">\(\mathbf{41.48^\circ\text{C}}\)</span>).</p>
+<h3 id="rotor-geometry-and-relative-centrifugal-force-scaling">Rotor Geometry and Relative Centrifugal Force Scaling</h3>
+<p>When a centrifuge spins a sample tube at angular velocity <span class="arithmatex">\(\omega = 2\pi \cdot \text{RPM} / 60\)</span> (in radians per second) at radial distance <span class="arithmatex">\(r\)</span> from the central spindle axis, the outward centripetal/centrifugal acceleration is <span class="arithmatex">\(a_c = \omega^2 r\)</span>. Because different centrifuge rotors have different physical radii <span class="arithmatex">\(r_{\text{cm}}\)</span> (in centimeters), quoting rotor speed in <span class="arithmatex">\(\text{RPM}\)</span> alone is ambiguous. Dividing <span class="arithmatex">\(a_c\)</span> by standard Earth gravity (<span class="arithmatex">\(g = 9.80665\text{ m/s}^2 = 980.665\text{ cm/s}^2\)</span>) defines the dimensionless <strong>Relative Centrifugal Force</strong> ([g] [RCF], expressed in multiples of Earth gravity, <span class="arithmatex">\(\times g\)</span>):</p>
+<div class="arithmatex">\[\text{RCF} = \frac{\omega^2 r}{g} = \left(\frac{2\pi}{60}\right)^2 \frac{r_{\text{cm}}}{980.665} \cdot \text{RPM}^2 \approx 1.118 \times 10^{-5} \cdot r_{\text{cm}} \cdot \text{RPM}^2 \iff \text{RPM} = \sqrt{\frac{\text{RCF}}{1.118 \times 10^{-5} \cdot r_{\text{cm}}}}\]</div>
+<p><img alt="Fixed-angle centrifuge rotor radial geometry showing r_min, r_av, and r_max relative to the spin axis." src="../../assets/diagrams/domains/diagram_ch06_centrifuge_rcf.png" /></p>
+<p>In a floor rotor of radius <span class="arithmatex">\(r_{\text{cm}} = 10.0\text{ cm}\)</span> spinning at <span class="arithmatex">\(10{,}000\text{ RPM}\)</span>, the sample experiences <span class="arithmatex">\(\text{RCF} = 1.118 \times 10^{-5} \times 10.0 \times 10^8 = \mathbf{11{,}180 \times g}\)</span>. Conversely, when our protein precipitation protocol specifies a sedimentation field of <span class="arithmatex">\(\text{RCF} = 12{,}000 \times g\)</span> in a benchtop rotor of radius <span class="arithmatex">\(r_{\text{cm}} = 9.5\text{ cm}\)</span> (or <span class="arithmatex">\(r_{\text{cm}} = 10.0\text{ cm}\)</span>), solving the inverse square-root relation gives the required spindle speed:
+- For <span class="arithmatex">\(r_{\text{cm}} = 9.5\text{ cm}\)</span>: <span class="arithmatex">\(\text{RPM} = \sqrt{12{,}000 / (1.118 \times 10^{-5} \times 9.5)} = \sqrt{12{,}000 / 1.0621 \times 10^{-4}} \approx \mathbf{10{,}629.4\text{ RPM}}\)</span>.
+- For <span class="arithmatex">\(r_{\text{cm}} = 10.0\text{ cm}\)</span>: <span class="arithmatex">\(\text{RPM} = \sqrt{12{,}000 / (1.118 \times 10^{-5} \times 10.0)} = \sqrt{12{,}000 / 1.118 \times 10^{-4}} \approx \mathbf{10{,}360.2\text{ RPM}}\)</span>.</p>
+<hr />
+<h2 id="quantifying-proteins-reaction-rates-and-rotor-speeds-on-the-sc-60">Quantifying Proteins, Reaction Rates, and Rotor Speeds on the SC-60</h2>
+<p>On the <strong>SC-60</strong>, optical transmittance-to-absorbance conversion ([f] [%T]), the three-variable Beer–Lambert law and solver ([εbc]), ideal gas pressure ([PVT]), Gibbs free energy and equilibrium constants ([f] [ΔG], [g] [Kₑq]), Nernst cell voltage ([g] [E°]), Arrhenius rate kinetics ([g] [Eₐ], [g] [t½]), calorimetry ([f] [CAL]), and centrifuge force conversion ([g] [RCF]) operate both directly across the RPN stack ([4-LV] or [8-LV]) and as bidirectional Equation Solver workspaces ([g] [SOLVE] / [XEQ]).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Key / Softkey</th>
+<th style="text-align: left;">RPN Stack Action</th>
+<th style="text-align: left;">Register Z</th>
+<th style="text-align: left;">Register Y</th>
+<th style="text-align: left;">Register X</th>
+<th style="text-align: left;">Solver Workspace ([g] [SOLVE] / [XEQ])</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[f] [%T]</td>
+<td style="text-align: left;">Optical Absorbance <span class="arithmatex">\(A = -\log_{10}(T)\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Transmittance <span class="arithmatex">\(T\)</span></td>
+<td style="text-align: left;">Direct 1-key logarithmic evaluation</td>
+</tr>
+<tr>
+<td style="text-align: left;">[εbc]</td>
+<td style="text-align: left;">Beer–Lambert Law <span class="arithmatex">\(A = \varepsilon \cdot b \cdot c\)</span></td>
+<td style="text-align: left;">Extinction <span class="arithmatex">\(\varepsilon\)</span></td>
+<td style="text-align: left;">Path <span class="arithmatex">\(b\)</span> (<span class="arithmatex">\(\text{cm}\)</span>)</td>
+<td style="text-align: left;">Conc <span class="arithmatex">\(c\)</span> (<span class="arithmatex">\(\text{M}\)</span>)</td>
+<td style="text-align: left;"><code>EBC</code>: [A], [E], [B], [c] (<code>A = E × B × C</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[PVT]</td>
+<td style="text-align: left;">Ideal Gas Law <span class="arithmatex">\(P = n R T / V\)</span> (<span class="arithmatex">\(Z=n, Y=T, X=V\)</span>; or <span class="arithmatex">\(Y=n, X=V\)</span> at <span class="arithmatex">\(298.15\text{ K}\)</span>)</td>
+<td style="text-align: left;">Moles <span class="arithmatex">\(n\)</span> (<span class="arithmatex">\(\text{mol}\)</span>)</td>
+<td style="text-align: left;">Temp <span class="arithmatex">\(T\)</span> (<span class="arithmatex">\(\text{K}\)</span>) or <span class="arithmatex">\(n\)</span></td>
+<td style="text-align: left;">Volume <span class="arithmatex">\(V\)</span> (<span class="arithmatex">\(\text{L}\)</span>)</td>
+<td style="text-align: left;"><code>PVT</code>: [P], [V], [N], [T] (<code>P × V = N × R × T</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [Eₐ] / [g] [t½]</td>
+<td style="text-align: left;">Boltzmann Factor <span class="arithmatex">\(\exp(-E_a / R T)\)</span> / Half-life <span class="arithmatex">\(\ln(2)/k\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Energy <span class="arithmatex">\(E_a\)</span> (<span class="arithmatex">\(\text{J/mol}\)</span>)</td>
+<td style="text-align: left;">Temp <span class="arithmatex">\(T\)</span> (<span class="arithmatex">\(\text{K}\)</span>) or <span class="arithmatex">\(k\)</span></td>
+<td style="text-align: left;">Evaluates Boltzmann factor or <span class="arithmatex">\(t_{1/2}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [ΔG] / [g] [Kₑq]</td>
+<td style="text-align: left;">Gibbs <span class="arithmatex">\(\Delta G = \Delta H - T \Delta S\)</span> / <span class="arithmatex">\(\Delta G^\circ = -R T \ln K_{\text{eq}}\)</span></td>
+<td style="text-align: left;">Enthalpy <span class="arithmatex">\(\Delta H\)</span></td>
+<td style="text-align: left;">Temp <span class="arithmatex">\(T\)</span> (<span class="arithmatex">\(\text{K}\)</span>)</td>
+<td style="text-align: left;">Entropy <span class="arithmatex">\(\Delta S\)</span> or <span class="arithmatex">\(K_{\text{eq}}\)</span></td>
+<td style="text-align: left;"><code>DG</code>: [G], [h], [T], [S] (<code>G = H - T × S</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [E°]</td>
+<td style="text-align: left;">Nernst Voltage <span class="arithmatex">\(E = E^\circ - \frac{0.05916}{n_e}\log_{10} Q\)</span></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Standard <span class="arithmatex">\(E^\circ\)</span> (<span class="arithmatex">\(\text{V}\)</span>)</td>
+<td style="text-align: left;">Reaction Quotient <span class="arithmatex">\(Q\)</span></td>
+<td style="text-align: left;"><code>E0</code>: [E], [S], [N], [Q] (<code>E = S - .059/N LOG Q</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [RCF]</td>
+<td style="text-align: left;">Relative Centrifugal Force (<span class="arithmatex">\(\times g\)</span>)</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Radius <span class="arithmatex">\(r_{\text{cm}}\)</span></td>
+<td style="text-align: left;">Speed (<span class="arithmatex">\(\text{RPM}\)</span>)</td>
+<td style="text-align: left;">Evaluates <span class="arithmatex">\(\text{RCF} = 1.118 \times 10^{-5} \cdot r_{\text{cm}} \cdot \text{RPM}^2\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="solving-cuvette-protein-concentration-and-arrhenius-rate-ratios">Solving Cuvette Protein Concentration and Arrhenius Rate Ratios</h3>
+<p>At the spectrophotometer, the biochemist converts a <span class="arithmatex">\(50\%\)</span> calibration filter (<span class="arithmatex">\(T = 0.50\)</span>) to absorbance ([f] [%T]), resolves the purified enzyme concentration <span class="arithmatex">\(c\)</span> from <span class="arithmatex">\(A = 0.680\text{ AU}\)</span> in the <span class="arithmatex">\(b = 1.0\text{ cm}\)</span> quartz cuvette for <span class="arithmatex">\(\varepsilon = 42{,}500\text{ M}^{-1}\text{cm}^{-1}\)</span> (and checks the forward product via [εbc]), and computes the Arrhenius rate acceleration between <span class="arithmatex">\(T_1 = 298.15\text{ K}\)</span> and <span class="arithmatex">\(T_2 = 308.15\text{ K}\)</span> for <span class="arithmatex">\(E_a = 52{,}000\text{ J/mol}\)</span> ([g] [Eₐ]):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>0.5</code> [f] [%T]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.301\)</span></td>
+<td style="text-align: left;">Verify <span class="arithmatex">\(50\%\)</span> transmittance (<span class="arithmatex">\(T = 0.50\)</span>) equals <span class="arithmatex">\(A = 0.3010\text{ AU}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.68</code> [ENTER] <code>42500</code> [÷]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.301\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000016\)</span></td>
+<td style="text-align: left;">Solve enzyme concentration <span class="arithmatex">\(c = A / (\varepsilon b) = 0.680 / 42{,}500 = 1.60 \times 10^{-5}\text{ M}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>42500</code> [ENTER] <code>1</code> [x⇄y] [εbc]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.301\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.68\)</span></td>
+<td style="text-align: left;">Forward [εbc] check: <span class="arithmatex">\(\varepsilon(42{,}500) \times b(1.0) \times c(16\,\mu\text{M}) = 0.680\text{ AU}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>52000</code> [ENTER] <code>308.15</code> [g] [Eₐ] <code>52000</code> [ENTER] <code>298.15</code> [g] [Eₐ] [÷]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.301\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.68\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(1.9753\)</span></strong></td>
+<td style="text-align: left;">Evaluate Arrhenius rate acceleration <span class="arithmatex">\(k_2 / k_1 = 1.9753\times\)</span> from <span class="arithmatex">\(298.15\text{ K}\)</span> to <span class="arithmatex">\(308.15\text{ K}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="evaluating-free-energy-equilibria-cell-potentials-rotor-speeds-and-inverse-solver-runs">Evaluating Free-Energy Equilibria, Cell Potentials, Rotor Speeds, and Inverse Solver Runs</h3>
+<p>Next, the researcher evaluates <span class="arithmatex">\(\Delta G\)</span> for an exothermic binding step (<span class="arithmatex">\(\Delta H = -100\text{ kJ/mol}, T = 300\text{ K}, \Delta S = -0.10\text{ kJ/(mol}\cdot\text{K)}\)</span>), verifies <span class="arithmatex">\(\Delta G^\circ = -5708\text{ J/mol}\)</span> for an equilibrium constant <span class="arithmatex">\(K_{\text{eq}} = 10.0\)</span> at <span class="arithmatex">\(298.15\text{ K}\)</span> ([g] [Kₑq]), checks a redox cell Nernst voltage (<span class="arithmatex">\(E^\circ = 1.10\text{ V}, n_e = 2, Q = 10\)</span> via [g] [E°]), evaluates <span class="arithmatex">\(\text{RCF}\)</span> at <span class="arithmatex">\(r_{\text{cm}} = 10\text{ cm}\)</span> and <span class="arithmatex">\(10{,}000\text{ RPM}\)</span>, and solves the required <span class="arithmatex">\(\text{RPM}\)</span> for <span class="arithmatex">\(\text{RCF} = 12{,}000 \times g\)</span> on the <span class="arithmatex">\(r_{\text{cm}} = 9.5\text{ cm}\)</span> benchtop rotor:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>100</code> [+/-] [ENTER] <code>300</code> [ENTER] <code>0.1</code> [+/-] [f] [ΔG]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-70\)</span></td>
+<td style="text-align: left;">Evaluate <span class="arithmatex">\(\Delta G = -100 - 300(-0.10) = -70.0\text{ kJ/mol}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>298.15</code> [ENTER] <code>10</code> [g] [Kₑq]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-70\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-5708.0\)</span></td>
+<td style="text-align: left;">Standard free energy <span class="arithmatex">\(\Delta G^\circ = -R(298.15)\ln(10) = -5708.0\text{ J/mol}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [E°] <code>1.1</code> [S] <code>2</code> [N] <code>10</code> [Q] [g] [SOLVE] [E]</td>
+<td style="text-align: center;"><span class="arithmatex">\(-70\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-5708.0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(10\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.0704\)</span></td>
+<td style="text-align: left;">Nernst cell voltage <span class="arithmatex">\(E = 1.10 - (0.05916/2)\log_{10}(10) = 1.0704\text{ V}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>10</code> [ENTER] <code>10000</code> [g] [RCF]</td>
+<td style="text-align: center;"><span class="arithmatex">\(-5708.0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(10\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.0704\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(11180\)</span></td>
+<td style="text-align: left;">Relative Centrifugal Force <span class="arithmatex">\(\text{RCF} = 11{,}180 \times g\)</span> at <span class="arithmatex">\(r = 10\text{ cm}, 10{,}000\text{ RPM}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>12000</code> [ENTER] <code>1.118</code> [E] <code>5</code> [+/-] [÷] <code>9.5</code> [÷] [√x]</td>
+<td style="text-align: center;"><span class="arithmatex">\(10\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.0704\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(11180\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(10629.4\)</span></strong></td>
+<td style="text-align: left;">Solve required rotor speed <span class="arithmatex">\(\text{RPM} = \sqrt{12{,}000 / (1.118\times 10^{-5} \times 9.5)} = 10{,}629\text{ RPM}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>When an analytical question runs <strong>backward</strong>—such as finding enzyme concentration <span class="arithmatex">\(c\)</span> from absorbance <span class="arithmatex">\(A\)</span>, finding the unknown reaction quotient <span class="arithmatex">\(Q\)</span> from a measured Nernst electrode potential <span class="arithmatex">\(E = 1.0408\text{ V}\)</span>, or finding the maximum safe reactor temperature <span class="arithmatex">\(T_2\)</span> before an Arrhenius rate triples (<span class="arithmatex">\(k_2/k_1 = 3.00\)</span>)—the <strong>Bidirectional Solver Workspaces</strong> ([εbc] and [g] [E°]) and [g] [R] constant key eliminate algebraic rearrangement:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Solver / Stack Action</th>
+<th style="text-align: left;">Workspace Binding / Sequence</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">Physical Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[εbc]: <code>0.68</code> [A] <code>42500</code> [E] <code>1</code> [B] <span class="arithmatex">\(\to\)</span> [g] [SOLVE] [c]</td>
+<td style="text-align: left;"><code>A = E × B × C</code> solved for <span class="arithmatex">\(C\)</span></td>
+<td style="text-align: center;"><strong><code>1.6000e-5</code></strong></td>
+<td style="text-align: left;">Purified enzyme concentration <span class="arithmatex">\(c = \mathbf{16.00\,\mu\text{M}}\)</span> (<code>0.0160 mM</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [E°]: <code>1.0408</code> [E] <code>1.10</code> [S] <code>2</code> [N] <span class="arithmatex">\(\to\)</span> [g] [SOLVE] [Q]</td>
+<td style="text-align: left;"><code>E = S - .059/N LOG Q</code> solved for <span class="arithmatex">\(Q\)</span></td>
+<td style="text-align: center;"><strong><code>100.3</code></strong></td>
+<td style="text-align: left;">Unknown redox reaction quotient <span class="arithmatex">\(Q = \mathbf{100}\)</span> (<span class="arithmatex">\(\log_{10} Q = 2.00\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>298.15</code> [g] [1/x] <code>3</code> [LN] [g] [R] [×] <code>52000</code> [÷] [-] [g] [1/x]</td>
+<td style="text-align: left;">Inverse Arrhenius <span class="arithmatex">\(T_2\)</span> for <span class="arithmatex">\(k_2/k_1 = 3.0\)</span></td>
+<td style="text-align: center;"><strong><code>314.63</code></strong></td>
+<td style="text-align: left;">Maximum safe reactor temperature <span class="arithmatex">\(T_2 = \mathbf{314.63\text{ K}}\)</span> (<span class="arithmatex">\(\mathbf{41.48^\circ\text{C}}\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="try-it-on-the-stack_2">Try It on the Stack</h3>
+<p>Consolidate your command of Beer–Lambert spectrophotometry, chemical thermodynamics, and centrifugation with these three biophysical chemistry exercises:</p>
+<ol>
+<li><strong>Wild-Type Enzyme Concentration in the Beer-Lambert Solver:</strong> A wild-type enzyme with <span class="arithmatex">\(\varepsilon_{280} = 45{,}000\text{ M}^{-1}\text{cm}^{-1}\)</span> in a <span class="arithmatex">\(b = 1.0\text{ cm}\)</span> cuvette gives an absorbance reading of <span class="arithmatex">\(A = 0.650\text{ AU}\)</span>. Open [εbc] (<code>EBC: A = E × B × C</code>) and solve for molar concentration <span class="arithmatex">\(c\)</span> (<code>0.65 [A] 45000 [E] 1 [B] [g] [SOLVE] [c]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\(c \approx \mathbf{1.4444 \times 10^{-5}\text{ M}}\)</span>, or <span class="arithmatex">\(14.44\,\mu\text{M}\)</span>.)</em></li>
+<li><strong>Ideal Gas Headspace Pressure and Redox Potential:</strong> Find the pressure <span class="arithmatex">\(P\)</span> (in <span class="arithmatex">\(\text{kPa}\)</span>) exerted by <span class="arithmatex">\(n = 1.00\text{ mol}\)</span> of ideal gas at <span class="arithmatex">\(T = 298.15\text{ K}\)</span> in a <span class="arithmatex">\(V = 24.79\text{ L}\)</span> vessel (<code>1 [ENTER] 24.79 [PVT]</code>), and evaluate the Nernst potential for a half-cell with <span class="arithmatex">\(E^\circ = 0.800\text{ V}\)</span>, <span class="arithmatex">\(n_e = 2\)</span>, and <span class="arithmatex">\(Q = 100\)</span> (<code>[g] [E°] 0.8 [S] 2 [N] 100 [Q] [g] [SOLVE] [E]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(P \approx \mathbf{100.0\text{ kPa}}\)</span> and <span class="arithmatex">\(E \approx \mathbf{0.7408\text{ V}}\)</span>.)</em></li>
+<li><strong>High-Speed Microcentrifuge RCF at 14,000 RPM:</strong> A microcentrifuge with rotor radius <span class="arithmatex">\(r_{\text{cm}} = 8.5\text{ cm}\)</span> spins at <span class="arithmatex">\(14{,}000\text{ RPM}\)</span>. Compute the Relative Centrifugal Force in multiples of Earth gravity (<code>8.5 [ENTER] 14000 [g] [RCF]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\(\text{RCF} \approx \mathbf{18{,}625.9 \times g}\)</span>.)</em></li>
+</ol>
+<p>From analytical balances, conjugate buffers, and quartz cuvettes in the wet lab, we turn in <a href="../07-sc78-culinary-brewing/">Unit VII: Commercial Baking, Dough Thermodynamics &amp; Brewing Science</a> to applied food and fermentation science—where flour-anchored baker's percentages, dough thermal balances, wort gravity scales, and hop isomerization kinetics govern the bakery and brewhouse.</p>
 
 
 

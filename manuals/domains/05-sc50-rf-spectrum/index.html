@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An applied guide to complex impedance, reflection coefficients, VSWR, and Smith chart matching on the StackCalc 50.">
+        <meta name="description" content="Three narrative engineering chapters mastering transmission-line wave reflections, complex Smith Chart impedance matching, microwave link budgets, Fresnel clearance, Friis noise cascades, and Shannon capacity on the SC-50.">
       
       
         <meta name="author" content="StackCalc Engineering">
@@ -22,7 +22,7 @@
     
     
       
-        <title>SC-50 RF Spectrum, Transmission Lines & Microwave Handbook - StackCalc32</title>
+        <title>Unit V: Radio-Frequency Engineering, Transmission Lines & Link Budgets - StackCalc32</title>
       
     
     
@@ -67,13 +67,13 @@
   
   <meta property="og:site_name" content="StackCalc32">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="SC-50 RF Spectrum, Transmission Lines &amp; Microwave Handbook">
-  <meta property="og:description" content="An applied guide to complex impedance, reflection coefficients, VSWR, and Smith chart matching on the StackCalc 50.">
+  <meta property="og:title" content="Unit V: Radio-Frequency Engineering, Transmission Lines &amp; Link Budgets">
+  <meta property="og:description" content="Three narrative engineering chapters mastering transmission-line wave reflections, complex Smith Chart impedance matching, microwave link budgets, Fresnel clearance, Friis noise cascades, and Shannon capacity on the SC-50.">
   <meta property="og:url" content="https://www.stackcalc.io/manuals/domains/05-sc50-rf-spectrum/">
   <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SC-50 RF Spectrum, Transmission Lines &amp; Microwave Handbook">
-  <meta name="twitter:description" content="An applied guide to complex impedance, reflection coefficients, VSWR, and Smith chart matching on the StackCalc 50.">
+  <meta name="twitter:title" content="Unit V: Radio-Frequency Engineering, Transmission Lines &amp; Link Budgets">
+  <meta name="twitter:description" content="Three narrative engineering chapters mastering transmission-line wave reflections, complex Smith Chart impedance matching, microwave link budgets, Fresnel clearance, Friis noise cascades, and Shannon capacity on the SC-50.">
   <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -120,7 +120,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sc-50-rf-spectrum-transmission-lines-microwave-handbook" class="md-skip">
+        <a href="#unit-v-radio-frequency-engineering-transmission-lines-link-budgets" class="md-skip">
           Skip to content
         </a>
       
@@ -158,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SC-50 RF Spectrum, Transmission Lines & Microwave Handbook
+              Unit V: Radio-Frequency Engineering, Transmission Lines & Link Budgets
             
           </span>
         </div>
@@ -2914,209 +2914,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-when-wires-stop-acting-like-wires" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. When Wires Stop Acting Like Wires
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. When Wires Stop Acting Like Wires">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-not-just-use-a-phone-app" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Not Just Use a Phone App?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-core-concepts-how-rf-and-microwave-engineers-think" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Core Concepts: How RF and Microwave Engineers Think
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Core Concepts: How RF and Microwave Engineers Think">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#concept-1-the-bouncing-wave-and-reflection-coefficient-gamma" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 1: The Bouncing Wave and Reflection Coefficient (\(\Gamma\))
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concept-2-standing-waves-vswr-return-loss" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 2: Standing Waves (VSWR) &amp; Return Loss
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Concept 2: Standing Waves (VSWR) & Return Loss">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#return-loss-rl" class="md-nav__link">
-    <span class="md-ellipsis">
-      Return Loss (\(RL\))
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concept-3-folding-infinity-into-a-circle-the-smith-chart" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 3: Folding Infinity into a Circle (The Smith Chart)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concept-4-listening-to-the-stars-friis-cascaded-noise" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 4: Listening to the Stars (Friis Cascaded Noise)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-real-world-field-walkthroughs" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Real-World Field Walkthroughs
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Real-World Field Walkthroughs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#field-case-1-checking-an-amateur-radio-antenna-match-microwaves101" class="md-nav__link">
-    <span class="md-ellipsis">
-      Field Case 1: Checking an Amateur Radio Antenna Match (Microwaves101)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Field Case 1: Checking an Amateur Radio Antenna Match (Microwaves101)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-solve-it-on-the-sc-50" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to Solve It on the SC-50
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-case-2-satellite-downlink-low-noise-preamplifier-eevblog" class="md-nav__link">
-    <span class="md-ellipsis">
-      Field Case 2: Satellite Downlink Low-Noise Preamplifier (EEVblog)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Field Case 2: Satellite Downlink Low-Noise Preamplifier (EEVblog)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step-mechanics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step-by-Step Mechanics
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-try-it-yourself-practice-problems" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Try It Yourself: Practice Problems
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Try It Yourself: Practice Problems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problem-1-transmission-line-quarter-wave-transformer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem 1: Transmission Line Quarter-Wave Transformer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problem-2-return-loss-from-power-measurements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem 2: Return Loss from Power Measurements
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problem-3-resonant-lc-tank-frequency" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem 3: Resonant LC Tank Frequency
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -3130,130 +2927,862 @@
                   
 
 
-<h1 id="sc-50-rf-spectrum-transmission-lines-microwave-handbook">SC-50 RF Spectrum, Transmission Lines &amp; Microwave Handbook</h1>
-<blockquote>
-<p><strong>Who this is for:</strong> Anyone who understands complex numbers (<span class="arithmatex">\(a + jb\)</span>) and alternating current, but wants to know why high-frequency radio waves behave like sound echoes bouncing off canyon walls, and how engineers tune antennas to prevent expensive amplifiers from melting.</p>
-</blockquote>
-<hr />
-<h2 id="1-when-wires-stop-acting-like-wires">1. When Wires Stop Acting Like Wires</h2>
-<p>If you shout into a wide canyon, your voice travels outward through the air until it hits the opposite cliff face. Because solid granite has a vastly different acoustic density than thin air, the rock cannot absorb the sudden wave of kinetic energy. The sound wave bounces straight back as an audible echo.</p>
-<p>At normal household frequencies (<span class="arithmatex">\(60\text{ Hz}\)</span> AC), electrical current travels along a copper wire smoothly and uniformly. The electromagnetic wavelength at <span class="arithmatex">\(60\text{ Hz}\)</span> is over <span class="arithmatex">\(3{,}000\text{ miles}\)</span> long—far larger than your house—so voltage is virtually identical everywhere along the cord.</p>
-<p>Now crank the frequency up to <span class="arithmatex">\(1\text{ Gigahertz}\)</span> (<span class="arithmatex">\(1{,}000{,}000{,}000\text{ cycles per second}\)</span>), the realm of Wi-Fi, cellular 5G, and aircraft radar.</p>
-<p>At <span class="arithmatex">\(1\text{ GHz}\)</span>, the wavelength shrinks to just <strong>30 centimeters</strong> (about one foot). A coaxial cable running from a radio transmitter to an antenna on a tower is no longer a simple static connection: it is a <strong>distributed transmission line</strong>. The electrical signal travels along the wire as an electromagnetic wave.</p>
-<p>When that forward-traveling wave hits the antenna terminals, one of two things happens:
-1. If the antenna’s electrical impedance <strong>matches</strong> the cable, the wave steps cleanly into the air and radiates into space as radio waves.
-2. If the impedance <strong>does not match</strong>, the antenna acts like the granite cliff in our canyon: it cannot absorb the energy, and a portion of the wave <strong>bounces backward down the cable toward the transmitter</strong>.</p>
-<p>That reflected wave collides with the incoming wave, creating standing hot spots of voltage along the feedline. Worse, when that reflected power hits the delicate output transistors of the transmitter, it is dissipated as instant heat. In a <span class="arithmatex">\(100\text{-watt}\)</span> or <span class="arithmatex">\(1{,}000\text{-watt}\)</span> transmitter, a mismatched antenna can melt a <span class="arithmatex">\(\$500\)</span> Gallium-Nitride (GaN) power transistor in milliseconds.</p>
-<p>The <strong>StackCalc 50 (SC-50)</strong> is designed specifically to calculate these wave reflections. It pairs a native complex-number RPN stack with dedicated reflection engines, one-touch characteristic impedance toggles (<span class="arithmatex">\(50\,\Omega \leftrightarrow 75\,\Omega\)</span>), Friis receiver noise figure accumulators, and transmission line matching tools.</p>
-<h3 id="why-not-just-use-a-phone-app">Why Not Just Use a Phone App?</h3>
-<ul>
-<li><strong>The Tower Climbing Reality:</strong> When a broadcast or cellular technician is climbing a 150-foot radio tower in gusty winds, tethered to a safety harness, a delicate touchscreen smartphone is an accident waiting to happen. The SC-50 features tactile keys that can be operated reliably with one hand while tethered to a climbing lanyard.</li>
-<li><strong>The <span class="arithmatex">\(50\,\Omega\)</span> vs. <span class="arithmatex">\(75\,\Omega\)</span> Compromise:</strong> Why is the entire RF world built on <span class="arithmatex">\(50\,\Omega\)</span> and <span class="arithmatex">\(75\,\Omega\)</span>? In the 1930s, electrical researchers discovered that for coaxial cables with air insulation, minimum signal loss (attenuation) occurs at <span class="arithmatex">\(77\,\Omega\)</span>, while maximum power-handling capability occurs at <span class="arithmatex">\(30\,\Omega\)</span>. Radio transmitters standardized on <strong><span class="arithmatex">\(50\,\Omega\)</span></strong> as the sweet-spot compromise between power and loss. Cable television (CATV), which carries tiny microvolt signals over long neighborhood runs, standardized on <strong><span class="arithmatex">\(75\,\Omega\)</span></strong> to minimize attenuation. The SC-50 lets you toggle between <span class="arithmatex">\(50\,\Omega\)</span> and <span class="arithmatex">\(75\,\Omega\)</span> reference systems with a single key.</li>
-</ul>
-<hr />
-<h2 id="2-core-concepts-how-rf-and-microwave-engineers-think">2. Core Concepts: How RF and Microwave Engineers Think</h2>
-<h3 id="concept-1-the-bouncing-wave-and-reflection-coefficient-gamma">Concept 1: The Bouncing Wave and Reflection Coefficient (<span class="arithmatex">\(\Gamma\)</span>)</h3>
-<p>When a transmission line with characteristic impedance <span class="arithmatex">\(Z_0\)</span> (usually <span class="arithmatex">\(50\,\Omega\)</span>) connects to an antenna with complex load impedance <span class="arithmatex">\(Z_L = R + jX\)</span>, the ratio of the reflected voltage wave to the forward voltage wave is the <strong>Voltage Reflection Coefficient (<span class="arithmatex">\(\Gamma\)</span>, Greek gamma)</strong>:</p>
-<div class="arithmatex">\[\Gamma = \frac{Z_L - Z_0}{Z_L + Z_0} = \rho \angle \theta\]</div>
-<p>Because <span class="arithmatex">\(Z_L\)</span> is a complex number, <span class="arithmatex">\(\Gamma\)</span> is also a complex phasor with a magnitude (<span class="arithmatex">\(\rho = |\Gamma| \le 1.0\)</span>) and a phase angle (<span class="arithmatex">\(\theta\)</span>):
-- <strong>Perfect Match (<span class="arithmatex">\(Z_L = 50\,\Omega\)</span>):</strong> <span class="arithmatex">\(\Gamma = \frac{50 - 50}{50 + 50} = \mathbf{0}\)</span>. Zero reflected wave; 100% of power radiates into the sky!
-- <strong>Open Circuit (<span class="arithmatex">\(Z_L = \infty\)</span>):</strong> <span class="arithmatex">\(\Gamma = \mathbf{+1.0} \angle 0^\circ\)</span>. All voltage reflects back in-phase.
-- <strong>Short Circuit (<span class="arithmatex">\(Z_L = 0\)</span>):</strong> <span class="arithmatex">\(\Gamma = \mathbf{-1.0} = 1.0 \angle 180^\circ\)</span>. All voltage reflects back inverted.</p>
-<h3 id="concept-2-standing-waves-vswr-return-loss">Concept 2: Standing Waves (VSWR) &amp; Return Loss</h3>
-<p>When forward and reflected waves pass through each other inside a cable, their peaks and troughs interfere constructively and destructively, creating a stationary wave pattern.</p>
-<p>The ratio of the maximum voltage peak to the minimum voltage valley is the <strong>Voltage Standing Wave Ratio (VSWR)</strong>:</p>
-<div class="arithmatex">\[VSWR = \frac{1 + |\Gamma|}{1 - |\Gamma|} = \frac{1 + \rho}{1 - \rho}\]</div>
-<ul>
-<li><strong>Ideal Match:</strong> <span class="arithmatex">\(VSWR = \mathbf{1.0 : 1}\)</span> (smooth, uniform voltage along the cable).</li>
-<li><strong>Good Commercial Antenna:</strong> <span class="arithmatex">\(VSWR \le \mathbf{1.5 : 1}\)</span> (<span class="arithmatex">\(4\%\)</span> power reflected).</li>
-<li><strong>Dangerous Mismatch:</strong> <span class="arithmatex">\(VSWR \ge \mathbf{3.0 : 1}\)</span> (<span class="arithmatex">\(25\%\)</span> or more power reflected backward into the transmitter!).</li>
-</ul>
-<h4 id="return-loss-rl">Return Loss (<span class="arithmatex">\(RL\)</span>)</h4>
-<p>Engineers often prefer to express reflection efficiency on a decibel scale called <strong>Return Loss</strong>:</p>
-<div class="arithmatex">\[RL = -20 \log_{10}|\Gamma| \quad [\text{dB}]\]</div>
-<p>A high return loss means the reflected wave has been heavily attenuated:
-- <span class="arithmatex">\(RL = 20\text{ dB} \iff |\Gamma| = 0.10 \iff 99\%\)</span> of power is absorbed by the antenna.
-- <span class="arithmatex">\(RL = 10\text{ dB} \iff |\Gamma| = 0.316 \iff 90\%\)</span> of power is absorbed (<span class="arithmatex">\(10\%\)</span> bounces back).</p>
-<h3 id="concept-3-folding-infinity-into-a-circle-the-smith-chart">Concept 3: Folding Infinity into a Circle (The Smith Chart)</h3>
-<p>In 1939, RCA engineer Phillip Smith grew tired of solving complex hyperbolic tangent equations to figure out how impedance changes as you travel along a transmission line.</p>
-<p>He noticed something magical: if you map the infinite right half of the complex impedance plane (<span class="arithmatex">\(R \ge 0\)</span>) onto the complex reflection coefficient <span class="arithmatex">\(\Gamma\)</span>, <strong>the entire infinite plane folds into a compact circular disk with a radius of 1.0</strong>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>                 Short Circuit 
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                   (Γ = -1)
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>                      *
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                     / \
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                    /   \     Center = 50 Ω Perfect Match (Γ = 0)
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                   |  +  |
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                    \   /
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>                     \ /
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                      *
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                  Open Circuit
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>                   (Γ = +1)
-</span></code></pre></div>
-<ul>
-<li>The exact center of the circle is the <strong><span class="arithmatex">\(50\,\Omega\)</span> perfect match</strong> (<span class="arithmatex">\(\Gamma = 0\)</span>).</li>
-<li>The outer boundary rim is total reflection (<span class="arithmatex">\(|\Gamma| = 1.0\)</span>).</li>
-<li>Moving down a coaxial cable corresponds simply to rotating clockwise around the center of the chart!</li>
-</ul>
-<p>On the SC-50, pressing <code>[SMTH]</code> lets you navigate impedance transformations and design matching networks without needing paper charts.</p>
-<h3 id="concept-4-listening-to-the-stars-friis-cascaded-noise">Concept 4: Listening to the Stars (Friis Cascaded Noise)</h3>
-<p>When a satellite dish points at deep space, the signal arriving from a spacecraft millions of miles away is unimaginably faint: often less than a billionth of a microwatt (<span class="arithmatex">\(-120\text{ dBm}\)</span>).</p>
-<p>Every electronic component generates natural thermal noise (random motion of electrons). To amplify a faint signal without burying it in hiss, engineers use a chain of amplifiers.</p>
-<p>Harald Friis at Bell Labs discovered that the total noise figure (<span class="arithmatex">\(F\)</span>) of an entire multi-stage receiver is dominated by the <strong>very first stage</strong>:</p>
-<div class="arithmatex">\[F_{\text{total}} = F_1 + \frac{F_2 - 1}{G_1} + \frac{F_3 - 1}{G_1 G_2} + \dots\]</div>
-<p>Notice the denominator: any noise added by stage 2 (<span class="arithmatex">\(F_2\)</span>) is divided by the gain of stage 1 (<span class="arithmatex">\(G_1\)</span>)! </p>
-<p>This explains why satellite dishes and cellular base stations always place a high-gain, Low Noise Amplifier (LNA) right at the antenna feedhorn on the mast, rather than down inside the warm building at the other end of a long, lossy cable.</p>
-<hr />
-<h2 id="3-real-world-field-walkthroughs">3. Real-World Field Walkthroughs</h2>
-<h3 id="field-case-1-checking-an-amateur-radio-antenna-match-microwaves101">Field Case 1: Checking an Amateur Radio Antenna Match (<code>Microwaves101</code>)</h3>
-<p>An antenna analyzer measures the feedpoint impedance of a newly installed dipole antenna at <span class="arithmatex">\(14.2\text{ MHz}\)</span>:
-- Load impedance: <span class="arithmatex">\(Z_L = 35 - j25\,\Omega\)</span>
-- Reference line: <span class="arithmatex">\(Z_0 = 50\,\Omega\)</span>
-What is the reflection coefficient magnitude (<span class="arithmatex">\(|\Gamma|\)</span>), the VSWR, and the Return Loss?</p>
-<h4 id="how-to-solve-it-on-the-sc-50">How to Solve It on the SC-50</h4>
+<h1 id="unit-v-radio-frequency-engineering-transmission-lines-link-budgets">Unit V: Radio-Frequency Engineering, Transmission Lines &amp; Link Budgets</h1>
+<p>In the 1880s, the self-taught English physicist and former telegraph operator Oliver Heaviside formulated the <em>telegrapher's equations</em> to explain why undersea telegraph cables blurred crisp Morse code pulses into sluggish, overlapping currents. In low-frequency <span class="arithmatex">\(60\text{ Hz}\)</span> building wiring, where an electromagnetic wave propagating near the speed of light (<span class="arithmatex">\(c \approx 3 \times 10^8\text{ m/s}\)</span>) spans a physical wavelength <span class="arithmatex">\(\lambda = c / f\)</span> of roughly five thousand kilometers, a circuit board ten centimeters wide shares a uniform instantaneous voltage and phase everywhere, allowing engineers to treat conductors as lumped nodes. Once the operating frequency rises seven orders of magnitude into the radio-frequency (RF) and microwave spectrum—from <span class="arithmatex">\(146\text{ MHz}\)</span> mountain repeaters (<span class="arithmatex">\(\lambda \approx 2.05\text{ m}\)</span>) and <span class="arithmatex">\(5.8\text{ GHz}\)</span> microwave backhauls (<span class="arithmatex">\(\lambda \approx 5.17\text{ cm}\)</span>) to <span class="arithmatex">\(28\text{ GHz}\)</span> millimeter-wave radar (<span class="arithmatex">\(\lambda \approx 1.07\text{ cm}\)</span>)—a coaxial feedline or circuit-board microstrip spans multiple wavelengths, and Heaviside's distributed series inductance <span class="arithmatex">\(L'\)</span> and shunt capacitance <span class="arithmatex">\(C'\)</span> govern wave propagation through the line's characteristic impedance <span class="arithmatex">\(Z_0 = \sqrt{L' / C'}\)</span>.</p>
+<p>In May 1929, Bell Telephone Laboratories engineers Lloyd Espenschied and Herman Affel patented the modern concentric coaxial transmission line for wideband long-distance telephony and television. Analyzing an air-insulated copper coaxial cylinder of outer shield inner diameter <span class="arithmatex">\(D\)</span> and center-conductor diameter <span class="arithmatex">\(d\)</span>, they discovered a fundamental physical trade-off: high-voltage dielectric breakdown power peaks at a diameter ratio of <span class="arithmatex">\(D / d \approx 1.65\)</span> (<span class="arithmatex">\(Z_0 \approx 30\ \Omega\)</span>), whereas resistive skin-effect attenuation in the copper conductors reaches its minimum at <span class="arithmatex">\(D / d \approx 3.59\)</span> (<span class="arithmatex">\(Z_0 \approx 77\ \Omega\)</span>). Two-way radio transmitters and laboratory test instruments standardized on the geometric compromise of <strong><span class="arithmatex">\(Z_0 = 50\ \Omega\)</span></strong> (<code>[g] [Z₀]</code>), while receive-only television broadcast and broadband cable networks adopted <strong><span class="arithmatex">\(Z_0 = 75\ \Omega\)</span></strong> to minimize signal loss over kilometer-long runs (<code>[g] [COX]</code>). Whenever a forward-traveling wave on a <span class="arithmatex">\(Z_0\)</span> line encounters a detuned antenna whose complex load impedance <span class="arithmatex">\(Z_L = R + jX\)</span> (entered in Native Complex Mode <code>[f] [CMPLX]</code> via softkey <code>[jX]</code>) differs from <span class="arithmatex">\(Z_0\)</span>, boundary continuity of the electric and magnetic fields launches a reflected wave <span class="arithmatex">\(\Gamma\)</span> (<code>[Γ]</code>) backward toward the transmitter, creating stationary voltage standing waves (<code>[SWR]</code>, <code>[SWR]</code>) and return loss (<code>[RL]</code>). To spare engineers tedious complex-number division when synthesizing quarter-wave transformers (<code>[Γ]</code>, <code>[g] [TLN]</code>, <code>[f] [λ/L]</code>) and reactive L-networks (<code>[f] [f₀]</code>, <code>[g] [fc]</code>, <code>[f] [XLC]</code>), RCA engineer Phillip H. Smith invented his conformal transmission-line chart in 1939, mapping every passive impedance (<span class="arithmatex">\(R \ge 0\)</span>) inside the complex unit disk.</p>
+<p>Once an electromagnetic wave leaves a matched antenna and radiates across open terrain or space, its power density spreads spherically across millions of square meters. During the 1940s at Bell Labs' Holmdel station in New Jersey, Danish-American radio engineer Harald T. Friis established the two foundational laws of wireless systems engineering: the 1946 <strong>Free-Space Path Loss</strong> transmission equation (<code>[FSL]</code>, <code>[f] [LNK]</code>), which pairs with Augustin-Jean Fresnel's ellipsoidal diffraction zones (<code>[g] [F₁]</code>) to govern line-of-sight microwave links, and the 1944 cascaded <strong>Noise Factor</strong> law (<code>[NF]</code>), which proves that the noise figure and gain of the very first masthead amplifier above the Johnson–Nyquist thermal noise floor (<code>[g] [Pₙ]</code>, <code>[g] [T₀]</code>, <code>[f] [kB]</code>) dictate the sensitivity of an entire receiving chain.</p>
+<p>Two years after Friis's transmission paper, his Bell Labs colleague Claude Elwood Shannon published <em>A Mathematical Theory of Communication</em> in 1948, establishing the absolute upper bound on error-free data rate (<code>[g] [C/B]</code>) that any communication channel of bandwidth <span class="arithmatex">\(B\)</span> can sustain in the presence of Gaussian thermal noise. To execute these transmission-line, link-budget, and receiver-cascade equations in the field without algebraic rearrangement, the <strong>SC-50</strong> is engineered around StackCalc's three-pillar architecture:</p>
 <ol>
-<li>Enter <span class="arithmatex">\(Z_L\)</span> on the complex stack:</li>
-<li><code>35</code> <code>[ENTER]</code> <code>25</code> <code>[+/-]</code> (Stack holds <span class="arithmatex">\(35 - j25\)</span>).</li>
-<li>Enter <span class="arithmatex">\(Z_0\)</span>:</li>
-<li><code>50</code></li>
-<li>Tap <code>[SWR]</code>:</li>
-<li>Register <span class="arithmatex">\(X\)</span> displays: <strong><code>1.884</code></strong> (<strong>VSWR = <span class="arithmatex">\(1.88 : 1\)</span></strong>).</li>
-<li>Register <span class="arithmatex">\(Y\)</span> displays: <strong><code>0.3065</code></strong> (Reflection coefficient <span class="arithmatex">\(|\Gamma| = 0.307\)</span>).</li>
-<li>Tap <code>[f] [RL]</code>:</li>
-<li>Register <span class="arithmatex">\(X\)</span> displays: <strong><code>10.27 dB</code></strong> (Return Loss).</li>
-<li>About <span class="arithmatex">\(90.6\%\)</span> of the transmitter's power is radiating into the air, and <span class="arithmatex">\(9.4\%\)</span> is reflected back. A simple L-matching network can tune this to <span class="arithmatex">\(1.0 : 1\)</span>.</li>
+<li><strong>Configurable RPN Stack Depth (<code>[4-LV]</code> / <code>[8-LV]</code> / Deep Stack via <code>[g] [FLAGS]</code>):</strong> RF workflows switch between the classic four-register RPN stack (<code>T, Z, Y, X</code>) and deeper eight-register (<code>[8-LV]</code>) or arbitrary-depth (<code>[INF]</code>) stacks so complex reflection phasors, antenna gains, cable losses, and noise figures remain live in stack memory across multi-hop calculations.</li>
+<li><strong>Dual-Mode Domain Keys (Immediate Stack Shortcut + Bidirectional Equation Solver Workspace):</strong> Every multi-parameter RF law—including standing-wave reflection (<code>[SWR]</code>), quarter-wave &amp; L-network matching (<code>[Γ]</code>, <code>[g] [TLN]</code>), resonant tank frequency (<code>[f] [f₀]</code>), Free-Space Path Loss (<code>[FSL]</code>), Link Budget (<code>[f] [LNK]</code>), First Fresnel Zone radius (<code>[g] [F₁]</code>), thermal noise power (<code>[g] [Pₙ]</code>), Friis noise cascade (<code>[NF]</code>), Shannon–Hartley capacity (<code>[g] [C/B]</code>), Doppler shift (<code>[g] [Δf]</code>), and monostatic radar range (<code>[f] [RCS]</code>)—operates on the RPN stack, while the seven core Equation Workspaces (<code>[SWR]</code>, <code>[FSL]</code>, <code>[Γ]</code> <span class="arithmatex">\(\to\)</span> <code>ZMAT</code>, <code>[NF]</code>, <code>[f] [LNK]</code>, <code>[g] [C/B]</code>, <code>[f] [f₀]</code>) bind equation variables to the dynamic softkeys (<code>[LFU0]</code>–<code>[LFU5]</code>) to solve forward or backward via <code>[g] [SOLVE]</code> / <code>[XEQ]</code>.</li>
+<li><strong>Native Complex RF Mode &amp; Live Reference Ledgers (<code>[f] [CMPLX]</code>, <code>[g] [Z₀]</code>, <code>[g] [▦]</code>):</strong> Pressing <code>[f] [CMPLX]</code> activates six dedicated RF complex softkeys (<code>[Γ]</code>, <code>[Z←Γ]</code>, <code>[jX]</code>, <code>[SWR]</code>, <code>[RL]</code>, <code>[Z₀]</code>) for direct complex impedance <span class="arithmatex">\(Z_L = R + jX \leftrightarrow \Gamma \leftrightarrow \text{VSWR}\)</span> and return loss transformations, while <code>[g] [▦]</code> displays the live Smith Chart and RF reference tables.</li>
 </ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Chapter</th>
+<th style="text-align: left;">Narrative Problem</th>
+<th style="text-align: left;">Mathematical Concepts</th>
+<th style="text-align: left;">Faceplate Legends &amp; Workspaces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Chapter 13</strong></td>
+<td style="text-align: left;">Diagnosing high reflected power on a <span class="arithmatex">\(50\ \Omega\)</span> mountain repeater coax terminated in <span class="arithmatex">\(Z_L = 35 - j25\ \Omega\)</span> and designing a reactive match</td>
+<td style="text-align: left;">Decibel-milliwatt scaling, complex reflection <span class="arithmatex">\(\Gamma\)</span>, VSWR, Return Loss, Mismatch Loss, Smith Chart L-networks, <span class="arithmatex">\(\lambda/4\)</span> stubs, LC resonance</td>
+<td style="text-align: left;"><code>[dBm]</code>, <code>[f] [▸dBm]</code>, <code>[g] [▸mW]</code>, <code>[g] [▸dBW]</code>, <code>[f] [CMPLX]</code> (<code>[jX]</code>, <code>[Γ]</code>, <code>[Z←Γ]</code>, <code>[SWR]</code>, <code>[RL]</code>, <code>[Z₀]</code>), <code>[SWR]</code>, <code>[Γ]</code>, <code>[g] [TLN]</code>, <code>[f] [f₀]</code>, <code>[g] [fc]</code>, <code>[f] [λ/L]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Chapter 14</strong></td>
+<td style="text-align: left;">Closing a <span class="arithmatex">\(5.8\text{ GHz}\)</span> microwave backhaul across a <span class="arithmatex">\(12\text{ km}\)</span> forested valley and verifying mid-span pine tree clearance</td>
+<td style="text-align: left;">Friis Free-Space Path Loss, effective isotropic radiated power, logarithmic link budgets, fade margin, First Fresnel Zone ellipsoid clearance</td>
+<td style="text-align: left;"><code>[FSL]</code>, <code>[f] [LNK]</code>, <code>[g] [F₁]</code>, <code>[g] [c]</code>, <code>[g] [COX]</code>, <code>[f] [PAD]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Chapter 15</strong></td>
+<td style="text-align: left;">Placing a masthead LNA (<span class="arithmatex">\(G_1 = 20\text{ dB}, N\!F_1 = 1.5\text{ dB}\)</span>) ahead of a <span class="arithmatex">\(6\text{ dB}\)</span> cable loss to rescue a weak satellite telemetry carrier</td>
+<td style="text-align: left;">Johnson–Nyquist thermal noise floor, Friis noise cascade, IIP3/SFDR linearity, Shannon–Hartley capacity, radar Doppler &amp; <span class="arithmatex">\(R^4\)</span> range</td>
+<td style="text-align: left;"><code>[g] [Pₙ]</code>, <code>[g] [T₀]</code>, <code>[f] [kB]</code>, <code>[NF]</code>, <code>[f] [IP3]</code>, <code>[g] [FDR]</code>, <code>[g] [C/B]</code>, <code>[g] [Δf]</code>, <code>[f] [RCS]</code>, <code>[f] [▸dBV]</code>, <code>[g] [▸μV]</code></td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h3 id="field-case-2-satellite-downlink-low-noise-preamplifier-eevblog">Field Case 2: Satellite Downlink Low-Noise Preamplifier (<code>EEVblog</code>)</h3>
-<p>A satellite ground station receiver consists of:
-- Stage 1 (Masthead LNA): Noise Figure <span class="arithmatex">\(= 0.8\text{ dB}\)</span> (<span class="arithmatex">\(F_1 = 1.202\)</span>), Gain <span class="arithmatex">\(= 20\text{ dB}\)</span> (<span class="arithmatex">\(G_1 = 100\)</span>).
-- Stage 2 (Coax Cable Run): Loss <span class="arithmatex">\(= 3.0\text{ dB}\)</span> (<span class="arithmatex">\(F_2 = 2.0\)</span>, <span class="arithmatex">\(G_2 = 0.50\)</span>).
-- Stage 3 (Indoor Receiver): Noise Figure <span class="arithmatex">\(= 6.0\text{ dB}\)</span> (<span class="arithmatex">\(F_3 = 3.98\)</span>).
-What is the total cascaded noise figure of the receiving system?</p>
-<h4 id="step-by-step-mechanics">Step-by-Step Mechanics</h4>
+<h1 id="chapter-13-the-reflected-wave-on-the-mountain-repeater-coax">Chapter 13: The Reflected Wave on the Mountain Repeater Coax</h1>
+<p>After a February rime-ice storm sweeps across a nine-thousand-foot summit in the Sierra Nevada, the remote telemetry alarm on a <span class="arithmatex">\(146.0\text{ MHz}\)</span> search-and-rescue VHF repeater trips into high-reflected-power foldback. Driving a <span class="arithmatex">\(50\text{ W}\)</span> (<span class="arithmatex">\(+47.0\text{ dBm}\)</span>) solid-state power amplifier into a <span class="arithmatex">\(Z_0 = 50\ \Omega\)</span> coaxial feedline (<code>[g] [Z₀]</code>, <code>[dBm]</code>, <code>[f] [▸dBm]</code>, <code>[g] [▸mW]</code>, <code>[g] [▸dBW]</code>), the repeater normally delivers nearly its full output into a tower-mounted dipole array. When the field engineer snowshoes into the summit shelter and connects a vector network analyzer to the bottom of the feedline, the instrument reveals that ice loading on the antenna elements has detuned the feedpoint to a complex load impedance of <span class="arithmatex">\(Z_L = 35 - j25\ \Omega\)</span> (keyed via <code>[f] [CMPLX]</code> and softkey <code>[jX]</code>)—dropping the radiation resistance to <span class="arithmatex">\(35\ \Omega\)</span> while introducing <span class="arithmatex">\(25\ \Omega\)</span> of capacitive reactance.</p>
+<p>On a high-frequency transmission line, an impedance mismatch does far more than reduce radiated signal strength. Because the electric and magnetic fields at the antenna terminals must satisfy Ohm's law for both the <span class="arithmatex">\(50\ \Omega\)</span> cable and the <span class="arithmatex">\(35 - j25\ \Omega\)</span> load simultaneously, a fraction of the incident voltage wave reflects backward down the coaxial line toward the transmitter. As the backward-traveling reflected wave interferes with the forward-traveling wave, it erects stationary voltage peaks and current troughs along the cable—quantified by the reflection coefficient (<code>[Γ]</code>), Voltage Standing Wave Ratio (<code>[SWR]</code>, <code>[SWR]</code>), Return Loss (<code>[RL]</code>), and Mismatch Loss—that can punch through coaxial dielectric insulation or destroy the collector junction of the output transistor.</p>
+<p>Before climbing the icy tower or soldering an emergency matching network in the shelter, the engineer must quantify the mismatch and synthesize a circuit fix: first, convert the transmitter power into decibel-milliwatts (<code>[f] [▸dBm]</code>, <code>[g] [▸mW]</code>) and use Native Complex Mode (<code>[f] [CMPLX]</code>) to evaluate the complex reflection coefficient <span class="arithmatex">\(\Gamma\)</span> (<code>[Γ]</code>), standing wave ratio (<code>[SWR]</code>), return loss (<code>[RL]</code>), and reflected power in watts for <span class="arithmatex">\(Z_L = 35 - j25\ \Omega\)</span>; second, determine the physical length of a quarter-wavelength coaxial matching section (<code>[f] [λ/L]</code>, <code>[g] [TLN]</code>, <code>[Γ]</code>) and the quality factor <span class="arithmatex">\(Q\)</span>, series inductance, shunt capacitance, and resonant frequency (<code>[Γ]</code>, <code>[f] [f₀]</code>) of a lumped reactive L-network, using the bidirectional <code>[f] [f₀]</code> Solver Workspace to back-solve for exact tuning capacitance.</p>
+<hr />
+<h2 id="transmission-line-reflections-standing-waves-and-decibel-power">Transmission-Line Reflections, Standing Waves, and Decibel Power</h2>
+<p>When radio-frequency energy travels from a transmitter output stage to an antenna feedpoint, the coaxial cable behaves as a distributed electromagnetic waveguide. Tracking forward and reflected power along that waveguide requires anchoring power measurements to the logarithmic milliwatt scale and solving the boundary equations at the load.</p>
+<h3 id="logarithmic-milliwatt-scaling-and-characteristic-impedance">Logarithmic Milliwatt Scaling and Characteristic Impedance</h3>
+<p>Because radio signals span eighteen orders of magnitude—from kilowatt broadcast transmitters down to femtowatt deep-space telemetry carriers—RF engineering anchors its absolute power scale to <strong>one milliwatt</strong> (<span class="arithmatex">\(1\text{ mW} = 10^{-3}\text{ W}\)</span>). Any linear power <span class="arithmatex">\(P_{\text{mW}}\)</span> (in milliwatts) or <span class="arithmatex">\(P_{\text{W}}\)</span> (in watts) converts to decibels relative to one milliwatt (<code>[dBm]</code>, <code>[f] [▸dBm]</code>) or one watt (<code>[g] [▸dBW]</code>) through the base-ten logarithm and inverts back to linear milliwatts (<code>[g] [▸mW]</code>) via base-ten exponentiation, while across a matched real characteristic impedance <span class="arithmatex">\(Z_0\)</span> (<code>[g] [Z₀]</code>, with voltage conversions <code>[f] [▸dBV]</code> and <code>[g] [▸μV]</code>) the root-mean-square RF voltage <span class="arithmatex">\(V_{\text{rms}}\)</span> satisfies Ohm's power law:</p>
+<div class="arithmatex">\[P_{\text{dBm}} = 10 \log_{10}\left(\frac{P_{\text{mW}}}{1\text{ mW}}\right) = 10 \log_{10}(P_{\text{W}}) + 30, \qquad P_{\text{mW}} = 10^{P_{\text{dBm}} / 10}, \qquad V_{\text{rms}} = \sqrt{P_{\text{W}} \cdot Z_0}\]</div>
+<p>In these expressions, <span class="arithmatex">\(P_{\text{dBm}}\)</span> is the absolute power level in <span class="arithmatex">\(\text{dBm}\)</span>, <span class="arithmatex">\(P_{\text{mW}}\)</span> is linear power in milliwatts, <span class="arithmatex">\(P_{\text{W}} = P_{\text{mW}} / 1000\)</span> is linear power in watts, and <span class="arithmatex">\(Z_0\)</span> is the transmission-line characteristic impedance in ohms (<span class="arithmatex">\(\Omega\)</span>, standardized at <span class="arithmatex">\(50\ \Omega\)</span> for transmitters and <span class="arithmatex">\(75\ \Omega\)</span> for video/broadcast coax).</p>
+<p>Every <span class="arithmatex">\(+10\text{ dB}\)</span> step multiplies linear power tenfold and every <span class="arithmatex">\(+3.0103\text{ dB}\)</span> step doubles linear power: <span class="arithmatex">\(0\text{ dBm}\)</span> equals <span class="arithmatex">\(\mathbf{1.0\text{ mW}}\)</span> (<span class="arithmatex">\(V_{\text{rms}} \approx 0.2236\text{ V}\)</span> across <span class="arithmatex">\(50\ \Omega\)</span>), <span class="arithmatex">\(+20\text{ dBm}\)</span> equals <span class="arithmatex">\(\mathbf{100\text{ mW}}\)</span> (<span class="arithmatex">\(0.10\text{ W}\)</span>), <span class="arithmatex">\(+30\text{ dBm}\)</span> equals <span class="arithmatex">\(1000\text{ mW} = \mathbf{1.0\text{ W}}\)</span> (<span class="arithmatex">\(V_{\text{rms}} \approx 7.071\text{ V}\)</span> across <span class="arithmatex">\(50\ \Omega\)</span>), and our mountain repeater's <span class="arithmatex">\(P_{\text{W}} = 50\text{ W}\)</span> (<span class="arithmatex">\(50{,}000\text{ mW}\)</span>) output corresponds to <span class="arithmatex">\(P_{\text{dBm}} = 10\log_{10}(50{,}000) \approx \mathbf{+46.990\text{ dBm}}\)</span>, developing a matched root-mean-square voltage of <span class="arithmatex">\(V_{\text{rms}} = \sqrt{50 \times 50} = \mathbf{50.0\text{ V}}\)</span> across the <span class="arithmatex">\(50\ \Omega\)</span> line.</p>
+<h3 id="complex-reflection-coefficient-standing-wave-ratio-return-loss-and-mismatch-loss">Complex Reflection Coefficient, Standing Wave Ratio, Return Loss, and Mismatch Loss</h3>
+<p>When a forward-traveling electromagnetic wave with voltage phasor <span class="arithmatex">\(V^+\)</span> and current phasor <span class="arithmatex">\(I^+ = V^+ / Z_0\)</span> propagates down a lossless transmission line of real characteristic impedance <span class="arithmatex">\(Z_0\)</span> and reaches an antenna of complex load impedance <span class="arithmatex">\(Z_L = R + jX\)</span> (<code>[jX]</code> in <code>[f] [CMPLX]</code>, where <span class="arithmatex">\(R\)</span> is series resistance and <span class="arithmatex">\(X\)</span> is inductive <span class="arithmatex">\(+jX\)</span> or capacitive <span class="arithmatex">\(-jX\)</span> reactance in ohms), boundary continuity requires total terminal voltage <span class="arithmatex">\(V_L = V^+ + V^-\)</span> and total terminal current <span class="arithmatex">\(I_L = (V^+ - V^-) / Z_0\)</span> to satisfy <span class="arithmatex">\(V_L / I_L = Z_L\)</span>. Solving that boundary condition defines the complex <strong>Voltage Reflection Coefficient</strong> <span class="arithmatex">\(\Gamma\)</span> (<code>[Γ]</code>, inverted back to complex impedance via <code>[Z←Γ]</code>):</p>
+<div class="arithmatex">\[\Gamma = \frac{V^-}{V^+} = \frac{Z_L - Z_0}{Z_L + Z_0} = \frac{(R - Z_0) + jX}{(R + Z_0) + jX} = |\Gamma| \angle \theta, \qquad |\Gamma| = \sqrt{\frac{(R - Z_0)^2 + X^2}{(R + Z_0)^2 + X^2}}\]</div>
+<p><img alt="Superposition of forward and reflected traveling waves along a transmission line forming a voltage standing wave envelope (VSWR)." src="../../assets/diagrams/domains/diagram_ch05_vswr_standing_wave.png" /></p>
+<p>As the reflected voltage wave <span class="arithmatex">\(V^-\)</span> travels backward and superposes with the incident wave <span class="arithmatex">\(V^+\)</span>, constructive interference at half-wavelength (<span class="arithmatex">\(\lambda / 2\)</span>) intervals produces stationary voltage maxima <span class="arithmatex">\(V_{\max} = |V^+|(1 + |\Gamma|)\)</span>, while destructive interference shifted by a quarter-wavelength (<span class="arithmatex">\(\lambda / 4\)</span>) produces voltage minima <span class="arithmatex">\(V_{\min} = |V^+|(1 - |\Gamma|)\)</span>. The ratio of peak to trough voltage defines the dimensionless <strong>Voltage Standing Wave Ratio</strong> (<code>[SWR]</code>, <code>[SWR]</code>), the decibel attenuation of the reflected power fraction <span class="arithmatex">\(|\Gamma|^2\)</span> defines the <strong>Return Loss</strong> (<code>[RL]</code>, in <span class="arithmatex">\(\text{dB}\)</span>), and the decibel reduction in forward power actually delivered into the load (<span class="arithmatex">\(1 - |\Gamma|^2\)</span>) defines the <strong>Mismatch Loss</strong> (<span class="arithmatex">\(\text{ML}_{\text{dB}}\)</span>, in <span class="arithmatex">\(\text{dB}\)</span>):</p>
+<div class="arithmatex">\[\text{VSWR} = \frac{V_{\max}}{V_{\min}} = \frac{1 + |\Gamma|}{1 - |\Gamma|} \iff |\Gamma| = \frac{\text{VSWR} - 1}{\text{VSWR} + 1}\]</div>
+<div class="arithmatex">\[\text{RL}_{\text{dB}} = -10 \log_{10}\left(|\Gamma|^2\right) = -20 \log_{10}|\Gamma|, \qquad \text{ML}_{\text{dB}} = -10 \log_{10}\left(1 - |\Gamma|^2\right)\]</div>
+<p>For our ice-detuned mountain repeater antenna with <span class="arithmatex">\(Z_L = 35 - j25\ \Omega\)</span> on a <span class="arithmatex">\(Z_0 = 50\ \Omega\)</span> coaxial feedline, the numerator impedance difference is <span class="arithmatex">\(Z_L - Z_0 = -15 - j25\ \Omega\)</span>, whose magnitude is <span class="arithmatex">\(\sqrt{(-15)^2 + (-25)^2} = \sqrt{225 + 625} = \sqrt{850} \approx 29.1548\ \Omega\)</span>. The denominator impedance sum is <span class="arithmatex">\(Z_L + Z_0 = 85 - j25\ \Omega\)</span>, whose magnitude is <span class="arithmatex">\(\sqrt{85^2 + (-25)^2} = \sqrt{7225 + 625} = \sqrt{7850} \approx 88.6002\ \Omega\)</span>. Dividing numerator by denominator gives the reflection magnitude and phase:</p>
+<div class="arithmatex">\[|\Gamma| = \frac{\sqrt{850}}{\sqrt{7850}} = \sqrt{\frac{17}{157}} \approx \mathbf{0.3291}, \qquad \theta = \operatorname{atan2}(-25, -15) - \operatorname{atan2}(-25, 85) = -120.96^\circ - (-16.39^\circ) = \mathbf{-104.57^\circ}\]</div>
+<p>Substituting <span class="arithmatex">\(|\Gamma| \approx 0.3291\)</span> into the standing-wave, return-loss, and mismatch-loss relations yields:</p>
+<div class="arithmatex">\[\text{VSWR} = \frac{1 + 0.3291}{1 - 0.3291} = \frac{1.3291}{0.6709} \approx \mathbf{1.981 : 1}, \qquad \text{RL}_{\text{dB}} = -20 \log_{10}(0.3291) \approx \mathbf{9.654\text{ dB}}, \qquad \text{ML}_{\text{dB}} = -10 \log_{10}\left(1 - 0.3291^2\right) \approx \mathbf{0.498\text{ dB}}\]</div>
+<p>Because the reflected power fraction is <span class="arithmatex">\(|\Gamma|^2 = 17 / 157 \approx \mathbf{10.828\%}\)</span>, our <span class="arithmatex">\(50\text{ W}\)</span> repeater transmitter suffers <span class="arithmatex">\(50\text{ W} \times 0.10828 \approx \mathbf{5.414\text{ W}}\)</span> (<span class="arithmatex">\(+37.335\text{ dBm}\)</span>) of reflected power slamming back into the amplifier output stage, while <span class="arithmatex">\(50\text{ W} - 5.414\text{ W} = \mathbf{44.586\text{ W}}\)</span> (<span class="arithmatex">\(89.172\%\)</span>) enters the antenna:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><code>[SWR]</code></th>
+<th style="text-align: center;">Reflection <span class="arithmatex">\(\lvert\Gamma\rvert\)</span></th>
+<th style="text-align: center;">Return Loss <code>[RL]</code> (<span class="arithmatex">\(\text{dB}\)</span>)</th>
+<th style="text-align: center;">Mismatch Loss <span class="arithmatex">\(\text{ML}\)</span> (<span class="arithmatex">\(\text{dB}\)</span>)</th>
+<th style="text-align: center;">Reflected Power <span class="arithmatex">\(\lvert\Gamma\rvert^2\)</span> (<span class="arithmatex">\(\%\)</span>)</th>
+<th style="text-align: center;">Transmitted Power <span class="arithmatex">\(1-\lvert\Gamma\rvert^2\)</span> (<span class="arithmatex">\(\%\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(1.00 : 1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\infty\text{ dB}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\text{ dB}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.00\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(100.00\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(1.20 : 1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0909\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(20.83\text{ dB}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.036\text{ dB}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.83\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(99.17\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(1.50 : 1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.2000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(13.98\text{ dB}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.177\text{ dB}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4.00\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(96.00\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(1.98 : 1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.3291\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(9.65\text{ dB}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.498\text{ dB}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(10.83\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(89.17\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(3.00 : 1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.5000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(6.02\text{ dB}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.249\text{ dB}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(25.00\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(75.00\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(6.00 : 1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.7143\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.92\text{ dB}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.100\text{ dB}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(51.02\%\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(48.98\%\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="conformal-smith-chart-transformations-and-reactive-matching-networks">Conformal Smith Chart Transformations and Reactive Matching Networks</h2>
+<p>To eliminate the reflected wave and restore a <span class="arithmatex">\(1.00 : 1\)</span> standing wave ratio on the main <span class="arithmatex">\(50\ \Omega\)</span> feedline, the engineer must insert a lossless impedance-matching network between the coaxial trunk and the antenna terminals.</p>
+<h3 id="normalized-impedance-mapping-and-quarter-wave-transformers">Normalized Impedance Mapping and Quarter-Wave Transformers</h3>
+<p>Dividing any complex load impedance <span class="arithmatex">\(Z_L = R + jX\)</span> by the system reference impedance <span class="arithmatex">\(Z_0\)</span> produces the dimensionless normalized impedance <span class="arithmatex">\(z = Z_L / Z_0 = (R / Z_0) + j(X / Z_0) = r + jx\)</span> (for our <span class="arithmatex">\(35 - j25\ \Omega\)</span> repeater load on a <span class="arithmatex">\(50\ \Omega\)</span> line, <span class="arithmatex">\(r = 35/50 = \mathbf{0.70}\)</span> and <span class="arithmatex">\(x = -25/50 = \mathbf{-0.50}\)</span>). Under the bilinear Möbius transformation <span class="arithmatex">\(\Gamma = (z - 1) / (z + 1)\)</span>, Phillip H. Smith showed in 1939 that the entire right half-plane of passive resistances (<span class="arithmatex">\(r \ge 0\)</span>) maps conformally into the unit circle <span class="arithmatex">\(|\Gamma| \le 1\)</span> on the <strong>Smith Chart</strong> (<code>[Γ]</code>, <code>[g] [▦]</code>).</p>
+<p><img alt="Complex reflection-coefficient plane and normalized impedance loci of the Smith Chart." src="../../assets/diagrams/domains/diagram_ch05_smith_chart.png" /></p>
+<p>At the center origin of the Smith Chart (<span class="arithmatex">\(\Gamma = 0 + j0\)</span>), the normalized impedance is <span class="arithmatex">\(z = 1 + j0\)</span> (<span class="arithmatex">\(Z_L = Z_0\)</span>). Moving a physical distance <span class="arithmatex">\(\ell\)</span> along a lossless transmission line of wavelength <span class="arithmatex">\(\lambda\)</span> (<code>[f] [λ/L]</code>) rotates the reflection phasor <span class="arithmatex">\(\Gamma\)</span> clockwise around the origin at constant radius <span class="arithmatex">\(|\Gamma|\)</span> through an electrical phase angle of <span class="arithmatex">\(2\beta\ell = 4\pi\ell / \lambda\)</span>. When the line section has an electrical length of one quarter-wavelength (<span class="arithmatex">\(\ell = \lambda / 4\)</span>), the rotation angle is <span class="arithmatex">\(2\beta(\lambda / 4) = \pi\text{ radians}\)</span> (<span class="arithmatex">\(180^\circ\)</span>), which inverts normalized impedance (<span class="arithmatex">\(z_{\text{in}} = 1 / z_L\)</span>) so that a <strong>Quarter-Wave Transformer</strong> (<code>[g] [TLN]</code>, and <code>[Γ]</code> opening the <code>ZMAT</code> workspace <code>Z = √(S × L)</code>) of characteristic impedance <span class="arithmatex">\(Z_{\text{match}}\)</span> matches a real source impedance <span class="arithmatex">\(Z_S\)</span> to a real load resistance <span class="arithmatex">\(Z_L\)</span>:</p>
+<div class="arithmatex">\[\lambda = \frac{c}{f} = \frac{299.792458}{f_{\text{MHz}}}\quad [\text{m}], \qquad \ell_{\lambda/4} = \frac{\lambda}{4} \cdot \text{VF}, \qquad Z_{\text{match}} = \sqrt{Z_S \cdot Z_L}\]</div>
+<p>Here <span class="arithmatex">\(f_{\text{MHz}}\)</span> is the operating frequency in megahertz, <span class="arithmatex">\(\lambda\)</span> is the free-space wavelength in meters, <span class="arithmatex">\(\text{VF} = 1 / \sqrt{\varepsilon_r}\)</span> is the coaxial cable velocity factor, and <span class="arithmatex">\(Z_{\text{match}}\)</span> is the geometric-mean characteristic impedance in ohms. At the repeater frequency of <span class="arithmatex">\(f = 146.0\text{ MHz}\)</span>, the free-space wavelength is <span class="arithmatex">\(\lambda = 299.792458 / 146.0 \approx \mathbf{2.0534\text{ m}}\)</span> and a free-space quarter-wave whip measures <span class="arithmatex">\(\ell_{\lambda/4} = 2.0534 / 4 \approx \mathbf{0.5133\text{ m}}\)</span> (<span class="arithmatex">\(51.33\text{ cm}\)</span>); cut from foam-dielectric coaxial cable with velocity factor <span class="arithmatex">\(\text{VF} = 0.82\)</span>, the physical quarter-wave stub length is <span class="arithmatex">\(0.5133 \times 0.82 \approx \mathbf{0.4209\text{ m}}\)</span> (<span class="arithmatex">\(42.1\text{ cm}\)</span>). To match a <span class="arithmatex">\(Z_S = 50\ \Omega\)</span> line to a <span class="arithmatex">\(Z_L = 112.5\ \Omega\)</span> antenna resistance, the required quarter-wave section impedance is <span class="arithmatex">\(Z_{\text{match}} = \sqrt{50 \times 112.5} = \sqrt{5625} = \mathbf{75.0\ \Omega}\)</span>, allowing standard <span class="arithmatex">\(75\ \Omega\)</span> video coax to serve as an exact quarter-wave transformer.</p>
+<h3 id="lumped-l-network-synthesis-and-resonant-tank-circuits">Lumped L-Network Synthesis and Resonant Tank Circuits</h3>
+<p>When matching a lower resistance <span class="arithmatex">\(R_{\text{low}}\)</span> up to a higher resistance <span class="arithmatex">\(R_{\text{high}}\)</span> at VHF or HF frequencies using compact lumped inductors and capacitors, a two-element reactive <strong>L-network</strong> (<code>[Γ]</code>) places a reactive element <span class="arithmatex">\(X_{\text{series}}\)</span> in series with <span class="arithmatex">\(R_{\text{low}}\)</span> and a complementary opposite-sign reactive element <span class="arithmatex">\(X_{\text{shunt}}\)</span> in parallel across <span class="arithmatex">\(R_{\text{high}}\)</span>. Equivalence of series and parallel resistance-reactance networks defines the nodal <strong>Quality Factor</strong> <span class="arithmatex">\(Q\)</span>, while inside RF filters and oscillators an inductance <span class="arithmatex">\(L\)</span> (in henries, <span class="arithmatex">\(\text{H}\)</span>) and capacitance <span class="arithmatex">\(C\)</span> (in farads, <span class="arithmatex">\(\text{F}\)</span>) resonate at frequency <span class="arithmatex">\(f_0\)</span> (<code>[f] [f₀]</code>, with reactance <code>[f] [XLC]</code> and RC cutoff frequency <code>[g] [fc]</code> given by <span class="arithmatex">\(f_c = 1 / (2\pi R C)\)</span>):</p>
+<div class="arithmatex">\[Q = \sqrt{\frac{R_{\text{high}}}{R_{\text{low}}} - 1}, \qquad |X_{\text{series}}| = Q \cdot R_{\text{low}}, \qquad |X_{\text{shunt}}| = \frac{R_{\text{high}}}{Q}, \qquad f_0 = \frac{1}{2\pi \sqrt{L \cdot C}}\]</div>
+<p><img alt="Lossless reactive L-network impedance matching topology transforming a low load resistance to 50 ohms." src="../../assets/diagrams/domains/diagram_ch05_l_network.png" /></p>
+<p>Consider matching our repeater's resistive component <span class="arithmatex">\(R_{\text{low}} = 35\ \Omega\)</span> up to <span class="arithmatex">\(R_{\text{high}} = 50\ \Omega\)</span> at <span class="arithmatex">\(f = 146.0\text{ MHz}\)</span>. The required nodal quality factor is <span class="arithmatex">\(Q = \sqrt{(50 / 35) - 1} = \sqrt{0.42857} \approx \mathbf{0.6547}\)</span>, which specifies a net series inductive reactance of <span class="arithmatex">\(|X_{\text{series}}| = 0.6547 \times 35 \approx \mathbf{22.91\ \Omega}\)</span> and a shunt capacitive reactance of <span class="arithmatex">\(|X_{\text{shunt}}| = 50 / 0.6547 \approx \mathbf{76.38\ \Omega}\)</span>. Because the iced antenna already exhibits <span class="arithmatex">\(-j25\ \Omega\)</span> of series capacitive reactance, the series inductor must simultaneously cancel that <span class="arithmatex">\(-25\ \Omega\)</span> reactance and supply <span class="arithmatex">\(+22.91\ \Omega\)</span> of net inductive reactance, requiring a total inductive reactance of <span class="arithmatex">\(X_L = 25 + 22.91 = \mathbf{47.91\ \Omega}\)</span> (<span class="arithmatex">\(L = 47.91 / (2\pi \times 146 \times 10^6) \approx \mathbf{52.23\text{ nH}}\)</span>) paired with a shunt capacitor of <span class="arithmatex">\(C = 1 / (2\pi \times 146 \times 10^6 \times 76.38) \approx \mathbf{14.27\text{ pF}}\)</span>. Similarly, when stepping a <span class="arithmatex">\(R_{\text{low}} = 10\ \Omega\)</span> power-transistor collector up to <span class="arithmatex">\(R_{\text{high}} = 50\ \Omega\)</span>, the nodal quality factor is <span class="arithmatex">\(Q = \sqrt{(50/10) - 1} = \mathbf{2.00}\)</span>, giving <span class="arithmatex">\(|X_{\text{series}}| = \mathbf{20.0\ \Omega}\)</span> and <span class="arithmatex">\(|X_{\text{shunt}}| = \mathbf{25.0\ \Omega}\)</span>.</p>
+<hr />
+<h2 id="diagnosing-mismatches-and-synthesizing-matching-networks-on-the-stack">Diagnosing Mismatches and Synthesizing Matching Networks on the Stack</h2>
+<p>The <strong>SC-50</strong> combines <strong>Native Complex RF Mode</strong> (<code>[f] [CMPLX]</code>, activating the six top-row softkeys <code>[Γ]</code>, <code>[Z←Γ]</code>, <code>[jX]</code>, <code>[SWR]</code>, <code>[RL]</code>, <code>[Z₀]</code>) for complex load impedances <span class="arithmatex">\(Z_L = R + jX\)</span> against toggleable system impedance <code>[g] [Z₀]</code> (<span class="arithmatex">\(50\ \Omega \leftrightarrow 75\ \Omega\)</span>), automatic Smith Chart parameter logging (<code>[g] [▦]</code>), decibel-milliwatt scaling (<code>[dBm]</code>, <code>[f] [▸dBm]</code>, <code>[g] [▸mW]</code>, <code>[g] [▸dBW]</code>), and matching primitives (<code>[SWR]</code>, <code>[Γ]</code>, <code>[g] [TLN]</code>, <code>[f] [f₀]</code>, <code>[g] [fc]</code>, <code>[f] [XLC]</code>, <code>[f] [λ/L]</code>) with the <strong>Bidirectional Equation Solver Workspaces</strong> (<code>[g] [SOLVE]</code> / <code>[XEQ]</code>) on <code>[SWR]</code> (<code>S = (1 + G) / (1 - G)</code>, softkeys <code>[S]</code>, <code>[G]</code>), <code>[Γ]</code> (<code>ZMAT: Z = √(S × L)</code>, softkeys <code>[Z]</code>, <code>[S]</code>, <code>[L]</code>), and <code>[f] [f₀]</code> (<code>F0: F = 1 / (2π√(L×C))</code>, softkeys <code>[F]</code>, <code>[L]</code>, <code>[c]</code>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Button / Menu</th>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">Governing Expression &amp; Solver Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>[dBm]</code> / <code>[f] [▸dBm]</code></td>
+<td style="text-align: left;">Linear Power to dBm</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Power <span class="arithmatex">\(P_{\text{mW}}\)</span> (<span class="arithmatex">\(\text{mW}\)</span>)</td>
+<td style="text-align: left;"><span class="arithmatex">\(P_{\text{dBm}} = 10 \log_{10}(P_{\text{mW}})\)</span> (paired with <code>[g] [▸dBW]</code>, <code>[f] [▸dBV]</code>, <code>[g] [▸μV]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [▸mW]</code></td>
+<td style="text-align: left;">dBm to Linear Power</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Power <span class="arithmatex">\(P_{\text{dBm}}\)</span> (<span class="arithmatex">\(\text{dBm}\)</span>)</td>
+<td style="text-align: left;"><span class="arithmatex">\(P_{\text{mW}} = 10^{P_{\text{dBm}} / 10}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[f] [CMPLX]</code></td>
+<td style="text-align: left;">Native Complex RF Menu</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Resistance <span class="arithmatex">\(R\)</span> (<span class="arithmatex">\(\Omega\)</span>)</td>
+<td style="text-align: center;">Reactance <span class="arithmatex">\(X\)</span> (<span class="arithmatex">\(\Omega\)</span>)</td>
+<td style="text-align: left;">Softkeys: <code>[Γ]</code> <code>[Z←Γ]</code> <code>[jX]</code> <code>[SWR]</code> <code>[RL]</code> <code>[Z₀]</code> (<span class="arithmatex">\(Z_L = R + jX \leftrightarrow \Gamma\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[SWR]</code></td>
+<td style="text-align: left;">Standing Wave Ratio</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;"><span class="arithmatex">\(\lvert\Gamma\rvert\)</span> or <span class="arithmatex">\(Z_L = R + jX\)</span></td>
+<td style="text-align: left;">Stack: <span class="arithmatex">\(\text{VSWR} = \frac{1 + \lvert\Gamma\rvert}{1 - \lvert\Gamma\rvert}\)</span> (fills <code>[g] [▦]</code>); Solver: <code>S = (1+G)/(1-G)</code> (<code>[S]</code>,<code>[G]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[RL]</code></td>
+<td style="text-align: left;">Return Loss (<span class="arithmatex">\(\text{dB}\)</span>)</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;"><span class="arithmatex">\(\Gamma\)</span> or <span class="arithmatex">\(Z_L\)</span></td>
+<td style="text-align: left;">Softkey in <code>[f] [CMPLX]</code>: <span class="arithmatex">\(\text{RL}_{\text{dB}} = -20 \log_{10}\lvert\Gamma\rvert\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[Γ]</code></td>
+<td style="text-align: left;">Smith Match &amp; <code>ZMAT</code> Solver</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Source <span class="arithmatex">\(Z_S\)</span> (<span class="arithmatex">\(\Omega\)</span>)</td>
+<td style="text-align: center;">Load <span class="arithmatex">\(Z_L\)</span> (<span class="arithmatex">\(\Omega\)</span>)</td>
+<td style="text-align: left;">Stack: <span class="arithmatex">\(Q = \sqrt{(R_{\text{high}} / R_{\text{low}}) - 1}\)</span>; Opens <code>ZMAT</code> (<code>Z = √(S×L)</code>, <code>[Z]</code>,<code>[S]</code>,<code>[L]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [TLN]</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(\lambda/4\)</span> Transformer Impedance</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Source <span class="arithmatex">\(Z_S\)</span> (<span class="arithmatex">\(\Omega\)</span>)</td>
+<td style="text-align: center;">Load <span class="arithmatex">\(Z_L\)</span> (<span class="arithmatex">\(\Omega\)</span>)</td>
+<td style="text-align: left;">Immediate stack: <span class="arithmatex">\(Z_{\text{match}} = \sqrt{Z_S \cdot Z_L}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[f] [f₀]</code> / <code>[g] [fc]</code></td>
+<td style="text-align: left;">LC Resonance &amp; RC Cutoff</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Inductance <span class="arithmatex">\(L\)</span> (<span class="arithmatex">\(\text{H}\)</span>)</td>
+<td style="text-align: center;">Capacitance <span class="arithmatex">\(C\)</span> (<span class="arithmatex">\(\text{F}\)</span>)</td>
+<td style="text-align: left;">Stack: <span class="arithmatex">\(f_0 = \frac{1}{2\pi\sqrt{L \cdot C}}\)</span>; Solver: <code>F = 1 / (2π√(L×C))</code> (<code>[F]</code>,<code>[L]</code>,<code>[c]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[f] [λ/L]</code></td>
+<td style="text-align: left;">Free-Space Wavelength</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Frequency <span class="arithmatex">\(f_{\text{MHz}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\lambda = 299.792458 / f_{\text{MHz}}\)</span> (<span class="arithmatex">\(\text{m}\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="evaluating-complex-repeater-mismatch-return-loss-and-reflected-watts-on-the-stack">Evaluating Complex Repeater Mismatch, Return Loss, and Reflected Watts on the Stack</h3>
+<p>Inside the mountain repeater shelter, the engineer opens Native Complex Mode (<code>[f] [CMPLX]</code>), packs the VNA measurement <span class="arithmatex">\(Z_L = 35 - j25\ \Omega\)</span> into Register <span class="arithmatex">\(X\)</span> with softkey <code>[jX]</code>, presses <code>[Γ]</code> / <code>[SWR]</code> (or primary <code>[SWR]</code>) to evaluate <span class="arithmatex">\(\text{VSWR}\)</span> and populate the Smith Chart table <code>[g] [▦]</code> (<code>|GAMMA| = 0.3291</code>, <code>GAMMA ANG = -104.57°</code>, <code>VSWR = 1.981</code>, <code>RET LOSS = 9.654 dB</code>, <code>r/z0 = 0.70</code>, <code>x/z0 = -0.50</code>), presses softkey <code>[RL]</code> for Return Loss, and checks the reflected power for the <span class="arithmatex">\(50{,}000\text{ mW}\)</span> (<span class="arithmatex">\(50\text{ W}\)</span>) transmitter:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>[f] [CMPLX] 35 [ENTER] 25 [+/-] [jX]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(35 - j25\)</span></td>
+<td style="text-align: left;">Pack complex load impedance <span class="arithmatex">\(Z_L = 35 - j25\ \Omega\)</span> into Register <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[SWR]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.981\)</span></td>
+<td style="text-align: left;">Evaluate <span class="arithmatex">\(\text{VSWR} = 1.981 : 1\)</span> against <span class="arithmatex">\(Z_0 = 50\ \Omega\)</span> (<code>[Z₀]</code>) and fill Smith table <code>[g] [▦]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>35 [ENTER] 25 [+/-] [jX] [RL]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.981\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(9.653\)</span></td>
+<td style="text-align: left;">Compute Return Loss <span class="arithmatex">\(\text{RL} = 9.653\text{ dB}\)</span> from complex load (<span class="arithmatex">\(\lvert\Gamma\rvert = 0.3291\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>50000 [f] [▸dBm] [x⇄y] [-]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.981\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(37.337\)</span></td>
+<td style="text-align: left;">Subtract <span class="arithmatex">\(9.653\text{ dB}\)</span> return loss from <span class="arithmatex">\(+46.990\text{ dBm}\)</span> (<span class="arithmatex">\(50\text{ W}\)</span>) to get reflected dBm</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [▸mW] 1000 [÷]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.981\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(5.416\)</span></strong></td>
+<td style="text-align: left;">Convert <span class="arithmatex">\(+37.337\text{ dBm}\)</span> to milliwatts (<span class="arithmatex">\(5416\text{ mW}\)</span>) and divide by <span class="arithmatex">\(1000\)</span> for <span class="arithmatex">\(5.416\text{ W}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The stack confirms that <span class="arithmatex">\(\mathbf{5.42\text{ W}}\)</span> of RF power is reflecting back down the line at <span class="arithmatex">\(\text{VSWR} = \mathbf{1.981 : 1}\)</span>, explaining why the repeater's protection circuit triggered.</p>
+<h3 id="designing-quarter-wave-stubs-l-networks-and-resonant-tanks-on-the-stack">Designing Quarter-Wave Stubs, L-Networks, and Resonant Tanks on the Stack</h3>
+<p>Next, the engineer evaluates the <span class="arithmatex">\(146.0\text{ MHz}\)</span> wavelength and quarter-wave dimension (<code>[f] [λ/L]</code>), computes the quarter-wave transformer impedance for a <span class="arithmatex">\(50\ \Omega\)</span> to <span class="arithmatex">\(112.5\ \Omega\)</span> port (<code>[g] [TLN]</code>), solves an L-network match from <span class="arithmatex">\(10\ \Omega\)</span> to <span class="arithmatex">\(50\ \Omega\)</span> (<code>[Γ]</code>), and checks a <span class="arithmatex">\(100\text{ nH} / 10\text{ pF}\)</span> harmonic trap (<code>[f] [f₀]</code>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>146 [f] [λ/L] 4 [÷]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.5133\)</span></td>
+<td style="text-align: left;">Compute free-space <span class="arithmatex">\(\lambda = 2.0534\text{ m}\)</span> at <span class="arithmatex">\(146\text{ MHz}\)</span> and divide by <span class="arithmatex">\(4\)</span> for <span class="arithmatex">\(\ell_{\lambda/4} = 0.5133\text{ m}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>50 [ENTER] 112.5 [g] [TLN]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.5133\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(75\)</span></td>
+<td style="text-align: left;">Quarter-wave transformer impedance <span class="arithmatex">\(Z_{\text{match}} = \sqrt{50 \times 112.5} = 75.0\ \Omega\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>50 [ENTER] 10 [Γ]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.5133\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(75\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2\)</span></td>
+<td style="text-align: left;">L-network nodal quality factor <span class="arithmatex">\(Q = \sqrt{(50/10) - 1} = 2.00\)</span> (and opens <code>ZMAT</code> workspace)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1 [E] 7 [+/-] [ENTER] 1 [E] 11 [+/-] [f] [f₀]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(75\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(1.5915\text{e}8\)</span></strong></td>
+<td style="text-align: left;">Resonant frequency <span class="arithmatex">\(f_0 = 159.155\text{ MHz}\)</span> for <span class="arithmatex">\(L = 100\text{ nH}\)</span> and <span class="arithmatex">\(C = 10\text{ pF}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Multiplying the L-network quality factor <span class="arithmatex">\(Q = 2.00\)</span> by <span class="arithmatex">\(R_{\text{low}} = 10\ \Omega\)</span> gives series reactance <span class="arithmatex">\(|X_{\text{series}}| = \mathbf{20.0\ \Omega}\)</span>, while dividing <span class="arithmatex">\(R_{\text{high}} = 50\ \Omega\)</span> by <span class="arithmatex">\(Q = 2.00\)</span> gives shunt reactance <span class="arithmatex">\(|X_{\text{shunt}}| = \mathbf{25.0\ \Omega}\)</span>.</p>
+<h3 id="back-solving-resonant-tuning-capacitance-and-reflection-limits-in-the-solver-workspace">Back-Solving Resonant Tuning Capacitance and Reflection Limits in the Solver Workspace</h3>
+<p>Suppose an auxiliary <span class="arithmatex">\(433.92\text{ MHz}\)</span> (<span class="arithmatex">\(4.3392 \times 10^8\text{ Hz}\)</span>) UHF telemetry link exhibits <span class="arithmatex">\(L = 18.5\text{ nH}\)</span> (<span class="arithmatex">\(1.85 \times 10^{-8}\text{ H}\)</span>) of parasitic feedpoint inductance and the engineer must select the exact series capacitor <span class="arithmatex">\(C\)</span> that resonates the feedpoint at <span class="arithmatex">\(433.92\text{ MHz}\)</span>, while also verifying the maximum reflection magnitude <span class="arithmatex">\(|\Gamma|\)</span> (<code>[G]</code>) allowed by a <span class="arithmatex">\(\text{VSWR} \le 1.50 : 1\)</span> (<code>[S]</code>) specification. Opening the <code>[f] [f₀]</code> (<code>F = 1 / (2π√(L×C))</code>) and <code>[SWR]</code> (<code>S = (1 + G) / (1 - G)</code>) Solver Workspaces solves both inverse problems directly:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Solver Display / Register X</th>
+<th style="text-align: left;">What Happens in the <code>[f] [f₀]</code> &amp; <code>[SWR]</code> Solver Workspaces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>[f] [f₀]</code></td>
+<td style="text-align: center;"><code>F=1/(2π√(L×C))</code></td>
+<td style="text-align: left;">Open the LC Resonance (<code>F0</code>) Solver Workspace with softkeys <code>[F]</code>, <code>[L]</code>, <code>[c]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>4.3392 [E] 8 [F]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(4.3392 \times 10^8\)</span></td>
+<td style="text-align: left;">Store target resonant frequency <span class="arithmatex">\(F = 433.92\text{ MHz}\)</span> into softkey <code>[F]</code> (<code>[LFU0]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1.85 [E] 8 [+/-] [L]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.8500 \times 10^{-8}\)</span></td>
+<td style="text-align: left;">Store parasitic inductance <span class="arithmatex">\(L = 18.5\text{ nH}\)</span> into softkey <code>[L]</code> (<code>[LFU1]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [SOLVE] [c]</code></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(7.2856 \times 10^{-12}\)</span></strong></td>
+<td style="text-align: left;">Solve backward for matching capacitance <span class="arithmatex">\(C = 1 / ((2\pi F)^2 L) = \mathbf{7.2856\text{ pF}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[SWR]</code></td>
+<td style="text-align: center;"><code>S=(1+G)/(1-G)</code></td>
+<td style="text-align: left;">Open the Standing Wave Ratio (<code>SWR</code>) Solver Workspace with softkeys <code>[S]</code>, <code>[G]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1.5 [S]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.5000\)</span></td>
+<td style="text-align: left;">Store specification limit <span class="arithmatex">\(S = 1.50\)</span> into softkey <code>[S]</code> (<code>[LFU0]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [SOLVE] [G]</code></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(0.2000\)</span></strong></td>
+<td style="text-align: left;">Solve backward for reflection magnitude <span class="arithmatex">\(\lvert\Gamma\rvert = (1.5 - 1)/(1.5 + 1) = \mathbf{0.2000}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="try-it-on-the-stack">Try It on the Stack</h3>
+<p>Practice complex transmission-line diagnostics, quarter-wave stub sizing, and reactive matching on the stack and in the Solver Workspace with these three RF workbench exercises:</p>
 <ol>
-<li><strong>Apply Friis Equation:</strong>
-   $<span class="arithmatex">\(F_{\text{total}} = F_1 + \frac{F_2 - 1}{G_1} + \frac{F_3 - 1}{G_1 \cdot G_2}\)</span>$
-   $<span class="arithmatex">\(F_{\text{total}} = 1.202 + \frac{2.0 - 1.0}{100} + \frac{3.98 - 1.0}{100 \times 0.50} = 1.202 + 0.010 + 0.0596 = \mathbf{1.2716}\)</span>$</li>
-<li><strong>Convert Back to Decibels:</strong>
-   $<span class="arithmatex">\(NF_{\text{total}} = 10 \log_{10}(1.2716) = \mathbf{1.04\text{ dB}}\)</span>$
-   Even though the indoor receiver has a noisy <span class="arithmatex">\(6\text{ dB}\)</span> noise figure and the cable is lossy, the masthead LNA's <span class="arithmatex">\(20\text{ dB}\)</span> gain keeps the total system noise figure down to an ultra-clean <span class="arithmatex">\(1.04\text{ dB}\)</span>!</li>
+<li><strong>75-Ohm Broadcast Coax Mismatch and Aviation Quarter-Wave Whip:</strong> Open <code>[f] [CMPLX]</code>, toggle the reference impedance to <span class="arithmatex">\(75\ \Omega\)</span> (<code>[Z₀]</code>), pack load impedance <span class="arithmatex">\(Z_L = 50 + j25\ \Omega\)</span> (<code>50 [ENTER] 25 [jX]</code>), and evaluate <code>[SWR]</code> (then press <code>[Z₀]</code> again to restore <span class="arithmatex">\(50\ \Omega\)</span>). Next, compute the quarter-wave whip length at the <span class="arithmatex">\(121.5\text{ MHz}\)</span> aviation emergency frequency (<code>121.5 [f] [λ/L] 4 [÷]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(\text{VSWR} \approx \mathbf{1.768 : 1}\)</span> and <span class="arithmatex">\(\ell_{\lambda/4} \approx \mathbf{0.617\text{ m}}\)</span>.)</em></li>
+<li><strong>Commercial Specification Limit Return Loss and Reflected Power:</strong> A commercial cellular sector antenna specifies a maximum reflection magnitude of <span class="arithmatex">\(|\Gamma| = 0.20\)</span>. Compute its standing wave ratio (<code>0.2 [SWR]</code>), return loss (<code>0.2 [f] [LOG] 20 [+/-] [×]</code>), and reflected power in watts when driven by a <span class="arithmatex">\(40\text{ W}\)</span> (<span class="arithmatex">\(40{,}000\text{ mW}\)</span>) base station (<code>40000 [f] [▸dBm] [x⇄y] [-] [g] [▸mW] 1000 [÷]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(\text{VSWR} = \mathbf{1.50 : 1}\)</span>, <span class="arithmatex">\(\text{RL} \approx \mathbf{13.979\text{ dB}}\)</span>, and <span class="arithmatex">\(P_{\text{refl}} = \mathbf{1.60\text{ W}}\)</span>.)</em></li>
+<li><strong>Power Transistor L-Network and Backward Tank Inductance:</strong> Find the L-network quality factor <span class="arithmatex">\(Q\)</span> and series reactance <span class="arithmatex">\(|X_{\text{series}}|\)</span> required to match a <span class="arithmatex">\(12.5\ \Omega\)</span> transistor output to <span class="arithmatex">\(50\ \Omega\)</span> (<code>50 [ENTER] 12.5 [Γ] 12.5 [×]</code>), then open <code>[f] [f₀]</code>, store <code>159.155 [E] 6 [F]</code> and <code>40 [E] 12 [+/-] [c]</code>, and press <code>[g] [SOLVE] [L]</code> to find the required tank inductance <span class="arithmatex">\(L\)</span>. <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(Q \approx \mathbf{1.732}\)</span>, <span class="arithmatex">\(|X_{\text{series}}| \approx \mathbf{21.651\ \Omega}\)</span>, and <span class="arithmatex">\(L = \mathbf{250.0\text{ nH}}\)</span>.)</em></li>
 </ol>
+<p>With the repeater feedline matched to <span class="arithmatex">\(50\ \Omega\)</span> and full forward power radiating from the tower, we follow the electromagnetic wave into open air in Chapter 14 to close a twelve-kilometer microwave backhaul across a forested mountain valley.</p>
 <hr />
-<h2 id="4-try-it-yourself-practice-problems">4. Try It Yourself: Practice Problems</h2>
-<h3 id="problem-1-transmission-line-quarter-wave-transformer">Problem 1: Transmission Line Quarter-Wave Transformer</h3>
-<p>A high-frequency load has a purely resistive impedance <span class="arithmatex">\(Z_L = 100\,\Omega\)</span>. You need to match it to a <span class="arithmatex">\(50\,\Omega\)</span> coaxial generator using a quarter-wavelength (<span class="arithmatex">\(\lambda / 4\)</span>) section of transmission line.
-Calculate the required characteristic impedance of the quarter-wave line: <span class="arithmatex">\(Z_{\text{match}} = \sqrt{Z_0 \cdot Z_L}\)</span>.
-<em>(Solution: <span class="arithmatex">\(Z_{\text{match}} = \sqrt{50 \times 100} = \sqrt{5000} \approx \mathbf{70.71\,\Omega}\)</span>.)</em></p>
-<h3 id="problem-2-return-loss-from-power-measurements">Problem 2: Return Loss from Power Measurements</h3>
-<p>A forward-power directional coupler measures <span class="arithmatex">\(100\text{ Watts}\)</span> forward power toward an antenna and <span class="arithmatex">\(4\text{ Watts}\)</span> reflected power bouncing back.
-1. What is the reflection coefficient magnitude <span class="arithmatex">\(\rho = \sqrt{P_{\text{ref}} / P_{\text{fwd}}}\)</span>?
-2. What is the Return Loss (<span class="arithmatex">\(RL = -20 \log_{10}\rho\)</span>)?
-3. What is the VSWR?
-<em>(Solution: <span class="arithmatex">\(\rho = \sqrt{4 / 100} = \mathbf{0.20}\)</span>. <span class="arithmatex">\(RL = -20 \log_{10}(0.20) = \mathbf{13.98\text{ dB}}\)</span>. <span class="arithmatex">\(VSWR = (1 + 0.20) / (1 - 0.20) = 1.20 / 0.80 = \mathbf{1.50 : 1}\)</span>.)</em></p>
-<h3 id="problem-3-resonant-lc-tank-frequency">Problem 3: Resonant LC Tank Frequency</h3>
-<p>A resonant filter circuit consists of an inductor <span class="arithmatex">\(L = 47\text{ nH}\)</span> (<span class="arithmatex">\(47 \times 10^{-9}\text{ H}\)</span>) and a capacitor <span class="arithmatex">\(C = 10\text{ pF}\)</span> (<span class="arithmatex">\(10 \times 10^{-12}\text{ F}\)</span>).
-Calculate the resonant frequency <span class="arithmatex">\(f_0 = \frac{1}{2\pi\sqrt{LC}}\)</span> in Megahertz.
-<em>(Solution: <span class="arithmatex">\(LC = 47 \times 10^{-9} \times 10 \times 10^{-12} = 4.7 \times 10^{-19}\)</span>. <span class="arithmatex">\(\sqrt{LC} \approx 6.8556 \times 10^{-10}\)</span>. <span class="arithmatex">\(2\pi\sqrt{LC} \approx 4.3075 \times 10^{-9}\)</span>. <span class="arithmatex">\(f_0 = 1 / 4.3075 \times 10^{-9} = 232{,}150{,}000\text{ Hz} = \mathbf{232.15\text{ MHz}}\)</span>.)</em></p>
+<h1 id="chapter-14-clearing-the-ridge-on-a-twelve-kilometer-microwave-backhaul">Chapter 14: Clearing the Ridge on a Twelve-Kilometer Microwave Backhaul</h1>
+<p>To link the mountain repeater shelter back to the county emergency operations center without paying for leased fiber across wilderness terrain, the communications team is commissioning a point-to-point unlicensed <span class="arithmatex">\(f = 5800\text{ MHz}\)</span> (<span class="arithmatex">\(5.8\text{ GHz}\)</span>) microwave backhaul across a <span class="arithmatex">\(d = 12.0\text{ km}\)</span> forested valley. At each end of the path, a tower crew mounts a parabolic dish antenna delivering <span class="arithmatex">\(+26.0\text{ dBi}\)</span> of isotropic gain (<span class="arithmatex">\(G = G_{\text{tx}} + G_{\text{rx}} = 52.0\text{ dB}\)</span> combined net antenna gain after short waveguide jumpers), driven by a microwave transceiver with transmitter output power <span class="arithmatex">\(P_{\text{tx}} = 250\text{ mW}\)</span> (<span class="arithmatex">\(+23.979\text{ dBm}\)</span>, <code>[dBm]</code>, <code>[f] [▸dBm]</code>). To sustain <span class="arithmatex">\(256\text{-QAM}\)</span> modulation with a <span class="arithmatex">\(25\text{ dB}\)</span> rain-fade margin above its <span class="arithmatex">\(-78.0\text{ dBm}\)</span> threshold, the receiver at the far end of the valley requires an unfaded signal level of at least <span class="arithmatex">\(P_{\text{rx}} \ge -55.0\text{ dBm}\)</span> (<code>[FSL]</code>, <code>[f] [LNK]</code>).</p>
+<p>Standing on the transmit tower platform with binoculars, the lead engineer spots a potential hazard halfway across the valley (<span class="arithmatex">\(d_{\text{mid}} = 6.0\text{ km}\)</span> from either tower): a granite ridge crowned with eighty-foot ponderosa pines rises just below the optical sightline between the two dishes. A casual observer might assume that as long as a laser pointer aimed from one dish to the other clears the treetops, the microwave link will suffer no obstruction loss. In wave optics and radio propagation, however, energy does not travel along an infinitely thin geometric pencil ray; it propagates as an expanding wavefront whose constructive phase coherence fills a cigar-shaped volume of space around the sightline known as the <strong>First Fresnel Zone</strong> (<code>[g] [F₁]</code>).</p>
+<p>If the mid-span pine needles intrude into that three-dimensional ellipsoid, waves grazing the treetops travel roughly half a wavelength (<span class="arithmatex">\(\lambda / 2 \approx 2.58\text{ cm}\)</span> at <span class="arithmatex">\(5.8\text{ GHz}\)</span>, <code>[g] [c]</code>, <code>[f] [λ/L]</code>) farther than the direct optical ray, arriving <span class="arithmatex">\(180^\circ\)</span> out of phase at the receiving dish and canceling the direct signal by <span class="arithmatex">\(6\text{ dB}\)</span> to <span class="arithmatex">\(15\text{ dB}\)</span>. Before bolting the dishes at their current tower height, the engineer must calculate the Friis Free-Space Path Loss across the <span class="arithmatex">\(12.0\text{ km}\)</span> valley (<code>[FSL]</code>), evaluate the complete link budget (<code>[f] [LNK]</code>), and compute the First Fresnel Zone radius (<code>[g] [F₁]</code>) to verify that the sightline clears the mid-span ridge without diffraction penalty.</p>
+<hr />
+<h2 id="spherical-wave-spreading-and-the-friis-transmission-equation">Spherical Wave Spreading and the Friis Transmission Equation</h2>
+<p>When an electromagnetic wave leaves a transmitting antenna and travels through unobstructed air or vacuum, no energy is dissipated as heat in the vacuum; instead, the signal weakens with distance because a fixed number of watts is spread over an ever-larger spherical surface while the receiving antenna intercepts only a tiny patch of that sphere.</p>
+<h3 id="isotropic-effective-aperture-and-free-space-path-loss">Isotropic Effective Aperture and Free-Space Path Loss</h3>
+<p>Imagine a hypothetical <strong>isotropic radiator</strong> emitting total radio-frequency power <span class="arithmatex">\(P_{\text{tx}}\)</span> uniformly in all directions. At distance <span class="arithmatex">\(d\)</span> (in meters), that radiated power is distributed evenly over a sphere of surface area <span class="arithmatex">\(4\pi d^2\)</span>, producing a power flux density of <span class="arithmatex">\(S = P_{\text{tx}} / (4\pi d^2)\text{ W/m}^2\)</span>. By electromagnetic reciprocity and thermodynamics, an isotropic receiving antenna immersed in a wave of wavelength <span class="arithmatex">\(\lambda = c / f\)</span> (<code>[g] [c]</code> <span class="arithmatex">\(= 299{,}792{,}458\text{ m/s}\)</span>) captures an <strong>effective aperture area</strong> of <span class="arithmatex">\(A_{\text{eff,iso}} = \lambda^2 / (4\pi)\)</span>. Multiplying the incident flux density <span class="arithmatex">\(S\)</span> by <span class="arithmatex">\(A_{\text{eff,iso}}\)</span> yields Harald T. Friis's 1946 free-space transmission ratio:</p>
+<div class="arithmatex">\[\frac{P_{\text{rx,iso}}}{P_{\text{tx,iso}}} = \left(\frac{\lambda}{4\pi d}\right)^2 = \left(\frac{c}{4\pi d f}\right)^2, \qquad \text{FSPL} = \left(\frac{4\pi d f}{c}\right)^2\]</div>
+<p>Notice why higher-frequency microwave links suffer higher path loss between isotropic antennas even though vacuum is non-absorptive: as frequency <span class="arithmatex">\(f\)</span> increases and wavelength <span class="arithmatex">\(\lambda = c / f\)</span> shrinks, the electrical capture area <span class="arithmatex">\(\lambda^2 / (4\pi)\)</span> of an isotropic antenna shrinks with the square of wavelength. Converting the dimensionless inverse ratio <span class="arithmatex">\(\text{FSPL}\)</span> into decibels and expressing path length <span class="arithmatex">\(d_{\text{km}}\)</span> in kilometers (<span class="arithmatex">\(d = 10^3 d_{\text{km}}\)</span>) and carrier frequency <span class="arithmatex">\(f_{\text{MHz}}\)</span> in megahertz (<span class="arithmatex">\(f = 10^6 f_{\text{MHz}}\)</span>), where <span class="arithmatex">\(20\log_{10}(4\pi \times 10^9 / 299{,}792{,}458) \approx 32.4418\text{ dB}\)</span>, gives the engineering <strong>Free-Space Path Loss</strong> (<code>[FSL]</code>) equation:</p>
+<div class="arithmatex">\[\text{FSPL}_{\text{dB}} = 20 \log_{10}(d_{\text{km}}) + 20 \log_{10}(f_{\text{MHz}}) + 32.44\]</div>
+<p>In this expression, <span class="arithmatex">\(d_{\text{km}}\)</span> is the line-of-sight hop distance in kilometers, <span class="arithmatex">\(f_{\text{MHz}}\)</span> is the carrier frequency in megahertz, and <span class="arithmatex">\(\text{FSPL}_{\text{dB}}\)</span> is the positive isotropic path attenuation in decibels. Doubling either the hop distance <span class="arithmatex">\(d_{\text{km}}\)</span> or the carrier frequency <span class="arithmatex">\(f_{\text{MHz}}\)</span> adds <span class="arithmatex">\(20\log_{10}(2) \approx \mathbf{6.02\text{ dB}}\)</span> of path loss.</p>
+<p>For our mountain valley backhaul spanning <span class="arithmatex">\(d_{\text{km}} = 12.0\text{ km}\)</span> at <span class="arithmatex">\(f_{\text{MHz}} = 5800\text{ MHz}\)</span>, the distance term contributes <span class="arithmatex">\(20\log_{10}(12.0) \approx 21.584\text{ dB}\)</span> and the frequency term contributes <span class="arithmatex">\(20\log_{10}(5800) \approx 75.269\text{ dB}\)</span>. Summing the three terms yields the free-space path loss across the valley:</p>
+<div class="arithmatex">\[\text{FSPL}_{\text{dB}} = 21.584 + 75.269 + 32.44 = \mathbf{129.292\text{ dB}}\]</div>
+<p>An attenuation of <span class="arithmatex">\(129.292\text{ dB}\)</span> means that an isotropic receiving antenna <span class="arithmatex">\(12\text{ km}\)</span> away would capture only <span class="arithmatex">\(10^{-12.9292} \approx 1.177 \times 10^{-13}\)</span> (roughly one ten-trillionth) of the transmitted power.</p>
+<h3 id="logarithmic-link-budgets-and-fade-margin-accounting">Logarithmic Link Budgets and Fade Margin Accounting</h3>
+<p>To overcome that thirteen-order-of-magnitude free-space spreading loss, microwave engineers collimate the transmitted wave and enlarge the receiving capture aperture using high-gain parabolic dish antennas. Because logarithms turn multiplication and division of linear power ratios into addition and subtraction of decibels, the <strong>Effective Isotropic Radiated Power</strong> (<span class="arithmatex">\(\text{EIRP}_{\text{dBm}} = P_{\text{tx,dBm}} + G_{\text{tx,dBi}} - L_{\text{line,dB}}\)</span>) and end-to-end <strong>Link Budget</strong> (<code>[f] [LNK]</code>) combine transmitter output power <span class="arithmatex">\(P_{\text{tx}}\)</span> (in <span class="arithmatex">\(\text{dBm}\)</span>), total net antenna and amplifier gains <span class="arithmatex">\(G = G_{\text{tx}} + G_{\text{rx}}\)</span> (in <span class="arithmatex">\(\text{dBi}\)</span>), and total link losses <span class="arithmatex">\(L = \text{FSPL}_{\text{dB}} + L_{\text{misc}}\)</span> (in <span class="arithmatex">\(\text{dB}\)</span>):</p>
+<div class="arithmatex">\[P_{\text{rx,dBm}} = P_{\text{tx,dBm}} + G_{\text{dB}} - L_{\text{dB}}, \qquad M_{\text{fade}} = P_{\text{rx,dBm}} - S_{\text{min,dBm}}\]</div>
+<p>Here <span class="arithmatex">\(P_{\text{rx,dBm}}\)</span> is the unfaded received signal power in <span class="arithmatex">\(\text{dBm}\)</span>, <span class="arithmatex">\(S_{\text{min,dBm}}\)</span> is the receiver's minimum sensitivity threshold for a target modulation scheme and bit-error rate, and <span class="arithmatex">\(M_{\text{fade}}\)</span> is the link's <strong>Fade Margin</strong> in <span class="arithmatex">\(\text{dB}\)</span> against heavy rain, snow, or atmospheric multipath ducting.</p>
+<p>On our <span class="arithmatex">\(12.0\text{ km}\)</span>, <span class="arithmatex">\(5800\text{ MHz}\)</span> link, the <span class="arithmatex">\(P_{\text{tx}} = 250\text{ mW}\)</span> transmitter delivers <span class="arithmatex">\(10\log_{10}(250) \approx \mathbf{+23.979\text{ dBm}}\)</span> (and an <span class="arithmatex">\(\text{EIRP}\)</span> of <span class="arithmatex">\(23.979 + 26.0 = \mathbf{+49.979\text{ dBm}}\)</span>). Adding the combined <span class="arithmatex">\(+52.0\text{ dB}\)</span> dish gain and subtracting the <span class="arithmatex">\(129.292\text{ dB}\)</span> free-space path loss yields the unfaded received signal level:</p>
+<div class="arithmatex">\[P_{\text{rx,dBm}} = 23.979\text{ dBm} + 52.0\text{ dB} - 129.292\text{ dB} = \mathbf{-53.313\text{ dBm}}\]</div>
+<p>Compared against the receiver's <span class="arithmatex">\(-78.0\text{ dBm}\)</span> demodulation threshold, the link achieves an unfaded fade margin of <span class="arithmatex">\(M_{\text{fade}} = -53.313 - (-78.0) = \mathbf{24.687\text{ dB}}\)</span> (and meets the <span class="arithmatex">\(-55.0\text{ dBm}\)</span> design target with <span class="arithmatex">\(1.69\text{ dB}\)</span> to spare)—provided the mid-span pine ridge does not introduce diffraction loss.</p>
+<hr />
+<h2 id="huygens-wavelets-and-fresnel-zone-diffraction-clearance">Huygens Wavelets and Fresnel Zone Diffraction Clearance</h2>
+<p>Why does an obstacle that lies <em>below</em> the straight-line optical path between two antennas still attenuate a microwave signal? In 1818, the French physicist Augustin-Jean Fresnel answered that question by combining Christiaan Huygens's principle of secondary spherical wavelets with phase interference.</p>
+<h3 id="ellipsoidal-phase-zones-and-half-wavelength-destructive-interference">Ellipsoidal Phase Zones and Half-Wavelength Destructive Interference</h3>
+<p>At any intermediate plane perpendicular to the straight line of sight of length <span class="arithmatex">\(d = d_1 + d_2\)</span> between a transmitter and a receiver, the advancing wavefront can be decomposed into concentric annular rings—<strong>Fresnel Zones</strong>—defined by the excess path length <span class="arithmatex">\(\Delta d = (r_{\text{tx}} + r_{\text{rx}}) - d\)</span> that a secondary wavelet travels from the transmitter through a point at radial offset <span class="arithmatex">\(r_n\)</span> to the receiver. The boundary of the <span class="arithmatex">\(n\text{th}\)</span> Fresnel Zone is the locus of points where that excess path length equals <span class="arithmatex">\(n\)</span> half-wavelengths (<span class="arithmatex">\(\Delta d = n \lambda / 2\)</span>). At the midpoint of a link of total distance <span class="arithmatex">\(d_{\text{km}}\)</span> (in kilometers, where <span class="arithmatex">\(d_1 = d_2 = d_{\text{km}} / 2\)</span>) operating at frequency <span class="arithmatex">\(f_{\text{GHz}}\)</span> (in gigahertz), paraxial geometry (<span class="arithmatex">\(\Delta d \approx r_1^2 / (2 d_1) + r_1^2 / (2 d_2) = 2 r_1^2 / d = \lambda / 2\)</span>) yields the midpoint radius <span class="arithmatex">\(r_1\)</span> of the <strong>First Fresnel Zone</strong> (<code>[g] [F₁]</code>, in meters):</p>
+<div class="arithmatex">\[r_1 = \sqrt{\frac{\lambda \cdot d}{4}} = 17.32 \sqrt{\frac{d_{\text{km}}}{4 f_{\text{GHz}}}} = 8.656 \sqrt{\frac{d_{\text{km}}}{f_{\text{GHz}}}}\quad [\text{m}]\]</div>
+<p>In this expression, <span class="arithmatex">\(d_{\text{km}}\)</span> is the total hop length in kilometers, <span class="arithmatex">\(f_{\text{GHz}}\)</span> is the carrier frequency in gigahertz, and <span class="arithmatex">\(r_1\)</span> is the midpoint cross-sectional radius in meters of the first phase-coherent ellipsoid.</p>
+<p><img alt="First Fresnel Zone prolate ellipsoid clearance radius r1 between line-of-sight microwave antennas." src="../../assets/diagrams/domains/diagram_ch05_fresnel_zone.png" /></p>
+<p>Every Huygens wavelet passing <em>inside</em> the First Fresnel Zone (<span class="arithmatex">\(r &lt; r_1\)</span>) travels less than <span class="arithmatex">\(\lambda / 2\)</span> farther than the direct axial ray, so its phase shift is less than <span class="arithmatex">\(180^\circ\)</span> and it interferes <strong>constructively</strong> at the receiving dish. If a sharp granite ridge or dense canopy of wet pine needles rises right up to the optical sightline (grazing incidence, <span class="arithmatex">\(0\text{ m}\)</span> clearance), it blocks the entire bottom half of the First Fresnel Zone and introduces <span class="arithmatex">\(\mathbf{6.0\text{ dB}}\)</span> of knife-edge diffraction loss, cutting received power to one quarter. Even worse, if a smooth ridge or rooftop sits precisely at the boundary <span class="arithmatex">\(r_1\)</span> and reflects the wave with a <span class="arithmatex">\(180^\circ\)</span> reflection phase reversal plus the <span class="arithmatex">\(180^\circ\)</span> (<span class="arithmatex">\(\lambda / 2\)</span>) path-length delay, or if an obstacle blocks the inner <span class="arithmatex">\(60\%\)</span> of the zone, destructive interference can gouge <span class="arithmatex">\(10\text{ dB}\)</span> to <span class="arithmatex">\(20\text{ dB}\)</span> out of the link budget.</p>
+<h3 id="sixty-percent-clearance-criteria-and-earth-bulge-ridge-audits">Sixty-Percent Clearance Criteria and Earth-Bulge Ridge Audits</h3>
+<p>In microwave path engineering, free-space propagation (<span class="arithmatex">\(\approx 0\text{ dB}\)</span> diffraction loss) is achieved whenever the optical sightline clears all terrain, foliage, and building obstacles by at least <strong><span class="arithmatex">\(60\%\)</span> of the First Fresnel Zone radius</strong> (<span class="arithmatex">\(h_{\text{clear}} \ge 0.60\,r_1\)</span>) after accounting for atmospheric refraction and Earth curvature:</p>
+<div class="arithmatex">\[h_{\text{clear,min}} = 0.60 \cdot r_1 = 0.60 \times 17.32 \sqrt{\frac{d_{\text{km}}}{4 f_{\text{GHz}}}}, \qquad h_{\text{earth,m}} = \frac{d_1 \cdot d_2}{2 K R_{\oplus}} \approx \frac{d_{\text{km}}^2}{68.0}\]</div>
+<p>Here <span class="arithmatex">\(h_{\text{clear,min}}\)</span> is the required obstacle-free radius in meters for zero diffraction loss, and <span class="arithmatex">\(h_{\text{earth,m}}\)</span> is the midpoint vertical bulge of the spherical Earth in meters under a standard <span class="arithmatex">\(K = 4/3\)</span> effective Earth-radius atmosphere (<span class="arithmatex">\(R_{\oplus} \approx 6371\text{ km}\)</span>).</p>
+<p>For our <span class="arithmatex">\(d_{\text{km}} = 12.0\text{ km}\)</span> valley hop at <span class="arithmatex">\(f_{\text{GHz}} = 5.8\text{ GHz}\)</span>, the midpoint First Fresnel Zone radius is:</p>
+<div class="arithmatex">\[r_1 = 17.32 \sqrt{\frac{12.0}{4 \times 5.8}} = 17.32 \sqrt{\frac{12.0}{23.2}} = 17.32 \sqrt{0.51724} \approx \mathbf{12.457\text{ m}}\]</div>
+<p>Applying the <span class="arithmatex">\(60\%\)</span> diffraction-free rule specifies a minimum treetop clearance of <span class="arithmatex">\(h_{\text{clear,min}} = 0.60 \times 12.457 \approx \mathbf{7.474\text{ m}}\)</span> (<span class="arithmatex">\(24.5\text{ ft}\)</span>) below the optical line of sight at mid-span, plus an Earth-curvature bulge of <span class="arithmatex">\(h_{\text{earth}} \approx 12.0^2 / 68.0 \approx 2.12\text{ m}\)</span>. Because the transit survey shows the eighty-foot mid-span pines sitting <span class="arithmatex">\(14.0\text{ m}\)</span> below the optical sightline, the link clears the entire First Fresnel Zone (<span class="arithmatex">\(14.0\text{ m} &gt; 12.457\text{ m}\)</span>) and the <span class="arithmatex">\(-53.313\text{ dBm}\)</span> free-space link budget holds intact.</p>
+<hr />
+<h2 id="closing-the-valley-link-budget-and-clearing-the-ridge-on-the-stack">Closing the Valley Link Budget and Clearing the Ridge on the Stack</h2>
+<p>The <strong>SC-50</strong> chains logarithmic milliwatt conversions (<code>[dBm]</code>, <code>[f] [▸dBm]</code>, <code>[g] [▸mW]</code>), Friis Free-Space Path Loss (<code>[FSL]</code>), three-register Link Budget summation (<code>[f] [LNK]</code>, taking <span class="arithmatex">\(P_{\text{tx}}\)</span> in Register <span class="arithmatex">\(Z\)</span>, net antenna gain <span class="arithmatex">\(G\)</span> in Register <span class="arithmatex">\(Y\)</span>, and total path loss <span class="arithmatex">\(L\)</span> in Register <span class="arithmatex">\(X\)</span> computed in place by <code>[FSL]</code>), and First Fresnel Zone clearance (<code>[g] [F₁]</code>) directly across the RPN stack, while also providing <strong>Bidirectional Equation Solver Workspaces</strong> (<code>[g] [SOLVE]</code> / <code>[XEQ]</code>) for <code>[FSL]</code> (<code>L = 20LOG(D)+20LOG(F)+32.44</code>, softkeys <code>[L]</code>, <code>[D]</code>, <code>[F]</code>) and <code>[f] [LNK]</code> (<code>R = P + G - L</code>, softkeys <code>[R]</code>, <code>[P]</code>, <code>[G]</code>, <code>[L]</code>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Button</th>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">Governing Expression &amp; Solver Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>[FSL]</code></td>
+<td style="text-align: left;">Free-Space Path Loss</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Distance <span class="arithmatex">\(d_{\text{km}}\)</span> (<span class="arithmatex">\(\text{km}\)</span>)</td>
+<td style="text-align: center;">Frequency <span class="arithmatex">\(f_{\text{MHz}}\)</span> (<span class="arithmatex">\(\text{MHz}\)</span>)</td>
+<td style="text-align: left;">Stack: <span class="arithmatex">\(20\log_{10}(d) + 20\log_{10}(f) + 32.44\)</span>; Solver: <code>[L]</code>,<code>[D]</code>,<code>[F]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[f] [LNK]</code></td>
+<td style="text-align: left;">Link Budget Rx Power</td>
+<td style="text-align: center;">Tx Power <span class="arithmatex">\(P_{\text{tx}}\)</span> (<span class="arithmatex">\(\text{dBm}\)</span>)</td>
+<td style="text-align: center;">Net Gain <span class="arithmatex">\(G\)</span> (<span class="arithmatex">\(\text{dB}\)</span>)</td>
+<td style="text-align: center;">Total Loss <span class="arithmatex">\(L\)</span> (<span class="arithmatex">\(\text{dB}\)</span>)</td>
+<td style="text-align: left;">Stack: <span class="arithmatex">\(P_{\text{rx}} = P_{\text{tx}} + G - L\)</span>; Solver: <code>R = P + G - L</code> (<code>[R]</code>,<code>[P]</code>,<code>[G]</code>,<code>[L]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [F₁]</code></td>
+<td style="text-align: left;">1st Fresnel Zone Radius</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Distance <span class="arithmatex">\(d_{\text{km}}\)</span> (<span class="arithmatex">\(\text{km}\)</span>)</td>
+<td style="text-align: center;">Frequency <span class="arithmatex">\(f_{\text{GHz}}\)</span> (<span class="arithmatex">\(\text{GHz}\)</span>)</td>
+<td style="text-align: left;">Immediate stack: <span class="arithmatex">\(r_1 = 17.32 \sqrt{d / (4 f)} = 8.656 \sqrt{d / f}\)</span> (<span class="arithmatex">\(\text{m}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [COX]</code> / <code>[f] [PAD]</code></td>
+<td style="text-align: left;">Coax Loss &amp; Resistive Pad</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Base Loss (<span class="arithmatex">\(\text{dB}\)</span>)</td>
+<td style="text-align: center;">Freq Ratio / Attenuation</td>
+<td style="text-align: left;"><span class="arithmatex">\(\alpha(f) = \alpha_0 \sqrt{f/f_0}\)</span> (<code>[g] [COX]</code>); <span class="arithmatex">\(50\ \Omega\)</span> Pi/Tee attenuator (<code>[f] [PAD]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [c]</code></td>
+<td style="text-align: left;">Vacuum Speed of Light</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">Pushes <span class="arithmatex">\(c = 299{,}792{,}458\text{ m/s}\)</span> onto Register <span class="arithmatex">\(X\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="computing-free-space-loss-and-received-signal-power-across-the-valley-on-the-stack">Computing Free-Space Loss and Received Signal Power Across the Valley on the Stack</h3>
+<p>To close the <span class="arithmatex">\(12.0\text{ km}\)</span>, <span class="arithmatex">\(5800\text{ MHz}\)</span> valley link on the stack, the engineer first converts <span class="arithmatex">\(P_{\text{tx}} = 250\text{ mW}\)</span> to <span class="arithmatex">\(+23.979\text{ dBm}\)</span> (<code>[f] [▸dBm]</code>), loads the <span class="arithmatex">\(+52.0\text{ dB}\)</span> combined dish gain, evaluates the <span class="arithmatex">\(129.292\text{ dB}\)</span> free-space path loss in place with <code>[FSL]</code>, and presses <code>[f] [LNK]</code> to resolve the received signal power <span class="arithmatex">\(P_{\text{rx}}\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>250 [f] [▸dBm] 52 [ENTER]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(23.979\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(52\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(52\)</span></td>
+<td style="text-align: left;">Convert <span class="arithmatex">\(250\text{ mW}\)</span> to <span class="arithmatex">\(+23.979\text{ dBm}\)</span> in <span class="arithmatex">\(Z\)</span>; load dish gain <span class="arithmatex">\(52\text{ dB}\)</span> into <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>12 [ENTER] 5800 [FSL]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(23.979\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(52\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(129.292\)</span></td>
+<td style="text-align: left;">Evaluate <span class="arithmatex">\(\text{FSPL} = 129.292\text{ dB}\)</span> at <span class="arithmatex">\(12\text{ km}, 5800\text{ MHz}\)</span>; <span class="arithmatex">\(P_{\text{tx}}\)</span> in <span class="arithmatex">\(Z\)</span>, <span class="arithmatex">\(G\)</span> in <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[f] [LNK]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(-53.313\)</span></strong></td>
+<td style="text-align: left;">Evaluate link budget <span class="arithmatex">\(P_{\text{rx}} = 23.979 + 52 - 129.292 = -53.313\text{ dBm}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Notice how <code>[FSL]</code> consumes <span class="arithmatex">\(d_{\text{km}} = 12\)</span> and <span class="arithmatex">\(f_{\text{MHz}} = 5800\)</span> from Registers <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(X\)</span>, dropping <span class="arithmatex">\(P_{\text{tx}} = 23.979\text{ dBm}\)</span> into Register <span class="arithmatex">\(Z\)</span> and <span class="arithmatex">\(G = 52\text{ dB}\)</span> into Register <span class="arithmatex">\(Y\)</span> so that pressing <code>[f] [LNK]</code> resolves <span class="arithmatex">\(P_{\text{rx}} = \mathbf{-53.313\text{ dBm}}\)</span> in a single keystroke.</p>
+<h3 id="auditing-mid-span-pine-tree-clearance-and-back-solving-link-range-power-in-the-solver-workspace">Auditing Mid-Span Pine Tree Clearance and Back-Solving Link Range &amp; Power in the Solver Workspace</h3>
+<p>With <span class="arithmatex">\(P_{\text{rx}} = -53.313\text{ dBm}\)</span> sitting in Register <span class="arithmatex">\(X\)</span>, the engineer evaluates the midpoint First Fresnel Zone radius <span class="arithmatex">\(r_1\)</span> at <span class="arithmatex">\(d_{\text{km}} = 12.0\text{ km}\)</span> and <span class="arithmatex">\(f_{\text{GHz}} = 5.8\text{ GHz}\)</span> using <code>[g] [F₁]</code> (<code>12 [ENTER] 5.8 [g] [F₁] 0.6 [×]</code>), and then opens the <code>[FSL]</code> (<code>L = 20LOG(D)+20LOG(F)+32.44</code>) and <code>[f] [LNK]</code> (<code>R = P + G - L</code>) Solver Workspaces to answer two inverse planning questions: first, what is the maximum line-of-sight hop distance <span class="arithmatex">\(D\)</span> (<code>[D]</code>) if rain-fade margin allows a maximum free-space path loss of <span class="arithmatex">\(L = 132.44\text{ dB}\)</span> at <span class="arithmatex">\(F = 5800\text{ MHz}\)</span>; second, what transmitter power <span class="arithmatex">\(P\)</span> (<code>[P]</code>) is required on an auxiliary telemetry link (<span class="arithmatex">\(L = 118\text{ dB}, G = 34\text{ dBi}\)</span>) to achieve <span class="arithmatex">\(R = -80.0\text{ dBm}\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Solver Display / Register X</th>
+<th style="text-align: left;">What Happens on the Stack &amp; in the <code>[FSL]</code> / <code>[f] [LNK]</code> Solver Workspaces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>12 [ENTER] 5.8 [g] [F₁] 0.6 [×]</code></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(7.474\)</span></strong></td>
+<td style="text-align: left;">Evaluate <span class="arithmatex">\(r_1 = 12.457\text{ m}\)</span> via <code>[g] [F₁]</code> and multiply by <span class="arithmatex">\(0.60\)</span> for <span class="arithmatex">\(7.474\text{ m}\)</span> clearance</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[FSL]</code></td>
+<td style="text-align: center;"><code>L=20LOG(D×F)+32.44</code></td>
+<td style="text-align: left;">Open the Free-Space Path Loss (<code>FSL</code>) Solver Workspace with softkeys <code>[L]</code>, <code>[D]</code>, <code>[F]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>132.44 [L]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(132.4400\)</span></td>
+<td style="text-align: left;">Store maximum allowable path loss <span class="arithmatex">\(L = 132.44\text{ dB}\)</span> into softkey <code>[L]</code> (<code>[LFU0]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>5800 [F]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(5{,}800.0000\)</span></td>
+<td style="text-align: left;">Store carrier frequency <span class="arithmatex">\(F = 5800\text{ MHz}\)</span> into softkey <code>[F]</code> (<code>[LFU2]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [SOLVE] [D]</code></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(17.2414\)</span></strong></td>
+<td style="text-align: left;">Solve backward for maximum hop distance <span class="arithmatex">\(D = 10^{(132.44-32.44)/20} / 5800 = \mathbf{17.2414\text{ km}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[f] [LNK]</code></td>
+<td style="text-align: center;"><code>R=P+G-L</code></td>
+<td style="text-align: left;">Open the Link Budget (<code>LNK</code>) Solver Workspace with softkeys <code>[R]</code>, <code>[P]</code>, <code>[G]</code>, <code>[L]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>80 [+/-] [R] 34 [G] 118 [L]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(118.0000\)</span></td>
+<td style="text-align: left;">Store target <span class="arithmatex">\(R = -80\text{ dBm}\)</span>, gain <span class="arithmatex">\(G = 34\text{ dB}\)</span>, and loss <span class="arithmatex">\(L = 118\text{ dB}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [SOLVE] [P] [g] [▸mW]</code></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(2.5119\)</span></strong></td>
+<td style="text-align: left;">Solve backward for <span class="arithmatex">\(P = +4.00\text{ dBm}\)</span> and convert to <span class="arithmatex">\(\mathbf{2.5119\text{ mW}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="try-it-on-the-stack_1">Try It on the Stack</h3>
+<p>Consolidate your mastery of free-space path loss, logarithmic link budgets, and Fresnel diffraction zones with these three field-engineering exercises:</p>
+<ol>
+<li><strong>2.4 GHz Ten-Kilometer Campus Link Budget:</strong> A <span class="arithmatex">\(P_{\text{tx}} = 100\text{ mW}\)</span> (<span class="arithmatex">\(+20\text{ dBm}\)</span>) bridge operates at <span class="arithmatex">\(f = 2400\text{ MHz}\)</span> (<span class="arithmatex">\(2.4\text{ GHz}\)</span>) across a <span class="arithmatex">\(d = 10.0\text{ km}\)</span> link using two <span class="arithmatex">\(+24\text{ dBi}\)</span> dishes (<span class="arithmatex">\(G = 48\text{ dB}\)</span>). Find the free-space path loss and received power (<code>100 [f] [▸dBm] 48 [ENTER] 10 [ENTER] 2400 [FSL] [f] [LNK]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(\text{FSPL} \approx \mathbf{120.044\text{ dB}}\)</span> and <span class="arithmatex">\(P_{\text{rx}} \approx \mathbf{-52.044\text{ dBm}}\)</span>.)</em></li>
+<li><strong>Six-Gigahertz Eighteen-Kilometer Fresnel Clearance Audit:</strong> Evaluate the full First Fresnel Zone radius <span class="arithmatex">\(r_1\)</span> and the <span class="arithmatex">\(60\%\)</span> minimum obstacle clearance at mid-span across an <span class="arithmatex">\(18.0\text{ km}\)</span> hop operating at <span class="arithmatex">\(6.0\text{ GHz}\)</span> (<code>18 [ENTER] 6 [g] [F₁] [ENTER] 0.6 [×]</code>), and verify the inverse hop length from <span class="arithmatex">\(r_1 = 15.0\text{ m}\)</span> at <span class="arithmatex">\(6.0\text{ GHz}\)</span> (<code>15 [ENTER] 8.656 [÷] [f] [x²] 6 [×]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(r_1 \approx \mathbf{15.000\text{ m}}\)</span>, <span class="arithmatex">\(0.6 r_1 \approx \mathbf{9.000\text{ m}}\)</span>, and <span class="arithmatex">\(D = \mathbf{18.000\text{ km}}\)</span>.)</em></li>
+<li><strong>Millimeter-Wave 28 GHz Urban Backhaul Loss:</strong> Compute the Free-Space Path Loss over a short <span class="arithmatex">\(d = 2.5\text{ km}\)</span> urban rooftop hop at <span class="arithmatex">\(f = 28{,}000\text{ MHz}\)</span> (<span class="arithmatex">\(28\text{ GHz}\)</span>) and determine the received power for <span class="arithmatex">\(P_{\text{tx}} = +15\text{ dBm}\)</span> and <span class="arithmatex">\(G = 70\text{ dB}\)</span> combined dish gain (<code>15 [ENTER] 70 [ENTER] 2.5 [ENTER] 28000 [FSL] [f] [LNK]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(\text{FSPL} \approx \mathbf{129.339\text{ dB}}\)</span> and <span class="arithmatex">\(P_{\text{rx}} \approx \mathbf{-44.339\text{ dBm}}\)</span>.)</em></li>
+</ol>
+<p>Having delivered an electromagnetic wavefront across a mountain valley to the receiving antenna, we step inside the receiver front-end in Chapter 15 to rescue a weak satellite telemetry carrier from thermal electron noise and compute the channel's Shannon capacity.</p>
+<hr />
+<h1 id="chapter-15-pulling-a-weak-telemetry-signal-out-of-thermal-noise">Chapter 15: Pulling a Weak Telemetry Signal Out of Thermal Noise</h1>
+<p>At a university satellite ground station, an engineering team is attempting to demodulate a weak <span class="arithmatex">\(437.0\text{ MHz}\)</span> telemetry carrier transmitted by a low-Earth-orbit CubeSat passing overhead at a radial closure velocity of <span class="arithmatex">\(v = 7500\text{ m/s}\)</span> over a <span class="arithmatex">\(B = 1.0\text{ MHz}\)</span> (<span class="arithmatex">\(10^6\text{ Hz}\)</span>) receiver channel. In the station's initial cabling layout, the roof-mounted Yagi antenna feeds <span class="arithmatex">\(30\text{ meters}\)</span> of coaxial cable having <span class="arithmatex">\(6.0\text{ dB}\)</span> of passive insertion loss (<span class="arithmatex">\(G_{\text{cable}} = 10^{-0.6} \approx 0.2512\)</span>, passive linear noise factor <span class="arithmatex">\(F_{\text{cable}} = 1 / G_{\text{cable}} \approx 3.981\)</span>) before reaching the equipment rack indoors, where a low-noise amplifier (<span class="arithmatex">\(G_{\text{LNA}} = 20\text{ dB} \implies \text{linear } G_1 = 100\)</span>, noise figure <span class="arithmatex">\(N\!F_1 = 1.5\text{ dB} \implies \text{linear } F_1 = 10^{0.15} \approx 1.4125\)</span>) and a software-defined radio receiver (<span class="arithmatex">\(N\!F_{\text{rx}} = 8.0\text{ dB} \implies \text{linear } F_2 = 10^{0.8} \approx 6.3096\)</span>) sit on the bench. With the LNA mounted <em>downstairs</em> at the rack after the <span class="arithmatex">\(6.0\text{ dB}\)</span> cable run, the telemetry waterfall display shows nothing but snow: the downlink signal is buried beneath the receiver system's noise floor.</p>
+<p>Why does placing a <span class="arithmatex">\(20\text{ dB}\)</span> amplifier at the bottom of the coaxial run fail to rescue the signal, whereas climbing onto the roof and bolting that identical amplifier at the antenna masthead <em>ahead</em> of the <span class="arithmatex">\(6.0\text{ dB}\)</span> coaxial cable brings the telemetry packets into crystal-clear lock? Both configurations have the identical net system gain (<span class="arithmatex">\(+20\text{ dB} - 6\text{ dB} = +14\text{ dB}\)</span>), yet their signal-to-noise ratios differ by more than a factor of ten!</p>
+<p>As Harald T. Friis proved in 1944, passive coaxial loss placed ahead of the first amplifier attenuates the delicate satellite signal while injecting room-temperature Johnson–Nyquist thermal noise (<code>[g] [Pₙ]</code>, <code>[g] [T₀]</code>, <code>[f] [kB]</code>), and the LNA downstairs amplifies both the weakened signal and the cable's thermal noise together. Moving the LNA to the masthead boosts the signal by <span class="arithmatex">\(100\times\)</span> (<span class="arithmatex">\(+20\text{ dB}\)</span>) <em>before</em> the cable attenuation occurs, dividing the noise contribution of the cable and downstream receiver by one hundred (<code>[NF]</code>). Tracing the physics of thermal noise floors, Friis cascades, third-order intermodulation dynamic range (<code>[f] [IP3]</code>, <code>[g] [FDR]</code>), Shannon–Hartley channel capacity (<code>[g] [C/B]</code>), and radar/orbital Doppler shifts (<code>[g] [Δf]</code>, <code>[f] [RCS]</code>) reveals how these receiver stages interact before we solve the ground-station upgrade on the stack and in the Solver Workspace.</p>
+<hr />
+<h2 id="thermal-noise-floors-cascaded-amplifiers-and-receiver-linearity">Thermal Noise Floors, Cascaded Amplifiers, and Receiver Linearity</h2>
+<p>Every radio receiver is ultimately bounded at the bottom of its dynamic range by the random thermal motion of electrons inside its own conductors, and bounded at the top by non-linear distortion in its active transistors and mixers.</p>
+<h3 id="johnson-nyquist-thermal-agitation-and-the-friis-noise-cascade-law">Johnson-Nyquist Thermal Agitation and the Friis Noise Cascade Law</h3>
+<p>In 1928, Bell Labs physicists John B. Johnson and Harry Nyquist demonstrated through statistical mechanics and fluctuation-dissipation theory that the random thermal agitation of charge carriers inside any matched resistor at absolute temperature <span class="arithmatex">\(T_0\)</span> (<code>[g] [T₀]</code>) delivers an available noise power spectral density of <span class="arithmatex">\(k_B T_0\)</span> watts per hertz of bandwidth, independent of resistance value or frequency across the RF spectrum. At the IEEE standard reference temperature of <span class="arithmatex">\(T_0 = 290\text{ K}\)</span> (<span class="arithmatex">\(16.85^\circ\text{C}\)</span>) with Boltzmann's constant <span class="arithmatex">\(k_B = 1.380649 \times 10^{-23}\text{ J/K}\)</span> (<code>[f] [kB]</code>), the thermal noise power per hertz is <span class="arithmatex">\(k_B T_0 \approx 4.0039 \times 10^{-21}\text{ W/Hz} = 4.0039 \times 10^{-18}\text{ mW/Hz}\)</span>, whose base-ten logarithm is <span class="arithmatex">\(10\log_{10}(4.0039 \times 10^{-18}) \approx -173.977\text{ dBm/Hz} \approx -174\text{ dBm/Hz}\)</span>. Integrating across an effective receiver noise bandwidth <span class="arithmatex">\(B_{\text{Hz}}\)</span> (in hertz) defines the <strong>Thermal Noise Floor</strong> (<code>[g] [Pₙ]</code>, in <span class="arithmatex">\(\text{dBm}\)</span>):</p>
+<div class="arithmatex">\[N_{\text{floor,dBm}} = 10 \log_{10}(k_B T_0 \cdot 1000) + 10 \log_{10}(B_{\text{Hz}}) \approx -173.977 + 10 \log_{10}(B_{\text{Hz}})\]</div>
+<p>When a signal passes through a cascade of amplifier, cable, and mixer stages having linear noise factors <span class="arithmatex">\(F_i = \text{SNR}_{\text{in},i} / \text{SNR}_{\text{out},i} = 10^{N\!F_i / 10}\)</span> and linear available power gains <span class="arithmatex">\(G_i = 10^{\text{Gain}_i / 10}\)</span>, Harald Friis's 1944 cascade formula (<code>[NF]</code>) determines the overall linear <strong>Total Noise Factor</strong> <span class="arithmatex">\(F_{\text{tot}}\)</span> and decibel <strong>Noise Figure</strong> <span class="arithmatex">\(N\!F_{\text{tot}} = 10\log_{10}(F_{\text{tot}})\)</span>:</p>
+<div class="arithmatex">\[F_{\text{tot}} = F_1 + \frac{F_2 - 1}{G_1} + \frac{F_3 - 1}{G_1 G_2} + \dots, \qquad N\!F_{\text{tot,dB}} = 10 \log_{10}(F_{\text{tot}})\]</div>
+<p>In this equation, <span class="arithmatex">\(F_1\)</span> and <span class="arithmatex">\(G_1\)</span> are the linear noise factor and linear power gain of the very first component following the antenna, and each subsequent stage's excess noise <span class="arithmatex">\((F_k - 1)\)</span> is divided by the product of all preceding linear gains <span class="arithmatex">\(G_1 G_2 \cdots G_{k-1}\)</span>. Notice also that a passive lossy component (such as a coaxial cable of insertion loss <span class="arithmatex">\(L_{\text{dB}}\)</span> at <span class="arithmatex">\(290\text{ K}\)</span>) has linear gain <span class="arithmatex">\(G_{\text{cable}} = 10^{-L_{\text{dB}} / 10} &lt; 1\)</span> and linear noise factor <span class="arithmatex">\(F_{\text{cable}} = 1 / G_{\text{cable}} = 10^{+L_{\text{dB}} / 10}\)</span>.</p>
+<p>Compare the two cabling configurations at our satellite ground station (<span class="arithmatex">\(B_{\text{Hz}} = 1.0\text{ MHz} = 10^6\text{ Hz}\)</span>, where the thermal noise floor is <span class="arithmatex">\(N_{\text{floor}} = -173.977 + 10\log_{10}(10^6) \approx \mathbf{-113.98\text{ dBm}}\)</span>):
+- <strong>Configuration A (Masthead LNA at the antenna, ahead of the <span class="arithmatex">\(6\text{ dB}\)</span> cable and <span class="arithmatex">\(8\text{ dB}\)</span> receiver):</strong> Stage 1 is the LNA (<span class="arithmatex">\(N\!F_1 = 1.5\text{ dB} \implies F_1 = 1.4125\)</span>, <span class="arithmatex">\(G_1 = 20\text{ dB} \implies 100\)</span>). The <span class="arithmatex">\(6.0\text{ dB}\)</span> cable (<span class="arithmatex">\(G_2 = 0.2512, F_2 = 3.9811\)</span>) and <span class="arithmatex">\(8.0\text{ dB}\)</span> receiver (<span class="arithmatex">\(F_3 = 6.3096\)</span>) have a combined downstream noise factor of <span class="arithmatex">\(F_{23} = F_2 + (F_3 - 1)/G_2 = 3.9811 + 5.3096 / 0.2512 \approx \mathbf{25.119}\)</span> (<span class="arithmatex">\(14.0\text{ dB}\)</span>). Because the masthead LNA precedes them with <span class="arithmatex">\(G_1 = 100\)</span>, the total system noise factor is:</p>
+<div class="arithmatex">\[F_{\text{tot,masthead}} = 1.4125 + \frac{25.119 - 1}{100} = 1.4125 + 0.2412 = \mathbf{1.6537} \quad \left(N\!F_{\text{tot}} = 10\log_{10}(1.6537) \approx \mathbf{2.185\text{ dB}}\right)\]</div>
+<ul>
+<li><strong>Configuration B (Coaxial cable first, LNA downstairs in the shack):</strong> Stage 1 is the <span class="arithmatex">\(6.0\text{ dB}\)</span> passive cable (<span class="arithmatex">\(F_1 = 3.9811, G_1 = 0.2512\)</span>), followed by the LNA (<span class="arithmatex">\(F_2 = 1.4125, G_2 = 100\)</span>) and receiver (<span class="arithmatex">\(F_3 = 6.3096\)</span>). Dividing by <span class="arithmatex">\(G_1 = 0.2512\)</span> <em>multiplies</em> the downstream noise by <span class="arithmatex">\(3.9811\)</span>:</li>
+</ul>
+<div class="arithmatex">\[F_{\text{tot,shack}} = 3.9811 + \frac{1.4125 - 1}{0.2512} + \frac{6.3096 - 1}{0.2512 \times 100} = 3.9811 + 1.6422 + 0.2114 = \mathbf{5.8347} \quad \left(N\!F_{\text{tot}} \approx \mathbf{7.660\text{ dB}}\right)\]</div>
+<p>Moving the LNA to the masthead improves the system noise figure from <span class="arithmatex">\(7.660\text{ dB}\)</span> down to <span class="arithmatex">\(2.185\text{ dB}\)</span>—a <span class="arithmatex">\(\mathbf{5.475\text{ dB}}\)</span> (<span class="arithmatex">\(3.53\times\)</span>) improvement in signal-to-noise ratio that pulls the CubeSat telemetry carrier out of the snow!</p>
+<h3 id="third-order-intermodulation-intercepts-and-spurious-free-dynamic-range">Third-Order Intermodulation Intercepts and Spurious-Free Dynamic Range</h3>
+<p>While high LNA gain improves weak-signal sensitivity, excessive gain can overload downstream mixers when strong adjacent broadcast or pager transmitters are present. When two strong interfering tones at frequencies <span class="arithmatex">\(f_1\)</span> and <span class="arithmatex">\(f_2\)</span> pass through a weakly non-linear amplifier, cubic distortion generates <strong>third-order intermodulation products</strong> at <span class="arithmatex">\(2f_1 - f_2\)</span> and <span class="arithmatex">\(2f_2 - f_1\)</span> that fall right back inside the receiver passband and grow <span class="arithmatex">\(3\text{ dB}\)</span> for every <span class="arithmatex">\(1\text{ dB}\)</span> increase in input power.</p>
+<p><img alt="Receiver linearity plot showing fundamental (1:1) and third-order intermodulation (3:1) power slopes, IIP3 intercept, and SFDR." src="../../assets/diagrams/domains/diagram_ch05_iip3_sfdr.png" /></p>
+<p>Extrapolating the <span class="arithmatex">\(1:1\)</span> fundamental power line and the <span class="arithmatex">\(3:1\)</span> third-order distortion line on a log-log plot defines the <strong>Input Third-Order Intercept Point</strong> (<code>[f] [IP3]</code>, in <span class="arithmatex">\(\text{dBm}\)</span>), which bounds the receiver's <strong>Spurious-Free Dynamic Range</strong> (<code>[g] [FDR]</code>, in <span class="arithmatex">\(\text{dB}\)</span>) above the effective noise floor <span class="arithmatex">\(N_{\text{floor,dBm}}\)</span>:</p>
+<div class="arithmatex">\[\text{SFDR}_{\text{dB}} = \frac{2}{3}\left(\text{IIP3}_{\text{dBm}} - N_{\text{floor,dBm}}\right)\]</div>
+<p>For a receiver front-end with <span class="arithmatex">\(\text{IIP3} = +5.0\text{ dBm}\)</span> and an effective noise floor of <span class="arithmatex">\(N_{\text{floor}} = -100.0\text{ dBm}\)</span>, the spurious-free dynamic range spans <span class="arithmatex">\(\text{SFDR} = \frac{2}{3}(5.0 - (-100.0)) = \mathbf{70.0\text{ dB}}\)</span>.</p>
+<hr />
+<h2 id="shannon-hartley-channel-capacity-and-radar-doppler-propagation">Shannon-Hartley Channel Capacity and Radar Doppler Propagation</h2>
+<p>Once the masthead LNA delivers a clean Signal-to-Noise Power Ratio (<span class="arithmatex">\(\text{SNR}\)</span>) to the demodulator, information theory and relativistic wave kinematics govern how many bits per second the channel can carry and how the satellite's orbital velocity shifts the carrier frequency.</p>
+<h3 id="spectral-efficiency-and-the-noisy-channel-coding-limit">Spectral Efficiency and the Noisy-Channel Coding Limit</h3>
+<p>In his landmark 1948 theorem, Claude Shannon proved that for a communication channel of bandwidth <span class="arithmatex">\(B\)</span> (in hertz) perturbed by additive white Gaussian noise where the received signal power is <span class="arithmatex">\(P_{\text{signal}}\)</span> and the total in-band noise power is <span class="arithmatex">\(P_{\text{noise}}\)</span> (giving linear signal-to-noise ratio <span class="arithmatex">\(\text{SNR} = P_{\text{signal}} / P_{\text{noise}} = 10^{\text{SNR}_{\text{dB}} / 10}\)</span>), there exist error-correcting codes that can transmit information with arbitrarily small error probability at any rate up to the <strong>Shannon–Hartley Channel Capacity</strong> <span class="arithmatex">\(C\)</span> (<code>[g] [C/B]</code>, in bits per second, <span class="arithmatex">\(\text{bps}\)</span>):</p>
+<div class="arithmatex">\[C = B \log_2\left(1 + \text{SNR}\right) \quad [\text{bps}], \qquad \eta = \frac{C}{B} = \log_2\left(1 + \text{SNR}\right) \quad \left[\frac{\text{bits/s}}{\text{Hz}}\right]\]</div>
+<p>Here <span class="arithmatex">\(B\)</span> is the channel bandwidth in hertz, <span class="arithmatex">\(\text{SNR}\)</span> is the dimensionless linear signal-to-noise power ratio, <span class="arithmatex">\(C\)</span> is the maximum theoretical error-free data rate in <span class="arithmatex">\(\text{bps}\)</span>, and <span class="arithmatex">\(\eta = C / B\)</span> is the <strong>spectral efficiency</strong> in <span class="arithmatex">\(\text{bits/s/Hz}\)</span>. At high signal-to-noise ratios (<span class="arithmatex">\(\text{SNR} \gg 1\)</span>), spectral efficiency grows as <span class="arithmatex">\(\eta \approx \log_2(\text{SNR}) = \text{SNR}_{\text{dB}} / (10\log_{10} 2) = \text{SNR}_{\text{dB}} / 3.0103\text{ bits/s/Hz}\)</span> per power ratio (or <span class="arithmatex">\(\text{SNR}_{\text{dB}} / 6.0206\)</span> amplitude bits per sample)—the exact information-theoretic dual of the Effective Number of Bits <span class="arithmatex">\(\text{ENOB} = (\text{SINAD}_{\text{dB}} - 1.7609) / 6.0206\)</span> of a mixed-signal Analog-to-Digital Converter in <a href="../03-sc16-systems-cyber/">Unit III: Digital Systems, Bitwise Logic &amp; Embedded Timing</a>.</p>
+<p>On our CubeSat ground station's <span class="arithmatex">\(B = 1.0\text{ MHz}\)</span> (<span class="arithmatex">\(10^6\text{ Hz}\)</span>) channel, if the masthead LNA upgrade raises the linear signal-to-noise ratio to <span class="arithmatex">\(\text{SNR} = 15.0\)</span> (<span class="arithmatex">\(\text{SNR}_{\text{dB}} = 10\log_{10}(15) \approx 11.76\text{ dB}\)</span>), the spectral efficiency reaches <span class="arithmatex">\(\eta = \log_2(1 + 15) = \log_2(16) = \mathbf{4.00\text{ bits/s/Hz}}\)</span>, supporting a theoretical error-free channel capacity of <span class="arithmatex">\(C = 10^6 \times 4.00 = \mathbf{4.00\text{ Mbps}}\)</span> (<span class="arithmatex">\(4{,}000{,}000\text{ bps}\)</span>). Even when a deep-space probe operates below the noise floor at <span class="arithmatex">\(\text{SNR} = 0.25\)</span> (<span class="arithmatex">\(-6.02\text{ dB}\)</span>), <span class="arithmatex">\(\log_2(1.25) \approx 0.3219\text{ bits/s/Hz}\)</span> still permits <span class="arithmatex">\(321.9\text{ kbps}\)</span> across a <span class="arithmatex">\(1\text{ MHz}\)</span> spread-spectrum channel.</p>
+<h3 id="monostatic-fourth-power-radar-range-and-relativistic-doppler-shift">Monostatic Fourth-Power Radar Range and Relativistic Doppler Shift</h3>
+<p>When a ground station or monostatic radar tracks a moving spacecraft or aircraft of radial velocity <span class="arithmatex">\(v\)</span> (in <span class="arithmatex">\(\text{m/s}\)</span>) and radar cross-section <span class="arithmatex">\(\sigma\)</span> (in <span class="arithmatex">\(\text{m}^2\)</span>) at range <span class="arithmatex">\(R\)</span>, wave compression shifts the carrier frequency <span class="arithmatex">\(f_0\)</span> (<code>[g] [Δf]</code>, which takes carrier frequency <span class="arithmatex">\(f_0\)</span> in Register <span class="arithmatex">\(Y\)</span> and closing velocity <span class="arithmatex">\(v\)</span> in Register <span class="arithmatex">\(X\)</span> to return the one-way Doppler shift <span class="arithmatex">\(\Delta f_{\text{1-way}} = f_0 v / c\)</span> in Register <span class="arithmatex">\(X\)</span> and the two-way monostatic radar Doppler shift <span class="arithmatex">\(\Delta f_{\text{2-way}} = 2 f_0 v / c\)</span> in Register <span class="arithmatex">\(Y\)</span>), while two-way spherical spreading (<span class="arithmatex">\(1 / (4\pi R^2)\)</span> outbound and <span class="arithmatex">\(1 / (4\pi R^2)\)</span> inbound) causes the radar echo power <span class="arithmatex">\(P_{\text{echo}}\)</span> to fall off inversely with the <strong>fourth power of range</strong> (<code>[f] [RCS]</code>):</p>
+<div class="arithmatex">\[\Delta f_{\text{1-way}} = \frac{f_0 \cdot v}{c}, \qquad \Delta f_{\text{2-way}} = \frac{2 \cdot f_0 \cdot v}{c}, \qquad P_{\text{echo}} = \frac{P_{\text{tx}} G^2 \lambda^2 \sigma}{(4\pi)^3 R^4} \implies \text{Radar Factor} = \frac{\sigma}{(4\pi)^3 R^4}\]</div>
+<p>For our CubeSat transmitting at <span class="arithmatex">\(f_0 = 437.0\text{ MHz}\)</span> (<span class="arithmatex">\(4.37 \times 10^8\text{ Hz}\)</span>) with a radial closure speed of <span class="arithmatex">\(v = 7500\text{ m/s}\)</span> (<code>437 [ENTER] 7500 [g] [Δf]</code>), the one-way telemetry downlink shift in Register <span class="arithmatex">\(X\)</span> is <span class="arithmatex">\(\Delta f_{\text{1-way}} = (4.37 \times 10^8 \times 7500) / 299{,}792{,}458 \approx \mathbf{10{,}932.6\text{ Hz}}\)</span> (<span class="arithmatex">\(10.93\text{ kHz}\)</span>), and the two-way monostatic radar shift in Register <span class="arithmatex">\(Y\)</span> is <span class="arithmatex">\(\Delta f_{\text{2-way}} \approx \mathbf{21{,}865.1\text{ Hz}}\)</span> (<span class="arithmatex">\(21.87\text{ kHz}\)</span>). Because two-way radar return scales with <span class="arithmatex">\(\sigma / ((4\pi)^3 R^4)\)</span> (<code>[f] [RCS]</code> with range <span class="arithmatex">\(R\)</span> in Register <span class="arithmatex">\(Y\)</span> and cross-section <span class="arithmatex">\(\sigma\)</span> in Register <span class="arithmatex">\(X\)</span>), doubling a radar's maximum detection range <span class="arithmatex">\(R_{\max}\)</span> requires increasing transmitter power sixteen-fold (<span class="arithmatex">\(2^4 = 16\)</span>, or <span class="arithmatex">\(+12.04\text{ dB}\)</span>).</p>
+<hr />
+<h2 id="rescuing-weak-telemetry-signals-and-auditing-channel-capacity-on-the-stack">Rescuing Weak Telemetry Signals and Auditing Channel Capacity on the Stack</h2>
+<p>The <strong>SC-50</strong> executes two-stage and multi-stage Friis noise cascades (<code>[NF]</code> taking <span class="arithmatex">\(F_1\)</span> in Register <span class="arithmatex">\(Z\)</span>, <span class="arithmatex">\(F_2\)</span> in Register <span class="arithmatex">\(Y\)</span>, and linear gain <span class="arithmatex">\(G_1\)</span> in Register <span class="arithmatex">\(X\)</span>), thermal noise floor evaluation (<code>[g] [Pₙ]</code>, <code>[g] [T₀]</code>, <code>[f] [kB]</code>), third-order intermodulation and spurious-free dynamic range (<code>[f] [IP3]</code>, <code>[g] [FDR]</code>), Shannon–Hartley channel capacity (<code>[g] [C/B]</code>), and Doppler / monostatic radar cross-section scaling (<code>[g] [Δf]</code>, <code>[f] [RCS]</code>) directly on the RPN stack, while providing <strong>Bidirectional Equation Solver Workspaces</strong> (<code>[g] [SOLVE]</code> / <code>[XEQ]</code>) for <code>[NF]</code> (<code>F = A + (B - 1) / G</code>, softkeys <code>[F]</code>, <code>[A]</code>, <code>[B]</code>, <code>[G]</code>) and <code>[g] [C/B]</code> (<code>C = B × LN(1 + S) / LN(2)</code>, softkeys <code>[c]</code>, <code>[B]</code>, <code>[S]</code>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Button</th>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">Governing Expression &amp; Solver Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>[NF]</code></td>
+<td style="text-align: left;">2-Stage Friis Factor</td>
+<td style="text-align: center;">Linear <span class="arithmatex">\(F_1\)</span></td>
+<td style="text-align: center;">Linear <span class="arithmatex">\(F_2\)</span></td>
+<td style="text-align: center;">Linear Gain <span class="arithmatex">\(G_1\)</span></td>
+<td style="text-align: left;">Stack: <span class="arithmatex">\(F_1 + (F_2 - 1) / G_1\)</span>; Solver: <code>F = A + (B - 1) / G</code> (<code>[F]</code>,<code>[A]</code>,<code>[B]</code>,<code>[G]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [Pₙ]</code></td>
+<td style="text-align: left;">Thermal Noise Floor</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Bandwidth <span class="arithmatex">\(B_{\text{Hz}}\)</span> (<span class="arithmatex">\(\text{Hz}\)</span>)</td>
+<td style="text-align: left;">Immediate stack: <span class="arithmatex">\(-173.977 + 10\log_{10}(B_{\text{Hz}})\)</span> (<span class="arithmatex">\(\text{dBm}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [T₀]</code> / <code>[f] [kB]</code></td>
+<td style="text-align: left;">Thermal Reference &amp; Boltzmann</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">Pushes <span class="arithmatex">\(T_0 = 290\text{ K}\)</span> (<code>[g] [T₀]</code>) or <span class="arithmatex">\(k_B = 1.380649 \times 10^{-23}\text{ J/K}\)</span> (<code>[f] [kB]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [FDR]</code> / <code>[f] [IP3]</code></td>
+<td style="text-align: left;">Spurious-Free Dynamic Range</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{IIP3}\)</span> (<span class="arithmatex">\(\text{dBm}\)</span>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(N_{\text{floor}}\)</span> (<span class="arithmatex">\(\text{dBm}\)</span>)</td>
+<td style="text-align: left;"><span class="arithmatex">\(\text{SFDR}_{\text{dB}} = \frac{2}{3}(\text{IIP3} - N_{\text{floor}})\)</span> (<code>[g] [FDR]</code>); cascaded IIP3 (<code>[f] [IP3]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [C/B]</code></td>
+<td style="text-align: left;">Shannon–Hartley Capacity</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Bandwidth <span class="arithmatex">\(B\)</span> (<span class="arithmatex">\(\text{Hz}\)</span>)</td>
+<td style="text-align: center;">Linear <span class="arithmatex">\(\text{SNR}\)</span></td>
+<td style="text-align: left;">Stack: <span class="arithmatex">\(C = B \log_2(1 + \text{SNR})\)</span>; Solver: <code>C = B × LOG2(1 + S)</code> (<code>[c]</code>,<code>[B]</code>,<code>[S]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [Δf]</code></td>
+<td style="text-align: left;">One-Way &amp; Two-Way Doppler</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Carrier <span class="arithmatex">\(f_0\)</span> (<span class="arithmatex">\(\text{MHz}\)</span>/<span class="arithmatex">\(\text{Hz}\)</span>)</td>
+<td style="text-align: center;">Velocity <span class="arithmatex">\(v\)</span> (<span class="arithmatex">\(\text{m/s}\)</span>)</td>
+<td style="text-align: left;"><span class="arithmatex">\(X' = f_0 v / c\)</span> (1-way <span class="arithmatex">\(\text{Hz}\)</span>), <span class="arithmatex">\(Y' = 2 f_0 v / c\)</span> (2-way radar <span class="arithmatex">\(\text{Hz}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[f] [RCS]</code></td>
+<td style="text-align: left;">Monostatic Radar Factor</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Range <span class="arithmatex">\(R\)</span> (<span class="arithmatex">\(\text{m}\)</span>)</td>
+<td style="text-align: center;">Cross-Section <span class="arithmatex">\(\sigma\)</span> (<span class="arithmatex">\(\text{m}^2\)</span>)</td>
+<td style="text-align: left;">Two-way geometric factor <span class="arithmatex">\(\sigma / ((4\pi)^3 R^4)\)</span> (and dB in <span class="arithmatex">\(Y\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comparing-masthead-lna-placement-against-coaxial-cable-loss-on-the-stack">Comparing Masthead LNA Placement Against Coaxial Cable Loss on the Stack</h3>
+<p>To verify the masthead LNA upgrade on the stack, the engineer evaluates the downstream cable-plus-receiver noise factor (<span class="arithmatex">\(F_2 = 3.9811, G_2 = 0.2512\)</span> for the <span class="arithmatex">\(6\text{ dB}\)</span> cable ahead of <span class="arithmatex">\(F_3 = 6.3096\)</span> for the <span class="arithmatex">\(8\text{ dB}\)</span> receiver, giving <span class="arithmatex">\(F_{23} = 25.119\)</span>), and then computes the total linear noise factor <span class="arithmatex">\(F_{\text{tot}}\)</span> with the masthead LNA (<span class="arithmatex">\(F_1 = 1.4125, G_1 = 100\)</span>) placed first versus placing a <span class="arithmatex">\(3\text{ dB}\)</span> cable (<span class="arithmatex">\(F = 2.0, G = 0.5\)</span>) before an LNA (<span class="arithmatex">\(F = 1.25, G = 20\)</span>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>3.9811 [ENTER] 6.3096 [ENTER] 0.2512 [NF]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(25.118\)</span></td>
+<td style="text-align: left;">Cable (<span class="arithmatex">\(6\text{ dB}\)</span>) + Receiver (<span class="arithmatex">\(8\text{ dB}\)</span>) combined factor <span class="arithmatex">\(F_{23} = 25.118\)</span> (<span class="arithmatex">\(14.0\text{ dB}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1.4125 [x⇄y] 100 [NF]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.654\)</span></td>
+<td style="text-align: left;">Masthead LNA (<span class="arithmatex">\(F_1 = 1.4125, G_1 = 100\)</span>) ahead of <span class="arithmatex">\(F_{23}\)</span> yields <span class="arithmatex">\(F_{\text{tot}} = 1.654\)</span> (<span class="arithmatex">\(2.18\text{ dB}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1.25 [ENTER] 2 [ENTER] 20 [NF]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.654\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3\)</span></td>
+<td style="text-align: left;">Reference check: LNA (<span class="arithmatex">\(F=1.25, G=20\)</span>) before <span class="arithmatex">\(3\text{ dB}\)</span> coax (<span class="arithmatex">\(F=2\)</span>) gives <span class="arithmatex">\(F_{\text{tot}} = 1.30\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>2 [ENTER] 1.25 [ENTER] 0.5 [NF]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.654\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(2.5\)</span></strong></td>
+<td style="text-align: left;">Reversing order (<span class="arithmatex">\(3\text{ dB}\)</span> coax before LNA) degrades noise factor to <span class="arithmatex">\(F_{\text{tot}} = 2.50\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="evaluating-thermal-noise-shannon-capacity-and-orbital-doppler-shift-on-the-stack">Evaluating Thermal Noise, Shannon Capacity, and Orbital Doppler Shift on the Stack</h3>
+<p>Next, the engineer evaluates the thermal noise floor over the <span class="arithmatex">\(B = 1.0\text{ MHz}\)</span> (<span class="arithmatex">\(10^6\text{ Hz}\)</span>) downlink channel (<code>[g] [Pₙ]</code>), checks the receiver's Spurious-Free Dynamic Range for <span class="arithmatex">\(\text{IIP3} = +8.0\text{ dBm}\)</span> (<code>[g] [FDR]</code>), calculates the Shannon–Hartley channel capacity at linear <span class="arithmatex">\(\text{SNR} = 15\)</span> (<code>[g] [C/B]</code>), and finds the one-way and two-way Doppler shifts at <span class="arithmatex">\(f_0 = 437\text{ MHz}\)</span> and <span class="arithmatex">\(v = 7500\text{ m/s}\)</span> (<code>[g] [Δf]</code>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>8 [ENTER] 1000000 [g] [Pₙ]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(8\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-113.977\)</span></td>
+<td style="text-align: left;">Thermal noise floor <span class="arithmatex">\(N_{\text{floor}} = -113.98\text{ dBm}\)</span> at <span class="arithmatex">\(B = 1\text{ MHz}\)</span>; <span class="arithmatex">\(\text{IIP3} = 8\)</span> in <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [FDR]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(81.318\)</span></td>
+<td style="text-align: left;">Spurious-Free Dynamic Range <span class="arithmatex">\(\text{SFDR} = \frac{2}{3}(8 - (-113.977)) = 81.32\text{ dB}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1000000 [ENTER] 15 [g] [C/B]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(81.318\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4000000\)</span></td>
+<td style="text-align: left;">Shannon capacity <span class="arithmatex">\(C = 10^6 \log_2(1 + 15) = 4.00\text{ Mbps}\)</span> (<span class="arithmatex">\(4{,}000{,}000\text{ bps}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>437 [ENTER] 7500 [g] [Δf]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(81.318\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4000000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(21865.1\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(10932.6\)</span></strong></td>
+<td style="text-align: left;">One-way downlink shift <span class="arithmatex">\(\Delta f = 10{,}932.6\text{ Hz}\)</span> in <span class="arithmatex">\(X\)</span>; two-way radar shift <span class="arithmatex">\(21{,}865.1\text{ Hz}\)</span> in <span class="arithmatex">\(Y\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="back-solving-required-snr-and-maximum-stage-noise-factor-in-the-solver-workspace">Back-Solving Required SNR and Maximum Stage Noise Factor in the Solver Workspace</h3>
+<p>Suppose a high-speed X-band payload downlink must deliver a target error-free data rate of <span class="arithmatex">\(C = 50\text{ Mbps}\)</span> (<span class="arithmatex">\(5 \times 10^7\text{ bps}\)</span>) across a channel bandwidth of <span class="arithmatex">\(B = 20\text{ MHz}\)</span> (<span class="arithmatex">\(2 \times 10^7\text{ Hz}\)</span>), and the engineer needs the minimum required linear Signal-to-Noise Ratio <span class="arithmatex">\(S\)</span> (<code>[S]</code>), while also solving backward in the <code>[NF]</code> workspace (<code>F = A + (B - 1) / G</code>) for the maximum allowable second-stage noise factor <span class="arithmatex">\(B\)</span> (<code>[B]</code>) when <span class="arithmatex">\(F_{\text{tot}} = 1.6537\)</span>, <span class="arithmatex">\(A = 1.4125\)</span>, and <span class="arithmatex">\(G = 100\)</span>. Opening the <code>[g] [C/B]</code> and <code>[NF]</code> Solver Workspaces resolves both inverse requirements directly:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Solver Display / Register X</th>
+<th style="text-align: left;">What Happens in the <code>[g] [C/B]</code> &amp; <code>[NF]</code> Solver Workspaces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>[g] [C/B]</code></td>
+<td style="text-align: center;"><code>C=B×LN(1+S)/LN(2)</code></td>
+<td style="text-align: left;">Open the Shannon–Hartley (<code>C/B</code>) Solver Workspace with softkeys <code>[c]</code>, <code>[B]</code>, <code>[S]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>5 [E] 7 [c]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(5.0000 \times 10^7\)</span></td>
+<td style="text-align: left;">Store required data rate <span class="arithmatex">\(C = 50\text{ Mbps}\)</span> (<span class="arithmatex">\(5 \times 10^7\text{ bps}\)</span>) into softkey <code>[c]</code> (<code>[LFU0]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>2 [E] 7 [B]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.0000 \times 10^7\)</span></td>
+<td style="text-align: left;">Store channel bandwidth <span class="arithmatex">\(B = 20\text{ MHz}\)</span> (<span class="arithmatex">\(2 \times 10^7\text{ Hz}\)</span>) into softkey <code>[B]</code> (<code>[LFU1]</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [SOLVE] [S]</code></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(4.6569\)</span></strong></td>
+<td style="text-align: left;">Solve backward for minimum linear <span class="arithmatex">\(\text{SNR} = 2^{50/20} - 1 = 2^{2.5} - 1 = \mathbf{4.6569}\)</span> (<span class="arithmatex">\(6.68\text{ dB}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[NF]</code></td>
+<td style="text-align: center;"><code>F=A+(B-1)/G</code></td>
+<td style="text-align: left;">Open the Friis Noise Factor (<code>NF</code>) Solver Workspace with softkeys <code>[F]</code>, <code>[A]</code>, <code>[B]</code>, <code>[G]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1.6537 [F] 1.4125 [A] 100 [G]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(100.0000\)</span></td>
+<td style="text-align: left;">Store target <span class="arithmatex">\(F_{\text{tot}} = 1.6537\)</span>, LNA <span class="arithmatex">\(F_1 = 1.4125\)</span>, and LNA gain <span class="arithmatex">\(G_1 = 100\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [SOLVE] [B]</code></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(25.1200\)</span></strong></td>
+<td style="text-align: left;">Solve backward for maximum downstream noise factor <span class="arithmatex">\(F_{23} = \mathbf{25.12}\)</span> (<span class="arithmatex">\(14.0\text{ dB}\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="try-it-on-the-stack_2">Try It on the Stack</h3>
+<p>Test your command of Friis receiver cascades, dynamic range, Shannon capacity, and radar Doppler scaling with these three telemetry and radar exercises:</p>
+<ol>
+<li><strong>Three-Stage Receiver Chain and Narrowband SFDR:</strong> Evaluate a three-stage receiver with Stage 1 (<span class="arithmatex">\(F_1 = 1.25, G_1 = 20\)</span>), Stage 2 (<span class="arithmatex">\(F_2 = 2.0, G_2 = 0.5\)</span>), and Stage 3 (<span class="arithmatex">\(F_3 = 4.0\)</span>) by cascading Stage 2 + Stage 3 first (<code>2 [ENTER] 4 [ENTER] 0.5 [NF]</code>) and then placing Stage 1 ahead of that result (<code>1.25 [x⇄y] 20 [NF]</code>). Then compute the thermal noise floor and <span class="arithmatex">\(\text{SFDR}\)</span> for <span class="arithmatex">\(\text{IIP3} = +12.0\text{ dBm}\)</span> over a <span class="arithmatex">\(B = 200\text{ kHz}\)</span> channel (<code>12 [ENTER] 200000 [g] [Pₙ] [g] [FDR]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(F_{\text{tot}} = \mathbf{1.60}\)</span>, <span class="arithmatex">\(N_{\text{floor}} \approx \mathbf{-120.97\text{ dBm}}\)</span>, and <span class="arithmatex">\(\text{SFDR} \approx \mathbf{88.65\text{ dB}}\)</span>.)</em></li>
+<li><strong>20 MHz Wireless Local Loop Shannon Capacity:</strong> A <span class="arithmatex">\(B = 20\text{ MHz}\)</span> (<span class="arithmatex">\(2 \times 10^7\text{ Hz}\)</span>) wireless backhaul operates at a linear Signal-to-Noise Ratio of <span class="arithmatex">\(\text{SNR} = 31.0\)</span> (<span class="arithmatex">\(14.91\text{ dB}\)</span>). Find the theoretical Shannon capacity in megabits per second (<code>2 [E] 7 [ENTER] 31 [g] [C/B] 1 [E] 6 [÷]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\(C = \mathbf{100.0\text{ Mbps}}\)</span> at <span class="arithmatex">\(5.0\text{ bits/s/Hz}\)</span>.)</em></li>
+<li><strong>X-Band Weather Radar Doppler Shift and Cross-Section Factor:</strong> An X-band radar at <span class="arithmatex">\(f_0 = 10.0\text{ GHz}\)</span> (<span class="arithmatex">\(10{,}000\text{ MHz}\)</span>) tracks an aircraft of cross-section <span class="arithmatex">\(\sigma = 2.5\text{ m}^2\)</span> at range <span class="arithmatex">\(R = 5000\text{ m}\)</span> moving at radial speed <span class="arithmatex">\(v = 150\text{ m/s}\)</span>. Compute the one-way and two-way Doppler shifts (<code>10000 [ENTER] 150 [g] [Δf]</code>) and the two-way geometric radar factor (<code>5000 [ENTER] 2.5 [f] [RCS]</code>). <em>(Verified Register <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> results: <span class="arithmatex">\(\Delta f_{\text{1-way}} \approx \mathbf{5{,}003.5\text{ Hz}}\)</span>, <span class="arithmatex">\(\Delta f_{\text{2-way}} \approx \mathbf{10{,}006.9\text{ Hz}}\)</span>, and geometric factor <span class="arithmatex">\(\sigma / ((4\pi)^3 R^4) \approx \mathbf{2.016 \times 10^{-18}}\)</span> or <span class="arithmatex">\(\mathbf{-176.96\text{ dB}}\)</span>.)</em></li>
+</ol>
+<p>Having traced electromagnetic waves from coaxial matching networks through free-space Fresnel zones and low-noise receiver cascades in Unit V, we step into the analytical wet lab in <a href="../06-sc60-chemistry-wetlab/">Unit VI: Stoichiometry, Chemical Equilibrium &amp; Wet-Lab Analytics</a> to count molecules by weighing grams, stabilize enzymatic buffers, and measure protein concentration with ultraviolet light.</p>
 
 
 

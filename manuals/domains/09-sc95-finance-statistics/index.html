@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An applied guide to the William Kahan 5-key TVM system, discounted cash flows (NPV/IRR), and Six Sigma process capability on the StackCalc 95.">
+        <meta name="description" content="First-principles mathematics of compound discounting, loan amortization, capital budgeting, fixed-income bond duration, Black–Scholes–Merton option pricing, and Six Sigma process capability across Chapters 25–27.">
       
       
         <meta name="author" content="StackCalc Engineering">
@@ -22,7 +22,7 @@
     
     
       
-        <title>SC-95 Quantitative Finance, Actuarial Science & Six Sigma Handbook - StackCalc32</title>
+        <title>Unit IX: Quantitative Finance, Fixed-Income Valuation & Six Sigma Quality - StackCalc32</title>
       
     
     
@@ -67,13 +67,13 @@
   
   <meta property="og:site_name" content="StackCalc32">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="SC-95 Quantitative Finance, Actuarial Science &amp; Six Sigma Handbook">
-  <meta property="og:description" content="An applied guide to the William Kahan 5-key TVM system, discounted cash flows (NPV/IRR), and Six Sigma process capability on the StackCalc 95.">
+  <meta property="og:title" content="Unit IX: Quantitative Finance, Fixed-Income Valuation &amp; Six Sigma Quality">
+  <meta property="og:description" content="First-principles mathematics of compound discounting, loan amortization, capital budgeting, fixed-income bond duration, Black–Scholes–Merton option pricing, and Six Sigma process capability across Chapters 25–27.">
   <meta property="og:url" content="https://www.stackcalc.io/manuals/domains/09-sc95-finance-statistics/">
   <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SC-95 Quantitative Finance, Actuarial Science &amp; Six Sigma Handbook">
-  <meta name="twitter:description" content="An applied guide to the William Kahan 5-key TVM system, discounted cash flows (NPV/IRR), and Six Sigma process capability on the StackCalc 95.">
+  <meta name="twitter:title" content="Unit IX: Quantitative Finance, Fixed-Income Valuation &amp; Six Sigma Quality">
+  <meta name="twitter:description" content="First-principles mathematics of compound discounting, loan amortization, capital budgeting, fixed-income bond duration, Black–Scholes–Merton option pricing, and Six Sigma process capability across Chapters 25–27.">
   <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -120,7 +120,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sc-95-quantitative-finance-actuarial-science-six-sigma-handbook" class="md-skip">
+        <a href="#unit-ix-quantitative-finance-fixed-income-valuation-six-sigma-quality" class="md-skip">
           Skip to content
         </a>
       
@@ -158,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SC-95 Quantitative Finance, Actuarial Science & Six Sigma Handbook
+              Unit IX: Quantitative Finance, Fixed-Income Valuation & Six Sigma Quality
             
           </span>
         </div>
@@ -2914,248 +2914,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-the-cost-of-tomorrow-time-uncertainty-and-capital" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. The Cost of Tomorrow: Time, Uncertainty, and Capital
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. The Cost of Tomorrow: Time, Uncertainty, and Capital">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-not-just-use-an-excel-spreadsheet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Not Just Use an Excel Spreadsheet?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-core-concepts-how-financial-analysts-and-quality-engineers-think" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Core Concepts: How Financial Analysts and Quality Engineers Think
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Core Concepts: How Financial Analysts and Quality Engineers Think">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#concept-1-the-5-key-time-value-of-money-tvm-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 1: The 5-Key Time Value of Money (TVM) Engine
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Concept 1: The 5-Key Time Value of Money (TVM) Engine">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-cash-flow-sign-convention-money-in-vs-money-out" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Cash-Flow Sign Convention (Money In vs. Money Out)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concept-2-discounted-cash-flows-npv-irr" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 2: Discounted Cash Flows (NPV &amp; IRR)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Concept 2: Discounted Cash Flows (NPV & IRR)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#net-present-value-npv" class="md-nav__link">
-    <span class="md-ellipsis">
-      Net Present Value (NPV)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#internal-rate-of-return-irr" class="md-nav__link">
-    <span class="md-ellipsis">
-      Internal Rate of Return (IRR)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concept-3-taming-the-bell-curve-six-sigma-c_pk" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 3: Taming the Bell Curve (Six Sigma \(C_{pk}\))
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Concept 3: Taming the Bell Curve (Six Sigma \(C_{pk}\))">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-process-potential-c_p" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Process Potential (\(C_p\))
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-process-capability-index-c_pk" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Process Capability Index (\(C_{pk}\))
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-real-world-field-walkthroughs" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Real-World Field Walkthroughs
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Real-World Field Walkthroughs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#field-case-1-30-year-mortgage-payment-extra-principal-bogleheads" class="md-nav__link">
-    <span class="md-ellipsis">
-      Field Case 1: 30-Year Mortgage Payment &amp; Extra Principal (Bogleheads)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Field Case 1: 30-Year Mortgage Payment & Extra Principal (Bogleheads)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-solve-it-on-the-sc-95" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to Solve It on the SC-95
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-case-2-machining-tolerance-audit-c_pk-on-a-stamping-line" class="md-nav__link">
-    <span class="md-ellipsis">
-      Field Case 2: Machining Tolerance Audit (\(C_{pk}\)) on a Stamping Line
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Field Case 2: Machining Tolerance Audit (\(C_{pk}\)) on a Stamping Line">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step-mechanics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step-by-Step Mechanics
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-try-it-yourself-practice-problems" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Try It Yourself: Practice Problems
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Try It Yourself: Practice Problems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problem-1-retirement-nest-egg-future-value" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem 1: Retirement Nest Egg (Future Value)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problem-2-corporate-equipment-net-present-value-npv" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem 2: Corporate Equipment Net Present Value (NPV)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problem-3-standard-normal-distribution-quantile-z-score" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem 3: Standard Normal Distribution Quantile (\(Z\)-Score)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -3169,150 +2927,630 @@
                   
 
 
-<h1 id="sc-95-quantitative-finance-actuarial-science-six-sigma-handbook">SC-95 Quantitative Finance, Actuarial Science &amp; Six Sigma Handbook</h1>
-<blockquote>
-<p><strong>Who this is for:</strong> Anyone who wants to understand the mathematics of capital, debt, and quality: how financial analysts value real estate and corporate acquisitions in their heads, and how industrial engineers use statistics to prevent factory defects.</p>
-</blockquote>
-<hr />
-<h2 id="1-the-cost-of-tomorrow-time-uncertainty-and-capital">1. The Cost of Tomorrow: Time, Uncertainty, and Capital</h2>
-<p>Here is a question with a seemingly obvious answer:</p>
-<blockquote>
-<p><em>Would you rather have <span class="arithmatex">\(\$10{,}000\)</span> in cash handed to you today, or <span class="arithmatex">\(\$10{,}000\)</span> promised to you ten years from today?</em></p>
-</blockquote>
-<p>Everyone instinctively chooses the money today. But why?</p>
-<p>Even if the future promise is <span class="arithmatex">\(100\%\)</span> guaranteed by a government, money today is fundamentally more valuable than money in the future for two mathematical reasons:
-1. <strong>Opportunity Cost:</strong> If you have the <span class="arithmatex">\(\$10{,}000\)</span> today, you can invest it in a business or bank account earning compound interest. Over ten years at <span class="arithmatex">\(7\%\)</span> annual return, that <span class="arithmatex">\(\$10{,}000\)</span> doubles into almost <span class="arithmatex">\(\$20{,}000\)</span>.
-2. <strong>Inflation:</strong> Over a decade, the rising price of goods erodes purchasing power; ten years from now, <span class="arithmatex">\(\$10{,}000\)</span> buys substantially fewer groceries or gallons of fuel.</p>
-<p>The mathematics of finance begins with this single realization: <strong>cash flows occurring at different points in time cannot be added together.</strong> A dollar in Year 10 is not the same currency as a dollar in Year 0. To compare them, you must translate future dollars backward into present dollars through <strong>discounting</strong>.</p>
-<p>In corporate boardrooms, real estate acquisitions, and industrial factories, financial and quality decisions are made under severe time pressure:
-- What monthly payment amortizes a <span class="arithmatex">\(\$450{,}000\)</span> commercial mortgage at <span class="arithmatex">\(6.5\%\)</span> interest?
-- If a solar panel array costs <span class="arithmatex">\(\$80{,}000\)</span> to install and saves <span class="arithmatex">\(\$12{,}000\)</span> a year for a decade, what is its true Internal Rate of Return (<span class="arithmatex">\(IRR\)</span>)?
-- On an automotive stamping line producing ten thousand engine valves an hour, is the machinery capable of meeting tolerance limits without generating costly defective scrap?</p>
-<p>In 1981, Hewlett-Packard introduced the <strong>HP-12C</strong>, designed with guidance from Turing Award winner Prof. William Kahan. It became the most enduring financial calculator in history, an icon carried into trading pits and boardrooms for decades.</p>
-<p>The <strong>StackCalc 95 (SC-95)</strong> preserves this gold-standard financial workflow while fusing it with modern Six Sigma process capability indices (<span class="arithmatex">\(C_p, C_{pk}\)</span>) and the complete continuous probability distribution suite of the statistical language <strong>R</strong> (<code>pnorm</code>, <code>qnorm</code>, <code>pt</code>, <code>qt</code>) directly within a 4-level RPN stack.</p>
-<h3 id="why-not-just-use-an-excel-spreadsheet">Why Not Just Use an Excel Spreadsheet?</h3>
-<ul>
-<li><strong>The Negotiation and Boardroom Reality:</strong> In a high-stakes commercial lending negotiation or corporate acquisition review, pulling up a laptop and fumbling through a messy spreadsheet with thirty nested tabs and broken circular references projects hesitation. A CFO or analyst who can verify an internal rate of return, bond yield to maturity, or balloon payment in six tactile clicks commands the room with authoritative confidence.</li>
-<li><strong>Strict Proctored Professional Exams:</strong> The Chartered Financial Analyst (CFA) Institute, Certified Financial Planner (CFP) Board, and Society of Actuaries (SOA) enforce the strictest testing security in the academic world: laptops, tablets, smartphones, and graphing tools are completely prohibited from exam halls. Candidates must master a dedicated, non-communicating financial calculator.</li>
-<li><strong>Factory Floor Mobility:</strong> An ASQ Six Sigma Black Belt auditing a vibrating manufacturing stamping floor cannot carry a laptop through oily walkways. One touch on <code>[CPK]</code> on the SC-95 immediately reports process capability and centering offsets right at the machine.</li>
-</ul>
-<hr />
-<h2 id="2-core-concepts-how-financial-analysts-and-quality-engineers-think">2. Core Concepts: How Financial Analysts and Quality Engineers Think</h2>
-<h3 id="concept-1-the-5-key-time-value-of-money-tvm-engine">Concept 1: The 5-Key Time Value of Money (TVM) Engine</h3>
-<p>The foundation of all mortgages, car loans, leases, retirement accounts, and bond valuations rests on a single mathematical relationship connecting five fundamental variables:</p>
-<div class="arithmatex">\[PV \cdot (1 + i)^N + PMT \cdot \left[\frac{(1 + i)^N - 1}{i}\right] \cdot (1 + i \cdot S) + FV = 0\]</div>
-<ul>
-<li><strong><span class="arithmatex">\(N\)</span>:</strong> Total number of payment periods (e.g. 360 months for a 30-year mortgage).</li>
-<li><strong><span class="arithmatex">\(i\)</span>:</strong> Interest rate per compounding period (e.g. <span class="arithmatex">\(6.0\%\)</span> annual rate compounded monthly <span class="arithmatex">\(\implies i = 6.0 / 12 = 0.50\%\)</span>).</li>
-<li><strong><span class="arithmatex">\(PV\)</span>:</strong> Present Value (the lump-sum cash amount today).</li>
-<li><strong><span class="arithmatex">\(PMT\)</span>:</strong> Periodic Payment (the recurring amount paid each period).</li>
-<li><strong><span class="arithmatex">\(FV\)</span>:</strong> Future Value (the final balloon balance at the end).</li>
-<li><strong><span class="arithmatex">\(S\)</span>:</strong> Timing switch (<span class="arithmatex">\(0\)</span> for <code>END</code> of period, <span class="arithmatex">\(1\)</span> for <code>BEGIN</code> of period).</li>
-</ul>
-<p>This equation is a five-way balance. If you know any four of the variables, the SC-95's TVM engine solves for the fifth unknown variable using Brent's root-finding algorithm.</p>
-<h4 id="the-cash-flow-sign-convention-money-in-vs-money-out">The Cash-Flow Sign Convention (Money In vs. Money Out)</h4>
-<p>Why does William Kahan's TVM system require one variable to be negative?</p>
-<p>Because <strong>money cannot be created out of thin air</strong>:
-- <strong>Cash received by you is POSITIVE (<span class="arithmatex">\(+\)</span>).</strong>
-- <strong>Cash paid out by you is NEGATIVE (<span class="arithmatex">\(-\)</span>).</strong></p>
-<p>If a bank lends you <span class="arithmatex">\(\$300{,}000\)</span> to buy a home, that cash is paid to you today: <strong><span class="arithmatex">\(PV = +300{,}000\)</span></strong>. Every month, when you write a mortgage check that leaves your bank account, that payment is an outflow: <strong><span class="arithmatex">\(PMT = -1{,}896.20\)</span></strong>.</p>
-<p>If you treat both as positive numbers, compound interest formulas collapse into nonsensical negative interest rates! Enforcing the sign convention reflects the true physics of accounting.</p>
-<h3 id="concept-2-discounted-cash-flows-npv-irr">Concept 2: Discounted Cash Flows (NPV &amp; IRR)</h3>
-<p>In corporate finance, companies invest money today to earn unpredictable streams of cash in the future.</p>
-<h4 id="net-present-value-npv">Net Present Value (NPV)</h4>
-<p>To find out if a project is worth doing, you discount every future cash flow (<span class="arithmatex">\(CF_t\)</span>) back to the present day using the company's required cost of capital rate (<span class="arithmatex">\(r\)</span>):</p>
-<div class="arithmatex">\[NPV = CF_0 + \frac{CF_1}{(1+r)^1} + \frac{CF_2}{(1+r)^2} + \dots + \frac{CF_k}{(1+r)^k}\]</div>
-<ul>
-<li>If <strong><span class="arithmatex">\(NPV &gt; 0\)</span></strong>, the investment generates more return than the cost of capital: <strong>Do the project!</strong></li>
-<li>If <strong><span class="arithmatex">\(NPV &lt; 0\)</span></strong>, the project destroys shareholder value: <strong>Reject it!</strong></li>
-</ul>
-<h4 id="internal-rate-of-return-irr">Internal Rate of Return (IRR)</h4>
-<p>The <strong>Internal Rate of Return (<span class="arithmatex">\(IRR\)</span>)</strong> is the exact annual interest rate at which <span class="arithmatex">\(NPV\)</span> equals zero. It tells you the exact break-even yield of the project.</p>
-<h3 id="concept-3-taming-the-bell-curve-six-sigma-c_pk">Concept 3: Taming the Bell Curve (Six Sigma <span class="arithmatex">\(C_{pk}\)</span>)</h3>
-<p>In industrial manufacturing, parts coming off an assembly line are never 100% identical. Natural vibrations, tool wear, and temperature fluctuations cause dimensions to vary in a Gaussian "bell curve" distribution with an average (<span class="arithmatex">\(\mu\)</span>) and standard deviation (<span class="arithmatex">\(\sigma\)</span>).</p>
-<p>Engineering blueprints define two boundary lines:
-- <strong>Lower Specification Limit (<span class="arithmatex">\(LSL\)</span>)</strong>
-- <strong>Upper Specification Limit (<span class="arithmatex">\(USL\)</span>)</strong></p>
-<p>Any part whose dimension falls outside these limits is defective scrap.</p>
-<p>How do engineers evaluate whether a machine is capable of consistently meeting tolerances?</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>      LSL                         Target                        USL
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>       |                            |                            |
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>       |                   *--*     |                            |
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>       |                *        *  |                            |
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>       |              *            *|                            |
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>       |            *               |*                           |
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>       |          *                 |  *                         |
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    ---+--------*-------------------+----*-----------------------+---
-</span></code></pre></div>
-<p>They use two <strong>Process Capability Indices</strong>:</p>
-<h4 id="1-process-potential-c_p">1. Process Potential (<span class="arithmatex">\(C_p\)</span>)</h4>
-<p>Measures the pure width of the process spread (<span class="arithmatex">\(6\sigma\)</span>) relative to the allowable tolerance band:</p>
-<div class="arithmatex">\[C_p = \frac{USL - LSL}{6\sigma}\]</div>
-<p>If <span class="arithmatex">\(C_p = 1.0\)</span>, the process width exactly equals the tolerance band. If <span class="arithmatex">\(C_p &gt; 1.33\)</span>, the process is capable of four-sigma or higher quality.</p>
-<h4 id="2-process-capability-index-c_pk">2. Process Capability Index (<span class="arithmatex">\(C_{pk}\)</span>)</h4>
-<p>What if the process is narrow, but its center has drifted toward one of the edges? <span class="arithmatex">\(C_p\)</span> cannot detect this drift, but <strong><span class="arithmatex">\(C_{pk}\)</span></strong> measures the distance from the average to the nearest specification limit:</p>
-<div class="arithmatex">\[C_{pk} = \min\left(\frac{USL - \mu}{3\sigma}, \frac{\mu - LSL}{3\sigma}\right)\]</div>
-<p>In modern manufacturing:
-- <strong><span class="arithmatex">\(C_{pk} &lt; 1.0\)</span>:</strong> The process is actively producing defects.
-- <strong><span class="arithmatex">\(C_{pk} = 1.33\)</span>:</strong> Industrial standard (<span class="arithmatex">\(4\sigma\)</span>, fewer than <span class="arithmatex">\(63\)</span> defects per million parts).
-- <strong><span class="arithmatex">\(C_{pk} \ge 2.0\)</span>:</strong> World-Class Six Sigma (<span class="arithmatex">\(6\sigma\)</span>, fewer than <span class="arithmatex">\(3.4\)</span> defects per million parts!).</p>
-<hr />
-<h2 id="3-real-world-field-walkthroughs">3. Real-World Field Walkthroughs</h2>
-<h3 id="field-case-1-30-year-mortgage-payment-extra-principal-bogleheads">Field Case 1: 30-Year Mortgage Payment &amp; Extra Principal (<code>Bogleheads</code>)</h3>
-<p>A homebuyer borrows <span class="arithmatex">\(\$400{,}000\)</span> on a 30-year fixed mortgage at an annual interest rate of <span class="arithmatex">\(6.50\%\)</span>.
-1. What is the standard monthly principal and interest payment (<span class="arithmatex">\(PMT\)</span>)?
-2. If the homeowner pays an extra <span class="arithmatex">\(\$300\text{ per month}\)</span> toward principal (<span class="arithmatex">\(PMT = \$2{,}828.31\)</span>), how many years earlier will the mortgage be paid off?</p>
-<h4 id="how-to-solve-it-on-the-sc-95">How to Solve It on the SC-95</h4>
+<h1 id="unit-ix-quantitative-finance-fixed-income-valuation-six-sigma-quality">Unit IX: Quantitative Finance, Fixed-Income Valuation &amp; Six Sigma Quality</h1>
+<p>In 1202, Leonardo of Pisa (known to posterity as Fibonacci) posed a foundational question in Chapters 12 and 13 of <em>Liber Abaci</em>: if a merchant or municipal treasury is promised a series of periodic cash payments over future years while productive capital earns compound interest each year, what single lump sum paid today is its fair equivalent? In physics and engineering, dimensional analysis forbids adding quantities that do not share the same physical units; in quantitative finance, a parallel conservation law forbids adding or subtracting cash flows that occur at different points in time until each flow is transported to a common reference epoch. At a <span class="arithmatex">\(6.0\%\)</span> annual compound return, an investment of <span class="arithmatex">\(\$10{,}000\)</span> today grows over ten years to <span class="arithmatex">\(V_{10} = 10{,}000(1.06)^{10} = \$17{,}908.48\)</span>, whereas a promise of <span class="arithmatex">\(\$10{,}000\)</span> delivered ten years in the future discounts back to a present purchasing power of <span class="arithmatex">\(V_0 = 10{,}000(1.06)^{-10} = \$5{,}583.95\)</span>.</p>
+<p>Seven centuries after Fibonacci, Frederick R. Macaulay's 1938 treatise for the National Bureau of Economic Research (<em>Some Theoretical Problems Suggested by the Movements of Interest Rates, Bond Yields and Stock Prices in the United States Since 1856</em>) generalized multi-period discounting to fixed-income bond pricing ([g] [BND]), cash-flow amortization timelines ([TVM], [f] [AMR]), corporate capital budgeting ([g] [CF]), and the weighted-average maturity of cash flows now known as Macaulay Duration. In 1973, Fischer Black, Myron Scholes, and Robert C. Merton extended continuous-time discounting into stochastic calculus, proving that a dynamically rebalanced delta-hedged portfolio of underlying shares and risk-free debt eliminates Wiener diffusion risk and prices European options via the cumulative standard normal integral ([g] [pN]). Notice how the continuous-time discount factor <span class="arithmatex">\(e^{-rT}\)</span> that transports option strike prices backward in time is the exact mathematical twin of exponential physical relaxation across our earlier field instruments: RC capacitor discharge <span class="arithmatex">\(e^{-t/\tau}\)</span> in <a href="../03-sc16-systems-cyber/">Unit III: Digital Systems, Bitwise Logic &amp; Embedded Timing</a>, Beer–Lambert optical attenuation <span class="arithmatex">\(10^{-\varepsilon \ell c}\)</span> and Arrhenius activation <span class="arithmatex">\(e^{-E_a/(RT)}\)</span> in <a href="../06-sc60-chemistry-wetlab/">Unit VI: Stoichiometry, Chemical Equilibrium &amp; Wet-Lab Analytics</a>, and first-order pharmacokinetic drug elimination <span class="arithmatex">\(e^{-k_e t}\)</span> in <a href="../08-sc80-clinical-pharmacy/">Unit VIII: Clinical Dosing, Renal Clearance &amp; Pharmacokinetics</a>.</p>
+<p>While financial economists formalized the time value of capital and derivative risk, industrial engineers and statisticians developed the mathematics of commercial unit economics and statistical quality control. In 1908, William Sealy Gosset—publishing under the pseudonym "Student" while working as Head Experimental Brewer at Arthur Guinness &amp; Son in Dublin—derived the heavy-tailed small-sample <span class="arithmatex">\(t\)</span>-distribution ([rt], [f] [qt], [g] [pt]), complementing Karl Pearson's 1900 chi-square goodness-of-fit law ([rχ²], [f] [qχ²], [g] [pχ²]) and George W. Snedecor's variance-ratio <span class="arithmatex">\(F\)</span>-distribution ([rF], [f] [qF], [g] [pF]). On May 16, 1924, Walter A. Shewhart drafted a one-page memorandum at Bell Telephone Laboratories introducing the statistical control chart ([g] [SPC]) to separate random common-cause variation from assignable mechanical drift. Six decades later, Motorola engineers Bill Smith and Mikel Harry synthesized Shewhart's dispersion limits with blueprint engineering tolerances into the Six Sigma process capability indices <span class="arithmatex">\(C_p\)</span> and <span class="arithmatex">\(C_{pk}\)</span> ([g] [Cpk]).</p>
+<p>To unite multi-period cash-flow discounting, fixed-income and option valuation, R-style probability distributions, and Six Sigma quality engineering without algebraic rearrangement or pre-chewed mental arithmetic, the <strong>SC-95</strong> is built on StackCalc's three-pillar architecture:</p>
 <ol>
-<li><strong>Calculate Standard Monthly Payment:</strong></li>
-<li>Set mode to <code>END</code> of period.</li>
-<li>Number of periods: <span class="arithmatex">\(30 \times 12 = 360 \implies\)</span> <code>360</code> <code>[f] [N]</code>.</li>
-<li>Monthly interest rate: <span class="arithmatex">\(6.50\% / 12 = 0.54167\% \implies\)</span> <code>6.5</code> <code>[ENTER]</code> <code>12</code> <code>[÷]</code> <code>[f] [I%YR]</code>.</li>
-<li>Loan amount: <code>400000</code> <code>[f] [PV]</code>.</li>
-<li>Final balance: <code>0</code> <code>[f] [FV]</code>.</li>
-<li>Solve for payment: Tap <code>[f] [PMT]</code>.</li>
-<li>Register <span class="arithmatex">\(X\)</span> displays: <strong><code>-$2,528.31</code></strong> (Monthly payment).</li>
-<li><strong>Calculate Accelerated Payoff with <span class="arithmatex">\(+\$300\)</span> Extra:</strong></li>
-<li>Enter new payment: <code>-2828.31</code> <code>[f] [PMT]</code>.</li>
-<li>Solve for remaining periods: Tap <code>[f] [N]</code>.</li>
-<li>Register <span class="arithmatex">\(X\)</span> displays: <strong><code>275.8 months</code></strong> (<span class="arithmatex">\(23.0\text{ years}\)</span>).</li>
-<li><strong>Result:</strong> Paying an extra <span class="arithmatex">\(\$300/\text{month}\)</span> cuts <strong>7 full years (84 payments)</strong> off the mortgage and saves over <strong><span class="arithmatex">\(\$128{,}000\)</span> in interest</strong>!</li>
+<li><strong>Configurable RPN Stack Depth ([4-LV], [8-LV], or [INF] via [g] [FLAGS]):</strong> Financial analysts and quality engineers can operate on the classic four-register stack (<code>T, Z, Y, X</code>) or expand to eight-level ([8-LV]) and unbounded ([INF]) stack modes so loan principal, cumulative interest, Black–Scholes <span class="arithmatex">\(d_1/d_2\)</span> terms, and control-chart sub-lots remain live in stack registers across multi-step audits.</li>
+<li><strong>Dual-Mode Domain Keys (Immediate Stack Shortcut + Bidirectional Equation Solver Workspace):</strong> Every multi-parameter financial and statistical relationship—including five-variable Time Value of Money ([TVM]: [N], [I%], [PV], [PMT], [FV], [END]/[BEG]), Net Present Value and Internal Rate of Return ([g] [CF]), fixed-income Bond Valuation and Yield to Maturity ([g] [BND]), Compound Annual Growth Rate ([g] [CGR]), Gross Margin and Markup ([f] [MGN], [g] [MKP]), Breakeven ([f] [BEP]), Economic Order Quantity ([g] [EOQ]), Depreciation ([g] [DEP]), Six Sigma Capability ([g] [Cpk]), Confidence Intervals ([g] [CI]), Hypothesis Tests ([f] [z₀], [f] [t₂], [g] [A/B]), and Sample Size Determination ([f] [n<em>])—works both on the RPN stack and as a </em><em>Bidirectional Equation Solver Workspace</em>* ([g] [SOLVE] / [XEQ]). Binding equation variables to the six dynamic softkeys ([LFU0]–[LFU5]), the Solver Workspace solves forward or backward for any unknown parameter—including closed-form algebraic inverses and iterative Secant–Brent / Newton–Raphson roots such as Internal Rate of Return <span class="arithmatex">\(R\)</span> and bond Yield to Maturity <span class="arithmatex">\(Y\)</span>.</li>
+<li><strong>Direct Faceplate R-Style Probability Suites, Statistical Accumulators &amp; Reference Ledgers ([Σ+], [g] [▦]):</strong> Bivariate sample accumulators ([Σ+], [f] [Σ-], [x̄,ȳ], [f] [MED], [g] [s,σ], [g] [L.R.], [f] [%Σ]) and calendar day-count operators ([f] [▸YR], [g] [▸YMD], [f] [DT+], [g] [ΔD]) pair with five dedicated faceplate probability distribution families—Binomial/Poisson ([rB], [f] [qB], [g] [pB]), Normal ([rN], [f] [qN], [g] [pN]), Student's <span class="arithmatex">\(t\)</span> ([rt], [f] [qt], [g] [pt]), Chi-Square ([rχ²], [f] [qχ²], [g] [pχ²]), and Snedecor's <span class="arithmatex">\(F\)</span> ([rF], [f] [qF], [g] [pF]) plus the [f] [PDF] density modifier—and the live Reference Table ([g] [▦]).</li>
 </ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Chapter</th>
+<th style="text-align: left;">Narrative Problem</th>
+<th style="text-align: left;">Mathematical Concepts</th>
+<th style="text-align: left;">Faceplate Legends &amp; Workspaces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Chapter 25</strong></td>
+<td style="text-align: left;">Structuring a <span class="arithmatex">\(\$450{,}000\)</span>, <span class="arithmatex">\(20\text{-year}\)</span> monthly facility mortgage at <span class="arithmatex">\(6.0\%\)</span>, decomposing Year 1 amortization, and valuing a <span class="arithmatex">\(4\text{-year}\)</span> plant expansion</td>
+<td style="text-align: left;">Five-variable compound Time Value of Money balance, geometric principal/interest amortization, Net Present Value, Internal Rate of Return, and gross margin versus markup</td>
+<td style="text-align: left;">[TVM], [f] [AMR], [g] [CF], [g] [CGR], [g] [ROI], [f] [MGN], [g] [MKP], [g] [DEP], [f] [BEP], [g] [EOQ], [g] [EAR]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Chapter 26</strong></td>
+<td style="text-align: left;">Pricing a <span class="arithmatex">\(10\text{-year}\)</span>, <span class="arithmatex">\(5\%\)</span> semiannual corporate bond yielding <span class="arithmatex">\(6.0\%\)</span>, hedging a <span class="arithmatex">\(+50\text{ bps}\)</span> rate hike, and valuing a <span class="arithmatex">\(6\text{-month}\)</span> European option (<span class="arithmatex">\(S=100, K=100\)</span>)</td>
+<td style="text-align: left;">Semiannual bond discounting, Yield to Maturity root-finding, Macaulay and Modified Duration, Black–Scholes–Merton continuous hedging, and Put–Call Parity</td>
+<td style="text-align: left;">[g] [BND], [g] [pN], [f] [qN], [g] [EAR], [f] [▸YR], [g] [▸YMD], [f] [DT+], [g] [ΔD]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Chapter 27</strong></td>
+<td style="text-align: left;">Auditing a precision shaft grinder (<span class="arithmatex">\(\text{LSL } 9.95\text{ mm}\)</span>, <span class="arithmatex">\(\text{USL } 10.05\text{ mm}\)</span>) whose mean has drifted to <span class="arithmatex">\(\mu = 10.01\text{ mm}\)</span> (<span class="arithmatex">\(\sigma = 0.01\text{ mm}\)</span>)</td>
+<td style="text-align: left;">Bivariate linear regression trend, Gaussian cumulative tail integrals, Student's <span class="arithmatex">\(t\)</span> confidence intervals, sample size <span class="arithmatex">\(n^*\)</span>, Six Sigma capability (<span class="arithmatex">\(C_p, C_{pk}\)</span>), and <span class="arithmatex">\(\text{DPMO}\)</span></td>
+<td style="text-align: left;">[Σ+], [x̄,ȳ], [g] [s,σ], [g] [L.R.], [g] [pN], [f] [qN], [f] [z₀], [f] [t₂], [g] [CI], [f] [n*], [g] [pt], [f] [qt], [g] [pχ²], [f] [qχ²], [g] [pF], [f] [qF], [g] [pB], [f] [qB], [g] [Cpk], [g] [SPC]</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h3 id="field-case-2-machining-tolerance-audit-c_pk-on-a-stamping-line">Field Case 2: Machining Tolerance Audit (<span class="arithmatex">\(C_{pk}\)</span>) on a Stamping Line</h3>
-<p>A quality engineer audits a CNC shaft turning operation:
-- Blueprint specification: <span class="arithmatex">\(25.000\text{ mm} \pm 0.050\text{ mm}\)</span> (<span class="arithmatex">\(LSL = 24.950\)</span>, <span class="arithmatex">\(USL = 25.050\)</span>).
-- A 50-part sample gives an average diameter <span class="arithmatex">\(\mu = 25.012\text{ mm}\)</span> and standard deviation <span class="arithmatex">\(\sigma = 0.008\text{ mm}\)</span>.
-What is the process capability <span class="arithmatex">\(C_{pk}\)</span>?</p>
-<h4 id="step-by-step-mechanics">Step-by-Step Mechanics</h4>
+<h1 id="chapter-25-structuring-the-equipment-lease-and-valuing-the-expansion-plant">Chapter 25: Structuring the Equipment Lease and Valuing the Expansion Plant</h1>
+<p>The chief financial officer of a precision valve manufacturer is finalizing the capital structure for a new regional assembly plant. To acquire the building, the company is taking out a <span class="arithmatex">\(\$450{,}000\)</span> commercial facility mortgage ([TVM]) amortized over <span class="arithmatex">\(20\text{ years}\)</span> with monthly payments (<span class="arithmatex">\(N = 240\text{ months}\)</span>) at a fixed <span class="arithmatex">\(6.00\%\)</span> nominal annual interest rate (<span class="arithmatex">\(0.50\%\)</span> per month). Before signing the loan covenant, the CFO must determine the exact monthly debt-service payment ([PMT]) and provide the corporate tax accountants with the first-year amortization breakdown ([f] [AMR])—separating the twelve monthly payments of Year 1 (Months <span class="arithmatex">\(1\text{ through }12\)</span>) into tax-deductible interest expense and balance-sheet principal reduction.</p>
+<p>Inside the newly acquired building, the VP of Operations proposes installing a robotic valve-machining cell requiring an upfront capital outlay of <span class="arithmatex">\(I_0 = \$120{,}000\)</span> at <span class="arithmatex">\(t = 0\)</span>. Engineering time studies project that the automated cell will generate uniform net operating cash savings of <span class="arithmatex">\(C = \$42{,}000\)</span> per year across a <span class="arithmatex">\(4\text{-year}\)</span> planning horizon. Discounting those future cash inflows at the company's <span class="arithmatex">\(10.0\%\)</span> weighted-average cost of capital ([g] [CF], [f] [WAC]) and solving for the project's break-even yield (<span class="arithmatex">\(\text{IRR}\)</span>) determines whether the automation investment creates net shareholder value.</p>
+<p>Finally, to set wholesale catalog pricing for the new valve line—which costs <span class="arithmatex">\(C = \$72.00\)</span> per unit to manufacture and is targeted to sell at <span class="arithmatex">\(P = \$120.00\)</span>—the commercial team must reconcile the accounting department's <strong>Gross Margin</strong> ([f] [MGN]) requirement against the sales force's <strong>Markup on Cost</strong> ([g] [MKP]) schedule.</p>
+<hr />
+<h2 id="compound-discounting-loan-amortization-and-the-five-variable-balance">Compound Discounting, Loan Amortization, and the Five-Variable Balance</h2>
+<p>Every level-payment commercial mortgage, equipment lease, sinking fund, and retirement annuity rests on transporting a schedule of signed periodic cash flows to a common reference epoch and enforcing conservation of value.</p>
+<h3 id="the-five-variable-time-value-of-money-recurrence-tvm">The Five-Variable Time Value of Money Recurrence (<code>TVM</code>)</h3>
+<p>Across any level-payment financial contract in the [TVM] workspace, five parameters are coupled together on softkeys [N], [I%], [PV], [PMT], and [FV] (alongside payment timing [END]/[BEG]): the total number of compounding or payment periods <span class="arithmatex">\(N\)</span> ([N]), the periodic interest rate [I%] expressed as a percentage per period where the decimal rate is <span class="arithmatex">\(i = (\text{I\%})/100\)</span> (obtained from the nominal annual rate by dividing by <span class="arithmatex">\(M\)</span> compounding periods per year), the initial <strong>Present Value</strong> <span class="arithmatex">\(\text{PV}\)</span> ([PV]) at <span class="arithmatex">\(t = 0\)</span>, the level periodic <strong>Payment</strong> <span class="arithmatex">\(\text{PMT}\)</span> ([PMT]) at the end of each period <span class="arithmatex">\(t = 1, 2, \dots, N\)</span>, and the terminal <strong>Future Value</strong> or balloon balance <span class="arithmatex">\(\text{FV}\)</span> ([FV]) at horizon <span class="arithmatex">\(t = N\)</span>. Discounting each cash flow back to <span class="arithmatex">\(t = 0\)</span> and summing the finite geometric series <span class="arithmatex">\(\sum_{t=1}^{N} (1+i)^{-t} = (1 - (1+i)^{-N})/i\)</span> yields the <strong>Time Value of Money Balance Equation</strong>:</p>
+<div class="arithmatex">\[\text{PV} + \text{PMT}\left(\frac{1 - (1 + i)^{-N}}{i}\right) + \text{FV}(1 + i)^{-N} = 0, \qquad \text{PV}(1 + i)^N + \text{PMT}\left(\frac{(1 + i)^N - 1}{i}\right) + \text{FV} = 0\]</div>
+<p>Because this equation enforces cash conservation across a two-party transaction, cash inflows received by the decision-maker carry a <strong>positive (<span class="arithmatex">\(+\)</span>)</strong> sign, whereas cash outflows paid out carry a <strong>negative (<span class="arithmatex">\(-\)</span>)</strong> sign.</p>
+<p><img alt="Cash-flow timeline convention showing positive inflows, negative outflows, and exponential discounting across N compounding periods." src="../../assets/diagrams/domains/diagram_ch09_cashflow_timeline.png" /></p>
+<p>For the valve manufacturer's <span class="arithmatex">\(\$450{,}000\)</span> commercial mortgage (<span class="arithmatex">\(\text{PV} = +450{,}000\)</span>) over <span class="arithmatex">\(20\text{ years}\)</span> paid monthly (<span class="arithmatex">\(N = 20 \times 12 = 240\text{ months}\)</span>) at a <span class="arithmatex">\(6.00\%\)</span> nominal annual rate (<span class="arithmatex">\(i = 6.00\% / 12 = 0.50\% = 0.005\)</span> per month) fully amortized to <span class="arithmatex">\(\text{FV} = 0\)</span>, the <span class="arithmatex">\(240\text{-month}\)</span> present-value annuity factor is <span class="arithmatex">\(a_{\overline{240}|0.005} = (1 - 1.005^{-240}) / 0.005 = 0.6979039 / 0.005 = 139.58077\)</span>. Dividing <span class="arithmatex">\(-\text{PV}\)</span> by <span class="arithmatex">\(a_{\overline{240}|0.005}\)</span> gives a monthly debt-service outflow of <span class="arithmatex">\(\text{PMT} = -450{,}000 / 139.58077 = \mathbf{-\$3{,}223.94/\text{month}}\)</span> (<span class="arithmatex">\(-\$3{,}223.9398\)</span>).</p>
+<h3 id="geometric-principal-and-interest-decomposition-across-amortization-periods-amr">Geometric Principal and Interest Decomposition Across Amortization Periods (<code>AMR</code>)</h3>
+<p>Although the total monthly payment <span class="arithmatex">\(|\text{PMT}| = \$3{,}223.94\)</span> remains constant across all <span class="arithmatex">\(240\text{ months}\)</span>, its internal composition between interest expense <span class="arithmatex">\(I_t\)</span> and principal reduction <span class="arithmatex">\(P_t\)</span> shifts every month ([f] [AMR]). In Month 1, interest on the initial <span class="arithmatex">\(\text{PV} = \$450{,}000\)</span> balance (<code>450000</code> [ENTER] <code>0.5</code> [f] [AMR]) is <span class="arithmatex">\(I_1 = \text{PV} \cdot i = 450{,}000 \times 0.005 = \mathbf{\$2{,}250.00}\)</span>, leaving <span class="arithmatex">\(P_1 = |\text{PMT}| - I_1 = 3{,}223.9398 - 2{,}250.00 = \mathbf{\$973.94}\)</span> to reduce principal. Because each month's principal reduction lowers the outstanding loan balance for the following month, the principal portion grows geometrically as <span class="arithmatex">\(P_t = P_1 (1 + i)^{t-1}\)</span>, so cumulative principal paid (<span class="arithmatex">\(\Delta\text{Prin}_{1\text{–}k}\)</span>), cumulative interest paid (<span class="arithmatex">\(\Delta\text{Int}_{1\text{–}k}\)</span>), and remaining loan balance <span class="arithmatex">\(B_k\)</span> after <span class="arithmatex">\(k\)</span> payments follow closed-form geometric sums:</p>
+<div class="arithmatex">\[\Delta\text{Prin}_{1\text{–}k} = P_1 \left(\frac{(1 + i)^k - 1}{i}\right), \qquad \Delta\text{Int}_{1\text{–}k} = k \cdot |\text{PMT}| - \Delta\text{Prin}_{1\text{–}k}, \qquad B_k = \text{PV} - \Delta\text{Prin}_{1\text{–}k}\]</div>
+<p><img alt="Evolution of monthly interest versus principal reduction across a 360-month level-payment mortgage amortization schedule." src="../../assets/diagrams/domains/diagram_ch09_amortization_split.png" /></p>
+<p>Evaluating these sums across the first twelve months (<span class="arithmatex">\(k = 12\)</span>) of the <span class="arithmatex">\(\$450{,}000\)</span> facility mortgage shows that total cash outflow in Year 1 is <span class="arithmatex">\(12 \times \$3{,}223.9398 = \mathbf{\$38{,}687.28}\)</span>. The cumulative Year 1 principal reduction is <span class="arithmatex">\(\Delta\text{Prin}_{1\text{–}12} = \$973.9398 \times [(1.005^{12} - 1)/0.005] = \$973.9398 \times 12.335562 = \mathbf{\$12{,}014.09}\)</span>, which reduces the ending Month 12 loan balance to <span class="arithmatex">\(B_{12} = \$450{,}000 - \$12{,}014.09 = \mathbf{\$437{,}985.91}\)</span> and leaves a Year 1 tax-deductible interest expense of <span class="arithmatex">\(\Delta\text{Int}_{1\text{–}12} = \$38{,}687.28 - \$12{,}014.09 = \mathbf{\$26{,}673.19}\)</span>.</p>
+<hr />
+<h2 id="capital-budgeting-and-commercial-unit-economics">Capital Budgeting and Commercial Unit Economics</h2>
+<p>Once long-term facility financing is in place, corporate capital allocation compares upfront equipment outlays against discounted operating cash inflows and links unit manufacturing cost to wholesale selling price.</p>
+<h3 id="net-present-value-internal-rate-of-return-cf-and-effective-annual-rates-ear">Net Present Value, Internal Rate of Return (<code>CF</code>), and Effective Annual Rates (<code>EAR</code>)</h3>
+<p>When a capital project requires an initial investment <span class="arithmatex">\(I_0\)</span> at <span class="arithmatex">\(t = 0\)</span> and generates a uniform net operating cash inflow <span class="arithmatex">\(C\)</span> across <span class="arithmatex">\(N\)</span> periods discounted at the firm's opportunity cost of capital (hurdle rate) <span class="arithmatex">\(r = R / 100\)</span>, <strong>Net Present Value</strong> ([g] [CF], opening the <code>NPV</code> Solver Workspace) subtracts <span class="arithmatex">\(I_0\)</span> from the present value of the cash-flow annuity; a positive <span class="arithmatex">\(\text{NPV} &gt; 0\)</span> certifies that the asset earns more than the hurdle rate <span class="arithmatex">\(r\)</span>. The break-even discount rate <span class="arithmatex">\(r^*\)</span> at which <span class="arithmatex">\(\text{NPV}(r^*) = 0\)</span> defines the <strong>Internal Rate of Return</strong> (<span class="arithmatex">\(\text{IRR}\)</span>), while a nominal Annual Percentage Rate (<span class="arithmatex">\(\text{APR}_{\%}\)</span>) compounded <span class="arithmatex">\(M\)</span> times per year converts to the <strong>Effective Annual Rate</strong> ([g] [EAR]), and multi-year lump-sum growth follows <strong>Compound Annual Growth Rate</strong> ([g] [CGR]) and <strong>Return on Investment</strong> ([g] [ROI]):</p>
+<div class="arithmatex">\[\text{NPV} = C\left(\frac{1 - (1 + r)^{-N}}{r}\right) - I_0, \qquad \text{NPV}(r^*) = 0 \iff \frac{1 - (1 + r^*)^{-N}}{r^*} = \frac{I_0}{C}, \qquad \text{EAR}_{\%} = \left[\left(1 + \frac{\text{APR}_{\%}}{100 \cdot M}\right)^M - 1\right] \times 100\]</div>
+<p>For a single-period cash outlay <span class="arithmatex">\(CF_0\)</span> and return <span class="arithmatex">\(CF_1\)</span>, the rate of return ([g] [ROI]) simplifies directly to <span class="arithmatex">\(\text{ROI}_{\%} = [(CF_1 - |CF_0|) / |CF_0|] \times 100\)</span>.</p>
+<p>In the valve manufacturer's automation proposal (<span class="arithmatex">\(I_0 = \$120{,}000\)</span>, <span class="arithmatex">\(C = \$42{,}000/\text{yr}\)</span> over <span class="arithmatex">\(N = 4\text{ years}\)</span> at hurdle rate <span class="arithmatex">\(R = 10.0\%\)</span>, so <span class="arithmatex">\(r = 0.10\)</span>), the <span class="arithmatex">\(4\text{-year}\)</span> annuity factor is <span class="arithmatex">\((1 - 1.10^{-4}) / 0.10 = 3.169865\)</span>. Multiplying by <span class="arithmatex">\(\$42{,}000/\text{yr}\)</span> gives a discounted inflow of <span class="arithmatex">\(\$133{,}134.35\)</span>, and subtracting the <span class="arithmatex">\(\$120{,}000\)</span> outlay yields a positive Net Present Value of <span class="arithmatex">\(\text{NPV} = \$133{,}134.35 - \$120{,}000 = \mathbf{+\$13{,}134.35}\)</span>. Setting <span class="arithmatex">\(V = \text{NPV}(r^*) = 0\)</span> in the [g] [CF] (<code>NPV</code>) Solver Workspace requires <span class="arithmatex">\(a_{\overline{4}|r^*} = 120{,}000 / 42{,}000 = 2.857143\)</span>, which resolves via [g] [SOLVE] <span class="arithmatex">\(\to\)</span> [R] to an Internal Rate of Return of <span class="arithmatex">\(\text{IRR} = \mathbf{14.96\%/\text{yr}}\)</span>—exceeding the <span class="arithmatex">\(10.0\%\)</span> hurdle rate by nearly <span class="arithmatex">\(500\text{ basis points}\)</span>.</p>
+<h3 id="gross-margin-mgn-markup-on-cost-mkp-breakeven-bep-and-economic-order-quantity-eoq">Gross Margin (<code>MGN</code>), Markup on Cost (<code>MKP</code>), Breakeven (<code>BEP</code>), and Economic Order Quantity (<code>EOQ</code>)</h3>
+<p>For a manufactured product with unit cost <span class="arithmatex">\(C\)</span> and wholesale selling price <span class="arithmatex">\(P\)</span>, the unit gross profit <span class="arithmatex">\((P - C)\)</span> is measured in financial statements as <strong>Gross Margin</strong> ([f] [MGN], profit as a percentage of selling price <span class="arithmatex">\(P\)</span>) and in cost-plus pricing sheets as <strong>Markup on Cost</strong> ([g] [MKP], profit as a percentage of unit cost <span class="arithmatex">\(C\)</span>):</p>
+<div class="arithmatex">\[\text{MGN}_{\%} = \left(\frac{P - C}{P}\right) \times 100, \qquad \text{MKP}_{\%} = \left(\frac{P - C}{C}\right) \times 100, \qquad P = \frac{C}{1 - \left(\text{MGN}_{\%}/100\right)} = C\left(1 + \frac{\text{MKP}_{\%}}{100}\right)\]</div>
+<p>Simultaneously, a plant with fixed overhead <span class="arithmatex">\(F_{\text{fixed}}\)</span> and unit contribution margin <span class="arithmatex">\(M_c = P - V\)</span> reaches its <strong>Breakeven Volume</strong> ([f] [BEP]) at <span class="arithmatex">\(Q_{\text{BEP}}^* = F_{\text{fixed}} / (P - V)\)</span>, depreciates an asset of net cost <span class="arithmatex">\((C_{\text{cost}} - S_{\text{salvage}})\)</span> over <span class="arithmatex">\(L\)</span> years via <strong>Straight-Line Depreciation</strong> ([g] [DEP], <span class="arithmatex">\(D_{\text{annual}} = (C_{\text{cost}} - S_{\text{salvage}})/L\)</span>), and minimizes combined annual ordering and holding cost for annual demand <span class="arithmatex">\(D\)</span>, setup cost <span class="arithmatex">\(S\)</span>, and holding cost <span class="arithmatex">\(H\)</span> at Ford W. Harris and R. H. Wilson's <strong>Economic Order Quantity</strong> ([g] [EOQ]):</p>
+<div class="arithmatex">\[Q_{\text{BEP}}^* = \frac{F_{\text{fixed}}}{P - V}, \qquad D_{\text{annual}} = \frac{C_{\text{cost}} - S_{\text{salvage}}}{L}, \qquad Q_{\text{EOQ}}^* = \sqrt{\frac{2 \cdot D \cdot S}{H}}\]</div>
+<p><img alt="Wilson Economic Order Quantity (EOQ) optimization balancing annual ordering cost against linear inventory holding cost." src="../../assets/diagrams/domains/diagram_ch09_eoq_cost_curve.png" /></p>
+<p>For the valve assembly with unit cost <span class="arithmatex">\(C = \$72.00\)</span> and selling price <span class="arithmatex">\(P = \$120.00\)</span> (unit gross profit <span class="arithmatex">\(\$48.00\)</span>), the Gross Margin ([f] [MGN]) is <span class="arithmatex">\(\text{MGN}_{\%} = (48.00 / 120.00) \times 100 = \mathbf{40.00\%}\)</span>, whereas the Markup on Cost ([g] [MKP]) is <span class="arithmatex">\(\text{MKP}_{\%} = (48.00 / 72.00) \times 100 = \mathbf{66.67\%}\)</span>. Covering <span class="arithmatex">\(\$36{,}000\)</span> of monthly fixed plant overhead at <span class="arithmatex">\(P - V = \$48.00/\text{unit}\)</span> ([f] [BEP]) requires a breakeven volume of <span class="arithmatex">\(Q_{\text{BEP}}^* = 36{,}000 / 48.00 = \mathbf{750\text{ valves/month}}\)</span>, and ordering raw brass forgings with annual demand <span class="arithmatex">\(D = 12{,}000\text{ units/yr}\)</span>, setup cost <span class="arithmatex">\(S = \$90/\text{order}\)</span>, and holding cost <span class="arithmatex">\(H = \$6.00/\text{unit/yr}\)</span> ([g] [EOQ]) yields an optimal batch size of <span class="arithmatex">\(Q_{\text{EOQ}}^* = \sqrt{(2 \times 12{,}000 \times 90)/6.00} = \sqrt{360{,}000} = \mathbf{600\text{ units/order}}\)</span>.</p>
+<hr />
+<h2 id="mortgage-structuring-and-capital-budgeting-on-the-stack-and-in-the-solver-workspace">Mortgage Structuring and Capital Budgeting on the Stack and in the Solver Workspace</h2>
+<p>The <strong>SC-95</strong> integrates the five-variable Time Value of Money workspace ([TVM]: softkeys [N], [I%], [PV], [PMT], [FV], [END]/[BEG]), loan interest amortization ([f] [AMR]), discounted cash-flow analysis ([g] [CF], opening the <code>NPV</code> Solver Workspace), and commercial unit-economics keys ([f] [MGN], [g] [MKP], [g] [DEP], [f] [BEP], [g] [EOQ], [g] [EAR], [g] [CGR], [g] [ROI]) across the RPN stack and <strong>Bidirectional Equation Solver Workspaces</strong> ([g] [SOLVE] / [XEQ]):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Key / Solver</th>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: left;">Stack Inputs (<span class="arithmatex">\(Y, X\)</span>)</th>
+<th style="text-align: left;">Governing Expression &amp; Solver Softkeys ([LFU0]–[LFU5])</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[TVM]</td>
+<td style="text-align: left;">Five-Variable TVM Workspace</td>
+<td style="text-align: left;">Value in <span class="arithmatex">\(X \to\)</span> tap softkey</td>
+<td style="text-align: left;"><span class="arithmatex">\(\text{PV} + \text{PMT}\,a_{\overline{N}\rvert i} + \text{FV}(1+i)^{-N} = 0\)</span> ([N] [I%] [PV] [PMT] [FV] [END])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [AMR]</td>
+<td style="text-align: left;">Loan Amortization Interest</td>
+<td style="text-align: left;"><span class="arithmatex">\(Y = \text{Balance } B\)</span>, <span class="arithmatex">\(X = i_{\%}\)</span></td>
+<td style="text-align: left;">Period interest <span class="arithmatex">\(I_t = B \cdot (i_{\%}/100)\)</span>; Geometric <span class="arithmatex">\(\Delta\text{Prin}_{1\text{–}k} = P_1\frac{(1+i)^k - 1}{i}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [CF]</td>
+<td style="text-align: left;">Cash Flow / <code>NPV</code> &amp; <code>IRR</code> Solver</td>
+<td style="text-align: left;"><span class="arithmatex">\(Y = CF_1\)</span>, <span class="arithmatex">\(X = R_{\%}\)</span></td>
+<td style="text-align: left;">Stack: <span class="arithmatex">\(\frac{Y}{1+X/100}\)</span>; Solver (<code>NPV</code>): <code>V = C×(1-(1+R/100)⁻ᴺ)/(R/100) - I</code> ([V] [C] [R] [N] [I])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [ROI] / [g] [CGR]</td>
+<td style="text-align: left;">Return on Investment &amp; CAGR</td>
+<td style="text-align: left;"><span class="arithmatex">\(Y = P_0\)</span>, <span class="arithmatex">\(X = F_N\)</span></td>
+<td style="text-align: left;">Stack: <span class="arithmatex">\(\frac{X - Y}{Y} \times 100\)</span>; Solver ([g] [CGR]): <code>F = P × (1 + R/100)^N</code> ([F] [P] [R] [N])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [MGN] / [g] [MKP]</td>
+<td style="text-align: left;">Gross Margin &amp; Markup</td>
+<td style="text-align: left;"><span class="arithmatex">\(Y = \text{Cost } C\)</span>, <span class="arithmatex">\(X = \text{Price } P\)</span></td>
+<td style="text-align: left;">Stack &amp; Solver: <span class="arithmatex">\(\text{MGN}_{\%} = \frac{P - C}{P}\times 100\)</span> ([M] [P] [C]); <span class="arithmatex">\(\text{MKP}_{\%} = \frac{P - C}{C}\times 100\)</span> ([U] [P] [C])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [BEP] / [g] [EOQ]</td>
+<td style="text-align: left;">Breakeven &amp; Wilson EOQ</td>
+<td style="text-align: left;">[g] [EOQ]: <span class="arithmatex">\(Y = D\cdot S, X = H\)</span></td>
+<td style="text-align: left;">[f] [BEP]: <code>Q = F / (P - V)</code> ([Q] [F] [P] [V]); [g] [EOQ]: <code>Q = √(2×D×S/H)</code> ([Q] [D] [S] [H])</td>
+</tr>
+</tbody>
+</table>
+<h3 id="solving-the-commercial-mortgage-and-year-1-amortization-on-the-stack">Solving the Commercial Mortgage and Year 1 Amortization on the Stack</h3>
+<p>To structure the <span class="arithmatex">\(\$450{,}000\)</span>, <span class="arithmatex">\(20\text{-year}\)</span> monthly mortgage (<span class="arithmatex">\(\text{PV} = 450{,}000\)</span>, <span class="arithmatex">\(\text{FV} = 0\)</span>) without pre-dividing the <span class="arithmatex">\(6.0\%\)</span> annual interest rate or <span class="arithmatex">\(20\text{-year}\)</span> term in his head, the CFO presses [TVM], lets the RPN stack compute <span class="arithmatex">\(N = 20 \times 12 = 240\text{ months}\)</span> ([N]) and periodic rate <span class="arithmatex">\(\text{I\%} = 6.0 / 12 = 0.50\%/\text{month}\)</span> ([I%]), solves for [PMT], and evaluates the Month 1–12 principal reduction and interest expense ([f] [AMR]) on the stack:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[TVM] <code>20</code> [ENTER] <code>12</code> [×] [N] <code>6</code> [ENTER] <code>12</code> [÷] [I%]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(240\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.5\)</span></td>
+<td style="text-align: left;">Open [TVM] and store <span class="arithmatex">\(N = 20 \times 12 = 240\text{ mo}\)</span> and <span class="arithmatex">\(i = 6 / 12 = 0.50\%\text{/mo}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>450000</code> [PV] <code>0</code> [FV] [g] [SOLVE] [PMT]</td>
+<td style="text-align: center;"><span class="arithmatex">\(240\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(450000\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(-3223.94\)</span></strong></td>
+<td style="text-align: left;">Store <span class="arithmatex">\(\text{PV} = 450{,}000, \text{FV} = 0\)</span> and solve <span class="arithmatex">\(\text{PMT} = -\$3{,}223.94/\text{mo}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[+/-] [ENTER] <code>450000</code> [ENTER] <code>0.5</code> [f] [AMR] [-]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(450000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3223.94\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(973.9398\)</span></strong></td>
+<td style="text-align: left;">Subtract Month 1 interest (<span class="arithmatex">\(\$2{,}250.00\)</span> via [f] [AMR]) from <span class="arithmatex">\(\lvert\text{PMT}\rvert\)</span>: <span class="arithmatex">\(P_1 = \$973.94\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1.005</code> [ENTER] <code>12</code> [g] [yˣ] <code>1</code> [-] <code>0.005</code> [÷] [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(450000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3223.94\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(12014.09\)</span></strong></td>
+<td style="text-align: left;">Accumulate Year 1 principal reduction <span class="arithmatex">\(\Delta\text{Prin}_{1\text{–}12} = \$12{,}014.09\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[x⇄y] <code>12</code> [×] [x⇄y] [-]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(450000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(12014.09\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(26673.19\)</span></strong></td>
+<td style="text-align: left;">Subtract <span class="arithmatex">\(\Delta\text{Prin}_{1\text{–}12}\)</span> from <span class="arithmatex">\(12\lvert\text{PMT}\rvert\)</span>: Year 1 interest <span class="arithmatex">\(\Delta\text{Int}_{1\text{–}12} = \$26{,}673.19\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Subtracting Year 1 principal <code>12014.09</code> in Register <span class="arithmatex">\(Y\)</span> from <code>450000</code> in Register <span class="arithmatex">\(Z\)</span> confirms the Month 12 ending balance <span class="arithmatex">\(B_{12} = \mathbf{\$437{,}985.91}\)</span>.</p>
+<h3 id="evaluating-plant-automation-npv-irr-and-valve-margin-in-the-solver-workspaces">Evaluating Plant Automation NPV, IRR, and Valve Margin in the Solver Workspaces</h3>
+<p>Next, the CFO opens the [g] [CF] (<code>NPV: V = C×(1-(1+R/100)⁻ᴺ)/(R/100) - I</code>) Solver Workspace to evaluate the <span class="arithmatex">\(4\text{-year}\)</span>, <span class="arithmatex">\(\$42{,}000/\text{yr}\)</span> automation cash-flow stream at the <span class="arithmatex">\(R = 10.0\%\)</span> hurdle rate net of the <span class="arithmatex">\(I = \$120{,}000\)</span> outlay, solves backward via Secant–Brent root-finding for the multi-period <strong>Internal Rate of Return</strong> (<span class="arithmatex">\(\text{IRR}\)</span>) where <span class="arithmatex">\(V = 0\)</span> and the break-even annual savings <span class="arithmatex">\(C\)</span>, and computes both Gross Margin ([f] [MGN]) and Markup on Cost ([g] [MKP]) for the <span class="arithmatex">\(\$72.00 / \$120.00\)</span> valve assembly:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Solver Display / Register X</th>
+<th style="text-align: left;">What Happens in the <code>NPV</code>, <code>MGN</code>, and <code>MKP</code> Workspaces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[C] [g] [CF]</td>
+<td style="text-align: center;"><code>NPV: V = C×(1-(1+R)⁻ᴺ)/R - I</code></td>
+<td style="text-align: left;">Open the <code>NPV</code> Solver Workspace with softkeys [V], [C], [R], [N], [I]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>42000</code> [C] <code>10</code> [R] <code>4</code> [N] <code>120000</code> [I] [g] [SOLVE] [V]</td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(13{,}134.3515\)</span></strong></td>
+<td style="text-align: left;">Solve forward for Net Present Value <span class="arithmatex">\(V = \mathbf{+\$13{,}134.35}\)</span> at <span class="arithmatex">\(R = 10.0\%\)</span> hurdle rate</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0</code> [V] [g] [SOLVE] [R]</td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(14.9631\)</span></strong></td>
+<td style="text-align: left;">Store break-even <span class="arithmatex">\(V = 0\)</span> and solve backward via root-finding for <span class="arithmatex">\(\text{IRR} = \mathbf{14.9631\%/\text{yr}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>10</code> [R] [g] [SOLVE] [C]</td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(37{,}856.4965\)</span></strong></td>
+<td style="text-align: left;">Restore <span class="arithmatex">\(R = 10.0\%\)</span> and solve backward for break-even annual savings <span class="arithmatex">\(C = \mathbf{\$37{,}856.50/\text{yr}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>72</code> [ENTER] <code>120</code> [f] [MGN]</td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(40.0000\)</span></strong></td>
+<td style="text-align: left;">Compute valve Gross Margin <span class="arithmatex">\(\text{MGN}_{\%} = (120 - 72)/120 = \mathbf{40.00\%}\)</span> (opens <code>MGN</code> workspace)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>72</code> [ENTER] <code>120</code> [g] [MKP]</td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(66.6667\)</span></strong></td>
+<td style="text-align: left;">Compute valve Markup on Cost <span class="arithmatex">\(\text{MKP}_{\%} = (120 - 72)/72 = \mathbf{66.67\%}\)</span> (opens <code>MKP</code> workspace)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="try-it-on-the-stack">Try It on the Stack</h3>
+<p>Apply the five-key [TVM] solver, discounted cash-flow [g] [CF] (<code>NPV</code>) workspace, and unit-economics operators to these three corporate finance problems:</p>
 <ol>
-<li><strong>Compute Distance to Upper Limit:</strong>
-   $<span class="arithmatex">\(\frac{USL - \mu}{3\sigma} = \frac{25.050 - 25.012}{3(0.008)} = \frac{0.038}{0.024} \approx \mathbf{1.583}\)</span>$</li>
-<li><strong>Compute Distance to Lower Limit:</strong>
-   $<span class="arithmatex">\(\frac{\mu - LSL}{3\sigma} = \frac{25.012 - 24.950}{3(0.008)} = \frac{0.062}{0.024} \approx \mathbf{2.583}\)</span>$</li>
-<li><strong>Determine <span class="arithmatex">\(C_{pk}\)</span>:</strong>
-   $<span class="arithmatex">\(C_{pk} = \min(1.583, 2.583) = \mathbf{1.58}\)</span>$
-   Because <span class="arithmatex">\(C_{pk} = 1.58 &gt; 1.33\)</span>, the process is capable and well-centered with virtually zero defect risk!</li>
+<li><strong>Equipment Lease with Residual Buyout Balloon ([TVM]):</strong> A <span class="arithmatex">\(5\text{-year}\)</span> monthly CNC equipment lease (<span class="arithmatex">\(N = 60\text{ months}\)</span>) finances <span class="arithmatex">\(\text{PV} = \$180{,}000\)</span> at <span class="arithmatex">\(7.20\%\)</span> APR with a <span class="arithmatex">\(\$30{,}000\)</span> residual purchase obligation at maturity (<span class="arithmatex">\(\text{FV} = -30{,}000\)</span>). Press [TVM], key <code>5</code> [ENTER] <code>12</code> [×] [N], <code>7.2</code> [ENTER] <code>12</code> [÷] [I%], <code>180000</code> [PV], and <code>30000</code> [+/-] [FV], then press [g] [SOLVE] [PMT]. <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\(\text{PMT} = \mathbf{-\$3{,}177.26/\text{month}}\)</span>.)</em></li>
+<li><strong>Packaging Line NPV and Multi-Period IRR ([g] [CF] &amp; [g] [ROI]):</strong> In the [g] [CF] (<code>NPV</code>) Solver Workspace ([C] [g] [CF]), evaluate the Net Present Value of a packaging line costing <span class="arithmatex">\(I = \$85{,}000\)</span> that saves <span class="arithmatex">\(C = \$26{,}000/\text{yr}\)</span> over <span class="arithmatex">\(N = 5\text{ years}\)</span> at an <span class="arithmatex">\(R = 8.0\%\)</span> discount rate (<code>26000</code> [C] <code>8</code> [R] <code>5</code> [N] <code>85000</code> [I] [g] [SOLVE] [V]), then store <code>0</code> [V] and press [g] [SOLVE] [R] to find the multi-year <span class="arithmatex">\(\text{IRR}\)</span> (and compare against the single-year return on a <span class="arithmatex">\(\$50{,}000\)</span> note returning <span class="arithmatex">\(\$56{,}250\)</span> via <code>50000</code> [ENTER] <code>56250</code> [g] [ROI]). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(\text{NPV} = \mathbf{+\$18{,}810.46}\)</span>, <span class="arithmatex">\(5\text{-yr }\text{IRR} = \mathbf{16.09\%}\)</span>, and <span class="arithmatex">\(1\text{-yr }\text{ROI} = \mathbf{12.50\%}\)</span>.)</em></li>
+<li><strong>Gross Margin ([f] [MGN]), Breakeven Volume ([f] [BEP]), and Wilson EOQ ([g] [EOQ]):</strong> For an industrial pump costing <span class="arithmatex">\(C = \$210\)</span> and selling for <span class="arithmatex">\(P = \$350\)</span>, evaluate [f] [MGN] and [g] [MKP] (<code>210</code> [ENTER] <code>350</code> [f] [MGN] <code>210</code> [ENTER] <code>350</code> [g] [MKP]), open the [f] [BEP] Solver Workspace ([C] [f] [BEP]) to find the monthly breakeven volume [Q] for <span class="arithmatex">\(F = \$49{,}000\)</span>, <span class="arithmatex">\(P = \$350\)</span>, <span class="arithmatex">\(V = \$210\)</span> (<code>49000</code> [F] <code>350</code> [P] <code>210</code> [V] [g] [SOLVE] [Q]), and compute [g] [EOQ] for annual demand <span class="arithmatex">\(D = 8{,}000\)</span>, order cost <span class="arithmatex">\(S = \$100\)</span>, and holding cost <span class="arithmatex">\(H = \$4.00\)</span> (<code>8000</code> [ENTER] <code>100</code> [×] <code>4</code> [g] [EOQ]). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(\text{MGN}_{\%} = \mathbf{40.00\%}\)</span>, <span class="arithmatex">\(\text{MKP}_{\%} = \mathbf{66.67\%}\)</span>, <span class="arithmatex">\(Q_{\text{BEP}}^* = \mathbf{350.0\text{ units}}\)</span>, and <span class="arithmatex">\(Q_{\text{EOQ}}^* = \mathbf{632.46\text{ units}}\)</span>.)</em></li>
 </ol>
+<p>From corporate mortgage amortization and plant capital budgeting in Chapter 25, we move in Chapter 26 to the fixed-income and derivatives trading desk—pricing a ten-year corporate bond, measuring its duration risk against a fifty-basis-point rate spike, and valuing a six-month European option via Black–Scholes–Merton.</p>
 <hr />
-<h2 id="4-try-it-yourself-practice-problems">4. Try It Yourself: Practice Problems</h2>
-<h3 id="problem-1-retirement-nest-egg-future-value">Problem 1: Retirement Nest Egg (Future Value)</h3>
-<p>You invest <span class="arithmatex">\(\$500\)</span> at the end of every month (<span class="arithmatex">\(PMT = -500\)</span>) into an index fund averaging <span class="arithmatex">\(8.0\%\)</span> annual return (<span class="arithmatex">\(i = 8.0 / 12 = 0.6667\%\)</span>) for 35 years (<span class="arithmatex">\(N = 35 \times 12 = 420\text{ months}\)</span>). You start with <span class="arithmatex">\(\$0\)</span> (<span class="arithmatex">\(PV = 0\)</span>).
-Calculate the accumulated Future Value (<span class="arithmatex">\(FV\)</span>).
-<em>(Solution: <span class="arithmatex">\(FV = \mathbf{\$1,146,941.24}\)</span>. A <span class="arithmatex">\(\$500\)</span>/month habit produces over <span class="arithmatex">\(\$1.1\)</span> million dollars through compound interest!)</em></p>
-<h3 id="problem-2-corporate-equipment-net-present-value-npv">Problem 2: Corporate Equipment Net Present Value (NPV)</h3>
-<p>A manufacturing plant is considering installing an automated packaging robot:
-- Initial cost today: <span class="arithmatex">\(CF_0 = -\$60{,}000\)</span>
-- Cash savings Year 1: <span class="arithmatex">\(CF_1 = +\$25{,}000\)</span>
-- Cash savings Year 2: <span class="arithmatex">\(CF_2 = +\$25{,}000\)</span>
-- Cash savings Year 3: <span class="arithmatex">\(CF_3 = +\$25{,}000\)</span>
-The company's required discount rate is <span class="arithmatex">\(10\%\)</span> (<span class="arithmatex">\(r = 0.10\)</span>).
-Calculate the Net Present Value (<span class="arithmatex">\(NPV\)</span>).
-<em>(Solution: Present value of annual savings <span class="arithmatex">\(= 25000 / 1.1 + 25000 / 1.1^2 + 25000 / 1.1^3 = 22727 + 20661 + 18783 = \$62,171\)</span>. <span class="arithmatex">\(NPV = -60000 + 62171 = \mathbf{+\$2,171.30}\)</span>. Since <span class="arithmatex">\(NPV &gt; 0\)</span>, the project is financially sound and approved!)</em></p>
-<h3 id="problem-3-standard-normal-distribution-quantile-z-score">Problem 3: Standard Normal Distribution Quantile (<span class="arithmatex">\(Z\)</span>-Score)</h3>
-<p>In statistical hypothesis testing, what is the two-tailed critical <span class="arithmatex">\(Z\)</span>-score for a <span class="arithmatex">\(95\%\)</span> confidence level (where <span class="arithmatex">\(2.5\%\)</span> sits in the upper tail, meaning cumulative probability <span class="arithmatex">\(P = 0.975\)</span>)?
-On the SC-95, enter <code>0.975</code> and tap <code>[g] [InvNorm]</code> (<code>qnorm</code> in R).
-<em>(Solution: Register <span class="arithmatex">\(X\)</span> displays </em><em><code>1.95996</code></em><em> <span class="arithmatex">\(\implies \mathbf{1.96}\)</span>. The iconic <span class="arithmatex">\(1.96\sigma\)</span> confidence interval multiplier!)</em></p>
+<h1 id="chapter-26-hedging-the-semiannual-corporate-bond-against-a-rate-spike">Chapter 26: Hedging the Semiannual Corporate Bond Against a Rate Spike</h1>
+<p>On the institutional fixed-income desk, a portfolio manager holds a <span class="arithmatex">\(10\text{-year}\)</span> senior corporate bond with a par redemption value of <span class="arithmatex">\(F = 100.00\)</span> that pays a <span class="arithmatex">\(5.00\%\)</span> nominal annual coupon in semiannual installments (<span class="arithmatex">\(C_{\text{semi}} = 2.50\)</span> every six months across <span class="arithmatex">\(N = 20\)</span> half-year periods, or <span class="arithmatex">\(C_{\text{ann}} = 5.00\)</span> across <span class="arithmatex">\(10\)</span> annual periods). Credit spreads and Treasury yields have risen since issuance, pushing the bond's market <strong>Yield to Maturity</strong> to <span class="arithmatex">\(6.00\%\)</span> (<span class="arithmatex">\(Y = 3.00\%\)</span> per half-year). Before the Federal Open Market Committee announcement at 2:00 p.m., the manager must price the discount bond ([g] [BND]) and calculate its <strong>Macaulay Duration</strong> and <strong>Modified Duration</strong> to quantify how many dollars the position will lose if yields spike by another <span class="arithmatex">\(+50\text{ basis points}\)</span> (<span class="arithmatex">\(\Delta y = +0.50\%\)</span>).</p>
+<p>Across the trading floor on the equity derivatives desk, a strategist is structuring a <span class="arithmatex">\(6\text{-month}\)</span> (<span class="arithmatex">\(T = 0.50\text{ yr}\)</span>) European collar on an industrial index currently trading at a spot price of <span class="arithmatex">\(S_0 = 100.00\)</span> with an at-the-money strike price of <span class="arithmatex">\(K = 100.00\)</span>, a continuous risk-free interest rate of <span class="arithmatex">\(r = 5.00\%\)</span> (<span class="arithmatex">\(0.05\)</span>), and an implied annualized volatility of <span class="arithmatex">\(\sigma = 20.00\%\)</span> (<span class="arithmatex">\(0.20\)</span>).</p>
+<p>To price both the European <strong>Call Option</strong> and <strong>Put Option</strong>—and determine the exact share delta (<span class="arithmatex">\(\Delta = \Phi(d_1)\)</span>) required to hedge the position dynamically—the strategist evaluates Fischer Black, Myron Scholes, and Robert Merton's partial differential equation solution using the cumulative standard normal distribution ([g] [pN]).</p>
+<hr />
+<h2 id="fixed-income-bond-valuation-and-duration-interest-rate-sensitivity">Fixed-Income Bond Valuation and Duration Interest-Rate Sensitivity</h2>
+<p>A fixed-coupon bond is a portfolio of two distinct cash-flow promises: a level annuity of periodic coupon payments <span class="arithmatex">\(C\)</span> and a single zero-coupon lump-sum redemption of par value <span class="arithmatex">\(F\)</span> at maturity.</p>
+<h3 id="discounting-coupon-annuities-and-par-redemption-across-market-yields-bnd">Discounting Coupon Annuities and Par Redemption Across Market Yields (<code>BND</code>)</h3>
+<p>For a bond with par redemption value <span class="arithmatex">\(F = 100\)</span>, periodic coupon payment <span class="arithmatex">\(C\)</span>, and <span class="arithmatex">\(N\)</span> remaining periods to maturity discounted at periodic <strong>Yield to Maturity</strong> (<span class="arithmatex">\(y = Y/100\)</span>), the fair market <strong>Bond Price</strong> ([g] [BND], <span class="arithmatex">\(P_{\text{bond}}\)</span>) is the sum of the present value of the coupon stream and the discounted par redemption:</p>
+<div class="arithmatex">\[P_{\text{bond}} = C\left(\frac{1 - (1 + y)^{-N}}{y}\right) + F(1 + y)^{-N}\]</div>
+<p>In the United States corporate and Treasury bond markets, a <span class="arithmatex">\(10\text{-year}\)</span> bond paying a <span class="arithmatex">\(5.00\%\)</span> annual coupon rate distributes <span class="arithmatex">\(C_{\text{semi}} = 2.50\)</span> every six months across <span class="arithmatex">\(N_{\text{semi}} = 20\)</span> semiannual periods at a periodic yield of <span class="arithmatex">\(Y_{\text{semi}} = Y_{\text{nom}} / 2 = 3.00\%\)</span> (<span class="arithmatex">\(y = 0.030\)</span>), whereas Eurobonds pay <span class="arithmatex">\(C_{\text{ann}} = 5.00\)</span> once per year across <span class="arithmatex">\(N_{\text{ann}} = 10\)</span> annual periods at <span class="arithmatex">\(Y_{\text{ann}} = 6.00\%\)</span> (<span class="arithmatex">\(y = 0.060\)</span>). When the market yield equals the coupon rate (<span class="arithmatex">\(y = C/F\)</span>), <span class="arithmatex">\(P_{\text{bond}} = 100.00\)</span> (<strong>par</strong>); when <span class="arithmatex">\(y &gt; C/F\)</span>, <span class="arithmatex">\(P_{\text{bond}} &lt; 100.00\)</span> (<strong>discount</strong>); and when <span class="arithmatex">\(y &lt; C/F\)</span>, <span class="arithmatex">\(P_{\text{bond}} &gt; 100.00\)</span> (<strong>premium</strong>).</p>
+<p><img alt="Convex price-yield relationship of a fixed-coupon bond across premium, par, and discount market yields." src="../../assets/diagrams/domains/diagram_ch09_bond_price_yield.png" /></p>
+<p>Evaluating the <span class="arithmatex">\(10\text{-year}\)</span>, <span class="arithmatex">\(5.00\%\)</span> corporate bond at a <span class="arithmatex">\(6.00\%\)</span> market yield under exact semiannual compounding (<span class="arithmatex">\(N = 20\)</span>, <span class="arithmatex">\(C = 2.50\)</span>, <span class="arithmatex">\(Y = 3.00\%\)</span>) in the [g] [BND] workspace gives a coupon annuity present value of <span class="arithmatex">\(2.50 \times [(1 - 1.03^{-20}) / 0.03] = 2.50 \times 14.877475 = 37.19369\)</span> and a discounted par value of <span class="arithmatex">\(100(1.03)^{-20} = 55.36758\)</span>, summing to a discount price of <span class="arithmatex">\(P_{\text{semi}} = \mathbf{92.5613\text{ USD}}\)</span>. Under annual compounding (<span class="arithmatex">\(N = 10\)</span>, <span class="arithmatex">\(C = 5.00\)</span>, <span class="arithmatex">\(Y = 6.00\%\)</span>), the coupon stream is <span class="arithmatex">\(5.00 \times 7.360087 = 36.80044\)</span> and discounted par is <span class="arithmatex">\(100(1.06)^{-10} = 55.83948\)</span>, yielding <span class="arithmatex">\(P_{\text{ann}} = \mathbf{92.6400\text{ USD}}\)</span>.</p>
+<h3 id="macaulay-duration-modified-duration-and-rate-hike-convexity">Macaulay Duration, Modified Duration, and Rate-Hike Convexity</h3>
+<p>In 1938, Frederick Macaulay defined the effective time horizon of a bond—<strong>Macaulay Duration</strong> (<span class="arithmatex">\(D_{\text{Mac}}\)</span>)—as the present-value-weighted average arrival time of its cash flows, which admits a closed-form algebraic expression in terms of periodic coupon rate <span class="arithmatex">\(c = C/F\)</span>, periodic yield <span class="arithmatex">\(y\)</span>, and period count <span class="arithmatex">\(N\)</span>. Dividing Macaulay Duration (in years) by <span class="arithmatex">\((1 + y)\)</span> yields the first-derivative price sensitivity with respect to yield, known as <strong>Modified Duration</strong> (<span class="arithmatex">\(D_{\text{Mod}}\)</span>):</p>
+<div class="arithmatex">\[D_{\text{Mac,periods}} = \frac{1 + y}{y} - \frac{1 + y + N(c - y)}{c\left[(1 + y)^N - 1\right] + y}, \qquad D_{\text{Mod}} = -\frac{1}{P_{\text{bond}}}\frac{dP_{\text{bond}}}{dy_{\text{nom}}} = \frac{D_{\text{Mac,yr}}}{1 + y}, \qquad \frac{\Delta P_{\text{bond}}}{P_{\text{bond}}} \approx -D_{\text{Mod}} \cdot \Delta y_{\text{nom}}\]</div>
+<p>Here <span class="arithmatex">\(D_{\text{Mod}}\)</span> measures the percentage price change per <span class="arithmatex">\(100\text{ percentage-point}\)</span> (<span class="arithmatex">\(1.00\)</span>) change in yield; because the true price-yield curve <span class="arithmatex">\(P_{\text{bond}}(y)\)</span> is strictly convex (<span class="arithmatex">\(d^2 P / dy^2 &gt; 0\)</span>), the linear tangent line <span class="arithmatex">\(-D_{\text{Mod}} \cdot \Delta y\)</span> slightly overstates price drops when yields rise and slightly understates price gains when yields fall.</p>
+<p>For our semiannual <span class="arithmatex">\(10\text{-year}\)</span>, <span class="arithmatex">\(5.00\%\)</span> corporate bond yielding <span class="arithmatex">\(6.00\%\)</span> (<span class="arithmatex">\(c = 0.025\)</span>, <span class="arithmatex">\(y = 0.030\)</span>, <span class="arithmatex">\(N = 20\)</span> half-years), the closed-form formula gives <span class="arithmatex">\(D_{\text{Mac,periods}} = (1.03 / 0.03) - [1.03 + 20(-0.005)] / [0.025(1.03^{20} - 1) + 0.03] = 34.3333 - (0.93 / 0.0501528) = \mathbf{15.7900\text{ half-years}}\)</span>, or <span class="arithmatex">\(D_{\text{Mac,yr}} = 15.7900 / 2 = \mathbf{7.8950\text{ years}}\)</span>. Dividing by <span class="arithmatex">\((1 + 0.03)\)</span> yields a Modified Duration of <span class="arithmatex">\(D_{\text{Mod}} = 7.8950 / 1.03 = \mathbf{7.6650\text{ years}}\)</span> (and for the annual-coupon bond, <span class="arithmatex">\(D_{\text{Mac}} = \mathbf{8.0225\text{ years}}\)</span> and <span class="arithmatex">\(D_{\text{Mod}} = 8.0225 / 1.06 = \mathbf{7.5684\text{ years}}\)</span>). Against a sudden <span class="arithmatex">\(+50\text{ bps}\)</span> (<span class="arithmatex">\(\Delta y = +0.0050\)</span>) rate spike to <span class="arithmatex">\(6.50\%\)</span>, Modified Duration predicts a price decline of <span class="arithmatex">\(\Delta P / P \approx -7.6650 \times 0.0050 = \mathbf{-3.8325\%}\)</span>, or <span class="arithmatex">\(\Delta P \approx -92.5613 \times 0.038325 = \mathbf{-\$3.5474}\)</span> per <span class="arithmatex">\(\$100\)</span> par (to <span class="arithmatex">\(\$89.0139\)</span>, compared to the exact repriced value of <span class="arithmatex">\(\$89.1085\)</span> at <span class="arithmatex">\(Y_{\text{semi}} = 3.25\%\)</span>).</p>
+<hr />
+<h2 id="blackscholesmerton-continuous-time-option-valuation">Black–Scholes–Merton Continuous-Time Option Valuation</h2>
+<p>While a bond promises deterministic cash flows, an equity option confers the right—without the obligation—to buy (Call) or sell (Put) an underlying asset at a fixed strike price <span class="arithmatex">\(K\)</span> on expiration date <span class="arithmatex">\(T\)</span> only if the terminal spot price <span class="arithmatex">\(S_T\)</span> finishes favorably.</p>
+<h3 id="risk-neutral-log-normal-diffusion-and-the-call-option-formula-pn">Risk-Neutral Log-Normal Diffusion and the Call Option Formula (<code>pN</code>)</h3>
+<p>Assuming the underlying asset price <span class="arithmatex">\(S_t\)</span> follows geometric Brownian motion <span class="arithmatex">\(dS_t = \mu S_t\,dt + \sigma S_t\,dW_t\)</span> with annualized volatility <span class="arithmatex">\(\sigma\)</span> and continuous risk-free interest rate <span class="arithmatex">\(r\)</span>, Fischer Black, Myron Scholes, and Robert Merton proved in 1973 that the drift rate <span class="arithmatex">\(\mu\)</span> cancels out of a continuously delta-hedged portfolio. The arbitrage-free price of a European <strong>Call Option</strong> (<span class="arithmatex">\(C_{\text{call}}\)</span>) on a non-dividend-paying asset of spot price <span class="arithmatex">\(S_0\)</span> with strike price <span class="arithmatex">\(K\)</span> and time to expiration <span class="arithmatex">\(T\)</span> (in years) is governed by the standard normal cumulative distribution function <span class="arithmatex">\(\Phi(z) = \text{pnorm}(z)\)</span> ([g] [pN]):</p>
+<div class="arithmatex">\[C_{\text{call}} = S_0 \, \Phi(d_1) - K e^{-rT} \Phi(d_2), \qquad d_1 = \frac{\ln(S_0 / K) + \left(r + \frac{1}{2}\sigma^2\right)T}{\sigma\sqrt{T}}, \qquad d_2 = d_1 - \sigma\sqrt{T}\]</div>
+<p>In this PDE solution, <span class="arithmatex">\(\Phi(d_1)\)</span> is the option's <strong>Delta</strong> (<span class="arithmatex">\(\Delta_{\text{call}} = \partial C_{\text{call}} / \partial S_0\)</span>, the number of underlying shares held per option to remain delta-neutral), <span class="arithmatex">\(K e^{-rT}\)</span> is the continuously discounted present value of the strike price, and <span class="arithmatex">\(\Phi(d_2)\)</span> is the risk-neutral probability that the option expires in the money (<span class="arithmatex">\(S_T &gt; K\)</span>).</p>
+<p><img alt="Standard normal density phi(z) illustrating cumulative probability integration (pnorm) and inverse quantile lookup (qnorm)." src="../../assets/diagrams/domains/diagram_ch09_normal_cdf_quantile.png" /></p>
+<p>For our <span class="arithmatex">\(6\text{-month}\)</span> (<span class="arithmatex">\(T = 0.50\text{ yr}\)</span>) European call option with <span class="arithmatex">\(S_0 = 100.00\)</span>, <span class="arithmatex">\(K = 100.00\)</span>, <span class="arithmatex">\(r = 0.05\)</span>, and <span class="arithmatex">\(\sigma = 0.20\)</span>, the volatility-time product is <span class="arithmatex">\(\sigma\sqrt{T} = 0.20\sqrt{0.50} = \mathbf{0.141421}\)</span>. Because the option is at the money (<span class="arithmatex">\(\ln(100/100) = 0\)</span>), the numerator of <span class="arithmatex">\(d_1\)</span> is <span class="arithmatex">\((0.05 + \frac{1}{2}(0.04))(0.50) = 0.070 \times 0.50 = 0.0350\)</span>, giving <span class="arithmatex">\(d_1 = 0.0350 / 0.141421 = \mathbf{+0.247487}\)</span> and <span class="arithmatex">\(d_2 = 0.247487 - 0.141421 = \mathbf{+0.106066}\)</span>. Integrating the standard normal curve at <span class="arithmatex">\(d_1\)</span> and <span class="arithmatex">\(d_2\)</span> via [g] [pN] yields <span class="arithmatex">\(\Phi(d_1) = \mathbf{0.597734}\)</span> (<span class="arithmatex">\(\Delta_{\text{call}} \approx 59.77\text{ shares per }100\text{-share contract}\)</span>) and <span class="arithmatex">\(\Phi(d_2) = \mathbf{0.542235}\)</span>. With discounted strike <span class="arithmatex">\(K e^{-rT} = 100 e^{-0.025} = \mathbf{97.53099}\)</span>, the fair European call premium is <span class="arithmatex">\(C_{\text{call}} = 100(0.597734) - 97.53099(0.542235) = 59.7734 - 52.8847 = \mathbf{\$6.8887 \approx \$6.89}\)</span>.</p>
+<h3 id="putcall-parity-and-european-put-option-valuation">Put–Call Parity and European Put Option Valuation</h3>
+<p>To prevent static arbitrage between a protective put portfolio (<span class="arithmatex">\(S_0 + P_{\text{put}}\)</span>) and a fiduciary call portfolio (<span class="arithmatex">\(C_{\text{call}} + K e^{-rT}\)</span>)—both of which deliver an identical payoff of <span class="arithmatex">\(\max(S_T, K)\)</span> at expiration <span class="arithmatex">\(T\)</span>—the European <strong>Put Option</strong> (<span class="arithmatex">\(P_{\text{put}}\)</span>) must satisfy Hans Stoll's (1969) <strong>Put–Call Parity</strong> identity:</p>
+<div class="arithmatex">\[P_{\text{put}} = C_{\text{call}} - S_0 + K e^{-rT} = K e^{-rT} \Phi(-d_2) - S_0 \, \Phi(-d_1)\]</div>
+<p>Here <span class="arithmatex">\(\Phi(-d_1) = 1 - \Phi(d_1)\)</span> gives the magnitude of the put option's negative delta (<span class="arithmatex">\(\Delta_{\text{put}} = \Phi(d_1) - 1 = -0.402266\)</span>).</p>
+<p>Applying Put–Call Parity to our <span class="arithmatex">\(6\text{-month}\)</span> at-the-money option (<span class="arithmatex">\(C_{\text{call}} = \$6.8887\)</span>, <span class="arithmatex">\(S_0 = \$100.00\)</span>, <span class="arithmatex">\(K e^{-rT} = \$97.5310\)</span>) yields a European put price of <span class="arithmatex">\(P_{\text{put}} = 6.8887 - 100.00 + 97.5310 = \mathbf{\$4.4197 \approx \$4.42}\)</span>. Notice why an at-the-money call (<span class="arithmatex">\(S_0 = K = 100\)</span>) trades <span class="arithmatex">\(\$2.47\)</span> higher than the corresponding put: positive risk-free interest rates (<span class="arithmatex">\(r = 5\%\)</span>) reduce the present value of the strike price paid by the call holder by <span class="arithmatex">\(100 - 97.5310 = \$2.4690\)</span>.</p>
+<hr />
+<h2 id="bond-duration-and-blackscholes-option-pricing-on-the-stack-and-in-the-solver-workspace">Bond Duration and Black–Scholes Option Pricing on the Stack and in the Solver Workspace</h2>
+<p>The <strong>SC-95</strong> combines the fixed-income <strong>Bidirectional <code>BND</code> Solver Workspace</strong> ([g] [BND]: <code>P = C×(1-(1+Y/100)⁻ᴺ)/(Y/100) + F×(1+Y/100)⁻ᴺ</code>, softkeys [P], [C], [Y], [N], [F]), calendar day-count operators ([f] [▸YR], [g] [▸YMD], [f] [DT+], [g] [ΔD]), and direct Row 2 normal distribution keys ([g] [pN], [f] [qN], [rN]) to solve forward for clean bond price <span class="arithmatex">\(P\)</span>, solve backward via Secant–Brent / Newton–Raphson root-finding for periodic Yield to Maturity <span class="arithmatex">\(Y\)</span>, and price European options on the RPN stack:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Key / Solver</th>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: left;">Stack Inputs / Softkeys</th>
+<th style="text-align: left;">Governing Expression &amp; Solver Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[g] [BND]</td>
+<td style="text-align: left;">Bond Price &amp; YTM Solver</td>
+<td style="text-align: left;">Stack: <span class="arithmatex">\(Y = C, X = P\)</span> • Solver: [P] [C] [Y] [N] [F]</td>
+<td style="text-align: left;">Stack: Current yield <span class="arithmatex">\((C/P)\times 100\)</span>; Solver: <span class="arithmatex">\(P = C a_{\overline{N}\rvert y} + F(1+y)^{-N}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [pN] / [f] [qN]</td>
+<td style="text-align: left;">Normal CDF &amp; Quantile</td>
+<td style="text-align: left;">Register <span class="arithmatex">\(X\)</span>: <span class="arithmatex">\(z\)</span>-score ([g] [pN]) or area <span class="arithmatex">\(p\)</span> ([f] [qN])</td>
+<td style="text-align: left;"><span class="arithmatex">\(\Phi(z) = \text{pnorm}(X)\)</span> (<code>NORM</code> workspace: [P] [X] [M] [S])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [EAR]</td>
+<td style="text-align: left;">Effective Annual Rate</td>
+<td style="text-align: left;">Register <span class="arithmatex">\(Y\)</span>: <span class="arithmatex">\(\text{APR}_{\%}\)</span>, Register <span class="arithmatex">\(X\)</span>: Periods <span class="arithmatex">\(M\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\text{EAR}_{\%} = [(1 + Y/(100X))^X - 1]\times 100\)</span> ([E] [A] [M])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [▸YR] / [g] [▸YMD] / [g] [ΔD]</td>
+<td style="text-align: left;">Calendar &amp; Day-Count Accrual</td>
+<td style="text-align: left;"><span class="arithmatex">\(Y = \text{Start Date}\)</span>, <span class="arithmatex">\(X = \text{End Date}\)</span></td>
+<td style="text-align: left;">Converts day counts and ISO dates for accrued bond interest</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pricing-the-corporate-bond-and-solving-yield-to-maturity-in-the-bnd-solver-workspace">Pricing the Corporate Bond and Solving Yield to Maturity in the <code>BND</code> Solver Workspace</h3>
+<p>On the fixed-income desk, the portfolio manager opens the [g] [BND] (<code>P = C×f(Y,N) + F(1+Y)⁻ᴺ</code>) Solver Workspace ([C] [g] [BND]) to price the <span class="arithmatex">\(10\text{-year}\)</span>, <span class="arithmatex">\(5.0\%\)</span> corporate bond under both annual compounding (<span class="arithmatex">\(C = 5.0\)</span>, <span class="arithmatex">\(Y = 6.0\%\)</span>, <span class="arithmatex">\(N = 10\)</span>, <span class="arithmatex">\(F = 100\)</span>) and exact semiannual compounding (<span class="arithmatex">\(C = 2.50\)</span>, <span class="arithmatex">\(Y = 3.00\%\)</span>, <span class="arithmatex">\(N = 20\)</span>, <span class="arithmatex">\(F = 100\)</span>), reprices the bond at a <span class="arithmatex">\(+50\text{ bps}\)</span> (<span class="arithmatex">\(6.50\%\)</span> nominal, <span class="arithmatex">\(Y = 3.25\%\)</span> semiannual) yield spike, and solves backward via [g] [SOLVE] <span class="arithmatex">\(\to\)</span> [Y] to verify the implied Yield to Maturity from the screen price:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Solver Display / Register X</th>
+<th style="text-align: left;">What Happens in the <code>BND</code> Solver Workspace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[C] [g] [BND]</td>
+<td style="text-align: center;"><code>BND: P = C×f(Y,N)+F(1+Y)⁻ᴺ</code></td>
+<td style="text-align: left;">Open the <code>BND</code> Solver Workspace with softkeys [P], [C], [Y], [N], [F]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>5</code> [C] <code>6</code> [Y] <code>10</code> [N] <code>100</code> [F] [g] [SOLVE] [P]</td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(92.6399\)</span></strong></td>
+<td style="text-align: left;">Price <span class="arithmatex">\(10\text{-yr}\)</span>, <span class="arithmatex">\(5\%\)</span> annual-coupon bond at <span class="arithmatex">\(6.0\%\)</span> yield: <span class="arithmatex">\(P_{\text{ann}} = \mathbf{\$92.6400}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>2.5</code> [C] <code>3</code> [Y] <code>20</code> [N] <code>100</code> [F] [g] [SOLVE] [P]</td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(92.5613\)</span></strong></td>
+<td style="text-align: left;">Price exact semiannual bond (<span class="arithmatex">\(C=2.5, Y=3\%, N=20\)</span>): <span class="arithmatex">\(P_{\text{semi}} = \mathbf{\$92.5613}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>3.25</code> [Y] [g] [SOLVE] [P]</td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(89.1085\)</span></strong></td>
+<td style="text-align: left;">Reprice semiannual bond after <span class="arithmatex">\(+50\text{ bps}\)</span> hike (<span class="arithmatex">\(Y = 3.25\%\)</span>): <span class="arithmatex">\(P_{\text{exact}} = \mathbf{\$89.1085}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>92.5613</code> [P] [g] [SOLVE] [Y] <code>2</code> [×]</td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(6.0000\)</span></strong></td>
+<td style="text-align: left;">Solve backward via root-finding for semiannual <span class="arithmatex">\(Y = 3.0000\%\)</span> and double for <span class="arithmatex">\(\mathbf{6.0000\%}\)</span> nominal <code>YTM</code></td>
+</tr>
+</tbody>
+</table>
+<p>Comparing the linear Modified Duration estimate (<span class="arithmatex">\(92.5613 \times (1 - 0.038325) = \mathbf{\$89.0139}\)</span>) against the exact repriced bond (<span class="arithmatex">\(P_{\text{exact}} = \mathbf{\$89.1085}\)</span>) displays the <span class="arithmatex">\(+\$0.0946\)</span> convexity cushion earned by the bondholder during the <span class="arithmatex">\(+50\text{ bps}\)</span> rate shock.</p>
+<h3 id="valuing-the-blackscholes-call-and-put-options-on-the-stack">Valuing the Black–Scholes Call and Put Options on the Stack</h3>
+<p>Switching to the equity derivatives desk (<span class="arithmatex">\(S_0 = 100\)</span>, <span class="arithmatex">\(K = 100\)</span>, <span class="arithmatex">\(r = 0.05\)</span>, <span class="arithmatex">\(\sigma = 0.20\)</span>, <span class="arithmatex">\(T = 0.50\text{ yr}\)</span>, so <span class="arithmatex">\(\sigma\sqrt{T} = 0.141421\)</span> and <span class="arithmatex">\(d_1 = 0.247487\)</span>), the strategist presses [g] [pN] (on Row 2 Col 2) to integrate <span class="arithmatex">\(\Phi(d_1)\)</span> and <span class="arithmatex">\(\Phi(d_2)\)</span> and evaluate both the European Call and Put prices:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[C] <code>0.247487</code> [g] [pN] <code>100</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(59.7734\)</span></strong></td>
+<td style="text-align: left;">Integrate <span class="arithmatex">\(\Phi(d_1) = 0.597734\)</span> ([g] [pN]) and scale by <span class="arithmatex">\(S_0 = 100\)</span>: <span class="arithmatex">\(S_0\Phi(d_1) = \$59.7734\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.247487</code> [ENTER] <code>0.141421</code> [-] [g] [pN]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(59.7734\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(0.5422\)</span></strong></td>
+<td style="text-align: left;">Compute <span class="arithmatex">\(d_2 = 0.106066\)</span> and integrate <span class="arithmatex">\(\Phi(d_2) = 0.542235\)</span> ([g] [pN])</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.025</code> [+/-] [eˣ] <code>100</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(59.7734\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.5422\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(97.5310\)</span></strong></td>
+<td style="text-align: left;">Compute continuously discounted strike <span class="arithmatex">\(K e^{-rT} = 100 e^{-0.025} = \$97.5310\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[×] [-]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(6.8887\)</span></strong></td>
+<td style="text-align: left;">Multiply <span class="arithmatex">\(K e^{-rT}\Phi(d_2) = \$52.8847\)</span> and subtract from <span class="arithmatex">\(S_0\Phi(d_1)\)</span>: <span class="arithmatex">\(C_{\text{call}} = \$6.89\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>100</code> [-] <code>97.5310</code> [+]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(4.4197\)</span></strong></td>
+<td style="text-align: left;">Apply Put–Call Parity <span class="arithmatex">\(P_{\text{put}} = C_{\text{call}} - S_0 + K e^{-rT} = \$4.42\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>In five stack steps, both the call premium (<span class="arithmatex">\(\$6.89\)</span>) and put premium (<span class="arithmatex">\(\$4.42\)</span>) are resolved to four decimal places.</p>
+<h3 id="try-it-on-the-stack_1">Try It on the Stack</h3>
+<p>Test your fixed-income and option-pricing stack fluency across these three trading-desk scenarios:</p>
+<ol>
+<li><strong>Premium Bond Valuation and Backward YTM Verification ([g] [BND]):</strong> A <span class="arithmatex">\(10\text{-year}\)</span> corporate bond (<span class="arithmatex">\(F = 100\)</span>) carries a <span class="arithmatex">\(7.0\%\)</span> annual coupon and trades in a market where yields have fallen to <span class="arithmatex">\(y = 5.0\%\)</span>. In the [g] [BND] Solver Workspace ([C] [g] [BND]), price the premium bond under annual compounding (<code>7</code> [C] <code>5</code> [Y] <code>10</code> [N] <code>100</code> [F] [g] [SOLVE] [P]) and semiannual compounding (<code>3.5</code> [C] <code>2.5</code> [Y] <code>20</code> [N] <code>100</code> [F] [g] [SOLVE] [P]), then store <code>115.5892</code> [P] and press [g] [SOLVE] [Y] to verify the semiannual yield. <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(P_{\text{ann}} = \mathbf{\$115.4435}\)</span>, <span class="arithmatex">\(P_{\text{semi}} = \mathbf{\$115.5892}\)</span>, and <span class="arithmatex">\(Y = \mathbf{2.5000\%}\)</span>.)</em></li>
+<li><strong>Effective Annual Rate of Daily vs. Monthly Compounding ([g] [EAR]):</strong> Convert a nominal <span class="arithmatex">\(\text{APR} = 9.0\%\)</span> into its Effective Annual Rate when compounded monthly (<span class="arithmatex">\(M = 12\)</span>: <code>9</code> [ENTER] <code>12</code> [g] [EAR]) and when compounded daily (<span class="arithmatex">\(M = 365\)</span>: <code>9</code> [ENTER] <code>365</code> [g] [EAR]). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(\text{EAR}_{12} = \mathbf{9.3807\%}\)</span> and <span class="arithmatex">\(\text{EAR}_{365} = \mathbf{9.4162\%}\)</span>.)</em></li>
+<li><strong>One-Year Out-of-the-Money Black–Scholes Call ([g] [pN]):</strong> For a <span class="arithmatex">\(1\text{-year}\)</span> (<span class="arithmatex">\(T = 1.0\)</span>) European call with <span class="arithmatex">\(S_0 = 100\)</span>, <span class="arithmatex">\(K = 110\)</span>, <span class="arithmatex">\(r = 0.05\)</span>, and <span class="arithmatex">\(\sigma = 0.25\)</span>, verify that <span class="arithmatex">\(d_1 = -0.09724\)</span>, <span class="arithmatex">\(d_2 = -0.34724\)</span>, and <span class="arithmatex">\(K e^{-rT} = 104.6353\)</span>, then evaluate <span class="arithmatex">\(C_{\text{call}} = 100\Phi(d_1) - 104.6353\Phi(d_2)\)</span> (<code>0.09724</code> [+/-] [g] [pN] <code>100</code> [×] <code>0.34724</code> [+/-] [g] [pN] <code>104.6353</code> [×] [-]). <em>(Verified Register <span class="arithmatex">\(X\)</span> result: <span class="arithmatex">\(C_{\text{call}} = \mathbf{\$8.0263}\)</span>.)</em></li>
+</ol>
+<p>From bond convexity and Black–Scholes option hedging in Chapter 26, we return to the factory floor in Chapter 27—applying linear regression, normal tail integrals, and Six Sigma process capability indices to catch a drifting grinding spindle before scrap occurs.</p>
+<hr />
+<h1 id="chapter-27-catching-the-drifting-grinding-spindle-before-scrap-happens">Chapter 27: Catching the Drifting Grinding Spindle Before Scrap Happens</h1>
+<p>On a high-volume automotive powertrain line, a cylindrical CBN (cubic boron nitride) grinding machine finishes hardened steel transmission output shafts to a blueprint nominal diameter of <span class="arithmatex">\(10.000\text{ mm}\)</span> with bilateral specification limits of <span class="arithmatex">\(\text{LSL} = 9.950\text{ mm}\)</span> and <span class="arithmatex">\(\text{USL} = 10.050\text{ mm}\)</span> (a total engineering tolerance window of <span class="arithmatex">\(\text{USL} - \text{LSL} = 0.100\text{ mm}\)</span>, or <span class="arithmatex">\(100\ \mu\text{m}\)</span>). Under short-term steady-state operation, the grinder exhibits a natural within-lot standard deviation of <span class="arithmatex">\(\sigma = 0.010\text{ mm}\)</span> (<span class="arithmatex">\(10\ \mu\text{m}\)</span>). When the process mean is centered at <span class="arithmatex">\(\mu_0 = 10.000\text{ mm}\)</span>, each specification limit lies five standard deviations (<span class="arithmatex">\(\pm 5.0\sigma\)</span>) away from the center line.</p>
+<p>By 1:00 p.m., however, gradual thermal expansion of the hydrostatic wheelhead bearing and microscopic dressing-diamond wear have caused the process mean across the latest five hourly inspection sub-lots (<span class="arithmatex">\(t = 1, 2, 3, 4, 5\text{ hr}\)</span>, with sub-lot means <span class="arithmatex">\(9.990, 10.000, 10.010, 10.020, 10.030\text{ mm}\)</span>) to average <span class="arithmatex">\(\mu = 10.010\text{ mm}\)</span>—a <span class="arithmatex">\(+0.010\text{ mm}\)</span> (<span class="arithmatex">\(+1.0\sigma\)</span>) upward drift toward the Upper Specification Limit <span class="arithmatex">\(\text{USL} = 10.050\text{ mm}\)</span>. Every single shaft inspected by the operator still measures inside the <span class="arithmatex">\([9.950, 10.050]\text{ mm}\)</span> blueprint tolerance band, so a naive go/no-go snap gauge reports zero defects.</p>
+<p>To catch the drifting spindle <em>before</em> the wheelhead crosses the scrap threshold, the quality engineer uses statistical process control on the stack: accumulating the hourly inspection series ([Σ+]), extracting sample mean ([x̄,ȳ]), standard deviation ([g] [s,σ]), and linear regression drift rate ([g] [L.R.]), comparing potential and centered capability ([g] [Cpk]), sizing the inspection sample ([f] [n<em>], [g] [CI], [f] [z₀]), and integrating the upper Gaussian tail ([g] [pN]) to quantify expected </em><em>Defects Per Million Opportunities</em>* (<code>DPMO</code>).</p>
+<hr />
+<h2 id="sample-regression-sampling-distributions-and-statistical-inference">Sample Regression, Sampling Distributions, and Statistical Inference</h2>
+<p>Statistical process control begins by summarizing empirical measurements into sufficient sample statistics and modeling how a process parameter drifts over time or varies across finite samples.</p>
+<h3 id="sample-mean-dispersion-and-ordinary-least-squares-linear-regression-xy-s-lr">Sample Mean, Dispersion, and Ordinary Least-Squares Linear Regression (<code>Σ+</code>, <code>x̄,ȳ</code>, <code>s,σ</code>, <code>L.R.</code>)</h3>
+<p>Given <span class="arithmatex">\(n\)</span> paired observations <span class="arithmatex">\((x_i, y_i)\)</span> accumulated via the statistical summation operator ([Σ+], with relative share [f] [%Σ])—where <span class="arithmatex">\(x_i\)</span> represents elapsed production hours and <span class="arithmatex">\(y_i\)</span> represents measured shaft diameter—the sample means <span class="arithmatex">\((\bar{x}, \bar{y})\)</span> ([x̄,ȳ]) and Bessel-corrected sample standard deviations <span class="arithmatex">\((s_x, s_y)\)</span> ([g] [s,σ], with <span class="arithmatex">\(n - 1\)</span> degrees of freedom in the denominator) pair with the sample covariance <span class="arithmatex">\(s_{xy}\)</span> to determine the ordinary least-squares <strong>Linear Regression</strong> ([g] [L.R.], binding softkeys [ŷ], [x̂], [m], [b], [r]) slope <span class="arithmatex">\(m\)</span>, intercept <span class="arithmatex">\(b\)</span>, and Pearson correlation coefficient <span class="arithmatex">\(r\)</span>:</p>
+<div class="arithmatex">\[\bar{y} = \frac{1}{n}\sum_{i=1}^{n} y_i, \qquad s_y = \sqrt{\frac{1}{n - 1}\sum_{i=1}^{n}\left(y_i - \bar{y}\right)^2}, \qquad m = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}, \qquad \hat{y}(x) = b + m x\]</div>
+<p>Here <span class="arithmatex">\(b = \bar{y} - m\bar{x}\)</span> is the baseline dimension at <span class="arithmatex">\(x = 0\)</span>, <span class="arithmatex">\(m\)</span> is the thermal drift velocity (in <span class="arithmatex">\(\text{mm/hr}\)</span>), and <span class="arithmatex">\(r = m(s_x / s_y) \in [-1, +1]\)</span> measures linear trend strength.</p>
+<p>Across the five hourly grinding sub-lots <span class="arithmatex">\((1, 9.990)\)</span>, <span class="arithmatex">\((2, 10.000)\)</span>, <span class="arithmatex">\((3, 10.010)\)</span>, <span class="arithmatex">\((4, 10.020)\)</span>, and <span class="arithmatex">\((5, 10.030)\)</span>, the mean time is <span class="arithmatex">\(\bar{x} = 3.0\text{ hr}\)</span> and the overall sample mean diameter is <span class="arithmatex">\(\bar{y} = \mu = \mathbf{10.010\text{ mm}}\)</span> (with sub-lot dispersion <span class="arithmatex">\(s_y = \mathbf{0.01581\text{ mm}}\)</span> across the five hours and within-hour natural machine standard deviation <span class="arithmatex">\(\sigma = \mathbf{0.010\text{ mm}}\)</span>). Least-squares regression ([g] [L.R.]) extracts a drift slope of <span class="arithmatex">\(m = \mathbf{+0.010\text{ mm/hr}}\)</span> from an initial intercept of <span class="arithmatex">\(b = 9.980\text{ mm}\)</span> (<span class="arithmatex">\(r = \mathbf{1.0000}\)</span>), predicting via [ŷ] that by Hour <span class="arithmatex">\(6\)</span> the spindle mean will reach <span class="arithmatex">\(\hat{y}(6) = 9.980 + 0.010(6) = \mathbf{10.040\text{ mm}}\)</span>—only <span class="arithmatex">\(1.0\sigma\)</span> below <span class="arithmatex">\(\text{USL}\)</span>.</p>
+<h3 id="normal-tail-integrals-students-t-intervals-and-hypothesis-testing">Normal Tail Integrals, Student's t Intervals, and Hypothesis Testing</h3>
+<p>When a continuous dimension <span class="arithmatex">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span> is standardized via <span class="arithmatex">\(z = (x - \mu)/\sigma\)</span>, the lower-tail probability <span class="arithmatex">\(P(X \le x) = \Phi(z)\)</span> is given by the <strong>Standard Normal Cumulative Integral</strong> ([g] [pN], inverted by [f] [qN]), while the upper-tail exceedance probability above a threshold <span class="arithmatex">\(x\)</span> is <span class="arithmatex">\(P(X &gt; x) = 1 - \Phi(z) = \Phi(-z)\)</span>:</p>
+<div class="arithmatex">\[z = \frac{x - \mu}{\sigma}, \qquad \Phi(z) = \int_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} e^{-u^2 / 2}\,du, \qquad E = z_{\alpha/2} \cdot \frac{s}{\sqrt{n}}, \qquad n^* = \left(\frac{z_{\alpha/2} \cdot s}{E}\right)^2, \qquad Z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}\]</div>
+<p>In these inference equations, <span class="arithmatex">\(E\)</span> ([g] [CI]) is the confidence interval margin of error around <span class="arithmatex">\(\bar{x}\)</span>, <span class="arithmatex">\(n^*\)</span> ([f] [n*]) is the required sample size to achieve a target margin of error <span class="arithmatex">\(E\)</span> at critical quantile <span class="arithmatex">\(z_{\alpha/2}\)</span> (<span class="arithmatex">\(1.96\)</span> for <span class="arithmatex">\(95\%\)</span> confidence), and <span class="arithmatex">\(Z\)</span> ([f] [z₀] / <code>ZTEST</code>, or two-sample [f] [t₂] / <code>TTEST</code> and proportion test [g] [A/B] / <code>PROP</code>, alongside William Sealy Gosset's Student's <span class="arithmatex">\(t\)</span>-distribution [g] [pt]/[f] [qt]/[rt], chi-square [g] [pχ²]/[f] [qχ²]/[rχ²], Snedecor's <span class="arithmatex">\(F\)</span> [g] [pF]/[f] [qF]/[rF], and binomial [g] [pB]/[f] [qB]/[rB]) tests whether the observed shift <span class="arithmatex">\(\bar{x} - \mu_0\)</span> is statistically distinguishable from random sampling noise.</p>
+<p><img alt="Comparison of heavy-tailed Student's t sampling density against N(0,1) and right-skewed Chi-Square critical region." src="../../assets/diagrams/domains/diagram_ch09_student_t_chisq.png" /></p>
+<p>If the quality engineer inspects a sample of <span class="arithmatex">\(n = 25\)</span> shafts (<span class="arithmatex">\(\sqrt{n} = 5\)</span>) at 1:00 p.m. and observes <span class="arithmatex">\(\bar{x} = 10.010\text{ mm}\)</span> against the blueprint target <span class="arithmatex">\(\mu_0 = 10.000\text{ mm}\)</span> with <span class="arithmatex">\(\sigma = 0.010\text{ mm}\)</span>, the standard error of the mean is <span class="arithmatex">\(\sigma / \sqrt{n} = 0.010 / 5 = 0.0020\text{ mm}\)</span>. The <span class="arithmatex">\(95\%\)</span> margin of error ([g] [CI]) is <span class="arithmatex">\(E = 1.96 \times 0.0020 = \mathbf{0.00392\text{ mm}}\)</span>, and the one-sample test statistic ([f] [z₀]) is <span class="arithmatex">\(Z = (10.010 - 10.000) / 0.0020 = \mathbf{+5.0000}\)</span>—confirming at better than <span class="arithmatex">\(99.9999\%\)</span> confidence that an assignable mechanical drift has occurred.</p>
+<hr />
+<h2 id="six-sigma-process-capability-and-defect-rate-prediction">Six Sigma Process Capability and Defect Rate Prediction</h2>
+<p>Walter Shewhart's control charts ([g] [SPC]) track process stability over time; Motorola's <strong>Six Sigma Capability Indices</strong> ([g] [Cpk]) compare the natural width and centering of that process against the customer's engineering blueprint limits (<span class="arithmatex">\(\text{LSL}\)</span> and <span class="arithmatex">\(\text{USL}\)</span>).</p>
+<h3 id="process-potential-versus-centered-process-capability-cpk">Process Potential Versus Centered Process Capability (<code>Cpk</code>)</h3>
+<p>For a manufacturing process with mean <span class="arithmatex">\(\mu\)</span> and short-term standard deviation <span class="arithmatex">\(\sigma\)</span> operating between <strong>Lower Specification Limit</strong> <span class="arithmatex">\(\text{LSL}\)</span> and <strong>Upper Specification Limit</strong> <span class="arithmatex">\(\text{USL}\)</span>, <strong>Process Potential</strong> (<span class="arithmatex">\(C_p\)</span>) divides the blueprint tolerance width <span class="arithmatex">\((\text{USL} - \text{LSL})\)</span> by the natural <span class="arithmatex">\(6\sigma\)</span> process spread (<span class="arithmatex">\(\pm 3\sigma\)</span>). Because <span class="arithmatex">\(C_p\)</span> ignores where the mean <span class="arithmatex">\(\mu\)</span> is located, <strong>Centered Process Capability</strong> (<span class="arithmatex">\(C_{pk}\)</span>) evaluates the upper capability <span class="arithmatex">\(C_{pu}\)</span> and lower capability <span class="arithmatex">\(C_{pl}\)</span> separately and takes the minimum—measuring the distance from <span class="arithmatex">\(\mu\)</span> to the <em>nearer</em> specification wall in units of <span class="arithmatex">\(3\sigma\)</span>:</p>
+<div class="arithmatex">\[C_p = \frac{\text{USL} - \text{LSL}}{6\sigma}, \qquad C_{pu} = \frac{\text{USL} - \mu}{3\sigma}, \qquad C_{pl} = \frac{\mu - \text{LSL}}{3\sigma}, \qquad C_{pk} = \min\left(C_{pu},\; C_{pl}\right) = C_p\left(1 - k_{\text{shift}}\right)\]</div>
+<p>Here <span class="arithmatex">\(k_{\text{shift}} = |\mu - T| / [(\text{USL} - \text{LSL})/2]\)</span> is the fractional off-center shift relative to the half-tolerance <span class="arithmatex">\((\text{USL} - \text{LSL})/2\)</span>, and the process Sigma Quality Level is <span class="arithmatex">\(Z_{\text{min}} = 3 \cdot C_{pk}\)</span>.</p>
+<p><img alt="Six Sigma process capability geometry (Cp and Cpk) comparing a shifted 6-sigma process bell curve against LSL and USL specification limits." src="../../assets/diagrams/domains/diagram_ch09_six_sigma_cpk.png" /></p>
+<p>Evaluating our automotive shaft grinder (<span class="arithmatex">\(\text{LSL} = 9.950\text{ mm}\)</span>, <span class="arithmatex">\(\text{USL} = 10.050\text{ mm}\)</span>, <span class="arithmatex">\(\sigma = 0.010\text{ mm}\)</span>) via [g] [Cpk] reveals a Process Potential of <span class="arithmatex">\(C_p = (10.050 - 9.950) / (6 \times 0.010) = 0.100 / 0.060 = \mathbf{1.6667}\)</span> (<span class="arithmatex">\(5.0\sigma\)</span> potential). Once the mean drifts by <span class="arithmatex">\(+0.010\text{ mm}\)</span> to <span class="arithmatex">\(\mu = 10.010\text{ mm}\)</span>, however, the lower margin expands to <span class="arithmatex">\(C_{pl} = (10.010 - 9.950) / 0.030 = \mathbf{2.0000}\)</span> (<span class="arithmatex">\(6.0\sigma\)</span>), while the upper margin shrinks to <span class="arithmatex">\(C_{pu} = (10.050 - 10.010) / 0.030 = 0.040 / 0.030 = \mathbf{1.3333}\)</span> (<span class="arithmatex">\(4.0\sigma\)</span>). Consequently, Centered Process Capability drops from <span class="arithmatex">\(1.6667\)</span> to <span class="arithmatex">\(C_{pk} = \min(1.3333, 2.0000) = \mathbf{1.3333}\)</span>—landing right on the <span class="arithmatex">\(4.0\sigma\)</span> automotive quality action limit and triggering a tool-offset compensation before capability erodes further.</p>
+<h3 id="gaussian-tail-integration-and-defects-per-million-opportunities">Gaussian Tail Integration and Defects Per Million Opportunities</h3>
+<p>To translate <span class="arithmatex">\(C_p\)</span> and <span class="arithmatex">\(C_{pk}\)</span> into expected scrap volume in <strong>Defects Per Million Opportunities</strong> (<code>DPMO</code>), the engineer integrates both normal tails outside <span class="arithmatex">\([\text{LSL}, \text{USL}]\)</span> via [g] [pN] and multiplies by <span class="arithmatex">\(1{,}000{,}000\)</span>:</p>
+<div class="arithmatex">\[z_{\text{USL}} = \frac{\text{USL} - \mu}{\sigma} = 3 \cdot C_{pu}, \qquad z_{\text{LSL}} = \frac{\text{LSL} - \mu}{\sigma} = -3 \cdot C_{pl}, \qquad \text{DPMO} = 10^6 \times \left[\Phi\left(z_{\text{LSL}}\right) + \Phi\left(-z_{\text{USL}}\right)\right]\]</div>
+<p>In Six Sigma quality reporting, a process is audited both at its current short-term mean <span class="arithmatex">\(\mu\)</span> (unshifted <span class="arithmatex">\(\text{DPMO}\)</span>) and under Motorola's standard <span class="arithmatex">\(1.5\sigma\)</span> long-term drift allowance (<span class="arithmatex">\(Z_{\text{LT}} = Z_{\text{ST}} - 1.5\)</span>).</p>
+<p>At the grinder's drifted mean of <span class="arithmatex">\(\mu = 10.010\text{ mm}\)</span>, the upper specification limit lies at <span class="arithmatex">\(z_{\text{USL}} = (10.050 - 10.010) / 0.010 = \mathbf{+4.00\sigma}\)</span> and the lower limit lies at <span class="arithmatex">\(z_{\text{LSL}} = (9.950 - 10.010) / 0.010 = \mathbf{-6.00\sigma}\)</span>. Integrating the upper normal tail at <span class="arithmatex">\(+4.00\sigma\)</span> via <code>4</code> [+/-] [g] [pN] gives <span class="arithmatex">\(\Phi(-4.00) = 1 - 0.999968329 = \mathbf{3.1671 \times 10^{-5}}\)</span> (while the lower tail at <span class="arithmatex">\(-6.00\sigma\)</span> is <span class="arithmatex">\(9.87 \times 10^{-10}\)</span>). Multiplying by <span class="arithmatex">\(10^6\)</span> yields an instantaneous defect rate of <span class="arithmatex">\(\text{DPMO} = \mathbf{31.67\text{ DPMO}}\)</span> (compared to <span class="arithmatex">\(0.57\text{ DPMO}\)</span> when centered at <span class="arithmatex">\(\mu = 10.000\text{ mm}\)</span>, a <strong><span class="arithmatex">\(55\text{-fold}\)</span> increase in scrap risk</strong> caused by a <span class="arithmatex">\(10\ \mu\text{m}\)</span> drift).</p>
+<hr />
+<h2 id="statistical-process-control-and-six-sigma-capability-on-the-stack-and-in-the-solver-workspace">Statistical Process Control and Six Sigma Capability on the Stack and in the Solver Workspace</h2>
+<p>The <strong>SC-95</strong> unites the dedicated faceplate R-style statistical distribution keys ([g] [pN], [f] [qN], [rN], [g] [pt], [f] [qt], [rt], [g] [pχ²], [f] [qχ²], [rχ²], [g] [pF], [f] [qF], [rF], [g] [pB], [f] [qB], [rB], plus [f] [PDF]), bivariate regression accumulators ([Σ+], [x̄,ȳ], [g] [s,σ], [g] [L.R.], [f] [%Σ]), and the Six Sigma capability operator ([g] [Cpk]) on the RPN stack with the <strong>Bidirectional Equation Solver Workspaces</strong> ([g] [SOLVE] / [XEQ]) for [g] [Cpk] (<code>C = (U - L) / (6×S)</code>, softkeys [C], [U], [L], [S]), [g] [CI] (<code>E = Z × S / √N</code>), [f] [z₀] (<code>Z = (X - M) / (S / √N)</code>), [f] [t₂] (<code>T = (X - Y) / (S × √(2/N))</code>), and [f] [n*] (<code>N = (Z × S / E)²</code>, softkeys [N], [Z], [S], [E]):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Key / Solver</th>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: left;">Stack Inputs (<span class="arithmatex">\(Z, Y, X\)</span>)</th>
+<th style="text-align: left;">Governing Expression &amp; Solver Softkeys ([LFU0]–[LFU4])</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[Σ+], [x̄,ȳ], [g] [s,σ], [g] [L.R.]</td>
+<td style="text-align: left;">Sample Stats &amp; Regression</td>
+<td style="text-align: left;"><span class="arithmatex">\(Y = y_i, X = x_i\)</span></td>
+<td style="text-align: left;">[g] [L.R.] softkeys: [ŷ] [x̂] [m] [b] [r]</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [CI] / [f] [z₀]</td>
+<td style="text-align: left;">Margin of Error &amp; <span class="arithmatex">\(Z\)</span>-Test</td>
+<td style="text-align: left;">[g] [CI]: <span class="arithmatex">\(Y = s, X = n\)</span> • [f] [z₀]: <span class="arithmatex">\(T = \bar{x}, Z = \mu_0, Y = \sigma, X = n\)</span></td>
+<td style="text-align: left;">[g] [CI]: <code>E = Z×S/√N</code> ([E] [Z] [S] [N]); [f] [z₀]: <code>Z = (X-M)/(S/√N)</code> ([Z] [X] [M] [S] [N])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [n*]</td>
+<td style="text-align: left;">Audit Sample Size (<code>NSIZE</code>)</td>
+<td style="text-align: left;">Stack: <span class="arithmatex">\(Y = s, X = E\)</span></td>
+<td style="text-align: left;">Stack: <span class="arithmatex">\((1.96 Y / X)^2\)</span>; Solver: <code>N = (Z × S / E)²</code> ([N] [Z] [S] [E])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [pN] / [f] [qN] / [rN]</td>
+<td style="text-align: left;">Normal CDF, Quantile &amp; RNG</td>
+<td style="text-align: left;">Register <span class="arithmatex">\(X\)</span>: <span class="arithmatex">\(z\)</span>-score ([g] [pN]) or area <span class="arithmatex">\(p\)</span> ([f] [qN])</td>
+<td style="text-align: left;"><span class="arithmatex">\(\Phi(z) = \text{pnorm}(X)\)</span> and <span class="arithmatex">\(\Phi^{-1}(p) = \text{qnorm}(X)\)</span> (<code>NORM</code>: [P] [X] [M] [S])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [pt] [f] [qt] [g] [pχ²] [f] [qχ²] [g] [pF] [f] [qF] [g] [pB] [f] [qB]</td>
+<td style="text-align: left;">Student's <span class="arithmatex">\(t\)</span>, <span class="arithmatex">\(\chi^2\)</span>, <span class="arithmatex">\(F\)</span>, and Binomial</td>
+<td style="text-align: left;"><span class="arithmatex">\(Y = \text{stat or } p\)</span>, <span class="arithmatex">\(X = \nu\)</span> (or <span class="arithmatex">\(Z=k, Y=n, X=p\)</span>)</td>
+<td style="text-align: left;">Exact cumulative tail probabilities, inverse quantiles, and <code>TDIST</code>/<code>CHISQ</code>/<code>FDIST</code>/<code>BINOM</code> solvers</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [Cpk] / [g] [SPC]</td>
+<td style="text-align: left;">Six Sigma Capability &amp; Control Limit</td>
+<td style="text-align: left;">[g] [Cpk]: <span class="arithmatex">\(Y = \text{USL}-\text{LSL}, X = \sigma\)</span> • [g] [SPC]: <span class="arithmatex">\(Y = \mu, X = \sigma\)</span></td>
+<td style="text-align: left;">Stack: <span class="arithmatex">\(C_p = \frac{Y}{6 X}\)</span>; Solver: <code>C = (U - L) / (6×S)</code> ([C] [U] [L] [S]); [g] [SPC]: <span class="arithmatex">\(\mu + 3\sigma\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="auditing-spindle-drift-significance-and-process-capability-on-the-stack">Auditing Spindle Drift Significance and Process Capability on the Stack</h3>
+<p>At the grinding cell, the quality engineer first verifies the <span class="arithmatex">\(95\%\)</span> confidence interval Margin of Error ([g] [CI]) and one-sample <span class="arithmatex">\(Z\)</span>-test statistic ([f] [z₀]) for the <span class="arithmatex">\(n = 25\)</span> shaft sample (<span class="arithmatex">\(\bar{x} = 10.010\text{ mm}\)</span>, <span class="arithmatex">\(\mu_0 = 10.000\text{ mm}\)</span>, <span class="arithmatex">\(\sigma = 0.010\text{ mm}\)</span>), then evaluates Process Potential <span class="arithmatex">\(C_p\)</span> ([g] [Cpk]) and Centered Process Capability <span class="arithmatex">\(C_{pk}\)</span> across <span class="arithmatex">\(\text{LSL} = 9.950\text{ mm}\)</span>, <span class="arithmatex">\(\text{USL} = 10.050\text{ mm}\)</span>, and <span class="arithmatex">\(\mu = 10.010\text{ mm}\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>0.010</code> [ENTER] <code>25</code> [g] [CI]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(0.0039\)</span></strong></td>
+<td style="text-align: left;">Compute <span class="arithmatex">\(95\%\)</span> Margin of Error <span class="arithmatex">\(E = 1.96 \times 0.010 / \sqrt{25} = 0.00392\text{ mm}\)</span> ([g] [CI])</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>10.01</code> [ENTER] <code>10.00</code> [ENTER] <code>0.010</code> [ENTER] <code>25</code> [f] [z₀]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0039\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(5.0000\)</span></strong></td>
+<td style="text-align: left;">Compute drift test statistic <span class="arithmatex">\(Z = (10.01 - 10.00) / (0.010/\sqrt{25}) = +5.0000\)</span> ([f] [z₀])</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>10.05</code> [ENTER] <code>9.95</code> [-] <code>0.010</code> [g] [Cpk]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0039\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(5.0000\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(1.6667\)</span></strong></td>
+<td style="text-align: left;">Evaluate centered Process Potential <span class="arithmatex">\(C_p = 0.100 / (6 \times 0.010) = 1.6667\)</span> ([g] [Cpk])</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>10.05</code> [ENTER] <code>10.01</code> [-] <code>0.03</code> [÷]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0039\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(5.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.6667\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(1.3333\)</span></strong></td>
+<td style="text-align: left;">Evaluate drifted Centered Capability <span class="arithmatex">\(C_{pk} = (10.05 - 10.01)/0.03 = 1.3333\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Comparing Register <span class="arithmatex">\(Y\)</span> (<span class="arithmatex">\(C_p = 1.6667\)</span>) and Register <span class="arithmatex">\(X\)</span> (<span class="arithmatex">\(C_{pk} = 1.3333\)</span>) quantifies the exact capability loss (<span class="arithmatex">\(1.6667 - 1.3333 = 0.3333\)</span>) caused by the <span class="arithmatex">\(+10\ \mu\text{m}\)</span> thermal wheelhead shift.</p>
+<h3 id="sizing-audit-samples-forward-and-backward-in-the-n-solver-workspace">Sizing Audit Samples Forward and Backward in the <code>n*</code> Solver Workspace</h3>
+<p>Suppose the automotive customer tightens the quality audit protocol, requiring the <span class="arithmatex">\(95\%\)</span> confidence interval margin of error around the hourly sample mean not to exceed <span class="arithmatex">\(E = \pm 0.0025\text{ mm}\)</span> (<span class="arithmatex">\(2.5\ \mu\text{m}\)</span>) at <span class="arithmatex">\(Z = 1.96\)</span> and <span class="arithmatex">\(\sigma = 0.010\text{ mm}\)</span>. Opening the [f] [n<em>] (<code>NSIZE: N = (Z × S / E)²</code>) Solver Workspace ([C] [f] [n</em>]) solves forward via [g] [SOLVE] <span class="arithmatex">\(\to\)</span> [N] for the required sample size <span class="arithmatex">\(N\)</span>, and if metrology cycle time caps the hourly sample at <span class="arithmatex">\(N = 25\)</span> shafts, solving backward on [E] reveals the tightest margin of error achievable:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Solver Display / Register X</th>
+<th style="text-align: left;">What Happens in the <code>NSIZE</code> Solver Workspace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[C] [f] [n*]</td>
+<td style="text-align: center;"><code>NSIZE: N = (Z × S / E)²</code></td>
+<td style="text-align: left;">Open the Sample Size ([f] [n*]) Solver Workspace with softkeys [N], [Z], [S], [E]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1.96</code> [Z] <code>0.010</code> [S] <code>0.0025</code> [E]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0025\)</span></td>
+<td style="text-align: left;">Store <span class="arithmatex">\(95\%\)</span> critical quantile <span class="arithmatex">\(Z = 1.96\)</span>, std dev <span class="arithmatex">\(S = 0.010\text{ mm}\)</span>, target <span class="arithmatex">\(E = 0.0025\text{ mm}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [SOLVE] [N]</td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(61.4656\)</span></strong></td>
+<td style="text-align: left;">Solve forward for required sample size <span class="arithmatex">\(N = (1.96 \times 0.010 / 0.0025)^2 = \mathbf{61.47 \to 62\text{ shafts}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>25</code> [N] [g] [SOLVE] [E]</td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(0.00392\)</span></strong></td>
+<td style="text-align: left;">Store budget cap <span class="arithmatex">\(N = 25\)</span> and solve backward for achievable margin <span class="arithmatex">\(E = \mathbf{0.00392\text{ mm}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="computing-gaussian-tail-probability-and-dpmo-on-the-stack">Computing Gaussian Tail Probability and DPMO on the Stack</h3>
+<p>Continuing with <span class="arithmatex">\(C_{pk} = 1.3333\)</span> on the stack, the engineer multiplies by <span class="arithmatex">\(3\)</span> to obtain the upper specification <span class="arithmatex">\(z\)</span>-score (<span class="arithmatex">\(z_{\text{USL}} = +4.00\sigma\)</span>), integrates the upper Gaussian tail via <code>4</code> [+/-] [g] [pN], scales by <span class="arithmatex">\(10^6\)</span> to obtain <code>DPMO</code>, and compares the result against a <span class="arithmatex">\(1.5\sigma\)</span>-shifted process (<span class="arithmatex">\(z = +2.50\sigma\)</span>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>1.333333</code> [ENTER] <code>3</code> [×] [+/-] [g] [pN]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(0.0000317\)</span></strong></td>
+<td style="text-align: left;">Convert <span class="arithmatex">\(C_{pk}=1.3333\)</span> to <span class="arithmatex">\(-z_{\text{USL}} = -4.00\)</span> and integrate tail <span class="arithmatex">\(\Phi(-4.00) = 3.167\times 10^{-5}\)</span> ([g] [pN])</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1000000</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(31.6712\)</span></strong></td>
+<td style="text-align: left;">Multiply tail probability by <span class="arithmatex">\(10^6\)</span>: unshifted <span class="arithmatex">\(\text{DPMO} = 31.67\text{ ppm}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>2.5</code> [+/-] [g] [pN] <code>1000000</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(31.6712\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(6209.67\)</span></strong></td>
+<td style="text-align: left;">Compare <span class="arithmatex">\(4\sigma\)</span> process after <span class="arithmatex">\(1.5\sigma\)</span> shift (<span class="arithmatex">\(z = 2.5\sigma\)</span>): <span class="arithmatex">\(\text{DPMO}_{1.5\sigma} = 6{,}209.7\text{ ppm}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Seeing <span class="arithmatex">\(\text{DPMO}\)</span> jump from <span class="arithmatex">\(31.67\text{ ppm}\)</span> in Register <span class="arithmatex">\(Y\)</span> to <span class="arithmatex">\(6{,}209.7\text{ ppm}\)</span> in Register <span class="arithmatex">\(X\)</span> if the spindle drifts another <span class="arithmatex">\(1.5\sigma\)</span> explains why Six Sigma control loops re-center the grinding wheel as soon as <span class="arithmatex">\(C_{pk}\)</span> touches <span class="arithmatex">\(1.33\)</span>.</p>
+<h3 id="try-it-on-the-stack_2">Try It on the Stack</h3>
+<p>Master statistical inference, non-normal sampling distributions, and Six Sigma capability on the stack with these three quality-engineering exercises:</p>
+<ol>
+<li><strong>Aerospace Fastener Six Sigma Audit ([g] [Cpk] &amp; [g] [pN]):</strong> A titanium bolt thread-rolling cell operates with blueprint tolerance width <span class="arithmatex">\(\text{USL} - \text{LSL} = 0.072\text{ mm}\)</span> and standard deviation <span class="arithmatex">\(\sigma = 0.006\text{ mm}\)</span>. Compute [g] [Cpk] (<code>0.072</code> [ENTER] <code>0.006</code> [g] [Cpk]), and find the centered two-tailed defect rate in <code>DPMO</code> at <span class="arithmatex">\(\pm 6.0\sigma\)</span> (<code>6</code> [+/-] [g] [pN] <code>2</code> [×] <code>1000000</code> [×]). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(C_p = \mathbf{2.0000}\)</span> and <span class="arithmatex">\(\text{DPMO}_{\text{centered}} = \mathbf{0.00197\text{ ppm}}\)</span>.)</em></li>
+<li><strong>Small-Sample Student's <span class="arithmatex">\(t\)</span> Quantile and Test Statistic ([f] [z₀] &amp; [f] [qt]):</strong> A laboratory tests <span class="arithmatex">\(n = 16\)</span> concrete cylinders (<span class="arithmatex">\(\nu = 15\)</span> degrees of freedom) with sample mean <span class="arithmatex">\(\bar{x} = 42.10\text{ MPa}\)</span> against target <span class="arithmatex">\(\mu_0 = 40.00\text{ MPa}\)</span> (<span class="arithmatex">\(\bar{x} - \mu_0 = 2.10\text{ MPa}\)</span>) and sample standard deviation <span class="arithmatex">\(s = 3.50\text{ MPa}\)</span>. Compute the one-sample test statistic (<code>42.10</code> [ENTER] <code>40.00</code> [ENTER] <code>3.50</code> [ENTER] <code>16</code> [f] [z₀]) and compare it against the <span class="arithmatex">\(95\%\)</span> two-tailed Student's <span class="arithmatex">\(t\)</span> critical quantile <span class="arithmatex">\(t_{0.975, 15}\)</span> (<code>0.975</code> [ENTER] <code>15</code> [f] [qt]). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(t = \mathbf{2.4000}\)</span> and <span class="arithmatex">\(t_{0.975, 15} = \mathbf{2.1314}\)</span>, rejecting <span class="arithmatex">\(H_0\)</span>.)</em></li>
+<li><strong>Chi-Square Variance Threshold ([f] [qχ²]) and Binomial Lot Acceptance ([g] [pB]):</strong> Find the <span class="arithmatex">\(95\%\)</span> chi-square critical value for <span class="arithmatex">\(\nu = 10\)</span> degrees of freedom (<code>0.95</code> [ENTER] <code>10</code> [f] [qχ²]). Then open the [g] [pB] (<code>BINOM</code>) Solver Workspace ([C] [g] [pB]) for a binomial lot sample of <span class="arithmatex">\(N = 20\)</span> boards with defect rate <span class="arithmatex">\(Q = 0.05\)</span> and find the cumulative probability [P] of observing <span class="arithmatex">\(K \le 2\)</span> defects (<code>2</code> [K] <code>20</code> [N] <code>0.05</code> [Q] [g] [SOLVE] [P]). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(\chi^2_{0.95, 10} = \mathbf{18.3070}\)</span> and <span class="arithmatex">\(P(X \le 2) = \mathbf{0.9245}\)</span>.)</em></li>
+</ol>
+<p>This concludes our twenty-seven-chapter journey across the nine instruments of <strong>Volume III: The Stack in the Field</strong>; for a unified mathematical and operational reference across all nine calculators (<code>SC-35</code> through <code>SC-95</code>), consult <a href="../appendix-a-cross-domain-formula-compendium/">Appendix A: Cross-Domain Formula &amp; Equation Compendium</a> and <a href="../appendix-b-domain-keycap-and-softkey-directory/">Appendix B: Domain Instrument Keycap &amp; Workspace Directory</a>.</p>
 
 
 

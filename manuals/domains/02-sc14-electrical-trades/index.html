@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An applied guide to electrical conductor sizing, three-phase power, conduit bending geometry, and machining physics on the StackCalc 14.">
+        <meta name="description" content="Three narrative-problem chapters covering electrical conductor resistance, three-phase AC power factor, conduit offset and saddle bending trigonometry, CNC machining speeds, hydraulic clamping, valve Cv, and 4–20 mA process loops on the SC-14.">
       
       
         <meta name="author" content="StackCalc Engineering">
@@ -22,7 +22,7 @@
     
     
       
-        <title>SC-14 Industrial Trades, Electrical & Mechanical Handbook - StackCalc32</title>
+        <title>Unit II: Electrical Power, Conduit Geometry & Industrial Trades - StackCalc32</title>
       
     
     
@@ -67,13 +67,13 @@
   
   <meta property="og:site_name" content="StackCalc32">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="SC-14 Industrial Trades, Electrical &amp; Mechanical Handbook">
-  <meta property="og:description" content="An applied guide to electrical conductor sizing, three-phase power, conduit bending geometry, and machining physics on the StackCalc 14.">
+  <meta property="og:title" content="Unit II: Electrical Power, Conduit Geometry &amp; Industrial Trades">
+  <meta property="og:description" content="Three narrative-problem chapters covering electrical conductor resistance, three-phase AC power factor, conduit offset and saddle bending trigonometry, CNC machining speeds, hydraulic clamping, valve Cv, and 4–20 mA process loops on the SC-14.">
   <meta property="og:url" content="https://www.stackcalc.io/manuals/domains/02-sc14-electrical-trades/">
   <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SC-14 Industrial Trades, Electrical &amp; Mechanical Handbook">
-  <meta name="twitter:description" content="An applied guide to electrical conductor sizing, three-phase power, conduit bending geometry, and machining physics on the StackCalc 14.">
+  <meta name="twitter:title" content="Unit II: Electrical Power, Conduit Geometry &amp; Industrial Trades">
+  <meta name="twitter:description" content="Three narrative-problem chapters covering electrical conductor resistance, three-phase AC power factor, conduit offset and saddle bending trigonometry, CNC machining speeds, hydraulic clamping, valve Cv, and 4–20 mA process loops on the SC-14.">
   <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -120,7 +120,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sc-14-industrial-trades-electrical-mechanical-handbook" class="md-skip">
+        <a href="#unit-ii-electrical-power-conduit-geometry-industrial-trades" class="md-skip">
           Skip to content
         </a>
       
@@ -158,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SC-14 Industrial Trades, Electrical & Mechanical Handbook
+              Unit II: Electrical Power, Conduit Geometry & Industrial Trades
             
           </span>
         </div>
@@ -2914,239 +2914,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-when-ohms-law-meets-heavy-copper" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. When Ohm's Law Meets Heavy Copper
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. When Ohm's Law Meets Heavy Copper">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-not-just-use-a-smartphone" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Not Just Use a Smartphone?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-core-concepts-how-electricians-and-machinists-think" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Core Concepts: How Electricians and Machinists Think
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Core Concepts: How Electricians and Machinists Think">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#concept-1-the-vanishing-volts-circular-mils-cm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 1: The Vanishing Volts &amp; Circular Mils (\(CM\))
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Concept 1: The Vanishing Volts & Circular Mils (\(CM\))">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-voltage-drop-formula" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Voltage Drop Formula
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concept-2-the-power-of-three-sqrt3-approx-1732" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 2: The Power of Three (\(\sqrt{3} \approx 1.732\))
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Concept 2: The Power of Three (\(\sqrt{3} \approx 1.732\))">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sizing-three-phase-motor-circuits" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sizing Three-Phase Motor Circuits
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concept-3-bending-steel-pipe-with-right-triangles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 3: Bending Steel Pipe with Right Triangles
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Concept 3: Bending Steel Pipe with Right Triangles">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bending-multipliers-quick-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bending Multipliers Quick Reference
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concept-4-machining-feeds-and-speeds" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 4: Machining Feeds and Speeds
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-real-world-field-walkthroughs" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Real-World Field Walkthroughs
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Real-World Field Walkthroughs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#field-case-1-sizing-a-480v-sub-panel-feeder-relectricians" class="md-nav__link">
-    <span class="md-ellipsis">
-      Field Case 1: Sizing a 480V Sub-Panel Feeder (r/electricians)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Field Case 1: Sizing a 480V Sub-Panel Feeder (r/electricians)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-solve-it-on-the-sc-14" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to Solve It on the SC-14
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-case-2-bending-a-4-inch-offset-around-an-i-beam-practical-machinist" class="md-nav__link">
-    <span class="md-ellipsis">
-      Field Case 2: Bending a 4-Inch Offset Around an I-Beam (Practical Machinist)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Field Case 2: Bending a 4-Inch Offset Around an I-Beam (Practical Machinist)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step-mechanics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step-by-Step Mechanics
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-try-it-yourself-practice-problems" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Try It Yourself: Practice Problems
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Try It Yourself: Practice Problems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problem-1-motor-full-load-current" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem 1: Motor Full Load Current
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problem-2-conduit-raceway-fill" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem 2: Conduit Raceway Fill
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problem-3-cnc-spindle-speed" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem 3: CNC Spindle Speed
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -3160,127 +2927,834 @@
                   
 
 
-<h1 id="sc-14-industrial-trades-electrical-mechanical-handbook">SC-14 Industrial Trades, Electrical &amp; Mechanical Handbook</h1>
-<blockquote>
-<p><strong>Who this is for:</strong> Anyone who knows Ohm's Law (<span class="arithmatex">\(V = IR\)</span>) and basic right-triangle trigonometry, but wants to understand the hidden physics behind electrical breaker panels, industrial motors, and bending steel pipes around structural obstacles.</p>
-</blockquote>
+<h1 id="unit-ii-electrical-power-conduit-geometry-industrial-trades">Unit II: Electrical Power, Conduit Geometry &amp; Industrial Trades</h1>
+<p>In 1826, in a physics laboratory at the Jesuit Gymnasium of Cologne, Georg Simon Ohm abandoned the unstable zinc-copper acid cells of Alessandro Volta and connected a bismuth-copper thermocouple—with one junction immersed in boiling water and the other packed in crushed ice—across test wires of varying lengths and diameters. In textbook schematics, wires are drawn as frictionless black lines of zero resistance, alternating current behaves like direct-current resistors, steel conduits turn sharp corners without bending radii, and industrial sensors report directly in pounds per square inch or gallons per minute. Through his torsion galvanometer, Ohm proved in <em>Die galvanische Kette, mathematisch bearbeitet</em> (1827) that every metallic conductor opposes electron flow in direct proportion to its length <span class="arithmatex">\(L\)</span> and in inverse proportion to its cross-sectional area <span class="arithmatex">\(A\)</span>. Whenever an industrial feeder carries current <span class="arithmatex">\(I\)</span> over hundreds of feet of copper or aluminum wire, the conductor's series resistance <span class="arithmatex">\(R\)</span> drops a portion of the supply voltage (<span class="arithmatex">\(V_{\text{drop}} = IR\)</span>) and converts that electrical energy into Joule heat (<span class="arithmatex">\(P_{\text{heat}} = I^2 R\)</span>) trapped inside the raceway.</p>
+<p>Sixty years after Ohm's experiments, Nikola Tesla's 1888 polyphase rotating magnetic field, Mikhail Dolivo-Dobrovolsky's 1891 three-phase transmission line from Lauffen am Neckar to Frankfurt, and Charles Proteus Steinmetz's 1893 symbolic phasor calculus established <strong>Three-Phase Alternating Current</strong> as the backbone of industrial power. Whereas single-phase power pulsates to zero twice every cycle (<span class="arithmatex">\(120\text{ times per second}\)</span> on a <span class="arithmatex">\(60\text{ Hz}\)</span> grid), three sinusoidal phase voltages staggered by <span class="arithmatex">\(120^\circ\)</span> never cross zero simultaneously, delivering smooth torque to induction motors. Vector addition across <span class="arithmatex">\(120^\circ\)</span> phase angles introduces the geometric factor <span class="arithmatex">\(\mathbf{\sqrt{3} \approx 1.73205}\)</span> ([g] [kVA], [g] [FLA]), while inductive magnetic energy storage shifts current behind voltage by phase angle <span class="arithmatex">\(\phi\)</span>, scaling working power by the <strong>Power Factor</strong> <span class="arithmatex">\(\text{PF} = \cos\phi\)</span> ([PF]).</p>
+<p>Around those electrical feeders, industrial tradespeople solve coupled geometric, mechanical, and fluid relationships across the plant floor. Electricians bend rigid steel and thin-wall EMT conduit around structural steel beams using right-triangle cosecant multipliers ([OFS], [f] [MIT], [g] [FIT]), pipe schedule and wall-thickness tables ([f] [SCH], [g] [WAL]), and NEC Chapter 9 cross-sectional area limits ([g] [▦]). Machinists follow Frederick Winslow Taylor's 1906 metal-cutting laws (<em>On the Art of Cutting Metals</em>) to spin carbide end-mills at the rotational speed ([f] [SFM], [g] [RPM]), thread tap drill diameter ([f] [TAP]), and bolt-circle chord spacing ([g] [BC]) required to machine precision flanges without tool chatter, while instrumentation and fluid-power technicians size control valves ([g] [Cᵥ]), pipe flow continuity ([PIP]), centrifugal pumps ([PMP]), net positive suction head ([g] [NPH]), and noise-immune <span class="arithmatex">\(4\text{--}20\text{ mA}\)</span> current loops ([mA], [f] [RTD]).</p>
+<p>To serve master electricians, pipefitters, machinists, and plant engineers in the field, the <strong>SC-14 Industrial Trades, Electrical &amp; Mechanical</strong> instrument unites three architectural pillars: configurable RPN stack depth (<code>4-LV</code>, <code>8-LV</code>, or deep stack so register capacity is never a bottleneck), dual-mode domain keys that execute immediate stack calculations when values sit in Registers <span class="arithmatex">\(Z\)</span>, <span class="arithmatex">\(Y\)</span>, and <span class="arithmatex">\(X\)</span> or open a bidirectional Equation Solver workspace ([XEQ] with softkeys [LFU0]–[LFU5] for <code>AWG</code>, <code>FLA</code>, <code>KVA</code>, <code>BEND</code>, <code>SFM</code>, <code>OHM</code>, <code>PF</code>, <code>BOLT</code>, <code>PIP</code>, <code>CV</code>, and <code>PMP</code>), and fractional [f] [f-i] entry paired with live NEC and trade lookup tables ([g] [▦]):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Chapter</th>
+<th style="text-align: left;">Narrative Problem</th>
+<th style="text-align: left;">Mathematical Concepts</th>
+<th style="text-align: left;">Domain Keys &amp; Workspaces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Chapter 4</strong></td>
+<td style="text-align: left;">Diagnosing why a <span class="arithmatex">\(480\text{ V}\)</span> three-phase gantry crane trips under load at the end of a <span class="arithmatex">\(450\text{ ft}\)</span> copper feeder and correcting its power factor</td>
+<td style="text-align: left;">Circular mils, NEC Table 8 wire resistance, <span class="arithmatex">\(1\phi/3\phi\)</span> line voltage drop, <span class="arithmatex">\(\sqrt{3}\)</span> Wye phasors, AC power triangles, and parallel impedance</td>
+<td style="text-align: left;">[AWG], [PF], [g] [FLA], [g] [kVA], [f] [Ω], [f] [MTR], [x∥y], [f] [▸kW], [g] [▸HP]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Chapter 5</strong></td>
+<td style="text-align: left;">Routing a parallel bank of four EMT conduits over a <span class="arithmatex">\(6\text{ in.}\)</span> boiler-room I-beam and steam header, then verifying NEC <span class="arithmatex">\(40\%\)</span> raceway fill</td>
+<td style="text-align: left;">Cosecant offset travel, half-angle tangent conduit shrinkage, 3D rolling offsets, 3-point saddle geometry, and NEC cross-sectional fill</td>
+<td style="text-align: left;">[OFS], [f] [MIT], [g] [FIT], [f] [SCH], [g] [WAL], [f] [f-i], [g] [▦], [g] [▸mm], [g] [▸in]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Chapter 6</strong></td>
+<td style="text-align: left;">Eliminating chatter on a <span class="arithmatex">\(\varnothing\,0.500\text{ in.}\)</span> carbide end-mill cutting 4140 steel, verifying hydraulic clamping force, sizing a coolant valve, and calibrating a <span class="arithmatex">\(4\text{--}20\text{ mA}\)</span> loop</td>
+<td style="text-align: left;">Tangential surface speed ([f] [SFM]), spindle [g] [RPM], thread tap drills ([f] [TAP]), bolt circles ([g] [BC]), pipe flow ([PIP]), valve <span class="arithmatex">\(C_v\)</span> ([g] [Cᵥ]), pump power ([PMP]), [g] [NPH], and <span class="arithmatex">\(4\text{--}20\text{ mA}\)</span> loops ([mA])</td>
+<td style="text-align: left;">[f] [SFM], [g] [RPM], [f] [TAP], [g] [BC], [PIP], [g] [Cᵥ], [PMP], [g] [NPH], [g] [ρw], [mA], [f] [RTD], [f] [▸PSI], [g] [▸lbf], [f] [▸GPM]</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="1-when-ohms-law-meets-heavy-copper">1. When Ohm's Law Meets Heavy Copper</h2>
-<p>Have you ever noticed the lights in your home dim for a split second when the air conditioner compressor kicks on?</p>
-<p>That momentary dip is Ohm's Law playing out along fifty feet of copper hidden behind your drywall. A copper wire is not an imaginary, zero-resistance superconductor; it is a very long, very thin resistor. When a heavy electric motor draws a sudden surge of current, that current passing through the wire's physical resistance drops voltage right in the line. The voltage at the appliance sags, and the missing energy turns directly into heat inside the wall.</p>
-<p>In a home, an undersized wire might merely cause flickering lamps or a tripped breaker. But in a commercial hospital, a high-rise data center, or an industrial chemical plant, excessive electrical heat can melt insulation and cause electrical fires. To prevent this, the National Fire Protection Association publishes <strong>NFPA 70</strong>, known universally as the <strong>National Electrical Code (NEC)</strong>.</p>
-<p>The NEC is essentially applied physics and geometry codified into law. Electricians, pipefitters, and precision machinists work in an environment where math must be calculated quickly, accurately, and without paper:
-- Sizing a feeder cable so that a <span class="arithmatex">\(480\text{-volt}\)</span> industrial pump doesn't suffer brownout over a <span class="arithmatex">\(300\text{-foot}\)</span> run.
-- Calculating how much steel conduit shrinks when bending around an overhead structural I-beam.
-- Figuring out the exact spindle RPM for a carbide milling cutter so it cuts clean metal without overheating and dulling.</p>
-<p>The <strong>StackCalc 14 (SC-14)</strong> puts these trade formulas, conductor tables, and mechanical calculations directly onto a rugged 4-level RPN stack.</p>
-<h3 id="why-not-just-use-a-smartphone">Why Not Just Use a Smartphone?</h3>
+<h1 id="chapter-4-the-voltage-drop-on-pier-14s-crane-feeder">Chapter 4: The Voltage Drop on Pier 14's Crane Feeder</h1>
+<p>At a container terminal on Pier 14, a newly commissioned <span class="arithmatex">\(480\text{ V}\)</span> three-phase ship-to-shore gantry crane rated at <span class="arithmatex">\(S = 75\text{ kVA}\)</span> (<span class="arithmatex">\(I_L \approx 90.21\text{ A}\)</span> at lagging power factor <span class="arithmatex">\(\text{PF} = 0.80\)</span>) trips its under-voltage relay whenever the hoist motor lifts a loaded forty-foot container at full speed. The marine electrical contractor fed the pier-end crane disconnect through a one-way conduit run of <span class="arithmatex">\(L = 450\text{ ft}\)</span> from the substation switchgear using <code>#2 AWG</code> copper conductors, which have an ampacity of <span class="arithmatex">\(115\text{ A}\)</span> at <span class="arithmatex">\(75^\circ\text{C}\)</span> under NEC Table 310.16—seemingly plenty of thermal capacity for a <span class="arithmatex">\(90.21\text{ A}\)</span> load.</p>
+<p>What the contractor overlooked is the physical resistance of <span class="arithmatex">\(900\text{ feet}\)</span> of round-trip copper path along the pier. If a feeder is sized solely by ampacity without checking <strong>Voltage Drop</strong> ([AWG]) over a <span class="arithmatex">\(450\text{ ft}\)</span> run, two failure modes compound each other: first, series <span class="arithmatex">\(I R\)</span> drop starves the crane's <span class="arithmatex">\(480\text{ V}\)</span> terminals below the NEC <span class="arithmatex">\(3\%\)</span> branch/feeder threshold (<span class="arithmatex">\(14.4\text{ V}\)</span>); second, because an AC induction hoist motor delivers constant mechanical shaft power (<span class="arithmatex">\(P = \sqrt{3}\,V_{LL} I_L \cos\phi\)</span>), a drop in terminal voltage <span class="arithmatex">\(V_{LL}\)</span> forces the motor to draw <strong>higher line current</strong> <span class="arithmatex">\(I_L\)</span>, which further increases <span class="arithmatex">\(I^2 R\)</span> heating inside the conduit and trips the magnetic-thermal overload. To fix Pier 14's crane feeder before the next cargo vessel docks, the port electrical engineer must evaluate the exact circular-mil cross-section and NEC Table 8 resistance ([AWG]), compute the three-phase voltage drop and active/reactive power triangle ([PF], [g] [kVA], [g] [FLA], [f] [Ω]), solve backward in the <code>AWG</code> workspace for maximum allowable run lengths and minimum wire gauges ([D], [R], [L], [I], [G]), and compare upsizing the feeder against running two parallel conductors per phase ([x∥y]).</p>
+<hr />
+<h2 id="conductor-resistivity-circular-mils-and-feeder-voltage-drop">Conductor Resistivity, Circular Mils, and Feeder Voltage Drop</h2>
+<p>Sizing a long industrial feeder requires linking the geometric cross-section of a round metallic conductor to its ohmic resistance per thousand feet and evaluating the series voltage drop across single-phase and three-phase paths.</p>
+<h3 id="circular-mil-cross-sections-and-american-wire-gauge-resistivity">Circular Mil Cross-Sections and American Wire Gauge Resistivity</h3>
+<p>In Euclidean geometry, a cylindrical wire of diameter <span class="arithmatex">\(d\)</span> has cross-sectional area <span class="arithmatex">\(A = \frac{\pi}{4}d^2\)</span>. To eliminate the transcendental factor <span class="arithmatex">\(\pi/4\)</span> from field cable tables, North American electrical engineering defines the <strong>Circular Mil</strong> (<span class="arithmatex">\(\text{CM}\)</span>) as the area of a circle whose diameter is exactly one mil (<span class="arithmatex">\(1\text{ mil} = 0.001\text{ in}\)</span>), so area in circular mils equals the square of the diameter in mils:</p>
+<div class="arithmatex">\[\text{CM} = d_{\text{mils}}^2 = \left(1000 \cdot d_{\text{inches}}\right)^2, \qquad R_{\text{wire}} = \frac{K \cdot L}{\text{CM}}\]</div>
+<p>In these expressions, <span class="arithmatex">\(d_{\text{mils}}\)</span> is the conductor diameter in thousandths of an inch, <span class="arithmatex">\(L\)</span> is the conductor length in feet, and <span class="arithmatex">\(K\)</span> is the material's <strong>specific resistance constant</strong> (in <span class="arithmatex">\(\Omega\cdot\text{cmil/ft}\)</span> at <span class="arithmatex">\(75^\circ\text{C}\)</span> operating temperature), equal to <span class="arithmatex">\(K_{\text{Cu}} = 12.9\ \Omega\cdot\text{cmil/ft}\)</span> for uncoated copper and <span class="arithmatex">\(K_{\text{Al}} = 21.2\ \Omega\cdot\text{cmil/ft}\)</span> for aluminum (both listed in the [g] [▦] NEC reference table). Solid and stranded building conductors are indexed on the logarithmic <strong>American Wire Gauge</strong> ([AWG]) scale, in which smaller gauge numbers designate thicker conductors that double in cross-sectional area every three gauge steps down. NEC Chapter 9, Table 8 tabulates the direct-current resistance <span class="arithmatex">\(R_{1000}\)</span> in <strong>ohms per thousand feet</strong> (<span class="arithmatex">\(\Omega/\text{kft}\)</span> at <span class="arithmatex">\(75^\circ\text{C}\)</span>) alongside NEC Table 310.16 <span class="arithmatex">\(75^\circ\text{C}\)</span> copper ampacities:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Wire Size ([AWG])</th>
+<th style="text-align: center;">Circular Mils (<span class="arithmatex">\(\text{CM}\)</span>)</th>
+<th style="text-align: center;">Copper Resistance <span class="arithmatex">\(R_{1000}\)</span> (<span class="arithmatex">\(\Omega/\text{kft}\)</span> at <span class="arithmatex">\(75^\circ\text{C}\)</span>)</th>
+<th style="text-align: center;"><span class="arithmatex">\(75^\circ\text{C}\)</span> Copper Ampacity (<span class="arithmatex">\(\text{A}\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong><code>#14 AWG</code></strong> (<code>14</code>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(4{,}110\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.07\ \Omega/\text{kft}\)</span> (<span class="arithmatex">\(3.14\)</span> coated)</td>
+<td style="text-align: center;"><span class="arithmatex">\(20\text{ A}\)</span> (<span class="arithmatex">\(15\text{ A}\)</span> OCPD rule)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>#12 AWG</code></strong> (<code>12</code>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(6{,}530\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.93\ \Omega/\text{kft}\)</span> (<span class="arithmatex">\(1.98\)</span> coated)</td>
+<td style="text-align: center;"><span class="arithmatex">\(25\text{ A}\)</span> (<span class="arithmatex">\(20\text{ A}\)</span> OCPD rule)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>#10 AWG</code></strong> (<code>10</code>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(10{,}380\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.24\ \Omega/\text{kft}\)</span> (<span class="arithmatex">\(1.29\)</span> coated)</td>
+<td style="text-align: center;"><span class="arithmatex">\(35\text{ A}\)</span> (<span class="arithmatex">\(30\text{ A}\)</span> OCPD rule)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>#8 AWG</code></strong> (<code>8</code>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(16{,}510\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.778\ \Omega/\text{kft}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(50\text{ A}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>#6 AWG</code></strong> (<code>6</code>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(26{,}240\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.491\ \Omega/\text{kft}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(65\text{ A}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>#4 AWG</code></strong> (<code>4</code>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(41{,}740\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.308\ \Omega/\text{kft}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(85\text{ A}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>#2 AWG</code></strong> (<code>2</code>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(66{,}360\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.194\ \Omega/\text{kft}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(115\text{ A}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>#1 AWG</code></strong> (<code>1</code>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(83{,}690\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.154\ \Omega/\text{kft}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(130\text{ A}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>#1/0 AWG</code></strong> (<code>0</code>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(105{,}600\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.122\ \Omega/\text{kft}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(150\text{ A}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="single-phase-and-three-phase-feeder-voltage-drop-and-parallel-conductors">Single-Phase and Three-Phase Feeder Voltage Drop and Parallel Conductors</h3>
+<p>In a single-phase circuit located a <strong>one-way</strong> physical conduit distance <span class="arithmatex">\(L\)</span> (in <span class="arithmatex">\(\text{ft}\)</span>) from the panelboard, load current <span class="arithmatex">\(I\)</span> (in <span class="arithmatex">\(\text{A}\)</span>) travels <span class="arithmatex">\(L\)</span> feet out along the ungrounded hot conductor and <span class="arithmatex">\(L\)</span> feet back along the return conductor, traversing a total series path of <span class="arithmatex">\(2L\text{ feet}\)</span>.</p>
+<p><img alt="Single-phase two-wire feeder loop resistance model showing outgoing hot conductor and return neutral path." src="../../assets/diagrams/domains/diagram_ch02_voltage_drop.png" /></p>
+<p>Whether expressed via NEC Table 8 resistance <span class="arithmatex">\(R_{1000}\)</span> (<span class="arithmatex">\(\Omega/\text{kft}\)</span>) or specific resistivity <span class="arithmatex">\(K\)</span> and circular mils <span class="arithmatex">\(\text{CM}\)</span>, the single-phase line <strong>Voltage Drop</strong> <span class="arithmatex">\(V_{\text{drop},1\phi}\)</span> ([AWG]) and its balanced three-phase counterpart <span class="arithmatex">\(V_{\text{drop},3\phi}\)</span> (where return currents share phases separated by <span class="arithmatex">\(120^\circ\)</span>, replacing the round-trip factor <span class="arithmatex">\(2\)</span> with <span class="arithmatex">\(\sqrt{3} \approx 1.73205\)</span>), together with the combined resistance <span class="arithmatex">\(R_{\parallel}\)</span> of two parallel conductors or loads <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> ([x∥y]), obey:</p>
+<div class="arithmatex">\[V_{\text{drop},1\phi} = \frac{2 \cdot L \cdot I \cdot R_{1000}}{1000} = \frac{2 \cdot K \cdot L \cdot I}{\text{CM}}, \qquad V_{\text{drop},3\phi} = \frac{\sqrt{3} \cdot L \cdot I \cdot R_{1000}}{1000}, \qquad R_1 \parallel R_2 = \frac{R_1 \cdot R_2}{R_1 + R_2}\]</div>
+<p>Here <span class="arithmatex">\(R_{1000}\)</span> is the NEC Table 8 conductor resistance in <span class="arithmatex">\(\Omega/\text{kft}\)</span>, <span class="arithmatex">\(L\)</span> is the one-way run length in feet, <span class="arithmatex">\(I\)</span> is the line current in amperes, and <span class="arithmatex">\(R_1 \parallel R_2 = (R_1^{-1} + R_2^{-1})^{-1}\)</span> is the harmonic-mean parallel operator—the exact same reciprocal sum that governs thin-lens focal length relations (<span class="arithmatex">\(\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}\)</span>) in Unit IV (<code>SC-24</code>) and shunt reactance networks in Unit V (<code>SC-50</code>). On Pier 14's three-phase <span class="arithmatex">\(480\text{ V}\)</span> crane feeder carrying <span class="arithmatex">\(I = 90.211\text{ A}\)</span> over <span class="arithmatex">\(L = 450\text{ ft}\)</span> of <code>#2 AWG</code> copper (<span class="arithmatex">\(R_{1000} = 0.194\ \Omega/\text{kft}\)</span>), the single-phase equivalent drop is <span class="arithmatex">\(V_{\text{drop},1\phi} = \frac{2 \times 450 \times 90.211 \times 0.194}{1000} \approx 15.75\text{ V}\)</span> and the balanced three-phase line voltage drop is <span class="arithmatex">\(V_{\text{drop},3\phi} = \frac{\sqrt{3} \times 450 \times 90.211 \times 0.194}{1000} \approx \mathbf{13.64\text{ V}}\)</span> (<span class="arithmatex">\(2.84\%\)</span> at rated steady current), which spikes to <span class="arithmatex">\(\mathbf{20.46\text{ V}}\)</span> (<span class="arithmatex">\(4.26\%\)</span>, starving the crane terminals down to <span class="arithmatex">\(459.5\text{ V}\)</span>) during a <span class="arithmatex">\(150\%\)</span> hoist starting surge. Paralleling two <code>#1/0 AWG</code> conductors per phase (<span class="arithmatex">\(R_1 = R_2 = 0.122\ \Omega/\text{kft}\)</span>, so <span class="arithmatex">\(0.122 \parallel 0.122 = \mathbf{0.061\ \Omega/\text{kft}}\)</span> via [x∥y]) cuts the steady three-phase voltage drop to <span class="arithmatex">\(\frac{\sqrt{3} \times 450 \times 90.211 \times 0.061}{1000} \approx \mathbf{4.29\text{ V}}\)</span> (<span class="arithmatex">\(0.89\%\)</span>).</p>
+<hr />
+<h2 id="three-phase-rotating-phasors-power-triangles-and-reactive-compensation">Three-Phase Rotating Phasors, Power Triangles, and Reactive Compensation</h2>
+<p>Understanding why the crane draws <span class="arithmatex">\(90.21\text{ A}\)</span> to perform <span class="arithmatex">\(60\text{ kW}\)</span> of mechanical lifting work requires examining the phase angle between alternating voltage and current and the <span class="arithmatex">\(\sqrt{3}\)</span> geometry of three-phase Wye phasors.</p>
+<h3 id="alternating-current-phase-shift-power-factor-and-capacitor-sizing">Alternating Current Phase Shift, Power Factor, and Capacitor Sizing</h3>
+<p>In a resistive load such as an immersion heater, alternating current rises and falls in phase with alternating voltage. In an inductive load such as the Pier 14 gantry crane hoist motor, the alternating magnetic field stores and returns reactive energy every quarter-cycle, causing the RMS line current <span class="arithmatex">\(I\)</span> to lag behind the RMS supply voltage <span class="arithmatex">\(V\)</span> by a phase angle <span class="arithmatex">\(\phi\)</span>. Because only the current component in phase with voltage (<span class="arithmatex">\(I\cos\phi\)</span>) performs real mechanical or thermal work, AC power forms a right triangle governed by the dimensionless <strong>Power Factor</strong> <span class="arithmatex">\(\text{PF} = \cos\phi \in [0, 1]\)</span> ([PF]), linking <strong>Real Working Power</strong> <span class="arithmatex">\(P\)</span> (in watts, <span class="arithmatex">\(\text{W}\)</span>, or kilowatts, <span class="arithmatex">\(\text{kW}\)</span>, converted via [f] [▸kW] and [g] [▸HP]), <strong>Reactive Magnetizing Power</strong> <span class="arithmatex">\(Q\)</span> (in volt-amperes reactive, <span class="arithmatex">\(\text{VAR}\)</span>, or <span class="arithmatex">\(\text{kVAR}\)</span>), and <strong>Apparent Power</strong> <span class="arithmatex">\(S\)</span> (in volt-amperes, <span class="arithmatex">\(\text{VA}\)</span>, or <span class="arithmatex">\(\text{kVA}\)</span>):</p>
+<p><img alt="Alternating-current power triangle relating real working power P, reactive magnetizing power Q, and apparent volt-amperes S." src="../../assets/diagrams/domains/diagram_ch02_power_triangle.png" /></p>
+<div class="arithmatex">\[P = V \cdot I \cdot \text{PF} = S \cos(\phi), \qquad Q = S \sin(\phi) = \sqrt{S^2 - P^2}, \qquad \text{PF} = \cos(\phi) = \frac{P}{S}\]</div>
+<p>In this power triangle, <span class="arithmatex">\(S\)</span> is the hypotenuse that sizes transformers, switchgear, and feeder conductors, <span class="arithmatex">\(P\)</span> is the adjacent horizontal leg converted into shaft work and heat, and <span class="arithmatex">\(Q\)</span> is the opposite vertical leg oscillating between the source and the motor's magnetic field—forming the exact electrical counterpart to the North-clockwise surveying projection (<span class="arithmatex">\(\Delta N = D\cos\alpha, \Delta E = D\sin\alpha\)</span>) and aeronautical wind triangle in Unit I (<code>SC-35</code>). On Pier 14's crane rated at apparent power <span class="arithmatex">\(S = 75.0\text{ kVA}\)</span> and lagging power factor <span class="arithmatex">\(\text{PF} = 0.80\)</span> (<span class="arithmatex">\(\phi = \arccos(0.80) \approx 36.87^\circ\)</span>, <span class="arithmatex">\(\sin\phi = 0.60\)</span>), the real working power is <span class="arithmatex">\(P = 75.0 \times 0.80 = \mathbf{60.0\text{ kW}}\)</span> (<span class="arithmatex">\(80.46\text{ HP}\)</span> via [g] [▸HP]) and the reactive magnetizing demand is <span class="arithmatex">\(Q = 75.0 \times 0.60 = \mathbf{45.0\text{ kVAR}}\)</span>. Installing a parallel <span class="arithmatex">\(25.0\text{ kVAR}\)</span> capacitor bank at the crane disconnect supplies <span class="arithmatex">\(25.0\text{ kVAR}\)</span> locally, reducing net reactive draw from the feeder to <span class="arithmatex">\(Q_{\text{new}} = 45.0 - 25.0 = 20.0\text{ kVAR}\)</span>, shrinking apparent feeder demand to <span class="arithmatex">\(S_{\text{new}} = \sqrt{60.0^2 + 20.0^2} \approx \mathbf{63.25\text{ kVA}}\)</span>, and raising the corrected power factor to <span class="arithmatex">\(\text{PF}_{\text{new}} = 60.0 / 63.2456 \approx \mathbf{0.9487}\)</span>.</p>
+<h3 id="three-phase-wye-phasor-geometry-and-motor-full-load-current">Three-Phase Wye Phasor Geometry and Motor Full-Load Current</h3>
+<p>In a balanced three-phase Wye (<span class="arithmatex">\(Y\)</span>) distribution system, three transformer windings share a common grounded neutral center point <span class="arithmatex">\(N\)</span> and radiate outward at phase angles <span class="arithmatex">\(0^\circ\)</span>, <span class="arithmatex">\(120^\circ\)</span>, and <span class="arithmatex">\(240^\circ\)</span>. If each winding develops a phase-to-neutral magnitude <span class="arithmatex">\(V_{LN}\)</span>, the line-to-line voltage <span class="arithmatex">\(V_{LL}\)</span> measured between any two outer phase conductors follows from the Law of Cosines across the <span class="arithmatex">\(120^\circ\)</span> isosceles triangle formed by Neutral <span class="arithmatex">\(N\)</span>, Phase <span class="arithmatex">\(A\)</span>, and Phase <span class="arithmatex">\(B\)</span>:</p>
+<p><img alt="Symmetric 120-degree three-phase Wye phasor diagram showing the sqrt(3) vector relationship between line-to-neutral and line-to-line voltage." src="../../assets/diagrams/domains/diagram_ch02_three_phase_phasor.png" /></p>
+<div class="arithmatex">\[V_{LL} = \sqrt{V_{LN}^2 + V_{LN}^2 - 2 V_{LN}^2 \cos(120^\circ)} = V_{LN} \sqrt{2 - 2(-0.5)} = \sqrt{3} \cdot V_{LN}\]</div>
+<p>This geometric ratio <span class="arithmatex">\(\sqrt{3} \approx 1.73205\)</span> produces the two standard commercial voltage systems in North America: multiplying <span class="arithmatex">\(V_{LN} = 120\text{ V}\)</span> by <span class="arithmatex">\(\sqrt{3}\)</span> gives <span class="arithmatex">\(207.85\text{ V}\)</span> (<span class="arithmatex">\(208\text{Y}/120\text{ V}\)</span>), and multiplying <span class="arithmatex">\(V_{LN} = 277\text{ V}\)</span> by <span class="arithmatex">\(\sqrt{3}\)</span> gives <span class="arithmatex">\(479.78\text{ V}\)</span> (<span class="arithmatex">\(480\text{Y}/277\text{ V}\)</span>). Because each of the three phases delivers apparent power <span class="arithmatex">\(V_{LN} I_L = (V_{LL}/\sqrt{3})I_L\)</span>, total three-phase apparent power across all three phases is <span class="arithmatex">\(3(V_{LL}/\sqrt{3})I_L = \sqrt{3}\,V_{LL}I_L\)</span>. Expressing three-phase apparent power <span class="arithmatex">\(S_{\text{kVA}}\)</span> in kilovolt-amperes ([g] [kVA]) to solve for per-phase line current <span class="arithmatex">\(I_L\)</span>, or converting rated mechanical output horsepower <span class="arithmatex">\(\text{HP}\)</span> (<span class="arithmatex">\(1\text{ HP} = 746\text{ W}\)</span>) and fractional efficiency <span class="arithmatex">\(\eta \in (0, 1]\)</span> into three-phase motor <strong>Full-Load Amps</strong> <span class="arithmatex">\(I_{\text{FLA}}\)</span> ([g] [FLA]), gives:</p>
+<div class="arithmatex">\[S_{\text{kVA}} = \frac{\sqrt{3} \cdot V_{LL} \cdot I_L}{1000}, \qquad I_L = \frac{S_{\text{kVA}} \times 1000}{\sqrt{3} \cdot V_{LL}}, \qquad I_{\text{FLA}} = \frac{\text{HP} \times 746}{\sqrt{3} \cdot V_{LL} \cdot \eta}\]</div>
+<p>Here <span class="arithmatex">\(V_{LL}\)</span> is the line-to-line RMS voltage, <span class="arithmatex">\(I_L\)</span> is the per-phase line current in amperes, and <span class="arithmatex">\(746\text{ W/HP}\)</span> converts mechanical horsepower into electrical watts. On Pier 14's <span class="arithmatex">\(480\text{ V}\)</span> three-phase feeder supplying <span class="arithmatex">\(S_{\text{kVA}} = 75\text{ kVA}\)</span>, dividing <span class="arithmatex">\(75{,}000\text{ VA}\)</span> by <span class="arithmatex">\(\sqrt{3} \times 480 \approx 831.384\text{ V}\)</span> via [g] [kVA] yields the uncorrected line current <span class="arithmatex">\(I_L \approx \mathbf{90.21\text{ A}}\)</span> (<span class="arithmatex">\(90.211\text{ A}\)</span>); after capacitor correction to <span class="arithmatex">\(S_{\text{new}} = 63.2456\text{ kVA}\)</span>, the feeder line current drops to <span class="arithmatex">\(I_{L,\text{new}} \approx \mathbf{76.07\text{ A}}\)</span>.</p>
+<hr />
+<h2 id="diagnosing-the-pier-14-feeder-on-the-stack-and-awg-solver-workspace">Diagnosing the Pier 14 Feeder on the Stack and <code>AWG</code> Solver Workspace</h2>
+<p>On the <strong>SC-14</strong>, electrical power keys operate both as immediate RPN stack shortcuts—computing 1-phase copper voltage drop <span class="arithmatex">\(V_{\text{drop}} = 2 \cdot L \cdot I \cdot R_{1000} / 1000\)</span> when current <span class="arithmatex">\(I\)</span> is in Register <span class="arithmatex">\(Z\)</span>, length <span class="arithmatex">\(L\)</span> (in <span class="arithmatex">\(\text{ft}\)</span>) is in Register <span class="arithmatex">\(Y\)</span>, and wire gauge (<code>14</code>..<code>0</code>) is in Register <span class="arithmatex">\(X\)</span> via [AWG], scaling three-phase apparent power by <span class="arithmatex">\(\sqrt{3}\,V_{LL}\)</span> via [g] [kVA], evaluating AC real power via [PF], and combining parallel impedances via [x∥y]—and as bidirectional Equation Solver workspaces (<code>AWG</code>, <code>FLA</code>, <code>KVA</code>, <code>PF</code>, <code>OHM</code>, and <code>MTR</code>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Button</th>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">Governing Expression &amp; Workspace Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[AWG]</td>
+<td style="text-align: left;">NEC Copper Voltage Drop &amp; Solver</td>
+<td style="text-align: center;">Current <span class="arithmatex">\(I\ (\text{A})\)</span></td>
+<td style="text-align: center;">Length <span class="arithmatex">\(L\ (\text{ft})\)</span></td>
+<td style="text-align: center;">Gauge <span class="arithmatex">\(G\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(V_{\text{drop}} = 2 \cdot L \cdot I \cdot R_{1000} / 1000\)</span>; <code>AWG</code> ([D], [R], [L], [I], [G])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[PF]</td>
+<td style="text-align: left;">AC Working Power &amp; Power Factor</td>
+<td style="text-align: center;">Voltage <span class="arithmatex">\(V\)</span></td>
+<td style="text-align: center;">Current <span class="arithmatex">\(I\)</span></td>
+<td style="text-align: center;">Power Factor <span class="arithmatex">\(\text{PF}\)</span></td>
+<td style="text-align: left;">3-arg <span class="arithmatex">\(P = V \cdot I \cdot \text{PF}\)</span> (2-arg <span class="arithmatex">\(P/S\)</span>); <code>PF</code> ([P], [V], [I], [F])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [kVA]</td>
+<td style="text-align: left;">Three-Phase Transformer Current</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Power <span class="arithmatex">\(S\ (\text{kVA})\)</span></td>
+<td style="text-align: center;">Voltage <span class="arithmatex">\(V_{LL}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(I_L = (S \times 1000) / (\sqrt{3} \cdot V_{LL})\)</span>; <code>KVA</code> ([S], [V], [I])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [FLA]</td>
+<td style="text-align: left;">Three-Phase Motor Full-Load Amps</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Power <span class="arithmatex">\(P\ (\text{HP})\)</span></td>
+<td style="text-align: center;">Voltage <span class="arithmatex">\(V_{LL}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(I = P \cdot 746 / (\sqrt{3} \cdot V \cdot E)\)</span>; <code>FLA</code> ([I], [P], [V], [E])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [Ω]</td>
+<td style="text-align: left;">Electrical Power &amp; Ohm's Law</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Voltage <span class="arithmatex">\(V\)</span></td>
+<td style="text-align: center;">Current <span class="arithmatex">\(I\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(P = V \times I\)</span>; <code>OHM</code> workspace ([P], [V], [I])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [MTR]</td>
+<td style="text-align: left;">Rotary Motor Shaft Horsepower</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Torque <span class="arithmatex">\(T\ (\text{lb}\cdot\text{ft})\)</span></td>
+<td style="text-align: center;">Speed <span class="arithmatex">\(N\ (\text{RPM})\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(H = T \times N / 5252\)</span>; <code>MTR</code> workspace ([H], [T], [N])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x∥y]</td>
+<td style="text-align: left;">Parallel Resistance / Impedance</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Value <span class="arithmatex">\(R_1\)</span></td>
+<td style="text-align: center;">Value <span class="arithmatex">\(R_2\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(R_1 \parallel R_2 = (R_1 \cdot R_2) / (R_1 + R_2)\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="evaluating-feeder-current-nec-table-8-resistance-and-line-voltage-drop-on-the-stack">Evaluating Feeder Current, NEC Table 8 Resistance, and Line Voltage Drop on the Stack</h3>
+<p>To diagnose Pier 14's <span class="arithmatex">\(75\text{ kVA}\)</span>, <span class="arithmatex">\(480\text{ V}\)</span> crane feeder across <span class="arithmatex">\(L = 450\text{ ft}\)</span> of <code>#2 AWG</code> copper, the engineer first computes the three-phase line current <span class="arithmatex">\(I_L \approx \mathbf{90.2110\text{ A}}\)</span> via <code>75</code> [ENTER] <code>480</code> [g] [kVA], evaluates the 1-phase copper voltage drop across <span class="arithmatex">\(L = 450\text{ ft}\)</span> of <code>#2 AWG</code> (<span class="arithmatex">\(R_{1000} = 0.194\ \Omega/\text{kft}\)</span>) via <code>450</code> [ENTER] <code>2</code> [AWG] (<span class="arithmatex">\(\mathbf{15.7508\text{ V}}\)</span>), and scales by <span class="arithmatex">\(\sqrt{3}/2\)</span> to obtain the balanced three-phase voltage drop <span class="arithmatex">\(V_{\text{drop},3\phi} \approx \mathbf{13.6406\text{ V}}\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>75</code> [ENTER] <code>480</code> [g] [kVA]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(90.2110\)</span></td>
+<td style="text-align: left;">Compute 3-phase crane current <span class="arithmatex">\(I_L = 75{,}000 / (\sqrt{3} \times 480) \approx 90.211\text{ A}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>450</code> [ENTER] <code>2</code> [AWG]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(15.7508\)</span></td>
+<td style="text-align: left;">Compute 1-phase <code>#2 AWG</code> copper drop <span class="arithmatex">\(2 \times 450 \times 90.211 \times 0.194 / 1000 \approx 15.75\text{ V}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>3</code> [√x] [×] <code>2</code> [÷]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(13.6406\)</span></strong></td>
+<td style="text-align: left;">Scale by <span class="arithmatex">\(\sqrt{3}/2\)</span> to obtain 3-phase drop <span class="arithmatex">\(V_{\text{drop},3\phi} \approx 13.64\text{ V}\)</span> (<span class="arithmatex">\(2.84\%\)</span> of <span class="arithmatex">\(480\text{ V}\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<p>Next, the engineer evaluates the real power of a single-phase <span class="arithmatex">\(240\text{ V}\)</span>, <span class="arithmatex">\(18\text{ A}\)</span> auxiliary air compressor at <span class="arithmatex">\(\text{PF} = 0.85\)</span> using the three-argument [PF] operator (<code>240</code> [ENTER] <code>18</code> [ENTER] <code>0.85</code> [PF] <span class="arithmatex">\(\to \mathbf{3{,}672\text{ W}}\)</span>), looks up <code>#1/0 AWG</code> copper (<code>0</code> [AWG] <span class="arithmatex">\(\to 0.122\ \Omega/\text{kft}\)</span>), combines two parallel <code>#1/0 AWG</code> conductors per phase via [ENTER] [x∥y] (<span class="arithmatex">\(\mathbf{0.061\ \Omega/\text{kft}}\)</span>), and verifies that the upgraded parallel feeder drops only <span class="arithmatex">\(\mathbf{4.2889\text{ V}}\)</span> (<span class="arithmatex">\(0.89\%\)</span>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>240</code> [ENTER] <code>18</code> [ENTER] <code>0.85</code> [PF]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3672\)</span></td>
+<td style="text-align: left;">Evaluate real power <span class="arithmatex">\(P = 240 \times 18 \times 0.85 = 3{,}672\text{ W}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0</code> [AWG] [C]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3672\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.122\)</span></td>
+<td style="text-align: left;">Bind <code>#1/0 AWG</code> copper resistance (<span class="arithmatex">\(0.122\ \Omega/\text{kft}\)</span>) and return to stack</td>
+</tr>
+<tr>
+<td style="text-align: left;">[ENTER] [x∥y]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3672\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.061\)</span></td>
+<td style="text-align: left;">Combine two parallel <code>#1/0 AWG</code> wires per phase (<span class="arithmatex">\(0.122 \parallel 0.122 = 0.061\ \Omega/\text{kft}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>90.211</code> [×] <code>450</code> [×] <code>3</code> [√x] [×] <code>1000</code> [÷]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3672\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(4.2889\)</span></strong></td>
+<td style="text-align: left;">Compute parallel 3-phase feeder drop <span class="arithmatex">\(V_{\text{drop},3\phi} \approx 4.29\text{ V}\)</span> (<span class="arithmatex">\(0.89\%\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inverse-maximum-run-length-and-gauge-selection-in-the-bidirectional-awg-workspace">Inverse Maximum Run Length and Gauge Selection in the Bidirectional <code>AWG</code> Workspace</h3>
+<p>In field design, an electrician often knows the wire gauge on the truck and the load current, and needs to solve <strong>backward</strong> for the <strong>maximum allowable one-way conduit run length <span class="arithmatex">\(L\)</span></strong> that keeps voltage drop within the NEC <span class="arithmatex">\(3.0\%\)</span> limit (<span class="arithmatex">\(D = 0.03 \times 240\text{ V} = 7.20\text{ V}\)</span> on a <span class="arithmatex">\(240\text{ V}\)</span> circuit)—or knows the run length <span class="arithmatex">\(L\)</span> and current <span class="arithmatex">\(I\)</span> and needs the <strong>minimum NEC copper wire gauge</strong> <code>G</code>. Pressing [AWG] with <code>0</code> in <span class="arithmatex">\(X\)</span> (or typing a wire gauge and pressing [AWG]) opens the <strong>Bidirectional <code>AWG</code> Equation Solver Workspace</strong>, displaying <code>AWG: VOLT DROP</code> and the governing law <code>D = 2×R×L×I / 1000</code> on Line 1 with five variable softkeys [D] ([LFU0]), [R] ([LFU1]), [L] ([LFU2]), [I] ([LFU3]), and [G] ([LFU4]):</p>
 <ul>
-<li><strong>The Scissor Lift Environment:</strong> Picture standing on a scissor lift platform thirty feet in the air, wearing leather work gloves coated in greasy wire-pulling lubricant. A glass smartphone requires bare hands, risks cracking if dropped onto concrete, and turns off its screen mid-calculation. The SC-14 is built for one-handed operation with tactile mechanical switches that click clearly even through thick gloves.</li>
-<li><strong>Scrap Conduit is Expensive:</strong> A single 10-foot stick of 3-inch or 4-inch rigid metal pipe costs over <span class="arithmatex">\(\$150\)</span>. If you miscalculate the offset travel or forget the shrinkage when bending around an obstacle, the pipe dog-legs, misses the junction box, and has to be thrown in the scrap bin.</li>
-<li><strong>Licensing Exams:</strong> Journeyman and Master Electrician licensing exams strictly ban smartphones and internet-connected devices. Candidates must be able to calculate conductor ampacity, conduit fill, and three-phase motor loads on an approved standalone instrument.</li>
+<li><strong>Automatic NEC Table 8 Resistance Binding via [G] &amp; Inverse Run Length ([L]):</strong> Entering wire gauge <code>12</code> (<code>#12 AWG</code>) and pressing [G] ([LFU4]) or [AWG] automatically looks up the NEC Table 8 uncoated copper resistance (<code>1.93</code> <span class="arithmatex">\(\Omega/\text{kft}\)</span>) and binds both [G] and [R] (or you can store <code>1.98</code> [R] for coated copper at <span class="arithmatex">\(75^\circ\text{C}\)</span>). For a <span class="arithmatex">\(240\text{ V}\)</span> pier winch control circuit carrying <span class="arithmatex">\(I = 28\text{ A}\)</span> with an NEC <span class="arithmatex">\(3\%\)</span> maximum voltage drop of <span class="arithmatex">\(D = 7.20\text{ V}\)</span>, keying <code>12</code> [G], <code>7.20</code> [D] ([LFU0]), and <code>28</code> [I] ([LFU3]) and pressing [XEQ] (or [XEQ] [L]) solves the equation backward for the maximum one-way conduit length:
+  $<span class="arithmatex">\(L_{\max} = \frac{1000 \times D}{2 \cdot R \cdot I} = \frac{1000 \times 7.20}{2 \times 1.93 \times 28} \approx \mathbf{66.6173\text{ ft}} \quad (\text{or } \mathbf{64.9351\text{ ft}} \text{ at coated } R = 1.98\ \Omega/\text{kft})\)</span>$</li>
+<li><strong>Inverse Maximum Load Current ([I]) &amp; Automatic Wire Gauge Selection ([G]):</strong> If the conduit run is fixed at <span class="arithmatex">\(L = 100.0\text{ ft}\)</span> (<code>100</code> [L]) on <code>#12 AWG</code> (<span class="arithmatex">\(R = 1.93\ \Omega/\text{kft}\)</span>) with <span class="arithmatex">\(D = 7.20\text{ V}\)</span> (<code>7.20</code> [D]), pressing [XEQ] [I] ([LFU3]) solves backward for the maximum permissible continuous load current <span class="arithmatex">\(I_{\max} = \frac{7200}{2 \times 1.93 \times 100} \approx \mathbf{18.6528\text{ A}}\)</span>. Conversely, with <code>7.20</code> [D], <code>125</code> [L], and <code>24</code> [I] bound, solving for [G] selects the most economical standard NEC copper gauge (<code>#8 AWG</code>, <span class="arithmatex">\(R = 0.778\ \Omega/\text{kft} \le 1.20\ \Omega/\text{kft}\)</span>) whose drop stays within <span class="arithmatex">\(7.20\text{ V}\)</span>.</li>
 </ul>
-<hr />
-<h2 id="2-core-concepts-how-electricians-and-machinists-think">2. Core Concepts: How Electricians and Machinists Think</h2>
-<h3 id="concept-1-the-vanishing-volts-circular-mils-cm">Concept 1: The Vanishing Volts &amp; Circular Mils (<span class="arithmatex">\(CM\)</span>)</h3>
-<p>Why do electricians measure wire thickness in "Circular Mils" rather than square millimeters or inches?</p>
-<p>A mil is one-thousandth of an inch (<span class="arithmatex">\(0.001\text{ in}\)</span>). In standard geometry, the area of a circle is <span class="arithmatex">\(\frac{\pi}{4} d^2\)</span>. But when sizing thousands of cables, carrying <span class="arithmatex">\(\frac{\pi}{4}\)</span> through every calculation is tedious. </p>
-<p>Electrical pioneers invented a brilliant shortcut: <strong>A Circular Mil (<span class="arithmatex">\(CM\)</span>) is simply the diameter in mils, squared</strong>:</p>
-<div class="arithmatex">\[CM = (d_{\text{mils}})^2 = (d_{\text{inches}} \times 1000)^2\]</div>
-<p>A wire with a diameter of <span class="arithmatex">\(0.10\text{ inches}\)</span> is <span class="arithmatex">\(100\text{ mils}\)</span> thick, which means its area is simply <span class="arithmatex">\(100^2 = 10{,}000\text{ CM}\)</span>. The circle's <span class="arithmatex">\(\pi\)</span> factor is baked directly into the material resistivity constant <span class="arithmatex">\(K\)</span>:
-- <strong>Copper (<span class="arithmatex">\(K_{\text{Cu}}\)</span>):</strong> <span class="arithmatex">\(\approx 12.9\,\Omega\cdot\text{cmil/ft}\)</span> at normal operating temperatures.
-- <strong>Aluminum (<span class="arithmatex">\(K_{\text{Al}}\)</span>):</strong> <span class="arithmatex">\(\approx 21.2\,\Omega\cdot\text{cmil/ft}\)</span>.</p>
-<h4 id="the-voltage-drop-formula">The Voltage Drop Formula</h4>
-<p>For a single-phase two-wire circuit carrying current <span class="arithmatex">\(I\)</span> over a one-way distance <span class="arithmatex">\(L\)</span> (total wire loop length is <span class="arithmatex">\(2L\)</span>):</p>
-<div class="arithmatex">\[\text{Voltage Drop } (VD) = \frac{2 \cdot K \cdot I \cdot L}{CM}\]</div>
-<p>The NEC recommends that voltage drop never exceed <strong>3%</strong> on a branch circuit (e.g. no more than <span class="arithmatex">\(3.6\text{ V}\)</span> drop on a <span class="arithmatex">\(120\text{ V}\)</span> line). If the calculated drop is too high, you must step up to a thicker wire gauge with more circular mils.</p>
-<h3 id="concept-2-the-power-of-three-sqrt3-approx-1732">Concept 2: The Power of Three (<span class="arithmatex">\(\sqrt{3} \approx 1.732\)</span>)</h3>
-<p>Why do commercial buildings and factories run on Three-Phase AC rather than the single-phase AC in our homes?</p>
-<p>In single-phase power, voltage pulses like a heartbeat: it peaks, drops through zero, and reverses 60 times a second. A single-phase motor vibrates and needs auxiliary starting capacitors.</p>
-<p>In three-phase power, three independent alternating voltage waves travel together, staggered evenly <span class="arithmatex">\(120^\circ\)</span> apart. When one wave is passing through zero, the other two are delivering strong power. The total electrical power delivered is continuous and smooth, allowing motors to be smaller, lighter, and self-starting.</p>
-<p>Because the three waves are separated by <span class="arithmatex">\(120^\circ\)</span> on a circle, the line-to-line voltage is not simply double: it is multiplied by the geometric factor <span class="arithmatex">\(\mathbf{\sqrt{3} \approx 1.732}\)</span>:</p>
-<div class="arithmatex">\[V_{\text{line-to-line}} = \sqrt{3} \cdot V_{\text{phase-to-neutral}} \approx 1.732 \times 120\text{ V} \approx 208\text{ V}$$
-$$1.732 \times 277\text{ V} \approx 480\text{ V}\]</div>
-<h4 id="sizing-three-phase-motor-circuits">Sizing Three-Phase Motor Circuits</h4>
-<p>For a 3-phase motor delivering horsepower (<span class="arithmatex">\(1\text{ HP} = 746\text{ Watts}\)</span>) at efficiency <span class="arithmatex">\(\eta\)</span> and power factor <span class="arithmatex">\(PF\)</span>:</p>
-<div class="arithmatex">\[\text{Full Load Amps } (FLA) = \frac{\text{HP} \cdot 746}{\sqrt{3} \cdot V_{\text{line}} \cdot \eta \cdot PF}\]</div>
-<p>Under NEC Article 430, because electric motors draw a heavy inductive inrush current when starting up, conductors must be sized to <strong><span class="arithmatex">\(125\%\)</span> of motor FLA</strong>. On the SC-14, pressing <code>[f] [3PH÷]</code> automatically incorporates <span class="arithmatex">\(\sqrt{3}\)</span> in one keystroke.</p>
-<h3 id="concept-3-bending-steel-pipe-with-right-triangles">Concept 3: Bending Steel Pipe with Right Triangles</h3>
-<p>When routing conduit across a ceiling, electricians frequently hit obstacles: air ducts, fire sprinkler lines, or structural steel columns. To get around them, you bend the pipe out and back in an <strong>offset bend</strong>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>                       Offset Depth (D)
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                      |---|
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    ------------------\
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                       \   Travel (Hypotenuse = D * csc θ)
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                        \
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                         \---------------------
-</span></code></pre></div>
-<p>An offset is simply two equal and opposite right triangles:
-- <strong>Travel Distance (Hypotenuse):</strong> <span class="arithmatex">\(\text{Travel} = \text{Depth} \cdot \csc\theta = \frac{\text{Depth}}{\sin\theta}\)</span>
-- <strong>Conduit Shrinkage:</strong> Because the hypotenuse is longer than the straight horizontal path, bending an offset pulls the end of the pipe backward toward the bender. If you don't account for this "shrinkage," your pipe will end up too short to reach the next junction box!</p>
-<div class="arithmatex">\[\text{Shrinkage} = \text{Depth} \times \left(\frac{1}{\tan\theta} - \frac{1}{\sin\theta}\right)\]</div>
-<h4 id="bending-multipliers-quick-reference">Bending Multipliers Quick Reference</h4>
-<ul>
-<li><strong><span class="arithmatex">\(30^\circ\)</span> Bend:</strong> Multiplier <span class="arithmatex">\(= 2.0\)</span> (Travel is exactly twice the depth; shrinks <span class="arithmatex">\(1/4\text{ in}\)</span> per inch of depth).</li>
-<li><strong><span class="arithmatex">\(45^\circ\)</span> Bend:</strong> Multiplier <span class="arithmatex">\(= 1.414\)</span> (Travel is <span class="arithmatex">\(1.414 \times \text{Depth}\)</span>; shrinks <span class="arithmatex">\(3/8\text{ in}\)</span> per inch of depth).</li>
-</ul>
-<h3 id="concept-4-machining-feeds-and-speeds">Concept 4: Machining Feeds and Speeds</h3>
-<p>In a machine shop, cutting metal on a milling machine or lathe obeys a simple physical rule: the cutting tool must slide through the workpiece at a specific linear velocity called <strong>Surface Feet per Minute (<span class="arithmatex">\(SFM\)</span>)</strong>:
-- Mild steel cuts at roughly <span class="arithmatex">\(100\text{ SFM}\)</span> with high-speed steel.
-- Aluminum can be machined at <span class="arithmatex">\(600\text{ SFM}\)</span> or higher.</p>
-<p>To turn linear surface feet into rotational spindle speed (<span class="arithmatex">\(RPM\)</span>):</p>
-<div class="arithmatex">\[RPM = \frac{SFM \times 12}{\pi \cdot \text{Diameter}} \approx \frac{3.82 \cdot SFM}{\text{Diameter (inches)}}\]</div>
-<p>A tiny <span class="arithmatex">\(1/8\text{-inch}\)</span> drill bit must spin at high RPM to achieve the proper cutting speed, while a massive <span class="arithmatex">\(3\text{-inch}\)</span> face mill must turn much slower to avoid overheating its carbide inserts.</p>
-<hr />
-<h2 id="3-real-world-field-walkthroughs">3. Real-World Field Walkthroughs</h2>
-<h3 id="field-case-1-sizing-a-480v-sub-panel-feeder-relectricians">Field Case 1: Sizing a 480V Sub-Panel Feeder (<code>r/electricians</code>)</h3>
-<p>An electrician is running a continuous <span class="arithmatex">\(65\text{-amp}\)</span> balanced 3-phase load from a main switchboard to a sub-panel located <span class="arithmatex">\(220\text{ feet}\)</span> away. The supply voltage is <span class="arithmatex">\(480\text{ V}\)</span> 3-phase copper.
-1. What minimum ampacity wire is required under the NEC <span class="arithmatex">\(125\%\)</span> continuous load rule?
-2. If using #4 AWG copper wire (<span class="arithmatex">\(41{,}740\text{ CM}\)</span>), what is the expected voltage drop and percentage drop?</p>
-<h4 id="how-to-solve-it-on-the-sc-14">How to Solve It on the SC-14</h4>
+<h3 id="try-it-on-the-stack">Try It on the Stack</h3>
+<p>Test your mastery of feeder resistance, inverse <code>AWG</code> run-length solving, and three-phase currents with these three electrical design problems:</p>
 <ol>
-<li><strong>Apply the 125% Continuous Rule (NEC 210.20):</strong></li>
-<li><code>65</code> <code>[ENTER]</code> <code>1.25</code> <code>[×]</code> <span class="arithmatex">\(\to\)</span> <strong><code>81.25 Amps</code></strong>.</li>
-<li>Looking at NEC Table 310.16 via <code>[TBL]</code>: #4 AWG copper (rated for <span class="arithmatex">\(85\text{ A}\)</span> at <span class="arithmatex">\(75^\circ\text{C}\)</span>) is required.</li>
-<li><strong>Calculate 3-Phase Voltage Drop:</strong></li>
-<li>Formula: <span class="arithmatex">\(VD = \frac{\sqrt{3} \cdot K \cdot I \cdot L}{CM}\)</span> (<span class="arithmatex">\(K = 12.9\)</span> for Cu, <span class="arithmatex">\(I = 65\text{ A}\)</span>, <span class="arithmatex">\(L = 220\text{ ft}\)</span>, <span class="arithmatex">\(CM = 41740\)</span>).</li>
-<li><code>1.732</code> <code>[ENTER]</code> <code>12.9</code> <code>[×]</code> <code>65</code> <code>[×]</code> <code>220</code> <code>[×]</code></li>
-<li>Stack displays: <code>319485</code></li>
-<li><code>41740</code> <code>[÷]</code> <span class="arithmatex">\(\to\)</span> <strong><code>7.65 Volts</code></strong>.</li>
-<li><strong>Calculate Percentage Drop:</strong></li>
-<li><code>7.65</code> <code>[ENTER]</code> <code>480</code> <code>[÷]</code> <code>100</code> <code>[×]</code> <span class="arithmatex">\(\to\)</span> <strong><code>1.59%</code></strong>.</li>
-<li>Since <span class="arithmatex">\(1.59\% &lt; 3.0\%\)</span>, the wire easily satisfies code requirements without excessive heat.</li>
+<li><strong>Three-Phase Feeder Current and Copper Voltage Drop:</strong> On a <span class="arithmatex">\(480\text{ V}\)</span> three-phase feeder supplying <span class="arithmatex">\(45\text{ kVA}\)</span> over <span class="arithmatex">\(L = 220\text{ ft}\)</span> of <code>#6 AWG</code> copper wire, use <code>45</code> [ENTER] <code>480</code> [g] [kVA] to find <span class="arithmatex">\(I_L\)</span>, evaluate <code>220</code> [ENTER] <code>6</code> [AWG] (<span class="arithmatex">\(R_{1000} = 0.491\ \Omega/\text{kft}\)</span>), and scale by <span class="arithmatex">\(\sqrt{3}/2\)</span> to obtain <span class="arithmatex">\(V_{\text{drop},3\phi} = \frac{\sqrt{3}\,R_{1000} L I_L}{1000}\)</span>. <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(I_L \approx \mathbf{54.1266\text{ A}}\)</span>, <span class="arithmatex">\(R_{1000} = \mathbf{0.491\ \Omega/\text{kft}}\)</span>, <span class="arithmatex">\(V_{\text{drop},1\phi} \approx \mathbf{11.6935\text{ V}}\)</span>, and <span class="arithmatex">\(V_{\text{drop},3\phi} \approx \mathbf{10.1269\text{ V}}\)</span>, or <span class="arithmatex">\(2.11\%\)</span>.)</em></li>
+<li><strong>Inverse Maximum Conduit Length in the <code>AWG</code> Solver:</strong> A <span class="arithmatex">\(120\text{ V}\)</span> single-phase lighting circuit carries <span class="arithmatex">\(I = 16\text{ A}\)</span> with a <span class="arithmatex">\(3.0\%\)</span> (<span class="arithmatex">\(D = 3.60\text{ V}\)</span>) drop limit on <code>#10 AWG</code> copper (<code>10</code> [AWG] <span class="arithmatex">\(\to R = 1.24\ \Omega/\text{kft}\)</span>). Store <code>3.60</code> [D] and <code>16</code> [I] in the <code>AWG</code> workspace and press [XEQ] to find the maximum allowable one-way conduit length <span class="arithmatex">\(L_{\max}\)</span>; then check the drop at <span class="arithmatex">\(L = 125\text{ ft}\)</span> on <code>#8 AWG</code> (<code>8</code> [G], <code>125</code> [L], [XEQ] [D]). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <code>#10 AWG</code> <span class="arithmatex">\(L_{\max} \approx \mathbf{90.7258\text{ ft}}\)</span>, and <code>#8 AWG</code> at <span class="arithmatex">\(125\text{ ft}\)</span> drops <span class="arithmatex">\(\mathbf{3.1120\text{ V}}\)</span> or <span class="arithmatex">\(2.59\% \le 3.0\%\)</span>.)</em></li>
+<li><strong>Motor Full-Load Current in <code>FLA</code> and NEC Continuous Duty Sizing:</strong> A <span class="arithmatex">\(480\text{ V}\)</span> three-phase induction motor rated at <span class="arithmatex">\(P = 30\text{ HP}\)</span> operates at efficiency <span class="arithmatex">\(\eta = 0.90\)</span> and power factor <span class="arithmatex">\(\text{PF} = 0.86\)</span>. Open the <code>FLA</code> workspace (<code>0</code> [ENTER] <code>0</code> [g] [FLA]: <code>I = P×746/(√3×V×E)</code>), store <code>30</code> [P], <code>480</code> [V], and <code>0.774</code> [E] (<span class="arithmatex">\(\eta \times \text{PF} = 0.90 \times 0.86\)</span>), press [XEQ] for <span class="arithmatex">\(I_{\text{FLA}}\)</span>, and multiply by <code>1.25</code> [×] for NEC continuous-duty conductor sizing. <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(I_{\text{FLA}} \approx \mathbf{34.7790\text{ A}}\)</span> and <span class="arithmatex">\(125\%\)</span> minimum ampacity <span class="arithmatex">\(\mathbf{43.4738\text{ A}}\)</span>.)</em></li>
 </ol>
+<p>With the feeder conductors sized for acceptable voltage drop, we step into the plant boiler room in Chapter 5 to bend the steel conduit raceways that carry them around structural I-beams and steam headers.</p>
 <hr />
-<h3 id="field-case-2-bending-a-4-inch-offset-around-an-i-beam-practical-machinist">Field Case 2: Bending a 4-Inch Offset Around an I-Beam (<code>Practical Machinist</code>)</h3>
-<p>An electrician running <span class="arithmatex">\(1\text{-inch}\)</span> EMT conduit must clear a steel ceiling beam that hangs <span class="arithmatex">\(4\text{ inches}\)</span> lower than the roof deck. The electrician chooses a standard <span class="arithmatex">\(30^\circ\)</span> offset.
-1. How far apart should the two bend marks be made on the pipe (Travel)?
-2. How much will the pipe shrink toward the bender?</p>
-<h4 id="step-by-step-mechanics">Step-by-Step Mechanics</h4>
+<h1 id="chapter-5-bending-four-conduits-around-the-boiler-room-i-beam">Chapter 5: Bending Four Conduits Around the Boiler-Room I-Beam</h1>
+<p>Inside the central boiler plant of a regional hospital, a journeyman electrician is routing a parallel rack of four <span class="arithmatex">\(1\text{-in.}\)</span> Electrical Metallic Tubing (<code>EMT</code>) raceways along a concrete wall at elevation <span class="arithmatex">\(9\text{ ft } 6\text{ in.}\)</span> above the floor. Forty-eight inches (<span class="arithmatex">\(4\text{ ft } 0\text{ in.}\)</span>) ahead of the main splitter trough, a structural steel wide-flange I-beam projects <span class="arithmatex">\(O = 6.0\text{ in.}\)</span> out from the wall face, and twenty feet further down the run, a cylindrical high-pressure steam riser of height <span class="arithmatex">\(O_{\text{pipe}} = 4.0\text{ in.}\)</span> crosses perpendicular to the wall before the rack rolls <span class="arithmatex">\(6.0\text{ in.}\)</span> upward and <span class="arithmatex">\(8.0\text{ in.}\)</span> laterally into an elevated motor control center (<code>MCC</code>).</p>
+<p>If the electrician marks the first bend on a stick of EMT at <span class="arithmatex">\(48\text{ in.}\)</span> from the coupling without accounting for <strong>Conduit Shrinkage</strong>, the diagonal climb up the <span class="arithmatex">\(30^\circ\)</span> offset pulls the far end of the pipe backward by <span class="arithmatex">\(1\text{-}1/2\text{ inches}\)</span>, causing the second bend to crash directly into the flange of the steel I-beam. Furthermore, once the raceway is strapped in place, the crew plans to pull twelve <code>#10 AWG</code> THHN copper circuit conductors through each <span class="arithmatex">\(1\text{-in.}\)</span> EMT tube, and the adjacent machine shop must drill, tap, and mill an 8-bolt mounting plate to anchor the conduit trapeze rack. Before bending a single stick of tubing or setting up the tugger winch, the electrician must calculate the exact center-to-center <strong>Travel Distance</strong> ([OFS]) and shrinkage pullback around the <span class="arithmatex">\(6\text{ in.}\)</span> I-beam, solve backward in the <code>BEND</code> workspace ([T], [O], [A]) for the required bend angle when a tight ceiling bay constrains maximum travel length, compute the compound 3D hypotenuse of the <strong>Rolling Offset</strong> ([f] [MIT], [g] [FIT]) into the MCC and the outer leg travel of the <strong>Three-Point Saddle</strong> ([OFS]) over the <span class="arithmatex">\(4\text{ in.}\)</span> steam pipe, verify pipe wall thickness ([f] [SCH], [g] [WAL]) and NEC Chapter 9 <strong>Conduit Fill</strong> ([g] [▦]) percentage, and size the trapeze bracket's spindle speed ([f] [SFM]), thread tap drill ([f] [TAP]), and bolt circle chord spacing ([g] [BC]).</p>
+<hr />
+<h2 id="cosecant-offset-multipliers-axial-shrinkage-and-rolling-offsets">Cosecant Offset Multipliers, Axial Shrinkage, and Rolling Offsets</h2>
+<p>Every conduit offset bend forms a right triangle in space whose opposite leg is the obstruction depth <span class="arithmatex">\(O\)</span>, whose hypotenuse along the diagonal pipe is the travel distance <span class="arithmatex">\(T\)</span>, and whose difference between hypotenuse and adjacent horizontal projection is the axial shrinkage <span class="arithmatex">\(S_{\text{shrink}}\)</span>.</p>
+<h3 id="right-triangle-offset-travel-and-half-angle-tangent-shrinkage">Right-Triangle Offset Travel and Half-Angle Tangent Shrinkage</h3>
+<p>When a conduit running along a wall encounters a structural beam or duct of perpendicular depth <span class="arithmatex">\(O\)</span> (in inches), the electrician bends the pipe outward at shoe angle <span class="arithmatex">\(\theta\)</span> and bends it back parallel to the wall at an equal return angle <span class="arithmatex">\(\theta\)</span>.</p>
+<p><img alt="Conduit offset bend geometry showing obstacle depth O, bend angle theta, travel length T, and linear conduit shrinkage." src="../../assets/diagrams/domains/diagram_ch02_conduit_offset.png" /></p>
+<p>In the right triangle formed by the perpendicular offset depth <span class="arithmatex">\(O\)</span> (opposite side) and the bend angle <span class="arithmatex">\(\theta\)</span> (denoted <span class="arithmatex">\(A\)</span> in the <code>BEND</code> solver workspace <code>T = O / SIN(A)</code> opened via [OFS]), the center-to-center <strong>Travel Distance</strong> <span class="arithmatex">\(T\)</span> along the diagonal pipe between the two bend marks ([OFS]) is the cosecant hypotenuse <span class="arithmatex">\(O\csc\theta\)</span>. Because the conduit previously spanned the full length <span class="arithmatex">\(T\)</span> along the wall but now projects horizontally across only the adjacent side <span class="arithmatex">\(O\cot\theta\)</span>, bending the offset pulls the far end of the pipe backward toward the starting coupling by the axial <strong>Conduit Shrinkage</strong> <span class="arithmatex">\(S_{\text{shrink}}\)</span>, which simplifies by the trigonometric half-angle identity <span class="arithmatex">\(\csc\theta - \cot\theta = \frac{1 - \cos\theta}{\sin\theta} = \tan(\theta / 2)\)</span>:</p>
+<div class="arithmatex">\[T = \frac{O}{\sin(\theta)} = O \csc(\theta), \qquad S_{\text{shrink}} = T - O \cot(\theta) = O \tan\!\left(\frac{\theta}{2}\right)\]</div>
+<p>In these expressions, <span class="arithmatex">\(O\)</span> is the perpendicular offset depth in inches, <span class="arithmatex">\(\theta\)</span> is the bender shoe angle in degrees, <span class="arithmatex">\(T\)</span> is the distance measured along the tubing between the two bend marks, and <span class="arithmatex">\(S_{\text{shrink}}\)</span> is the length added to the obstruction setback when placing the Obstruction-Approach mark first (while a 3-argument [OFS] call with offset <span class="arithmatex">\(O\)</span> in Register <span class="arithmatex">\(Z\)</span>, angle <span class="arithmatex">\(\theta\)</span> in Register <span class="arithmatex">\(Y\)</span>, and bender deduct <span class="arithmatex">\(D\)</span> in Register <span class="arithmatex">\(X\)</span> returns net travel <span class="arithmatex">\(T - D\)</span>). Standard conduit bender shoes engrave five primary bend angles, each with its cosecant travel multiplier and half-angle tangent shrinkage per inch of offset depth:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Bend Angle <span class="arithmatex">\(\theta\)</span></th>
+<th style="text-align: center;">Travel Multiplier (<span class="arithmatex">\(\csc\theta = 1/\sin\theta\)</span>)</th>
+<th style="text-align: center;">Exact Shrinkage Factor (<span class="arithmatex">\(\tan(\theta/2)\)</span>)</th>
+<th style="text-align: center;">Field Rule Shrinkage per Inch of Offset</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong><span class="arithmatex">\(10^\circ\)</span></strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(5.759 \approx 6.0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0875\text{ in/in}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1/16\text{ in}\)</span> per inch</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><span class="arithmatex">\(22.5^\circ\)</span></strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.613 \approx 2.6\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.1989\text{ in/in}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3/16\text{ in}\)</span> per inch</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><span class="arithmatex">\(30^\circ\)</span></strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathbf{2.000}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.2679\text{ in/in}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathbf{1/4\text{ in}}\)</span> (<span class="arithmatex">\(0.25\text{ in}\)</span>) per inch</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><span class="arithmatex">\(45^\circ\)</span></strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathbf{1.414}\)</span> (<span class="arithmatex">\(\sqrt{2}\)</span>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.4142\text{ in/in}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathbf{3/8\text{ in}}\)</span> (<span class="arithmatex">\(0.375\text{ in}\)</span>) per inch</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><span class="arithmatex">\(60^\circ\)</span></strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.155\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.5774\text{ in/in}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(9/16\text{ in}\)</span> per inch</td>
+</tr>
+</tbody>
+</table>
+<p>To clear the boiler-room I-beam of depth <span class="arithmatex">\(O = 6.0\text{ in.}\)</span> located <span class="arithmatex">\(D_{\text{obs}} = 48.0\text{ in.}\)</span> (<span class="arithmatex">\(4\text{ ft } 0\text{ in.}\)</span>) from the splitter box using <span class="arithmatex">\(\theta = 30^\circ\)</span> bends, keying <code>6</code> [ENTER] <code>30</code> [OFS] returns the travel distance between marks <span class="arithmatex">\(T = 6.0 / \sin(30^\circ) = \mathbf{12.00\text{ in.}}\)</span> and the shrinkage (at <span class="arithmatex">\(1/4\text{ in/in}\)</span> field rule, or <span class="arithmatex">\(6\tan 15^\circ = \mathbf{1.6077\text{ in.}}\)</span> exact) is <span class="arithmatex">\(S_{\text{shrink}} = 6.0 \times 0.25 = \mathbf{1.50\text{ in.}}\)</span> (<span class="arithmatex">\(1\text{-}1/2\text{ in.}\)</span>). Adding <span class="arithmatex">\(S_{\text{shrink}}\)</span> to the <span class="arithmatex">\(48.0\text{ in.}\)</span> setback places the second bend mark (at the beam edge) at <span class="arithmatex">\(48.0 + 1.50 = \mathbf{49\text{-}1/2\text{ in.}}\)</span> and the first bend mark at <span class="arithmatex">\(49.50 - 12.00 = \mathbf{37\text{-}1/2\text{ in.}}\)</span> from the end of the conduit.</p>
+<h3 id="compound-rolling-offsets-across-horizontal-and-vertical-planes">Compound Rolling Offsets Across Horizontal and Vertical Planes</h3>
+<p>When a conduit run must simultaneously shift vertically by a <strong>Rise</strong> <span class="arithmatex">\(R_{\text{vert}}\)</span> and horizontally by a lateral <strong>Roll</strong> <span class="arithmatex">\(R_{\text{horiz}}\)</span> to enter a misaligned cabinet, the two perpendicular displacements form a right triangle in the cross-sectional plane perpendicular to the conduit axis. By the Pythagorean theorem, rotating the conduit bender in that plane aligns the shoe with the <strong>True Offset Depth</strong> <span class="arithmatex">\(O_{\text{true}}\)</span> ([g] [FIT] or [f] [MIT]), which then scales by <span class="arithmatex">\(\csc\theta\)</span> via [OFS] to yield the rolling travel distance <span class="arithmatex">\(T_{\text{roll}}\)</span>:</p>
+<div class="arithmatex">\[O_{\text{true}} = \sqrt{R_{\text{vert}}^2 + R_{\text{horiz}}^2}, \qquad T_{\text{roll}} = \frac{O_{\text{true}}}{\sin(\theta)} = \csc(\theta)\sqrt{R_{\text{vert}}^2 + R_{\text{horiz}}^2}\]</div>
+<p>Here <span class="arithmatex">\(R_{\text{vert}}\)</span> and <span class="arithmatex">\(R_{\text{horiz}}\)</span> are the orthogonal vertical and horizontal shifts in inches, <span class="arithmatex">\(O_{\text{true}}\)</span> is the diagonal offset depth in the rotated bending plane evaluated via [g] [FIT] or [f] [MIT], and <span class="arithmatex">\(T_{\text{roll}}\)</span> is the center-to-center distance between bend marks along the conduit evaluated via [OFS]. Where the boiler-room rack rises <span class="arithmatex">\(R_{\text{vert}} = 6.0\text{ in.}\)</span> and rolls laterally <span class="arithmatex">\(R_{\text{horiz}} = 8.0\text{ in.}\)</span> into the MCC knockouts, keying <code>6</code> [ENTER] <code>8</code> [g] [FIT] returns the true diagonal offset <span class="arithmatex">\(O_{\text{true}} = \sqrt{6.0^2 + 8.0^2} = \mathbf{10.00\text{ in.}}\)</span>, and keying <code>30</code> [OFS] bends that compound offset at <span class="arithmatex">\(\theta = 30^\circ\)</span> with a travel distance of <span class="arithmatex">\(T_{\text{roll}} = 10.00 / \sin(30^\circ) = \mathbf{20.00\text{ in.}}\)</span> between marks.</p>
+<hr />
+<h2 id="three-point-saddle-geometry-nec-raceway-fill-and-shop-bracket-machining">Three-Point Saddle Geometry, NEC Raceway Fill, and Shop Bracket Machining</h2>
+<p>After clearing the I-beam and planning the rolling entry, the electrician must hop the conduit bank over the cylindrical <span class="arithmatex">\(4.0\text{ in.}\)</span> steam pipe, verify that twelve <code>#10 AWG</code> conductors satisfy NEC cross-sectional fill inside <span class="arithmatex">\(1\text{-in.}\)</span> EMT, and drill and tap the steel trapeze mounting plates.</p>
+<h3 id="symmetric-three-point-saddle-bends-over-cylindrical-obstructions">Symmetric Three-Point Saddle Bends Over Cylindrical Obstructions</h3>
+<p>When a conduit strapped flat against a wall must step over a single cylindrical pipe of height <span class="arithmatex">\(O\)</span> and return to the same mounting surface, electricians form a <strong>Three-Point Saddle</strong> consisting of a center crown bend of angle <span class="arithmatex">\(\theta_{\text{center}} = 45^\circ\)</span> placed directly over the obstruction centerline, flanked by two symmetric outer return bends of <span class="arithmatex">\(\theta_{\text{outer}} = \theta_{\text{center}} / 2 = 22.5^\circ\)</span>:</p>
+<p><img alt="Three-point conduit saddle bend geometry with a 45-degree center bend and symmetric 22.5-degree outer return bends." src="../../assets/diagrams/domains/diagram_ch02_saddle_bend.png" /></p>
+<div class="arithmatex">\[T_{\text{saddle}} = \frac{O}{\sin(22.5^\circ)} = O \csc(22.5^\circ) \approx 2.6131 \cdot O, \qquad S_{\text{saddle}} = 2 \cdot O \tan(11.25^\circ) \approx \frac{3}{16}\text{ in.} \times O\]</div>
+<p>In this symmetric geometry, each outer sloped leg rises through angle <span class="arithmatex">\(\theta_{\text{outer}} = 22.5^\circ\)</span> over height <span class="arithmatex">\(O\)</span>, so keying <code>4</code> [ENTER] <code>22.5</code> [OFS] places the two outer <span class="arithmatex">\(22.5^\circ\)</span> marks at distance <span class="arithmatex">\(T_{\text{saddle}} \approx 2.613\,O\)</span> (or <span class="arithmatex">\(2.5\text{ in/in}\)</span> field rule) on either side of the center <span class="arithmatex">\(45^\circ\)</span> mark, while total axial shrinkage across both sloped legs adds <span class="arithmatex">\(3/16\text{ in.}\)</span> (<span class="arithmatex">\(0.1875\text{ in.}\)</span>) per inch of obstruction height to the center mark distance. Over the boiler room's <span class="arithmatex">\(O = 4.0\text{ in.}\)</span> steam pipe centered <span class="arithmatex">\(120.0\text{ in.}\)</span> (<span class="arithmatex">\(10\text{ ft } 0\text{ in.}\)</span>) down the wall, total saddle shrinkage is <span class="arithmatex">\(4 \times (3/16\text{ in.}) = \mathbf{0.75\text{ in.}}\)</span> (<span class="arithmatex">\(3/4\text{ in.}\)</span>), placing the center <span class="arithmatex">\(45^\circ\)</span> mark at <span class="arithmatex">\(120.75\text{ in.}\)</span> and the two outer <span class="arithmatex">\(22.5^\circ\)</span> return marks at <span class="arithmatex">\(T_{\text{saddle}} = 4.0 / \sin(22.5^\circ) \approx \mathbf{10.45\text{ in.}}\)</span> (<span class="arithmatex">\(10\text{-}7/16\text{ in.}\)</span> via [f] [f-i], or <span class="arithmatex">\(10.0\text{ in.}\)</span> by the <span class="arithmatex">\(2.5\times\)</span> field rule) on either side of the center mark.</p>
+<h3 id="cross-sectional-raceway-fill-limits-pipe-wall-schedule-and-bracket-layout">Cross-Sectional Raceway Fill Limits, Pipe Wall Schedule, and Bracket Layout</h3>
+<p>Once a conduit run is installed, pulling insulated conductors around multiple bends generates capstan friction proportional to <span class="arithmatex">\(e^{\mu \Sigma\theta}\)</span> and traps <span class="arithmatex">\(I^2 R\)</span> heat inside the tube. To prevent insulation abrasion during pulling and ensure adequate air space for heat dissipation, <strong>NEC Chapter 9, Table 1</strong> (accessible directly via [g] [▦] on the <code>SC-14</code>: <code>1W FILL = 53% MAX</code>, <code>2W FILL = 31% MAX</code>, <code>3+W FIL = 40% MAX</code>) limits the cross-sectional <strong>Conduit Fill Ratio</strong> to <span class="arithmatex">\(53\%\)</span> for <span class="arithmatex">\(1\)</span> conductor, <span class="arithmatex">\(31\%\)</span> for <span class="arithmatex">\(2\)</span> conductors, and <span class="arithmatex">\(\mathbf{40\%}\)</span> for <span class="arithmatex">\(3\)</span> or more conductors:</p>
+<div class="arithmatex">\[\text{Fill\%} = \left(\frac{\sum_{k=1}^{N} A_{\text{wire},k}}{A_{\text{conduit}}}\right) \times 100\% \le 40\%, \qquad N_{\max} = \left\lfloor \frac{0.40 \cdot A_{\text{conduit}}}{A_{\text{wire}}} \right\rfloor\]</div>
+<p>Here <span class="arithmatex">\(A_{\text{conduit}}\)</span> is the total internal cross-sectional area of the raceway from NEC Chapter 9, Table 4 (while [f] [SCH] and [g] [WAL] evaluate pipe inner diameter and wall thickness <span class="arithmatex">\(OD - ID\)</span>), <span class="arithmatex">\(A_{\text{wire}}\)</span> is the insulated conductor area from NEC Chapter 9, Table 5, and <span class="arithmatex">\(N_{\max}\)</span> is the maximum whole number of identical conductors permitted at the <span class="arithmatex">\(40\%\)</span> ceiling:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Trade Size (EMT)</th>
+<th style="text-align: center;">Total Internal Area (<span class="arithmatex">\(100\%\)</span>)</th>
+<th style="text-align: center;"><span class="arithmatex">\(1\)</span> Wire Fill (<span class="arithmatex">\(53\%\)</span>)</th>
+<th style="text-align: center;"><span class="arithmatex">\(2\)</span> Wires Fill (<span class="arithmatex">\(31\%\)</span>)</th>
+<th style="text-align: center;"><span class="arithmatex">\(3+\)</span> Wires Fill (<span class="arithmatex">\(40\%\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong><code>1/2 in</code> EMT</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.304\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.161\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.094\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.122\text{ in}^2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>3/4 in</code> EMT</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.533\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.283\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.165\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.213\text{ in}^2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>1 in</code> EMT</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.864\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.458\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.268\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.346\text{ in}^2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>1-1/4 in</code> EMT</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.496\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.793\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.464\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.598\text{ in}^2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>1-1/2 in</code> EMT</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.036\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.079\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.631\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.814\text{ in}^2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>2 in</code> EMT</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.356\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.778\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.040\text{ in}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.342\text{ in}^2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>In our boiler-room run of <span class="arithmatex">\(1\text{-in.}\)</span> EMT (<span class="arithmatex">\(A_{\text{conduit}} = 0.864\text{ in}^2\)</span>, <span class="arithmatex">\(40\%\)</span> allowance <span class="arithmatex">\(= 0.3456\text{ in}^2\)</span>), each <code>#10 AWG</code> THHN conductor has an insulated cross-sectional area of <span class="arithmatex">\(A_{\text{wire}} = 0.0211\text{ in}^2\)</span>. Pulling twelve <code>#10 AWG</code> THHN conductors occupies <span class="arithmatex">\(12 \times 0.0211 = \mathbf{0.2532\text{ in}^2}\)</span>, giving a fill ratio of <span class="arithmatex">\(\text{Fill\%} = (0.2532 / 0.864) \times 100\% \approx \mathbf{29.31\%}\)</span> (well below the <span class="arithmatex">\(40.0\%\)</span> limit, which permits up to <span class="arithmatex">\(\lfloor 0.3456 / 0.0211 \rfloor = \mathbf{16}\)</span> conductors). Meanwhile, to fabricate the trapeze header's steel adapter ring—milling with a <span class="arithmatex">\(D = 0.500\text{ in.}\)</span> cutter at <span class="arithmatex">\(\text{SFM} = 400\text{ ft/min}\)</span> ([f] [SFM], <code>(7,4)f</code>), tapping <code>1/2-13 UNC</code> anchor holes ([f] [TAP], <code>(2,0)f</code>), and drilling an <span class="arithmatex">\(N = 8\text{-hole}\)</span> pattern on a <span class="arithmatex">\(D = 6.00\text{ in.}\)</span> bolt circle ([g] [BC], <code>(4,2)g</code>)—the shop keys <code>400</code> [ENTER] <code>0.5</code> [f] [SFM] (<span class="arithmatex">\(\mathbf{3{,}055.77\text{ RPM}}\)</span>), <code>0.5</code> [ENTER] <code>13</code> [f] [TAP] (<span class="arithmatex">\(\mathbf{0.4231\text{ in.}}\)</span> tap drill), and <code>6</code> [ENTER] <code>8</code> [g] [BC] (<span class="arithmatex">\(C = 6\sin(22.5^\circ) = \mathbf{2.2961\text{ in.}}\)</span> chord spacing).</p>
+<hr />
+<h2 id="laying-out-the-boiler-room-conduit-bank-on-the-stack-and-bend-solver">Laying Out the Boiler-Room Conduit Bank on the Stack and <code>BEND</code> Solver</h2>
+<p>On the <strong>SC-14</strong>, [OFS] operates both as an immediate stack shortcut—consuming offset depth <span class="arithmatex">\(O\)</span> in Register <span class="arithmatex">\(Y\)</span> and bend angle <span class="arithmatex">\(\theta^\circ\)</span> in Register <span class="arithmatex">\(X\)</span> (<code>6</code> [ENTER] <code>30</code> [OFS] <span class="arithmatex">\(\to 12.00\text{ in.}\)</span>) or 3-argument offset <span class="arithmatex">\(O\)</span> in <span class="arithmatex">\(Z\)</span>, angle <span class="arithmatex">\(\theta^\circ\)</span> in <span class="arithmatex">\(Y\)</span>, and deduct <span class="arithmatex">\(D\)</span> in <span class="arithmatex">\(X\)</span>—and as a bidirectional Equation Solver Workspace (<code>BEND: CONDUIT</code>, displaying <code>T = O / SIN(A)</code> on Line 1 with softkeys [T], [O], and [A], pre-initialized to the standard <span class="arithmatex">\(A = 30^\circ\)</span> bender shoe angle):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Button</th>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">Governing Expression &amp; Workspace Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[OFS]</td>
+<td style="text-align: left;">Conduit Offset Travel &amp; Solver</td>
+<td style="text-align: center;">(Opt. Offset <span class="arithmatex">\(O\)</span>)</td>
+<td style="text-align: center;">Offset <span class="arithmatex">\(O\ (\text{in})\)</span></td>
+<td style="text-align: center;">Angle <span class="arithmatex">\(\theta^\circ\)</span> (or Deduct <span class="arithmatex">\(D\)</span>)</td>
+<td style="text-align: left;"><span class="arithmatex">\(T = O / \sin(A)\)</span> (3-arg <span class="arithmatex">\(T - D\)</span>); <code>BEND</code> ([T], [O], [A])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [MIT] / [g] [FIT]</td>
+<td style="text-align: left;">True 3D Rolling Offset Hypotenuse</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Rise <span class="arithmatex">\(R_{\text{vert}}\)</span></td>
+<td style="text-align: center;">Roll <span class="arithmatex">\(R_{\text{horiz}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(O_{\text{true}} = \sqrt{R_{\text{vert}}^2 + R_{\text{horiz}}^2}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [SCH] / [g] [WAL]</td>
+<td style="text-align: left;">Pipe Schedule &amp; Wall Thickness</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Outer Dia <span class="arithmatex">\(OD\)</span></td>
+<td style="text-align: center;">Inner Dia / Wall</td>
+<td style="text-align: left;"><span class="arithmatex">\(ID\)</span> or wall thickness difference <span class="arithmatex">\(Y - X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [SFM]</td>
+<td style="text-align: left;">Spindle Speed &amp; Surface Velocity</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Speed <span class="arithmatex">\(\text{SFM}\)</span></td>
+<td style="text-align: center;">Diameter <span class="arithmatex">\(D\ (\text{in})\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(N = (3.8197 \cdot \text{SFM}) / D\)</span>; <code>SFM</code> ([N], [S], [D])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [TAP]</td>
+<td style="text-align: left;"><span class="arithmatex">\(75\%\)</span> Thread Tap Drill Diameter</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Major <span class="arithmatex">\(D\ (\text{in})\)</span></td>
+<td style="text-align: center;">Pitch <span class="arithmatex">\(p\)</span> or TPI</td>
+<td style="text-align: left;"><span class="arithmatex">\(D_{\text{tap}} = D - 1/\text{TPI}\)</span> (if <span class="arithmatex">\(X &gt; 3\)</span>) or <span class="arithmatex">\(D - p\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [BC]</td>
+<td style="text-align: left;">Bolt Circle Chord Spacing &amp; Solver</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Circle Dia <span class="arithmatex">\(D\)</span></td>
+<td style="text-align: center;">Hole Count <span class="arithmatex">\(N\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(C = D \sin(180^\circ / N)\)</span>; <code>BOLT</code> ([C], [D], [N])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [f-i] / [g] [▦]</td>
+<td style="text-align: left;">Architectural <code>FF.IISS</code> &amp; NEC Table</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">(Opt. Feet)</td>
+<td style="text-align: center;">Decimal / Inches</td>
+<td style="text-align: left;">Converts decimal feet <span class="arithmatex">\(\leftrightarrow\)</span> <code>FF' II-S/16"</code>; opens NEC fill table</td>
+</tr>
+</tbody>
+</table>
+<h3 id="computing-offset-travel-shrinkage-marks-and-rolling-offsets-on-the-stack">Computing Offset Travel, Shrinkage Marks, and Rolling Offsets on the Stack</h3>
+<p>To lay out the <span class="arithmatex">\(O = 6.0\text{ in.}\)</span> I-beam offset at <span class="arithmatex">\(\theta = 30^\circ\)</span> (<span class="arithmatex">\(48.0\text{ in.}\)</span> from the splitter trough) and the subsequent <span class="arithmatex">\(6.0\text{ in.} \times 8.0\text{ in.}\)</span> rolling offset into the MCC at <span class="arithmatex">\(30^\circ\)</span>, the electrician evaluates <code>6</code> [ENTER] <code>30</code> [OFS] (<span class="arithmatex">\(T = \mathbf{12.00\text{ in.}}\)</span>), adds the <span class="arithmatex">\(1/4\text{ in/in}\)</span> shrinkage (<span class="arithmatex">\(6 \times 0.25 = 1.50\text{ in.}\)</span>) to <span class="arithmatex">\(48.0\text{ in.}\)</span> to place the two bend marks at <span class="arithmatex">\(\mathbf{49.50\text{ in.}}\)</span> and <span class="arithmatex">\(\mathbf{37.50\text{ in.}}\)</span>, and uses [g] [FIT] followed by [OFS] to compute the rolling offset travel <span class="arithmatex">\(T_{\text{roll}} = \mathbf{20.00\text{ in.}}\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>6</code> [ENTER] <code>30</code> [OFS] [C]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(12\)</span></td>
+<td style="text-align: left;">Compute <span class="arithmatex">\(30^\circ\)</span> I-beam offset travel <span class="arithmatex">\(T = 6 / \sin(30^\circ) = 12.00\text{ in.}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>48</code> [ENTER] <code>6</code> [ENTER] <code>0.25</code> [×] [+]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(12\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(49.5\)</span></td>
+<td style="text-align: left;">Add shrinkage <span class="arithmatex">\(S = 1.50\text{ in.}\)</span> to <span class="arithmatex">\(48.0\text{ in.}\)</span> for Mark 2 at <span class="arithmatex">\(49.50\text{ in.}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[x⇄y] [-]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(37.5\)</span></td>
+<td style="text-align: left;">Subtract travel <span class="arithmatex">\(T = 12.00\text{ in.}\)</span> to locate Mark 1 at <span class="arithmatex">\(37.50\text{ in.}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>6</code> [ENTER] <code>8</code> [g] [FIT] <code>30</code> [OFS] [C]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(37.5\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(20\)</span></strong></td>
+<td style="text-align: left;">Compute true rolling offset <span class="arithmatex">\(O_{\text{true}} = 10\text{ in.}\)</span> ([g] [FIT]) and <span class="arithmatex">\(30^\circ\)</span> travel <span class="arithmatex">\(T_{\text{roll}} = 20.00\text{ in.}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="inverse-bend-angle-solving-in-bend-and-verifying-nec-conduit-fill">Inverse Bend Angle Solving in <code>BEND</code> and Verifying NEC Conduit Fill</h3>
+<p>Suppose a fire-sprinkler main hung just ahead of an overhead structural beam restricts the available diagonal travel length of a <span class="arithmatex">\(O = 6.0\text{ in.}\)</span> offset to at most <span class="arithmatex">\(T = 10.0\text{ in.}\)</span> (so a standard <span class="arithmatex">\(30^\circ\)</span> bend with <span class="arithmatex">\(T = 12.00\text{ in.}\)</span> will not fit in the ceiling bay). Pressing <code>0</code> [ENTER] <code>0</code> [OFS] opens the <strong>Bidirectional <code>BEND</code> Equation Solver Workspace</strong>, displaying <code>BEND: CONDUIT</code> and <code>T = O / SIN(A)</code> on Line 1 with variable softkeys [T] ([LFU0]), [O] ([LFU1]), and [A] ([LFU2]). Storing the constrained travel length <code>10</code> [T] ([LFU0]) and offset height <code>6</code> [O] ([LFU1]) and pressing [XEQ] [A] ([LFU2]) solves the cosecant equation backward for the minimum required bend angle:</p>
+<div class="arithmatex">\[A = \arcsin\!\left(\frac{O}{T}\right) = \arcsin\!\left(\frac{6.0}{10.0}\right) \approx \mathbf{36.8699^\circ}\]</div>
+<p>This tells the electrician immediately to step up from the <span class="arithmatex">\(30^\circ\)</span> bender groove to a custom <span class="arithmatex">\(37^\circ\)</span> digital protractor bend (or the <span class="arithmatex">\(45^\circ\)</span> shoe mark, where <code>6</code> [O] <code>45</code> [A] [XEQ] [T] gives <span class="arithmatex">\(T \approx \mathbf{8.4853\text{ in.}}\)</span>).</p>
+<p>Next, to step over the <span class="arithmatex">\(O = 4.0\text{ in.}\)</span> steam pipe using a <span class="arithmatex">\(45^\circ\text{--}22.5^\circ\)</span> three-point saddle (<code>4</code> [ENTER] <code>22.5</code> [OFS]) and verify the NEC conduit fill of twelve <code>#10 AWG</code> THHN conductors (<span class="arithmatex">\(0.0211\text{ in}^2\)</span> each) inside <span class="arithmatex">\(1\text{-in.}\)</span> EMT (<span class="arithmatex">\(A_{\text{conduit}} = 0.864\text{ in}^2\)</span>), the crew chains the saddle travel and area ratio on the stack:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>4</code> [ENTER] <code>22.5</code> [OFS] [C]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(10.4525\)</span></td>
+<td style="text-align: left;">Compute outer <span class="arithmatex">\(22.5^\circ\)</span> saddle leg travel <span class="arithmatex">\(T_{\text{saddle}} = 4/\sin(22.5^\circ) \approx 10.45\text{ in.}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>12</code> [ENTER] <code>0.0211</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(10.4525\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.2532\)</span></td>
+<td style="text-align: left;">Compute total cross-sectional area of <span class="arithmatex">\(12\)</span> <code>#10 AWG</code> THHN wires (<span class="arithmatex">\(0.2532\text{ in}^2\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.864</code> [÷] <code>100</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(10.4525\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(29.3056\)</span></td>
+<td style="text-align: left;">Divide by <span class="arithmatex">\(1\text{-in.}\)</span> EMT area (<span class="arithmatex">\(0.864\text{ in}^2\)</span>) to confirm <span class="arithmatex">\(\text{Fill\%} \approx 29.31\% \le 40\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.3456</code> [ENTER] <code>0.0211</code> [÷]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(10.4525\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(29.3056\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(16.3791\)</span></strong></td>
+<td style="text-align: left;">Divide <span class="arithmatex">\(40\%\)</span> allowance (<span class="arithmatex">\(0.3456\text{ in}^2\)</span>) by <span class="arithmatex">\(0.0211\text{ in}^2\)</span> (<span class="arithmatex">\(\lfloor 16.38 \rfloor = 16\)</span> max wires)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="try-it-on-the-stack_1">Try It on the Stack</h3>
+<p>Practice conduit offset geometry, inverse <code>BEND</code> workspace solves, and shop bracket machining with these three field layout exercises:</p>
 <ol>
-<li><strong>Compute Travel Distance:</strong></li>
-<li>Multiplier for <span class="arithmatex">\(30^\circ\)</span> is <span class="arithmatex">\(\frac{1}{\sin(30^\circ)} = 2.0\)</span>.</li>
-<li><code>4</code> <code>[ENTER]</code> <code>30</code> <code>[SIN]</code> <code>[÷]</code> <span class="arithmatex">\(\to\)</span> <strong><code>8.00 inches</code></strong>.</li>
-<li>The electrician places the two bend arrows exactly <span class="arithmatex">\(8\text{ inches}\)</span> apart on the conduit.</li>
-<li><strong>Compute Pipe Shrinkage:</strong></li>
-<li>For <span class="arithmatex">\(30^\circ\)</span>, shrink is <span class="arithmatex">\(1/4\text{ inch}\)</span> per inch of offset depth.</li>
-<li><code>4</code> <code>[ENTER]</code> <code>0.25</code> <code>[×]</code> <span class="arithmatex">\(\to\)</span> <strong><code>1.00 inch</code></strong>.</li>
-<li>The electrician shifts the first bend mark forward by <span class="arithmatex">\(1\text{ inch}\)</span> so the final end lands flush in the junction box.</li>
+<li><strong>Comparing Thirty-Degree and Forty-Five-Degree Offsets:</strong> For an obstruction depth of <span class="arithmatex">\(O = 6.5\text{ in.}\)</span> (<span class="arithmatex">\(6\text{-}1/2\text{ in.}\)</span>), compare the travel distance ([OFS]) and shrinkage at <span class="arithmatex">\(\theta = 30^\circ\)</span> (<code>6.5</code> [ENTER] <code>30</code> [OFS]) against <span class="arithmatex">\(\theta = 45^\circ\)</span> (<code>6.5</code> [ENTER] <code>45</code> [OFS]). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(T_{30} = \mathbf{13.00\text{ in.}}\)</span> with <span class="arithmatex">\(1.625\text{ in.}\)</span> field shrinkage; <span class="arithmatex">\(T_{45} \approx \mathbf{9.1924\text{ in.}}\)</span> with <span class="arithmatex">\(2.4375\text{ in.}\)</span> field shrinkage.)</em></li>
+<li><strong>Inverse Saddle Bend Angle in a Constrained Ceiling Bay:</strong> To clear a rectangular HVAC duct of depth <span class="arithmatex">\(O = 9.0\text{ in.}\)</span> where ceiling hangers restrict maximum diagonal travel between bends to <span class="arithmatex">\(T = 18.0\text{ in.}\)</span>, open <code>BEND</code> (<code>0</code> [ENTER] <code>0</code> [OFS]), store <code>18</code> [T] and <code>9</code> [O], and press [XEQ] [A] for the required bend angle; then compare with the travel at <span class="arithmatex">\(A = 22.5^\circ\)</span> (<code>22.5</code> [A] [XEQ] [T]). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: constrained angle <span class="arithmatex">\(A = \mathbf{30.00^\circ}\)</span>, and <span class="arithmatex">\(22.5^\circ\)</span> travel <span class="arithmatex">\(T \approx \mathbf{23.5182\text{ in.}}\)</span> with exact shrinkage <span class="arithmatex">\(S_{\text{shrink}} \approx \mathbf{1.7902\text{ in.}}\)</span>.)</em></li>
+<li><strong>Trapeze Bracket Spindle Speed, Tap Drill, and Bolt Circle:</strong> For the steel trapeze adapter ring, evaluate spindle speed for <span class="arithmatex">\(\text{SFM} = 400\text{ ft/min}\)</span> on a <span class="arithmatex">\(D = 0.500\text{ in.}\)</span> end-mill (<code>400</code> [ENTER] <code>0.5</code> [f] [SFM]), tap drill diameter for <code>1/2-13 UNC</code> (<code>0.5</code> [ENTER] <code>13</code> [f] [TAP]), and chord spacing for <span class="arithmatex">\(N = 8\)</span> holes on a <span class="arithmatex">\(D = 6.00\text{ in.}\)</span> bolt circle (<code>6</code> [ENTER] <code>8</code> [g] [BC]). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(N \approx \mathbf{3{,}055.77\text{ RPM}}\)</span>, <span class="arithmatex">\(D_{\text{tap}} \approx \mathbf{0.4231\text{ in.}}\)</span>, and <span class="arithmatex">\(C \approx \mathbf{2.2961\text{ in.}}\)</span>.)</em></li>
 </ol>
+<p>With the boiler-room conduit bank bent and pulled, we move to the machine shop and instrumentation bench in Chapter 6 to silence a chattering carbide milling cutter, size a coolant control valve and pump, and calibrate a drifting hydraulic pressure loop.</p>
 <hr />
-<h2 id="4-try-it-yourself-practice-problems">4. Try It Yourself: Practice Problems</h2>
-<h3 id="problem-1-motor-full-load-current">Problem 1: Motor Full Load Current</h3>
-<p>A three-phase <span class="arithmatex">\(480\text{-volt}\)</span> induction motor produces <span class="arithmatex">\(25\text{ HP}\)</span> on a factory conveyor line. The motor nameplate lists an operating efficiency of <span class="arithmatex">\(88\%\)</span> (<span class="arithmatex">\(\eta = 0.88\)</span>) and a power factor of <span class="arithmatex">\(0.85\)</span> (<span class="arithmatex">\(PF = 0.85\)</span>).
-Calculate the motor Full Load Amps (<span class="arithmatex">\(FLA\)</span>).
-<em>(Solution: <span class="arithmatex">\(25 \times 746 = 18{,}650\text{ W}\)</span>. Denominator <span class="arithmatex">\(= 1.732 \times 480 \times 0.88 \times 0.85 = 622.3\)</span>. <span class="arithmatex">\(FLA = 18650 / 622.3 = \mathbf{29.97\text{ Amps}}\)</span>. Branch conductors must be sized to <span class="arithmatex">\(125\% \times 29.97 = \mathbf{37.5\text{ A}}\)</span>.)</em></p>
-<h3 id="problem-2-conduit-raceway-fill">Problem 2: Conduit Raceway Fill</h3>
-<p>Under NEC Chapter 9 Table 1, a conduit raceway with more than two conductors may be filled to a maximum of <strong>40%</strong> of its cross-sectional area.
-A <span class="arithmatex">\(1\text{-inch}\)</span> EMT conduit has an internal cross-sectional area of <span class="arithmatex">\(0.864\text{ sq in}\)</span>.
-If each #10 THHN conductor has a cross-sectional area of <span class="arithmatex">\(0.0211\text{ sq in}\)</span>, what is the maximum number of #10 wires allowed in this pipe?
-<em>(Solution: Usable area <span class="arithmatex">\(= 0.864 \times 0.40 = 0.3456\text{ sq in}\)</span>. Max wires <span class="arithmatex">\(= 0.3456 / 0.0211 = 16.38 \implies \mathbf{16\text{ wires}}\)</span>.)</em></p>
-<h3 id="problem-3-cnc-spindle-speed">Problem 3: CNC Spindle Speed</h3>
-<p>A machinist is facing an aluminum block (<span class="arithmatex">\(SFM = 500\)</span>) using a <span class="arithmatex">\(2.5\text{-inch}\)</span> diameter carbide face mill.
-Calculate the proper spindle speed in <span class="arithmatex">\(RPM\)</span>.
-<em>(Solution: <span class="arithmatex">\(RPM = 3.82 \times 500 / 2.5 = \mathbf{764\text{ RPM}}\)</span>.)</em></p>
+<h1 id="chapter-6-the-chattering-milling-cutter-and-the-drifting-pressure-loop">Chapter 6: The Chattering Milling Cutter and the Drifting Pressure Loop</h1>
+<p>In the heavy-machinery maintenance shop adjacent to the boiler plant, a toolmaker is milling an 8-bolt high-pressure steam flange out of annealed 4140 alloy steel on a vertical CNC machining center using a <span class="arithmatex">\(\varnothing\,0.500\text{ in.}\)</span> (<span class="arithmatex">\(1/2\text{ in.}\)</span>) 4-flute solid carbide end-mill. Halfway through the roughing pass, the cutter begins to emit a high-pitched harmonic shriek—chatter—leaving washboard ripples along the flange wall while the control panel flags an intermittent low-pressure alarm on the hydraulic workholding fixture.</p>
+<p>Two distinct shop-floor problems have converged at the milling table. First, the operator accidentally left the spindle speed set to <span class="arithmatex">\(3{,}056\text{ RPM}\)</span> from an earlier aluminum job (<span class="arithmatex">\(\text{SFM} = 400\text{ ft/min}\)</span> via <code>400</code> [ENTER] <code>0.5</code> [f] [SFM])—four times the <span class="arithmatex">\(100\text{ Surface Feet per Minute}\)</span> ([f] [SFM]) cutting velocity rating of 4140 alloy steel—while starving the 4-flute cutter of its proper <span class="arithmatex">\(f_t = 0.003\text{ in/tooth}\)</span> chip load ([g] [RPM]), causing the cutting edges to rub and work-harden the steel rather than shearing clean chips. Once the outer profile is milled, the machinist must also compute the tap drill size ([f] [TAP]) and center-to-center chord spacing ([g] [BC]) to drill and tap <span class="arithmatex">\(N = 8\)</span> threaded mounting holes (<code>1/2-13 UNC</code>) around a <span class="arithmatex">\(D_{\text{bolt}} = 6.00\text{ in.}\)</span> (and <span class="arithmatex">\(10.00\text{ in.}\)</span>) pitch circle. Second, on the hydraulic fixture clamping the flange and the heat-exchanger cooling loop, the <span class="arithmatex">\(4\text{--}20\text{ mA}\)</span> pressure transmitter ([mA], calibrated for <span class="arithmatex">\(0\text{--}3{,}000\text{ psi}\)</span>) is reading <span class="arithmatex">\(62.5\%\)</span> of span (<span class="arithmatex">\(1{,}875\text{ psi}\)</span>) across a <span class="arithmatex">\(\varnothing\,2.00\text{ in.}\)</span> hydraulic clamping cylinder; the instrumentation technician must verify the clamping force in pounds ([g] [▸lbf]), check the <span class="arithmatex">\(4\text{--}20\text{ mA}\)</span> loop current ([mA]) and <span class="arithmatex">\(\text{Pt100}\)</span> coolant RTD resistance ([f] [RTD]), verify pipe continuity flow ([PIP], <code>Q = A × V</code>) and net positive suction head ([g] [NPH]), and use the [g] [Cᵥ] (<code>Q = C × √(P / G)</code>) and [PMP] (<code>P = Q × H / 3960</code>) workspaces to verify cooling valve flow and pump brake horsepower.</p>
+<hr />
+<h2 id="rotary-cutting-kinematics-thread-tapping-and-bolt-circle-trigonometry">Rotary Cutting Kinematics, Thread Tapping, and Bolt Circle Trigonometry</h2>
+<p>Eliminating chatter and laying out precision flange patterns require coupling rotary tangential velocity with per-tooth chip thickness, thread pitch geometry, and circular chord trigonometry.</p>
+<h3 id="surface-feet-per-minute-spindle-speed-and-chip-load-feed-rate">Surface Feet per Minute, Spindle Speed, and Chip-Load Feed Rate</h3>
+<p>When a lathe turns a cylindrical bar of diameter <span class="arithmatex">\(D\)</span> (in inches) or a milling machine spins an end-mill of diameter <span class="arithmatex">\(D\)</span> at spindle rotational speed <span class="arithmatex">\(N\)</span> (in Revolutions Per Minute, <span class="arithmatex">\(\text{RPM}\)</span>), each revolution carries a cutting tooth around the outer circumference <span class="arithmatex">\(\pi D\text{ inches} = \frac{\pi D}{12}\text{ feet}\)</span>. Multiplying by <span class="arithmatex">\(N\text{ rev/min}\)</span> defines the tangential cutting velocity in <strong>Surface Feet per Minute</strong> ([f] [SFM] at <code>(7,4)f</code>), and inverting that relation determines the required <strong>Spindle Speed</strong> <span class="arithmatex">\(N\)</span> ([f] [SFM] / [g] [RPM]), the linear table <strong>Feed Rate</strong> <span class="arithmatex">\(F_m\)</span> (in <span class="arithmatex">\(\text{in/min}\)</span>) for a cutter with <span class="arithmatex">\(Z\)</span> flutes and chip load <span class="arithmatex">\(f_t\)</span> (in <span class="arithmatex">\(\text{in/tooth}\)</span>), and the <span class="arithmatex">\(75\%\)</span>-thread <strong>Tap Drill Diameter</strong> <span class="arithmatex">\(D_{\text{tap}}\)</span> ([f] [TAP] at <code>(2,0)f</code>) for a screw of major diameter <span class="arithmatex">\(D_{\text{major}}\)</span> and pitch <span class="arithmatex">\(P_{\text{tpi}}\)</span> (threads per inch, or metric/decimal pitch <span class="arithmatex">\(p\)</span> when <span class="arithmatex">\(X \le 3\)</span>):</p>
+<p><img alt="Rotary milling cutter kinematics relating cutter diameter D, spindle speed RPM, and tangential surface feet per minute (SFM)." src="../../assets/diagrams/domains/diagram_ch02_machining_sfm.png" /></p>
+<div class="arithmatex">\[\text{SFM} = \frac{\pi \cdot D \cdot N}{12} \implies N = \frac{12 \cdot \text{SFM}}{\pi \cdot D} \approx \frac{3.8197 \cdot \text{SFM}}{D}, \qquad F_m = N \cdot f_t \cdot Z, \qquad D_{\text{tap}} = D_{\text{major}} - \frac{1}{P_{\text{tpi}}}\]</div>
+<p>In these machining equations, <span class="arithmatex">\(D\)</span> is the cutter or workpiece diameter in inches, <span class="arithmatex">\(12 / \pi \approx 3.8197186\)</span> (<span class="arithmatex">\(3.82\)</span> in the <code>SFM</code> workspace <code>N = 3.82 × S / D</code> with softkeys [N], [S], [D]) converts feet per minute into inches per revolution, <span class="arithmatex">\(f_t \cdot Z\)</span> is the linear advance per spindle revolution, and subtracting one pitch length <span class="arithmatex">\(1 / P_{\text{tpi}}\)</span> from the major diameter <span class="arithmatex">\(D_{\text{major}}\)</span> yields the standard <span class="arithmatex">\(75\%\)</span> unified national thread tap drill diameter. While an aluminum roughing pass at <span class="arithmatex">\(\text{SFM} = 400\text{ ft/min}\)</span> on a <span class="arithmatex">\(D = 0.500\text{ in.}\)</span> cutter runs at <code>400</code> [ENTER] <code>0.5</code> [f] [SFM] <span class="arithmatex">\(\to \mathbf{3{,}055.77\text{ RPM}}\)</span>, milling 4140 steel rated at <span class="arithmatex">\(\text{SFM} = 100\text{ ft/min}\)</span> with a <span class="arithmatex">\(D = 0.500\text{ in.}\)</span> 4-flute end-mill and a chip load of <span class="arithmatex">\(f_t = 0.003\text{ in/tooth}\)</span> requires reducing the spindle speed via <code>100</code> [ENTER] <code>0.5</code> [f] [SFM] to <span class="arithmatex">\(N = \frac{12 \times 100}{\pi \times 0.500} \approx \mathbf{763.94\text{ RPM}}\)</span> and setting the table feed rate to <span class="arithmatex">\(F_m = 763.9437 \times 0.003 \times 4 \approx \mathbf{9.17\text{ in/min}}\)</span>. Tapping the <code>1/2-13 UNC</code> flange holes (<span class="arithmatex">\(D_{\text{major}} = 0.500\text{ in.}\)</span>, <span class="arithmatex">\(P_{\text{tpi}} = 13\text{ TPI}\)</span>) via <code>0.5</code> [ENTER] <code>13</code> [f] [TAP] requires a tap drill diameter of <span class="arithmatex">\(D_{\text{tap}} = 0.500 - 1/13 \approx \mathbf{0.4231\text{ in.}}\)</span> (<span class="arithmatex">\(27/64\text{ in.} = 0.4219\text{ in.}\)</span>).</p>
+<h3 id="bolt-circle-chord-indexing-and-right-triangle-fixture-layout">Bolt Circle Chord Indexing and Right-Triangle Fixture Layout</h3>
+<p>When drilling <span class="arithmatex">\(N\)</span> equally spaced bolt holes around a pitch circle of diameter <span class="arithmatex">\(D_{\text{bolt}}\)</span> (radius <span class="arithmatex">\(R = D_{\text{bolt}}/2\)</span>), the central angle between adjacent holes is <span class="arithmatex">\(\Delta\theta = 360^\circ / N\)</span>. Bisecting the isosceles triangle formed by the circle center and two adjacent holes yields two right triangles with half-angle <span class="arithmatex">\(\frac{\Delta\theta}{2} = \frac{180^\circ}{N}\)</span> and hypotenuse <span class="arithmatex">\(R = D_{\text{bolt}}/2\)</span>:</p>
+<p><img alt="Bolt circle hole layout showing pitch radius R, angular pitch 360/N, and center-to-center chord distance C." src="../../assets/diagrams/domains/diagram_ch02_bolt_circle.png" /></p>
+<div class="arithmatex">\[C = 2 R \sin\!\left(\frac{180^\circ}{N}\right) = D_{\text{bolt}} \sin\!\left(\frac{180^\circ}{N}\right), \qquad X_k = \frac{D_{\text{bolt}}}{2} \cos\!\left(\theta_0 + k \cdot \frac{360^\circ}{N}\right), \qquad Y_k = \frac{D_{\text{bolt}}}{2} \sin\!\left(\theta_0 + k \cdot \frac{360^\circ}{N}\right)\]</div>
+<p>Here <span class="arithmatex">\(C\)</span> is the straight-line center-to-center <strong>Chord Distance</strong> ([g] [BC] at <code>(4,2)g</code>, which also opens the <code>BOLT</code> workspace <code>C = D × SIN(180 / N)</code> with softkeys [C], [D], [N]) between adjacent holes used for caliper verification, and <span class="arithmatex">\((X_k, Y_k)\)</span> are the Cartesian CNC table coordinates of hole <span class="arithmatex">\(k \in \{0, 1, \dots, N-1\}\)</span> starting from reference angle <span class="arithmatex">\(\theta_0\)</span>. On an <span class="arithmatex">\(N = 8\text{-bolt}\)</span> hub with a <span class="arithmatex">\(D_{\text{bolt}} = 6.00\text{ in.}\)</span> pitch circle (<span class="arithmatex">\(\frac{180^\circ}{8} = 22.5^\circ\)</span>), keying <code>6</code> [ENTER] <code>8</code> [g] [BC] returns <span class="arithmatex">\(C = 6.00\sin(22.5^\circ) \approx \mathbf{2.2961\text{ in.}}\)</span>, while on the outer <span class="arithmatex">\(D_{\text{bolt}} = 10.00\text{ in.}\)</span> steam flange (<code>10</code> [ENTER] <code>8</code> [g] [BC]), the chord spacing is <span class="arithmatex">\(C = 10.00\sin(22.5^\circ) \approx \mathbf{3.8268\text{ in.}}\)</span>.</p>
+<hr />
+<h2 id="pipe-flow-continuity-valve-coefficient-pump-power-and-process-loops">Pipe Flow Continuity, Valve Coefficient, Pump Power, and Process Loops</h2>
+<p>Holding a heavy steel forging stationary against cutting forces and monitoring its coolant and hydraulic circuits unite fluid continuity, Bernoulli's orifice flow law, Net Positive Suction Head, and Kirchhoff's current law.</p>
+<h3 id="pipe-continuity-valve-flow-coefficient-pump-power-and-suction-head">Pipe Continuity, Valve Flow Coefficient, Pump Power, and Suction Head</h3>
+<p>In the cooling header supplying the machining center, incompressible fluid of cross-sectional pipe area <span class="arithmatex">\(A\)</span> moving at velocity <span class="arithmatex">\(V\)</span> obeys the <strong>Pipe Flow Continuity Law</strong> <span class="arithmatex">\(Q = A \times V\)</span> ([PIP], primary at <code>(1,4)</code>, opening the <code>PIP</code> workspace with softkeys [Q], [A], [V]). Downstream, a control valve of <strong>Flow Coefficient</strong> <span class="arithmatex">\(C_v\)</span> ([g] [Cᵥ] at <code>(1,0)g</code>) passes <span class="arithmatex">\(Q\text{ GPM}\)</span> ([f] [▸GPM]) of fluid of specific gravity <span class="arithmatex">\(G = \rho / \rho_w\)</span> ([g] [ρw]) across pressure drop <span class="arithmatex">\(\Delta P\)</span> (in <span class="arithmatex">\(\text{psi}\)</span>, [f] [▸PSI]), lifting <span class="arithmatex">\(Q\text{ GPM}\)</span> against <span class="arithmatex">\(H\text{ feet}\)</span> of total dynamic head requires hydraulic <strong>Pump Power</strong> <span class="arithmatex">\(P_{\text{BHP}}\)</span> ([PMP], primary at <code>(1,5)</code>, where <span class="arithmatex">\(33{,}000\text{ ft}\cdot\text{lb/min} \div 8.333\text{ lb/gal} = 3{,}960\)</span>), and preventing cavitation at the pump impeller eye requires maintaining <strong>Available Net Positive Suction Head</strong> <span class="arithmatex">\(\text{NPSH}_a\)</span> ([g] [NPH] at <code>(4,1)g</code>) above the pump's required threshold:</p>
+<div class="arithmatex">\[Q = A \cdot V, \qquad Q = C_v \sqrt{\frac{\Delta P}{G}}, \qquad P_{\text{BHP}} = \frac{Q \cdot H}{3960}, \qquad \text{NPSH}_a = P_{\text{atm}} - P_{\text{vap}} \pm z_s - h_f\]</div>
+<p>In these fluid-power relations, <span class="arithmatex">\(Q\)</span> scales with pipe area and velocity in [PIP] and with the square root of valve pressure drop <span class="arithmatex">\(\Delta P\)</span> in [g] [Cᵥ] (<code>CV</code> workspace softkeys [Q], [C], [P], [G]), <span class="arithmatex">\(P_{\text{BHP}}\)</span> measures the water horsepower delivered by [PMP] (<code>PMP</code> workspace softkeys [P], [Q], [H]), and [g] [NPH] evaluates available suction head margin so vapor bubbles do not implode against the impeller vanes. Meanwhile, with the fixture's <span class="arithmatex">\(\varnothing\,2.00\text{ in.}\)</span> hydraulic clamping cylinder (<span class="arithmatex">\(A_{\text{piston}} = \frac{\pi}{4}(2.00)^2 = \pi \approx 3.1416\text{ in}^2\)</span>) pressurized to <span class="arithmatex">\(P_{\text{psi}} = 1{,}875\text{ psi}\)</span>, the clamping force holding the 4140 flange is <span class="arithmatex">\(F_{\text{clamp}} = 1875 \times \pi \approx \mathbf{5{,}890.49\text{ lbf}}\)</span> ([g] [▸lbf]). A coolant control valve with <span class="arithmatex">\(C_v = 25\)</span> at <span class="arithmatex">\(\Delta P = 16\text{ psi}\)</span> (<span class="arithmatex">\(G = 1.0\)</span>) delivers <span class="arithmatex">\(Q = 25\sqrt{16} = \mathbf{100.0\text{ GPM}}\)</span> via <code>25</code> [ENTER] <code>16</code> [g] [Cᵥ], and pumping <span class="arithmatex">\(Q = 198\text{ GPM}\)</span> against <span class="arithmatex">\(H = 100\text{ ft}\)</span> of head requires <span class="arithmatex">\(P_{\text{BHP}} = (198 \times 100)/3960 = \mathbf{5.00\text{ HP}}\)</span> via <code>198</code> [ENTER] <code>100</code> [PMP].</p>
+<h3 id="noise-immune-four-to-twenty-milliampere-loops-and-platinum-rtds">Noise-Immune Four-to-Twenty Milliampere Loops and Platinum RTDs</h3>
+<p>Industrial plants transmit pressure, temperature, and flow readings from field sensors to programmable logic controllers (<code>PLCs</code>) as a <strong><span class="arithmatex">\(4\text{--}20\text{ mA}\)</span> direct-current signal</strong> ([mA], primary at <code>(2,2)</code>) rather than a <span class="arithmatex">\(0\text{--}10\text{ V}\)</span> voltage signal for two physical reasons: first, by Kirchhoff's Current Law, series loop current is identical at every point along a <span class="arithmatex">\(2{,}000\text{ ft}\)</span> cable regardless of wire voltage drop; second, elevating <span class="arithmatex">\(0\%\)</span> of calibrated span to a <strong>live zero of <span class="arithmatex">\(4.0\text{ mA}\)</span></strong> allows the controller to distinguish a <span class="arithmatex">\(0\text{ psi}\)</span> reading (<span class="arithmatex">\(4.0\text{ mA}\)</span>) from a severed wire (<span class="arithmatex">\(0.0\text{ mA}\)</span>).</p>
+<p><img alt="Industrial 4-to-20 mA current loop circuit with 24 V supply, two-wire field transmitter, and 250-ohm PLC sense resistor." src="../../assets/diagrams/domains/diagram_ch02_current_loop.png" /></p>
+<p>Across the <span class="arithmatex">\(16.0\text{ mA}\)</span> active span between <span class="arithmatex">\(4.0\text{ mA}\)</span> (<span class="arithmatex">\(0\%\)</span>) and <span class="arithmatex">\(20.0\text{ mA}\)</span> (<span class="arithmatex">\(100\%\)</span>), loop current <span class="arithmatex">\(I_{\text{mA}}\)</span> scales linearly with process percentage <span class="arithmatex">\(\text{Pct} \in [0, 100]\)</span> via [mA], while an industrial <strong><span class="arithmatex">\(\text{Pt100}\)</span> Resistance Temperature Detector</strong> ([f] [RTD] at <code>(2,2)f</code>)—standardized to ice-point resistance <span class="arithmatex">\(R_0 = 100.0\ \Omega\)</span> at <span class="arithmatex">\(0^\circ\text{C}\)</span> with IEC 60751 platinum temperature coefficient <span class="arithmatex">\(\alpha = 0.00385\ \Omega/(\Omega\cdot^\circ\text{C})\)</span>—follows the linear Callendar–Van Dusen relation at temperature <span class="arithmatex">\(T\)</span> (in <span class="arithmatex">\(^\circ\text{C}\)</span>):</p>
+<div class="arithmatex">\[I_{\text{mA}} = 4.0 + 16.0 \times \left(\frac{\text{Pct}}{100}\right), \qquad \text{Pct} = \left(\frac{I_{\text{mA}} - 4.0}{16.0}\right) \times 100\%, \qquad R(T) = R_0\left(1 + \alpha \cdot T\right) = 100 + 0.385 \cdot T\]</div>
+<p>Here <span class="arithmatex">\(\text{Pct}\)</span> is the percentage of calibrated transmitter span, <span class="arithmatex">\(I_{\text{mA}}\)</span> is the loop current in milliamperes evaluated via [mA], and <span class="arithmatex">\(R(T)\)</span> is the <span class="arithmatex">\(\text{Pt100}\)</span> sensor resistance in ohms evaluated via [f] [RTD]. When the fixture's <span class="arithmatex">\(0\text{--}3{,}000\text{ psi}\)</span> hydraulic transmitter is pressurized to <span class="arithmatex">\(1{,}875\text{ psi}\)</span> (<span class="arithmatex">\(\text{Pct} = (1875 / 3000) \times 100\% = 62.5\%\)</span>), keying <code>62.5</code> [mA] gives the calibrated loop current <span class="arithmatex">\(I_{\text{mA}} = 4.0 + 16.0(0.625) = \mathbf{14.00\text{ mA}}\)</span> (developing <span class="arithmatex">\(14.0\text{ mA} \times 250\ \Omega = 3.50\text{ V}\)</span> across the PLC's <span class="arithmatex">\(250\ \Omega\)</span> sense resistor), confirming that the transmitter is accurate and the intermittent alarm was caused by a loose terminal screw rather than hydraulic pressure loss.</p>
+<hr />
+<h2 id="dialing-in-the-milling-fixture-and-fluid-loop-on-the-stack-and-solver-workspaces">Dialing In the Milling Fixture and Fluid Loop on the Stack and Solver Workspaces</h2>
+<p>On the <strong>SC-14</strong>, machining, fluid-power, and instrumentation keys operate both as immediate stack evaluators and as bidirectional Equation Solver workspaces (<code>SFM</code> with <code>N = 3.82 × S / D</code>, <code>BOLT</code> with <code>C = D × SIN(180 / N)</code>, <code>PIP</code> with <code>Q = A × V</code>, <code>CV</code> with <code>Q = C × √(P / G)</code>, and <code>PMP</code> with <code>P = Q × H / 3960</code>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Button</th>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">Governing Expression &amp; Workspace Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[f] [SFM] / [g] [RPM]</td>
+<td style="text-align: left;">Spindle Speed &amp; Surface Velocity</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Speed <span class="arithmatex">\(\text{SFM}\)</span></td>
+<td style="text-align: center;">Diameter <span class="arithmatex">\(D\ (\text{in})\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(N = (3.8197 \cdot \text{SFM}) / D\)</span>; <code>SFM</code> ([N], [S], [D])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [TAP]</td>
+<td style="text-align: left;"><span class="arithmatex">\(75\%\)</span> Thread Tap Drill Diameter</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Major <span class="arithmatex">\(D_{\text{major}}\)</span></td>
+<td style="text-align: center;">Pitch <span class="arithmatex">\(p\)</span> or TPI</td>
+<td style="text-align: left;"><span class="arithmatex">\(D_{\text{tap}} = D_{\text{major}} - 1 / \text{TPI}\)</span> (if <span class="arithmatex">\(X &gt; 3\)</span>) or <span class="arithmatex">\(D_{\text{major}} - p\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [BC]</td>
+<td style="text-align: left;">Bolt Circle Chord Spacing &amp; Solver</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Circle Dia <span class="arithmatex">\(D_{\text{bolt}}\)</span></td>
+<td style="text-align: center;">Hole Count <span class="arithmatex">\(N\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(C = D_{\text{bolt}} \sin(180^\circ / N)\)</span>; <code>BOLT</code> ([C], [D], [N])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[PIP]</td>
+<td style="text-align: left;">Pipe Continuity Flow &amp; Solver</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Pipe Area <span class="arithmatex">\(A\)</span></td>
+<td style="text-align: center;">Velocity <span class="arithmatex">\(V\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(Q = A \times V\)</span>; <code>PIP</code> workspace ([Q], [A], [V])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [Cᵥ]</td>
+<td style="text-align: left;">Control Valve Flow &amp; Solver</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Coeff <span class="arithmatex">\(C_v\)</span></td>
+<td style="text-align: center;">Drop <span class="arithmatex">\(\Delta P\ (\text{psi})\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(Q = C \sqrt{P / G}\)</span>; <code>CV</code> workspace ([Q], [C], [P], [G])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[PMP] / [g] [NPH]</td>
+<td style="text-align: left;">Hydraulic Pump Power &amp; Suction Head</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Flow <span class="arithmatex">\(Q\ (\text{GPM})\)</span></td>
+<td style="text-align: center;">Head <span class="arithmatex">\(H\ (\text{ft})\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(P = Q \cdot H / 3960\)</span>; <code>PMP</code> ([P], [Q], [H]) &amp; <span class="arithmatex">\(\text{NPSH}_a\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[mA] / [f] [RTD]</td>
+<td style="text-align: left;">Process Current &amp; <span class="arithmatex">\(\text{Pt100}\)</span> Resistance</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{Pct}\ (\%)\)</span> or <span class="arithmatex">\(T\ (^\circ\text{C})\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(I_{\text{mA}} = 4 + 0.16\,\text{Pct},\; R = 100 + 0.385\,T\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="solving-spindle-speed-tap-drill-and-bolt-circle-chords-on-the-stack">Solving Spindle Speed, Tap Drill, and Bolt Circle Chords on the Stack</h3>
+<p>To compare the aluminum spindle setting (<code>400</code> [ENTER] <code>0.5</code> [f] [SFM] <span class="arithmatex">\(\to \mathbf{3{,}055.77\text{ RPM}}\)</span>) against 4140 alloy steel at <span class="arithmatex">\(\text{SFM} = 100\text{ ft/min}\)</span> (<code>100</code> [ENTER] <code>0.5</code> [f] [SFM] <span class="arithmatex">\(\to \mathbf{763.94\text{ RPM}}\)</span>), compute the <code>1/2-13 UNC</code> tap drill size (<code>0.5</code> [ENTER] <code>13</code> [f] [TAP] <span class="arithmatex">\(\to \mathbf{0.4231\text{ in.}}\)</span>), and evaluate the 8-hole bolt circle chord spacing on a <span class="arithmatex">\(6.00\text{ in.}\)</span> hub (<code>6</code> [ENTER] <code>8</code> [g] [BC] <span class="arithmatex">\(\to \mathbf{2.2961\text{ in.}}\)</span>), the machinist executes:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>400</code> [ENTER] <code>0.5</code> [f] [SFM] [C]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3055.7749\)</span></td>
+<td style="text-align: left;">Compute spindle speed at <span class="arithmatex">\(400\text{ SFM}\)</span>: <span class="arithmatex">\(N = (3.8197 \times 400)/0.5 \approx 3{,}055.77\text{ RPM}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>100</code> [ENTER] <code>0.5</code> [f] [SFM] [C]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3055.7749\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(763.9437\)</span></td>
+<td style="text-align: left;">Reduce spindle speed to <span class="arithmatex">\(100\text{ SFM}\)</span> for 4140 steel (<span class="arithmatex">\(763.94\text{ RPM}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.5</code> [ENTER] <code>13</code> [f] [TAP]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3055.7749\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(763.9437\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.4231\)</span></td>
+<td style="text-align: left;">Compute <code>1/2-13 UNC</code> tap drill diameter <span class="arithmatex">\(D_{\text{tap}} = 0.500 - 1/13 \approx 0.4231\text{ in.}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>6</code> [ENTER] <code>8</code> [g] [BC] [C]</td>
+<td style="text-align: center;"><span class="arithmatex">\(3055.7749\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(763.9437\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.4231\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(2.2961\)</span></strong></td>
+<td style="text-align: left;">Compute 8-bolt chord spacing on <span class="arithmatex">\(6\text{ in.}\)</span> circle (<span class="arithmatex">\(C = 6\sin 22.5^\circ \approx 2.2961\text{ in.}\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="calibrating-the-loop-on-the-stack-and-solving-backward-in-cv-and-pmp">Calibrating the Loop on the Stack and Solving Backward in <code>CV</code> and <code>PMP</code></h3>
+<p>Turning to the hydraulic workholding fixture (<span class="arithmatex">\(P_{\text{psi}} = 1{,}875\text{ psi}\)</span> on a <span class="arithmatex">\(0\text{--}3{,}000\text{ psi}\)</span> span) and the shop coolant loop (<span class="arithmatex">\(C_v = 30\)</span> valve at <span class="arithmatex">\(\Delta P = 9\text{ psi}\)</span> pumping against <span class="arithmatex">\(H = 88\text{ ft}\)</span> of head), the technician converts <span class="arithmatex">\(1875 / 3000 = 62.5\%\)</span> span into <span class="arithmatex">\(\mathbf{14.00\text{ mA}}\)</span> via [mA], checks the <span class="arithmatex">\(\text{Pt100}\)</span> sensor at <span class="arithmatex">\(150^\circ\text{C}\)</span> (<span class="arithmatex">\(\mathbf{157.75\ \Omega}\)</span> via [f] [RTD]), evaluates valve flow <span class="arithmatex">\(Q = \mathbf{90.00\text{ GPM}}\)</span> via [g] [Cᵥ], and chains directly into <code>88</code> [PMP] (<span class="arithmatex">\(\to \mathbf{2.00\text{ HP}}\)</span>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>1875</code> [ENTER] <code>3000</code> [÷] <code>100</code> [×] [mA]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(14\)</span></td>
+<td style="text-align: left;">Convert <span class="arithmatex">\(62.5\%\)</span> pressure span to loop current <span class="arithmatex">\(I_{\text{mA}} = 14.00\text{ mA}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>150</code> [f] [RTD]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(14\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(157.75\)</span></td>
+<td style="text-align: left;">Compute <span class="arithmatex">\(\text{Pt100}\)</span> RTD resistance at <span class="arithmatex">\(150^\circ\text{C}\)</span> (<span class="arithmatex">\(R = 157.75\ \Omega\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>30</code> [ENTER] <code>9</code> [g] [Cᵥ] [C]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(14\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(157.75\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(90\)</span></td>
+<td style="text-align: left;">Compute coolant valve flow <span class="arithmatex">\(Q = 30\sqrt{9} = 90.00\text{ GPM}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>88</code> [PMP] [C]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(14\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(157.75\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(2\)</span></strong></td>
+<td style="text-align: left;">Compute pump hydraulic horsepower <span class="arithmatex">\(P = (90 \times 88)/3960 = 2.00\text{ HP}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>When plant engineering upgrades the heat-exchanger manifold, the technician uses the <strong>Bidirectional Equation Solver Workspaces</strong> for [PIP] (<code>PIP: PIPE FLOW</code>, <code>Q = A × V</code>), [g] [Cᵥ] (<code>CV: VALVE FLOW</code>, <code>Q = C × √(P / G)</code>), and [PMP] (<code>PMP: PUMP BHP</code>, <code>P = Q × H / 3960</code>) to solve backward for required component ratings:
+- <strong>Inverse Valve Pressure Drop &amp; Minimum <span class="arithmatex">\(C_v\)</span> in [g] [Cᵥ] (<code>Q = C × √(P / G)</code>):</strong> Suppose a quench manifold requires <span class="arithmatex">\(Q = 100.0\text{ GPM}\)</span> (<code>100</code> [Q] on [LFU0]) of synthetic heat-transfer brine of specific gravity <span class="arithmatex">\(G = 1.08\)</span> (<code>1.08</code> [G] on [LFU3]) through a valve with <span class="arithmatex">\(C_v = 35.0\)</span> (<code>35</code> [C] on [LFU1]). Pressing [XEQ] [P] ([LFU2]) solves backward for the required pressure drop across the valve:
+  $<span class="arithmatex">\(\Delta P = G \cdot \left(\frac{Q}{C_v}\right)^2 = 1.08 \times \left(\frac{100.0}{35.0}\right)^2 \approx \mathbf{8.8163\text{ psi}}\)</span>$
+  Conversely, if header pressure drop is limited to <span class="arithmatex">\(\Delta P = 16.0\text{ psi}\)</span> (<code>16</code> [P]) for <span class="arithmatex">\(Q = 150.0\text{ GPM}\)</span> (<code>150</code> [Q]) of water (<code>1</code> [G]), pressing [XEQ] [C] ([LFU1]) solves backward for the minimum required valve coefficient <span class="arithmatex">\(C_v = 150.0 / \sqrt{16.0} = \mathbf{37.50}\)</span>.
+- <strong>Inverse Discharge Head in [PMP] (<code>P = Q × H / 3960</code>):</strong> When an existing <span class="arithmatex">\(P = 5.00\text{ HP}\)</span> (<code>5</code> [P] on [LFU0]) coolant pump must deliver <span class="arithmatex">\(Q = 180.0\text{ GPM}\)</span> (<code>180</code> [Q] on [LFU1]), pressing [XEQ] [H] ([LFU2]) solves backward for the maximum vertical discharge head the pump can sustain: <span class="arithmatex">\(H_{\max} = \frac{3960 \times 5.00}{180.0} = \mathbf{110.00\text{ ft}}\)</span>.</p>
+<h3 id="try-it-on-the-stack_2">Try It on the Stack</h3>
+<p>Complete your mastery of the <code>SC-14</code> industrial trades calculator with these three machine-shop and process-control exercises:</p>
+<ol>
+<li><strong>Milling Spindle Speed and Table Feed Rate:</strong> Compute spindle speed <span class="arithmatex">\(N\)</span> ([f] [SFM]) and feed rate <span class="arithmatex">\(F_m = N f_t Z\)</span> for a <span class="arithmatex">\(D = 0.625\text{ in.}\)</span> (<span class="arithmatex">\(5/8\text{ in.}\)</span>) 4-flute carbide end-mill cutting alloy steel at <span class="arithmatex">\(\text{SFM} = 120\text{ ft/min}\)</span> (<code>120</code> [ENTER] <code>0.625</code> [f] [SFM]) with chip load <span class="arithmatex">\(f_t = 0.0025\text{ in/tooth}\)</span>. <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(N \approx \mathbf{733.3860\text{ RPM}}\)</span> on the stack or <span class="arithmatex">\(\mathbf{733.44\text{ RPM}}\)</span> in the <code>SFM</code> workspace, and <span class="arithmatex">\(F_m \approx \mathbf{7.3339\text{ in/min}}\)</span>.)</em></li>
+<li><strong>Twelve-Hole Flange Bolt Circle and Inverse Cutter Diameter:</strong> Find the adjacent hole chord spacing ([g] [BC]) for a <span class="arithmatex">\(12\text{-hole}\)</span> pattern on a <span class="arithmatex">\(D_{\text{bolt}} = 9.50\text{ in.}\)</span> pitch circle (<code>9.5</code> [ENTER] <code>12</code> [g] [BC]), and use the <code>SFM</code> workspace (<code>N = 3.82 × S / D</code>) to solve backward for the maximum cutter diameter [D] that can run at spindle speed <span class="arithmatex">\(N = 764\text{ RPM}\)</span> (<code>764</code> [N]) without exceeding surface speed <span class="arithmatex">\(S = 150\text{ ft/min}\)</span> (<code>150</code> [S], [XEQ] [D]). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(C \approx \mathbf{2.4588\text{ in.}}\)</span> and <span class="arithmatex">\(D_{\max} = \mathbf{0.7500\text{ in.}}\)</span>.)</em></li>
+<li><strong>Process Loop Calibration and Inverse Valve Sizing:</strong> For a <span class="arithmatex">\(\text{Pt100}\)</span> RTD at <span class="arithmatex">\(T = 125^\circ\text{C}\)</span> on a <span class="arithmatex">\(0\text{--}200^\circ\text{C}\)</span> transmitter, find sensor resistance (<code>125</code> [f] [RTD]) and loop current (<code>62.5</code> [mA]), and use the [g] [Cᵥ] and [PMP] workspaces to find flow <span class="arithmatex">\(Q\)</span> (<code>35</code> [C] <code>25</code> [P] <code>1</code> [G] [XEQ] [Q]) and water brake horsepower (<code>175</code> [Q] <code>132</code> [H] [XEQ] [P]). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(R = \mathbf{148.125\ \Omega}\)</span>, <span class="arithmatex">\(I_{\text{mA}} = \mathbf{14.00\text{ mA}}\)</span>, <span class="arithmatex">\(Q = \mathbf{175.00\text{ GPM}}\)</span>, and <span class="arithmatex">\(\text{BHP} \approx \mathbf{5.8333\text{ HP}}\)</span>.)</em></li>
+</ol>
+<p>From macroscopic copper feeders, bent steel raceways, and <span class="arithmatex">\(4\text{--}20\text{ mA}\)</span> analog current loops, we cross into the digital registers, bitwise masks, and clock dividers that govern embedded silicon in <a href="../03-sc16-systems-cyber/">Unit III: Digital Systems, Bitwise Logic &amp; Embedded Timing</a>.</p>
 
 
 

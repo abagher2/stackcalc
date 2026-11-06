@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An applied guide to multi-base arithmetic, two's complement integer limits, bitwise masks, and memory alignment on the StackCalc 16.">
+        <meta name="description" content="Three narrative-problem chapters covering positional radix systems, two's complement modular rings, bitwise Boolean masks and shifts, IEEE-754 floating-point packets, CRC checksums, timer/UART clock synthesis, ADC quantization, and CIDR subnetting on the SC-16.">
       
       
         <meta name="author" content="StackCalc Engineering">
@@ -22,7 +22,7 @@
     
     
       
-        <title>SC-16 Systems Programming, Embedded & Cyber Operations - StackCalc32</title>
+        <title>Unit III: Digital Systems, Bitwise Logic & Embedded Timing - StackCalc32</title>
       
     
     
@@ -67,13 +67,13 @@
   
   <meta property="og:site_name" content="StackCalc32">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="SC-16 Systems Programming, Embedded &amp; Cyber Operations">
-  <meta property="og:description" content="An applied guide to multi-base arithmetic, two&#39;s complement integer limits, bitwise masks, and memory alignment on the StackCalc 16.">
+  <meta property="og:title" content="Unit III: Digital Systems, Bitwise Logic &amp; Embedded Timing">
+  <meta property="og:description" content="Three narrative-problem chapters covering positional radix systems, two&#39;s complement modular rings, bitwise Boolean masks and shifts, IEEE-754 floating-point packets, CRC checksums, timer/UART clock synthesis, ADC quantization, and CIDR subnetting on the SC-16.">
   <meta property="og:url" content="https://www.stackcalc.io/manuals/domains/03-sc16-systems-cyber/">
   <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SC-16 Systems Programming, Embedded &amp; Cyber Operations">
-  <meta name="twitter:description" content="An applied guide to multi-base arithmetic, two&#39;s complement integer limits, bitwise masks, and memory alignment on the StackCalc 16.">
+  <meta name="twitter:title" content="Unit III: Digital Systems, Bitwise Logic &amp; Embedded Timing">
+  <meta name="twitter:description" content="Three narrative-problem chapters covering positional radix systems, two&#39;s complement modular rings, bitwise Boolean masks and shifts, IEEE-754 floating-point packets, CRC checksums, timer/UART clock synthesis, ADC quantization, and CIDR subnetting on the SC-16.">
   <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -120,7 +120,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sc-16-systems-programming-embedded-cyber-operations" class="md-skip">
+        <a href="#unit-iii-digital-systems-bitwise-logic-embedded-timing" class="md-skip">
           Skip to content
         </a>
       
@@ -158,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SC-16 Systems Programming, Embedded & Cyber Operations
+              Unit III: Digital Systems, Bitwise Logic & Embedded Timing
             
           </span>
         </div>
@@ -2914,209 +2914,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-when-numbers-hit-the-silicon-ceiling" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. When Numbers Hit the Silicon Ceiling
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. When Numbers Hit the Silicon Ceiling">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-not-just-use-python-or-an-on-screen-calculator" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Not Just Use Python or an On-Screen Calculator?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-core-concepts-how-systems-and-cyber-engineers-think" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Core Concepts: How Systems and Cyber Engineers Think
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Core Concepts: How Systems and Cyber Engineers Think">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#concept-1-the-odometer-in-reverse-twos-complement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 1: The Odometer in Reverse (Two's Complement)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Concept 1: The Odometer in Reverse (Two's Complement)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#word-sizes-and-the-sign-bit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Word Sizes and the Sign Bit
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concept-2-speaking-in-hexadecimal-base-16" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 2: Speaking in Hexadecimal (Base-16)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concept-3-bitwise-logic-masking" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 3: Bitwise Logic &amp; Masking
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concept-4-memory-alignment-struct-padding" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept 4: Memory Alignment &amp; Struct Padding
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-real-world-field-walkthroughs" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Real-World Field Walkthroughs
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Real-World Field Walkthroughs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#field-case-1-isolating-a-hardware-status-bit-rembedded" class="md-nav__link">
-    <span class="md-ellipsis">
-      Field Case 1: Isolating a Hardware Status Bit (r/embedded)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Field Case 1: Isolating a Hardware Status Bit (r/embedded)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-solve-it-on-the-sc-16" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to Solve It on the SC-16
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#field-case-2-subnetting-an-ipv4-network-hacker-news" class="md-nav__link">
-    <span class="md-ellipsis">
-      Field Case 2: Subnetting an IPv4 Network (Hacker News)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Field Case 2: Subnetting an IPv4 Network (Hacker News)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-by-step-mechanics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step-by-Step Mechanics
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-try-it-yourself-practice-problems" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Try It Yourself: Practice Problems
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Try It Yourself: Practice Problems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problem-1-twos-complement-negative-conversion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem 1: Two's Complement Negative Conversion
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problem-2-circular-ring-buffer-masking" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem 2: Circular Ring-Buffer Masking
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problem-3-decoding-an-ieee-754-single-precision-float" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem 3: Decoding an IEEE-754 Single-Precision Float
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -3130,187 +2927,944 @@
                   
 
 
-<h1 id="sc-16-systems-programming-embedded-cyber-operations">SC-16 Systems Programming, Embedded &amp; Cyber Operations</h1>
-<blockquote>
-<p><strong>Who this is for:</strong> Anyone who writes software in high-level languages like Python, C, Rust, or JavaScript, but wants to understand what actually happens when variables turn into electrical signals, registers, and memory addresses inside a CPU.</p>
-</blockquote>
-<hr />
-<h2 id="1-when-numbers-hit-the-silicon-ceiling">1. When Numbers Hit the Silicon Ceiling</h2>
-<p>In high school math, numbers are smooth and infinite. You can start at zero and count upward forever, or take any two numbers and divide them into smaller and smaller fractions.</p>
-<p>In a computer chip, numbers are neither smooth nor infinite. <strong>They live in fixed-width boxes of silicon.</strong></p>
-<p>A physical register in a microprocessor is made of microscopic flip-flops—transistor circuits that can hold either high voltage (<span class="arithmatex">\(1\)</span>) or low voltage (<span class="arithmatex">\(0\)</span>). An 8-bit register has eight switches; a 32-bit register has thirty-two; a 64-bit register has sixty-four. Because there are only so many switches in the box, numbers in computing behave like an old mechanical car odometer.</p>
-<p>If your car’s odometer has five digit wheels and you drive past <span class="arithmatex">\(99{,}999\text{ miles}\)</span>, the odometer doesn't expand to six digits; it clicks over to <span class="arithmatex">\(00{,}000\)</span>.</p>
-<p>In 1996, the European Space Agency learned this lesson the hard way during the maiden launch of the Ariane 5 rocket. A routine software function tried to cram a 64-bit floating-point measurement of horizontal drift velocity into a 16-bit signed integer register. In pure math, the measured velocity of <span class="arithmatex">\(32{,}768\)</span> was completely valid. But the maximum positive number that fits into a 16-bit signed integer is <span class="arithmatex">\(32{,}767\)</span>. The number overflowed, the CPU threw an unhandled hardware exception, the rocket's flight computers misread diagnostic dump data as an emergency command, and the rocket tore itself apart thirty-seven seconds into flight.</p>
-<p>In the 1980s, Hewlett-Packard built the beloved <strong>HP-16C Computer Scientist</strong> to help programmers see and master these discrete boundaries. The <strong>StackCalc 16 (SC-16)</strong> modernizes that workflow: it lets you switch between Hex, Decimal, Octal, and Binary at a single touch, configure word sizes from 8 to 64 bits, mask bitfields, inspect compiler struct padding, and decode IEEE-754 floating-point bits directly on an RPN stack.</p>
-<h3 id="why-not-just-use-python-or-an-on-screen-calculator">Why Not Just Use Python or an On-Screen Calculator?</h3>
-<ul>
-<li><strong>The SCIF and Air-Gap Security Reality:</strong> In defense aerospace, cybersecurity red-teams, and secure government facilities (governed by DoD ICD 705 standards), smartphones, fitness trackers, and internet-connected devices are strictly prohibited and locked outside the vault door. Engineers debugging secure crypto chips or flight avionics work in clean rooms with zero web access. The SC-16 provides a compliant, non-communicating physical instrument permitted inside secure areas.</li>
-<li><strong>Bare-Metal Hardware Bring-Up:</strong> When a new prototype circuit board comes back from the factory, the microcontroller often crashes before the operating system or USB serial port even initializes. An engineer staring at raw hexadecimal addresses on a logic analyzer or JTAG debugger needs dedicated <code>[A]</code> through <code>[F]</code> keys to mask bits and calculate offsets without switching away from the oscilloscope.</li>
-<li><strong>Thinking in Hexadecimal:</strong> Generic calculators force you to convert hex addresses into decimal before doing math. On the SC-16, you add <code>0x1000</code> to <code>0x0F80</code> and bit-shift directly in native hexadecimal.</li>
-</ul>
-<hr />
-<h2 id="2-core-concepts-how-systems-and-cyber-engineers-think">2. Core Concepts: How Systems and Cyber Engineers Think</h2>
-<h3 id="concept-1-the-odometer-in-reverse-twos-complement">Concept 1: The Odometer in Reverse (Two's Complement)</h3>
-<p>How does a computer represent negative numbers using only ones and zeros?</p>
-<p>Early computer pioneers tried using the first bit as a simple plus/minus flag. But this created two separate zeros (<span class="arithmatex">\(+0\)</span> and <span class="arithmatex">\(-0\)</span>), requiring complicated arithmetic circuits. </p>
-<p>The industry settled on a clever mechanical trick called <strong>Two's Complement</strong>. Think back to our five-digit car odometer:
-- If you start at <span class="arithmatex">\(00{,}000\)</span> and drive forward 1 mile, the odometer reads <span class="arithmatex">\(00{,}001\)</span>.
-- What happens if you put the car in reverse and drive backward 1 mile? The wheels click backward from zero to <strong><span class="arithmatex">\(99{,}999\)</span></strong>!</p>
-<p>In a 16-bit binary register:
-- <span class="arithmatex">\(0\)</span> is <code>0000 0000 0000 0000</code>.
-- Rolling backward by 1 gives <code>1111 1111 1111 1111</code> (<span class="arithmatex">\(65{,}535\)</span> if unsigned, or <strong><span class="arithmatex">\(-1\)</span></strong> if signed!).</p>
-<p>To negate any binary number in two's complement, you simply <strong>invert all the bits and add 1</strong>:
-$<span class="arithmatex">\(\text{Negate}(x) = (\sim x) + 1\)</span>$</p>
-<p>Because of this symmetry, a CPU does not need a separate subtraction circuit. To compute <span class="arithmatex">\(A - B\)</span>, the silicon simply computes <span class="arithmatex">\(A + ((\sim B) + 1)\)</span> using standard addition gates.</p>
-<h4 id="word-sizes-and-the-sign-bit">Word Sizes and the Sign Bit</h4>
-<p>The most significant (leftmost) bit acts as the sign flag:
-- <code>0</code> means positive.
-- <code>1</code> means negative.</p>
+<h1 id="unit-iii-digital-systems-bitwise-logic-embedded-timing">Unit III: Digital Systems, Bitwise Logic &amp; Embedded Timing</h1>
+<p>In 1703, Gottfried Wilhelm Leibniz published <em>Explication de l'Arithmétique Binaire</em> in the <em>Mémoires de l'Académie Royale des Sciences</em>, demonstrating that every integer can be represented using only the two figures <code>0</code> and <code>1</code> through successive powers of two. More than two centuries later, in his 1937 master's thesis at the Massachusetts Institute of Technology (<em>A Symbolic Analysis of Relay and Switching Circuits</em>), twenty-one-year-old Claude Shannon proved that George Boole's 1854 algebra of logical propositions maps one-to-one onto physical electrical switches wired in series ([&amp;]), in parallel ([|]), and through inverting relays ([g] [~]). When John von Neumann, Arthur Burks, and Herman Goldstine drafted their 1945–1946 reports on the EDVAC and the Institute for Advanced Study computer, they united Leibniz's base-2 positional notation with Shannon's switching gates and standardized <strong>two's complement</strong> binary arithmetic ([f] [NEG]) across fixed-width hardware registers.</p>
+<p>In pure mathematics, the set of integers <span class="arithmatex">\(\mathbb{Z}\)</span> extends without bound in both directions and the continuum of real numbers <span class="arithmatex">\(\mathbb{R}\)</span> is infinitely dense between any two points; an algebraist never asks how many bits wide an equation is, whether shifting a number right preserves its sign, or whether a variable's memory address is divisible by sixteen. Inside a physical microprocessor, an operating-system kernel, a cryptographic engine, or a network router, every number lives inside a hardware register built from a fixed number <span class="arithmatex">\(W\)</span> of bistable transistor flip-flops, each holding a low voltage (<code>0</code>) or a high voltage (<code>1</code>) across standard <strong>Word Sizes</strong> ([g] [WSZ]) of <span class="arithmatex">\(W \in \{8, 16, 32, 64\}\)</span> bits. Because a <span class="arithmatex">\(W\)</span>-bit register has <span class="arithmatex">\(2^W\)</span> states, hardware integer arithmetic operates over the finite <strong>modular ring <span class="arithmatex">\(\mathbb{Z} / 2^W \mathbb{Z}\)</span></strong>: just as a five-digit mechanical odometer wraps from <code>99999</code> to <code>00000</code>, an 8-bit unsigned register ([g] [UNS]) holding <code>1111 1111</code> (<span class="arithmatex">\(255\)</span>) wraps to <code>0000 0000</code> (<span class="arithmatex">\(0\)</span>) when incremented by <span class="arithmatex">\(1\)</span>, and a 16-bit signed register incremented past <span class="arithmatex">\(+32{,}767\)</span> (<code>0x7FFF</code>) wraps into <span class="arithmatex">\(-32{,}768\)</span> (<code>0x8000</code>), asserting hardware <strong>Signed Arithmetic Overflow</strong> ([g] [OVF]).</p>
+<p>In the decades following von Neumann's architecture, Richard Hamming (1950) formalized bit-level Hamming weight ([f] [#B]), William Wesley Peterson (1961) introduced Galois-field polynomial <strong>Cyclic Redundancy Checks</strong> ([f] [CRC]), and William Kahan (1985) led the standardization of <strong>IEEE 754 floating-point</strong> representation ([FLT], [f] [F16], [g] [F64]). The <strong>SC-16 Systems Programming, Embedded &amp; Cyber Operations</strong> instrument brings these hardware laws together through a three-pillar architecture:
+1. <strong>Configurable Stack Depth (<code>4-LV</code>, <code>8-LV</code>, or Deep Stack):</strong> Engineers can work in classic four-register <span class="arithmatex">\((X, Y, Z, T)\)</span> RPN discipline, toggle an eight-register stack (<code>8-LV</code>), or enable deep stack capacity so complex register pipelines never encounter an artificial register ceiling.
+2. <strong>Dual-Mode Domain Keys (Quick-Access RPN Stack Shortcuts + Bidirectional Equation Solver Workspaces):</strong> Pressing a domain key with arguments already on the stack executes the forward calculation in a single keystroke—embedding standard reference voltages (<span class="arithmatex">\(V_{\text{ref}} = 3.3\text{ V}\)</span>), word masks, and binary/clock unit conversions ([f] [▸KiB], [g] [▸MiB], [f] [▸GiB], [g] [▸TiB], [f] [▸MHz], [g] [▸GHz], [f] [▸cyc], [g] [▸ns], [f] [▸ms], [g] [▸μs], [f] [▸B], [g] [▸bit]). Opening the key's <strong>Bidirectional Equation Solver Workspace ([g] [SOLVE] / [XEQ])</strong> displays the governing identity on Line 1 (<code>F = C / (P × A)</code> for [PWM], <code>T = R × C</code> for [f] [τ], <code>D = V / R × 2^N</code> for [f] [ADC]) and binds the six softkeys ([LFU0]–[LFU5]) to its variables so knowns can be stored in any order and solved forward or backward for any unknown variable.
+3. <strong>Domain Modes, Hex Softkeys, &amp; Live Reference Ledgers ([g] [▦]):</strong> Selectable hardware word sizes ([g] [WSZ]: <span class="arithmatex">\(8, 16, 32, 64\text{-bit}\)</span>), live multi-radix rendering ([HEX], [f] [DEC], [f] [OCT], [g] [BIN]) where activating [HEX] binds the top-row softkeys [LFU0]–[LFU5] directly to hexadecimal digits [A]–[F], and the non-destructive [g] [▦] systems reference ledger.</p>
+<p>Across the three narrative chapters of this Unit, we trace the <code>SC-16</code> from debugging a runaway robotic motor controller register, to unpacking a corrupted big-endian serial telemetry packet and synthesizing CIDR subnet masks and UART clock dividers, to configuring timer PWM carriers, sizing a 12-bit vibration sensor RC anti-aliasing and ADC front end, and aligning DMA memory buffers:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Word Size</th>
-<th style="text-align: center;">Bit Width</th>
-<th style="text-align: left;">Unsigned Range</th>
-<th style="text-align: left;">Signed Two's Complement Range</th>
+<th style="text-align: left;">Chapter</th>
+<th style="text-align: left;">Narrative Problem</th>
+<th style="text-align: left;">Mathematical Concepts</th>
+<th style="text-align: left;">Buttons Mastered</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><strong>BYTE</strong></td>
-<td style="text-align: center;">8 bits</td>
-<td style="text-align: left;"><span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(255\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(-128\)</span> to <span class="arithmatex">\(+127\)</span></td>
+<td style="text-align: left;"><strong>Chapter 7</strong></td>
+<td style="text-align: left;">Debugging a 16/32-bit motor controller timer register where an unmasked bitfield and a logical-vs-arithmetic shift bug corrupt signed velocity commands, then inspecting IEEE-754 and <span class="arithmatex">\(Q_{m.n}\)</span> fixed-point words</td>
+<td style="text-align: left;">Positional radix compression, <span class="arithmatex">\(\mathbb{Z}/2^W\mathbb{Z}\)</span> two's complement rings, Boolean masking, bit set/clear/test primitives, logical vs. arithmetic shifts, IEEE-754 floats, and <span class="arithmatex">\(Q_{m.n}\)</span> fixed-point</td>
+<td style="text-align: left;">[HEX], [f] [DEC], [f] [OCT], [g] [BIN], [g] [WSZ], [f] [NEG], [&amp;], [</td>
 </tr>
 <tr>
-<td style="text-align: center;"><strong>WORD</strong></td>
-<td style="text-align: center;">16 bits</td>
-<td style="text-align: left;"><span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(65{,}535\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(-32{,}768\)</span> to <span class="arithmatex">\(+32{,}767\)</span></td>
+<td style="text-align: left;"><strong>Chapter 8</strong></td>
+<td style="text-align: left;">Unpacking a big-endian 4-byte telemetry packet into an IEEE 754 float, verifying its CRC checksum, partitioning CIDR subnets, and solving UART baud dividers</td>
+<td style="text-align: left;">Little/Big-Endian byte swaps, IEEE 754 <code>binary32</code> bitfields, <span class="arithmatex">\(\text{GF}(2)\)</span> <code>CRC8/CCITT</code> &amp; <code>CRC-32</code> polynomial division, CIDR host/netmask synthesis, and <span class="arithmatex">\(16\times\)</span> UART divisors</td>
+<td style="text-align: left;">[g] [SWP], [FLT], [f] [CRC], [NET], [g] [BPS], [g] [MOD], [f] [÷R], [f] [▸MHz], [g] [▸GHz], [f] [▸cyc], [g] [▸ns], [f] [▸ms], [g] [▸μs]</td>
 </tr>
 <tr>
-<td style="text-align: center;"><strong>DWORD</strong></td>
-<td style="text-align: center;">32 bits</td>
-<td style="text-align: left;"><span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(4{,}294{,}967{,}295\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(-2{,}147{,}483{,}648\)</span> to <span class="arithmatex">\(+2{,}147{,}483{,}647\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>QWORD</strong></td>
-<td style="text-align: center;">64 bits</td>
-<td style="text-align: left;"><span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(\approx 1.84 \times 10^{19}\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(\approx -9.22 \times 10^{18}\)</span> to <span class="arithmatex">\(+9.22 \times 10^{18}\)</span></td>
+<td style="text-align: left;"><strong>Chapter 9</strong></td>
+<td style="text-align: left;">Synthesizing timer PWM carriers, sizing an RC anti-aliasing filter and 12-bit ADC front end for a <span class="arithmatex">\(3.3\text{ V}\)</span> vibration sensor, and aligning DMA ring buffers</td>
+<td style="text-align: left;">Timer [PWM] prescalers (<code>F = C / (P × A)</code>), RC settling time constants (<span class="arithmatex">\(\tau = RC\)</span>, <span class="arithmatex">\(f_c = 1/(2\pi RC)\)</span>), uniform <span class="arithmatex">\(2^N\)</span> ADC quantization, Hamming weight ([f] [#B]), leading zeros ([g] [CLZ]), and memory alignment ([g] [ALN])</td>
+<td style="text-align: left;">[PWM], [f] [ADC], [g] [DAC], [f] [τ], [f] [#B], [g] [CLZ], [g] [2ˣ], [lg], [NET], [g] [ALN], [f] [▸B], [g] [▸bit], [f] [▸KiB], [g] [▸MiB], [f] [▸GiB], [g] [▸TiB], [g] [▦]</td>
 </tr>
 </tbody>
 </table>
-<h3 id="concept-2-speaking-in-hexadecimal-base-16">Concept 2: Speaking in Hexadecimal (Base-16)</h3>
-<p>Humans have ten fingers, so we count in decimal (base-10). Computers have binary switches, so they count in binary (base-2).</p>
-<p>Writing long binary strings like <code>1101111010101101</code> is dizzying and prone to transcription errors. Hexadecimal (base-16) solves this because <span class="arithmatex">\(16 = 2^4\)</span>. <strong>Every single hexadecimal digit represents exactly four binary bits (a "nibble")</strong>:</p>
+<hr />
+<h1 id="chapter-7-the-stuck-interrupt-flag-in-the-motor-controller">Chapter 7: The Stuck Interrupt Flag in the Motor Controller</h1>
+<p>On a robotics test bench, an embedded firmware engineer is bringing up a 32-bit ARM Cortex-M microcontroller that drives a precision linear actuator. Two baffling bugs appear during closed-loop testing. First, when the initialization routine attempts to write a 4-bit clock-divider setting of <code>10</code> (<code>0xA</code>) into bits <code>[11:8]</code> of the 32-bit Timer Control Register (initially holding <code>0x00240505</code>), the interrupt-enable flag at bit <span class="arithmatex">\(0\)</span> stays stuck and the old prescaler bits in <code>[11:8]</code> corrupt the new setting because the developer used a raw bitwise [|] without first masking and clearing the target bitfield ([f] [MSK], [g] [~], [&amp;], [≪], [|]).</p>
+<p>Second, whenever the optical encoder commands a slow reverse jog of <span class="arithmatex">\(V = -16\text{ counts/tick}\)</span> inside a 16-bit signed velocity loop ([g] [WSZ] <span class="arithmatex">\(= 16\)</span>, where <span class="arithmatex">\(-16\)</span> is stored in two's complement as <code>0xFFF0</code>), the proportional damping filter divides the velocity by <span class="arithmatex">\(4\)</span> using a 2-bit <strong>Logical Shift Right</strong> ([≫]) instead of a sign-preserving <strong>Arithmetic Shift Right</strong> ([f] [ASR]). Zero-filling the top two bits turns <code>0xFFF0</code> (<span class="arithmatex">\(-16\)</span>) into <code>0x3FFC</code> (<span class="arithmatex">\(+16{,}380\)</span>), slamming the actuator forward at full saturation. To squash both bugs at the register transfer level, the engineer must translate between binary nibbles and hexadecimal words ([HEX], [g] [BIN], [f] [OCT], [f] [DEC]—using the top-row softkeys [LFU0]–[LFU5] as hex digits [A]–[F] in [HEX] mode), verify 16-bit two's complement negation ([g] [WSZ], [f] [NEG]), construct a surgical 4-bit clear-and-merge bitmask for bits <code>[11:8]</code> ([f] [MSK], [&amp;], [|], [⊕], [g] [~], [f] [~&amp;], [f] [~|]), compare [≫], [f] [ASR], and [g] [ROR] across signed and unsigned words, and verify IEEE-754 float bit patterns ([FLT]) and <span class="arithmatex">\(Q_{m.n}\)</span> fixed-point filter gains ([f] [Q.n], [g] [FXP]).</p>
+<hr />
+<h2 id="positional-radix-compression-and-fixed-width-twos-complement-rings">Positional Radix Compression and Fixed-Width Two's Complement Rings</h2>
+<p>At the register transfer level, every value stored in memory or across an internal CPU bus is a sequence of <span class="arithmatex">\(W\)</span> bits that can be viewed in any positional radix and interpreted as an unsigned magnitude or a signed two's complement integer.</p>
+<h3 id="binary-nibbles-octal-triads-and-hexadecimal-register-notation">Binary Nibbles, Octal Triads, and Hexadecimal Register Notation</h3>
+<p>In any positional number system of integer radix <span class="arithmatex">\(b \ge 2\)</span>—where <span class="arithmatex">\(b = 16\)</span> for Hexadecimal ([HEX]), <span class="arithmatex">\(b = 10\)</span> for Decimal ([f] [DEC]), <span class="arithmatex">\(b = 8\)</span> for Octal ([f] [OCT]), and <span class="arithmatex">\(b = 2\)</span> for Binary ([g] [BIN])—a <span class="arithmatex">\(k\)</span>-digit word <span class="arithmatex">\((d_{k-1} d_{k-2} \dots d_1 d_0)_b\)</span> with digits <span class="arithmatex">\(d_i \in \{0, 1, \dots, b-1\}\)</span> represents the scalar integer <span class="arithmatex">\(V\)</span> obtained by summing each digit weighted by its positional power <span class="arithmatex">\(b^i\)</span>. When [HEX] mode is active on the <code>SC-16</code>, the six top-row softkeys [LFU0]–[LFU5] automatically bind to the hexadecimal digits [A], [B], [C], [D], [E], and [F] for rapid single-keystroke entry of 16-, 32-, and 64-bit register words. Because <span class="arithmatex">\(16 = 2^4\)</span>, partitioning a binary string into blocks of <strong>four bits (nibbles)</strong> from the least significant bit (<span class="arithmatex">\(i = 0\)</span>) upward maps each 4-bit block <span class="arithmatex">\((b_{4m+3} b_{4m+2} b_{4m+1} b_{4m})_2\)</span> with internal weights <span class="arithmatex">\((8, 4, 2, 1)\)</span> onto a single hexadecimal digit <span class="arithmatex">\(H_m \in [0, 15]\)</span> (<code>0</code>–<code>9</code>, [A]–[F]), while <span class="arithmatex">\(8 = 2^3\)</span> maps each 3-bit triad onto a single octal digit (<code>0</code>–<code>7</code>):</p>
+<div class="arithmatex">\[V = \sum_{i=0}^{k-1} d_i \cdot b^i, \qquad \sum_{j=0}^{3} b_{4m + j} \cdot 2^{4m + j} = 2^{4m}\!\left(8 b_{4m+3} + 4 b_{4m+2} + 2 b_{4m+1} + 1 b_{4m}\right) = H_m \cdot 16^m\]</div>
+<p>In this radix decomposition, each hexadecimal digit <span class="arithmatex">\(H_m\)</span> summarizes four adjacent transistor states without cross-boundary carry arithmetic:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Hex Digit</th>
-<th style="text-align: center;">Binary</th>
-<th style="text-align: center;">Decimal</th>
-<th style="text-align: center;">Hex Digit</th>
-<th style="text-align: center;">Binary</th>
-<th style="text-align: center;">Decimal</th>
+<th style="text-align: center;">Hex ([HEX])</th>
+<th style="text-align: center;">Binary Nibble ([g] [BIN])</th>
+<th style="text-align: center;">Decimal ([f] [DEC])</th>
+<th style="text-align: center;">Octal ([f] [OCT])</th>
+<th style="text-align: center;">Hex ([HEX])</th>
+<th style="text-align: center;">Binary Nibble ([g] [BIN])</th>
+<th style="text-align: center;">Decimal ([f] [DEC])</th>
+<th style="text-align: center;">Octal ([f] [OCT])</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><code>0</code>–<code>9</code></td>
-<td style="text-align: center;"><code>0000</code>–<code>1001</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0\)</span>–<span class="arithmatex">\(9\)</span></td>
-<td style="text-align: center;"><code>C</code></td>
-<td style="text-align: center;"><code>1100</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(12\)</span></td>
+<td style="text-align: center;"><strong><code>0</code></strong></td>
+<td style="text-align: center;"><code>0000</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><code>00</code></td>
+<td style="text-align: center;"><strong><code>8</code></strong></td>
+<td style="text-align: center;"><code>1000</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(8\)</span></td>
+<td style="text-align: center;"><code>10</code></td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>A</code></td>
+<td style="text-align: center;"><strong><code>1</code></strong></td>
+<td style="text-align: center;"><code>0001</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: center;"><code>01</code></td>
+<td style="text-align: center;"><strong><code>9</code></strong></td>
+<td style="text-align: center;"><code>1001</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(9\)</span></td>
+<td style="text-align: center;"><code>11</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>2</code></strong></td>
+<td style="text-align: center;"><code>0010</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(2\)</span></td>
+<td style="text-align: center;"><code>02</code></td>
+<td style="text-align: center;">[A] ([LFU0])</td>
 <td style="text-align: center;"><code>1010</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(10\)</span></td>
-<td style="text-align: center;"><code>D</code></td>
-<td style="text-align: center;"><code>1101</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(13\)</span></td>
+<td style="text-align: center;"><code>12</code></td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>B</code></td>
+<td style="text-align: center;"><strong><code>3</code></strong></td>
+<td style="text-align: center;"><code>0011</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(3\)</span></td>
+<td style="text-align: center;"><code>03</code></td>
+<td style="text-align: center;">[B] ([LFU1])</td>
 <td style="text-align: center;"><code>1011</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(11\)</span></td>
-<td style="text-align: center;"><code>E</code> / <code>F</code></td>
-<td style="text-align: center;"><code>1110</code> / <code>1111</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(14\)</span> / <span class="arithmatex">\(15\)</span></td>
+<td style="text-align: center;"><code>13</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>4</code></strong></td>
+<td style="text-align: center;"><code>0100</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(4\)</span></td>
+<td style="text-align: center;"><code>04</code></td>
+<td style="text-align: center;">[C] ([LFU2])</td>
+<td style="text-align: center;"><code>1100</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(12\)</span></td>
+<td style="text-align: center;"><code>14</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>5</code></strong></td>
+<td style="text-align: center;"><code>0101</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(5\)</span></td>
+<td style="text-align: center;"><code>05</code></td>
+<td style="text-align: center;">[D] ([LFU3])</td>
+<td style="text-align: center;"><code>1101</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(13\)</span></td>
+<td style="text-align: center;"><code>15</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>6</code></strong></td>
+<td style="text-align: center;"><code>0110</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(6\)</span></td>
+<td style="text-align: center;"><code>06</code></td>
+<td style="text-align: center;">[E] ([LFU4])</td>
+<td style="text-align: center;"><code>1110</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(14\)</span></td>
+<td style="text-align: center;"><code>16</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><code>7</code></strong></td>
+<td style="text-align: center;"><code>0111</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(7\)</span></td>
+<td style="text-align: center;"><code>07</code></td>
+<td style="text-align: center;">[F] ([LFU5])</td>
+<td style="text-align: center;"><code>1111</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(15\)</span></td>
+<td style="text-align: center;"><code>17</code></td>
 </tr>
 </tbody>
 </table>
-<p>The 16-bit binary number <code>1101 1110 1010 1101</code> splits cleanly into four nibbles: <code>DE</code> <code>AD</code> <span class="arithmatex">\(\implies\)</span> <strong><code>0xDEAD</code></strong>.</p>
-<h3 id="concept-3-bitwise-logic-masking">Concept 3: Bitwise Logic &amp; Masking</h3>
-<p>In high-level programming, you write conditions like <code>if (user.isActive)</code>. In firmware and network packet drivers, you interact directly with hardware registers where each individual bit controls a physical circuit (like turning on an LED, enabling an antenna, or resetting a timer).</p>
-<p>We control individual bits using Boolean logic:
-- <strong><code>AND</code> (<code>&amp;</code>):</strong> Clears bits to zero. To check if bit 3 is set, you "mask" with <code>0000 1000</code>.
-- <strong><code>OR</code> (<code>|</code>):</strong> Sets bits to one without touching other bits.
-- <strong><code>XOR</code> (<code>^</code>):</strong> Toggles bits, or checks if two values differ.
-- <strong>Bit Shifts (<code>&lt;&lt;</code>, <code>&gt;&gt;</code>):</strong> Multiplying or dividing by powers of 2. Shifting left by 1 multiplies by 2; shifting right by 1 divides by 2.</p>
-<h3 id="concept-4-memory-alignment-struct-padding">Concept 4: Memory Alignment &amp; Struct Padding</h3>
-<p>Modern 32-bit and 64-bit processors do not read memory one single byte at a time; they fetch 4-byte or 8-byte chunks across wide silicon buses.</p>
-<p>If an 8-byte variable (like a 64-bit float) sits at an odd memory address (like <code>0x1001</code>), the CPU has to make two separate memory accesses, stitch the halves together, and burn clock cycles. To prevent this, compilers insert invisible <strong>padding bytes</strong> between struct variables:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    struct SensorData {
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        uint8_t  sensorId;   // 1 byte  at offset 0
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        // [3 PADDING BYTES INSERTED BY COMPILER]
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        uint32_t timestamp;  // 4 bytes at offset 4 (must align to multiple of 4!)
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        uint16_t reading;    // 2 bytes at offset 8
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        // [2 PADDING BYTES INSERTED AT END]
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    }; // Total size = 12 bytes, NOT 7 bytes!
-</span></code></pre></div>
-<p>The SC-16's <code>ALIGN</code> softkeys calculate struct offsets and padding gaps automatically.</p>
+<p><img alt="Partitioning a 16-bit hardware register (0x4A3F) into four 4-bit hexadecimal nibbles." src="../../assets/diagrams/domains/diagram_ch03_hex_nibbles.png" /></p>
+<p>To translate a 16-bit hexadecimal register snapshot <code>0x4A3F</code> into binary ([g] [BIN]) and decimal ([f] [DEC]), each hex digit expands into its 4-bit nibble under the <span class="arithmatex">\((8, 4, 2, 1)\)</span> weights—<code>4</code> <span class="arithmatex">\(= 0100_2\)</span>, <code>A</code> (<span class="arithmatex">\(10 = 8+2\)</span>) <span class="arithmatex">\(= 1010_2\)</span>, <code>3</code> (<span class="arithmatex">\(2+1\)</span>) <span class="arithmatex">\(= 0011_2\)</span>, and <code>F</code> (<span class="arithmatex">\(8+4+2+1\)</span>) <span class="arithmatex">\(= 1111_2\)</span>—giving <code>0100 1010 0011 1111</code>, while summing the powers of <span class="arithmatex">\(16\)</span> gives <span class="arithmatex">\(V = 4(16^3) + 10(16^2) + 3(16^1) + 15(16^0) = 16{,}384 + 2{,}560 + 48 + 15 = \mathbf{19{,}007}\)</span>.</p>
+<h3 id="modular-integer-rings-twos-complement-negation-and-signed-overflow">Modular Integer Rings, Two's Complement Negation, and Signed Overflow</h3>
+<p>In a fixed <span class="arithmatex">\(W\)</span>-bit register ([g] [WSZ]), an <strong>Unsigned Integer</strong> ([g] [UNS]) assigns positive weight <span class="arithmatex">\(+2^i\)</span> to every bit <span class="arithmatex">\(b_i\)</span> from <span class="arithmatex">\(i = 0\)</span> through <span class="arithmatex">\(W - 1\)</span>. To encode negative numbers without building separate subtraction circuitry, digital processors use <strong>Two's Complement</strong> ([f] [NEG]) representation, in which the most significant bit <span class="arithmatex">\(b_{W-1}\)</span> carries <strong>negative weight <span class="arithmatex">\(-2^{W-1}\)</span></strong> while the lower <span class="arithmatex">\(W - 1\)</span> bits retain positive weights <span class="arithmatex">\(+2^i\)</span>:</p>
+<div class="arithmatex">\[V_{\text{unsigned}} = \sum_{i=0}^{W-1} b_i \cdot 2^i, \qquad V_{\text{signed}} = -b_{W-1} \cdot 2^{W-1} + \sum_{i=0}^{W-2} b_i \cdot 2^i, \qquad -X \equiv 2^W - X \equiv (\sim X) + 1 \pmod{2^W}\]</div>
+<p>Because adding any <span class="arithmatex">\(W\)</span>-bit word <span class="arithmatex">\(X\)</span> to its bitwise one's complement <span class="arithmatex">\(\sim X\)</span> ([g] [~], where every <code>0</code> flips to <code>1</code> and every <code>1</code> flips to <code>0</code>) produces a word of <span class="arithmatex">\(W\)</span> ones equal to <span class="arithmatex">\(2^W - 1\)</span>, adding <span class="arithmatex">\(1\)</span> yields <span class="arithmatex">\(X + ((\sim X) + 1) = 2^W \equiv 0 \pmod{2^W}\)</span>. Consequently, the additive inverse <span class="arithmatex">\(-X\)</span> in <span class="arithmatex">\(W\)</span>-bit two's complement ([f] [NEG]) is formed by inverting all <span class="arithmatex">\(W\)</span> bits and adding <span class="arithmatex">\(1\)</span>:</p>
+<p><img alt="Eight-bit modular two's complement integer ring showing sign symmetry around zero and the signed overflow boundary." src="../../assets/diagrams/domains/diagram_ch03_twos_complement_ring.png" /></p>
+<p>Because zero (<code>0x00</code>) consumes one of the <span class="arithmatex">\(2^{W-1}\)</span> non-negative bit patterns, every signed <span class="arithmatex">\(W\)</span>-bit two's complement range is asymmetric by one count, extending from <span class="arithmatex">\(-2^{W-1}\)</span> (<code>0x80...0</code>) to <span class="arithmatex">\(+2^{W-1} - 1\)</span> (<code>0x7F...F</code>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Word Size ([g] [WSZ])</th>
+<th style="text-align: center;">Bits <span class="arithmatex">\(W\)</span></th>
+<th style="text-align: left;">Unsigned Range ([g] [UNS]: <span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(2^W - 1\)</span>)</th>
+<th style="text-align: left;">Signed Two's Complement Range (<span class="arithmatex">\(-2^{W-1}\)</span> to <span class="arithmatex">\(+2^{W-1}-1\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Byte</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(8\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(255\)</span> (<code>0xFF</code>)</td>
+<td style="text-align: left;"><span class="arithmatex">\(-128\)</span> (<code>0x80</code>) to <span class="arithmatex">\(+127\)</span> (<code>0x7F</code>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Halfword / Word</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(16\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(65{,}535\)</span> (<code>0xFFFF</code>)</td>
+<td style="text-align: left;"><span class="arithmatex">\(-32{,}768\)</span> (<code>0x8000</code>) to <span class="arithmatex">\(+32{,}767\)</span> (<code>0x7FFF</code>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Word / DWord</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(32\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(4{,}294{,}967{,}295\)</span> (<code>0xFFFFFFFF</code>)</td>
+<td style="text-align: left;"><span class="arithmatex">\(-2{,}147{,}483{,}648\)</span> (<code>0x80000000</code>) to <span class="arithmatex">\(+2{,}147{,}483{,}647\)</span> (<code>0x7FFFFFFF</code>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Quadword</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(64\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(1.84467 \times 10^{19}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(-9.22337 \times 10^{18}\)</span> to <span class="arithmatex">\(+9.22337 \times 10^{18}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>In our motor controller's 16-bit velocity register ([g] [WSZ] <span class="arithmatex">\(= 16\)</span>), <span class="arithmatex">\(+16\)</span> is <code>0x0010</code> (<code>0000 0000 0001 0000</code>); inverting all 16 bits gives <code>0xFFEF</code> and adding <span class="arithmatex">\(1\)</span> via [f] [NEG] yields <span class="arithmatex">\(-16 \equiv \mathbf{\text{0xFFF0}}\)</span> (<span class="arithmatex">\(65{,}520\)</span> unsigned). Similarly, in 8-bit mode ([g] [WSZ] <span class="arithmatex">\(= 8\)</span>), <span class="arithmatex">\(-42\)</span> is formed from <span class="arithmatex">\(+42 = \text{0x2A}\)</span> (<code>0010 1010</code>) via <span class="arithmatex">\(\sim\text{0x2A} + 1 = \text{0xD5} + 1 = \mathbf{\text{0xD6}}\)</span> (<span class="arithmatex">\(214\)</span> unsigned). When two <span class="arithmatex">\(W\)</span>-bit words <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> sum to <span class="arithmatex">\(S = (A + B) \bmod 2^W\)</span>, <strong>Signed Arithmetic Overflow</strong> ([g] [OVF]) occurs if and only if two operands of the same sign bit (<span class="arithmatex">\(A_{W-1} = B_{W-1}\)</span>) produce a sum of the opposite sign bit (<span class="arithmatex">\(S_{W-1} \ne A_{W-1}\)</span>):</p>
+<div class="arithmatex">\[\text{OVF} = \left(A_{W-1} \ \&amp; \ B_{W-1} \ \&amp; \ (\sim S_{W-1})\right) \ \mid \ \left((\sim A_{W-1}) \ \&amp; \ (\sim B_{W-1}) \ \&amp; \ S_{W-1}\right)\]</div>
+<p>Here <span class="arithmatex">\(A_{W-1}, B_{W-1},\)</span> and <span class="arithmatex">\(S_{W-1}\)</span> are the sign bits of the two addends and their modular sum. In 8-bit signed arithmetic (<span class="arithmatex">\([-128, +127]\)</span>), adding <span class="arithmatex">\(+100\)</span> (<code>0x64</code>) and <span class="arithmatex">\(+50\)</span> (<code>0x32</code>) produces <code>0x96</code>; because two positive operands (<span class="arithmatex">\(A_7 = B_7 = 0\)</span>) yielded <span class="arithmatex">\(S_7 = 1\)</span>, the processor asserts [g] [OVF] (<code>1</code>) as <span class="arithmatex">\(+150\)</span> wraps across <span class="arithmatex">\(+127 / -128\)</span> to <span class="arithmatex">\(150 - 256 = \mathbf{-106}\)</span>.</p>
 <hr />
-<h2 id="3-real-world-field-walkthroughs">3. Real-World Field Walkthroughs</h2>
-<h3 id="field-case-1-isolating-a-hardware-status-bit-rembedded">Field Case 1: Isolating a Hardware Status Bit (<code>r/embedded</code>)</h3>
-<p>An engineer is reading an SPI status register from a radio transceiver. The hardware datasheet says:
-- Register address: <code>0x4001</code>
-- Bit 5 is the <strong><code>TX_READY</code></strong> flag (<span class="arithmatex">\(1 = \text{ready to transmit}\)</span>, <span class="arithmatex">\(0 = \text{busy}\)</span>).
-- The microcontroller reads raw byte: <code>0x7A</code>.
-Is the radio ready to transmit?</p>
-<h4 id="how-to-solve-it-on-the-sc-16">How to Solve It on the SC-16</h4>
+<h2 id="bitwise-boolean-masking-shifts-and-fixedfloating-point-encoding">Bitwise Boolean Masking, Shifts, and Fixed/Floating-Point Encoding</h2>
+<p>Manipulating packed peripheral control registers without disturbing adjacent interrupt flags requires combining Boolean truth tables with contiguous bitfield mask generators, distinguishing logical zero-fill shifts from arithmetic sign-extending shifts, and converting between IEEE-754 floating-point bit patterns ([FLT]) and <span class="arithmatex">\(Q_{m.n}\)</span> fixed-point integers ([f] [Q.n], [g] [FXP]).</p>
+<h3 id="boolean-logic-gates-and-peripheral-control-register-masking">Boolean Logic Gates and Peripheral Control Register Masking</h3>
+<p>Bitwise operators apply Boolean logic gates in parallel across each bit index <span class="arithmatex">\(i \in \{0, \dots, W-1\}\)</span> of two <span class="arithmatex">\(W\)</span>-bit words <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(X\)</span>:</p>
+<p>| Bit <span class="arithmatex">\(Y_i\)</span> | Bit <span class="arithmatex">\(X_i\)</span> | [&amp;] (<span class="arithmatex">\(Y_i \&amp; X_i\)</span>) | [|] (<span class="arithmatex">\(Y_i \mid X_i\)</span>) | [⊕] (<span class="arithmatex">\(Y_i \oplus X_i\)</span>) | [g] [~] (<span class="arithmatex">\(\sim X_i\)</span>) | [f] [~&amp;] <span class="arithmatex">\(\sim(Y_i \&amp; X_i)\)</span> | [f] [~|] <span class="arithmatex">\(\sim(Y_i \mid X_i)\)</span> |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| <code>0</code> | <code>0</code> | <code>0</code> | <code>0</code> | <code>0</code> | <code>1</code> | <code>1</code> | <code>1</code> |
+| <code>0</code> | <code>1</code> | <code>0</code> | <code>1</code> | <code>1</code> | <code>0</code> | <code>1</code> | <code>0</code> |
+| <code>1</code> | <code>0</code> | <code>0</code> | <code>1</code> | <code>1</code> | — | <code>1</code> | <code>0</code> |
+| <code>1</code> | <code>1</code> | <code>1</code> | <code>1</code> | <code>0</code> | — | <code>0</code> | <code>0</code> |</p>
+<p>To isolate or modify a multi-bit hardware field of width <span class="arithmatex">\(w\)</span> bits starting at bit offset <span class="arithmatex">\(s\)</span>, the <strong>Bitfield Mask Generator</strong> ([f] [MSK]) shifts <span class="arithmatex">\(2^w - 1\)</span> (<span class="arithmatex">\(w\)</span> contiguous <code>1</code> bits) left by <span class="arithmatex">\(s\)</span> positions:</p>
+<div class="arithmatex">\[\text{MSK}(s, w) = \left((1 \ll w) - 1\right) \ll s, \qquad R_{\text{updated}} = \left(R \ \&amp; \ \sim\text{MSK}(s, w)\right) \ \mid \ \left((V_{\text{field}} \ll s) \ \&amp; \ \text{MSK}(s, w)\right)\]</div>
+<p>In this read-modify-write identity, <span class="arithmatex">\(R\)</span> is the initial control register value, <span class="arithmatex">\(\text{MSK}(s, w)\)</span> is the positive mask covering bits <span class="arithmatex">\([s+w-1 : s]\)</span>, <span class="arithmatex">\(\sim\text{MSK}(s, w)\)</span> is the inverted clear mask with <code>0</code>s across the target field and <code>1</code>s everywhere else, and <span class="arithmatex">\(V_{\text{field}} \ll s\)</span> aligns the new setting into position. For our motor controller's 4-bit clock-divider field (<span class="arithmatex">\(w = 4\)</span>) at bit offset <span class="arithmatex">\(s = 8\)</span> (bits <code>[11:8]</code>), the mask is <span class="arithmatex">\(\text{MSK}(8, 4) = ((1 \ll 4) - 1) \ll 8 = 15 \times 256 = \mathbf{\text{0x0F00}}\)</span> (<span class="arithmatex">\(3{,}840\)</span>). Clearing bits <code>[11:8]</code> of <code>0x00240505</code> with <span class="arithmatex">\(\sim\text{0x0F00}\)</span> leaves <code>0x00240005</code>, and merging <code>0xA</code> shifted left by <span class="arithmatex">\(8\)</span> (<code>0x0A00</code>) via [|] yields <code>0x00240A05</code> (or <span class="arithmatex">\(\mathbf{\text{0xA05}}\)</span> on the low 16-bit halfword).</p>
+<h3 id="logical-shifts-sign-preserving-arithmetic-shifts-rotations-and-fixed-point-scaling">Logical Shifts, Sign-Preserving Arithmetic Shifts, Rotations, and Fixed-Point Scaling</h3>
+<p>Shifting a binary word <span class="arithmatex">\(Y\)</span> left or right by <span class="arithmatex">\(k\)</span> bit positions scales the integer by <span class="arithmatex">\(2^k\)</span>, where the fill rule for the vacated bits distinguishes unsigned magnitudes from signed two's complement velocities:</p>
+<p><img alt="Comparison of Logical Shift Right (SHR, zero-fill) and Arithmetic Shift Right (ASR, sign-bit replication)." src="../../assets/diagrams/domains/diagram_ch03_bit_shifts.png" /></p>
+<div class="arithmatex">\[Y \ll k = (Y \cdot 2^k) \bmod 2^W \quad (\text{[≪]}), \qquad Y \ggg k = \left\lfloor \frac{Y_{\text{unsigned}}}{2^k} \right\rfloor \quad (\text{[≫]}), \qquad Y \gg k = \left\lfloor \frac{Y_{\text{signed}}}{2^k} \right\rfloor \quad (\text{[f] [ASR]})\]</div>
+<p>Here <strong>Logical Shift Left</strong> ([≪]) shifts bits toward the most significant end and fills vacated low bits with <code>0</code>; <strong>Logical Shift Right</strong> ([≫]) shifts toward the least significant end and fills vacated high bits with <code>0</code> (dividing an unsigned word by <span class="arithmatex">\(2^k\)</span>); <strong>Arithmetic Shift Right</strong> ([f] [ASR]) shifts right while <strong>replicating the original sign bit <span class="arithmatex">\(b_{W-1}\)</span></strong> into all vacated high bits to preserve two's complement sign; <strong>Circular Rotate</strong> ([g] [ROR]) rotates bits across the <span class="arithmatex">\(W\)</span>-bit word; and single-bit manipulation keys <strong>Bit Set</strong> ([f] [SB], <span class="arithmatex">\(Y \mid (1 \ll X)\)</span>), <strong>Bit Clear</strong> ([f] [CB], <span class="arithmatex">\(Y \&amp; \sim(1 \ll X)\)</span>), and <strong>Bit Test</strong> ([g] [B?], <span class="arithmatex">\((Y \ggg X) \&amp; 1\)</span>) operate directly on individual flag bits. Furthermore, on the <code>SC-16</code>:
+- <strong>Bidirectional IEEE-754 Single-Precision (<code>binary32</code>) Conversion ([FLT]):</strong> When Register <span class="arithmatex">\(X\)</span> holds a 32-bit integer bit pattern (<code>&gt;= 0x00800000</code>, such as <code>0x41480000</code> <span class="arithmatex">\(= 1{,}095{,}237{,}632\)</span>), pressing [FLT] decodes it into its floating-point value (<span class="arithmatex">\(\mathbf{12.5}\)</span>); when Register <span class="arithmatex">\(X\)</span> holds a floating-point value such as <code>12.5</code>, pressing [FLT] encodes it into its IEEE-754 32-bit integer pattern (<code>1095237632</code> <span class="arithmatex">\(= \mathbf{\text{0x41480000}}\)</span>).
+- <strong>Fixed-Point <span class="arithmatex">\(Q_{m.n}\)</span> Encode ([f] [Q.n]) &amp; Decode ([g] [FXP]):</strong> With a floating-point number in Register <span class="arithmatex">\(Y\)</span> and fractional bit count <span class="arithmatex">\(n\)</span> in Register <span class="arithmatex">\(X\)</span>, pressing [f] [Q.n] converts to the rounded <span class="arithmatex">\(Q\)</span>-format integer <span class="arithmatex">\(\operatorname{round}(Y \cdot 2^X)\)</span> (e.g., <code>0.75</code> [ENTER] <code>15</code> [f] [Q.n] <span class="arithmatex">\(\to \mathbf{24{,}576} = \text{0x6000}\)</span>), while pressing [g] [FXP] converts a <span class="arithmatex">\(Q\)</span>-format integer in Register <span class="arithmatex">\(Y\)</span> with fractional bits <span class="arithmatex">\(n\)</span> in Register <span class="arithmatex">\(X\)</span> back to its real floating-point value <span class="arithmatex">\(Y / 2^X\)</span>.</p>
+<hr />
+<h2 id="debugging-the-motor-controller-register-and-velocity-shift-on-the-stack">Debugging the Motor Controller Register and Velocity Shift on the Stack</h2>
+<p>The <strong>SC-16</strong> brings multi-radix display switching ([HEX], [f] [DEC], [f] [OCT], [g] [BIN]), configurable hardware word widths ([g] [WSZ]: <span class="arithmatex">\(8, 16, 32, 64\text{-bit}\)</span>), two's complement negation ([f] [NEG]), Boolean logic gates ([&amp;], [|], [⊕], [g] [~], [f] [~&amp;], [f] [~|]), single-bit and contiguous bitfield manipulators ([f] [SB], [f] [CB], [g] [B?], [f] [MSK]), logical/arithmetic shifts ([≪], [≫], [f] [ASR], [g] [ROR]), and IEEE-754 / <span class="arithmatex">\(Q_{m.n}\)</span> converters ([FLT], [f] [Q.n], [g] [FXP]) together on the RPN stack:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Button</th>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">Governing Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[HEX] [f] [DEC] [f] [OCT] [g] [BIN]</td>
+<td style="text-align: left;">Active Radix Selection</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Value <span class="arithmatex">\(X\)</span></td>
+<td style="text-align: left;">Displays stack in base <span class="arithmatex">\(b \in \{16, 10, 8, 2\}\)</span> ([LFU0]–[LFU5] = [A]–[F] in [HEX])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [WSZ] / [g] [UNS] / [g] [OVF]</td>
+<td style="text-align: left;">Word Width, Unsigned &amp; Overflow</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Width <span class="arithmatex">\(W\)</span> / Word <span class="arithmatex">\(X\)</span></td>
+<td style="text-align: left;">Masks modulo <span class="arithmatex">\(2^W\)</span> (<span class="arithmatex">\(W \in \{8,16,32,64\}\)</span>), unsigned cast, signed overflow check</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [NEG]</td>
+<td style="text-align: left;">Two's Complement Negation</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Word <span class="arithmatex">\(X\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(-X \equiv (\sim X + 1) \bmod 2^W\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[&amp;] [</td>
+<td style="text-align: left;">] [⊕] [f] [~&amp;] [f] [~</td>
+<td style="text-align: center;">]</td>
+<td style="text-align: center;">Binary Bitwise Logic</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">Word <span class="arithmatex">\(Y\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [~]</td>
+<td style="text-align: left;">One's Complement Inversion</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Word <span class="arithmatex">\(X\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\((\sim X) \bmod 2^W\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [SB] [f] [CB] [g] [B?]</td>
+<td style="text-align: left;">Single-Bit Set / Clear / Test</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Word <span class="arithmatex">\(Y\)</span></td>
+<td style="text-align: center;">Bit index <span class="arithmatex">\(k\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(Y \mid 2^k,\; Y \&amp; \sim 2^k,\; (Y \ggg k) \&amp; 1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [MSK]</td>
+<td style="text-align: left;">Contiguous Bitfield Mask</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Offset <span class="arithmatex">\(s\)</span></td>
+<td style="text-align: center;">Width <span class="arithmatex">\(w\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\text{MSK}(s, w) = ((1 \ll w) - 1) \ll s\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[≪] [≫] [f] [ASR] [g] [ROR]</td>
+<td style="text-align: left;">Bitwise Shifts &amp; Rotation</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Word <span class="arithmatex">\(Y\)</span></td>
+<td style="text-align: center;">Count <span class="arithmatex">\(k\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(Y \ll k,\; Y \ggg k\)</span> (zero-fill), <span class="arithmatex">\(Y \gg k\)</span> (sign-fill), circular rotate</td>
+</tr>
+<tr>
+<td style="text-align: left;">[FLT] / [f] [Q.n] / [g] [FXP]</td>
+<td style="text-align: left;">IEEE-754 &amp; <span class="arithmatex">\(Q_{m.n}\)</span> Fixed-Point</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Value <span class="arithmatex">\(Y\)</span></td>
+<td style="text-align: center;">Word <span class="arithmatex">\(X\)</span> or Bits <span class="arithmatex">\(n\)</span></td>
+<td style="text-align: left;"><code>0x41480000</code> <span class="arithmatex">\(\leftrightarrow 12.5\)</span> ([FLT]); <span class="arithmatex">\(\operatorname{round}(Y\cdot 2^X)\)</span> ([f] [Q.n]); <span class="arithmatex">\(Y/2^X\)</span> ([g] [FXP])</td>
+</tr>
+</tbody>
+</table>
+<h3 id="masking-and-merging-the-timer-control-field-in-hexadecimal">Masking and Merging the Timer Control Field in Hexadecimal</h3>
+<p>To configure the 4-bit clock divider at bits <code>[11:8]</code> (<span class="arithmatex">\(s = 8, w = 4\)</span>) with <code>0xA</code> (<span class="arithmatex">\(10_{10}\)</span>, entered via softkey [A] on [LFU0]) on a control register holding <code>0x0005</code>, the engineer switches to [HEX], generates <code>8</code> [ENTER] <code>4</code> [f] [MSK] (<span class="arithmatex">\(\mathbf{\text{0xF00}}\)</span>), shifts [A] left by <span class="arithmatex">\(8\)</span> bits via [A] [ENTER] <code>8</code> [≪] (<span class="arithmatex">\(\mathbf{\text{0xA00}}\)</span>), and merges with <code>5</code> via [|] to obtain <span class="arithmatex">\(\mathbf{\text{0xA05}}\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[HEX] <code>8</code> [ENTER] <code>4</code> [f] [MSK]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0xF00}\)</span></td>
+<td style="text-align: left;">Generate 4-bit mask at bit offset <span class="arithmatex">\(8\)</span> (<span class="arithmatex">\(\text{MSK}(8,4) = \text{0x0F00}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>5</code> [ENTER]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0xF00}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0x5}\)</span></td>
+<td style="text-align: left;">Stage initial control register value <code>0x0005</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">[A] [ENTER] <code>8</code> [≪]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0xF00}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0x5}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0xA00}\)</span></td>
+<td style="text-align: left;">Shift hex digit [A] ([LFU0]) left by <span class="arithmatex">\(8\)</span> bits to <code>0x0A00</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">[</td>
+<td style="text-align: center;">]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0xF00}\)</span></td>
+<td style="text-align: left;"><strong><span class="arithmatex">\(\text{0xA05}\)</span></strong></td>
+</tr>
+</tbody>
+</table>
+<p>When extracting bits <code>[11:8]</code> in the inverse direction from a returned status word <code>0x002405A0</code> at peripheral address <code>0x40013800 + 0x1C = 0x4001381C</code>, keying [HEX] <code>2405</code> [A] <code>0</code> [ENTER] <code>8</code> [ENTER] <code>4</code> [f] [MSK] [&amp;] <code>8</code> [≫] masks <code>0x0500</code> and shifts it down to <span class="arithmatex">\(\mathbf{\text{0x5}}\)</span>.</p>
+<h3 id="fixing-the-signed-velocity-right-shift-in-sixteen-bit-mode">Fixing the Signed Velocity Right Shift in Sixteen-Bit Mode</h3>
+<p>Next, setting the word width to 16 bits ([HEX] <code>10</code> [g] [WSZ], since <code>0x10</code> <span class="arithmatex">\(= 16_{10}\)</span>) and negating <code>+16</code> (<code>0x10</code>) with [f] [NEG] produces <code>0xFFF0</code> (<span class="arithmatex">\(-16\)</span>). Executing <code>2</code> [f] [ASR] preserves the sign bit to give <span class="arithmatex">\(\mathbf{\text{0xFFFC}}\)</span> (<span class="arithmatex">\(-4\)</span>), whereas <code>2</code> [≫] reproduces the runaway positive value <span class="arithmatex">\(\mathbf{\text{0x3FFC}}\)</span> (<span class="arithmatex">\(+16{,}380\)</span>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[HEX] <code>10</code> [g] [WSZ]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0x10}\)</span></td>
+<td style="text-align: left;">Set active word width to <span class="arithmatex">\(16\)</span> bits (<code>0x10</code> <span class="arithmatex">\(= 16_{10}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>10</code> [f] [NEG]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0xFFF0}\)</span></td>
+<td style="text-align: left;">Negate <code>0x0010</code> (<span class="arithmatex">\(+16\)</span>) to 16-bit two's complement <code>0xFFF0</code> (<span class="arithmatex">\(-16\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[ENTER] <code>2</code> [f] [ASR]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0xFFF0}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0xFFFC}\)</span></td>
+<td style="text-align: left;">Arithmetic right shift by <span class="arithmatex">\(2\)</span> bits preserves sign (<code>0xFFFC</code> <span class="arithmatex">\(= -4\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[F] [F] [F] <code>0</code> [ENTER] <code>2</code> [≫]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0xFFF0}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0xFFFC}\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(\text{0x3FFC}\)</span></strong></td>
+<td style="text-align: left;">Logical right shift by <span class="arithmatex">\(2\)</span> bits zero-fills high bits (<code>0x3FFC</code> <span class="arithmatex">\(= +16{,}380\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="try-it-on-the-stack">Try It on the Stack</h3>
+<p>Practice register masking, two's complement negation, and IEEE-754 / <span class="arithmatex">\(Q_{m.n}\)</span> conversion with these three firmware debugging exercises:</p>
 <ol>
-<li>Put the SC-16 in <code>HEX</code> mode: softkey <code>[ HEX ]</code>.</li>
-<li>Enter the raw byte: <code>7A</code> <code>[ENTER]</code>.</li>
-<li>Create a bitmask for bit 5 (<span class="arithmatex">\(2^5 = 32 = \text{0x20}\)</span>):</li>
-<li><code>20</code></li>
-<li>Execute bitwise AND:</li>
-<li>Tap <code>[f] [AND]</code>.</li>
-<li>Register <span class="arithmatex">\(X\)</span> displays: <strong><code>0x20</code></strong>.</li>
-<li>Because the result is non-zero (<code>0x20</code>), bit 5 is high: <strong>The radio is ready to transmit!</strong></li>
+<li><strong>Peripheral Control Register Field Modification:</strong> A 32-bit SPI control register holds <code>0x00000301</code>. Using [f] [MSK], [g] [~], [&amp;], [≪], and [|] in [HEX] mode, clear the 3-bit baud-rate field at bits <code>[5:3]</code> (shift <span class="arithmatex">\(s = 3\)</span>, width <span class="arithmatex">\(w = 3\)</span>) and insert the new setting <code>0x5</code> (<span class="arithmatex">\(5_{10}\)</span>) into bits <code>[5:3]</code>. <em>(Verified Register <span class="arithmatex">\(X\)</span> results: mask <span class="arithmatex">\(\text{MSK}(3,3) = \mathbf{\text{0x38}}\)</span>, cleared register <span class="arithmatex">\(\mathbf{\text{0x301}}\)</span>, shifted setting <span class="arithmatex">\(5 \ll 3 = \mathbf{\text{0x28}}\)</span>, and final merged register <span class="arithmatex">\(\mathbf{\text{0x329}}\)</span>.)</em></li>
+<li><strong>Sixteen-Bit Signed Sensor Delta Division and Bit Set/Clear:</strong> A 16-bit encoder delta equals <span class="arithmatex">\(\Delta = -36\)</span> (<code>+36 = 0x0024</code>). Key [f] [DEC] <code>16</code> [g] [WSZ] [HEX] <code>24</code> [f] [NEG] to find its 16-bit two's complement hex word and <code>2</code> [f] [ASR] to divide by <span class="arithmatex">\(4\)</span> with sign extension; then in 8-bit mode ([f] [DEC] <code>8</code> [g] [WSZ] [HEX]), set bit 7 of <code>0x5A</code> (<code>5</code> [A] [ENTER] <code>7</code> [f] [SB]), clear bit 1 (<code>1</code> [f] [CB]), and test bit 3 (<code>3</code> [g] [B?]). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(-36 \equiv \mathbf{\text{0xFFDC}}\)</span>, <span class="arithmatex">\(-36 \gg 2 = -9 \equiv \mathbf{\text{0xFFF7}}\)</span>, [f] [SB] <span class="arithmatex">\(= \mathbf{\text{0xDA}}\)</span>, [f] [CB] <span class="arithmatex">\(= \mathbf{\text{0xD8}}\)</span>, and [g] [B?] <span class="arithmatex">\(= \mathbf{\text{0x1}}\)</span>.)</em></li>
+<li><strong>Bidirectional IEEE-754 Float and Fixed-Point <span class="arithmatex">\(Q_{15}\)</span> Round-Trip:</strong> In [f] [DEC] mode, encode <code>12.5</code> into its 32-bit IEEE-754 integer pattern (<code>12.5</code> [FLT] <span class="arithmatex">\(\to \mathbf{1{,}095{,}237{,}632} = \text{0x41480000}\)</span>) and press [FLT] again to decode back to <span class="arithmatex">\(\mathbf{12.5}\)</span>; then encode <code>0.75</code> into <span class="arithmatex">\(Q_{15}\)</span> (<code>0.75</code> [ENTER] <code>15</code> [f] [Q.n] <span class="arithmatex">\(\to \mathbf{24{,}576}\)</span>) and decode back via <code>15</code> [g] [FXP] (<span class="arithmatex">\(\to \mathbf{0.75}\)</span>).</li>
 </ol>
+<p>With the internal control register and velocity loop operating as designed, we trace the actuator's serial telemetry link and industrial network subnet across the system bus in Chapter 8.</p>
 <hr />
-<h3 id="field-case-2-subnetting-an-ipv4-network-hacker-news">Field Case 2: Subnetting an IPv4 Network (<code>Hacker News</code>)</h3>
-<p>A network architect is dividing a corporate network with IP block <code>192.168.10.0/26</code>.
-1. What is the subnet mask in dotted-decimal and hex?
-2. How many total host IP addresses are available in each subnet?</p>
-<h4 id="step-by-step-mechanics">Step-by-Step Mechanics</h4>
+<h1 id="chapter-8-the-corrupt-sensor-packet-across-the-serial-bus">Chapter 8: The Corrupt Sensor Packet Across the Serial Bus</h1>
+<p>Once the linear actuator is running, the microcontroller streams 4-byte temperature and current telemetry packets over an RS-485 serial bus at <span class="arithmatex">\(115{,}200\text{ bits/s}\)</span> ([g] [BPS]) to a Little-Endian ARM monitoring gateway connected to an isolated <code>/24</code> (<code>255.255.255.0</code>) industrial Ethernet VLAN ([NET]). On the monitoring console, however, a normal heatsink temperature reading of <span class="arithmatex">\(+12.25^\circ\text{C}\)</span> (and <span class="arithmatex">\(+12.50^\circ\text{C}\)</span> on Channel 2) suddenly displays as <span class="arithmatex">\(6.02 \times 10^{-39}\text{ }^\circ\text{C}\)</span>, and one out of every thousand frames fails its <strong>Cyclic Redundancy Check</strong> ([f] [CRC]).</p>
+<p>Inspecting the raw serial capture on a logic analyzer reveals three layers of embedded systems and network physics at work. First, the sensor node transmitted the 32-bit IEEE 754 floating-point word <code>0x41440000</code> in Big-Endian <strong>Network Byte Order</strong> (<code>41 44 00 00</code>), but the Little-Endian host CPU read the four bytes backward as <code>0x00004441</code> without executing an <strong>Endian Byte Swap</strong> ([g] [SWP]) before decoding the <strong>IEEE 754 Single-Precision Float</strong> ([FLT]). Second, verifying packet integrity requires evaluating the polynomial remainder via [f] [CRC] (supporting <code>CRC8/CCITT</code> with polynomial <code>0x07</code> and IEEE 802.3 32-bit frame verification). Third, auditing the gateway's CIDR subnet mask and host capacity (<code>24</code> [NET] <span class="arithmatex">\(\to Y = \text{0xFFFFFF00} = 4{,}294{,}967{,}040\)</span> netmask and <span class="arithmatex">\(X = 254\)</span> usable hosts) alongside the <span class="arithmatex">\(16\times\)</span> oversampled UART baud divisor ([g] [BPS]) shows how integer rounding in the baud divisor shifts the actual serial rate to <span class="arithmatex">\(115{,}384.6\text{ bps}\)</span> (<span class="arithmatex">\(+0.16\%\)</span> clock error).</p>
+<hr />
+<h2 id="network-byte-order-floating-point-bitfields-and-galois-field-checksums">Network Byte Order, Floating-Point Bitfields, and Galois-Field Checksums</h2>
+<p>Transmitting fractional measurements reliably across heterogeneous processors requires reconciling byte endianness, unpacking sign-exponent-mantissa bitfields, and computing polynomial division remainders over <span class="arithmatex">\(\text{GF}(2)\)</span>.</p>
+<h3 id="endian-byte-swapping-and-single-precision-floating-point-encoding">Endian Byte Swapping and Single-Precision Floating-Point Encoding</h3>
+<p>When multi-byte words cross between x86 or ARM processors—which store the least significant byte at the lowest memory address in <strong>Little-Endian</strong> order—and network or industrial fieldbus protocols in <strong>Big-Endian</strong> (Network Byte Order, most significant byte first), <strong>Byte-Order Endian Swap</strong> ([g] [SWP]) reverses the four octets of a 32-bit word (or the two bytes of a 16-bit halfword):</p>
+<p><img alt="Little-Endian host byte order versus Big-Endian network byte order across a 32-bit word (SWP)." src="../../assets/diagrams/domains/diagram_ch03_endian_swap.png" /></p>
+<p>Once the 32-bit word is in native host order, the <strong>IEEE 754 Single-Precision (<code>binary32</code>)</strong> standard ([FLT], alongside half-precision [f] [F16] and double-precision [g] [F64]) partitions bits <code>[31:0]</code> into a 1-bit sign <span class="arithmatex">\(S \in \{0, 1\}\)</span> at bit 31, an 8-bit unsigned biased exponent <span class="arithmatex">\(E \in [1, 254]\)</span> at bits <code>[30:23]</code> (with bias <span class="arithmatex">\(127\)</span>, so the true binary exponent is <span class="arithmatex">\(e = E - 127\)</span>), and a 23-bit fractional mantissa <span class="arithmatex">\(M \in [0, 2^{23}-1]\)</span> at bits <code>[22:0]</code> with an implicit leading <span class="arithmatex">\(1\)</span> before the binary point. On microcontrollers without floating-point hardware, <strong><span class="arithmatex">\(Q_{m.n}\)</span> Fixed-Point Scaling</strong> ([f] [Q.n] and [g] [FXP]) instead converts between a real value <span class="arithmatex">\(V_{\text{real}}\)</span> and an integer <span class="arithmatex">\(Q_{\text{int}}\)</span> scaled by <span class="arithmatex">\(2^n\)</span>:</p>
+<p><img alt="IEEE-754 single-precision 32-bit floating-point bitfield allocation (sign bit, 8-bit biased exponent, and 23-bit mantissa)." src="../../assets/diagrams/domains/diagram_ch03_ieee754_float.png" /></p>
+<div class="arithmatex">\[V_{\text{float}} = (-1)^S \times \left(1 + \frac{M}{2^{23}}\right) \times 2^{E - 127}, \qquad Q_{\text{int}} = \operatorname{round}\!\left(V_{\text{real}} \cdot 2^n\right) \quad (\text{[f] [Q.n]}), \qquad V_{\text{real}} = \frac{Q_{\text{int}}}{2^n} \quad (\text{[g] [FXP]})\]</div>
+<p>In the byte-swapped 32-bit telemetry word <code>0x41440000</code> (<code>0100 0001 0100 0100 0000 0000 0000 0000</code>), sign bit <span class="arithmatex">\(S = 0\)</span> indicates a positive value, biased exponent <span class="arithmatex">\(E = \text{1000 0010}_2 = 130\)</span> gives true exponent <span class="arithmatex">\(e = 130 - 127 = +3\)</span>, and the fractional mantissa bits <code>.1000100..._2</code> evaluate to <span class="arithmatex">\(2^{-1} + 2^{-5} = 0.5 + 0.03125 = 0.53125\)</span>, yielding <span class="arithmatex">\(V_{\text{float}} = +1.53125 \times 2^3 = \mathbf{+12.25^\circ\text{C}}\)</span> (while <code>0x41480000</code> <span class="arithmatex">\(= 1{,}095{,}237{,}632\)</span> decodes via [FLT] to <span class="arithmatex">\(+1.5625 \times 2^3 = \mathbf{+12.50^\circ\text{C}}\)</span>, and pressing [FLT] on <code>12.5</code> encodes back to <code>1095237632</code> <span class="arithmatex">\(= \text{0x41480000}\)</span>).</p>
+<h3 id="polynomial-division-over-galois-field-two-and-cyclic-redundancy-checks">Polynomial Division over Galois Field Two and Cyclic Redundancy Checks</h3>
+<p>To detect burst noise on serial sensor buses and Ethernet links, a <strong>Cyclic Redundancy Check</strong> ([f] [CRC] at <code>(2,2)f</code>) treats a binary message frame as a polynomial over the two-element Galois field <span class="arithmatex">\(\text{GF}(2)\)</span>, where addition and subtraction are both carry-free [⊕] (<span class="arithmatex">\(\oplus\)</span>), and computes the remainder modulo a generator polynomial:
+- <strong>8-Bit Sensor Bus <code>CRC8/CCITT</code> (<span class="arithmatex">\(G(x) = x^8 + x^2 + x + 1\)</span>, Polynomial <code>0x07</code>):</strong> For compact 1-wire and RS-485 sensor headers, each bit shift tests the MSB (<span class="arithmatex">\(b_7\)</span>) of the 8-bit accumulator and XORs with <code>0x07</code> when <span class="arithmatex">\(b_7 = 1\)</span>.
+- <strong>32-Bit Frame <code>CRC-32</code> (<span class="arithmatex">\(G_{\text{ref}} = \text{0xEDB88320}\)</span>):</strong> For IEEE 802.3 Ethernet and telemetry frames, starting from <span class="arithmatex">\(C_0 = \text{0xFFFFFFFF} \oplus X\)</span>, the reflected Linear Feedback Shift Register (<code>LFSR</code>) shifts right and XORs with <code>0xEDB88320</code> whenever the LSB is <code>1</code>, followed by final bitwise inversion <span class="arithmatex">\(\sim C\)</span>:</p>
+<p><img alt="Reflected 32-bit Linear Feedback Shift Register (LFSR) datapath for IEEE 802.3 CRC-32 polynomial division." src="../../assets/diagrams/domains/diagram_ch03_crc32_lfsr.png" /></p>
+<div class="arithmatex">\[C_{i+1} = \begin{cases} (C_i \ggg 1) \oplus G_{\text{poly}} &amp; \text{if } (C_i \ \&amp; \ 1) = 1 \\ C_i \ggg 1 &amp; \text{if } (C_i \ \&amp; \ 1) = 0 \end{cases}\]</div>
+<hr />
+<h2 id="cidr-subnet-mask-synthesis-and-asynchronous-serial-baud-divisors">CIDR Subnet Mask Synthesis and Asynchronous Serial Baud Divisors</h2>
+<p>Routing telemetry frames from the RS-485 gateway onto the plant Ethernet backbone requires synthesizing CIDR netmasks and host capacities ([NET]) and verifying that the <span class="arithmatex">\(16\times\)</span> oversampled UART baud clock ([g] [BPS]) remains within framing tolerance.</p>
+<h3 id="cidr-prefix-netmasks-and-usable-host-counts">CIDR Prefix Netmasks and Usable Host Counts</h3>
+<p>In <strong>Classless Inter-Domain Routing</strong> ([NET], primary at <code>(2,2)</code>), an IPv4 subnet prefix <code>/P</code> (<span class="arithmatex">\(P \in [0, 32]\)</span>) assigns the upper <span class="arithmatex">\(P\)</span> bits of a 32-bit IPv4 word to the network mask and leaves <span class="arithmatex">\(32 - P\)</span> bits for host addresses. Pressing [NET] with prefix <span class="arithmatex">\(P\)</span> in Register <span class="arithmatex">\(X\)</span> evaluates both the <strong>32-bit Netmask</strong> in Register <span class="arithmatex">\(Y\)</span> and the <strong>Usable Host Count</strong> <span class="arithmatex">\(N_{\text{hosts}}\)</span> in Register <span class="arithmatex">\(X\)</span>:</p>
+<div class="arithmatex">\[\text{Netmask}(P) = \left(2^{32} - 2^{32 - P}\right) = \text{0xFFFFFFFF} \ll (32 - P), \qquad N_{\text{hosts}} = 2^{32 - P} - 2\]</div>
+<p>For a standard <code>/24</code> industrial VLAN (<code>24</code> [NET]), the 32-bit netmask pushed to Register <span class="arithmatex">\(Y\)</span> is <code>4294967040</code> (<span class="arithmatex">\(\mathbf{\text{0xFFFFFF00}}\)</span>, or <code>255.255.255.0</code>) and the usable host count in Register <span class="arithmatex">\(X\)</span> is <span class="arithmatex">\(2^{32-24} - 2 = \mathbf{254\text{ hosts}}\)</span> (excluding the <code>.0</code> network address and <code>.255</code> broadcast address).</p>
+<h3 id="sixteen-times-oversampled-asynchronous-serial-divisors-and-clock-drift">Sixteen-Times Oversampled Asynchronous Serial Divisors and Clock Drift</h3>
+<p>Because a <strong>Universal Asynchronous Receiver/Transmitter</strong> ([g] [BPS] at <code>(2,1)g</code>) transmits data without a shared clock wire, the receiver oversamples the incoming line at <span class="arithmatex">\(16\)</span> times the target symbol rate <span class="arithmatex">\(B\)</span> (in <span class="arithmatex">\(\text{bits/s}\)</span>) so it can align its sample point with the center (<span class="arithmatex">\(8\text{th}\)</span> tick) of each bit cell. Dividing the peripheral clock <span class="arithmatex">\(f_{\text{clk}}\)</span> (in Register <span class="arithmatex">\(Y\)</span>) by <span class="arithmatex">\(16 \cdot B\)</span> (<span class="arithmatex">\(B\)</span> in Register <span class="arithmatex">\(X\)</span>) and rounding to the nearest integer yields the hardware baud divisor <span class="arithmatex">\(D\)</span>:</p>
+<div class="arithmatex">\[D = \operatorname{round}\!\left(\frac{f_{\text{clk}}}{16 \cdot B}\right), \qquad B_{\text{actual}} = \frac{f_{\text{clk}}}{16 \cdot D}, \qquad \text{Err\%} = \left(\frac{B_{\text{actual}} - B}{B}\right) \times 100\%\]</div>
+<p>Here <span class="arithmatex">\(D\)</span> is the integer value written to the baud-rate register via [g] [BPS], <span class="arithmatex">\(B_{\text{actual}}\)</span> is the synthesized bit rate, and <span class="arithmatex">\(\text{Err\%}\)</span> is the fractional clock skew (which must remain within <span class="arithmatex">\(\pm 2.0\%\)</span> over a 10-bit start-data-stop frame to prevent stop-bit framing errors). On our <span class="arithmatex">\(f_{\text{clk}} = 48\text{ MHz}\)</span> bus targeting <span class="arithmatex">\(B = 115{,}200\text{ bps}\)</span>, keying <code>48000000</code> [ENTER] <code>115200</code> [g] [BPS] evaluates <span class="arithmatex">\(\frac{48{,}000{,}000}{16 \times 115{,}200} = 26.0417\)</span> and rounds to <span class="arithmatex">\(D = \mathbf{26}\)</span>; the actual baud rate is <span class="arithmatex">\(\frac{48{,}000{,}000}{16 \times 26} \approx \mathbf{115{,}384.6\text{ bps}}\)</span>, a clock drift of <span class="arithmatex">\(+0.16\%\)</span>—proving that the UART timing is well within tolerance and the CRC errors were caused by an un-terminated RS-485 bus end rather than baud-rate skew.</p>
+<hr />
+<h2 id="unpacking-the-telemetry-frame-and-auditing-subnets-and-clocks-on-the-stack">Unpacking the Telemetry Frame and Auditing Subnets and Clocks on the Stack</h2>
+<p>On the <strong>SC-16</strong>, [g] [SWP], [FLT], [f] [CRC], [NET], and [g] [BPS] evaluate 32-bit telemetry words, CIDR prefixes, and serial clock dividers directly on the RPN stack:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Button</th>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">Governing Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[g] [SWP]</td>
+<td style="text-align: left;">Endian Byte-Order Swap</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Word <span class="arithmatex">\(X\)</span></td>
+<td style="text-align: left;">Reverses byte order (<code>B3..B0</code> <span class="arithmatex">\(\leftrightarrow\)</span> <code>B0..B3</code>) across <span class="arithmatex">\(W\)</span> bits</td>
+</tr>
+<tr>
+<td style="text-align: left;">[FLT] / [f] [F16] / [g] [F64]</td>
+<td style="text-align: left;">IEEE-754 Float Decode &amp; Encode</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Word or Float <span class="arithmatex">\(X\)</span></td>
+<td style="text-align: left;">Decodes <code>0x41480000</code> <span class="arithmatex">\(\to 12.5\)</span>; encodes <code>12.5</code> <span class="arithmatex">\(\to 1{,}095{,}237{,}632\)</span> (<code>0x41480000</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [CRC]</td>
+<td style="text-align: left;">Cyclic Redundancy Check</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Byte / Word <span class="arithmatex">\(X\)</span></td>
+<td style="text-align: left;">Evaluates polynomial CRC remainder (<code>CRC8/CCITT</code> <code>0x07</code> / <code>CRC-32</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[NET]</td>
+<td style="text-align: left;">CIDR Subnet Mask &amp; Usable Hosts</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Prefix <span class="arithmatex">\(P\)</span></td>
+<td style="text-align: left;">Pushes netmask <span class="arithmatex">\(2^{32}-2^{32-P}\)</span> to <span class="arithmatex">\(Y\)</span> and usable hosts <span class="arithmatex">\(2^{32-P}-2\)</span> to <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [BPS]</td>
+<td style="text-align: left;"><span class="arithmatex">\(16\times\)</span> UART Baud Divisor</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Clock <span class="arithmatex">\(f_{\text{clk}}\)</span></td>
+<td style="text-align: center;">Target Baud <span class="arithmatex">\(B\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(D = \operatorname{round}(f_{\text{clk}} / (16 \cdot B))\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [÷R] / [g] [MOD] / [g] [GCD]</td>
+<td style="text-align: left;">Integer Quotient, Modulo &amp; GCD</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Dividend <span class="arithmatex">\(Y\)</span></td>
+<td style="text-align: center;">Divisor <span class="arithmatex">\(X\)</span></td>
+<td style="text-align: left;">Integer quotient &amp; remainder ([f] [÷R]), <span class="arithmatex">\(Y \bmod X\)</span> ([g] [MOD]), <span class="arithmatex">\(\gcd(Y, X)\)</span> ([g] [GCD])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [▸MHz] [g] [▸GHz] [f] [▸cyc] [g] [▸ns] [f] [▸ms] [g] [▸μs]</td>
+<td style="text-align: left;">Clock &amp; Timing Conversions</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Frequency / Time <span class="arithmatex">\(X\)</span></td>
+<td style="text-align: left;">Converts between <span class="arithmatex">\(\text{Hz}\)</span>, <span class="arithmatex">\(\text{MHz}/\text{GHz}\)</span>, <span class="arithmatex">\(\text{ms}/\mu\text{s}/\text{ns}\)</span>, and CPU cycles</td>
+</tr>
+</tbody>
+</table>
+<h3 id="byte-swapping-the-telemetry-word-decoding-ieee-754-and-checking-cidr-and-crc">Byte-Swapping the Telemetry Word, Decoding IEEE-754, and Checking CIDR and CRC</h3>
+<p>In 32-bit [HEX] mode ([f] [DEC] <code>32</code> [g] [WSZ] [HEX]), loading the mis-ordered Little-Endian capture <code>0x00004441</code> and pressing [g] [SWP] restores the Big-Endian word <code>0x41440000</code>; pressing [FLT] decodes the true heatsink temperature <span class="arithmatex">\(\mathbf{+12.25^\circ\text{C}}\)</span>, keying <code>12.5</code> [FLT] encodes <span class="arithmatex">\(+12.5^\circ\text{C}\)</span> to <code>1095237632</code> (<span class="arithmatex">\(\mathbf{\text{0x41480000}}\)</span>), and keying <code>24</code> [NET] pushes netmask <code>4294967040</code> (<code>0xFFFFFF00</code>) to Register <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(\mathbf{254}\)</span> usable hosts to Register <span class="arithmatex">\(X\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[f] [DEC] <code>32</code> [g] [WSZ] [HEX] <code>4441</code> [g] [SWP]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0x20}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0x41440000}\)</span></td>
+<td style="text-align: left;">Byte-swap Little-Endian <code>0x00004441</code> into Big-Endian <code>0x41440000</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">[FLT]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(32\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(12.25\)</span></td>
+<td style="text-align: left;">Decode IEEE 754 <code>binary32</code> pattern <code>0x41440000</code> to <span class="arithmatex">\(+12.25\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [DEC] <code>12.5</code> [FLT]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(32\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(12.25\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1095237632\)</span></td>
+<td style="text-align: left;">Encode float <code>12.5</code> into IEEE 754 bit pattern <code>1095237632</code> (<code>0x41480000</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>24</code> [NET]</td>
+<td style="text-align: center;"><span class="arithmatex">\(32\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(12.25\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4294967040\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(254\)</span></strong></td>
+<td style="text-align: left;">Compute <code>/24</code> netmask in <span class="arithmatex">\(Y\)</span> (<code>0xFFFFFF00</code>) and <span class="arithmatex">\(254\)</span> usable hosts in <span class="arithmatex">\(X\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="auditing-the-sixteen-times-oversampled-uart-baud-divisor-on-the-stack">Auditing the Sixteen-Times Oversampled UART Baud Divisor on the Stack</h3>
+<p>Switching to [f] [DEC] mode, the engineer verifies the <span class="arithmatex">\(115{,}200\text{ bps}\)</span> UART divisor on the <span class="arithmatex">\(48\text{ MHz}\)</span> peripheral bus via <code>48000000</code> [ENTER] <code>115200</code> [g] [BPS] (<span class="arithmatex">\(\to D = \mathbf{26}\)</span>) and computes the resulting <span class="arithmatex">\(+0.1603\%\)</span> baud-rate drift:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[f] [DEC] <code>48000000</code> [ENTER] <code>115200</code> [g] [BPS]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(26\)</span></td>
+<td style="text-align: left;">Compute <span class="arithmatex">\(16\times\)</span> oversampled UART integer divisor <span class="arithmatex">\(D = 26\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>16</code> [×] <code>48000000</code> [x⇄y] [÷]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(115384.6154\)</span></td>
+<td style="text-align: left;">Compute actual synthesized baud rate <span class="arithmatex">\(B_{\text{actual}} = 48{,}000{,}000 / (16 \times 26)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>115200</code> [-] <code>115200</code> [÷] <code>100</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(0.1603\)</span></strong></td>
+<td style="text-align: left;">Confirm <span class="arithmatex">\(+0.1603\%\)</span> UART clock drift (well within <span class="arithmatex">\(\pm 2.0\%\)</span> limit)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="try-it-on-the-stack_1">Try It on the Stack</h3>
+<p>Reinforce your command of endianness, floating-point bitfields, CIDR prefixes, and UART clock dividers with these three exercises:</p>
 <ol>
-<li>A <code>/26</code> prefix means the first 26 bits are 1s, and the remaining <span class="arithmatex">\(32 - 26 = 6\text{ bits}\)</span> are 0s.</li>
-<li>In the 4th byte, there are two 1s followed by six 0s: <code>1100 0000</code> in binary.</li>
-<li>On the SC-16, type <code>11000000</code> in <code>BIN</code> mode <span class="arithmatex">\(\to\)</span> switch to <code>DEC</code>: displays <strong><code>192</code></strong>.</li>
-<li>Subnet mask is <strong><code>255.255.255.192</code></strong> (or <code>0xFFFFFFC0</code> in hex).</li>
-<li>Compute total host count from the 6 host bits:</li>
-<li><code>2</code> <code>[ENTER]</code> <code>6</code> <code>[yˣ]</code> <span class="arithmatex">\(\to\)</span> <strong><code>64 total addresses</code></strong>.</li>
-<li>Subtract network ID (all 0s) and broadcast ID (all 1s): <span class="arithmatex">\(64 - 2 = \mathbf{62\text{ usable hosts}}\)</span>.</li>
+<li><strong>Network Byte Order Swap on an IPv4 Address:</strong> A 32-bit Little-Endian socket buffer holds <code>0xC0A80164</code> (<code>192.168.1.100</code>). Key [f] [DEC] <code>32</code> [g] [WSZ] [HEX] [C] <code>0</code> [A] <code>80164</code> [g] [SWP] to reverse the four octets into Big-Endian Network Byte Order, and swap a 16-bit port number <code>0x1234</code> in 16-bit mode ([f] [DEC] <code>16</code> [g] [WSZ] [HEX] <code>1234</code> [g] [SWP]). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: 32-bit swap <span class="arithmatex">\(\mathbf{\text{0x6401A8C0}}\)</span> and 16-bit swap <span class="arithmatex">\(\mathbf{\text{0x3412}}\)</span>.)</em></li>
+<li><strong>Decoding IEEE-754 Floats and Fixed-Point Scaling:</strong> Decode the 32-bit IEEE 754 hex words <code>0x42280000</code> and <code>0xC0B00000</code> via [HEX] <code>&lt;WORD&gt;</code> [FLT], and encode the real filter coefficient <span class="arithmatex">\(-0.375\)</span> into 16-bit <span class="arithmatex">\(Q_{15}\)</span> fixed-point format via [f] [DEC] <code>0.375</code> [+/-] [ENTER] <code>15</code> [f] [Q.n]. <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <code>0x42280000</code> <span class="arithmatex">\(\to \mathbf{+42.00}\)</span>, <code>0xC0B00000</code> <span class="arithmatex">\(\to \mathbf{-5.50}\)</span>, and <span class="arithmatex">\(Q_{15} = \mathbf{-12{,}288}\)</span> or <code>0xD000</code>.)</em></li>
+<li><strong>CIDR Subnet Evaluation and High-Speed UART Divisor:</strong> Evaluate <code>24</code> [NET] and <code>26</code> [NET] to compare <code>/24</code> and <code>/26</code> usable host capacities, and on a microcontroller running at <span class="arithmatex">\(f_{\text{clk}} = 72{,}000{,}000\text{ Hz}\)</span> (<span class="arithmatex">\(72\text{ MHz}\)</span>), find the <span class="arithmatex">\(16\times\)</span> UART divisor for <span class="arithmatex">\(115{,}200\text{ bps}\)</span> via <code>72000000</code> [ENTER] <code>115200</code> [g] [BPS]. <em>(Verified results: <code>/24</code> yields <span class="arithmatex">\(Y = \mathbf{4{,}294{,}967{,}040}\)</span> (<code>0xFFFFFF00</code>), <span class="arithmatex">\(X = \mathbf{254\text{ hosts}}\)</span>; <code>/26</code> yields <span class="arithmatex">\(X = \mathbf{62\text{ hosts}}\)</span>; and <span class="arithmatex">\(D_{\text{UART}} = \mathbf{39}\)</span>.)</em></li>
 </ol>
+<p>Having restored the serial telemetry link and verified the gateway subnet, we complete Unit III in Chapter 9 by synthesizing timer PWM carriers, calibrating the analog-to-digital vibration sensor front end, and aligning DMA memory buffers.</p>
 <hr />
-<h2 id="4-try-it-yourself-practice-problems">4. Try It Yourself: Practice Problems</h2>
-<h3 id="problem-1-twos-complement-negative-conversion">Problem 1: Two's Complement Negative Conversion</h3>
-<p>Using an 8-bit word size (<code>BYTE</code> mode on SC-16), enter decimal value <span class="arithmatex">\(+42\)</span>.
-Convert it to signed negative <span class="arithmatex">\(-42\)</span> using two's complement.
-<em>(Solution: <span class="arithmatex">\(+42 = \text{0x2A} = \text{0010 1010}_2\)</span>. Invert bits: <span class="arithmatex">\(\text{1101 0101}_2 = \text{0xD5}\)</span>. Add 1: <span class="arithmatex">\(\text{0xD5} + 1 = \mathbf{0xD6}\)</span>. In 8-bit signed decimal, <span class="arithmatex">\(\text{0xD6} = \mathbf{-42}\)</span>.)</em></p>
-<h3 id="problem-2-circular-ring-buffer-masking">Problem 2: Circular Ring-Buffer Masking</h3>
-<p>A high-speed UART driver allocates a ring buffer of size <span class="arithmatex">\(256\text{ bytes}\)</span> (<span class="arithmatex">\(2^8\)</span>). The head pointer is currently at index <code>310</code>.
-Using bitwise AND masking instead of an expensive division/modulo operator (<code>%</code>), find the buffer index.
-<em>(Solution: Mask with size minus one: <span class="arithmatex">\(256 - 1 = 255 = \text{0xFF}\)</span>. <code>310 &amp; 0xFF</code> <span class="arithmatex">\(\implies\)</span> <code>310</code> <code>[ENTER]</code> <code>255</code> <code>[AND]</code> <span class="arithmatex">\(\to\)</span> </em><em><code>54</code></em><em>. Fast, single-cycle ring-buffer wrapping!)</em></p>
-<h3 id="problem-3-decoding-an-ieee-754-single-precision-float">Problem 3: Decoding an IEEE-754 Single-Precision Float</h3>
-<p>A binary packet dumps the 32-bit hex word <code>0x41440000</code>.
-On the SC-16, enter <code>41440000</code> in <code>HEX</code> mode, then tap <code>[FLT]</code> followed by <code>[g] [SHOW]</code>.
-<em>(Solution: Sign bit <span class="arithmatex">\(= 0\)</span> (+). Exponent bits <span class="arithmatex">\(= 10000010_2 = 130\)</span>. Unbias: <span class="arithmatex">\(130 - 127 = 3\)</span>. Mantissa bits <span class="arithmatex">\(= 0.28125\)</span>. Value <span class="arithmatex">\(= +1.28125 \times 2^3 = \mathbf{12.25}\)</span>.)</em></p>
+<h1 id="chapter-9-partitioning-the-factory-floor-subnet-and-adc-front-end">Chapter 9: Partitioning the Factory Floor Subnet and ADC Front End</h1>
+<p>To expand predictive maintenance across the assembly line, the systems engineering team is deploying a cluster of fifty-four networked vibration-monitoring nodes along the factory floor while driving the actuator's H-bridge power stage with a <span class="arithmatex">\(1.0\text{ kHz}\)</span> <strong>Pulse-Width Modulation</strong> ([PWM]) carrier derived from a <span class="arithmatex">\(48\text{ MHz}\)</span> crystal oscillator (and a <span class="arithmatex">\(20.0\text{ kHz}\)</span> ultrasonic servo loop on a <span class="arithmatex">\(168\text{ MHz}\)</span> high-speed timer bus). Each sensor node samples a piezoelectric accelerometer through a first-order RC anti-aliasing filter ([f] [τ]) feeding a 12-bit Successive-Approximation <strong>Analog-to-Digital Converter</strong> ([f] [ADC]) referenced to <span class="arithmatex">\(V_{\text{ref}} = 3.30\text{ V}\)</span>, packs the quantized samples into 53-byte telemetry descriptors aligned to 16-byte Direct Memory Access (<code>DMA</code>) cache boundaries ([g] [ALN], [f] [▸B], [f] [▸KiB]), and transmits them over an isolated industrial Ethernet VLAN carved from the <code>192.168.10.0/24</code> address space around gateway address <code>192.168.10.200/26</code> ([NET]).</p>
+<p>Before flashing the node firmware or programming the managed Ethernet switch, the lead systems architect must verify three boundary conditions. First, on the timer peripheral bus, the architect must verify the <span class="arithmatex">\(1.0\text{ kHz}\)</span> PWM carrier on the stack (<code>48000000</code> [ENTER] <code>48</code> [ENTER] <code>1000</code> [PWM]) and solve backward in the <code>PWM</code> workspace ([F], [C], [P], [A]) for the 16-bit auto-reload period <span class="arithmatex">\(A\)</span> at <span class="arithmatex">\(20.0\text{ kHz}\)</span>. Second, on the mixed-signal front end, the architect must compute the step size and digital code of the 12-bit converter across <span class="arithmatex">\(3.30\text{ V}\)</span> ([f] [ADC]), invert a live DMA sample register code <span class="arithmatex">\(D = 2{,}894\)</span> back to its physical sensor voltage <span class="arithmatex">\(V_{\text{in}}\)</span> in the bidirectional <code>ADC</code> Solver Workspace ([D], [V], [R], [N]), evaluate the RC time constant <span class="arithmatex">\(\tau = R C\)</span> and <span class="arithmatex">\(-3\text{ dB}\)</span> cutoff frequency <span class="arithmatex">\(f_c = 1/(2\pi RC)\)</span> via [f] [τ] (<code>TAU</code> workspace [T], [R], [C]), and use bitwise <strong>Population Count</strong> ([f] [#B]) and <strong>Count Leading Zeros</strong> ([g] [CLZ]) to inspect bit weights and base-2 logarithms ([lg], [g] [2ˣ]). Third, on the network and DMA engine, the architect must confirm <code>/26</code> usable host capacity ([NET]) and align 53-byte descriptors and 300-byte ring buffers ([g] [ALN]).</p>
+<hr />
+<h2 id="hardware-timer-prescalers-mixed-signal-adc-quantization-and-rc-settling">Hardware Timer Prescalers, Mixed-Signal ADC Quantization, and RC Settling</h2>
+<p>Bridging crystal oscillator clocks and continuous analog sensor voltages to discrete digital registers relies on integer timer prescaling, uniform <span class="arithmatex">\(2^N\)</span> quantization, exponential RC charge settling, and combinatorial bit-counting primitives.</p>
+<h3 id="hardware-timer-prescalers-and-pulse-width-modulation-carrier-synthesis">Hardware Timer Prescalers and Pulse-Width Modulation Carrier Synthesis</h3>
+<p>A hardware timer divides the peripheral bus clock <span class="arithmatex">\(f_{\text{clk}}\)</span> ([C], in <span class="arithmatex">\(\text{Hz}\)</span>) through an integer <strong>Prescaler</strong> <span class="arithmatex">\(P\)</span> ([P]) to produce a counter tick clock <span class="arithmatex">\(f_{\text{tick}} = f_{\text{clk}} / P\)</span>, which then counts up to an integer <strong>Auto-Reload Period</strong> <span class="arithmatex">\(\text{ARR}\)</span> ([A]) to synthesize a <strong>Pulse-Width Modulation</strong> ([PWM], primary at <code>(7,2)</code>) carrier of frequency <span class="arithmatex">\(f_{\text{PWM}}\)</span> ([F]):</p>
+<p><img alt="Microcontroller timer up-counter sawtooth waveform, auto-reload period A, compare threshold CCR, and PWM output pulse train." src="../../assets/diagrams/domains/diagram_ch03_pwm_timer.png" /></p>
+<div class="arithmatex">\[f_{\text{tick}} = \frac{f_{\text{clk}}}{P}, \qquad f_{\text{PWM}} = \frac{f_{\text{clk}}}{P \cdot \text{ARR}} \iff \text{ARR} = \frac{f_{\text{clk}}}{P \cdot f_{\text{PWM}}}, \qquad \text{Duty\%} = \left(\frac{\text{CCR}}{\text{ARR}}\right) \times 100\%\]</div>
+<p>On the immediate RPN stack, pressing [PWM] with <span class="arithmatex">\(f_{\text{clk}}\)</span> in Register <span class="arithmatex">\(Z\)</span>, prescaler <span class="arithmatex">\(P\)</span> in Register <span class="arithmatex">\(Y\)</span>, and auto-reload period <span class="arithmatex">\(\text{ARR}\)</span> in Register <span class="arithmatex">\(X\)</span> computes <span class="arithmatex">\(f_{\text{PWM}} = f_{\text{clk}} / (P \times \text{ARR})\)</span> and opens the <strong><code>PWM</code> Equation Solver Workspace</strong> (<code>F = C / (P × A)</code>) with variable softkeys [F] ([LFU0]), [C] ([LFU1]), [P] ([LFU2]), and [A] ([LFU3]). Driven by a <span class="arithmatex">\(f_{\text{clk}} = 48\text{ MHz}\)</span> (<span class="arithmatex">\(48{,}000{,}000\text{ Hz}\)</span>) bus clock with prescaler <span class="arithmatex">\(P = 48\)</span> and auto-reload period <span class="arithmatex">\(\text{ARR} = 1{,}000\)</span>, keying <code>48000000</code> [ENTER] <code>48</code> [ENTER] <code>1000</code> [PWM] generates <span class="arithmatex">\(f_{\text{PWM}} = \mathbf{1{,}000.0\text{ Hz}}\)</span> (<span class="arithmatex">\(1.0\text{ kHz}\)</span>). Conversely, when upgrading the servo stage to an ultrasonic <span class="arithmatex">\(F = 20{,}000\text{ Hz}\)</span> (<span class="arithmatex">\(20\text{ kHz}\)</span>) switching frequency on a <span class="arithmatex">\(C = 168{,}000{,}000\text{ Hz}\)</span> (<span class="arithmatex">\(168\text{ MHz}\)</span>) timer bus with prescaler <span class="arithmatex">\(P = 4\)</span>, solving <code>F = C / (P × A)</code> backward for [A] via [g] [SOLVE] [A] yields <span class="arithmatex">\(\text{ARR} = \frac{168{,}000{,}000}{4 \times 20{,}000} = \mathbf{2{,}100\text{ counts}}\)</span>.</p>
+<h3 id="successive-approximation-quantization-enob-and-half-lsb-rc-settling">Successive-Approximation Quantization, ENOB, and Half-LSB RC Settling</h3>
+<p>An <span class="arithmatex">\(N\)</span>-bit <strong>Analog-to-Digital Converter</strong> ([f] [ADC] at <code>(5,4)f</code>) partitions its full-scale reference voltage <span class="arithmatex">\(V_{\text{ref}}\)</span> into <span class="arithmatex">\(2^N\)</span> uniform quantization steps of width <span class="arithmatex">\(V_{\text{LSB}}\)</span> (the Least Significant Bit voltage), mapping a continuous analog input voltage <span class="arithmatex">\(V_{\text{in}} \in [0, V_{\text{ref}})\)</span> to the integer digital code <span class="arithmatex">\(D \in [0, 2^N - 1]\)</span> (while [g] [DAC] reconstructs <span class="arithmatex">\(V_{\text{out}}\)</span> from a 12-bit code):</p>
+<div class="arithmatex">\[V_{\text{LSB}} = \frac{V_{\text{ref}}}{2^N}, \qquad D = \left\lfloor \frac{V_{\text{in}}}{V_{\text{ref}}} \cdot 2^N \right\rfloor = \left\lfloor \frac{V_{\text{in}}}{V_{\text{LSB}}} \right\rfloor\]</div>
+<p>In these quantization equations, <span class="arithmatex">\(N\)</span> is the converter resolution in bits, <span class="arithmatex">\(2^N\)</span> is the total number of discrete code bins (<span class="arithmatex">\(4{,}096\)</span> for a 12-bit converter or <span class="arithmatex">\(65{,}536\)</span> for a 16-bit converter), and <span class="arithmatex">\(V_{\text{LSB}}\)</span> is the smallest voltage change that increments <span class="arithmatex">\(D\)</span> by <span class="arithmatex">\(1\)</span>. Because ideal uniform quantization introduces a sawtooth error bounded by <span class="arithmatex">\(\pm\frac{1}{2} V_{\text{LSB}}\)</span> with root-mean-square noise <span class="arithmatex">\(V_{q,\text{rms}} = V_{\text{LSB}} / \sqrt{12}\)</span>, a full-scale sine wave of RMS amplitude <span class="arithmatex">\(V_{\text{ref}} / (2\sqrt{2})\)</span> achieves a theoretical Signal-to-Noise-and-Distortion ratio <span class="arithmatex">\(\text{SINAD}_{\text{dB}} = 6.0206 N + 1.7609\text{ dB}\)</span>, defining the converter's <strong>Effective Number of Bits</strong>:</p>
+<div class="arithmatex">\[\text{ENOB} = \frac{\text{SINAD}_{\text{dB}} - 1.7609}{6.0206}, \qquad \tau = R \cdot C, \qquad f_c = \frac{1}{2\pi R C}, \qquad t_{\text{acq}} \ge (N + 1)\ln(2)\,\tau\]</div>
+<p>To prevent front-end charge-injection droop from degrading <span class="arithmatex">\(\text{ENOB}\)</span>, the external RC anti-aliasing and sample-and-hold network ([f] [τ] at <code>(7,3)f</code>) of time constant <span class="arithmatex">\(\tau = R C\)</span> and <span class="arithmatex">\(-3\text{ dB}\)</span> cutoff frequency <span class="arithmatex">\(f_c = \frac{1}{2\pi R C}\)</span> must settle following a full-scale input step <span class="arithmatex">\(V_{\text{step}} = V_{\text{ref}}\)</span> until the residual tracking error <span class="arithmatex">\(V_{\text{err}}(t) = V_{\text{ref}} e^{-t/\tau}\)</span> falls below <span class="arithmatex">\(\frac{1}{2}\text{ LSB} = V_{\text{ref}} / 2^{N+1}\)</span>—requiring at least <span class="arithmatex">\((N + 1)\ln(2) \approx 9.0109\)</span> time constants for a 12-bit converter. This exponential relaxation law <span class="arithmatex">\(e^{-t/\tau}\)</span> is mathematically identical to first-order pharmacokinetic drug elimination <span class="arithmatex">\(C(t) = C_0 e^{-k_e t}\)</span> in <a href="../08-sc80-clinical-pharmacy/">Unit VIII: Clinical Nephrology, Pharmacokinetics &amp; Infusion Critical Care</a>, where the elimination rate constant <span class="arithmatex">\(k_e\)</span> plays the exact reciprocal role of the RC time constant <span class="arithmatex">\(1/\tau\)</span>, while the <span class="arithmatex">\(6.02\text{ dB/bit}\)</span> scaling of <span class="arithmatex">\(\text{ENOB}\)</span> mirrors the logarithmic spectral efficiency <span class="arithmatex">\(\log_2(1 + \text{SNR})\)</span> of the Shannon–Hartley channel capacity theorem in <a href="../05-sc50-rf-spectrum/">Unit V: Radio-Frequency Engineering, Transmission Lines &amp; Link Budgets</a>. On our vibration node's 12-bit [f] [ADC] with reference <span class="arithmatex">\(V_{\text{ref}} = 3.30\text{ V}\)</span>, the step size is <span class="arithmatex">\(V_{\text{LSB}} = 3.30 / 4096 \approx \mathbf{0.80566\text{ mV/LSB}}\)</span> (<span class="arithmatex">\(805.66\ \mu\text{V}\)</span>), a DC bias input of <span class="arithmatex">\(V_{\text{in}} = 1.65\text{ V}\)</span> maps to mid-scale code <span class="arithmatex">\(D = \lfloor (1.65 / 3.30) \times 4096 \rfloor = \mathbf{2{,}048}\)</span> (<code>0x800</code>), and a live DMA register sample <span class="arithmatex">\(D = 2{,}894\)</span> (<code>0xB4E</code>) inverts in the <code>ADC</code> workspace (<code>D = V / R × 2^N</code>, softkeys [D], [V], [R], [N]) to <span class="arithmatex">\(V_{\text{in}} = 2894 \times 3.30 / 4096 = \mathbf{2.3316\text{ V}}\)</span>.</p>
+<h3 id="population-count-hamming-distance-and-count-leading-zeros">Population Count, Hamming Distance, and Count Leading Zeros</h3>
+<p>Two unary bit-inspection operators implemented in single-cycle silicon hardware—<strong>Population Count</strong> ([f] [#B] at <code>(4,3)f</code>) and <strong>Count Leading Zeros</strong> ([g] [CLZ] at <code>(4,3)g</code>)—analyze the bit distribution of a <span class="arithmatex">\(W\)</span>-bit word <span class="arithmatex">\(X\)</span>:</p>
+<div class="arithmatex">\[\operatorname{POP}(X) = \sum_{i=0}^{W-1} b_i \quad (\text{[f] [#B]}), \qquad d_H(Y, X) = \operatorname{POP}(Y \oplus X), \qquad \lfloor \log_2(X) \rfloor = W - 1 - \operatorname{CLZ}(X) \quad (\text{[g] [CLZ]},\; X &gt; 0)\]</div>
+<p>Here [f] [#B] (the <strong>Hamming weight</strong>) sums all <code>1</code> bits in <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(\operatorname{POP}(Y \oplus X)\)</span> measures the <strong>Hamming distance</strong> (number of differing bit positions) between words <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(X\)</span>, and [g] [CLZ] counts the contiguous <code>0</code> bits preceding the highest <code>1</code> bit in a <span class="arithmatex">\(W\)</span>-bit register, directly determining the base-2 logarithm ([lg], primary at <code>(1,5)</code>) and the smallest power of two <span class="arithmatex">\(2^{W - \operatorname{CLZ}(X - 1)}\)</span> ([g] [2ˣ] at <code>(0,0)g</code>) capable of holding a DMA ring buffer of size <span class="arithmatex">\(X\)</span>. For the 32-bit word <code>0x41440000</code> (<code>0100 0001 0100 0100 0000 0000 0000 0000</code>), keying [f] [#B] returns <span class="arithmatex">\(\mathbf{4}\)</span> (bits 30, 24, 22, and 18) and keying [g] [CLZ] returns <span class="arithmatex">\(\mathbf{1}\)</span> (bit 31 is <code>0</code>).</p>
+<hr />
+<h2 id="classless-inter-domain-routing-subnets-and-memory-bus-alignment">Classless Inter-Domain Routing Subnets and Memory Bus Alignment</h2>
+<p>Partitioning an IPv4 address block into collision-free factory subnets ([NET]) and aligning DMA packet descriptors in RAM ([g] [ALN]) both apply power-of-two bitmask boundaries.</p>
+<h3 id="prefix-bitmasks-usable-host-capacity-and-broadcast-boundaries">Prefix Bitmasks, Usable Host Capacity, and Broadcast Boundaries</h3>
+<p>In <strong>Classless Inter-Domain Routing</strong> ([NET]), a 32-bit IPv4 address written with prefix length <code>/P</code> (<span class="arithmatex">\(P \in [0, 32]\)</span>) allocates the upper <span class="arithmatex">\(P\)</span> bits to the fixed <strong>Network Prefix</strong> (where the subnet mask pushed to Register <span class="arithmatex">\(Y\)</span> has [f] [#B] <span class="arithmatex">\(= P\)</span> leading <code>1</code> bits) and leaves <span class="arithmatex">\(H = 32 - P\)</span> bits for <strong>Host Addresses</strong>:</p>
+<p><img alt="IPv4 32-bit address partitioning under a /26 CIDR prefix into a 26-bit network mask and 6-bit host field." src="../../assets/diagrams/domains/diagram_ch03_cidr_subnet.png" /></p>
+<div class="arithmatex">\[\text{Block Size} = 2^{32 - P}, \qquad N_{\text{hosts}} = 2^{32 - P} - 2 \quad (0 \le P \le 30)\]</div>
+<p>Because the all-zeros host pattern (<span class="arithmatex">\(0\)</span>) is reserved for the <strong>Subnet Network ID</strong> and the all-ones host pattern (<span class="arithmatex">\(2^{32-P} - 1\)</span>) is reserved for the <strong>Subnet Broadcast Address</strong>, pressing [NET] on a <code>/P</code> prefix pushes the 32-bit netmask to Register <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(N_{\text{hosts}} = 2^{32 - P} - 2\)</span> usable <strong>Host Addresses</strong> to Register <span class="arithmatex">\(X\)</span>. For our factory floor <code>/26</code> subnet (<code>26</code> [NET], leaving <span class="arithmatex">\(H = 6\)</span> host bits and fourth-octet mask <span class="arithmatex">\(256 - 2^6 = 192\)</span>, or <code>255.255.255.192</code> <span class="arithmatex">\(= \text{0xFFFFFFC0}\)</span>), the total block size is <span class="arithmatex">\(2^6 = 64\)</span> addresses and the usable capacity is <span class="arithmatex">\(N_{\text{hosts}} = 64 - 2 = \mathbf{62\text{ usable hosts}}\)</span>—accommodating all <span class="arithmatex">\(54\)</span> vibration nodes and the <code>.200</code> gateway with <span class="arithmatex">\(7\)</span> addresses to spare. Because <span class="arithmatex">\(\lfloor 200 / 64 \rfloor \times 64 = 3 \times 64 = 192\)</span>, the <code>192.168.10.200/26</code> block starts at Network ID <code>192.168.10.192</code>, spans usable hosts <code>192.168.10.193</code> through <code>192.168.10.254</code>, and terminates at Broadcast Address <code>192.168.10.255</code>.</p>
+<h3 id="power-of-two-dma-ring-buffers-and-natural-structure-alignment">Power-of-Two DMA Ring Buffers and Natural Structure Alignment</h3>
+<p>Inside system memory, CPU load/store units and DMA engines require packet descriptors to begin at byte addresses <span class="arithmatex">\(A\)</span> divisible by a power-of-two <strong>Alignment Boundary</strong> <span class="arithmatex">\(B \in \{2, 4, 8, 16, 32, 64, 4096\}\)</span> ([g] [ALN] at <code>(7,3)g</code>), or round a minimum ring-buffer size <span class="arithmatex">\(S\)</span> up to the next power of two <span class="arithmatex">\(S_{\text{pow2}}\)</span>, with binary storage keys ([f] [▸B], [g] [▸bit], [f] [▸KiB], [g] [▸MiB], [f] [▸GiB], [g] [▸TiB]) converting between raw bit counts and IEC power-of-two byte capacities (<span class="arithmatex">\(1\text{ KiB} = 2^{10} = 1{,}024\text{ B}\)</span>):</p>
+<p><img alt="Natural 4-byte memory bus alignment of a C structure showing compiler-inserted padding bytes (ALN)." src="../../assets/diagrams/domains/diagram_ch03_struct_alignment.png" /></p>
+<div class="arithmatex">\[A_{\text{aligned}} = \left\lceil \frac{A}{B} \right\rceil \times B = (A + B - 1) \ \&amp; \ \sim(B - 1), \qquad S_{\text{pow2}} = 2^{\lceil \log_2 S \rceil}\]</div>
+<p>Here <span class="arithmatex">\((A + B - 1) \ \&amp; \ \sim(B - 1)\)</span> clears the lower <span class="arithmatex">\(\log_2 B\)</span> address bits to round <span class="arithmatex">\(A\)</span> up to the next multiple of <span class="arithmatex">\(B\)</span>. Aligning our vibration node's raw 53-byte packet descriptor (<span class="arithmatex">\(A = 53\)</span>) up to a <span class="arithmatex">\(B = 16\text{-byte}\)</span> DMA burst boundary via <code>53</code> [ENTER] <code>16</code> [g] [ALN] yields <span class="arithmatex">\(A_{\text{aligned}} = \lceil 53 / 16 \rceil \times 16 = 4 \times 16 = \mathbf{64\text{ bytes}}\)</span>, while rounding a <span class="arithmatex">\(300\text{-byte}\)</span> circular sample queue up to the next power of two via <code>0</code> [ENTER] <code>300</code> [g] [ALN] yields <span class="arithmatex">\(S_{\text{pow2}} = 2^9 = \mathbf{512\text{ bytes}}\)</span> (<span class="arithmatex">\(0.5\text{ KiB}\)</span> via [f] [▸KiB]).</p>
+<hr />
+<h2 id="configuring-timer-pwm-the-vibration-node-and-subnet-block-on-the-stack">Configuring Timer PWM, the Vibration Node, and Subnet Block on the Stack</h2>
+<p>The <strong>SC-16</strong> instrument combines immediate RPN stack evaluation for [PWM] carrier synthesis, [f] [ADC] quantization, [f] [τ] RC filter timing, bit population counting ([f] [#B]), leading-zero inspection ([g] [CLZ]), CIDR usable-host and netmask evaluation ([NET]), DMA memory alignment ([g] [ALN]), and binary storage scaling ([f] [▸B], [g] [▸bit], [f] [▸KiB], [g] [▸MiB], [f] [▸GiB], [g] [▸TiB]) with the <strong>Bidirectional Equation Solver Workspace</strong> ([g] [SOLVE] / [XEQ]) on [PWM] (<code>F = C / (P × A)</code>), [f] [ADC] (<code>D = V / R × 2^N</code>), and [f] [τ] (<code>T = R × C</code>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Button</th>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">Governing Expression &amp; Solver Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[PWM]</td>
+<td style="text-align: left;">Timer PWM Frequency &amp; Solver</td>
+<td style="text-align: center;">Clock <span class="arithmatex">\(f_{\text{clk}}\)</span></td>
+<td style="text-align: center;">Prescaler <span class="arithmatex">\(P\)</span></td>
+<td style="text-align: center;">Period <span class="arithmatex">\(\text{ARR}\)</span></td>
+<td style="text-align: left;">Stack: <span class="arithmatex">\(f_{\text{PWM}} = f_{\text{clk}} / (P \cdot \text{ARR})\)</span>; <code>PWM</code> ([F], [C], [P], [A])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [ADC]</td>
+<td style="text-align: left;">ADC Quantization &amp; Code Solver</td>
+<td style="text-align: center;">(Opt. <span class="arithmatex">\(V_{\text{in}}\)</span>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(V_{\text{in}}\)</span> or <span class="arithmatex">\(V_{\text{ref}}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(V_{\text{ref}}\)</span> or Bits <span class="arithmatex">\(N\)</span></td>
+<td style="text-align: left;">Stack: code / <span class="arithmatex">\(V_{\text{LSB}}\)</span>; <code>ADC</code>: <code>D = V / R × 2^N</code> ([D], [V], [R], [N])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [τ]</td>
+<td style="text-align: left;">RC Filter Time Constant &amp; Cutoff</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Resistance <span class="arithmatex">\(R\)</span></td>
+<td style="text-align: center;">Capacitance <span class="arithmatex">\(C\)</span></td>
+<td style="text-align: left;">Stack: <span class="arithmatex">\(\tau = RC\)</span> in <span class="arithmatex">\(Y\)</span>, <span class="arithmatex">\(f_c = 1/(2\pi RC)\)</span> in <span class="arithmatex">\(X\)</span>; <code>TAU</code>: <code>T = R × C</code> ([T], [R], [C])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [#B]</td>
+<td style="text-align: left;">Population Count (Hamming Weight)</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Word <span class="arithmatex">\(X\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\operatorname{POP}(X) = \sum_{i=0}^{W-1} b_i\)</span> (<code>1</code> bits)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [CLZ]</td>
+<td style="text-align: left;">Count Leading Zeros</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Word <span class="arithmatex">\(X\)</span></td>
+<td style="text-align: left;">Contiguous <code>0</code> bits from MSB <span class="arithmatex">\(b_{W-1}\)</span> downward</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [2ˣ] / [lg]</td>
+<td style="text-align: left;">Binary Power &amp; Base-2 Logarithm</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Value <span class="arithmatex">\(X\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(2^X\)</span> and <span class="arithmatex">\(\log_2(X)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[NET]</td>
+<td style="text-align: left;">CIDR Subnet Mask &amp; Usable Hosts</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Prefix <span class="arithmatex">\(P\)</span></td>
+<td style="text-align: left;">Netmask <span class="arithmatex">\(2^{32}-2^{32-P}\)</span> in <span class="arithmatex">\(Y\)</span>, usable hosts <span class="arithmatex">\(2^{32 - P} - 2\)</span> in <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [ALN]</td>
+<td style="text-align: left;">Memory &amp; Power-of-Two Alignment</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Address <span class="arithmatex">\(A\)</span></td>
+<td style="text-align: center;">Boundary <span class="arithmatex">\(B\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\lceil A / B \rceil \times B\)</span> (or <span class="arithmatex">\(2^{\lceil\log_2 X\rceil}\)</span> if <span class="arithmatex">\(Y = 0\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [▸KiB] / [f] [▸B] / [g] [▸bit]</td>
+<td style="text-align: left;">Binary Storage Unit Scaling</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Count <span class="arithmatex">\(X\)</span></td>
+<td style="text-align: left;">Convert between bits, bytes, and IEC <span class="arithmatex">\(\text{KiB}/\text{MiB}/\text{GiB}/\text{TiB}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Pressing [g] [▦] on the <code>SC-16</code> also opens the non-destructive systems reference table of live multi-radix decompositions (<code>HEX</code>, <code>DEC</code>, <code>OCT</code>, <code>BIN</code>, <code>IEEE32</code>, <code>SIGN</code>, <code>EXP</code>, <code>MANT</code>, <code>Q16.16</code>, <code>ALIGN 4B</code>, <code>ALIGN 8B</code>), ASCII boundaries, and integer ceilings:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Constant Name</th>
+<th style="text-align: center;">Hexadecimal ([HEX])</th>
+<th style="text-align: center;">Decimal ([f] [DEC])</th>
+<th style="text-align: left;">Systems Engineering Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>0x20</code> / <code>0x30</code> / <code>0x41</code> / <code>0x61</code></strong></td>
+<td style="text-align: center;"><code>0x20</code> / <code>0x30</code> / <code>0x41</code> / <code>0x61</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(32\)</span> / <span class="arithmatex">\(48\)</span> / <span class="arithmatex">\(65\)</span> / <span class="arithmatex">\(97\)</span></td>
+<td style="text-align: left;">ASCII <code>' '</code>, <code>'0'</code>, <code>'A'</code>, and <code>'a'</code> byte codes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>INT8</code> / <code>UINT8</code></strong></td>
+<td style="text-align: center;"><code>0x80..0x7F</code> / <code>0xFF</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(-128..127\)</span> / <span class="arithmatex">\(255\)</span></td>
+<td style="text-align: left;">8-bit signed and unsigned boundaries</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>INT16</code> / <code>UINT16</code></strong></td>
+<td style="text-align: center;"><code>0x8000</code> / <code>0xFFFF</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(-32{,}768\)</span> / <span class="arithmatex">\(65{,}535\)</span></td>
+<td style="text-align: left;">16-bit signed and unsigned boundaries</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>INT32</code></strong></td>
+<td style="text-align: center;"><code>0x7FFFFFFF</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(2{,}147{,}483{,}647\)</span></td>
+<td style="text-align: left;">32-bit signed two's complement maximum</td>
+</tr>
+</tbody>
+</table>
+<h3 id="synthesizing-pwm-carrier-frequencies-and-quantizing-the-vibration-sensor-on-the-stack">Synthesizing PWM Carrier Frequencies and Quantizing the Vibration Sensor on the Stack</h3>
+<p>To verify the <span class="arithmatex">\(1{,}000.0\text{ Hz}\)</span> PWM carrier (<code>48000000</code> [ENTER] <code>48</code> [ENTER] <code>1000</code> [PWM]), compute the 12-bit vibration sensor [f] [ADC] step size at <span class="arithmatex">\(V_{\text{ref}} = 3.30\text{ V}\)</span> (<code>3.3</code> [ENTER] <code>12</code> [f] [ADC] <code>1000</code> [×] <span class="arithmatex">\(\to \mathbf{0.8057\text{ mV/LSB}}\)</span>), and inspect the set bits ([f] [#B]) and leading zeros ([g] [CLZ]) of the 32-bit word <code>0x41440000</code>, the architect executes:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[f] [DEC] <code>48000000</code> [ENTER] <code>48</code> [ENTER] <code>1000</code> [PWM] [C]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1000\)</span></td>
+<td style="text-align: left;">3-arg stack shortcut: <span class="arithmatex">\(f_{\text{PWM}} = 48{,}000{,}000 / (48 \times 1000) = 1{,}000\text{ Hz}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>3.3</code> [ENTER] <code>12</code> [f] [ADC] [C] <code>1000</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.8057\)</span></td>
+<td style="text-align: left;">Compute 12-bit step size <span class="arithmatex">\(V_{\text{LSB}} = (3.3 / 4096) \times 1000 \approx 0.8057\text{ mV}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1650</code> [x⇄y] [÷]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2048\)</span></td>
+<td style="text-align: left;">Divide <span class="arithmatex">\(1{,}650\text{ mV}\)</span> input by <span class="arithmatex">\(V_{\text{LSB}}\)</span> to obtain mid-scale code <span class="arithmatex">\(D = 2{,}048\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>32</code> [g] [WSZ] [HEX] <code>41440000</code> [ENTER] [f] [#B]</td>
+<td style="text-align: center;"><span class="arithmatex">\(1000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2048\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0x41440000}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0x4}\)</span></td>
+<td style="text-align: left;">Count set <code>1</code> bits in <code>0x41440000</code> ([f] [#B] <span class="arithmatex">\(= 4\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x⇄y] [g] [CLZ]</td>
+<td style="text-align: center;"><span class="arithmatex">\(1000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2048\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{0x4}\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(\text{0x1}\)</span></strong></td>
+<td style="text-align: left;">Count leading zeros of <code>0x41440000</code> in 32-bit register ([g] [CLZ] <span class="arithmatex">\(= 1\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="solving-backward-in-the-pwm-adc-and-tau-workspaces">Solving Backward in the <code>PWM</code>, <code>ADC</code>, and <code>TAU</code> Workspaces</h3>
+<p>When configuring the <span class="arithmatex">\(20\text{ kHz}\)</span> ultrasonic servo timer on a <span class="arithmatex">\(168\text{ MHz}\)</span> bus (<code>PWM</code> workspace <code>F = C / (P × A)</code>), inverting a raw 12-bit DMA accelerometer code <span class="arithmatex">\(D = 2{,}894\)</span> (<code>ADC</code> workspace <code>D = V / R × 2^N</code>, pre-populated with <span class="arithmatex">\(R = 3.3\text{ V}\)</span> and <span class="arithmatex">\(N = 12\)</span>), or sizing the anti-aliasing series resistor <span class="arithmatex">\(R\)</span> driving a <span class="arithmatex">\(C = 1.0\text{ nF}\)</span> (<span class="arithmatex">\(10^{-9}\text{ F}\)</span>) capacitor for <span class="arithmatex">\(\tau = 1.0\ \mu\text{s}\)</span> (<code>TAU</code> workspace <code>T = R × C</code>), the architect solves directly for the unknown parameter:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Solver Display / Register X</th>
+<th style="text-align: left;">What Happens in the <code>PWM</code>, <code>ADC</code>, &amp; <code>TAU</code> Workspaces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[f] [DEC] <code>0</code> [ENTER] <code>0</code> [PWM]</td>
+<td style="text-align: center;"><code>F = C / (P × A)</code></td>
+<td style="text-align: left;">Open the <code>PWM</code> Solver Workspace (<code>PWM: TIMER FREQ</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>168000000</code> [C] <code>4</code> [P] <code>20000</code> [F]</td>
+<td style="text-align: center;"><span class="arithmatex">\(20{,}000.0000\)</span></td>
+<td style="text-align: left;">Bind <span class="arithmatex">\(C = 168\text{ MHz}\)</span> ([LFU1]), <span class="arithmatex">\(P = 4\)</span> ([LFU2]), and <span class="arithmatex">\(F = 20\text{ kHz}\)</span> ([LFU0])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [SOLVE] [A]</td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(2{,}100.0000\)</span></strong></td>
+<td style="text-align: left;">Solve backward for 16-bit auto-reload period <span class="arithmatex">\(A = 168{,}000{,}000 / (4 \times 20{,}000) = \mathbf{2{,}100}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0</code> [ENTER] <code>0</code> [f] [ADC]</td>
+<td style="text-align: center;"><code>D = V / R × 2^N</code></td>
+<td style="text-align: left;">Open the <code>ADC</code> Solver Workspace (pre-populated with <span class="arithmatex">\(R = 3.3\text{ V}\)</span>, <span class="arithmatex">\(N = 12\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>2894</code> [D]</td>
+<td style="text-align: center;"><span class="arithmatex">\(2{,}894.0000\)</span></td>
+<td style="text-align: left;">Store the captured DMA sample register code <span class="arithmatex">\(D = 2{,}894\)</span> into softkey [D] ([LFU0])</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [SOLVE] [V]</td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(2.3316\)</span></strong></td>
+<td style="text-align: left;">Solve backward for analog input voltage <span class="arithmatex">\(V = 2894 \times 3.3 / 2^{12} = \mathbf{2.3316\text{ V}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0</code> [ENTER] <code>0</code> [f] [τ]</td>
+<td style="text-align: center;"><code>T = R × C</code></td>
+<td style="text-align: left;">Open the RC Time Constant (<code>TAU</code>) Solver Workspace with softkeys [T], [R], [C]</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1</code> [E] <code>6</code> [+/-] [T] <code>1</code> [E] <code>9</code> [+/-] [C]</td>
+<td style="text-align: center;"><span class="arithmatex">\(1.0000 \times 10^{-9}\)</span></td>
+<td style="text-align: left;">Store target time constant <span class="arithmatex">\(T = 1.0\ \mu\text{s}\)</span> into [T] and <span class="arithmatex">\(C = 1.0\text{ nF}\)</span> into [C]</td>
+</tr>
+<tr>
+<td style="text-align: left;">[g] [SOLVE] [R]</td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(1{,}000.0000\)</span></strong></td>
+<td style="text-align: left;">Solve backward for anti-aliasing series resistance <span class="arithmatex">\(R = T / C = \mathbf{1{,}000\ \Omega}\)</span> (<span class="arithmatex">\(1.0\text{ k}\Omega\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="partitioning-the-factory-subnet-and-aligning-dma-packet-descriptors">Partitioning the Factory Subnet and Aligning DMA Packet Descriptors</h3>
+<p>In [f] [DEC] mode, keying <code>26</code> [NET] (or <code>32</code> [ENTER] <code>26</code> [-] [g] [2ˣ] <code>2</code> [-]) confirms that the <code>/26</code> factory floor subnet provides <span class="arithmatex">\(\mathbf{62}\)</span> usable IPv4 host addresses (with netmask <code>4294967232</code> <span class="arithmatex">\(= \text{0xFFFFFFC0}\)</span> in Register <span class="arithmatex">\(Y\)</span>), keying <code>53</code> [ENTER] <code>16</code> [g] [ALN] aligns the 53-byte telemetry header up to a <span class="arithmatex">\(\mathbf{64\text{-byte}}\)</span> DMA boundary, and keying <code>0</code> [ENTER] <code>300</code> [g] [ALN] rounds the 300-byte sample queue up to the next power of two at <span class="arithmatex">\(\mathbf{512\text{ bytes}}\)</span> (<span class="arithmatex">\(\mathbf{0.5\text{ KiB}}\)</span> via [f] [▸KiB]):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[f] [DEC] <code>26</code> [NET]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4294967232\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(62\)</span></td>
+<td style="text-align: left;">Evaluate <code>/26</code> netmask in <span class="arithmatex">\(Y\)</span> (<code>0xFFFFFFC0</code>) and <span class="arithmatex">\(62\)</span> usable IPv4 hosts in <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>22</code> [NET]</td>
+<td style="text-align: center;"><span class="arithmatex">\(4294967232\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(62\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4294966272\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1022\)</span></td>
+<td style="text-align: left;">Evaluate plant-wide <code>/22</code> supernet netmask in <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(1{,}022\)</span> usable hosts in <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>53</code> [ENTER] <code>16</code> [g] [ALN]</td>
+<td style="text-align: center;"><span class="arithmatex">\(4294967232\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(62\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1022\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(64\)</span></td>
+<td style="text-align: left;">Align 53-byte packet descriptor up to 16-byte boundary (<span class="arithmatex">\(64\text{ bytes}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0</code> [ENTER] <code>300</code> [g] [ALN]</td>
+<td style="text-align: center;"><span class="arithmatex">\(62\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1022\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(64\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(512\)</span></strong></td>
+<td style="text-align: left;">Round 300-byte DMA ring request up to next power of two (<span class="arithmatex">\(512\text{ bytes}\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="try-it-on-the-stack_2">Try It on the Stack</h3>
+<p>Complete Unit III with these three mixed-signal, networking, and memory-alignment exercises:</p>
+<ol>
+<li><strong>Precision Sixteen-Bit ADC Step Resolution and Backward Voltage Inversion:</strong> A precision strain-gauge bridge uses a 16-bit [f] [ADC] (<span class="arithmatex">\(2^{16} = 65{,}536\)</span>) with a <span class="arithmatex">\(V_{\text{ref}} = 2.50\text{ V}\)</span> reference. Key [f] [DEC] <code>2.5</code> [ENTER] <code>16</code> [f] [ADC] [C] <code>1000000</code> [×] on the stack to find the step size <span class="arithmatex">\(V_{\text{LSB}}\)</span> in microvolts (<span class="arithmatex">\(\mu\text{V}\)</span>), then open <code>ADC</code> (<code>0</code> [ENTER] <code>0</code> [f] [ADC]), store <code>2.5</code> [R], <code>16</code> [N], and <code>49152</code> [D] (<code>0xC000</code>), and press [g] [SOLVE] [V] to invert the code back to volts. <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(V_{\text{LSB}} \approx \mathbf{38.1470\ \mu\text{V}}\)</span> and <span class="arithmatex">\(V = \mathbf{1.8750\text{ V}}\)</span>.)</em></li>
+<li><strong>Subnet Capacity and Broadcast Boundary Check:</strong> Compute the usable host count and netmask ([NET]) for a <code>/25</code> subnet (<code>25</code> [NET]) and a <code>/28</code> equipment management subnet (<code>28</code> [NET]), and determine the block size (<span class="arithmatex">\(2^{32-28}\)</span> via <code>4</code> [g] [2ˣ]) of the <code>/28</code> subnet. <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <code>/25</code> yields <span class="arithmatex">\(\mathbf{126\text{ hosts}}\)</span>; <code>/28</code> yields <span class="arithmatex">\(\mathbf{14\text{ hosts}}\)</span> with a block size of <span class="arithmatex">\(\mathbf{16\text{ addresses}}\)</span>.)</em></li>
+<li><strong>Cache-Line Descriptor Alignment and Power-of-Two Sizing:</strong> Align a <span class="arithmatex">\(108\text{-byte}\)</span> DMA descriptor to a <span class="arithmatex">\(64\text{-byte}\)</span> cache line (<code>108</code> [ENTER] <code>64</code> [g] [ALN]), align a <span class="arithmatex">\(210\text{-byte}\)</span> buffer to a <span class="arithmatex">\(32\text{-byte}\)</span> boundary (<code>210</code> [ENTER] <code>32</code> [g] [ALN]), and round a <span class="arithmatex">\(1{,}200\text{-byte}\)</span> FIFO request up to the next power of two (<code>0</code> [ENTER] <code>1200</code> [g] [ALN]) and convert it to KiB ([f] [▸KiB]). <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(\mathbf{128\text{ bytes}}\)</span>, <span class="arithmatex">\(\mathbf{224\text{ bytes}}\)</span>, and <span class="arithmatex">\(\mathbf{2{,}048\text{ bytes}}\)</span> = <span class="arithmatex">\(\mathbf{2.0000\text{ KiB}}\)</span>.)</em></li>
+</ol>
+<p>Having traced how silicon registers, bitfields, and crystal oscillators process digital words on the <code>SC-16</code>, we move in <a href="../04-sc24-cinema-broadcast/">Unit IV: Cinema Optics, Broadcast Timecode &amp; Live Acoustics</a> to optical wavefronts, SMPTE drop-frame timecode, and acoustic decibels.</p>
 
 
 
