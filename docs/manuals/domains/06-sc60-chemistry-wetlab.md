@@ -140,8 +140,8 @@ Next, the biochemist verifies the molarity of a stock bottle prepared with $0.50
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `0.5` {{key:ENTER}} `0.25` {{key:÷}} | $0$ | $0$ | $0$ | $2$ | Verify stock concentration $C_1 = 0.50\text{ mol} / 0.25\text{ L} = 2.00\text{ M}$ |
-| `0.1` {{key:ENTER}} `150` {{key:ENTER}} `2` {{key:C₁V₁}} | $0$ | $0$ | $2$ | $7.5$ | Solve required stock aliquot $V_1 = (0.10 \times 150) / 2.0 = 7.50\text{ mL}$ |
-| `150` {{key:x⇄y}} {{key:-}} | $0$ | $0$ | $2$ | **$142.5$** | Subtract $7.50\text{ mL}$ aliquot from $150\text{ mL}$ to find $V_{\text{solvent}} = 142.50\text{ mL}$ water |
+| `0.1` {{key:ENTER}} `150` {{key:ENTER}} `2` {{key:C₁V₁}} | $2$ | $2$ | $2$ | $7.5$ | Solve required stock aliquot $V_1 = (0.10 \times 150) / 2.0 = 7.50\text{ mL}$ |
+| `150` {{key:x⇄y}} {{key:-}} | $2$ | $2$ | $2$ | **$142.5$** | Subtract $7.50\text{ mL}$ aliquot from $150\text{ mL}$ to find $V_{\text{solvent}} = 142.50\text{ mL}$ water |
 
 To verify both the dilution and the chromogenic cofactor aliquot using the **Bidirectional Equation Solver Workspaces** ({{key:SOLVE}} / {{key:XEQ}}):
 - Pressing {{key:C₁V₁}} (`C1V1: C × V = D × U`), binding `2` {{keycap:C}}, `0.1` {{keycap:D}}, and `150` {{keycap:U}}, and pressing {{key:SOLVE}} {{keycap:V}} directly solves for $V_1 = \mathbf{7.50\text{ mL}}$.
@@ -263,11 +263,11 @@ To formulate $1.00\text{ L}$ of the $0.100\text{ M}$ sodium phosphate buffer at 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `0.03869` {{key:ENTER}} | $0$ | $0$ | $0.0387$ | $0.0387$ | Load monobasic weak-acid moles $n_{\text{acid}} = 0.03869\text{ mol}$ into Register $Y$ |
-| {{key:MW}} {{keycap:FML}} `NaH2PO4` {{keycap:FML}} | $0$ | $0$ | $0.0387$ | $119.976$ | Parse $\text{NaH}_2\text{PO}_4$ molar mass $M = 119.976\text{ g/mol}$ into Register $X$ |
-| {{key:×}} | $0$ | $0$ | $0$ | $4.642$ | Compute monobasic $\text{NaH}_2\text{PO}_4$ mass $W_{\text{acid}} = 4.642\text{ g}$ |
-| `0.06131` {{key:ENTER}} | $0$ | $4.642$ | $0.0613$ | $0.0613$ | Load dibasic conjugate-base moles $n_{\text{base}} = 0.06131\text{ mol}$ into Register $Y$ |
-| {{key:MW}} {{keycap:FML}} `Na2HPO4` {{keycap:FML}} | $0$ | $4.642$ | $0.0613$ | $141.958$ | Parse $\text{Na}_2\text{HPO}_4$ molar mass $M = 141.958\text{ g/mol}$ into Register $X$ |
-| {{key:×}} | $0$ | $0$ | $4.642$ | **$8.703$** | Compute dibasic $\text{Na}_2\text{HPO}_4$ mass $W_{\text{base}} = 8.703\text{ g}$; $W_{\text{acid}}$ in $Y$ |
+| {{key:MW}} {{keycap:FML}} `NaH2PO4` {{keycap:FML}} | $0$ | $0.03869$ | $0.0387$ | $119.976$ | Parse $\text{NaH}_2\text{PO}_4$ molar mass $M = 119.976\text{ g/mol}$ into Register $X$ |
+| {{key:×}} | $0$ | $0$ | $0.03869$ | $4.642$ | Compute monobasic $\text{NaH}_2\text{PO}_4$ mass $W_{\text{acid}} = 4.642\text{ g}$ |
+| `0.06131` {{key:ENTER}} | $0.03869$ | $4.642$ | $0.0613$ | $0.0613$ | Load dibasic conjugate-base moles $n_{\text{base}} = 0.06131\text{ mol}$ into Register $Y$ |
+| {{key:MW}} {{keycap:FML}} `Na2HPO4` {{keycap:FML}} | $4.6419$ | $0.06131$ | $0.0613$ | $141.958$ | Parse $\text{Na}_2\text{HPO}_4$ molar mass $M = 141.958\text{ g/mol}$ into Register $X$ |
+| {{key:×}} | $4.6419$ | $4.6419$ | $0.06131$ | **$8.703$** | Compute dibasic $\text{Na}_2\text{HPO}_4$ mass $W_{\text{base}} = 8.703\text{ g}$; $W_{\text{acid}}$ in $Y$ |
 
 Weighing $\mathbf{4.642\text{ g}}$ of $\text{NaH}_2\text{PO}_4$ and $\mathbf{8.703\text{ g}}$ of anhydrous $\text{Na}_2\text{HPO}_4$ and bringing the solution to $1.00\text{ L}$ poises the assay buffer at $\text{pH } 7.400$.
 
@@ -279,8 +279,8 @@ Next, the researcher verifies the buffer's $\text{pH}$ after the $5.0\text{ mM}$
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `7.2` {{key:ENTER}} `56.31` {{key:ENTER}} `43.69` {{key:÷}} | $0$ | $0$ | $7.2$ | $1.2889$ | Compute post-spike ratio $[\text{A}^-]/[\text{HA}] = 56.31 / 43.69 = 1.2889$; $\text{p}K_a$ in $Y$ |
 | {{key:BUF}} | $0$ | $0$ | $0$ | $7.3102$ | Evaluate post-spike buffer $\text{pH} = 7.20 + \log_{10}(1.2889) = 7.310$ ($\Delta\text{pH} = -0.090$) |
-| `0.1` {{key:ENTER}} `24.5` {{key:ENTER}} `25` {{key:EQV}} | $0$ | $0$ | $7.3102$ | $0.098$ | Evaluate acid normality $N_B = (0.1000 \times 24.50) / 25.00 = 0.0980\text{ N}$ |
-| `2` {{key:÷}} | $0$ | $0$ | $7.3102$ | **$0.049$** | Divide by $\nu = 2$ protons per $\text{H}_2\text{SO}_4$ for molarity $C_{\text{H}_2\text{SO}_4} = 0.0490\text{ M}$ |
+| `0.1` {{key:ENTER}} `24.5` {{key:ENTER}} `25` {{key:EQV}} | $7.3102$ | $7.3102$ | $7.3102$ | $0.098$ | Evaluate acid normality $N_B = (0.1000 \times 24.50) / 25.00 = 0.0980\text{ N}$ |
+| `2` {{key:÷}} | $7.3102$ | $7.3102$ | $7.3102$ | **$0.049$** | Divide by $\nu = 2$ protons per $\text{H}_2\text{SO}_4$ for molarity $C_{\text{H}_2\text{SO}_4} = 0.0490\text{ M}$ |
 
 What if the researcher is given the target physiological $\text{pH} = 7.40$ and phosphate's ionic-strength-corrected dissociation constant $\text{p}K_a' = 6.86$ (or thermodynamic $\text{p}K_a = 7.20$), and needs to **solve backward** for the required conjugate base-to-acid ratio $A / H$ without exponentiating by hand? Pressing {{key:BUF}} opens the `BUF: P = K + LOG(A/H)` workspace:
 
@@ -408,8 +408,8 @@ At the spectrophotometer, the biochemist converts a $50\%$ calibration filter ($
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `0.5` {{key:%T}} | $0$ | $0$ | $0$ | $0.301$ | Verify $50\%$ transmittance ($T = 0.50$) equals $A = 0.3010\text{ AU}$ |
 | `0.68` {{key:ENTER}} `42500` {{key:÷}} | $0$ | $0$ | $0.301$ | $0.000016$ | Solve enzyme concentration $c = A / (\varepsilon b) = 0.680 / 42{,}500 = 1.60 \times 10^{-5}\text{ M}$ |
-| `42500` {{key:ENTER}} `1` {{key:x⇄y}} {{key:εbc}} | $0$ | $0$ | $0.301$ | $0.68$ | Forward {{key:εbc}} check: $\varepsilon(42{,}500) \times b(1.0) \times c(16\,\mu\text{M}) = 0.680\text{ AU}$ |
-| `52000` {{key:ENTER}} `308.15` {{key:Eₐ}} `52000` {{key:ENTER}} `298.15` {{key:Eₐ}} {{key:÷}} | $0$ | $0.301$ | $0.68$ | **$1.9753$** | Evaluate Arrhenius rate acceleration $k_2 / k_1 = 1.9753\times$ from $298.15\text{ K}$ to $308.15\text{ K}$ |
+| `42500` {{key:ENTER}} `1` {{key:x⇄y}} {{key:εbc}} | $0.30103$ | $0.30103$ | $0.301$ | $0.68$ | Forward {{key:εbc}} check: $\varepsilon(42{,}500) \times b(1.0) \times c(16\,\mu\text{M}) = 0.680\text{ AU}$ |
+| `52000` {{key:ENTER}} `308.15` {{key:Eₐ}} `52000` {{key:ENTER}} `298.15` {{key:Eₐ}} {{key:÷}} | $0.68$ | $0.68$ | $0.68$ | **$1.9753$** | Evaluate Arrhenius rate acceleration $k_2 / k_1 = 1.9753\times$ from $298.15\text{ K}$ to $308.15\text{ K}$ |
 
 ### Evaluating Free-Energy Equilibria, Cell Potentials, Rotor Speeds, and Inverse Solver Runs
 
@@ -419,9 +419,9 @@ Next, the researcher evaluates $\Delta G$ for an exothermic binding step ($\Delt
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `100` {{key:+/-}} {{key:ENTER}} `300` {{key:ENTER}} `0.1` {{key:+/-}} {{key:ΔG}} | $0$ | $0$ | $0$ | $-70$ | Evaluate $\Delta G = -100 - 300(-0.10) = -70.0\text{ kJ/mol}$ |
 | `298.15` {{key:ENTER}} `10` {{key:Kₑq}} | $0$ | $0$ | $-70$ | $-5708.0$ | Standard free energy $\Delta G^\circ = -R(298.15)\ln(10) = -5708.0\text{ J/mol}$ |
-| {{key:E°}} `1.1` {{keycap:S}} `2` {{keycap:N}} `10` {{keycap:Q}} {{key:SOLVE}} {{keycap:E}} | $-70$ | $-5708.0$ | $10$ | $1.0704$ | Nernst cell voltage $E = 1.10 - (0.05916/2)\log_{10}(10) = 1.0704\text{ V}$ |
-| `10` {{key:ENTER}} `10000` {{key:RCF}} | $-5708.0$ | $10$ | $1.0704$ | $11180$ | Relative Centrifugal Force $\text{RCF} = 11{,}180 \times g$ at $r = 10\text{ cm}, 10{,}000\text{ RPM}$ |
-| `12000` {{key:ENTER}} `1.118` {{key:E}} `5` {{key:+/-}} {{key:÷}} `9.5` {{key:÷}} {{key:√x}} | $10$ | $1.0704$ | $11180$ | **$10629.4$** | Solve required rotor speed $\text{RPM} = \sqrt{12{,}000 / (1.118\times 10^{-5} \times 9.5)} = 10{,}629\text{ RPM}$ |
+| {{key:E°}} `1.1` {{keycap:S}} `2` {{keycap:N}} `10` {{keycap:Q}} {{key:SOLVE}} {{keycap:E}} | $1.1$ | $2$ | $10$ | $1.0704$ | Nernst cell voltage $E = 1.10 - (0.05916/2)\log_{10}(10) = 1.0704\text{ V}$ |
+| `10` {{key:ENTER}} `10000` {{key:RCF}} | $10$ | $10$ | $1.0704$ | $11180$ | Relative Centrifugal Force $\text{RCF} = 11{,}180 \times g$ at $r = 10\text{ cm}, 10{,}000\text{ RPM}$ |
+| `12000` {{key:ENTER}} `1.118` {{key:E}} `5` {{key:+/-}} {{key:÷}} `9.5` {{key:÷}} {{key:√x}} | $1.0704$ | $1.0704$ | $11180$ | **$10629.4$** | Solve required rotor speed $\text{RPM} = \sqrt{12{,}000 / (1.118\times 10^{-5} \times 9.5)} = 10{,}629\text{ RPM}$ |
 
 When an analytical question runs **backward**—such as finding enzyme concentration $c$ from absorbance $A$, finding the unknown reaction quotient $Q$ from a measured Nernst electrode potential $E = 1.0408\text{ V}$, or finding the maximum safe reactor temperature $T_2$ before an Arrhenius rate triples ($k_2/k_1 = 3.00$)—the **Bidirectional Solver Workspaces** ({{key:εbc}} and {{key:E°}}) and {{key:R}} constant key eliminate algebraic rearrangement:
 
@@ -429,7 +429,7 @@ When an analytical question runs **backward**—such as finding enzyme concentra
 | :--- | :--- | :---: | :--- |
 | {{key:εbc}}: `0.68` {{keycap:A}} `42500` {{keycap:E}} `1` {{keycap:B}} $\to$ {{key:SOLVE}} {{keycap:C}} | `A = E × B × C` solved for $C$ | **`1.6000e-5`** | Purified enzyme concentration $c = \mathbf{16.00\,\mu\text{M}}$ (`0.0160 mM`) |
 | {{key:E°}}: `1.0408` {{keycap:E}} `1.10` {{keycap:S}} `2` {{keycap:N}} $\to$ {{key:SOLVE}} {{keycap:Q}} | `E = S - .059/N LOG Q` solved for $Q$ | **`100.3`** | Unknown redox reaction quotient $Q = \mathbf{100}$ ($\log_{10} Q = 2.00$) |
-| `298.15` {{key:1/x}} `3` {{key:LN}} {{key:R}} {{key:×}} `52000` {{key:÷}} {{key:-}} {{key:1/x}} | Inverse Arrhenius $T_2$ for $k_2/k_1 = 3.0$ | **`314.63`** | Maximum safe reactor temperature $T_2 = \mathbf{314.63\text{ K}}$ ($\mathbf{41.48^\circ\text{C}}$) |
+| `1` {{key:ENTER}} `298.15` {{key:÷}} `3` {{key:LN}} {{key:R}} {{key:×}} `52000` {{key:÷}} {{key:-}} `1` {{key:x⇄y}} {{key:÷}} | Inverse Arrhenius $T_2$ for $k_2/k_1 = 3.0$ | **`314.63`** | Maximum safe reactor temperature $T_2 = \mathbf{314.63\text{ K}}$ ($\mathbf{41.48^\circ\text{C}}$) |
 
 ### Try It on the Stack
 

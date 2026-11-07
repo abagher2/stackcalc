@@ -250,9 +250,9 @@ To lay out the $O = 6.0\text{ in.}$ I-beam offset at $\theta = 30^\circ$ ($48.0\
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `6` {{key:ENTER}} `30` {{key:OFS}} {{key:C}} | $0$ | $0$ | $0$ | $12$ | Compute $30^\circ$ I-beam offset travel $T = 6 / \sin(30^\circ) = 12.00\text{ in.}$ |
-| `48` {{key:ENTER}} `6` {{key:ENTER}} `0.25` {{key:×}} {{key:+}} | $0$ | $0$ | $12$ | $49.5$ | Add shrinkage $S = 1.50\text{ in.}$ to $48.0\text{ in.}$ for Mark 2 at $49.50\text{ in.}$ |
-| {{key:x⇄y}} {{key:-}} | $0$ | $0$ | $0$ | $37.5$ | Subtract travel $T = 12.00\text{ in.}$ to locate Mark 1 at $37.50\text{ in.}$ |
-| `6` {{key:ENTER}} `8` {{key:FIT}} `30` {{key:OFS}} {{key:C}} | $0$ | $0$ | $37.5$ | **$20$** | Compute true rolling offset $O_{\text{true}} = 10\text{ in.}$ ({{key:FIT}}) and $30^\circ$ travel $T_{\text{roll}} = 20.00\text{ in.}$ |
+| `48` {{key:ENTER}} `6` {{key:ENTER}} `0.25` {{key:×}} {{key:+}} | $12$ | $12$ | $12$ | $49.5$ | Add shrinkage $S = 1.50\text{ in.}$ to $48.0\text{ in.}$ for Mark 2 at $49.50\text{ in.}$ |
+| {{key:x⇄y}} {{key:-}} | $12$ | $12$ | $12$ | $37.5$ | Subtract travel $T = 12.00\text{ in.}$ to locate Mark 1 at $37.50\text{ in.}$ |
+| `6` {{key:ENTER}} `8` {{key:FIT}} `30` {{key:OFS}} {{key:C}} | $12$ | $12$ | $37.5$ | **$20$** | Compute true rolling offset $O_{\text{true}} = 10\text{ in.}$ ({{key:FIT}}) and $30^\circ$ travel $T_{\text{roll}} = 20.00\text{ in.}$ |
 
 ### Inverse Bend Angle Solving in `BEND` and Verifying NEC Conduit Fill
 
@@ -269,7 +269,7 @@ Next, to step over the $O = 4.0\text{ in.}$ steam pipe using a $45^\circ\text{--
 | `4` {{key:ENTER}} `22.5` {{key:OFS}} {{key:C}} | $0$ | $0$ | $0$ | $10.4525$ | Compute outer $22.5^\circ$ saddle leg travel $T_{\text{saddle}} = 4/\sin(22.5^\circ) \approx 10.45\text{ in.}$ |
 | `12` {{key:ENTER}} `0.0211` {{key:×}} | $0$ | $0$ | $10.4525$ | $0.2532$ | Compute total cross-sectional area of $12$ `#10 AWG` THHN wires ($0.2532\text{ in}^2$) |
 | `0.864` {{key:÷}} `100` {{key:×}} | $0$ | $0$ | $10.4525$ | $29.3056$ | Divide by $1\text{-in.}$ EMT area ($0.864\text{ in}^2$) to confirm $\text{Fill\%} \approx 29.31\% \le 40\%$ |
-| `0.3456` {{key:ENTER}} `0.0211` {{key:÷}} | $0$ | $10.4525$ | $29.3056$ | **$16.3791$** | Divide $40\%$ allowance ($0.3456\text{ in}^2$) by $0.0211\text{ in}^2$ ($\lfloor 16.38 \rfloor = 16$ max wires) |
+| `0.3456` {{key:ENTER}} `0.0211` {{key:÷}} | $10.4525$ | $10.4525$ | $29.3056$ | **$16.3791$** | Divide $40\%$ allowance ($0.3456\text{ in}^2$) by $0.0211\text{ in}^2$ ($\lfloor 16.38 \rfloor = 16$ max wires) |
 
 ### Try It on the Stack
 
@@ -365,8 +365,8 @@ To compare the aluminum spindle setting (`400` {{key:ENTER}} `0.5` {{key:SFM}} $
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `400` {{key:ENTER}} `0.5` {{key:SFM}} {{key:C}} | $0$ | $0$ | $0$ | $3055.7749$ | Compute spindle speed at $400\text{ SFM}$: $N = (3.8197 \times 400)/0.5 \approx 3{,}055.77\text{ RPM}$ |
 | `100` {{key:ENTER}} `0.5` {{key:SFM}} {{key:C}} | $0$ | $0$ | $3055.7749$ | $763.9437$ | Reduce spindle speed to $100\text{ SFM}$ for 4140 steel ($763.94\text{ RPM}$) |
-| `0.5` {{key:ENTER}} `13` {{key:TAP}} | $0$ | $3055.7749$ | $763.9437$ | $0.4231$ | Compute `1/2-13 UNC` tap drill diameter $D_{\text{tap}} = 0.500 - 1/13 \approx 0.4231\text{ in.}$ |
-| `6` {{key:ENTER}} `8` {{key:BC}} {{key:C}} | $3055.7749$ | $763.9437$ | $0.4231$ | **$2.2961$** | Compute 8-bolt chord spacing on $6\text{ in.}$ circle ($C = 6\sin 22.5^\circ \approx 2.2961\text{ in.}$) |
+| `0.5` {{key:ENTER}} `13` {{key:TAP}} | $3055.77$ | $3055.7749$ | $763.9437$ | $0.4231$ | Compute `1/2-13 UNC` tap drill diameter $D_{\text{tap}} = 0.500 - 1/13 \approx 0.4231\text{ in.}$ |
+| `6` {{key:ENTER}} `8` {{key:BC}} {{key:C}} | $763.94$ | $763.9437$ | $0.4231$ | **$2.2961$** | Compute 8-bolt chord spacing on $6\text{ in.}$ circle ($C = 6\sin 22.5^\circ \approx 2.2961\text{ in.}$) |
 
 ### Calibrating the Loop on the Stack and Solving Backward in `CV` and `PMP`
 
@@ -376,8 +376,8 @@ Turning to the hydraulic workholding fixture ($P_{\text{psi}} = 1{,}875\text{ ps
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `1875` {{key:ENTER}} `3000` {{key:÷}} `100` {{key:×}} {{key:mA}} | $0$ | $0$ | $0$ | $14$ | Convert $62.5\%$ pressure span to loop current $I_{\text{mA}} = 14.00\text{ mA}$ |
 | `150` {{key:RTD}} | $0$ | $0$ | $14$ | $157.75$ | Compute $\text{Pt100}$ RTD resistance at $150^\circ\text{C}$ ($R = 157.75\ \Omega$) |
-| `30` {{key:ENTER}} `9` {{key:Cᵥ}} {{key:C}} | $0$ | $14$ | $157.75$ | $90$ | Compute coolant valve flow $Q = 30\sqrt{9} = 90.00\text{ GPM}$ |
-| `88` {{key:PMP}} {{key:C}} | $0$ | $14$ | $157.75$ | **$2$** | Compute pump hydraulic horsepower $P = (90 \times 88)/3960 = 2.00\text{ HP}$ |
+| `30` {{key:ENTER}} `9` {{key:Cᵥ}} {{key:C}} | $14$ | $14$ | $157.75$ | $90$ | Compute coolant valve flow $Q = 30\sqrt{9} = 90.00\text{ GPM}$ |
+| `88` {{key:PMP}} {{key:C}} | $14$ | $14$ | $157.75$ | **$2$** | Compute pump hydraulic horsepower $P = (90 \times 88)/3960 = 2.00\text{ HP}$ |
 
 When plant engineering upgrades the heat-exchanger manifold, the technician uses the **Bidirectional Equation Solver Workspaces** for {{key:PIP}} (`PIP: PIPE FLOW`, `Q = A × V`), {{key:Cᵥ}} (`CV: VALVE FLOW`, `Q = C × √(P / G)`), and {{key:PMP}} (`PMP: PUMP BHP`, `P = Q × H / 3960`) to solve backward for required component ratings:
 - **Inverse Valve Pressure Drop & Minimum $C_v$ in {{key:Cᵥ}} (`Q = C × √(P / G)`):** Suppose a quench manifold requires $Q = 100.0\text{ GPM}$ (`100` {{keycap:Q}} on {{key:LFU0}}) of synthetic heat-transfer brine of specific gravity $G = 1.08$ (`1.08` {{keycap:G}} on {{key:LFU3}}) through a valve with $C_v = 35.0$ (`35` {{keycap:C}} on {{key:LFU1}}). Pressing {{key:XEQ}} {{keycap:P}} ({{key:LFU2}}) solves backward for the required pressure drop across the valve:

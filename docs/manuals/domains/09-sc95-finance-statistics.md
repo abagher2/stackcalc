@@ -114,9 +114,9 @@ To structure the $\$450{,}000$, $20\text{-year}$ monthly mortgage ($\text{PV} = 
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | {{key:TVM}} `20` {{key:ENTER}} `12` {{key:×}} {{keycap:N}} `6` {{key:ENTER}} `12` {{key:÷}} {{keycap:I%}} | $0$ | $0$ | $240$ | $0.5$ | Open {{key:TVM}} and store $N = 20 \times 12 = 240\text{ mo}$ and $i = 6 / 12 = 0.50\%\text{/mo}$ |
 | `450000` {{keycap:PV}} `0` {{keycap:FV}} {{key:SOLVE}} {{keycap:PMT}} | $240$ | $0.5$ | $450000$ | **$-3223.94$** | Store $\text{PV} = 450{,}000, \text{FV} = 0$ and solve $\text{PMT} = -\$3{,}223.94/\text{mo}$ |
-| {{key:+/-}} {{key:ENTER}} `450000` {{key:ENTER}} `0.5` {{key:AMR}} {{key:-}} | $0.5$ | $450000$ | $3223.94$ | **$973.9398$** | Subtract Month 1 interest ($\$2{,}250.00$ via {{key:AMR}}) from $\lvert\text{PMT}\rvert$: $P_1 = \$973.94$ |
-| `1.005` {{key:ENTER}} `12` {{key:yˣ}} `1` {{key:-}} `0.005` {{key:÷}} {{key:×}} | $0.5$ | $450000$ | $3223.94$ | **$12014.09$** | Accumulate Year 1 principal reduction $\Delta\text{Prin}_{1\text{–}12} = \$12{,}014.09$ |
-| {{key:x⇄y}} `12` {{key:×}} {{key:x⇄y}} {{key:-}} | $0.5$ | $450000$ | $12014.09$ | **$26673.19$** | Subtract $\Delta\text{Prin}_{1\text{–}12}$ from $12\lvert\text{PMT}\rvert$: Year 1 interest $\Delta\text{Int}_{1\text{–}12} = \$26{,}673.19$ |
+| {{key:+/-}} {{key:ENTER}} {{key:ENTER}} `450000` {{key:ENTER}} `0.5` {{key:AMR}} {{key:-}} | $3223.94$ | $3223.94$ | $3223.94$ | **$973.9398$** | Subtract Month 1 interest ($\$2{,}250.00$ via {{key:AMR}}) from $\lvert\text{PMT}\rvert$: $P_1 = \$973.94$ |
+| `1.005` {{key:ENTER}} `12` {{key:yˣ}} `1` {{key:-}} `0.005` {{key:÷}} {{key:×}} | $3223.94$ | $3223.94$ | $3223.94$ | **$12014.09$** | Accumulate Year 1 principal reduction $\Delta\text{Prin}_{1\text{–}12} = \$12{,}014.09$ |
+| {{key:x⇄y}} `12` {{key:×}} {{key:x⇄y}} {{key:-}} | $3223.94$ | $3223.94$ | $3223.94$ | **$26673.19$** | Subtract $\Delta\text{Prin}_{1\text{–}12}$ from $12\lvert\text{PMT}\rvert$: Year 1 interest $\Delta\text{Int}_{1\text{–}12} = \$26{,}673.19$ |
 
 Subtracting Year 1 principal `12014.09` in Register $Y$ from `450000` in Register $Z$ confirms the Month 12 ending balance $B_{12} = \mathbf{\$437{,}985.91}$.
 
@@ -244,9 +244,9 @@ Switching to the equity derivatives desk ($S_0 = 100$, $K = 100$, $r = 0.05$, $\
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | {{key:C}} `0.247487` {{key:pN}} `100` {{key:×}} | $0$ | $0$ | $0$ | **$59.7734$** | Integrate $\Phi(d_1) = 0.597734$ ({{key:pN}}) and scale by $S_0 = 100$: $S_0\Phi(d_1) = \$59.7734$ |
 | `0.247487` {{key:ENTER}} `0.141421` {{key:-}} {{key:pN}} | $0$ | $0$ | $59.7734$ | **$0.5422$** | Compute $d_2 = 0.106066$ and integrate $\Phi(d_2) = 0.542235$ ({{key:pN}}) |
-| `0.025` {{key:+/-}} {{key:eˣ}} `100` {{key:×}} | $0$ | $59.7734$ | $0.5422$ | **$97.5310$** | Compute continuously discounted strike $K e^{-rT} = 100 e^{-0.025} = \$97.5310$ |
-| {{key:×}} {{key:-}} | $0$ | $0$ | $0$ | **$6.8887$** | Multiply $K e^{-rT}\Phi(d_2) = \$52.8847$ and subtract from $S_0\Phi(d_1)$: $C_{\text{call}} = \$6.89$ |
-| `100` {{key:-}} `97.5310` {{key:+}} | $0$ | $0$ | $0$ | **$4.4197$** | Apply Put–Call Parity $P_{\text{put}} = C_{\text{call}} - S_0 + K e^{-rT} = \$4.42$ |
+| `0.025` {{key:+/-}} {{key:eˣ}} `100` {{key:×}} | $59.7734$ | $59.7734$ | $0.5422$ | **$97.5310$** | Compute continuously discounted strike $K e^{-rT} = 100 e^{-0.025} = \$97.5310$ |
+| {{key:×}} {{key:-}} | $59.7734$ | $59.7734$ | $59.7734$ | **$6.8887$** | Multiply $K e^{-rT}\Phi(d_2) = \$52.8847$ and subtract from $S_0\Phi(d_1)$: $C_{\text{call}} = \$6.89$ |
+| `100` {{key:-}} `97.5310` {{key:+}} | $59.7734$ | $59.7734$ | $59.7734$ | **$4.4197$** | Apply Put–Call Parity $P_{\text{put}} = C_{\text{call}} - S_0 + K e^{-rT} = \$4.42$ |
 
 In five stack steps, both the call premium ($\$6.89$) and put premium ($\$4.42$) are resolved to four decimal places.
 
@@ -348,9 +348,9 @@ At the grinding cell, the quality engineer first verifies the $95\%$ confidence 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `0.010` {{key:ENTER}} `25` {{key:CI}} | $0$ | $0$ | $0$ | **$0.0039$** | Compute $95\%$ Margin of Error $E = 1.96 \times 0.010 / \sqrt{25} = 0.00392\text{ mm}$ ({{key:CI}}) |
-| `10.01` {{key:ENTER}} `10.00` {{key:ENTER}} `0.010` {{key:ENTER}} `25` {{key:z₀}} | $0$ | $0$ | $0.0039$ | **$5.0000$** | Compute drift test statistic $Z = (10.01 - 10.00) / (0.010/\sqrt{25}) = +5.0000$ ({{key:z₀}}) |
-| `10.05` {{key:ENTER}} `9.95` {{key:-}} `0.010` {{key:Cpk}} | $0$ | $0.0039$ | $5.0000$ | **$1.6667$** | Evaluate centered Process Potential $C_p = 0.100 / (6 \times 0.010) = 1.6667$ ({{key:Cpk}}) |
-| `10.05` {{key:ENTER}} `10.01` {{key:-}} `0.03` {{key:÷}} | $0.0039$ | $5.0000$ | $1.6667$ | **$1.3333$** | Evaluate drifted Centered Capability $C_{pk} = (10.05 - 10.01)/0.03 = 1.3333$ |
+| `10.01` {{key:ENTER}} `10.00` {{key:ENTER}} `0.010` {{key:ENTER}} `25` {{key:z₀}} | $10.01$ | $10.01$ | $10.01$ | **$5.0000$** | Compute drift test statistic $Z = (10.01 - 10.00) / (0.010/\sqrt{25}) = +5.0000$ ({{key:z₀}}) |
+| `10.05` {{key:ENTER}} `9.95` {{key:-}} `0.010` {{key:Cpk}} | $10.01$ | $10.01$ | $5.0000$ | **$1.6667$** | Evaluate centered Process Potential $C_p = 0.100 / (6 \times 0.010) = 1.6667$ ({{key:Cpk}}) |
+| `10.05` {{key:ENTER}} `10.01` {{key:-}} `0.03` {{key:÷}} | $5$ | $5.0000$ | $1.6667$ | **$1.3333$** | Evaluate drifted Centered Capability $C_{pk} = (10.05 - 10.01)/0.03 = 1.3333$ |
 
 Comparing Register $Y$ ($C_p = 1.6667$) and Register $X$ ($C_{pk} = 1.3333$) quantifies the exact capability loss ($1.6667 - 1.3333 = 0.3333$) caused by the $+10\ \mu\text{m}$ thermal wheelhead shift.
 

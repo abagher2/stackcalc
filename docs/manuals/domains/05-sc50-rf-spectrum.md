@@ -134,9 +134,9 @@ Inside the mountain repeater shelter, the engineer opens Native Complex Mode (`{
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `{{key:CMPLX}} 35 {{key:ENTER}} 25 {{key:+/-}} {{keycap:jX}}` | $0$ | $0$ | $0$ | $35 - j25$ | Pack complex load impedance $Z_L = 35 - j25\ \Omega$ into Register $X$ |
+| `{{key:CMPLX}} 35 {{key:ENTER}} 25 {{key:+/-}} {{keycap:jX}} {{key:+}}` | $0$ | $0$ | $0$ | $35 - j25$ | Pack complex load impedance $Z_L = 35 - j25\ \Omega$ into Register $X$ |
 | `{{keycap:SWR}}` | $0$ | $0$ | $0$ | $1.981$ | Evaluate $\text{VSWR} = 1.981 : 1$ against $Z_0 = 50\ \Omega$ (`{{keycap:Z₀}}`) and fill Smith table `{{key:▦}}` |
-| `35 {{key:ENTER}} 25 {{key:+/-}} {{keycap:jX}} {{keycap:RL}}` | $0$ | $0$ | $1.981$ | $9.653$ | Compute Return Loss $\text{RL} = 9.653\text{ dB}$ from complex load ($\lvert\Gamma\rvert = 0.3291$) |
+| `35 {{key:ENTER}} 25 {{key:+/-}} {{keycap:jX}} {{key:+}} {{keycap:RL}}` | $0$ | $0$ | $1.981$ | $9.653$ | Compute Return Loss $\text{RL} = 9.653\text{ dB}$ from complex load ($\lvert\Gamma\rvert = 0.3291$) |
 | `50000 {{key:▸dBm}} {{key:x⇄y}} {{key:-}}` | $0$ | $0$ | $1.981$ | $37.337$ | Subtract $9.653\text{ dB}$ return loss from $+46.990\text{ dBm}$ ($50\text{ W}$) to get reflected dBm |
 | `{{key:▸mW}} 1000 {{key:÷}}` | $0$ | $0$ | $1.981$ | **$5.416$** | Convert $+37.337\text{ dBm}$ to milliwatts ($5416\text{ mW}$) and divide by $1000$ for $5.416\text{ W}$ |
 
@@ -150,8 +150,8 @@ Next, the engineer evaluates the $146.0\text{ MHz}$ wavelength and quarter-wave 
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `146 {{key:λ/L}} 4 {{key:÷}}` | $0$ | $0$ | $0$ | $0.5133$ | Compute free-space $\lambda = 2.0534\text{ m}$ at $146\text{ MHz}$ and divide by $4$ for $\ell_{\lambda/4} = 0.5133\text{ m}$ |
 | `50 {{key:ENTER}} 112.5 {{key:TLN}}` | $0$ | $0$ | $0.5133$ | $75$ | Quarter-wave transformer impedance $Z_{\text{match}} = \sqrt{50 \times 112.5} = 75.0\ \Omega$ |
-| `50 {{key:ENTER}} 10 {{key:Γ}}` | $0$ | $0.5133$ | $75$ | $2$ | L-network nodal quality factor $Q = \sqrt{(50/10) - 1} = 2.00$ (and opens `ZMAT` workspace) |
-| `1 {{key:E}} 7 {{key:+/-}} {{key:ENTER}} 1 {{key:E}} 11 {{key:+/-}} {{key:f₀}}` | $0$ | $75$ | $2$ | **$1.5915\text{e}8$** | Resonant frequency $f_0 = 159.155\text{ MHz}$ for $L = 100\text{ nH}$ and $C = 10\text{ pF}$ |
+| `50 {{key:ENTER}} 10 {{key:Γ}}` | $0.51334$ | $0.5133$ | $75$ | $2$ | L-network nodal quality factor $Q = \sqrt{(50/10) - 1} = 2.00$ (and opens `ZMAT` workspace) |
+| `1 {{key:E}} 7 {{key:+/-}} {{key:ENTER}} 1 {{key:E}} 11 {{key:+/-}} {{key:f₀}}` | $75$ | $75$ | $2$ | **$1.5915\text{e}8$** | Resonant frequency $f_0 = 159.155\text{ MHz}$ for $L = 100\text{ nH}$ and $C = 10\text{ pF}$ |
 
 Multiplying the L-network quality factor $Q = 2.00$ by $R_{\text{low}} = 10\ \Omega$ gives series reactance $|X_{\text{series}}| = \mathbf{20.0\ \Omega}$, while dividing $R_{\text{high}} = 50\ \Omega$ by $Q = 2.00$ gives shunt reactance $|X_{\text{shunt}}| = \mathbf{25.0\ \Omega}$.
 
@@ -280,8 +280,8 @@ To close the $12.0\text{ km}$, $5800\text{ MHz}$ valley link on the stack, the e
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `250 {{key:▸dBm}} 52 {{key:ENTER}}` | $0$ | $23.979$ | $52$ | $52$ | Convert $250\text{ mW}$ to $+23.979\text{ dBm}$ in $Z$; load dish gain $52\text{ dB}$ into $Y$ |
-| `12 {{key:ENTER}} 5800 {{key:FSL}}` | $0$ | $23.979$ | $52$ | $129.292$ | Evaluate $\text{FSPL} = 129.292\text{ dB}$ at $12\text{ km}, 5800\text{ MHz}$; $P_{\text{tx}}$ in $Z$, $G$ in $Y$ |
-| `{{key:LNK}}` | $0$ | $0$ | $0$ | **$-53.313$** | Evaluate link budget $P_{\text{rx}} = 23.979 + 52 - 129.292 = -53.313\text{ dBm}$ |
+| `12 {{key:ENTER}} 5800 {{key:FSL}}` | $23.9794$ | $23.979$ | $52$ | $129.292$ | Evaluate $\text{FSPL} = 129.292\text{ dB}$ at $12\text{ km}, 5800\text{ MHz}$; $P_{\text{tx}}$ in $Z$, $G$ in $Y$ |
+| `{{key:LNK}}` | $23.9794$ | $23.9794$ | $23.9794$ | **$-53.313$** | Evaluate link budget $P_{\text{rx}} = 23.979 + 52 - 129.292 = -53.313\text{ dBm}$ |
 
 Notice how `{{key:FSL}}` consumes $d_{\text{km}} = 12$ and $f_{\text{MHz}} = 5800$ from Registers $Y$ and $X$, dropping $P_{\text{tx}} = 23.979\text{ dBm}$ into Register $Z$ and $G = 52\text{ dB}$ into Register $Y$ so that pressing `{{key:LNK}}` resolves $P_{\text{rx}} = \mathbf{-53.313\text{ dBm}}$ in a single keystroke.
 
@@ -409,8 +409,8 @@ To verify the masthead LNA upgrade on the stack, the engineer evaluates the down
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `3.9811 {{key:ENTER}} 6.3096 {{key:ENTER}} 0.2512 {{key:NF}}` | $0$ | $0$ | $0$ | $25.118$ | Cable ($6\text{ dB}$) + Receiver ($8\text{ dB}$) combined factor $F_{23} = 25.118$ ($14.0\text{ dB}$) |
 | `1.4125 {{key:x⇄y}} 100 {{key:NF}}` | $0$ | $0$ | $0$ | $1.654$ | Masthead LNA ($F_1 = 1.4125, G_1 = 100$) ahead of $F_{23}$ yields $F_{\text{tot}} = 1.654$ ($2.18\text{ dB}$) |
-| `1.25 {{key:ENTER}} 2 {{key:ENTER}} 20 {{key:NF}}` | $0$ | $0$ | $1.654$ | $1.3$ | Reference check: LNA ($F=1.25, G=20$) before $3\text{ dB}$ coax ($F=2$) gives $F_{\text{tot}} = 1.30$ |
-| `2 {{key:ENTER}} 1.25 {{key:ENTER}} 0.5 {{key:NF}}` | $0$ | $1.654$ | $1.3$ | **$2.5$** | Reversing order ($3\text{ dB}$ coax before LNA) degrades noise factor to $F_{\text{tot}} = 2.50$ |
+| `1.25 {{key:ENTER}} 2 {{key:ENTER}} 20 {{key:NF}}` | $1.6537$ | $1.6537$ | $1.654$ | $1.3$ | Reference check: LNA ($F=1.25, G=20$) before $3\text{ dB}$ coax ($F=2$) gives $F_{\text{tot}} = 1.30$ |
+| `2 {{key:ENTER}} 1.25 {{key:ENTER}} 0.5 {{key:NF}}` | $1.3$ | $1.3$ | $1.3$ | **$2.5$** | Reversing order ($3\text{ dB}$ coax before LNA) degrades noise factor to $F_{\text{tot}} = 2.50$ |
 
 ### Evaluating Thermal Noise, Shannon Capacity, and Orbital Doppler Shift on the Stack
 

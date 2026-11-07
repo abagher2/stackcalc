@@ -1288,7 +1288,7 @@ _MATH_SANS_GLYPH_RE = re.compile(
     r'([⊗⊙⊖⊘⊞⊟⊠⊡⊢⊣⊤⊥⊨⊩⊪⊫⊬⊭⊮⊯⊰⊱⊲⊳⊴⊵⊶⊷⊸⊹⊺⊻⊼⊽⊾⊿⋀⋁⋂⋃⋄⋅⋆⋇⋈⋉⋊⋋⋌⋍⋎⋏⋐⋑⋒⋓⋔⋕⋖⋗⋘⋙⋚⋛⋜⋝⋞⋟⋠⋡⋢⋣⋤⋥⋦⋧⋨⋩⋪⋫⋬⋭⋮⋯⋰⋱'
     r'⇐⇑⇓⇕↦↪↩↼⇀↽⇁⇋∀∃∅∈∉∋∌∐∔∕∖∗∘∙∛∜∟∡∢∣∤∦∧∨∮∯∰∱∲∳∴∵∶∷∸∹∺∻∼∽∾∿≀≁≂≃≄≅≆≇≉≊≋≌≍≎≏≐≑≒≓≔≕≖≗≘≙≚≛≜≝≞≟'
     r'≢≣≦≧≨≩≪≫≬≭≮≯≰≱≲≳≴≵≶≷≸≹≺≻≼≽≾≿⊀⊁⊂⊃⊄⊅⊆⊇⊈⊉⊊⊋⊌⊍⊎⊏⊐⊑⊒⊓⊔⟪⟫⟬⟭⟮⟯'
-    r'ₐₑₒₓₔₕₖₗₘₙₚₛₜᵥᴺ⇄↰↱ȳℓ─○★✓✗↖↗■☉▸▲▼])'
+    r'ₐₑₒₓₔₕₖₗₘₙₚₛₜᵥᴺ⇄↰↱ȳℓ─○★✓✗↖↗■☉▸▲▼△])'
 )
 
 
@@ -1625,14 +1625,14 @@ def sanitize_inline_markdown(text: str, is_sc32: bool, in_table: bool = False) -
     # Protect currency parentheticals like ($) or ($ per period) without matching ($f(x)$) math
     text = re.sub(r'\(\$(\s*|\s+per\b[^)\$]*|\s*/[a-zA-Z]+[^)\$]*)\)', lambda m: f"({save_placeholder('$')}{m.group(1)})", text)
 
-    from book_engine import get_registry
+    from book_engine import get_registry, get_model_registry
     registry = get_registry(is_sc32)
     alt_registry = get_registry(not is_sc32)
 
     _DOMAIN_KEYCAP_SET = {
         "ENTER", "ON", "C", "CLEAR", "AC", "<-", "BS", "DICE", "CLOCK", "FRAME", "TBL", "SOLVE", "XEQ",
         "FWD", "INV", "BRG", "WND", "ISA", "TRAV", "trav", "→HR", "→HMS", "POL", "REC",
-        "SLOPE", "GRADE%", "PT+", "CLOSURE", "HCRV", "VCRV", "3-W", "STA", "LVL", "WIND", "XWIND", "HW", "ALT", "TSD", "TOD", "VS", "TRI",
+        "SLOPE", "GRADE%", "PT+", "CLOSURE", "HCRV", "VCRV", "VCV", "3-W", "STA", "LVL", "WIND", "XWIND", "HW", "ALT", "TSD", "TOD", "VS", "TRI", "△",
         "RUN", "RISE", "DIAG", "HIP", "BEND", "VD", "3PH÷", "→mm", "→in", "AWG", "Cᵥ", "PUMP", "RPM", "SFM", "FEED", "TAP", "BOLT", "4-20", "RTD", "M·S", "HYD",
         "HEX", "DEC", "BIN", "OCT", "WSZ", "ENDN", "FLT", "AND", "OR", "XOR", "NOT", "NAND", "NOR",
         "SL", "SR", "ASR", "RL", "RR", "MOD", "ROL", "ROR", "2's", "BSWP", "BSET", "BCLR", "BTST", "MSK", "POP", "CLZ", "2ˣ", "LOG₂", "PWM", "ADC", "BAUD", "τ", "CRC", "CIDR",
@@ -1641,10 +1641,17 @@ def sanitize_inline_markdown(text: str, is_sc32: bool, in_table: bool = False) -
         "FML", "MW", "Z", "ION", "MOL", "C₁V₁", "M₁V₁", "εbc", "pH", "pKₐ", "BUFF", "BUF", "ABS", "TITR", "10⁻ˣ", "Kₑq", "ΔG", "E°", "Eₐ", "t½", "RCF", "Nₐ", "R", "F",
         "FLR", "FLOUR", "BKR%", "BK%", "ΣW", "DIV", "Tw", "DDT", "ABV", "STRK", "MSH", "OG", "IBU", "SRM", "CO₂", "SO₂", "Aw", "YLD", "CST", "MGN", "MKP",
         "PT", "BSA", "IBW", "AdjW", "CrCl", "GFR", "DOS", "DRP", "IV", "MCG", "GTT", "PED", "AGE", "SEX", "SCR", "W", "H", "PK", "MAP", "BRN", "A-a", "AG", "Ca²⁺", "Na⁺", "QTc", "O₂",
-        "N", "I/Y", "I%YR", "PV", "PMT", "FV", "CPK", "Cpk", "AMRT", "NPV", "IRR", "BOND", "NormCDF", "InvNorm",
+        "N", "I/Y", "I%YR", "PV", "PMT", "FV", "CPK", "Cpk", "AMRT", "NPV", "IRR", "BOND", "BND", "CF", "NormCDF", "InvNorm",
         "pN", "qN", "rN", "pt", "qt", "rt", "pχ²", "qχ²", "rχ²", "pF", "qF", "rF", "pB", "qB", "rB", "z₀", "t₂", "CI", "n*", "ŷ", "ΔD", "%Σ", "Σ+",
         "SHOW", "x²", "yˣ", "√x", "1/x", "+/-", "x⇄y", "R↓", "←", "≪", "≫", "⊕", "x∥y",
     }
+    for _dm in ("sc35", "sc14", "sc16", "sc24", "sc50", "sc60", "sc78", "sc80", "sc95"):
+        try:
+            _dreg = get_model_registry(_dm)
+            for _entry in _dreg.entries.values():
+                _DOMAIN_KEYCAP_SET.add(_entry.canonical)
+        except Exception:
+            pass
 
     def _is_valid_keycap(token: str) -> bool:
         t_clean = token.strip()
@@ -1890,21 +1897,43 @@ def format_heading_text(raw_title: str, is_sc32: bool = True) -> Tuple[str, str]
     t = re.sub(r'[*`]', '', t)
 
     # Plain version for TOC & PDF Bookmarks (convert special key symbols to clean readable ASCII/Unicode)
-    t_plain = t.replace("↰", "f").replace("↱", "g").replace("⇄", "↔").replace("∥", "||").replace("▸", "→")
+    t_plain = t.replace("↰", "f").replace("↱", "g").replace("⇄", "↔").replace("∥", "||").replace("▸", "→").replace("△", "TRI")
     t_plain = t_plain.replace("ᵥ", "v").replace("ᴺ", "N")
     grid_plain = "TBL" if (is_sc32 or _ACTIVE_MANUAL_KIND == "domains") else "FRAME"
     t_plain = t_plain.replace("🎲", "DICE").replace("🕒", "CLOCK").replace("▦", grid_plain)
     t_plain = t_plain.replace("⌊", "floor(").replace("⌋", ")").replace("⌈", "ceil(").replace("⌉", ")")
     for k, v in math_ph.items():
         v_plain = re.sub(r'</?[a-zA-Z][^>]*>', '', v)
-        v_plain = v_plain.replace("∥", "||").replace("⌊", "floor(").replace("⌋", ")").replace("ᵥ", "v").replace("ᴺ", "N")
+        v_plain = v_plain.replace("∥", "||").replace("⌊", "floor(").replace("⌋", ")").replace("ᵥ", "v").replace("ᴺ", "N").replace("△", "TRI")
         t_plain = t_plain.replace(k, v_plain)
     plain = html.unescape(re.sub(r'</?[a-zA-Z][^>]*>', '', t_plain)).strip()
 
     # Styled version for Heading on page (with Paper-theme keycaps and Terminus glyph protection)
-    from book_engine import get_registry
+    from book_engine import get_registry, get_model_registry
     reg1 = get_registry(is_sc32)
     reg2 = get_registry(not is_sc32)
+    _hdr_domain_keys = {
+        "FWD", "INV", "BRG", "WND", "ISA", "TRAV", "trav", "→HR", "→HMS", "POL", "REC",
+        "SLOPE", "GRADE%", "PT+", "CLOSURE", "HCRV", "VCRV", "VCV", "3-W", "STA", "LVL", "WIND", "XWIND", "HW", "ALT", "TSD", "TOD", "VS", "TRI", "△",
+        "RUN", "RISE", "DIAG", "HIP", "BEND", "VD", "TBL", "3PH÷", "→mm", "→in", "AWG", "Cᵥ", "PUMP", "RPM", "SFM", "FEED", "TAP", "BOLT", "4-20", "RTD", "M·S", "HYD",
+        "HEX", "DEC", "BIN", "OCT", "WSZ", "ENDN", "FLT", "AND", "OR", "XOR", "NOT", "NAND", "NOR",
+        "SL", "SR", "ASR", "RL", "RR", "MOD", "ROL", "ROR", "2's", "BSWP", "BSET", "BCLR", "BTST", "MSK", "POP", "CLZ", "2ˣ", "LOG₂", "PWM", "ADC", "BAUD", "τ", "CRC", "CIDR",
+        "TC", "+TC", "−TC", "-TC", "FPS", "DOF", "FOV", "EV", "SHUTTER", "CROP", "ASPECT", "EXP", "AUD", "dB⊕", "SPL", "dB", "λ", "vₛ",
+        "dBm", "→W", "SWR", "VSWR", "FSPL", "FSL", "LNK", "EIRP", "SMTH", "NF", "ML", "Γ", "Z₀", "T₀", "c", "kB", "f₀", "fc", "λ/L", "F₁", "Δf", "RADAR", "C/B", "Pₙ",
+        "FML", "MW", "Z", "ION", "MOL", "C₁V₁", "M₁V₁", "εbc", "pH", "pKₐ", "BUFF", "BUF", "ABS", "TITR", "10⁻ˣ", "Kₑq", "ΔG", "E°", "Eₐ", "t½", "RCF", "Nₐ", "R", "F",
+        "FLR", "FLOUR", "BKR%", "BK%", "ΣW", "DIV", "Tw", "DDT", "ABV", "STRK", "MSH", "OG", "IBU", "SRM", "CO₂", "SO₂", "Aw", "YLD", "CST", "MGN", "MKP",
+        "PT", "BSA", "IBW", "AdjW", "CrCl", "GFR", "DOS", "DRP", "IV", "MCG", "GTT", "PED", "AGE", "SEX", "SCR", "PK", "MAP", "BRN", "A-a", "AG", "Ca²⁺", "Na⁺", "QTc", "O₂",
+        "N", "I/Y", "I%YR", "PV", "PMT", "FV", "CPK", "Cpk", "AMRT", "NPV", "IRR", "BOND", "BND", "CF", "NormCDF", "InvNorm",
+        "pN", "qN", "rN", "pt", "qt", "rt", "pχ²", "qχ²", "rχ²", "pF", "qF", "rF", "pB", "qB", "rB", "z₀", "t₂", "CI", "n*", "ŷ", "ΔD", "%Σ", "Σ+",
+        "SOLVE", "XEQ", "≪", "≫", "⊕", "x∥y",
+    }
+    for _dm in ("sc35", "sc14", "sc16", "sc24", "sc50", "sc60", "sc78", "sc80", "sc95"):
+        try:
+            _dreg = get_model_registry(_dm)
+            for _entry in _dreg.entries.values():
+                _hdr_domain_keys.add(_entry.canonical)
+        except Exception:
+            pass
     key_ph = {}
     def _save_h_key(m):
         k_tok = m.group(1).strip()
@@ -1916,21 +1945,7 @@ def format_heading_text(raw_title: str, is_sc32: bool = True) -> Tuple[str, str]
                 return ph_k
             except ValueError:
                 pass
-        if (k_tok.startswith("▸") and len(k_tok) <= 6) or k_tok in {
-            "FWD", "INV", "BRG", "WND", "ISA", "TRAV", "trav", "→HR", "→HMS", "POL", "REC",
-            "SLOPE", "GRADE%", "PT+", "CLOSURE", "HCRV", "VCRV", "3-W", "STA", "LVL", "WIND", "XWIND", "HW", "ALT", "TSD", "TOD", "VS", "TRI",
-            "RUN", "RISE", "DIAG", "HIP", "BEND", "VD", "TBL", "3PH÷", "→mm", "→in", "AWG", "Cᵥ", "PUMP", "RPM", "SFM", "FEED", "TAP", "BOLT", "4-20", "RTD", "M·S", "HYD",
-            "HEX", "DEC", "BIN", "OCT", "WSZ", "ENDN", "FLT", "AND", "OR", "XOR", "NOT", "NAND", "NOR",
-            "SL", "SR", "ASR", "RL", "RR", "MOD", "ROL", "ROR", "2's", "BSWP", "BSET", "BCLR", "BTST", "MSK", "POP", "CLZ", "2ˣ", "LOG₂", "PWM", "ADC", "BAUD", "τ", "CRC", "CIDR",
-            "TC", "+TC", "−TC", "-TC", "FPS", "DOF", "FOV", "EV", "SHUTTER", "CROP", "ASPECT", "EXP", "AUD", "dB⊕", "SPL", "dB", "λ", "vₛ",
-            "dBm", "→W", "SWR", "VSWR", "FSPL", "FSL", "LNK", "EIRP", "SMTH", "NF", "ML", "Γ", "Z₀", "T₀", "c", "kB", "f₀", "fc", "λ/L", "F₁", "Δf", "RADAR", "C/B", "Pₙ",
-            "FML", "MW", "Z", "ION", "MOL", "C₁V₁", "M₁V₁", "εbc", "pH", "pKₐ", "BUFF", "BUF", "ABS", "TITR", "10⁻ˣ", "Kₑq", "ΔG", "E°", "Eₐ", "t½", "RCF", "Nₐ", "R", "F",
-            "FLR", "FLOUR", "BKR%", "BK%", "ΣW", "DIV", "Tw", "DDT", "ABV", "STRK", "MSH", "OG", "IBU", "SRM", "CO₂", "SO₂", "Aw", "YLD", "CST", "MGN", "MKP",
-            "PT", "BSA", "IBW", "AdjW", "CrCl", "GFR", "DOS", "DRP", "IV", "MCG", "GTT", "PED", "AGE", "SEX", "SCR", "PK", "MAP", "BRN", "A-a", "AG", "Ca²⁺", "Na⁺", "QTc", "O₂",
-            "N", "I/Y", "I%YR", "PV", "PMT", "FV", "CPK", "Cpk", "AMRT", "NPV", "IRR", "BOND", "NormCDF", "InvNorm",
-            "pN", "qN", "rN", "pt", "qt", "rt", "pχ²", "qχ²", "rχ²", "pF", "qF", "rF", "pB", "qB", "rB", "z₀", "t₂", "CI", "n*", "ŷ", "ΔD", "%Σ", "Σ+",
-            "SOLVE", "XEQ", "≪", "≫", "⊕", "x∥y",
-        }:
+        if (k_tok.startswith("▸") and len(k_tok) <= 6) or k_tok in _hdr_domain_keys:
             ph_k = f"QQHK{len(key_ph)}QQ"
             key_ph[ph_k] = format_hardware_keycap_cartouche(k_tok, is_sc32, target_h_pt=10.0)
             return ph_k
@@ -2142,65 +2157,65 @@ INDEX_CATALOG_SC6 = [
 
 INDEX_CATALOG_DOMAINS = [
     ("4-Register RPN Stack (T, Z, Y, X) & Vector Decomposition", [re.compile(r'\b(register [xyzt]|four-register|stack lift)\b', re.IGNORECASE)]),
-    ("4–20 mA Current Loop Scaling & Live Zero ([4-20])", [re.compile(r'\b(4-20|4\s*mA|20\s*mA|current loop|live zero)\b', re.IGNORECASE)]),
-    ("ABV (Alcohol by Volume) & Specific Gravity ([ABV])", [re.compile(r'\b(alcohol by volume|original gravity|final gravity|attenuation)\b', re.IGNORECASE)]),
-    ("Acid-Base Titration & Henderson-Hasselbalch Buffers ([BUF])", [re.compile(r'\b(henderson-hasselbalch|titration|conjugate base|buffer)\b', re.IGNORECASE)]),
+    ("4–20 mA Current Loop Scaling & Live Zero ([mA])", [re.compile(r'\b(4-20|4\s*mA|20\s*mA|current loop|live zero)\b', re.IGNORECASE)]),
+    ("ABV (Alcohol by Volume) & Specific Gravity ([ABV], [SGT])", [re.compile(r'\b(alcohol by volume|original gravity|final gravity|attenuation)\b', re.IGNORECASE)]),
+    ("Acid-Base Titration & Henderson-Hasselbalch Buffers ([BUF], [EQV])", [re.compile(r'\b(henderson-hasselbalch|titration|conjugate base|buffer)\b', re.IGNORECASE)]),
     ("ADC Quantization, LSB Step & Mixed-Signal Resolution ([ADC])", [re.compile(r'\b(analog-to-digital|quantization|\badc\b)\b', re.IGNORECASE)]),
-    ("Arrhenius Activation Energy & Chemical Kinetics ([ARR])", [re.compile(r'\b(arrhenius|activation energy|rate constant)\b', re.IGNORECASE)]),
+    ("Arrhenius Activation Energy & Chemical Kinetics ([Eₐ], [t½])", [re.compile(r'\b(arrhenius|activation energy|rate constant)\b', re.IGNORECASE)]),
     ("Avogadro, Amedeo & Stoichiometric Molar Bridge", [re.compile(r'\b(avogadro|cannizzaro|stoichiometr)\b', re.IGNORECASE)]),
-    ("Aviation Wind Triangle, Crosswind & WCA ([WND])", [re.compile(r'\b(wind triangle|crosswind|wind correction angle)\b', re.IGNORECASE)]),
-    ("Baker's Percentage, Dough Hydration & Scaling ([FLR], [BKR%])", [re.compile(r'\b(baker\'s percentage|dough hydration|flour weight)\b', re.IGNORECASE)]),
-    ("Beer-Lambert Law, Absorbance & Spectrophotometry ([ABS], [BEER])", [re.compile(r'\b(beer-lambert|absorbance|transmittance|molar absorptivity)\b', re.IGNORECASE)]),
-    ("Bitfield Masking, Population Count & Leading Zeros ([MSK], [POP], [CLZ])", [re.compile(r'\b(bitfield|hamming weight|population count|leading zeros)\b', re.IGNORECASE)]),
-    ("Bitwise Logic, Shift/Rotate & Two's Complement ([2's], [ASR], [ROL])", [re.compile(r'\b(two\'s complement|bitwise|rotate left|arithmetic shift)\b', re.IGNORECASE)]),
+    ("Aviation Wind Triangle, Crosswind & WCA ([WND], [XWC])", [re.compile(r'\b(wind triangle|crosswind|wind correction angle)\b', re.IGNORECASE)]),
+    ("Baker's Percentage, Dough Hydration & Scaling ([BK%], [HYD], [SCL])", [re.compile(r'\b(baker\'s percentage|dough hydration|flour weight)\b', re.IGNORECASE)]),
+    ("Beer-Lambert Law, Absorbance & Spectrophotometry ([εbc], [%T])", [re.compile(r'\b(beer-lambert|absorbance|transmittance|molar absorptivity)\b', re.IGNORECASE)]),
+    ("Bitfield Masking, Population Count & Leading Zeros ([MSK], [#B], [CLZ])", [re.compile(r'\b(bitfield|hamming weight|population count|leading zeros)\b', re.IGNORECASE)]),
+    ("Bitwise Logic, Shift/Rotate & Two's Complement ([NEG], [ASR], [ROR])", [re.compile(r'\b(two\'s complement|bitwise|rotate left|arithmetic shift)\b', re.IGNORECASE)]),
     ("Black-Scholes Option Pricing & Volatility", [re.compile(r'\b(black-scholes|call option|volatility|risk-free)\b', re.IGNORECASE)]),
     ("Body Surface Area (Du Bois & Mosteller Formula, [BSA])", [re.compile(r'\b(mosteller|du bois|body surface area|\bbsa\b)\b', re.IGNORECASE)]),
-    ("Bolt Circle Coordinates & Rotary Machining ([BOLT], [SFM])", [re.compile(r'\b(bolt circle|surface feet per minute|spindle speed)\b', re.IGNORECASE)]),
-    ("Bond Pricing, Macaulay Duration & Convexity", [re.compile(r'\b(macaulay duration|yield to maturity|bond price|convexity)\b', re.IGNORECASE)]),
-    ("Bowditch Compass Rule & Traverse Closure ([trav], [CLOS])", [re.compile(r'\b(bowditch|compass rule|misclosure|closure error)\b', re.IGNORECASE)]),
-    ("Brake Horsepower & Control Valve Sizing ([BHP], [Cv])", [re.compile(r'\b(brake horsepower|flow coefficient|\bcv\b)\b', re.IGNORECASE)]),
+    ("Bolt Circle Coordinates & Rotary Machining ([BC], [SFM])", [re.compile(r'\b(bolt circle|surface feet per minute|spindle speed)\b', re.IGNORECASE)]),
+    ("Bond Pricing, Macaulay Duration & Convexity ([BND])", [re.compile(r'\b(macaulay duration|yield to maturity|bond price|convexity)\b', re.IGNORECASE)]),
+    ("Bowditch Compass Rule & Traverse Closure ([TRV], [CLS])", [re.compile(r'\b(bowditch|compass rule|misclosure|closure error)\b', re.IGNORECASE)]),
+    ("Brake Horsepower & Control Valve Sizing ([PMP], [Cᵥ])", [re.compile(r'\b(brake horsepower|flow coefficient|\bcv\b)\b', re.IGNORECASE)]),
     ("Centrifuge Relative Centrifugal Force ([RCF])", [re.compile(r'\b(centrifugal force|\brcf\b|centrifuge)\b', re.IGNORECASE)]),
-    ("CIDR IPv4 Subnetting & Host Capacity ([CIDR])", [re.compile(r'\b(cidr|subnet|netmask|broadcast address)\b', re.IGNORECASE)]),
-    ("Circular Highway Curves, Tangent & Chord ([HCRV])", [re.compile(r'\b(circular curve|deflection angle|long chord|middle ordinate)\b', re.IGNORECASE)]),
-    ("Cockcroft-Gault Creatinine Clearance ([CrCl])", [re.compile(r'\b(cockcroft-gault|creatinine clearance|renal|glomerular)\b', re.IGNORECASE)]),
-    ("Color Temperature, Mired Shift & Inverse-Square Lux ([LUX])", [re.compile(r'\b(mired|correlated color temperature|illuminance|foot-candles)\b', re.IGNORECASE)]),
-    ("Conduit Offset Bends, Cosecant & Shrink ([BEND])", [re.compile(r'\b(conduit|offset bend|shrinkage|saddle bend)\b', re.IGNORECASE)]),
-    ("Coordinate Inverse & Forward Projection ([FWD], [INV], [BRG])", [re.compile(r'\b(coordinate geometry|azimuth|northing|easting|departure)\b', re.IGNORECASE)]),
+    ("CIDR IPv4 Subnetting & Host Capacity ([NET])", [re.compile(r'\b(cidr|subnet|netmask|broadcast address)\b', re.IGNORECASE)]),
+    ("Circular Highway Curves, Tangent & Chord ([CRV])", [re.compile(r'\b(circular curve|deflection angle|long chord|middle ordinate)\b', re.IGNORECASE)]),
+    ("Cockcroft-Gault Creatinine Clearance ([GFR])", [re.compile(r'\b(cockcroft-gault|creatinine clearance|renal|glomerular)\b', re.IGNORECASE)]),
+    ("Color Temperature, Mired Shift & Inverse-Square Lux ([LUX], [GEL])", [re.compile(r'\b(mired|correlated color temperature|illuminance|foot-candles)\b', re.IGNORECASE)]),
+    ("Conduit Offset Bends, Cosecant & Shrink ([OFS], [MIT])", [re.compile(r'\b(conduit|offset bend|shrinkage|saddle bend)\b', re.IGNORECASE)]),
+    ("Coordinate Inverse & Forward Projection ([TRV], [INV], [BRG])", [re.compile(r'\b(coordinate geometry|azimuth|northing|easting|departure)\b', re.IGNORECASE)]),
     ("CRC-32 Polynomial Division & Checksums ([CRC])", [re.compile(r'\b(cyclic redundancy|crc-32|galois)\b', re.IGNORECASE)]),
-    ("Decibel Power/Voltage Ratios & dBm ([dBm], [dB⊕])", [re.compile(r'\b(decibels?|\bdbm\b|incoherent|sound pressure level)\b', re.IGNORECASE)]),
-    ("Density Altitude & International Standard Atmosphere ([ISA])", [re.compile(r'\b(density altitude|pressure altitude|standard atmosphere)\b', re.IGNORECASE)]),
-    ("Depth of Field, Hyperfocal Distance & Circle of Confusion ([DOF], [HYP])", [re.compile(r'\b(hyperfocal|depth of field|circle of confusion)\b', re.IGNORECASE)]),
-    ("Desired Dough Temperature & Mixer Friction ([DDT])", [re.compile(r'\b(desired dough temperature|friction factor|strike-water)\b', re.IGNORECASE)]),
+    ("Decibel Power/Voltage Ratios & dBm ([dBm], [SPL])", [re.compile(r'\b(decibels?|\bdbm\b|incoherent|sound pressure level)\b', re.IGNORECASE)]),
+    ("Density Altitude & International Standard Atmosphere ([ALT])", [re.compile(r'\b(density altitude|pressure altitude|standard atmosphere)\b', re.IGNORECASE)]),
+    ("Depth of Field, Hyperfocal Distance & Circle of Confusion ([DOF], [HFD])", [re.compile(r'\b(hyperfocal|depth of field|circle of confusion)\b', re.IGNORECASE)]),
+    ("Desired Dough Temperature & Mixer Friction ([Tw], [ICE])", [re.compile(r'\b(desired dough temperature|friction factor|strike-water)\b', re.IGNORECASE)]),
     ("Differential Spirit Leveling & Three-Wire Stadia ([LVL])", [re.compile(r'\b(differential leveling|backsight|foresight|stadia)\b', re.IGNORECASE)]),
-    ("Dilution Conservation (C1V1 = C2V2, [DIL])", [re.compile(r'\b(dilution|stock solution|aliquot)\b', re.IGNORECASE)]),
-    ("Endianness Byte Swap & IEEE-754 Floating-Point ([BSWP], [FLT])", [re.compile(r'\b(endianness|little-endian|big-endian|ieee-754|mantissa)\b', re.IGNORECASE)]),
-    ("Exposure Value, f-Stops & Rotary Shutter Angle ([EV], [SHUTTER])", [re.compile(r'\b(shutter angle|exposure value|aperture)\b', re.IGNORECASE)]),
+    ("Dilution Conservation (C1V1 = C2V2, [C₁V₁])", [re.compile(r'\b(dilution|stock solution|aliquot)\b', re.IGNORECASE)]),
+    ("Endianness Byte Swap & IEEE-754 Floating-Point ([SWP], [FLT])", [re.compile(r'\b(endianness|little-endian|big-endian|ieee-754|mantissa)\b', re.IGNORECASE)]),
+    ("Exposure Value, f-Stops & Rotary Shutter Angle ([EV], [SHT])", [re.compile(r'\b(shutter angle|exposure value|aperture)\b', re.IGNORECASE)]),
     ("Fibonacci (Leonardo of Pisa) & Present-Value Discounting", [re.compile(r'\b(fibonacci|liber abaci|present value)\b', re.IGNORECASE)]),
     ("Field of View & Sensor Crop Factor ([FOV])", [re.compile(r'\b(field of view|focal length|rectilinear)\b', re.IGNORECASE)]),
-    ("First-Order Pharmacokinetic Elimination & Half-Life", [re.compile(r'\b(half-life|elimination rate|steady-state|trough)\b', re.IGNORECASE)]),
-    ("Fixed-Point Q-Format Scaling & Memory Alignment ([Q-FMT], [ALGN])", [re.compile(r'\b(fixed-point|q-format|cache-line|alignment)\b', re.IGNORECASE)]),
-    ("Friis, Harald T. & Free-Space Link Budgets ([FSPL], [LINK])", [re.compile(r'\b(friis|free-space path loss|link budget|\bfspl\b)\b', re.IGNORECASE)]),
-    ("Gauss's Shoelace Polygon Area Formula ([AREA])", [re.compile(r'\b(shoelace|polygon area|acreage)\b', re.IGNORECASE)]),
-    ("Gravity IV Drip Rates & Weight-Based Infusions ([MCG], [GTT])", [re.compile(r'\b(drip factor|drops per minute|vasopressor|norepinephrine|titration)\b', re.IGNORECASE)]),
+    ("First-Order Pharmacokinetic Elimination & Half-Life ([PK])", [re.compile(r'\b(half-life|elimination rate|steady-state|trough)\b', re.IGNORECASE)]),
+    ("Fixed-Point Q-Format Scaling & Memory Alignment ([Q.n], [ALN])", [re.compile(r'\b(fixed-point|q-format|cache-line|alignment)\b', re.IGNORECASE)]),
+    ("Friis, Harald T. & Free-Space Link Budgets ([FSL], [LNK])", [re.compile(r'\b(friis|free-space path loss|link budget|\bfspl\b)\b', re.IGNORECASE)]),
+    ("Gauss's Shoelace Polygon Area Formula ([CLS])", [re.compile(r'\b(shoelace|polygon area|acreage)\b', re.IGNORECASE)]),
+    ("Gravity IV Drip Rates & Weight-Based Infusions ([DOS], [DRP], [gtt])", [re.compile(r'\b(drip factor|drops per minute|vasopressor|norepinephrine|titration)\b', re.IGNORECASE)]),
     ("Heaviside, Oliver & Transmission-Line Telegrapher Equations", [re.compile(r'\b(heaviside|characteristic impedance|transmission line)\b', re.IGNORECASE)]),
     ("Hexadecimal ([HEX]), Binary ([BIN]) & Word Sizes ([WSZ])", [re.compile(r'\b(hexadecimal|word size|nibble|radix)\b', re.IGNORECASE)]),
-    ("Holliday-Segar 4-2-1 Pediatric Fluid Rule ([PED])", [re.compile(r'\b(holliday-segar|4-2-1|pediatric maintenance)\b', re.IGNORECASE)]),
-    ("Hop Utilization (Tinseth IBU) & Mash Strike Water ([STRK], [IBU])", [re.compile(r'\b(tinseth|strike water|alpha-acid|isomerization)\b', re.IGNORECASE)]),
-    ("Ideal & Adjusted Body Weight (Devine Formula, [IBW])", [re.compile(r'\b(ideal body weight|adjusted body weight|devine)\b', re.IGNORECASE)]),
-    ("Ideal Gas Law (PV = nRT, [IDEAL])", [re.compile(r'\b(ideal gas|universal gas constant)\b', re.IGNORECASE)]),
+    ("Holliday-Segar 4-2-1 Pediatric Fluid Rule ([PED], [421])", [re.compile(r'\b(holliday-segar|4-2-1|pediatric maintenance)\b', re.IGNORECASE)]),
+    ("Hop Utilization (Tinseth IBU) & Mash Strike Water ([MSH], [IBU])", [re.compile(r'\b(tinseth|strike water|alpha-acid|isomerization)\b', re.IGNORECASE)]),
+    ("Ideal & Adjusted Body Weight (Devine Formula, [IBW], [ABW])", [re.compile(r'\b(ideal body weight|adjusted body weight|devine)\b', re.IGNORECASE)]),
+    ("Ideal Gas Law (PV = nRT, [PVT])", [re.compile(r'\b(ideal gas|universal gas constant)\b', re.IGNORECASE)]),
     ("Kelvin, Lord (William Thomson) & Physical Measurement", [re.compile(r'\b(kelvin|william thomson)\b', re.IGNORECASE)]),
     ("Leibniz, Shannon & Boolean Switching Algebra", [re.compile(r'\b(leibniz|shannon|boolean)\b', re.IGNORECASE)]),
     ("Mason, Charles & Jeremiah Dixon (Geodetic Azimuth Survey)", [re.compile(r'\b(mason|dixon|theodolite)\b', re.IGNORECASE)]),
-    ("Molar Mass, Stoichiometry & Molarity ([MW], [MOL], [MOLAR])", [re.compile(r'\b(molar mass|molarity|formula weight)\b', re.IGNORECASE)]),
-    ("NEC Conductor Resistance, Ampacity & Voltage Drop ([VD], [AWG])", [re.compile(r'\b(circular mils|voltage drop|american wire gauge|\bawg\b)\b', re.IGNORECASE)]),
-    ("Net Present Value (NPV) & Internal Rate of Return ([NPV], [IRR])", [re.compile(r'\b(net present value|internal rate of return)\b', re.IGNORECASE)]),
-    ("Ohm, Georg Simon & Feeder Loop Resistance", [re.compile(r'\b(ohm|feeder|conductor resistance)\b', re.IGNORECASE)]),
-    ("Plato, Fritz & Balling Wort Gravity Scales", [re.compile(r'\b(plato|balling|wort|specific gravity)\b', re.IGNORECASE)]),
+    ("Molar Mass, Stoichiometry & Molarity ([MW], [RXN])", [re.compile(r'\b(molar mass|molarity|formula weight)\b', re.IGNORECASE)]),
+    ("NEC Conductor Resistance, Ampacity & Voltage Drop ([AWG])", [re.compile(r'\b(circular mils|voltage drop|american wire gauge|\bawg\b)\b', re.IGNORECASE)]),
+    ("Net Present Value (NPV) & Internal Rate of Return ([CF])", [re.compile(r'\b(net present value|internal rate of return)\b', re.IGNORECASE)]),
+    ("Ohm, Georg Simon & Feeder Loop Resistance ([Ω])", [re.compile(r'\b(ohm|feeder|conductor resistance)\b', re.IGNORECASE)]),
+    ("Plato, Fritz & Balling Wort Gravity Scales ([SGT])", [re.compile(r'\b(plato|balling|wort|specific gravity)\b', re.IGNORECASE)]),
     ("Platinum RTD Callendar-Van Dusen Thermometry ([RTD])", [re.compile(r'\b(pt100|callendar-van dusen|\brtd\b)\b', re.IGNORECASE)]),
-    ("PWM Timer Prescalers & UART Baud Divisors ([PWM], [UART])", [re.compile(r'\b(pulse-width modulation|baud rate|prescaler|\buart\b|\bpwm\b)\b', re.IGNORECASE)]),
-    ("Quarter-Wave Impedance Transformer ([λ/4], [Z0])", [re.compile(r'\b(quarter-wave|geometric mean|matching section)\b', re.IGNORECASE)]),
-    ("Reflection Coefficient Γ, VSWR & Return Loss ([SWR], [RL], [GAMMA])", [re.compile(r'\b(reflection coefficient|\bvswr\b|standing wave|return loss|mismatch loss)\b', re.IGNORECASE)]),
-    ("Sabine, Wallace Clement & Room Reverberation ([RT60], [WAV])", [re.compile(r'\b(sabine|reverberation|\brt60\b)\b', re.IGNORECASE)]),
+    ("PWM Timer Prescalers & UART Baud Divisors ([PWM], [BPS])", [re.compile(r'\b(pulse-width modulation|baud rate|prescaler|\buart\b|\bpwm\b)\b', re.IGNORECASE)]),
+    ("Quarter-Wave Impedance Transformer ([TLN], [Z₀])", [re.compile(r'\b(quarter-wave|geometric mean|matching section)\b', re.IGNORECASE)]),
+    ("Reflection Coefficient Γ, VSWR & Return Loss ([SWR], [RL], [Γ])", [re.compile(r'\b(reflection coefficient|\bvswr\b|standing wave|return loss|mismatch loss)\b', re.IGNORECASE)]),
+    ("Sabine, Wallace Clement & Room Reverberation ([DLY], [λ])", [re.compile(r'\b(sabine|reverberation|\brt60\b)\b', re.IGNORECASE)]),
     ("SC-14 Electrical Power, Conduit & Industrial Trades Calculator", [re.compile(r'\bsc-14\b', re.IGNORECASE)]),
     ("SC-16 Binary Radix, Bitwise Logic & Embedded Calculator", [re.compile(r'\bsc-16\b', re.IGNORECASE)]),
     ("SC-24 Cinema Optics, Broadcast Timecode & Sound Calculator", [re.compile(r'\bsc-24\b', re.IGNORECASE)]),
@@ -2210,15 +2225,15 @@ INDEX_CATALOG_DOMAINS = [
     ("SC-78 Commercial Baking, Dough & Brewing Calculator", [re.compile(r'\bsc-78\b', re.IGNORECASE)]),
     ("SC-80 Clinical Dosing, Renal Clearance & ICU Calculator", [re.compile(r'\bsc-80\b', re.IGNORECASE)]),
     ("SC-95 Quantitative Finance, Valuation & Six Sigma Calculator", [re.compile(r'\bsc-95\b', re.IGNORECASE)]),
-    ("Sexagesimal Degrees-Minutes-Seconds (DDD.MMSS, [DMS])", [re.compile(r'\b(sexagesimal|ddd\.mmss|arcminutes|arcseconds)\b', re.IGNORECASE)]),
-    ("Shewhart, Walter A. & Six Sigma Process Capability ([CPK], [NormCDF])", [re.compile(r'\b(shewhart|six sigma|process capability|\bcpk\b)\b', re.IGNORECASE)]),
-    ("Slope Distance Reduction & Architectural Feet-Inches ([SLOPE], [FT-IN])", [re.compile(r'\b(slope distance|zenith|fractional inches)\b', re.IGNORECASE)]),
+    ("Sexagesimal Degrees-Minutes-Seconds (DDD.MMSS, [▸HMS])", [re.compile(r'\b(sexagesimal|ddd\.mmss|arcminutes|arcseconds)\b', re.IGNORECASE)]),
+    ("Shewhart, Walter A. & Six Sigma Process Capability ([Cpk], [pN])", [re.compile(r'\b(shewhart|six sigma|process capability|\bcpk\b)\b', re.IGNORECASE)]),
+    ("Slope Distance Reduction & Architectural Feet-Inches ([SLP], [f-i])", [re.compile(r'\b(slope distance|zenith|fractional inches)\b', re.IGNORECASE)]),
     ("Smith, Phillip H. & Normalized Impedance Chart", [re.compile(r'\b(smith chart|phillip h\.? smith|normalized impedance)\b', re.IGNORECASE)]),
-    ("SMPTE Timecode & 29.97 Drop-Frame Arithmetic ([TC], [FPS])", [re.compile(r'\b(smpte|timecode|drop-frame|29\.97)\b', re.IGNORECASE)]),
-    ("Sørensen, Søren P. L. & Logarithmic pH Activity ([pH], [pKa])", [re.compile(r'\b(sørensen|sorensen|hydrogen-ion|acid dissociation)\b', re.IGNORECASE)]),
-    ("Tesla, Nikola & Three-Phase AC Power Triangle ([PF], [3PH÷], [KVA], [FLA])", [re.compile(r'\b(tesla|three-phase|power factor|apparent power|reactive power)\b', re.IGNORECASE)]),
+    ("SMPTE Timecode & 29.97 Drop-Frame Arithmetic ([TC], [FPS], [DF])", [re.compile(r'\b(smpte|timecode|drop-frame|29\.97)\b', re.IGNORECASE)]),
+    ("Sørensen, Søren P. L. & Logarithmic pH Activity ([pH], [pKₐ])", [re.compile(r'\b(sørensen|sorensen|hydrogen-ion|acid dissociation)\b', re.IGNORECASE)]),
+    ("Tesla, Nikola & Three-Phase AC Power Triangle ([PF], [kVA], [FLA])", [re.compile(r'\b(tesla|three-phase|power factor|apparent power|reactive power)\b', re.IGNORECASE)]),
     ("Thermal Noise Floor, Cascaded Noise Figure & IP3 ([NF], [IP3])", [re.compile(r'\b(noise figure|thermal noise|intermodulation|\bip3\b)\b', re.IGNORECASE)]),
-    ("Time Value of Money & Loan Amortization ([N], [I/Y], [PV], [PMT], [FV], [AMRT])", [re.compile(r'\b(time value of money|amortization|compound interest)\b', re.IGNORECASE)]),
+    ("Time Value of Money & Loan Amortization ([TVM], [AMR])", [re.compile(r'\b(time value of money|amortization|compound interest)\b', re.IGNORECASE)]),
 ]
 
 
@@ -3702,6 +3717,7 @@ def parse_markdown_file(
                     inner_line = inner_line.replace(r'\$', '\x00DOLLAR\x00')
                     inner_line = re.sub(r'\{\{[^}]+\}\}', lambda m: m.group(0).replace('|', '\x00PIPE\x00'), inner_line)
                     inner_line = re.sub(r'`[^`]+`', lambda m: m.group(0).replace('|', '\x00PIPE\x00'), inner_line)
+                    inner_line = re.sub(r'\[[^\]]+\]', lambda m: m.group(0).replace('|', '\x00PIPE\x00'), inner_line)
                     inner_line = re.sub(r'\$(?:(?!\s+\|\s+)[^\$\n])+\$', lambda m: m.group(0).replace('|', '\x00PIPE\x00'), inner_line)
                     raw_cells = [c.replace('\x00PIPE\x00', '|').replace('\x00DOLLAR\x00', r'\$').strip() for c in inner_line.split('|')]
                     parsed_rows.append((r_idx == 0, raw_cells))
@@ -4659,12 +4675,27 @@ def compile_manual_pdf(is_sc32: bool = True, manual_kind: Optional[str] = None) 
     story.append(HRFlowable(width="100%", thickness=1.5, color=to_color(primary_hex), spaceAfter=10))
 
     class NoOrphanSimpleIndex(SimpleIndex):
-        """Subclass of ReportLab SimpleIndex that binds each A–Z letter heading to its first entry."""
+        """Subclass of ReportLab SimpleIndex that binds each A–Z letter heading to its first entry and renders [KEY] as Paper keycaps."""
         def _build(self, availWidth, availHeight):
             super()._build(availWidth, availHeight)
             tbl = getattr(self, "_flowable", None)
             if tbl is not None and hasattr(tbl, "_cellvalues"):
                 rows = tbl._cellvalues
+                for r in rows:
+                    if len(r) == 1 and isinstance(r[0], Paragraph):
+                        p_obj = r[0]
+                        st_name = getattr(getattr(p_obj, "style", None), "name", "")
+                        if st_name == "IndexEntryStyle":
+                            raw_txt = getattr(p_obj, "text", "")
+                            if "[" in raw_txt and "]" in raw_txt:
+                                clean_raw = re.sub(r"<font\b[^>]*>(.*?)</font>", r"\1", raw_txt)
+                                new_txt = re.sub(
+                                    r"\[([^\]\n]{1,12})\]",
+                                    lambda m_k: format_hardware_keycap_cartouche(m_k.group(1).strip(), is_sc32, target_h_pt=7.2),
+                                    clean_raw,
+                                )
+                                new_txt = _protect_special_unicode_glyphs(new_txt)
+                                r[0] = make_paragraph(new_txt, p_obj.style)
                 merged_rows = []
                 r_idx = 0
                 while r_idx < len(rows):

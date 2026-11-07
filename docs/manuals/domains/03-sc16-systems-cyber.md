@@ -144,9 +144,9 @@ To configure the 4-bit clock divider at bits `[11:8]` ($s = 8, w = 4$) with `0xA
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | {{key:HEX}} `8` {{key:ENTER}} `4` {{key:MSK}} | $0$ | $0$ | $0$ | $\text{0xF00}$ | Generate 4-bit mask at bit offset $8$ ($\text{MSK}(8,4) = \text{0x0F00}$) |
-| `5` {{key:ENTER}} | $0$ | $0$ | $\text{0xF00}$ | $\text{0x5}$ | Stage initial control register value `0x0005` |
-| {{keycap:A}} {{key:ENTER}} `8` {{key:≪}} | $0$ | $\text{0xF00}$ | $\text{0x5}$ | $\text{0xA00}$ | Shift hex digit {{keycap:A}} ({{key:LFU0}}) left by $8$ bits to `0x0A00` |
-| {{key:&#124;}} | $0$ | $0$ | $\text{0xF00}$ | **$\text{0xA05}$** | Merge shifted field into register ($\text{0x0005} \lor \text{0x0A00} = \text{0x0A05}$) |
+| `5` {{key:ENTER}} | $0$ | $\text{0xF00}$ | $\text{0x5}$ | $\text{0x5}$ | Stage initial control register value `0x0005` |
+| {{keycap:A}} {{key:ENTER}} `8` {{key:≪}} | $\text{0xF00}$ | $\text{0xF00}$ | $\text{0x5}$ | $\text{0xA00}$ | Shift hex digit {{keycap:A}} ({{key:LFU0}}) left by $8$ bits to `0x0A00` |
+| {{key:&#124;}} | $\text{0xF00}$ | $\text{0xF00}$ | $\text{0xF00}$ | **$\text{0xA05}$** | Merge shifted field into register ($\text{0x0005} \lor \text{0x0A00} = \text{0x0A05}$) |
 
 When extracting bits `[11:8]` in the inverse direction from a returned status word `0x002405A0` at peripheral address `0x40013800 + 0x1C = 0x4001381C`, keying {{key:HEX}} `2405` {{keycap:A}} `0` {{key:ENTER}} `8` {{key:ENTER}} `4` {{key:MSK}} {{key:&}} `8` {{key:≫}} masks `0x0500` and shifts it down to $\mathbf{\text{0x5}}$.
 
@@ -157,9 +157,9 @@ Next, setting the word width to 16 bits ({{key:HEX}} `10` {{key:WSZ}}, since `0x
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | {{key:HEX}} `10` {{key:WSZ}} | $0$ | $0$ | $0$ | $\text{0x10}$ | Set active word width to $16$ bits (`0x10` $= 16_{10}$) |
-| `10` {{key:NEG}} | $0$ | $0$ | $0$ | $\text{0xFFF0}$ | Negate `0x0010` ($+16$) to 16-bit two's complement `0xFFF0` ($-16$) |
-| {{key:ENTER}} `2` {{key:ASR}} | $0$ | $0$ | $\text{0xFFF0}$ | $\text{0xFFFC}$ | Arithmetic right shift by $2$ bits preserves sign (`0xFFFC` $= -4$) |
-| {{keycap:F}} {{keycap:F}} {{keycap:F}} `0` {{key:ENTER}} `2` {{key:≫}} | $0$ | $\text{0xFFF0}$ | $\text{0xFFFC}$ | **$\text{0x3FFC}$** | Logical right shift by $2$ bits zero-fills high bits (`0x3FFC` $= +16{,}380$) |
+| `10` {{key:NEG}} | $0$ | $0$ | $\text{0x10}$ | $\text{0xFFF0}$ | Negate `0x0010` ($+16$) to 16-bit two's complement `0xFFF0` ($-16$) |
+| {{key:ENTER}} `2` {{key:ASR}} | $0$ | $0$ | $\text{0x10}$ | $\text{0xFFFC}$ | Arithmetic right shift by $2$ bits preserves sign (`0xFFFC` $= -4$) |
+| {{keycap:F}} {{keycap:F}} {{keycap:F}} `0` {{key:ENTER}} `2` {{key:≫}} | $\text{0x10}$ | $\text{0x10}$ | $\text{0xFFFC}$ | **$\text{0x3FFC}$** | Logical right shift by $2$ bits zero-fills high bits (`0x3FFC` $= +16{,}380$) |
 
 ### Try It on the Stack
 
@@ -256,7 +256,7 @@ In 32-bit {{key:HEX}} mode ({{key:DEC}} `32` {{key:WSZ}} {{key:HEX}}), loading t
 | {{key:DEC}} `32` {{key:WSZ}} {{key:HEX}} `4441` {{key:SWP}} | $0$ | $0$ | $\text{0x20}$ | $\text{0x41440000}$ | Byte-swap Little-Endian `0x00004441` into Big-Endian `0x41440000` |
 | {{key:FLT}} | $0$ | $0$ | $32$ | $12.25$ | Decode IEEE 754 `binary32` pattern `0x41440000` to $+12.25$ |
 | {{key:DEC}} `12.5` {{key:FLT}} | $0$ | $32$ | $12.25$ | $1095237632$ | Encode float `12.5` into IEEE 754 bit pattern `1095237632` (`0x41480000`) |
-| `24` {{key:NET}} | $32$ | $12.25$ | $4294967040$ | **$254$** | Compute `/24` netmask in $Y$ (`0xFFFFFF00`) and $254$ usable hosts in $X$ |
+| `24` {{key:NET}} | $12.25$ | $1095237632$ | $4294967040$ | **$254$** | Compute `/24` netmask in $Y$ (`0xFFFFFF00`) and $254$ usable hosts in $X$ |
 
 ### Auditing the Sixteen-Times Oversampled UART Baud Divisor on the Stack
 
@@ -384,8 +384,8 @@ To verify the $1{,}000.0\text{ Hz}$ PWM carrier (`48000000` {{key:ENTER}} `48` {
 | {{key:DEC}} `48000000` {{key:ENTER}} `48` {{key:ENTER}} `1000` {{key:PWM}} {{key:C}} | $0$ | $0$ | $0$ | $1000$ | 3-arg stack shortcut: $f_{\text{PWM}} = 48{,}000{,}000 / (48 \times 1000) = 1{,}000\text{ Hz}$ |
 | `3.3` {{key:ENTER}} `12` {{key:ADC}} {{key:C}} `1000` {{key:×}} | $0$ | $0$ | $1000$ | $0.8057$ | Compute 12-bit step size $V_{\text{LSB}} = (3.3 / 4096) \times 1000 \approx 0.8057\text{ mV}$ |
 | `1650` {{key:x⇄y}} {{key:÷}} | $0$ | $0$ | $1000$ | $2048$ | Divide $1{,}650\text{ mV}$ input by $V_{\text{LSB}}$ to obtain mid-scale code $D = 2{,}048$ |
-| `32` {{key:WSZ}} {{key:HEX}} `41440000` {{key:ENTER}} {{key:#B}} | $1000$ | $2048$ | $\text{0x41440000}$ | $\text{0x4}$ | Count set `1` bits in `0x41440000` ({{key:#B}} $= 4$) |
-| {{key:x⇄y}} {{key:CLZ}} | $1000$ | $2048$ | $\text{0x4}$ | **$\text{0x1}$** | Count leading zeros of `0x41440000` in 32-bit register ({{key:CLZ}} $= 1$) |
+| `32` {{key:WSZ}} {{key:HEX}} `41440000` {{key:ENTER}} {{key:#B}} | $2048$ | $32$ | $\text{0x41440000}$ | $\text{0x4}$ | Count set `1` bits in `0x41440000` ({{key:#B}} $= 4$) |
+| {{key:x⇄y}} {{key:CLZ}} | $2048$ | $32$ | $\text{0x4}$ | **$\text{0x1}$** | Count leading zeros of `0x41440000` in 32-bit register ({{key:CLZ}} $= 1$) |
 
 ### Solving Backward in the `PWM`, `ADC`, and `TAU` Workspaces
 
@@ -411,8 +411,8 @@ In {{key:DEC}} mode, keying `26` {{key:NET}} (or `32` {{key:ENTER}} `26` {{key:-
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | {{key:DEC}} `26` {{key:NET}} | $0$ | $0$ | $4294967232$ | $62$ | Evaluate `/26` netmask in $Y$ (`0xFFFFFFC0`) and $62$ usable IPv4 hosts in $X$ |
 | `22` {{key:NET}} | $4294967232$ | $62$ | $4294966272$ | $1022$ | Evaluate plant-wide `/22` supernet netmask in $Y$ and $1{,}022$ usable hosts in $X$ |
-| `53` {{key:ENTER}} `16` {{key:ALN}} | $4294967232$ | $62$ | $1022$ | $64$ | Align 53-byte packet descriptor up to 16-byte boundary ($64\text{ bytes}$) |
-| `0` {{key:ENTER}} `300` {{key:ALN}} | $62$ | $1022$ | $64$ | **$512$** | Round 300-byte DMA ring request up to next power of two ($512\text{ bytes}$) |
+| `53` {{key:ENTER}} `16` {{key:ALN}} | $4294967232$ | $4294966272$ | $1022$ | $64$ | Align 53-byte packet descriptor up to 16-byte boundary ($64\text{ bytes}$) |
+| `0` {{key:ENTER}} `300` {{key:ALN}} | $1022$ | $64$ | $0$ | **$512$** | Round 300-byte DMA ring request up to next power of two ($512\text{ bytes}$) |
 
 ### Try It on the Stack
 

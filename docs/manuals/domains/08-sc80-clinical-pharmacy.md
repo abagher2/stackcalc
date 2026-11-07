@@ -114,8 +114,8 @@ At the bedside computer cart, the pharmacist evaluates Mosteller {{key:BSA}} for
 | `175` {{key:ENTER}} `88` {{key:BSA}} | $0$ | $0$ | $0$ | $2.0683$ | Compute Mosteller surface area $B = \sqrt{175 \times 88 / 3600} = 2.0683\text{ m}^2$ |
 | `175` {{key:IBW}} | $0$ | $0$ | $2.0683$ | $70.4646$ | Lift `BSA` to Register $Y$; evaluate Devine $\text{IBW}_{\text{male}} = 70.4646\text{ kg}$ |
 | `88` {{key:ABW}} | $0$ | $0$ | $2.0683$ | $77.4787$ | Blend $\text{IBW}$ ($Y$) and $\text{TBW} = 88\text{ kg}$ ($X$) into $\text{ABW} = 77.4787\text{ kg}$ |
-| `68` {{key:x⇄y}} `1.6` {{key:GFR}} | $0$ | $0$ | $2.0683$ | $48.4242$ | Evaluate `ABW`-adjusted clearance $C_{\text{ABW}} = 48.42\text{ mL/min}$ ($Z=68, Y=77.48, X=1.6$) |
-| `68` {{key:ENTER}} `88` {{key:ENTER}} `1.6` {{key:GFR}} | $0$ | $2.0683$ | $48.4242$ | **$55.0000$** | Compare unadjusted total-weight clearance $C_{\text{TBW}} = 55.00\text{ mL/min}$ |
+| `68` {{key:x⇄y}} `1.6` {{key:GFR}} | $2.0683$ | $2.0683$ | $2.0683$ | $48.4242$ | Evaluate `ABW`-adjusted clearance $C_{\text{ABW}} = 48.42\text{ mL/min}$ ($Z=68, Y=77.48, X=1.6$) |
+| `68` {{key:ENTER}} `88` {{key:ENTER}} `1.6` {{key:GFR}} | $48.4242$ | $48.4242$ | $48.4242$ | **$55.0000$** | Compare unadjusted total-weight clearance $C_{\text{TBW}} = 55.00\text{ mL/min}$ |
 
 ### Bidirectional Solver Workspaces (`GFR` and `DOS`): Pre-Populated Patient Biometrics and Inverse Clearance
 
@@ -214,9 +214,9 @@ During the shift-change double check, the nurse evaluates the hourly mass flux (
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `5` {{key:ENTER}} `80` {{key:DRP}} | $0$ | $0$ | $0$ | $24.0000$ | Compute vasopressor mass delivery $\dot{m} = 24.00\text{ mg/hr}$ ($24{,}000\ \mu\text{g/hr}$) |
 | `400` {{key:ENTER}} `250` {{key:÷}} {{key:÷}} | $0$ | $0$ | $0$ | $15.0000$ | Divide by bag concentration $1.60\text{ mg/mL}$: pump rate $R = 15.00\text{ mL/hr}$ |
-| {{key:ENTER}} `15` {{key:gtt}} | $0$ | $0$ | $15.0000$ | $3.7500$ | Preserve $R = 15.00\text{ mL/hr}$ in $Y$ and compute $15\text{ gtt/mL}$ drip: $3.75\text{ gtt/min}$ |
-| `106` {{key:ENTER}} `52` {{key:MAP}} | $0$ | $15.0000$ | $3.7500$ | $70.0000$ | Evaluate Mean Arterial Pressure $\text{MAP} = 52 + (106 - 52)/3 = 70.0\text{ mmHg}$ |
-| `80` {{key:ENTER}} `35` {{key:BRN}} `16` {{key:IV}} | $15.0000$ | $3.7500$ | $70.0000$ | **$700.000$** | Compute $24\text{-hr}$ Parkland volume ($11{,}200\text{ mL}$) and first-$8\text{-hr}$ rate $700.0\text{ mL/hr}$ |
+| {{key:ENTER}} {{key:ENTER}} `15` {{key:gtt}} | $0$ | $0$ | $15.0000$ | $3.7500$ | Preserve $R = 15.00\text{ mL/hr}$ in $Y$ and compute $15\text{ gtt/mL}$ drip: $3.75\text{ gtt/min}$ |
+| `106` {{key:ENTER}} `52` {{key:MAP}} | $15$ | $15.0000$ | $3.7500$ | $70.0000$ | Evaluate Mean Arterial Pressure $\text{MAP} = 52 + (106 - 52)/3 = 70.0\text{ mmHg}$ |
+| `80` {{key:ENTER}} `35` {{key:BRN}} `16` {{key:IV}} | $3.75$ | $3.7500$ | $70.0000$ | **$700.000$** | Compute $24\text{-hr}$ Parkland volume ($11{,}200\text{ mL}$) and first-$8\text{-hr}$ rate $700.0\text{ mL/hr}$ |
 
 ### Bidirectional Solver Workspaces (`DRP` and `IV`): Back-Calculating Delivered Dose from an Inherited Pump
 
@@ -325,9 +325,9 @@ To evaluate the $500\text{ mg}$ IV bolus in $V = 25.0\text{ L}$ with $T_{1/2} = 
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `500` {{key:ENTER}} `25` {{key:÷}} `6` {{key:PK}} | $0$ | $0$ | $20.0000$ | $0.1155$ | Peak $C_0 = 20.0\text{ mg/L}$ in $Y$; rate constant $K = \ln(2)/6 = 0.11552\text{ hr}^{-1}$ in $X$ |
 | `12` {{key:×}} {{key:+/-}} {{key:eˣ}} {{key:×}} `0.75` {{key:÷}} | $0$ | $0$ | $0$ | $6.6667$ | First trough $C(12) = 5.0\text{ mg/L}$ scaled by $1/(1-0.25) \to C_{\text{ss,min}} = 6.67\text{ mg/L}$ |
-| `140` {{key:ENTER}} `102` {{key:ENTER}} `14` {{key:+}} {{key:AG}} `5` {{key:+}} | $0$ | $0$ | $6.6667$ | $29.0000$ | Uncorrected $\text{AG} = 24.0$ plus $+5.0$ albumin correction $\to \text{AG}_{\text{corr}} = 29.0\text{ mEq/L}$ |
-| `7.6` {{key:ENTER}} `2.0` {{key:Ca²⁺}} | $0$ | $6.6667$ | $29.0000$ | $9.2000$ | Payne Albumin-Corrected Calcium $\text{Ca}_{\text{corr}} = 7.6 + 0.8(4 - 2) = 9.20\text{ mg/dL}$ |
-| `420` {{key:ENTER}} `96` {{key:QTc}} | $6.6667$ | $29.0000$ | $9.2000$ | **$531.2627$** | Bazett corrected interval $\text{QT}_c = 420 / \sqrt{60/96} = 531.26\text{ ms}$ |
+| `140` {{key:ENTER}} `102` {{key:ENTER}} `14` {{key:+}} {{key:AG}} `5` {{key:+}} | $6.6667$ | $6.6667$ | $6.6667$ | $29.0000$ | Uncorrected $\text{AG} = 24.0$ plus $+5.0$ albumin correction $\to \text{AG}_{\text{corr}} = 29.0\text{ mEq/L}$ |
+| `7.6` {{key:ENTER}} `2.0` {{key:Ca²⁺}} | $6.6667$ | $6.6667$ | $29.0000$ | $9.2000$ | Payne Albumin-Corrected Calcium $\text{Ca}_{\text{corr}} = 7.6 + 0.8(4 - 2) = 9.20\text{ mg/dL}$ |
+| `420` {{key:ENTER}} `96` {{key:QTc}} | $29$ | $29.0000$ | $9.2000$ | **$531.2627$** | Bazett corrected interval $\text{QT}_c = 420 / \sqrt{60/96} = 531.26\text{ ms}$ |
 
 ### Bidirectional Solver Workspaces (`PK` and `ICU`) and Inverse Oxygen Budgeting (`O₂`)
 
