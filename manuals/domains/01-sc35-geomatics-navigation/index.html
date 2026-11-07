@@ -2928,10 +2928,10 @@
 
 
 <h1 id="unit-i-geomatics-land-surveying-flight-navigation">Unit I: Geomatics, Land Surveying &amp; Flight Navigation</h1>
-<p>In the autumn of 1763, the English astronomer Charles Mason and the surveyor Jeremiah Dixon landed at Philadelphia with a six-foot brass zenith sector crafted by John Bird and a surveyor's transit fitted with a micrometer screw. Commissioned to resolve an eighty-year border dispute between the Penn and Calvert families across the timbered ridges and tidal marshes of the Chesapeake peninsula, Mason and Dixon could not stretch an iron chain along an idealized paper parallel. In a classroom, points reside on a frictionless Cartesian plane where the horizontal <span class="arithmatex">\(+x\)</span> axis points East, the vertical <span class="arithmatex">\(+y\)</span> axis points North, and angles sweep counterclockwise from the positive horizontal axis. In the field, dense forests, steep ravines, and atmospheric refraction force a survey crew to anchor every sightline to the stars and the Earth's rotation axis. Within a decade of Mason and Dixon's survey, the London instrument maker Jesse Ramsden perfected his geared circular dividing engine (1775), engraving brass horizontal circles to fractions of an arcminute so compact optical theodolites could carry celestial meridian accuracy across continents.</p>
-<p>Because navigation on land and sea grew around the magnetic compass and the meridian of Polaris, field geometry reverses both reference conventions of the classroom unit circle. When a surveyor levels a theodolite over a brass monument or an aviator reads a directional gyroscope, the zero reference line (<span class="arithmatex">\(0^\circ\)</span>) is <strong>True North</strong> (or Grid North on a planar state projection) rather than East, and the graduated azimuth circle increases <strong>clockwise</strong> through <span class="arithmatex">\(90^\circ\)</span> at East, <span class="arithmatex">\(180^\circ\)</span> at South, and <span class="arithmatex">\(270^\circ\)</span> at West. Starting at the vertical axis and rotating clockwise reflects the coordinate plane across the <span class="arithmatex">\(45^\circ\)</span> Northeast diagonal and <strong>swaps the roles of sine and cosine</strong>: North-South displacement (<strong>Latitude</strong>, <span class="arithmatex">\(\Delta N\)</span>) projects along the cosine of the azimuth, while East-West displacement (<strong>Departure</strong>, <span class="arithmatex">\(\Delta E\)</span>) projects along the sine of the azimuth. Whenever a coordinate pair must be transposed between <span class="arithmatex">\((N, E)\)</span> and <span class="arithmatex">\((E, N)\)</span> conventions, the coordinate swap key <code>[f] [N⇄E]</code> (or standard RPN swap <code>[x⇄y]</code>) exchanges Registers <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> in a single keystroke.</p>
-<p>The physical lever arm of a terrestrial sightline also explains why surveyors and navigators preserve <strong>sexagesimal notation</strong> (Degrees, Minutes, and Seconds <code>DDD.MMSS</code>, where <span class="arithmatex">\(1^\circ = 60'\)</span> and <span class="arithmatex">\(1' = 60''\)</span>, converted via <code>[f] [▸DEG]</code>, <code>[f] [▸HR]</code>, and <code>[g] [▸HMS]</code>) alongside architectural <strong>feet, whole inches, and binary fractions</strong> (<code>[f] [f-i]</code>) and historic land units (<code>[f] [▸ch]</code> for 66-foot Gunter's chains, <code>[g] [▸rod]</code> for 16.5-foot rods, <code>[f] [▸ac]</code> for statutory acres, and <code>[g] [▸ha]</code> for metric hectares). One arcsecond (<span class="arithmatex">\(1'' = 1/3600^\circ\)</span>) is the angle subtended by a United States quarter coin viewed from just over three miles (<span class="arithmatex">\(5\text{ km}\)</span>) away. Over a routine boundary sightline of <span class="arithmatex">\(2{,}000\text{ ft}\)</span>, an angular error of a single arcminute (<span class="arithmatex">\(1'\)</span>) shifts the far stake laterally by <span class="arithmatex">\(2000 \sin(1') \approx 0.582\text{ ft}\)</span> (<span class="arithmatex">\(\approx 7\text{ inches}\)</span>), and an angular rounding error of <span class="arithmatex">\(0.05^\circ\)</span> (<span class="arithmatex">\(3'\)</span>) displaces a corner monument by nearly two feet.</p>
-<p>To support both rapid field reductions and inverse boundary or route design, the <strong>SC-35 Geomatics, Land Surveying &amp; Flight Navigation</strong> instrument combines three architectural pillars: configurable stack depth (<code>4-LV</code>, <code>8-LV</code>, or <code>INF</code> deep stack cycled on Flag 5 <code>5:DEP</code> inside <code>[g] [FLAGS]</code> so register capacity is never a bottleneck), dual-mode domain keys that execute immediate stack projections when operands sit in Registers <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(X\)</span> or open a bidirectional Equation Solver workspace (<code>[g] [SOLVE]</code> / <code>[XEQ]</code> with dynamic softkeys <code>[LFU0]</code>–<code>[LFU5]</code> that morph into variable softkeys inside <code>TSD</code>, <code>FLW</code>, <code>LVL</code>, <code>TRI</code>, <code>CG</code>, <code>HCRV</code>, <code>WIND</code>, and <code>ALT</code>), and native <code>DDD.MMSS</code> / <code>[f] [f-i]</code> parsers paired with the live <code>@COGO</code> coordinate and polygon area/closure ledger (<code>[g] [▦]</code>). Across the three narrative chapters of this Unit, we follow the <code>SC-35</code> from an 18th-century boundary retracement in the New Jersey Pine Barrens, up a switchback highway alignment and spirit-leveling loop through a granite canyon, and onto the flight deck of a twin-turboprop battling a mountain crosswind at night:</p>
+<p>In the autumn of 1763, the astronomer Charles Mason and the surveyor Jeremiah Dixon landed at Philadelphia. They carried a six-foot brass zenith sector crafted by John Bird and a transit fitted with a micrometer screw. For eighty years, the Penn and Calvert families had disputed the border across the timbered ridges and marshes of the Chesapeake peninsula. Mason and Dixon could not simply stretch an iron chain along an idealized paper parallel. In a classroom, points sit on a frictionless plane where <span class="arithmatex">\(+x\)</span> points East, <span class="arithmatex">\(+y\)</span> points North, and angles sweep counterclockwise. In the wild, dense forests, steep ravines, and atmospheric refraction force a crew to anchor every sightline to the stars. Within a decade, the London instrument maker Jesse Ramsden perfected his geared circular dividing engine (1775). By engraving brass circles to fractions of an arcminute, compact optical theodolites could carry celestial accuracy across continents.</p>
+<p>Because navigation on land and sea grew around the magnetic compass and Polaris, field geometry reverses both classroom conventions. When a surveyor levels a theodolite over a monument or an aviator reads a directional gyro, zero (<span class="arithmatex">\(0^\circ\)</span>) points to <strong>True North</strong>. From that meridian, the graduated azimuth circle increases <strong>clockwise</strong> through <span class="arithmatex">\(90^\circ\)</span> at East, <span class="arithmatex">\(180^\circ\)</span> at South, and <span class="arithmatex">\(270^\circ\)</span> at West. Starting at the vertical axis and rotating clockwise reflects the plane across the <span class="arithmatex">\(45^\circ\)</span> Northeast diagonal, <strong>swapping sine and cosine</strong>. North-South displacement (<strong>Latitude</strong>, <span class="arithmatex">\(\Delta N\)</span>) projects along the cosine of the azimuth, while East-West displacement (<strong>Departure</strong>, <span class="arithmatex">\(\Delta E\)</span>) projects along the sine. Whenever a coordinate pair must be transposed between <span class="arithmatex">\((N, E)\)</span> and <span class="arithmatex">\((E, N)\)</span> conventions, <code>[f] [N⇄E]</code> (or <code>[x⇄y]</code>) swaps Registers <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> in one keystroke.</p>
+<p>The long lever arm of an outdoor sightline also explains why field crews preserve <strong>sexagesimal notation</strong> (Degrees, Minutes, and Seconds <code>DDD.MMSS</code>, where <span class="arithmatex">\(1^\circ = 60'\)</span> and <span class="arithmatex">\(1' = 60''\)</span>). One arcsecond (<span class="arithmatex">\(1'' = 1/3600^\circ\)</span>) is the tiny angle subtended by a quarter coin viewed from more than three miles (<span class="arithmatex">\(5\text{ km}\)</span>) away. Over a routine boundary sightline of <span class="arithmatex">\(2{,}000\text{ ft}\)</span>, a one-arcminute error (<span class="arithmatex">\(1'\)</span>) shifts the far stake laterally by <span class="arithmatex">\(2000 \sin(1') \approx 0.582\text{ ft}\)</span>—nearly seven inches. A careless rounding error of just <span class="arithmatex">\(0.05^\circ\)</span> (<span class="arithmatex">\(3'\)</span>) displaces a property corner by almost two feet.</p>
+<p>The <strong>SC-35 Geomatics, Land Surveying &amp; Flight Navigation</strong> calculator is built for this outdoor world. You can configure the RPN stack depth (<code>[4-LV]</code>, <code>[8-LV]</code>, or <code>[INF]</code> inside <code>[g] [FLAGS]</code>) so multi-step coordinate chains never run out of room. Each domain key works in two ways: press it with numbers on the stack for an immediate trigonometric reduction, or open its bidirectional Equation Solver workspace (<code>[g] [SOLVE]</code> / <code>[XEQ]</code>) to solve forward or backward for any variable. Across the three chapters of this Unit, we follow the SC-35 from a colonial boundary retracement in the New Jersey Pine Barrens, up a switchback highway alignment in a granite canyon, and onto the flight deck of a twin-turboprop battling a mountain crosswind at night:</p>
 <table>
 <thead>
 <tr>
@@ -3101,7 +3101,7 @@
 </tbody>
 </table>
 <h3 id="reducing-the-ravine-slope-shot-projecting-coordinates-and-checking-three-wire-stadia">Reducing the Ravine Slope Shot, Projecting Coordinates, and Checking Three-Wire Stadia</h3>
-<p>Standing at Witness Station <span class="arithmatex">\(A\)</span>, the party chief begins with the raw ravine sightline from the field book: an azimuth of <span class="arithmatex">\(47^\circ 22' 30''\)</span> (<code>47.2230 [f] [▸DEG]</code> <span class="arithmatex">\(= 47.375^\circ\)</span>) and an inclined slope distance of <span class="arithmatex">\(S = 412.68\text{ ft}\)</span> at a slope angle of <span class="arithmatex">\(6^\circ 15' 00''\)</span> (<code>6.15 [f] [▸DEG]</code> <span class="arithmatex">\(= 6.25^\circ\)</span>). Keying <code>412.68 [ENTER] 6.25 [SLP]</code> places the vertical rise <span class="arithmatex">\(\Delta V = \mathbf{44.92\text{ ft}}\)</span> into Register <span class="arithmatex">\(Y\)</span> and the reduced horizontal distance <span class="arithmatex">\(D_H = \mathbf{410.10\text{ ft}}\)</span> into Register <span class="arithmatex">\(X\)</span>. Next, placing the azimuth <span class="arithmatex">\(\alpha = 47.375^\circ\)</span> in Register <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(D_H = 410.10\text{ ft}\)</span> in Register <span class="arithmatex">\(X\)</span> and pressing <code>[TRV]</code> pushes the northward latitude change <span class="arithmatex">\(\Delta N = \mathbf{277.75\text{ ft}}\)</span> into Register <span class="arithmatex">\(Y\)</span> and the eastward departure <span class="arithmatex">\(\Delta E = \mathbf{301.76\text{ ft}}\)</span> into Register <span class="arithmatex">\(X\)</span> while accumulating the leg in <code>statSumX</code>/<code>statSumY</code>. Finally, reading three-wire stadia crosshair intercepts on the creekside benchmark rod—top wire <span class="arithmatex">\(7.82\text{ ft}\)</span> in Register <span class="arithmatex">\(Z\)</span>, middle wire <span class="arithmatex">\(5.42\text{ ft}\)</span> in Register <span class="arithmatex">\(Y\)</span>, and bottom wire <span class="arithmatex">\(3.02\text{ ft}\)</span> in Register <span class="arithmatex">\(X\)</span>—and pressing <code>[f] [LVL]</code> verifies crosshair balance by placing the expected mid-wire reading <span class="arithmatex">\(\mathbf{5.42\text{ ft}}\)</span> into Register <span class="arithmatex">\(Y\)</span> and the horizontal stadia sight distance <span class="arithmatex">\(100 \times (7.82 - 3.02) = \mathbf{480.00\text{ ft}}\)</span> into Register <span class="arithmatex">\(X\)</span>:</p>
+<p>Standing at Witness Station <span class="arithmatex">\(A\)</span>, the party chief begins with the raw ravine sightline from the field book: an azimuth of <span class="arithmatex">\(47^\circ 22' 30''\)</span> (<code>47.2230 [f] [▸HR]</code> <span class="arithmatex">\(= 47.375^\circ\)</span>) and an inclined slope distance of <span class="arithmatex">\(S = 412.68\text{ ft}\)</span> at a slope angle of <span class="arithmatex">\(6^\circ 15' 00''\)</span> (<code>6.15 [f] [▸HR]</code> <span class="arithmatex">\(= 6.25^\circ\)</span>). Keying <code>412.68 [ENTER] 6.25 [SLP]</code> places the vertical rise <span class="arithmatex">\(\Delta V = \mathbf{44.92\text{ ft}}\)</span> into Register <span class="arithmatex">\(Y\)</span> and the reduced horizontal distance <span class="arithmatex">\(D_H = \mathbf{410.10\text{ ft}}\)</span> into Register <span class="arithmatex">\(X\)</span>. Next, placing the azimuth <span class="arithmatex">\(\alpha = 47.375^\circ\)</span> in Register <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(D_H = 410.10\text{ ft}\)</span> in Register <span class="arithmatex">\(X\)</span> and pressing <code>[TRV] [f] [N⇄E]</code> places the northward latitude change <span class="arithmatex">\(\Delta N = \mathbf{277.75\text{ ft}}\)</span> into Register <span class="arithmatex">\(Y\)</span> and the eastward departure <span class="arithmatex">\(\Delta E = \mathbf{301.76\text{ ft}}\)</span> into Register <span class="arithmatex">\(X\)</span>. Finally, reading three-wire stadia crosshair intercepts on the creekside benchmark rod—top wire <span class="arithmatex">\(7.82\text{ ft}\)</span> in Register <span class="arithmatex">\(Z\)</span>, middle wire <span class="arithmatex">\(5.42\text{ ft}\)</span> in Register <span class="arithmatex">\(Y\)</span>, and bottom wire <span class="arithmatex">\(3.02\text{ ft}\)</span> in Register <span class="arithmatex">\(X\)</span>—and pressing <code>[f] [LVL]</code> verifies crosshair balance by placing the expected mid-wire reading <span class="arithmatex">\(\mathbf{5.42\text{ ft}}\)</span> into Register <span class="arithmatex">\(Y\)</span> and the horizontal stadia sight distance <span class="arithmatex">\(100 \times (7.82 - 3.02) = \mathbf{480.00\text{ ft}}\)</span> into Register <span class="arithmatex">\(X\)</span>:</p>
 <table>
 <thead>
 <tr>
@@ -3123,7 +3123,7 @@
 <td style="text-align: left;">Reduce slope shot to vertical <span class="arithmatex">\(\Delta V = 44.92\text{ ft}\)</span> (<span class="arithmatex">\(Y\)</span>) and horizontal <span class="arithmatex">\(D_H = 410.10\text{ ft}\)</span> (<span class="arithmatex">\(X\)</span>)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>47.2230 [f] [▸DEG] [x⇄y] [TRV]</code></td>
+<td style="text-align: left;"><code>47.2230 [f] [▸HR] [x⇄y] [TRV] [f] [N⇄E]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(44.92\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(277.75\)</span></td>
@@ -3132,8 +3132,8 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code>7.82 [ENTER] 5.42 [ENTER] 3.02 [f] [LVL]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(44.92\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(277.75\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(301.85\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(301.85\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(5.42\)</span></td>
 <td style="text-align: center;"><strong><span class="arithmatex">\(480.00\)</span></strong></td>
 <td style="text-align: left;">3-wire stadia check: expected mid-wire <span class="arithmatex">\(5.42\text{ ft}\)</span> in <span class="arithmatex">\(Y\)</span> and stadia distance <span class="arithmatex">\(480.00\text{ ft}\)</span> in <span class="arithmatex">\(X\)</span></td>
@@ -3167,31 +3167,31 @@
 <td style="text-align: left;"><code>0 [ENTER] 300 [TRV] [f] [PT+]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(300\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
 <td style="text-align: left;">Project Leg 1 (<span class="arithmatex">\(\alpha_1 = 0^\circ, D_1 = 300 \to \Delta N_1 = 300, \Delta E_1 = 0\)</span>) and store Vertex 1</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>90 [ENTER] 400 [TRV] [f] [PT+]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(300\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(400\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(2\)</span></td>
 <td style="text-align: left;">Project Leg 2 (<span class="arithmatex">\(\alpha_2 = 90^\circ, D_2 = 400 \to \Delta N_2 = 0, \Delta E_2 = 400\)</span>) and store Vertex 2</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>233.1301 [ENTER] 500 [TRV] [f] [PT+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(300\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(-300\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(400\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-400.00\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(3\)</span></td>
 <td style="text-align: left;">Project Leg 3 (<span class="arithmatex">\(\Delta N_3 = -300, \Delta E_3 = -400\)</span>); <code>[g] [▦]</code> reports <code>CLOS = 0</code>, <code>AREA = 60000</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>60000 [f] [▸ac]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(-300\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(3\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(400\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-400.00\)</span></td>
 <td style="text-align: center;"><strong><span class="arithmatex">\(1.3774\)</span></strong></td>
 <td style="text-align: left;">Convert enclosed shoelace area <span class="arithmatex">\(60{,}000\text{ ft}^2\)</span> from <code>[g] [▦]</code> to <span class="arithmatex">\(1.3774\text{ acres}\)</span></td>
 </tr>
@@ -3203,7 +3203,7 @@
 <h3 id="try-it-on-the-stack">Try It on the Stack</h3>
 <p>Use these three boundary retracement exercises to practice slope reduction, coordinate projection, and traverse closure on the stack:</p>
 <ol>
-<li><strong>Slope Reduction and Forward Coordinate Projection:</strong> Reduce slope distance <span class="arithmatex">\(S = 412.68\text{ ft}\)</span> at inclination <span class="arithmatex">\(\nu = +6^\circ 15' 00''\)</span> (<code>6.15 [f] [▸DEG]</code> <span class="arithmatex">\(= 6.25^\circ\)</span>) via <code>412.68 [ENTER] 6.25 [SLP]</code> to obtain <span class="arithmatex">\(D_H = 410.10\text{ ft}\)</span> in Register <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(\Delta V = 44.92\text{ ft}\)</span> in Register <span class="arithmatex">\(Y\)</span>, then place Azimuth <span class="arithmatex">\(\alpha = 47^\circ 22' 30''\)</span> (<code>47.2230 [f] [▸DEG]</code> <span class="arithmatex">\(= 47.375^\circ\)</span>) in Register <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(D_H = 410.10\text{ ft}\)</span> in Register <span class="arithmatex">\(X\)</span> and press <code>[TRV]</code>. <em>(Verified stack results: <span class="arithmatex">\(\Delta V = \mathbf{44.92\text{ ft}}\)</span>, <span class="arithmatex">\(D_H = \mathbf{410.10\text{ ft}}\)</span>, <span class="arithmatex">\(\Delta N = \mathbf{277.75\text{ ft}}\)</span> in <span class="arithmatex">\(Y\)</span>, and <span class="arithmatex">\(\Delta E = \mathbf{301.76\text{ ft}}\)</span> in <span class="arithmatex">\(X\)</span>.)</em></li>
+<li><strong>Slope Reduction and Forward Coordinate Projection:</strong> Reduce slope distance <span class="arithmatex">\(S = 412.68\text{ ft}\)</span> at inclination <span class="arithmatex">\(\nu = +6^\circ 15' 00''\)</span> (<code>6.15 [f] [▸HR]</code> <span class="arithmatex">\(= 6.25^\circ\)</span>) via <code>412.68 [ENTER] 6.25 [SLP]</code> to obtain <span class="arithmatex">\(D_H = 410.10\text{ ft}\)</span> in Register <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(\Delta V = 44.92\text{ ft}\)</span> in Register <span class="arithmatex">\(Y\)</span>, then place Azimuth <span class="arithmatex">\(\alpha = 47^\circ 22' 30''\)</span> (<code>47.2230 [f] [▸HR]</code> <span class="arithmatex">\(= 47.375^\circ\)</span>) in Register <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(D_H = 410.10\text{ ft}\)</span> in Register <span class="arithmatex">\(X\)</span> and press <code>[TRV] [f] [N⇄E]</code>. <em>(Verified stack results: <span class="arithmatex">\(\Delta V = \mathbf{44.92\text{ ft}}\)</span>, <span class="arithmatex">\(D_H = \mathbf{410.10\text{ ft}}\)</span>, <span class="arithmatex">\(\Delta N = \mathbf{277.75\text{ ft}}\)</span> in <span class="arithmatex">\(Y\)</span>, and <span class="arithmatex">\(\Delta E = \mathbf{301.76\text{ ft}}\)</span> in <span class="arithmatex">\(X\)</span>.)</em></li>
 <li><strong>Inverse Bearing Between Witness Monuments:</strong> Given two iron boundary pipes at <span class="arithmatex">\(A(1200.00, 1500.00)\)</span> and <span class="arithmatex">\(B(1585.20, 1912.60)\)</span>, key <code>1585.20 [ENTER] 1200 [-] 1912.60 [ENTER] 1500 [-] [INV]</code> and <code>[x⇄y] [BRG] [g] [▸HMS]</code> to find the boundary length and legal quadrant bearing. <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(D \approx \mathbf{564.4624\text{ ft}}\)</span>, <span class="arithmatex">\(\alpha \approx \mathbf{46.9669^\circ}\)</span>, packed DMS bearing <span class="arithmatex">\(\mathbf{46.5801}\)</span> or <span class="arithmatex">\(\text{N } 46^\circ 58' 01'' \text{ E}\)</span>.)</em></li>
 <li><strong>Traverse Closure Precision and Acreage Conversion:</strong> A four-leg boundary loop of perimeter <span class="arithmatex">\(P = 2{,}500.00\text{ ft}\)</span> has net misclosures <span class="arithmatex">\(\Sigma_{\Delta N} = +0.15\text{ ft}\)</span> and <span class="arithmatex">\(\Sigma_{\Delta E} = -0.20\text{ ft}\)</span> and an enclosed shoelace area in <code>[g] [▦]</code> of <span class="arithmatex">\(A = 326{,}700\text{ ft}^2\)</span>. Key <code>0.15 [ENTER] 0.20 [+/-] [g] [CLS]</code> for <span class="arithmatex">\(E_c\)</span>, <code>2500 [x⇄y] [÷]</code> for the precision ratio, and <code>326700 [f] [▸ac]</code> for acreage. <em>(Verified Register <span class="arithmatex">\(X\)</span> results: <span class="arithmatex">\(E_c = \mathbf{0.25\text{ ft}}\)</span>, precision <span class="arithmatex">\(\mathbf{1 : 10{,}000}\)</span>, and <span class="arithmatex">\(\mathbf{7.5000\text{ acres}}\)</span>.)</em></li>
 </ol>
@@ -3336,16 +3336,16 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code>425.00 [ENTER] 2.5 [ENTER] 1.75 [+/-] [ENTER] 8 [f] [VCV]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(304.77\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(596.90\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(425\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(425\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(425\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(430.75\)</span></td>
 <td style="text-align: left;">Compute parabolic crest elevation <span class="arithmatex">\(\text{Elev}(4) = 430.75\text{ ft}\)</span> (<span class="arithmatex">\(\text{PVT} = 428.00\text{ ft}\)</span> at <span class="arithmatex">\(x = 8\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>320 [ENTER] 400 [ENTER] 150 [g] [CUT]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(304.77\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(596.90\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(430.75\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(430.75\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(430.75\)</span></td>
 <td style="text-align: center;"><strong><span class="arithmatex">\(2000.00\)</span></strong></td>
 <td style="text-align: left;">Compute trapezoidal prism volume <span class="arithmatex">\(V = \frac{320+400}{2}\cdot\frac{150}{27} = 2{,}000.00\text{ yd}^3\)</span></td>
@@ -3379,7 +3379,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code>[x⇄y] 4812.40 [ENTER] 6.85 [+]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(480\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(480.00\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(5.42\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(4819.25\)</span></td>
@@ -3387,15 +3387,15 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code>[x⇄y] [-]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(480\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(480\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(480.00\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(4813.83\)</span></td>
 <td style="text-align: left;">Subtract foresight <span class="arithmatex">\(F = 5.42\text{ ft}\)</span> to find <span class="arithmatex">\(E_{\text{PC}} = 4{,}813.83\text{ ft}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>35.814 [ENTER] 596.90 [g] [GR%]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(480\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(480.00\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(4813.83\)</span></td>
 <td style="text-align: center;"><strong><span class="arithmatex">\(6.0000\)</span></strong></td>
@@ -3528,7 +3528,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code>6200 [ENTER] 28 [f] [ALT]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(21.4492\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(21.45\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(7.13\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(9248\)</span></td>
@@ -3536,7 +3536,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code>220 [ENTER] 145 [f] [CG]</code></td>
-<td style="text-align: center;"><span class="arithmatex">\(21.45\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(7.1302\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(7.13\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(9248\)</span></td>
 <td style="text-align: center;"><strong><span class="arithmatex">\(31900\)</span></strong></td>

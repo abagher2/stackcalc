@@ -8,7 +8,7 @@
       "book_virtual_panelmovement": 0
    },
    "content_hash": {
-      "resources/book.kdf": "63aa358feda12bc5f21de7beb3a4a1ab",
+      "resources/book.kdf": "28de516c1f45aed5055848366f3a25bc",
       "resources/res/rsrc0": "c5162bf521e901cc067d2a37f9ad8eb7"
    },
    "metadata": {
@@ -18,7 +18,7 @@
       ],
       "format": "yj",
       "global_styling": true,
-      "id": "63963b00-16ab-40cc-afa0-f02b4f071818",
+      "id": "a4f2e123-cba5-43ea-bef0-bd233e0e735a",
       "log_path": "",
       "platform": "mac",
       "quality_report": "",

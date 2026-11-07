@@ -2921,27 +2921,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#physical-constraints-and-operational-acronyms" class="md-nav__link">
+  <a href="#where-classroom-equations-meet-the-real-world" class="md-nav__link">
     <span class="md-ellipsis">
-      Physical Constraints and Operational Acronyms
+      Where Classroom Equations Meet the Real World
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dual-mode-rpn-stack-pipelines-and-bidirectional-equation-workspaces" class="md-nav__link">
+  <a href="#concepts-first-worked-examples-second-keystrokes-third" class="md-nav__link">
     <span class="md-ellipsis">
-      Dual-Mode RPN Stack Pipelines and Bidirectional Equation Workspaces
+      Concepts First, Worked Examples Second, Keystrokes Third
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#scope-and-mathematical-progression" class="md-nav__link">
+  <a href="#forward-chains-and-backward-puzzles-one-story-two-ways-of-thinking" class="md-nav__link">
     <span class="md-ellipsis">
-      Scope and Mathematical Progression
+      Forward Chains and Backward Puzzles: One Story, Two Ways of Thinking
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Forward Chains and Backward Puzzles: One Story, Two Ways of Thinking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-thinking-forward-on-the-four-register-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Thinking Forward on the Four-Register Stack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-thinking-backward-in-the-equation-solver-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Thinking Backward in the Equation Solver Workspace
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nine-worlds-of-applied-mathematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nine Worlds of Applied Mathematics
     </span>
   </a>
   
@@ -2963,27 +2996,43 @@
 
 
 <h1 id="prologue-when-mathematics-meets-the-physical-trades">Prologue: When Mathematics Meets the Physical Trades</h1>
-<p>In the summer of 1858, while the first transatlantic telegraph cable was being paid out across the floor of the North Atlantic between Valentia Island, Ireland, and Heart's Content, Newfoundland, the thirty-four-year-old Scottish physicist William Thomson—later Lord Kelvin—sat aboard HMS <em>Agamemnon</em> watching a mirror galvanometer. In university lecture halls, electrical circuits had been taught as idealized abstractions: wires carried current without resistance, signals arrived at the far end of a line without delay, and pulses retained their sharp rectangular edges regardless of distance. Across two thousand nautical miles of gutta-percha-insulated copper core resting on the ocean seabed, physical reality intervened. Distributed conductor resistance and seawater capacitance turned crisp Morse dots into slow, attenuating thermal and electromagnetic diffusions, and when the chief electrician in London applied high-voltage induction coils to force a faster signal through the cable, the insulation charred and failed within weeks.</p>
-<p>Twenty-five years later, in a famous 1883 address to the Institution of Civil Engineers in London, Kelvin distilled the lesson of the Atlantic cable into the foundational maxim of applied science: until you can measure what you are speaking about and express it in numbers, your knowledge remains of a meager and unsatisfactory kind. In a classroom, angles begin along the horizontal <span class="arithmatex">\(+x\)</span> axis and sweep counterclockwise, conductors carry current without heating, integers grow arbitrarily large without wrapping around, waves travel down cables without reflecting, and chemical or culinary formulations scale by volume. When mathematics enters the field, the shop floor, the wet lab, or the flight deck, it encounters the physical properties of real materials and the historical conventions of human instruments.</p>
-<p>Compasses and optical theodolites measure angles clockwise from True North (<span class="arithmatex">\(0^\circ\)</span>), swapping the roles of sine and cosine, while historic property deeds record bearings in sexagesimal degrees, arcminutes, and arcseconds (<span class="arithmatex">\(D^\circ M' S''\)</span>) and structural blueprints specify dimensions in feet and binary fractional inches. Copper and aluminum feeders resist electron flow and convert voltage into heat inside steel raceways that foreshorten along their run when bent around overhead beams. Silicon microprocessor registers hold a fixed number of bistable flip-flops (<span class="arithmatex">\(W \in \{8, 16, 32, 64\}\)</span> bits) whose signed integers wrap around modulo <span class="arithmatex">\(2^W\)</span> in two's complement arithmetic. Camera lenses focus light across a finite depth of field governed by the circle of confusion, radio-frequency waves reflect from mismatched antenna impedances, analytical chemists weigh macroscopic grams to count submicroscopic moles, commercial bakers anchor dough hydration and mixer friction to flour mass, hospital pharmacists titrate narrow-therapeutic-index infusions to patient body surface area and renal clearance, and quality engineers measure manufacturing capability against Six Sigma tolerance bands.</p>
+<p>In the summer of 1858, sailors aboard two steamships met in the middle of the North Atlantic, spliced two coils of copper cable together, and lowered the joint into two miles of dark ocean water. As HMS <em>Agamemnon</em> steamed eastward toward Ireland and USS <em>Niagara</em> steamed westward toward Newfoundland, they paid out the first telegraph line ever to connect two continents.</p>
+<p>Below deck on the <em>Agamemnon</em> sat a thirty-four-year-old Scottish physicist named William Thomson, who would later become Lord Kelvin. All across Europe and America, newspapers celebrated the end of distance. In university classrooms, electricity had been taught as a weightless, instantaneous fluid: when you closed a switch in London, a crisp rectangular pulse of current was supposed to appear in New York at the speed of light.</p>
+<p>Sitting in the ship's cabin watching a tiny mirror suspended on a silk thread, Thomson saw something very different. Two thousand miles of copper wire wrapped in tree resin and submerged in icy salt water did not behave like a blackboard diagram. The copper resisted the flow of electrons, while the surrounding ocean acted like a giant capacitor that soaked up electrical charge. By the time a sharp Morse code dot traveled from Ireland to Newfoundland, it arrived as a slow,gentle swell that took seconds to rise and fade.</p>
+<p>Worse still, the chief electrician in London refused to believe Thomson's equations. Convinced that a sluggish signal simply needed a harder push, he connected giant high-voltage induction coils to the wire. Within weeks, the electrical pressure burned through the insulation on the ocean floor, and the Atlantic cable went silent.</p>
+<p>Twenty-five years later, speaking to the Institution of Civil Engineers in London, Lord Kelvin summed up the lesson of that summer at sea: until you can measure what you are speaking about and express it in numbers, your knowledge is meager and unsatisfactory. That is the subject of this book.</p>
 <hr />
-<h2 id="physical-constraints-and-operational-acronyms">Physical Constraints and Operational Acronyms</h2>
-<p>Across every technical craft, practitioners condense recurring mathematical relationships into compact three- or four-letter operational shorthand. Rather than speaking in unanchored algebraic symbols, a land surveyor speaks of running a <strong>Forward</strong> coordinate projection (<code>[TRV]</code>) or an <strong>Inverse</strong> monument check (<code>[INV]</code>); a master electrician checks branch-circuit <strong>Voltage Drop</strong> (<code>[AWG]</code>), <strong>Power Factor</strong> (<code>[PF]</code>), or motor <strong>Full-Load Amps</strong> (<code>[g] [FLA]</code>); and an embedded systems engineer applies a contiguous bitfield <strong>Mask</strong> (<code>[f] [MSK]</code>), an <strong>Arithmetic Shift Right</strong> (<code>[f] [ASR]</code>), or a <strong>Cyclic Redundancy Check</strong> (<code>[f] [CRC]</code>).</p>
-<p><img alt="From physical observation to mathematical model and RPN stack operator." src="../assets/diagrams/domains/diagram_intro_pipeline.png" /></p>
-<p>Throughout this volume, each operational acronym is introduced directly inside the first-principles conceptual derivation that motivates it. Treating tokens such as <code>[TRV]</code>, <code>[INV]</code>, <code>[BRG]</code>, <code>[CRV]</code>, <code>[AWG]</code>, <code>[OFS]</code>, <code>[g] [Cᵥ]</code>, <code>[f] [NEG]</code>, <code>[FLT]</code>, <code>[f] [ADC]</code>, <code>[NET]</code>, <code>[DOF]</code>, <code>[SWR]</code>, <code>[εbc]</code>, <code>[BUF]</code>, <code>[Tw]</code>, <code>[GFR]</code>, and <code>[g] [Cpk]</code> as named mathematical transformations serves two pedagogical purposes at once. First, it binds every governing equation to its physical trade context: seeing <code>[INV]</code> recalls extracting straight-line distance and compass azimuth between two boundary monuments, while seeing <code>[OFS]</code> recalls the cosecant hypotenuse of a conduit offset triangle. Second, once the geometry and physics behind each acronym are established through worked analytical examples, transitioning to an operational keypad where those exact legends engrave the keys requires no translation layer.</p>
-<hr />
-<h2 id="dual-mode-rpn-stack-pipelines-and-bidirectional-equation-workspaces">Dual-Mode RPN Stack Pipelines and Bidirectional Equation Workspaces</h2>
-<p>In an introductory algebra course, an equation is typically presented as a single static formula on paper and evaluated once. In the physical trades, field computation unfolds as a <strong>progressive pipeline of intermediate physical quantities</strong> where the output of one transformation becomes the input to the next, or as an <strong>inverse design problem</strong> where a physical boundary constraint fixes the output and the practitioner must solve backward for a required input dimension. An electrician computes the apparent power of a three-phase load in kilovolt-amperes, converts that apparent power into line current in amperes, scales by <span class="arithmatex">\(125\%\)</span> for continuous duty, and checks either the voltage drop across a selected wire gauge or the maximum conduit run length permitted under a <span class="arithmatex">\(3\%\)</span> voltage-drop ceiling. A land surveyor reduces an inclined slope distance to horizontal ground distance, projects that horizontal distance into North and East displacements, and adds those displacements to the starting benchmark coordinates. A clinical pharmacist calculates a patient's body surface area in square meters, multiplies by an oncology protocol dose in <span class="arithmatex">\(\text{mg/m}^2\)</span> to determine total milligrams, divides by stock vial concentration to find required milliliters, and divides by infusion duration to set the volumetric pump rate in <span class="arithmatex">\(\text{mL/hr}\)</span>.</p>
-<p><img alt="Architecture of the four-register RPN stack (T, Z, Y, X) during physical multi-parameter evaluation." src="../assets/diagrams/domains/diagram_intro_stack.png" /></p>
-<p>Every instrument in the StackCalc Domain Series (<code>SC-35</code> through <code>SC-95</code>) is built around a <strong>three-pillar computational architecture</strong> designed specifically for this dual forward-and-inverse field workflow:</p>
+<h2 id="where-classroom-equations-meet-the-real-world">Where Classroom Equations Meet the Real World</h2>
+<p>In a math classroom, the world is wonderfully tidy. Angles always start on the flat horizontal axis on the right side of the page and sweep counterclockwise. Wires carry electricity without getting warm. Whole numbers can grow forever without running out of room. Sound and radio waves travel in straight lines without bouncing off walls, and recipes can be doubled just by pouring two cups instead of one.</p>
+<p>The moment you step outside the classroom—into a forest canyon, a ship's engine room, a bakery at four in the morning, or a hospital intensive-care ward—nature introduces rules of its own.</p>
+<p><img alt="Three everyday physical puzzles where classroom geometry and physics meet the real world." src="../assets/diagrams/domains/diagram_intro_problems.png" /></p>
+<p>Look at the three everyday puzzles in <strong>Figure 0.1</strong>:</p>
 <ol>
-<li><strong>Configurable RPN Stack Depth (<code>4-LV</code>, <code>8-LV</code>, or Deep Stack <code>INF</code>):</strong> Practitioners can operate with classic four-register <span class="arithmatex">\((X, Y, Z, T)\)</span> RPN discipline, or cycle Flag 5 (<code>5:DEP</code>) inside <code>[↱] [FLAGS]</code> to <code>8-LV</code> for an eight-register stack or <code>INF</code> for deep stack capacity so register depth is never an artificial hardware bottleneck. Throughout this volume, stack trace tables display the active four-register window (<span class="arithmatex">\(T, Z, Y, X\)</span>) at the bottom of the stack where operands are staged and inspected.</li>
-<li><strong>Dual-Mode Domain Keys (Quick-Access RPN Stack Shortcuts + Bidirectional Equation Solver Workspaces):</strong></li>
-<li><strong>Immediate Stack Mode (Quick-Access Shortcut):</strong> When operands are already staged in Registers <span class="arithmatex">\(Z, Y,\)</span> and <span class="arithmatex">\(X\)</span>, pressing a domain key executes the forward transformation in a single keystroke and remains on the RPN stack so results can be chained immediately. Domain operators embed fundamental physical constants (such as the molar gas constant <span class="arithmatex">\(R = 8.314462618\text{ J/(mol}\cdot\text{K)}\)</span> on <code>[g] [R]</code>, the Faraday constant <span class="arithmatex">\(F = 96{,}485.33\text{ C/mol}\)</span> on <code>[f] [F]</code>, and standard water density <span class="arithmatex">\(\rho_w\)</span> on <code>[g] [ρw]</code>), regulatory lookup tables (such as NEC Chapter 9, Table 8 conductor resistances in <code>[AWG]</code> and 118-element IUPAC atomic weights in <code>[Z]</code>), and dimensional scaling factors so field engineers can chain calculations without error-prone manual constant entry.</li>
-<li><strong>Bidirectional Equation Solver Workspace (<code>[↱] [SOLVE]</code> / <code>[XEQ]</code> + Softkeys <code>[LFU0]</code>–<code>[LFU5]</code>):</strong> When idle on the RPN stack, the six top-row softkeys (<code>[LFU0]</code>–<code>[LFU5]</code>) dynamically surface your most recently used domain operations via <code>LFUManager</code> (or hexadecimal digits <code>[A]</code>–<code>[F]</code> on the <code>SC-16</code> in <code>[HEX]</code> mode). Pressing a domain key when <span class="arithmatex">\(X = 0\)</span> and <span class="arithmatex">\(Y = 0\)</span> (or after <code>[↱] [SOLVE]</code>) opens its Equation Solver Workspace, displaying the classical governing law across Line 1 of the LCD—such as <code>L = R × Δ × π / 180</code> for horizontal curves (<code>[CRV]</code>), <code>A = ε × B × C</code> for Beer–Lambert spectrophotometry (<code>[εbc]</code>), <code>P = K + LOG(A/H)</code> for Henderson–Hasselbalch buffers (<code>[BUF]</code>), <code>D = 2×R×L×I / 1000</code> for feeder voltage drop (<code>[AWG]</code>), <code>T = O / SIN(A)</code> for conduit offsets (<code>[OFS]</code>), or <code>Q = C × √(P / G)</code> for control valve flow (<code>[g] [Cᵥ]</code>)—and rebinds <code>[LFU0]</code>–<code>[LFU5]</code> to the equation's named variables. Storing known parameters in any order and pressing <code>[↱] [SOLVE]</code> (or <code>[XEQ]</code>) on the remaining variable softkey solves <strong>forward or backward for any unknown variable</strong> without algebraic rearrangement.</li>
-<li><strong>Domain Input Parsers and Live Reference Ledgers (<code>[g] [▦]</code>):</strong> Dedicated entry parsers accept native trade notation—packed sexagesimal <code>DDD.MMSS</code> angles (<code>[f] [▸DEG]</code> / <code>[g] [▸HMS]</code>), architectural feet and fractional inches (<code>[f] [f-i]</code>), chemical formulas (<code>[Z]</code>), hardware radix words (<code>[HEX]</code>, <code>[g] [BIN]</code>, <code>[f] [OCT]</code>), and broadcast timecode (<code>[TC]</code>)—while the non-destructive Reference Table (<code>[g] [▦]</code>) maintains live domain ledgers such as <code>@COGO</code> survey coordinates and polygon area/closure, NEC wire ampacity tables, and elemental mass breakdowns.</li>
+<li><strong>The Surveyor's Compass and the Canyon:</strong> Suppose you stand on the rim of a river canyon holding a magnetic compass. Unlike a classroom protractor that puts <span class="arithmatex">\(0^\circ\)</span> on the right, every compass needle on Earth points to <strong>True North (<span class="arithmatex">\(0^\circ\)</span>)</strong> at the top of the dial, and its angles increase <em>clockwise</em> toward East (<span class="arithmatex">\(90^\circ\)</span>), South (<span class="arithmatex">\(180^\circ\)</span>), and West (<span class="arithmatex">\(270^\circ\)</span>). When a surveyor sights a target <span class="arithmatex">\(500\text{ feet}\)</span> away at a clockwise compass angle of <span class="arithmatex">\(53^\circ\)</span>, that simple change of direction swaps the familiar roles of sine and cosine.</li>
+<li><strong>The Electrician's Bent Steel Pipe:</strong> Imagine running a rigid steel pipe along a factory wall when you meet a <span class="arithmatex">\(6\text{-inch}\)</span>-thick steel beam blocking your path. To climb over the beam cleanly, the electrician bends the pipe upward at <span class="arithmatex">\(30^\circ\)</span> and then bends it back flat at the top. Because the sine of <span class="arithmatex">\(30^\circ\)</span> is exactly <span class="arithmatex">\(\frac{1}{2}\)</span>, climbing <span class="arithmatex">\(6\text{ inches}\)</span> vertically requires placing the two bends exactly <span class="arithmatex">\(2 \times 6 = 12\text{ inches}\)</span> apart along the pipe!</li>
+<li><strong>The Baker's Spinning Mixer:</strong> When a bakery kneads two hundred loaves of bread dough in a heavy steel spiral mixer, the friction of the spinning steel hook heats the dough by <span class="arithmatex">\(18^\circ\text{C}\)</span> during mixing. If the dough comes out too warm, the yeast races out of control and the bread collapses. To hit an exact target dough temperature of <span class="arithmatex">\(24^\circ\text{C}\)</span>, the baker works backward from the room, flour, and friction temperatures to calculate how cold the tap water must be—and how many kilograms of crushed ice must melt inside the bowl.</li>
 </ol>
-<p>To see how immediate stack execution and the bidirectional Equation Solver complement each other, consider a <span class="arithmatex">\(150\text{ ft}\)</span> single-phase <span class="arithmatex">\(240\text{ V}\)</span> branch circuit carrying <span class="arithmatex">\(I = 24\text{ A}\)</span> on <code>#10 AWG</code> copper wire (<span class="arithmatex">\(R = 1.24\ \Omega/\text{kft}\)</span>). On the RPN stack, staging current <span class="arithmatex">\(I = 24\text{ A}\)</span> in Register <span class="arithmatex">\(Z\)</span>, one-way length <span class="arithmatex">\(L = 150\text{ ft}\)</span> in Register <span class="arithmatex">\(Y\)</span>, and wire gauge <code>10</code> in Register <span class="arithmatex">\(X\)</span> before pressing <code>[AWG]</code> evaluates the round-trip line voltage drop <span class="arithmatex">\(V_{\text{drop}} = \frac{2 R L I}{1000} = \mathbf{8.928\text{ V}}\)</span> directly from the built-in NEC Table 8 resistance lookup, or you can inspect each intermediate physical product step by step:</p>
+<p>Every chapter in this book is built around real stories like these. You do not need to be an engineer to enjoy them. If you have ever wondered how an airline pilot lands crabwise in a crosswind, how a movie camera blurs the background behind an actor's face, how a computer stores a negative number using only zeros and ones, or how a pharmacist tailors medicine to a patient's kidneys, the mathematics is waiting right beneath the surface.</p>
+<hr />
+<h2 id="concepts-first-worked-examples-second-keystrokes-third">Concepts First, Worked Examples Second, Keystrokes Third</h2>
+<p>In every skilled trade, people who use the same physical law every day eventually give it a short nickname. A land surveyor does not say, <em>"Let us apply the Pythagorean theorem and four-quadrant arc-tangent to our Northing and Easting differences."</em> Instead, the surveyor calls that check an <strong>Inverse</strong> (<code>[INV]</code>). A pipefitter calls the geometry of bending pipe over a beam an <strong>Offset</strong> (<code>[OFS]</code>). A cinematographer calls the zone of sharp focus <strong>Depth of Field</strong> (<code>[DOF]</code>), and a baker calls scaling a recipe to flour weight <strong>Baker's Percentage</strong> (<code>[BK%]</code>).</p>
+<p>To make every field welcoming to newcomers and rewarding for experts, each chapter in this book follows the same three-step rhythm as Volume II (<em>Thinking in the Stack</em>):</p>
+<ol>
+<li><strong>The Physical Story and the Mathematical Idea:</strong> We begin each chapter with a human story and a physical puzzle, building the geometry or physics from first principles without jargon.</li>
+<li><strong>Worked Examples by Hand:</strong> Next, we put real numbers into the idea and trace how the quantities fit together step by step, so you can see <em>why</em> the answer makes physical sense.</li>
+<li><strong>Bringing the Idea to the Calculator:</strong> Finally, we show how that exact concept lives on the StackCalc Domain Series (<code>SC-35</code> through <code>SC-95</code>), where those three-letter trade nicknames are engraved right on the keys.</li>
+</ol>
+<hr />
+<h2 id="forward-chains-and-backward-puzzles-one-story-two-ways-of-thinking">Forward Chains and Backward Puzzles: One Story, Two Ways of Thinking</h2>
+<p>Why do practitioners in the field use a stack calculator with dedicated domain keys instead of a basic four-function calculator or a spreadsheet? Because field problems almost always come in pairs: first you <strong>chain measurements forward</strong>, and then a real-world limit forces you to <strong>solve the same problem backward</strong>.</p>
+<p>Let us trace a single concrete example to see how both modes work.</p>
+<p>Suppose an electrician is wiring a <span class="arithmatex">\(240\text{ V}\)</span> motor at the end of a <span class="arithmatex">\(150\text{-foot}\)</span> pier using medium-gauge copper wire (<code>#10 AWG</code>). Copper is a wonderful conductor, but it is not perfect: every <span class="arithmatex">\(1{,}000\text{ feet}\)</span> of <code>#10 AWG</code> copper wire has an electrical resistance of <span class="arithmatex">\(1.24\text{ ohms}\)</span> (<span class="arithmatex">\(\Omega\)</span>). Because electricity must travel <span class="arithmatex">\(150\text{ feet}\)</span> out to the motor and <span class="arithmatex">\(150\text{ feet}\)</span> back along the return wire, the current travels through <span class="arithmatex">\(300\text{ feet}\)</span> of copper in total.</p>
+<p><img alt="Forward pipeline versus backward design on a 150-foot copper feeder." src="../assets/diagrams/domains/diagram_intro_pipeline.png" /></p>
+<h3 id="1-thinking-forward-on-the-four-register-stack">1. Thinking Forward on the Four-Register Stack</h3>
+<p>When the motor draws <span class="arithmatex">\(24\text{ amperes}\)</span> of current, how much voltage is lost as heat along the <span class="arithmatex">\(300\text{-foot}\)</span> round trip? By Ohm's law, voltage drop is simply resistance times current.</p>
+<p>On the four-register RPN stack (<strong>Figure 0.3</strong>), four visible lines—Registers <span class="arithmatex">\(T, Z, Y,\)</span> and <span class="arithmatex">\(X\)</span> from top to bottom—hold your numbers as you build the calculation from the inside out:</p>
+<p><img alt="The four-register RPN stack (T, Z, Y, X) staging intermediate physical quantities." src="../assets/diagrams/domains/diagram_intro_stack.png" /></p>
+<p>Watch how each physical step happens right in Register <span class="arithmatex">\(X\)</span> at the bottom of the screen:</p>
 <table>
 <thead>
 <tr>
@@ -3002,7 +3051,7 @@
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(1.24\)</span></td>
-<td style="text-align: left;">Look up NEC Table 8 copper resistance for <code>#10 AWG</code> (<span class="arithmatex">\(1.24\ \Omega/\text{kft}\)</span>)</td>
+<td style="text-align: left;">Look up copper resistance for <code>#10 AWG</code> (<span class="arithmatex">\(1.24\ \Omega\text{ per }1{,}000\text{ ft}\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>2 [×] 150 [×]</code></td>
@@ -3010,7 +3059,7 @@
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(372\)</span></td>
-<td style="text-align: left;">Form round-trip resistance-length product <span class="arithmatex">\(2 R L = 372\ \Omega\cdot\text{ft}/\text{kft}\)</span></td>
+<td style="text-align: left;">Multiply by <span class="arithmatex">\(2 \times 150\text{ ft}\)</span> round-trip distance (<span class="arithmatex">\(372\ \Omega\cdot\text{ft}\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>24 [×] 1000 [÷]</code></td>
@@ -3018,7 +3067,7 @@
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(8.928\)</span></td>
-<td style="text-align: left;">Scale by <span class="arithmatex">\(I = 24\text{ A}\)</span> and divide by <span class="arithmatex">\(1{,}000\)</span> to find <span class="arithmatex">\(V_{\text{drop}} = 8.928\text{ V}\)</span></td>
+<td style="text-align: left;">Multiply by <span class="arithmatex">\(24\text{ A}\)</span> current and divide by <span class="arithmatex">\(1{,}000\text{ ft}\)</span> (<span class="arithmatex">\(8.928\text{ V}\)</span> lost)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>240 [÷] 100 [×]</code></td>
@@ -3026,72 +3075,86 @@
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><strong><span class="arithmatex">\(3.72\)</span></strong></td>
-<td style="text-align: left;">Divide by <span class="arithmatex">\(240\text{ V}\)</span> supply and scale to percentage drop (<span class="arithmatex">\(3.72\%\)</span>)</td>
+<td style="text-align: left;">Compare <span class="arithmatex">\(8.928\text{ V}\)</span> against the <span class="arithmatex">\(240\text{ V}\)</span> supply (<span class="arithmatex">\(3.72\%\)</span> drop)</td>
 </tr>
 </tbody>
 </table>
-<p>Because <span class="arithmatex">\(3.72\%\)</span> exceeds the NEC <span class="arithmatex">\(3.0\%\)</span> branch-circuit recommendation (<span class="arithmatex">\(D_{\max} = 0.03 \times 240\text{ V} = 7.20\text{ V}\)</span>), suppose the electrician needs to know the <strong>maximum allowable one-way conduit length <span class="arithmatex">\(L\)</span></strong> on <code>#10 AWG</code> wire at <span class="arithmatex">\(I = 24\text{ A}\)</span> without exceeding <span class="arithmatex">\(D = 7.20\text{ V}\)</span>. Opening the <code>[AWG]</code> Equation Workspace displays <code>D = 2×R×L×I / 1000</code> with variable softkeys <code>[D]</code>, <code>[R]</code>, <code>[L]</code>, <code>[I]</code>, and <code>[G]</code> on <code>[LFU0]</code>–<code>[LFU4]</code>: keying <code>10 [AWG]</code> auto-populates <span class="arithmatex">\(R = 1.24\ \Omega/\text{kft}\)</span> and binds <code>[G]</code> <span class="arithmatex">\(= 10\)</span>, storing <code>7.20 [D]</code> (<code>[LFU0]</code>) and <code>24 [I]</code> (<code>[LFU3]</code>), and pressing <code>[↱] [SOLVE] [L]</code> (<code>[LFU2]</code>) immediately solves the equation backward to return <span class="arithmatex">\(L = \frac{1000 \times 7.20}{2 \times 1.24 \times 24} \approx \mathbf{120.97\text{ ft}}\)</span>.</p>
+<p>If all three numbers—current (<span class="arithmatex">\(24\text{ A}\)</span>), one-way length (<span class="arithmatex">\(150\text{ ft}\)</span>), and wire gauge (<code>10</code>)—are already sitting on the stack in Registers <span class="arithmatex">\(Z, Y,\)</span> and <span class="arithmatex">\(X\)</span>, pressing <code>[AWG]</code> performs that entire round-trip calculation in a single keystroke and puts <code>8.928</code> volts directly into Register <span class="arithmatex">\(X\)</span>.</p>
+<p><em>(And if a calculation ever needs more than four shelves, opening <code>[↱] [FLAGS]</code> lets you switch stack depth from classic four-level <code>[4-LV]</code> to eight-level <code>[8-LV]</code> or unlimited deep stack <code>[INF]</code>.)</em></p>
+<h3 id="2-thinking-backward-in-the-equation-solver-workspace">2. Thinking Backward in the Equation Solver Workspace</h3>
+<p>Now comes the twist that happens every day on a real job site.</p>
+<p>The National Electrical Code recommends losing no more than <strong><span class="arithmatex">\(3.0\%\)</span> of your supply voltage</strong> on a branch circuit so motors do not overheat. On a <span class="arithmatex">\(240\text{ V}\)</span> line, <span class="arithmatex">\(3.0\%\)</span> is <span class="arithmatex">\(0.03 \times 240 = \mathbf{7.20\text{ V}}\)</span>. Our <span class="arithmatex">\(150\text{-foot}\)</span> wire lost <span class="arithmatex">\(8.928\text{ V}\)</span> (<span class="arithmatex">\(3.72\%\)</span>), which is too high!</p>
+<p>So the electrician asks the backward question: <strong>If I am only allowed to lose <span class="arithmatex">\(7.20\text{ V}\)</span>, what is the longest one-way distance <span class="arithmatex">\(L\)</span> I can run <code>#10 AWG</code> wire at <span class="arithmatex">\(24\text{ A}\)</span>?</strong></p>
+<p>Instead of rearranging algebra on a scrap of cardboard, pressing <code>[AWG]</code> on an empty stack opens its <strong>Equation Solver Workspace</strong>. The top line of the screen shows the wire-drop formula (<code>D = 2×R×L×I / 1000</code>), and the row of softkeys right below the screen becomes the formula's named variables:</p>
+<ul>
+<li><code>[D]</code> for Voltage Drop (<span class="arithmatex">\(7.20\text{ V}\)</span>)</li>
+<li><code>[R]</code> for Wire Resistance (<span class="arithmatex">\(1.24\ \Omega/\text{kft}\)</span>, loaded automatically when you key <code>10 [AWG]</code>)</li>
+<li><code>[L]</code> for One-Way Length (our unknown!)</li>
+<li><code>[I]</code> for Current (<span class="arithmatex">\(24\text{ A}\)</span>)</li>
+</ul>
+<p>You simply type the numbers you know into their softkeys—<code>7.20 [D]</code> and <code>24 [I]</code>—and then press <code>[↱] [SOLVE] [L]</code>. The calculator solves the equation backward and answers immediately: <strong><span class="arithmatex">\(L = \mathbf{120.97\text{ feet}}\)</span></strong>.</p>
+<p>Every instrument in this book works the same way. You can chain values forward on the RPN stack, open a bidirectional Equation Solver Workspace to solve backward for any variable, or press the Reference Table key (<code>[g] [▦]</code>) to inspect live field tables like survey coordinates, wire gauges, or the periodic table of elements.</p>
 <hr />
-<h2 id="scope-and-mathematical-progression">Scope and Mathematical Progression</h2>
-<p>This volume is organized into <strong>nine domain Units</strong>—one for each specialized instrument in the StackCalc Domain Series (<code>SC-35</code>, <code>SC-14</code>, <code>SC-16</code>, <code>SC-24</code>, <code>SC-50</code>, <code>SC-60</code>, <code>SC-78</code>, <code>SC-80</code>, and <code>SC-95</code>)—spanning <strong>twenty-seven narrative-problem Chapters</strong> and two formal reference appendices. Each Unit opens with the historical and mathematical foundations of its discipline and unfolds across three interconnected field narratives, where each chapter solves an authentic end-to-end engineering problem from first principles using both immediate RPN stack pipelines and bidirectional Equation Workspaces:</p>
+<h2 id="nine-worlds-of-applied-mathematics">Nine Worlds of Applied Mathematics</h2>
+<p>This volume is organized into <strong>nine Units</strong>—one for each domain instrument (<code>SC-35</code> through <code>SC-95</code>)—spanning <strong>twenty-seven narrative Chapters</strong>. Each Unit introduces a field of human endeavor, and each Chapter follows three connected themes along a single real-world story:</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Unit &amp; Chapters</th>
-<th style="text-align: left;">Domain Instrument &amp; Scope</th>
-<th style="text-align: left;">Narrative Problems &amp; Domain Keys Mastered</th>
+<th style="text-align: left;">Domain &amp; Instrument</th>
+<th style="text-align: left;">Narrative Trajectory &amp; Core Mathematical Themes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;"><strong><a href="01-sc35-geomatics-navigation/">Unit I (Chapters 1–3)</a></strong></td>
 <td style="text-align: left;"><strong>Geomatics, Land Surveying &amp; Flight Navigation</strong> (<code>SC-35</code>)</td>
-<td style="text-align: left;"><strong>Ch 1:</strong> Retracing a lost 18th-century timber boundary &amp; polygon closure (<code>[f] [▸DEG]</code>, <code>[g] [▸HMS]</code>, <code>[f] [▸HR]</code>, <code>[f] [f-i]</code>, <code>[SLP]</code>, <code>[TRV]</code>, <code>[INV]</code>, <code>[BRG]</code>, <code>[f] [PT+]</code>, <code>[g] [CLS]</code>, <code>[g] [△]</code>, <code>[f] [LVL]</code>, <code>[g] [▦]</code>) • <strong>Ch 2:</strong> Mountain highway switchback curve, vertical crest curve, earthwork &amp; canyon spirit leveling (<code>[CRV]</code>, <code>[f] [VCV]</code>, <code>[f] [LVL]</code>, <code>[g] [STA]</code>, <code>[g] [GR%]</code>, <code>[g] [CUT]</code>, <code>[FLW]</code>) • <strong>Ch 3:</strong> High-desert night crosswind approach, density altitude, weight &amp; balance, and fuel endurance (<code>[WND]</code>, <code>[g] [XWC]</code>, <code>[f] [ALT]</code>, <code>[TSD]</code>, <code>[f] [CG]</code>)</td>
+<td style="text-align: left;"><strong>Ch 1:</strong> Retracing a lost 18th-century forest boundary using clockwise compass azimuths, slope reduction, and Gauss's shoelace area formula • <strong>Ch 2:</strong> Designing a mountain highway switchback curve, parabolic crest, and canyon spirit-leveling loop • <strong>Ch 3:</strong> Landing a bush plane at night in a high-desert crosswind while balancing density altitude, center of gravity, and fuel endurance</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="02-sc14-electrical-trades/">Unit II (Chapters 4–6)</a></strong></td>
 <td style="text-align: left;"><strong>Electrical Power, Conduit Geometry &amp; Industrial Trades</strong> (<code>SC-14</code>)</td>
-<td style="text-align: left;"><strong>Ch 4:</strong> Pier 14 gantry crane feeder voltage drop, three-phase power factor &amp; conduit offsets (<code>[AWG]</code>, <code>[PF]</code>, <code>[g] [FLA]</code>, <code>[g] [kVA]</code>, <code>[OFS]</code>, <code>[x∥y]</code>, <code>[f] [Ω]</code>) • <strong>Ch 5:</strong> Parallel boiler-room I-beam conduit offsets, miter/fitting layouts &amp; machining speeds (<code>[OFS]</code>, <code>[f] [MIT]</code>, <code>[g] [FIT]</code>, <code>[f] [SFM]</code>, <code>[f] [TAP]</code>, <code>[g] [BC]</code>, <code>[g] [▦]</code>) • <strong>Ch 6:</strong> Process piping velocity, hydraulic pump power, NPSH, valve <span class="arithmatex">\(C_v\)</span> &amp; <span class="arithmatex">\(4\text{--}20\text{ mA}\)</span> loops (<code>[PIP]</code>, <code>[PMP]</code>, <code>[g] [NPH]</code>, <code>[g] [Cᵥ]</code>, <code>[mA]</code>, <code>[f] [RTD]</code>, <code>[g] [RPM]</code>, <code>[g] [WLD]</code>)</td>
+<td style="text-align: left;"><strong>Ch 4:</strong> Commissioning a harbor gantry crane feeder across Ohm's law voltage drop, Nikola Tesla's three-phase AC power triangle, and parallel resistance • <strong>Ch 5:</strong> Bending parallel steel conduits over boiler-room beams with trigonometry, miter angles, and lathe cutting speeds • <strong>Ch 6:</strong> Sizing chemical-plant process pipes, centrifugal pump horsepower, control valve flow, and <span class="arithmatex">\(4\text{--}20\text{ mA}\)</span> sensor loops</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="03-sc16-systems-cyber/">Unit III (Chapters 7–9)</a></strong></td>
 <td style="text-align: left;"><strong>Digital Systems, Bitwise Logic &amp; Embedded Timing</strong> (<code>SC-16</code>)</td>
-<td style="text-align: left;"><strong>Ch 7:</strong> Stuck motor-controller interrupt flag, two's complement, arithmetic shifts &amp; IEEE-754/Q-format encoding (<code>[HEX]</code>, <code>[g] [BIN]</code>, <code>[f] [OCT]</code>, <code>[f] [DEC]</code>, <code>[g] [WSZ]</code>, <code>[f] [NEG]</code>, <code>[&amp;]</code>, <code>[|]</code>, <code>[⊕]</code>, <code>[g] [~]</code>, <code>[f] [MSK]</code>, <code>[≪]</code>, <code>[≫]</code>, <code>[f] [ASR]</code>, <code>[g] [ROR]</code>, <code>[FLT]</code>, <code>[f] [Q.n]</code>, <code>[g] [FXP]</code>) • <strong>Ch 8:</strong> Corrupt serial telemetry packet, endian byte swap, CRC, CIDR subnetting &amp; UART baud drift (<code>[g] [SWP]</code>, <code>[FLT]</code>, <code>[f] [CRC]</code>, <code>[NET]</code>, <code>[PWM]</code>, <code>[g] [BPS]</code>) • <strong>Ch 9:</strong> Mixed-signal 12-bit ADC front end, RC time constant, timer PWM &amp; <code>/26</code> factory floor subnetting (<code>[PWM]</code>, <code>[f] [ADC]</code>, <code>[f] [τ]</code>, <code>[f] [#B]</code>, <code>[g] [CLZ]</code>, <code>[NET]</code>, <code>[g] [ALN]</code>)</td>
+<td style="text-align: left;"><strong>Ch 7:</strong> Debugging a stuck spacecraft motor interrupt across binary/hexadecimal nibbles, two's complement rings, bit masks, and fixed-point numbers • <strong>Ch 8:</strong> Catching a corrupted telemetry packet via byte-order endian swaps, IEEE-754 floating-point bits, and CRC checksum division • <strong>Ch 9:</strong> Designing a 12-bit sensor interface with RC filter time constants, PWM timer waves, and IPv4 network subnets</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="04-sc24-cinema-broadcast/">Unit IV (Chapters 10–12)</a></strong></td>
 <td style="text-align: left;"><strong>Cinema Optics, Broadcast Timecode &amp; Live Acoustics</strong> (<code>SC-24</code>)</td>
-<td style="text-align: left;"><strong>Ch 10:</strong> NTSC drop-frame broadcast sync &amp; frame-accurate editing (<code>[TC]</code>, <code>[FPS]</code>, <code>[g] [DF]</code>, <code>[f] [▸FRM]</code>, <code>[g] [▸TC]</code>, <code>[g] [+TC]</code>, <code>[g] [-TC]</code>) • <strong>Ch 11:</strong> Anamorphic thin-lens hyperfocal distance, depth of field &amp; rotary shutter exposure (<code>[DOF]</code>, <code>[f] [HFD]</code>, <code>[FOV]</code>, <code>[EV]</code>, <code>[f] [SHT]</code>, <code>[LUX]</code>, <code>[g] [GEL]</code>) • <strong>Ch 12:</strong> Stadium delay-tower acoustics, decibel power addition &amp; wavelength delay (<code>[dB]</code>, <code>[f] [SPL]</code>, <code>[g] [λ]</code>, <code>[g] [DLY]</code>, <code>[g] [vₛ]</code>)</td>
+<td style="text-align: left;"><strong>Ch 10:</strong> Keeping a live television broadcast in sync across NTSC 29.97 drop-frame timecode arithmetic and frame rates • <strong>Ch 11:</strong> Pulling focus on an anamorphic night shoot using thin-lens hyperfocal geometry, depth of field, and rotary shutter angles • <strong>Ch 12:</strong> Aligning outdoor stadium delay speaker towers with decibel power addition, sound speed in warm air, and room modes</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="05-sc50-rf-spectrum/">Unit V (Chapters 13–15)</a></strong></td>
 <td style="text-align: left;"><strong>Radio-Frequency Engineering, Transmission Lines &amp; Link Budgets</strong> (<code>SC-50</code>)</td>
-<td style="text-align: left;"><strong>Ch 13:</strong> Coaxial feedline impedance mismatch, reflection coefficient &amp; standing wave ratio (<code>[dBm]</code>, <code>[g] [▸mW]</code>, <code>[Γ]</code>, <code>[SWR]</code>) • <strong>Ch 14:</strong> Quarter-wave stub matching &amp; LC resonance synthesis (<code>[g] [Z₀]</code>, <code>[f] [λ/L]</code>, <code>[g] [TLN]</code>, <code>[f] [f₀]</code>) • <strong>Ch 15:</strong> Geostationary microwave link budget, Friis path loss &amp; cascaded noise figure (<code>[FSL]</code>, <code>[f] [LNK]</code>, <code>[NF]</code>, <code>[f] [IP3]</code>, <code>[g] [FDR]</code>, <code>[g] [C/B]</code>)</td>
+<td style="text-align: left;"><strong>Ch 13:</strong> Diagnosing a storm-damaged mountain radio tower through decibel-milliwatts, wave reflections, and standing wave ratio • <strong>Ch 14:</strong> Matching a detuned antenna with quarter-wave transmission-line stubs, Smith chart impedance, and <span class="arithmatex">\(LC\)</span> resonance • <strong>Ch 15:</strong> Closing a deep-space and microwave satellite link across Friis free-space path loss, receiver noise floors, and Shannon capacity</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="06-sc60-chemistry-wetlab/">Unit VI (Chapters 16–18)</a></strong></td>
 <td style="text-align: left;"><strong>Wet-Lab Chemistry, Stoichiometry &amp; Optical Spectroscopy</strong> (<code>SC-60</code>)</td>
-<td style="text-align: left;"><strong>Ch 16:</strong> Gravimetric reagent preparation, IUPAC molar mass, serial dilutions &amp; UV-Vis verification (<code>[MW]</code>, <code>[Z]</code>, <code>[f] [ION]</code>, <code>[C₁V₁]</code>, <code>[f] [RXN]</code>, <code>[εbc]</code>, <code>[f] [▸M]</code>, <code>[g] [▸mM]</code>, <code>[g] [▸mol]</code>) • <strong>Ch 17:</strong> Sørensen <span class="arithmatex">\(\text{pH}\)</span>, weak-acid dissociation &amp; Henderson–Hasselbalch buffer synthesis (<code>[pH]</code>, <code>[g] [pKₐ]</code>, <code>[BUF]</code>, <code>[f] [EQV]</code>, <code>[f] [10ˣ]</code>) • <strong>Ch 18:</strong> Beer–Lambert UV-Vis spectrophotometry, ideal gas vessels, Nernst redox, Arrhenius kinetics &amp; centrifugation (<code>[εbc]</code>, <code>[f] [%T]</code>, <code>[PVT]</code>, <code>[f] [ΔG]</code>, <code>[g] [Kₑq]</code>, <code>[g] [E°]</code>, <code>[g] [Eₐ]</code>, <code>[g] [t½]</code>, <code>[g] [RCF]</code>)</td>
+<td style="text-align: left;"><strong>Ch 16:</strong> Preparing a pure protein reagent across Avogadro's molar bridge, 118-element formula weights, and serial dilutions • <strong>Ch 17:</strong> Taming acid-base swings with Sørensen's logarithmic <span class="arithmatex">\(\text{pH}\)</span> scale, weak-acid dissociation, and Henderson–Hasselbalch buffers • <strong>Ch 18:</strong> Measuring molecules with light and heat via Beer–Lambert absorbance, ideal gas pressure, Nernst redox cells, and centrifuges</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="07-sc78-culinary-brewing/">Unit VII (Chapters 19–21)</a></strong></td>
 <td style="text-align: left;"><strong>Commercial Baking, Dough Thermodynamics &amp; Brewing Science</strong> (<code>SC-78</code>)</td>
-<td style="text-align: left;"><strong>Ch 19:</strong> Artisan sourdough scaling, flour-anchored baker's percentages &amp; preferments (<code>[BK%]</code>, <code>[g] [HYD]</code>, <code>[f] [SCL]</code>, <code>[LEV]</code>, <code>[ΣW]</code>, <code>[f] [DIV]</code>) • <strong>Ch 20:</strong> Desired dough temperature, spiral-mixer friction calorimetry &amp; ice batching (<code>[Tw]</code>, <code>[g] [ICE]</code>, <code>[YLD]</code>, <code>[CST]</code>, <code>[f] [PRC]</code>) • <strong>Ch 21:</strong> All-grain mash strike thermodynamics, Plato gravity attenuation &amp; Tinseth hop isomerization (<code>[MSH]</code>, <code>[g] [SGT]</code>, <code>[f] [▸°P]</code>, <code>[ABV]</code>, <code>[IBU]</code>, <code>[g] [SRM]</code>)</td>
+<td style="text-align: left;"><strong>Ch 19:</strong> Scaling an artisan sourdough bakery from a single test loaf to a 200-loaf production batch using flour-anchored baker's percentages and levain splits • <strong>Ch 20:</strong> Controlling fermentation clockwork through mixer friction calorimetry, latent heat of fusion in crushed ice, and prep-yield economics • <strong>Ch 21:</strong> Brewing an all-grain craft ale across mash strike-water thermodynamics, Plato sugar gravity, and Tinseth hop bitterness</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="08-sc80-clinical-pharmacy/">Unit VIII (Chapters 22–24)</a></strong></td>
 <td style="text-align: left;"><strong>Clinical Dosing, Renal Clearance &amp; Pharmacokinetics</strong> (<code>SC-80</code>)</td>
-<td style="text-align: left;"><strong>Ch 22:</strong> Oncology body surface area, Devine ideal weight &amp; Cockcroft–Gault renal clearance (<code>[BSA]</code>, <code>[f] [IBW]</code>, <code>[g] [ABW]</code>, <code>[g] [BMI]</code>, <code>[GFR]</code>) • <strong>Ch 23:</strong> ICU vasoactive microgram titrations, stock reconstitution &amp; gravity drip factors (<code>[DOS]</code>, <code>[DRP]</code>, <code>[IV]</code>, <code>[f] [VIL]</code>, <code>[g] [▸mcg]</code>, <code>[gtt]</code>, <code>[f] [PED]</code>) • <strong>Ch 24:</strong> First-order elimination half-life, vancomycin trough kinetics &amp; serum electroneutrality (<code>[PK]</code>, <code>[g] [AG]</code>, <code>[f] [Ca²⁺]</code>, <code>[g] [ABG]</code>)</td>
+<td style="text-align: left;"><strong>Ch 22:</strong> Individualizing hospital chemotherapy doses across geometric body surface area, Devine ideal weight, and Cockcroft–Gault kidney clearance • <strong>Ch 23:</strong> Titrating intensive-care infusions across weight-based microgram pumps, vial reconstitution, and pediatric 4-2-1 fluid rules • <strong>Ch 24:</strong> Tracking drug half-life decay, steady-state vancomycin troughs, and blood-gas electroneutrality in the ICU</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="09-sc95-finance-statistics/">Unit IX (Chapters 25–27)</a></strong></td>
 <td style="text-align: left;"><strong>Quantitative Finance, Fixed-Income Valuation &amp; Six Sigma Quality</strong> (<code>SC-95</code>)</td>
-<td style="text-align: left;"><strong>Ch 25:</strong> Commercial project cash flows, five-variable TVM, amortization &amp; internal rate of return (<code>[TVM]</code>, <code>[f] [AMR]</code>, <code>[g] [CF]</code>) • <strong>Ch 26:</strong> Fixed-income bond pricing, yield to maturity &amp; capital asset depreciation (<code>[g] [BND]</code>, <code>[g] [DEP]</code>, <code>[g] [CGR]</code>, <code>[g] [EAR]</code>) • <strong>Ch 27:</strong> Precision aerospace tolerance bands, normal quantiles &amp; Six Sigma capability (<code>[g] [pN]</code>, <code>[f] [qN]</code>, <code>[rN]</code>, <code>[f] [z₀]</code>, <code>[f] [t₂]</code>, <code>[g] [Cpk]</code>, <code>[g] [CI]</code>)</td>
+<td style="text-align: left;"><strong>Ch 25:</strong> Evaluating a solar microgrid investment across Fibonacci's present-value discounting, mortgage amortization, and internal rate of return • <strong>Ch 26:</strong> Pricing Treasury bonds, Macaulay duration, compound growth, and break-even manufacturing volume • <strong>Ch 27:</strong> Guiding an aerospace factory to Six Sigma quality with Gaussian bell-curve quantiles, confidence intervals, and capability indices</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="appendix-a-cross-domain-formula-compendium/">Appendices A–B</a></strong></td>
-<td style="text-align: left;"><strong>Formal Reference Compendium</strong></td>
-<td style="text-align: left;"><strong>App. A:</strong> Cross-Domain Formula &amp; Governing Equation Compendium • <strong><a href="appendix-b-domain-keycap-and-softkey-directory/">App. B</a>:</strong> Domain Keycap, Softkey &amp; Operator Directory across <code>SC-35</code> through <code>SC-95</code></td>
+<td style="text-align: left;"><strong>Reference Compendium</strong></td>
+<td style="text-align: left;"><strong>App. A:</strong> Cross-Domain Formula &amp; Governing Equation Compendium • <strong><a href="appendix-b-domain-keycap-and-softkey-directory/">App. B</a>:</strong> Complete Keycap, Softkey &amp; Operator Directory across <code>SC-35</code> through <code>SC-95</code></td>
 </tr>
 </tbody>
 </table>
