@@ -37,7 +37,7 @@ Every chapter in this book is built around real stories like these. You do not n
 
 ## Concepts First, Worked Examples Second, Keystrokes Third
 
-In every skilled trade, people who use the same physical law every day eventually give it a short nickname. A land surveyor does not say, *"Let us apply the Pythagorean theorem and four-quadrant arc-tangent to our Northing and Easting differences."* Instead, the surveyor calls that check an **Inverse** (`{{key:sc35:INV}}`). A pipefitter calls the geometry of bending pipe over a beam an **Offset** (`{{key:sc14:OFS}}`). A cinematographer calls the zone of sharp focus **Depth of Field** (`{{key:sc24:DOF}}`), and a baker calls scaling a recipe to flour weight **Baker's Percentage** (`{{key:sc78:BK%}}`).
+In every skilled trade, people who use the same physical law every day eventually give it a short nickname. A land surveyor does not say, *"Let us apply the Pythagorean theorem and four-quadrant arc-tangent to our Northing and Easting differences."* Instead, the surveyor calls that check an **Inverse** ({{key:sc35:INV}}). A pipefitter calls the geometry of bending pipe over a beam an **Offset** ({{key:sc14:OFS}}). A cinematographer calls the zone of sharp focus **Depth of Field** ({{key:sc24:DOF}}), and a baker calls scaling a recipe to flour weight **Baker's Percentage** ({{key:sc78:BK%}}).
 
 To make every field welcoming to newcomers and rewarding for experts, each chapter in this book follows the same three-step rhythm as Volume II (*Thinking in the Stack*):
 
@@ -53,7 +53,7 @@ Why do practitioners in the field use a stack calculator with dedicated domain k
 
 Let us trace a single concrete example to see how both modes work.
 
-Suppose an electrician is wiring a $240\text{ V}$ motor at the end of a $150\text{-foot}$ pier using medium-gauge copper wire (`#10 AWG`). Copper is a wonderful conductor, but it is not perfect: every $1{,}000\text{ feet}$ of `#10 AWG` copper wire has an electrical resistance of $1.24\text{ ohms}$ ($\Omega$). Because electricity must travel $150\text{ feet}$ out to the motor and $150\text{ feet}$ back along the return wire, the current travels through $300\text{ feet}$ of copper in total.
+Suppose an electrician is wiring a $240\text{ V}$ motor at the end of a $150\text{-foot}$ pier using medium-gauge copper wire (#10 AWG). Copper is a wonderful conductor, but it is not perfect: every $1{,}000\text{ feet}$ of #10 AWG copper wire has an electrical resistance of $1.24\text{ ohms}$ ($\Omega$). Because electricity must travel $150\text{ feet}$ out to the motor and $150\text{ feet}$ back along the return wire, the current travels through $300\text{ feet}$ of copper in total.
 
 ![Forward pipeline versus backward design on a 150-foot copper feeder.](../assets/diagrams/domains/diagram_intro_pipeline.png)
 
@@ -74,9 +74,9 @@ Watch how each physical step happens right in Register $X$ at the bottom of the 
 | `24 {{key:×}} 1000 {{key:÷}}` | $0$ | $0$ | $0$ | $8.928$ | Multiply by $24\text{ A}$ current and divide by $1{,}000\text{ ft}$ ($8.928\text{ V}$ lost) |
 | `240 {{key:÷}} 100 {{key:×}}` | $0$ | $0$ | $0$ | **$3.72$** | Compare $8.928\text{ V}$ against the $240\text{ V}$ supply ($3.72\%$ drop) |
 
-If all three numbers—current ($24\text{ A}$), one-way length ($150\text{ ft}$), and wire gauge (`10`)—are already sitting on the stack in Registers $Z, Y,$ and $X$, pressing `{{key:sc14:AWG}}` performs that entire round-trip calculation in a single keystroke and puts `8.928` volts directly into Register $X$.
+If all three numbers—current ($24\text{ A}$), one-way length ($150\text{ ft}$), and wire gauge (`10`)—are already sitting on the stack in Registers $Z, Y,$ and $X$, pressing {{key:sc14:AWG}} performs that entire round-trip calculation in a single keystroke and puts `8.928` volts directly into Register $X$.
 
-*(And if a calculation ever needs more than four shelves, opening `{{key:FLAGS}}` lets you switch stack depth from classic four-level `{{key:4-LV}}` to eight-level `{{key:8-LV}}` or unlimited deep stack `{{key:INF}}`.)*
+*(And if a calculation ever needs more than four shelves, opening {{key:FLAGS}} lets you switch stack depth from classic four-level {{key:4-LV}} to eight-level {{key:8-LV}} or unlimited deep stack {{key:INF}}.)*
 
 ### 2. Thinking Backward in the Equation Solver Workspace
 
@@ -84,18 +84,18 @@ Now comes the twist that happens every day on a real job site.
 
 The National Electrical Code recommends losing no more than **$3.0\%$ of your supply voltage** on a branch circuit so motors do not overheat. On a $240\text{ V}$ line, $3.0\%$ is $0.03 \times 240 = \mathbf{7.20\text{ V}}$. Our $150\text{-foot}$ wire lost $8.928\text{ V}$ ($3.72\%$), which is too high!
 
-So the electrician asks the backward question: **If I am only allowed to lose $7.20\text{ V}$, what is the longest one-way distance $L$ I can run `#10 AWG` wire at $24\text{ A}$?**
+So the electrician asks the backward question: **If I am only allowed to lose $7.20\text{ V}$, what is the longest one-way distance $L$ I can run #10 AWG wire at $24\text{ A}$?**
 
-Instead of rearranging algebra on a scrap of cardboard, pressing `{{key:sc14:AWG}}` on an empty stack opens its **Equation Solver Workspace**. The top line of the screen shows the wire-drop formula (`D = 2×R×L×I / 1000`), and the row of softkeys right below the screen becomes the formula's named variables:
+Instead of rearranging algebra on a scrap of cardboard, pressing {{key:sc14:AWG}} on an empty stack opens its **Equation Solver Workspace**. The top line of the screen shows the wire-drop formula (`D = 2×R×L×I / 1000`), and the row of softkeys right below the screen becomes the formula's named variables:
 
-- `{{keycap:D}}` for Voltage Drop ($7.20\text{ V}$)
-- `{{keycap:R}}` for Wire Resistance ($1.24\ \Omega/\text{kft}$, loaded automatically when you key `10 {{key:sc14:AWG}}`)
-- `{{keycap:L}}` for One-Way Length (our unknown!)
-- `{{keycap:I}}` for Current ($24\text{ A}$)
+- {{keycap:D}} for Voltage Drop ($7.20\text{ V}$)
+- {{keycap:R}} for Wire Resistance ($1.24\ \Omega/\text{kft}$, loaded automatically when you key `10` {{key:sc14:AWG}})
+- {{keycap:L}} for One-Way Length (our unknown!)
+- {{keycap:I}} for Current ($24\text{ A}$)
 
-You simply type the numbers you know into their softkeys—`7.20 {{keycap:D}}` and `24 {{keycap:I}}`—and then press `{{key:SOLVE}} {{keycap:L}}`. The calculator solves the equation backward and answers immediately: **$L = \mathbf{120.97\text{ feet}}$**.
+You simply type the numbers you know into their softkeys—`7.20` {{keycap:D}} and `24` {{keycap:I}}—and then press {{key:SOLVE}} {{keycap:L}}. The calculator solves the equation backward and answers immediately: **$L = \mathbf{120.97\text{ feet}}$**.
 
-Every instrument in this book works the same way. You can chain values forward on the RPN stack, open a bidirectional Equation Solver Workspace to solve backward for any variable, or press the Reference Table key (`{{key:▦}}`) to inspect live field tables like survey coordinates, wire gauges, or the periodic table of elements.
+Every instrument in this book works the same way. You can chain values forward on the RPN stack, open a bidirectional Equation Solver Workspace to solve backward for any variable, or press the Reference Table key ({{key:▦}}) to inspect live field tables like survey coordinates, wire gauges, or the periodic table of elements.
 
 ---
 
