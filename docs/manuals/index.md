@@ -118,6 +118,22 @@ Every worked example, story, and 4-register stack trace in both books is verifie
 
 ### Volume I: *From Blocks to the Stack: Hands-On Math & the SC-6 Stack Calculator* (Grades 3–6)
 
+<div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; margin: 1.25rem 0; padding: 1.25rem; background: #11141A; border: 1px solid rgba(255, 153, 0, 0.35); border-radius: 12px;">
+  <img src="../assets/manuals/sc6_book_cover_square.png" alt="From Blocks to the Stack Book Cover" style="width: 180px; max-width: 100%; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.6);">
+  <div style="flex: 1; min-width: 260px;">
+    <div style="font-family: monospace; font-size: 0.75rem; color: #FF9900; font-weight: bold; text-transform: uppercase;">Volume I // Grades 3–6</div>
+    <h4 style="margin: 0.25rem 0 0.5rem 0; font-size: 1.25rem; color: #FFFFFF;">From Blocks to the Stack: Hands-On Math &amp; the SC-6</h4>
+    <p style="font-size: 0.88rem; color: #CBD5E1; margin-bottom: 1rem; line-height: 1.5;">
+      Written directly for curious 3rd–6th graders, parents, and teachers, <em>From Blocks to the Stack</em> guides young learners from their very first stack addition to multi-step problem solving without parentheses, connecting 9 physical manipulative studios with the 4-level number stack ($X, Y, Z, T$).
+    </p>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+      <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: #FF9900; color: #111827; font-weight: 800; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Order on Amazon ($16) ↗</a>
+      <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; font-weight: 700; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Spiral Edition on Lulu ↗</a>
+      <a href="../products/sc6-book.md" style="padding: 0.5rem 0.9rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-weight: 600; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Book Details &rarr;</a>
+    </div>
+  </div>
+</div>
+
 Written directly for curious 3rd–6th graders, parents, and teachers, ***From Blocks to the Stack*** begins with a simple observation: before you ever learned to write equations with parentheses and equals signs, your hands already knew how to do math by **stacking physical things**. Pairing the **StackCalc SC-6** with nine 3D-printed manipulative studios (Ten-Frames, Counting Tiles, $84\text{ mm}$ Fraction Towers, Prime Factor Blocks, and a Planetary Geared Clock), the book gently guides young learners from their very first stack addition to multi-step problem solving without parentheses.
 
 - **[Order on Amazon: Paperback & Hardcover Bookstore Editions ↗](https://link.amazon/B0f5cP0Ur)**
@@ -146,6 +162,23 @@ Written directly for curious 3rd–6th graders, parents, and teachers, ***From B
 ---
 
 ### Volume II: *Thinking in the Stack: The Art of Reverse Polish Notation* (SC-32 Scientific)
+
+<div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; margin: 1.25rem 0; padding: 1.25rem; background: #11141A; border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px;">
+  <img src="../assets/manuals/sc32_book_cover_square.png" alt="Thinking in the Stack Book Cover" style="width: 180px; max-width: 100%; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.6);">
+  <div style="flex: 1; min-width: 260px;">
+    <div style="font-family: monospace; font-size: 0.75rem; color: #38BDF8; font-weight: bold; text-transform: uppercase;">Volume II // High School to Pro</div>
+    <h4 style="margin: 0.25rem 0 0.5rem 0; font-size: 1.25rem; color: #FFFFFF;">Thinking in the Stack: Postfix Computation &amp; Algorithmic Thinking</h4>
+    <p style="font-size: 0.88rem; color: #CBD5E1; margin-bottom: 1rem; line-height: 1.5;">
+      The definitive engineering reference manual for the StackCalc SC-32 scientific hardware calculator. Explores 16-level RPN stack architecture, transcendentals, complex phasors, Brent's root solver, Romberg quadrature, bivariate statistics, and 36-bit computer science.
+    </p>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+      <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: #FF9900; color: #111827; font-weight: 800; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Paperback on Amazon ($16) ↗</a>
+      <a href="https://link.amazon/B09AnTIQI" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: #FF9900; color: #111827; font-weight: 800; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Hardcover ($28) ↗</a>
+      <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; font-weight: 700; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Lulu Spiral Edition ↗</a>
+      <a href="sc32/index.md" style="padding: 0.5rem 0.9rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-weight: 600; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Read Online &rarr;</a>
+    </div>
+  </div>
+</div>
 
 Written in the narrative tradition of popular mathematics and classic Corvallis engineering handbooks, ***Thinking in the Stack*** explores why postfix stack computation mirrors physical causality—and how four visible registers ($X, Y, Z, T$) let you evaluate everything from parallel impedances and AC phasors to Richard Brent's root solver (`SOLVE`), adaptive Romberg integration (`∫`), bivariate curve fitting (`L.R.`), 36-bit binary/hex arithmetic, and Time Value of Money (`TVM`) without a single parenthesis.
 
@@ -178,6 +211,22 @@ Written in the narrative tradition of popular mathematics and classic Corvallis 
 ---
 
 ### Volume III: *Middle School Math Block Supplement & Hands-On Workbook* (Grades 6–8)
+
+<div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; margin: 1.25rem 0; padding: 1.25rem; background: #11141A; border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px;">
+  <img src="../assets/manuals/middle_school_workbook_cover_square.png" alt="Middle School Math Lab Workbook Cover" style="width: 180px; max-width: 100%; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.6);">
+  <div style="flex: 1; min-width: 260px;">
+    <div style="font-family: monospace; font-size: 0.75rem; color: #10B981; font-weight: bold; text-transform: uppercase;">Volume III // Grades 6–8</div>
+    <h4 style="margin: 0.25rem 0 0.5rem 0; font-size: 1.25rem; color: #FFFFFF;">Middle School Math Lab: Hands-On Fractions, Integers, &amp; RPN</h4>
+    <p style="font-size: 0.88rem; color: #CBD5E1; margin-bottom: 1rem; line-height: 1.5;">
+      128-page reproducible curriculum workbook connecting physical Fraction &amp; Prime Factor blocks directly to SC-6 calculator exercises. Features 10 units, 45 textbook sections, 90 daily worksheets, and 900 practice problems.
+    </p>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+      <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: #FF9900; color: #111827; font-weight: 800; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Order on Amazon ($16) ↗</a>
+      <a href="../curriculum/big-ideas-middle-school-sc6-workbook.md" style="padding: 0.5rem 0.9rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; font-weight: 700; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Curriculum Alignment &rarr;</a>
+      <a href="../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" style="padding: 0.5rem 0.9rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-weight: 600; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Download PDF &darr;</a>
+    </div>
+  </div>
+</div>
 
 Written specifically for middle school math classrooms, homeschool families, and intervention specialists, the ***Middle School Math Block Supplement & Student Workbook*** bridges 3D-printed math blocks (Prime Factor Studio, Fraction Studio, Place Value Studio, and Algebra Factoring Tiles) with standard middle school math curricula (Big Ideas Math, Common Core, Texas TEKS, Florida B.E.S.T.). Features 10 units, 45 textbook sections, 90 daily practice worksheets (Practice A & B), 90 multi-way worked examples, and 900 practice problems.
 

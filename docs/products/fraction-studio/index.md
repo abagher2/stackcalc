@@ -15,11 +15,11 @@ hide:
       "@type": "Product",
       "name": "Fraction Towers & Proportional Equivalence Manipulatives Set - 26 Precision Desk Towers",
       "image": [
-        "https://www.stackcalc.io/assets/renders/fraction-studio-hero.png",
-        "https://www.stackcalc.io/assets/renders/fraction-studio-gauge-comparison.png",
-        "https://www.stackcalc.io/assets/reference_cards/reference_card_FRAC-01_paper.png",
-        "https://www.stackcalc.io/assets/renders/etsy/fraction-specs-infographic-square.png",
-        "https://www.stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png"
+        "https://www.stackcalc.io/assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg",
+        "https://www.stackcalc.io/assets/renders/etsy/fraction-studio-real-towers-iso-hero-tight.jpg",
+        "https://www.stackcalc.io/assets/renders/etsy/fraction-studio-real-packed-box-hero-tight.jpg",
+        "https://www.stackcalc.io/assets/renders/etsy/fraction-studio-real-equivalence-proof-hero-tight.jpg",
+        "https://www.stackcalc.io/assets/reference_cards/reference_card_FRAC-01_paper.png"
       ],
       "keywords": "fraction towers manipulatives, fraction tiles, fraction bars, equivalent fractions visual tool, common denominators manipulative, tactile math manipulatives, STEM fractions, CCSS.MATH.CONTENT.3.NF.A.1, TEKS 111.5.b.3",
       "description": "Tactile STEM fraction manipulatives with 26 precision proportional towers. Inverse millimeter height ratios ensure self-correcting mathematical equivalence on any flat classroom tabletop.",
@@ -123,31 +123,31 @@ hide:
     <!-- Left Column: Product Gallery -->
     <div class="ec-gallery">
       <div class="ec-gallery-main">
-        <img id="main-product-image" src="../../assets/renders/fraction-studio-hero.png" alt="StackCalc Fraction Studio Proportional Towers on Classroom Desk" loading="eager">
+        <img id="main-product-image" src="../../assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg" alt="StackCalc Fraction Studio Proportional Towers on Classroom Desk" loading="eager">
       </div>
 
-      <!-- Thumbnail Selector Strip (Includes Real High-Res Infographics) -->
+      <!-- Thumbnail Selector Strip (Includes Real High-Res Photography & Infographics) -->
       <div class="ec-gallery-thumbs">
-        <div class="ec-gallery-thumb active" onclick="document.getElementById('main-product-image').src='../../assets/renders/fraction-studio-hero.png'">
-          <img src="../../assets/renders/fraction-studio-hero.png" alt="Proportional Towers Desktop Perspective">
+        <div class="ec-gallery-thumb active" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg'">
+          <img src="../../assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg" alt="Proportional Towers Front Hero Studio Photo">
         </div>
-        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/fraction-studio-hero-square.png'">
-          <img src="../../assets/renders/etsy/fraction-studio-hero-square.png" alt="Fraction Studio Proportional Towers Square View">
+        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/fraction-studio-real-towers-iso-hero-tight.jpg'">
+          <img src="../../assets/renders/etsy/fraction-studio-real-towers-iso-hero-tight.jpg" alt="Proportional Towers Isometric Studio Photo">
         </div>
-        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/fraction-studio-gauge-comparison.png'">
-          <img src="../../assets/renders/fraction-studio-gauge-comparison.png" alt="Benchmark Gauge Equivalence Lineup">
+        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/fraction-studio-real-packed-box-hero-tight.jpg'">
+          <img src="../../assets/renders/etsy/fraction-studio-real-packed-box-hero-tight.jpg" alt="Packed in Modular Storage Box Studio Photo">
         </div>
-        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/fraction-studio-craftsmanship-macro.png'">
-          <img src="../../assets/renders/fraction-studio-craftsmanship-macro.png" alt="Archival Debossed Typography Macro">
+        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/fraction-studio-real-equivalence-proof-hero-tight.jpg'">
+          <img src="../../assets/renders/etsy/fraction-studio-real-equivalence-proof-hero-tight.jpg" alt="Tactile Equivalence Proof Studio Photo">
+        </div>
+        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/fraction-studio-real-towers-stages-hero-tight.jpg'">
+          <img src="../../assets/renders/etsy/fraction-studio-real-towers-stages-hero-tight.jpg" alt="Ascending Towers in Stages Studio Photo">
         </div>
         <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/fraction-specs-infographic-square.png'">
           <img src="../../assets/renders/etsy/fraction-specs-infographic-square.png" alt="Fraction Block Millimeter Heights Table">
         </div>
         <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/reference_cards/reference_card_FRAC-01_paper.png'">
           <img src="../../assets/reference_cards/reference_card_FRAC-01_paper.png" alt="Reference Card Side A Manifest">
-        </div>
-        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/reference_cards/reference_card_FRAC-01_laser.png'">
-          <img src="../../assets/reference_cards/reference_card_FRAC-01_laser.png" alt="Laser Engraved Black Reference Card">
         </div>
         <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/infographic-gridfinity-system-square.png'">
           <img src="../../assets/renders/etsy/infographic-gridfinity-system-square.png" alt="Gridfinity 42mm Modular Storage Standard">
@@ -170,8 +170,8 @@ hide:
       </div>
 
       <div class="ec-price-box">
-        <span class="ec-price-current">$48.00</span>
-        <span class="ec-shipping-note">&check; Free US Shipping &bull; In Stock</span>
+        <span class="ec-price-current">$24.99 &ndash; $48.00</span>
+        <span class="ec-shipping-note">&check; Beta Kit ($24.99) &bull; Standard V1 ($48.00) &bull; Free US Shipping $35+</span>
       </div>
 
       <p class="ec-short-summary">
@@ -201,7 +201,7 @@ hide:
       <!-- Action Buttons -->
       <div class="ec-actions-row">
         <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
-          Order on Etsy ($48.00) ↗
+          Order on Etsy ($24.99+) ↗
         </a>
         <a href="#downloads" class="ec-btn-secondary">
           Download Free 3MF / STLs &darr;
@@ -215,9 +215,15 @@ hide:
           <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-orange-500/20 hover:bg-orange-500/30 text-orange-300 border border-orange-500/40 font-semibold">🛒 Handcrafted Kit on Etsy ↗</a>
           <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-semibold">🏭 On-Demand Print on Slant 3D ↗</a>
           <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-semibold">🖨️ Free STLs on Printables ↗</a>
-          <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-semibold">📙 Middle School Workbook on Amazon ↗</a>
-          <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-semibold">📗 Companion Book on Amazon ↗</a>
+          <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-semibold">📘 SC-32 Manual on Amazon ($16) ↗</a>
+          <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-semibold">📗 SC-6 Book on Amazon ($16) ↗</a>
+          <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-semibold">📙 Middle School Workbook on Amazon ($16) ↗</a>
         </div>
+        <div class="text-slate-300 leading-relaxed">
+          <strong>📖 Aligned Book Story:</strong> <a href="../../manuals/sc6/05-fractions-decimals-ratios/" class="text-sky-400 hover:underline">The Pharaoh's Bakery, Pythagoras's Strings & Why Towers Stand 84.0 mm Tall (SC-6 Ch. 5)</a><br>
+          <strong>📄 Printable Lesson Packets:</strong> <a href="../../downloads/curriculum_units/stackcalc_curriculum_unit_06.pdf" class="text-emerald-400 hover:underline font-semibold">Print Unit 06 Fraction Studio 4-Page Packet (PDF)</a> &bull; <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_02.pdf" class="text-amber-300 hover:underline font-semibold">Print Big Ideas Unit 2 (Fractions & Decimals PDF)</a>
+        </div>
+      </div>
         <div class="text-slate-300 leading-relaxed">
           <strong>📖 Aligned Book Story:</strong> <a href="../../manuals/sc6/05-fractions-decimals-ratios/" class="text-sky-400 hover:underline">The Pharaoh's Bakery, Pythagoras's Strings & Why Towers Stand 84.0 mm Tall (SC-6 Ch. 5)</a><br>
           <strong>📄 Printable Lesson Packets:</strong> <a href="../../downloads/curriculum_units/stackcalc_curriculum_unit_06.pdf" class="text-emerald-400 hover:underline font-semibold">Print Unit 06 Fraction Studio 4-Page Packet (PDF)</a> &bull; <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_02.pdf" class="text-amber-300 hover:underline font-semibold">Print Big Ideas Unit 2 (Fractions & Decimals PDF)</a>
