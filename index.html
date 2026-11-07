@@ -1006,7 +1006,7 @@
                     </div>
                     <div class="mt-4 md:mt-0">
                         <a href="products/" class="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-slate-400 hover:text-white transition">
-                            <span>VIEW FULL CATALOG (13 ITEMS)</span>
+                            <span>VIEW FULL CATALOG (15 ITEMS)</span>
                             <span>&rarr;</span>
                         </a>
                     </div>
@@ -1014,12 +1014,12 @@
 
                 <!-- Category Filter Bar -->
                 <div class="flex flex-wrap gap-2 mb-8" role="tablist">
-                    <button type="button" class="filter-tab-pill active" onclick="filterHomeProducts('core', this)">★ TOP CORE (6)</button>
+                    <button type="button" class="filter-tab-pill active" onclick="filterHomeProducts('core', this)">★ TOP CORE (8)</button>
                     <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('calc', this)">RPN HARDWARE (2)</button>
                     <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('manip', this)">CORE MANIPULATIVES (3)</button>
-                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('book', this)">BOOKS &amp; MANUALS (1)</button>
+                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('book', this)">BOOKS &amp; MANUALS (3)</button>
                     <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('archive', this)">⏸ ON-HOLD 3MF LAB (7)</button>
-                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('all', this)">ALL CATALOG (13)</button>
+                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('all', this)">ALL CATALOG (15)</button>
                 </div>
 
                 <!-- Product Showcase Grid -->
@@ -1048,7 +1048,7 @@
                                 <span class="font-mono text-base font-bold text-white">$89.00</span>
                                 <div class="flex gap-2">
                                     <a href="products/sc32-calculator/" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                    <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#f1641e] hover:bg-[#d95315] text-white font-mono text-xs font-bold rounded transition">Etsy ↗</a>
                                 </div>
                             </div>
                         </div>
@@ -1077,7 +1077,7 @@
                                 <span class="font-mono text-base font-bold text-white">$79.00</span>
                                 <div class="flex gap-2">
                                     <a href="products/sc6-elementary/" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                    <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#f1641e] hover:bg-[#d95315] text-white font-mono text-xs font-bold rounded transition">Etsy ↗</a>
                                 </div>
                             </div>
                         </div>
@@ -1091,7 +1091,7 @@
                         </div>
                         <div class="home-card-viewport">
                             <a href="products/sc6-book/">
-                                <img src="assets/manuals/sc6_book_cover.png" alt="From Blocks to the Stack Book Cover" loading="eager" decoding="async">
+                                <img src="assets/manuals/sc6_book_cover_square.png" alt="From Blocks to the Stack Book Cover" loading="eager" decoding="async">
                             </a>
                         </div>
                         <div class="p-4 flex-1 flex flex-col justify-between">
@@ -1112,7 +1112,65 @@
                         </div>
                     </article>
 
-                    <!-- 3. Fraction Tower Studio -->
+                    <!-- 4. SC-32 Scientific Manual: Thinking in the Stack -->
+                    <article class="home-product-card" data-cat="core book">
+                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
+                            <span class="text-slate-400">BOOK // ADVANCED RPN</span>
+                            <span class="text-emerald-400 font-bold">● ON AMAZON</span>
+                        </div>
+                        <div class="home-card-viewport">
+                            <a href="manuals/#sc-32-scientific">
+                                <img src="assets/manuals/sc32_book_cover_square.png" alt="Thinking in the Stack SC-32 Reference Manual" loading="eager" decoding="async">
+                            </a>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Reference Manual &bull; High School to Pro</div>
+                                <h3 class="font-bold text-base text-white mb-1.5"><a href="manuals/#sc-32-scientific" class="hover:text-white">Thinking in the Stack (SC-32 Book)</a></h3>
+                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                                    The definitive reference manual for postfix computation, 16-level stack architecture, scientific functions, and numerical algorithms with the SC-32.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
+                                <span class="font-mono text-base font-bold text-white">$16.00</span>
+                                <div class="flex gap-2">
+                                    <a href="manuals/#sc-32-scientific" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Manual</a>
+                                    <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#FF9900] hover:bg-[#FFaa22] text-slate-950 font-mono text-xs font-bold rounded transition">Amazon ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 5. Middle School Math Lab Workbook -->
+                    <article class="home-product-card" data-cat="core book">
+                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
+                            <span class="text-slate-400">WORKBOOK // LAB ACTIVITIES</span>
+                            <span class="text-emerald-400 font-bold">● ON AMAZON</span>
+                        </div>
+                        <div class="home-card-viewport">
+                            <a href="curriculum/big-ideas-middle-school-sc6-workbook/">
+                                <img src="assets/manuals/middle_school_workbook_cover_square.png" alt="Middle School Math Lab Workbook Cover" loading="eager" decoding="async">
+                            </a>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Curriculum Workbook &bull; Grades 6&ndash;8</div>
+                                <h3 class="font-bold text-base text-white mb-1.5"><a href="curriculum/big-ideas-middle-school-sc6-workbook/" class="hover:text-white">Middle School Math Lab (Workbook)</a></h3>
+                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                                    128-page reproducible classroom workbook connecting physical Fraction &amp; Prime Factor blocks directly to SC-6 calculator exercises.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
+                                <span class="font-mono text-base font-bold text-white">$16.00</span>
+                                <div class="flex gap-2">
+                                    <a href="curriculum/big-ideas-middle-school-sc6-workbook/" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Curriculum</a>
+                                    <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#FF9900] hover:bg-[#FFaa22] text-slate-950 font-mono text-xs font-bold rounded transition">Amazon ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 6. Fraction Tower Studio -->
                     <article class="home-product-card" data-cat="core manip">
                         <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
                             <span class="text-slate-400">FRAC-01 // EQUIVALENCE</span>
@@ -1120,7 +1178,7 @@
                         </div>
                         <div class="home-card-viewport">
                             <a href="products/fraction-studio/">
-                                <img src="assets/renders/fraction-studio-hero.png" alt="Fraction Studio Proportional Towers" loading="eager" decoding="async">
+                                <img src="assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg" alt="Fraction Studio Proportional Towers" loading="eager" decoding="async">
                             </a>
                         </div>
                         <div class="p-4 flex-1 flex flex-col justify-between">
@@ -1132,16 +1190,19 @@
                                 </p>
                             </div>
                             <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-base font-bold text-white">$48.00</span>
+                                <div>
+                                    <span class="font-mono text-base font-bold text-white">$24.99</span>
+                                    <span class="font-mono text-[10px] text-slate-400 block -mt-1">Beta ($48 V1)</span>
+                                </div>
                                 <div class="flex gap-2">
                                     <a href="products/fraction-studio/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                    <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#f1641e] hover:bg-[#d95315] text-white font-mono text-xs font-bold rounded transition">Etsy ↗</a>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- 4. Prime Factor Studio -->
+                    <!-- 7. Prime Factor Studio -->
                     <article class="home-product-card" data-cat="core manip">
                         <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
                             <span class="text-slate-400">PRIME-01 // NUMBER THEORY</span>
@@ -1149,7 +1210,7 @@
                         </div>
                         <div class="home-card-viewport">
                             <a href="products/prime-factor-studio/">
-                                <img src="assets/renders/etsy/prime-factor-studio-hero-square.png" alt="Prime Factor Studio &amp; Factor Towers" loading="eager" decoding="async">
+                                <img src="assets/renders/etsy/prime-factor-studio-real-staircase-iso-hero-tight.jpg" alt="Prime Factor Studio &amp; Factor Towers" loading="eager" decoding="async">
                             </a>
                         </div>
                         <div class="p-4 flex-1 flex flex-col justify-between">
@@ -1164,13 +1225,13 @@
                                 <span class="font-mono text-base font-bold text-white">$46.00</span>
                                 <div class="flex gap-2">
                                     <a href="products/prime-factor-studio/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                    <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#f1641e] hover:bg-[#d95315] text-white font-mono text-xs font-bold rounded transition">Etsy ↗</a>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- 5. Place Value Studio & Regrouping Trays -->
+                    <!-- 8. Place Value Studio & Regrouping Trays -->
                     <article class="home-product-card" data-cat="core manip">
                         <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
                             <span class="text-slate-400">PLAC-01 // REGROUPING TRAYS</span>
@@ -1193,7 +1254,7 @@
                                 <span class="font-mono text-base font-bold text-white">$38.00</span>
                                 <div class="flex gap-2">
                                     <a href="products/place-value/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                    <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#f1641e] hover:bg-[#d95315] text-white font-mono text-xs font-bold rounded transition">Etsy ↗</a>
                                 </div>
                             </div>
                         </div>
@@ -2601,7 +2662,10 @@
                         <li><a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Printables Community Models ↗</a></li>
                         <li><a href="printables/" class="hover:text-white transition">Makerspace 3D Print Kits</a></li>
                         <li><a href="parts/" class="hover:text-white transition">Replacement Parts Center</a></li>
-                        <li><a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Amazon Book Edition ↗</a></li>
+                        <li><a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">SC-32 Manual on Amazon ↗</a></li>
+                        <li><a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">SC-6 Book on Amazon ↗</a></li>
+                        <li><a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Middle School Workbook on Amazon ↗</a></li>
+                        <li><a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Lulu Spiral Workbooks ↗</a></li>
                         <li><a href="https://apps.apple.com/app/id6801788040" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">App Store (Mac &amp; iOS) ↗</a></li>
                         <li><a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Hackaday Logs ↗</a></li>
                         <li><a href="press/" class="hover:text-white transition">Press &amp; Media Kit</a></li>
@@ -2739,23 +2803,23 @@
             'fraction': {
                 tag: 'PROPORTIONS // HEIGHT PARITY',
                 title: 'Fraction Studio Towers',
-                price: '$48.00 USD',
-                subtitle: 'Dual-Color 1 to 1/12',
-                dims: '1/1 to 1/12 Heights • Proportional Scale • Zero Loose Trays',
-                badge: 'In Stock',
-                btnText: 'Order $48',
-                src: 'assets/renders/fraction-studio-hero.png',
+                price: '$24.99 – $48.00 USD',
+                subtitle: 'Authentic Silk Biopolymer • Reciprocal 84mm Datum',
+                dims: '10 Curriculum Denominators • 4-Face Conversions • Snap-Tight Case',
+                badge: 'Beta / V1 In Stock',
+                btnText: 'Order $24.99+',
+                src: 'assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg',
                 link: 'products/fraction-studio/'
             },
             'prime': {
                 tag: 'NUMBER THEORY // LOGARITHMIC TOWERS',
                 title: 'Prime Factor Studio & Towers',
                 price: '$46.00 USD',
-                subtitle: 'h = k·log(p) Fundamental Theorem',
-                dims: '29 Proportional Blocks • Bilateral Comparator • Gridfinity 3x1',
+                subtitle: 'Ascending Prime Towers • Fundamental Theorem',
+                dims: 'Logarithmic Stacking • Commutative Proof • Dual-Well Stage Lid',
                 badge: 'In Stock',
                 btnText: 'Order $46',
-                src: 'assets/renders/etsy/prime-factor-studio-hero-square.png',
+                src: 'assets/renders/etsy/prime-factor-studio-real-staircase-iso-hero-tight.jpg',
                 link: 'products/prime-factor-studio/'
             },
             'placevalue': {
