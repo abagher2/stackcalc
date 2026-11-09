@@ -333,9 +333,15 @@ class KeyRegistry:
                 rec_entry = self.entries["▸y,x"]
                 for alias in ("->REC", "→REC", "▸REC", "->y,x", "→y,x"):
                     self.entries[alias] = rec_entry
+            if "MODES" in self.entries:
+                self.entries["MODE"] = self.entries["MODES"]
         else:
             if "?" in self.entries:
                 self.entries["QUIZ"] = self.entries["?"]
+            # Register SC-6 default contextual softkeys
+            for idx, sk in enumerate(["x²", "𝑥²", "x!", "π", "x³", "𝑥³", "PV", "$", "CURRENCY"]):
+                self.entries[sk] = KeyEntry(sk, None, "menu", 0, min(idx, 5))
+                self.menu_labels.add(sk)
 
     def resolve(self, key_name: str) -> KeyEntry:
         clean = key_name.strip().replace("&#124;", "|")
