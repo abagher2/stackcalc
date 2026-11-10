@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A concept-first applied mathematics guide to nine physical trades and engineering disciplines across nine units and twenty-seven narrative-problem chapters, uniting first-principles derivations with RPN stack execution and bidirectional equation solvers.">
+        <meta name="description" content="Applied mathematics across surveying, electrical trades, digital systems, cinema optics, radio engineering, analytical chemistry, culinary thermodynamics, clinical pharmacokinetics, and quantitative finance.">
       
       
         <meta name="author" content="StackCalc Engineering">
@@ -68,12 +68,12 @@
   <meta property="og:site_name" content="StackCalc32">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Volume III — The Stack in the Field: When Mathematics Meets the Physical Trades">
-  <meta property="og:description" content="A concept-first applied mathematics guide to nine physical trades and engineering disciplines across nine units and twenty-seven narrative-problem chapters, uniting first-principles derivations with RPN stack execution and bidirectional equation solvers.">
+  <meta property="og:description" content="Applied mathematics across surveying, electrical trades, digital systems, cinema optics, radio engineering, analytical chemistry, culinary thermodynamics, clinical pharmacokinetics, and quantitative finance.">
   <meta property="og:url" content="https://www.stackcalc.io/manuals/domains/">
   <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Volume III — The Stack in the Field: When Mathematics Meets the Physical Trades">
-  <meta name="twitter:description" content="A concept-first applied mathematics guide to nine physical trades and engineering disciplines across nine units and twenty-seven narrative-problem chapters, uniting first-principles derivations with RPN stack execution and bidirectional equation solvers.">
+  <meta name="twitter:description" content="Applied mathematics across surveying, electrical trades, digital systems, cinema optics, radio engineering, analytical chemistry, culinary thermodynamics, clinical pharmacokinetics, and quantitative finance.">
   <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -2930,15 +2930,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#concepts-first-worked-examples-second-keystrokes-third" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concepts First, Worked Examples Second, Keystrokes Third
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#forward-chains-and-backward-puzzles-one-story-two-ways-of-thinking" class="md-nav__link">
     <span class="md-ellipsis">
       Forward Chains and Backward Puzzles: One Story, Two Ways of Thinking
@@ -2972,6 +2963,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-grand-arc-the-architecture-of-the-built-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Grand Arc: The Architecture of the Built World
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#nine-worlds-of-applied-mathematics" class="md-nav__link">
     <span class="md-ellipsis">
       Nine Worlds of Applied Mathematics
@@ -2998,34 +2998,23 @@
 <h1 id="prologue-when-mathematics-meets-the-physical-trades">Prologue: When Mathematics Meets the Physical Trades</h1>
 <p>In the summer of 1858, sailors aboard two steamships met in the middle of the North Atlantic, spliced two coils of copper cable together, and lowered the joint into two miles of dark ocean water. As HMS <em>Agamemnon</em> steamed eastward toward Ireland and USS <em>Niagara</em> steamed westward toward Newfoundland, they paid out the first telegraph line ever to connect two continents.</p>
 <p>Below deck on the <em>Agamemnon</em> sat a thirty-four-year-old Scottish physicist named William Thomson, who would later become Lord Kelvin. All across Europe and America, newspapers celebrated the end of distance. In university classrooms, electricity had been taught as a weightless, instantaneous fluid: when you closed a switch in London, a crisp rectangular pulse of current was supposed to appear in New York at the speed of light.</p>
-<p>Sitting in the ship's cabin watching a tiny mirror suspended on a silk thread, Thomson saw something very different. Two thousand miles of copper wire wrapped in tree resin and submerged in icy salt water did not behave like a blackboard diagram. The copper resisted the flow of electrons, while the surrounding ocean acted like a giant capacitor that soaked up electrical charge. By the time a sharp Morse code dot traveled from Ireland to Newfoundland, it arrived as a slow,gentle swell that took seconds to rise and fade.</p>
+<p>Sitting in the ship's cabin watching a tiny mirror suspended on a silk thread, Thomson saw something very different. Two thousand miles of copper wire wrapped in tree resin and submerged in icy salt water did not behave like a blackboard diagram. The copper resisted the flow of electrons, while the surrounding ocean acted like a giant capacitor that soaked up electrical charge. By the time a sharp Morse code dot traveled from Ireland to Newfoundland, it arrived as a slow, gentle swell that took seconds to rise and fade.</p>
 <p>Worse still, the chief electrician in London refused to believe Thomson's equations. Convinced that a sluggish signal simply needed a harder push, he connected giant high-voltage induction coils to the wire. Within weeks, the electrical pressure burned through the insulation on the ocean floor, and the Atlantic cable went silent.</p>
-<p>Twenty-five years later, speaking to the Institution of Civil Engineers in London, Lord Kelvin summed up the lesson of that summer at sea: until you can measure what you are speaking about and express it in numbers, your knowledge is meager and unsatisfactory. That is the subject of this book.</p>
+<p>Twenty-five years later, speaking to the Institution of Civil Engineers in London, Lord Kelvin summed up the lesson of that summer at sea: until you can measure what you are speaking about and express it in numbers, your knowledge is meager and unsatisfactory.</p>
 <hr />
 <h2 id="where-classroom-equations-meet-the-real-world">Where Classroom Equations Meet the Real World</h2>
 <p>In a math classroom, the world is wonderfully tidy. Angles always start on the flat horizontal axis on the right side of the page and sweep counterclockwise. Wires carry electricity without getting warm. Whole numbers can grow forever without running out of room. Sound and radio waves travel in straight lines without bouncing off walls, and recipes can be doubled just by pouring two cups instead of one.</p>
 <p>The moment you step outside the classroom—into a forest canyon, a ship's engine room, a bakery at four in the morning, or a hospital intensive-care ward—nature introduces rules of its own.</p>
 <p><img alt="Three everyday physical puzzles where classroom geometry and physics meet the real world." src="../assets/diagrams/domains/diagram_intro_problems.png" /></p>
-<p>Look at the three everyday puzzles in <strong>Figure 0.1</strong>:</p>
 <ol>
 <li><strong>The Surveyor's Compass and the Canyon:</strong> Suppose you stand on the rim of a river canyon holding a magnetic compass. Unlike a classroom protractor that puts <span class="arithmatex">\(0^\circ\)</span> on the right, every compass needle on Earth points to <strong>True North (<span class="arithmatex">\(0^\circ\)</span>)</strong> at the top of the dial, and its angles increase <em>clockwise</em> toward East (<span class="arithmatex">\(90^\circ\)</span>), South (<span class="arithmatex">\(180^\circ\)</span>), and West (<span class="arithmatex">\(270^\circ\)</span>). When a surveyor sights a target <span class="arithmatex">\(500\text{ feet}\)</span> away at a clockwise compass angle of <span class="arithmatex">\(53^\circ\)</span>, that simple change of direction swaps the familiar roles of sine and cosine.</li>
-<li><strong>The Electrician's Bent Steel Pipe:</strong> Imagine running a rigid steel pipe along a factory wall when you meet a <span class="arithmatex">\(6\text{-inch}\)</span>-thick steel beam blocking your path. To climb over the beam cleanly, the electrician bends the pipe upward at <span class="arithmatex">\(30^\circ\)</span> and then bends it back flat at the top. Because the sine of <span class="arithmatex">\(30^\circ\)</span> is exactly <span class="arithmatex">\(\frac{1}{2}\)</span>, climbing <span class="arithmatex">\(6\text{ inches}\)</span> vertically requires placing the two bends exactly <span class="arithmatex">\(2 \times 6 = 12\text{ inches}\)</span> apart along the pipe!</li>
+<li><strong>The Electrician's Bent Steel Pipe:</strong> Imagine running a rigid steel pipe along a factory wall when you meet a <span class="arithmatex">\(6\text{-inch}\)</span>-thick steel beam blocking your path. To climb over the beam cleanly, the electrician bends the pipe upward at <span class="arithmatex">\(30^\circ\)</span> and then bends it back flat at the top. Because the sine of <span class="arithmatex">\(30^\circ\)</span> is exactly <span class="arithmatex">\(\frac{1}{2}\)</span>, climbing <span class="arithmatex">\(6\text{ inches}\)</span> vertically requires placing the two bends exactly <span class="arithmatex">\(2 \times 6 = 12\text{ inches}\)</span> apart along the pipe.</li>
 <li><strong>The Baker's Spinning Mixer:</strong> When a bakery kneads two hundred loaves of bread dough in a heavy steel spiral mixer, the friction of the spinning steel hook heats the dough by <span class="arithmatex">\(18^\circ\text{C}\)</span> during mixing. If the dough comes out too warm, the yeast races out of control and the bread collapses. To hit an exact target dough temperature of <span class="arithmatex">\(24^\circ\text{C}\)</span>, the baker works backward from the room, flour, and friction temperatures to calculate how cold the tap water must be—and how many kilograms of crushed ice must melt inside the bowl.</li>
-</ol>
-<p>Every chapter in this book is built around real stories like these. You do not need to be an engineer to enjoy them. If you have ever wondered how an airline pilot lands crabwise in a crosswind, how a movie camera blurs the background behind an actor's face, how a computer stores a negative number using only zeros and ones, or how a pharmacist tailors medicine to a patient's kidneys, the mathematics is waiting right beneath the surface.</p>
-<hr />
-<h2 id="concepts-first-worked-examples-second-keystrokes-third">Concepts First, Worked Examples Second, Keystrokes Third</h2>
-<p>In every skilled trade, people who use the same physical law every day eventually give it a short nickname. A land surveyor does not say, <em>"Let us apply the Pythagorean theorem and four-quadrant arc-tangent to our Northing and Easting differences."</em> Instead, the surveyor calls that check an <strong>Inverse</strong> ([INV]). A pipefitter calls the geometry of bending pipe over a beam an <strong>Offset</strong> ([OFS]). A cinematographer calls the zone of sharp focus <strong>Depth of Field</strong> ([DOF]), and a baker calls scaling a recipe to flour weight <strong>Baker's Percentage</strong> ([BK%]).</p>
-<p>To make every field welcoming to newcomers and rewarding for experts, each chapter in this book follows the same three-step rhythm as Volume II (<em>Thinking in the Stack</em>):</p>
-<ol>
-<li><strong>The Physical Story and the Mathematical Idea:</strong> We begin each chapter with a human story and a physical puzzle, building the geometry or physics from first principles without jargon.</li>
-<li><strong>Worked Examples by Hand:</strong> Next, we put real numbers into the idea and trace how the quantities fit together step by step, so you can see <em>why</em> the answer makes physical sense.</li>
-<li><strong>Bringing the Idea to the Calculator:</strong> Finally, we show how that exact concept lives on the StackCalc Domain Series (<code>SC-35</code> through <code>SC-95</code>), where those three-letter trade nicknames are engraved right on the keys.</li>
 </ol>
 <hr />
 <h2 id="forward-chains-and-backward-puzzles-one-story-two-ways-of-thinking">Forward Chains and Backward Puzzles: One Story, Two Ways of Thinking</h2>
+<p>In every skilled trade, people who use the same physical law every day eventually give it a short operational name. A land surveyor does not say, <em>"Let us apply the Pythagorean theorem and four-quadrant arc-tangent to our Northing and Easting differences."</em> Instead, the surveyor calls that check an <strong>Inverse</strong> ([INV]). A pipefitter calls the geometry of bending pipe over a beam an <strong>Offset</strong> ([OFS]). A cinematographer calls the zone of sharp focus <strong>Depth of Field</strong> ([DOF]), and a baker calls scaling a recipe to flour weight <strong>Baker's Percentage</strong> ([BK%]).</p>
 <p>Why do practitioners in the field use a stack calculator with dedicated domain keys instead of a basic four-function calculator or a spreadsheet? Because field problems almost always come in pairs: first you <strong>chain measurements forward</strong>, and then a real-world limit forces you to <strong>solve the same problem backward</strong>.</p>
-<p>Let us trace a single concrete example to see how both modes work.</p>
 <p>Suppose an electrician is wiring a <span class="arithmatex">\(240\text{ V}\)</span> motor at the end of a <span class="arithmatex">\(150\text{-foot}\)</span> pier using medium-gauge copper wire (#10 AWG). Copper is a wonderful conductor, but it is not perfect: every <span class="arithmatex">\(1{,}000\text{ feet}\)</span> of #10 AWG copper wire has an electrical resistance of <span class="arithmatex">\(1.24\text{ ohms}\)</span> (<span class="arithmatex">\(\Omega\)</span>). Because electricity must travel <span class="arithmatex">\(150\text{ feet}\)</span> out to the motor and <span class="arithmatex">\(150\text{ feet}\)</span> back along the return wire, the current travels through <span class="arithmatex">\(300\text{ feet}\)</span> of copper in total.</p>
 <p><img alt="Forward pipeline versus backward design on a 150-foot copper feeder." src="../assets/diagrams/domains/diagram_intro_pipeline.png" /></p>
 <h3 id="1-thinking-forward-on-the-four-register-stack">1. Thinking Forward on the Four-Register Stack</h3>
@@ -3083,82 +3072,97 @@
 <p><em>(And if a calculation ever needs more than four shelves, opening [↱] [FLAGS] lets you switch stack depth from classic four-level [4-LV] to eight-level [8-LV] or unlimited deep stack [INF].)</em></p>
 <h3 id="2-thinking-backward-in-the-equation-solver-workspace">2. Thinking Backward in the Equation Solver Workspace</h3>
 <p>Now comes the twist that happens every day on a real job site.</p>
-<p>The National Electrical Code recommends losing no more than <strong><span class="arithmatex">\(3.0\%\)</span> of your supply voltage</strong> on a branch circuit so motors do not overheat. On a <span class="arithmatex">\(240\text{ V}\)</span> line, <span class="arithmatex">\(3.0\%\)</span> is <span class="arithmatex">\(0.03 \times 240 = \mathbf{7.20\text{ V}}\)</span>. Our <span class="arithmatex">\(150\text{-foot}\)</span> wire lost <span class="arithmatex">\(8.928\text{ V}\)</span> (<span class="arithmatex">\(3.72\%\)</span>), which is too high!</p>
+<p>The National Electrical Code recommends losing no more than <strong><span class="arithmatex">\(3.0\%\)</span> of your supply voltage</strong> on a branch circuit so motors do not overheat. On a <span class="arithmatex">\(240\text{ V}\)</span> line, <span class="arithmatex">\(3.0\%\)</span> is <span class="arithmatex">\(0.03 \times 240 = \mathbf{7.20\text{ V}}\)</span>. Our <span class="arithmatex">\(150\text{-foot}\)</span> wire lost <span class="arithmatex">\(8.928\text{ V}\)</span> (<span class="arithmatex">\(3.72\%\)</span>), which exceeds the code recommendation.</p>
 <p>So the electrician asks the backward question: <strong>If I am only allowed to lose <span class="arithmatex">\(7.20\text{ V}\)</span>, what is the longest one-way distance <span class="arithmatex">\(L\)</span> I can run #10 AWG wire at <span class="arithmatex">\(24\text{ A}\)</span>?</strong></p>
 <p>Instead of rearranging algebra on a scrap of cardboard, pressing [AWG] on an empty stack opens its <strong>Equation Solver Workspace</strong>. The top line of the screen shows the wire-drop formula (<code>D = 2×R×L×I / 1000</code>), and the row of softkeys right below the screen becomes the formula's named variables:</p>
 <ul>
 <li>[D] for Voltage Drop (<span class="arithmatex">\(7.20\text{ V}\)</span>)</li>
 <li>[R] for Wire Resistance (<span class="arithmatex">\(1.24\ \Omega/\text{kft}\)</span>, loaded automatically when you key <code>10</code> [AWG])</li>
-<li>[L] for One-Way Length (our unknown!)</li>
+<li>[L] for One-Way Length (the target unknown)</li>
 <li>[I] for Current (<span class="arithmatex">\(24\text{ A}\)</span>)</li>
 </ul>
 <p>You simply type the numbers you know into their softkeys—<code>7.20</code> [D] and <code>24</code> [I]—and then press [↱] [SOLVE] [L]. The calculator solves the equation backward and answers immediately: <strong><span class="arithmatex">\(L = \mathbf{120.97\text{ feet}}\)</span></strong>.</p>
-<p>Every instrument in this book works the same way. You can chain values forward on the RPN stack, open a bidirectional Equation Solver Workspace to solve backward for any variable, or press the Reference Table key ([g] [▦]) to inspect live field tables like survey coordinates, wire gauges, or the periodic table of elements.</p>
+<p>Every domain instrument supports these three ways of working: chaining values forward on the RPN stack, opening a bidirectional Equation Solver Workspace to solve backward for any variable, and pressing the Reference Table key ([g] [▦]) to inspect live field tables like survey coordinates, wire gauges, or the periodic table of elements.</p>
+<hr />
+<h2 id="the-grand-arc-the-architecture-of-the-built-world">The Grand Arc: The Architecture of the Built World</h2>
+<p>Why are these nine disciplines gathered in a single volume? A casual glance might suggest nine separate manuals bound together. But look closer: they trace the foundational arc of how human beings establish, build, and sustain modern technological society.</p>
+<p>Imagine establishing a high-altitude scientific station or an advanced industrial outpost on a remote frontier. The problems you face unfold in a necessary, connected sequence:</p>
+<ol>
+<li><strong>First, you must survey the earth and navigate the sky (<a href="01-sc35-geomatics-navigation/">Unit I</a>):</strong> Before a single foundation can be poured, surveyors anchor coordinates to True North, reduce slope sightlines across steep ravines, lay out horizontal and vertical transport curves, and fly supply lines through mountain passes.</li>
+<li><strong>Next, you must build physical infrastructure and distribute power (<a href="02-sc14-electrical-trades/">Unit II</a>):</strong> Heavy timber and structural steel rise. Electricians bend conduit over obstacles and balance three-phase transformer loads, while millwrights and pipefitters size hydraulic pumps and process flow lines.</li>
+<li><strong>Then, you must breathe intelligence into the machines (<a href="03-sc16-systems-cyber/">Unit III</a>):</strong> Microcontrollers and embedded processors take control. Engineers write digital logic, configure pulse-width timers, unpack IEEE-754 floating-point sensors, and secure industrial networks down to the exact bit, register, and microsecond.</li>
+<li><strong>You must document, broadcast, and synchronize human activity (<a href="04-sc24-cinema-broadcast/">Unit IV</a>):</strong> Optical cameras capture high-speed motion with precise rotary shutter exposures, audio engineers tame room standing waves, and broadcast suites lock multi-camera feeds to the exact SMPTE timecode frame.</li>
+<li><strong>You must push signals across the horizon (<a href="05-sc50-rf-spectrum/">Unit V</a>):</strong> Transmission lines match impedances, parabolic dishes link distant mountaintops, and radio transceivers pull faint data streams out of thermal noise up to Shannon's theoretical channel capacity.</li>
+<li><strong>You must understand and refine matter at the molecular scale (<a href="06-sc60-chemistry-wetlab/">Unit VI</a>):</strong> Analytical chemists test water purity, synthesize reagents, buffer biological reactions against acid-base shocks, and balance thermodynamic enthalpy and free energy.</li>
+<li><strong>You must nourish and sustain the community (<a href="07-sc78-culinary-brewing/">Unit VII</a>):</strong> Master bakers scale sourdough batches to flour weight, brewers calculate strike water thermodynamics and hop isomerization kinetics, and food scientists manage water activity to ensure long-term food preservation.</li>
+<li><strong>You must protect human life in critical moments (<a href="08-sc80-clinical-pharmacy/">Unit VIII</a>):</strong> When trauma or illness strikes, clinical teams partition lean body compartments, calculate renal antibiotic clearances, titrate vasoactive drips to the microgram, and manage pharmacokinetic decay to keep patients alive.</li>
+<li><strong>Finally, you must steward capital and demand zero-defect precision (<a href="09-sc95-finance-statistics/">Unit IX</a>):</strong> Facility mortgages are structured, capital equipment is evaluated through net present value, fixed-income yields are hedged against interest rate spikes, and Six Sigma statistical process control keeps automated CNC machines running within fractions of a micron.</li>
+</ol>
+<p>Throughout this entire journey, <strong>the mathematics is not nine different inventions—it is one single universal language.</strong> Vector projections that guide an airplane through a crosswind also balance a three-phase electrical generator. Exponential decay that discharges a capacitor also models how an antibiotic clears the bloodstream and how future cash flows discount back to the present. Logarithmic compression that maps decibel sound levels in an auditorium also measures radio-frequency link gains and chemical acidity in a beaker.</p>
+<p>By viewing these nine fields as a single coherent world, the reader discovers that mastery of the stack is mastery of the physical universe.</p>
 <hr />
 <h2 id="nine-worlds-of-applied-mathematics">Nine Worlds of Applied Mathematics</h2>
-<p>This volume is organized into <strong>nine Units</strong>—one for each domain instrument (<code>SC-35</code> through <code>SC-95</code>)—spanning <strong>twenty-seven narrative Chapters</strong>. Each Unit introduces a field of human endeavor, and each Chapter follows three connected themes along a single real-world story:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Unit &amp; Chapters</th>
+<th style="text-align: left;">Unit</th>
 <th style="text-align: left;">Domain &amp; Instrument</th>
-<th style="text-align: left;">Narrative Trajectory &amp; Core Mathematical Themes</th>
+<th style="text-align: left;">Core Mathematical Concepts</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;"><strong><a href="01-sc35-geomatics-navigation/">Unit I (Chapters 1–3)</a></strong></td>
 <td style="text-align: left;"><strong>Geomatics, Land Surveying &amp; Flight Navigation</strong> (<code>SC-35</code>)</td>
-<td style="text-align: left;"><strong>Ch 1:</strong> Retracing a lost 18th-century forest boundary using clockwise compass azimuths, slope reduction, and Gauss's shoelace area formula • <strong>Ch 2:</strong> Designing a mountain highway switchback curve, parabolic crest, and canyon spirit-leveling loop • <strong>Ch 3:</strong> Landing a bush plane at night in a high-desert crosswind while balancing density altitude, center of gravity, and fuel endurance</td>
+<td style="text-align: left;">Clockwise North azimuths, slope reduction, traverse closure, Gauss's shoelace area formula, circular and parabolic highway curves, differential spirit leveling, wind-triangle vectors, density altitude, and center-of-gravity moments</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="02-sc14-electrical-trades/">Unit II (Chapters 4–6)</a></strong></td>
 <td style="text-align: left;"><strong>Electrical Power, Conduit Geometry &amp; Industrial Trades</strong> (<code>SC-14</code>)</td>
-<td style="text-align: left;"><strong>Ch 4:</strong> Commissioning a harbor gantry crane feeder across Ohm's law voltage drop, Nikola Tesla's three-phase AC power triangle, and parallel resistance • <strong>Ch 5:</strong> Bending parallel steel conduits over boiler-room beams with trigonometry, miter angles, and lathe cutting speeds • <strong>Ch 6:</strong> Sizing chemical-plant process pipes, centrifugal pump horsepower, control valve flow, and <span class="arithmatex">\(4\text{--}20\text{ mA}\)</span> sensor loops</td>
+<td style="text-align: left;">Ohm's law, feeder voltage drop, three-phase AC power triangles, reactive power factor correction, parallel conduit offset and saddle trigonometry, machining surface speed, Darcy–Weisbach pipe friction, pump horsepower, and <span class="arithmatex">\(4\text{--}20\text{ mA}\)</span> instrumentation scaling</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="03-sc16-systems-cyber/">Unit III (Chapters 7–9)</a></strong></td>
 <td style="text-align: left;"><strong>Digital Systems, Bitwise Logic &amp; Embedded Timing</strong> (<code>SC-16</code>)</td>
-<td style="text-align: left;"><strong>Ch 7:</strong> Debugging a stuck spacecraft motor interrupt across binary/hexadecimal nibbles, two's complement rings, bit masks, and fixed-point numbers • <strong>Ch 8:</strong> Catching a corrupted telemetry packet via byte-order endian swaps, IEEE-754 floating-point bits, and CRC checksum division • <strong>Ch 9:</strong> Designing a 12-bit sensor interface with RC filter time constants, PWM timer waves, and IPv4 network subnets</td>
+<td style="text-align: left;">Binary and hexadecimal radix representation, two's complement modular rings, bitwise masking, fixed-point scaling, byte-order endianness, IEEE-754 floating-point encoding, CRC polynomial division, <span class="arithmatex">\(RC\)</span> exponential relaxation, PWM duty cycles, and IPv4 subnetting</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="04-sc24-cinema-broadcast/">Unit IV (Chapters 10–12)</a></strong></td>
 <td style="text-align: left;"><strong>Cinema Optics, Broadcast Timecode &amp; Live Acoustics</strong> (<code>SC-24</code>)</td>
-<td style="text-align: left;"><strong>Ch 10:</strong> Keeping a live television broadcast in sync across NTSC 29.97 drop-frame timecode arithmetic and frame rates • <strong>Ch 11:</strong> Pulling focus on an anamorphic night shoot using thin-lens hyperfocal geometry, depth of field, and rotary shutter angles • <strong>Ch 12:</strong> Aligning outdoor stadium delay speaker towers with decibel power addition, sound speed in warm air, and room modes</td>
+<td style="text-align: left;">SMPTE 29.97 drop-frame timecode arithmetic, frame-rate speed ramps, Gaussian thin-lens optics, hyperfocal distance, depth of field, rotary shutter exposure, logarithmic decibel power addition, acoustic propagation delay, and room standing-wave modes</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="05-sc50-rf-spectrum/">Unit V (Chapters 13–15)</a></strong></td>
 <td style="text-align: left;"><strong>Radio-Frequency Engineering, Transmission Lines &amp; Link Budgets</strong> (<code>SC-50</code>)</td>
-<td style="text-align: left;"><strong>Ch 13:</strong> Diagnosing a storm-damaged mountain radio tower through decibel-milliwatts, wave reflections, and standing wave ratio • <strong>Ch 14:</strong> Matching a detuned antenna with quarter-wave transmission-line stubs, Smith chart impedance, and <span class="arithmatex">\(LC\)</span> resonance • <strong>Ch 15:</strong> Closing a deep-space and microwave satellite link across Friis free-space path loss, receiver noise floors, and Shannon capacity</td>
+<td style="text-align: left;">Decibel-milliwatt (<span class="arithmatex">\(\text{dBm}\)</span>) power scaling, transmission-line reflection coefficients, standing wave ratio (<span class="arithmatex">\(\text{VSWR}\)</span>), quarter-wave impedance transformers, <span class="arithmatex">\(LC\)</span> resonance, quality factor (<span class="arithmatex">\(Q\)</span>), Friis free-space path loss, Johnson–Nyquist thermal noise, and Shannon channel capacity</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="06-sc60-chemistry-wetlab/">Unit VI (Chapters 16–18)</a></strong></td>
 <td style="text-align: left;"><strong>Wet-Lab Chemistry, Stoichiometry &amp; Optical Spectroscopy</strong> (<code>SC-60</code>)</td>
-<td style="text-align: left;"><strong>Ch 16:</strong> Preparing a pure protein reagent across Avogadro's molar bridge, 118-element formula weights, and serial dilutions • <strong>Ch 17:</strong> Taming acid-base swings with Sørensen's logarithmic <span class="arithmatex">\(\text{pH}\)</span> scale, weak-acid dissociation, and Henderson–Hasselbalch buffers • <strong>Ch 18:</strong> Measuring molecules with light and heat via Beer–Lambert absorbance, ideal gas pressure, Nernst redox cells, and centrifuges</td>
+<td style="text-align: left;">Avogadro's molar bridge, 118-element molecular weights, stock dilution conservation, Sørensen's logarithmic <span class="arithmatex">\(\text{pH}\)</span> scale, weak-acid equilibrium, Henderson–Hasselbalch buffers, Beer–Lambert optical absorbance, ideal gas thermodynamics, Nernst redox potentials, and centrifugal <span class="arithmatex">\(g\)</span>-force</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="07-sc78-culinary-brewing/">Unit VII (Chapters 19–21)</a></strong></td>
 <td style="text-align: left;"><strong>Commercial Baking, Dough Thermodynamics &amp; Brewing Science</strong> (<code>SC-78</code>)</td>
-<td style="text-align: left;"><strong>Ch 19:</strong> Scaling an artisan sourdough bakery from a single test loaf to a 200-loaf production batch using flour-anchored baker's percentages and levain splits • <strong>Ch 20:</strong> Controlling fermentation clockwork through mixer friction calorimetry, latent heat of fusion in crushed ice, and prep-yield economics • <strong>Ch 21:</strong> Brewing an all-grain craft ale across mash strike-water thermodynamics, Plato sugar gravity, and Tinseth hop bitterness</td>
+<td style="text-align: left;">Flour-anchored baker's percentages, preferment hydration splits, mixer friction calorimetry, latent heat of fusion for ice additions, butcher and produce trim-yield economics, all-grain mash strike thermodynamics, specific gravity and Plato sugar density, and Tinseth hop isomerization kinetics</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="08-sc80-clinical-pharmacy/">Unit VIII (Chapters 22–24)</a></strong></td>
 <td style="text-align: left;"><strong>Clinical Dosing, Renal Clearance &amp; Pharmacokinetics</strong> (<code>SC-80</code>)</td>
-<td style="text-align: left;"><strong>Ch 22:</strong> Individualizing hospital chemotherapy doses across geometric body surface area, Devine ideal weight, and Cockcroft–Gault kidney clearance • <strong>Ch 23:</strong> Titrating intensive-care infusions across weight-based microgram pumps, vial reconstitution, and pediatric 4-2-1 fluid rules • <strong>Ch 24:</strong> Tracking drug half-life decay, steady-state vancomycin troughs, and blood-gas electroneutrality in the ICU</td>
+<td style="text-align: left;">Mosteller geometric body surface area, Devine ideal and adjusted body weight, Cockcroft–Gault renal clearance, continuous weight-based IV pump titration, powder reconstitution displacement, pediatric fluid rules, first-order half-life decay, steady-state trough accumulation, and acid-base anion gap</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><a href="09-sc95-finance-statistics/">Unit IX (Chapters 25–27)</a></strong></td>
 <td style="text-align: left;"><strong>Quantitative Finance, Fixed-Income Valuation &amp; Six Sigma Quality</strong> (<code>SC-95</code>)</td>
-<td style="text-align: left;"><strong>Ch 25:</strong> Evaluating a solar microgrid investment across Fibonacci's present-value discounting, mortgage amortization, and internal rate of return • <strong>Ch 26:</strong> Pricing Treasury bonds, Macaulay duration, compound growth, and break-even manufacturing volume • <strong>Ch 27:</strong> Guiding an aerospace factory to Six Sigma quality with Gaussian bell-curve quantiles, confidence intervals, and capability indices</td>
+<td style="text-align: left;">Present-value discounting, mortgage amortization, net present value (<span class="arithmatex">\(\text{NPV}\)</span>), internal rate of return (<span class="arithmatex">\(\text{IRR}\)</span>), fixed-income bond pricing, Macaulay duration, continuous compounding, break-even cost-volume-profit analysis, Gaussian normal quantiles, confidence intervals, and Six Sigma capability (<span class="arithmatex">\(C_{pk}\)</span>)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong><a href="appendix-a-cross-domain-formula-compendium/">Appendices A–B</a></strong></td>
+<td style="text-align: left;"><strong><a href="appendix-a-cross-domain-formula-compendium/">Appendices A–C</a></strong></td>
 <td style="text-align: left;"><strong>Reference Compendium</strong></td>
-<td style="text-align: left;"><strong>App. A:</strong> Cross-Domain Formula &amp; Governing Equation Compendium • <strong><a href="appendix-b-domain-keycap-and-softkey-directory/">App. B</a>:</strong> Complete Keycap, Softkey &amp; Operator Directory across <code>SC-35</code> through <code>SC-95</code></td>
+<td style="text-align: left;"><strong><a href="appendix-a-cross-domain-formula-compendium/">Appendix A</a>:</strong> Cross-Domain Formula &amp; Governing Equation Compendium • <strong><a href="appendix-b-domain-keycap-and-softkey-directory/">Appendix B</a>:</strong> Domain Keycap, Softkey &amp; Operator Directory (<code>SC-35</code> through <code>SC-95</code>) • <strong><a href="appendix-c-solutions-to-practice-problems/">Appendix C</a>:</strong> Solutions to Chapter Practice Problems (135 Field Exercises)</td>
 </tr>
 </tbody>
 </table>
-<p>We begin on the land and in the sky in <a href="01-sc35-geomatics-navigation/">Unit I: Geomatics, Land Surveying &amp; Flight Navigation</a>.</p>
 
 
 

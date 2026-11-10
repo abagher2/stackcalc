@@ -157,10 +157,8 @@
       "primaryLatex" : "e^{\\,x}",
       "row" : 1,
       "w" : 7,
-      "yellowAction" : "exp10",
-      "yellowBitmapIdentifier" : "operation.29",
-      "yellowLabel" : "10ˣ",
-      "yellowLatex" : "10^{\\,x}"
+      "yellowAction" : "ln",
+      "yellowLabel" : "LN"
     },
     {
       "alphaLabel" : "C",
@@ -175,12 +173,14 @@
       "isEnter" : false,
       "isShiftBlue" : false,
       "isShiftYellow" : false,
-      "primaryAction" : "ln",
-      "primaryLabel" : "LN",
+      "primaryAction" : "tvm",
+      "primaryBitmapIdentifier" : "operation.143",
+      "primaryLabel" : "TVM",
       "row" : 1,
       "w" : 7,
-      "yellowAction" : "log",
-      "yellowLabel" : "LOG"
+      "yellowAction" : "finAmortization",
+      "yellowBitmapIdentifier" : "operation.364",
+      "yellowLabel" : "AMR"
     },
     {
       "alphaLabel" : "D",
@@ -770,10 +770,9 @@
       "primaryLabel" : "1",
       "row" : 6,
       "w" : 8.6,
-      "yellowAction" : "finPercentTotal",
-      "yellowBitmapIdentifier" : "operation.356",
-      "yellowLabel" : "%Σ",
-      "yellowLatex" : "\\%\\Sigma"
+      "yellowAction" : "finEffectiveRate",
+      "yellowBitmapIdentifier" : "operation.365",
+      "yellowLabel" : "EAR"
     },
     {
       "alphaLabel" : "X",
@@ -886,10 +885,9 @@
     },
     {
       "alphaLabel" : "i",
-      "blueAction" : "percentChangeDelta",
-      "blueBitmapIdentifier" : "operation.251",
-      "blueLabel" : "Δ%",
-      "blueLatex" : "\\Delta\\%",
+      "blueAction" : "rnd",
+      "blueBitmapIdentifier" : "operation.92",
+      "blueLabel" : "RND",
       "col" : 2,
       "cx" : 37.369,
       "cy" : 135.125,
@@ -903,15 +901,16 @@
       "primaryLabel" : ".",
       "row" : 7,
       "w" : 8.6,
-      "yellowAction" : "percent",
-      "yellowBitmapIdentifier" : "operation.126",
-      "yellowLabel" : "%"
+      "yellowAction" : "fdisp",
+      "yellowBitmapIdentifier" : "operation.140",
+      "yellowLabel" : "FDISP"
     },
     {
       "alphaLabel" : "(i)",
-      "blueAction" : "finEffectiveRate",
-      "blueBitmapIdentifier" : "operation.365",
-      "blueLabel" : "EAR",
+      "blueAction" : "finPercentTotal",
+      "blueBitmapIdentifier" : "operation.356",
+      "blueLabel" : "%Σ",
+      "blueLatex" : "\\%\\Sigma",
       "col" : 3,
       "cx" : 51.06,
       "cy" : 135.125,
@@ -920,14 +919,15 @@
       "isEnter" : false,
       "isShiftBlue" : false,
       "isShiftYellow" : false,
-      "primaryAction" : "tvm",
-      "primaryBitmapIdentifier" : "operation.143",
-      "primaryLabel" : "TVM",
+      "primaryAction" : "percent",
+      "primaryBitmapIdentifier" : "operation.126",
+      "primaryLabel" : "%",
       "row" : 7,
       "w" : 8.6,
-      "yellowAction" : "finAmortization",
-      "yellowBitmapIdentifier" : "operation.364",
-      "yellowLabel" : "AMR"
+      "yellowAction" : "percentChangeDelta",
+      "yellowBitmapIdentifier" : "operation.251",
+      "yellowLabel" : "Δ%",
+      "yellowLatex" : "\\Delta\\%"
     },
     {
       "alphaLabel" : "",

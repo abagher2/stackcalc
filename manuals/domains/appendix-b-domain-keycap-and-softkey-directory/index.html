@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Complete hardware keycap, Row 0 domain softkey, and register input/output directory for all nine instruments in the StackCalc Domain Series (SC-35 through SC-95, Units I–IX, Chapters 1–27).">
+        <meta name="description" content="Hardware keycap, Row 0 domain softkey, and register input/output directory for all nine instruments in the StackCalc Domain Series (SC-35 through SC-95).">
       
       
         <meta name="author" content="StackCalc Engineering">
@@ -68,12 +68,12 @@
   <meta property="og:site_name" content="StackCalc32">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Appendix B: Domain Instrument Keycap &amp; Workspace Directory">
-  <meta property="og:description" content="Complete hardware keycap, Row 0 domain softkey, and register input/output directory for all nine instruments in the StackCalc Domain Series (SC-35 through SC-95, Units I–IX, Chapters 1–27).">
+  <meta property="og:description" content="Hardware keycap, Row 0 domain softkey, and register input/output directory for all nine instruments in the StackCalc Domain Series (SC-35 through SC-95).">
   <meta property="og:url" content="https://www.stackcalc.io/manuals/domains/appendix-b-domain-keycap-and-softkey-directory/">
   <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Appendix B: Domain Instrument Keycap &amp; Workspace Directory">
-  <meta name="twitter:description" content="Complete hardware keycap, Row 0 domain softkey, and register input/output directory for all nine instruments in the StackCalc Domain Series (SC-35 through SC-95, Units I–IX, Chapters 1–27).">
+  <meta name="twitter:description" content="Hardware keycap, Row 0 domain softkey, and register input/output directory for all nine instruments in the StackCalc Domain Series (SC-35 through SC-95).">
   <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -2939,6 +2939,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#built-in-interactive-guided-tutorials-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Built-in Interactive Guided Tutorials ([↰] [C] / [↰] [?])
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-live-reference-ledgers-g" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Live Reference Ledgers ([g] [▦])
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3041,9 +3059,9 @@
 
 
 <h1 id="appendix-b-domain-instrument-keycap-workspace-directory">Appendix B: Domain Instrument Keycap &amp; Workspace Directory</h1>
-<p>This directory catalogs the physical keycaps, Row 0 contextual/LFU softkeys ([LFU0]–[LFU5]), yellow ([↰]) and blue ([↱]) shift layers, bidirectional Equation Solver Workspaces ([g] [SOLVE] / [XEQ]), and register input-output signatures across all nine instruments in the StackCalc Domain Series (<code>SC-35</code> through <code>SC-95</code>, covered in Units I through IX, Chapters 1 through 27). Each table lists the pre-execution stack arguments consumed from <code>Register T</code>, <code>Register Z</code>, <code>Register Y</code>, and <code>Register X</code> alongside the post-execution results returned to <code>Register X'</code> and <code>Register Y'</code> and the softkey variable bindings inside each instrument's Equation Solver Workspace.</p>
+<p>This directory catalogs the physical keycaps, Row 0 domain softkeys, yellow ([↰]) and blue ([↱]) shift layers, bidirectional Equation Solver Workspaces ([g] [SOLVE] / [XEQ]), and register input-output signatures across all nine instruments in the StackCalc Domain Series (<code>SC-35</code> through <code>SC-95</code>). Each table lists the pre-execution stack arguments consumed from <code>Register T</code>, <code>Register Z</code>, <code>Register Y</code>, and <code>Register X</code> alongside the post-execution results returned to <code>Register X'</code> and <code>Register Y'</code> and the softkey variable bindings inside each instrument's Equation Solver Workspace.</p>
 <h2 id="shared-three-pillar-core-keys-across-all-nine-instruments">Shared Three-Pillar Core Keys Across All Nine Instruments</h2>
-<p>Every calculator in the StackCalc Domain Series is built on the same <strong>three-pillar architecture</strong>: configurable RPN stack depth ([4-LV], [8-LV], or [INF] cycled on Flag 5 <code>5:DEP</code> inside [↱] [FLAGS]), dual-mode domain keys that combine one-key RPN stack evaluation with a bidirectional Equation Solver Workspace ([g] [SOLVE] / [XEQ] + [LFU0]–[LFU5]), and non-destructive Live Reference Ledgers ([g] [▦]) paired with ten general-purpose memory registers (<code>R₀</code>–<code>R₉</code>):</p>
+<p>Every calculator in the StackCalc Domain Series provides configurable RPN stack depth ([4-LV], [8-LV], or [INF] cycled on Flag 5 <code>5:DEP</code> inside [↱] [FLAGS]), dual-mode domain keys that combine one-key RPN stack evaluation with a bidirectional Equation Solver Workspace ([g] [SOLVE] / [XEQ]), and non-destructive Live Reference Ledgers ([g] [▦]) paired with ten general-purpose memory registers (<code>R₀</code>–<code>R₉</code>):</p>
 <table>
 <thead>
 <tr>
@@ -3100,13 +3118,25 @@
 <td style="text-align: left;">[g] [SOLVE] / [XEQ]</td>
 <td style="text-align: left;">Bidirectional Solver Arm</td>
 <td style="text-align: left;"><code>Y, X</code></td>
-<td style="text-align: left;">Arms Equation Workspace to solve forward or backward for the next [LFU0]–[LFU5] softkey pressed</td>
+<td style="text-align: left;">Arms Equation Workspace to solve forward or backward for the next softkey pressed</td>
 </tr>
 <tr>
-<td style="text-align: left;">[LFU0]–[LFU5]</td>
 <td style="text-align: left;">Row 0 Softkeys (Cols 0–5)</td>
+<td style="text-align: left;">Contextual Softkeys</td>
 <td style="text-align: left;"><code>Y, X</code></td>
-<td style="text-align: left;">Populates dynamically with recently/frequently used operations (LFU) when idle, or stores/solves symbolic variables in an active Equation Workspace</td>
+<td style="text-align: left;">Populates with domain shortcuts when idle, or stores/solves symbolic variables in an active Equation Workspace</td>
+</tr>
+<tr>
+<td style="text-align: left;">[0] <code>&lt;SOFTKEY&gt;</code></td>
+<td style="text-align: left;">Zero-Value Parameter Binding</td>
+<td style="text-align: left;"><code>0, X</code></td>
+<td style="text-align: left;">Explicitly binds <span class="arithmatex">\(0.0000\)</span> to the variable (indicated by <code>*</code> or <code>•</code>), enabling exact zero boundary conditions</td>
+</tr>
+<tr>
+<td style="text-align: left;">[↰] <code>&lt;SOFTKEY&gt;</code> ([↰])</td>
+<td style="text-align: left;">Shift-Softkey Variable Unsetting</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Unbinds and clears the variable from the bound set (displaying <code>UNSET &lt;VAR&gt;</code>), freeing it to be solved for</td>
 </tr>
 <tr>
 <td style="text-align: left;">[g] [▦]</td>
@@ -3132,253 +3162,604 @@
 <td style="text-align: left;"><code>Y, X</code></td>
 <td style="text-align: left;">Temporarily reveals all 15–17 significant IEEE 754 digits of <span class="arithmatex">\(X\)</span></td>
 </tr>
+<tr>
+<td style="text-align: left;">[↰] [C] ([↰] [?])</td>
+<td style="text-align: left;">Interactive Guided Tutorial Runner</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Launches on-device step-by-step tutorial runner with 3 guided domain lessons</td>
+</tr>
 </tbody>
 </table>
 <h3 id="master-directory-of-bidirectional-equation-solver-workspaces">Master Directory of Bidirectional Equation Solver Workspaces</h3>
-<p>Opening a multi-parameter domain workspace (by pressing the key with <span class="arithmatex">\(X = 0, Y = 0\)</span> or after [g] [SOLVE]) renders its governing law on Line 1 of the display and binds the Row 0 softkeys ([LFU0]–[LFU5]) to its symbolic variables so any parameter can be solved forward or backward via [XEQ] <code>&lt;SOFTKEY&gt;</code> (or [g] [SOLVE] <code>&lt;SOFTKEY&gt;</code>):</p>
+<p>Opening a multi-parameter domain workspace (by pressing the key with <span class="arithmatex">\(X = 0, Y = 0\)</span> or after [g] [SOLVE]) renders its governing law on Line 1 of the display and binds the Row 0 softkeys to its symbolic variables so any parameter can be solved forward or backward via [XEQ] <code>&lt;SOFTKEY&gt;</code> (or [g] [SOLVE] <code>&lt;SOFTKEY&gt;</code>):</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Instrument</th>
 <th style="text-align: left;">Workspace Key</th>
 <th style="text-align: left;">Governing Equation on Line 1</th>
-<th style="text-align: left;">Bound Softkeys ([LFU0]–[LFU5])</th>
+<th style="text-align: left;">Bound Softkeys</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;"><strong>SC-35</strong></td>
-<td style="text-align: left;">[CRV] ([CRV])</td>
+<td style="text-align: left;">[CRV]</td>
 <td style="text-align: left;"><code>L = R × D × π / 180</code></td>
 <td style="text-align: left;">[L] arc length • [R] radius • [D] central angle <span class="arithmatex">\(\Delta\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-35</strong></td>
-<td style="text-align: left;">[f] [LVL] ([f] [LVL])</td>
+<td style="text-align: left;">[f] [VCV]</td>
+<td style="text-align: left;"><code>E = P + (3×G + H) × L / 8</code></td>
+<td style="text-align: left;">[E] midpoint elevation • [P] PVC elevation • [G] entry grade <span class="arithmatex">\(g_1\%\)</span> • [H] exit grade <span class="arithmatex">\(g_2\%\)</span> • [L] length stations</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-35</strong></td>
+<td style="text-align: left;">[f] [LVL]</td>
 <td style="text-align: left;"><code>E = H + B - F</code></td>
 <td style="text-align: left;">[E] elevation • [H] benchmark / HI • [B] backsight • [F] foresight</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-35</strong></td>
-<td style="text-align: left;">[WND] ([WND])</td>
+<td style="text-align: left;">[f] [WND]</td>
 <td style="text-align: left;"><code>X = V × SIN(A)</code></td>
 <td style="text-align: left;">[X] crosswind • [V] wind speed • [A] wind angle <span class="arithmatex">\(\gamma\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-35</strong></td>
-<td style="text-align: left;">[f] [ALT] ([f] [ALT])</td>
+<td style="text-align: left;">[g] [ALT]</td>
 <td style="text-align: left;"><code>D = P + 120 × (T - 15)</code></td>
 <td style="text-align: left;">[D] density altitude • [P] pressure altitude • [T] OAT (<span class="arithmatex">\(^\circ\text{C}\)</span>)</td>
 </tr>
 <tr>
+<td style="text-align: left;"><strong>SC-35</strong></td>
+<td style="text-align: left;">[TSD]</td>
+<td style="text-align: left;"><code>D = S × T</code></td>
+<td style="text-align: left;">[D] distance • [S] speed • [T] time</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-35</strong></td>
+<td style="text-align: left;">[FLW]</td>
+<td style="text-align: left;"><code>Q = A × V</code></td>
+<td style="text-align: left;">[Q] flow • [A] area • [V] velocity</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-35</strong></td>
+<td style="text-align: left;">[g] [△]</td>
+<td style="text-align: left;"><code>A = 0.5 × B × H</code></td>
+<td style="text-align: left;">[A] area • [B] base • [H] height</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-35</strong></td>
+<td style="text-align: left;">[f] [CG]</td>
+<td style="text-align: left;"><code>M = W × A</code></td>
+<td style="text-align: left;">[M] moment • [W] weight • [A] arm station</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-35</strong></td>
+<td style="text-align: left;">[f] [ISC]</td>
+<td style="text-align: left;"><code>N = (N1·T2 - N2·T1 + ΔE) / ΔT</code></td>
+<td style="text-align: left;">[N] Northing • [D] distance • [A] azimuth</td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>SC-14</strong></td>
-<td style="text-align: left;">[AWG] ([AWG])</td>
+<td style="text-align: left;">[AWG]</td>
 <td style="text-align: left;"><code>D = 2 × R × L × I / 1000</code></td>
 <td style="text-align: left;">[D] drop (<span class="arithmatex">\(\text{V}\)</span>) • [R] <span class="arithmatex">\(\Omega/\text{kft}\)</span> • [L] one-way run (<span class="arithmatex">\(\text{ft}\)</span>) • [I] load (<span class="arithmatex">\(\text{A}\)</span>) • [G] AWG gauge</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-14</strong></td>
-<td style="text-align: left;">[OFS] ([OFS])</td>
+<td style="text-align: left;">[OFS]</td>
 <td style="text-align: left;"><code>T = O / SIN(A)</code></td>
 <td style="text-align: left;">[T] center-to-center travel • [O] obstruction offset • [A] bend angle <span class="arithmatex">\(\theta\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-14</strong></td>
-<td style="text-align: left;">[g] [Cᵥ] ([g] [Cᵥ])</td>
+<td style="text-align: left;">[g] [FIT]</td>
+<td style="text-align: left;"><code>T = √(R² + O²)</code></td>
+<td style="text-align: left;">[T] rolling offset travel • [R] roll offset • [O] height offset</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-14</strong></td>
+<td style="text-align: left;">[g] [BC]</td>
+<td style="text-align: left;"><code>C = D × SIN(180 / N)</code></td>
+<td style="text-align: left;">[C] chord distance • [D] bolt-circle diameter • [N] hole count</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-14</strong></td>
+<td style="text-align: left;">[f] [Ω]</td>
+<td style="text-align: left;"><code>P = V × I</code></td>
+<td style="text-align: left;">[P] real power • [V] voltage • [I] current</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-14</strong></td>
+<td style="text-align: left;">[PF]</td>
+<td style="text-align: left;"><code>P = V × I × F</code></td>
+<td style="text-align: left;">[P] real power • [V] voltage • [I] current • [F] power factor <span class="arithmatex">\(\cos\phi\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-14</strong></td>
+<td style="text-align: left;">[f] [MTR]</td>
+<td style="text-align: left;"><code>H = T × N / 5252</code></td>
+<td style="text-align: left;">[H] horsepower • [T] torque (<span class="arithmatex">\(\text{ft}\cdot\text{lb}\)</span>) • [N] spindle RPM</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-14</strong></td>
+<td style="text-align: left;">[g] [FLA]</td>
+<td style="text-align: left;"><code>I = P × 746 / (1.732 × V × E)</code></td>
+<td style="text-align: left;">[I] full-load current • [P] horsepower • [V] voltage • [E] efficiency <span class="arithmatex">\(\eta\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-14</strong></td>
+<td style="text-align: left;">[g] [kVA]</td>
+<td style="text-align: left;"><code>S = V × I × 1.732 / 1000</code></td>
+<td style="text-align: left;">[S] apparent power (<span class="arithmatex">\(\text{kVA}\)</span>) • [V] voltage • [I] current</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-14</strong></td>
+<td style="text-align: left;">[f] [SFM]</td>
+<td style="text-align: left;"><code>N = 3.82 × S / D</code></td>
+<td style="text-align: left;">[N] spindle RPM • [S] surface speed <span class="arithmatex">\(\text{SFM}\)</span> • [D] tool diameter</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-14</strong></td>
+<td style="text-align: left;">[g] [WLD]</td>
+<td style="text-align: left;"><code>H = 60 × V × I / (1000 × S)</code></td>
+<td style="text-align: left;">[H] heat input (<span class="arithmatex">\(\text{kJ/in}\)</span>) • [V] arc voltage • [I] arc current • [S] travel speed</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-14</strong></td>
+<td style="text-align: left;">[PIP]</td>
+<td style="text-align: left;"><code>Q = A × V</code></td>
+<td style="text-align: left;">[Q] flow rate • [A] pipe cross-section • [V] fluid velocity</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-14</strong></td>
+<td style="text-align: left;">[g] [Cᵥ]</td>
 <td style="text-align: left;"><code>Q = C × √(P / G)</code></td>
 <td style="text-align: left;">[Q] flow (<span class="arithmatex">\(\text{GPM}\)</span>) • [C] valve <span class="arithmatex">\(C_v\)</span> • [P] <span class="arithmatex">\(\Delta P\)</span> (<span class="arithmatex">\(\text{psi}\)</span>) • [G] specific gravity</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-14</strong></td>
-<td style="text-align: left;">[PMP] ([PMP])</td>
+<td style="text-align: left;">[PMP]</td>
 <td style="text-align: left;"><code>P = Q × H / 3960</code></td>
 <td style="text-align: left;">[P] hydraulic/brake HP • [Q] flow (<span class="arithmatex">\(\text{GPM}\)</span>) • [H] total dynamic head (<span class="arithmatex">\(\text{ft}\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-16</strong></td>
-<td style="text-align: left;">[PWM] ([PWM])</td>
+<td style="text-align: left;">[f] [PWM]</td>
 <td style="text-align: left;"><code>F = C / (P × A)</code></td>
 <td style="text-align: left;">[F] PWM freq (<span class="arithmatex">\(\text{Hz}\)</span>) • [C] clock <span class="arithmatex">\(f_{\text{clk}}\)</span> • [P] prescaler <span class="arithmatex">\(P_{\text{PSC}}+1\)</span> • [A] period <span class="arithmatex">\(A_{\text{ARR}}+1\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-16</strong></td>
-<td style="text-align: left;">[f] [ADC] ([f] [ADC])</td>
+<td style="text-align: left;">[f] [ADC]</td>
 <td style="text-align: left;"><code>D = (V / R) × 2^N</code></td>
 <td style="text-align: left;">[D] digital code • [V] input <span class="arithmatex">\(V_{\text{in}}\)</span> • [R] reference <span class="arithmatex">\(V_{\text{ref}}\)</span> • [N] bit depth</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-16</strong></td>
-<td style="text-align: left;">[f] [τ] ([f] [τ])</td>
+<td style="text-align: left;">[g] [τ]</td>
 <td style="text-align: left;"><code>T = R × C</code></td>
 <td style="text-align: left;">[T] time constant <span class="arithmatex">\(\tau\)</span> (<span class="arithmatex">\(\text{s}\)</span>) • [R] series resistance (<span class="arithmatex">\(\Omega\)</span>) • [C] capacitance (<span class="arithmatex">\(\text{F}\)</span>)</td>
 </tr>
 <tr>
+<td style="text-align: left;"><strong>SC-16</strong></td>
+<td style="text-align: left;">[g] [BPS]</td>
+<td style="text-align: left;"><code>D = C / (16 × B)</code></td>
+<td style="text-align: left;">[D] baud divisor • [C] clock <span class="arithmatex">\(f_{\text{clk}}\)</span> • [B] baud rate (<span class="arithmatex">\(\text{bps}\)</span>)</td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>SC-24</strong></td>
-<td style="text-align: left;">[FOV] ([FOV])</td>
+<td style="text-align: left;">[FOV]</td>
 <td style="text-align: left;"><code>A = 2 × ATAN(W / (2 × F))</code></td>
 <td style="text-align: left;">[A] angle of view (<span class="arithmatex">\(^\circ\)</span>) • [W] sensor gate width (<span class="arithmatex">\(\text{mm}\)</span>) • [F] focal length (<span class="arithmatex">\(\text{mm}\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-24</strong></td>
-<td style="text-align: left;">[EV] ([EV])</td>
+<td style="text-align: left;">[EV]</td>
 <td style="text-align: left;"><code>N² = T × 2^E</code></td>
 <td style="text-align: left;">[N] aperture <span class="arithmatex">\(f\)</span>-stop • [T] exposure time (<span class="arithmatex">\(\text{s}\)</span>) • [E] exposure value <span class="arithmatex">\(\text{EV}_{100}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-24</strong></td>
-<td style="text-align: left;">[DOF] ([DOF])</td>
+<td style="text-align: left;">[DOF]</td>
 <td style="text-align: left;"><code>H = F² / (N × C)</code></td>
 <td style="text-align: left;">[H] hyperfocal • [F] focal length (<span class="arithmatex">\(\text{mm}\)</span>) • [N] <span class="arithmatex">\(T\)</span>-stop • [C] circle of confusion (<span class="arithmatex">\(\text{mm}\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-24</strong></td>
-<td style="text-align: left;">[TC] ([TC])</td>
+<td style="text-align: left;">[TC]</td>
 <td style="text-align: left;"><code>F = S × R</code></td>
 <td style="text-align: left;">[F] total frame count • [S] elapsed seconds • [R] frame rate (<span class="arithmatex">\(\text{fps}\)</span>)</td>
 </tr>
 <tr>
+<td style="text-align: left;"><strong>SC-24</strong></td>
+<td style="text-align: left;">[BIT]</td>
+<td style="text-align: left;"><code>R = B × F / 8</code></td>
+<td style="text-align: left;">[R] data rate (<span class="arithmatex">\(\text{MB/s}\)</span>) • [B] bytes/frame • [F] frame rate (<span class="arithmatex">\(\text{fps}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-24</strong></td>
+<td style="text-align: left;">[LUX]</td>
+<td style="text-align: left;"><code>E = I / D²</code></td>
+<td style="text-align: left;">[E] illuminance (<span class="arithmatex">\(\text{lux}\)</span>) • [I] luminous intensity (<span class="arithmatex">\(\text{cd}\)</span>) • [D] distance (<span class="arithmatex">\(\text{m}\)</span>)</td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>SC-50</strong></td>
-<td style="text-align: left;">[f] [f₀] ([f] [f₀])</td>
+<td style="text-align: left;">[f] [f₀]</td>
 <td style="text-align: left;"><code>F = 1 / (2π√(L×C))</code></td>
 <td style="text-align: left;">[F] resonant <span class="arithmatex">\(f_0\)</span> (<span class="arithmatex">\(\text{Hz}\)</span>) • [L] inductance (<span class="arithmatex">\(\text{H}\)</span>) • [C] capacitance (<span class="arithmatex">\(\text{F}\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-50</strong></td>
-<td style="text-align: left;">[SWR] ([SWR])</td>
+<td style="text-align: left;">[SWR]</td>
 <td style="text-align: left;"><code>S = (1 + G) / (1 - G)</code></td>
 <td style="text-align: left;">[S] standing wave ratio <span class="arithmatex">\(\text{VSWR}\)</span> • [G] reflection magnitude <span class="arithmatex">\(\lvert\Gamma\rvert\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-50</strong></td>
-<td style="text-align: left;">[FSL] ([FSL])</td>
+<td style="text-align: left;">[FSL]</td>
 <td style="text-align: left;"><code>L = 20LOG(D) + 20LOG(F) + 32.44</code></td>
 <td style="text-align: left;">[L] path loss <span class="arithmatex">\(\text{FSPL}_{\text{dB}}\)</span> • [D] link distance (<span class="arithmatex">\(\text{km}\)</span>) • [F] carrier (<span class="arithmatex">\(\text{MHz}\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-50</strong></td>
-<td style="text-align: left;">[f] [LNK] ([f] [LNK])</td>
+<td style="text-align: left;">[f] [LNK]</td>
 <td style="text-align: left;"><code>R = P + G - L</code></td>
 <td style="text-align: left;">[R] received <span class="arithmatex">\(P_{\text{rx}}\)</span> (<span class="arithmatex">\(\text{dBm}\)</span>) • [P] transmit <span class="arithmatex">\(P_{\text{tx}}\)</span> • [G] net antenna gain • [L] total loss</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-50</strong></td>
-<td style="text-align: left;">[g] [C/B] ([g] [C/B])</td>
+<td style="text-align: left;">[g] [C/B]</td>
 <td style="text-align: left;"><code>C = B × LN(1 + S) / LN(2)</code></td>
 <td style="text-align: left;">[C] capacity (<span class="arithmatex">\(\text{bps}\)</span>) • [B] bandwidth (<span class="arithmatex">\(\text{Hz}\)</span>) • [S] linear <span class="arithmatex">\(\text{SNR}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-50</strong></td>
-<td style="text-align: left;">[Γ] ([g] [Z₀])</td>
+<td style="text-align: left;">[g] [Z₀]</td>
 <td style="text-align: left;"><code>Z = √(S × L)</code></td>
 <td style="text-align: left;">[Z] quarter-wave transformer <span class="arithmatex">\(Z_q\)</span> • [S] source impedance <span class="arithmatex">\(Z_S\)</span> • [L] load impedance <span class="arithmatex">\(Z_L\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>SC-60</strong></td>
-<td style="text-align: left;">[εbc] ([εbc])</td>
-<td style="text-align: left;"><code>A = E × B × C</code></td>
-<td style="text-align: left;">[A] absorbance • [E] molar absorptivity <span class="arithmatex">\(\varepsilon\)</span> • [B] path length (<span class="arithmatex">\(\text{cm}\)</span>) • [C] molarity (<span class="arithmatex">\(\text{M}\)</span>)</td>
+<td style="text-align: left;"><strong>SC-50</strong></td>
+<td style="text-align: left;">[NF]</td>
+<td style="text-align: left;"><code>F = A + (B - 1) / G</code></td>
+<td style="text-align: left;">[F] cascaded noise factor • [A] stage 1 noise • [B] stage 2 noise • [G] stage 1 gain</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-60</strong></td>
-<td style="text-align: left;">[BUF] ([BUF])</td>
-<td style="text-align: left;"><code>P = K + LOG(A / H)</code></td>
-<td style="text-align: left;">[P] target <span class="arithmatex">\(\text{pH}\)</span> • [K] acid <span class="arithmatex">\(\text{p}K_a\)</span> • [A] base <span class="arithmatex">\([\text{A}^-]\)</span> • [H] acid <span class="arithmatex">\([\text{HA}]\)</span></td>
+<td style="text-align: left;">[MW]</td>
+<td style="text-align: left;"><code>W = N × M</code></td>
+<td style="text-align: left;">[W] reagent mass (<span class="arithmatex">\(\text{g}\)</span>) • [N] substance quantity (<span class="arithmatex">\(\text{mol}\)</span>) • [M] molar mass (<span class="arithmatex">\(\text{g/mol}\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-60</strong></td>
-<td style="text-align: left;">[PVT] ([PVT])</td>
+<td style="text-align: left;">[g] [PVT]</td>
 <td style="text-align: left;"><code>P × V = N × 8.3145 × T</code></td>
 <td style="text-align: left;">[P] pressure • [V] volume • [N] moles <span class="arithmatex">\(n\)</span> • [T] absolute temperature (<span class="arithmatex">\(\text{K}\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-60</strong></td>
-<td style="text-align: left;">[C₁V₁] ([C₁V₁])</td>
+<td style="text-align: left;">[εbc]</td>
+<td style="text-align: left;"><code>A = E × B × C</code></td>
+<td style="text-align: left;">[A] absorbance • [E] molar absorptivity <span class="arithmatex">\(\varepsilon\)</span> • [B] path length (<span class="arithmatex">\(\text{cm}\)</span>) • [C] molarity (<span class="arithmatex">\(\text{M}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-60</strong></td>
+<td style="text-align: left;">[BUF]</td>
+<td style="text-align: left;"><code>P = K + LOG(A / H)</code></td>
+<td style="text-align: left;">[P] target <span class="arithmatex">\(\text{pH}\)</span> • [K] acid <span class="arithmatex">\(\text{p}K_a\)</span> • [A] base <span class="arithmatex">\([\text{A}^-]\)</span> • [H] acid <span class="arithmatex">\([\text{HA}]\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-60</strong></td>
+<td style="text-align: left;">[C₁V₁]</td>
 <td style="text-align: left;"><code>C × V = D × U</code></td>
 <td style="text-align: left;">[C] stock <span class="arithmatex">\(C_1\)</span> • [V] aliquot <span class="arithmatex">\(V_1\)</span> • [D] target <span class="arithmatex">\(C_2\)</span> • [U] final volume <span class="arithmatex">\(V_2\)</span></td>
 </tr>
 <tr>
+<td style="text-align: left;"><strong>SC-60</strong></td>
+<td style="text-align: left;">[f] [ΔG]</td>
+<td style="text-align: left;"><code>G = H - T × S</code></td>
+<td style="text-align: left;">[G] Gibbs free energy <span class="arithmatex">\(\Delta G\)</span> • [H] enthalpy <span class="arithmatex">\(\Delta H\)</span> • [T] temp (<span class="arithmatex">\(\text{K}\)</span>) • [S] entropy <span class="arithmatex">\(\Delta S\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-60</strong></td>
+<td style="text-align: left;">[g] [E°]</td>
+<td style="text-align: left;"><code>E = S - (0.05916 / N) × LOG(Q)</code></td>
+<td style="text-align: left;">[E] cell potential • [S] standard <span class="arithmatex">\(E^\circ\)</span> • [N] electrons transferred • [Q] reaction quotient</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-60</strong></td>
+<td style="text-align: left;">[f] [EQV]</td>
+<td style="text-align: left;"><code>A × V = B × U</code></td>
+<td style="text-align: left;">[A] acid normality • [V] acid volume • [B] base normality • [U] base volume</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-60</strong></td>
+<td style="text-align: left;">[f] [RXN]</td>
+<td style="text-align: left;"><code>N = C × V</code></td>
+<td style="text-align: left;">[N] solute moles • [C] molar concentration • [V] volume (<span class="arithmatex">\(\text{L}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-60</strong></td>
+<td style="text-align: left;">[g] [CAL]</td>
+<td style="text-align: left;"><code>Q = M × C × T</code></td>
+<td style="text-align: left;">[Q] heat enthalpy • [M] solution mass • [C] specific heat • [T] temperature change <span class="arithmatex">\(\Delta T\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-60</strong></td>
+<td style="text-align: left;">[g] [Eₐ]</td>
+<td style="text-align: left;"><code>K = A × EXP(-E / (R × T))</code></td>
+<td style="text-align: left;">[K] rate constant <span class="arithmatex">\(k\)</span> • [A] pre-exponential factor • [E] activation energy <span class="arithmatex">\(E_a\)</span> • [T] absolute temperature</td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>SC-78</strong></td>
-<td style="text-align: left;">[BK%] ([BK%])</td>
+<td style="text-align: left;">[BK%]</td>
 <td style="text-align: left;"><code>P = (I / F) × 100</code></td>
 <td style="text-align: left;">[P] baker's <span class="arithmatex">\(\%\)</span> • [I] ingredient weight • [F] total flour weight</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-78</strong></td>
-<td style="text-align: left;">[Tw] ([Tw])</td>
+<td style="text-align: left;">[Tw]</td>
 <td style="text-align: left;"><code>W = 3 × D - R - F - M</code></td>
 <td style="text-align: left;">[W] water temp <span class="arithmatex">\(T_w\)</span> • [D] target <span class="arithmatex">\(\text{DDT}\)</span> • [R] room <span class="arithmatex">\(T_r\)</span> • [F] flour <span class="arithmatex">\(T_f\)</span> • [M] friction</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-78</strong></td>
-<td style="text-align: left;">[MSH] ([MSH])</td>
-<td style="text-align: left;"><code>S = (0.2 / R) × (T - G) + T</code></td>
-<td style="text-align: left;">[S] strike water temp • [R] water-grist ratio • [T] mash target • [G] dry grain temp</td>
+<td style="text-align: left;">[ABV]</td>
+<td style="text-align: left;"><code>A = (O - F) × 131.25</code></td>
+<td style="text-align: left;">[A] alcohol by volume <span class="arithmatex">\(\%\)</span> • [O] original gravity <span class="arithmatex">\(\text{OG}\)</span> • [F] final gravity <span class="arithmatex">\(\text{FG}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-78</strong></td>
-<td style="text-align: left;">[IBU] ([IBU])</td>
+<td style="text-align: left;">[IBU]</td>
 <td style="text-align: left;"><code>I = W × A × U × 74.89 / V</code></td>
 <td style="text-align: left;">[I] bitterness <span class="arithmatex">\(\text{IBU}\)</span> • [W] hop mass (<span class="arithmatex">\(\text{oz}\)</span>) • [A] alpha acid <span class="arithmatex">\(\%\)</span> • [U] utilization • [V] volume (<span class="arithmatex">\(\text{gal}\)</span>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-78</strong></td>
-<td style="text-align: left;">[CST] ([CST])</td>
+<td style="text-align: left;">[MSH]</td>
+<td style="text-align: left;"><code>S = (0.2 / R) × (T - G) + T</code></td>
+<td style="text-align: left;">[S] strike water temp • [R] water-grist ratio • [T] mash target • [G] dry grain temp</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-78</strong></td>
+<td style="text-align: left;">[g] [CST]</td>
 <td style="text-align: left;"><code>P = C / (F / 100)</code></td>
 <td style="text-align: left;">[P] menu price • [C] portion cost • [F] target food cost <span class="arithmatex">\(\%\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-80</strong></td>
-<td style="text-align: left;">[BSA] ([BSA])</td>
+<td style="text-align: left;">[BSA]</td>
 <td style="text-align: left;"><code>B = √(H × W / 3600)</code></td>
 <td style="text-align: left;">[B] BSA (<span class="arithmatex">\(\text{m}^2\)</span>) • [H] height (<span class="arithmatex">\(\text{cm}\)</span>) • [W] weight (<span class="arithmatex">\(\text{kg}\)</span>) • [PAT] patient profile</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-80</strong></td>
-<td style="text-align: left;">[GFR] ([GFR])</td>
+<td style="text-align: left;">[GFR]</td>
 <td style="text-align: left;"><code>C = (140-A)×W / (72×S)</code></td>
 <td style="text-align: left;">[C] clearance (<span class="arithmatex">\(\text{mL/min}\)</span>) • [A] age (<span class="arithmatex">\(\text{yr}\)</span>) • [W] weight (<span class="arithmatex">\(\text{kg}\)</span>) • [S] <span class="arithmatex">\(\text{SCr}\)</span> (<span class="arithmatex">\(\text{mg/dL}\)</span>) • [PAT]</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-80</strong></td>
-<td style="text-align: left;">[DRP] ([DRP])</td>
+<td style="text-align: left;">[DRP]</td>
 <td style="text-align: left;"><code>R = D × W × 60 / C</code></td>
 <td style="text-align: left;">[R] pump rate (<span class="arithmatex">\(\text{mL/hr}\)</span>) • [D] dose (<span class="arithmatex">\(\text{mcg/kg/min}\)</span>) • [W] weight (<span class="arithmatex">\(\text{kg}\)</span>) • [C] concentration (<span class="arithmatex">\(\text{mcg/mL}\)</span>) • [PAT]</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-80</strong></td>
-<td style="text-align: left;">[PK] ([PK])</td>
+<td style="text-align: left;">[PK]</td>
 <td style="text-align: left;"><code>T = 0.693 × V / C</code></td>
 <td style="text-align: left;">[T] half-life <span class="arithmatex">\(t_{1/2}\)</span> (<span class="arithmatex">\(\text{hr}\)</span>) • [V] volume <span class="arithmatex">\(V_d\)</span> (<span class="arithmatex">\(\text{L}\)</span>) • [C] clearance <span class="arithmatex">\(\text{CL}\)</span> (<span class="arithmatex">\(\text{L/hr}\)</span>)</td>
 </tr>
 <tr>
+<td style="text-align: left;"><strong>SC-80</strong></td>
+<td style="text-align: left;">[IV]</td>
+<td style="text-align: left;"><code>R = V / T</code></td>
+<td style="text-align: left;">[R] volumetric pump rate (<span class="arithmatex">\(\text{mL/hr}\)</span>) • [V] total bag volume (<span class="arithmatex">\(\text{mL}\)</span>) • [T] infusion time (<span class="arithmatex">\(\text{hr}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-80</strong></td>
+<td style="text-align: left;">[DOS]</td>
+<td style="text-align: left;"><code>T = W × D</code></td>
+<td style="text-align: left;">[T] total medication dose (<span class="arithmatex">\(\text{mg}\)</span>) • [W] patient weight (<span class="arithmatex">\(\text{kg}\)</span>) • [D] unit dose (<span class="arithmatex">\(\text{mg/kg}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-80</strong></td>
+<td style="text-align: left;">[g] [BRN]</td>
+<td style="text-align: left;"><code>V = 4 × W × B</code></td>
+<td style="text-align: left;">[V] 24-hr fluid volume (<span class="arithmatex">\(\text{mL}\)</span>) • [W] patient weight (<span class="arithmatex">\(\text{kg}\)</span>) • [B] burn surface <span class="arithmatex">\(\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-80</strong></td>
+<td style="text-align: left;">[ICU]</td>
+<td style="text-align: left;"><code>Q = H × S / 1000</code></td>
+<td style="text-align: left;">[Q] cardiac output (<span class="arithmatex">\(\text{L/min}\)</span>) • [H] heart rate • [S] stroke volume (<span class="arithmatex">\(\text{mL}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-80</strong></td>
+<td style="text-align: left;">[f] [VIL]</td>
+<td style="text-align: left;"><code>A = A0 × 2^(-T / H)</code></td>
+<td style="text-align: left;">[A] remaining activity • [O] initial activity <span class="arithmatex">\(A_0\)</span> • [T] elapsed decay time • [H] isotope half-life</td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>SC-95</strong></td>
-<td style="text-align: left;">[TVM] ([TVM])</td>
+<td style="text-align: left;">[TVM]</td>
 <td style="text-align: left;"><code>PV(1+I)^N + PMT... + FV = 0</code></td>
 <td style="text-align: left;">[N] periods • [I%] rate • [PV] present value • [PMT] payment • [FV] future value • [END]/[BEG]</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-95</strong></td>
-<td style="text-align: left;">[g] [CF] ([g] [CF])</td>
-<td style="text-align: left;"><code>V = C×(1-(1+R/100)⁻ᴺ)/(R/100) - I</code></td>
+<td style="text-align: left;">[g] [CF]</td>
+<td style="text-align: left;"><code>V = C × (1 - (1 + R/100)^-N) / (R/100) - I</code></td>
 <td style="text-align: left;">[V] net present value • [C] uniform cash flow • [R] discount rate / <span class="arithmatex">\(\text{IRR}\)</span> (<span class="arithmatex">\(\%\)</span>) • [N] periods • [I] outlay</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-95</strong></td>
-<td style="text-align: left;">[g] [BND] ([g] [BND])</td>
-<td style="text-align: left;"><code>P = C×(1-(1+Y/100)⁻ᴺ)/(Y/100) + F/(1+Y/100)ᴺ</code></td>
+<td style="text-align: left;">[g] [BND]</td>
+<td style="text-align: left;"><code>P = C × (1 - (1 + Y/100)^-N) / (Y/100) + F / (1 + Y/100)^N</code></td>
 <td style="text-align: left;">[P] bond price • [C] periodic coupon • [Y] periodic yield (<span class="arithmatex">\(\%\)</span>) • [N] periods • [F] par face value</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>SC-95</strong></td>
-<td style="text-align: left;">[f] [n<em>] ([f] [n</em>])</td>
+<td style="text-align: left;">[g] [DEP]</td>
+<td style="text-align: left;"><code>D = (C - S) / L</code></td>
+<td style="text-align: left;">[D] annual depreciation • [C] initial asset cost • [S] salvage value • [L] useful life</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-95</strong></td>
+<td style="text-align: left;">[f] [MGN]</td>
+<td style="text-align: left;"><code>M = (P - C) / P × 100</code></td>
+<td style="text-align: left;">[M] gross margin <span class="arithmatex">\(\%\)</span> • [P] selling price • [C] unit cost</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-95</strong></td>
+<td style="text-align: left;">[g] [MKP]</td>
+<td style="text-align: left;"><code>U = (P - C) / C × 100</code></td>
+<td style="text-align: left;">[U] markup on cost <span class="arithmatex">\(\%\)</span> • [P] selling price • [C] unit cost</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-95</strong></td>
+<td style="text-align: left;">[f] [EAR]</td>
+<td style="text-align: left;"><code>E = ((1 + A / (100 × M))^M - 1) × 100</code></td>
+<td style="text-align: left;">[E] effective annual rate <span class="arithmatex">\(\%\)</span> • [A] nominal annual rate • [M] compounding periods</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-95</strong></td>
+<td style="text-align: left;">[g] [CGR]</td>
+<td style="text-align: left;"><code>F = P × (1 + R / 100)^N</code></td>
+<td style="text-align: left;">[F] future compound value • [P] present base value • [R] annual growth rate <span class="arithmatex">\(\%\)</span> • [N] years</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-95</strong></td>
+<td style="text-align: left;">[f] [BEP]</td>
+<td style="text-align: left;"><code>Q = F / (P - V)</code></td>
+<td style="text-align: left;">[Q] breakeven production quantity • [F] total fixed costs • [P] unit price • [V] variable cost</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-95</strong></td>
+<td style="text-align: left;">[g] [EOQ]</td>
+<td style="text-align: left;"><code>Q = √(2 × D × S / H)</code></td>
+<td style="text-align: left;">[Q] economic order quantity • [D] annual demand • [S] order setup cost • [H] holding cost</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-95</strong></td>
+<td style="text-align: left;">[g] [TAX]</td>
+<td style="text-align: left;"><code>T = P × (1 + R / 100)</code></td>
+<td style="text-align: left;">[T] total gross price with tax • [P] net pretax price • [R] sales tax rate <span class="arithmatex">\(\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-95</strong></td>
+<td style="text-align: left;">[g] [Cpk]</td>
+<td style="text-align: left;"><code>C = (U - L) / (6 × S)</code></td>
+<td style="text-align: left;">[C] potential capability <span class="arithmatex">\(C_p\)</span> / <span class="arithmatex">\(C_{pk}\)</span> • [U] upper tolerance <span class="arithmatex">\(\text{USL}\)</span> • [L] lower tolerance <span class="arithmatex">\(\text{LSL}\)</span> • [S] sample standard deviation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-95</strong></td>
+<td style="text-align: left;">[g] [CI]</td>
+<td style="text-align: left;"><code>E = Z × S / √N</code></td>
+<td style="text-align: left;">[E] error margin • [Z] normal score <span class="arithmatex">\(z_{\alpha/2}\)</span> • [S] sample standard deviation • [N] sample size</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-95</strong></td>
+<td style="text-align: left;">[f] [n*]</td>
 <td style="text-align: left;"><code>N = (Z × S / E)²</code></td>
 <td style="text-align: left;">[N] sample size <span class="arithmatex">\(n^*\)</span> • [Z] critical quantile <span class="arithmatex">\(z_{\alpha/2}\)</span> • [S] dispersion <span class="arithmatex">\(s\)</span> • [E] margin of error</td>
 </tr>
+<tr>
+<td style="text-align: left;"><strong>SC-95</strong></td>
+<td style="text-align: left;">[g] [pN]</td>
+<td style="text-align: left;"><code>P = Φ((X - M) / S)</code></td>
+<td style="text-align: left;">[P] cumulative probability • [X] observed value • [M] mean <span class="arithmatex">\(\mu\)</span> • [S] standard deviation <span class="arithmatex">\(\sigma\)</span></td>
+</tr>
 </tbody>
 </table>
+<h3 id="built-in-interactive-guided-tutorials-c">Built-in Interactive Guided Tutorials ([↰] [C] / [↰] [?])</h3>
+<p>Every calculator in the StackCalc Domain Series includes an on-device interactive tutor engine, launched by pressing [↰] [C] (yellow-shifted [↰] [?]). The runner observes keypresses in real-time, coaching the user step-by-step through foundational RPN mechanics and flagship domain calculations:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Instrument</th>
+<th style="text-align: left;">Built-in Lesson 1</th>
+<th style="text-align: left;">Built-in Lesson 2</th>
+<th style="text-align: left;">Built-in Lesson 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>SC-35</strong></td>
+<td style="text-align: left;"><strong>RPN Primer:</strong> Distance and bearing coordinate product</td>
+<td style="text-align: left;"><strong>Field Aviation:</strong> Crosswind component and heading correction</td>
+<td style="text-align: left;"><strong>Spirit Leveling:</strong> Benchmark elevation and differential rod transfer ([f] [LVL])</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-14</strong></td>
+<td style="text-align: left;"><strong>RPN Primer:</strong> Single-phase real power (<span class="arithmatex">\(P = V \times I\)</span>)</td>
+<td style="text-align: left;"><strong>Roof Framing:</strong> Rafter run, rise, and hypotenuse geometry</td>
+<td style="text-align: left;"><strong>Voltage Drop:</strong> NEC conductor series drop along long feeders ([AWG])</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-16</strong></td>
+<td style="text-align: left;"><strong>RPN Primer:</strong> Hexadecimal address offset accumulation</td>
+<td style="text-align: left;"><strong>CIDR Bitwise:</strong> Netmask synthesis and usable host capacity</td>
+<td style="text-align: left;"><strong>Bitwise Logic:</strong> Multi-byte bitwise AND masking (<code>0xDEAD AND 0xBEEF</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-24</strong></td>
+<td style="text-align: left;"><strong>RPN Primer:</strong> Frame count accumulation (<span class="arithmatex">\(24\text{ fps} \times 5\text{ s}\)</span>)</td>
+<td style="text-align: left;"><strong>Audio Exposure:</strong> Base-2 EV balance and rotary shutter angle</td>
+<td style="text-align: left;"><strong>Photometrics:</strong> Inverse-square illuminance and falloff ([LUX])</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-50</strong></td>
+<td style="text-align: left;"><strong>RPN Primer:</strong> Transmitter power and antenna gain summation</td>
+<td style="text-align: left;"><strong>RF Physics:</strong> Dipole physical resonance and quarter-wave length</td>
+<td style="text-align: left;"><strong>Path Loss:</strong> Friis free-space microwave link loss ([FSL])</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-60</strong></td>
+<td style="text-align: left;"><strong>RPN Primer:</strong> Reagent molar mass to gram conversion</td>
+<td style="text-align: left;"><strong>Lab Molarity:</strong> Solution concentration and primary standards</td>
+<td style="text-align: left;"><strong>Buffer pH:</strong> Henderson–Hasselbalch conjugate equilibrium ([BUF])</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-78</strong></td>
+<td style="text-align: left;"><strong>RPN Primer:</strong> Sourdough flour and hydration mass sum</td>
+<td style="text-align: left;"><strong>Brewing ABV:</strong> Hydrometer extract drop and alcohol yield</td>
+<td style="text-align: left;"><strong>Water Temp:</strong> Four-term Desired Dough Temperature balance ([Tw])</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-80</strong></td>
+<td style="text-align: left;"><strong>RPN Primer:</strong> Unit dose to total daily administration</td>
+<td style="text-align: left;"><strong>Pediatric Dosing:</strong> Body weight-based milligram calculation</td>
+<td style="text-align: left;"><strong>Vasoactive Drip:</strong> Critical microgram infusion rate ([DRP])</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SC-95</strong></td>
+<td style="text-align: left;"><strong>RPN Primer:</strong> Gross revenue minus expense operating profit</td>
+<td style="text-align: left;"><strong>Margin &amp; Markup:</strong> Selling price versus cost percentage</td>
+<td style="text-align: left;"><strong>Gaussian CDF:</strong> Standard normal cumulative probability tail ([g] [pN])</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dynamic-live-reference-ledgers-g">Dynamic Live Reference Ledgers ([g] [▦])</h3>
+<p>Pressing [g] [▦] ([↱] [+/-]) opens the non-destructive domain reference ledger. Unlike a static table of physical constants, the StackCalc ledger dynamically tracks data accumulated in real time with [f] [PT+] or [Σ+]:</p>
+<ul>
+<li><strong>SC-35 (<code>@COGO</code>):</strong> Accumulates polygon perimeter coordinates, calculates cumulative linear misclosure (<code>CLOS</code>), and computes Gauss's Shoelace polygon area (<code>AREA</code>) in square feet, acres, and hectares.</li>
+<li><strong>SC-14 (<code>@BOM</code> / Service Sizing):</strong> Sums individual branch circuit loads via [Σ+], calculates total load (<code>TOT LOAD</code>), applies the NEC 125% continuous duty multiplier (<code>80% CONT</code>), and automatically selects the minimum standard service panel rating (<code>PNL MIN</code>: 100A, 125A, 200A, 400A).</li>
+<li><strong>SC-16 (Registers &amp; Cyber):</strong> Decomposes the active register into simultaneous <code>HEX</code>, <code>DEC</code>, <code>OCT</code>, and <code>BIN</code> representations, extracts IEEE-754 32/64-bit sign, exponent, and mantissa bitfields, formats fixed-point <code>Q16.16</code>, and calculates 4-byte and 8-byte struct alignment padding (<code>ALIGN 4B</code>, <code>ALIGN 8B</code>).</li>
+<li><strong>SC-24 (Cinema Production Log):</strong> Logs scene takes with [Σ+], tracking total accumulated timecode (<code>TOTAL TC</code>), total frames (<code>TOTAL F</code>), take count (<code>TAKES</code>), average take duration (<code>AVG TAKE</code>), camera raw data generated (<code>DATA GEN</code> in GB), and remaining card recording runtime (<code>512G REM</code> in hours).</li>
+<li><strong>SC-50 (Smith &amp; Friis Cascade):</strong> Evaluates complex reflection parameters (<code>|GAMMA|</code>, <code>GAMMA ANG</code>, <code>VSWR</code>, <code>RET LOSS</code>, normalized <span class="arithmatex">\(r/z_0\)</span> and <span class="arithmatex">\(x/z_0\)</span>), and sums multi-stage RF amplifiers via [Σ+] to compute total cascaded gain (<code>CASC G</code>) and Friis cascaded noise figure (<code>CASC NF</code>).</li>
+<li><strong>SC-60 (Solution &amp; Formula Mass Breakdown):</strong> Accumulates gravimetric solute masses via [Σ+] to display solute mass percent (<code>SOL1 %</code>, <code>TOT MASS</code>), and parses active chemical formulas (<code>FML</code>, <code>MW</code>) into live per-element mass percentage breakdowns (<code>H MASS%</code>, <code>O MASS%</code>, etc.).</li>
+<li><strong>SC-78 (Baking Formula Ledger):</strong> Anchors formula flour weight (<code>FLOUR</code>), computes live Baker's percentages for all added ingredients (<code>ING1 %</code>, <code>ING2 %</code>), and tracks total batch dough weight (<code>TOT W</code>).</li>
+<li><strong>SC-80 (Patient Clinical Dashboard):</strong> Displays the persistent Patient Profile: patient weight (<code>PAT WT</code>), height (<code>PAT HT</code>), age and sex (<code>PAT AGE</code>), serum creatinine (<code>PAT SCR</code>), Mosteller Body Surface Area (<code>PAT BSA</code>), Devine Ideal Body Weight (<code>PAT IBW</code>), and Cockcroft–Gault creatinine clearance (<code>PAT GFR</code>).</li>
+<li><strong>SC-95 (Bivariate Statistics &amp; Regression):</strong> Accumulates <span class="arithmatex">\((x, y)\)</span> sample points via [Σ+], tracking sample count (<span class="arithmatex">\(n\)</span>), means (<span class="arithmatex">\(\bar{x}, \bar{y}\)</span>), standard deviations (<span class="arithmatex">\(s_x, s_y\)</span>), ordinary least-squares slope (<span class="arithmatex">\(m\)</span>), intercept (<span class="arithmatex">\(b\)</span>), Pearson correlation (<span class="arithmatex">\(r\)</span>), coefficient of determination (<span class="arithmatex">\(r^2\)</span>), and the last 10 points.</li>
+</ul>
 <hr />
 <h2 id="geomatics-land-surveying-and-flight-navigation-keycaps">Geomatics, Land Surveying, and Flight Navigation Keycaps</h2>
-<p>On the <strong>SC-35</strong> (<a href="../01-sc35-geomatics-navigation/">Unit I, Chapters 1–3</a>), the Row 1 and Row 2 geomatics keys and shifted trigonometric/navigation operators execute plane coordinate geometry (COGO), horizontal and vertical highway curves, Bowditch traverse closure, sexagesimal angle conversions, and E6B aviation wind-triangle and density-altitude solutions:</p>
+<p>On the <strong>SC-35</strong> the Row 1 and Row 2 geomatics keys and shifted trigonometric/navigation operators execute plane coordinate geometry (COGO), horizontal and vertical highway curves, Bowditch traverse closure, sexagesimal angle conversions, and E6B aviation wind-triangle and density-altitude solutions:</p>
 <table>
 <thead>
 <tr>
@@ -3390,22 +3771,27 @@
 <tbody>
 <tr>
 <td style="text-align: left;">[TRV] / [f] [PT+]</td>
-<td style="text-align: left;">Row 1 Primary / Yellow Shift</td>
-<td style="text-align: left;"><strong>Forward Traverse &amp; Station Accumulator:</strong> Consumes distance <span class="arithmatex">\(D\)</span> and azimuth <span class="arithmatex">\(\alpha\)</span> to resolve <span class="arithmatex">\((\Delta N, \Delta E)\)</span> ([f] [N⇄E] swaps Northing/Easting), and [f] [PT+] accumulates station coordinates.</td>
+<td style="text-align: left;">Row 1 Col 0 Primary / Row 2 Col 0 Yellow</td>
+<td style="text-align: left;"><strong>Forward Traverse &amp; Station Accumulator:</strong> Consumes distance <span class="arithmatex">\(D\)</span> and azimuth <span class="arithmatex">\(\alpha\)</span> to resolve <span class="arithmatex">\((\Delta N, \Delta E)\)</span> ([f] [N⇄E] swaps Northing/Easting), and [f] [PT+] accumulates station coordinates into <code>@COGO</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">[INV] / [g] [CLS]</td>
-<td style="text-align: left;">Row 1 Primary / Blue Shift</td>
+<td style="text-align: left;">Row 1 Col 1 Primary / Blue Shift</td>
 <td style="text-align: left;"><strong>Coordinate Inverse &amp; Bowditch Closure:</strong> Consumes <span class="arithmatex">\(\Delta N\)</span> (<span class="arithmatex">\(Y\)</span>) and <span class="arithmatex">\(\Delta E\)</span> (<span class="arithmatex">\(X\)</span>) to return azimuth <span class="arithmatex">\(\alpha\)</span> and distance <span class="arithmatex">\(D\)</span>; [g] [CLS] computes traverse closure error and precision ratio.</td>
 </tr>
 <tr>
-<td style="text-align: left;">[BRG] / [f] [ISC]</td>
-<td style="text-align: left;">Row 1 Primary / Yellow Shift</td>
-<td style="text-align: left;"><strong>Quadrant Bearing &amp; Intersection:</strong> Formats azimuth in <span class="arithmatex">\(X\)</span> as surveyor quadrant bearing (NE, SE, SW, NW), and [f] [ISC] evaluates bearing-bearing intersections.</td>
+<td style="text-align: left;">[BRG] / [f] [N⇄E]</td>
+<td style="text-align: left;">Row 1 Col 2 Primary / Yellow Shift</td>
+<td style="text-align: left;"><strong>Quadrant Bearing &amp; Axis Swap:</strong> Formats azimuth in <span class="arithmatex">\(X\)</span> as surveyor quadrant bearing (NE, SE, SW, NW), and [f] [N⇄E] swaps active Northing/Easting coordinates.</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [ISC]</td>
+<td style="text-align: left;">Row 4 Col 1 Yellow Shift ([7])</td>
+<td style="text-align: left;"><strong>Bearing-Bearing Intersection Workspace ([f] [ISC]):</strong> Solves <code>N = (N1·T2 - N2·T1 + ΔE) / ΔT</code> ([N], [D], [A]) or solves directly on the stack with bearings in <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(X\)</span>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">[CRV] / [g] [STA]</td>
-<td style="text-align: left;">Row 1 Primary / Blue Shift</td>
+<td style="text-align: left;">Row 1 Col 3 Primary / Row 2 Col 1 Blue</td>
 <td style="text-align: left;"><strong>Horizontal Curve Workspace ([CRV]) &amp; Stationing:</strong> Solves circular arc <code>L = R × D × π / 180</code> ([L], [R], [D]) and formats highway stationing <code>XX+XX.XX</code>.</td>
 </tr>
 <tr>
@@ -3415,13 +3801,18 @@
 </tr>
 <tr>
 <td style="text-align: left;">[f] [LVL] / [FLW] / [g] [△]</td>
-<td style="text-align: left;">Yellow / Primary / Blue Shift</td>
+<td style="text-align: left;">Row 1 Col 1 Yellow / Row 1 Col 5 (Prim/Blue)</td>
 <td style="text-align: left;"><strong>Differential Leveling ([f] [LVL]), Open-Channel Flow ([FLW]) &amp; Triangle ([g] [SOLVE]):</strong> Solves <code>E = H + B - F</code> ([E], [H], [B], [F]), continuity <code>Q = A × V</code>, and triangle area <code>A = 0.5 × B × H</code>.</td>
 </tr>
 <tr>
-<td style="text-align: left;">[WND] / [f] [ALT] / [g] [XWC]</td>
+<td style="text-align: left;">[f] [WND] / [g] [XWC]</td>
+<td style="text-align: left;">Row 5 Col 2 (Yellow / Blue Shift)</td>
+<td style="text-align: left;"><strong>E6B Wind Triangle Workspace ([f] [WND]) &amp; Crosswind:</strong> Solves <code>X = V × SIN(A)</code> ([X], [V], [A]) or evaluates crosswind/headwind components on the stack ([g] [XWC]).</td>
+</tr>
+<tr>
+<td style="text-align: left;">[▸HR] / [f] [▸HMS] / [g] [ALT]</td>
 <td style="text-align: left;">Row 7 Col 3 (Primary / Yellow / Blue)</td>
-<td style="text-align: left;"><strong>E6B Wind Triangle ([WND]), Density Altitude ([f] [ALT]) &amp; Crosswind:</strong> Solves <code>X = V × SIN(A)</code> ([X], [V], [A]), density altitude <code>D = P + 120 × (T - 15)</code> ([D], [P], [T]), and crosswind component ([g] [XWC]).</td>
+<td style="text-align: left;"><strong>Sexagesimal Conversions &amp; Density Altitude ([g] [ALT]):</strong> Converts <code>DDD.MMSS</code> to decimal degrees/hours ([▸HR]) and back ([f] [▸HMS]), and solves density altitude <code>D = P + 120 × (T - 15)</code> ([D], [P], [T]).</td>
 </tr>
 <tr>
 <td style="text-align: left;">[TSD] / [f] [CG] / [g] [TID]</td>
@@ -3429,9 +3820,9 @@
 <td style="text-align: left;"><strong>Time-Speed-Distance ([TSD]), Weight &amp; Balance ([f] [CG]) &amp; Tidal Height:</strong> Solves <code>D = S × T</code> ([D], [S], [T]), moment <code>M = W × A</code> ([M], [W], [A]), and rule-of-twelfths tidal stage ([g] [TID]).</td>
 </tr>
 <tr>
-<td style="text-align: left;">[f] [▸HR] / [g] [▸HMS] / [f] [▸DEG] / [g] [▸RAD] / [g] [▸GRD]</td>
+<td style="text-align: left;">[▸HR] / [f] [▸HMS] / [f] [▸DEG] / [g] [▸RAD] / [g] [▸GRD]</td>
 <td style="text-align: left;">Angular &amp; Sexagesimal Shifts</td>
-<td style="text-align: left;">Converts packed sexagesimal <code>DDD.MMSS</code> to decimal degrees/hours ([f] [▸HR]) and back ([g] [▸HMS]), or converts between degrees, radians, and gradians.</td>
+<td style="text-align: left;">Converts packed sexagesimal <code>DDD.MMSS</code> to decimal degrees/hours ([▸HR]) and back ([f] [▸HMS]), or converts between degrees, radians, and gradians.</td>
 </tr>
 <tr>
 <td style="text-align: left;">[f] [▸θ,r] / [g] [▸y,x] / [f] [f-i]</td>
@@ -3442,7 +3833,7 @@
 </table>
 <hr />
 <h2 id="industrial-trades-electrical-and-mechanical-keycaps">Industrial Trades, Electrical, and Mechanical Keycaps</h2>
-<p>On the <strong>SC-14</strong> (<a href="../02-sc14-electrical-trades/">Unit II, Chapters 4–6</a>), the Row 1 and Row 2 electrical, conduit, piping, and machining keys pair with dimensional shift converters to resolve National Electrical Code (NEC) conductor sizing, three-phase power and motor full-load amps, conduit offset bends, industrial process flow, and spindle machining speeds:</p>
+<p>On the <strong>SC-14</strong> the Row 1 and Row 2 electrical, conduit, piping, and machining keys pair with dimensional shift converters to resolve National Electrical Code (NEC) conductor sizing, three-phase power and motor full-load amps, conduit offset bends, industrial process flow, and spindle machining speeds:</p>
 <table>
 <thead>
 <tr>
@@ -3496,7 +3887,7 @@
 </table>
 <hr />
 <h2 id="systems-programming-embedded-and-cyber-operations-keycaps">Systems Programming, Embedded, and Cyber Operations Keycaps</h2>
-<p>On the <strong>SC-16</strong> (<a href="../03-sc16-systems-cyber/">Unit III, Chapters 7–9</a>), radix and word-architecture keys pair with bitwise logical operators, bit shifts, circular rotations, embedded timer/ADC workspaces, and modular/network keys (while Row 0 softkeys [LFU0]–[LFU5] automatically become hexadecimal digits [A]–[F] whenever [HEX] mode is active):</p>
+<p>On the <strong>SC-16</strong> radix and word-architecture keys pair with bitwise logical operators, bit shifts, circular rotations, embedded timer/ADC workspaces, and modular/network keys (while Row 0 softkeys automatically become hexadecimal digits [A]–[F] whenever [HEX] mode is active):</p>
 <table>
 <thead>
 <tr>
@@ -3509,7 +3900,7 @@
 <tr>
 <td style="text-align: left;">[HEX] / [f] [DEC] / [f] [OCT] / [g] [BIN]</td>
 <td style="text-align: left;">Row 1 Col 1 &amp; Col 5</td>
-<td style="text-align: left;">Switches display and keypad entry across base-16 hexadecimal (binding [LFU0]–[LFU5] to [A]–[F]), base-10 decimal, base-8 octal, and base-2 binary view.</td>
+<td style="text-align: left;">Switches display and keypad entry across base-16 hexadecimal (binding softkeys to [A]–[F]), base-10 decimal, base-8 octal, and base-2 binary view.</td>
 </tr>
 <tr>
 <td style="text-align: left;">[g] [WSZ] / [g] [UNS] / [f] [NEG] / [g] [OVF]</td>
@@ -3542,9 +3933,9 @@
 <td style="text-align: left;">Counts set <code>1</code>-bits (Hamming weight [f] [#B]) or leading zeros ([g] [CLZ]) in <span class="arithmatex">\(X\)</span>, and evaluates exact base-2 powers <span class="arithmatex">\(2^X\)</span> ([g] [2ˣ]) and <span class="arithmatex">\(\log_2(X)\)</span> ([lg]).</td>
 </tr>
 <tr>
-<td style="text-align: left;">[PWM] / [f] [τ] / [g] [ALN] / [g] [BPS]</td>
-<td style="text-align: left;">Row 7 Col 3 &amp; Row 2 Col 1</td>
-<td style="text-align: left;"><strong>Timer ([PWM]), RC Settling ([f] [τ]), Memory Alignment &amp; UART Baud:</strong> Solves <code>F = C / (P × A)</code> ([F], [C], [P], [A]), RC time constant <code>T = R × C</code> ([T], [R], [C]), power-of-two address alignment ([g] [ALN]), and UART baud divisor ([g] [BPS]).</td>
+<td style="text-align: left;">[f] [PWM] / [g] [τ] / [g] [ALN] / [g] [BPS]</td>
+<td style="text-align: left;">Row 4 Col 4, Row 3 Col 4 &amp; Row 2 Col 1</td>
+<td style="text-align: left;"><strong>Timer ([f] [PWM]), RC Settling ([g] [τ]), Memory Alignment &amp; UART Baud:</strong> Solves <code>F = C / (P × A)</code> ([F], [C], [P], [A]), RC time constant <code>T = R × C</code> ([T], [R], [C]), power-of-two address alignment ([g] [ALN]), and UART baud divisor ([g] [BPS]).</td>
 </tr>
 <tr>
 <td style="text-align: left;">[f] [ADC] / [g] [DAC]</td>
@@ -3552,9 +3943,9 @@
 <td style="text-align: left;"><strong>ADC Quantization Workspace ([f] [ADC]) &amp; DAC Output:</strong> Solves <code>D = (V / R) × 2^N</code> ([D], [V], [R], [N]) and reconstructs analog DAC output voltage ([g] [DAC]).</td>
 </tr>
 <tr>
-<td style="text-align: left;">[NET] / [f] [CRC] / [g] [SWP] / [f] [÷R] / [g] [MOD] / [g] [GCD]</td>
-<td style="text-align: left;">Row 2 Col 2 &amp; Modular Keys</td>
-<td style="text-align: left;">Computes IPv4 [NET] usable host count <span class="arithmatex">\(2^{32-P}-2\)</span> ([NET]), IEEE 802.3 CRC-32 ([f] [CRC]), byte-order endian swap ([g] [SWP]), integer quotient ([f] [÷R]), remainder <span class="arithmatex">\(Y \bmod X\)</span> ([g] [MOD]), and greatest common divisor ([g] [GCD]).</td>
+<td style="text-align: left;">[MOD] / [f] [÷R] / [g] [WSZ] / [NET] / [f] [CRC] / [g] [SWP]</td>
+<td style="text-align: left;">Row 7 Col 3 &amp; Networking/Data Keys</td>
+<td style="text-align: left;">Evaluates remainder <span class="arithmatex">\(Y \bmod X\)</span> ([MOD]), integer quotient ([f] [÷R]), word size cycle ([g] [WSZ]), IPv4 [NET] host capacity, IEEE 802.3 CRC-32 ([f] [CRC]), and endian swap ([g] [SWP]).</td>
 </tr>
 <tr>
 <td style="text-align: left;">[f] [▸B] / [g] [▸bit] / [f] [▸KiB] / [g] [▸MiB] / [f] [▸GiB] / [g] [▸TiB] / [f] [▸ms] / [g] [▸μs] / [f] [▸MHz] / [g] [▸GHz] / [f] [▸cyc] / [g] [▸ns]</td>
@@ -3565,7 +3956,7 @@
 </table>
 <hr />
 <h2 id="cinema-optics-broadcast-timecode-and-sound-keycaps">Cinema Optics, Broadcast Timecode, and Sound Keycaps</h2>
-<p>On the <strong>SC-24</strong> (<a href="../04-sc24-cinema-broadcast/">Unit IV, Chapters 10–12</a>), the Row 1 and Row 2 camera, lighting, audio, and DIT keys pair with Row 7 SMPTE timecode solvers to evaluate angle of view, rotary shutter exposure, hyperfocal and depth-of-field lens geometry, mired color-temperature shifts, and location sound acoustics:</p>
+<p>On the <strong>SC-24</strong> the Row 1 and Row 2 camera, lighting, audio, and DIT keys pair with Row 7 SMPTE timecode solvers to evaluate angle of view, rotary shutter exposure, hyperfocal and depth-of-field lens geometry, mired color-temperature shifts, and location sound acoustics:</p>
 <table>
 <thead>
 <tr>
@@ -3614,7 +4005,7 @@
 </table>
 <hr />
 <h2 id="rf-spectrum-transmission-lines-and-microwave-keycaps">RF Spectrum, Transmission Lines, and Microwave Keycaps</h2>
-<p>On the <strong>SC-50</strong> (<a href="../05-sc50-rf-spectrum/">Unit V, Chapters 13–15</a>), the Row 1 and Row 2 RF propagation, impedance matching, and dynamic range keys pair with bidirectional Equation Workspaces and decibel converters to solve transmission-line standing waves, resonant LC networks, free-space link budgets, cascaded noise figures, Shannon capacity, and radar Doppler shifts:</p>
+<p>On the <strong>SC-50</strong> the Row 1 and Row 2 RF propagation, impedance matching, and dynamic range keys pair with bidirectional Equation Workspaces and decibel converters to solve transmission-line standing waves, resonant LC networks, free-space link budgets, cascaded noise figures, Shannon capacity, and radar Doppler shifts:</p>
 <table>
 <thead>
 <tr>
@@ -3663,7 +4054,7 @@
 </table>
 <hr />
 <h2 id="wet-lab-chemistry-stoichiometry-and-spectroscopy-keycaps">Wet-Lab Chemistry, Stoichiometry, and Spectroscopy Keycaps</h2>
-<p>On the <strong>SC-60</strong> (<a href="../06-sc60-chemistry-wetlab/">Unit VI, Chapters 16–18</a>), the Row 1 and Row 2 analytical chemistry keys and bidirectional Equation Workspaces evaluate formula molecular weights, gravimetric molarity, stock aliquot dilutions, Sørensen <span class="arithmatex">\(\text{pH}\)</span>, Henderson–Hasselbalch buffer pairs, Beer–Lambert optical absorbance, chemical thermodynamics, and Nernstian electrochemistry:</p>
+<p>On the <strong>SC-60</strong> the Row 1 and Row 2 analytical chemistry keys and bidirectional Equation Workspaces evaluate formula molecular weights, gravimetric molarity, stock aliquot dilutions, Sørensen <span class="arithmatex">\(\text{pH}\)</span>, Henderson–Hasselbalch buffer pairs, Beer–Lambert optical absorbance, chemical thermodynamics, and Nernstian electrochemistry:</p>
 <table>
 <thead>
 <tr>
@@ -3689,19 +4080,24 @@
 <td style="text-align: left;"><strong>Beer–Lambert ([εbc]) &amp; Optical Transmittance:</strong> Solves <code>A = E × B × C</code> ([A], [E], [B], [C]) and converts percent transmittance <span class="arithmatex">\(\%T\)</span> to absorbance <span class="arithmatex">\(A = 2 - \log_{10}(\%T)\)</span> ([f] [%T]).</td>
 </tr>
 <tr>
-<td style="text-align: left;">[pH] / [g] [pKₐ] / [f] [EQV] / [BUF] / [f] [%Y]</td>
-<td style="text-align: left;">Row 2 Cols 4–5 &amp; Row 1 Col 2</td>
-<td style="text-align: left;"><strong>Sørensen pH, Titration Equivalence ([f] [EQV]), Buffer ([BUF]) &amp; Yield:</strong> Converts <span class="arithmatex">\([\text{H}^+]\)</span> or <span class="arithmatex">\(K_a\)</span> to <span class="arithmatex">\(-\log_{10}(X)\)</span> ([pH], [g] [pKₐ]), solves titration equivalence <code>A × V = B × U</code> ([A], [V], [B], [U]), Henderson–Hasselbalch <code>P = K + LOG(A / H)</code> ([P], [K], [A], [H]), and percent yield ([f] [%Y]).</td>
+<td style="text-align: left;">[pH] / [f] [EQV] / [g] [PVT]</td>
+<td style="text-align: left;">Row 2 Col 4 (Primary / Yellow / Blue)</td>
+<td style="text-align: left;"><strong>Sørensen pH, Titration ([f] [EQV]) &amp; Ideal Gas Workspace ([g] [PVT]):</strong> Converts <span class="arithmatex">\([\text{H}^+]\)</span> to <span class="arithmatex">\(\text{pH} = -\log_{10}(X)\)</span> ([pH]), solves titration equivalence <code>A × V = B × U</code>, and ideal gas law <code>P × V = N × 8.3145 × T</code> ([P], [V], [N], [T]).</td>
 </tr>
 <tr>
-<td style="text-align: left;">[PVT] / [f] [CAL] / [g] [RCF]</td>
-<td style="text-align: left;">Row 7 Col 3 (Primary / Yellow / Blue)</td>
-<td style="text-align: left;"><strong>Ideal Gas ([PVT]), Calorimetry ([f] [CAL]) &amp; Centrifuge RCF:</strong> Solves <code>P × V = N × R × T</code> ([P], [V], [N], [T]), heat transfer <code>Q = M × C × T</code> ([Q], [M], [C], [T]), and relative centrifugal force <span class="arithmatex">\(\text{RCF} = 1.118 \times 10^{-5} r\,\text{RPM}^2\)</span> ([g] [RCF]).</td>
+<td style="text-align: left;">[BUF] / [f] [%Y] / [g] [CAL]</td>
+<td style="text-align: left;">Row 2 Col 5 (Primary / Yellow / Blue)</td>
+<td style="text-align: left;"><strong>Henderson–Hasselbalch Buffer ([BUF]), Yield &amp; Calorimetry ([g] [CAL]):</strong> Solves buffer <code>P = K + LOG(A / H)</code> ([P], [K], [A], [H]), percent yield ([f] [%Y]), and heat transfer <code>Q = M × C × T</code> ([Q], [M], [C], [T]).</td>
+</tr>
+<tr>
+<td style="text-align: left;">[f] [RCF] / [%] / [f] [Δ%] / [g] [▸M]</td>
+<td style="text-align: left;">Row 5 Col 2 Yellow &amp; Row 7 Col 3</td>
+<td style="text-align: left;"><strong>Centrifuge RCF, Percent &amp; Molarity:</strong> Evaluates centrifugal acceleration <span class="arithmatex">\(\text{RCF} = 1.118 \times 10^{-5} r\,\text{RPM}^2\)</span> ([f] [RCF]), percentages ([%], [f] [Δ%]), and molar concentration conversions ([g] [▸M]).</td>
 </tr>
 <tr>
 <td style="text-align: left;">[g] [Kₑq] / [g] [Eₐ] / [f] [ΔG] / [g] [E°] / [g] [t½]</td>
-<td style="text-align: left;">Kinetics, Thermodynamics &amp; Electrochemistry</td>
-<td style="text-align: left;">Evaluates equilibrium constant ([g] [Kₑq]), Arrhenius rate factor ([g] [Eₐ]), Gibbs free energy <code>G = H - T × S</code> ([f] [ΔG]: [G], [H], [T], [S]), Nernst cell potential <code>E = S - (0.05916/N)LOG(Q)</code> ([g] [E°]: [E], [S], [N], [Q]), and first-order half-life <span class="arithmatex">\(t_{1/2} = \ln(2)/k\)</span> ([g] [t½]).</td>
+<td style="text-align: left;">Row 1 Col 1 Blue &amp; Kinetics/Thermo Keys</td>
+<td style="text-align: left;"><strong>Arrhenius Kinetics Workspace ([g] [Eₐ]), Equilibrium &amp; Electrochemistry:</strong> Solves <code>K = A × EXP(-E / (R × T))</code> ([K], [A], [E], [T]), equilibrium constant ([g] [Kₑq]), Gibbs free energy <code>G = H - T × S</code> ([f] [ΔG]), standard potential <code>E = S - (0.05916/N)LOG(Q)</code> ([g] [E°]), and half-life ([g] [t½]).</td>
 </tr>
 <tr>
 <td style="text-align: left;">[g] [R] / [g] [h] / [f] [F] / [f] [Nₐ] / [f] [kB] / [g] [c]</td>
@@ -3712,7 +4108,7 @@
 </table>
 <hr />
 <h2 id="commercial-bakery-fermentation-science-and-brewing-keycaps">Commercial Bakery, Fermentation Science, and Brewing Keycaps</h2>
-<p>On the <strong>SC-78</strong> (<a href="../07-sc78-culinary-brewing/">Unit VII, Chapters 19–21</a>), the Row 1 bakery and culinary yield keys and Row 2 brewing and enology keys pair with bidirectional Equation Workspaces to anchor batch scaling to total flour mass, compute mix water and flake-ice mass from friction and ambient heat, evaluate brewing gravity attenuation, strike water temperature, and hop bitterness, and audit butcher trim yields and menu food cost:</p>
+<p>On the <strong>SC-78</strong> the Row 1 bakery and culinary yield keys and Row 2 brewing and enology keys pair with bidirectional Equation Workspaces to anchor batch scaling to total flour mass, compute mix water and flake-ice mass from friction and ambient heat, evaluate brewing gravity attenuation, strike water temperature, and hop bitterness, and audit butcher trim yields and menu food cost:</p>
 <table>
 <thead>
 <tr>
@@ -3743,9 +4139,14 @@
 <td style="text-align: left;"><strong>Alcohol by Volume ([ABV]), Chaptalization, Morey SRM &amp; Hydrometer:</strong> Solves <code>A = (O - F) × 131.25</code> ([A], [O], [F]), sugar addition ([f] [CHP]), beer color <span class="arithmatex">\(\text{SRM} = 1.4922 \cdot \text{MCU}^{0.6859}\)</span> ([g] [SRM]), alcohol-corrected refractometer FG ([f] [BRX]), and hydrometer temperature correction ([g] [SGT]).</td>
 </tr>
 <tr>
-<td style="text-align: left;">[MSH] / [f] [SPG] / [IBU] / [f] [CO₂]</td>
-<td style="text-align: left;">Row 2 Cols 4–5 (Primary / Yellow)</td>
-<td style="text-align: left;"><strong>Mash Strike ([MSH]), Sparge Volume, Hop Bitterness ([IBU]) &amp; Carbonation:</strong> Solves <code>S = (0.2 / R) × (T - G) + T</code> ([S], [R], [T], [G]), boil/sparge volume ([f] [SPG]), hop bitterness <code>I = W × A × U × 74.89 / V</code> ([I], [W], [A], [U], [V]), and keg head pressure ([f] [CO₂]).</td>
+<td style="text-align: left;">[MSH] / [f] [SPG] / [g] [PU]</td>
+<td style="text-align: left;">Row 2 Col 4 (Primary / Yellow / Blue)</td>
+<td style="text-align: left;"><strong>Mash Strike ([MSH]), Sparge Volume &amp; Pasteurization ([g] [PU]):</strong> Solves <code>S = (0.2 / R) × (T - G) + T</code> ([S], [R], [T], [G]), boil/sparge volume ([f] [SPG]), and thermal pasteurization units ([g] [PU]).</td>
+</tr>
+<tr>
+<td style="text-align: left;">[IBU] / [f] [CO₂] / [g] [PRC]</td>
+<td style="text-align: left;">Row 2 Col 5 (Primary / Yellow / Blue)</td>
+<td style="text-align: left;"><strong>Hop Bitterness ([IBU]), Carbonation &amp; Menu Price ([g] [PRC]):</strong> Solves <code>I = W × A × U × 74.89 / V</code> ([I], [W], [A], [U], [V]), keg head pressure ([f] [CO₂]), and menu pricing from cost % ([g] [PRC]).</td>
 </tr>
 <tr>
 <td style="text-align: left;">[C₁V₁] / [f] [TA] / [g] [WTR] / [g] [SO₂] / [f] [ACD]</td>
@@ -3753,9 +4154,9 @@
 <td style="text-align: left;">Solves Pearson dilution <code>C × V = D × U</code> ([C₁V₁]), titratable acidity ([f] [TA]), brewing salt ppm ([g] [WTR]), potassium metabisulfite dosage ([g] [SO₂]), and acid blend adjustment ([f] [ACD]).</td>
 </tr>
 <tr>
-<td style="text-align: left;">[YLD] / [f] [MAC] / [CST] / [f] [PRC] / [g] [PU]</td>
-<td style="text-align: left;">Yield, Costing &amp; Food Safety Keys</td>
-<td style="text-align: left;"><strong>Butcher Yield ([YLD]) &amp; Plate Costing ([CST]):</strong> Computes edible yield <span class="arithmatex">\(\text{EP}/\text{AP}\times 100\)</span> ([YLD]), Atwater caloric macros ([f] [MAC]), solves <code>P = C / (F / 100)</code> ([P], [C], [F]) or menu price ([f] [PRC]), and evaluates thermal pasteurization units ([g] [PU]).</td>
+<td style="text-align: left;">[YLD] / [f] [MAC] / [g] [CST] / [%] / [f] [Δ%] / [g] [a:b]</td>
+<td style="text-align: left;">Row 1 Col 5 &amp; Row 7 Col 3</td>
+<td style="text-align: left;"><strong>Butcher Yield ([YLD]), Plate Costing ([g] [CST]) &amp; Ratios:</strong> Computes edible yield <span class="arithmatex">\(\text{EP}/\text{AP}\times 100\)</span> ([YLD]), Atwater caloric macros ([f] [MAC]), solves <code>P = C / (F / 100)</code> ([P], [C], [F]), percentages, and baker's hydration ratios ([g] [a:b]).</td>
 </tr>
 <tr>
 <td style="text-align: left;">[f] [▸Brx] / [g] [▸SG] / [f] [▸°P] / [g] [▸PRF] / [g] [TDS] / [f] [DTR] / [f] [SAL] / [g] [SV] / [g] [SYR] / [g] [Aw]</td>
@@ -3766,7 +4167,7 @@
 </table>
 <hr />
 <h2 id="clinical-nursing-hospital-pharmacy-and-infusions-keycaps">Clinical Nursing, Hospital Pharmacy, and Infusions Keycaps</h2>
-<p>On the <strong>SC-80</strong> (<a href="../08-sc80-clinical-pharmacy/">Unit VIII, Chapters 22–24</a>), the Row 1 and Row 2 clinical dosing, clearance, and pharmacy compounding keys pair with the Patient Profile softkey bar ([PAT]: [W], [H], [A], [S], [MALE]/[FEM]) to evaluate Mosteller body surface area, Devine ideal and adjusted dosing weights, Cockcroft–Gault renal clearance, pediatric maintenance rules, vasoactive pump and gravity drip rates, and one-compartment pharmacokinetics:</p>
+<p>On the <strong>SC-80</strong> the Row 1 and Row 2 clinical dosing, clearance, and pharmacy compounding keys pair with the Patient Profile softkey bar ([PAT]: [W], [H], [A], [S], [MALE]/[FEM]) to evaluate Mosteller body surface area, Devine ideal and adjusted dosing weights, Cockcroft–Gault renal clearance, pediatric maintenance rules, vasoactive pump and gravity drip rates, and one-compartment pharmacokinetics:</p>
 <table>
 <thead>
 <tr>
@@ -3820,7 +4221,7 @@
 </table>
 <hr />
 <h2 id="quantitative-finance-actuarial-science-and-six-sigma-keycaps">Quantitative Finance, Actuarial Science, and Six Sigma Keycaps</h2>
-<p>On the <strong>SC-95</strong> (<a href="../09-sc95-finance-statistics/">Unit IX, Chapters 25–27</a>), the Row 7 Time Value of Money workspace key ([TVM]), Row 1 and Row 2 R-style probability distribution keys, and shifted financial and statistical solvers combine five-variable compound interest, discounted cash-flow and bond valuation, unit-economic accounting, and Six Sigma statistical inference:</p>
+<p>On the <strong>SC-95</strong> the Row 1 Time Value of Money workspace key ([TVM]), Row 1 and Row 2 R-style probability distribution keys, and shifted financial and statistical solvers combine five-variable compound interest, discounted cash-flow and bond valuation, unit-economic accounting, and Six Sigma statistical inference:</p>
 <table>
 <thead>
 <tr>
@@ -3832,28 +4233,28 @@
 <tbody>
 <tr>
 <td style="text-align: left;">[TVM] <span class="arithmatex">\(\to\)</span> [N] [I%] [PV] [PMT] [FV] [END]/[BEG]</td>
-<td style="text-align: left;">Row 7 Col 3 Primary &amp; Softkeys</td>
-<td style="text-align: left;"><strong>Five-Variable TVM Workspace:</strong> Pressing [TVM] binds [LFU0]–[LFU5] to [N], [I%], [PV], [PMT], [FV], and payment timing [END]/[BEG]; pressing <code>&lt;VALUE&gt;</code> <code>&lt;SOFTKEY&gt;</code> stores a known parameter, and [g] [SOLVE] <code>&lt;SOFTKEY&gt;</code> (or [XEQ] <code>&lt;SOFTKEY&gt;</code>) solves for the unknown variable.</td>
+<td style="text-align: left;">Row 1 Col 2 Primary &amp; Softkeys</td>
+<td style="text-align: left;"><strong>Five-Variable TVM Workspace:</strong> Pressing [TVM] binds softkeys to [N], [I%], [PV], [PMT], [FV], and payment timing [END]/[BEG]; keying <code>&lt;VALUE&gt;</code> <code>&lt;SOFTKEY&gt;</code> stores a parameter (with <code>0</code> binding <span class="arithmatex">\(0.0000\)</span>), [↰] <code>&lt;SOFTKEY&gt;</code> unbinds, and [g] [SOLVE] <code>&lt;SOFTKEY&gt;</code> (or [XEQ] <code>&lt;SOFTKEY&gt;</code>) solves for the unknown.</td>
 </tr>
 <tr>
-<td style="text-align: left;">[f] [AMR] / [g] [EAR]</td>
-<td style="text-align: left;">Row 7 Col 3 (Yellow / Blue)</td>
-<td style="text-align: left;"><strong>Loan Amortization &amp; Effective Annual Rate ([g] [EAR]):</strong> Computes principal/interest reduction from the active [TVM] registers ([f] [AMR]), or solves <code>E = ((1 + A / (100 × M))^M - 1) × 100</code> ([E], [A], [M]) via [g] [EAR].</td>
+<td style="text-align: left;">[f] [AMR] / [g] [CF] / [f] [EAR]</td>
+<td style="text-align: left;">Row 1 Col 2 (Yel/Blu) &amp; Row 6 Col 1 Yel</td>
+<td style="text-align: left;"><strong>Loan Amortization, Cash Flows ([g] [CF]) &amp; Effective Rate ([f] [EAR]):</strong> Computes principal/interest reduction ([f] [AMR]), opens discounted cash flows ([g] [CF]), or solves <code>E = ((1 + A / (100 × M))^M - 1) × 100</code> ([E], [A], [M]) via [f] [EAR].</td>
 </tr>
 <tr>
-<td style="text-align: left;">[g] [CF] ([g] [CF] Workspace) / [g] [ROI] / [g] [CGR] / [f] [WAC] / [g] [CAP]</td>
+<td style="text-align: left;">[g] [ROI] / [g] [CGR] / [f] [WAC] / [g] [CAP]</td>
 <td style="text-align: left;">Capital Budgeting &amp; Return Keys</td>
-<td style="text-align: left;"><strong>Discounted Cash-Flow Workspace ([g] [CF]) &amp; Growth Solvers:</strong> [g] [CF] solves <code>V = C×(1-(1+R/100)⁻ᴺ)/(R/100) - I</code> ([V] for NPV, [R] for IRR at <span class="arithmatex">\(V=0\)</span>, [C], [N], [I]), return on investment ([g] [ROI]), compound annual growth <code>F = P × (1 + R/100)^N</code> ([g] [CGR]: [F], [P], [R], [N]), WACC ([f] [WAC]), and perpetuity capitalization ([g] [CAP]).</td>
+<td style="text-align: left;">Return on investment ([g] [ROI]), compound annual growth <code>F = P × (1 + R/100)^N</code> ([g] [CGR]: [F], [P], [R], [N]), WACC ([f] [WAC]), and perpetuity capitalization ([g] [CAP]).</td>
 </tr>
 <tr>
-<td style="text-align: left;">[f] [MGN] / [g] [MKP] / [f] [BEP] / [g] [EOQ] / [g] [DEP] / [g] [TAX] / [f] [%Σ]</td>
+<td style="text-align: left;">[f] [MGN] / [g] [MKP] / [f] [BEP] / [g] [EOQ] / [g] [DEP] / [g] [TAX] / [g] [%Σ]</td>
 <td style="text-align: left;">Commercial &amp; CPA Accounting Keys</td>
-<td style="text-align: left;">Solves gross margin <code>M = (P - C) / P × 100</code> ([f] [MGN]: [M], [P], [C]), markup <code>U = (P - C) / C × 100</code> ([g] [MKP]: [U], [P], [C]), break-even units <code>Q = F / (P - V)</code> ([f] [BEP]: [Q], [F], [P], [V]), Wilson <code>Q = √(2×D×S/H)</code> ([g] [EOQ]: [Q], [D], [S], [H]), straight-line depreciation <code>D = (C - S) / L</code> ([g] [DEP]: [D], [C], [S], [L]), sales tax <code>T = P × (1 + R/100)</code> ([g] [TAX]: [T], [P], [R]), and share of total ([f] [%Σ]).</td>
+<td style="text-align: left;">Solves gross margin <code>M = (P - C) / P × 100</code> ([f] [MGN]: [M], [P], [C]), markup <code>U = (P - C) / C × 100</code> ([g] [MKP]: [U], [P], [C]), break-even units <code>Q = F / (P - V)</code> ([f] [BEP]: [Q], [F], [P], [V]), Wilson <code>Q = √(2×D×S/H)</code> ([g] [EOQ]: [Q], [D], [S], [H]), straight-line depreciation <code>D = (C - S) / L</code> ([g] [DEP]: [D], [C], [S], [L]), sales tax <code>T = P × (1 + R/100)</code> ([g] [TAX]: [T], [P], [R]), and share of total ([g] [%Σ]).</td>
 </tr>
 <tr>
-<td style="text-align: left;">[g] [BND] ([g] [BND] Workspace)</td>
+<td style="text-align: left;">[g] [BND] (Bond Valuation)</td>
 <td style="text-align: left;">Row 2 Col 1 Blue Shift</td>
-<td style="text-align: left;"><strong>Fixed-Income Bond Workspace ([g] [BND]):</strong> Solves <code>P = C×(1-(1+Y/100)⁻ᴺ)/(Y/100) + F/(1+Y/100)ᴺ</code> forward for clean price [P] or backward for periodic yield to maturity [Y], coupon [C], remaining periods [N], or par redemption [F].</td>
+<td style="text-align: left;"><strong>Fixed-Income Bond Workspace ([g] [BND]):</strong> Solves <code>P = C × (1 - (1 + Y/100)^-N) / (Y/100) + F / (1 + Y/100)^N</code> forward for clean price [P] or backward for periodic yield to maturity [Y], coupon [C], remaining periods [N], or par redemption [F].</td>
 </tr>
 <tr>
 <td style="text-align: left;">[g] [pN] / [f] [qN] / [rN] / [g] [pt] / [f] [qt] / [rt] / [g] [pχ²] / [f] [qχ²] / [rχ²] / [g] [pF] / [f] [qF] / [rF] / [g] [pB] / [f] [qB] / [rB] / [f] [PDF]</td>
@@ -3871,9 +4272,14 @@
 <td style="text-align: left;">Six Sigma, Inference &amp; Bayesian Solvers</td>
 </tr>
 <tr>
+<td style="text-align: left;">[%] / [f] [Δ%] / [g] [%Σ]</td>
+<td style="text-align: left;">Row 7 Col 3 (Primary / Yellow / Blue)</td>
+<td style="text-align: left;"><strong>Percentage Functions:</strong> Standard percentage ([%]), percent change <span class="arithmatex">\(\Delta\%\)</span> ([f] [Δ%]), and percent of total <span class="arithmatex">\(\%T\)</span> ([g] [%Σ]).</td>
+</tr>
+<tr>
 <td style="text-align: left;">[f] [▸YR] / [g] [▸YMD] / [f] [DT+] / [g] [ΔD]</td>
-<td style="text-align: left;">Calendar &amp; Day-Count Keys</td>
-<td style="text-align: left;">Converts day counts to annualized years ([f] [▸YR]), formats ISO <code>YYYY.MMDD</code> dates ([g] [▸YMD]), projects future maturity dates ([f] [DT+]), and computes day counts between dates ([g] [ΔD]).</td>
+<td style="text-align: left;">Row 5 Cols 1–2 Shifted Keys</td>
+<td style="text-align: left;"><strong>Calendar &amp; Day-Count Keys:</strong> Converts day counts to annualized years ([f] [▸YR]), toggles ISO <code>YYYY.MMDD</code> format ([g] [▸YMD]), projects calendar maturity dates ([f] [DT+]), and evaluates exact calendar days between dates ([g] [ΔD]).</td>
 </tr>
 </tbody>
 </table>

@@ -654,11 +654,9 @@
     },
     {
       "alphaLabel" : "U",
-      "blueAction" : "toHms",
-      "blueBitmapIdentifier" : "operation.37",
-      "blueLabel" : "▸HMS",
-      "blueLatex" : "\\to",
-      "blueSuffix" : "HMS",
+      "blueAction" : "navCrosswind",
+      "blueBitmapIdentifier" : "operation.285",
+      "blueLabel" : "XWC",
       "col" : 2,
       "cx" : 37.369,
       "cy" : 112.525,
@@ -672,11 +670,9 @@
       "primaryLabel" : "5",
       "row" : 5,
       "w" : 8.6,
-      "yellowAction" : "toHr",
-      "yellowBitmapIdentifier" : "operation.38",
-      "yellowLabel" : "▸HR",
-      "yellowLatex" : "\\to",
-      "yellowSuffix" : "HR"
+      "yellowAction" : "navWindTriangle",
+      "yellowBitmapIdentifier" : "operation.283",
+      "yellowLabel" : "WND"
     },
     {
       "alphaLabel" : "V",
@@ -907,9 +903,9 @@
     },
     {
       "alphaLabel" : "(i)",
-      "blueAction" : "navCrosswind",
-      "blueBitmapIdentifier" : "operation.285",
-      "blueLabel" : "XWC",
+      "blueAction" : "navAltitude",
+      "blueBitmapIdentifier" : "operation.284",
+      "blueLabel" : "ALT",
       "col" : 3,
       "cx" : 51.06,
       "cy" : 135.125,
@@ -918,14 +914,17 @@
       "isEnter" : false,
       "isShiftBlue" : false,
       "isShiftYellow" : false,
-      "primaryAction" : "navWindTriangle",
-      "primaryBitmapIdentifier" : "operation.283",
-      "primaryLabel" : "WND",
+      "primaryAction" : "toHr",
+      "primaryBitmapIdentifier" : "operation.38",
+      "primaryLabel" : "▸HR",
+      "primaryLatex" : "\\to",
       "row" : 7,
       "w" : 8.6,
-      "yellowAction" : "navAltitude",
-      "yellowBitmapIdentifier" : "operation.284",
-      "yellowLabel" : "ALT"
+      "yellowAction" : "toHms",
+      "yellowBitmapIdentifier" : "operation.37",
+      "yellowLabel" : "▸HMS",
+      "yellowLatex" : "\\to",
+      "yellowSuffix" : "HMS"
     },
     {
       "alphaLabel" : "",
@@ -1093,6 +1092,13 @@
       "END",
       "BEG",
       "BGN\/END"
+    ],
+    "VCV" : [
+      "E",
+      "P",
+      "G",
+      "H",
+      "L"
     ],
     "WIND" : [
       "X",

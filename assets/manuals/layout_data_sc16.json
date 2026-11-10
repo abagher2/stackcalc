@@ -454,9 +454,9 @@
     },
     {
       "alphaLabel" : "P",
-      "blueAction" : "sysWordSize",
-      "blueBitmapIdentifier" : "operation.554",
-      "blueLabel" : "WSZ",
+      "blueAction" : "sysMemoryAlign",
+      "blueBitmapIdentifier" : "operation.581",
+      "blueLabel" : "ALN",
       "col" : 4,
       "cx" : 53.25,
       "cy" : 89.92500000000001,
@@ -586,9 +586,10 @@
     },
     {
       "alphaLabel" : "",
-      "blueAction" : "modulo",
-      "blueBitmapIdentifier" : "operation.132",
-      "blueLabel" : "MOD",
+      "blueAction" : "sysRCTimeConstant",
+      "blueBitmapIdentifier" : "operation.580",
+      "blueLabel" : "τ",
+      "blueLatex" : "\\tau",
       "col" : 4,
       "cx" : 64.75,
       "cy" : 101.22500000000001,
@@ -602,10 +603,9 @@
       "primaryLabel" : "÷",
       "row" : 4,
       "w" : 8.6,
-      "yellowAction" : "intDiv",
-      "yellowBitmapIdentifier" : "operation.68",
-      "yellowLabel" : "÷R",
-      "yellowLatex" : "\\div_{\\mkern-2mu\\textstyle\\mathrm{R}}"
+      "yellowAction" : "sysPWMTimer",
+      "yellowBitmapIdentifier" : "operation.579",
+      "yellowLabel" : "PWM"
     },
     {
       "alphaLabel" : "",
@@ -886,9 +886,9 @@
     },
     {
       "alphaLabel" : "(i)",
-      "blueAction" : "sysMemoryAlign",
-      "blueBitmapIdentifier" : "operation.581",
-      "blueLabel" : "ALN",
+      "blueAction" : "sysWordSize",
+      "blueBitmapIdentifier" : "operation.554",
+      "blueLabel" : "WSZ",
       "col" : 3,
       "cx" : 51.06,
       "cy" : 135.125,
@@ -897,15 +897,15 @@
       "isEnter" : false,
       "isShiftBlue" : false,
       "isShiftYellow" : false,
-      "primaryAction" : "sysPWMTimer",
-      "primaryBitmapIdentifier" : "operation.579",
-      "primaryLabel" : "PWM",
+      "primaryAction" : "modulo",
+      "primaryBitmapIdentifier" : "operation.132",
+      "primaryLabel" : "MOD",
       "row" : 7,
       "w" : 8.6,
-      "yellowAction" : "sysRCTimeConstant",
-      "yellowBitmapIdentifier" : "operation.580",
-      "yellowLabel" : "τ",
-      "yellowLatex" : "\\tau"
+      "yellowAction" : "intDiv",
+      "yellowBitmapIdentifier" : "operation.68",
+      "yellowLabel" : "÷R",
+      "yellowLatex" : "\\div_{\\mkern-2mu\\textstyle\\mathrm{R}}"
     },
     {
       "alphaLabel" : "",
@@ -942,6 +942,11 @@
       "DEC",
       "OCT",
       "BIN"
+    ],
+    "BPS" : [
+      "D",
+      "C",
+      "B"
     ],
     "CLEAR" : [
       "CLEQN",
