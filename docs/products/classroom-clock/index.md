@@ -862,8 +862,8 @@ hide:
         </p>
       </div>
       <div class="flex flex-wrap gap-3">
-        <a href="/downloads/classroom-clock-open-source-stls.zip" class="ec-btn-primary">
-          Download Clock STLs (.ZIP) &darr;
+        <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #FA6B05; border-color: #FA6B05; color: #FFFFFF;">
+          Download 3MF on Printables ↗
         </a>
       </div>
     </div>

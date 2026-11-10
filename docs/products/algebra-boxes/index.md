@@ -412,7 +412,7 @@ hide:
       <div class="workbook-body">
         <div class="workbook-header">
           <div class="workbook-meta-strip">
-            <span>STACKCALC MATH LABS // SERIES 01</span>
+            <span>STACKCALC MATH LABS • SERIES 01</span>
             <span>STANDARDS: CCSS HSA.APR.A.1 &bull; TEKS 111.39.c.10</span>
             <span>PERIOD: 45 MIN STATION</span>
           </div>
@@ -755,7 +755,7 @@ hide:
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// GEOMETRIC PROOF</span>
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">GEOMETRIC PROOF</span>
           <h3 class="font-bold text-base text-white mt-1 mb-2">Tactile Area Modeling</h3>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
             Physically constructs binomial products and quadratic factors as discrete 2D rectangular areas. Converts abstract FOIL procedures into visual and spatial proofs.
@@ -768,7 +768,7 @@ hide:
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// MECHANICAL STABILITY</span>
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">MECHANICAL STABILITY</span>
           <h3 class="font-bold text-base text-white mt-1 mb-2">Factoring Retention Rails</h3>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
             Integrated perimeter stage rails align tile factors along orthogonal axes without shifting or sliding across desk surfaces during multi-student collaborative proofs.
@@ -781,7 +781,7 @@ hide:
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// INVENTORY AUDITING</span>
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">INVENTORY AUDITING</span>
           <h3 class="font-bold text-base text-white mt-1 mb-2">Gridfinity 3&times;1 Organization</h3>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
             Every piece has a molded recess inside the 3&times;1 Gridfinity box. Teachers and students complete a full 35-piece visual audit in under 15 seconds before dismissing class.
@@ -855,8 +855,8 @@ hide:
         </p>
       </div>
       <div class="flex flex-wrap gap-3">
-        <a href="/downloads/algebra-boxes-open-source-stls.zip" class="ec-btn-primary">
-          Download Algebra STLs (.ZIP) &darr;
+        <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #FA6B05; border-color: #FA6B05; color: #FFFFFF;">
+          Download 3MF on Printables ↗
         </a>
       </div>
     </div>

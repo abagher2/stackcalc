@@ -394,7 +394,7 @@ hide:
   <section class="ec-section" id="pedagogy">
     <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
       <div>
-        <span class="text-xs font-mono uppercase text-sky-400 font-bold tracking-wider">// PROPORTIONAL TACTILE PEDAGOGY</span>
+        <span class="text-xs font-mono uppercase text-sky-400 font-bold tracking-wider">PROPORTIONAL TACTILE PEDAGOGY</span>
         <h2 class="ec-section-title m-0">The 84.0 mm Harmonic Datum</h2>
       </div>
       <span class="text-xs font-mono text-slate-400 border border-white/10 px-2 py-0.5 rounded">Self-Correcting Equivalence</span>
@@ -700,7 +700,7 @@ hide:
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// MATHEMATICAL GEOMETRY</span>
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">MATHEMATICAL GEOMETRY</span>
           <h3 class="font-bold text-base text-white mt-1 mb-2">Self-Correcting Z-Axis Heights</h3>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
             Vertical heights are strictly proportional to mathematical values (two 1/4 blocks physically equal one 1/2 block). Eliminates cognitive misconceptions through undeniable tactile equality.
@@ -713,7 +713,7 @@ hide:
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// TACTILE ACCESSIBILITY</span>
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">TACTILE ACCESSIBILITY</span>
           <h3 class="font-bold text-base text-white mt-1 mb-2">Debossed Microhatching</h3>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
             Each fraction denominator family features unique tactile hatched surface patterns alongside debossed numerals, enabling multi-sensory and low-vision spatial recognition.
@@ -726,7 +726,7 @@ hide:
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// WORKSPACE EFFICIENCY</span>
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">WORKSPACE EFFICIENCY</span>
           <h3 class="font-bold text-base text-white mt-1 mb-2">12-Column Caddy &amp; Desktop Freedom</h3>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
             Engineered with a removable 12-column caddy chassis featuring anti-scrape runner glides and debossed socket floors. During lessons, towers stand freely on any student desk with zero wobble for multi-tower comparisons.
@@ -800,8 +800,8 @@ hide:
         </p>
       </div>
       <div class="flex flex-wrap gap-3">
-        <a href="/downloads/fraction-studio-open-source-stls.zip" class="ec-btn-primary">
-          Download Fraction STLs (.ZIP) &darr;
+        <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #FA6B05; border-color: #FA6B05; color: #FFFFFF;">
+          Download 3MF on Printables ↗
         </a>
       </div>
     </div>

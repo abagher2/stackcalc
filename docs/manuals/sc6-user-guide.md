@@ -4628,23 +4628,23 @@ To make classroom 3D printing simple and modular, the nine physical studios are 
 
 #### Part 1: The 3 Core Anchor Block Studios (Print These First)
 
-| Anchor Studio Code & Kit Name | Gridfinity Box | Filament & Slicer Profile | Direct STL Pack Download |
+| Anchor Studio Code & Kit Name | Gridfinity Box | Filament & Slicer Profile | Free 3MF Download |
 | :--- | :---: | :--- | :--- |
-| **`PLACE-01`: Ten-Frame, Place Value & Counting/Array Studios** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; pause at $1.80\text{ mm}$ on counters for red/gold swap; 4-color tile plates ($12 \times 7.0 = 84.0\text{ mm}$) | [Ten-Frame STL](https://stackcalc.io/downloads/ten-frames-open-source-stls.zip) • [Place Value STL](https://stackcalc.io/downloads/place-value-open-source-stls.zip) • [Counting Tiles STL](https://stackcalc.io/downloads/counting-tiles-open-source-stls.zip) |
-| **`FRAC-01`: 84 mm Fraction Towers & Comparator Studio** | Desktop Case ($3 \times 1$) | $0.20\text{ mm}$ PLA ($0.10\text{ mm}$ adaptive on $\frac{1}{8}$ block for exact $10.5\text{ mm}$ height) | [Fraction Studio STL Pack](https://stackcalc.io/downloads/fraction-studio-open-source-stls.zip) |
-| **`PRIME-01`: Prime Factor Logarithmic Tower Studio** | Desktop Case ($3 \times 1$) | $0.10\text{ mm}$ fine layers for $\pm 0.05\text{ mm}$ logarithmic height match ($h(p) = 7.0 \cdot \log_2(p)\text{ mm}$) | [Prime Factor STL Pack](https://stackcalc.io/downloads/prime-factor-studio-open-source-stls.zip) |
+| **`PLACE-01`: Ten-Frame, Place Value & Counting/Array Studios** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; pause at $1.80\text{ mm}$ on counters for red/gold swap; 4-color tile plates ($12 \times 7.0 = 84.0\text{ mm}$) | [Printables Profile ↗](https://www.printables.com/@StackCalc_5593834) |
+| **`FRAC-01`: 84 mm Fraction Towers & Comparator Studio** | Desktop Case ($3 \times 1$) | $0.20\text{ mm}$ PLA ($0.10\text{ mm}$ adaptive on $\frac{1}{8}$ block for exact $10.5\text{ mm}$ height) | [Printables Profile ↗](https://www.printables.com/@StackCalc_5593834) |
+| **`PRIME-01`: Prime Factor Logarithmic Tower Studio** | Desktop Case ($3 \times 1$) | $0.10\text{ mm}$ fine layers for $\pm 0.05\text{ mm}$ logarithmic height match ($h(p) = 7.0 \cdot \log_2(p)\text{ mm}$) | [Printables Profile ↗](https://www.printables.com/@StackCalc_5593834) |
 
 #### Part 2: The 6 Companion Specialty Studios (Print as Needed by Unit)
 
-| Companion Studio & Modular Kit Name | Gridfinity Box | Filament & Slicer Profile | Direct STL Pack Download |
+| Companion Studio & Modular Kit Name | Gridfinity Box | Filament & Slicer Profile | Free 3MF Download |
 | :--- | :---: | :--- | :--- |
-| **4. 90° Corner L-Frame & Area Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA in 4 colors (gold flats, blue rods, white/red units) | [L-Frame & Area STL Pack](https://stackcalc.io/downloads/algebra-boxes-open-source-stls.zip) |
-| **5a. Planetary Geared Clock** | $3 \times 2 \times 7\text{U}$ | $0.20\text{ mm}$ PLA with $0.15\text{ mm}$ elephant-foot compensation on gears | [Geared Clock STL Pack](https://stackcalc.io/downloads/classroom-clock-open-source-stls.zip) |
-| **5b. Unit Circle Volvelle** | $120\text{ mm}$ Disc | $0.20\text{ mm}$ PLA; two-color swap on degree ticks & sight window | [Unit Circle STL Pack](https://stackcalc.io/downloads/unit-circle-volvelle-open-source-stls.zip) |
-| **6a. Number Rack Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; print sliding $5+5$ beads in white and coral red | [Number Rack STL Pack](https://stackcalc.io/downloads/) |
-| **6b. Math Dominoes Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; top-layer contrast swap on raised domino pips | [Math Dominoes STL Pack](https://stackcalc.io/downloads/) |
-| **6c. Quest Scoreboard** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; 60 radiant-gold `+10` tokens & dark slate lid | [Quest Scoreboard STL Pack](https://stackcalc.io/downloads/) |
-| **8. Probability Dice & Spinner** | $1 \times 1 \times 7\text{U}$ | $100\%$ concentric infill on dice; $0.12\text{ mm}$ layers on spinner spindle | [Dice & Spinner STL Pack](https://stackcalc.io/downloads/dice-and-spinner-open-source-stls.zip) |
+| **4. 90° Corner L-Frame & Area Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA in 4 colors (gold flats, blue rods, white/red units) | [Printables Profile ↗](https://www.printables.com/@StackCalc_5593834) |
+| **5a. Planetary Geared Clock** | $3 \times 2 \times 7\text{U}$ | $0.20\text{ mm}$ PLA with $0.15\text{ mm}$ elephant-foot compensation on gears | [Printables Profile ↗](https://www.printables.com/@StackCalc_5593834) |
+| **5b. Unit Circle Volvelle** | $120\text{ mm}$ Disc | $0.20\text{ mm}$ PLA; two-color swap on degree ticks & sight window | [Printables Profile ↗](https://www.printables.com/@StackCalc_5593834) |
+| **6a. Number Rack Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; print sliding $5+5$ beads in white and coral red | [Printables Profile ↗](https://www.printables.com/@StackCalc_5593834) |
+| **6b. Math Dominoes Studio** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; top-layer contrast swap on raised domino pips | [Printables Profile ↗](https://www.printables.com/@StackCalc_5593834) |
+| **6c. Quest Scoreboard** | $3 \times 1 \times 7\text{U}$ | $0.20\text{ mm}$ PLA; 60 radiant-gold `+10` tokens & dark slate lid | [Printables Profile ↗](https://www.printables.com/@StackCalc_5593834) |
+| **8. Probability Dice & Spinner** | $1 \times 1 \times 7\text{U}$ | $100\%$ concentric infill on dice; $0.12\text{ mm}$ layers on spinner spindle | [Printables Profile ↗](https://www.printables.com/@StackCalc_5593834) |
 
 ### A.2.2 Five-Color Filament Palette & Multi-Color Layer Swaps
 To help students spot mathematical connections across different chapters—and to let any single-nozzle printer produce high-contrast parts—all nine studios share a five-color filament palette:

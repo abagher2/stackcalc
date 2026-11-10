@@ -5,7 +5,7 @@ description: "Free open-source 3D printable math manipulative kits and replaceme
 
 # Makerspace 3D Print Kits & Classroom Refills
 
-<div class="inline-block px-3 py-1 mb-6 border border-accentCyan text-accentCyan font-mono text-xs tracking-wider">// FREE 3D PRINTABLE MODELS ON PRINTABLES · OPEN HARDWARE ECOSYSTEM · 42MM GRIDFINITY STANDARD</div>
+<div class="inline-block px-3 py-1 mb-6 border border-accentCyan text-accentCyan font-mono text-xs tracking-wider">FREE 3D PRINTABLE MODELS ON PRINTABLES · OPEN HARDWARE ECOSYSTEM · 42MM GRIDFINITY STANDARD</div>
 
 Welcome to the **StackCalc Makerspace Hub**. We believe mathematics manipulatives belong in every classroom, and budget constraints or lost pieces should never stop a student from holding math in their hands.
 
@@ -13,7 +13,7 @@ Instead of charging for digital STL downloads or hosting cumbersome raw files ac
 
 <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin: 1.5rem 0 2rem 0; padding: 1.25rem 1.5rem; background: rgba(250, 107, 5, 0.08); border: 1px solid rgba(250, 107, 5, 0.4); border-radius: 12px;">
   <div style="flex: 1; min-width: 280px;">
-    <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #FA6B05; text-transform: uppercase;">// OFFICIAL PRUSA PRINTABLES PROFILE</span>
+    <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #FA6B05; text-transform: uppercase;">OFFICIAL PRINTABLES PROFILE</span>
     <h3 style="margin: 0.25rem 0 0.5rem 0; font-size: 1.25rem; font-weight: 800; color: #FFFFFF;">Printables Collection: @StackCalc_5593834</h3>
     <p style="margin: 0; font-size: 0.85rem; color: #CBD5E1; line-height: 1.5;">
       Browse 14 verified models, pre-sliced color-coordinated plate files matching our factory manufacturing pipeline, and download individual replacement pieces with standardized Part IDs.
@@ -230,7 +230,7 @@ The Place Value Studio makes positional notation physical through dual 6x2 activ
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">PRINTABLES SKU: PLACE-01 &bull; 3X1X7U GRIDFINITY &bull; CALC KEY: [PV]</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">3X1X7U GRIDFINITY &bull; HARDWARE KEY: [PV]</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes Whole Tray, Decimal Tray, 44 Symmetric Digit Tiles (22 White + 22 Blue-Gray), 4 Regrouping (+1) Tokens, 7U Box with 12 Labeled Floor Sockets, and Snapfinity Stage Lid.</div>
     </div>
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD ON PRINTABLES ↗</a>
@@ -269,7 +269,7 @@ Every tower's height is mathematically calibrated: $h = 84/d\text{ mm}$, where $
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">PRINTABLES SKU: FRAC-01 &bull; 3X1X13U GRIDFINITY &bull; CALC KEYS: [FDISP], [SIMP]</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">3X1X13U GRIDFINITY &bull; HARDWARE KEYS: [FDISP], [SIMP]</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes 9 Proportional Towers (1/1 to 1/12), Comparison Stage, 3x1 Bin &amp; Workbench Lid.</div>
     </div>
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD ON PRINTABLES ↗</a>
@@ -314,7 +314,7 @@ The Prime Factor Studio is the world's first logarithmic manipulative where stac
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">PRINTABLES SKU: PRIME-01 &bull; 3X1X7U GRIDFINITY &bull; CALC KEY: [PRIME]</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">3X1X7U GRIDFINITY &bull; HARDWARE KEY: [PRIME]</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes 29 Logarithmic Prime Blocks (Primes 2–23), Slide Rule Comparator Stage &amp; Stepped Box.</div>
     </div>
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD ON PRINTABLES ↗</a>
@@ -354,7 +354,7 @@ The Ten-Frame Studio uses two modular 2x5 recessed grid stages and 40 tactile de
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">PRINTABLES SKU: BASE-10 &bull; 3X1X7U GRIDFINITY &bull; CALC KEY: [▦]</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">3X1X7U GRIDFINITY &bull; HARDWARE KEY: [▦]</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes Dual 2x5 Stages, 40 Monolithic Counters, 2U Carry Cube &amp; 3x1 Storage Caddy.</div>
     </div>
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD ON PRINTABLES ↗</a>
@@ -392,7 +392,7 @@ Rote multiplication tables on flashcards teach children that math is about rapid
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">PRINTABLES SKU: COUNT-01 &bull; 3X1 GRIDFINITY &bull; CALC KEY: [ENTER], [x]</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">3X1 GRIDFINITY &bull; HARDWARE KEYS: [ENTER], [x]</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes 10x10 Planar Array Tray, 100 Interlocking Tiles &amp; 3x1 Storage Caddy.</div>
     </div>
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD ON PRINTABLES ↗</a>
@@ -431,7 +431,7 @@ This set features 28 Double-Six MathBlock dominoes with deep debossed pips that 
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">PRINTABLES SKU: DOMI-01 &bull; 3X1X7U GRIDFINITY &bull; CALC KEY: [+], [REP]</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">3X1X7U GRIDFINITY &bull; HARDWARE KEYS: [+], [REP]</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes 30 Double-Six Dominoes, 12-Frame Tray &amp; Doubling Snap Lid.</div>
     </div>
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD ON PRINTABLES ↗</a>
@@ -468,7 +468,7 @@ We engineered an authentic 12:1 epicyclic planetary gear train directly into a 2
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">PRINTABLES SKU: TIME-01 &bull; 2X1 DESK STAND &bull; CALC KEY: [CLK]</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">2X1 DESK STAND &bull; HARDWARE KEY: [CLK]</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes 12:1 Planetary Core, 4 Color Quadrants, Hour/Minute Hands &amp; 2x1 Gridfinity Stand.</div>
     </div>
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD ON PRINTABLES ↗</a>
@@ -509,7 +509,7 @@ Archimedean algebra tiles transform abstract quadratic factoring into solving a 
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">PRINTABLES SKU: ALGB-01 &bull; 3X1 GRIDFINITY &bull; CALC KEY: [POLY], [SOLVE]</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">3X1 GRIDFINITY &bull; HARDWARE KEYS: [POLY], [SOLVE]</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes 32 Factoring Tiles, 90° Cartesian Stage, 3x1 Storage Caddy &amp; Cartouche Lid.</div>
     </div>
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD ON PRINTABLES ↗</a>
@@ -548,7 +548,7 @@ Most school plastic spinners snag on plastic friction burrs, yielding biased res
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">PRINTABLES SKU: PROB-01 &bull; 1X1 GRIDFINITY &bull; CALC KEYS: [Σ+], [x̄]</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">1X1 GRIDFINITY &bull; HARDWARE KEYS: [Σ+], [x̄]</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes Low-Friction Spinner Base, 4 Modular Face Discs, Dice Cages &amp; 1x1 Pocket Box.</div>
     </div>
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD ON PRINTABLES ↗</a>
@@ -588,7 +588,7 @@ The Unit Circle Volvelle turns trigonometry into a precision rotating slide deco
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">PRINTABLES SKU: VOLV-01 &bull; POCKET ROTOR &bull; CALC KEYS: [SIN], [COS], [RAD], [π]</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">POCKET ROTOR &bull; HARDWARE KEYS: [SIN], [COS], [RAD], [π]</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes 120mm Stator Base Disc, Rotor with Viewing Windows &amp; Interlocking Snap Pivot Pin.</div>
     </div>
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD ON PRINTABLES ↗</a>
@@ -622,7 +622,7 @@ The SC-6 Quest Scoreboard is designed as the classroom companion to our 120 stat
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">PRINTABLES SKU: QUEST-01 &bull; 3X1X7U GRIDFINITY &bull; CALC KEY: [?]</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">3X1X7U GRIDFINITY &bull; HARDWARE KEY: [?]</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes 3x1 Scoreboard Lid with Sockets 1–10 &amp; 100 Mastery Tower + 60 Universal +10 Tokens.</div>
     </div>
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD ON PRINTABLES ↗</a>
@@ -657,7 +657,7 @@ A 4-piece interlocking puzzle stand that snaps together in 10 seconds with zero 
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">PRINTABLES SKU: RACK-01 &bull; MODULAR DESK STAND &bull; 15° / 60°</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">MODULAR DESK STAND &bull; 15° / 60° ANGLE</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes Left &amp; Right Interlocking Legs with Dual Angle Sockets + Crossbar Braces.</div>
     </div>
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD ON PRINTABLES ↗</a>
@@ -691,7 +691,7 @@ The SC-32 is a 100% open-source scientific RPN calculator powered by the dual-co
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">PRINTABLES SKU: SC32-HW &bull; OPEN HARDWARE RPN CALCULATOR</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">OPEN HARDWARE RPN CALCULATOR &bull; RP2350 SILICON</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes Top Bezel Cowl, Bottom Shell, Slide Battery Door, Carrier Plate &amp; 43 Tactile Keycaps.</div>
     </div>
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD ON PRINTABLES ↗</a>
@@ -728,7 +728,7 @@ The SC-6 Elementary Calculator chassis is an ultra-rugged, drop-proof handheld e
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">PRINTABLES SKU: SC6-HW &bull; ELEMENTARY RPN CALCULATOR</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">ELEMENTARY RPN CALCULATOR &bull; RP2040 SILICON</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes Shock-Rim Bezel, Impact Shell, Screw Battery Cover &amp; 24 Tactile Keycaps.</div>
     </div>
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD ON PRINTABLES ↗</a>

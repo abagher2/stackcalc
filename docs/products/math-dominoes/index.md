@@ -568,7 +568,7 @@ hide:
       <div class="workbook-body">
         <div class="workbook-header">
           <div class="workbook-meta-strip">
-            <span>STACKCALC MATH LABS // SERIES 03b</span>
+            <span>STACKCALC MATH LABS • SERIES 03b</span>
             <span>STANDARDS: CCSS 1.OA.C.6 &bull; 2.OA.B.2 &bull; TEKS 111.3.b.3</span>
             <span>PERIOD: 40 MIN STATION</span>
           </div>
@@ -919,8 +919,8 @@ hide:
         </p>
       </div>
       <div class="flex flex-wrap gap-3">
-        <a href="/downloads/math-dominoes-open-source-stls.zip" class="ec-btn-primary">
-          Download Domino STLs (.ZIP) &darr;
+        <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #FA6B05; border-color: #FA6B05; color: #FFFFFF;">
+          Download 3MF on Printables ↗
         </a>
         <a href="https://github.com/abagher/watch-calc-32" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary">
           GitHub CAD Repository ↗
