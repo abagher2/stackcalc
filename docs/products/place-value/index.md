@@ -211,21 +211,32 @@ hide:
         </a>
       </div>
 
-      <!-- MULTI-CHANNEL BLOCKS & BOOK ALIGNMENT -->
-      <div class="p-3.5 rounded-xl bg-slate-900/90 border border-white/15 my-3 text-xs">
-        <div class="font-mono font-bold text-amber-400 uppercase tracking-wider mb-1.5">🧱 Get `PLACE-01` Blocks in Multiple Places &amp; Printable Curriculum</div>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-orange-500/20 hover:bg-orange-500/30 text-orange-300 border border-orange-500/40 font-semibold">🛒 Handcrafted Kit on Etsy ↗</a>
-          <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-semibold">🏭 On-Demand Print on Slant 3D ↗</a>
-          <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-semibold">🖨️ Free STLs on Printables ↗</a>
-          <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-semibold">📘 SC-32 Manual on Amazon ($16) ↗</a>
-          <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-semibold">📗 SC-6 Book on Amazon ($16) ↗</a>
-          <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-semibold">📙 Middle School Workbook on Amazon ($16) ↗</a>
-        </div>
-        <div class="text-slate-300 leading-relaxed">
-          <strong>📖 Aligned Book Story:</strong> <a href="../../manuals/sc6/02-rpn-for-young-learners/" class="text-sky-400 hover:underline">Inside the 4-Floor Number Elevator (T, Z, Y, X) & Base-10 Regrouping (SC-6 Ch. 2 & Ch. 3)</a><br>
-          <strong>📄 Printable Lesson Packets:</strong> <a href="../../downloads/curriculum_units/stackcalc_curriculum_unit_05.pdf" class="text-emerald-400 hover:underline font-semibold">Print Unit 05 Place Value & 4-Stack Packet (PDF)</a> &bull; <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_08.pdf" class="text-amber-300 hover:underline font-semibold">Print Big Ideas Unit 8 (3D Volume Cubes PDF)</a>
-        </div>
+      <!-- Navigation & Editions Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 my-4 font-mono text-xs">
+        <a href="../../manuals/sc6/02-rpn-for-young-learners/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Aligned Chapter</span>
+          <span class="text-sky-400">&rarr;</span>
+        </a>
+        <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>SC-6 Book (Amazon)</span>
+          <span class="text-[#FF9900]">↗</span>
+        </a>
+        <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Workbook (Amazon)</span>
+          <span class="text-[#FF9900]">↗</span>
+        </a>
+        <a href="../../downloads/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Free 3MF / STL</span>
+          <span class="text-emerald-400">&darr;</span>
+        </a>
+        <a href="../../curriculum/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Curriculum Guide</span>
+          <span class="text-amber-400">&rarr;</span>
+        </a>
+        <a href="#specifications" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Technical Specs</span>
+          <span class="text-slate-400">&darr;</span>
+        </a>
       </div>
 
       <!-- Trust Badges -->

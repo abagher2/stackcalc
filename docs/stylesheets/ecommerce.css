@@ -1073,42 +1073,55 @@ body.ecommerce-mode .md-main .md-grid {
   gap: 0.5rem;
 }
 
-/* Specifications Table */
+/* Specifications Table - Teenage Engineering / Swiss Precision Aesthetic */
 .ec-spec-table {
   width: 100%;
   border-collapse: collapse;
-  background: #13151A;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  overflow: hidden;
+  background: transparent;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+  overflow: visible;
+  margin-top: 1.5rem;
   margin-bottom: 3rem;
 }
 
 .ec-spec-table tr {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.15s ease;
+}
+
+.ec-spec-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .ec-spec-table tr:last-child {
-  border-bottom: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .ec-spec-table tr:nth-child(even) {
-  background: rgba(255, 255, 255, 0.015);
+  background: transparent;
 }
 
 .ec-spec-k {
-  padding: 1rem 1.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #9CA3AF;
-  width: 35%;
+  padding: 1rem 1.5rem 1rem 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #7E8B9B;
+  width: 30%;
+  vertical-align: top;
 }
 
 .ec-spec-v {
-  padding: 1rem 1.5rem;
-  font-size: 0.875rem;
-  color: #F3F4F6;
-  font-weight: 500;
+  padding: 1rem 0;
+  font-size: 0.92rem;
+  color: #E2E8F0;
+  font-weight: 400;
+  line-height: 1.6;
+  vertical-align: top;
 }
 
 /* What's In The Box List */
@@ -2423,23 +2436,30 @@ body.ecommerce-mode .md-main .md-grid {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.82rem;
-  margin: 0.75rem 0;
+  margin: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .workbook-table th {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.6rem 0.75rem;
   text-align: left;
   font-family: 'Space Mono', monospace;
   font-size: 0.72rem;
-  color: #94A3B8;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #7E8B9B;
 }
 
 .workbook-table td {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0.5rem 0.75rem;
-  color: #E2E8F0;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.6rem 0.75rem;
+  color: #CBD5E1;
+}
 }
 
 .workbook-teacher-box {

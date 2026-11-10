@@ -207,28 +207,31 @@ hide:
         </a>
       </div>
 
-      <!-- MULTI-CHANNEL BLOCKS & BOOK ALIGNMENT -->
-      <div class="p-3.5 rounded-xl bg-slate-900/90 border border-white/15 my-3 text-xs">
-        <div class="font-mono font-bold text-amber-400 uppercase tracking-wider mb-1.5">🧱 Get `TIME-01` Blocks in Multiple Places &amp; Printable Curriculum</div>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-orange-500/20 hover:bg-orange-500/30 text-orange-300 border border-orange-500/40 font-semibold">🛒 Handcrafted Kit on Etsy ↗</a>
-          <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-semibold">🏭 On-Demand Print on Slant 3D ↗</a>
-          <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-semibold">🖨️ Free STLs on Printables ↗</a>
-          <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-semibold">📗 Companion Book on Amazon ↗</a>
-        </div>
-        <div class="text-slate-300 leading-relaxed">
-          <strong>📖 Aligned Book Story:</strong> <a href="../../manuals/sc6/06-geometry-surface-area/" class="text-sky-400 hover:underline">Why Ancient Babylonians Counted to 60 & Modulo-60 Clock Arithmetic (SC-6 Ch. 6)</a><br>
-          <strong>📄 Printable Lesson Packets:</strong> <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_05.pdf" class="text-emerald-400 hover:underline font-semibold">Print Big Ideas Unit 5 (Area & Elapsed Time PDF)</a> &bull; <a href="../../downloads/curriculum_units/stackcalc_curriculum_unit_09.pdf" class="text-amber-300 hover:underline font-semibold">Print Unit 09 Angles & Rotation Packet (PDF)</a>
-        </div>
-      </div>
-
-      <!-- Quick Subpage Links -->
-      <div class="flex flex-wrap gap-2 my-4">
-        <a href="assembly/" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-sky-400 border border-sky-500/30 hover:bg-slate-700">
-          &bull; Step-by-Step Assembly Guide &amp; Video &rarr;
+      <!-- Navigation & Editions Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 my-4 font-mono text-xs">
+        <a href="assembly/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Assembly Guide</span>
+          <span class="text-sky-400">&rarr;</span>
         </a>
-        <a href="lessons/" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-emerald-400 border border-emerald-500/30 hover:bg-slate-700">
-          &bull; Classroom Curriculum (Lessons 1 &amp; 2) &rarr;
+        <a href="lessons/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Curriculum Lessons</span>
+          <span class="text-emerald-400">&rarr;</span>
+        </a>
+        <a href="../../manuals/sc6/06-geometry-surface-area/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Aligned Chapter</span>
+          <span class="text-amber-400">&rarr;</span>
+        </a>
+        <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Companion Book</span>
+          <span class="text-[#FF9900]">↗</span>
+        </a>
+        <a href="#downloads" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Free 3MF / STL</span>
+          <span class="text-emerald-400">&darr;</span>
+        </a>
+        <a href="#specifications" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Technical Specs</span>
+          <span class="text-slate-400">&darr;</span>
         </a>
       </div>
 
@@ -664,10 +667,6 @@ hide:
         <tr>
           <td class="ec-spec-k">Curriculum Standards</td>
           <td class="ec-spec-v">Common Core: CCSS.MATH.CONTENT.1.MD.B.3, 2.MD.C.7, 3.MD.A.1 &bull; TEKS: 111.3.b.7, 111.4.b.9 &bull; Grades 1&ndash;3</td>
-        </tr>
-        <tr>
-          <td class="ec-spec-k">Procurement Classification</td>
-          <td class="ec-spec-v">UNSPSC: 60101700 (Math Manipulatives) &bull; NIGP: 785-70 &bull; Title I Math Intervention &amp; ESSER Eligible</td>
         </tr>
       </tbody>
     </table>

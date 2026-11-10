@@ -208,35 +208,31 @@ hide:
         </a>
       </div>
 
-      <!-- MULTI-CHANNEL BLOCKS & BOOK ALIGNMENT -->
-      <div class="p-3.5 rounded-xl bg-slate-900/90 border border-white/15 my-3 text-xs">
-        <div class="font-mono font-bold text-amber-400 uppercase tracking-wider mb-1.5">🧱 Get `FRAC-01` Blocks in Multiple Places &amp; Printable Curriculum</div>
-        <div class="flex flex-wrap gap-2 mb-2">
-          <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-orange-500/20 hover:bg-orange-500/30 text-orange-300 border border-orange-500/40 font-semibold">🛒 Handcrafted Kit on Etsy ↗</a>
-          <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-semibold">🏭 On-Demand Print on Slant 3D ↗</a>
-          <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-semibold">🖨️ Free STLs on Printables ↗</a>
-          <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-semibold">📘 SC-32 Manual on Amazon ($16) ↗</a>
-          <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-semibold">📗 SC-6 Book on Amazon ($16) ↗</a>
-          <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-semibold">📙 Middle School Workbook on Amazon ($16) ↗</a>
-        </div>
-        <div class="text-slate-300 leading-relaxed">
-          <strong>📖 Aligned Book Story:</strong> <a href="../../manuals/sc6/05-fractions-decimals-ratios/" class="text-sky-400 hover:underline">The Pharaoh's Bakery, Pythagoras's Strings & Why Towers Stand 84.0 mm Tall (SC-6 Ch. 5)</a><br>
-          <strong>📄 Printable Lesson Packets:</strong> <a href="../../downloads/curriculum_units/stackcalc_curriculum_unit_06.pdf" class="text-emerald-400 hover:underline font-semibold">Print Unit 06 Fraction Studio 4-Page Packet (PDF)</a> &bull; <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_02.pdf" class="text-amber-300 hover:underline font-semibold">Print Big Ideas Unit 2 (Fractions & Decimals PDF)</a>
-        </div>
-      </div>
-        <div class="text-slate-300 leading-relaxed">
-          <strong>📖 Aligned Book Story:</strong> <a href="../../manuals/sc6/05-fractions-decimals-ratios/" class="text-sky-400 hover:underline">The Pharaoh's Bakery, Pythagoras's Strings & Why Towers Stand 84.0 mm Tall (SC-6 Ch. 5)</a><br>
-          <strong>📄 Printable Lesson Packets:</strong> <a href="../../downloads/curriculum_units/stackcalc_curriculum_unit_06.pdf" class="text-emerald-400 hover:underline font-semibold">Print Unit 06 Fraction Studio 4-Page Packet (PDF)</a> &bull; <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_02.pdf" class="text-amber-300 hover:underline font-semibold">Print Big Ideas Unit 2 (Fractions & Decimals PDF)</a>
-        </div>
-      </div>
-
-      <!-- Quick Subpage Links -->
-      <div class="flex flex-wrap gap-2 my-4">
-        <a href="assembly/" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-sky-400 border border-sky-500/30 hover:bg-slate-700">
-          &bull; Step-by-Step Assembly Guide &amp; Video &rarr;
+      <!-- Navigation & Editions Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 my-4 font-mono text-xs">
+        <a href="assembly/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Assembly Guide</span>
+          <span class="text-sky-400">&rarr;</span>
         </a>
-        <a href="lessons/" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-emerald-400 border border-emerald-500/30 hover:bg-slate-700">
-          &bull; Classroom Curriculum (Lessons 1 &amp; 2) &rarr;
+        <a href="lessons/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Curriculum Lessons</span>
+          <span class="text-emerald-400">&rarr;</span>
+        </a>
+        <a href="../../manuals/sc6/05-fractions-decimals-ratios/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Aligned Chapter</span>
+          <span class="text-amber-400">&rarr;</span>
+        </a>
+        <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>SC-6 Book (Amazon)</span>
+          <span class="text-[#FF9900]">↗</span>
+        </a>
+        <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Workbook (Amazon)</span>
+          <span class="text-[#FF9900]">↗</span>
+        </a>
+        <a href="#specifications" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Technical Specs</span>
+          <span class="text-slate-400">&darr;</span>
         </a>
       </div>
 
@@ -393,167 +389,79 @@ hide:
   </section>
 
   <!-- ==========================================================================
-       SECTION: FROM THE TEACHER'S MANUAL (REPRODUCIBLE MANIPULATIVE LAB SHEET)
+       SECTION: PROPORTIONAL ARCHITECTURE & PEDAGOGY
        ========================================================================== -->
-  <section class="ec-section">
-    <div class="flex items-center justify-between mb-3">
+  <section class="ec-section" id="pedagogy">
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
       <div>
-        <span class="text-xs font-mono uppercase text-sky-400 font-bold tracking-wider">&bull; Classroom Pedagogy &bull; Concrete-Representational-Abstract (CRA)</span>
-        <h2 class="ec-section-title m-0">From the Teacher's Manual: Unit Lab Sheet</h2>
+        <span class="text-xs font-mono uppercase text-sky-400 font-bold tracking-wider">// PROPORTIONAL TACTILE PEDAGOGY</span>
+        <h2 class="ec-section-title m-0">The 84.0 mm Harmonic Datum</h2>
       </div>
-      <span class="ec-pill ec-pill-category">Unit 01 &bull; Fractions</span>
+      <span class="text-xs font-mono text-slate-400 border border-white/10 px-2 py-0.5 rounded">Self-Correcting Equivalence</span>
     </div>
     <p class="ec-section-subtitle">
-      Most traditional math teacher manuals treat manipulatives as optional afterthoughts. In the StackCalc curriculum, every manipulative unit includes a dedicated, reproducible lab sheet connecting hands-on tactile geometry directly to hardware calculator execution.
+      Instead of arbitrary plastic circles or flat tiles, Fraction Studio uses precision inverse heights calibrated against an 84.0 mm whole tower. When two fraction stacks are equal in value, they align flush down to the sub-millimeter level on any flat desk.
     </p>
 
-    <!-- Authentic Spiral-Bound Workbook Page Facsimile -->
-    <div class="workbook-lab-container">
-      <div class="workbook-spine-punches">
-        <div class="workbook-ring-hole"></div>
-        <div class="workbook-ring-hole"></div>
-        <div class="workbook-ring-hole"></div>
-        <div class="workbook-ring-hole"></div>
-        <div class="workbook-ring-hole"></div>
+    <!-- The 3 Pillars of Proportional Intuition -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+      <div class="p-5 rounded-xl bg-slate-900/60 border border-white/10 flex flex-col justify-between">
+        <div>
+          <div class="font-mono text-xs text-sky-400 font-bold uppercase tracking-wider mb-2">01 / The Harmonic Height</div>
+          <h3 class="text-base font-bold text-white mb-2">Why 84.0 mm?</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            84 is the smallest integer divisible by \(1, 2, 3, 4, 6, 7,\) and \(12\). Every tower segment has an integer or clean half-millimeter height, creating exact geometric alignment without rounding error.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-white/10 font-mono text-[11px] text-slate-500">
+          Clean rational proportions
+        </div>
       </div>
 
-      <div class="workbook-body">
-        <div class="workbook-header">
-          <div class="workbook-meta-strip">
-            <span>STACKCALC MATH LABS // SERIES 01</span>
-            <span>STANDARDS: CCSS 3.NF.A.1 &bull; 4.NF.A.2 &bull; TEKS 111.5.b.3</span>
-            <span>PERIOD: 45 MIN STATION</span>
-          </div>
-          <h3 class="workbook-title">Lab 01: Proportional Equivalence &amp; RPN Fraction Arithmetic</h3>
-          <p class="workbook-objective">
-            <strong>Investigation Goal:</strong> Prove fractional equivalence through tactile stacking heights against the 84.0mm Whole datum. Discover common denominators visually, then execute exact fraction and decimal conversions on the SC-32 RPN stack.
+      <div class="p-5 rounded-xl bg-slate-900/60 border border-white/10 flex flex-col justify-between">
+        <div>
+          <div class="font-mono text-xs text-emerald-400 font-bold uppercase tracking-wider mb-2">02 / Self-Correcting Touch</div>
+          <h3 class="text-base font-bold text-white mb-2">Instant Visual Proof</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Common student misconceptions (such as adding across denominators: \(\frac{1}{3} + \frac{1}{6} = \frac{2}{9}\)) instantly fail physically: two \(1/9\) towers stand at 18.66 mm, glaringly shorter than the 42.0 mm half datum.
           </p>
         </div>
+        <div class="mt-4 pt-3 border-t border-white/10 font-mono text-[11px] text-slate-500">
+          Zero teacher reprimand needed
+        </div>
+      </div>
 
-        <!-- Phase 1: Concrete Spatial Exploration -->
-        <div class="workbook-phase-card">
-          <div class="workbook-phase-title workbook-phase-1">
-            <span>&square;</span> PHASE 1: CONCRETE SPATIAL EXPLORATION (MANIPULATIVE STAGE)
-          </div>
-          <p class="text-xs text-slate-300 mb-2">
-            Stand the 84.0mm Whole (\(1/1\)) block on the study table. Stack two \(1/2\) blocks side-by-side; notice they align perfectly flush with the top datum. Now explore alternative combinations that match the same height:
+      <div class="p-5 rounded-xl bg-slate-900/60 border border-white/10 flex flex-col justify-between">
+        <div>
+          <div class="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider mb-2">03 / Hardware Stack Pairing</div>
+          <h3 class="text-base font-bold text-white mb-2">Concrete to Postfix</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Stack two segments on the desk, then verify on the SC-32 or SC-6: <code class="text-white font-mono bg-white/10 px-1 py-0.5 rounded">1 [ENTER] 3 [/] 1 [ENTER] 6 [/] [+]</code> displays <code class="text-emerald-400 font-mono">0.5000</code>, and pressing <code class="text-white font-mono bg-white/10 px-1 py-0.5 rounded">d/c</code> renders <code class="text-emerald-400 font-mono">1/2</code>.
           </p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs font-mono text-slate-300">
-            <div class="p-2 bg-slate-900/60 rounded border border-slate-800">
-              <strong class="text-sky-400 block mb-0.5">Tower A: Binary Halves</strong>
-              Two \(1/2\) blocks (\(42.0\text{ mm} \times 2 = 84.0\text{ mm}\)).
-            </div>
-            <div class="p-2 bg-slate-900/60 rounded border border-slate-800">
-              <strong class="text-amber-400 block mb-0.5">Tower B: Mixed Thirds &amp; Sixths</strong>
-              One \(1/3\) block + two \(1/6\) blocks (\(28.0 + 28.0 = 56.0 = 2/3\)).
-            </div>
-            <div class="p-2 bg-slate-900/60 rounded border border-slate-800">
-              <strong class="text-emerald-400 block mb-0.5">Tower C: Octave Quarters</strong>
-              Four \(1/4\) blocks (\(21.0\text{ mm} \times 4 = 84.0\text{ mm}\)).
-            </div>
-          </div>
         </div>
+        <div class="mt-4 pt-3 border-t border-white/10 font-mono text-[11px] text-slate-500">
+          Seamless arithmetic transition
+        </div>
+      </div>
+    </div>
 
-        <!-- Phase 2: Structured Observation Table -->
-        <div class="workbook-phase-card">
-          <div class="workbook-phase-title workbook-phase-2">
-            <span>&equiv;</span> PHASE 2: REPRESENTATIONAL DATA &amp; OBSERVATION TABLE
-          </div>
-          <table class="workbook-table">
-            <thead>
-              <tr>
-                <th>Fraction Stack Formula</th>
-                <th>Measured Height (mm)</th>
-                <th>Comparison to 84.0mm Datum</th>
-                <th>Simplified Fraction</th>
-                <th>Decimal Value</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="font-mono text-cyan-300">\(\frac{1}{2} + \frac{1}{4} + \frac{1}{4}\)</td>
-                <td class="font-mono">\(42.0 + 21.0 + 21.0 = 84.0\)</td>
-                <td class="font-mono text-emerald-400 font-bold">Flush with Whole (1.0)</td>
-                <td class="font-mono font-bold">\(1\)</td>
-                <td class="font-mono">\(1.0000\)</td>
-              </tr>
-              <tr>
-                <td class="font-mono text-cyan-300">\(\frac{1}{3} + \frac{1}{6}\)</td>
-                <td class="font-mono">\(28.0 + 14.0 = 42.0\)</td>
-                <td class="font-mono text-emerald-400 font-bold">Flush with 1/2 Block</td>
-                <td class="font-mono font-bold">\(\frac{1}{2}\)</td>
-                <td class="font-mono">\(0.5000\)</td>
-              </tr>
-              <tr>
-                <td class="font-mono text-cyan-300">\(\frac{1}{4} + \frac{1}{8} + \frac{1}{8}\)</td>
-                <td class="font-mono">\(21.0 + 10.5 + 10.5 = 42.0\)</td>
-                <td class="font-mono text-emerald-400 font-bold">Flush with 1/2 Block</td>
-                <td class="font-mono font-bold">\(\frac{1}{2}\)</td>
-                <td class="font-mono">\(0.5000\)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Phase 3: Abstract Verification via SC-32 RPN Calculator -->
-        <div class="workbook-phase-card">
-          <div class="workbook-phase-title workbook-phase-3">
-            <span>&Delta;</span> PHASE 3: ABSTRACT VERIFICATION (SC-32 CALCULATOR EXECUTION)
-          </div>
-          <p class="text-xs text-slate-300 mb-2">
-            Calculate the exact sum of \(\frac{1}{3} + \frac{1}{6}\) on the SC-32 RPN stack, then convert the decimal result to an exact fraction:
-          </p>
-          <div class="space-y-2">
-            <div>
-              <span class="text-[11px] font-mono text-slate-400 block">1. Calculate \(\frac{1}{3} + \frac{1}{6}\) on the RPN Stack:</span>
-              <div class="calc-keystroke-row">
-                <span class="calc-key">1</span>
-                <span class="calc-key calc-key-enter">ENTER</span>
-                <span class="calc-key">3</span>
-                <span class="calc-key calc-key-op">&divide;</span>
-                <span class="calc-key">1</span>
-                <span class="calc-key calc-key-enter">ENTER</span>
-                <span class="calc-key">6</span>
-                <span class="calc-key calc-key-op">&divide;</span>
-                <span class="calc-key calc-key-op">+</span>
-                <span class="text-xs text-emerald-400 ml-2 font-bold">&rarr; X-Register: 0.5000</span>
-              </div>
-            </div>
-            <div>
-              <span class="text-[11px] font-mono text-slate-400 block">2. Convert Decimal to Exact Simplified Fraction:</span>
-              <div class="calc-keystroke-row">
-                <span class="calc-key calc-key-func">d/c</span>
-                <span class="text-xs text-emerald-400 ml-2 font-bold">&rarr; LCD Displays: 1/2</span>
-              </div>
-            </div>
-          </div>
-          <div class="calc-stack-display mt-3">
-            <span>STACK X: 1/2 (EXACT FRACTION)</span>
-            <span>STACK Y: 0.3333 (1/3 TERM)</span>
-            <span>PHYSICAL HEIGHT: 42.0 mm</span>
-            <span class="text-emerald-400 font-bold">&check; MATCHES 1/2 TOWER</span>
-          </div>
-        </div>
-
-        <!-- Teacher Facilitation Box -->
-        <div class="workbook-teacher-box">
-          <strong>Teacher Diagnostic Note:</strong> Students frequently commit the "Add Across Denominators" error: \(\frac{1}{3} + \frac{1}{6} = \frac{2}{9}\). Have the student place two \(1/9\) blocks next to the tower (\(9.33 \times 2 = 18.66\text{ mm}\)). They will immediately see that \(18.66\text{ mm}\) does NOT match the physical \(42.0\text{ mm}\) height, correcting the misconception visually without teacher reprimand.
-        </div>
-
-        <!-- Download & Order Row -->
-        <div class="workbook-actions">
-          <div class="text-xs text-slate-400">
-            <strong>Sample Page 08</strong> from the 36-page <em>StackCalc RPN Math Labs Student Workbook</em>.
-          </div>
-          <div class="flex gap-2">
-            <a href="/downloads/stackcalc-curriculum-sample-v0.2.0.pdf" class="ec-btn-secondary text-xs">
-              &darr; Download Free Lab 01 Worksheet (PDF)
-            </a>
-            <a href="/products/curriculum-and-decks/" class="ec-btn-primary text-xs">
-              Order Complete 36-Page Workbook ($24.00) &rarr;
-            </a>
-          </div>
-        </div>
+    <!-- Pedagogy & Documentation Companion Strip -->
+    <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/10 font-mono text-xs">
+      <div class="text-slate-300">
+        Looking for printable student investigation packets, lesson plans, or the textbook chapter?
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="lessons/" class="text-sky-400 hover:text-sky-300 transition font-bold">
+          View Fraction Lessons &rarr;
+        </a>
+        <span class="text-white/20">&bull;</span>
+        <a href="../../manuals/sc6/05-fractions-decimals-ratios/" class="text-slate-300 hover:text-white transition">
+          Chapter 5: Proportional Strings &rarr;
+        </a>
+        <span class="text-white/20">&bull;</span>
+        <a href="../../downloads/" class="text-amber-400 hover:text-amber-300 transition">
+          Open 3MF Blueprints &rarr;
+        </a>
       </div>
     </div>
   </section>
@@ -693,10 +601,6 @@ hide:
         <tr>
           <td class="ec-spec-k">Curriculum Standards</td>
           <td class="ec-spec-v">Common Core: CCSS.MATH.CONTENT.3.NF.A.1, 3.NF.A.3 (Equivalence), 4.NF.A.1, 5.NF.A.1 &bull; TEKS: 111.5.b.3, 111.6.b.3 &bull; Grades 2&ndash;6</td>
-        </tr>
-        <tr>
-          <td class="ec-spec-k">Procurement Classification</td>
-          <td class="ec-spec-v">UNSPSC: 60101700 (Math Manipulatives) &bull; Eligible for Federal Title I and Title IV STEM Grant Funding</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Stacking Profile</td>

@@ -120,37 +120,19 @@ hide:
       </div>
     </div>
 
-    <!-- Institutional School PO Banner & Free Curriculum Lead Magnet -->
-    <div style="margin-top: 1rem; margin-bottom: 1.25rem; padding: 1.25rem 1.5rem; background: linear-gradient(135deg, rgba(255, 191, 0, 0.1), rgba(17, 20, 26, 0.95)); border: 1px solid rgba(255, 191, 0, 0.35); border-radius: 12px;">
-      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
-        <div>
-          <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #FFBF00; text-transform: uppercase;">// INSTITUTIONAL &amp; DISTRICT PROCUREMENT</span>
-          <h3 style="margin: 0.25rem 0; font-size: 1.15rem; font-weight: 800; color: #FFFFFF;">Equipping a Math Lab, Department, or School Co-op?</h3>
-          <p style="margin: 0; font-size: 0.82rem; color: #CBD5E1; max-width: 650px;">
-            We accept standard school purchase orders (Net-30 payment terms), provide signed W-9s, and offer volume tiered classroom discounts. Includes our <strong>Perpetual Reproduction License</strong>—print unlimited student lab workbooks forever with zero recurring software fees.
-          </p>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
-          <a href="../#school-po" style="padding: 0.55rem 1rem; border-radius: 6px; background-color: #FFBF00; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">INTERACTIVE PO FORM &rarr;</a>
-          <a href="../curriculum/worksheets/" style="padding: 0.55rem 1rem; border-radius: 6px; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">120 STATION WORKSHEETS &rarr;</a>
-          <a href="../curriculum/uil-competition/" style="padding: 0.55rem 1rem; border-radius: 6px; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">24 UIL EXAMS &amp; KEYS &rarr;</a>
-        </div>
+    <!-- Aesthetic Overview Architecture Strip -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; margin-top: 1.25rem; margin-bottom: 1.5rem; font-family: 'Space Mono', monospace; font-size: 0.75rem;">
+      <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1rem;">
+        <span style="color: #38BDF8; font-weight: 700; letter-spacing: 0.04em;">01 &bull; HARDWARE INSTRUMENTS</span>
+        <div style="color: #94A3B8; font-size: 0.76rem; margin-top: 0.35rem; line-height: 1.4;">Bare-metal RP2350 silicon, tactile microswitches, zero soldering required.</div>
       </div>
-    </div>
-
-    <!-- Tri-Tier Acquisition Architecture Banner -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem; font-family: 'Space Mono', monospace; font-size: 0.75rem;">
-      <div style="background: #11141A; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 0.85rem;">
-        <span style="color: #38BDF8; font-weight: 700;">TIER 1 &bull; PHYSICAL INSTRUMENTS &amp; KITS ($18–$89)</span>
-        <div style="color: #E2E6EE; font-size: 0.78rem; margin-top: 0.25rem;">Classroom manipulatives &amp; pre-soldered Maker Kits. Ships in 48 hours via Etsy.</div>
+      <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1rem;">
+        <span style="color: #FFBF00; font-weight: 700; letter-spacing: 0.04em;">02 &bull; TACTILE MANIPULATIVES</span>
+        <div style="color: #94A3B8; font-size: 0.76rem; margin-top: 0.35rem; line-height: 1.4;">Proportional biopolymer blocks with debossed geometry and 42mm Gridfinity fit.</div>
       </div>
-      <div style="background: #11141A; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 0.85rem;">
-        <span style="color: #FFBF00; font-weight: 700;">TIER 2 &bull; MAKER PACKS ($15–$25)</span>
-        <div style="color: #E2E6EE; font-size: 0.78rem; margin-top: 0.25rem;">PCBs, laser-foamed keycaps, fasteners, and silicone pads.</div>
-      </div>
-      <div style="background: #11141A; border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 0.85rem;">
-        <span style="color: #10B981; font-weight: 700;">TIER 3 &bull; FREE 3MFs ($0)</span>
-        <div style="color: #E2E6EE; font-size: 0.78rem; margin-top: 0.25rem;">100% free open-source STLs &amp; 3MFs on Printables.</div>
+      <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1rem;">
+        <span style="color: #10B981; font-weight: 700; letter-spacing: 0.04em;">03 &bull; BOOKS &amp; 3MF BLUEPRINTS</span>
+        <div style="color: #94A3B8; font-size: 0.76rem; margin-top: 0.35rem; line-height: 1.4;">Paperback/Hardcover reference manuals, plus 100% free open-source STLs.</div>
       </div>
     </div>
 
@@ -1408,64 +1390,38 @@ hide:
   <!-- ==========================================================================
        SECTION: THE COMPETITIVE POSITIONING MATRIX (POSTFIX VS. IN-FIX)
        ========================================================================== -->
-  <section class="ec-section" style="margin-top: 3.5rem; margin-bottom: 3.5rem;">
+  <!-- ==========================================================================
+       SECTION: THE POSTFIX MANIFESTO (ARCHITECTURE & PHILOSOPHY)
+       ========================================================================== -->
+  <section class="ec-section" style="margin-top: 4rem; margin-bottom: 4rem;">
     <div class="te-section-bar">
       <div>
-        <h2 class="te-section-title">The Architecture of Understanding: Why Postfix Outperforms In-Fix</h2>
-        <p class="text-sm text-gray-400 m-0">A 5-dimension objective comparison against legacy classroom calculators and commodity manipulatives.</p>
+        <h2 class="te-section-title">The Architecture of Understanding: Postfix vs. In-Fix</h2>
+        <p class="text-sm text-gray-400 m-0">Why physical stacking and Reverse Polish Notation outperform legacy calculating tools.</p>
       </div>
-      <span class="te-section-badge">OBJECTIVE CRO RUBRIC AUDIT</span>
+      <span class="te-section-badge">DESIGN MANIFESTO</span>
     </div>
 
-    <div style="background: #11141A; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; overflow-x: auto; margin-top: 1.5rem; box-shadow: 0 16px 36px rgba(0,0,0,0.6);">
-      <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left; min-width: 680px;">
-        <thead>
-          <tr style="background: #0E1015; border-bottom: 1px solid rgba(255, 255, 255, 0.1); font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #94A3B8;">
-            <th style="padding: 1rem 1.25rem;">DIMENSION</th>
-            <th style="padding: 1rem 1.25rem;">LEGACY IN-FIX CALCULATORS</th>
-            <th style="padding: 1rem 1.25rem;">COMMODITY SCHOOL PLASTICS</th>
-            <th style="padding: 1rem 1.25rem;">TRADITIONAL SENSORY SETS</th>
-            <th style="padding: 1rem 1.25rem; background: rgba(56, 189, 248, 0.08); border-left: 2px solid #38BDF8; border-right: 2px solid #38BDF8; color: #38BDF8; font-weight: 800;">STACKCALC ECOSYSTEM</th>
-          </tr>
-        </thead>
-        <tbody style="color: #CBD5E1;">
-          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.06);">
-            <td style="padding: 1rem 1.25rem; font-family: 'Space Mono', monospace; font-weight: 700; color: #FFFFFF;">Logic System</td>
-            <td style="padding: 1rem 1.25rem; color: #94A3B8;">In-fix parentheses soup, hidden order of operations, syntax errors</td>
-            <td style="padding: 1rem 1.25rem; color: #94A3B8;">None (disconnected toys without computational link)</td>
-            <td style="padding: 1rem 1.25rem; color: #94A3B8;">None (rote sensorial isolation)</td>
-            <td style="padding: 1rem 1.25rem; background: rgba(56, 189, 248, 0.08); border-left: 2px solid #38BDF8; border-right: 2px solid #38BDF8; font-weight: 700; color: #FFFFFF;">Pure RPN: Zero parentheses. 1:1 concrete block to hardware stack parity.</td>
-          </tr>
-          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.06);">
-            <td style="padding: 1rem 1.25rem; font-family: 'Space Mono', monospace; font-weight: 700; color: #FFFFFF;">Durability / CMF</td>
-            <td style="padding: 1rem 1.25rem; color: #94A3B8;">Flimsy injection plastic, mushy membrane keys, battery acid leaks</td>
-            <td style="padding: 1rem 1.25rem; color: #94A3B8;">Thin brittle polystyrene, pastel colors that chip</td>
-            <td style="padding: 1rem 1.25rem; color: #94A3B8;">Softwood, chips easily, moisture expansion</td>
-            <td style="padding: 1rem 1.25rem; background: rgba(56, 189, 248, 0.08); border-left: 2px solid #38BDF8; border-right: 2px solid #38BDF8; font-weight: 700; color: #FFFFFF;">High-rigidity technical polymers (PETG/PLA 2.0+), tactile microswitches with sculpted TPU keys.</td>
-          </tr>
-          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.06);">
-            <td style="padding: 1rem 1.25rem; font-family: 'Space Mono', monospace; font-weight: 700; color: #FFFFFF;">Modularity &amp; Storage</td>
-            <td style="padding: 1rem 1.25rem; color: #94A3B8;">Monolithic brick; zero desk organization</td>
-            <td style="padding: 1rem 1.25rem; color: #94A3B8;">Loose unorganized plastic tubs; pieces scatter across carpet</td>
-            <td style="padding: 1rem 1.25rem; color: #94A3B8;">Bulky wooden trays requiring dedicated storage shelves</td>
-            <td style="padding: 1rem 1.25rem; background: rgba(56, 189, 248, 0.08); border-left: 2px solid #38BDF8; border-right: 2px solid #38BDF8; font-weight: 700; color: #FFFFFF;">100% Gridfinity compatible standard. Lid doubles as a desk workbench.</td>
-          </tr>
-          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.06);">
-            <td style="padding: 1rem 1.25rem; font-family: 'Space Mono', monospace; font-weight: 700; color: #FFFFFF;">Software Subscriptions</td>
-            <td style="padding: 1rem 1.25rem; color: #94A3B8;">Paid emulator licenses ($15/seat/year recurring school fees)</td>
-            <td style="padding: 1rem 1.25rem; color: #94A3B8;">Fragile companion iPad apps with ads and notifications</td>
-            <td style="padding: 1rem 1.25rem; color: #94A3B8;">None</td>
-            <td style="padding: 1rem 1.25rem; background: rgba(56, 189, 248, 0.08); border-left: 2px solid #38BDF8; border-right: 2px solid #38BDF8; font-weight: 700; color: #FFFFFF;">Zero subscriptions. Perpetual classroom reproduction license included.</td>
-          </tr>
-          <tr>
-            <td style="padding: 1rem 1.25rem; font-family: 'Space Mono', monospace; font-weight: 700; color: #FFFFFF;">Repairability</td>
-            <td style="padding: 1rem 1.25rem; color: #94A3B8;">Proprietary, non-repairable, landfill bound</td>
-            <td style="padding: 1rem 1.25rem; color: #94A3B8;">Discard and re-purchase entire kit when parts vanish</td>
-            <td style="padding: 1rem 1.25rem; color: #94A3B8;">Costly hand-carved replacement pieces with long lead times</td>
-            <td style="padding: 1rem 1.25rem; background: rgba(56, 189, 248, 0.08); border-left: 2px solid #38BDF8; border-right: 2px solid #38BDF8; font-weight: 700; color: #FFFFFF;">100% Open Source. Free downloadable 3MFs to 3D print spares for pennies.</td>
-          </tr>
-        </tbody>
-      </table>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.75rem;">
+      <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #EF4444; font-weight: 700; text-transform: uppercase; margin-bottom: 0.75rem;">// LEGACY IN-FIX COMPUTING</div>
+        <ul style="list-style: none; margin: 0; padding: 0; font-size: 0.88rem; color: #94A3B8; line-height: 1.6;">
+          <li style="margin-bottom: 0.85rem;"><strong style="color: #E2E8F0;">Parentheses Traps:</strong> Formulas are entered as abstract strings with invisible precedence rules and constant syntax errors.</li>
+          <li style="margin-bottom: 0.85rem;"><strong style="color: #E2E8F0;">Ephemeral Black Boxes:</strong> Numbers vanish behind plastic membranes; intermediate states cannot be inspected or verified.</li>
+          <li style="margin-bottom: 0.85rem;"><strong style="color: #E2E8F0;">Disposable Hardware:</strong> Thin injection polystyrene, non-repairable assemblies, and battery leaks destined for landfills.</li>
+          <li><strong style="color: #E2E8F0;">Recurring Software Rent:</strong> Cloud apps and paid emulator licenses ($15/seat/year) laden with notifications and ads.</li>
+        </ul>
+      </div>
+
+      <div style="background: rgba(56, 189, 248, 0.04); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 1.5rem;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #38BDF8; font-weight: 700; text-transform: uppercase; margin-bottom: 0.75rem;">// THE STACKCALC HARDWARE PHILOSOPHY</div>
+        <ul style="list-style: none; margin: 0; padding: 0; font-size: 0.88rem; color: #E2E8F0; line-height: 1.6;">
+          <li style="margin-bottom: 0.85rem;"><strong style="color: #38BDF8;">Pure Physical Postfix:</strong> Zero parentheses. Numbers are pushed onto visible shelves; operations consume them in order of physical causality.</li>
+          <li style="margin-bottom: 0.85rem;"><strong style="color: #38BDF8;">1:1 Spatial Mapping:</strong> Physical manipulative blocks on your desk map directly to the 4-line hardware LCD stack.</li>
+          <li style="margin-bottom: 0.85rem;"><strong style="color: #38BDF8;">Heirloom Craftsmanship:</strong> Precision biopolymer with debossed geometry, snap-dome microswitches, and Shore 90A TPU keys.</li>
+          <li><strong style="color: #38BDF8;">Zero Subscriptions, 100% Repairable:</strong> Buy once, own forever. 100% open-source 3MF files to print replacement parts anytime.</li>
+        </ul>
+      </div>
     </div>
 
     <div style="margin-top: 1.5rem; text-align: center;">

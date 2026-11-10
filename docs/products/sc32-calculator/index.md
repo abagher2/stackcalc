@@ -231,22 +231,31 @@ hide:
         </a>
       </div>
 
-      <!-- Quick Subpage Links -->
-      <div class="flex flex-wrap gap-2 my-4">
-        <a href="assembly/" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-sky-400 border border-sky-500/30 hover:bg-slate-700">
-          &bull; Step-by-Step Dovetail Assembly Guide &amp; Video &rarr;
+      <!-- Quick Navigation & Documentation -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 my-4 font-mono text-xs">
+        <a href="assembly/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Assembly Guide</span>
+          <span class="text-sky-400">&rarr;</span>
         </a>
-        <a href="lessons/" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-emerald-400 border border-emerald-500/30 hover:bg-slate-700">
-          &bull; RPN Operational Stack Lessons (1 &amp; 2) &rarr;
+        <a href="lessons/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Stack Lessons</span>
+          <span class="text-emerald-400">&rarr;</span>
         </a>
-        <a href="../../manuals/#sc-32-scientific" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-amber-400 border border-amber-500/30 hover:bg-slate-700">
-          &bull; Reference Manual &amp; TOC Preview &rarr;
+        <a href="../../manuals/#sc-32-scientific" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Manual &amp; TOC</span>
+          <span class="text-amber-400">&rarr;</span>
         </a>
-        <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-[#FF9900]/20 text-[#FF9900] border border-[#FF9900]/40 hover:bg-[#FF9900]/30">
-          &bull; Order Book (Paperback $16) ↗
+        <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Paperback Book</span>
+          <span class="text-[#FF9900]">↗</span>
         </a>
-        <a href="https://link.amazon/B09AnTIQI" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-[#FF9900]/20 text-[#FF9900] border border-[#FF9900]/40 hover:bg-[#FF9900]/30">
-          &bull; Order Book (Hardcover) ↗
+        <a href="https://link.amazon/B09AnTIQI" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Hardcover Book</span>
+          <span class="text-[#FF9900]">↗</span>
+        </a>
+        <a href="#specifications" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Technical Specs</span>
+          <span class="text-slate-400">&darr;</span>
         </a>
       </div>
 
@@ -403,190 +412,111 @@ hide:
   </section>
 
   <!-- ==========================================================================
-       SECTION: FROM THE TEACHER'S MANUAL (REPRODUCIBLE RPN STACK LAB SHEET)
+       SECTION: THE POSTFIX ARCHITECTURE & PEDAGOGY
        ========================================================================== -->
-  <section class="ec-section">
-    <div class="flex items-center justify-between mb-3">
+  <section class="ec-section" id="pedagogy">
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
       <div>
-        <span class="text-xs font-mono uppercase text-sky-400 font-bold tracking-wider">&bull; Classroom Pedagogy &bull; Concrete-Representational-Abstract (CRA)</span>
-        <h2 class="ec-section-title m-0">From the Teacher's Manual: Unit Lab Sheet</h2>
+        <span class="text-xs font-mono uppercase text-sky-400 font-bold tracking-wider">// POSTFIX ARCHITECTURAL PEDAGOGY</span>
+        <h2 class="ec-section-title m-0">Order of Operations Made Visible</h2>
       </div>
-      <span class="ec-pill ec-pill-category">Unit 00 &bull; RPN Stack Mechanics</span>
+      <span class="text-xs font-mono text-slate-400 border border-white/10 px-2 py-0.5 rounded">RPN Stack Mechanics</span>
     </div>
     <p class="ec-section-subtitle">
-      Most traditional math teacher manuals treat calculators as black-box answer boxes. In the StackCalc curriculum, the SC-32 RPN architecture is an active pedagogical instrument that makes order of operations, stack registers, and intermediate states visible at every keystroke.
+      Traditional calculators act as opaque black boxes that hide evaluation order behind nested parentheses. The SC-32 makes mathematical dataflow tangible: numbers enter a four-register operational stack, operators act on physical pairs, and intermediate results stay visible at every single keystroke.
     </p>
 
-    <!-- Authentic Spiral-Bound Workbook Page Facsimile -->
-    <div class="workbook-lab-container">
-      <div class="workbook-spine-punches">
-        <div class="workbook-ring-hole"></div>
-        <div class="workbook-ring-hole"></div>
-        <div class="workbook-ring-hole"></div>
-        <div class="workbook-ring-hole"></div>
-        <div class="workbook-ring-hole"></div>
+    <!-- The 3 Pillars of Postfix Intuition -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+      <div class="p-5 rounded-xl bg-slate-900/60 border border-white/10 flex flex-col justify-between">
+        <div>
+          <div class="font-mono text-xs text-sky-400 font-bold uppercase tracking-wider mb-2">01 / Concrete Stack Dynamics</div>
+          <h3 class="text-base font-bold text-white mb-2">Push &amp; Consume</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Values are pushed onto registers \(X, Y, Z, T\). Pressing <code class="text-white font-mono bg-white/10 px-1 py-0.5 rounded">ENTER</code> lifts the stack; pressing an operator consumes the bottom two operands and drops the stack in real time.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-white/10 font-mono text-[11px] text-slate-500">
+          Enforces structural mental models
+        </div>
       </div>
 
-      <div class="workbook-body">
-        <div class="workbook-header">
-          <div class="workbook-meta-strip">
-            <span>STACKCALC MATH LABS // SERIES 00</span>
-            <span>STANDARDS: CCSS MP.1 &bull; CCSS MP.5 &bull; TEKS 111.39.c.1</span>
-            <span>PERIOD: 45 MIN STATION</span>
-          </div>
-          <h3 class="workbook-title">Lab 00: Four-Register Stack Dynamics &amp; Parenthesis Inversion</h3>
-          <p class="workbook-objective">
-            <strong>Investigation Goal:</strong> Trace the physical flow of data through the 4-register operational stack (\(X, Y, Z, T\)). Prove mathematically how Reverse Polish Notation evaluates complex rational expressions without parentheses, eliminating algebraic precedence traps.
+      <div class="p-5 rounded-xl bg-slate-900/60 border border-white/10 flex flex-col justify-between">
+        <div>
+          <div class="font-mono text-xs text-emerald-400 font-bold uppercase tracking-wider mb-2">02 / Zero Parentheses</div>
+          <h3 class="text-base font-bold text-white mb-2">Inside-Out Evaluation</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Complex rational expressions like \(\frac{(14 + 6) \times (38 - 13)}{25}\) resolve naturally from inside out in 11 tactile strokes. No parenthesis count tracking, no operator precedence traps, no syntax errors.
           </p>
         </div>
+        <div class="mt-4 pt-3 border-t border-white/10 font-mono text-[11px] text-slate-500">
+          Eliminates syntax anxiety
+        </div>
+      </div>
 
-        <!-- Phase 1: Concrete Spatial Exploration -->
-        <div class="workbook-phase-card">
-          <div class="workbook-phase-title workbook-phase-1">
-            <span>&square;</span> PHASE 1: CONCRETE SPATIAL EXPLORATION (STACK TOKEN DYNAMICS)
-          </div>
-          <p class="text-xs text-slate-300 mb-2">
-            Arrange 4 tactile manipulative tokens on the desk labeled \(X\) (Active Entry), \(Y\) (Operator Partner), \(Z\) (Buffer), and \(T\) (Top Register). Model the mechanical "Stack Lift" and "Stack Drop":
+      <div class="p-5 rounded-xl bg-slate-900/60 border border-white/10 flex flex-col justify-between">
+        <div>
+          <div class="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider mb-2">03 / Bare-Metal Feedback</div>
+          <h3 class="text-base font-bold text-white mb-2">Sub-Millisecond Response</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            RP2350 silicon executes mathematical primitives in microseconds with instant LCD updates and 400g snap-dome acoustic feedback. Calculations become tactile muscle memory.
           </p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs font-mono text-slate-300">
-            <div class="p-2 bg-slate-900/60 rounded border border-slate-800">
-              <strong class="text-sky-400 block mb-0.5">Operation 1: The Stack Lift</strong>
-              Keying <span class="calc-key text-[10px]">ENTER</span> duplicates the \(X\) token into \(Y\), pushing previous registers up (\(Y \rightarrow Z\), \(Z \rightarrow T\)).
-            </div>
-            <div class="p-2 bg-slate-900/60 rounded border border-slate-800">
-              <strong class="text-amber-400 block mb-0.5">Operation 2: Binary Execution</strong>
-              Pressing any operator (<span class="calc-key calc-key-op text-[10px]">+</span>, <span class="calc-key calc-key-op text-[10px]">&times;</span>) consumes \(X\) and \(Y\), drops the stack, and places the result into \(X\).
-            </div>
-            <div class="p-2 bg-slate-900/60 rounded border border-slate-800">
-              <strong class="text-emerald-400 block mb-0.5">Operation 3: Zero Parentheses</strong>
-              Innermost terms evaluate immediately. Intermediate numbers remain live on the display without scratch paper or memory clearing.
-            </div>
-          </div>
         </div>
+        <div class="mt-4 pt-3 border-t border-white/10 font-mono text-[11px] text-slate-500">
+          Direct sensory verification
+        </div>
+      </div>
+    </div>
 
-        <!-- Phase 2: Structured Observation Table -->
-        <div class="workbook-phase-card">
-          <div class="workbook-phase-title workbook-phase-2">
-            <span>&equiv;</span> PHASE 2: REPRESENTATIONAL DATA &amp; STACK REGISTER TRACE
-          </div>
-          <p class="text-xs text-slate-300 mb-2">
-            Evaluate the multi-operator rational expression: \(\displaystyle \frac{(14 + 6) \times (38 - 13)}{25}\). Record each register state after every tactile keystroke:
-          </p>
-          <table class="workbook-table">
-            <thead>
-              <tr>
-                <th>Tactile Keystroke</th>
-                <th>Register X (Display)</th>
-                <th>Register Y</th>
-                <th>Register Z</th>
-                <th>Operational Meaning</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="font-mono text-cyan-300">14 [ENTER]</td>
-                <td class="font-mono">14.0000</td>
-                <td class="font-mono">14.0000</td>
-                <td class="font-mono">0.0000</td>
-                <td class="font-mono text-slate-300">Push first term into stack</td>
-              </tr>
-              <tr>
-                <td class="font-mono text-cyan-300">6 [+]</td>
-                <td class="font-mono text-emerald-400 font-bold">20.0000</td>
-                <td class="font-mono">0.0000</td>
-                <td class="font-mono">0.0000</td>
-                <td class="font-mono text-slate-300">Sum first bracket: \((14 + 6 = 20)\)</td>
-              </tr>
-              <tr>
-                <td class="font-mono text-cyan-300">38 [ENTER]</td>
-                <td class="font-mono">38.0000</td>
-                <td class="font-mono">20.0000</td>
-                <td class="font-mono">0.0000</td>
-                <td class="font-mono text-slate-300">Push second factor; preserves 20 in Y</td>
-              </tr>
-              <tr>
-                <td class="font-mono text-cyan-300">13 [-]</td>
-                <td class="font-mono text-emerald-400 font-bold">25.0000</td>
-                <td class="font-mono">20.0000</td>
-                <td class="font-mono">0.0000</td>
-                <td class="font-mono text-slate-300">Evaluate second bracket: \((38 - 13 = 25)\)</td>
-              </tr>
-              <tr>
-                <td class="font-mono text-cyan-300">[*]</td>
-                <td class="font-mono text-emerald-400 font-bold">500.0000</td>
-                <td class="font-mono">0.0000</td>
-                <td class="font-mono">0.0000</td>
-                <td class="font-mono text-slate-300">Multiply numerator factors: \((20 \times 25 = 500)\)</td>
-              </tr>
-              <tr>
-                <td class="font-mono text-cyan-300">25 [/]</td>
-                <td class="font-mono text-emerald-400 font-bold">20.0000</td>
-                <td class="font-mono">0.0000</td>
-                <td class="font-mono">0.0000</td>
-                <td class="font-mono text-slate-300">Divide by denominator: \((500 / 25 = 20)\)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+    <!-- Concrete Execution Example -->
+    <div class="p-5 rounded-xl bg-[#0c1017] border border-white/10 mb-6">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+        <span class="font-mono text-xs text-slate-300 font-bold uppercase">Example: \(\displaystyle \frac{(14 + 6) \times (38 - 13)}{25} = 20\)</span>
+        <span class="font-mono text-[11px] text-emerald-400">&check; 11 Tactile Keystrokes &bull; 0 Parentheses</span>
+      </div>
+      <div class="calc-keystroke-row mb-3">
+        <span class="calc-key">1</span>
+        <span class="calc-key">4</span>
+        <span class="calc-key calc-key-enter">ENTER</span>
+        <span class="calc-key">6</span>
+        <span class="calc-key calc-key-op">+</span>
+        <span class="calc-key">3</span>
+        <span class="calc-key">8</span>
+        <span class="calc-key calc-key-enter">ENTER</span>
+        <span class="calc-key">1</span>
+        <span class="calc-key">3</span>
+        <span class="calc-key calc-key-op">&minus;</span>
+        <span class="calc-key calc-key-op">&times;</span>
+        <span class="calc-key">2</span>
+        <span class="calc-key">5</span>
+        <span class="calc-key calc-key-op">&divide;</span>
+        <span class="text-xs text-emerald-400 ml-2 font-bold font-mono">&rarr; X: 20.0000</span>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-[11px] pt-3 border-t border-white/5 text-slate-400">
+        <div>Register X: <span class="text-white font-bold">20.0000</span></div>
+        <div>Register Y: <span class="text-slate-500">0.0000</span></div>
+        <div>Active Stack: <span class="text-sky-400">4 Registers</span></div>
+        <div>Precedence Errors: <span class="text-emerald-400 font-bold">0%</span></div>
+      </div>
+    </div>
 
-        <!-- Phase 3: Abstract Verification via SC-32 RPN Calculator -->
-        <div class="workbook-phase-card">
-          <div class="workbook-phase-title workbook-phase-3">
-            <span>&Delta;</span> PHASE 3: ABSTRACT VERIFICATION (SC-32 HARDWARE EXECUTION)
-          </div>
-          <p class="text-xs text-slate-300 mb-2">
-            Replicate the expression on your physical SC-32 calculator. Verify the snap-dome acoustic response and LCD stack status:
-          </p>
-          <div class="space-y-2">
-            <div>
-              <span class="text-[11px] font-mono text-slate-400 block">Complete 11-Keystroke Execution Sequence (Zero Parentheses):</span>
-              <div class="calc-keystroke-row">
-                <span class="calc-key">1</span>
-                <span class="calc-key">4</span>
-                <span class="calc-key calc-key-enter">ENTER</span>
-                <span class="calc-key">6</span>
-                <span class="calc-key calc-key-op">+</span>
-                <span class="calc-key">3</span>
-                <span class="calc-key">8</span>
-                <span class="calc-key calc-key-enter">ENTER</span>
-                <span class="calc-key">1</span>
-                <span class="calc-key">3</span>
-                <span class="calc-key calc-key-op">&minus;</span>
-                <span class="calc-key calc-key-op">&times;</span>
-                <span class="calc-key">2</span>
-                <span class="calc-key">5</span>
-                <span class="calc-key calc-key-op">&divide;</span>
-                <span class="text-xs text-emerald-400 ml-2 font-bold">&rarr; Result: 20.0000</span>
-              </div>
-            </div>
-          </div>
-          <div class="calc-stack-display mt-3">
-            <span>STACK X: 20.0000 (FINAL EVALUATION)</span>
-            <span>STACK Y: 0.0000 (CLEARED BUFFER)</span>
-            <span>PARENTHESES USED: 0 (ZERO SYNTAX TRAPS)</span>
-            <span class="text-emerald-400 font-bold">&check; EXACT MATCH TO ANALYTIC SOLUTION</span>
-          </div>
-        </div>
-
-        <!-- Teacher Facilitation Box -->
-        <div class="workbook-teacher-box">
-          <strong>Teacher Diagnostic Note:</strong> When solving \(\frac{(14 + 6) \times (38 - 13)}{25}\) on traditional algebraic calculators, over 35% of secondary students make precedence errors (e.g. entering \(14 + 6 \times 38 - 13 / 25\) without nested brackets), producing the incorrect answer \(222.48\). RPN enforces inside-out evaluation, cultivating authentic structural understanding of mathematical operations.
-        </div>
-
-        <!-- Download & Order Row -->
-        <div class="workbook-actions">
-          <div class="text-xs text-slate-400">
-            <strong>Sample Page 04</strong> from the 36-page <em>StackCalc RPN Math Labs Student Workbook</em>.
-          </div>
-          <div class="flex gap-2">
-            <a href="/downloads/stackcalc-curriculum-sample-v0.2.0.pdf" class="ec-btn-secondary text-xs">
-              &darr; Download Free Lab 00 Worksheet (PDF)
-            </a>
-            <a href="/products/curriculum-and-decks/" class="ec-btn-primary text-xs">
-              Order Complete 36-Page Workbook ($24.00) &rarr;
-            </a>
-          </div>
-        </div>
+    <!-- Pedagogy & Documentation Companion Strip -->
+    <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/10 font-mono text-xs">
+      <div class="text-slate-300">
+        Looking for structured student worksheets, classroom stations, or the official manual?
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="lessons/" class="text-sky-400 hover:text-sky-300 transition font-bold">
+          View Stack Lessons &rarr;
+        </a>
+        <span class="text-white/20">&bull;</span>
+        <a href="../../curriculum/" class="text-slate-300 hover:text-white transition">
+          Full Curriculum Guide &rarr;
+        </a>
+        <span class="text-white/20">&bull;</span>
+        <a href="../../manuals/#sc-32-scientific" class="text-amber-400 hover:text-amber-300 transition">
+          Owner's Manual &rarr;
+        </a>
       </div>
     </div>
   </section>
@@ -968,10 +898,6 @@ FORCE (g)
         <tr>
           <td class="ec-spec-k">Industrial Design &amp; CMF</td>
           <td class="ec-spec-v">Sliding dovetail tool-free chassis &bull; Zero fasteners or adhesives &bull; Satin matte impact-resistant PETG &bull; Custom Shore 95A keycaps &bull; Ergonomic 1.6&deg; planar wedge with anti-wobble desk pads</td>
-        </tr>
-        <tr>
-          <td class="ec-spec-k">Procurement Classification</td>
-          <td class="ec-spec-v">UNSPSC: 44101807 (Calculators), 44101800 (Electronic calculators) &bull; NIGP: 204-16 &bull; Perkins V CTE &amp; NSF STEM Grant Eligible</td>
         </tr>
       </tbody>
     </table>
