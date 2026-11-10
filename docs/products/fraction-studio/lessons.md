@@ -231,7 +231,7 @@ hide:
       </div>
       <h2 class="text-2xl font-bold text-white mb-2">Reciprocal Height Parity &amp; Multi-Notational Mapping</h2>
       <p class="text-sm text-gray-300 mb-6">
-        Every block in Fraction Studio is fabricated from tough matte biopolymer and debossed with crisp Space Mono typography. Notice the 0.5U Gridfinity bottom base plug and top socket with 45-degree lead-in chamfers for seamless freestanding alignment.
+        Every block in Fraction Studio is fabricated from tough matte polymer and debossed with crisp Space Mono typography. Notice the 0.5U Gridfinity bottom base plug and top socket with 45-degree lead-in chamfers for seamless freestanding alignment.
       </p>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">

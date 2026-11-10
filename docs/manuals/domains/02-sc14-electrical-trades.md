@@ -13,7 +13,7 @@ The catastrophic vulnerability of polyphase AC distribution when reactive impeda
 
 Around those electrical feeders, tradespeople solve coupled geometric, mechanical, and fluid problems across the plant floor. Electricians bend rigid steel and thin-wall EMT conduit around structural steel beams using right-triangle cosecant multipliers and NEC Chapter 9 cross-sectional area limits. Machinists follow Frederick Winslow Taylor's 1906 metal-cutting laws (*On the Art of Cutting Metals*) to spin carbide end-mills at the exact rotational speed, tap drill diameter, and bolt-circle chord spacing required to cut steel flanges without tool chatter. Simultaneously, instrumentation and fluid-power technicians size control valves, centrifugal pumps, and noise-immune $4\text{--}20\text{ mA}$ current loops.
 
-With geographical coordinates and access corridors established in Unit I, the second pillar of our expedition raises the physical plant: distributing three-phase electrical power through conduit raceways to power induction motors, CNC machine spindles, and industrial fluid loops. The **SC-14 Electrical Power, Conduit Geometry & Industrial Trades** calculator brings National Electrical Code wire tables, complex AC power triangles, pipe-bending trigonometry, and process-loop scaling directly to the technician's hands. Our exploration of heavy power unfolds through three industrial field cases:
+Industrial power distribution, raceway geometry, and mechanical fabrication form the working infrastructure of the modern physical plant: delivering three-phase electrical power to heavy induction motors, routing steel conduits around structural steel, and machining mechanical couplings to precise tolerances. The **SC-14 Electrical Power, Conduit Geometry & Industrial Trades** calculator brings National Electrical Code wire tables, complex AC power triangles, pipe-bending trigonometry, and process-loop scaling directly to the technician's hands. Three industrial field cases guide this analysis:
 
 In **Chapter 4**, we step onto the salt-sprayed concrete of Pier 14 to diagnose a burning voltage drop on a 480-volt container crane feeder, sizing conductors via NEC Table 8, calculating parallel harmonic resistance, and balancing three-phase reactive power factor.
 
@@ -496,7 +496,7 @@ Because the conduit curves along a circular arc rather than pivoting at a sharp 
    - $30^\circ$: Multiplier $\csc(30^\circ) = \mathbf{2.000}$
    - $45^\circ$: Multiplier $\csc(45^\circ) \approx 1.414 \approx 1.4$
    - $60^\circ$: Multiplier $\csc(60^\circ) \approx 1.155 \approx 1.2$
-   Notice why $30^\circ$ offsets are standard in field practice: the multiplier is exactly **$2.0$**. To clear an $8\text{-inch}$ I-beam with $30^\circ$ bends, the distance between marks is simply $8 \times 2 = \mathbf{16.0\text{ inches}}$.
+   This explains why $30^\circ$ offsets are standard in field practice: the multiplier is exactly **$2.0$**. To clear an $8\text{-inch}$ I-beam with $30^\circ$ bends, the distance between marks is simply $8 \times 2 = \mathbf{16.0\text{ inches}}$.
 
 3. **Axial Shrinkage ($S$)**: Because the offset follows the hypotenuse instead of running along the flat ceiling baseline, the pipe physically "shrinks" in total length along the room. The amount by which the conduit end pulls back is governed by the half-angle tangent:
    $$S = O \cdot \tan\left(\frac{\theta}{2}\right)$$
@@ -868,7 +868,7 @@ Work through these five field problems on your calculator. Step-by-step keystrok
 4. **Four-Bend Saddle Over Rectangular Duct:** A conduit crosses a rectangular ventilation duct measuring $16.0\text{ in.}$ wide and $H = 6.0\text{ in.}$ deep using two symmetrical $30^\circ$ offsets. Calculate the travel distance along each incline, the total shrinkage across both offsets, and the overall spacing between the two inside bend marks.
 5. **NEC Conduit Fill and Conductor Ampacity Derating:** A $1\text{-inch}$ EMT conduit has total internal cross-sectional area $A = 0.864\text{ in.}^2$. Determine the maximum permitted $40\%$ fill area for three or more conductors. Then, if nine #12 AWG THHN copper conductors are installed in the raceway ($70\%$ derating factor per NEC Table 310.15(C)(1)), calculate the adjusted allowable ampacity from the $30\text{ A}$ table baseline.
 
-With all four EMT conduits bent and strapped to the ceiling slab with laser-straight uniformity, the chiller feeder cables were pulled without a single snag. In Chapter 6, our expedition turns from electrical raceways to the machine shop and process floor: dialing in CNC spindle speeds, eliminating chatter on a stainless-steel pump flange, and tuning noise-immune $4\text{--}20\text{ mA}$ hydraulic process loops.
+With the four EMT conduits bent and strapped to the ceiling slab, the chiller feeder cables were pulled without incident. In Chapter 6, the analysis turns from electrical raceways to the machine shop and process floor: dialing in CNC spindle speeds, eliminating chatter on a stainless-steel pump flange, and tuning noise-immune $4\text{--}20\text{ mA}$ hydraulic process loops.
 
 ---
 
@@ -963,7 +963,7 @@ Finally, Sarah checks the electrical signaling between the hydraulic pressure tr
 
 Why does the entire global industrial automation sector rely on **$4\text{--}20\text{ milliampere}$ current loops** rather than $0\text{--}10\text{ volt}$ signals or $0\text{--}20\text{ mA}$ loops?
 
-Two profound engineering principles explain the dominance of $4\text{--}20\text{ mA}$:
+Two foundational engineering principles explain the dominance of $4\text{--}20\text{ mA}$:
 
 First, **The Live Zero Principle**: If an analog system used $0\text{ to } 10\text{ volts}$ or $0\text{ to } 20\text{ mA}$, what happens if a wire breaks, a terminal comes loose, or an instrument power supply fails?
 The reading at the controller drops to $0.0\text{ V}$ or $0.0\text{ mA}$.

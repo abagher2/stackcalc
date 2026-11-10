@@ -231,16 +231,16 @@ hide:
       <!-- Trust Badges -->
       <div class="ec-trust-strip">
         <div class="ec-trust-item">
-          <span class="ec-trust-icon">&plusmn;</span>
-          <span class="ec-trust-text">&plusmn;0.05mm Calibrated &bull; Non-Toxic Biopolymer</span>
+          <span class="ec-trust-icon">&check;</span>
+          <span class="ec-trust-text">Durable Matte Polymer &bull; Brass Pivot</span>
         </div>
         <div class="ec-trust-item">
           <span class="ec-trust-icon">&check;</span>
           <span class="ec-trust-text">Anti-Heartbreak $2.49 Part Refills</span>
         </div>
         <div class="ec-trust-item">
-          <span class="ec-trust-icon">&hearts;</span>
-          <span class="ec-trust-text">30-Day Risk-Free In-Home Trial</span>
+          <span class="ec-trust-icon">&check;</span>
+          <span class="ec-trust-text">Secure Checkout via Etsy</span>
         </div>
       </div>
 
@@ -712,7 +712,7 @@ hide:
           <span>&#10003;</span> 100% Non-Toxic &amp; Archival Grade
         </strong>
         <p class="text-gray-300 text-xs m-0 leading-relaxed">
-          Crafted from 100% recyclable shatter-resistant PETG biopolymer and heavy archival cardstock. Free from BPA, plasticizers, and toxic coatings.
+          Crafted from 100% recyclable shatter-resistant PETG polymer and heavy archival cardstock. Free from BPA, plasticizers, and toxic coatings.
         </p>
       </div>
 
@@ -826,7 +826,7 @@ hide:
           <span class="text-cyan-400 text-lg group-open:rotate-45 transition-transform">+</span>
         </summary>
         <p class="mt-3 text-sm text-gray-300 leading-relaxed">
-          The volvelle is crafted from shatterproof, impact-resistant PETG biopolymer fastened with a flush-pressed industrial brass eyelet. Under our "Anti-Heartbreak" lifetime guarantee, if a student bends or tears the dial, we replace it for just $2.49 with free envelope shipping.
+          The volvelle is crafted from shatterproof, impact-resistant PETG polymer fastened with a flush-pressed industrial brass eyelet. Under our "Anti-Heartbreak" lifetime guarantee, if a student bends or tears the dial, we replace it for just $2.49 with free envelope shipping.
         </p>
       </details>
     </div>

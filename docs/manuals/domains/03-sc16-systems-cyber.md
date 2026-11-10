@@ -17,7 +17,7 @@ The Patriot's 24-bit fixed-point register chopped this fraction at 24 bits, intr
 
 Around those silicon microcontrollers, embedded engineers and cyber operators solve coupled low-level hardware, networking, and signal-processing problems across the industrial plant. Firmware engineers reverse endian byte ordering between big-endian network packet streams and little-endian ARM processors using single-cycle `BSWAP` primitives. Systems programmers unpack IEEE-754 floating-point bitfields, evaluate Galois-field cyclic redundancy checks (CRC-32) across noisy serial links, and synthesize ultrasonic pulse-width-modulated (PWM) motor frequencies using 16-bit hardware timer prescalers. Simultaneously, network architects partition Classless Inter-Domain Routing (CIDR) subnets and align direct memory access (DMA) buffers to natural cache-line boundaries.
 
-With geographic corridors mapped in Unit I and high-voltage power conduits routed in Unit II, the third pillar of our expedition brings intelligent digital life to the physical machinery: embedding microcontroller logic, serial communications, and cyber diagnostics into the plant. The **SC-16 Digital Systems, Bitwise Logic & Cyber Operations** calculator brings multi-base hexadecimal arithmetic, signed modular rings, bitfield manipulation, and network subnetting directly to the engineer's fingertips. Three diagnostic missions trace the boundary between embedded software and physical silicon:
+At the interface between physical power and automated control, digital systems govern modern machinery through discrete logic, serialized telemetry, and network communication. The **SC-16 Digital Systems, Bitwise Logic & Cyber Operations** calculator brings multi-base hexadecimal arithmetic, signed modular rings, bitfield manipulation, and network subnetting directly to the engineer's fingertips. Three diagnostic case studies trace the boundary between embedded software and physical silicon:
 
 In **Chapter 7**, we step into the cleanroom of a precision robotics laboratory to debug a stalled linear actuator, isolating stuck interrupt flags in memory-mapped timer registers, calculating signed two's complement velocities, and executing atomic bitmasking on the RPN stack.
 
@@ -1294,7 +1294,7 @@ Where:
 Look carefully at the hold margin equation:
 $$t_{\text{margin,hold}} = t_{\text{co,\min}} + t_{\text{prop,\min}} - t_{\text{h}} - \Delta t_{\text{skew}}$$
 
-Notice that **clock period $T_{\text{clk}}$ does not appear in the hold margin equation**.
+Crucially, **clock period $T_{\text{clk}}$ does not appear in the hold margin equation**.
 If a high-speed bus suffers from a hold-time violation ($t_{\text{margin,hold}} < 0$), **slowing down the clock will not fix it**. A hold violation means new data is arriving at the receiver before the previous data has been latched. The only fixes are physical PCB trace redesign, adding trace length to delay the data line, or adding series buffer delay gates.
 
 ### Metastability and Clock Domain Crossing (CDC)
@@ -1443,10 +1443,10 @@ With the vibration sensor's analog front end filtered and calibrated, timer PWM 
 
 Yet physical control, mixed-signal quantization, and data serialization represent only half the modern industrial mission. When autonomous robotic workcells, industrial inspections, and aerospace vehicles operate in the physical world, their operations must be captured, synchronized, and documented with absolute photographic precision.
 
-In **Volume IV (Chapters 10–12)**, our expedition crosses from embedded silicon and microcontrollers into the optical and temporal domain of **Cinema Optics, Photometry, and Broadcast Media**:
-- In **Chapter 10**, we step onto the soundstage and forensic testing bay, trading memory registers for optical glass: calculating circle of confusion, hyperfocal distance, depth of field, and sensor crop factors.
-- In **Chapter 11**, we synchronize high-speed motion capture against pulsed illumination, mastering the physics of shutter angles, flicker-free exposure windows, photometric lux-to-footcandle conversions, and inverse-square lighting falloff.
-- In **Chapter 12**, we bridge digital time and optical frames, locking cinema cameras, multi-track audio recorders, and broadcast video routers together using SMPTE timecode arithmetic, drop-frame compensation, and audio sample-rate phase alignment.
+In **Unit IV (Chapters 10–12)**, these discrete timing principles transition from microcontroller buses to optical glass and broadcast media:
+- In **Chapter 10**, we evaluate image capture geometry: calculating circles of confusion, hyperfocal distances, depths of field, and sensor format crop factors.
+- In **Chapter 11**, we synchronize high-speed motion capture against pulsed illumination, solving shutter angles, flicker-free exposure windows, photometric lux-to-footcandle conversions, and inverse-square lighting falloff.
+- In **Chapter 12**, we synchronize multi-camera streams, audio recorders, and broadcast video infrastructure using SMPTE timecode arithmetic, drop-frame compensation, and audio sample-rate phase alignment.
 
-Take a breath, stow the oscilloscope probes and logic analyzer clips, and turn the page to Volume IV: where the stack commands the lens, the shutter, and the light.
+From the register buses of embedded silicon, we turn next to the optics, exposure timing, and acoustic fields of cinema and broadcast engineering.
 

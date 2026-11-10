@@ -232,16 +232,16 @@ hide:
       <!-- Trust Badges -->
       <div class="ec-trust-strip">
         <div class="ec-trust-item">
-          <span class="ec-trust-icon">&plusmn;</span>
-          <span class="ec-trust-text">&plusmn;0.05mm Calibrated &bull; Non-Toxic Biopolymer</span>
+          <span class="ec-trust-icon">&check;</span>
+          <span class="ec-trust-text">Durable Matte Polymer &bull; 42mm Gridfinity</span>
         </div>
         <div class="ec-trust-item">
           <span class="ec-trust-icon">&check;</span>
           <span class="ec-trust-text">Anti-Heartbreak $2.49 Part Refills</span>
         </div>
         <div class="ec-trust-item">
-          <span class="ec-trust-icon">&hearts;</span>
-          <span class="ec-trust-text">30-Day Risk-Free In-Home Trial</span>
+          <span class="ec-trust-icon">&check;</span>
+          <span class="ec-trust-text">Secure Checkout via Etsy</span>
         </div>
       </div>
 
@@ -713,10 +713,10 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-slate-700/60 text-sm">
         <strong class="text-sky-400 flex items-center gap-2 mb-1">
-          <span>&#10003;</span> 100% Non-Toxic &amp; Food-Contact Safe Biopolymers
+          <span>&#10003;</span> 100% Non-Toxic Classroom Materials
         </strong>
         <p class="text-gray-300 text-xs m-0 leading-relaxed">
-          Manufactured from pure, odorless, BPA-free PLA biopolymer. 100% free of lead, phthalates, and PVC. Safe for everyday classroom handling and sanitizable with alcohol wipes.
+          Manufactured from pure, odorless, BPA-free PLA polymer. 100% free of lead, phthalates, and PVC. Safe for everyday classroom handling and sanitizable with alcohol wipes.
         </p>
       </div>
 

@@ -429,7 +429,7 @@ This compendium provides complete step-by-step keystroke solutions, stack regist
    - **Solution**: Total 24-hour resuscitation volume is $V_{24} = 4 \times 65 \times 27 = \mathbf{7{,}020\text{ mL}}$. First 8 hours delivers half ($3{,}510\text{ mL}$) at $Q_1 = \mathbf{438.75\text{ mL/hr}}$; remaining 16 hours delivers $3{,}510\text{ mL}$ at $Q_2 = \mathbf{219.38\text{ mL/hr}}$.
 4. **Mean Arterial Pressure and Vasopressor Titration**
    - **Keystrokes**: `72` {{key:sc80:ENTER}} `45` {{key:sc80:MAP}} `118` {{key:sc80:ENTER}} `74` {{key:sc80:MAP}} {{key:sc80:-}}
-   - **Solution**: Initial arterial pressure is $\text{MAP} = (72 + 2 \times 45) / 3 = \mathbf{54.00\text{ mmHg}}$ (profound hypoperfusion). Resuscitated pressure reaches $\text{MAP} = (118 + 2 \times 74) / 3 = \mathbf{88.67\text{ mmHg}}$, delivering net perfusion gain $\Delta\text{MAP} = \mathbf{+34.67\text{ mmHg}}$.
+   - **Solution**: Initial arterial pressure is $\text{MAP} = (72 + 2 \times 45) / 3 = \mathbf{54.00\text{ mmHg}}$ (severe hypoperfusion). Resuscitated pressure reaches $\text{MAP} = (118 + 2 \times 74) / 3 = \mathbf{88.67\text{ mmHg}}$, delivering net perfusion gain $\Delta\text{MAP} = \mathbf{+34.67\text{ mmHg}}$.
 5. **Back-Calculating Inherited Infusion Rate on the Stack**
    - **Keystrokes**: `18` {{key:sc80:ENTER}} `200` {{key:sc80:×}} `60` {{key:sc80:÷}} `80` {{key:sc80:÷}}
    - **Solution**: Volumetric rate delivers mass rate $\dot{m} = 18.0 \times 200 = 3{,}600\ \mu\text{g/hr} = 60.0\ \mu\text{g/min}$. Dividing by patient weight yields normalized dose rate $R = 60.0 / 80.0 = \mathbf{0.375\ \mu\text{g/kg/min}}$.

@@ -13,7 +13,7 @@ The long lever arm of an outdoor sightline also explains why field crews preserv
 
 The life-or-death consequence of neglecting unit discipline and calculation verification was demonstrated with chilling drama on July 23, 1983, when Air Canada Flight 143—a brand-new Boeing 767 flying at forty-one thousand feet from Montreal to Edmonton—starved of all fuel. Its twin turbofan engines flamed out in mid-cruise. The aircraft was one of the first fitted with all-metric digital avionics, but due to an inoperative fuel quantity indication computer, ground handlers and flight crew manually dipped the wing tanks with drip tubes measured in liters. In converting liters to the required fuel mass in kilograms, technicians inadvertently multiplied by $1.77$—the density of Jet-A fuel in pounds per liter—rather than the metric value of $0.803\text{ kg/L}$. Carrying less than half the fuel required to complete the route, the wide-body jet became the world's heaviest glider over Manitoba. Only an extraordinary deadstick landing by Captain Bob Pearson onto an abandoned military strip at Gimli averted tragedy. The "Gimli Glider" serves as an enduring cautionary precedent across geomatics, civil route alignment, and flight navigation: dimensional discipline, unit conversions, and stack verification are matters of human survival.
 
-As the first pillar in our journey across the built world, geomatics and flight navigation establish human coordinates on the raw physical landscape: anchoring property boundaries to True North, carving transportation corridors around granite bluffs, and flying supply lines through high-mountain passes. The **SC-35 Geomatics, Land Surveying & Flight Navigation** calculator brings coordinate geometry, route alignment, and flight-deck navigation to the field. Three field investigations guide our study of the instrument:
+Geomatics and aeronautical navigation establish human coordinates upon the physical landscape: anchoring legal property boundaries to True North, laying out transportation alignments across complex topography, and navigating flight paths through changing air masses. The **SC-35 Geomatics, Land Surveying & Flight Navigation** calculator brings coordinate geometry, route alignment, and flight-deck navigation to the field. Three field investigations guide our study of the instrument:
 
 In **Chapter 1**, we retrace a disputed 1794 colonial boundary through a dense Pine Barrens ravine, recovering a buried brass cornerstone using sexagesimal reductions, slope corrections, Bowditch compass-rule adjustments, and Gauss's shoelace polygon area.
 
@@ -274,7 +274,7 @@ From Station 2, Marcus backsights Station 1 on the north rim across reverse azim
 3. Project the forward coordinates of the iron pipe $(N_{\text{pipe}}, E_{\text{pipe}})$.
 4. Inverse the distance and bearing between this newly established iron pipe and the colonial deed call to verify whether the pipe represents the true 1794 boundary line.
 
-Notice how the four-register stack maintains all intermediate results in memory without a single intermediate pencil scribble:
+The four-register stack maintains all intermediate results in memory without intermediate scratch notes:
 
 | Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Field Scenario Stack Walkthrough |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -681,7 +681,7 @@ $$L = \frac{1}{2} \rho v^2 S C_L$$
 
 In this equation, $L$ is lift force (which must equal aircraft gross weight $W$ in level flight), $S$ is wing planform area, $C_L$ is the dimensionless coefficient of lift governed by angle of attack and wing airfoil camber, $v$ is True Airspeed through the air mass, and $\mathbf{\rho}$ is the physical mass density of the air (in $\text{kg/m}^3$ or $\text{slugs/ft}^3$).
 
-Notice the decisive role of air density $\rho$. Lift is **directly proportional to air density**. If air density drops by thirty percent, the wings produce thirty percent less lift at the same velocity.
+Air density $\rho$ directly governs lift: lift is **directly proportional to air density**. If air density drops by thirty percent, the wings produce thirty percent less lift at the same velocity.
 
 Now, recall the Ideal Gas Law governing atmospheric air:
 
@@ -769,7 +769,7 @@ In mountain flight operations over remote terrain, fuel management is a life-or-
 
    $$d_{\text{PET}} = GS_{\text{out}} \times t_{\text{PET}} = \frac{D \cdot GS_{\text{ret}} \cdot GS_{\text{out}}}{GS_{\text{out}} + GS_{\text{ret}}}$$
 
-   Notice that in calm air ($GS_{\text{out}} = GS_{\text{ret}}$), the PET lies at the exact geographic midpoint ($D/2$). But if the flight faces a strong headwind outbound, $GS_{\text{out}} < GS_{\text{ret}}$, and the Point of Equal Time **shifts forward toward the destination**. If an in-flight emergency occurs before $t_{\text{PET}}$, the fastest way to a safe runway is to turn back; after $t_{\text{PET}}$, the fastest way is to press forward.
+   In calm air ($GS_{\text{out}} = GS_{\text{ret}}$), the PET lies at the exact geographic midpoint ($D/2$). But if the flight faces a strong headwind outbound, $GS_{\text{out}} < GS_{\text{ret}}$, and the Point of Equal Time **shifts forward toward the destination**. If an in-flight emergency occurs before $t_{\text{PET}}$, the fastest way to a safe runway is to turn back; after $t_{\text{PET}}$, the fastest way is to press forward.
 
 2. **Point of Safe Return (PSR)**, or **Radius of Action**: The maximum time and distance an aircraft can fly toward a destination and still have sufficient fuel onboard to turn around and return to the departure airport with legal reserve margins intact:
 
@@ -828,7 +828,7 @@ With a $V_w = 28\text{ kt}$ wind blowing at $\theta = 40^\circ$ off the course (
 
 Across any navigation leg of distance $D$ (in nautical miles, {{key:▸NM}}, where $1\text{ NM} = 6{,}076.12\text{ ft} = 1{,}852\text{ m}$) flown at ground speed $S = \text{GS}$ (in knots, $\text{NM/hr}$) over elapsed time $T$ (in hours), the **Time–Speed–Distance** relation ({{key:TSD}}, workspace variables {{keycap:D}}, {{keycap:S}}, {{keycap:T}}) is $D = S \times T$. Simultaneously, loading passengers, medical litters, and fuel aboard the aircraft shifts the longitudinal **Center of Gravity (CG)** relative to the manufacturer's reference datum: each item of weight $W$ (in pounds) located at station arm $A$ (in inches aft of datum) generates a pitching **Moment** $M = W \times A$ ({{key:CG}}, workspace variables {{keycap:M}}, {{keycap:W}}, {{keycap:A}}), and dividing the total aircraft moment $\Sigma M$ by total gross weight $\Sigma W$ locates the center-of-gravity station: $A_{\text{CG}} = \sum M_i / \sum W_i$.
 
-When evaluating this moment equilibrium, Captain Evans recognizes a profound mathematical Rosetta Stone: the weighted center-of-gravity formula $A_{\text{CG}} = \sum x_i W_i / \sum W_i$ is a universal first-moment balance that transcends aeronautics. Exactly this mathematical structure returns in Chapter 26 as Macaulay Bond Duration—where discounted cash-flow amounts replace physical station weights, and time horizons replace spatial moment arms along the fuselage. In both realms, stability depends on the center of mass: whether trimming an airframe against aerodynamic pitching stall or immunizing an investment portfolio against interest-rate shocks, equilibrium balances the weighted first moment of the distribution.
+When evaluating this moment equilibrium, Captain Evans recognizes a direct mathematical equivalence: the weighted center-of-gravity formula $A_{\text{CG}} = \sum x_i W_i / \sum W_i$ is a universal first-moment balance that transcends aeronautics. Exactly this mathematical structure returns in Chapter 26 as Macaulay Bond Duration—where discounted cash-flow amounts replace physical station weights, and time horizons replace spatial moment arms along the fuselage. In both realms, stability depends on the center of mass: whether trimming an airframe against aerodynamic pitching stall or immunizing an investment portfolio against interest-rate shocks, equilibrium balances the weighted first moment of the distribution.
 
 Over the $D = 128.0\text{ NM}$ mountain leg at ground speed $S = 122.43\text{ kt}$, solving {{key:TSD}} (`D = S × T`) for time $T$ yields $T = 128.0 / 122.43 \approx \mathbf{1.0455\text{ hr}}$ ($62.7\text{ min}$). Meanwhile, a $W = 220\text{ lb}$ medical litter locked into cabin station arm $A = 145.0\text{ in}$ adds a pitching moment of $M = 220 \times 145.0 = \mathbf{31{,}900\text{ lb}\cdot\text{in}}$ via {{key:CG}}.
 
@@ -891,7 +891,7 @@ Captain Evans must instantly determine:
 3. The fuel required at single-engine diversion fuel burn ($72.0\text{ gal/hr}$).
 4. The high-altitude landing roll increase at the diversion airfield where Density Altitude is $DA = 10{,}720\text{ ft}$.
 
-Notice how the four-register stack tracks each stage of the diversion calculation without a scratchpad:
+The four-register stack tracks each stage of the diversion calculation without a scratchpad:
 
 | Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Field Scenario Stack Walkthrough |
 | :--- | :---: | :---: | :---: | :---: | :--- |

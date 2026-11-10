@@ -171,7 +171,7 @@ hide:
           <span class="text-xs text-sky-400 font-mono">10s Tool-Free Swap</span>
         </div>
         <div class="te-swatches-grid">
-          <button type="button" class="te-swatch-btn active" id="pdp-swatch-stealth" onclick="switchPDPFaceplate('stealth', '../../assets/renders/edition_stealth_industrial.png', 'Technical Matte Black Biopolymer', 'Technical Matte Black', 'Tactile Light Gray TPU 95A', 'Direct Laser-Foamed')">
+          <button type="button" class="te-swatch-btn active" id="pdp-swatch-stealth" onclick="switchPDPFaceplate('stealth', '../../assets/renders/edition_stealth_industrial.png', 'Technical Matte Black PLA', 'Technical Matte Black', 'Tactile Light Gray TPU 95A', 'Direct Laser-Foamed')">
             <span class="te-swatch-chip chip-stealth"></span>
             <span class="te-swatch-name">Stealth</span>
           </button>
@@ -193,7 +193,7 @@ hide:
           </button>
         </div>
         <div class="te-cmf-readout" id="pdp-cmf-readout">
-          <strong>[ACTIVE CMF]</strong> <span id="pdp-cmf-text">FACEPLATE: Technical Matte Black Biopolymer &bull; CHASSIS: Technical Matte Black &bull; KEYS: Tactile Light Gray TPU 95A &bull; MARKINGS: Direct Laser-Foamed</span>
+          <strong>[ACTIVE CMF]</strong> <span id="pdp-cmf-text">FACEPLATE: Technical Matte Black PLA &bull; CHASSIS: Technical Matte Black &bull; KEYS: Tactile Light Gray TPU 95A &bull; MARKINGS: Direct Laser-Foamed</span>
         </div>
       </div>
 

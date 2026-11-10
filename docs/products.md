@@ -128,7 +128,7 @@ hide:
       </div>
       <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1rem;">
         <span style="color: #FFBF00; font-weight: 700; letter-spacing: 0.04em;">02 &bull; TACTILE MANIPULATIVES</span>
-        <div style="color: #94A3B8; font-size: 0.76rem; margin-top: 0.35rem; line-height: 1.4;">Proportional biopolymer blocks with debossed geometry and 42mm Gridfinity fit.</div>
+        <div style="color: #94A3B8; font-size: 0.76rem; margin-top: 0.35rem; line-height: 1.4;">Proportional tactile blocks with debossed geometry and 42mm Gridfinity fit.</div>
       </div>
       <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1rem;">
         <span style="color: #10B981; font-weight: 700; letter-spacing: 0.04em;">03 &bull; BOOKS &amp; 3MF BLUEPRINTS</span>
@@ -1302,7 +1302,7 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-slate-700/60 text-sm">
         <strong class="text-sky-400 flex items-center gap-2 mb-1 font-mono text-xs">
-          <span>✓</span> 100% NON-TOXIC BIOPOLYMERS
+          <span>✓</span> 100% NON-TOXIC MATERIALS
         </strong>
         <p class="text-gray-300 text-xs m-0 leading-relaxed">
           Produced exclusively from odorless, renewable, food-contact grade PLA and impact-absorbing PETG. Zero BPA, lead, PVC, or phthalates. Completely washable and sanitizable between class periods.
@@ -1418,7 +1418,7 @@ hide:
         <ul style="list-style: none; margin: 0; padding: 0; font-size: 0.88rem; color: #E2E8F0; line-height: 1.6;">
           <li style="margin-bottom: 0.85rem;"><strong style="color: #38BDF8;">Pure Physical Postfix:</strong> Zero parentheses. Numbers are pushed onto visible shelves; operations consume them in order of physical causality.</li>
           <li style="margin-bottom: 0.85rem;"><strong style="color: #38BDF8;">1:1 Spatial Mapping:</strong> Physical manipulative blocks on your desk map directly to the 4-line hardware LCD stack.</li>
-          <li style="margin-bottom: 0.85rem;"><strong style="color: #38BDF8;">Heirloom Craftsmanship:</strong> Precision biopolymer with debossed geometry, snap-dome microswitches, and Shore 90A TPU keys.</li>
+          <li style="margin-bottom: 0.85rem;"><strong style="color: #38BDF8;">Heirloom Craftsmanship:</strong> Precision matte polymer with debossed geometry, snap-dome microswitches, and Shore 90A TPU keys.</li>
           <li><strong style="color: #38BDF8;">Zero Subscriptions, 100% Repairable:</strong> Buy once, own forever. 100% open-source 3MF files to print replacement parts anytime.</li>
         </ul>
       </div>

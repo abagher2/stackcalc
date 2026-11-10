@@ -238,16 +238,16 @@ hide:
       <!-- Trust Badges -->
       <div class="ec-trust-strip">
         <div class="ec-trust-item">
-          <span class="ec-trust-icon">&plusmn;</span>
-          <span class="ec-trust-text">&plusmn;0.05mm Calibrated &bull; Non-Toxic Biopolymer</span>
+          <span class="ec-trust-icon">&check;</span>
+          <span class="ec-trust-text">Durable Matte Polymer &bull; 42mm Gridfinity</span>
         </div>
         <div class="ec-trust-item">
           <span class="ec-trust-icon">&check;</span>
           <span class="ec-trust-text">Anti-Heartbreak $2.49 Part Refills</span>
         </div>
         <div class="ec-trust-item">
-          <span class="ec-trust-icon">&hearts;</span>
-          <span class="ec-trust-text">30-Day Risk-Free In-Home Trial</span>
+          <span class="ec-trust-icon">&check;</span>
+          <span class="ec-trust-text">Secure Checkout via Etsy</span>
         </div>
       </div>
 
@@ -655,7 +655,7 @@ hide:
         </tr>
         <tr>
           <td class="ec-spec-k">Industrial Design &amp; CMF</td>
-          <td class="ec-spec-v">Precision classroom biopolymer &bull; &plusmn;0.15 mm interlocking fit tolerance &bull; 45&deg; finger-relief edge bevels &bull; Debossed mathematical legends</td>
+          <td class="ec-spec-v">Precision classroom polymer &bull; &plusmn;0.15 mm interlocking fit tolerance &bull; 45&deg; finger-relief edge bevels &bull; Debossed mathematical legends</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Curriculum Standards</td>
@@ -711,10 +711,10 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-slate-700/60 text-sm">
         <strong class="text-sky-400 flex items-center gap-2 mb-1">
-          <span>&#10003;</span> 100% Non-Toxic &amp; Food-Contact Safe Biopolymers
+          <span>&#10003;</span> 100% Non-Toxic Classroom Materials
         </strong>
         <p class="text-gray-300 text-xs m-0 leading-relaxed">
-          Manufactured exclusively from odorless, non-toxic, BPA-free PLA biopolymer and impact-resistant PETG. Free from lead, PVC, and phthalates. Wipe clean with standard classroom disinfectant wipes.
+          Manufactured exclusively from odorless, non-toxic, BPA-free PLA polymer and impact-resistant PETG. Free from lead, PVC, and phthalates. Wipe clean with standard classroom disinfectant wipes.
         </p>
       </div>
 
@@ -828,7 +828,7 @@ hide:
           <span class="text-cyan-400 text-lg group-open:rotate-45 transition-transform">+</span>
         </summary>
         <p class="mt-3 text-sm text-gray-300 leading-relaxed">
-          All components are manufactured from waterproof, non-porous PLA biopolymer and PETG. They can be sanitized using standard hospital-grade classroom disinfectant wipes or washed in lukewarm soapy water (up to 50°C / 120°F).
+          All components are manufactured from waterproof, non-porous PLA polymer and PETG. They can be sanitized using standard hospital-grade classroom disinfectant wipes or washed in lukewarm soapy water (up to 50°C / 120°F).
         </p>
       </details>
 

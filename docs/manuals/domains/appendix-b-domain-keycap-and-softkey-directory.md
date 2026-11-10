@@ -7,7 +7,7 @@ description: "Hardware keycap, Row 0 domain softkey, and register input/output d
 
 This directory catalogs the physical keycaps, Row 0 domain softkeys, yellow ({{key:f}}) and blue ({{key:g}}) shift layers, bidirectional Equation Solver Workspaces ({{key:sc35:SOLVE}} / {{key:XEQ}}), and register input-output signatures across all nine instruments in the StackCalc Domain Series (`SC-35` through `SC-95`). Each table lists the pre-execution stack arguments consumed from `Register T`, `Register Z`, `Register Y`, and `Register X` alongside the post-execution results returned to `Register X'` and `Register Y'` and the softkey variable bindings inside each instrument's Equation Solver Workspace.
 
-## Shared Three-Pillar Core Keys Across All Nine Instruments
+## Shared Core Keys and Architecture Across All Nine Instruments
 
 Every calculator in the StackCalc Domain Series provides configurable RPN stack depth ({{keycap:4-LV}}, {{keycap:8-LV}}, or {{keycap:INF}} cycled on Flag 5 `5:DEP` inside {{key:FLAGS}}), dual-mode domain keys that combine one-key RPN stack evaluation with a bidirectional Equation Solver Workspace ({{key:sc35:SOLVE}} / {{key:XEQ}}), and non-destructive Live Reference Ledgers ({{key:▦}}) paired with ten general-purpose memory registers (`R₀`–`R₉`):
 

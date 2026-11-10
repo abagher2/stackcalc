@@ -7,7 +7,7 @@ description: "Governing equations, physical constants, and stack argument conven
 
 This compendium consolidates the governing mathematical identities, physical constants, four-register RPN stack conventions, and bidirectional Equation Solver Workspace schemas across all nine specialized instruments in the StackCalc Domain Series (`SC-35`, `SC-14`, `SC-16`, `SC-24`, `SC-50`, `SC-60`, `SC-78`, `SC-80`, and `SC-95`). Each section summarizes governing equations across the domain calculators so engineers, navigators, clinicians, and analysts can verify input dimensions, immediate stack arguments, and closed-form or numerical solver relationships at a glance.
 
-## Universal Three-Pillar Stack, Precision, and Bidirectional Solver Conventions
+## Universal Stack, Precision, and Bidirectional Solver Conventions
 
 Every instrument in the StackCalc Domain Series provides IEEE 754 double-precision floating-point arithmetic ($64\text{-bit}$ word, $53\text{-bit}$ binary significand, providing $15$ to $17$ significant decimal digits) and selectable fixed-width integer arithmetic on the `SC-16`:
 
@@ -942,7 +942,7 @@ In a cascaded receiver chain, each successive stage adds noise. Harald Friis's 1
 
 $$F_{\text{tot}} = F_1 + \frac{F_2 - 1}{G_1} + \frac{F_3 - 1}{G_1 G_2} + \dots$$
 
-In this equation, $F_1$ and $G_1$ are the linear noise factor and linear power gain of the very first component following the antenna, and each subsequent stage's excess noise $(F_k - 1)$ is divided by the product of all preceding linear gains $G_1 G_2 \cdots G_{k-1}$. Notice also that a passive lossy component (such as a coaxial cable of insertion loss $L_{\text{dB}}$ at $290\text{ K}$) has linear gain $G_{\text{cable}} = 10^{-L_{\text{dB}} / 10} < 1$ and linear noise factor $F_{\text{cable}} = 1 / G_{\text{cable}} = 10^{+L_{\text{dB}} / 10}$.
+In this equation, $F_1$ and $G_1$ are the linear noise factor and linear power gain of the very first component following the antenna, and each subsequent stage's excess noise $(F_k - 1)$ is divided by the product of all preceding linear gains $G_1 G_2 \cdots G_{k-1}$. In addition, a passive lossy component (such as a coaxial cable of insertion loss $L_{\text{dB}}$ at $290\text{ K}$) has linear gain $G_{\text{cable}} = 10^{-L_{\text{dB}} / 10} < 1$ and linear noise factor $F_{\text{cable}} = 1 / G_{\text{cable}} = 10^{+L_{\text{dB}} / 10}$.
 
 * **Calculator Interface:** Primary Key: {{key:sc50:NF}} • Expression / Workspace: `NF: F = A + (B - 1) / G` • Softkeys: {{keycap:F}} {{keycap:A}} {{keycap:B}} {{keycap:G}}
 
@@ -977,7 +977,7 @@ Here $B$ is the channel bandwidth in hertz, $\text{SNR}$ is the dimensionless li
 
 ### Eq. 15.5 — Doppler Velocity Shift and Fourth-Power Radar Echo
 
-When a radio wave is received from a moving transmitter, wave crests are compressed or stretched, shifting the carrier frequency by the ratio of closing velocity to the speed of light. In a monostatic radar, the wave travels out to the target and reflects back, doubling the Doppler frequency shift. Because the wave spreads spherically on both the outbound and return journeys, echo power drops inversely with the fourth power of target range:
+When a radio wave is received from a moving transmitter, wave crests are compressed or stretched, shifting the carrier frequency by the ratio of closing velocity to the speed of light. In a monostatic radar, the wave travels out to the target and reflects back, doubling the Doppler frequency shift. Because the wave spreads spherically on both the outbound and return paths, echo power drops inversely with the fourth power of target range:
 
 $$\Delta f_{\text{1-way}} = \frac{f_0 \cdot v}{c}$$
 
@@ -1092,7 +1092,7 @@ The solution pH equals the weak acid's pKa plus the base-ten logarithm of the ra
 
 $$\text{pH} = \text{p}K_a + \log_{10}\left(\frac{[\text{A}^-]}{[\text{HA}]}\right)$$
 
-Here $[\text{A}^-]$ is the molar concentration of the proton-accepting conjugate base, $[\text{HA}]$ is the molar concentration of the proton-donating weak acid, and $r = [\text{A}^-] / [\text{HA}]$ is the dimensionless conjugate base-to-acid ratio. Notice the structural unity across physical science: just as the Nernst equation shifts electrochemical cell voltage by $(2.3026 R T / n_e F) \log_{10}([\text{Ox}]/[\text{Red}])$ ($59.16\text{ mV}$ per decade at $25^\circ\text{C}$) and decibels measure $10\log_{10}(P_2/P_1)$, the Henderson–Hasselbalch equation shifts chemical proton potential by $1.00\text{ pH unit}$ per decade change in the conjugate ratio $[\text{A}^-]/[\text{HA}]$. Furthermore, because dissociation constants depend on temperature—most notably in amine buffers such as Tris, where a large temperature coefficient of $\Delta \text{p}K_a / \Delta T \approx -0.028 / ^\circ\text{C}$ shifts a benchtop solution from $\text{pH } 7.40$ at $25^\circ\text{C}$ to nearly $\text{pH } 8.0$ in a $4^\circ\text{C}$ cold room—chemists calibrate electrodes and prepare buffers at the intended assay temperature.
+Here $[\text{A}^-]$ is the molar concentration of the proton-accepting conjugate base, $[\text{HA}]$ is the molar concentration of the proton-donating weak acid, and $r = [\text{A}^-] / [\text{HA}]$ is the dimensionless conjugate base-to-acid ratio. This reflects structural unity across physical science: just as the Nernst equation shifts electrochemical cell voltage by $(2.3026 R T / n_e F) \log_{10}([\text{Ox}]/[\text{Red}])$ ($59.16\text{ mV}$ per decade at $25^\circ\text{C}$) and decibels measure $10\log_{10}(P_2/P_1)$, the Henderson–Hasselbalch equation shifts chemical proton potential by $1.00\text{ pH unit}$ per decade change in the conjugate ratio $[\text{A}^-]/[\text{HA}]$. Furthermore, because dissociation constants depend on temperature—most notably in amine buffers such as Tris, where a large temperature coefficient of $\Delta \text{p}K_a / \Delta T \approx -0.028 / ^\circ\text{C}$ shifts a benchtop solution from $\text{pH } 7.40$ at $25^\circ\text{C}$ to nearly $\text{pH } 8.0$ in a $4^\circ\text{C}$ cold room—chemists calibrate electrodes and prepare buffers at the intended assay temperature.
 
 * **Calculator Interface:** Primary Key: {{key:sc60:BUF}} • Expression / Workspace: `BUF: P = K + LOG(A/H)` • Softkeys: {{keycap:P}} {{keycap:K}} {{keycap:A}} {{keycap:H}}
 
@@ -1381,7 +1381,7 @@ Every manual intravenous administration set manufactures its drip-chamber orific
 
 $$R_{\text{gtt/min}} = \frac{R_{\text{mL/hr}} \cdot DF_{\text{gtt/mL}}}{60}$$
 
-Notice the geometric elegance of the $60\text{ gtt/mL}$ micro-drip chamber: when $DF_{\text{gtt/mL}} = 60$, the ratio $60 / 60$ equals unity, so $R_{\text{gtt/min}} = R_{\text{mL/hr}}$ numerically. For our ICU transport running at $R_{\text{mL/hr}} = 15.00\text{ mL/hr}$, a macro-drip set with $DF = 15\text{ gtt/mL}$ produces a drip rate via {{key:sc80:gtt}} of $R_{\text{gtt/min}} = (15.00 \times 15) / 60 = \mathbf{3.75\text{ gtt/min}}$, whereas switching to a $60\text{ gtt/mL}$ micro-drip chamber raises the drip frequency to $\mathbf{15.00\text{ gtt/min}}$ (one drop every $4.0\text{ seconds}$).
+In a $60\text{ gtt/mL}$ micro-drip chamber: when $DF_{\text{gtt/mL}} = 60$, the ratio $60 / 60$ equals unity, so $R_{\text{gtt/min}} = R_{\text{mL/hr}}$ numerically. For our ICU transport running at $R_{\text{mL/hr}} = 15.00\text{ mL/hr}$, a macro-drip set with $DF = 15\text{ gtt/mL}$ produces a drip rate via {{key:sc80:gtt}} of $R_{\text{gtt/min}} = (15.00 \times 15) / 60 = \mathbf{3.75\text{ gtt/min}}$, whereas switching to a $60\text{ gtt/mL}$ micro-drip chamber raises the drip frequency to $\mathbf{15.00\text{ gtt/min}}$ (one drop every $4.0\text{ seconds}$).
 
 * **Calculator Interface:** Primary Key: {{key:sc80:gtt}} • Expression / Workspace: `Gravity drop frequency from flow rate` • Softkeys: {{keycap:gtt}} {{keycap:DRP}}
 

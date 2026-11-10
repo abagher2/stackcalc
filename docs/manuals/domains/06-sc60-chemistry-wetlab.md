@@ -13,7 +13,7 @@ Half a century later in 1909 at the Carlsberg Laboratory in Copenhagen, Danish b
 
 To count dissolved biomolecules without consuming or destroying the sample, German physicist August Beer proved in 1852 that monochromatic light traversing an absorbing solution attenuates exponentially with both solute concentration and optical path length, uniting Pierre Bouguer and Johann Heinrich Lambert's earlier absorption laws into the **Beer–Lambert spectrophotometric equation**. Inside a quartz cuvette at $280\text{ nm}$, aromatic tryptophan and tyrosine side chains cast a quantitative optical shadow proportional to protein molarity—obeying the same base-ten logarithmic attenuation law ($A = -\log_{10}(I/I_0) = \varepsilon b c$) that governs neutral-density camera filters in Unit IV and RF path loss in Unit V. Rounding out the physical-chemistry bench, the ideal gas equation, J. Willard Gibbs's 1876 free-energy criterion for reaction spontaneity, Walther Nernst's 1889 electrochemical potential, Svante Arrhenius's 1889 activation-energy rate law, calorimetry, and Theodor Svedberg's Nobel-winning centrifugal sedimentation equations link microscopic molecular energetics to laboratory instruments.
 
-Across this volume, our journey has followed a continuous progression through physical phenomena:
+The applied disciplines of this volume follow a continuous progression through physical phenomena:
 1. In **Unit I (SC-35 Geomatics & Celestial Navigation)**, we mapped macroscopic geographic space across spherical terrain, tracking geodetic coordinates, magnetic declination, and astronomical lines of position.
 2. In **Unit II (SC-14 Electrical Power & Industrial Trades)**, we channeled thousands of watts of alternating current through industrial conductors, bent steel conduit raceways, and sized high-pressure hydraulic valves.
 3. In **Unit III (SC-16 Digital Systems & Cyber Operations)**, we compressed those electrical voltages into nanosecond digital pulses, navigating microcontroller timer prescalers, bitwise masks, and cryptographic hash functions.
@@ -22,9 +22,9 @@ Across this volume, our journey has followed a continuous progression through ph
 
 Now, in **Unit VI (SC-60 Chemistry & Wet Lab)**, we cross the threshold from macroscopic fields and guided waves into the atomic and molecular architecture of matter itself. The radio-frequency photons that spanned meters and centimeters in Unit V carry quantum energies on the order of nano-electronvolts ($E = hf \approx 10^{-7}\text{ eV}$)—far too feeble to alter atomic structures. In this unit, photon wavelengths contract by eight orders of magnitude into the ultraviolet and visible spectrum ($\lambda \approx 200\text{--}800\text{ nm}$), where individual photon energies surge into the electronvolt regime ($E \approx 1.5\text{--}6.2\text{ eV}$). At these energetic scales, light directly interacts with the valence electrons of molecules, promoting electrons between bonding and anti-bonding molecular orbitals, exciting aromatic chromophores, and driving chemical reactions across thermal activation barriers.
 
-The wet lab presents the craftsman with a unique set of profound dilemmas:
+The analytical wet lab presents three foundational operational dilemmas:
 - **Counting Molecules by Weighing Grams:** A chemist cannot count individual molecules one by one with tweezers. Instead, an analytical balance weighing powder to a tenth of a milligram serves as a molecular counter. If the molar mass calculation ignores waters of crystallization in a hydrated crystal, every stoichiometric ratio that follows will be fatally skewed.
-- **The Acidity Razor's Edge:** In human blood and mammalian cell culture, physiological pH is poised precariously at $7.40$. If the pH drifts downward by just $0.40$ units to $7.00$ (severe acidemia) or upward to $7.80$ (severe alkalemia), the altered electric charge on histidine and lysine residues destroys enzyme tertiary structures, denatures hemoglobin, precipitates metabolic collapse, and induces fatal cardiac arrhythmias within minutes. Conjugate acid-base buffers are the biochemical shock absorbers that protect life against catastrophic pH shifts.
+- **Acid-Base Regulation and Physiological Limits:** In human blood and mammalian cell culture, physiological pH is poised precariously at $7.40$. If the pH drifts downward by just $0.40$ units to $7.00$ (severe acidemia) or upward to $7.80$ (severe alkalemia), the altered electric charge on histidine and lysine residues destroys enzyme tertiary structures, denatures hemoglobin, precipitates metabolic collapse, and induces fatal cardiac arrhythmias within minutes. Conjugate acid-base buffers are the biochemical shock absorbers that protect life against catastrophic pH shifts.
 - **The Pipetting Compound Error:** When preparing standard curves or running serially diluted enzyme assays, every mechanical transfer introduces Gaussian volume uncertainty. Because relative dilution errors accumulate in quadrature as $\sqrt{k}$, careless multi-step serial pipetting rapidly destroys analytical validity, whereas cutting a single direct aliquot from a gravimetrically calibrated primary stock preserves precision.
 
 To solve these problems with speed, precision, and complete clarity, we place the **SC-60 Chemistry & Wet Lab RPN Calculator** in the hands of senior analytical chemist Dr. Evelyn Cross and junior researcher Lucas Perez across three deeply technical, narrative chapters:
@@ -359,7 +359,7 @@ At the analytical balance, the biochemist first computes the required moles of $
 
 Lucas must prepare $V = 250.0\text{ mL}$ ($0.250\text{ L}$) of a standard physiological saline stock solution containing $C = 0.500\text{ M}$ sodium chloride ($\text{NaCl}$) and $C = 0.100\text{ M}$ Tris buffer from dry crystalline reagents.
 
-Watch as Dr. Cross guides Lucas through the formula evaluation on the four-register stack:
+The formula evaluation proceeds on the four-register stack:
 
 1. **Sodium Chloride Formula Weight:** Lucas keys in the elemental components of $\text{NaCl}$. Striking the molar mass function evaluates $M(\text{NaCl}) = 22.990 + 35.453 = \mathbf{58.443\text{ g/mol}}$.
 2. **Dissolving to $0.500\text{ M}$ in $250.0\text{ mL}$:** Lucas pushes target molarity $0.500\text{ M}$ into Register Y and volume $0.250\text{ L}$ into Register X, multiplying to find the required solute amount: $n = 0.500 \times 0.250 = \mathbf{0.125\text{ mol}}$. Multiplying by molar mass $58.443\text{ g/mol}$ yields the exact mass to weigh on the balance: $W = 0.125 \times 58.443 = \mathbf{7.3054\text{ g}}$.
@@ -521,7 +521,7 @@ Because the autoionization of water is an endothermic bond-breaking reaction ($\
 | $50^\circ\text{C}$ ($323\text{ K}$) | $5.476 \times 10^{-14}$ | $13.26$ | $2.340 \times 10^{-7}\text{ M}$ | $\mathbf{6.63}$ |
 | $100^\circ\text{C}$ ($373\text{ K}$, boiling) | $51.3 \times 10^{-14}$ | $12.29$ | $7.162 \times 10^{-7}\text{ M}$ | $\mathbf{6.14}$ |
 
-Notice the critical physiological implication: in pure water at human body temperature ($37^\circ\text{C}$), neutral pH is **$6.81$**, not $7.00$. A neutral solution contains equal numbers of $\text{H}^+$ and $\text{OH}^-$ ions ($[\text{H}^+] = [\text{OH}^-] = \sqrt{K_w}$), regardless of the numerical pH value.
+This establishes a critical physiological baseline: in pure water at human body temperature ($37^\circ\text{C}$), neutral pH is **$6.81$**, not $7.00$. A neutral solution contains equal numbers of $\text{H}^+$ and $\text{OH}^-$ ions ($[\text{H}^+] = [\text{OH}^-] = \sqrt{K_w}$), regardless of the numerical pH value.
 
 In 1909 at the Carlsberg Laboratory, Søren Peder Lauritz Sørensen recognized that free proton concentrations in chemistry span fourteen orders of magnitude—from $1.0\text{ M}$ in battery acid to $1.0 \times 10^{-14}\text{ M}$ in drain cleaner. To compress this exponential scale into manageable positive numbers, Sørensen defined the **pH** scale:
 
@@ -536,7 +536,7 @@ Because the pH scale is logarithmic, every single integer change in pH represent
 - At $\text{pH} = 6.00$, $[\text{H}^+] = 1.00 \times 10^{-6}\text{ mol/L} = 1000.0\text{ nM}$ ($10\times$ more acidic).
 - At $\text{pH} = 8.00$, $[\text{H}^+] = 1.00 \times 10^{-8}\text{ mol/L} = 10.0\text{ nM}$ ($10\times$ less acidic).
 
-#### The Acidity Razor's Edge in Living Systems
+#### Acid-Base Homeostasis and Living Systems
 
 Why does a tiny shift in pH have such catastrophic biological consequences? Consider the amino acid **histidine**, an essential component of hemoglobin and the active catalytic triad of serine proteases. The imidazole side chain of histidine has an acid dissociation constant of $\text{p}K_a \approx 6.0\text{--}6.5$:
 
@@ -636,7 +636,7 @@ The three additive terms in Van Slyke's equation have distinct physical meanings
 2. **The $[\text{OH}^-]$ term:** Dominates at very high pH ($> 12.0$), where caustic hydroxide concentration provides strong buffering against base addition.
 3. **The $C_{\text{buf}} \alpha_0 \alpha_1$ term:** Represents the chemical buffering provided by the conjugate acid-base pair. In the physiological range ($\text{pH } 4\text{--}10$), the $[\text{H}^+]$ and $[\text{OH}^-]$ terms are negligible ($\sim 10^{-7}\text{ M}$), so buffer capacity is governed entirely by this term.
 
-Notice that the product $\alpha_0 \alpha_1 = \alpha_1 (1 - \alpha_1)$ achieves its mathematical maximum when $\alpha_1 = 0.50$ (that is, when $\text{pH} = \text{p}K_a$). At this optimal point, the buffer capacity is $\beta_{\max} \approx 0.576 \cdot C_{\text{buf}}$. If the total buffer concentration is $C_{\text{buf}} = 0.100\text{ M}$, the maximum buffer capacity is $\beta_{\max} \approx 0.0576\text{ M/pH}$.
+The product $\alpha_0 \alpha_1 = \alpha_1 (1 - \alpha_1)$ achieves its mathematical maximum when $\alpha_1 = 0.50$ (that is, when $\text{pH} = \text{p}K_a$). At this optimal point, the buffer capacity is $\beta_{\max} \approx 0.576 \cdot C_{\text{buf}}$. If the total buffer concentration is $C_{\text{buf}} = 0.100\text{ M}$, the maximum buffer capacity is $\beta_{\max} \approx 0.0576\text{ M/pH}$.
 
 #### Quantitative Acid and Base Spikes
 
@@ -722,7 +722,7 @@ $$\alpha_0 = \frac{[\text{H}_2\text{A}]}{C_{\text{total}}} = \frac{[\text{H}^+]^
 $$\alpha_1 = \frac{[\text{HA}^-]}{C_{\text{total}}} = \frac{K_{a1}[\text{H}^+]}{D_2}$$
 $$\alpha_2 = \frac{[\text{A}^{2-}]}{C_{\text{total}}} = \frac{K_{a1} K_{a2}}{D_2}$$
 
-Notice that the sum of the alpha fractions is identically unity at every pH ($\alpha_0 + \alpha_1 + \alpha_2 = 1.000$).
+The sum of the alpha fractions is identically unity at every pH ($\alpha_0 + \alpha_1 + \alpha_2 = 1.000$).
 
 For triprotic phosphoric acid ($\text{H}_3\text{PO}_4 \rightleftharpoons \text{H}_2\text{PO}_4^- \rightleftharpoons \text{HPO}_4^{2-} \rightleftharpoons \text{PO}_4^{3-}$), the characteristic polynomial denominator expands to a cubic equation in $[\text{H}^+]$:
 
@@ -792,7 +792,7 @@ Rearranging gives the **First Gran Function**, $F_1(V_b)$:
 
 $$F_1(V_b) = V_b \cdot 10^{-\text{pH}} = K_a \cdot (V_{\text{eq}} - V_b) = -K_a \cdot V_b + K_a V_{\text{eq}}$$
 
-Notice the mathematical beauty of this relation:
+This relation possesses a clean geometric interpretation:
 - $V_b \cdot 10^{-\text{pH}}$ is plotted on the vertical y-axis.
 - Titrant volume $V_b$ is plotted on the horizontal x-axis.
 - The plot forms a straight line.
@@ -834,7 +834,7 @@ Because carbonic acid ($\text{H}_2\text{CO}_3$) in plasma is in instantaneous eq
 
 $$\text{pH} = \text{p}K_a' + \log_{10}\left( \frac{[\text{HCO}_3^-]}{\alpha \cdot P_{\text{CO}_2}} \right) = 6.100 + \log_{10}\left( \frac{[\text{HCO}_3^-]}{0.0307 \cdot P_{\text{CO}_2}} \right)$$
 
-Notice that the analyzer does not measure bicarbonate directly; it **back-solves $[\text{HCO}_3^-]$** using the SC-60 stack algorithm.
+The analyzer does not measure bicarbonate directly; it **back-solves $[\text{HCO}_3^-]$** using the SC-60 stack algorithm.
 At normal baseline values ($\text{pH} = 7.400$, $P_{\text{CO}_2} = 40.0\text{ mmHg}$):
 $$[\text{CO}_2(d)] = 0.0307 \times 40.0 = 1.228\text{ mM}$$
 $$\text{pH} - \text{p}K_a' = 7.400 - 6.100 = 1.300$$
@@ -1033,7 +1033,7 @@ Inverting the natural logarithm gives the exponential attenuation law:
 
 $$I = I_0 \cdot e^{-\alpha b c}$$
 
-Notice the fundamental physical insight: light intensity decays **exponentially** through an absorbing medium. This is the exact mathematical counterpart to the radioactive decay law in nuclear physics, atmospheric barometric pressure decay with altitude, and coaxial cable signal attenuation ($e^{-\gamma z}$) derived in Unit V.
+Light intensity decays **exponentially** through an absorbing medium. This is the exact mathematical counterpart to the radioactive decay law in nuclear physics, atmospheric barometric pressure decay with altitude, and coaxial cable signal attenuation ($e^{-\gamma z}$) derived in Unit V.
 
 In analytical chemistry, engineers and spectrophotometers work in base-10 logarithms rather than natural logarithms. Converting to base-10:
 
@@ -1137,7 +1137,7 @@ Standard international biophysical conversion factors for a $1.000\text{ cm}$ pa
 - **Single-Stranded RNA ($\text{ssRNA}$):** $A_{260} = 1.000 \iff \mathbf{40.0\ \mu\text{g/mL}}$ ($0.040\text{ mg/mL}$)
 - **Single-Stranded DNA Oligonucleotides ($\text{ssDNA}$):** $A_{260} = 1.000 \iff \mathbf{33.0\ \mu\text{g/mL}}$ ($0.033\text{ mg/mL}$)
 
-Notice the striking phenomenon of **hyperchromicity**: double-stranded DNA absorbs substantially less UV light than single-stranded DNA ($50\ \mu\text{g/mL}$ per OD versus $33\ \mu\text{g/mL}$ per OD). In native double-helical B-DNA, the planar aromatic base pairs stack closely atop one another ($3.4\text{ Å}$ rise per base pair). The dipole-dipole interactions between adjacent stacked base pairs align their transition dipoles, electrostatically suppressing their net oscillator strength—a phenomenon called *hypochromicity*. When the DNA duplex is thermally melted (denatured) into disordered single strands, the unstacked bases absorb UV photons independently, causing a dramatic **twenty to forty percent surge in absorbance**—the *hyperchromic shift*.
+This creates the optical phenomenon of **hyperchromicity**: double-stranded DNA absorbs substantially less UV light than single-stranded DNA ($50\ \mu\text{g/mL}$ per OD versus $33\ \mu\text{g/mL}$ per OD). In native double-helical B-DNA, the planar aromatic base pairs stack closely atop one another ($3.4\text{ Å}$ rise per base pair). The dipole-dipole interactions between adjacent stacked base pairs align their transition dipoles, electrostatically suppressing their net oscillator strength—a phenomenon called *hypochromicity*. When the DNA duplex is thermally melted (denatured) into disordered single strands, the unstacked bases absorb UV photons independently, causing a dramatic **twenty to forty percent surge in absorbance**—the *hyperchromic shift*.
 
 To assess sample purity, biochemists compute the **$A_{260} / A_{280}$ ratio**:
 - Pure double-stranded DNA yields $A_{260} / A_{280} \approx \mathbf{1.80} \pm 0.05$.
@@ -1461,16 +1461,16 @@ Work through these five field problems on your calculator. Step-by-step keystrok
 
 ## Operational Baton: Handing Off from Wet-Lab Analytics to Culinary Arts & Fermentation Science
 
-With the spectrophotometer powered down, the quartz cuvettes rinsed in deionized water, and the analytical balance tared to zero, we have brought our journey across physical stoichiometry, chemical equilibrium, and molecular kinetics to its natural culmination.
+The principles of physical stoichiometry, chemical equilibrium, and molecular kinetics provide a deterministic framework for measuring and controlling chemical transformations at the bench.
 
 In **Unit VI (SC-60 Chemistry & Wet Lab)**, we mastered the quantitative tools of analytical chemistry:
 1. In **Chapter 16**, we converted macroscopic balance masses into discrete molecular counts through Avogadro's constant, accounted for waters of crystallization in hydrated salts, dissolved reagents to precise Molarity, and quantified micropipette serial dilution error.
-2. In **Chapter 17**, we explored the logarithmic razor's edge of Sørensen acidity, derived the Henderson–Hasselbalch conjugate buffer equilibrium, calculated Van Slyke buffer capacity, and defended living cultures against acid spikes.
+2. In **Chapter 17**, we explored the logarithmic scale of Sørensen acidity, derived the Henderson–Hasselbalch conjugate buffer equilibrium, calculated Van Slyke buffer capacity, and defended living cultures against acid spikes.
 3. In **Chapter 18**, we tracked exponential photon absorption through the Beer–Lambert law, predicted protein extinction coefficients from aromatic amino acid sequences, evaluated Arrhenius thermal degradation barriers, and balanced centrifugal sedimentation fields.
 
 Throughout Unit VI, our focus has been **sterile laboratory precision**: high-purity synthetic reagents, sealed cuvettes, and certified Class A volumetric glassware.
 
-Yet chemistry does not exist solely inside cleanrooms and air-filtered instrument bays. Across millennia of human civilization, humanity's oldest and most profound chemical laboratory has been the hearth, the fermentation cellar, and the brew deck. The chemical laws governing molecular solutions do not change when we trade a borosilicate flask for an oak cask or a stainless steel mash tun.
+Yet chemistry does not exist solely inside cleanrooms and air-filtered instrument bays. Across human history, humanity's oldest applied chemical laboratory has been the hearth, the fermentation cellar, and the brew deck. The chemical laws governing molecular solutions do not change when we trade a borosilicate flask for an oak cask or a stainless steel mash tun.
 
 In **Unit VII (SC-78 Culinary Arts, Levain Hydration & Brewing Thermodynamics)**, the fundamental physical laws remain unchanged. The stoichiometric mole calculations, Henderson–Hasselbalch buffer curves, and Arrhenius reaction kinetics we explored on the SC-60 stack manifest in living culinary systems:
 - The gravimetric mass fractions of Chapter 16 transform into **Baker's Percentages** and dough hydration ratios governing gluten development in artisanal sourdough levain.

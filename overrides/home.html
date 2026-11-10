@@ -378,7 +378,7 @@
                         Dedicated tactile calculating instruments and architectural math blocks engineered for deep mathematical intuition. Zero screens, zero notifications, zero subscriptions. Just pure, tangible focus from elementary arithmetic to advanced scientific computing.
                     </p>
                     
-                    <!-- Action Buttons: Clear Orange Primary, Ghost Outline Secondary, Telemetry Simulator -->
+                    <!-- Action Buttons: Clear Orange Primary, Ghost Outline Secondary -->
                     <div class="flex flex-wrap items-center gap-3 font-mono text-xs sm:text-sm font-bold">
                         <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="bg-[#FF5500] hover:bg-[#FF6611] text-white px-5 py-3 rounded text-center font-mono text-xs sm:text-sm font-bold transition flex items-center gap-2 shadow-lg shadow-orange-950/30">
                             <span>ORDER ON ETSY</span>
@@ -388,10 +388,6 @@
                             <span>EXPLORE INSTRUMENTS</span>
                             <span>&darr;</span>
                         </a>
-                        <button type="button" onclick="switchHeroShowcase('digital');" class="text-slate-400 hover:text-white px-2 py-3 text-center transition flex items-center gap-2 text-xs font-mono">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                            <span>TEST SIMULATOR &rarr;</span>
-                        </button>
                     </div>
 
                     <!-- Direct Guide & Open Blueprint Bar -->
@@ -410,17 +406,16 @@
                     </div>
                 </div>
                 
-                <!-- Right Column: Interactive Studio Showcase (In-Hand Renders + Live Digital Twin) -->
+                <!-- Right Column: Interactive Studio Showcase (In-Hand Renders) -->
                 <div class="lg:col-span-5 flex flex-col items-center relative">
                     
                     <!-- Showcase Mode Selector (Sleek Segmented Instrument Toolbar) -->
-                    <div class="w-full max-w-[440px] bg-[#11141A] p-1 rounded-xl border border-white/10 grid grid-cols-6 gap-1 mb-3 font-mono select-none">
+                    <div class="w-full max-w-[440px] bg-[#11141A] p-1 rounded-xl border border-white/10 grid grid-cols-5 gap-1 mb-3 font-mono text-[11px] select-none">
                         <button type="button" class="hero-tab-btn active" id="hero-tab-sc32" onclick="switchHeroShowcase('sc32')">SC-32</button>
                         <button type="button" class="hero-tab-btn" id="hero-tab-sc6" onclick="switchHeroShowcase('sc6')">SC-6</button>
                         <button type="button" class="hero-tab-btn" id="hero-tab-fraction" onclick="switchHeroShowcase('fraction')">FRACTION</button>
                         <button type="button" class="hero-tab-btn" id="hero-tab-prime" onclick="switchHeroShowcase('prime')">PRIME</button>
                         <button type="button" class="hero-tab-btn" id="hero-tab-placevalue" onclick="switchHeroShowcase('placevalue')">PLACE VAL</button>
-                        <button type="button" class="hero-tab-btn" id="hero-tab-digital" onclick="switchHeroShowcase('digital')">SIMULATOR</button>
                     </div>
 
                     <!-- Viewport 1: High-Resolution Studio Render Photography -->
@@ -447,81 +442,6 @@
                         </div>
                     </div>
 
-                    <!-- Viewport 2: Live Digital Twin Simulator (Hidden until tab 06 is clicked) -->
-                    <div id="hero-digital-viewport" class="hidden w-full max-w-[395px] flex flex-col items-center">
-                        <!-- Mission Tag -->
-                        <div class="w-full flex items-center justify-between mb-2 px-2 font-mono text-xs">
-                            <span class="text-slate-400 font-bold uppercase tracking-wider text-[11px]" id="showcase-mission-tag">RPN CALCULATION TWIN</span>
-                            <span class="text-slate-400 text-[10px]" id="showcase-step-tag">AUTOPLAY</span>
-                        </div>
-
-                        <!-- iPhone Frame -->
-                        <div id="calc-iphone-container" class="w-full iphone-frame p-3.5 flex flex-col select-none sc-theme-dark transition-colors duration-200">
-                            <div class="sc-chassis rounded-[36px] p-3 border border-black/5 bg-[#11141A]">
-                                <!-- Status Bar -->
-                                <div class="flex justify-between items-center text-xs font-bold font-mono px-1 mb-2 text-slate-400">
-                                    <span>9:41</span>
-                                    <div class="w-20 h-3.5 bg-black rounded-full mx-auto"></div>
-                                    <span>5G 100%</span>
-                                </div>
-
-                                <!-- Brand Header -->
-                                <div class="flex justify-between items-baseline mb-2 px-1">
-                                    <span class="font-bold text-lg tracking-tight font-mono text-white">StackCalc <span class="text-[#FF4400]">32</span></span>
-                                    <span class="font-mono text-[10px] tracking-wider text-slate-400">RPN ENGINE</span>
-                                </div>
-
-                                <!-- LCD Screen (Strict Rubric G5 Left-Aligned Stack) -->
-                                <div class="lcd-screen rounded-lg p-2.5 font-terminus text-sm leading-tight border border-black/30 shadow-inner mb-2 text-left bg-[#DCE2EC]">
-                                    <div class="text-[10px] text-slate-600 border-b border-slate-400/30 pb-0.5 mb-1 flex justify-between font-tiny5">
-                                        <span>RAD FIX 4</span>
-                                        <span>RPN STACK (4-LINE)</span>
-                                    </div>
-                                    <div class="text-[12px] text-slate-600 font-tiny5 text-left leading-none mb-0.5 reg-t">T: 0.0000</div>
-                                    <div class="text-[12px] text-slate-600 font-tiny5 text-left leading-none mb-0.5 reg-z">Z: 1.4142</div>
-                                    <div class="text-[12px] text-slate-700 font-tiny5 text-left leading-tight reg-y">Y: 2.7183</div>
-                                    <div class="text-lg font-bold text-slate-900 tracking-wider font-terminus text-left mt-0.5" id="app-lcd-text">X: 3.1416_</div>
-                                </div>
-
-                                <!-- Keypad Grid (Full 4-Line RPN Layout) -->
-                                <div class="sc-grid-6 text-center text-[10px] font-mono font-bold mb-1">
-                                    <button type="button" class="brutalist-button py-1.5 rounded bg-slate-800 text-white hover:bg-slate-700 transition" onclick="handleKeyClick('sqrt')">&radic;x</button>
-                                    <button type="button" class="brutalist-button py-1.5 rounded bg-slate-800 text-white hover:bg-slate-700 transition" onclick="handleKeyClick('pow')">y&#739;</button>
-                                    <button type="button" class="brutalist-button py-1.5 rounded bg-slate-800 text-white hover:bg-slate-700 transition" onclick="handleKeyClick('ln')">LN</button>
-                                    <button type="button" class="brutalist-button py-1.5 rounded bg-slate-800 text-white hover:bg-slate-700 transition" onclick="handleKeyClick('sin')">SIN</button>
-                                    <button type="button" class="brutalist-button py-1.5 rounded bg-slate-800 text-white hover:bg-slate-700 transition" onclick="handleKeyClick('cos')">COS</button>
-                                    <button type="button" class="brutalist-button py-1.5 rounded bg-slate-800 text-white hover:bg-slate-700 transition" onclick="handleKeyClick('tan')">TAN</button>
-                                </div>
-                                <div class="sc-grid-5 text-center text-xs font-mono font-bold mb-1">
-                                    <button type="button" class="sc-col-span-2 py-1.5 rounded bg-[#FF4400] text-white font-bold hover:bg-[#ff5511] transition shadow-sm" onclick="handleKeyClick('enter')">ENTER</button>
-                                    <button type="button" class="py-1.5 rounded bg-slate-800 text-white hover:bg-slate-700 transition" onclick="handleKeyClick('swap')">x&gtrless;y</button>
-                                    <button type="button" class="py-1.5 rounded bg-slate-800 text-white hover:bg-slate-700 transition" onclick="handleKeyClick('neg')">+/-</button>
-                                    <button type="button" class="py-1.5 rounded bg-slate-800 text-white hover:bg-slate-700 transition" onclick="handleKeyClick('c')">CLR</button>
-                                </div>
-                                <div class="sc-grid-5 text-center text-sm font-mono font-bold mb-1">
-                                    <button type="button" class="py-1.5 rounded bg-slate-900 text-white hover:bg-slate-800 transition" onclick="handleKeyClick('7')">7</button>
-                                    <button type="button" class="py-1.5 rounded bg-slate-900 text-white hover:bg-slate-800 transition" onclick="handleKeyClick('8')">8</button>
-                                    <button type="button" class="py-1.5 rounded bg-slate-900 text-white hover:bg-slate-800 transition" onclick="handleKeyClick('9')">9</button>
-                                    <button type="button" class="py-1.5 rounded bg-slate-800 text-white hover:bg-slate-700 transition" onclick="handleKeyClick('/')">&divide;</button>
-                                    <button type="button" class="py-1.5 rounded bg-slate-800 text-white hover:bg-slate-700 transition" onclick="handleKeyClick('*')">&times;</button>
-                                </div>
-                                <div class="sc-grid-5 text-center text-sm font-mono font-bold mb-1">
-                                    <button type="button" class="py-1.5 rounded bg-slate-900 text-white hover:bg-slate-800 transition" onclick="handleKeyClick('4')">4</button>
-                                    <button type="button" class="py-1.5 rounded bg-slate-900 text-white hover:bg-slate-800 transition" onclick="handleKeyClick('5')">5</button>
-                                    <button type="button" class="py-1.5 rounded bg-slate-900 text-white hover:bg-slate-800 transition" onclick="handleKeyClick('6')">6</button>
-                                    <button type="button" class="py-1.5 rounded bg-slate-800 text-white hover:bg-slate-700 transition" onclick="handleKeyClick('-')">&minus;</button>
-                                    <button type="button" class="py-1.5 rounded bg-slate-800 text-white hover:bg-slate-700 transition" onclick="handleKeyClick('+')">+</button>
-                                </div>
-                                <div class="sc-grid-5 text-center text-sm font-mono font-bold">
-                                    <button type="button" class="sc-col-span-2 py-1.5 rounded bg-slate-900 text-white hover:bg-slate-800 transition" onclick="handleKeyClick('0')">0</button>
-                                    <button type="button" class="py-1.5 rounded bg-slate-900 text-white hover:bg-slate-800 transition" onclick="handleKeyClick('.')">.</button>
-                                    <button type="button" class="py-1.5 rounded bg-slate-800 text-cyan-400 font-bold hover:bg-slate-700 transition" onclick="handleKeyClick('pi')">&pi;</button>
-                                    <button type="button" class="py-1.5 rounded bg-slate-800 text-amber-400 font-bold hover:bg-slate-700 transition" onclick="handleKeyClick('back')">&larr;</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -532,16 +452,16 @@
         <section class="py-3 sm:py-4 bg-[#080A0E] border-b border-white/10 font-mono text-[11px] sm:text-xs text-slate-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-center">
                 <div class="flex items-center justify-center">
-                    <span><span class="text-emerald-400 font-bold mr-1.5">&plusmn;</span>0.05mm Calibrated Precision</span>
+                    <span><span class="text-[#FF5500] font-bold mr-1.5">//</span>RP2350 Dual-Core Silicon</span>
                 </div>
                 <div class="flex items-center justify-center">
-                    <span><span class="text-emerald-400 font-bold mr-1.5">&check;</span>Non-Toxic Biopolymer &bull; CPSIA</span>
+                    <span><span class="text-emerald-400 font-bold mr-1.5">&check;</span>SAT &bull; ACT &bull; AP Permitted</span>
                 </div>
                 <div class="flex items-center justify-center">
-                    <span><span class="text-cyan-400 font-bold mr-1.5">&check;</span>$2.49 Lifetime Piece Refills</span>
+                    <span><span class="text-cyan-400 font-bold mr-1.5">&check;</span>$2.49 Lifetime Part Refills</span>
                 </div>
                 <div class="flex items-center justify-center">
-                    <span><span class="text-emerald-400 font-bold mr-1.5">&check;</span>30-Day Risk-Free In-Home Trial</span>
+                    <span><span class="text-emerald-400 font-bold mr-1.5">&check;</span>Secure Checkout via Etsy</span>
                 </div>
             </div>
         </section>
@@ -816,7 +736,7 @@
                                 <td class="text-slate-400">Flimsy injection plastic, mushy membrane keys, battery acid leaks</td>
                                 <td class="text-slate-400">Hollow, brittle petroleum plastics; printed ink that rubs off in weeks</td>
                                 <td class="text-slate-400">Softwood, prone to humidity warping, splintering, and chipped edges</td>
-                                <td class="compare-highlight font-bold text-white">Dense acoustic-mass biopolymer, stone-matte finish, 400g snap-domes, debossed geometry.</td>
+                                <td class="compare-highlight font-bold text-white">Solid matte polymer, 400g snap-domes, Shore 95A TPU keys, debossed geometry.</td>
                             </tr>
                             <tr>
                                 <td class="font-mono font-bold text-white">Modularity &amp; Storage</td>
@@ -916,7 +836,7 @@
                                 <li class="flex items-center gap-1.5"><span class="text-slate-400">&check;</span> Zero Screen Time or Subscription Fees</li>
                                 <li class="flex items-center gap-1.5"><span class="text-slate-400">&check;</span> 3-Second Visual Clean-Up (Sculpted Sockets)</li>
                                 <li class="flex items-center gap-1.5"><span class="text-slate-400">&check;</span> Anti-Heartbreak $2.49 Part Refills</li>
-                                <li class="flex items-center gap-1.5"><span class="text-slate-400">&check;</span> 30-Day Risk-Free In-Home Trial</li>
+                                <li class="flex items-center gap-1.5"><span class="text-slate-400">&check;</span> Secure Checkout &amp; Protection on Etsy</li>
                             </ul>
                         </div>
                         <div class="space-y-2.5">
@@ -968,7 +888,7 @@
                                 Tired of decorative trinkets? Download free, watertight, 100% support-free .3MF project files sliced with PrusaSlicer for Prusa printers and published on Printables.
                             </p>
                             <ul class="font-sans text-xs text-slate-300 space-y-1.5 mb-6">
-                                <li class="flex items-center gap-1.5"><span class="text-slate-400">&check;</span> Calibrated on Prusa 3D Printers</li>
+                                <li class="flex items-center gap-1.5"><span class="text-slate-400">&check;</span> Tested on Bambu &amp; Prusa Printers</li>
                                 <li class="flex items-center gap-1.5"><span class="text-slate-400">&check;</span> Official 42mm Gridfinity Specs</li>
                                 <li class="flex items-center gap-1.5"><span class="text-slate-400">&check;</span> 100% Support-Free Models</li>
                             </ul>
@@ -1000,7 +920,7 @@
                         <div class="font-mono text-xs uppercase tracking-widest text-slate-400 font-bold mb-2">// 42MM GRIDFINITY STANDARD &bull; GRADES PRE-K THROUGH CALCULUS</div>
                         <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Classroom Manipulatives</h2>
                         <p class="text-slate-400 text-sm md:text-base mt-2 max-w-2xl">
-                            Tangible mathematical laboratories designed to turn abstract formulas into concrete spatial intuition. Engineered with &plusmn;0.05mm micrometer precision in dense, non-toxic biopolymer with permanent debossed geometry.
+                            Tangible mathematical instruments designed to turn abstract concepts into physical spatial intuition. Manufactured in durable matte polymer with deep debossed markings and standard 42mm Gridfinity fit.
                         </p>
                     </div>
                     <div class="mt-4 md:mt-0">
@@ -1017,7 +937,7 @@
                     <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('calc', this)">RPN HARDWARE (2)</button>
                     <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('manip', this)">CORE MANIPULATIVES (3)</button>
                     <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('book', this)">BOOKS &amp; MANUALS (3)</button>
-                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('archive', this)">⏸ ON-HOLD 3MF LAB (7)</button>
+                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('archive', this)">OPEN 3MF LAB (7)</button>
                     <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('all', this)">ALL CATALOG (15)</button>
                 </div>
 
@@ -1543,7 +1463,7 @@
                             <span class="font-mono text-xs text-slate-400 font-bold uppercase tracking-wider">// DURABILITY, PACKAGING &amp; OPEN REPAIRABILITY</span>
                             <h3 class="text-2xl font-bold text-white mt-1 mb-3">Zero-Waste Kraft Packaging. "No Lost Piece Left Behind."</h3>
                             <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                                Engineered in high-density non-toxic biopolymer and shatterproof PETG. Every kit ships in a 200 lb-test stay-flat kraft mailer engineered for permanent desk storage without throwaway plastic films. If your child loses a counter or a block goes missing, our Anti-Heartbreak Lifetime Guarantee replaces the exact matching piece for just $2.49 with free domestic shipping.
+                                Engineered in solid non-toxic matte polymers and shatterproof PETG. Every kit ships in a 200 lb-test stay-flat kraft mailer engineered for permanent desk storage without throwaway plastic films. If your child loses a counter or a block goes missing, our Anti-Heartbreak Lifetime Guarantee replaces the exact matching piece for just $2.49 with free domestic shipping.
                             </p>
                             <div class="flex flex-wrap gap-4 font-mono text-xs text-slate-400">
                                 <span>&bull; CCSS &bull; TEKS ALIGNED</span>
@@ -2547,7 +2467,7 @@
                             <span class="font-mono text-slate-400 group-open:rotate-45 transition transform text-xl font-bold ml-4">+</span>
                         </summary>
                         <p class="text-slate-300 mt-4 text-sm leading-relaxed pl-8 border-l border-white/10 ml-2">
-                            Commodity school sets are hollow, injection-molded plastics with loose &plusmn;1.5mm tolerances and printed ink that rubs off within weeks. Traditional wooden sets warp and swell with room humidity. StackCalc instruments are micrometer-calibrated to &plusmn;0.05mm so fractional equivalence is physically flush to the touch. They are molded from dense, non-toxic organic biopolymers with deep permanent debossing that never fades, housed in self-auditing 3-second clean-up boxes, and backed by lifetime $2.49 exact piece replacement. You buy an instrument once for your child's entire schooling, and it can be handed down to siblings.
+                            Commodity classroom sets are typically hollow injection plastics with printed ink that rubs off, or wooden blocks that expand and warp with room humidity. StackCalc instruments are precision-printed in solid, non-toxic matte polymers with recessed debossed legends that cannot wear off. Fraction towers align flush to the touch, pieces seat with satisfying mechanical detents into modular Gridfinity desk boxes, and every set is supported by open 3MF blueprints and $2.49 replacement refills. You invest once in a durable learning instrument designed to last through high school and pass down to siblings.
                         </p>
                     </details>
 
@@ -2803,7 +2723,7 @@
                 tag: 'PROPORTIONS // HEIGHT PARITY',
                 title: 'Fraction Studio Towers',
                 price: '$24.99 – $48.00 USD',
-                subtitle: 'Authentic Silk Biopolymer • Reciprocal 84mm Datum',
+                subtitle: 'Authentic Dual-Tone Polymer • Reciprocal 84mm Datum',
                 dims: '10 Curriculum Denominators • 4-Face Conversions • Snap-Tight Case',
                 badge: 'Beta / V1 In Stock',
                 btnText: 'Order $24.99+',
@@ -2842,36 +2762,24 @@
             const activeBtn = document.getElementById('hero-tab-' + mode);
             if (activeBtn) activeBtn.classList.add('active');
 
-            const photoViewport = document.getElementById('hero-render-viewport');
-            const digitalViewport = document.getElementById('hero-digital-viewport');
-
-            if (mode === 'digital') {
-                photoViewport.classList.add('hidden');
-                digitalViewport.classList.remove('hidden');
-            } else {
-                digitalViewport.classList.add('hidden');
-                photoViewport.classList.remove('hidden');
-                
-                const data = showcaseData[mode];
-                if (data) {
-                    const img = document.getElementById('hero-main-photo');
-                    img.src = data.src;
-                    document.getElementById('hero-photo-tag').textContent = data.tag;
-                    document.getElementById('hero-photo-title').textContent = data.title;
-                    document.getElementById('hero-photo-link').href = data.link;
-                    if (document.getElementById('hero-photo-price')) {
-                        document.getElementById('hero-photo-price').innerHTML = `${data.price} <span class="text-[10px] text-slate-500 font-normal">(${data.subtitle})</span>`;
-                    }
-                    if (document.getElementById('hero-photo-dims')) {
-                        document.getElementById('hero-photo-dims').textContent = data.dims || '';
-                    }
-                    if (document.getElementById('hero-photo-badge')) {
-                        document.getElementById('hero-photo-badge').textContent = data.badge;
-                    }
-                    if (document.getElementById('hero-photo-btn-text')) {
-                        document.getElementById('hero-photo-btn-text').textContent = data.btnText;
-                    }
-                }
+            const data = showcaseData[mode];
+            if (data) {
+                const img = document.getElementById('hero-main-photo');
+                if (img) img.src = data.src;
+                const tagEl = document.getElementById('hero-photo-tag');
+                if (tagEl) tagEl.textContent = data.tag;
+                const titleEl = document.getElementById('hero-photo-title');
+                if (titleEl) titleEl.textContent = data.title;
+                const linkEl = document.getElementById('hero-photo-link');
+                if (linkEl) linkEl.href = data.link;
+                const priceEl = document.getElementById('hero-photo-price');
+                if (priceEl) priceEl.innerHTML = `${data.price} <span class="text-[10px] text-slate-500 font-normal">(${data.subtitle})</span>`;
+                const dimsEl = document.getElementById('hero-photo-dims');
+                if (dimsEl) dimsEl.textContent = data.dims || '';
+                const badgeEl = document.getElementById('hero-photo-badge');
+                if (badgeEl) badgeEl.textContent = data.badge;
+                const btnTextEl = document.getElementById('hero-photo-btn-text');
+                if (btnTextEl) btnTextEl.textContent = data.btnText;
             }
         }
 
@@ -3559,133 +3467,7 @@
             });
         }
 
-        // Authentic 4-Line RPN Stack Calculator Engine
-        const rpnStack = {
-            x: 3.1416,
-            y: 2.7183,
-            z: 1.4142,
-            t: 0.0000
-        };
-        let inputBuffer = '';
-        let stackLift = false;
 
-        function formatRPN(val) {
-            if (isNaN(val) || !isFinite(val)) return 'ERR: SYNTAX';
-            const num = Number(val);
-            if (Math.abs(num) >= 1e8 || (Math.abs(num) > 0 && Math.abs(num) < 1e-4)) {
-                return num.toExponential(4).toUpperCase();
-            }
-            return num.toFixed(4);
-        }
-
-        function updateSimulatorLCD() {
-            const regT = document.querySelector('.reg-t');
-            const regZ = document.querySelector('.reg-z');
-            const regY = document.querySelector('.reg-y');
-            const regX = document.getElementById('app-lcd-text');
-
-            if (regT) regT.textContent = 'T: ' + formatRPN(rpnStack.t);
-            if (regZ) regZ.textContent = 'Z: ' + formatRPN(rpnStack.z);
-            if (regY) regY.textContent = 'Y: ' + formatRPN(rpnStack.y);
-            if (regX) {
-                if (inputBuffer !== '') {
-                    regX.textContent = 'X: ' + inputBuffer + '_';
-                } else {
-                    regX.textContent = 'X: ' + formatRPN(rpnStack.x) + '_';
-                }
-            }
-        }
-
-        function handleKeyClick(key) {
-            playHapticClick(720);
-
-            // Numeric Digits & Decimal
-            if (['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'].includes(key)) {
-                if (key === '.' && inputBuffer.includes('.')) return;
-                if (stackLift && inputBuffer === '') {
-                    // Push stack up before starting new number after ENTER
-                    rpnStack.t = rpnStack.z;
-                    rpnStack.z = rpnStack.y;
-                    rpnStack.y = rpnStack.x;
-                    stackLift = false;
-                }
-                if (inputBuffer.length < 12) {
-                    inputBuffer += key;
-                }
-                updateSimulatorLCD();
-                return;
-            }
-
-            // Commit buffer if typing
-            if (inputBuffer !== '') {
-                rpnStack.x = parseFloat(inputBuffer) || 0;
-                inputBuffer = '';
-            }
-
-            stackLift = false;
-
-            if (key === 'enter') {
-                rpnStack.t = rpnStack.z;
-                rpnStack.z = rpnStack.y;
-                rpnStack.y = rpnStack.x;
-                stackLift = true;
-            } else if (key === '+') {
-                rpnStack.x = rpnStack.y + rpnStack.x;
-                rpnStack.y = rpnStack.z;
-                rpnStack.z = rpnStack.t;
-            } else if (key === '-') {
-                rpnStack.x = rpnStack.y - rpnStack.x;
-                rpnStack.y = rpnStack.z;
-                rpnStack.z = rpnStack.t;
-            } else if (key === '*') {
-                rpnStack.x = rpnStack.y * rpnStack.x;
-                rpnStack.y = rpnStack.z;
-                rpnStack.z = rpnStack.t;
-            } else if (key === '/') {
-                rpnStack.x = (rpnStack.x !== 0) ? (rpnStack.y / rpnStack.x) : NaN;
-                rpnStack.y = rpnStack.z;
-                rpnStack.z = rpnStack.t;
-            } else if (key === 'pow') {
-                rpnStack.x = Math.pow(rpnStack.y, rpnStack.x);
-                rpnStack.y = rpnStack.z;
-                rpnStack.z = rpnStack.t;
-            } else if (key === 'sqrt') {
-                rpnStack.x = Math.sqrt(rpnStack.x);
-            } else if (key === 'ln') {
-                rpnStack.x = Math.log(rpnStack.x);
-            } else if (key === 'sin') {
-                rpnStack.x = Math.sin(rpnStack.x);
-            } else if (key === 'cos') {
-                rpnStack.x = Math.cos(rpnStack.x);
-            } else if (key === 'tan') {
-                rpnStack.x = Math.tan(rpnStack.x);
-            } else if (key === 'swap') {
-                const tmp = rpnStack.x;
-                rpnStack.x = rpnStack.y;
-                rpnStack.y = tmp;
-            } else if (key === 'neg') {
-                rpnStack.x = -rpnStack.x;
-            } else if (key === 'pi') {
-                rpnStack.t = rpnStack.z;
-                rpnStack.z = rpnStack.y;
-                rpnStack.y = rpnStack.x;
-                rpnStack.x = Math.PI;
-            } else if (key === 'back') {
-                if (inputBuffer.length > 0) {
-                    inputBuffer = inputBuffer.slice(0, -1);
-                } else {
-                    rpnStack.x = 0;
-                }
-            } else if (key === 'c') {
-                rpnStack.x = 0;
-                rpnStack.y = 0;
-                rpnStack.z = 0;
-                rpnStack.t = 0;
-                inputBuffer = '';
-            }
-
-            updateSimulatorLCD();
-        }
 
         // Interactive CRA Bridge Switcher (Stage 02)
         const craBridgeData = {

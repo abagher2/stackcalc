@@ -11,11 +11,11 @@ In domestic kitchens, recipes are traditionally recorded in volumetric scoops—
 
 Controlling biological fermentation in the bakery and brewhouse requires balancing mechanical work against sensible and latent heat. Baker's yeast (*Saccharomyces cerevisiae*) and sourdough lactic acid bacteria (*Fructilactobacillus sanfranciscensis*) roughly double their metabolic carbon-dioxide evolution and organic acid synthesis for every $8^\circ\text{C}\text{ to }10^\circ\text{C}$ ($15^\circ\text{F}$) rise in dough temperature ($Q_{10} \approx 2.0$). This extreme thermal sensitivity forms the foundation of modern zymurgy, rooted in Louis Pasteur's landmark 1876 treatise *Études sur la Bière* (*Studies on Beer*). Following the devastation of the Franco-Prussian War, Pasteur applied rigorous temperature calorimetry and optical microscopy to demonstrate that fermentation and beer spoilage were not spontaneous chemical breakdowns as nineteenth-century dogma held, but competitive microbiological reactions governed strictly by thermodynamics and enzyme kinetics. Pasteur showed that without strict thermal discipline, wild bacteria outpace brewing yeasts, converting sweet wort into sour vinegar and lactic acid.
 
-When heavy electric spiral mixers entered twentieth-century bakeries, viscous shear between the rotating steel hook and the developing gluten matrix converted mechanical work into thermal energy, warming the dough during mixing. If dough exits the mixer bowl at $29^\circ\text{C}$ ($84^\circ\text{F}$) instead of the intended $24^\circ\text{C}$ ($75^\circ\text{F}$), wild yeasts and lactobacilli ferment uncontrollably: the enzymatic breakdown of starch accelerates, proteolytic enzymes dismantle the gluten matrix, and shaped loaves puddle flat on the loader peel before ever reaching the hearth oven. To hit a repeatable post-mix desired dough temperature (DDT, spoken as D-D-T), bakers solve an inverse enthalpy balance for the required strike-water temperature. Furthermore, when hot summer ambient air warms municipal water beyond the cooling threshold, bakers substitute flake ice, harnessing its massive $80\text{ kcal/kg}$ ($144\text{ BTU/lb}$) latent heat of fusion to absorb excess heat without altering dough hydration. Meanwhile, all-grain brewers balance the specific heat of dry malted barley against hot strike liquor to land within the exact, razor-thin $64^\circ\text{C}\text{–}69^\circ\text{C}$ ($147^\circ\text{F}\text{–}156^\circ\text{F}$) enzymatic window where $\alpha$-amylase and $\beta$-amylase hydrolyze complex grain starches into fermentable sugars and mouthfeel dextrins.
+When heavy electric spiral mixers entered twentieth-century bakeries, viscous shear between the rotating steel hook and the developing gluten matrix converted mechanical work into thermal energy, warming the dough during mixing. If dough exits the mixer bowl at $29^\circ\text{C}$ ($84^\circ\text{F}$) instead of the intended $24^\circ\text{C}$ ($75^\circ\text{F}$), wild yeasts and lactobacilli ferment uncontrollably: the enzymatic breakdown of starch accelerates, proteolytic enzymes dismantle the gluten matrix, and shaped loaves puddle flat on the loader peel before ever reaching the hearth oven. To hit a repeatable post-mix desired dough temperature (DDT, spoken as D-D-T), bakers solve an inverse enthalpy balance for the required strike-water temperature. Furthermore, when hot summer ambient air warms municipal water beyond the cooling threshold, bakers substitute flake ice, harnessing its massive $80\text{ kcal/kg}$ ($144\text{ BTU/lb}$) latent heat of fusion to absorb excess heat without altering dough hydration. Meanwhile, all-grain brewers balance the specific heat of dry malted barley against hot strike liquor to land within the exact $64^\circ\text{C}\text{–}69^\circ\text{C}$ ($147^\circ\text{F}\text{–}156^\circ\text{F}$) enzymatic window where $\alpha$-amylase and $\beta$-amylase hydrolyze complex grain starches into fermentable sugars and mouthfeel dextrins.
 
 Quantitative brewing science (*zymurgy*) traces its mathematical foundation to 1843 in Prague. There, Bohemian chemist Carl Joseph Napoleon Balling calibrated aqueous sucrose density tables so brewers could monitor malt starch conversion and yeast attenuation with a floating hydrometer measuring Specific Gravity. In 1854, Prussian civil engineer Adolf Ferdinand Wenceslaus Brix refined Balling's pycnometric tables for the beet-sugar and fermentation trades. In 1900, German chemist Fritz Plato standardized the extract scale ($1^\circ\text{P} = 1\text{ g}$ sucrose per $100\text{ g}$ wort) for the Imperial Normal Calibration Commission, linking the gravity drop from temperature-corrected Original Gravity to Final Gravity to Alcohol by Volume. Nearly a century later in 1995, Oregon brewing scientist Glenn Tinseth modeled the first-order thermal isomerization kinetics of hop alpha acids (*Humulus lupulus*) across boil time and wort gravity, turning the art of beer bittering into an exact biochemical rate equation.
 
-Bridging chemistry and biological transformation into daily human sustenance, the seventh pillar powers the craft of commercial food science: scaling artisan sourdough to total flour mass, calculating mixer friction calorimetry and ice additions, predicting all-grain mash strike enthalpies and hop isomerization kinetics, and enforcing food-safety water-activity hurdles. The **SC-78 Culinary, Baking, Brewing & Hospitality** calculator brings gravimetric dough scaling, thermal balances, wort extract density, and yield economics to the production kitchen and brewhouse. Three real-world craft challenges bridge the artisan kitchen, the commercial mash tun, and the restaurant ledger:
+Applied culinary and fermentation sciences bring chemical thermodynamics, microbiological rate equations, and mass conservation directly into food production: scaling sourdough formulas to total flour mass, calculating mixer friction calorimetry, predicting all-grain mash strike enthalpies, and modeling hop isomerization kinetics. The **SC-78 Culinary, Baking, Brewing & Hospitality** calculator brings gravimetric dough scaling, thermal balances, wort extract density, and yield economics to the production kitchen and brewhouse. Three operational challenges structure this study:
 
 In **Chapter 19**, we scale country sourdough production across varying mixer capacities, balancing flour-weight Baker's percentages, true pre-ferment hydration, mixer shear friction, and latent-heat flake ice substitution.
 
@@ -39,7 +39,7 @@ To hold the post-mix Desired Dough Temperature at an exact $D = 24.0^\circ\text{
 
 Commercial dough formulation rests on decoupling ingredient adjustments from one another through a single invariant mass reference. In conventional domestic cookery, recipes are recorded in volumetric measures or standard weight percentages that total $100\%$. While summing to one hundred percent feels mathematically neat to an accountant, it creates operational chaos in a commercial production facility.
 
-### The Algebraic Coupling Catastrophe of Standard Percentages
+### The Algebraic Coupling Problem of Standard Percentages
 
 Consider the algebraic dilemma that confronted nineteenth-century master bakers when formulas were expressed in standard total-weight fractions. Let a dough formula consist of $m$ ingredients with individual masses $w_1, w_2, \dots, w_m$ such that total batch mass is $W_{\text{total}} = \sum_{j=1}^m w_j$. In standard percentage mathematics, each ingredient's fraction is defined as:
 
@@ -161,7 +161,7 @@ Adding these components to the mixer additions reveals the true total quantities
 Evaluating True Overall Dough Hydration ({{key:HYD}}):
 $$\text{HYDR}_{\text{true}} = \left(\frac{74.3996}{99.8043}\right) \times 100 = \mathbf{74.545\%}$$
 
-Notice that the true hydration ($74.55\%$) is significantly higher than the mixer hydration ($72.00\%$). In dimensionless baker's percentage terms, this can be seen instantly: the formula contains $100\%$ mixer flour plus $10\%$ pre-ferment flour ($110\%$ total flour), and $72\%$ mixer water plus $10\%$ pre-ferment water ($82\%$ total water). The true ratio is $82 / 110 = 0.74545$, or $74.55\%$.
+The true hydration ($74.55\%$) is significantly higher than the mixer hydration ($72.00\%$). In dimensionless baker's percentage terms, this can be seen instantly: the formula contains $100\%$ mixer flour plus $10\%$ pre-ferment flour ($110\%$ total flour), and $72\%$ mixer water plus $10\%$ pre-ferment water ($82\%$ total water). The true ratio is $82 / 110 = 0.74545$, or $74.55\%$.
 
 Now consider what happens when a baker transitions a formula from a liquid levain or $100\%$ poolish to a stiff Italian **biga** maintained at $H_{\text{pre}} = 50.0\%$ hydration ($2:1$ flour to water ratio). If a formula calls for $W_{\text{flour}} = 1000\text{ g}$ mixer flour, $620\text{ g}$ mixer water, and $300\text{ g}$ of stiff biga, decomposing the biga gives:
 $$W_{\text{biga,flour}} = \frac{300}{1 + 0.50} = \frac{300}{1.5} = \mathbf{200\text{ g}}$$
@@ -425,7 +425,7 @@ Intact starch granules are insoluble in cold water. During mashing, as strike wa
 - **$\beta$-Amylase (The Fermentability Engine):** $\beta$-Amylase is an **exo-enzyme**. It attacks the non-reducing ends of starch polymers, sequentially cleaving off two-glucose units as **maltose** (the primary disaccharide that brewer's yeast ferments into ethanol and $\text{CO}_2$). However, $\beta$-amylase is physically blocked by $\alpha\text{-(1}\to\text{6)}$ branch points; it halts three glucose units away from any branch, leaving large unfermentable "limit dextrins." Crucially, $\beta$-amylase is **thermally fragile**: its optimal activity occurs at $60^\circ\text{C}\text{–}65^\circ\text{C}$ ($140^\circ\text{F}\text{–}149^\circ\text{F}$), and it undergoes rapid, irreversible thermal denaturation at temperatures above $67^\circ\text{C}$ ($152.6^\circ\text{F}$).
 - **$\alpha$-Amylase (The Body and Mouthfeel Engine):** $\alpha$-Amylase is an **endo-enzyme**. It cleaves internal $\alpha\text{-(1}\to\text{4)}$ bonds at random points throughout the interior of amylose and amylopectin chains. By randomly chopping long starch polymers into shorter fragments (maltotriose, maltotetraose, and branched dextrins), $\alpha$-amylase rapidly lowers mash viscosity and exposes new non-reducing ends for $\beta$-amylase to attack. Unlike $\beta$-amylase, $\alpha$-amylase is **thermally robust**: its optimum activity spans $68^\circ\text{C}\text{–}72^\circ\text{C}$ ($154.4^\circ\text{F}\text{–}161.6^\circ\text{F}$) and it survives temperatures up to $75^\circ\text{C}$.
 
-Here lies the master brewer's razor-thin thermodynamic window:
+Here lies the master brewer's critical thermodynamic window:
 - If strike liquor lands the mash at **$63^\circ\text{C}$ ($145^\circ\text{F}$)**, $\beta$-amylase thrives while $\alpha$-amylase is sluggish. The resulting wort is loaded with simple maltose; yeast attenuates it aggressively, producing a thin, bone-dry, watery beer lacking foam retention or mouthfeel.
 - If strike liquor overshoots to **$70^\circ\text{C}$ ($158^\circ\text{F}$)**, $\beta$-amylase denatures and permanently deactivates within five to ten minutes. Only $\alpha$-amylase survives, producing a wort dominated by unfermentable long-chain dextrins. When pitched with yeast, the beer fails to attenuate, finishing with high residual gravity, cloying sweetness, low alcohol, and heavy, syrupy mouthfeel.
 
@@ -453,7 +453,7 @@ When working in metric units where mash thickness $R_{\text{metric}}$ is express
 
 $$S = \frac{0.41}{R_{\text{L/kg}}}\left(T - G\right) + T$$
 
-Notice that $1.50\text{ qt/lb} \times (0.946353 / 0.453592) = 3.13\text{ L/kg}$, and $0.41 / 3.13 = 0.131 \approx 0.20 / 1.50 = 0.133$.
+Here, $1.50\text{ qt/lb} \times (0.946353 / 0.453592) = 3.13\text{ L/kg}$, and $0.41 / 3.13 = 0.131 \approx 0.20 / 1.50 = 0.133$.
 
 ### Accounting for Mash Tun Vessel Thermal Mass
 
@@ -723,7 +723,7 @@ The brewmaster targets an **Original Gravity** of $O = 1.0750$ ($18.2^\circ\text
 On the brew deck, the brewer steps through the hop charge evaluation on the stack:
 First, the brewer calculates the Tinseth gravity bigness factor for the dense $\text{SG} = 1.0750$ wort:
 $$f_G(1.075) = 1.65 \times (0.000125)^{0.0750} = \mathbf{0.840915}$$
-Notice how significantly the dense wort penalizes hop utilization: while the $1.056$ pale ale had $f_G = 0.9985$, the $1.075$ double IPA drops to $0.8409$—a $15.8\%$ loss of extraction efficiency solely due to dissolved sugars.
+Dense wort penalizes hop extraction efficiency: while the $1.056$ pale ale had $f_G = 0.9985$, the $1.075$ double IPA drops to $0.8409$—a $15.8\%$ loss of extraction efficiency solely due to dissolved sugars.
 
 Second, for the $60\text{-minute}$ boil:
 $$f_t(60) = 0.219104$$
@@ -817,7 +817,7 @@ The cumulative yield percentage is $Y_{\%} = y_{\text{cum}} \times 100$. Multipl
 
 $$W_{\text{EP}} = W_{\text{AP}} \times y_{\text{cum}} \iff W_{\text{AP}} = \frac{W_{\text{EP}}}{y_{\text{cum}}}$$
 
-Notice the mathematical difference:
+The mathematical distinction is direct:
 - In our beef tenderloin with $\ell_1 = 20.0\%$ trim loss ($y_1 = 0.80$) and $\ell_2 = 10.0\%$ cooking loss ($y_2 = 0.90$), the true cumulative yield is:
 $$y_{\text{cum}} = 0.80 \times 0.90 = \mathbf{0.720}\text{ (}72.0\%\text{)}$$
 rather than the $70.0\%$ predicted by linear subtraction.
@@ -892,7 +892,7 @@ $$\text{Free SO}_2 = \left[\text{SO}_2\right]_{\text{mol}} \cdot \left(1 + 10^{\
 
 Enological consensus requires a molecular $\text{SO}_2$ level of **$0.80\text{ mg/L}$** for white and rosé wines (to prevent malolactic fermentation and preserve crisp fruit esters) and **$0.50\text{ mg/L}$** for red wines (where higher polyphenolic tannins provide auxiliary protection).
 
-Notice the extreme sensitivity to wine pH:
+Wine stability exhibits high sensitivity to pH:
 - At $\text{pH } 3.20$: $10^{3.20 - 1.81} = 10^{1.39} = 24.55$. To achieve $0.80\text{ mg/L}$ molecular $\text{SO}_2$, the required free $\text{SO}_2$ is:
 $$\text{Free SO}_2 = 0.80 \times (1 + 24.55) = 0.80 \times 25.55 = \mathbf{20.44\text{ ppm}}$$
 - At $\text{pH } 3.80$: $10^{3.80 - 1.81} = 10^{1.99} = 97.72$. The required free $\text{SO}_2$ explodes to:
@@ -1101,9 +1101,7 @@ Work through these five field problems on your calculator. Step-by-step keystrok
 
 ## Operational Baton: From Food Thermodynamics to Physiological Compartments
 
-With bread drawn hot from the steam hearth, ale fermented and bittered to exact gravimetric balance, and culinary banquet yields reconciled against hyperbolic profit curves, our journey departs the commissary kitchen. Yet the physical conservation laws mastered across this unit do not end at the kitchen door.
+The physical conservation laws that govern commercial food production extend directly into human physiology. The semi-permeable membranes that bounded yeast cells in the fermentation cellar find their direct counterparts in the vascular endothelia and glomerular capillaries of the human body. The exponential attenuation of wort extract during fermentation parallels the first-order clearance of critical pharmaceuticals from blood plasma; and the enthalpy balances that size strike water and flake ice mirror the metabolic heat generation and fluid resuscitation equations of acute medical care.
 
-When food and fermented nutrients cross human lips, culinary mass transfer transforms into clinical physiology. The biological cell membranes that bounded *Saccharomyces cerevisiae* in the brewhouse kettle find their direct counterparts in the endothelial capillary walls and glomerular podocytes of the human kidney. The exponential decay of wort extract during fermentation becomes the first-order clearance of lifesaving antibiotics from human blood plasma. The thermal balances that sized strike water and flake ice expand into metabolic heat generation, pediatric fluid maintenance, and the delicate fluid resuscitation of severe thermal burns.
-
-In **Unit VIII (SC-80 Clinical Pharmacy, Critical Care & Nursing)**, the expedition enters the intensive care unit and hospital cleanroom. Here, the bathroom scale lies: fat tissue holds little water, making total-body weight lethal for dosing narrow-therapeutic-index drugs. The practitioner must establish a persistent Patient Profile, partition human mass into Ideal and Adjusted Body Weights, unmask hidden renal clearance failure in sarcopenic elderly patients, and titrate micro-dose vasoactive catecholamines where a syringe pump error of three milliliters per hour means the difference between cardiac stabilization and fatal arrest.
+In **Unit VIII (SC-80 Clinical Pharmacy, Critical Care & Nursing)**, these transport principles apply at the hospital bedside: establishing persistent patient anthropometric profiles, partitioning lean from adipose mass compartments, evaluating Cockcroft–Gault renal clearance in sarcopenic patients, and titrating continuous micro-dose vasoactive infusions under acute physiological constraints.
 

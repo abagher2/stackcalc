@@ -17,7 +17,7 @@ Yet the peril of relying on elegant continuous-time mathematical models without 
 
 While financial economists formalized the time value of capital and derivative risk, industrial engineers and statisticians developed the mathematics of commercial unit economics and statistical quality control. In 1908, William Sealy Gosset—publishing under the pseudonym "Student" while working as Head Experimental Brewer at Arthur Guinness & Son in Dublin—derived the heavy-tailed small-sample $t$-distribution, complementing Karl Pearson's 1900 chi-square goodness-of-fit law and George W. Snedecor's variance-ratio $F$-distribution. On May 16, 1924, Walter A. Shewhart drafted a one-page memorandum at Bell Telephone Laboratories introducing the statistical control chart to separate random common-cause variation from assignable mechanical drift. Six decades later, Motorola engineers Bill Smith and Mikel Harry synthesized Shewhart's dispersion limits with blueprint engineering tolerances into the Six Sigma process capability indices $C_p$ and $C_{pk}$.
 
-Completing our expedition, the ninth pillar provides the institutional foundation that sustains complex technological enterprises: structuring commercial facility financing, budgeting capital assets through discounted cash flows, hedging fixed-income portfolios against interest rate shocks, and enforcing Six Sigma statistical process control to keep automated machine tools operating within microns. The **SC-95 Quantitative Finance, Fixed-Income Valuation & Six Sigma Quality** calculator solves compound discounting, bond duration, option valuation, and statistical process capability with deterministic precision. Three rigorous analytical studies trace this final transition from facility financing and debt valuation to microscopic factory floor tolerances:
+Quantitative finance, capital budgeting, and statistical quality control provide the institutional and operational foundation that sustains modern technological enterprises: structuring commercial debt indentures, evaluating capital allocations through discounted cash flows, immunizing fixed-income portfolios against yield shifts, and enforcing Six Sigma statistical process control across automated manufacturing lines. The **SC-95 Quantitative Finance, Fixed-Income Valuation & Six Sigma Quality** calculator solves compound discounting, bond duration, option valuation, and statistical process capability with deterministic precision. Three rigorous analytical studies structure this analysis:
 
 In **Chapter 25**, we structure commercial mortgages and evaluate capital investments: navigating compound Time Value of Money schedules, auditing geometric loan amortization cash flows, evaluating Net Present Value and Internal Rate of Return against hurdle rates, calculating gross margins versus markups on cost, and optimizing Wilson Economic Order Quantities.
 
@@ -103,7 +103,7 @@ This yields the law of **Continuous Compounding**:
 
 $$FV = PV \cdot e^{r t} \iff PV = FV \cdot e^{-r t}$$
 
-Notice that continuous financial discounting ($PV = FV \cdot e^{-rt}$) is mathematically identical to first-order radioactive decay in nuclear physics ($N = N_0 e^{-\lambda t}$) and pharmacokinetic elimination in critical care pharmacology ($C = C_0 e^{-Kt}$). Capital erodes under continuous discounting along the exact same exponential trajectory that drug molecules are cleared from human kidneys.
+Continuous financial discounting ($PV = FV \cdot e^{-rt}$) is mathematically identical to first-order radioactive decay in nuclear physics ($N = N_0 e^{-\lambda t}$) and pharmacokinetic elimination in critical care pharmacology ($C = C_0 e^{-Kt}$). Capital erodes under continuous discounting along the exact same exponential trajectory that drug molecules are cleared from human kidneys.
 
 To compare credit agreements with differing compounding frequencies, the **Effective Annual Rate (EAR)** normalizes nominal annual percentage rates (APR) to an annualized equivalent:
 
@@ -436,7 +436,7 @@ To structure the $PV = \$450{,}000$ mortgage across $20\text{ years}$ ($N = 240\
 | `1.005` {{key:ENTER}} `12` {{key:yˣ}} `1` {{key:-}} `0.005` {{key:÷}} {{key:×}} | $3223.94$ | $3223.94$ | $3223.94$ | **$12014.09$** | Accumulate Year 1 principal reduction $\Delta\text{Prin}_{1\text{–}12} = \$12{,}014.09$ |
 | {{key:x⇄y}} `12` {{key:×}} {{key:x⇄y}} {{key:-}} | $3223.94$ | $3223.94$ | $3223.94$ | **$26673.19$** | Subtract $\Delta\text{Prin}_{1\text{–}12}$ from $12\lvert\text{PMT}\rvert$: Year 1 interest $\Delta\text{Int}_{1\text{–}12} = \$26{,}673.19$ |
 
-Notice step 2 in the workspace table above: entering `0` {{keycap:FV}} explicitly binds $0.0000$ to the future value (indicated by `*FV`), preventing ambiguity and ensuring the solver treats zero as a fixed boundary condition (a fully amortized loan). To clear or unbind any variable so that the TVM engine solves for it as the unknown target, simply press Yellow Shift followed by the variable softkey ({{key:f}} `<SOFTKEY>`), immediately clearing its binding and displaying `UNSET <VAR>`.
+In step 2 of the workspace table above, entering `0` {{keycap:FV}} explicitly binds $0.0000$ to the future value (indicated by `*FV`), preventing ambiguity and ensuring the solver treats zero as a fixed boundary condition (a fully amortized loan). To clear or unbind any variable so that the TVM engine solves for it as the unknown target, simply press Yellow Shift followed by the variable softkey ({{key:f}} `<SOFTKEY>`), immediately clearing its binding and displaying `UNSET <VAR>`.
 
 The corporate treasury team structures the commercial facility mortgage across the four-register RPN stack ($PV = \$450{,}000$, $\text{APR} = 7.50\%$, $N = 240\text{ months}$):
 
@@ -664,7 +664,7 @@ $$\frac{\Delta P}{P} \approx -7.5725 \times (+0.0100) = \mathbf{-0.075725} \quad
 Predicted new price: $\$1{,}077.9458 \times (1 - 0.075725) = \mathbf{\$996.32}$.
 
 #### Convexity as a Defensive Shield
-Notice that the linear duration approximation is a tangent line to a curved function. The relationship between bond price and yield is not a straight line; it is **strictly convex** ($d^2P/dy^2 > 0$).
+The linear duration approximation is a tangent line to a curved function. The relationship between bond price and yield is not a straight line; it is **strictly convex** ($d^2P/dy^2 > 0$).
 
 For large interest rate shocks ($100\text{ bps}$ or more), the linear duration approximation underestimates bond price performance. To restore mathematical accuracy, the analyst applies a second-order Taylor series expansion:
 
@@ -764,7 +764,7 @@ $$dr_t = \kappa \left(\theta - r_t\right) dt + \sigma \sqrt{r_t} \, dW_t$$
 As $r_t \to 0$, the diffusion term $\sigma \sqrt{r_t} \to 0$, preventing interest rates from becoming negative provided the Feller condition is satisfied ($2\kappa\theta \ge \sigma^2$).
 
 #### Merton's (1974) Structural Model of Corporate Credit Risk
-In corporate bond valuation, a corporate bond differs from a risk-free government bond by carrying the risk of bankruptcy. In 1974, Robert C. Merton unified corporate debt valuation with option pricing through a profound insight:
+In corporate bond valuation, a corporate bond differs from a risk-free government bond by carrying the risk of bankruptcy. In 1974, Robert C. Merton unified corporate debt valuation with option pricing through a structural insight:
 
 ```
 [Merton's Structural Insight]
@@ -815,7 +815,7 @@ and $N(x)$ is the cumulative standard normal distribution integral:
 $$N(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x e^{-u^2 / 2} \, du$$
 
 #### The Economic Interpretation of $N(d_1)$ and $N(d_2)$
-In quantitative finance, the two normal probabilities possess profound economic meaning:
+In quantitative finance, the two normal probabilities possess distinct economic meanings:
 1. **$N(d_1)$ (The Delta $\Delta$):** Represents the option's hedge ratio—the exact number of shares of underlying stock required to create a risk-free delta-neutral hedge. It also reflects the expected present value of the stock received at expiration under the risk-neutral measure.
 2. **$N(d_2)$ (Exercise Probability):** Represents the exact **risk-neutral probability that the option will expire in-the-money** ($S_T > K$). The term $K e^{-rT} N(d_2)$ is the discounted expected strike cash disbursement required upon exercise.
 
@@ -884,7 +884,7 @@ For a two-asset portfolio with asset weights $w_1$ and $w_2$ ($w_1 + w_2 = 1$), 
 
 $$\sigma_p = \sqrt{w_1^2 \sigma_1^2 + w_2^2 \sigma_2^2 + 2 w_1 w_2 \rho_{12} \sigma_1 \sigma_2}$$
 
-Notice that whenever correlation is less than perfect ($\rho_{12} < 1.0$), **portfolio risk is strictly less than the weighted average of individual risks.**
+Whenever correlation is less than perfect ($\rho_{12} < 1.0$), **portfolio risk is strictly less than the weighted average of individual risks.**
 
 To optimize capital allocation, William F. Sharpe (1966) formulated the **Sharpe Ratio**:
 
@@ -1551,13 +1551,13 @@ Work through these five field problems on your calculator. Step-by-step keystrok
 
 ## Grand Epilogue Coda: The Architecture of Human Reason
 
-Across twenty-seven chapters, nine specialized units, and three comprehensive volumes, this work has traversed the vast, interconnected landscape of quantitative human ingenuity. We began our journey on the wind-swept terrain of civil geodesy and structural mechanics—measuring arc-seconds across mountain ridges, balancing indeterminate truss bridges, and routing turbulent fluid through penstocks and head losses. We ascended into the high heavens of orbital ballistics, solar radiation pressure, and relativistic time dilation, before descending into the subatomic heart of nuclear fission reactors, gigahertz transmission lines, and stoichiometric chemical reactors. We entered the living fermenting chambers of commercial dough microbiology, strike water thermodynamics, and brewing attenuation, the intensive care units of vancomycin pharmacokinetics, vasoactive catecholamine titrations, and electrolyte electroneutrality, and finally the high-stakes trading floors of fixed-income duration hedging and the micron-level metrology of Six Sigma automotive manufacturing.
+Across twenty-seven chapters, nine specialized units, and three comprehensive volumes, this work has examined the universal mathematical grammar that governs the physical and built world: civil geodesy, structural mechanics, fluid dynamics, orbital ballistics, nuclear physics, digital architectures, cinema photometry, radio-frequency propagation, chemical stoichiometry, zymurgical thermodynamics, clinical pharmacokinetics, and quantitative finance.
 
 Through every domain, across every physical discipline and industrial frontier, a singular instrument has accompanied the practitioner: the Reverse Polish Notation calculator.
 
 ### The Cognitive Ergonomics of the Four-Register Stack
 
-The RPN stack is not merely an alternative input format; it is a profound cognitive architecture designed to mirror the natural forward flow of physical reasoning. 
+The RPN stack is not merely an alternative input format; it is an operational architecture designed to mirror the natural forward flow of physical reasoning. 
 
 In traditional algebraic notation, calculations are encumbered by arbitrary syntactical rules: operator precedence hierarchies ($PEMDAS$), nested parentheses, and hidden internal state registers. To evaluate a compound fraction:
 
@@ -1597,19 +1597,15 @@ The modern StackCalc32 hardware instrument honors this legacy:
 - **Reflective Monochromatic Metrology Displays:** Unlike emissive smartphone displays that wash out under direct equatorial sunlight and cause pupillary fatigue in darkened cockpits, a high-contrast reflective liquid crystal display leverages ambient light, remaining perfectly legible from bright midday desert civil surveys to dim red-lit night-vision emergency medical stations.
 - **Independence from the Ephemeral Cloud:** A dedicated calculating instrument requires no wireless network connectivity, incurs no software subscription renewals, demands no operating system security patches, and uploads no private patient or proprietary corporate telemetry to remote commercial cloud servers. It functions as an autonomous, self-contained mathematical island—instantly operational the moment power is switched on, whether in an underground mine shaft, an offshore oil platform, or a spaceflight capsule.
 
-By anchoring high-level mathematics in an unyielding physical chassis, the calculator preserves the craftsman's direct connection to physical reality.
+By anchoring high-level mathematics in a rugged physical chassis, the calculator preserves the craftsman's direct connection to physical reality.
 
-### The Moral Responsibility of the Practitioner
+### Notation, Verification, and the Engineering Ethos
 
-At the conclusion of our journey, we must confront the ultimate purpose of quantitative precision. Mathematics and engineering do not exist in a vacuum; they exist to protect human life, preserve human dignity, and sustain civilization.
+In 1979, Turing Award laureate Kenneth E. Iverson delivered his landmark lecture *Notation as a Tool of Thought*. Iverson observed that a concise, transparent mathematical notation does not simply record thought; it actively directs the course of reasoning, freeing the mind to focus on essential relationships while shielding it from incidental complexity.
 
-In an era increasingly dominated by opaque black-box machine learning models, abstracted cloud APIs, and autonomous algorithms whose internal reasoning cannot be interrogated by the people who deploy them, the physical stack calculator stands as an enduring bulwark of technical integrity. 
+Reverse Polish Notation is such a notation. By organizing calculations into an open, four-level operational stack, it eliminates the artificial scaffolding of nested parentheses and operator-precedence hierarchies, mirroring the chronological unfolding of physical laws from initial measurements to final decisions.
 
-When a clinical pharmacist stands in a darkened ICU calculating a neonatal vasopressor titration, a structural engineer inspects a cracked suspension bridge cable in the rain, a flight transport nurse budgets oxygen reserves over mountain terrain, or a corporate treasurer structures debt financing to keep a manufacturing plant solvent and protect thousands of jobs, delegating the calculation to an unverified black box is an abdication of moral duty.
+In mission-critical engineering, clinical medicine, and industrial production, calculating tools are not neutral accessories; they shape how practitioners conceptualize problems. When a flight nurse calculates an emergency oxygen reserve over mountainous terrain, a structural engineer verifies maximum shear stress on an aged bridge girder, or an intensivist titrates a vasoactive infusion for a hemodynamically unstable patient, the calculation is an ethical act. Professional responsibility cannot be outsourced to opaque, unverified systems whose intermediate reasoning cannot be audited in real time.
 
-The ability of a single human being to stand before a physical system—armed with an unbreakable understanding of first principles, twenty tactile keypresses, and a four-register stack—and verify the underlying physical truth with absolute mathematical fidelity is the highest expression of the engineering ethos.
-
-Mathematics is the universal language of the physical universe; engineering and clinical science are the arts of translating that language into safety, health, prosperity, and wonder. When history looks back upon our era of technological triumphs and ecological challenges, it will not measure us by the sheer volume of data we stored, nor by the speed of the black-box models we constructed. It will measure us by the discipline with which we exercised human agency, the rigor with which we verified physical truth, and the humility with which we stewarded the limited resources of our planet.
-
-As long as matter and energy obey invariant conservation laws, and as long as human beings dare to build, measure, heal, and explore, the stack will remain: transparent, unflinching, and forever true.
+The capacity of a practitioner to stand before a complex physical system—grounded in first principles, working through a four-register operational stack, and verifying physical truth step by step—remains the foundation of technical craftsmanship. Tools will continue to evolve, but as long as matter and energy obey invariant conservation laws, the need for deterministic mathematical clarity remains absolute.
 
