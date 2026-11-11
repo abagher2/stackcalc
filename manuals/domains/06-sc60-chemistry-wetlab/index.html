@@ -2886,9 +2886,9 @@
 <li><strong>Chapter 17: Holding pH 7.40 Against an Acid Spike</strong> explores water autoionization (<span class="arithmatex">\(K_w\)</span>), Sørensen logarithmic acidity, weak-acid dissociation (<span class="arithmatex">\(K_a\)</span>), the Henderson–Hasselbalch conjugate equilibrium equation, Van Slyke buffer capacity (<span class="arithmatex">\(\beta\)</span>), acid/base spike shifts, and volumetric titration stoichiometry.</li>
 <li><strong>Chapter 18: Reading Protein Concentration Through a Quartz Cuvette</strong> quantifies exponential light extinction via the Beer–Lambert law (<span class="arithmatex">\(A = \varepsilon b c\)</span>), aromatic amino acid UV extinction coefficients at <span class="arithmatex">\(280\text{ nm}\)</span>, spectrophotometer stray-light linearity limits, Gibbs free energy (<span class="arithmatex">\(\Delta G^\circ = -RT\ln K_{\text{eq}}\)</span>), Nernst electrochemical potentials, Arrhenius activation barriers (<span class="arithmatex">\(k = A e^{-E_a/RT}\)</span>), and Relative Centrifugal Force (<span class="arithmatex">\(\text{RCF} = 1.118 \times 10^{-5} r_{\text{cm}}\text{RPM}^2\)</span>).</li>
 </ul>
-<p>By harnessing the 4-register RPN stack, every calculation—from the gravimetric mass of dry crystals to the logarithmic absorbance of light and the centrifugal separation of macromolecules—becomes an exact, reproducible laboratory procedure.</p>
+<p>By harnessing the operational RPN stack, every calculation—from the gravimetric mass of dry crystals to the logarithmic absorbance of light and the centrifugal separation of macromolecules—becomes an exact, reproducible laboratory procedure.</p>
 <h1 id="chapter-16-weighing-the-buffer-and-cutting-the-stock-aliquot">Chapter 16: Weighing the Buffer and Cutting the Stock Aliquot</h1>
-<p>An analytical balance does not measure molecules; it measures the gravitational force exerted on an aggregate of atoms. When an experimental protocol calls for a fifty-millimolar buffer for an enzymatic inhibition assay, weighing grams without checking chemical stoichiometry is an invitation to irreproducible science. If a researcher weighs out a crystalline salt assuming it is anhydrous when the bottle contains a heptahydrate, forty-seven percent of the weighed mass is inert water trapped in the crystal lattice—cutting the intended active solute concentration nearly in half.</p>
+<p>Weighing out crystalline reagents on an analytical balance presents an invisible stoichiometric pitfall: if a protocol calls for a fifty-millimolar enzymatic buffer and the chemist overlooks water of crystallization, forty-seven percent of the weighed mass can be inert water trapped inside the crystal lattice—cutting the intended active solute concentration nearly in half.</p>
 <p>Enzymes and biological catalysts do not respond to ounces, grams, or milliliters; they respond strictly to the absolute number of substrate and cofactor molecules dissolved per unit volume. To bridge the macroscopic world of balance pans and volumetric flasks with the microscopic world of stoichiometric chemical reactions, the analytical chemist relies on the mole.</p>
 <p>Preparing high-throughput enzymatic screening solutions demands parsing chemical formulas, converting hydrated crystals, calculating dilution conservation (<span class="arithmatex">\(C_1 V_1 = C_2 V_2\)</span>), and tracking error propagation through sequential micropipette steps. To prepare the reagents with verified accuracy, analytical chemist Dr. Evelyn Cross and junior researcher Lucas Perez turn to the <strong>SC-60 Chemistry &amp; Wet Lab</strong> calculator:</p>
 <hr />
@@ -3262,7 +3262,7 @@ $<span class="arithmatex">\(\xi_{\text{osm}} = i \cdot m = \frac{\Delta T_f}{K_f
 </tbody>
 </table>
 <p>Lucas must prepare <span class="arithmatex">\(V = 250.0\text{ mL}\)</span> (<span class="arithmatex">\(0.250\text{ L}\)</span>) of a standard physiological saline stock solution containing <span class="arithmatex">\(C = 0.500\text{ M}\)</span> sodium chloride (<span class="arithmatex">\(\text{NaCl}\)</span>) and <span class="arithmatex">\(C = 0.100\text{ M}\)</span> Tris buffer from dry crystalline reagents.</p>
-<p>The formula evaluation proceeds on the four-register stack:</p>
+<p>The formula evaluation proceeds on the operational stack:</p>
 <ol>
 <li><strong>Sodium Chloride Formula Weight:</strong> Lucas keys in the elemental components of <span class="arithmatex">\(\text{NaCl}\)</span>. Striking the molar mass function evaluates <span class="arithmatex">\(M(\text{NaCl}) = 22.990 + 35.453 = \mathbf{58.443\text{ g/mol}}\)</span>.</li>
 <li><strong>Dissolving to <span class="arithmatex">\(0.500\text{ M}\)</span> in <span class="arithmatex">\(250.0\text{ mL}\)</span>:</strong> Lucas pushes target molarity <span class="arithmatex">\(0.500\text{ M}\)</span> into Register Y and volume <span class="arithmatex">\(0.250\text{ L}\)</span> into Register X, multiplying to find the required solute amount: <span class="arithmatex">\(n = 0.500 \times 0.250 = \mathbf{0.125\text{ mol}}\)</span>. Multiplying by molar mass <span class="arithmatex">\(58.443\text{ g/mol}\)</span> yields the exact mass to weigh on the balance: <span class="arithmatex">\(W = 0.125 \times 58.443 = \mathbf{7.3054\text{ g}}\)</span>.</li>
@@ -3355,7 +3355,7 @@ The solution freezes at <span class="arithmatex">\(T_f = \mathbf{-1.951^\circ\te
 <h4 id="step-4-4-step-serial-dilution-error-propagation">Step 4: 4-Step Serial Dilution Error Propagation</h4>
 <p>When Lucas pipettes this mother liquor through <span class="arithmatex">\(k = 4\)</span> sequential serial dilution steps using a micropipette with relative dispensing uncertainty <span class="arithmatex">\(\sigma_V / V = 1.5\% = 0.015\)</span>:
 $<span class="arithmatex">\(\frac{\sigma_{C_4}}{C_4} \approx \sqrt{4} \times 1.5\% = 2 \times 1.5\% = \mathbf{\pm 3.00\%}\)</span>$</p>
-<p>Here is the complete four-register stack trace for this crystallization mother liquor workflow:</p>
+<p>Here is the complete stack trace for this crystallization mother liquor workflow:</p>
 <table>
 <thead>
 <tr>
@@ -3847,7 +3847,7 @@ $<span class="arithmatex">\([\text{HCO}_3^-] = 19.953 \times 1.228\text{ mM} \ap
 - <strong>Respiratory Acidosis:</strong> Caused by opioid hypoventilation, severe asthma, or pulmonary edema. <span class="arithmatex">\(P_{\text{CO}_2}\)</span> spikes above <span class="arithmatex">\(45\text{ mmHg}\)</span>. The kidneys compensate over several days by retaining bicarbonate (<span class="arithmatex">\([\text{HCO}_3^-] &gt; 28\text{ mM}\)</span>).
 - <strong>Metabolic Alkalosis:</strong> Caused by prolonged vomiting or diuretic abuse. Bicarbonate surges above <span class="arithmatex">\(26\text{ mM}\)</span>. The respiratory center depresses breathing to retain <span class="arithmatex">\(\text{CO}_2\)</span>.
 - <strong>Respiratory Alkalosis:</strong> Caused by high-altitude hypoxia or hyperventilation panic attacks. <span class="arithmatex">\(P_{\text{CO}_2}\)</span> drops below <span class="arithmatex">\(35\text{ mmHg}\)</span>, driving pH above <span class="arithmatex">\(7.45\)</span>.</p>
-<p>By evaluating the base excess (<span class="arithmatex">\(\text{BE} = \Delta[\text{HCO}_3^-] + 16.2 \times (\text{pH} - 7.40)\)</span>) on the four-register stack, the clinical chemist dissects whether an acid-base disorder is metabolic, respiratory, or a mixed life-threatening emergency.</p>
+<p>By evaluating the base excess (<span class="arithmatex">\(\text{BE} = \Delta[\text{HCO}_3^-] + 16.2 \times (\text{pH} - 7.40)\)</span>) on the operational stack, the clinical chemist dissects whether an acid-base disorder is metabolic, respiratory, or a mixed life-threatening emergency.</p>
 <h2 id="formulating-conjugate-buffers-and-standardizing-acids-on-the-sc-60">Formulating Conjugate Buffers and Standardizing Acids on the SC-60</h2>
 <p>At the analytical bench, Dr. Cross and Lucas Perez formulate the physiological buffer and defend the bioreactor on the SC-60 stack.</p>
 <h3 id="partitioning-phosphate-buffer-masses-for-physiological-ph-740">Partitioning Phosphate Buffer Masses for Physiological pH 7.40</h3>
@@ -3933,7 +3933,7 @@ $<span class="arithmatex">\([\text{A}^-] = 0.0500 - 0.019343 = \mathbf{0.030657\
 - <strong>Dibasic Base Heptahydrate (<span class="arithmatex">\(\text{Na}_2\text{HPO}_4\cdot 7\text{H}_2\text{O}\)</span>):</strong>
   $<span class="arithmatex">\(n_{\text{base}} = 0.030657\text{ mol/L} \times 0.500\text{ L} = \mathbf{0.015328\text{ mol}}\)</span>$
   $<span class="arithmatex">\(W_{\text{base}} = 0.015328\text{ mol} \times 268.063\text{ g/mol} = \mathbf{4.1090\text{ g}}\)</span>$</p>
-<p>The complete four-register stack evaluation proceeds as follows:</p>
+<p>The complete stack evaluation proceeds as follows:</p>
 <table>
 <thead>
 <tr>
@@ -4031,7 +4031,7 @@ The pH has plunged to <span class="arithmatex">\(6.956\)</span>—dangerously cl
 <h4 id="step-4-corrective-titration-aliquot">Step 4: Corrective Titration Aliquot</h4>
 <p>To neutralize the <span class="arithmatex">\(0.0500\text{ moles}\)</span> of lactic acid, Lucas must inject an equal stoichiometric amount of base (<span class="arithmatex">\(\Delta n_{\text{base}} = 0.0500\text{ mol}\)</span>). Using stock <span class="arithmatex">\(C_{\text{base}} = 2.00\text{ M}\)</span> <span class="arithmatex">\(\text{NaOH}\)</span>:
 $<span class="arithmatex">\(V_{\text{NaOH}} = \frac{\Delta n}{C_{\text{base}}} = \frac{0.0500\text{ mol}}{2.00\text{ mol/L}} = \mathbf{0.0250\text{ L}} = \mathbf{25.00\text{ mL}}\)</span>$</p>
-<p>Here is the complete four-register stack trace for this bioreactor rescue:</p>
+<p>Here is the complete stack trace for this bioreactor rescue:</p>
 <table>
 <thead>
 <tr>
@@ -4473,7 +4473,7 @@ $<span class="arithmatex">\(\frac{1}{T_1} - \frac{1}{T_2} = \frac{1}{277.15} - \
 $<span class="arithmatex">\(\ln\left(\frac{k_2}{k_1}\right) = \frac{85{,}000}{8.31446} \times 0.00025414 = 10{,}223.15 \times 0.00025414 \approx \mathbf{2.5981}\)</span>$
 $<span class="arithmatex">\(\frac{k_2}{k_1} = e^{2.5981} \approx \mathbf{13.438}\)</span>$</p>
 <p>At room temperature (<span class="arithmatex">\(25^\circ\text{C}\)</span>), the antibody denatures <strong><span class="arithmatex">\(13.44\)</span> times faster</strong> than in the cold room (<span class="arithmatex">\(4^\circ\text{C}\)</span>). A batch that remains stable for twelve months at <span class="arithmatex">\(4^\circ\text{C}\)</span> degrades in less than one month on the open benchtop.</p>
-<p>The four-register stack execution proceeds as follows:</p>
+<p>The stack execution proceeds as follows:</p>
 <table>
 <thead>
 <tr>
@@ -4574,7 +4574,7 @@ At the top of the tube, particles experience only <span class="arithmatex">\(8{,
 $<span class="arithmatex">\(\ln(K_{\text{eq}}) = \ln(8.00 \times 10^8) = 20.4999\)</span>$
 $<span class="arithmatex">\(\Delta G^\circ = -R \cdot T \cdot \ln(K_{\text{eq}}) = -8.31446\text{ J}/(\text{mol}\cdot\text{K}) \times 298.15\text{ K} \times 20.4999 \approx \mathbf{-50{,}818\text{ J/mol}} = \mathbf{-50.82\text{ kJ/mol}}\)</span>$
 The large negative <span class="arithmatex">\(\Delta G^\circ\)</span> confirms that antibody-receptor binding is extraordinarily spontaneous and tight.</p>
-<p>Here is the complete four-register stack trace:</p>
+<p>Here is the complete stack trace:</p>
 <table>
 <thead>
 <tr>
@@ -4754,7 +4754,7 @@ The dye's molar absorptivity is back-solved with a single keystroke.</p>
 - The gravimetric mass fractions of Chapter 16 transform into <strong>Baker's Percentages</strong> and dough hydration ratios governing gluten development in artisanal sourdough levain.
 - The weak-acid equilibria of Chapter 17 govern the delicate pH balance of brewing mash tuns, where calcium ions precipitate phosphate buffers to optimize alpha- and beta-amylase enzymatic starch conversion.
 - The Arrhenius activation barriers and exponential kinetics of Chapter 18 govern the thermal isomerization of hop alpha-acids into bitter iso-alpha-acids during the boil, and the logarithmic extraction of coffee solids across refractory brew columns.</p>
-<p>In <strong>Chapter 19</strong>, we step onto the flour-dusted marble slab of the artisan bakery, scaling sourdough mother cultures, adjusting water temperatures against mechanical friction, and balancing levain hydration on the four-register stack.</p>
+<p>In <strong>Chapter 19</strong>, we step onto the flour-dusted marble slab of the artisan bakery, scaling sourdough mother cultures, adjusting water temperatures against mechanical friction, and balancing levain hydration on the operational stack.</p>
 
 
 
