@@ -371,7 +371,7 @@ hide:
       <article class="te-card">
         <div class="te-card-viewport">
           <a href="place-value/">
-            <img src="../assets/renders/etsy/place-value-studio-hero-square.png" alt="Place Value Studio Dual Trays & 53 Blocks" loading="lazy">
+            <img src="../assets/renders/etsy/place-value-studio-real-overview-hero-tight.jpg" alt="Place Value Studio Dual Trays & 53 Blocks" loading="lazy">
           </a>
         </div>
         <div class="te-card-body">

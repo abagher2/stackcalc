@@ -15,10 +15,11 @@ hide:
       "@type": "Product",
       "name": "Place Value Blocks & Regrouping Trays - Dual Whole Number & Decimal Desktop Trays",
       "image": [
-        "https://www.stackcalc.io/assets/renders/etsy/place-value-studio-hero-square.png",
-        "https://www.stackcalc.io/assets/renders/etsy/place-value-whole-tray-4x3.png",
-        "https://www.stackcalc.io/assets/renders/etsy/place-value-decimal-tray-4x3.png",
-        "https://www.stackcalc.io/assets/renders/etsy/place-value-regrouping-4x3.png",
+        "https://www.stackcalc.io/assets/renders/etsy/place-value-studio-real-overview-hero-tight.jpg",
+        "https://www.stackcalc.io/assets/renders/etsy/place-value-studio-real-pi-trays-hero-tight.jpg",
+        "https://www.stackcalc.io/assets/renders/etsy/place-value-studio-real-packed-box-hero-tight.jpg",
+        "https://www.stackcalc.io/assets/renders/etsy/place-value-studio-real-regrouping-hero-tight.jpg",
+        "https://www.stackcalc.io/assets/renders/etsy/place-value-studio-real-desk-context-4x3.jpg",
         "https://www.stackcalc.io/assets/renders/etsy/place-value-specs-infographic-square.png",
         "https://www.stackcalc.io/assets/reference_cards/reference_card_PLACE-01-PACK_paper.png",
         "https://www.stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png",
@@ -126,25 +127,25 @@ hide:
     <!-- Left Column: Product Gallery -->
     <div class="ec-gallery">
       <div class="ec-gallery-main">
-        <img id="main-product-image" src="../../assets/renders/etsy/place-value-studio-hero-square.png" alt="StackCalc Place Value Studio Dual Trays & 53 Blocks" loading="eager">
+        <img id="main-product-image" src="../../assets/renders/etsy/place-value-studio-real-overview-hero-tight.jpg" alt="StackCalc Place Value Studio Dual Trays & 53 Blocks" loading="eager">
       </div>
 
       <!-- Thumbnail Selector Strip -->
       <div class="ec-gallery-thumbs">
-        <div class="ec-gallery-thumb active" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/place-value-studio-hero-square.png'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
-          <img src="../../assets/renders/etsy/place-value-studio-hero-square.png" alt="Place Value Studio Hero">
+        <div class="ec-gallery-thumb active" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/place-value-studio-real-overview-hero-tight.jpg'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img src="../../assets/renders/etsy/place-value-studio-real-overview-hero-tight.jpg" alt="Place Value Studio Overview">
         </div>
-        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/place-value-whole-tray-4x3.png'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
-          <img src="../../assets/renders/etsy/place-value-whole-tray-4x3.png" alt="Whole Numbers Tray">
+        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/place-value-studio-real-pi-trays-hero-tight.jpg'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img src="../../assets/renders/etsy/place-value-studio-real-pi-trays-hero-tight.jpg" alt="Dual Whole & Decimal Pi Trays">
         </div>
-        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/place-value-decimal-tray-4x3.png'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
-          <img src="../../assets/renders/etsy/place-value-decimal-tray-4x3.png" alt="Decimal Numbers Tray">
+        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/place-value-studio-real-packed-box-hero-tight.jpg'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img src="../../assets/renders/etsy/place-value-studio-real-packed-box-hero-tight.jpg" alt="Packed 3x1 Desktop Storage Box">
         </div>
-        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/place-value-regrouping-4x3.png'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
-          <img src="../../assets/renders/etsy/place-value-regrouping-4x3.png" alt="Regrouping in Action">
+        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/place-value-studio-real-regrouping-hero-tight.jpg'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img src="../../assets/renders/etsy/place-value-studio-real-regrouping-hero-tight.jpg" alt="Tactile Base-Ten Regrouping">
         </div>
-        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/place-value-parts-4x3.png'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
-          <img src="../../assets/renders/etsy/place-value-parts-4x3.png" alt="53 Miniblocks Exploded">
+        <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/place-value-studio-real-desk-context-4x3.jpg'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          <img src="../../assets/renders/etsy/place-value-studio-real-desk-context-4x3.jpg" alt="Classroom Desktop Context">
         </div>
         <div class="ec-gallery-thumb" onclick="document.getElementById('main-product-image').src='../../assets/renders/etsy/place-value-specs-infographic-square.png'; document.querySelectorAll('.ec-gallery-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
           <img src="../../assets/renders/etsy/place-value-specs-infographic-square.png" alt="Specifications Infographic">
@@ -268,7 +269,7 @@ hide:
 
     <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg my-6 max-w-2xl mx-auto">
       <div class="ec-video-player relative">
-        <video controls playsinline preload="metadata" poster="../../assets/renders/etsy/place-value-studio-hero-square.png" style="width: 100%; border-radius: 8px;">
+        <video controls playsinline preload="metadata" poster="../../assets/renders/etsy/place-value-studio-real-overview-hero-tight.jpg" style="width: 100%; border-radius: 8px;">
           <source src="../../assets/videos/place-value-studio-listing-hero.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>

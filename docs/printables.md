@@ -227,7 +227,8 @@ The Place Value Studio makes positional notation physical through dual 6x2 activ
 
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
-    <div>
+    <img src="../assets/renders/etsy/place-value-studio-real-overview-hero-tight.jpg" alt="Place Value Studio 3D Printed Kit" style="width: 120px; height: 120px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+    <div style="flex: 1; min-width: 240px;">
       <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">3X1X7U GRIDFINITY &bull; HARDWARE KEY: [PV]</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes Whole Tray, Decimal Tray, 44 Symmetric Digit Tiles (22 White + 22 Blue-Gray), 4 Regrouping (+1) Tokens, 7U Box with 12 Labeled Floor Sockets, and Snapfinity Stage Lid.</div>
     </div>
@@ -266,7 +267,8 @@ Every tower's height is mathematically calibrated: $h = 84/d\text{ mm}$, where $
 
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
-    <div>
+    <img src="../assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg" alt="Fraction Studio 3D Printed Kit" style="width: 120px; height: 120px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+    <div style="flex: 1; min-width: 240px;">
       <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">3X1X13U GRIDFINITY &bull; HARDWARE KEYS: [FDISP], [SIMP]</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes 9 Proportional Towers (1/1 to 1/12), Comparison Stage, 3x1 Bin &amp; Workbench Lid.</div>
     </div>
@@ -311,7 +313,8 @@ The Prime Factor Studio is the world's first logarithmic manipulative where stac
 
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); margin-bottom: 1.25rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
-    <div>
+    <img src="../assets/renders/etsy/prime-factor-studio-real-staircase-iso-hero-tight.jpg" alt="Prime Factor Studio 3D Printed Kit" style="width: 120px; height: 120px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+    <div style="flex: 1; min-width: 240px;">
       <span style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700;">3X1X7U GRIDFINITY &bull; HARDWARE KEY: [PRIME]</span>
       <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 0.25rem;">Includes 29 Logarithmic Prime Blocks (Primes 2–23), Slide Rule Comparator Stage &amp; Stepped Box.</div>
     </div>
