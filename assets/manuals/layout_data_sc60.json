@@ -176,12 +176,12 @@
       "isEnter" : false,
       "isShiftBlue" : false,
       "isShiftYellow" : false,
-      "primaryAction" : "ln",
-      "primaryLabel" : "LN",
+      "primaryAction" : "log",
+      "primaryLabel" : "LOG",
       "row" : 1,
       "w" : 7,
-      "yellowAction" : "log",
-      "yellowLabel" : "LOG"
+      "yellowAction" : "ln",
+      "yellowLabel" : "LN"
     },
     {
       "alphaLabel" : "D",
@@ -272,9 +272,9 @@
       "primaryLabel" : "STO",
       "row" : 2,
       "w" : 7,
-      "yellowAction" : "chemIsotope",
-      "yellowBitmapIdentifier" : "operation.292",
-      "yellowLabel" : "ISO"
+      "yellowAction" : "chemHendersonHasselbalch",
+      "yellowBitmapIdentifier" : "operation.705",
+      "yellowLabel" : "HH"
     },
     {
       "alphaLabel" : "H",
@@ -343,15 +343,15 @@
       "primaryLatex" : "\\varepsilon bc",
       "row" : 2,
       "w" : 7,
-      "yellowAction" : "chemTransmittance",
-      "yellowBitmapIdentifier" : "operation.300",
-      "yellowLabel" : "%T"
+      "yellowAction" : "chemClausiusClapeyron",
+      "yellowBitmapIdentifier" : "operation.707",
+      "yellowLabel" : "CLAU"
     },
     {
       "alphaLabel" : "K",
-      "blueAction" : "chemGasLaw",
-      "blueBitmapIdentifier" : "operation.323",
-      "blueLabel" : "PVT",
+      "blueAction" : "constGasR",
+      "blueBitmapIdentifier" : "operation.303",
+      "blueLabel" : "R",
       "col" : 4,
       "cx" : 53.25,
       "cy" : 78.625,
@@ -550,10 +550,9 @@
     },
     {
       "alphaLabel" : "R",
-      "blueAction" : "chemHalfLife",
-      "blueBitmapIdentifier" : "operation.307",
-      "blueLabel" : "t½",
-      "blueLatex" : "t_{1\/2}",
+      "blueAction" : "toJoulesFromEV",
+      "blueLabel" : "▸J",
+      "blueSuffix" : "J",
       "col" : 2,
       "cx" : 37.369,
       "cy" : 101.22500000000001,
@@ -567,9 +566,9 @@
       "primaryLabel" : "8",
       "row" : 4,
       "w" : 8.6,
-      "yellowAction" : "constFaraday",
-      "yellowBitmapIdentifier" : "operation.306",
-      "yellowLabel" : "F"
+      "yellowAction" : "toElectronVolts",
+      "yellowLabel" : "▸eV",
+      "yellowSuffix" : "eV"
     },
     {
       "alphaLabel" : "S",
@@ -595,9 +594,9 @@
     },
     {
       "alphaLabel" : "",
-      "blueAction" : "toMillimoles",
-      "blueLabel" : "▸mM",
-      "blueSuffix" : "mM",
+      "blueAction" : "chemGasLaw",
+      "blueBitmapIdentifier" : "operation.323",
+      "blueLabel" : "PVT",
       "col" : 4,
       "cx" : 64.75,
       "cy" : 101.22500000000001,
@@ -611,10 +610,9 @@
       "primaryLabel" : "÷",
       "row" : 4,
       "w" : 8.6,
-      "yellowAction" : "constAvogadro",
-      "yellowBitmapIdentifier" : "operation.310",
-      "yellowLabel" : "Nₐ",
-      "yellowLatex" : "N_A"
+      "yellowAction" : "chemTitration",
+      "yellowBitmapIdentifier" : "operation.298",
+      "yellowLabel" : "EQV"
     },
     {
       "alphaLabel" : "",
@@ -674,9 +672,9 @@
       "primaryLabel" : "5",
       "row" : 5,
       "w" : 8.6,
-      "yellowAction" : "chemCentrifuge",
-      "yellowBitmapIdentifier" : "operation.325",
-      "yellowLabel" : "RCF"
+      "yellowAction" : "toMolarity",
+      "yellowLabel" : "▸M",
+      "yellowSuffix" : "M"
     },
     {
       "alphaLabel" : "V",
@@ -769,9 +767,11 @@
     },
     {
       "alphaLabel" : "X",
-      "blueAction" : "toKelvin",
-      "blueLabel" : "▸K",
-      "blueSuffix" : "K",
+      "blueAction" : "toFahrenheit",
+      "blueBitmapIdentifier" : "operation.10",
+      "blueLabel" : "▸°F",
+      "blueLatex" : "\\to",
+      "blueSuffix" : "°F",
       "col" : 2,
       "cx" : 37.369,
       "cy" : 123.82500000000002,
@@ -906,9 +906,9 @@
     },
     {
       "alphaLabel" : "(i)",
-      "blueAction" : "toMolarity",
-      "blueLabel" : "▸M",
-      "blueSuffix" : "M",
+      "blueAction" : "chemPH",
+      "blueBitmapIdentifier" : "operation.297",
+      "blueLabel" : "pH",
       "col" : 3,
       "cx" : 51.06,
       "cy" : 135.125,
@@ -951,6 +951,12 @@
     }
   ],
   "menus" : {
+    "ARR" : [
+      "K",
+      "A",
+      "E",
+      "T"
+    ],
     "BASE" : [
       "HEX",
       "DEC",

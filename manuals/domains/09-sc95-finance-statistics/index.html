@@ -2955,7 +2955,7 @@ $<span class="arithmatex">\(PV + PMT \left[\frac{1 - (1 + i)^{-N}}{i}\right] (1 
 <div class="arithmatex">\[\text{Total Paid} = 240 \times 3625.17 = \$870{,}040.80\]</div>
 <p>Total finance interest paid over 20 years equals <span class="arithmatex">\(\$870{,}040.80 - \$450{,}000 = \mathbf{\$420{,}040.80}\)</span>—nearly matching the original principal of the machine.</p>
 <p><img alt="Amortization waterfall chart illustrating the exponential decay of interest payments and the corresponding geometric acceleration of principal equity retirement." src="../../assets/diagrams/domains/diagram_ch09_amortization_schedule.png" /></p>
-<h3 id="geometric-principal-and-interest-decomposition-across-amortization-periods-f-amr">Geometric Principal and Interest Decomposition Across Amortization Periods ([f] [AMR])</h3>
+<h3 id="geometric-principal-and-interest-decomposition-across-amortization-periods">Geometric Principal and Interest Decomposition Across Amortization Periods</h3>
 <p>A common operational error is assuming that each monthly payment retires an equal fraction of the principal. In reality, loan amortization follows an <strong>exponential geometric progression</strong>.</p>
 <p>In any period <span class="arithmatex">\(t\)</span>:
 1. The monthly payment <span class="arithmatex">\(PMT\)</span> first covers the interest accrued on the remaining balance from the prior period:
@@ -2975,7 +2975,7 @@ $<span class="arithmatex">\(PV + PMT \left[\frac{1 - (1 + i)^{-N}}{i}\right] (1 
 <p>For Month 12:
 - Using the geometric law: <span class="arithmatex">\(\text{Principal}_{12} = 812.67 \times (1.00625)^{11} = 812.67 \times 1.070857 = \mathbf{\$870.25}\)</span>.
 - <span class="arithmatex">\(\text{Interest}_{12} = 3625.17 - 870.25 = \mathbf{\$2{,}754.92}\)</span>.</p>
-<p>Summing all 12 months of Year 1 on the <strong>SC-95</strong> amortization engine ([f] [AMR]):
+<p>Summing all 12 months of Year 1 on the <strong>SC-95</strong> stack:
 - <strong>Total Year 1 Interest:</strong> <span class="arithmatex">\(\mathbf{\$33{,}407.69}\)</span>
 - <strong>Total Year 1 Principal:</strong> <span class="arithmatex">\(\mathbf{\$10{,}094.34}\)</span>
 - <strong>Ending Balance after Month 12:</strong> <span class="arithmatex">\(\mathbf{\$439{,}905.66}\)</span></p>
@@ -3035,13 +3035,13 @@ $<span class="arithmatex">\(NPV = -I_0 + CF \left[\frac{1 - (1 + r)^{-N}}{r}\rig
 <p>In discounted cash flow (DCF) enterprise valuation, plant operations and corporate divisions do not terminate abruptly at Year 5. Beyond the explicit forecast horizon, the continuing value of the business is captured by the <strong>Gordon Growth Model</strong> (formulated by Myron J. Gordon in 1956):</p>
 <div class="arithmatex">\[V_{\text{terminal}} = \frac{CF_{N+1}}{r - g} = \frac{CF_N (1 + g)}{r - g}\]</div>
 <p>where <span class="arithmatex">\(r\)</span> is the cost of capital and <span class="arithmatex">\(g\)</span> is the sustainable perpetual long-term growth rate (which must be strictly less than the macroeconomic GDP growth rate, <span class="arithmatex">\(g &lt; r\)</span>). Capital budgeting decisions integrate this terminal value discounted back to the present, ensuring that long-lived industrial assets are valued with complete intertemporal consistency.</p>
-<h3 id="gross-margin-f-mgn-markup-on-cost-g-mkp-breakeven-f-bep-and-economic-order-quantity-g-eoq">Gross Margin ([f] [MGN]), Markup on Cost ([g] [MKP]), Breakeven ([f] [BEP]), and Economic Order Quantity ([g] [EOQ])</h3>
+<h3 id="gross-margin-f-mgn-markup-on-cost-breakeven-f-bep-and-economic-order-quantity-g-eoq">Gross Margin ([f] [MGN]), Markup on Cost, Breakeven ([f] [BEP]), and Economic Order Quantity ([g] [EOQ])</h3>
 <p>At the level of individual manufactured components, operational solvency depends upon unit economics.</p>
 <h4 id="the-retail-bankruptcy-trap-gross-margin-vs-markup-on-cost">The Retail Bankruptcy Trap: Gross Margin vs. Markup on Cost</h4>
 <p>One of the most frequent causes of commercial bankruptcy in manufacturing and distribution is confusing <strong>Gross Margin</strong> with <strong>Markup on Cost</strong>:
 - <strong>Gross Margin ([f] [MGN]):</strong> The fraction of selling price retained after direct production costs:
   $<span class="arithmatex">\(\text{Margin} = \frac{\text{Price} - \text{Cost}}{\text{Price}} = 1 - \frac{\text{Cost}}{\text{Price}}\)</span>$
-- <strong>Markup on Cost ([g] [MKP]):</strong> The percentage added on top of direct cost to establish the selling price:
+- <strong>Markup on Cost:</strong> The percentage added on top of direct cost to establish the selling price, evaluated directly on the stack via <code>Cost [ENTER] Price [f] [Δ%]</code> (or <span class="arithmatex">\((P - C)/C \times 100\)</span>):
   $<span class="arithmatex">\(\text{Markup} = \frac{\text{Price} - \text{Cost}}{\text{Cost}} = \frac{\text{Price}}{\text{Cost}} - 1\)</span>$</p>
 <p>Converting between the two metrics:</p>
 <div class="arithmatex">\[\text{Markup} = \frac{\text{Margin}}{1 - \text{Margin}} \iff \text{Margin} = \frac{\text{Markup}}{1 + \text{Markup}}\]</div>
@@ -3119,7 +3119,7 @@ $<span class="arithmatex">\(\text{BEP} = \frac{FC}{P - VC} \qquad EOQ = \sqrt{\f
   $<span class="arithmatex">\(\text{Interest}_t = \text{Liability}_{t-1} \times IBR_{\text{per}}\)</span>$</p>
 <p>This creates a front-loaded total expense profile: early lease periods exhibit significantly higher combined expenses (amortization plus high initial interest) than later periods. In EBITDA calculations (Earnings Before Interest, Taxes, Depreciation, and Amortization), capitalizing leases reclassifies rent expenses out of operating costs and into depreciation and interest, artificially inflating reported EBITDA while increasing debt leverage metrics on corporate credit covenants.</p>
 <h2 id="mortgage-structuring-and-capital-budgeting-on-the-stack-and-in-the-solver-workspace">Mortgage Structuring and Capital Budgeting on the Stack and in the Solver Workspace</h2>
-<p>On the <strong>SC-95</strong>, Time Value of Money schedules (accessed directly on Row 1 Col 2 via [TVM]), loan amortizations ([f] [AMR]), discounted cash flow valuations ([g] [CF]), margins, and order quantities operate across immediate stack operations and Bidirectional Equation Workspaces.</p>
+<p>On the <strong>SC-95</strong>, Time Value of Money schedules (accessed directly on Row 1 Col 2 via [TVM]), discounted cash flow valuations ([g] [CF]), margins, and order quantities operate across immediate stack operations and Bidirectional Equation Workspaces.</p>
 <table>
 <thead>
 <tr>
@@ -3137,10 +3137,10 @@ $<span class="arithmatex">\(\text{BEP} = \frac{FC}{P - VC} \qquad EOQ = \sqrt{\f
 <td style="text-align: left;"><span class="arithmatex">\(PV + PMT \left[\frac{1 - (1+i)^{-N}}{i}\right] + FV (1+i)^{-N} = 0\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;">[f] [AMR]</td>
-<td style="text-align: left;">Stack Function</td>
-<td style="text-align: left;">Register <span class="arithmatex">\(Y\)</span>: Start Period, Register <span class="arithmatex">\(X\)</span>: End Period</td>
-<td style="text-align: left;">Evaluates <span class="arithmatex">\(\sum \text{Principal}\)</span>, <span class="arithmatex">\(\sum \text{Interest}\)</span>, <span class="arithmatex">\(\text{Balance}_{\text{end}}\)</span></td>
+<td style="text-align: left;"><strong><code>[f] [BS]</code></strong></td>
+<td style="text-align: left;">Option Pricing</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Stock <span class="arithmatex">\(S\)</span>, Strike <span class="arithmatex">\(K\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[g] [CF]</td>
@@ -3149,10 +3149,10 @@ $<span class="arithmatex">\(\text{BEP} = \frac{FC}{P - VC} \qquad EOQ = \sqrt{\f
 <td style="text-align: left;"><span class="arithmatex">\(NPV = \sum CF_t (1+r)^{-t}\)</span>; solves <span class="arithmatex">\(IRR\)</span> where <span class="arithmatex">\(NPV = 0\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;">[f] [MGN] / [g] [MKP]</td>
+<td style="text-align: left;">[f] [MGN]</td>
 <td style="text-align: left;">Immediate Stack</td>
 <td style="text-align: left;">Register <span class="arithmatex">\(Y\)</span>: Price, Register <span class="arithmatex">\(X\)</span>: Cost</td>
-<td style="text-align: left;"><span class="arithmatex">\(\text{Margin} = (Y - X)/Y\)</span>; <span class="arithmatex">\(\text{Markup} = (Y - X)/X\)</span></td>
+<td style="text-align: left;">Gross margin <span class="arithmatex">\(\text{Margin} = (Y - X)/Y\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">[f] [BEP] / [g] [EOQ]</td>
@@ -3164,7 +3164,7 @@ $<span class="arithmatex">\(\text{BEP} = \frac{FC}{P - VC} \qquad EOQ = \sqrt{\f
 </table>
 <hr />
 <h3 id="solving-the-commercial-mortgage-and-year-1-amortization-on-the-stack">Solving the Commercial Mortgage and Year 1 Amortization on the Stack</h3>
-<p>To structure the <span class="arithmatex">\(PV = \$450{,}000\)</span> mortgage across <span class="arithmatex">\(20\text{ years}\)</span> (<span class="arithmatex">\(N = 240\text{ months}\)</span>) at <span class="arithmatex">\(6.0\%\)</span> nominal APR (<span class="arithmatex">\(i = 0.50\%/\text{mo}\)</span>), the treasurer opens [TVM], solves for the monthly payment <span class="arithmatex">\(PMT \approx \mathbf{-\$3{,}223.94}\)</span>, evaluates Month 1 interest via [f] [AMR] (<span class="arithmatex">\(\$2{,}250.00\)</span>), subtracts from <span class="arithmatex">\(\lvert PMT\rvert\)</span> to find Month 1 principal (<span class="arithmatex">\(P_1 = \mathbf{\$973.94}\)</span>), and evaluates Year 1 cumulative principal reduction (<span class="arithmatex">\(\mathbf{\$12{,}014.09}\)</span>) and Year 1 total interest (<span class="arithmatex">\(\mathbf{\$26{,}673.19}\)</span>):</p>
+<p>To structure the <span class="arithmatex">\(PV = \$450{,}000\)</span> mortgage across <span class="arithmatex">\(20\text{ years}\)</span> (<span class="arithmatex">\(N = 240\text{ months}\)</span>) at <span class="arithmatex">\(6.0\%\)</span> nominal APR (<span class="arithmatex">\(i = 0.50\%/\text{mo}\)</span>), the treasurer opens [TVM], solves for the monthly payment <span class="arithmatex">\(PMT \approx \mathbf{-\$3{,}223.94}\)</span>, evaluates Month 1 interest on the stack (<span class="arithmatex">\(450{,}000 \times 0.005 = \$2{,}250.00\)</span>), subtracts from <span class="arithmatex">\(\lvert PMT\rvert\)</span> to find Month 1 principal (<span class="arithmatex">\(P_1 = \mathbf{\$973.94}\)</span>), and evaluates Year 1 cumulative principal reduction (<span class="arithmatex">\(\mathbf{\$12{,}014.09}\)</span>) and Year 1 total interest (<span class="arithmatex">\(\mathbf{\$26{,}673.19}\)</span>):</p>
 <table>
 <thead>
 <tr>
@@ -3194,12 +3194,12 @@ $<span class="arithmatex">\(\text{BEP} = \frac{FC}{P - VC} \qquad EOQ = \sqrt{\f
 <td style="text-align: left;">Store <span class="arithmatex">\(\text{PV} = 450{,}000, \text{FV} = 0\)</span> and solve <span class="arithmatex">\(\text{PMT} = -\$3{,}223.94/\text{mo}\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;">[+/-] [ENTER] [ENTER] <code>450000</code> [ENTER] <code>0.5</code> [f] [AMR] [-]</td>
+<td style="text-align: left;">[+/-] [ENTER] [ENTER] <code>450000</code> [ENTER] <code>0.005</code> [×] [-]</td>
 <td style="text-align: center;"><span class="arithmatex">\(3223.94\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(3223.94\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(3223.94\)</span></td>
 <td style="text-align: center;"><strong><span class="arithmatex">\(973.9398\)</span></strong></td>
-<td style="text-align: left;">Subtract Month 1 interest (<span class="arithmatex">\(\$2{,}250.00\)</span> via [f] [AMR]) from <span class="arithmatex">\(\lvert\text{PMT}\rvert\)</span>: <span class="arithmatex">\(P_1 = \$973.94\)</span></td>
+<td style="text-align: left;">Subtract Month 1 interest (<span class="arithmatex">\(450{,}000 \times 0.005 = \$2{,}250.00\)</span>) from <span class="arithmatex">\(\lvert\text{PMT}\rvert\)</span>: <span class="arithmatex">\(P_1 = \$973.94\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>1.005</code> [ENTER] <code>12</code> [g] [yˣ] <code>1</code> [-] <code>0.005</code> [÷] [×]</td>
@@ -3290,30 +3290,30 @@ $<span class="arithmatex">\(\text{BEP} = \frac{FC}{P - VC} \qquad EOQ = \sqrt{\f
 </tr>
 <tr>
 <td style="text-align: center;">7</td>
-<td style="text-align: left;"><code>1</code> [ENTER] <code>12</code> [f] [AMR]</td>
+<td style="text-align: left;"><code>12</code> [×] <code>10094.34</code> [-]</td>
 <td style="text-align: left;"><code>33407.69</code></td>
 <td style="text-align: left;"><code>-3625.17</code></td>
 <td style="text-align: left;"><code>0.00000</code></td>
 <td style="text-align: left;"><code>0.00000</code></td>
-<td style="text-align: left;">Total Year 1 Interest paid <span class="arithmatex">\(= \mathbf{\$33{,}407.69}\)</span></td>
+<td style="text-align: left;">Total Year 1 Interest paid <span class="arithmatex">\(= 12\lvert PMT\rvert - \Delta\text{Prin} = \mathbf{\$33{,}407.69}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: center;">8</td>
-<td style="text-align: left;">[f] [R↓]</td>
+<td style="text-align: left;"><code>450000</code> [ENTER] <code>10094.34</code> [-]</td>
+<td style="text-align: left;"><code>439905.66</code></td>
+<td style="text-align: left;"><code>33407.69</code></td>
+<td style="text-align: left;"><code>-3625.17</code></td>
+<td style="text-align: left;"><code>0.00000</code></td>
+<td style="text-align: left;">Remaining Loan Balance after Month 12 <span class="arithmatex">\(= \mathbf{\$439{,}905.66}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;"><code>10094.34</code></td>
 <td style="text-align: left;"><code>10094.34</code></td>
 <td style="text-align: left;"><code>439905.66</code></td>
 <td style="text-align: left;"><code>33407.69</code></td>
 <td style="text-align: left;"><code>-3625.17</code></td>
 <td style="text-align: left;">Total Year 1 Principal retired <span class="arithmatex">\(= \mathbf{\$10{,}094.34}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">9</td>
-<td style="text-align: left;">[f] [R↓]</td>
-<td style="text-align: left;"><code>439905.66</code></td>
-<td style="text-align: left;"><code>33407.69</code></td>
-<td style="text-align: left;"><code>-3625.17</code></td>
-<td style="text-align: left;"><code>10094.34</code></td>
-<td style="text-align: left;">Remaining Loan Balance after Month 12 <span class="arithmatex">\(= \mathbf{\$439{,}905.66}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -3321,7 +3321,7 @@ $<span class="arithmatex">\(\text{BEP} = \frac{FC}{P - VC} \qquad EOQ = \sqrt{\f
 <ul>
 <li><strong>Steps 1–4:</strong> Evaluating the annuity discount factor <span class="arithmatex">\([1 - (1+i)^{-N}]\)</span> on the stack without storing intermediate terms.</li>
 <li><strong>Steps 5–6:</strong> Computing the monthly payment <span class="arithmatex">\(PMT = -\$3{,}625.17\)</span>, correctly signed as a cash outflow.</li>
-<li><strong>Steps 7–9:</strong> Invoking [f] [AMR] across periods 1 to 12 populates the stack with the three critical auditing metrics: total interest (<span class="arithmatex">\(\$33{,}407.69\)</span>), total principal retired (<span class="arithmatex">\(\$10{,}094.34\)</span>), and remaining loan principal (<span class="arithmatex">\(\$439{,}905.66\)</span>), accessible via standard stack rotation ([f] [R↓]).</li>
+<li><strong>Steps 7–9:</strong> Evaluating Year 1 cumulative interest (<span class="arithmatex">\(\$33{,}407.69\)</span>), Year 1 principal retirement (<span class="arithmatex">\(\$10{,}094.34\)</span>), and remaining loan principal (<span class="arithmatex">\(\$439{,}905.66\)</span>) through postfix operations on the stack.</li>
 </ul>
 <hr />
 <h3 id="evaluating-plant-automation-npv-irr-and-unit-economics-on-the-stack">Evaluating Plant Automation NPV, IRR, and Unit Economics on the Stack</h3>
@@ -3386,8 +3386,8 @@ $<span class="arithmatex">\(\text{BEP} = \frac{FC}{P - VC} \qquad EOQ = \sqrt{\f
 </tr>
 <tr>
 <td style="text-align: center;">6</td>
-<td style="text-align: left;"><code>85</code> [ENTER] <code>37</code> [g] [MKP]</td>
-<td style="text-align: left;"><code>1.2973</code></td>
+<td style="text-align: left;"><code>37</code> [ENTER] <code>85</code> [f] [Δ%]</td>
+<td style="text-align: left;"><code>129.7297</code></td>
 <td style="text-align: left;"><code>0.0000</code></td>
 <td style="text-align: left;"><code>0.0000</code></td>
 <td style="text-align: left;"><code>0.0000</code></td>
@@ -3432,7 +3432,7 @@ $<span class="arithmatex">\(\text{BEP} = \frac{FC}{P - VC} \qquad EOQ = \sqrt{\f
 <tr>
 <th style="text-align: left;">Keystroke</th>
 <th style="text-align: center;">Solver Display / Register X</th>
-<th style="text-align: left;">What Happens in the [g] [CF], [f] [MGN], and [g] [MKP] Workspaces</th>
+<th style="text-align: left;">What Happens in the [g] [CF] and [f] [MGN] Workspaces</th>
 </tr>
 </thead>
 <tbody>
@@ -3462,9 +3462,9 @@ $<span class="arithmatex">\(\text{BEP} = \frac{FC}{P - VC} \qquad EOQ = \sqrt{\f
 <td style="text-align: left;">Compute valve Gross Margin <span class="arithmatex">\(\text{MGN}_{\%} = (120 - 72)/120 = \mathbf{40.00\%}\)</span> (opens [f] [MGN] workspace)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>72</code> [ENTER] <code>120</code> [g] [MKP]</td>
+<td style="text-align: left;"><code>72</code> [ENTER] <code>120</code> [f] [Δ%]</td>
 <td style="text-align: center;"><strong><span class="arithmatex">\(66.6667\)</span></strong></td>
-<td style="text-align: left;">Compute valve Markup on Cost <span class="arithmatex">\(\text{MKP}_{\%} = (120 - 72)/72 = \mathbf{66.67\%}\)</span> (opens [g] [MKP] workspace)</td>
+<td style="text-align: left;">Compute valve Markup on Cost via percent change: <span class="arithmatex">\((120 - 72)/72 = \mathbf{66.67\%}\)</span></td>
 </tr>
 </tbody>
 </table>

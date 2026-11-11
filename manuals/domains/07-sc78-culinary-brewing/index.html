@@ -3014,7 +3014,7 @@ $<span class="arithmatex">\(W = 3 D - R - F - M\)</span>$</p>
 <p>Why cannot the baker simply use chilled water from a domestic refrigerator? To cool <span class="arithmatex">\(65.33\text{ kg}\)</span> of water from <span class="arithmatex">\(21^\circ\text{C}\)</span> down to <span class="arithmatex">\(9^\circ\text{C}\)</span> using liquid water alone would require adding water at <span class="arithmatex">\(0^\circ\text{C}\)</span>. But liquid water at <span class="arithmatex">\(0^\circ\text{C}\)</span> possesses only sensible heat capacity:</p>
 <div class="arithmatex">\[q_{\text{sensible}} = m \cdot c_p \cdot \Delta T\]</div>
 <p>where <span class="arithmatex">\(c_p = 1.00\text{ kcal/(kg}\cdot{^\circ\text{C})}\)</span> (<span class="arithmatex">\(4.184\text{ kJ/(kg}\cdot\text{K)}\)</span>). Each kilogram of chilled liquid water can absorb only <span class="arithmatex">\(1\text{ kcal}\)</span> of heat for every degree Celsius it warms. Mixing <span class="arithmatex">\(21^\circ\text{C}\)</span> tap water with <span class="arithmatex">\(0^\circ\text{C}\)</span> liquid water in equal proportions would yield water at <span class="arithmatex">\(10.5^\circ\text{C}\)</span>—still warmer than the required <span class="arithmatex">\(9.0^\circ\text{C}\)</span> target. To hit <span class="arithmatex">\(9.0^\circ\text{C}\)</span> with <span class="arithmatex">\(0^\circ\text{C}\)</span> liquid water, more than <span class="arithmatex">\(57\%\)</span> of the water would have to be near freezing, requiring massive refrigeration tanks.</p>
-<p>When ambient summer heat pushes required strike water temperatures below available tap water, the trade turns to the massive thermodynamic sink of <strong>phase-change latent heat</strong>: replacing part of the liquid water with solid ice ([g] [ICE]).</p>
+<p>When ambient summer heat pushes required strike water temperatures below available tap water, the trade turns to the massive thermodynamic sink of <strong>phase-change latent heat</strong>: replacing part of the liquid water with solid ice (<span class="arithmatex">\(80\text{ cal/g}\)</span>, [g] [ΔHf]).</p>
 <p>Solid ice at <span class="arithmatex">\(0^\circ\text{C}\)</span> absorbs approximately <strong>eighty kilocalories per kilogram</strong> (<span class="arithmatex">\(80\text{ kcal/kg}\)</span>, or <span class="arithmatex">\(144\text{ BTU/lb}\)</span>, <span class="arithmatex">\(334\text{ kJ/kg}\)</span>) solely to undergo the phase transition from crystalline solid to liquid water at <span class="arithmatex">\(0^\circ\text{C}\)</span> without changing temperature by a single degree. This latent heat of fusion is eighty times greater than the sensible heat capacity of liquid water over a <span class="arithmatex">\(1^\circ\text{C}\)</span> change.</p>
 <p>Equating the sensible cooling deficit of the total recipe water mass <span class="arithmatex">\(W_{\text{water}}\)</span> to the latent heat absorbed by melting ice of mass <span class="arithmatex">\(W_{\text{ice}}\)</span> gives the fundamental ice substitution balance:</p>
 <div class="arithmatex">\[W_{\text{water}} \cdot c_p \cdot \left(T_{\text{tap}} - W\right) = W_{\text{ice}} \cdot \Delta H_{\text{fusion}}\]</div>
@@ -3023,7 +3023,7 @@ $<span class="arithmatex">\(W = 3 D - R - F - M\)</span>$</p>
 $<span class="arithmatex">\(W_{\text{ice}} = \frac{W_{\text{water}} \cdot \left(T_{\text{tap}} - W\right)}{80}\)</span>$</p>
 <p>The remaining liquid tap-water addition is then simply the difference between total recipe water and ice mass:</p>
 <div class="arithmatex">\[W_{\text{liquid}} = W_{\text{water}} - W_{\text{ice}}\]</div>
-<p>Applying [g] [ICE] to Claire's <span class="arithmatex">\(W_{\text{water}} = 65.3265\text{ kg}\)</span> of mixer water with tap water at <span class="arithmatex">\(T_{\text{tap}} = 21.0^\circ\text{C}\)</span> and target strike temperature <span class="arithmatex">\(W = 9.0^\circ\text{C}\)</span> gives a sensible cooling deficit of:</p>
+<p>Balancing latent heat of fusion (<span class="arithmatex">\(80\text{ kcal/kg}\)</span>) against Claire's <span class="arithmatex">\(W_{\text{water}} = 65.3265\text{ kg}\)</span> of mixer water with tap water at <span class="arithmatex">\(T_{\text{tap}} = 21.0^\circ\text{C}\)</span> and target strike temperature <span class="arithmatex">\(W = 9.0^\circ\text{C}\)</span> gives a sensible cooling deficit of:</p>
 <div class="arithmatex">\[\Delta T = T_{\text{tap}} - W = 21.0 - 9.0 = 12.0^\circ\text{C}\]</div>
 <p>Evaluating the required flake ice mass:</p>
 <div class="arithmatex">\[W_{\text{ice}} = 65.3265 \times \left(\frac{12.0}{80}\right) = 65.3265 \times 0.1500 = \mathbf{9.7990\text{ kg}}\]</div>
@@ -3037,7 +3037,7 @@ $<span class="arithmatex">\(W_{\text{ice}} = \frac{W_{\text{water}} \cdot \left(
 <p>Flake ice, by contrast, has a thickness of only <span class="arithmatex">\(1.5\text{–}2.0\text{ mm}\)</span> and an enormous surface-area-to-mass ratio. When added directly to the mixer bowl alongside the dry flour and liquid tap water, flake ice undergoes complete phase-change melting within the first sixty to ninety seconds of slow first-speed agitation, absorbing its full <span class="arithmatex">\(80\text{ kcal/kg}\)</span> of latent heat before gluten development begins. The dough hydrates uniformly, chilled to the exact target temperature.</p>
 <hr />
 <h2 id="dough-scaling-and-thermal-balancing-on-the-stack-and-in-the-solver-workspace">Dough Scaling and Thermal Balancing on the Stack and in the Solver Workspace</h2>
-<p>On the <strong>SC-78</strong>, entering the base flour weight in Register <span class="arithmatex">\(Y\)</span> and the first ingredient weight in Register <span class="arithmatex">\(X\)</span> before pressing [BK%] locks the base flour weight <span class="arithmatex">\(F\)</span> and activates the live <code>@BK%</code> recipe ledger in [g] [▦]. Subsequent presses of [BK%] compute each ingredient's Baker's Percentage and append it to the ledger, while [ΣW], [f] [SCL], [f] [DIV], [Tw], and [g] [ICE] handle batch scaling, portion dividing, and thermal balancing.</p>
+<p>On the <strong>SC-78</strong>, entering the base flour weight in Register <span class="arithmatex">\(Y\)</span> and the first ingredient weight in Register <span class="arithmatex">\(X\)</span> before pressing [BK%] locks the base flour weight <span class="arithmatex">\(F\)</span> and activates the live <code>@BK%</code> recipe ledger in [g] [▦]. Subsequent presses of [BK%] compute each ingredient's Baker's Percentage and append it to the ledger, while [ΣW], [f] [SCL], [f] [DIV], and [Tw] handle batch scaling, portion dividing, and thermal balancing.</p>
 <table>
 <thead>
 <tr>
@@ -3079,15 +3079,15 @@ $<span class="arithmatex">\(W_{\text{ice}} = \frac{W_{\text{water}} \cdot \left(
 <td style="text-align: left;"><span class="arithmatex">\(W = 3 D - R - F - M\)</span> (Strike Water / Mixer Friction Solver)</td>
 </tr>
 <tr>
-<td style="text-align: left;">[g] [ICE]</td>
-<td style="text-align: left;">Immediate Stack</td>
-<td style="text-align: left;">Register <span class="arithmatex">\(Y\)</span>: Water mass <span class="arithmatex">\(W_{\text{water}}\)</span>, Register <span class="arithmatex">\(X\)</span>: Cooling <span class="arithmatex">\(\Delta T = T_{\text{tap}} - W\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(W_{\text{ice}} = W_{\text{water}} \cdot (\Delta T / 80)\)</span> (<span class="arithmatex">\(80\text{ kcal/kg}\)</span> latent heat of fusion)</td>
+<td style="text-align: left;"><strong><code>[g] [ΔHf]</code></strong></td>
+<td style="text-align: left;">Fundamental Constant</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
 </tr>
 </tbody>
 </table>
 <h3 id="building-and-scaling-the-bk-recipe-ledger-on-the-stack">Building and Scaling the <code>@BK%</code> Recipe Ledger on the Stack</h3>
-<p>To build the country sourdough ledger from a <span class="arithmatex">\(1000\text{ g}\)</span> test formula (<code>720 g</code> water, <code>200 g</code> levain, <code>22 g</code> salt), recall the cumulative test-batch dough weight with [ΣW], scale the entire recipe to <span class="arithmatex">\(200\)</span> loaves at <span class="arithmatex">\(0.881\text{ kg}\)</span> (<span class="arithmatex">\(176.2\text{ kg}\)</span> total dough) with [f] [SCL], and compute the flake-ice weight for <span class="arithmatex">\(W = 9.0^\circ\text{C}\)</span> strike water with [g] [ICE], the baker chains:</p>
+<p>To build the country sourdough ledger from a <span class="arithmatex">\(1000\text{ g}\)</span> test formula (<code>720 g</code> water, <code>200 g</code> levain, <code>22 g</code> salt), recall the cumulative test-batch dough weight with [ΣW], scale the entire recipe to <span class="arithmatex">\(200\)</span> loaves at <span class="arithmatex">\(0.881\text{ kg}\)</span> (<span class="arithmatex">\(176.2\text{ kg}\)</span> total dough) with [f] [SCL], and compute the flake-ice weight for <span class="arithmatex">\(W = 9.0^\circ\text{C}\)</span> strike water via latent heat (<span class="arithmatex">\(W_{\text{ice}} = W_{\text{water}} \times \Delta T / 80\)</span>), the baker chains:</p>
 <table>
 <thead>
 <tr>
@@ -3133,7 +3133,7 @@ $<span class="arithmatex">\(W_{\text{ice}} = \frac{W_{\text{water}} \cdot \left(
 <td style="text-align: left;">Scale anchor flour to <span class="arithmatex">\(176.2\text{ kg}\)</span> batch: <span class="arithmatex">\(F = 90.7312\text{ kg}\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>0.72</code> [×] <code>12</code> [g] [ICE]</td>
+<td style="text-align: left;"><code>0.72</code> [×] <code>12</code> [×] <code>80</code> [÷]</td>
 <td style="text-align: center;"><span class="arithmatex">\(20\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(20\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(2.2\)</span></td>
@@ -3448,11 +3448,11 @@ $<span class="arithmatex">\(\text{Total Color Points} = 650(2.0) + 50(40.0) = 13
 $<span class="arithmatex">\(\text{MCU} = \frac{3300}{310.0} = \mathbf{10.6452}\)</span>$
 $<span class="arithmatex">\(\text{SRM} = 1.4922 \times (10.6452)^{0.6859} = 1.4922 \times 5.0663 = \mathbf{7.560\text{ SRM}}\)</span>$</p>
 <p>An SRM of <span class="arithmatex">\(7.56\)</span> corresponds visually to a brilliant, glowing golden-copper hue—the hallmark of an authentic American pale ale.</p>
-<h3 id="carbonation-physics-and-henrys-law-f-co2">Carbonation Physics and Henry's Law ([f] [CO₂])</h3>
+<h3 id="carbonation-physics-and-henrys-law">Carbonation Physics and Henry's Law</h3>
 <p>In the bright tank, carbonating finished beer follows <strong>Henry's Law</strong>: at a constant temperature, the amount of dissolved gas in a liquid is directly proportional to the partial pressure of that gas in equilibrium above the liquid:</p>
 <div class="arithmatex">\[C_{\text{gas}} = k_H(T) \cdot P_{\text{head}}\]</div>
 <p>Brewers measure dissolved carbon dioxide in <strong>volumes of <span class="arithmatex">\(\text{CO}_2\)</span></strong> (the volume of gas at standard temperature and pressure dissolved per volume of liquid). Standard American draft ales target <span class="arithmatex">\(2.4\text{–}2.6\text{ volumes}\)</span>, while British cask ales target <span class="arithmatex">\(1.6\text{–}1.9\text{ volumes}\)</span> and Belgian tripels reach <span class="arithmatex">\(3.0\text{–}3.5\text{ volumes}\)</span>.</p>
-<p>Because gas solubility is inversely proportional to liquid temperature, holding beer at <span class="arithmatex">\(1.0^\circ\text{C}\)</span> (<span class="arithmatex">\(33.8^\circ\text{F}\)</span>) requires a tank head pressure of approximately <span class="arithmatex">\(10.5\text{ psi}\)</span> to maintain <span class="arithmatex">\(2.5\text{ volumes}\)</span> of <span class="arithmatex">\(\text{CO}_2\)</span>. If the cellar warms to <span class="arithmatex">\(5.0^\circ\text{C}\)</span> (<span class="arithmatex">\(41.0^\circ\text{F}\)</span>), the head pressure must be increased to <span class="arithmatex">\(13.5\text{ psi}\)</span> (via [f] [CO₂]) to prevent dissolved carbon dioxide from outgassing.</p>
+<p>Because gas solubility is inversely proportional to liquid temperature, holding beer at <span class="arithmatex">\(1.0^\circ\text{C}\)</span> (<span class="arithmatex">\(33.8^\circ\text{F}\)</span>) requires a tank head pressure of approximately <span class="arithmatex">\(10.5\text{ psi}\)</span> to maintain <span class="arithmatex">\(2.5\text{ volumes}\)</span> of <span class="arithmatex">\(\text{CO}_2\)</span>. If the cellar warms to <span class="arithmatex">\(5.0^\circ\text{C}\)</span> (<span class="arithmatex">\(41.0^\circ\text{F}\)</span>), the head pressure must be increased to <span class="arithmatex">\(13.5\text{ psi}\)</span> to prevent dissolved carbon dioxide from outgassing.</p>
 <h3 id="late-whirlpool-extraction-kinetics-and-isomerization-at-sub-boiling-temperatures">Late Whirlpool Extraction Kinetics and Isomerization at Sub-Boiling Temperatures</h3>
 <p>In contemporary brewing of aromatic IPAs, a substantial fraction of hop charges are added not during the vigorous <span class="arithmatex">\(60\text{-minute}\)</span> rolling boil, but during the <strong>whirlpool rest</strong> after flameout.</p>
 <p>When wort boiling ceases, the liquid in the copper kettle begins cooling from <span class="arithmatex">\(100^\circ\text{C}\)</span> (<span class="arithmatex">\(212^\circ\text{F}\)</span>) down through <span class="arithmatex">\(85^\circ\text{C}\)</span> (<span class="arithmatex">\(185^\circ\text{F}\)</span>). While boiling maximizes the thermal acyloin rearrangement into iso-alpha-acids, it also strips out low-boiling-point aromatic terpenes and essential oils (myrcene boils at <span class="arithmatex">\(167^\circ\text{C}\)</span>, but co-distills with steam at <span class="arithmatex">\(95^\circ\text{C}\)</span>; linalool boils at <span class="arithmatex">\(198^\circ\text{C}\)</span>; geraniol at <span class="arithmatex">\(230^\circ\text{C}\)</span>).</p>
@@ -3469,7 +3469,7 @@ $<span class="arithmatex">\(\text{EY}_{\%} = \frac{38.0 \times 9.50}{18.0} = \ma
 landing squarely in the sweet center of the Golden Cup envelope.</p>
 <hr />
 <h2 id="brewhouse-gravity-attenuation-and-bitterness-on-the-stack-and-in-the-solver-workspace">Brewhouse Gravity, Attenuation, and Bitterness on the Stack and in the Solver Workspace</h2>
-<p>On the <strong>SC-78</strong>, mash infusion thermodynamics ([MSH]), ASBC extract conversions ([g] [▸SG], [f] [▸Brx], [f] [▸°P], [f] [BRX], [g] [SGT]), fermentation alcohol ([ABV], [g] [▸PRF]), hop isomerization ([IBU]), malt color ([g] [SRM]), carbonation ([f] [CO₂]), and coffee extraction ([g] [TDS]) execute both as immediate two-register RPN stack operators and as multi-variable Equation Solver Workspaces ([MSH], [ABV], [IBU]).</p>
+<p>On the <strong>SC-78</strong>, mash infusion thermodynamics ([MSH]), ASBC extract conversions ([g] [▸SG], [f] [▸Brx], [f] [▸°P], [f] [BRX], [g] [SGT]), fermentation alcohol ([ABV], [g] [▸PRF]), hop isomerization ([IBU]), malt color ([g] [SRM]), carbonation thermodynamics, and coffee extraction ([g] [TDS]) execute both as immediate two-register RPN stack operators and as multi-variable Equation Solver Workspaces ([MSH], [ABV], [IBU]).</p>
 <table>
 <thead>
 <tr>
@@ -3740,7 +3740,7 @@ $<span class="arithmatex">\(I_{15} = \frac{80.0 \times 9.5 \times 0.09142 \times
 <p>A dangerous accounting error common among novice culinary managers is the <strong>linear subtraction fallacy</strong>. Suppose a subprimal loses <span class="arithmatex">\(20.0\%\)</span> on the butcher block during trimming and another <span class="arithmatex">\(10.0\%\)</span> moisture loss during roasting. Linear intuition leads the untrained cook to subtract:
 $<span class="arithmatex">\(100\% - 20\% - 10\% = 70\%\text{ yield?}\)</span>$
 This linear subtraction is mathematically false. The second stage loss (<span class="arithmatex">\(10.0\%\)</span>) does not act on the original <span class="arithmatex">\(100\%\)</span> delivered weight; it acts only on the <span class="arithmatex">\(80\%\)</span> mass that survived the butcher table.</p>
-<h3 id="compounding-multi-stage-fabrication-yields-yld">Compounding Multi-Stage Fabrication Yields ([YLD])</h3>
+<h3 id="compounding-multi-stage-fabrication-yields">Compounding Multi-Stage Fabrication Yields</h3>
 <p>In culinary cost accounting, mass conservation dictates that sequential preparation stages <strong>multiply geometrically</strong> rather than subtracting linearly. </p>
 <p>Let a commodity undergo <span class="arithmatex">\(m\)</span> sequential processing stages (e.g., Stage 1: butchering and deboning; Stage 2: portioning and skinning; Stage 3: cooking shrinkage). Each stage <span class="arithmatex">\(k\)</span> has a fractional mass loss <span class="arithmatex">\(\ell_k \in [0, 1)\)</span> and a corresponding decimal stage yield <span class="arithmatex">\(y_k = 1 - \ell_k \in (0, 1]\)</span>. The cumulative yield decimal <span class="arithmatex">\(y_{\text{cum}}\)</span> across all <span class="arithmatex">\(m\)</span> stages is the continued product:</p>
 <p><strong>Eq. 21.1 — Compounding Fabrication Yield and Edible Mass</strong>
@@ -3787,8 +3787,8 @@ u = 2$ for <span class="arithmatex">\(\text{NaCl}\)</span>).</p>
 - <strong><span class="arithmatex">\(a_w = 0.85\)</span>:</strong> Growth ceiling for <em>Staphylococcus aureus</em> under aerobic conditions. Below <span class="arithmatex">\(a_w = 0.85\)</span>, all pathogenic bacterial proliferation is arrested. This marks the FDA and USDA statutory threshold for <strong>shelf-stable food requiring no refrigeration</strong>.
 - <strong><span class="arithmatex">\(a_w = 0.60\)</span>:</strong> Osmophilic yeasts and xerophilic molds cease growth; microbial life is completely dormant.</p>
 <p>When curing artisan charcuterie (prosciutto, saucisson sec, bresaola), Henri uses the SC-78 to monitor equilibrium salt brine calculations ([f] [SAL]) and water activity ([g] [Aw]). Measuring an equilibrium relative humidity of <span class="arithmatex">\(\text{ERH} = 85.0\%\)</span> in the dry-curing chamber certifies that <span class="arithmatex">\(a_w = 0.850\)</span>, confirming that the charcuterie has crossed the safety threshold into shelf stability.</p>
-<h3 id="enological-stability-hendersonhasselbalch-sulfite-equilibrium-g-so2">Enological Stability: Henderson–Hasselbalch Sulfite Equilibrium ([g] [SO₂])</h3>
-<p>In the hotel's wine cellar, the sommelier and beverage director manage chemical oxidation and microbial spoilage (<em>Brettanomyces bruxellensis</em>, <em>Acetobacter aceti</em>) through <strong>potassium metabisulfite</strong> (<span class="arithmatex">\(\text{K}_2\text{S}_2\text{O}_5\)</span>) additions ([g] [SO₂]).</p>
+<h3 id="enological-stability-hendersonhasselbalch-sulfite-equilibrium-f-mso2">Enological Stability: Henderson–Hasselbalch Sulfite Equilibrium ([f] [MSO2])</h3>
+<p>In the hotel's wine cellar, the sommelier and beverage director manage chemical oxidation and microbial spoilage (<em>Brettanomyces bruxellensis</em>, <em>Acetobacter aceti</em>) through <strong>potassium metabisulfite</strong> (<span class="arithmatex">\(\text{K}_2\text{S}_2\text{O}_5\)</span>) additions ([f] [MSO2]).</p>
 <p>When sulfur dioxide dissolves in wine must, it exists in a dynamic pH-dependent equilibrium between three chemical species:
 $<span class="arithmatex">\(\text{SO}_2 \cdot \text{H}_2\text{O} \rightleftharpoons \text{H}^+ + \text{HSO}_3^- \rightleftharpoons 2\text{H}^+ + \text{SO}_3^{2-}\)</span>$
 1. <strong>Molecular <span class="arithmatex">\(\text{SO}_2\)</span> (<span class="arithmatex">\(\text{SO}_2\cdot\text{H}_2\text{O}\)</span>):</strong> The neutral, un-ionized dissolved gas. Crucially, <strong>only molecular <span class="arithmatex">\(\text{SO}_2\)</span> is antimicrobial</strong>. Because it carries no electrical charge, it can diffuse directly across the hydrophobic lipid bilayer of microbial cell membranes, destroying cellular enzymes.
@@ -3808,7 +3808,7 @@ $<span class="arithmatex">\(\text{Mass Fraction} = \frac{128.12}{222.32} = 0.576
 Each gram of potassium metabisulfite delivers <span class="arithmatex">\(576\text{ mg}\)</span> of pure active <span class="arithmatex">\(\text{SO}_2\)</span>.</p>
 <p>To raise a <span class="arithmatex">\(V_{\text{L}} = 225\text{ L}\)</span> French oak barrique by <span class="arithmatex">\(\Delta\text{ppm} = 25\text{ mg/L}\)</span> of free <span class="arithmatex">\(\text{SO}_2\)</span>:
 $<span class="arithmatex">\(W_{\text{SO}_2,\text{mg}} = \Delta\text{ppm} \times V_{\text{L}} = 25 \times 225 = \mathbf{5625\text{ mg}}\text{ (}5.625\text{ g)}\)</span>$
-Dividing by the <span class="arithmatex">\(57.6\%\)</span> active yield ([g] [SO₂]):
+Dividing by the <span class="arithmatex">\(57.6\%\)</span> active yield (<code>576 [÷]</code>):
 $<span class="arithmatex">\(W_{\text{K}_2\text{S}_2\text{O}_5,\text{g}} = \frac{5625}{576} = \mathbf{9.766\text{ g}}\)</span>$
 Adding <span class="arithmatex">\(9.77\text{ g}\)</span> of metabisulfite salt secures the barrel against oxidative browning and wild yeast spoilage.</p>
 <h3 id="thermal-pasteurization-kinetics-g-pu-and-atwater-macronutrient-energy-f-mac">Thermal Pasteurization Kinetics ([g] [PU]) and Atwater Macronutrient Energy ([f] [MAC])</h3>
@@ -3873,7 +3873,7 @@ An item is deemed "High Margin" if its contribution margin exceeds the category 
 - <strong>Dogs (Low Popularity, Low Contribution Margin):</strong> Items that fail to attract guests and generate minimal cash profit when sold, tying up valuable walk-in refrigerator storage and prep labor. Culinary action: eliminate immediately from the menu and replace with a higher-yielding seasonal preparation.</p>
 <p>Crucially, without the <strong>yield-adjusted edible portion costing</strong> (<span class="arithmatex">\(C_{\text{EP}} = C_{\text{AP}} / y_{\text{cum}}\)</span>) formulated in Eq. 21.2, a chef relying on raw invoice prices will misclassify dishes. A dish whose raw invoice food cost appears to be <span class="arithmatex">\(28\%\)</span> may actually operate at a true yield-adjusted food cost of <span class="arithmatex">\(42\%\)</span> once trimming, deboning, and cooking shrinkage are calculated—disguising an unprofitable Plowhorse as a phantom Star.</p>
 <h2 id="butcher-yield-menu-costing-and-preservation-on-the-stack-and-in-the-solver-workspace">Butcher Yield, Menu Costing, and Preservation on the Stack and in the Solver Workspace</h2>
-<p>On the <strong>SC-78</strong>, fabrication yield ([YLD]), food-cost percentage and pricing ([g] [CST], [g] [PRC]), water activity ([g] [Aw]), sulfite dosing ([g] [SO₂]), and utensil-snapping volume conversions ([f] [▸cup], [g] [▸pt], [f] [▸qt], [g] [▸dL], [g] [▸tb], [f] [▸tsp]) operate across both the RPN stack and the bidirectional [g] [CST] Solver Workspace.</p>
+<p>On the <strong>SC-78</strong>, fabrication yield, food-cost percentage and pricing ([g] [CST], [g] [PRC]), water activity ([g] [Aw]), molecular sulfite equilibrium ([f] [MSO2]), and utensil-snapping volume conversions ([f] [▸cup], [g] [▸pt], [f] [▸tb], [f] [▸tsp]) operate across both the RPN stack and the bidirectional [g] [CST] Solver Workspace.</p>
 <table>
 <thead>
 <tr>
@@ -3885,7 +3885,7 @@ An item is deemed "High Margin" if its contribution margin exceeds the category 
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">[YLD]</td>
+<td style="text-align: left;"><strong><code>[%]</code></strong> / <strong><code>[÷]</code></strong></td>
 <td style="text-align: left;">Immediate Stack</td>
 <td style="text-align: left;">Register <span class="arithmatex">\(Y\)</span>: As-Purchased <span class="arithmatex">\(W_{\text{AP}}\)</span>, Register <span class="arithmatex">\(X\)</span>: Edible <span class="arithmatex">\(W_{\text{EP}}\)</span></td>
 <td style="text-align: left;">Trim yield percentage <span class="arithmatex">\(Y_{\%} = (X / Y) \times 100\)</span></td>
@@ -3903,13 +3903,13 @@ An item is deemed "High Margin" if its contribution margin exceeds the category 
 <td style="text-align: left;">Menu selling price <span class="arithmatex">\(P = C / (F_{\%} / 100)\)</span> (Gross margin <span class="arithmatex">\(M_{\%} = 100 - F_{\%}\)</span>)</td>
 </tr>
 <tr>
-<td style="text-align: left;">[g] [Aw] / [g] [SO₂]</td>
+<td style="text-align: left;">[g] [Aw] / [f] [MSO2]</td>
 <td style="text-align: left;">Immediate Stack</td>
-<td style="text-align: left;">[g] [Aw]: <span class="arithmatex">\(X = \text{ERH}_{\%}\)</span> • [g] [SO₂]: <span class="arithmatex">\(Y = W_{\text{SO}_2,\text{mg}}, X = 576\)</span> (or <span class="arithmatex">\(V_{\text{L}}\)</span>)</td>
-<td style="text-align: left;">Water activity <span class="arithmatex">\(a_w = X / 100\)</span>; Sulfite ratio <span class="arithmatex">\(Y / X\)</span></td>
+<td style="text-align: left;">[g] [Aw]: <span class="arithmatex">\(X = \text{ERH}_{\%}\)</span> • [f] [MSO2]: Molecular <span class="arithmatex">\(\text{SO}_2\)</span> equilibrium</td>
+<td style="text-align: left;">Water activity <span class="arithmatex">\(a_w = X / 100\)</span>; Henderson–Hasselbalch sulfite</td>
 </tr>
 <tr>
-<td style="text-align: left;">[f] [▸cup] [g] [▸tb] [f] [▸tsp]</td>
+<td style="text-align: left;">[f] [▸cup] [f] [▸tb] [f] [▸tsp]</td>
 <td style="text-align: left;">Immediate Stack</td>
 <td style="text-align: left;">Register <span class="arithmatex">\(X\)</span>: Volume in <span class="arithmatex">\(\text{mL}\)</span></td>
 <td style="text-align: left;">Converts volume to cups, tablespoons, or teaspoons with fraction snap</td>
@@ -3917,7 +3917,7 @@ An item is deemed "High Margin" if its contribution margin exceeds the category 
 </tbody>
 </table>
 <h3 id="tenderloin-yield-plate-costing-and-margin-audit-on-the-stack">Tenderloin Yield, Plate Costing, and Margin Audit on the Stack</h3>
-<p>At the butcher table, the chef verifies the <span class="arithmatex">\(72.0\%\)</span> fabrication yield on <span class="arithmatex">\(45.0\text{ lb}\)</span> of tenderloin ([YLD]), calculates the <span class="arithmatex">\(\$8.40\)</span> yield-adjusted plate cost, prices the entrée at a <span class="arithmatex">\(28.0\%\)</span> food-cost target ([g] [PRC]), and audits the achieved food cost percentage ([g] [CST]) and gross margin (<span class="arithmatex">\(100 - F_{\%}\)</span>) at a <span class="arithmatex">\(\$32.00\)</span> menu tariff:</p>
+<p>At the butcher table, the chef verifies the <span class="arithmatex">\(72.0\%\)</span> fabrication yield on <span class="arithmatex">\(45.0\text{ lb}\)</span> of tenderloin (<code>32.4 [ENTER] 45 [÷] 100 [×]</code>), calculates the <span class="arithmatex">\(\$8.40\)</span> yield-adjusted plate cost, prices the entrée at a <span class="arithmatex">\(28.0\%\)</span> food-cost target ([g] [PRC]), and audits the achieved food cost percentage ([g] [CST]) and gross margin (<span class="arithmatex">\(100 - F_{\%}\)</span>) at a <span class="arithmatex">\(\$32.00\)</span> menu tariff:</p>
 <table>
 <thead>
 <tr>
@@ -3931,7 +3931,7 @@ An item is deemed "High Margin" if its contribution margin exceeds the category 
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>45</code> [ENTER] <code>32.4</code> [YLD]</td>
+<td style="text-align: left;"><code>32.4</code> [ENTER] <code>45</code> [÷] <code>100</code> [×]</td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>

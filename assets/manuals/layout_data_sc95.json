@@ -178,9 +178,9 @@
       "primaryLabel" : "TVM",
       "row" : 1,
       "w" : 7,
-      "yellowAction" : "finAmortization",
-      "yellowBitmapIdentifier" : "operation.364",
-      "yellowLabel" : "AMR"
+      "yellowAction" : "finBlackScholesD1D2",
+      "yellowBitmapIdentifier" : "operation.693",
+      "yellowLabel" : "BS"
     },
     {
       "alphaLabel" : "D",
@@ -691,9 +691,9 @@
     },
     {
       "alphaLabel" : "V",
-      "blueAction" : "finMarkup",
-      "blueBitmapIdentifier" : "operation.355",
-      "blueLabel" : "MKP",
+      "blueAction" : "finCAGRAnnualized",
+      "blueBitmapIdentifier" : "operation.691",
+      "blueLabel" : "CAGR",
       "col" : 3,
       "cx" : 51.06,
       "cy" : 112.525,
@@ -754,9 +754,9 @@
     },
     {
       "alphaLabel" : "W",
-      "blueAction" : "finTax",
-      "blueBitmapIdentifier" : "operation.327",
-      "blueLabel" : "TAX",
+      "blueAction" : "finBondModDuration",
+      "blueBitmapIdentifier" : "operation.692",
+      "blueLabel" : "Dmod",
       "col" : 1,
       "cx" : 23.679,
       "cy" : 123.82500000000002,
@@ -776,9 +776,9 @@
     },
     {
       "alphaLabel" : "X",
-      "blueAction" : "finCAGR",
-      "blueBitmapIdentifier" : "operation.359",
-      "blueLabel" : "CGR",
+      "blueAction" : "finCapRate",
+      "blueBitmapIdentifier" : "operation.676",
+      "blueLabel" : "CAP",
       "col" : 2,
       "cx" : 37.369,
       "cy" : 123.82500000000002,
@@ -798,9 +798,9 @@
     },
     {
       "alphaLabel" : "Y",
-      "blueAction" : "finActuarial",
-      "blueBitmapIdentifier" : "operation.361",
-      "blueLabel" : "CAP",
+      "blueAction" : "finDSCR",
+      "blueBitmapIdentifier" : "operation.677",
+      "blueLabel" : "DSCR",
       "col" : 3,
       "cx" : 51.06,
       "cy" : 123.82500000000002,
@@ -814,9 +814,9 @@
       "primaryLabel" : "3",
       "row" : 6,
       "w" : 8.6,
-      "yellowAction" : "finWACC",
-      "yellowBitmapIdentifier" : "operation.360",
-      "yellowLabel" : "WAC"
+      "yellowAction" : "finCAPM",
+      "yellowBitmapIdentifier" : "operation.708",
+      "yellowLabel" : "CAPM"
     },
     {
       "alphaLabel" : "",
@@ -863,9 +863,9 @@
     },
     {
       "alphaLabel" : "Z",
-      "blueAction" : "finROI",
-      "blueBitmapIdentifier" : "operation.357",
-      "blueLabel" : "ROI",
+      "blueAction" : "toBasisPoints",
+      "blueLabel" : "▸bps",
+      "blueSuffix" : "bps",
       "col" : 1,
       "cx" : 23.679,
       "cy" : 135.125,
@@ -907,10 +907,9 @@
     },
     {
       "alphaLabel" : "(i)",
-      "blueAction" : "finPercentTotal",
-      "blueBitmapIdentifier" : "operation.356",
-      "blueLabel" : "%Σ",
-      "blueLatex" : "\\%\\Sigma",
+      "blueAction" : "finGordonGrowth",
+      "blueBitmapIdentifier" : "operation.709",
+      "blueLabel" : "DDM",
       "col" : 3,
       "cx" : 51.06,
       "cy" : 135.125,
@@ -977,12 +976,6 @@
       "Y",
       "N",
       "F"
-    ],
-    "CGR" : [
-      "F",
-      "P",
-      "R",
-      "N"
     ],
     "CHISQ" : [
       "P",
@@ -1062,11 +1055,6 @@
     ],
     "MGN" : [
       "M",
-      "P",
-      "C"
-    ],
-    "MKP" : [
-      "U",
       "P",
       "C"
     ],
@@ -1152,11 +1140,6 @@
       "Σy²",
       "Σxy",
       "n"
-    ],
-    "TAX" : [
-      "T",
-      "P",
-      "R"
     ],
     "TDIST" : [
       "P",

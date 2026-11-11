@@ -2917,7 +2917,7 @@ $<span class="arithmatex">\(\Delta\text{EV}_{\text{fps}} = \log_2(M_{\text{ramp}
 <p>For the documentary's high-speed wildlife B-roll shot—where a peregrine falcon strike was captured at <span class="arithmatex">\(R_{\text{shoot}} = 120\text{ fps}\)</span> for <span class="arithmatex">\(t_{\text{shoot}} = 1.50\text{ s}\)</span>, yielding <span class="arithmatex">\(F_{\text{total}} = 120 \times 1.50 = 180\text{ frames}\)</span>—conforming those <span class="arithmatex">\(180\text{ frames}\)</span> onto a theatrical <span class="arithmatex">\(R_{\text{play}} = 24\text{ fps}\)</span> timeline (<code>24</code> [ENTER] <code>120</code> [FPS]) stretches the time axis by <span class="arithmatex">\(M_{\text{ramp}} = 120 / 24 = \mathbf{5.0\times}\)</span> in Register <span class="arithmatex">\(X\)</span> (with an overcrank exposure loss of <span class="arithmatex">\(\log_2(5) \approx \mathbf{2.3219\text{ EV}}\)</span> in Register <span class="arithmatex">\(Y\)</span>, or <span class="arithmatex">\(60 / 24 = \mathbf{2.5\times}\)</span> and <span class="arithmatex">\(\log_2(2.5) \approx \mathbf{1.3219\text{ EV}}\)</span> for a <span class="arithmatex">\(60\text{ fps}\)</span> shot), producing a screen playback duration of <span class="arithmatex">\(t_{\text{play}} = 180 / 24 = \mathbf{7.50\text{ s}}\)</span> (<code>00:00:07:12</code>, or <code>0.000712</code> at <span class="arithmatex">\(24\text{ fps}\)</span>). If that same <span class="arithmatex">\(180\text{-frame}\)</span> burst is dropped directly onto the network's <span class="arithmatex">\(30\text{ fps}\)</span> broadcast master timeline, the time magnification becomes <span class="arithmatex">\(M_{\text{ramp}} = 120 / 30 = \mathbf{4.0\times}\)</span> and the insert runs for <span class="arithmatex">\(t_{\text{play}} = 180 / 30 = \mathbf{6.00\text{ s}}\)</span> (<code>00:00:06:00</code>).</p>
 <hr />
 <h2 id="ntsc-subcarrier-pulldown-and-drop-frame-reconciliation">NTSC Subcarrier Pulldown and Drop-Frame Reconciliation</h2>
-<p>When a broadcast facility operates on North American fractional frame rates (<span class="arithmatex">\(23.976\text{ fps}\)</span>, <span class="arithmatex">\(29.97\text{ fps}\)</span>, or <span class="arithmatex">\(59.94\text{ fps}\)</span>), the rate at which frames pass through the switcher no longer equals a whole integer per second. Reconciling integer frame labels with continuous atomic time requires tracking the <span class="arithmatex">\(1000/1001\)</span> frequency offset ([g] [DF]) and applying SMPTE's deterministic label-skipping algorithm.</p>
+<p>When a broadcast facility operates on North American fractional frame rates (<span class="arithmatex">\(23.976\text{ fps}\)</span>, <span class="arithmatex">\(29.97\text{ fps}\)</span>, or <span class="arithmatex">\(59.94\text{ fps}\)</span>), the rate at which frames pass through the switcher no longer equals a whole integer per second. Reconciling integer frame labels with continuous atomic time requires tracking the <span class="arithmatex">\(1000/1001\)</span> frequency offset ([f] [DF]) and applying SMPTE's deterministic label-skipping algorithm.</p>
 <h3 id="the-1953-color-subcarrier-offset-and-wall-clock-drift">The 1953 Color Subcarrier Offset and Wall-Clock Drift</h3>
 <p>When the National Television System Committee convened in 1953 to establish the standard for North American color television, they were constrained by a severe regulatory mandate: complete backward compatibility. Ten million monochrome cathode-ray tube (CRT) receivers were already installed in American households. A color broadcast signal had to display cleanly in full color on new color receivers while producing an artifact-free black-and-white image on existing monochrome sets, all squeezed inside the exact same <span class="arithmatex">\(6\text{ MHz}\)</span> radio-frequency channel allocation.</p>
 <p>In the original monochrome standard established in 1941, the picture scanned 525 horizontal lines per frame, 30 frames per second, interlaced into 60 fields per second. The vertical field rate was deliberately locked to the <span class="arithmatex">\(60\text{ Hz}\)</span> AC power line grid so that any residual 60 Hz hum ripple from poorly filtered power supplies would produce a stationary horizontal bar rather than a wandering shadow across the screen. Multiplying 525 lines by 30 frames gave an exact horizontal line scanning frequency of:
@@ -2947,7 +2947,7 @@ This <span class="arithmatex">\(3.579545\text{ MHz}\)</span> subcarrier compromi
 <p><strong>Eq. 10.3 — NTSC Color Pulldown and Wall-Clock Drift Rate</strong>
 $<span class="arithmatex">\(R_{\text{NTSC}} = \frac{30}{1.001} = \frac{30{,}000}{1001} \approx 29.97003\text{ fps}\)</span>$
 $<span class="arithmatex">\(\Delta t_{\text{drift}} = t_{\text{nominal}} \times 0.001 = t_{\text{real}} - t_{\text{nominal}}\)</span>$</p>
-<p>In this pulldown relationship, <span class="arithmatex">\(t_{\text{nominal}} = F / 30\)</span> is the apparent duration indicated by a Non-Drop-Frame (NDF) counter that increments one second every <span class="arithmatex">\(30\)</span> frames, <span class="arithmatex">\(t_{\text{real}} = F / R_{\text{NTSC}}\)</span> is the true wall-clock elapsed time in seconds ([g] [DF]), and <span class="arithmatex">\(\Delta t_{\text{drift}} = t_{\text{real}} - t_{\text{nominal}}\)</span> is the cumulative clock error. Similarly, when theatrical <span class="arithmatex">\(24\text{ fps}\)</span> cinema masters are transferred to NTSC video via <span class="arithmatex">\(2:3\)</span> telecine pulldown ([g] [3:2]), the cinema frame rate is pulled down by <span class="arithmatex">\(1000/1001\)</span> to <span class="arithmatex">\(24 / 1.001 \approx 23.976024\text{ fps}\)</span>.</p>
+<p>In this pulldown relationship, <span class="arithmatex">\(t_{\text{nominal}} = F / 30\)</span> is the apparent duration indicated by a Non-Drop-Frame (NDF) counter that increments one second every <span class="arithmatex">\(30\)</span> frames, <span class="arithmatex">\(t_{\text{real}} = F / R_{\text{NTSC}}\)</span> is the true wall-clock elapsed time in seconds ([f] [DF]), and <span class="arithmatex">\(\Delta t_{\text{drift}} = t_{\text{real}} - t_{\text{nominal}}\)</span> is the cumulative clock error. Similarly, when theatrical <span class="arithmatex">\(24\text{ fps}\)</span> cinema masters are transferred to NTSC video via <span class="arithmatex">\(2:3\)</span> telecine pulldown, the cinema frame rate is pulled down by <span class="arithmatex">\(1000/1001\)</span> on the stack (<code>24 [ENTER] 1.001 [÷]</code>) to <span class="arithmatex">\(24 / 1.001 \approx 23.976024\text{ fps}\)</span>.</p>
 <p>In telecine <span class="arithmatex">\(2:3\)</span> pulldown, four cinema frames are expanded into ten television interlaced fields (five video frames) to convert <span class="arithmatex">\(24\text{ fps}\)</span> into <span class="arithmatex">\(30\text{ fps}\)</span> (or <span class="arithmatex">\(23.976\text{ fps}\)</span> to <span class="arithmatex">\(29.97\text{ fps}\)</span>). The first film frame is scanned into two video fields (an "odd" field and an "even" field), while the second film frame is scanned into three video fields (odd, even, odd). This alternating cadence (<span class="arithmatex">\(2\text{ fields}, 3\text{ fields}, 2\text{ fields}, 3\text{ fields}\)</span>) maps four original film frames across five video frames:
 $<span class="arithmatex">\(4\text{ film frames} \times 2.5\text{ fields/frame} = 10\text{ video fields} = 5\text{ video frames}\)</span>$
 The time expansion ratio is exactly <span class="arithmatex">\(5 / 4 = 1.25\)</span>.</p>
@@ -2958,7 +2958,7 @@ $<span class="arithmatex">\(S_{\text{color}}(t) = I(t) \cos(2\pi f_{\text{sc}} t
 To synchronize the local oscillator in millions of living room televisions, a reference burst of eight to ten cycles of the unmodulated subcarrier is transmitted immediately following the horizontal sync pulse on the "back porch" of every horizontal line.</p>
 <p>The receiver compares the phase of the arriving chrominance wave against this reference color burst. A phase displacement of zero degrees represents purplish-blue, ninety degrees represents yellow-green, and fifty-seven degrees represents human skin tones. This phase sensitivity is unforgiving: an analog transmission link that introduces a phase delay error of merely <strong>five degrees</strong> shifts skin tones from natural pink into pale olive green. Because long-distance coaxial cable links and microwave repeaters suffered from non-linear phase shifts as picture brightness varied (differential phase and differential gain), color consistency frequently drifted along broadcast networks—prompting television technicians to humorously re-interpret the NTSC acronym as <em>"Never Twice the Same Color"</em>.</p>
 <h3 id="the-smpte-drop-frame-counting-rule-across-minute-boundaries">The SMPTE Drop-Frame Counting Rule Across Minute Boundaries</h3>
-<p>To force the eight-digit timecode display to match wall-clock time at <span class="arithmatex">\(29.97\text{ fps}\)</span> without cutting or deleting a single recorded image from the video stream, SMPTE invented <strong>Drop-Frame</strong> ([g] [DF]) timecode. Because an NDF counter accumulates <span class="arithmatex">\(+108\text{ extra frames}\)</span> of lag every hour (<span class="arithmatex">\(60\text{ minutes}\)</span>), the counter must skip ahead by <span class="arithmatex">\(108\)</span> numerical frame labels per hour, or <span class="arithmatex">\(108 / 60 = 1.8\text{ frame labels per minute}\)</span>. Since a timecode display can only skip whole integer labels, skipping <span class="arithmatex">\(2\text{ frame labels}\)</span> at the start of every minute would drop <span class="arithmatex">\(2 \times 60 = 120\text{ labels}\)</span> per hour—overcorrecting by <span class="arithmatex">\(12\text{ labels}\)</span>. Dropping <span class="arithmatex">\(2\text{ labels}\)</span> on nine out of every ten minutes removes <span class="arithmatex">\(2 \times 9 = 18\text{ labels}\)</span> every ten minutes, or <span class="arithmatex">\(18 \times 6 = 108\text{ labels}\)</span> per hour.</p>
+<p>To force the eight-digit timecode display to match wall-clock time at <span class="arithmatex">\(29.97\text{ fps}\)</span> without cutting or deleting a single recorded image from the video stream, SMPTE invented <strong>Drop-Frame</strong> ([f] [DF]) timecode. Because an NDF counter accumulates <span class="arithmatex">\(+108\text{ extra frames}\)</span> of lag every hour (<span class="arithmatex">\(60\text{ minutes}\)</span>), the counter must skip ahead by <span class="arithmatex">\(108\)</span> numerical frame labels per hour, or <span class="arithmatex">\(108 / 60 = 1.8\text{ frame labels per minute}\)</span>. Since a timecode display can only skip whole integer labels, skipping <span class="arithmatex">\(2\text{ frame labels}\)</span> at the start of every minute would drop <span class="arithmatex">\(2 \times 60 = 120\text{ labels}\)</span> per hour—overcorrecting by <span class="arithmatex">\(12\text{ labels}\)</span>. Dropping <span class="arithmatex">\(2\text{ labels}\)</span> on nine out of every ten minutes removes <span class="arithmatex">\(2 \times 9 = 18\text{ labels}\)</span> every ten minutes, or <span class="arithmatex">\(18 \times 6 = 108\text{ labels}\)</span> per hour.</p>
 <p>To maintain perfect synchronization without discarding recorded footage, the display skips frame label numbers rather than physical images. Skipping two numbers on nine minutes out of ten, while retaining every number on decade minutes (zero, ten, twenty, thirty, forty, and fifty), drops exactly one hundred eight labels an hour. The physical frame index is evaluated by accumulating one hundred seven thousand eight hundred ninety-two frames per hour, seventeen hundred ninety-eight frames per minute, and adding back two frames for every decade minute boundary:</p>
 <p><strong>Eq. 10.4 — SMPTE Drop-Frame Label Skip and Physical Frame Index</strong>
 $<span class="arithmatex">\(N_{\text{dropped}} = 2 \times \left(M_{\text{total}} - \left\lfloor \frac{M_{\text{total}}}{10} \right\rfloor\right)\)</span>$
@@ -2968,7 +2968,7 @@ $<span class="arithmatex">\(F_{\text{DF}} = 107{,}892 \cdot \text{HH} + 1798 \cd
 <p>At the end of the first minute, a Drop-Frame counter advances directly from <code>00:00:59;29</code> to <code>00:01:00;02</code>, skipping the numbers <code>:00</code> and <code>:01</code> while every recorded video frame remains intact. At the tenth minute boundary, it counts normally from <code>00:09:59;29</code> to <code>00:10:00;00</code>. Over one full hour (<code>01:00:00;00</code>), <span class="arithmatex">\(M_{\text{total}} = 60\)</span> and <span class="arithmatex">\(N_{\text{dropped}} = 2(60 - 6) = 108\text{ dropped labels}\)</span>, so <code>01:00:00;00</code> corresponds to physical frame <span class="arithmatex">\(F_{\text{DF}} = 108{,}000 - 108 = \mathbf{107{,}892\text{ frames}}\)</span>. At the true NTSC rate of <span class="arithmatex">\(30{,}000 / 1001\text{ fps}\)</span>, those <span class="arithmatex">\(107{,}892\text{ frames}\)</span> occupy <span class="arithmatex">\(107{,}892 \times 1.001 / 30 = \mathbf{3599.9964\text{ s}}\)</span>, locking the studio timecode display to atomic time within <span class="arithmatex">\(3.6\text{ milliseconds}\)</span> (<span class="arithmatex">\(0.1\text{ frame}\)</span>) per hour.</p>
 <hr />
 <h2 id="synchronizing-broadcast-timelines-on-the-stack-and-in-the-solver-workspace">Synchronizing Broadcast Timelines on the Stack and in the Solver Workspace</h2>
-<p>On the <strong>SC-24</strong>, packed <code>HH.MMSSFF</code> timecode arithmetic ([g] [+TC], [g] [-TC]), immediate frame-to-timecode conversions ([f] [▸FRM], [g] [▸TC]), overcrank playback and exposure scaling ([FPS]), Drop-Frame drift scaling ([g] [DF]), and the bidirectional [TC] Equation Solver Workspace (<code>F = S × R</code>, equivalently <code>S = F / R</code>) work together across any configured stack depth ([4-LV], [8-LV], or [INF] via [g] [FLAGS]) while logging cue points to the <code>@CUES</code> edit decision list in [g] [▦].</p>
+<p>On the <strong>SC-24</strong>, packed <code>HH.MMSSFF</code> timecode arithmetic ([g] [+TC], [g] [-TC]), immediate frame-to-timecode conversions ([f] [▸FRM], [g] [▸TC]), overcrank playback and exposure scaling ([FPS]), and Drop-Frame drift scaling ([f] [DF]) work together seamlessly across any configured stack depth ([4-LV], [8-LV], or [INF] via [g] [FLAGS]) while logging cue points to the <code>@CUES</code> edit decision list in [g] [▦].</p>
 <table>
 <thead>
 <tr>
@@ -3010,16 +3010,16 @@ $<span class="arithmatex">\(F_{\text{DF}} = 107{,}892 \cdot \text{HH} + 1798 \cd
 <td style="text-align: left;">Packs integer frame count <span class="arithmatex">\(F\)</span> into <code>HH.MMSSFF</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>[g] [DF]</code></td>
+<td style="text-align: left;"><code>[f] [DF]</code></td>
 <td style="text-align: left;">Immediate Stack</td>
 <td style="text-align: left;">Register <span class="arithmatex">\(X\)</span>: Nominal NDF duration <span class="arithmatex">\(t_{\text{nom}}\)</span></td>
 <td style="text-align: left;">Scales by <span class="arithmatex">\(1.001\)</span> NTSC pulldown: <span class="arithmatex">\(t_{\text{real}} = 1.001 \cdot X\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>[TC]</code></td>
-<td style="text-align: left;">Stack / Solver</td>
-<td style="text-align: left;">Softkeys: <code>[F]</code> Frames, <code>[S]</code> Seconds, <code>[R]</code> Rate</td>
-<td style="text-align: left;">Bidirectional solver for <span class="arithmatex">\(F = S \times R\)</span> (<span class="arithmatex">\(S = F / R\)</span>; default <span class="arithmatex">\(R = 24\)</span>)</td>
+<td style="text-align: left;"><strong><code>[÷]</code></strong> / <strong><code>[×]</code></strong></td>
+<td style="text-align: left;">Immediate Stack</td>
+<td style="text-align: left;">Register <span class="arithmatex">\(Y\)</span>: Frames <span class="arithmatex">\(F\)</span> or Seconds <span class="arithmatex">\(S\)</span>, Register <span class="arithmatex">\(X\)</span>: Rate <span class="arithmatex">\(R\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(S = F / R\)</span> (seconds from frames); <span class="arithmatex">\(F = S \times R\)</span> (frames from duration)</td>
 </tr>
 </tbody>
 </table>
@@ -3062,7 +3062,7 @@ $<span class="arithmatex">\(F_{\text{DF}} = 107{,}892 \cdot \text{HH} + 1798 \cd
 <td style="text-align: left;">Convert frame total into nominal NDF seconds <span class="arithmatex">\(t_{\text{nom}} = 7634.067\text{ s}\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>[g] [DF]</code></td>
+<td style="text-align: left;"><code>[f] [DF]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
@@ -3131,7 +3131,7 @@ $<span class="arithmatex">\(F_{\text{DF}} = 107{,}892 \cdot \text{HH} + 1798 \cd
 <td style="text-align: left;">Compute nominal NDF duration <span class="arithmatex">\(t_{\text{nom}} = 108{,}265 / 30 = 3608.8333\text{ s}\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>[g] [DF]</code></td>
+<td style="text-align: left;"><code>[f] [DF]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
@@ -3165,57 +3165,47 @@ $<span class="arithmatex">\(F_{\text{DF}} = 107{,}892 \cdot \text{HH} + 1798 \cd
 </tbody>
 </table>
 <p>By executing this continuous cascade, the team determines that trimming exactly twelve seconds and thirteen frames (<code>00:00:12:13</code>) from the commercial intermission pads will bring the broadcast to an exact, frame-accurate top-of-the-hour conclusion without leaving a single trailing video line unsynchronized.</p>
-<h3 id="bidirectional-solver-workspace-tc-solving-backward-for-frame-budgets">Bidirectional Solver Workspace ([TC]): Solving Backward for Frame Budgets</h3>
-<p>Suppose the network's automated satellite switcher allocates a strict broadcast act window of <span class="arithmatex">\(S = 1650.0\text{ seconds}\)</span> (<span class="arithmatex">\(27\text{ minutes } 30\text{ seconds}\)</span> of real atomic time), and the editor needs to know the exact total frame budget <span class="arithmatex">\(F\)</span> available when delivering at fractional NTSC <span class="arithmatex">\(R = 29.97003\text{ fps}\)</span> versus cinema <span class="arithmatex">\(R = 23.976024\text{ fps}\)</span>, and then solve forward for the playback duration <span class="arithmatex">\(S\)</span> of the <span class="arithmatex">\(F = 180\text{-frame}\)</span> falcon slow-motion insert at <span class="arithmatex">\(R = 24\text{ fps}\)</span>. Pressing [TC] opens the <code>TC: TIMECODE</code> Equation Workspace on Line 1 (<code>F = S × R</code>, equivalently <code>S = F / R</code>) and binds softkeys to [F], [S], and [R]:</p>
+<h3 id="evaluating-timeline-frame-budgets-and-playback-durations-on-the-stack">Evaluating Timeline Frame Budgets and Playback Durations on the Stack</h3>
+<p>Suppose the network's automated satellite switcher allocates a strict broadcast act window of <span class="arithmatex">\(S = 1650.0\text{ seconds}\)</span> (<span class="arithmatex">\(27\text{ minutes } 30\text{ seconds}\)</span> of real atomic time), and the editor needs to know the exact total frame budget <span class="arithmatex">\(F\)</span> available when delivering at fractional NTSC <span class="arithmatex">\(R = 29.97003\text{ fps}\)</span> versus cinema <span class="arithmatex">\(R = 23.976024\text{ fps}\)</span>, and then solve forward for the playback duration <span class="arithmatex">\(S\)</span> of the <span class="arithmatex">\(F = 180\text{-frame}\)</span> falcon slow-motion insert at <span class="arithmatex">\(R = 24\text{ fps}\)</span>. Evaluating <span class="arithmatex">\(F = S \times R\)</span> and <span class="arithmatex">\(S = F / R\)</span> directly on the postfix stack gives:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Step &amp; Action</th>
-<th style="text-align: left;">Line 1 Workspace Formula</th>
-<th style="text-align: left;">Workspace Softkeys (<code>[F]</code>, <code>[S]</code>, <code>[R]</code>)</th>
-<th style="text-align: left;">Register X Result &amp; Physical Meaning</th>
+<th style="text-align: left;">Keystroke Sequence</th>
+<th style="text-align: center;">Register T</th>
+<th style="text-align: center;">Register Z</th>
+<th style="text-align: center;">Register Y</th>
+<th style="text-align: center;">Register X</th>
+<th style="text-align: left;">What Happens on the Stack</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>[TC]</code> (open workspace)</td>
-<td style="text-align: left;"><code>TC: F = S × R</code></td>
-<td style="text-align: left;"><code>[F]</code> <code>[S]</code> <code>[R]</code>=24</td>
-<td style="text-align: left;">Opens <code>[TC]</code> solver with cinema default <span class="arithmatex">\(R = 24.0\text{ fps}\)</span> pre-bound</td>
+<td style="text-align: left;"><code>1650 [ENTER] 29.97003 [×]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(49450.55\)</span></strong></td>
+<td style="text-align: left;">Evaluate exact NTSC act capacity <span class="arithmatex">\(F = 1650 \times 29.97003 = \mathbf{49{,}450.55\text{ frames}}\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>1650</code> <span class="arithmatex">\(\to\)</span> <code>[S]</code></td>
-<td style="text-align: left;"><code>TC: F = S × R</code></td>
-<td style="text-align: left;"><code>[F]</code> <code>[S]</code>=1650 <code>[R]</code>=24</td>
-<td style="text-align: left;">Stores broadcast act duration <span class="arithmatex">\(S = 1650.0\text{ s}\)</span></td>
+<td style="text-align: left;"><code>1650 [ENTER] 23.976024 [×]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(49450.55\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(39560.44\)</span></strong></td>
+<td style="text-align: left;">Re-evaluate at <span class="arithmatex">\(23.976\text{ fps}\)</span> for cinema pulldown budget <span class="arithmatex">\(F = \mathbf{39{,}560.44\text{ frames}}\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>29.97003</code> <span class="arithmatex">\(\to\)</span> <code>[R]</code></td>
-<td style="text-align: left;"><code>TC: F = S × R</code></td>
-<td style="text-align: left;"><code>[F]</code> <code>[S]</code>=1650 <code>[R]</code>=29.97</td>
-<td style="text-align: left;">Stores fractional NTSC broadcast frame rate <span class="arithmatex">\(R = 29.97003\text{ fps}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[XEQ]</code> <span class="arithmatex">\(\to\)</span> <code>[F]</code></td>
-<td style="text-align: left;"><code>F = 49450.55</code></td>
-<td style="text-align: left;"><code>[F]</code>=49451 <code>[S]</code>=1650 <code>[R]</code>=29.97</td>
-<td style="text-align: left;">Solves for exact NTSC act capacity <span class="arithmatex">\(F = \mathbf{49{,}450.5\text{ frames}}\)</span> (<code>00:27:30;00</code> DF)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>23.976024</code> <span class="arithmatex">\(\to\)</span> <code>[R]</code>, <code>[XEQ]</code> <span class="arithmatex">\(\to\)</span> <code>[F]</code></td>
-<td style="text-align: left;"><code>F = 39560.44</code></td>
-<td style="text-align: left;"><code>[F]</code>=39560 <code>[S]</code>=1650 <code>[R]</code>=23.98</td>
-<td style="text-align: left;">Re-solves at <span class="arithmatex">\(23.976\text{ fps}\)</span> for cinema pulldown budget <span class="arithmatex">\(F = \mathbf{39{,}560.4\text{ frames}}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>180</code> <span class="arithmatex">\(\to\)</span> <code>[F]</code>, <code>24</code> <span class="arithmatex">\(\to\)</span> <code>[R]</code>, <code>[XEQ]</code> <span class="arithmatex">\(\to\)</span> <code>[S]</code></td>
-<td style="text-align: left;"><code>S = 7.5000</code></td>
-<td style="text-align: left;"><code>[F]</code>=180 <code>[S]</code>=7.5 <code>[R]</code>=24</td>
-<td style="text-align: left;">Solves backward for <span class="arithmatex">\(24\text{ fps}\)</span> playback duration <span class="arithmatex">\(S = 180 / 24 = \mathbf{7.50\text{ s}}\)</span></td>
+<td style="text-align: left;"><code>180 [ENTER] 24 [÷]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(49450.55\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(49450.55\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(39560.44\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(7.5000\)</span></strong></td>
+<td style="text-align: left;">Solve for <span class="arithmatex">\(24\text{ fps}\)</span> insert playback duration <span class="arithmatex">\(S = 180 / 24 = \mathbf{7.50\text{ s}}\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>Because [S], [R], and [F] remain bound in the workspace, changing a single delivery specification—such as switching [R] from <code>29.97003</code> to <code>23.976024</code> or <code>25</code> for European PAL delivery—recomputes the frame budget in two keystrokes without re-entering the segment duration.</p>
+<p>Because values remain intact on the stack, modifying delivery parameters recomputes the frame budget in two keystrokes without re-entering the segment duration.</p>
 <p>Conforming the timeline to Drop-Frame timecode and inserting the <span class="arithmatex">\(7.5\text{-second}\)</span> overcranked falcon sequence locked the program length to the satellite broadcast window with zero-frame drift, hitting the top-of-the-hour commercial break exactly as the network rubidium clock turned 8:00:00 p.m.</p>
 <h3 id="try-it-on-the-stack">Try It on the Stack</h3>
 <p>Work through these five field problems on your calculator. Step-by-step keystroke solutions and register walkthroughs are provided in <a href="../appendix-c-solutions-to-practice-problems/">Appendix C</a>.</p>
@@ -3287,7 +3277,7 @@ At wide apertures such as <span class="arithmatex">\(f/2.8\)</span>, the Airy di
 <h2 id="logarithmic-exposure-reciprocity-rotary-shutters-and-color-mireds">Logarithmic Exposure Reciprocity, Rotary Shutters, and Color Mireds</h2>
 <p>Once the focal length <span class="arithmatex">\(F\)</span> and aperture <span class="arithmatex">\(N\)</span> are chosen to establish framing and depth of field, the camera and lighting crews must regulate photon flux and spectral color temperature so the sensor records balanced exposure and uniform white point as dusk settles.</p>
 <h3 id="base-two-exposure-value-shutter-angles-neutral-density-and-flicker-free-windows">Base-Two Exposure Value, Shutter Angles, Neutral Density, and Flicker-Free Windows</h3>
-<p>Because human brightness perception and silicon photo-site well capacity scale geometrically, cinematography measures exposure changes in base-two <strong>stops</strong>, where each <span class="arithmatex">\(+1\text{ stop}\)</span> step doubles photon exposure and each <span class="arithmatex">\(-1\text{ stop}\)</span> step halves it. Combining relative aperture irradiance (<span class="arithmatex">\(\propto 1/N^2\)</span>) and frame integration time <span class="arithmatex">\(T\)</span> (in seconds) onto a unified base-two logarithmic scale defines <strong>Exposure Value</strong> ([EV], [f] [▸EV] at ISO <span class="arithmatex">\(100\)</span>), while a spinning motion-picture rotary shutter of open sector angle <span class="arithmatex">\(\theta_{\text{shutter}}\)</span> ([f] [SHT], where <span class="arithmatex">\(180^\circ\)</span> is standard) sets integration time <span class="arithmatex">\(T\)</span> as a fraction of the frame period <span class="arithmatex">\(1 / \text{FPS}\)</span>, and gray <strong>Neutral Density</strong> ([g] [▸ND]) filters attenuate excess light according to base-ten optical density <span class="arithmatex">\(D\)</span>.</p>
+<p>Because human brightness perception and silicon photo-site well capacity scale geometrically, cinematography measures exposure changes in base-two <strong>stops</strong>, where each <span class="arithmatex">\(+1\text{ stop}\)</span> step doubles photon exposure and each <span class="arithmatex">\(-1\text{ stop}\)</span> step halves it. Combining relative aperture irradiance (<span class="arithmatex">\(\propto 1/N^2\)</span>) and frame integration time <span class="arithmatex">\(T\)</span> (in seconds) onto a unified base-two logarithmic scale defines <strong>Exposure Value</strong> ([EV], [g] [▸EV] at ISO <span class="arithmatex">\(100\)</span>), while a spinning motion-picture rotary shutter of open sector angle <span class="arithmatex">\(\theta_{\text{shutter}}\)</span> ([f] [SHT], where <span class="arithmatex">\(180^\circ\)</span> is standard) sets integration time <span class="arithmatex">\(T\)</span> as a fraction of the frame period <span class="arithmatex">\(1 / \text{FPS}\)</span>, and gray <strong>Neutral Density</strong> ([g] [▸ND]) filters attenuate excess light according to base-ten optical density <span class="arithmatex">\(D\)</span>.</p>
 <p>In cinematography, the <strong>180-Degree Shutter Rule</strong> governs motion rendition. In classical motion-picture film cameras—such as the Mitchell BNC, Arriflex 35 BL, or Panavision Panaflex—a physical semicircular mirror disc spins continuously between the lens rear element and the film gate. During half of the disc's <span class="arithmatex">\(360^\circ\)</span> revolution (<span class="arithmatex">\(180^\circ\)</span>), the open sector allows light to strike the stationary film frame; during the remaining <span class="arithmatex">\(180^\circ\)</span>, the mirrored surface reflects the image up into the optical viewfinder while the mechanical claw pulls down the next frame of film.</p>
 <p>Because mechanical rotary disc shutters historically exposed film for half of each full circular rotation, setting <span class="arithmatex">\(\theta_{\text{shutter}} = 180^\circ\)</span> yields an exposure integration time equal to exactly half the frame duration:
 $<span class="arithmatex">\(T_{180^\circ} = \frac{1}{2 \cdot \text{FPS}}\)</span>$
@@ -3300,7 +3290,7 @@ $<span class="arithmatex">\(T = \frac{\theta_{\text{shutter}}}{360^\circ \cdot \
 $<span class="arithmatex">\(D = -\log_{10}(T_{\text{trans}}) = \log_{10}(2) \times \text{stops} \approx 0.30103 \times \text{stops}\)</span>$</p>
 <p>In these photometric equations, <span class="arithmatex">\(N\)</span> is the lens f-number, <span class="arithmatex">\(T\)</span> is the exposure integration time in seconds, <span class="arithmatex">\(E\)</span> is the Exposure Value (<span class="arithmatex">\(\text{EV}_{100}\)</span>), <span class="arithmatex">\(\theta_{\text{shutter}} \in (0^\circ, 360^\circ]\)</span> is the rotary shutter angle, <span class="arithmatex">\(D\)</span> is the dimensionless neutral-density filter rating ([g] [▸ND] converts stops <span class="arithmatex">\(s\)</span> in Register <span class="arithmatex">\(X\)</span> into optical density <span class="arithmatex">\(D = 0.3 \times s\)</span> in Register <span class="arithmatex">\(X\)</span> and filter factor <span class="arithmatex">\(2^s\)</span> in Register <span class="arithmatex">\(Y\)</span>), and <span class="arithmatex">\(T_{\text{trans}} = 2^{-\text{stops}} = 10^{-D}\)</span> is the fractional light transmittance.</p>
 <p>In cinematography optics, an essential distinction exists between geometric aperture and photometric transmission. The geometric f-number <span class="arithmatex">\(N = F / D_{\text{iris}}\)</span> dictates depth of field and blur disk geometry. However, because real cinema lenses contain fourteen to twenty-two separate glass elements, internal Fresnel surface reflections and bulk glass absorption attenuate incoming photons. Cinematography lenses are therefore calibrated in photometric <strong>T-stops</strong> (<span class="arithmatex">\(T_{\text{stop}} = N / \sqrt{\tau_{\text{trans}}}\)</span>, where <span class="arithmatex">\(\tau_{\text{trans}}\)</span> is total optical transmittance). A cinema prime set to <span class="arithmatex">\(T2.8\)</span> delivers the exact same photon irradiance to the sensor plane as a hypothetical <span class="arithmatex">\(100\%\)</span> transmitting lens at <span class="arithmatex">\(f/2.8\)</span>, guaranteeing that exposure remains identical when swapping between wide primes, telephotos, and complex zoom lenses.</p>
-<p>When filming under alternating-current discharge lamps or LED pulse-width-modulated drivers operating at line frequency <span class="arithmatex">\(f_{\text{line}}\)</span> (<span class="arithmatex">\(60\text{ Hz}\)</span> in North America or <span class="arithmatex">\(50\text{ Hz}\)</span> in Europe), the lamp intensity pulses at twice the utility line frequency (<span class="arithmatex">\(2 f_{\text{line}}\)</span>: <span class="arithmatex">\(120\text{ Hz}\)</span> or <span class="arithmatex">\(100\text{ Hz}\)</span>). Avoiding rolling exposure bands across the frame ([f] [FLK]) requires choosing a shutter integration time <span class="arithmatex">\(T\)</span> that integrates an integer number <span class="arithmatex">\(k \in \{1, 2, 3, \dots\}\)</span> of half-cycles:</p>
+<p>When filming under alternating-current discharge lamps or LED pulse-width-modulated drivers operating at line frequency <span class="arithmatex">\(f_{\text{line}}\)</span> (<span class="arithmatex">\(60\text{ Hz}\)</span> in North America or <span class="arithmatex">\(50\text{ Hz}\)</span> in Europe), the lamp intensity pulses at twice the utility line frequency (<span class="arithmatex">\(2 f_{\text{line}}\)</span>: <span class="arithmatex">\(120\text{ Hz}\)</span> or <span class="arithmatex">\(100\text{ Hz}\)</span>). Avoiding rolling exposure bands across the frame requires choosing a shutter integration time <span class="arithmatex">\(T\)</span> that integrates an integer number <span class="arithmatex">\(k \in \{1, 2, 3, \dots\}\)</span> of half-cycles (<span class="arithmatex">\(T = k / (2 f_{\text{line}})\)</span>):</p>
 <p><strong>Eq. 11.4 — Flicker-Free Shutter Angle and Integration Period</strong>
 $<span class="arithmatex">\(T_{\text{flicker-free}} = \frac{k}{2 f_{\text{line}}}\)</span>$
 $<span class="arithmatex">\(\theta_{\text{flicker-free}} = 360^\circ \cdot \text{FPS} \cdot \left(\frac{k}{2 f_{\text{line}}}\right)\)</span>$</p>
@@ -3330,7 +3320,7 @@ $<span class="arithmatex">\(\Delta M = \frac{10^6}{T_2} - \frac{10^6}{T_1} = \fr
 1. <strong>Television Lighting Consistency Index (TLCI-2012):</strong> Standardized by the European Broadcasting Union (EBU Tech 3355), TLCI models a standard 3-CCD broadcast camera and calculates color errors across twenty-four standardized Macbeth color patches on a 0–100 scale, where scores above 90 indicate that color grading will not require manual correction.
 2. <strong>Spectral Similarity Index (SSI):</strong> Developed by the Science and Technology Council of the Academy of Motion Picture Arts and Sciences (AMPAS), SSI compares the test luminaire's emission spectrum against a true blackbody or standard daylight reference spectrum across the entire visible band (<span class="arithmatex">\(380\text{ nm}\)</span> to <span class="arithmatex">\(670\text{ nm}\)</span>). An SSI score of 100 indicates an exact spectral match, ensuring that costume dyes and makeup retain identical chromatic fidelity when lit interchangeably by artificial fixtures or natural magic-hour twilight.</p>
 <h2 id="pulling-focus-and-balancing-dusk-exposure-on-the-stack-and-in-the-solver-workspace">Pulling Focus and Balancing Dusk Exposure on the Stack and in the Solver Workspace</h2>
-<p>On the <strong>SC-24</strong>, optical framing ([FOV], [g] [W:H], [f] [▸35], [g] [▸16]), hyperfocal depth of field ([DOF], [f] [HFD]), exposure reciprocity ([EV], [f] [SHT], [f] [▸EV], [g] [▸ND]), and lighting photometry ([LUX], [g] [▸lux], [f] [▸fc], [g] [GEL], [f] [▸MRD]) operate both as immediate RPN stack shortcuts and as bidirectional Equation Solver Workspaces ([FOV], [DOF], [EV], [LUX]).</p>
+<p>On the <strong>SC-24</strong>, optical framing ([FOV], [f] [▸35], [g] [▸16]), hyperfocal depth of field ([DOF], [f] [HFD]), exposure reciprocity ([EV], [f] [SHT], [g] [▸EV], [g] [▸ND]), and lighting photometry ([LUX], [g] [▸lux], [f] [▸fc], [g] [GEL], [f] [▸MRD]) operate both as immediate RPN stack shortcuts and as bidirectional Equation Solver Workspaces ([FOV], [DOF], [EV], [LUX]).</p>
 <table>
 <thead>
 <tr>
@@ -3366,10 +3356,10 @@ $<span class="arithmatex">\(\Delta M = \frac{10^6}{T_2} - \frac{10^6}{T_1} = \fr
 <td style="text-align: left;"><span class="arithmatex">\(X' = (\theta / 360^\circ) / \text{fps}\)</span> (<span class="arithmatex">\(\text{s}\)</span>), <span class="arithmatex">\(Y' = 1 / X'\)</span> (shutter denominator)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>[g] [▸ND]</code> / <code>[f] [▸EV]</code></td>
+<td style="text-align: left;"><code>[g] [▸ND]</code> / <code>[g] [▸EV]</code></td>
 <td style="text-align: left;">Immediate Stack</td>
-<td style="text-align: left;">Register <span class="arithmatex">\(X\)</span>: Attenuation in stops (<code>[g] [▸ND]</code>) or lux (<code>[f] [▸EV]</code>)</td>
-<td style="text-align: left;"><span class="arithmatex">\(X' = 0.3 \times \text{stops}, Y' = 2^{\text{stops}}\)</span> (<code>[g] [▸ND]</code>); <span class="arithmatex">\(\text{EV}_{100} = \log_2(\text{lx}/2.5)\)</span> (<code>[f] [▸EV]</code>)</td>
+<td style="text-align: left;">Register <span class="arithmatex">\(X\)</span>: Attenuation in stops (<code>[g] [▸ND]</code>) or lux (<code>[g] [▸EV]</code>)</td>
+<td style="text-align: left;"><span class="arithmatex">\(X' = 0.3 \times \text{stops}, Y' = 2^{\text{stops}}\)</span> (<code>[g] [▸ND]</code>); <span class="arithmatex">\(\text{EV}_{100} = \log_2(\text{lx}/2.5)\)</span> (<code>[g] [▸EV]</code>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>[LUX]</code> / <code>[g] [▸lux]</code> / <code>[f] [▸fc]</code></td>
@@ -3597,13 +3587,13 @@ $<span class="arithmatex">\(\Delta M = \frac{10^6}{T_2} - \frac{10^6}{T_1} = \fr
 <p>It was not until 1816 that the French mathematician Pierre-Simon Laplace resolved the discrepancy. Laplace recognized that acoustic vibrations occur at hundreds or thousands of cycles per second—far too rapidly for heat to conduct across adjacent microscopic air parcels. Instead, acoustic compression is strictly <strong>adiabatic</strong>: compressing an air packet raises its local temperature and pressure dynamically, which stiffens the restoring force and accelerates the wave. </p>
 <p>In dry air treated as an ideal diatomic gas (<span class="arithmatex">\(\gamma = c_p / c_v \approx 1.400\)</span>, mean molar mass <span class="arithmatex">\(M \approx 0.02897\text{ kg/mol}\)</span>), Laplace's adiabatic wave equation sets the speed of sound <span class="arithmatex">\(v_s\)</span> proportional to the square root of absolute Kelvin temperature:
 $<span class="arithmatex">\(v_s = \sqrt{\frac{\gamma R T_K}{M}} = \sqrt{\frac{1.400 \times 8.31446 \times (273.15 + T_C)}{0.02897}} = 331.3 \sqrt{1 + \frac{T_C}{273.15}}\text{ m/s}\)</span>$
-Linearizing that square root across ambient outdoor and indoor temperatures (<span class="arithmatex">\(-20^\circ\text{C}\)</span> to <span class="arithmatex">\(+40^\circ\text{C}\)</span>) via the binomial approximation <span class="arithmatex">\(\sqrt{1 + x} \approx 1 + x/2\)</span> yields the standard acoustic velocity law ([g] [vₛ]).</p>
+Linearizing that square root across ambient outdoor and indoor temperatures (<span class="arithmatex">\(-20^\circ\text{C}\)</span> to <span class="arithmatex">\(+40^\circ\text{C}\)</span>) via the binomial approximation <span class="arithmatex">\(\sqrt{1 + x} \approx 1 + x/2\)</span> yields the standard acoustic velocity law ([f] [vₛ]).</p>
 <p>Sound is a mechanical pressure wave passed from air molecule to air molecule. Because higher temperatures increase the thermal speed of gas molecules, the speed of sound rises linearly with temperature, starting at <span class="arithmatex">\(331.3\text{ m/s}\)</span> at freezing and adding roughly <span class="arithmatex">\(0.606\text{ m/s}\)</span> for every degree Celsius of warmth. The acoustic transit time across a venue is simply distance divided by velocity; multiplying by one thousand converts seconds into milliseconds. Dividing sound speed by the acoustic frequency yields the physical wavelength—the spatial distance between adjacent compression peaks:</p>
 <p><strong>Eq. 12.1 — Thermal Speed of Sound and Acoustic Propagation Delay</strong>
 $<span class="arithmatex">\(v_s(T_C) = 331.3 + 0.606 \cdot T_C \quad \left[\frac{\text{m}}{\text{s}}\right]\)</span>$
 $<span class="arithmatex">\(\Delta t_{\text{ms}} = \frac{d}{v_s} \times 1000\)</span>$
 $<span class="arithmatex">\(\lambda = \frac{v_s}{f}\)</span>$</p>
-<p>In these expressions, <span class="arithmatex">\(T_C\)</span> is the ambient air temperature in degrees Celsius (<span class="arithmatex">\(^\circ\text{C}\)</span>), <span class="arithmatex">\(v_s\)</span> is the acoustic phase velocity in <span class="arithmatex">\(\text{m/s}\)</span> (evaluating to <span class="arithmatex">\(343.42\text{ m/s} \approx 343\text{ m/s}\)</span> at the standard <span class="arithmatex">\(20^\circ\text{C}\)</span> room reference recalled by [g] [vₛ]), <span class="arithmatex">\(d\)</span> is the physical distance from the main stage array to the delay tower in meters, <span class="arithmatex">\(\Delta t_{\text{ms}}\)</span> is the acoustic transit delay in milliseconds (<span class="arithmatex">\(\text{ms}\)</span>), and <span class="arithmatex">\(\lambda\)</span> is the physical wavelength in meters.</p>
+<p>In these expressions, <span class="arithmatex">\(T_C\)</span> is the ambient air temperature in degrees Celsius (<span class="arithmatex">\(^\circ\text{C}\)</span>), <span class="arithmatex">\(v_s\)</span> is the acoustic phase velocity in <span class="arithmatex">\(\text{m/s}\)</span> (evaluating to <span class="arithmatex">\(343.42\text{ m/s} \approx 343\text{ m/s}\)</span> at the standard <span class="arithmatex">\(20^\circ\text{C}\)</span> room reference recalled by [f] [vₛ]), <span class="arithmatex">\(d\)</span> is the physical distance from the main stage array to the delay tower in meters, <span class="arithmatex">\(\Delta t_{\text{ms}}\)</span> is the acoustic transit delay in milliseconds (<span class="arithmatex">\(\text{ms}\)</span>), and <span class="arithmatex">\(\lambda\)</span> is the physical wavelength in meters.</p>
 <p><img alt="Time-aligned festival sound reinforcement coordinating acoustic air travel from the main stage array with DSP delay towers." src="../../assets/diagrams/domains/diagram_ch04_acoustic_delay.png" /></p>
 <p>At our stadium's turf temperature of <span class="arithmatex">\(T_C = 25^\circ\text{C}\)</span>, the speed of sound rises to <span class="arithmatex">\(v_s(25^\circ\text{C}) = 331.3 + 0.606(25) = 331.3 + 15.15 = \mathbf{346.45\text{ m/s}}\)</span>. Over the <span class="arithmatex">\(d = 45.0\text{ m}\)</span> air path to the delay tower (<code>45</code> [ENTER] <code>25</code> [g] [DLY]), the main stage wavefront requires a transit time of:
 $<span class="arithmatex">\(\Delta t_{\text{25}^\circ\text{C}} = \frac{45.0}{346.45} \times 1000 \approx \mathbf{129.889\text{ ms}}\)</span>$</p>
@@ -3676,7 +3666,7 @@ For our <span class="arithmatex">\(V = 2400\text{ m}^3\)</span> scoring studio w
 $<span class="arithmatex">\(f_s \approx 2000 \sqrt{\frac{0.805}{2400}} = 2000 \sqrt{0.0003354} = 2000 \times 0.01831 = \mathbf{36.6\text{ Hz}}\)</span>$
 Because the Schroeder frequency sits below <span class="arithmatex">\(37\text{ Hz}\)</span>, almost the entire audible musical spectrum above the lowest pedal notes behaves as a well-behaved diffuse sound field. In a tiny <span class="arithmatex">\(4\text{ m} \times 3\text{ m} \times 2.5\text{ m}\)</span> broadcast editing booth (<span class="arithmatex">\(V = 30\text{ m}^3, RT_{60} = 0.5\text{ s}\)</span>), however, <span class="arithmatex">\(f_s \approx 2000 \sqrt{0.5 / 30} \approx \mathbf{258\text{ Hz}}\)</span>, meaning that all dialogue fundamentals below middle C suffer from unpredictable modal peaks and nulls unless controlled by deep resonant membrane bass traps.</p>
 <h2 id="time-aligning-arrays-and-evaluating-sound-levels-on-the-stack-and-in-the-solver-workspace">Time-Aligning Arrays and Evaluating Sound Levels on the Stack and in the Solver Workspace</h2>
-<p>On the <strong>SC-24</strong>, acoustic delay alignment ([g] [DLY]), reference sound velocity ([g] [vₛ]), acoustic wavelength ([g] [λ]), spherical spreading attenuation ([f] [SPL]), incoherent decibel summation ([dB] [+]), analog studio voltage conversions ([f] [▸dBu], [g] [▸V]), and uncompressed broadcast stream data rates ([BIT]) execute directly on the RPN stack and in the bidirectional Solver Workspace.</p>
+<p>On the <strong>SC-24</strong>, acoustic delay alignment ([g] [DLY]), reference sound velocity ([f] [vₛ]), acoustic wavelength ([g] [λ]), spherical spreading attenuation ([f] [SPL]), incoherent decibel summation ([dB] [+]), analog studio voltage conversions ([f] [▸dBu], [g] [▸V]), and uncompressed broadcast stream data rates ([BIT]) execute directly on the RPN stack and in the bidirectional Solver Workspace.</p>
 <table>
 <thead>
 <tr>
@@ -3694,7 +3684,7 @@ Because the Schroeder frequency sits below <span class="arithmatex">\(37\text{ H
 <td style="text-align: left;"><span class="arithmatex">\(\Delta t = d / 343 \times 1000\text{ ms}\)</span> (or <span class="arithmatex">\(d / (331.3 + 0.606 T_C) \times 1000\text{ ms}\)</span>)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>[g] [vₛ]</code></td>
+<td style="text-align: left;"><code>[f] [vₛ]</code></td>
 <td style="text-align: left;">Constant / Stack</td>
 <td style="text-align: left;">Pushes reference acoustic speed <span class="arithmatex">\(v_s\)</span></td>
 <td style="text-align: left;"><span class="arithmatex">\(v_s = 343.0\text{ m/s}\)</span> (<span class="arithmatex">\(20^\circ\text{C}\)</span> dry air reference)</td>

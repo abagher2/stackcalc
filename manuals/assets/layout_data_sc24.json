@@ -269,15 +269,15 @@
       "primaryLabel" : "STO",
       "row" : 2,
       "w" : 7,
-      "yellowAction" : "cineDiopter",
-      "yellowBitmapIdentifier" : "operation.419",
-      "yellowLabel" : "DPT"
+      "yellowAction" : "constSqrt2",
+      "yellowBitmapIdentifier" : "operation.638",
+      "yellowLabel" : "√2"
     },
     {
       "alphaLabel" : "H",
-      "blueAction" : "cineAspectRatio",
-      "blueBitmapIdentifier" : "operation.420",
-      "blueLabel" : "W:H",
+      "blueAction" : "constRefLevelDbu4",
+      "blueBitmapIdentifier" : "operation.640",
+      "blueLabel" : "+4u",
       "col" : 1,
       "cx" : 18.75,
       "cy" : 78.625,
@@ -297,9 +297,9 @@
     },
     {
       "alphaLabel" : "I",
-      "blueAction" : "cinePulldown",
-      "blueBitmapIdentifier" : "operation.409",
-      "blueLabel" : "3:2",
+      "blueAction" : "cinePhotometricsFalloff",
+      "blueBitmapIdentifier" : "operation.717",
+      "blueLabel" : "FALL",
       "col" : 2,
       "cx" : 30.25,
       "cy" : 78.625,
@@ -313,9 +313,9 @@
       "primaryLabel" : "FPS",
       "row" : 2,
       "w" : 7,
-      "yellowAction" : "cineFlicker",
-      "yellowBitmapIdentifier" : "operation.408",
-      "yellowLabel" : "FLK"
+      "yellowAction" : "cineAnamorphicDeSqueeze",
+      "yellowBitmapIdentifier" : "operation.701",
+      "yellowLabel" : "DESQ"
     },
     {
       "alphaLabel" : "J",
@@ -497,9 +497,9 @@
     },
     {
       "alphaLabel" : "",
-      "blueAction" : "cineGeneratorLoad",
-      "blueBitmapIdentifier" : "operation.426",
-      "blueLabel" : "PWR",
+      "blueAction" : "cinePhotometricsCosine",
+      "blueBitmapIdentifier" : "operation.702",
+      "blueLabel" : "Ecos",
       "col" : 0,
       "cx" : 7.25,
       "cy" : 101.22500000000001,
@@ -513,9 +513,9 @@
       "primaryLabel" : "XEQ",
       "row" : 4,
       "w" : 8.6,
-      "yellowAction" : "cineDMX512",
-      "yellowBitmapIdentifier" : "operation.425",
-      "yellowLabel" : "DMX"
+      "yellowAction" : "audioSabineRT60",
+      "yellowBitmapIdentifier" : "operation.700",
+      "yellowLabel" : "RT60"
     },
     {
       "alphaLabel" : "Q",
@@ -711,10 +711,10 @@
       "primaryLabel" : "×",
       "row" : 5,
       "w" : 8.6,
-      "yellowAction" : "elecOhmsLaw",
-      "yellowBitmapIdentifier" : "operation.400",
-      "yellowLabel" : "Ω",
-      "yellowLatex" : "\\Omega"
+      "yellowAction" : "constSpeedOfSound",
+      "yellowBitmapIdentifier" : "operation.424",
+      "yellowLabel" : "vₛ",
+      "yellowLatex" : "v_s"
     },
     {
       "alphaLabel" : "",
@@ -891,9 +891,9 @@
     },
     {
       "alphaLabel" : "(i)",
-      "blueAction" : "cineDropFrame",
-      "blueBitmapIdentifier" : "operation.447",
-      "blueLabel" : "DF",
+      "blueAction" : "toStopEV",
+      "blueLabel" : "▸EV",
+      "blueSuffix" : "EV",
       "col" : 3,
       "cx" : 51.06,
       "cy" : 135.125,
@@ -902,14 +902,14 @@
       "isEnter" : false,
       "isShiftBlue" : false,
       "isShiftYellow" : false,
-      "primaryAction" : "cineTimecodeSolver",
-      "primaryBitmapIdentifier" : "operation.445",
-      "primaryLabel" : "TC",
+      "primaryAction" : "audioNotePitch",
+      "primaryBitmapIdentifier" : "operation.446",
+      "primaryLabel" : "Hz",
       "row" : 7,
       "w" : 8.6,
-      "yellowAction" : "audioNotePitch",
-      "yellowBitmapIdentifier" : "operation.446",
-      "yellowLabel" : "Hz"
+      "yellowAction" : "cineDropFrame",
+      "yellowBitmapIdentifier" : "operation.447",
+      "yellowLabel" : "DF"
     },
     {
       "alphaLabel" : "",
@@ -1011,11 +1011,6 @@
       ",",
       "FLGS"
     ],
-    "OHM" : [
-      "P",
-      "V",
-      "I"
-    ],
     "PARTS" : [
       "IP",
       "FP",
@@ -1059,11 +1054,6 @@
       "Σy²",
       "Σxy",
       "n"
-    ],
-    "TC" : [
-      "F",
-      "S",
-      "R"
     ],
     "TVM" : [
       "N",

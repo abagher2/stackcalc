@@ -340,9 +340,9 @@
     },
     {
       "alphaLabel" : "K",
-      "blueAction" : "percent",
-      "blueBitmapIdentifier" : "operation.126",
-      "blueLabel" : "%",
+      "blueAction" : "sysRCCutoff",
+      "blueBitmapIdentifier" : "operation.712",
+      "blueLabel" : "Fcut",
       "col" : 4,
       "cx" : 53.25,
       "cy" : 78.625,
@@ -362,10 +362,9 @@
     },
     {
       "alphaLabel" : "L",
-      "blueAction" : "percentChangeDelta",
-      "blueBitmapIdentifier" : "operation.251",
-      "blueLabel" : "Δ%",
-      "blueLatex" : "\\Delta\\%",
+      "blueAction" : "sysBitwiseXNOR",
+      "blueBitmapIdentifier" : "operation.678",
+      "blueLabel" : "XNOR",
       "col" : 5,
       "cx" : 64.75,
       "cy" : 78.625,
@@ -586,10 +585,9 @@
     },
     {
       "alphaLabel" : "",
-      "blueAction" : "sysRCTimeConstant",
-      "blueBitmapIdentifier" : "operation.580",
-      "blueLabel" : "τ",
-      "blueLatex" : "\\tau",
+      "blueAction" : "sysPWMTimer",
+      "blueBitmapIdentifier" : "operation.579",
+      "blueLabel" : "PWM",
       "col" : 4,
       "cx" : 64.75,
       "cy" : 101.22500000000001,
@@ -603,9 +601,10 @@
       "primaryLabel" : "÷",
       "row" : 4,
       "w" : 8.6,
-      "yellowAction" : "sysPWMTimer",
-      "yellowBitmapIdentifier" : "operation.579",
-      "yellowLabel" : "PWM"
+      "yellowAction" : "sysRCTimeConstant",
+      "yellowBitmapIdentifier" : "operation.580",
+      "yellowLabel" : "τ",
+      "yellowLatex" : "\\tau"
     },
     {
       "alphaLabel" : "",
@@ -649,9 +648,9 @@
     },
     {
       "alphaLabel" : "U",
-      "blueAction" : "toGigahertz",
-      "blueLabel" : "▸GHz",
-      "blueSuffix" : "GHz",
+      "blueAction" : "sysGrayDecode",
+      "blueBitmapIdentifier" : "operation.681",
+      "blueLabel" : "BIN",
       "col" : 2,
       "cx" : 37.369,
       "cy" : 112.525,
@@ -665,9 +664,9 @@
       "primaryLabel" : "5",
       "row" : 5,
       "w" : 8.6,
-      "yellowAction" : "toMegahertz",
-      "yellowLabel" : "▸MHz",
-      "yellowSuffix" : "MHz"
+      "yellowAction" : "sysGrayEncode",
+      "yellowBitmapIdentifier" : "operation.680",
+      "yellowLabel" : "GRAY"
     },
     {
       "alphaLabel" : "V",

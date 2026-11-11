@@ -3135,12 +3135,12 @@ $<span class="arithmatex">\(I_{\text{FLA}} = \frac{\text{HP} \times 746}{\sqrt{3
 <td style="text-align: left;"><span class="arithmatex">\(I_{\text{FLA}} = (\text{HP} \times 746)/(\sqrt{3} V_{LL} \eta)\)</span>; [g] [FLA] workspace (<code>[I]</code>, <code>[P]</code>, <code>[V]</code>, <code>[E]</code>)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong><code>[f] [MTR]</code></strong></td>
-<td style="text-align: left;">Motor Mechanical Torque Solver</td>
+<td style="text-align: left;"><strong><code>[XL]</code></strong> / <strong><code>[f] [XC]</code></strong></td>
+<td style="text-align: left;">AC Reactance (<span class="arithmatex">\(X_L, X_C\)</span>)</td>
 <td style="text-align: center;">—</td>
-<td style="text-align: center;">Spindle <span class="arithmatex">\(\text{RPM}\)</span></td>
-<td style="text-align: center;">Horsepower <span class="arithmatex">\(\text{HP}\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(H = T \times N / 5252\)</span>; [f] [MTR] workspace (<code>[H]</code>, <code>[T]</code>, <code>[N]</code>)</td>
+<td style="text-align: center;">Frequency <span class="arithmatex">\(f\ (\text{Hz})\)</span></td>
+<td style="text-align: center;">Inductance <span class="arithmatex">\(L\)</span> / Capacitance <span class="arithmatex">\(C\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(X_L = 2\pi f L,\; X_C = 1 / (2\pi f C)\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><code>[f] [Ω]</code></strong></td>
@@ -3883,11 +3883,11 @@ $<span class="arithmatex">\(C = D_{\text{bolt}} \sin\!\left(\frac{180^\circ}{N_{
 <h2 id="pipe-flow-continuity-valve-coefficient-pump-power-and-process-loops">Pipe Flow Continuity, Valve Coefficient, Pump Power, and Process Loops</h2>
 <p>Process engineers size valves, piping, and instrumentation loops to maintain hydraulic stability across industrial manufacturing plants.</p>
 <h3 id="pipe-continuity-valve-flow-coefficient-pump-power-and-suction-head">Pipe Continuity, Valve Flow Coefficient, Pump Power, and Suction Head</h3>
-<p>Volumetric liquid flow rate <span class="arithmatex">\(Q\)</span> through a pipe of internal cross-sectional area <span class="arithmatex">\(A\)</span> at mean velocity <span class="arithmatex">\(V\)</span> is governed by continuity: <span class="arithmatex">\(Q = A \times V\)</span> (operational shorthand [PIP]). Sizing control valves across pressure drop <span class="arithmatex">\(\Delta P\)</span> (in PSI) with fluid specific gravity <span class="arithmatex">\(G\)</span> uses the valve flow coefficient <span class="arithmatex">\(C_v\)</span> ([g] [Cᵥ]), while calculating hydraulic or brake horsepower <span class="arithmatex">\(P_{\text{HP}}\)</span> for a pump delivering flow <span class="arithmatex">\(Q\)</span> (in <span class="arithmatex">\(\text{GPM}\)</span>) against total dynamic head <span class="arithmatex">\(H\)</span> (in feet of liquid) evaluates the hydraulic work ([PMP]):</p>
+<p>Volumetric liquid flow rate <span class="arithmatex">\(Q\)</span> through a pipe of internal cross-sectional area <span class="arithmatex">\(A\)</span> at mean velocity <span class="arithmatex">\(V\)</span> is governed by continuity: <span class="arithmatex">\(Q = A \times V\)</span> (evaluated directly on the stack via <code>A [ENTER] V [×]</code>). Sizing control valves across pressure drop <span class="arithmatex">\(\Delta P\)</span> (in PSI) with fluid specific gravity <span class="arithmatex">\(G\)</span> uses the valve flow coefficient <span class="arithmatex">\(C_v\)</span> ([g] [Cᵥ]), while calculating hydraulic or brake horsepower <span class="arithmatex">\(P_{\text{HP}}\)</span> for a pump delivering flow <span class="arithmatex">\(Q\)</span> (in <span class="arithmatex">\(\text{GPM}\)</span>) against total dynamic head <span class="arithmatex">\(H\)</span> (in feet of liquid) evaluates the hydraulic work via <span class="arithmatex">\(P_{\text{HP}} = \frac{Q \cdot H}{3{,}960 \cdot \eta_{\text{pump}}}\)</span>:</p>
 <p><strong>Eq. 6.3 — Control Valve Volumetric Flow and Pump Power</strong>
 $<span class="arithmatex">\(Q = C_v \sqrt{\frac{\Delta P}{G}}\)</span>$
 $<span class="arithmatex">\(P_{\text{HP}} = \frac{Q \cdot H}{3{,}960 \cdot \eta_{\text{pump}}}\)</span>$</p>
-<p>For a coolant valve with flow coefficient <span class="arithmatex">\(C_v = 30.0\)</span> operating across a pressure drop of <span class="arithmatex">\(\Delta P = 9.0\text{ psi}\)</span> with water (<span class="arithmatex">\(G = 1.00\)</span>), pressing [g] [Cᵥ] evaluates flow as <span class="arithmatex">\(Q = 30.0 \sqrt{9.0} = \mathbf{90.00\text{ GPM}}\)</span>, while a pump delivering that <span class="arithmatex">\(90\text{ GPM}\)</span> against <span class="arithmatex">\(H = 88.0\text{ ft}\)</span> of dynamic head at <span class="arithmatex">\(100\%\)</span> efficiency requires <span class="arithmatex">\(P = (90 \times 88)/3960 = \mathbf{2.00\text{ HP}}\)</span> via [PMP].</p>
+<p>For a coolant valve with flow coefficient <span class="arithmatex">\(C_v = 30.0\)</span> operating across a pressure drop of <span class="arithmatex">\(\Delta P = 9.0\text{ psi}\)</span> with water (<span class="arithmatex">\(G = 1.00\)</span>), pressing [g] [Cᵥ] evaluates flow as <span class="arithmatex">\(Q = 30.0 \sqrt{9.0} = \mathbf{90.00\text{ GPM}}\)</span>, while a pump delivering that <span class="arithmatex">\(90\text{ GPM}\)</span> against <span class="arithmatex">\(H = 88.0\text{ ft}\)</span> of dynamic head at <span class="arithmatex">\(100\%\)</span> efficiency requires <span class="arithmatex">\(P = (90 \times 88)/3960 = \mathbf{2.00\text{ HP}}\)</span> (<code>90 [ENTER] 88 [×] 3960 [÷]</code>).</p>
 <h3 id="noise-immune-four-to-twenty-milliampere-loops-and-platinum-rtds">Noise-Immune Four-to-Twenty Milliampere Loops and Platinum RTDs</h3>
 <p>Analog process sensors monitor temperature, pressure, flow, and level by converting physical variables into a standard direct-current signal spanning <span class="arithmatex">\(4.00\text{ mA}\)</span> (<span class="arithmatex">\(0\%\)</span> span, live zero) to <span class="arithmatex">\(20.00\text{ mA}\)</span> (<span class="arithmatex">\(100\%\)</span> span) ([mA]):</p>
 <p><strong>Eq. 6.4 — Four-to-Twenty Milliampere Current Scaling</strong>
@@ -3961,7 +3961,7 @@ $$P_{\text{cut}} = 1.8338 \times 1.10 \approx \mathbf{2.017\text{ HP}}\]</div>
 <p>This produces a seven-hundred-pound pressure transient on top of the existing <span class="arithmatex">\(1{,}500\text{ PSI}\)</span> operating pressure. The total pressure surges to <span class="arithmatex">\(2{,}200\text{ PSI}\)</span>, stressing pipe hangers, degrading elastomeric O-ring seals, and risking pump casing fractures.</p>
 <p>To suppress water hammer, Sarah installs a <strong>nitrogen-precharged bladder hydraulic accumulator</strong> immediately upstream of the valve. The compressible nitrogen gas behaves like a pneumatic spring, absorbing the kinetic pulse of the fluid and clamping transient shockwaves to safe levels.</p>
 <h2 id="dialing-in-the-milling-fixture-and-fluid-loop-on-the-stack-and-solver-workspaces">Dialing In the Milling Fixture and Fluid Loop on the Stack and Solver Workspaces</h2>
-<p>On the <strong>SC-14</strong>, machining, fluid, and process operators work as immediate RPN stack functions and interactive Equation Solver workspaces ([f] [SFM], [g] [BC], [g] [Cᵥ], [PMP], and [mA]):</p>
+<p>On the <strong>SC-14</strong>, machining, fluid, and process operators work as immediate RPN stack functions and interactive Equation Solver workspaces ([f] [SFM], [g] [BC], [g] [Cᵥ], and [mA]):</p>
 <table>
 <thead>
 <tr>
@@ -3997,14 +3997,6 @@ $$P_{\text{cut}} = 1.8338 \times 1.10 \approx \mathbf{2.017\text{ HP}}\]</div>
 <td style="text-align: center;">Valve Coeff <span class="arithmatex">\(C_v\)</span></td>
 <td style="text-align: center;">Pressure Drop <span class="arithmatex">\(\Delta P\)</span></td>
 <td style="text-align: left;"><span class="arithmatex">\(Q = C_v\sqrt{\Delta P/G}\)</span>; [g] [Cᵥ] workspace (<code>[Q]</code>, <code>[C]</code>, <code>[P]</code>, <code>[G]</code>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong><code>[PMP]</code></strong></td>
-<td style="text-align: left;">Pump Horsepower &amp; Head Solver</td>
-<td style="text-align: center;">Efficiency <span class="arithmatex">\(\eta\)</span></td>
-<td style="text-align: center;">Flow <span class="arithmatex">\(Q\ (\text{GPM})\)</span></td>
-<td style="text-align: center;">Total Head <span class="arithmatex">\(H\ (\text{ft})\)</span></td>
-<td style="text-align: left;"><span class="arithmatex">\(P = (Q\cdot H)/(3960\cdot\eta)\)</span>; [PMP] workspace (<code>[P]</code>, <code>[Q]</code>, <code>[H]</code>)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><code>[mA]</code></strong></td>
@@ -4133,7 +4125,7 @@ $$P_{\text{cut}} = 1.8338 \times 1.10 \approx \mathbf{2.017\text{ HP}}\]</div>
 2. The relief valve flow capacity was sized to <span class="arithmatex">\(186.5\text{ GPM}\)</span>, eliminating cavitation.
 3. Pump motor power was certified at <span class="arithmatex">\(7.32\text{ BHP}\)</span> (safely within the <span class="arithmatex">\(10\text{ HP}\)</span> motor rating).
 4. The transmitter's <span class="arithmatex">\(16.8\text{ mA}\)</span> signal was validated as an exact <span class="arithmatex">\(80.0\text{ PSI}\)</span> bearing pressure.</p>
-<h3 id="calibrating-the-loop-on-the-stack-and-solving-backward-in-g-cv-and-pmp">Calibrating the Loop on the Stack and Solving Backward in [g] [Cᵥ] and [PMP]</h3>
+<h3 id="calibrating-the-loop-on-the-stack-and-solving-sizing-equations">Calibrating the Loop on the Stack and Solving Sizing Equations</h3>
 <p>The hydraulic clamping pressure and shop cooling loop monitoring proceed on the stack:</p>
 <table>
 <thead>
@@ -4164,7 +4156,7 @@ $$P_{\text{cut}} = 1.8338 \times 1.10 \approx \mathbf{2.017\text{ HP}}\]</div>
 <td style="text-align: left;">Compute <span class="arithmatex">\(\text{Pt100}\)</span> RTD resistance at <span class="arithmatex">\(150^\circ\text{C}\)</span> (<span class="arithmatex">\(R = 157.75\ \Omega\)</span>)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>30 [ENTER] 9 [g] [Cᵥ] [C]</code></td>
+<td style="text-align: left;"><code>30 [ENTER] 9 [g] [Cᵥ]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(14\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(14\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(157.75\)</span></td>
@@ -4172,7 +4164,7 @@ $$P_{\text{cut}} = 1.8338 \times 1.10 \approx \mathbf{2.017\text{ HP}}\]</div>
 <td style="text-align: left;">Compute coolant valve flow <span class="arithmatex">\(Q = 30\sqrt{9} = 90.00\text{ GPM}\)</span></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>88 [PMP] [C]</code></td>
+<td style="text-align: left;"><code>88 [×] 3960 [÷]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(14\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(14\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(157.75\)</span></td>
@@ -4181,9 +4173,9 @@ $$P_{\text{cut}} = 1.8338 \times 1.10 \approx \mathbf{2.017\text{ HP}}\]</div>
 </tr>
 </tbody>
 </table>
-<p>When plant engineering upgrades the heat-exchanger manifold, the technician uses the <strong>Bidirectional Equation Solver Workspaces</strong> for [PIP] (<code>PIP: PIPE FLOW</code>, <code>Q = A × V</code>), [g] [Cᵥ] (<code>CV: VALVE FLOW</code>, <code>Q = C × √(P / G)</code>), and [PMP] (<code>PMP: PUMP BHP</code>, <code>P = Q × H / 3960</code>) to solve backward for required component ratings:
+<p>When plant engineering upgrades the heat-exchanger manifold, the technician uses the <strong>Bidirectional Equation Solver Workspace</strong> for [g] [Cᵥ] (<code>CV: VALVE FLOW</code>, <code>Q = C × √(P / G)</code>) or solves piping continuity and hydraulic pump power directly on the postfix stack to determine required component ratings:
 - <strong>Inverse Valve Pressure Drop &amp; Minimum <span class="arithmatex">\(C_v\)</span> in [g] [Cᵥ] (<code>Q = C × √(P / G)</code>):</strong> Suppose a quench manifold requires <span class="arithmatex">\(Q = 100.0\text{ GPM}\)</span> (<code>100</code> [Q]) of synthetic heat-transfer brine of specific gravity <span class="arithmatex">\(G = 1.08\)</span> (<code>1.08</code> [G]) through a valve with <span class="arithmatex">\(C_v = 35.0\)</span> (<code>35</code> [C]). Pressing [XEQ] [P] solves backward for the required pressure drop across the valve: <span class="arithmatex">\(\Delta P = G \cdot (Q / C_v)^2 = 1.08 \times (100.0 / 35.0)^2 \approx \mathbf{8.8163\text{ psi}}\)</span>. Conversely, if header pressure drop is limited to <span class="arithmatex">\(\Delta P = 16.0\text{ psi}\)</span> (<code>16</code> [P]) for <span class="arithmatex">\(Q = 150.0\text{ GPM}\)</span> (<code>150</code> [Q]) of water (<code>1</code> [G]), pressing [XEQ] [C] solves backward for the minimum required valve coefficient <span class="arithmatex">\(C_v = 150.0 / \sqrt{16.0} = \mathbf{37.50}\)</span>.
-- <strong>Inverse Discharge Head in [PMP] (<code>P = Q × H / 3960</code>):</strong> When an existing <span class="arithmatex">\(P = 5.00\text{ HP}\)</span> (<code>5</code> [P]) coolant pump must deliver <span class="arithmatex">\(Q = 180.0\text{ GPM}\)</span> (<code>180</code> [Q]), pressing [XEQ] [H] solves backward for the maximum vertical discharge head the pump can sustain: <span class="arithmatex">\(H_{\max} = \frac{3960 \times 5.00}{180.0} = \mathbf{110.00\text{ ft}}\)</span>.</p>
+- <strong>Inverse Pump Dynamic Head:</strong> When an existing <span class="arithmatex">\(P = 5.00\text{ HP}\)</span> coolant pump must deliver <span class="arithmatex">\(Q = 180.0\text{ GPM}\)</span>, solving the hydraulic power equation <span class="arithmatex">\(H = \frac{3960 \times P}{Q}\)</span> on the stack via <code>3960 [ENTER] 5 [×] 180 [÷]</code> isolates the maximum vertical discharge head the pump can sustain: <span class="arithmatex">\(H_{\max} = \frac{3960 \times 5.00}{180.0} = \mathbf{110.00\text{ ft}}\)</span>.</p>
 <p>Dialing the CNC mill to the calculated <span class="arithmatex">\(1{,}834\text{ RPM}\)</span> spindle speed and <span class="arithmatex">\(14.67\text{ in/min}\)</span> feed rate completely silenced the tool chatter, producing a mirror-like <span class="arithmatex">\(32\ \mu\text{in}\)</span> surface finish across the stainless pump flange. Across the plant floor, the calibrated <span class="arithmatex">\(4\text{--}20\text{ mA}\)</span> transmitter reported a rock-solid <span class="arithmatex">\(16.8\text{ mA}\)</span> at <span class="arithmatex">\(80.0\text{ PSI}\)</span>, certifying the hydraulic cooling loop for continuous production.</p>
 <h3 id="try-it-on-the-stack_2">Try It on the Stack</h3>
 <p>Work through these five field problems on your calculator. Step-by-step keystroke solutions and register walkthroughs are provided in <a href="../appendix-c-solutions-to-practice-problems/">Appendix C</a>.</p>

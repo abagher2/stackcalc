@@ -3263,7 +3263,7 @@
 <li><strong>Keystrokes</strong>: <code>1585.20</code> [ENTER] <code>1200</code> [-] <code>1912.60</code> [ENTER] <code>1500</code> [-] [INV] [x⇄y] [BRG] [f] [▸HMS]</li>
 <li><strong>Solution</strong>: Calculates coordinate differences <span class="arithmatex">\(\Delta N = 385.20\text{ ft}\)</span> and <span class="arithmatex">\(\Delta E = 412.60\text{ ft}\)</span> to yield boundary distance <span class="arithmatex">\(D = \mathbf{564.4624\text{ ft}}\)</span>, azimuth <span class="arithmatex">\(\alpha = \mathbf{46.9669^\circ}\)</span>, and legal quadrant bearing <span class="arithmatex">\(\mathbf{\text{N } 46^\circ 58' 01'' \text{ E}}\)</span> (<code>46.5801</code>).</li>
 <li><strong>Traverse Closure Precision and Acreage Conversion</strong></li>
-<li><strong>Keystrokes</strong>: <code>0.15</code> [ENTER] <code>0.20</code> [+/-] [g] [CLS] <code>2500</code> [x⇄y] [÷] <code>326700</code> [f] [▸ac]</li>
+<li><strong>Keystrokes</strong>: <code>0.15</code> [ENTER] <code>0.20</code> [+/-] [g] [CLS] <code>2500</code> [x⇄y] [÷] <code>326700</code> [ENTER] <code>43560</code> [÷]</li>
 <li><strong>Solution</strong>: Resolves linear error of closure <span class="arithmatex">\(E_c = \sqrt{0.15^2 + (-0.20)^2} = \mathbf{0.25\text{ ft}}\)</span>, computes relative precision ratio <span class="arithmatex">\(2500 / 0.25 = \mathbf{1 : 10{,}000}\)</span>, and converts <span class="arithmatex">\(326{,}700\text{ ft}^2\)</span> to <span class="arithmatex">\(\mathbf{7.5000\text{ acres}}\)</span>.</li>
 <li><strong>Architectural Foot-Inch Reduction and Colonial Chain Conversions</strong></li>
 <li><strong>Keystrokes</strong>: <code>38</code> [ENTER] <code>7</code> [ENTER] <code>5</code> [ENTER] <code>8</code> [÷] [+] <code>12</code> [÷] [+] <code>14.75</code> [ENTER] <code>66</code> [×]</li>
@@ -3299,7 +3299,7 @@
 <li><strong>Keystrokes</strong>: <code>15</code> [X] <code>30</code> [V] [g] [SOLVE] [A] <code>6200</code> [ENTER] <code>28</code> [g] [ALT]</li>
 <li><strong>Solution</strong>: Solves crosswind limit backward to find <span class="arithmatex">\(\theta_{\max} = \arcsin(15/30) = \mathbf{30.00^\circ}\)</span>. Evaluates atmospheric expansion to find Density Altitude <span class="arithmatex">\(\text{DA} = \mathbf{9{,}248\text{ ft}}\)</span>.</li>
 <li><strong>Endurance Leg Check and Center of Gravity Moment</strong></li>
-<li><strong>Keystrokes</strong>: <code>165</code> [D] <code>1.25</code> [T] [g] [SOLVE] [S] <code>350</code> [ENTER] <code>120</code> [f] [CG]</li>
+<li><strong>Keystrokes</strong>: <code>165</code> [D] <code>1.25</code> [T] [g] [SOLVE] [S] <code>350</code> [ENTER] <code>120</code> [×]</li>
 <li><strong>Solution</strong>: Solves time-speed-distance equation to yield required groundspeed <span class="arithmatex">\(S = 165 / 1.25 = \mathbf{132.00\text{ kt}}\)</span>, and computes fuel moment <span class="arithmatex">\(M = 350 \times 120 = \mathbf{42{,}000\text{ lb}\cdot\text{in}}\)</span>.</li>
 <li><strong>Point of Equal Time on Headwind Route</strong></li>
 <li><strong>Keystrokes</strong>: <code>360</code> [ENTER] <code>170</code> [×] <code>130</code> [ENTER] <code>170</code> [+] [÷] <code>130</code> [÷]</li>
@@ -3388,7 +3388,7 @@
 <li><strong>Keystrokes</strong>: [f] [DEC] <code>12.5</code> [f] [NEG] [FLT]</li>
 <li><strong>Solution</strong>: Decomposes <span class="arithmatex">\(-12.50 = -1.1001_2 \times 2^3\)</span> into sign <span class="arithmatex">\(s=1\)</span>, biased exponent <span class="arithmatex">\(e = 3 + 127 = 130\)</span> (<code>0x82</code>), and mantissa fraction <code>0x480000</code> to assemble binary word <span class="arithmatex">\(\mathbf{\text{0xC1480000}}\)</span> in <span class="arithmatex">\(X\)</span>.</li>
 <li><strong>32-Bit Endianness Reversal</strong></li>
-<li><strong>Keystrokes</strong>: [HEX] <code>32</code> [g] [WSZ] <code>00409642</code> [END]</li>
+<li><strong>Keystrokes</strong>: [HEX] <code>32</code> [g] [WSZ] <code>00409642</code> [g] [SWP]</li>
 <li><strong>Solution</strong>: Executes 32-bit byte reversal, transposing byte sequence <span class="arithmatex">\([B_0, B_1, B_2, B_3] \to [B_3, B_2, B_1, B_0]\)</span> to return <span class="arithmatex">\(\mathbf{\text{0x42964000}}\)</span> (<span class="arithmatex">\(+75.125^\circ\text{C}\)</span> in IEEE-754).</li>
 <li><strong>CIDR /28 Subnet Sizing</strong></li>
 <li><strong>Keystrokes</strong>: [HEX] <code>32</code> [g] [WSZ] <code>FFFFFFFF</code> [ENTER] <code>4</code> [≪] [f] [DEC] <code>2</code> [ENTER] <code>4</code> [f] [yˣ] <code>2</code> [-]</li>
@@ -3422,7 +3422,7 @@
 <h3 id="chapter-10-the-missing-three-point-six-seconds-at-the-broadcast-desk">Chapter 10: The Missing Three-Point-Six Seconds at the Broadcast Desk</h3>
 <ol>
 <li><strong>Two-Hour Feature NTSC Drift in Seconds and Packed Timecode</strong></li>
-<li><strong>Keystrokes</strong>: <code>30</code> [ENTER] <code>2.000000</code> [f] [▸FRM] <code>30</code> [÷] [g] [DF] <code>7200</code> [-] <code>30</code> [×] <code>30</code> [ENTER] <code>216</code> [g] [▸TC]</li>
+<li><strong>Keystrokes</strong>: <code>30</code> [ENTER] <code>2.000000</code> [f] [▸FRM] <code>30</code> [÷] [f] [DF] <code>7200</code> [-] <code>30</code> [×] <code>30</code> [ENTER] <code>216</code> [g] [▸TC]</li>
 <li><strong>Solution</strong>: Calculates total frame count <span class="arithmatex">\(F = \mathbf{216{,}000\text{ frames}}\)</span>, true wall-clock duration <span class="arithmatex">\(t_{\text{real}} = \mathbf{7207.2072\text{ s}}\)</span>, and accumulated timecode drift <span class="arithmatex">\(\Delta F = \mathbf{216\text{ frames}}\)</span> (<span class="arithmatex">\(+7.2072\text{ s}\)</span>, packed <code>0.000706</code> or <code>00:00:07:06</code>).</li>
 <li><strong>Commercial Act Trim via Packed Timecode Subtraction</strong></li>
 <li><strong>Keystrokes</strong>: <code>0.241218</code> [ENTER] <code>0.223000</code> [g] [-TC] <code>30</code> [x⇄y] [f] [▸FRM]</li>
@@ -3553,7 +3553,7 @@
 <li><strong>Keystrokes</strong>: <code>7.382</code> [+/-] <code>10</code> [x⇄y] [f] [yˣ] <code>1000000000</code> [×] <code>1</code> [ENTER] <code>14</code> [+/-] <code>10ˣ</code> <code>4.15</code> [ENTER] <code>9</code> [+/-] <code>10ˣ</code> [÷]</li>
 <li><strong>Solution</strong>: Hydronium ion concentration is <span class="arithmatex">\([\text{H}_3\text{O}^+] = 10^{-7.382} = 4.150 \times 10^{-8}\text{ M} = \mathbf{41.50\text{ nM}}\)</span>. Hydroxide ion concentration is <span class="arithmatex">\([\text{OH}^-] = K_w / [\text{H}_3\text{O}^+] = \mathbf{2.410 \times 10^{-7}\text{ M}}\)</span> (<span class="arithmatex">\(241.0\text{ nM}\)</span>).</li>
 <li><strong>Acetate Buffer Ratio and pH Shift</strong></li>
-<li><strong>Keystrokes</strong>: <code>0.1</code> [ENTER] <code>0.05</code> [÷] [f] [LOG] <code>4.756</code> [+] <code>0.09</code> [ENTER] <code>0.06</code> [÷] [f] [LOG] <code>4.756</code> [+]</li>
+<li><strong>Keystrokes</strong>: <code>0.1</code> [ENTER] <code>0.05</code> [÷] [LOG] <code>4.756</code> [+] <code>0.09</code> [ENTER] <code>0.06</code> [÷] [LOG] <code>4.756</code> [+]</li>
 <li><strong>Solution</strong>: Initial Henderson–Hasselbalch pH is <span class="arithmatex">\(\text{pH} = 4.756 + \log_{10}(2.0) = \mathbf{5.057}\)</span>. After adding <span class="arithmatex">\(0.010\text{ M}\)</span> acid, <span class="arithmatex">\([\text{A}^-] = 0.090\)</span> and <span class="arithmatex">\([\text{HA}] = 0.060\)</span>, shifting pH to <span class="arithmatex">\(4.756 + \log_{10}(1.5) = \mathbf{4.932}\)</span> (a buffering shift of only <span class="arithmatex">\(\mathbf{-0.125\text{ pH units}}\)</span>).</li>
 <li><strong>Van Slyke Maximum Buffer Capacity</strong></li>
 <li><strong>Keystrokes</strong>: <code>2.3026</code> [ENTER] <code>0.08</code> [×] <code>0.25</code> [×] <code>2.3026</code> [ENTER] <code>0.08</code> [×] <code>0.9091</code> [×] <code>0.0909</code> [×]</li>
@@ -3562,7 +3562,7 @@
 <li><strong>Keystrokes</strong>: <code>0.105</code> [ENTER] <code>28.45</code> [×] <code>25</code> [÷]</li>
 <li><strong>Solution</strong>: Equivalence stoichiometry yields acid molarity <span class="arithmatex">\(C_{\text{HCl}} = (C_{\text{titrant}} \times V_{\text{eq}}) / V_{\text{sample}} = (0.1050 \times 28.45) / 25.00 = \mathbf{0.1195\text{ M}}\)</span>.</li>
 <li><strong>Diprotic Carbonic Acid Blood Buffer Shift</strong></li>
-<li><strong>Keystrokes</strong>: <code>24</code> [ENTER] <code>1.2</code> [÷] [f] [LOG] <code>6.1</code> [+] <code>24</code> [ENTER] <code>2.4</code> [÷] [f] [LOG] <code>6.1</code> [+]</li>
+<li><strong>Keystrokes</strong>: <code>24</code> [ENTER] <code>1.2</code> [÷] [LOG] <code>6.1</code> [+] <code>24</code> [ENTER] <code>2.4</code> [÷] [LOG] <code>6.1</code> [+]</li>
 <li><strong>Solution</strong>: Normal arterial pH is <span class="arithmatex">\(\text{pH} = 6.100 + \log_{10}(24.0 / 1.20) = 6.100 + 1.301 = \mathbf{7.401}\)</span>. Acute doubling of dissolved carbon dioxide acid drops pH to <span class="arithmatex">\(6.100 + \log_{10}(10.0) = \mathbf{7.100}\)</span>—inducing severe, life-threatening uncompensated respiratory acidosis.</li>
 </ol>
 <h3 id="chapter-18-reading-protein-concentration-through-a-quartz-cuvette">Chapter 18: Reading Protein Concentration Through a Quartz Cuvette</h3>
@@ -3577,7 +3577,7 @@
 <li><strong>Keystrokes</strong>: <code>2000</code> [ENTER] <code>1.1182</code> [ENTER] <code>5</code> [+/-] <code>10ˣ</code> [×] <code>16.5</code> [×] [÷] [√x]</li>
 <li><strong>Solution</strong>: Using conversion equation <span class="arithmatex">\(\text{RPM} = \sqrt{\text{RCF} / (1.1182 \times 10^{-5} \times r)}\)</span> yields rotor speed <span class="arithmatex">\(\text{RPM} = \mathbf{3{,}291.6\text{ RPM}}\)</span> (set to <span class="arithmatex">\(3{,}300\text{ RPM}\)</span> on the digital centrifuge panel).</li>
 <li><strong>Nernst Half-Cell Electrochemical Potential</strong></li>
-<li><strong>Keystrokes</strong>: <code>0.01</code> [f] [LOG] <code>0.05916</code> [×] <code>2</code> [÷] <code>1.1</code> [x⇄y] [-]</li>
+<li><strong>Keystrokes</strong>: <code>0.01</code> [LOG] <code>0.05916</code> [×] <code>2</code> [÷] <code>1.1</code> [x⇄y] [-]</li>
 <li><strong>Solution</strong>: Applying the Nernst equation <span class="arithmatex">\(E = E^\circ - (0.05916/n)\log_{10}(Q)\)</span> yields <span class="arithmatex">\(E = 1.100 - (-0.05916) = \mathbf{1.1592\text{ V}}\)</span>.</li>
 <li><strong>Gibbs Free Energy and Chemical Equilibrium Constant</strong></li>
 <li><strong>Keystrokes</strong>: <code>15500</code> [+/-] <code>8.31446</code> [÷] <code>310.15</code> [÷] [+/-] [eˣ]</li>
@@ -3593,7 +3593,7 @@
 <li><strong>Keystrokes</strong>: <code>1000</code> [ENTER] <code>200</code> [+] <code>620</code> [ENTER] <code>100</code> [+] [g] [HYD]</li>
 <li><strong>Solution</strong>: Total formulation flour is <span class="arithmatex">\(1000 + 200 = 1{,}200\text{ g}\)</span> and total water is <span class="arithmatex">\(620 + 100 = 720\text{ g}\)</span>. Evaluating true hydration yields <span class="arithmatex">\(\text{HYDR}_{\text{true}} = (720 / 1200) \times 100 = \mathbf{60.00\%}\)</span>.</li>
 <li><strong>Bagel Spiral Mixer Friction and Flake-Ice Cooling</strong></li>
-<li><strong>Keystrokes</strong>: <code>22</code> [D] <code>27</code> [R] <code>25</code> [F] <code>12</code> [M] [XEQ] [W] <code>24</code> [ENTER] <code>18</code> [g] [ICE]</li>
+<li><strong>Keystrokes</strong>: <code>22</code> [D] <code>27</code> [R] <code>25</code> [F] <code>12</code> [M] [XEQ] [W] <code>24</code> [ENTER] <code>18</code> [×] <code>80</code> [÷]</li>
 <li><strong>Solution</strong>: Evaluating strike water balance <span class="arithmatex">\(W = 3D - (R + F + M)\)</span> yields <span class="arithmatex">\(W = 66.0 - 64.0 = \mathbf{2.0^\circ\text{C}}\)</span>. Applying the latent heat ice substitution formula (<span class="arithmatex">\(W_{\text{ice}} = W_{\text{total}} \times \Delta T / 80\)</span>) yields flake-ice requirement <span class="arithmatex">\(W_{\text{ice}} = 24.0 \times 18.0 / 80 = \mathbf{5.40\text{ kg}}\)</span>.</li>
 <li><strong>Multi-Flour Rustic Miche with 100% Hydration Levain</strong></li>
 <li><strong>Keystrokes</strong>: <code>150</code> [ENTER] <code>205.2</code> [÷] <code>100</code> [×] <code>0.25</code> [×] <code>2</code> [÷]</li>
@@ -3623,16 +3623,16 @@
 <h3 id="chapter-21-trimming-the-tenderloin-and-pricing-the-tasting-menu">Chapter 21: Trimming the Tenderloin and Pricing the Tasting Menu</h3>
 <ol>
 <li><strong>Two-Stage Atlantic Halibut Fabrication and Portion Cost</strong></li>
-<li><strong>Keystrokes</strong>: <code>19.25</code> [ENTER] <code>35</code> [YLD] <code>14.3</code> [ENTER] <code>0.55</code> [÷] <code>0.375</code> [×]</li>
+<li><strong>Keystrokes</strong>: <code>19.25</code> [ENTER] <code>35</code> [÷] <code>100</code> [×] <code>14.3</code> [ENTER] <code>0.55</code> [÷] <code>0.375</code> [×]</li>
 <li><strong>Solution</strong>: Yield percentage is <span class="arithmatex">\(19.25 / 35.0 = \mathbf{55.00\%}\)</span>. Edible Portion cost is <span class="arithmatex">\(C_{\text{EP}} = 14.30 / 0.55 = \mathbf{\$26.00/\text{lb}}\)</span>. A <span class="arithmatex">\(6.0\text{-oz}\)</span> portion costs <span class="arithmatex">\(0.375 \times \$26.00 = \mathbf{\$9.75}\)</span>.</li>
 <li><strong>Hyperbolic Margin versus Markup Audit</strong></li>
 <li><strong>Keystrokes</strong>: <code>3.15</code> [ENTER] <code>14</code> [g] [CST] <code>14</code> [ENTER] <code>3.15</code> [-] <code>3.15</code> [÷] <code>100</code> [×]</li>
 <li><strong>Solution</strong>: Food cost percentage is <span class="arithmatex">\(3.15 / 14.00 = \mathbf{22.50\%}\)</span> and gross margin is <span class="arithmatex">\(100 - 22.50 = \mathbf{77.50\%}\)</span>. Markup on cost is <span class="arithmatex">\((14.00 - 3.15)/3.15 = \mathbf{344.44\%}\)</span>.</li>
 <li><strong>Barrique Sulfite Addition and Water Activity</strong></li>
-<li><strong>Keystrokes</strong>: <code>225</code> [ENTER] <code>35</code> [g] [SO₂] <code>88.5</code> [ENTER] <code>100</code> [÷]</li>
+<li><strong>Keystrokes</strong>: <code>225</code> [ENTER] <code>35</code> [×] <code>576</code> [÷] <code>88.5</code> [ENTER] <code>100</code> [÷]</li>
 <li><strong>Solution</strong>: Evaluates sulfite addition <span class="arithmatex">\(m_{\text{KMBS}} = (225 \times 35) / (1000 \times 0.576) = \mathbf{13.67\text{ g}}\)</span> of KMBS. Water activity is <span class="arithmatex">\(a_w = 88.5 / 100 = \mathbf{0.885}\)</span> (safely below the <span class="arithmatex">\(0.910\)</span> pathogenic bacterial threshold).</li>
 <li><strong>Three-Stage Pork Belly Porchetta Breakdown and Costing</strong></li>
-<li><strong>Keystrokes</strong>: <code>15.3</code> [ENTER] <code>18.5</code> [YLD] <code>13.5</code> [ENTER] <code>15.3</code> [YLD] <code>77.70</code> [ENTER] <code>18</code> [÷]</li>
+<li><strong>Keystrokes</strong>: <code>15.3</code> [ENTER] <code>18.5</code> [÷] <code>100</code> [×] <code>13.5</code> [ENTER] <code>15.3</code> [÷] <code>100</code> [×] <code>77.70</code> [ENTER] <code>18</code> [÷]</li>
 <li><strong>Solution</strong>: Raw fabrication yield is <span class="arithmatex">\(15.3 / 18.5 = \mathbf{82.70\%}\)</span> and cooking yield is <span class="arithmatex">\(13.5 / 15.3 = \mathbf{88.24\%}\)</span> (cumulative yield <span class="arithmatex">\(72.97\%\)</span>). Dividing entire wholesale cost by 18 portions yields banquet plate cost <span class="arithmatex">\(C_{\text{portion}} = 77.70 / 18 = \mathbf{\$4.32}\)</span>.</li>
 <li><strong>Molecular SO2 pH Compensation Across Cellar Tank Lots</strong></li>
 <li><strong>Keystrokes</strong>: <code>0.8</code> [ENTER] <code>1</code> [ENTER] <code>10</code> [ENTER] <code>3.3</code> [ENTER] <code>1.81</code> [-] [f] [yˣ] [+] [×] <code>0.8</code> [ENTER] <code>1</code> [ENTER] <code>10</code> [ENTER] <code>3.8</code> [ENTER] <code>1.81</code> [-] [f] [yˣ] [+] [×]</li>

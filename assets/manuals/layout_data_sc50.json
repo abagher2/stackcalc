@@ -658,9 +658,9 @@
     },
     {
       "alphaLabel" : "U",
-      "blueAction" : "toGigahertz",
-      "blueLabel" : "▸GHz",
-      "blueSuffix" : "GHz",
+      "blueAction" : "toRatioFromDB",
+      "blueLabel" : "▸Lin",
+      "blueSuffix" : "Lin",
       "col" : 2,
       "cx" : 37.369,
       "cy" : 112.525,
@@ -674,9 +674,9 @@
       "primaryLabel" : "5",
       "row" : 5,
       "w" : 8.6,
-      "yellowAction" : "toMegahertz",
-      "yellowLabel" : "▸MHz",
-      "yellowSuffix" : "MHz"
+      "yellowAction" : "toDBFromRatio",
+      "yellowLabel" : "▸dB",
+      "yellowSuffix" : "dB"
     },
     {
       "alphaLabel" : "V",
@@ -769,9 +769,9 @@
     },
     {
       "alphaLabel" : "X",
-      "blueAction" : "toDBMicrovolts",
-      "blueLabel" : "▸μV",
-      "blueSuffix" : "μV",
+      "blueAction" : "toWattsFromDBW",
+      "blueLabel" : "▸W",
+      "blueSuffix" : "W",
       "col" : 2,
       "cx" : 37.369,
       "cy" : 123.82500000000002,
@@ -785,9 +785,9 @@
       "primaryLabel" : "2",
       "row" : 6,
       "w" : 8.6,
-      "yellowAction" : "toDBV",
-      "yellowLabel" : "▸dBV",
-      "yellowSuffix" : "dBV"
+      "yellowAction" : "toDBW",
+      "yellowLabel" : "▸dBW",
+      "yellowSuffix" : "dBW"
     },
     {
       "alphaLabel" : "Y",
@@ -817,9 +817,9 @@
     },
     {
       "alphaLabel" : "",
-      "blueAction" : "toDBW",
-      "blueLabel" : "▸dBW",
-      "blueSuffix" : "dBW",
+      "blueAction" : "rfQuarterWaveZ0",
+      "blueBitmapIdentifier" : "operation.711",
+      "blueLabel" : "Zqtr",
       "col" : 4,
       "cx" : 64.75,
       "cy" : 123.82500000000002,
