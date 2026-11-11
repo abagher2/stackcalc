@@ -33,11 +33,11 @@ To solve these problems with speed, precision, and complete clarity, we place th
 - **Chapter 17: Holding pH 7.40 Against an Acid Spike** explores water autoionization ($K_w$), Sørensen logarithmic acidity, weak-acid dissociation ($K_a$), the Henderson–Hasselbalch conjugate equilibrium equation, Van Slyke buffer capacity ($\beta$), acid/base spike shifts, and volumetric titration stoichiometry.
 - **Chapter 18: Reading Protein Concentration Through a Quartz Cuvette** quantifies exponential light extinction via the Beer–Lambert law ($A = \varepsilon b c$), aromatic amino acid UV extinction coefficients at $280\text{ nm}$, spectrophotometer stray-light linearity limits, Gibbs free energy ($\Delta G^\circ = -RT\ln K_{\text{eq}}$), Nernst electrochemical potentials, Arrhenius activation barriers ($k = A e^{-E_a/RT}$), and Relative Centrifugal Force ($\text{RCF} = 1.118 \times 10^{-5} r_{\text{cm}}\text{RPM}^2$).
 
-By harnessing the 4-register RPN stack, every calculation—from the gravimetric mass of dry crystals to the logarithmic absorbance of light and the centrifugal separation of macromolecules—becomes an exact, reproducible laboratory procedure.
+By harnessing the operational RPN stack, every calculation—from the gravimetric mass of dry crystals to the logarithmic absorbance of light and the centrifugal separation of macromolecules—becomes an exact, reproducible laboratory procedure.
 
 # Chapter 16: Weighing the Buffer and Cutting the Stock Aliquot
 
-An analytical balance does not measure molecules; it measures the gravitational force exerted on an aggregate of atoms. When an experimental protocol calls for a fifty-millimolar buffer for an enzymatic inhibition assay, weighing grams without checking chemical stoichiometry is an invitation to irreproducible science. If a researcher weighs out a crystalline salt assuming it is anhydrous when the bottle contains a heptahydrate, forty-seven percent of the weighed mass is inert water trapped in the crystal lattice—cutting the intended active solute concentration nearly in half.
+Weighing out crystalline reagents on an analytical balance presents an invisible stoichiometric pitfall: if a protocol calls for a fifty-millimolar enzymatic buffer and the chemist overlooks water of crystallization, forty-seven percent of the weighed mass can be inert water trapped inside the crystal lattice—cutting the intended active solute concentration nearly in half.
 
 Enzymes and biological catalysts do not respond to ounces, grams, or milliliters; they respond strictly to the absolute number of substrate and cofactor molecules dissolved per unit volume. To bridge the macroscopic world of balance pans and volumetric flasks with the microscopic world of stoichiometric chemical reactions, the analytical chemist relies on the mole.
 
@@ -361,7 +361,7 @@ At the analytical balance, the biochemist first computes the required moles of $
 
 Lucas must prepare $V = 250.0\text{ mL}$ ($0.250\text{ L}$) of a standard physiological saline stock solution containing $C = 0.500\text{ M}$ sodium chloride ($\text{NaCl}$) and $C = 0.100\text{ M}$ Tris buffer from dry crystalline reagents.
 
-The formula evaluation proceeds on the four-register stack:
+The formula evaluation proceeds on the operational stack:
 
 1. **Sodium Chloride Formula Weight:** Lucas keys in the elemental components of $\text{NaCl}$. Striking the molar mass function evaluates $M(\text{NaCl}) = 22.990 + 35.453 = \mathbf{58.443\text{ g/mol}}$.
 2. **Dissolving to $0.500\text{ M}$ in $250.0\text{ mL}$:** Lucas pushes target molarity $0.500\text{ M}$ into Register Y and volume $0.250\text{ L}$ into Register X, multiplying to find the required solute amount: $n = 0.500 \times 0.250 = \mathbf{0.125\text{ mol}}$. Multiplying by molar mass $58.443\text{ g/mol}$ yields the exact mass to weigh on the balance: $W = 0.125 \times 58.443 = \mathbf{7.3054\text{ g}}$.
@@ -416,7 +416,7 @@ The solution freezes at $T_f = \mathbf{-1.951^\circ\text{C}}$.
 When Lucas pipettes this mother liquor through $k = 4$ sequential serial dilution steps using a micropipette with relative dispensing uncertainty $\sigma_V / V = 1.5\% = 0.015$:
 $$\frac{\sigma_{C_4}}{C_4} \approx \sqrt{4} \times 1.5\% = 2 \times 1.5\% = \mathbf{\pm 3.00\%}$$
 
-Here is the complete four-register stack trace for this crystallization mother liquor workflow:
+Here is the complete stack trace for this crystallization mother liquor workflow:
 
 | Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Chemistry Scenario Stack Walkthrough |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -847,7 +847,7 @@ This $20:1$ ratio of metabolic base ($[\text{HCO}_3^-]$) to respiratory acid ($P
 - **Metabolic Alkalosis:** Caused by prolonged vomiting or diuretic abuse. Bicarbonate surges above $26\text{ mM}$. The respiratory center depresses breathing to retain $\text{CO}_2$.
 - **Respiratory Alkalosis:** Caused by high-altitude hypoxia or hyperventilation panic attacks. $P_{\text{CO}_2}$ drops below $35\text{ mmHg}$, driving pH above $7.45$.
 
-By evaluating the base excess ($\text{BE} = \Delta[\text{HCO}_3^-] + 16.2 \times (\text{pH} - 7.40)$) on the four-register stack, the clinical chemist dissects whether an acid-base disorder is metabolic, respiratory, or a mixed life-threatening emergency.
+By evaluating the base excess ($\text{BE} = \Delta[\text{HCO}_3^-] + 16.2 \times (\text{pH} - 7.40)$) on the operational stack, the clinical chemist dissects whether an acid-base disorder is metabolic, respiratory, or a mixed life-threatening emergency.
 
 ## Formulating Conjugate Buffers and Standardizing Acids on the SC-60
 
@@ -889,7 +889,7 @@ For total volume $V = 0.500\text{ L}$:
   $$n_{\text{base}} = 0.030657\text{ mol/L} \times 0.500\text{ L} = \mathbf{0.015328\text{ mol}}$$
   $$W_{\text{base}} = 0.015328\text{ mol} \times 268.063\text{ g/mol} = \mathbf{4.1090\text{ g}}$$
 
-The complete four-register stack evaluation proceeds as follows:
+The complete stack evaluation proceeds as follows:
 
 | Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Chemistry Scenario Stack Walkthrough |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -935,7 +935,7 @@ The pH has plunged to $6.956$—dangerously close to the critical autolytic boun
 To neutralize the $0.0500\text{ moles}$ of lactic acid, Lucas must inject an equal stoichiometric amount of base ($\Delta n_{\text{base}} = 0.0500\text{ mol}$). Using stock $C_{\text{base}} = 2.00\text{ M}$ $\text{NaOH}$:
 $$V_{\text{NaOH}} = \frac{\Delta n}{C_{\text{base}}} = \frac{0.0500\text{ mol}}{2.00\text{ mol/L}} = \mathbf{0.0250\text{ L}} = \mathbf{25.00\text{ mL}}$$
 
-Here is the complete four-register stack trace for this bioreactor rescue:
+Here is the complete stack trace for this bioreactor rescue:
 
 | Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Chemistry Scenario Stack Walkthrough |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -1319,7 +1319,7 @@ $$\frac{k_2}{k_1} = e^{2.5981} \approx \mathbf{13.438}$$
 
 At room temperature ($25^\circ\text{C}$), the antibody denatures **$13.44$ times faster** than in the cold room ($4^\circ\text{C}$). A batch that remains stable for twelve months at $4^\circ\text{C}$ degrades in less than one month on the open benchtop.
 
-The four-register stack execution proceeds as follows:
+The stack execution proceeds as follows:
 
 | Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Chemistry Scenario Stack Walkthrough |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -1360,7 +1360,7 @@ $$\ln(K_{\text{eq}}) = \ln(8.00 \times 10^8) = 20.4999$$
 $$\Delta G^\circ = -R \cdot T \cdot \ln(K_{\text{eq}}) = -8.31446\text{ J}/(\text{mol}\cdot\text{K}) \times 298.15\text{ K} \times 20.4999 \approx \mathbf{-50{,}818\text{ J/mol}} = \mathbf{-50.82\text{ kJ/mol}}$$
 The large negative $\Delta G^\circ$ confirms that antibody-receptor binding is extraordinarily spontaneous and tight.
 
-Here is the complete four-register stack trace:
+Here is the complete stack trace:
 
 | Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Chemistry Scenario Stack Walkthrough |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -1477,5 +1477,5 @@ In **Unit VII (SC-78 Culinary Arts, Levain Hydration & Brewing Thermodynamics)**
 - The weak-acid equilibria of Chapter 17 govern the delicate pH balance of brewing mash tuns, where calcium ions precipitate phosphate buffers to optimize alpha- and beta-amylase enzymatic starch conversion.
 - The Arrhenius activation barriers and exponential kinetics of Chapter 18 govern the thermal isomerization of hop alpha-acids into bitter iso-alpha-acids during the boil, and the logarithmic extraction of coffee solids across refractory brew columns.
 
-In **Chapter 19**, we step onto the flour-dusted marble slab of the artisan bakery, scaling sourdough mother cultures, adjusting water temperatures against mechanical friction, and balancing levain hydration on the four-register stack.
+In **Chapter 19**, we step onto the flour-dusted marble slab of the artisan bakery, scaling sourdough mother cultures, adjusting water temperatures against mechanical friction, and balancing levain hydration on the operational stack.
 

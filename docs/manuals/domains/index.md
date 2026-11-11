@@ -30,7 +30,7 @@ More dangerously, automated software functions as an **opaque black box**. When 
 The calculator endures because it is not an automated oracle; it is an **intellectual lever**. It represents the **epistemology of the intermediate result**:
 - **Direct Physical Feedback:** You do not jump blindly from initial conditions to an isolated final number. As keystrokes execute, the physical milestones of the problem reveal themselves in sequence: the Reynolds number appears before the friction factor; the reactive volt-amperes surface before total apparent power; the crab angle registers before the groundspeed vector. The builder feels the order of magnitude of the physics unfold under their thumbs.
 - **Thermodynamic Causality:** Postfix evaluation ($A$, $B$, $+$) reflects the irreversible causality of the physical world: *substance precedes reaction; cause precedes consequence; mass precedes acceleration*. You cannot apply an operator to a vacuum. By requiring operands before operators, the stack mirrors the physical transformations taking place on the shop floor or in the laboratory.
-- **Configurable Operational Headroom:** The stack is a live computational surface. While the display window presents the immediate four operational registers ($X, Y, Z, T$) for effortless visual parsing, modern instruments like StackCalc provide instant, configurable stack depths. The practitioner can work within the classic four-register discipline ({{key:4-LV}}), expand to eight-level headroom ({{key:8-LV}}) for multi-stage vector transforms, or engage dynamic unlimited depth ({{key:INF}}) for complex chain reactions. The power does not depend on an arbitrary hardware boundary; it stems from eliminating syntax friction, parenthesis nesting, and cognitive clutter.
+- **Operational Clarity:** The RPN stack is a live computational surface where intermediate results remain visible and accessible. By eliminating syntax friction, parenthesis nesting, and cognitive clutter, postfix evaluation lets the practitioner focus entirely on the physical problem rather than input mechanics.
 - **The Ethos of Personal Accountability:** Those who build, wire, machine, dose, and navigate cannot hide behind an automated algorithm. When a licensed surveyor signs a boundary plat, an electrician throws a 480-volt disconnect, a machinist touches off a sixty-thousand-dollar aerospace forging, or a clinical specialist calculates an infusion rate, personal accountability is absolute. 
 
 For the doer and the builder, direct calculation is not nostalgia. It is an act of cognitive sovereignty—the fastest, cleanest, and most reliable bridge between human judgment and the unforgiving laws of nature.
@@ -80,7 +80,7 @@ Each physical step evaluates directly in Register $X$ at the bottom of the scree
 
 If all three numbers—current ($24\text{ A}$), one-way length ($150\text{ ft}$), and wire gauge (`10`)—are already sitting on the stack in Registers $Z, Y,$ and $X$, pressing {{key:sc14:AWG}} performs that entire round-trip calculation in a single keystroke and puts `8.928` volts directly into Register $X$.
 
-*(And if a calculation ever needs more than four shelves, opening {{key:FLAGS}} lets you switch stack depth from classic four-level {{key:4-LV}} to eight-level {{key:8-LV}} or unlimited deep stack {{key:INF}}.)*
+*(And if a calculation ever needs additional levels, the RPN stack can be expanded to provide further operational headroom as needed.)*
 
 ### 2. Thinking Backward in the Equation Solver Workspace
 

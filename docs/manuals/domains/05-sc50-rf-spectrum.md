@@ -25,11 +25,11 @@ In the chapters that follow, we place the SC-50 RF & Microwave RPN calculator in
 - **Chapter 14: Clearing the Ridge on a Twelve-Kilometer Microwave Backhaul** scales outward from guided conductors to free-space radiation, deriving the Friis transmission equation, link margin accounting, Huygens wavelet diffraction, ellipsoidal Fresnel clearance zones, atmospheric absorption windows, ITU rain attenuation, and curved Earth bulge refraction.
 - **Chapter 15: Pulling a Weak Telemetry Signal Out of Thermal Noise** descends to the microscopic quantum and thermodynamic boundaries of detection, calculating Johnson–Nyquist thermal noise floors, Friis cascaded amplifier noise figures, third-order intercept linearity (IIP3), spurious-free dynamic range (SFDR), monostatic radar range equations, and the absolute Shannon–Hartley channel capacity limit.
 
-Every calculation is executed on the 4-register RPN stack, transforming abstract electromagnetic theory into rapid, verified, field-ready engineering decisions.
+Every calculation is executed on the operational RPN stack, transforming abstract electromagnetic theory into rapid, verified, field-ready engineering decisions.
 
 # Chapter 13: The Reflected Wave on the Mountain Repeater Coax
 
-Radio-frequency power does not travel inside the copper core of a coaxial cable; it travels through the electromagnetic field trapped within the dielectric spacer between the conductors. At DC and audio frequencies, electricity obeys Ohm's simple ratio of current to voltage. But as frequency climbs into hundreds of megahertz, a wire ceases to be a simple conductor and becomes a geometric waveguide. If the impedance at the antenna terminals differs by even a fraction of an ohm from the characteristic impedance of the feeder, nature refuses to accept the energy. The wave strikes the boundary, reverses its trajectory, and travels backward down the copper to collide with the transmitter that gave it birth.
+At one hundred and forty-six megahertz, a coaxial transmission line behaves as a distributed electromagnetic waveguide where energy travels through the dielectric field between conductors. At DC and audio frequencies, electricity obeys Ohm's simple ratio of current to voltage. But as frequency climbs into hundreds of megahertz, a wire ceases to be a simple conductor and becomes a geometric waveguide. If the impedance at the antenna terminals differs by even a fraction of an ohm from the characteristic impedance of the feeder, nature refuses to accept the energy. The wave strikes the boundary, reverses its trajectory, and travels backward down the copper to collide with the transmitter that gave it birth.
 
 When an emergency search-and-rescue VHF repeater ($146.0\text{ MHz}$) trips into high-reflected-power foldback on a mountain summit, a vector network analyzer (VNA) connected to the feedline reveals that ice loading on the antenna array has pulled the feedpoint impedance to $Z_L = 35 - j25\ \Omega$. Driving a $50\text{ W}$ ($+47.0\text{ dBm}$) solid-state power amplifier into that $Z_0 = 50\ \Omega$ line creates stationary voltage peaks and current troughs that threaten to puncture the dielectric insulation or destroy the output stage transistors.
 
@@ -257,7 +257,7 @@ The stack confirms that $\mathbf{5.42\text{ W}}$ of RF power is reflecting back 
 
 ### Designing a High-Power Marine Transceiver L-Network on the Stack
 
-To experience how the 4-register stack banishes scratchpad fatigue in the field, follow Jackson as he resolves a severe antenna mismatch on a $100\text{ W}$ ($+50.0\text{ dBm}$) marine HF transceiver operating at $f = 14.20\text{ MHz}$ into a $Z_0 = 50\ \Omega$ feedline. A storm has detuned the long-wire antenna to $Z_L = 20 + j40\ \Omega$. Jackson must determine the complex reflection coefficient $\Gamma$, the standing wave ratio, the return loss, the reflected power in watts, and synthesize a low-pass L-network ($Q, X_{\text{series}}, X_{\text{shunt}}, L, C$) to match the $20\ \Omega$ real part up to $50\ \Omega$ while canceling the $+j40\ \Omega$ inductive reactance:
+To experience how the operational RPN stack banishes scratchpad fatigue in the field, follow Jackson as he resolves a severe antenna mismatch on a $100\text{ W}$ ($+50.0\text{ dBm}$) marine HF transceiver operating at $f = 14.20\text{ MHz}$ into a $Z_0 = 50\ \Omega$ feedline. A storm has detuned the long-wire antenna to $Z_L = 20 + j40\ \Omega$. Jackson must determine the complex reflection coefficient $\Gamma$, the standing wave ratio, the return loss, the reflected power in watts, and synthesize a low-pass L-network ($Q, X_{\text{series}}, X_{\text{shunt}}, L, C$) to match the $20\ \Omega$ real part up to $50\ \Omega$ while canceling the $+j40\ \Omega$ inductive reactance:
 
 | Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | RF Spectrum Scenario Stack Walkthrough |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -275,7 +275,7 @@ To cancel the antenna's $+j40\ \Omega$ inductive reactance and simultaneously pr
 
 ### Designing Quarter-Wave Stubs, L-Networks, and Resonant Tanks on the Stack
 
-Synthesizing quarter-wave coaxial transformers, reactive L-network parameters, and LC resonant tanks proceeds across the four registers:
+Synthesizing quarter-wave coaxial transformers, reactive L-network parameters, and LC resonant tanks proceeds across the operational stack:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -316,7 +316,7 @@ Having tuned the coaxial transmission line and matched antenna impedances at the
 
 # Chapter 14: Clearing the Ridge on a Twelve-Kilometer Microwave Backhaul
 
-A laser pointer aimed across a twelve-kilometer mountain valley shows a clean line of sight, but microwave radiation does not travel along an infinitely thin ray. Radio waves propagate as an expanding electromagnetic wavefront whose constructive phase coherence occupies an ellipsoidal volume of space known as the First Fresnel Zone. If treetops, ridge lines, or the curved surface of the Earth intrude into that ellipsoid, waves grazing the obstacle travel a fraction of a wavelength farther than the direct ray, arriving out of phase at the receiving dish and canceling the signal by ten to twenty decibels.
+Clear optical line of sight across a twelve-kilometer mountain valley is a necessary condition for a microwave link, but it is rarely sufficient: radio frequency energy expands into an ellipsoidal volume of space whose constructive phase coherence defines the First Fresnel Zone. If treetops, ridge lines, or the curved surface of the Earth intrude into that ellipsoid, waves grazing the obstacle travel a fraction of a wavelength farther than the direct ray, arriving out of phase at the receiving dish and canceling the signal by ten to twenty decibels.
 
 Commissioning a point-to-point unlicensed $f = 5800\text{ MHz}$ ($5.8\text{ GHz}$) microwave backhaul across a $d = 12.0\text{ km}$ forested valley connects the mountain repeater shelter to the county emergency operations center without the expense of leased fiber. At each end, a parabolic dish antenna delivers $+26.0\text{ dBi}$ of gain, driven by a transmitter output of $P_{\text{tx}} = 250\text{ mW}$ ($+23.979\text{ dBm}$). Halfway across the valley, a pine-crowned granite ridge rises toward the line of sight.
 
@@ -565,7 +565,7 @@ The {{key:FSL}} solver consumes $d_{\text{km}} = 12$ and $f_{\text{MHz}} = 5800$
 
 ### Sizing an 11 GHz 25-Kilometer Desert Microwave Hop on the Stack
 
-To observe how the 4-register stack streamlines complex RF link planning, follow Priya as she engineers an $11.0\text{ GHz}$ ($11{,}000\text{ MHz}$) backbone data link spanning $d = 25.0\text{ km}$ across an arid plateau. The transceivers output $P_{\text{tx}} = 500\text{ mW}$ ($+26.990\text{ dBm}$). Each terminal uses a $1.2\text{-meter}$ parabolic dish antenna delivering $+40.0\text{ dBi}$ of gain ($G = 80.0\text{ dB}$ combined gain). The receiver demodulator requires a threshold of $S_{\text{min}} = -68.0\text{ dBm}$ for error-free 1024-QAM operation.
+To observe how the operational RPN stack streamlines complex RF link planning, follow Priya as she engineers an $11.0\text{ GHz}$ ($11{,}000\text{ MHz}$) backbone data link spanning $d = 25.0\text{ km}$ across an arid plateau. The transceivers output $P_{\text{tx}} = 500\text{ mW}$ ($+26.990\text{ dBm}$). Each terminal uses a $1.2\text{-meter}$ parabolic dish antenna delivering $+40.0\text{ dBi}$ of gain ($G = 80.0\text{ dB}$ combined gain). The receiver demodulator requires a threshold of $S_{\text{min}} = -68.0\text{ dBm}$ for error-free 1024-QAM operation.
 
 Priya must:
 1. Compute the free-space path loss across $25.0\text{ km}$ at $11{,}000\text{ MHz}$.

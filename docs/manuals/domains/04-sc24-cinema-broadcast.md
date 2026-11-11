@@ -190,7 +190,7 @@ On the **SC-24**, packed `HH.MMSSFF` timecode arithmetic ({{key:+TC}}, {{key:-TC
 
 ### Immediate Stack Trace: Packed Timecode Rollovers, Overcrank Scaling, and NTSC Drift
 
-Reconciling multi-reel timecode, total frame counts, and NTSC drop-frame drift proceeds on the four-register stack:
+Reconciling multi-reel timecode, total frame counts, and NTSC drop-frame drift proceeds on the RPN stack:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -255,7 +255,7 @@ With the broadcast timeline locked to atomic wall-clock time and the high-speed 
 
 # Chapter 11: Holding Focus on the Steadicam Close-Up at Dusk
 
-A motion-picture prime lens does not produce an infinitely flat plane of sharpness; it produces a narrow, conical slice of acceptable focus governed by the diameter of the iris, the focal length, and the geometry of the camera sensor. When a first assistant camera (1st AC) pulls focus on an actor walking along a cliff path toward a moving Steadicam rig at nominal focus distance $s = 3.00\text{ m}$ ($3000\text{ mm}$), the margin of error is unforgiving. With an $F = 50\text{ mm}$ prime opened wide to $f/2.8$ in failing light on a Super 35 sensor ($W = 24.89\text{ mm}$, allowable Circle of Confusion $C = 0.025\text{ mm}$), the depth of field is barely forty centimeters deep. If the focus puller misses the mark by two inches, the actor's eyes soften into blur, and an entire sixty-second tracking shot is ruined.
+Pulling focus on an actor walking along a cliff path toward a moving Steadicam rig at dusk leaves a margin of error measured in centimeters. With an $F = 50\text{ mm}$ prime lens opened wide to $f/2.8$ in failing light on a Super 35 sensor ($W = 24.89\text{ mm}$, allowable Circle of Confusion $C = 0.025\text{ mm}$), the depth of field around nominal focus distance $s = 3.00\text{ m}$ ($3000\text{ mm}$) is barely forty centimeters deep. If the first assistant camera (1st AC) misses the mark by two inches, the actor's eyes soften into blur, and an entire sixty-second tracking shot is ruined.
 
 Simultaneously, the operator plans to switch to an $F = 35\text{ mm}$ wide-angle prime for a running tracking shot and asks what exact f-stop $N$ will lock the hyperfocal distance at $H = 4.50\text{ m}$ ($4500\text{ mm}$) so everything from $2.25\text{ m}$ to the horizon remains sharp without pulling focus. Meanwhile, as the sun drops, the gaffer balances an HMI fixture with an interior tungsten practical, requiring a micro-reciprocal degree gel calculation to match the two blackbody color temperatures and a rotary shutter check against the $60\text{ Hz}$ generator feeding the set.
 
@@ -497,7 +497,7 @@ With the visual scene captured in critical focus and photometrically balanced ag
 
 # Chapter 12: Aligning the Stadium Delay Towers Before Downbeat
 
-Acoustic sound in air is not an instantaneous broadcast; it is a mechanical pressure wave crawling through space at approximately three hundred and forty-six meters per second. When an outdoor concert system deploys supplementary delay speaker towers $d = 45.0\text{ m}$ downfield to cover an upper stadium bowl, physics creates a severe wave-propagation race condition. The electrical audio signal travels down the fiber-optic trunk to the delay towers at the speed of light, reaching the amplifiers in less than a microsecond. But the acoustic wave launched by the main stage array takes more than a tenth of a second to travel that same forty-five meters through $25^\circ\text{C}$ air.
+Because electrical audio signals travel down fiber-optic trunks at the speed of light while sound pressure waves crawl through stadium air at barely three hundred and forty-six meters per second, deploying delay speaker towers creates a severe acoustic race condition. When supplementary sound towers are rigged $d = 45.0\text{ m}$ downfield to cover an upper stadium bowl, the electrical signal reaches the delay amplifiers in less than a microsecond, while the sound launched by the main stage array takes more than a tenth of a second to travel that same distance through $25^\circ\text{C}$ air.
 
 If the delay towers fire without precise digital signal delay, listeners in the back half of the stadium hear the sound from the overhead rigging more than a tenth of a second *before* the sound from the stage arrives. This shatters the musical performance into an unintelligible slap-back echo and pulls perceived vocal localization completely away from the performers on stage.
 
@@ -674,7 +674,7 @@ The acoustic delay calculations for the stadium sound towers ($D = 45\text{ m}, 
 
 ### Multi-Ring Stadium Acoustic Alignment, Balcony SPL Summation, and Headroom Verification on the Stack
 
-To experience how the 4-register stack eliminates scratchpad fatigue during high-pressure live sound checks, follow the FOH engineer as they align the secondary upper-deck delay ring. The upper balcony ring stands at distance $d_2 = 90.0\text{ m}$ from the main stage array. The air in the upper bowl has warmed to $T_C = 28^\circ\text{C}$. The main stage array produces $136.0\text{ dBSPL}$ at $1.0\text{ m}$, while each upper-balcony fill cabinet delivers $108.0\text{ dBSPL}$ at $1.0\text{ m}$ (and covers patrons at a local throw distance of $12.0\text{ m}$).
+To experience how the RPN stack eliminates scratchpad fatigue during high-pressure live sound checks, follow the FOH engineer as they align the secondary upper-deck delay ring. The upper balcony ring stands at distance $d_2 = 90.0\text{ m}$ from the main stage array. The air in the upper bowl has warmed to $T_C = 28^\circ\text{C}$. The main stage array produces $136.0\text{ dBSPL}$ at $1.0\text{ m}$, while each upper-balcony fill cabinet delivers $108.0\text{ dBSPL}$ at $1.0\text{ m}$ (and covers patrons at a local throw distance of $12.0\text{ m}$).
 
 The engineer must calculate:
 1. The acoustic transit time across $90.0\text{ m}$ at $28^\circ\text{C}$ plus a $+15.0\text{ ms}$ Haas offset.
@@ -692,7 +692,7 @@ The engineer must calculate:
 | `{{key:dB}} {{key:+}}` | $273.42$ | $273.42$ | $273.4216$ | $97.2858$ | Incoherent sum of main stage ($96.92$) and delay fill ($86.42$) = $\mathbf{97.286\text{ dBSPL}}$ |
 | `6 {{key:▸V}}` | $273.42$ | $273.4216$ | $97.2858$ | **$1.5455$** | Convert $+6.0\text{ dBu}$ line level to line voltage: $0.774597 \times 10^{6/20} = \mathbf{1.5455\text{ V}_{\text{rms}}}$ |
 
-On the four-register stack, the delay time ($273.42\text{ ms}$) was staged safely up into Register Z and T, preserved while the engineer computed the two acoustic pressure levels, combined them into the total SPL ($97.29\text{ dBSPL}$), and verified console output voltage ($1.55\text{ V}_{\text{rms}}$)—all without writing a single intermediate number on paper.
+On the RPN stack, the delay time ($273.42\text{ ms}$) was staged safely up into higher registers, preserved while the engineer computed the two acoustic pressure levels, combined them into the total SPL ($97.29\text{ dBSPL}$), and verified console output voltage ($1.55\text{ V}_{\text{rms}}$)—all without writing a single intermediate number on paper.
 
 ### Bidirectional Solver Workspaces ({{key:EQN}} and {{key:BIT}}): Boom-Mic Reach and Broadcast Trunk Bandwidth
 

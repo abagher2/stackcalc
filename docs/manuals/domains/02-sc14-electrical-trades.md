@@ -414,7 +414,7 @@ Next, the engineer evaluates the real power of a single-phase $240\text{ V}$, $1
 
 ### Three-Phase Motor Branch Feeder Sizing, Inrush Protection, and Shunt Capacitor Correction on the Stack
 
-The four-register stack resolves the complete industrial motor branch design in one continuous sequence without scratchpad notes. A new $100\text{ HP}$, $480\text{ V}$ three-phase conveyor motor is being added to Pier 14. 
+The RPN stack resolves the complete industrial motor branch design in one continuous sequence without scratchpad notes. A new $100\text{ HP}$, $480\text{ V}$ three-phase conveyor motor is being added to Pier 14. 
 
 Frank and Jimmy must execute five interconnected calculations:
 1. Recall the motor Full-Load Current from NEC Table 430.250 ($I_{\text{FLC}} = 124.0\text{ A}$).
@@ -423,7 +423,7 @@ Frank and Jimmy must execute five interconnected calculations:
 4. Given uncorrected operating power factor $\text{PF}_1 = 0.82$ lagging at rated active input $P = 82.0\text{ kW}$, calculate uncorrected reactive power $Q_1$, target reactive power $Q_2$ for $\text{PF}_2 = 0.95$, and the required shunt capacitor size $Q_C = Q_1 - Q_2$.
 5. Determine the reduced feeder line current $I_{\text{new}}$ flowing from the switchgear once the capacitor bank is energized.
 
-The four-register stack evaluates the motor branch circuit and power factor correction:
+The RPN stack evaluates the motor branch circuit and power factor correction:
 
 | Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Electrical Trades Scenario Walkthrough |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -459,7 +459,7 @@ With the #3/0 AWG feeder pulled and the $25\text{ kVAR}$ capacitor bank online, 
 
 # Chapter 5: Bending Four Conduits Around the Boiler-Room I-Beam
 
-In the electrical and mechanical trades, a structural obstacle is not an excuse for sloppy workmanship; it is a direct test of geometric discipline. When four parallel runs of one-inch Electrical Metallic Tubing (EMT) must clear an eight-inch structural I-beam drop ($O = 8.0\text{ in.}$) on a municipal hospital ceiling, sloppy layout is immediately obvious to any inspector. If the four conduits are bent without accounting for centerline shrink and concentric radius growth, they will bunch unevenly across the ceiling like tangled cables, bind against junction box knockouts, and shred conductor insulation during the wire pull.
+Routing four parallel runs of one-inch Electrical Metallic Tubing (EMT) across a municipal hospital basement ceiling requires clearing an eight-inch structural I-beam drop ($O = 8.0\text{ in.}$) without splaying the pipes or binding the wire pull. If the four conduits are bent without accounting for centerline shrink and concentric radius growth, they will bunch unevenly across the ceiling like tangled cables, bind against junction box knockouts, and shred conductor insulation during pulling.
 
 To power the hospital's new emergency chiller pumps, master electrician Frank Miller and apprentice Jimmy must run the parallel conduit bank along the concrete slab, clearing the structural I-beam and an adjacent insulated steam header before terminating into the motor control center (MCC). Executing the installation requires right-triangle offset trigonometry:
 1. Calculate the center-to-center travel distance $T = O \csc\theta$ and half-angle axial shrink deduction $S = O \tan(\theta/2)$ for standard bender angles ($10^\circ, 22.5^\circ, 30^\circ, 45^\circ$).
@@ -874,7 +874,7 @@ With the four EMT conduits bent and strapped to the ceiling slab, the chiller fe
 
 # Chapter 6: The Chattering Milling Cutter and the Drifting Pressure Loop
 
-A high-pitched acoustic scream from a CNC machine enclosure is never just ambient noise; it is the sound of regenerative chatter destroying a five-hundred-dollar carbide tool and scrapping a precision workpiece. In Bay 4 of an industrial pump plant, a four-flute solid carbide end-mill cutting the sealing face of a $316\text{L}$ stainless-steel centrifugal pump casing has begun vibrating violently, leaving visible herringbone ripples across the gasket seat. Meanwhile, across the aisle, the hydraulic cooling loop feeding the spindle bearings is hunting in wild pressure surges because an erratic $4\text{--}20\text{ mA}$ sensor signal is destabilizing the proportional relief valve.
+When a five-axis vertical machining center begins vibrating with an ear-splitting acoustic shriek, every experienced machinist recognizes the destructive onset of regenerative chatter. In Bay 4 of an industrial pump plant, a four-flute solid carbide end-mill cutting the sealing face of a $316\text{L}$ stainless-steel centrifugal pump casing is carving jagged herringbone ripples across the gasket seat. Meanwhile, across the aisle, the hydraulic cooling loop feeding the spindle bearings is hunting in wild pressure surges because an erratic $4\text{--}20\text{ mA}$ sensor signal is destabilizing the proportional relief valve.
 
 In precision manufacturing, when metal is chattering and fluid loops are cavitating, you do not guess. CNC machinist Kurt Weber and instrumentation technician Sarah Lin meet at the control console with the SC-14 calculator:
 1. Kurt must eliminate the destructive milling chatter by applying metal-cutting kinematics—recalculating Surface Feet per Minute ($\text{SFM} = 240\text{ ft/min}$), dialing in spindle speed $N = 1{,}834\text{ RPM}$, and adjusting chip load per tooth ($f_t = 0.002\text{ in/tooth}$) to land in a stable cutting zone.

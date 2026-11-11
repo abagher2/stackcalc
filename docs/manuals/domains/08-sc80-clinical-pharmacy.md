@@ -384,7 +384,7 @@ To establish the dosing profile for a 68-year-old male patient ($H = 175\text{ c
 - **Step 4:** Applying {{key:IBW}} with biological sex flag $1$ (male) evaluates Devine lean mass ($73.181\text{ kg}$).
 - **Steps 5–6:** Dividing actual mass by ideal mass reveals a ratio of $1.2025$, mathematically confirming that the patient exceeds the $120\%$ obesity threshold.
 - **Steps 7–8:** Applying {{key:ABW}} computes the definitive $40\%$ adjusted dosing weight ($79.109\text{ kg}$).
-- **Steps 9–12:** The four-register stack evaluates the Cockcroft–Gault numerator and denominator without pen, paper, or scratch registers, yielding a renal clearance of $49.44\text{ mL/min}$. Vancomycin dosing guidelines mandate extending the dosing interval from $12\text{ hours}$ to $24\text{ hours}$ for clearances below $50\text{ mL/min}$—averting severe drug accumulation.
+- **Steps 9–12:** The operational stack evaluates the Cockcroft–Gault numerator and denominator without pen, paper, or scratch registers, yielding a renal clearance of $49.44\text{ mL/min}$. Vancomycin dosing guidelines mandate extending the dosing interval from $12\text{ hours}$ to $24\text{ hours}$ for clearances below $50\text{ mL/min}$—averting severe drug accumulation.
 
 ---
 
@@ -960,7 +960,7 @@ In nuclear physics (Chapter 16), an unstable radioactive isotope disintegrates a
 
 In quantitative finance (Chapter 25), future cash flows are discounted to the present under continuous interest intensity $r$: $PV = FV \cdot e^{-rt}$. The erosion of future purchasing power under continuous interest follows the exact same trajectory as the metabolic degradation of antibiotic molecules in the liver and kidneys.
 
-Nature and human commerce speak a unified mathematical language. The RPN stack treats all of them with the identical four-register operational discipline.
+Nature and human commerce speak a unified mathematical language. The RPN stack treats all of them with the identical operational discipline.
 
 ### Superposition and Steady-State Accumulation Across Five Half-Lives
 
@@ -1313,5 +1313,5 @@ In **Unit IX: SC-95 Quantitative Finance & Statistics**, these mathematical mode
 3. **From Vasoactive Perfusion Pressure to Bond Convexity and Option Volatility:** Dynamic equilibrium under vascular resistance parallels the duration and convexity management of fixed-income portfolios, while stochastic diffusion models option pricing.
 4. **From Clinical Laboratory Reference Ranges to Six Sigma Process Capability:** Physiological reference intervals translate into Gaussian dispersion limits, Student's $t$ confidence bounds, and Six Sigma process capability metrics ($C_p, C_{pk}$).
 
-The operational discipline of the four-register stack remains constant across all of these physical and institutional manifestations.
+The operational discipline of the RPN stack remains constant across all of these physical and institutional manifestations.
 

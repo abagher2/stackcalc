@@ -25,7 +25,7 @@ In **Chapter 3**, we take to the flight deck of a twin-turboprop, navigating cro
 
 # Chapter 1: The Lost Cornerstone in the Pine Barrens
 
-A boundary dispute does not begin in an attorney's office; it begins where two property owners discover that an iron pipe in the dirt does not agree with the bearings recorded in their deeds. When Party Chief Elena Vance unrolls a 1794 parchment deed across the tailgate of her survey truck, she is confronting two centuries of physical change. The colonial surveyor recorded the tract in Edmund Gunter's 66-foot chains, sexagesimal compass bearings (`DDD.MMSS`), and stone-wall offsets measured in feet and fractional inches. The legal description terminates at an inscribed brass-capped granite cornerstone set beside a cedar creek. Two centuries of wildfire, pine regrowth, and alluvial wash have buried that stone beneath three feet of loam on the far side of a steep, cedar-choked ravine.
+Two centuries of forest growth, wildfires, and alluvial wash can bury a brass-capped cornerstone, but they cannot alter the mathematical bearings recorded on colonial parchment. When Party Chief Elena Vance unrolls a 1794 parchment deed across the tailgate of her survey truck, she is retracing an 18th-century boundary established in Edmund Gunter's 66-foot chains, sexagesimal compass bearings (`DDD.MMSS`), and stone-wall offsets measured in feet and fractional inches. The legal description terminates at an inscribed granite monument set beside a cedar creek on the far side of a steep, cedar-choked ravine.
 
 Elena cannot stretch a flat steel tape across the brushy gorge. Even if she and her apprentice Marcus hacked a clearance path through the tangled briars with machetes, a steel tape suspended over an open ravine sags under its own catenary weight, stretches elastically with pull tension, and contracts in cold air. Instead, she and Marcus set their electronic total station over Witness Station $A$ on the north rim, leveling the optical tribrach until the tubular spirit bubble splits the etched center rings, and sighting the prism rod across azimuth $47^\circ 22' 30''$ over an inclined slope distance of $412.68\text{ ft}$ at a vertical angle of $6^\circ 15' 00''$. To pinpoint where to dig and certify the parcel's legal boundary, Elena must reduce the inclined ravine shot to horizontal ground distance $D_H = 410.10\text{ ft}$ and vertical rise $\Delta V = 44.92\text{ ft}$, project coordinates to the witness oak on the opposite bluff, solve the inverse bearing and distance to the deed cornerstone, verify leveling benchmarks, and close the four-sided perimeter loop.
 
@@ -254,7 +254,7 @@ On the **SC-35**, two-component survey operators ({{key:SLP}}, {{key:TRV}}, {{ke
 
 ### Reducing the Ravine Slope Shot, Projecting Coordinates, and Checking Three-Wire Stadia
 
-To reduce the ravine slope shot ($S = 412.68\text{ ft}$, $\nu = +6.25^\circ$), project forward coordinates along bearing $\text{N } 47^\circ 22' 30'' \text{ E}$, and verify the three-wire stadia reading ($7.82$, $5.42$, $3.02\text{ ft}$), the four-register stack evaluates:
+To reduce the ravine slope shot ($S = 412.68\text{ ft}$, $\nu = +6.25^\circ$), project forward coordinates along bearing $\text{N } 47^\circ 22' 30'' \text{ E}$, and verify the three-wire stadia reading ($7.82$, $5.42$, $3.02\text{ ft}$), the RPN stack evaluates:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -274,7 +274,7 @@ From Station 2, Marcus backsights Station 1 on the north rim across reverse azim
 3. Project the forward coordinates of the iron pipe $(N_{\text{pipe}}, E_{\text{pipe}})$.
 4. Inverse the distance and bearing between this newly established iron pipe and the colonial deed call to verify whether the pipe represents the true 1794 boundary line.
 
-The four-register stack maintains all intermediate results in memory without intermediate scratch notes:
+The RPN stack maintains all intermediate results in memory without intermediate scratch notes:
 
 | Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Field Scenario Stack Walkthrough |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -323,7 +323,7 @@ The recovered cornerstone and staked boundary coordinates at Station 4 provide t
 
 # Chapter 2: Threading the Switchback Grade Through Granite Gorge
 
-A highway curve is not a drawing on a drafting table; it is an unyielding negotiation between centrifugal force and eighty thousand pounds of rolling freight. Where State Route 49 winds through the American River canyon, a massive quartz-monzonite bluff forces the two straight tangents of the roadbed to intersect inside solid rock at an exterior deflection angle of $\Delta = 28^\circ 30' 00''$ ($28.5^\circ$). If resident highway engineer Carlos Mendez swings the roadbed too tightly, a loaded timber truck descending the pass will roll over when the driver steers into the sudden lateral acceleration. If he swings the arc too wide, the excavation cuts through millions of dollars of solid rock. To curve the corridor cleanly around the rock face without creating a blind hazard, Carlos and junior technician Dave must specify and stake a tangent circular curve of centerline radius $R = 1{,}200.00\text{ ft}$.
+Threading State Route 49 through Granite Gorge forces eighty thousand pounds of rolling timber freight into direct conflict with centrifugal acceleration. Where the highway winds through the American River canyon, a massive quartz-monzonite bluff forces the two straight tangents of the roadbed to intersect inside solid rock at an exterior deflection angle of $\Delta = 28^\circ 30' 00''$ ($28.5^\circ$). If resident highway engineer Carlos Mendez swings the roadbed too tightly around the rock face, a loaded commercial vehicle descending the pass will roll over when the driver steers into the sudden lateral acceleration. If he swings the arc too wide, the excavation cuts through millions of dollars of solid rock. To curve the corridor cleanly without creating a blind hazard, Carlos and junior technician Dave must specify and stake a tangent circular curve of centerline radius $R = 1{,}200.00\text{ ft}$.
 
 The physical stakes are immediate. Heavily loaded commercial vehicles descend this mountain corridor day and night. If the transition into the arc creates sudden lateral steering jerk, or if the crest of the vertical grade hides stopped vehicles from approaching drivers, this stretch of highway becomes an accident blackspot. Before the earthmoving crew can mobilize bulldozers and hydraulic rock drills, Carlos and Dave must calculate the tangent setback distance $T = 304.77\text{ ft}$, centerline arc length $L = 596.90\text{ ft}$, and long chord $LC = 590.80\text{ ft}$. They must compute vertical parabolic crest elevations transitioning from a $+2.50\%$ climbing grade to a $-1.75\%$ downgrade over an $800\text{-foot}$ vertical curve, verify bank cut volume across the rock prism, and transfer a vertical datum up from the canyon floor benchmark using three-wire differential spirit leveling.
 
@@ -653,9 +653,7 @@ With the Granite Gorge roadbed carved around the granite bluff and grade stakes 
 
 # Chapter 3: Night Approach Under a Mountain Crosswind
 
-A runway at six thousand feet above sea level looks identical to a runway on the coast, but to an aircraft's wings and engines, thin mountain air is an invisible trap. Descending into a remote Oregon valley airstrip with a critical cardiac patient aboard a twin-turboprop medical transport, Captain Nora Evans and First Officer Leo Park check the automated weather report: pressure altitude $P = 6{,}200\text{ ft}$, surface temperature an astonishing $T = 28^\circ\text{C}$ ($82.4^\circ\text{F}$)—twenty-five degrees Celsius hotter than standard atmospheric conditions for that elevation.
-
-Hot, low-density air starves propeller blades of bite, starves turbine combustion chambers of mass flow, and forces the aircraft to fly at a significantly higher true airspeed to generate lift. An aircraft that lands comfortably in three thousand feet at sea level can easily float past five thousand feet on a hot mountain plateau. Flanked on both approaches by basalt rimrock canyons and facing a $V_w = 28\text{ knot}$ wind blowing from $005^\circ$ against their $045^\circ$ course ($\theta = 40^\circ$ crosswind angle), Captain Evans and Leo cannot afford guesswork.
+Descending into a remote Oregon valley airstrip with a critical cardiac patient aboard a twin-turboprop medical transport, Captain Nora Evans and First Officer Leo Park check the automated weather report: pressure altitude $P = 6{,}200\text{ ft}$, surface temperature an astonishing $T = 28^\circ\text{C}$ ($82.4^\circ\text{F}$)—twenty-five degrees Celsius hotter than standard atmospheric conditions for that elevation. Cruising at a calibrated True Airspeed of $V_{\text{TAS}} = 145\text{ knots}$ over the final $D = 128.0\text{ NM}$ mountain leg, they face a severe aerodynamic trap: hot, low-density air starves propeller blades of bite, starves turbine combustion chambers of mass flow, and forces the aircraft to fly at a significantly higher true airspeed to generate lift. An aircraft that lands comfortably in three thousand feet at sea level can easily float past five thousand feet on a hot mountain plateau. Flanked on both approaches by basalt rimrock canyons and facing a $V_w = 28\text{ knot}$ wind blowing from $005^\circ$ against their $045^\circ$ course ($\theta = 40^\circ$ crosswind angle), Captain Evans and Leo cannot afford guesswork.
 
 Before beginning the descent, they must execute four non-negotiable verifications:
 1. Decompose the $28\text{-knot}$ wind vector at $\theta = 40^\circ$ into its longitudinal headwind component ($V_{\text{hw}} = 21.45\text{ kt}$) and lateral crosswind component ($V_{\text{xw}} = 18.00\text{ kt}$).
@@ -880,7 +878,7 @@ Resolving the wind vector ($V_w = 28\text{ kt}, \theta = 40^\circ$), crab angle 
 
 ### High-Altitude Emergency Diversion and Critical Point Determination on the Stack
 
-When a cockpit master caution light flashes in the dark, the four-register stack delivers an immediate diversion decision. Halfway across the mountain sector, the right engine oil temperature begins climbing toward the redline, accompanied by a slight drop in oil pressure. Captain Evans dials back power on the affected engine, leveling off at $12{,}000\text{ ft}$.
+When a cockpit master caution light flashes in the dark, the RPN stack delivers an immediate diversion decision. Halfway across the mountain sector, the right engine oil temperature begins climbing toward the redline, accompanied by a slight drop in oil pressure. Captain Evans dials back power on the affected engine, leveling off at $12{,}000\text{ ft}$.
 
 The aircraft is on a $D = 360.0\text{ NM}$ cross-country route between Redmond and Boise. Facing an outbound headwind, the aircraft's groundspeed toward Boise is $GS_{\text{out}} = 130.0\text{ kt}$. If they turn back to Redmond with a tailwind, their groundspeed will be $GS_{\text{ret}} = 170.0\text{ kt}$.
 The aircraft has been airborne for $75.0\text{ minutes}$ ($1.25\text{ hr}$), having covered $D_{\text{flown}} = 130 \times 1.25 = 162.5\text{ NM}$.
@@ -891,7 +889,7 @@ Captain Evans must instantly determine:
 3. The fuel required at single-engine diversion fuel burn ($72.0\text{ gal/hr}$).
 4. The high-altitude landing roll increase at the diversion airfield where Density Altitude is $DA = 10{,}720\text{ ft}$.
 
-The four-register stack tracks each stage of the diversion calculation without a scratchpad:
+The RPN stack tracks each stage of the diversion calculation without a scratchpad:
 
 | Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Field Scenario Stack Walkthrough |
 | :--- | :---: | :---: | :---: | :---: | :--- |

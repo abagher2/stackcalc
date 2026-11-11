@@ -5,7 +5,7 @@ description: "Governing equations, physical constants, and stack argument conven
 
 # Appendix A: Cross-Domain Formula & Equation Compendium
 
-This compendium consolidates the governing mathematical identities, physical constants, four-register RPN stack conventions, and bidirectional Equation Solver Workspace schemas across all nine specialized instruments in the StackCalc Domain Series (`SC-35`, `SC-14`, `SC-16`, `SC-24`, `SC-50`, `SC-60`, `SC-78`, `SC-80`, and `SC-95`). Each section summarizes governing equations across the domain calculators so engineers, navigators, clinicians, and analysts can verify input dimensions, immediate stack arguments, and closed-form or numerical solver relationships at a glance.
+This compendium consolidates the governing mathematical identities, physical constants, RPN stack conventions, and bidirectional Equation Solver Workspace schemas across all nine specialized instruments in the StackCalc Domain Series (`SC-35`, `SC-14`, `SC-16`, `SC-24`, `SC-50`, `SC-60`, `SC-78`, `SC-80`, and `SC-95`). Each section summarizes governing equations across the domain calculators so engineers, navigators, clinicians, and analysts can verify input dimensions, immediate stack arguments, and closed-form or numerical solver relationships at a glance.
 
 ## Universal Stack, Precision, and Bidirectional Solver Conventions
 

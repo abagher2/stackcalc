@@ -31,7 +31,7 @@ Finally, in the **Grand Epilogue Coda**, the manual concludes with an overarchin
 
 # Chapter 25: Structuring the Equipment Lease and Valuing the Expansion Plant
 
-A dollar committed to physical machinery today is not the same as a dollar returned from production five years from now; the gap between them is the time value of capital. When an industrial enterprise structures the financing for a new $\$450{,}000$ high-precision CNC manufacturing line, commercial debt commitments cannot be evaluated by casual arithmetic. A 20-year fixed-rate equipment mortgage at $7.50\%$ nominal annual interest ($N = 240\text{ months}$, $i = 0.625\%$ monthly) commits the business to ongoing debt service across shifting economic cycles. Before executing the credit indenture, the finance team must determine the exact monthly payment $PMT$, calculate the interest and principal amortization across the first year, and verify remaining loan balance.
+Financing a four-hundred-and-fifty-thousand-dollar CNC production line requires bridging two distinct financial realities: the contractual certainty of monthly debt amortization and the discounted value of future capital savings. A 20-year fixed-rate equipment mortgage at $7.50\%$ nominal annual interest ($N = 240\text{ months}$, $i = 0.625\%$ monthly) commits the business to ongoing debt service across shifting economic cycles. Before executing the credit indenture, the finance team must determine the exact monthly payment $PMT$, calculate the interest and principal amortization across the first year, and verify remaining loan balance.
 
 Simultaneously, the operations team evaluates an automated robotic loading cell requiring an upfront capital outlay of $I_0 = \$120{,}000$ to generate constant labor and scrap savings of $CF = \$32{,}000$ per year across a 5-year operating lifespan ($N = 5\text{ years}$). At the firm's weighted average cost of capital ($k = 10.0\%$), the team must compute Net Present Value ($NPV$) to verify that the project creates enterprise value, and solve for the exact Internal Rate of Return ($IRR$) against hurdle rates.
 
@@ -438,7 +438,7 @@ To structure the $PV = \$450{,}000$ mortgage across $20\text{ years}$ ($N = 240\
 
 In step 2 of the workspace table above, entering `0` {{keycap:FV}} explicitly binds $0.0000$ to the future value (indicated by `*FV`), preventing ambiguity and ensuring the solver treats zero as a fixed boundary condition (a fully amortized loan). To clear or unbind any variable so that the TVM engine solves for it as the unknown target, simply press Yellow Shift followed by the variable softkey ({{key:f}} `<SOFTKEY>`), immediately clearing its binding and displaying `UNSET <VAR>`.
 
-The corporate treasury team structures the commercial facility mortgage across the four-register RPN stack ($PV = \$450{,}000$, $\text{APR} = 7.50\%$, $N = 240\text{ months}$):
+The corporate treasury team structures the commercial facility mortgage across the operational RPN stack ($PV = \$450{,}000$, $\text{APR} = 7.50\%$, $N = 240\text{ months}$):
 
 | Step | Key Pressed | Display (X) | Y | Z | T | Physical Meaning & Stack Operation |
 | :---: | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -951,7 +951,7 @@ If the basis deviates significantly from zero due to funding constraints or coun
 
 ## Bond Duration and Black–Scholes Option Pricing on the Stack and in the Solver Workspace
 
-On the **SC-95**, bond pricing, duration, convexity, option diffusion, and normal integrals operate seamlessly across the four-register stack and dedicated Solver Workspaces.
+On the **SC-95**, bond pricing, duration, convexity, option diffusion, and normal integrals operate seamlessly across the RPN stack and dedicated Solver Workspaces.
 
 | Key / Solver | Mode | Inputs / Workspace Softkeys | Governing Expression |
 | :--- | :--- | :--- | :--- |
@@ -1548,7 +1548,7 @@ Across twenty-seven chapters, nine specialized units, and three comprehensive vo
 
 Through every domain, across every physical discipline and industrial frontier, a singular instrument has accompanied the practitioner: the Reverse Polish Notation calculator.
 
-### The Cognitive Ergonomics of the Four-Register Stack
+### The Cognitive Ergonomics of the Operational Stack
 
 The RPN stack is not merely an alternative input format; it is an operational architecture designed to mirror the natural forward flow of physical reasoning. 
 
@@ -1560,10 +1560,10 @@ an algebraic calculator forces the human mind to halt, anticipate future operati
 
 Reverse Polish Notation eliminates this cognitive burden entirely. Formulated in 1924 by the Polish logician Jan Łukasiewicz to simplify formal mathematical logic, and adapted for computer architectures by Australian philosopher and computer scientist Charles Hamblin in 1957, postfix notation operates strictly from operands to operators. 
 
-On the four-level operational stack—Register $X$, Register $Y$, Register $Z$, Register $T$, alongside the steadfast preservation of $\text{Last } X$:
+On the operational RPN stack—with its immediate visible registers and the steadfast preservation of $\text{Last } X$:
 1. Every calculation proceeds in the exact chronological order in which physical reality unfolds: from causes to effects, from empirical measurements to intermediate invariants, and from invariants to final decisions.
 2. Intermediate results are immediately visible in the active registers, never hidden behind an un-evaluated algebraic tree.
-3. The human working memory—which cognitive psychologists George A. Miller (1956) and Nelson Cowan (2001) established as operating optimally on three to four active chunks of information ($4 \pm 1$)—aligns perfectly with the four-register physical stack. The four registers provide exactly enough operational depth to hold the terms of a complex differential or algebraic equation without overwhelming the engineer's visual field.
+3. The human working memory—which cognitive psychologists George A. Miller (1956) and Nelson Cowan (2001) established as operating optimally on chunks of immediate information ($4 \pm 1$)—aligns naturally with the operational stack. Direct visibility of active registers provides immediate operational depth to hold intermediate invariants of a complex differential or algebraic equation without overwhelming the engineer's visual field.
 
 Furthermore, the dedicated $\text{Last } X$ register acts as an instantaneous undo mechanism and a conversational partner. When an engineer divides by an incorrect constant, or needs to reuse an input variable in the subsequent line of a multi-step calculation, pressing {{key:LASTx}} instantly recalls the preceding argument into Register $X$ without requiring paper scratchpads or re-entry.
 
@@ -1596,9 +1596,9 @@ By anchoring high-level mathematics in a rugged physical chassis, the calculator
 
 In 1979, Turing Award laureate Kenneth E. Iverson delivered his landmark lecture *Notation as a Tool of Thought*. Iverson observed that a concise, transparent mathematical notation does not simply record thought; it actively directs the course of reasoning, freeing the mind to focus on essential relationships while shielding it from incidental complexity.
 
-Reverse Polish Notation is such a notation. By organizing calculations into an open, four-level operational stack, it eliminates the artificial scaffolding of nested parentheses and operator-precedence hierarchies, mirroring the chronological unfolding of physical laws from initial measurements to final decisions.
+Reverse Polish Notation is such a notation. By organizing calculations into an open operational stack, it eliminates the artificial scaffolding of nested parentheses and operator-precedence hierarchies, mirroring the chronological unfolding of physical laws from initial measurements to final decisions.
 
 In mission-critical engineering, clinical medicine, and industrial production, calculating tools are not neutral accessories; they shape how practitioners conceptualize problems. When a flight nurse calculates an emergency oxygen reserve over mountainous terrain, a structural engineer verifies maximum shear stress on an aged bridge girder, or an intensivist titrates a vasoactive infusion for a hemodynamically unstable patient, the calculation is an ethical act. Professional responsibility cannot be outsourced to opaque, unverified systems whose intermediate reasoning cannot be audited in real time.
 
-The capacity of a practitioner to stand before a complex physical system—grounded in first principles, working through a four-register operational stack, and verifying physical truth step by step—remains the foundation of technical craftsmanship. Tools will continue to evolve, but as long as matter and energy obey invariant conservation laws, the need for deterministic mathematical clarity remains absolute.
+The capacity of a practitioner to stand before a complex physical system—grounded in first principles, working through an operational stack, and verifying physical truth step by step—remains the foundation of technical craftsmanship. Tools will continue to evolve, but as long as matter and energy obey invariant conservation laws, the need for deterministic mathematical clarity remains absolute.
 
