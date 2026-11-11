@@ -658,7 +658,7 @@ In these relations, $R_{\text{play}}$ is the base delivery timeline frame rate s
 
 ### Eq. 10.3 — NTSC Color Pulldown and Wall-Clock Drift Rate
 
-Because the video frame rate is dialed back by exactly one part in a thousand, each broadcast second takes one thousand and one thousandths of a physical second to pass. A counter that increments thirty whole frames per second therefore lags behind atomic wall-clock time by exactly one tenth of a percent: one second of drift every thousand seconds, accumulating three point six seconds of wall-clock lag across every nominal broadcast hour:
+Because the video frame rate is dialed back by exactly one part in a thousand, each broadcast second takes one thousand and one thousandths of a physical second to pass. A counter that increments thirty whole frames per second therefore lags behind atomic wall-clock time by exactly one tenth of a percent: one second of drift every thousand seconds, accumulating $3.6\text{ seconds}$ of wall-clock lag across every nominal broadcast hour:
 
 $$R_{\text{NTSC}} = \frac{30}{1.001} = \frac{30{,}000}{1001} \approx 29.97003\text{ fps}$$
 
@@ -751,7 +751,7 @@ Here a positive shift ($\Delta M > 0$) calls for an amber **Color Temperature Or
 
 ### Eq. 12.1 — Thermal Speed of Sound and Acoustic Propagation Delay
 
-Sound is a mechanical pressure wave passed from air molecule to air molecule. Because higher temperatures increase the thermal speed of gas molecules, the speed of sound rises linearly with temperature, starting at three hundred thirty-one point three meters per second at freezing and adding roughly zero point six meters per second for every degree Celsius of warmth. The acoustic transit time across a venue is simply distance divided by velocity; multiplying by one thousand converts seconds into milliseconds. Dividing sound speed by the acoustic frequency yields the physical wavelength—the spatial distance between adjacent compression peaks:
+Sound is a mechanical pressure wave passed from air molecule to air molecule. Because higher temperatures increase the thermal speed of gas molecules, the speed of sound rises linearly with temperature, starting at $331.3\text{ m/s}$ at freezing and adding roughly $0.606\text{ m/s}$ for every degree Celsius of warmth. The acoustic transit time across a venue is simply distance divided by velocity; multiplying by one thousand converts seconds into milliseconds. Dividing sound speed by the acoustic frequency yields the physical wavelength—the spatial distance between adjacent compression peaks:
 
 $$v_s(T_C) = 331.3 + 0.606 \cdot T_C \quad \left[\frac{\text{m}}{\text{s}}\right]$$
 

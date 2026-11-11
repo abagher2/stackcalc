@@ -91,7 +91,7 @@ hide:
     <!-- Right Column: Buy Box & Product Info -->
     <div class="ec-buybox">
       <div class="flex items-center gap-2 mb-2">
-        <span class="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider">// OFFICIAL BOOKSTORE &amp; BENCH EDITION</span>
+        <span class="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider">Official Bookstore &amp; Bench Edition</span>
         <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">In Stock</span>
       </div>
 
@@ -273,7 +273,7 @@ hide:
   <section class="ec-section mt-8">
     <div class="p-6 rounded-xl bg-slate-900/60 border border-sky-500/40 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-lg">
       <div class="space-y-2">
-        <span class="font-mono text-xs text-sky-400 font-bold uppercase tracking-wider">// ON-DEMAND FABRICATION VIA SLANT 3D</span>
+        <span class="font-mono text-xs text-sky-400 font-bold uppercase tracking-wider">On-Demand Fabrication via Slant 3D</span>
         <h3 class="text-xl font-bold text-white">Need the Physical 3D Math Manipulatives?</h3>
         <p class="text-sm text-slate-300 max-w-2xl leading-relaxed">
           Every chapter in <em>From Blocks to the Stack</em> corresponds to a physical manipulative kit. Order individual component refills, complete studio boxes, or classroom fleet packs on-demand through our official <strong>Slant 3D Portal</strong>, or 3D print them locally using our free open-source STL files.

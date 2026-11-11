@@ -254,7 +254,7 @@ On the **SC-35**, two-component survey operators ({{key:SLP}}, {{key:TRV}}, {{ke
 
 ### Reducing the Ravine Slope Shot, Projecting Coordinates, and Checking Three-Wire Stadia
 
-Listen to the kinetic flow of the stack as Elena and Marcus reduce the slope shot, project forward coordinates, and audit the stadia sightline. Sighting across the Pine Barrens ravine, keying the slant range of $412.68\text{ ft}$ into Register X and pressing ENTER lifts the distance to Register Y as Register X accepts the $6.25^\circ$ vertical inclination angle. Striking SLP drops the stack, depositing the vertical rise of $44.92\text{ ft}$ into Register Y while the horizontal ground distance of $410.10\text{ ft}$ settles into Register X. Next, converting the packed sexagesimal bearing of $47^\circ 22' 30''$ via ▸HR yields $47.375^\circ$; swapping registers places the azimuth into Register Y and the horizontal run into Register X. A single execution of TRV followed by N⇄E projects the vector along the North-clockwise meridian, loading Northing latitude change $\Delta N = 277.75\text{ ft}$ into Register Y and Easting departure $\Delta E = 301.76\text{ ft}$ into Register X. Finally, keying the three leveling rod intercepts—$7.82\text{ ft}$ into Z, $5.42\text{ ft}$ into Y, and $3.02\text{ ft}$ into X—and pressing LVL checks crosshair balance in Register Y while Register X snaps to the exact $480.00\text{ ft}$ stadia distance:
+To reduce the ravine slope shot ($S = 412.68\text{ ft}$, $\nu = +6.25^\circ$), project forward coordinates along bearing $\text{N } 47^\circ 22' 30'' \text{ E}$, and verify the three-wire stadia reading ($7.82$, $5.42$, $3.02\text{ ft}$), the four-register stack evaluates:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -289,7 +289,7 @@ The recovered iron pipe matches the colonial deed call within three-hundredths o
 
 ### Auditing Traverse Closure in `@COGO` ({{key:▦}}) and Solving Sub-Parcel Geometry ({{key:△}}, {{key:LVL}})
 
-Listen as the traverse registers accumulate each boundary vector around the closed perimeter. Clearing the statistical registers leaves the stack pristine at zero. Staging the Due North azimuth of $0^\circ$ in Register Y and the $300.00\text{ ft}$ run in Register X, striking TRV and PT+ calculates the northward departure and logs the first polygon vertex into the COGO matrix. Next, turning ninety degrees East and running $400.00\text{ ft}$ pushes the second vertex, lifting the cumulative boundary perimeter. Turning onto the return diagonal azimuth of $233.1301^\circ$, TRV resolves the negative latitude and departure, closing the vector sum cleanly back onto the Point of Beginning. A single conversion of the enclosed $60{,}000\text{ ft}^2$ in Register X via ▸ac transforms the planar shoelace tally into $1.3774\text{ statutory acres}$:
+Accumulating boundary vectors around the closed perimeter and evaluating polygon area proceeds through the traverse registers:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -585,7 +585,7 @@ On the **SC-35**, route geometry, earthwork, and leveling operators work in both
 
 ### Immediate Stack Execution and Inverse Curve Solving in {{key:CRV}} and {{key:VCV}}
 
-Listen to the stack's kinetic cadence as Carlos Mendez dimensions the horizontal curve, parabolic vertical crest, and earthwork cut. Keying the twelve-hundred-foot centerline radius into Register Y and the exterior deflection angle of twenty-eight point five degrees into Register X, striking CRV executes the circular curve geometry, depositing the tangent setback distance of three hundred four point seven seven feet into Register Y while Register X receives the five-hundred-ninety-six-foot centerline arc. Latching the vertical curve parameters—starting elevation at four hundred twenty-five feet in T, entry grade of positive two point five percent in Z, exit grade of minus one point seven five percent in Y, and eight stations curve length in X—and striking VCV computes the parabolic crest elevation of four hundred thirty point seven five feet at the midpoint. Finally, loading the two cross-sectional cut areas and the hundred-fifty-foot station interval into CUT evaluates the average end-area prism, yielding two thousand cubic yards of excavated granite:
+Evaluating the horizontal curve geometry ($R = 1200\text{ ft}$, $\Delta = 28.5^\circ$), parabolic vertical crest curve ($L = 8\text{ stns}$, $g_1 = +2.5\%$, $g_2 = -1.75\%$), and excavation cut prism ($A_1 = 320\text{ ft}^2$, $A_2 = 400\text{ ft}^2$, $L = 150\text{ ft}$) proceeds across the four registers:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -624,7 +624,7 @@ In six operations, Carlos proved that the contractor's standard end-area invoice
 
 ### Running the Three-Wire Canyon Leveling Loop and {{key:LVL}} Solver ({{key:LVL}})
 
-Listen as the differential leveling loop climbs from the canyon floor benchmark up to the curve tangent stake. Seating the three stadia crosshair readings on the stack—top wire seven point eight two feet in Z, middle wire five point four two feet in Y, and bottom wire three point zero two feet in X—and pressing LVL confirms optical balance with five point four two in Register Y while Register X reports the four-hundred-eighty-foot sight distance. Exchanging registers lifts the sight distance to safety while the instrument height sums the benchmark elevation and backsight reading to four thousand eight hundred nineteen point two five feet in Register X. Swapping registers and subtracting the foresight rod reading yields the four-thousand-eight-hundred-thirteen-foot pavement elevation. Finally, comparing the vertical rise against arc run via GR-percent reveals a crisp six-percent climbing grade:
+Executing the differential leveling loop from canyon floor benchmark ($4812.40\text{ ft}$) to tangent stake proceeds on the stack, verifying three-wire balance and slope grade:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -869,7 +869,7 @@ On the **SC-35**, flight-navigation keys operate both as immediate two-register 
 
 ### Solving the Wind Triangle, Density Altitude, and Weight & Balance on the Stack
 
-Listen to the aeronautical flight-deck cadence as Captain Evans resolves the wind vector, crab angle, and landing environment. Loading the twenty-eight-knot wind speed into Register Y and the forty-degree relative bearing into Register X, pressing WND decomposes the vector, placing the twenty-one-knot headwind into Register Y while the eighteen-knot crosswind settles into Register X. Dividing by the one-hundred-forty-five-knot true airspeed and pressing ASIN evaluates the unit circle projection, revealing a seven-point-one-three-degree crab angle into the wind. Next, entering the six-thousand-two-hundred-foot pressure altitude and the twenty-eight-degree desert air temperature, pressing ALT computes the nine-thousand-two-hundred-forty-eight-foot density altitude. Finally, pairing the two-hundred-twenty-pound litter with its cabin station arm at one hundred forty-five inches and striking CG computes the thirty-one-thousand-nine-hundred pound-inch longitudinal pitching moment:
+Resolving the wind vector ($V_w = 28\text{ kt}, \theta = 40^\circ$), crab angle at $V_{\text{TAS}} = 145\text{ kt}$, density altitude ($6200\text{ ft}, 28^\circ\text{C}$), and longitudinal aircraft moment ($W = 220\text{ lb}, A = 145\text{ in.}$) evaluates on the stack:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |

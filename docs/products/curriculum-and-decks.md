@@ -104,7 +104,7 @@ hide:
   <!-- Free Pre-Generated Digital Curriculum Callout -->
   <div style="margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(16, 185, 129, 0.08)); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">// 100% FREE DIGITAL CURRICULUM PORTAL</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">Free Digital Curriculum Portal</span>
       <h3 style="margin: 0.25rem 0 0.5rem 0; font-size: 1.25rem; font-weight: 800; color: #FFFFFF;">Looking for Immediate Pre-Generated Printables?</h3>
       <p style="margin: 0; font-size: 0.85rem; color: #CBD5E1; max-width: 650px;">
         Explore our complete digital catalog: 120 pre-generated classroom station guides (Singapore Math, Bridges, Big Ideas), the 102-page Big Ideas Middle School Practice Supplement (90 Worksheets &bull; 900 Problems + 10 Separate Printable Chapter PDFs) + 10-page Coach's Guide, 12 separate 4-page Teacher Curriculum Unit PDFs, and 12 official Texas UIL &amp; TMSCA tournament practice exams with complete 3-sig-fig scoring keys.
@@ -377,7 +377,7 @@ hide:
       <div class="workbook-body">
         <div class="workbook-header">
           <div class="workbook-meta-strip">
-            <span>STACKCALC MATH LABS // SERIES 04</span>
+            <span>STACKCALC MATH LABS &bull; SERIES 04</span>
             <span>STANDARDS: CCSS HSA-APR.A.1 &bull; TEKS 111.39.c.8</span>
             <span>PERIOD: 45 MIN STATION</span>
           </div>

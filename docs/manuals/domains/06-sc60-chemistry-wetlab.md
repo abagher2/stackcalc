@@ -889,7 +889,7 @@ For total volume $V = 0.500\text{ L}$:
   $$n_{\text{base}} = 0.030657\text{ mol/L} \times 0.500\text{ L} = \mathbf{0.015328\text{ mol}}$$
   $$W_{\text{base}} = 0.015328\text{ mol} \times 268.063\text{ g/mol} = \mathbf{4.1090\text{ g}}$$
 
-Watch the complete four-register stack evaluation:
+The complete four-register stack evaluation proceeds as follows:
 
 | Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Chemistry Scenario Stack Walkthrough |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -1319,7 +1319,7 @@ $$\frac{k_2}{k_1} = e^{2.5981} \approx \mathbf{13.438}$$
 
 At room temperature ($25^\circ\text{C}$), the antibody denatures **$13.44$ times faster** than in the cold room ($4^\circ\text{C}$). A batch that remains stable for twelve months at $4^\circ\text{C}$ degrades in less than one month on the open benchtop.
 
-Watch the four-register stack execution:
+The four-register stack execution proceeds as follows:
 
 | Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Chemistry Scenario Stack Walkthrough |
 | :--- | :---: | :---: | :---: | :---: | :--- |

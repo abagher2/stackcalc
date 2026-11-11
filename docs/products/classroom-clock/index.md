@@ -415,7 +415,7 @@ hide:
       <div class="workbook-body">
         <div class="workbook-header">
           <div class="workbook-meta-strip">
-            <span>STACKCALC MATH LABS // SERIES 01</span>
+            <span>STACKCALC MATH LABS &bull; SERIES 01</span>
             <span>STANDARDS: CCSS 1.MD.B.3 &bull; 2.MD.C.7 &bull; TEKS 111.4.b.9</span>
             <span>PERIOD: 45 MIN STATION</span>
           </div>
@@ -762,7 +762,7 @@ hide:
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// KINEMATIC INTEGRITY</span>
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">Kinematic Integrity</span>
           <h3 class="font-bold text-base text-white mt-1 mb-2">12:1 Planetary Gear Drive</h3>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
             Double-helical herringbone planetary gear core steps the hour hand in precise mathematical lockstep with the minute dial, permanently eliminating arbitrary hand misalignment.
@@ -775,7 +775,7 @@ hide:
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// SPATIAL FRACTIONS</span>
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">Spatial Fractions</span>
           <h3 class="font-bold text-base text-white mt-1 mb-2">Detachable Quadrants</h3>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
             Removable 15-minute quadrant sectors detach smoothly, allowing students to physically build "quarter after", "half past", and elapsed time intervals prior to reading numerals.
@@ -788,7 +788,7 @@ hide:
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// DESK STABILITY</span>
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">Desk Stability</span>
           <h3 class="font-bold text-base text-white mt-1 mb-2">Gridfinity 2&times;1 Stand</h3>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
             Low center-of-gravity modular base seats firmly into standard 42mm Gridfinity trays or rests stable on student desks without tipping during vigorous manual minute rotation.

@@ -176,7 +176,7 @@ hide:
     <div class="p-6 md:p-8 rounded-2xl bg-[#0D1017] border border-cyan-500/30 shadow-xl">
       <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
         <div>
-          <span class="font-mono text-xs text-cyan-400 font-bold uppercase tracking-wider">// COMPETITION &amp; CURRICULUM INTEGRATION</span>
+          <span class="font-mono text-xs text-cyan-400 font-bold uppercase tracking-wider">Competition &amp; Curriculum Integration</span>
           <h2 class="text-2xl font-bold text-white mt-1">Texas UIL Tournament Center &amp; Exam Compliance</h2>
         </div>
         <span class="text-xs px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono font-bold">UIL &bull; TMSCA &bull; SAT &bull; ACT &bull; AP APPROVED</span>

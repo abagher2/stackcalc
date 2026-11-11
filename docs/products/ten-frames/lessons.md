@@ -221,7 +221,7 @@ hide:
     <div class="p-6 md:p-8 rounded-2xl bg-[#0D1017] border border-cyan-500/30 shadow-xl">
       <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
         <div>
-          <span class="font-mono text-xs text-cyan-400 font-bold uppercase tracking-wider">// CURRICULUM &amp; STATION GUIDES</span>
+          <span class="font-mono text-xs text-cyan-400 font-bold uppercase tracking-wider">Curriculum &amp; Station Guides</span>
           <h2 class="text-2xl font-bold text-white mt-1">Pre-Generated Ten-Frame Worksheets &amp; Standards</h2>
         </div>
         <span class="text-xs px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono font-bold">CCSS K.CC.B.4 &bull; 1.NBT.B.2 &bull; 1.OA.C.6</span>

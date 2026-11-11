@@ -5,8 +5,6 @@ description: "Free open-source 3D printable math manipulative kits and replaceme
 
 # Makerspace 3D Print Kits & Classroom Refills
 
-<div class="inline-block px-3 py-1 mb-6 border border-accentCyan text-accentCyan font-mono text-xs tracking-wider">FREE 3D PRINTABLE MODELS ON PRINTABLES · OPEN HARDWARE ECOSYSTEM · 42MM GRIDFINITY STANDARD</div>
-
 Welcome to the **StackCalc Makerspace Hub**. We believe mathematics manipulatives belong in every classroom, and budget constraints or lost pieces should never stop a student from holding math in their hands.
 
 Instead of charging for digital STL downloads or hosting cumbersome raw files across unversioned servers, **the complete digital 3D design files (STLs and 3MFs) for our entire library of 14 math manipulative kits, Gridfinity storage enclosures, and calculator hardware chassis are published 100% free and open-source on [Printables](https://www.printables.com/@StackCalc_5593834)** under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (CC BY-NC-SA 4.0) license.
@@ -37,7 +35,7 @@ Instead of charging for digital STL downloads or hosting cumbersome raw files ac
 
 ---
 
-## 🌟 The Big Picture: Why We Are Building StackCalc
+## The Big Picture: Why We Are Building StackCalc
 
 If you ask a classroom of elementary or middle school students how they feel about math, far too many will say: *"I'm just not a math person."*
 
@@ -54,7 +52,7 @@ Whether you only print a single kit for your child's homework desk or build the 
 
 ---
 
-## 🖨️ Why 3D Printing & Open Hardware? (Our Hybrid Model)
+## Why 3D Printing & Open Hardware: The Hybrid Model
 
 Commercial manipulative kits from educational publishers cost $40 to $80 per box. They are sold in closed corporate ecosystems, and when two unit blocks roll under a radiator or get lost in a backpack, the whole set is ruined and ends up abandoned in a classroom closet.
 
@@ -67,7 +65,7 @@ Commercial manipulative kits from educational publishers cost $40 to $80 per box
 
 ---
 
-## 🌟 Community Attribution, Remix Heritage & Open Standards
+## Community Attribution, Remix Heritage & Open Standards
 
 The StackCalc Learning Lab is proudly built on the open-source shoulders of the 3D printing and maker community. We express our deepest gratitude and provide direct links to the foundational standards and creators that made this project possible:
 
@@ -82,7 +80,7 @@ The StackCalc Learning Lab is proudly built on the open-source shoulders of the 
 
 ---
 
-## 🏛️ The Architecture: Gridfinity, Snapfinity & Quarter-Gridfinity (21 mm)
+## Storage Architecture: Gridfinity, Snapfinity & Quarter-Gridfinity (21 mm)
 
 Every StackCalc manipulative kit is engineered from the ground up to eliminate classroom clutter, prevent lost parts, and enable cross-kit physical arithmetic through three architectural principles:
 
@@ -107,7 +105,7 @@ Every StackCalc manipulative kit is engineered from the ground up to eliminate c
 
 ---
 
-## 🧠 From Blocks to the Stack: The CPA Learning Continuum & RPN
+## From Blocks to the Stack: The CPA Learning Continuum & RPN
 
 Why do our manipulatives mention calculators and "stacks"?
 
@@ -136,7 +134,7 @@ Traditional algebraic calculators hide intermediate numbers behind an invisible 
 
 ---
 
-## 🛠️ Makerspace Slicer & Print Specifications
+## Makerspace Slicer & Print Specifications
 
 Every part in the StackCalc ecosystem has been engineered from the ground up for standard school and makerspace 3D printers (such as the Original Prusa MK4, MK3S+, and Prusa MINI).
 
@@ -153,7 +151,7 @@ Every part in the StackCalc ecosystem has been engineered from the ground up for
 
 ---
 
-## 📐 Tactile Debossed Typography & Single-Material Efficiency
+## Tactile Debossed Typography & Single-Material Efficiency
 
 StackCalc MathBlocks are engineered specifically for clean, reliable printing on standard single-extruder 3D printers:
 
@@ -164,7 +162,7 @@ StackCalc MathBlocks are engineered specifically for clean, reliable printing on
 
 ---
 
-## 🛠️ Open-Source Parametric CAD & Automated Makefile Pipeline
+## Open-Source Parametric CAD & Makefile Pipeline
 
 For makers, educators, and makerspace coordinators who want to customize tolerances or automate batch printing, StackCalc provides the full **OpenSCAD (`.scad`) parametric source code** and automated `Makefile` pipeline for every manipulative kit alongside the pre-rendered STLs and 3MFs.
 
@@ -191,7 +189,7 @@ The `make plates` target in each kit's Makefile is the exact same command used t
 
 ---
 
-## 🔍 Classroom Refill Protocol: How to Replace a Lost Block
+## Classroom Refill Protocol: Replacing a Lost Block
 
 When a block rolls under a desk or disappears into a backpack, never retire the kit:
 
@@ -212,7 +210,7 @@ graph TD
 
 ---
 
-## 📦 Master Kit Directory for Printables (14 Kits)
+## Master Model Directory for Printables (14 Kits)
 
 Below is the complete directory of physical manipulative kits and hardware enclosures available on Printables. Each card includes the educational scope, bill of materials, Part IDs, and plate-by-plate print settings organized by color and material matching our Slant 3D manufacturing files (`Education/build/stl/slant3d_plates/`).
 
@@ -752,7 +750,7 @@ The SC-6 Elementary Calculator chassis is an ultra-rugged, drop-proof handheld e
 
 ---
 
-## 🏫 District & Classroom Purchasing Options
+## District & Classroom Purchasing Options
 
 | Need | Recommended Route | Channel Link | Details |
 | :--- | :--- | :---: | :--- |

@@ -9,9 +9,9 @@ When a 400-amp circuit breaker trips with the sharp report of a rifle shot, an i
 
 Sixty years after Ohm's experiments, Nikola Tesla's 1888 polyphase rotating magnetic field, Mikhail Dolivo-Dobrovolsky's 1891 three-phase transmission line, and Charles Proteus Steinmetz's 1893 phasor calculus established **Three-Phase Alternating Current** as the backbone of industrial power. Single-phase power pulsates to zero twice every cycle ($120\text{ times per second}$ on a $60\text{ Hz}$ grid). Three sinusoidal phase voltages staggered by $120^\circ$ never cross zero simultaneously, delivering smooth, ripple-free torque to heavy induction motors. Vector addition across $120^\circ$ phase angles introduces the geometric factor $\mathbf{\sqrt{3} \approx 1.73205}$. Meanwhile, inductive magnetic fields shift current behind voltage by phase angle $\phi$, scaling real working power by the **Power Factor** $\text{PF} = \cos\phi$.
 
-The catastrophic vulnerability of polyphase AC distribution when reactive impedance and phase angles are miscalculated was etched into history on the evening of November 9, 1965. At the Sir Adam Beck Hydroelectric Generating Station at Queenston, Ontario, a protective backup relay on a $230\text{ kV}$ transmission line had been set years earlier with a trip threshold calibrated for lower pre-expansion power flows. As evening heating and lighting loads surged, the combination of high line current and lagging reactive power dropped the apparent electrical impedance seen by the directional relay below its trip threshold. The relay tripped, instantly shedding $375\text{ MW}$ of power into five parallel circuits that immediately overloaded and tripped in cascade. Within twelve minutes, thirty gigawatts of generation collapsed, plunging thirty million people across Ontario and eight northeastern US states—including all of New York City—into total darkness for up to thirteen hours. The 1965 Northeast Blackout proved permanently that alternating current power is not an abstract spreadsheet entry: voltage drop, reactive power factor, and conductor impedance govern the stability of entire civilizations.
+The sensitivity of polyphase AC distribution to reactive power imbalance and impedance boundaries was etched into history on the evening of November 9, 1965. At the Sir Adam Beck Hydroelectric Generating Station at Queenston, Ontario, a protective backup relay on a $230\text{ kV}$ transmission line had been set years earlier with a trip threshold calibrated for lower pre-expansion power flows. As evening heating and lighting loads surged, the combination of high line current and lagging reactive power dropped the apparent electrical impedance seen by the directional relay below its trip threshold. The relay tripped, instantly shedding $375\text{ MW}$ of power into five parallel circuits that immediately overloaded and tripped in cascade. Within twelve minutes, thirty gigawatts of generation collapsed, plunging thirty million people across Ontario and eight northeastern US states—including all of New York City—into total darkness for up to thirteen hours. The 1965 Northeast Blackout proved permanently that alternating current power is not an abstract spreadsheet entry: voltage drop, reactive power factor, and conductor impedance govern the stability of entire civilizations.
 
-Around those electrical feeders, tradespeople solve coupled geometric, mechanical, and fluid problems across the plant floor. Electricians bend rigid steel and thin-wall EMT conduit around structural steel beams using right-triangle cosecant multipliers and NEC Chapter 9 cross-sectional area limits. Machinists follow Frederick Winslow Taylor's 1906 metal-cutting laws (*On the Art of Cutting Metals*) to spin carbide end-mills at the exact rotational speed, tap drill diameter, and bolt-circle chord spacing required to cut steel flanges without tool chatter. Simultaneously, instrumentation and fluid-power technicians size control valves, centrifugal pumps, and noise-immune $4\text{--}20\text{ mA}$ current loops.
+Beyond electrical service entrance panels, industrial installations require solving coupled geometric, mechanical, and fluid problems across the plant floor. Electricians bend rigid steel and thin-wall EMT conduit around structural steel beams using right-triangle cosecant multipliers and NEC Chapter 9 cross-sectional area limits. Machinists follow Frederick Winslow Taylor's 1906 metal-cutting laws (*On the Art of Cutting Metals*) to spin carbide end-mills at the exact rotational speed, tap drill diameter, and bolt-circle chord spacing required to cut steel flanges without tool chatter. Simultaneously, instrumentation and fluid-power technicians size control valves, centrifugal pumps, and noise-immune $4\text{--}20\text{ mA}$ current loops.
 
 Industrial power distribution, raceway geometry, and mechanical fabrication form the working infrastructure of the modern physical plant: delivering three-phase electrical power to heavy induction motors, routing steel conduits around structural steel, and machining mechanical couplings to precise tolerances. The **SC-14 Electrical Power, Conduit Geometry & Industrial Trades** calculator brings National Electrical Code wire tables, complex AC power triangles, pipe-bending trigonometry, and process-loop scaling directly to the technician's hands. Three industrial field cases guide this analysis:
 
@@ -423,7 +423,7 @@ Frank and Jimmy must execute five interconnected calculations:
 4. Given uncorrected operating power factor $\text{PF}_1 = 0.82$ lagging at rated active input $P = 82.0\text{ kW}$, calculate uncorrected reactive power $Q_1$, target reactive power $Q_2$ for $\text{PF}_2 = 0.95$, and the required shunt capacitor size $Q_C = Q_1 - Q_2$.
 5. Determine the reduced feeder line current $I_{\text{new}}$ flowing from the switchgear once the capacitor bank is energized.
 
-Watch the kinetic flow across the four registers:
+The four-register stack evaluates the motor branch circuit and power factor correction:
 
 | Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Electrical Trades Scenario Walkthrough |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -874,7 +874,7 @@ With the four EMT conduits bent and strapped to the ceiling slab, the chiller fe
 
 # Chapter 6: The Chattering Milling Cutter and the Drifting Pressure Loop
 
-Inside the advanced manufacturing facility of an industrial pump manufacturer, the ambient sound is normally a rhythmic, oiled hum. But this morning, from Bay 4, a piercing, deafening screech echoes through the building. The safety glass on a $500{,}000$ five-axis vertical machining center (VMC) is vibrating violently. Inside the enclosure, a four-flute solid carbide end-mill is cutting the sealing face of a $316\text{L}$ stainless-steel centrifugal pump casing. The cutter is vibrating uncontrollably in a violent state of **regenerative chatter**, carving jagged chatter marks across the flange face and threatening to shatter the $\$400$ carbide tool into lethal shrapnel.
+Inside the advanced manufacturing facility of an industrial pump manufacturer, the ambient sound is normally a rhythmic, oiled hum. But this morning, from Bay 4, a piercing, deafening screech echoes through the building. The safety glass on a $500{,}000$ five-axis vertical machining center (VMC) is vibrating violently. Inside the enclosure, a four-flute solid carbide end-mill is cutting the sealing face of a $316\text{L}$ stainless-steel centrifugal pump casing. The cutter is vibrating uncontrollably in a violent state of **regenerative chatter**, carving jagged chatter marks across the flange face and threatening to fracture the $\$400$ carbide tool and scrap the casing.
 
 At the same time, across the aisle on the hydraulic test stand, an automated pressure relief loop is hunting in wild pressure surges. The hydraulic cooling loop supplies oil to the CNC machine's hydrostatic spindle bearings. A $4\text{--}20\text{ mA}$ pressure transmitter is reporting erratic signals, causing the proportional relief valve to oscillate wildly and starving the high-speed spindle of pressurized lubrication.
 
@@ -1187,7 +1187,7 @@ To compare the aluminum spindle setting (`400` {{key:ENTER}} `0.5` {{key:SFM}} $
 
 ### Dialing In CNC Milling Stability and Calibrating a Cavitating Pump Loop on the Stack
 
-Now follow the kinetic flow across the four registers as Kurt and Sarah solve both the chattering end-mill and the cavitating cooling loop simultaneously on the stack:
+The calculations for tool chatter stability and hydraulic loop dynamics resolve across the four registers:
 
 | Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Electrical Trades Scenario Walkthrough |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -1205,7 +1205,7 @@ The stack verified every critical machining and process parameter:
 
 ### Calibrating the Loop on the Stack and Solving Backward in {{key:Cᵥ}} and {{key:PMP}}
 
-Listen as the stack monitors the hydraulic clamping pressure and shop cooling loop:
+The hydraulic clamping pressure and shop cooling loop monitoring proceed on the stack:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |

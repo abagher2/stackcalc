@@ -417,7 +417,7 @@ hide:
   <section class="ec-section" id="pedagogy">
     <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
       <div>
-        <span class="text-xs font-mono uppercase text-sky-400 font-bold tracking-wider">// POSTFIX ARCHITECTURAL PEDAGOGY</span>
+        <span class="text-xs font-mono uppercase text-sky-400 font-bold tracking-wider">Postfix Architectural Pedagogy</span>
         <h2 class="ec-section-title m-0">Order of Operations Made Visible</h2>
       </div>
       <span class="text-xs font-mono text-slate-400 border border-white/10 px-2 py-0.5 rounded">RPN Stack Mechanics</span>
@@ -628,7 +628,7 @@ hide:
     <!-- Teenage Engineering-Grade Tactile Actuation Profile -->
     <div class="mt-8 p-6 rounded-xl bg-[#0B0E14] border border-sky-500/30 font-mono text-xs shadow-xl">
       <div class="flex flex-wrap justify-between items-center gap-2 mb-4 pb-3 border-b border-white/10">
-        <span class="text-sky-400 font-bold uppercase tracking-wider">// TE-SPEC 0400: TACTILE ACTUATION PROFILE &amp; FORCE CURVE</span>
+        <span class="text-sky-400 font-bold uppercase tracking-wider">Tactile Actuation Profile &amp; Force Curve</span>
         <span class="text-slate-400">400G PEAK &bull; 0.25MM TRAVEL &bull; 720HZ ACOUSTIC SNAP</span>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
@@ -680,24 +680,14 @@ FORCE (g)
         <h2 class="te-section-title">Curated Faceplate Architectures &amp; CMF Finishes</h2>
         <p class="text-sm text-gray-400 m-0">Modular faceplates slide on in under 10 seconds along internal dovetail rails without tools.</p>
       </div>
-      <span class="te-section-badge">6 EDITIONS &bull; MATTE POLYMERS &bull; LASER-ENGRAVED FOILS</span>
     </div>
 
     <div class="te-grid-3">
 
       <!-- 1. Stealth Industrial -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">ED-01 // STEALTH INDUSTRIAL</span>
-          <span class="te-card-status status-instock">● IN STOCK</span>
-        </div>
         <div class="te-card-viewport">
           <img src="../../assets/renders/edition_stealth_industrial.png" alt="Stealth Industrial SC-32 Edition" loading="lazy">
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">FACE: BLACK PLA</span>
-          <span class="te-card-spec-item">CHASSIS: PETG</span>
-          <span class="te-card-spec-item">KEYS: AZURE TPU</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Concentric Micro-Grooves</div>
@@ -714,17 +704,8 @@ FORCE (g)
 
       <!-- 2. Retrofuturism -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">ED-02 // RETROFUTURISM</span>
-          <span class="te-card-status status-instock">● IN STOCK</span>
-        </div>
         <div class="te-card-viewport">
           <img src="../../assets/renders/edition_retrofuturism.png" alt="Retrofuturism SC-32 Edition" loading="lazy">
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">FACE: POLAR WHITE</span>
-          <span class="te-card-spec-item">CHASSIS: WHITE PLA</span>
-          <span class="te-card-spec-item">KEYS: WHITE TPU</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Archival Polar White</div>
@@ -741,17 +722,8 @@ FORCE (g)
 
       <!-- 3. Voyager -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">ED-03 // VOYAGER</span>
-          <span class="te-card-status status-instock">● IN STOCK</span>
-        </div>
         <div class="te-card-viewport">
           <img src="../../assets/renders/edition_voyager.png" alt="Voyager SC-32 Edition" loading="lazy">
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">FACE: FROSTED PETG</span>
-          <span class="te-card-spec-item">CHASSIS: MIDNIGHT</span>
-          <span class="te-card-spec-item">KEYS: AZURE TPU</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Optical Translucent</div>
@@ -768,17 +740,8 @@ FORCE (g)
 
       <!-- 4. Supernova -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">ED-04 // SUPERNOVA</span>
-          <span class="te-card-status status-instock">● IN STOCK</span>
-        </div>
         <div class="te-card-viewport">
           <img src="../../assets/renders/edition_supernova.png" alt="Supernova SC-32 Edition" loading="lazy">
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">FACE: RED+GOLD SILK</span>
-          <span class="te-card-spec-item">CHASSIS: MIDNIGHT</span>
-          <span class="te-card-spec-item">KEYS: GRAY TPU</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Anisotropic Silk Sheen</div>
@@ -795,17 +758,8 @@ FORCE (g)
 
       <!-- 5. Deep Space -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">ED-05 // DEEP SPACE</span>
-          <span class="te-card-status status-instock">● IN STOCK</span>
-        </div>
         <div class="te-card-viewport">
           <img src="../../assets/renders/edition_deep_space.png" alt="Deep Space SC-32 Edition" loading="lazy">
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">FACE: TRICHROMATIC</span>
-          <span class="te-card-spec-item">CHASSIS: BLACK PLA</span>
-          <span class="te-card-spec-item">KEYS: AZURE TPU</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Trichromatic Silk PLA</div>
@@ -822,17 +776,8 @@ FORCE (g)
 
       <!-- 6. Synthwave -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">ED-06 // SYNTHWAVE</span>
-          <span class="te-card-status status-instock">● IN STOCK</span>
-        </div>
         <div class="te-card-viewport">
           <img src="../../assets/renders/edition_synthwave.png" alt="Synthwave SC-32 Edition" loading="lazy">
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">FACE: NEON PURPLE</span>
-          <span class="te-card-spec-item">CHASSIS: BLACK PLA</span>
-          <span class="te-card-spec-item">KEYS: AZURE TPU</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Dichromatic Violet Silk</div>
@@ -1017,7 +962,7 @@ FORCE (g)
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// KEYPAD MATRIX</span>
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">Keypad Matrix</span>
           <h3 class="font-bold text-base text-white mt-1 mb-2">400g Tactile Snap-Domes</h3>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
             Actuation threshold verified at 400g &plusmn; 15g across 100,000 continuous test cycles. Provides sharp physical mechanical confirmation without mushy rubber squish.
@@ -1030,7 +975,7 @@ FORCE (g)
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <span class="font-mono text-xs uppercase text-slate-400 font-bold">// REGULATORY COMPLIANCE</span>
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">Regulatory Compliance</span>
           <h3 class="font-bold text-base text-white mt-1 mb-2">Zero Wireless Radios</h3>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
             Zero Bluetooth, zero Wi-Fi, zero RF transmission hardware. Meets College Board SAT, AP Calculus, AP Physics, and ACT testing center calculator security standards.
@@ -1111,7 +1056,7 @@ FORCE (g)
     <div class="p-6 rounded-xl bg-slate-900/60 border border-amber-500/40 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-lg shadow-amber-950/20">
       <div class="space-y-2">
         <div class="flex items-center gap-2">
-          <span class="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider">// OFFICIAL DOCUMENTATION</span>
+          <span class="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider">Official Documentation</span>
           <span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono font-bold">Print Edition Available ($16.00)</span>
         </div>
         <h3 class="text-xl font-bold text-white">SC-32 Scientific Calculator Reference Manual</h3>

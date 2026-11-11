@@ -17,28 +17,6 @@ This reflection boundary formulation serves as a direct structural bridge across
 
 On real high-frequency transmission lines, distributed series conductor resistance from the radio-frequency skin effect and shunt dielectric conductance attenuate traveling waves exponentially as $e^{-\alpha z}$. In the complex plane, the Smith chart maps reflection coefficient $\Gamma = |\Gamma|e^{j\theta}$ directly to normalized impedance, where line attenuation causes impedance trajectories to spiral inward toward the $50\ \Omega$ center as reflected power diminishes.
 
-For our ice-detuned mountain repeater antenna with $Z_L = 35 - j25\ \Omega$ on a $Z_0 = 50\ \Omega$ coaxial feedline, the numerator impedance difference is $Z_L - Z_0 = -15 - j25\ \Omega$, whose magnitude is $\sqrt{(-15)^2 + (-25)^2} = \sqrt{225 + 625} = \sqrt{850} \approx 29.1548\ \Omega$. The denominator impedance sum is $Z_L + Z_0 = 85 - j25\ \Omega$, whose magnitude is $\sqrt{85^2 + (-25)^2} = \sqrt{7225 + 625} = \sqrt{7850} \approx 88.6002\ \Omega$. Dividing numerator by denominator gives the reflection magnitude and phase:
-
-$$|\Gamma| = \frac{\sqrt{850}}{\sqrt{7850}} = \sqrt{\frac{17}{157}} \approx \mathbf{0.3291}$$
-$$\theta = \operatorname{atan2}(-25, -15) - \operatorname{atan2}(-25, 85) = -120.96^\circ - (-16.39^\circ) = \mathbf{-104.57^\circ}$$
-
-Substituting $|\Gamma| \approx 0.3291$ into the standing-wave, return-loss, and mismatch-loss relations yields:
-
-$$\text{VSWR} = \frac{1 + 0.3291}{1 - 0.3291} = \frac{1.3291}{0.6709} \approx \mathbf{1.981 : 1}$$
-$$\text{RL}_{\text{dB}} = -20 \log_{10}(0.3291) \approx \mathbf{9.654\text{ dB}}$$
-$$\text{ML}_{\text{dB}} = -10 \log_{10}\left(1 - 0.3291^2\right) \approx \mathbf{0.498\text{ dB}}$$
-
-Because the reflected power fraction is $|\Gamma|^2 = 17 / 157 \approx \mathbf{10.828\%}$, our $50\text{ W}$ repeater transmitter suffers $50\text{ W} \times 0.10828 \approx \mathbf{5.414\text{ W}}$ ($+37.335\text{ dBm}$) of reflected power slamming back into the amplifier output stage, while $50\text{ W} - 5.414\text{ W} = \mathbf{44.586\text{ W}}$ ($89.172\%$) enters the antenna:
-
-| `{{key:SWR}}` | Reflection $\lvert\Gamma\rvert$ | Return Loss `{{keycap:RL}}` ($\text{dB}$) | Mismatch Loss $\text{ML}$ ($\text{dB}$) | Reflected Power $\lvert\Gamma\rvert^2$ ($\%$) | Transmitted Power $1-\lvert\Gamma\rvert^2$ ($\%$) |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| $1.00 : 1$ | $0.0000$ | $\infty\text{ dB}$ | $0.000\text{ dB}$ | $0.00\%$ | $100.00\%$ |
-| $1.20 : 1$ | $0.0909$ | $20.83\text{ dB}$ | $0.036\text{ dB}$ | $0.83\%$ | $99.17\%$ |
-| $1.50 : 1$ | $0.2000$ | $13.98\text{ dB}$ | $0.177\text{ dB}$ | $4.00\%$ | $96.00\%$ |
-| $1.98 : 1$ | $0.3291$ | $9.65\text{ dB}$ | $0.498\text{ dB}$ | $10.83\%$ | $89.17\%$ |
-| $3.00 : 1$ | $0.5000$ | $6.02\text{ dB}$ | $1.249\text{ dB}$ | $25.00\%$ | $75.00\%$ |
-| $6.00 : 1$ | $0.7143$ | $2.92\text{ dB}$ | $3.100\text{ dB}$ | $51.02\%$ | $48.98\%$ |
-
 In practical field engineering, an acceptable standing-wave ratio on a sweep meter does not guarantee an operational channel. Oxidized connector barrels, loose copper braid clamps, and weathered metallic brackets act as microscopic semiconductor diodes. Under high-power transmit carrier excitation, these non-linear junctions generate Passive Intermodulation (PIM) distortion products whose spectral spurs fall directly into the co-located receiver passband, blinding sensitive front-ends to weak signals.
 
 In the chapters that follow, we place the SC-50 RF & Microwave RPN calculator in the hands of field engineers confronting these exact challenges across three interconnected operational domains:
@@ -154,28 +132,6 @@ This reflection boundary formulation serves as a direct structural bridge across
 
 On real high-frequency transmission lines, distributed series conductor resistance from the radio-frequency skin effect and shunt dielectric conductance attenuate traveling waves exponentially as $e^{-\alpha z}$. In the complex plane, the Smith chart maps reflection coefficient $\Gamma = |\Gamma|e^{j\theta}$ directly to normalized impedance, where line attenuation causes impedance trajectories to spiral inward toward the $50\ \Omega$ center as reflected power diminishes.
 
-For our ice-detuned mountain repeater antenna with $Z_L = 35 - j25\ \Omega$ on a $Z_0 = 50\ \Omega$ coaxial feedline, the numerator impedance difference is $Z_L - Z_0 = -15 - j25\ \Omega$, whose magnitude is $\sqrt{(-15)^2 + (-25)^2} = \sqrt{225 + 625} = \sqrt{850} \approx 29.1548\ \Omega$. The denominator impedance sum is $Z_L + Z_0 = 85 - j25\ \Omega$, whose magnitude is $\sqrt{85^2 + (-25)^2} = \sqrt{7225 + 625} = \sqrt{7850} \approx 88.6002\ \Omega$. Dividing numerator by denominator gives the reflection magnitude and phase:
-
-$$|\Gamma| = \frac{\sqrt{850}}{\sqrt{7850}} = \sqrt{\frac{17}{157}} \approx \mathbf{0.3291}$$
-$$\theta = \operatorname{atan2}(-25, -15) - \operatorname{atan2}(-25, 85) = -120.96^\circ - (-16.39^\circ) = \mathbf{-104.57^\circ}$$
-
-Substituting $|\Gamma| \approx 0.3291$ into the standing-wave, return-loss, and mismatch-loss relations yields:
-
-$$\text{VSWR} = \frac{1 + 0.3291}{1 - 0.3291} = \frac{1.3291}{0.6709} \approx \mathbf{1.981 : 1}$$
-$$\text{RL}_{\text{dB}} = -20 \log_{10}(0.3291) \approx \mathbf{9.654\text{ dB}}$$
-$$\text{ML}_{\text{dB}} = -10 \log_{10}\left(1 - 0.3291^2\right) \approx \mathbf{0.498\text{ dB}}$$
-
-Because the reflected power fraction is $|\Gamma|^2 = 17 / 157 \approx \mathbf{10.828\%}$, our $50\text{ W}$ repeater transmitter suffers $50\text{ W} \times 0.10828 \approx \mathbf{5.414\text{ W}}$ ($+37.335\text{ dBm}$) of reflected power slamming back into the amplifier output stage, while $50\text{ W} - 5.414\text{ W} = \mathbf{44.586\text{ W}}$ ($89.172\%$) enters the antenna:
-
-| `{{key:SWR}}` | Reflection $\lvert\Gamma\rvert$ | Return Loss `{{keycap:RL}}` ($\text{dB}$) | Mismatch Loss $\text{ML}$ ($\text{dB}$) | Reflected Power $\lvert\Gamma\rvert^2$ ($\%$) | Transmitted Power $1-\lvert\Gamma\rvert^2$ ($\%$) |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| $1.00 : 1$ | $0.0000$ | $\infty\text{ dB}$ | $0.000\text{ dB}$ | $0.00\%$ | $100.00\%$ |
-| $1.20 : 1$ | $0.0909$ | $20.83\text{ dB}$ | $0.036\text{ dB}$ | $0.83\%$ | $99.17\%$ |
-| $1.50 : 1$ | $0.2000$ | $13.98\text{ dB}$ | $0.177\text{ dB}$ | $4.00\%$ | $96.00\%$ |
-| $1.98 : 1$ | $0.3291$ | $9.65\text{ dB}$ | $0.498\text{ dB}$ | $10.83\%$ | $89.17\%$ |
-| $3.00 : 1$ | $0.5000$ | $6.02\text{ dB}$ | $1.249\text{ dB}$ | $25.00\%$ | $75.00\%$ |
-| $6.00 : 1$ | $0.7143$ | $2.92\text{ dB}$ | $3.100\text{ dB}$ | $51.02\%$ | $48.98\%$ |
-
 In practical field engineering, an acceptable standing-wave ratio on a sweep meter does not guarantee an operational channel. Oxidized connector barrels, loose copper braid clamps, and weathered metallic brackets act as microscopic semiconductor diodes. Under high-power transmit carrier excitation, these non-linear junctions generate Passive Intermodulation (PIM) distortion products whose spectral spurs fall directly into the co-located receiver passband, blinding sensitive front-ends to weak signals.
 
 ### Conductor Skin Depth and Microwave Surface Conduction
@@ -287,7 +243,7 @@ The **SC-50** combines **Native Complex RF Mode** ({{key:CMPLX}}, activating the
 
 ### Evaluating Complex Repeater Mismatch, Return Loss, and Reflected Watts on the Stack
 
-Observing how complex numbers circulate through the four-register stack clarifies the feedline diagnosis. Opening Native Complex Mode and keying the vector impedance thirty-five minus twenty-five $j$ ohms packs the complex load into Register X. Striking the {{keycap:SWR}} softkey immediately evaluates the reflection coefficient magnitude and projects a standing wave ratio of one point nine eight to one into X, while automatically updating the Smith Chart logging registers in {{key:▦}}. Re-entering the load and pressing {{keycap:RL}} computes the return loss of nine point six five decibels in Register X. Converting the transmitter's fifty thousand milliwatts into decibel-milliwatts in Register X yields forty-six point nine nine dBm; subtracting the return loss isolates the reflected power level of thirty-seven point three four dBm. Finally, pressing {{key:▸mW}} and dividing by one thousand drops five point four two watts of destructive reflected power directly into Register X:
+Evaluating complex load impedance ($Z_L = 35 - j25\ \Omega$), standing-wave ratio, return loss, and reflected power on the transmission line resolves across the four registers:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -319,7 +275,7 @@ To cancel the antenna's $+j40\ \Omega$ inductive reactance and simultaneously pr
 
 ### Designing Quarter-Wave Stubs, L-Networks, and Resonant Tanks on the Stack
 
-Follow the impedance matching synthesis across the stack. Entering the one hundred forty-six megahertz carrier frequency into {{key:λ/L}} yields a free-space wavelength of two point zero five meters in Register X, which dividing by four converts to a zero point five one meter quarter-wave dimension. Loading the fifty-ohm source and one hundred twelve point five-ohm load into {{key:TLN}} calculates the geometric mean, placing an exact seventy-five-ohm transformer impedance into Register X. Next, entering the fifty-ohm system and ten-ohm transistor load into {{key:Γ}} yields a nodal quality factor of two point zero zero. Finally, entering one hundred nanohenries and ten picofarads into {{key:f₀}} evaluates the tank resonance, delivering one hundred fifty-nine point one five megahertz into Register X:
+Synthesizing quarter-wave coaxial transformers, reactive L-network parameters, and LC resonant tanks proceeds across the four registers:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -597,7 +553,7 @@ The **SC-50** chains logarithmic milliwatt conversions ({{key:dBm}}, {{key:▸dB
 
 ### Computing Free-Space Loss and Received Signal Power Across the Valley on the Stack
 
-Trace the microwave link budget across the RPN stack. Keying the two hundred fifty milliwatt transmitter power and pressing {{key:▸dBm}} places twenty-three point nine eight dBm into Register X, and entering the fifty-two decibel combined dish gain lifts the transmit power into Register Z while holding fifty-two in Y. Keying the twelve-kilometer distance into Y and fifty-eight hundred megahertz into X readies the stack for the {{key:FSL}} key, which evaluates the free-space path loss of one hundred twenty-nine point two nine decibels in X while preserving transmit power and antenna gain in the upper registers. Striking {{key:LNK}} combines all three registers in a single operation, dropping the unfaded received signal level of minus fifty-three point three one dBm smoothly into Register X:
+The microwave link budget evaluates transmitter power ($250\text{ mW}$), combined antenna gains ($52\text{ dBi}$), and free-space path loss ($12\text{ km}$ at $5.8\text{ GHz}$) across the stack:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -936,7 +892,7 @@ The **SC-50** executes two-stage and multi-stage Friis noise cascades ({{key:NF}
 
 ### Comparing Masthead LNA Placement Against Coaxial Cable Loss on the Stack
 
-To verify the masthead LNA upgrade on the stack, follow the cascaded noise factor calculations across the four registers as the team tests the low-noise amplifier placement. Entering the linear noise factor and gain of the coaxial cable alongside the receiver's noise factor into {{key:NF}} computes a combined downstream factor of twenty-five point one two in Register X. Swapping registers and placing the masthead amplifier with its noise factor of one point four one and gain of one hundred ahead of that downstream block evaluates the total system noise factor of one point six five, delivering a pristine two point one nine decibel system noise figure into Register X. Reversing the order with a three-decibel lossy cable placed ahead of the amplifier sends the noise factor climbing to two point five zero, illustrating how front-end attenuation degrades receiver sensitivity:
+Evaluating the masthead LNA upgrade across the cascaded noise factor equation proceeds on the stack:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -971,7 +927,7 @@ The four registers smoothly handled the entire cascade: establishing an extraord
 
 Before ascending the antenna tower or servicing feedhorns near active transmitter arrays, Jackson enforces strict Maximum Permissible Exposure (MPE) radio-frequency safety rules, locking out high-power amplifiers or calculating minimum power-density standoff distances so technicians are never exposed to hazardous non-ionizing electromagnetic radiation.
 
-Hear the kinetic movement of numbers across the stack as the satellite telemetry channel is characterized. Keying the third-order intercept of plus eight dBm into Register Y and the one-megahertz channel bandwidth into Register X allows the {{key:Pₙ}} command to evaluate the thermal noise floor of minus one hundred thirteen point nine eight dBm in X while retaining intercept power in Y. Striking {{key:FDR}} computes the two-thirds dynamic range difference, placing eighty-one point three two decibels of spurious-free dynamic range into Register X. Entering the one-megahertz bandwidth and linear signal-to-noise ratio of fifteen into {{key:C/B}} calculates the Shannon capacity of four million bits per second. Finally, keying the four hundred thirty-seven megahertz carrier and seven thousand five hundred meter-per-second closure speed into {{key:Δf}} places the one-way downlink Doppler shift of ten point nine three kilohertz into X and the two-way radar shift of twenty-one point eight seven kilohertz into Y:
+Characterizing the satellite telemetry channel—evaluating thermal noise floor, spurious-free dynamic range, channel capacity, and Doppler shift—resolves on the stack:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |

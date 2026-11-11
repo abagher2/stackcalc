@@ -63,35 +63,23 @@ hide:
     <span class="ec-breadcrumb-current">Products &amp; Manipulatives</span>
   </nav>
 
-  <!-- Store Header: Teenage Engineering Technical Directory -->
+  <!-- Store Header: Product Directory -->
   <header class="te-catalog-header">
     <div class="te-header-meta">
-      <span class="te-header-meta-tag">STACKCALC HARDWARE DIRECTORY</span>
+      <span class="te-header-meta-tag">PRODUCT DIRECTORY</span>
       <span>•</span>
-      <span>REV 2.4</span>
-      <span>•</span>
-      <span>MATTE PLA 2.0+</span>
-      <span>•</span>
-      <span>42MM GRIDFINITY STANDARD</span>
+      <span>HARDWARE &amp; TACTILE INSTRUMENTS</span>
     </div>
     <h1 class="te-catalog-headline">Tactile Instruments &amp; Classroom Manipulatives</h1>
     <p class="te-catalog-subhead">
-      Dedicated handheld Reverse Polish Notation calculators, precision physical math manipulatives, modular desk stands, and 100% free open-source CAD/STL downloads. Engineered for focus, tactile feedback, and concrete mathematical mastery.
+      Dedicated handheld Reverse Polish Notation calculators, precision physical math manipulatives, modular desk stands, and 100% free open-source CAD downloads. Engineered for focus, tactile feedback, and concrete mathematical mastery.
     </p>
 
-    <!-- eBay-Style Live Trust & Guarantee Status Strip -->
+    <!-- Storefront Quick Links -->
     <div class="te-trust-strip">
       <div class="te-trust-item">
         <span class="text-emerald-400 font-bold">&check;</span>
         <span>SAT &bull; ACT &bull; AP Exam Permitted (No RF)</span>
-      </div>
-      <div class="te-trust-item text-xs text-emerald-400">
-        <span>✓</span>
-        <span>Free US Priority Shipping on Orders $35+</span>
-      </div>
-      <div class="te-trust-item text-xs text-sky-400">
-        <span>⚙</span>
-        <span>"No Lost Piece Left Behind" Lifetime Guarantee</span>
       </div>
       <div class="te-trust-item">
         <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-trust-link-etsy">
@@ -99,8 +87,8 @@ hide:
         </a>
       </div>
       <div class="te-trust-item">
-        <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="color: #38BDF8; font-weight: 700; text-decoration: none;">
-          <span>Slant 3D Portal &amp; Parts ↗</span>
+        <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="color: #FA6B05; font-weight: 700; text-decoration: none;">
+          <span>Printables Profile ↗</span>
         </a>
       </div>
       <div class="te-trust-item">
@@ -120,54 +108,14 @@ hide:
       </div>
     </div>
 
-    <!-- Aesthetic Overview Architecture Strip -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; margin-top: 1.25rem; margin-bottom: 1.5rem; font-family: 'Space Mono', monospace; font-size: 0.75rem;">
-      <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1rem;">
-        <span style="color: #38BDF8; font-weight: 700; letter-spacing: 0.04em;">01 &bull; HARDWARE INSTRUMENTS</span>
-        <div style="color: #94A3B8; font-size: 0.76rem; margin-top: 0.35rem; line-height: 1.4;">Bare-metal RP2350 silicon, tactile microswitches, zero soldering required.</div>
-      </div>
-      <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1rem;">
-        <span style="color: #FFBF00; font-weight: 700; letter-spacing: 0.04em;">02 &bull; TACTILE MANIPULATIVES</span>
-        <div style="color: #94A3B8; font-size: 0.76rem; margin-top: 0.35rem; line-height: 1.4;">Proportional tactile blocks with debossed geometry and 42mm Gridfinity fit.</div>
-      </div>
-      <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1rem;">
-        <span style="color: #10B981; font-weight: 700; letter-spacing: 0.04em;">03 &bull; BOOKS &amp; 3MF BLUEPRINTS</span>
-        <div style="color: #94A3B8; font-size: 0.76rem; margin-top: 0.35rem; line-height: 1.4;">Paperback/Hardcover reference manuals, plus 100% free open-source STLs.</div>
-      </div>
-    </div>
-
-    <!-- Teenage Engineering Mechanical Segmented Filter Bar -->
+    <!-- Filter Bar -->
     <div class="te-filter-nav" role="tablist">
-      <button type="button" class="te-filter-btn active" data-filter="all" onclick="filterCatalog('all', this)" role="tab">
-        <span class="te-btn-idx">00</span>
-        <span>ALL SYSTEMS</span>
-        <span class="te-btn-count">13</span>
-      </button>
-      <button type="button" class="te-filter-btn" data-filter="calculators" onclick="filterCatalog('calculators', this)" role="tab">
-        <span class="te-btn-idx">01</span>
-        <span>RPN CALCULATORS</span>
-        <span class="te-btn-count">03</span>
-      </button>
-      <button type="button" class="te-filter-btn" data-filter="manipulatives" onclick="filterCatalog('manipulatives', this)" role="tab">
-        <span class="te-btn-idx">02</span>
-        <span>CLASSROOM MANIPULATIVES</span>
-        <span class="te-btn-count">07</span>
-      </button>
-      <button type="button" class="te-filter-btn" data-filter="accessories" onclick="filterCatalog('accessories', this)" role="tab">
-        <span class="te-btn-idx">03</span>
-        <span>STANDS &amp; REFILLS</span>
-        <span class="te-btn-count">03</span>
-      </button>
-      <button type="button" class="te-filter-btn" data-filter="curriculum" onclick="filterCatalog('curriculum', this)" role="tab">
-        <span class="te-btn-idx">04</span>
-        <span>BOOKS &amp; CURRICULUM</span>
-        <span class="te-btn-count">04</span>
-      </button>
-      <button type="button" class="te-filter-btn" data-filter="downloads" onclick="filterCatalog('downloads', this)" role="tab">
-        <span class="te-btn-idx">05</span>
-        <span>FREE 3D STLs</span>
-        <span class="te-btn-count">ZIP</span>
-      </button>
+      <button type="button" class="te-filter-btn active" data-filter="all" onclick="filterCatalog('all', this)" role="tab">All Products</button>
+      <button type="button" class="te-filter-btn" data-filter="calculators" onclick="filterCatalog('calculators', this)" role="tab">Calculators</button>
+      <button type="button" class="te-filter-btn" data-filter="manipulatives" onclick="filterCatalog('manipulatives', this)" role="tab">Manipulatives</button>
+      <button type="button" class="te-filter-btn" data-filter="accessories" onclick="filterCatalog('accessories', this)" role="tab">Stands &amp; Pouches</button>
+      <button type="button" class="te-filter-btn" data-filter="curriculum" onclick="filterCatalog('curriculum', this)" role="tab">Books &amp; Curriculum</button>
+      <button type="button" class="te-filter-btn" data-filter="downloads" onclick="filterCatalog('downloads', this)" role="tab">Free 3D Printables</button>
     </div>
   </header>
 
@@ -176,53 +124,10 @@ hide:
        Complete with real hardware faceplates and interactive swatch switcher
        ========================================================================== -->
   <section id="featured">
-    <!-- SC-6 Book Spotlight Feature -->
-    <div class="te-spotlight-card my-6" style="border: 1px solid rgba(255, 153, 0, 0.4); background: linear-gradient(135deg, rgba(255, 153, 0, 0.08), rgba(15, 23, 42, 0.95));">
-      <div class="te-spotlight-left" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; background: #0E1116; border-right: 1px solid var(--te-border-subtle);">
-        <img src="../assets/manuals/sc6_book_cover_square.png" alt="From Blocks to the Stack Book Cover" style="max-height: 280px; max-width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
-      </div>
-      <div class="te-spotlight-right" style="border-right: 1px solid var(--te-border-subtle);">
-        <div>
-          <div class="te-product-id text-amber-400">OFFICIAL BOOKSTORE EDITION • GRADES 3–6</div>
-          <h3 class="te-spotlight-title">From Blocks to the Stack</h3>
-          <div class="text-sm font-semibold text-slate-300 mt-1">Hands-On Math &amp; the SC-6 Stack Calculator</div>
-          <div class="te-price-headline" style="margin-top: 0.5rem;">
-            <span class="te-price-main">$16.00</span>
-            <span class="te-price-note">✓ Print Book on Amazon Prime &bull; Spiral Workbooks on Lulu</span>
-          </div>
-          <p class="te-card-desc" style="font-size: 0.92rem; margin-top: 0.75rem;">
-            The student handbook, parent guide, and classroom companion connecting 3D-printed math blocks with the 4-level number stack ($X, Y, Z, T$). 9 illustrated chapters, 25 complete teacher lesson plans, and engine-verified stack traces.
-          </p>
-        </div>
-        <div class="te-actions-row" style="flex-wrap: wrap; gap: 0.5rem;">
-          <a href="sc6-book/" class="te-btn-primary">Book Overview &amp; TOC &rarr;</a>
-          <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="te-btn-primary" style="background-color: #FF9900; border-color: #FF9900; color: #111827; font-weight: 800;">Order on Amazon ($16) ↗</a>
-          <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #FF9900; color: #FF9900; font-weight: 700;">Middle School Workbook ↗</a>
-          <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #0284C7; color: #38BDF8; font-weight: 700;">Spiral Workbooks on Lulu ↗</a>
-          <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #38BDF8; color: #38BDF8; font-weight: 700;">Slant 3D Manipulatives ↗</a>
-        </div>
-      </div>
-      <div class="p-8 bg-black/40 flex flex-col justify-center">
-        <h4 class="text-white font-semibold mb-3 font-mono text-sm uppercase text-amber-400">Book Highlights:</h4>
-        <ul class="text-sm text-gray-300 space-y-2.5 m-0 p-0 list-none">
-          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 9 comprehensive chapters &amp; 4 appendices</li>
-          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Pairs with 9 modular 3D-printed manipulative studios</li>
-          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 25 complete classroom lesson plans for Grades 3&ndash;6</li>
-          <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 100% free open-source digital edition available online</li>
-        </ul>
-      </div>
-    </div>
-
     <div class="te-spotlight-card">
 
       <!-- Left Column: Unobstructed Hardware Viewport & Real Faceplate Matrix -->
       <div class="te-spotlight-left">
-        <!-- Pre-Image Header Bar (Never overlapping the product!) -->
-        <div class="te-viewport-header">
-          <span class="te-viewport-sku">SC-32 SCIENTIFIC INSTRUMENT</span>
-          <span class="te-viewport-status">● READY TO SHIP [24H]</span>
-        </div>
-
         <!-- Clean Media Viewport -->
         <div class="te-spotlight-viewport">
           <img id="sc32-showcase-image" src="../assets/renders/etsy/combo_sc32_cosmos-square.png" alt="StackCalc SC-32 Scientific RPN Calculator - Cosmos Champion Edition" loading="eager">
@@ -231,7 +136,7 @@ hide:
         <!-- Interactive Tactile Faceplate Swatch Selector -->
         <div class="te-faceplate-section">
           <div class="te-faceplate-header">
-            <span class="te-faceplate-label">Modular Faceplate Architecture:</span>
+            <span class="te-faceplate-label">Modular Faceplates:</span>
             <span class="text-xs text-sky-400 font-mono">Tool-Free 10s Dovetail Swap</span>
           </div>
 
@@ -287,7 +192,7 @@ hide:
 
           <!-- Dynamic CMF Material Readout Strip -->
           <div class="te-cmf-readout" id="sc32-cmf-panel">
-            <strong>[ACTIVE CMF]</strong> <span id="cmf-faceplate">FACEPLATE: Sunlu Midnight PLA 2.0+ (15.2:1 AAA Champion)</span> &bull; <span id="cmf-chassis">CHASSIS: Midnight Navy PLA 2.0+</span> &bull; <span id="cmf-keys">KEYS: Tactile Light Gray TPU 95A</span> &bull; <span id="cmf-foil">MARKING: Direct 1064nm IR Micro-Foam Stark White</span>
+            <strong>CMF FINISH:</strong> <span id="cmf-faceplate">FACEPLATE: Sunlu Midnight PLA 2.0+ (15.2:1 AAA Champion)</span> &bull; <span id="cmf-chassis">CHASSIS: Midnight Navy PLA 2.0+</span> &bull; <span id="cmf-keys">KEYS: Tactile Light Gray TPU 95A</span> &bull; <span id="cmf-foil">MARKING: Direct 1064nm IR Micro-Foam Stark White</span>
           </div>
 
           <!-- Quick Thumbnails Strip -->
@@ -320,14 +225,8 @@ hide:
       <!-- Right Column: Specs, Certification & Buy Box -->
       <div class="te-spotlight-right">
         <div>
-          <div class="te-product-id">RP2350 HARDWARE SILICON • 4-LINE POSTFIX STACK</div>
+          <div class="te-product-id">RP2350 Hardware Silicon &bull; 4-Line RPN Stack</div>
           <h2 class="te-spotlight-title">SC-32 Scientific RPN Calculator</h2>
-
-          <div class="te-rating-row">
-            <span class="te-rating-tag">&check; SAT &bull; ACT &bull; AP APPROVED</span>
-            <span class="text-emerald-400 font-mono text-xs font-bold ml-2">&bull; BATCH 04 IN PRODUCTION</span>
-            <span class="text-gray-400 font-mono text-xs ml-2">&bull; ZERO SOLDERING REQUIRED</span>
-          </div>
 
           <!-- Teenage Engineering Technical Field Spec Grid -->
           <div class="te-field-specs">
@@ -361,7 +260,7 @@ hide:
           <div class="te-price-tier-box">
             <div class="te-price-headline">
               <span class="te-price-main">$89.00</span>
-              <span class="te-price-note">&check; Free US Priority Shipping &bull; 100% Pre-Soldered Maker Kit</span>
+              <span class="te-price-note">Free US Priority Shipping &bull; 100% Pre-Soldered Maker Kit</span>
             </div>
             <div class="te-tier-options">
               <div class="te-tier-opt">
@@ -411,26 +310,16 @@ hide:
         <h2 class="te-section-title">Classroom Physical Manipulatives</h2>
         <p class="text-sm text-gray-400 m-0">Hands-on architectural math tools designed for standard tabletop and desk use.</p>
       </div>
-      <span class="te-section-badge">★ TOP 3 CORE KITS &bull; 42MM GRIDFINITY STANDARD &bull; NON-TOXIC PLA 2.0+</span>
     </div>
 
     <div class="te-grid-3">
 
       <!-- 1. Fraction Studio -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">FRACTION TOWERS</span>
-          <span class="te-card-status status-instock">● IN STOCK [SHIPS 24H]</span>
-        </div>
         <div class="te-card-viewport">
           <a href="fraction-studio/">
             <img src="../assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg" alt="Fraction Studio Proportional Towers" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">GRID: 42mm</span>
-          <span class="te-card-spec-item">GRADES: 3&ndash;8</span>
-          <span class="te-card-spec-item">NOTATION: 4-FACE</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Fractions &amp; Equivalence</div>
@@ -442,7 +331,6 @@ hide:
         <div class="te-card-footer">
           <div>
             <span class="te-card-price">$24.99 &ndash; $48.00</span>
-            <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
           </div>
           
           <div class="te-card-actions">
@@ -455,19 +343,10 @@ hide:
 
       <!-- 2. Prime Factor Studio -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">PRIME FACTOR TOWERS</span>
-          <span class="te-card-status status-instock">● IN STOCK [SHIPS 24H]</span>
-        </div>
         <div class="te-card-viewport">
           <a href="prime-factor-studio/">
             <img src="../assets/renders/etsy/prime-factor-studio-real-staircase-iso-hero-tight.jpg" alt="Prime Factor Studio &amp; Factor Towers" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">BLOCKS: 29 PROPORTIONAL</span>
-          <span class="te-card-spec-item">GRADES: 3&ndash;9</span>
-          <span class="te-card-spec-item">HEIGHT: k·log(p)</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Prime Factorization &amp; Logarithms</div>
@@ -479,7 +358,6 @@ hide:
         <div class="te-card-footer">
           <div>
             <span class="te-card-price">$46.00</span>
-            <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
           </div>
           <div class="te-card-actions">
             <a href="prime-factor-studio/" class="te-card-btn">Specs &rarr;</a>
@@ -491,19 +369,10 @@ hide:
 
       <!-- 3. Place Value Studio -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">PLACE VALUE TRAYS</span>
-          <span class="te-card-status status-instock">● IN STOCK [SHIPS 24H]</span>
-        </div>
         <div class="te-card-viewport">
           <a href="place-value/">
             <img src="../assets/renders/etsy/place-value-studio-hero-square.png" alt="Place Value Studio Dual Trays & 53 Blocks" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">GRID: 42mm</span>
-          <span class="te-card-spec-item">GRADES: 1&ndash;5</span>
-          <span class="te-card-spec-item">BLOCKS: 53 TOTAL</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Place Value, Addition &amp; Decimals</div>
@@ -515,7 +384,6 @@ hide:
         <div class="te-card-footer">
           <div>
             <span class="te-card-price">$38.00</span>
-            <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
           </div>
           <div class="te-card-actions">
             <a href="place-value/" class="te-card-btn">Specs &rarr;</a>
@@ -541,19 +409,10 @@ hide:
 
       <!-- 2. Sectional Planetary Clock -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">PLANETARY CLOCK</span>
-          <span class="te-card-status" style="background: rgba(250, 107, 5, 0.15); color: #FA6B05; border: 1px solid rgba(250, 107, 5, 0.3);">FREE ON PRINTABLES</span>
-        </div>
         <div class="te-card-viewport">
           <a href="classroom-clock/">
             <img src="../assets/renders/clock-classroom-hero.png" alt="Sectional Classroom Planetary Clock" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">RATIO: 12:1 GEARS</span>
-          <span class="te-card-spec-item">GRADES: K&ndash;5</span>
-          <span class="te-card-spec-item">GRID: 2x1 STAND</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Time &amp; Gear Mechanics</div>
@@ -564,8 +423,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">FREE 3MF</span>
-            <span class="te-card-shipping-tag">Open Source</span>
+            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">Free 3MF</span>
           </div>
           
           <div class="te-card-actions">
@@ -577,19 +435,10 @@ hide:
 
       <!-- 3. Algebra Boxes & Factoring Stage -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">ALGEBRA TILES</span>
-          <span class="te-card-status" style="background: rgba(250, 107, 5, 0.15); color: #FA6B05; border: 1px solid rgba(250, 107, 5, 0.3);">FREE ON PRINTABLES</span>
-        </div>
         <div class="te-card-viewport">
           <a href="algebra-boxes/">
             <img src="../assets/renders/algebra-boxes-hero.png" alt="Algebra Boxes and Polynomial Trays" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">TILES: x², x, 1</span>
-          <span class="te-card-spec-item">GRADES: 7&ndash;11</span>
-          <span class="te-card-spec-item">STAGE: DUAL-L</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Algebra &amp; Factoring</div>
@@ -600,8 +449,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">FREE 3MF</span>
-            <span class="te-card-shipping-tag">Open Source</span>
+            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">Free 3MF</span>
           </div>
           
           <div class="te-card-actions">
@@ -613,19 +461,10 @@ hide:
 
       <!-- 4. Dual Ten-Frames & Carry Shelf -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">TEN-FRAMES</span>
-          <span class="te-card-status" style="background: rgba(250, 107, 5, 0.15); color: #FA6B05; border: 1px solid rgba(250, 107, 5, 0.3);">FREE ON PRINTABLES</span>
-        </div>
         <div class="te-card-viewport">
           <a href="ten-frames/">
             <img src="../assets/renders/ten-frames-real-front-badged-square.png" alt="Dual Ten-Frames and Carry Shelf Physical Print" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">BLOCKS: 20 SQUARE MINIBLOCKS</span>
-          <span class="te-card-spec-item">CARRY: 2U REGROUP CUBE</span>
-          <span class="te-card-spec-item">GRADES: K&ndash;3</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Place Value &amp; Counting</div>
@@ -636,8 +475,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">FREE 3MF</span>
-            <span class="te-card-shipping-tag">Open Source</span>
+            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">Free 3MF</span>
           </div>
           
           <div class="te-card-actions">
@@ -649,19 +487,10 @@ hide:
 
       <!-- 5. Math Domino Studio & 12-Frame Set -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">MATH DOMINOES</span>
-          <span class="te-card-status" style="background: rgba(250, 107, 5, 0.15); color: #FA6B05; border: 1px solid rgba(250, 107, 5, 0.3);">FREE ON PRINTABLES</span>
-        </div>
         <div class="te-card-viewport">
           <a href="math-dominoes/">
             <img src="../assets/renders/etsy/dominoes-studio-hero-square.png" alt="Math Domino Studio & 12-Frame Set" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">PIPS: 1064nm FOAMED</span>
-          <span class="te-card-spec-item">GRADES: PRE-K&ndash;4</span>
-          <span class="te-card-spec-item">LID: DOUBLES SLOTS</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Early Numeracy &amp; Doubles</div>
@@ -672,8 +501,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">FREE 3MF</span>
-            <span class="te-card-shipping-tag">Open Source</span>
+            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">Free 3MF</span>
           </div>
           
           <div class="te-card-actions">
@@ -685,19 +513,10 @@ hide:
 
       <!-- 6. Probability Dice & Spinner Pack -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">PROBABILITY DICE</span>
-          <span class="te-card-status" style="background: rgba(250, 107, 5, 0.15); color: #FA6B05; border: 1px solid rgba(250, 107, 5, 0.3);">FREE ON PRINTABLES</span>
-        </div>
         <div class="te-card-viewport">
           <a href="dice-and-spinner/">
             <img src="../assets/renders/dice-spinner-hero.png" alt="Probability Dice and Modular Spinner Pack" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">DISCS: 4/6/8/12</span>
-          <span class="te-card-spec-item">GRADES: 4&ndash;10</span>
-          <span class="te-card-spec-item">HUB: CERAMIC BEARINGS</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Probability &amp; Data</div>
@@ -708,8 +527,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">FREE 3MF</span>
-            <span class="te-card-shipping-tag">Open Source</span>
+            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">Free 3MF</span>
           </div>
           
           <div class="te-card-actions">
@@ -721,19 +539,10 @@ hide:
 
       <!-- 7. Unit Circle & Trig Volvelle -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">TRIG VOLVELLE</span>
-          <span class="te-card-status" style="background: rgba(250, 107, 5, 0.15); color: #FA6B05; border: 1px solid rgba(250, 107, 5, 0.3);">FREE ON PRINTABLES</span>
-        </div>
         <div class="te-card-viewport">
           <a href="unit-circle-volvelle/">
             <img src="../assets/renders/unit-circle-volvelle-hero.png" alt="Unit Circle and Trigonometry Volvelle" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">DIAL: DUAL-DISC</span>
-          <span class="te-card-spec-item">GRADES: 9&ndash;COLLEGE</span>
-          <span class="te-card-spec-item">NOTATION: (cos, sin)</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Trigonometry &amp; Calculus</div>
@@ -744,8 +553,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">FREE 3MF</span>
-            <span class="te-card-shipping-tag">Open Source</span>
+            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">Free 3MF</span>
           </div>
           
           <div class="te-card-actions">
@@ -757,19 +565,10 @@ hide:
 
       <!-- 8. Counting Tiles & Planar Array Studio -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">COUNTING TILES</span>
-          <span class="te-card-status" style="background: rgba(250, 107, 5, 0.15); color: #FA6B05; border: 1px solid rgba(250, 107, 5, 0.3);">FREE ON PRINTABLES</span>
-        </div>
         <div class="te-card-viewport">
           <a href="counting-tiles/">
             <img src="../assets/renders/counting-tiles-hero.png" alt="Counting Tiles &amp; Planar Array Studio" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">TILES: 144 PIECES</span>
-          <span class="te-card-spec-item">GRADES: K&ndash;6</span>
-          <span class="te-card-spec-item">GRID: 3x1x13U BOX</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Cardinality &amp; Multiplication Arrays</div>
@@ -780,8 +579,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">FREE 3MF</span>
-            <span class="te-card-shipping-tag">Open Source</span>
+            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">Free 3MF</span>
           </div>
           
           <div class="te-card-actions">
@@ -793,19 +591,10 @@ hide:
 
       <!-- 9. SC-6 Quest Scoreboard & +10 Token Kit -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">QUEST SCOREBOARD</span>
-          <span class="te-card-status" style="background: rgba(250, 107, 5, 0.15); color: #FA6B05; border: 1px solid rgba(250, 107, 5, 0.3);">FREE ON PRINTABLES</span>
-        </div>
         <div class="te-card-viewport">
           <a href="quest-scoreboard/">
             <img src="../assets/manuals/quest_scoreboard_lid.png" alt="SC-6 Quest Scoreboard &amp; +10 Token Kit" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">TOKENS: 60x (+10)</span>
-          <span class="te-card-spec-item">SOCKETS: 1&ndash;10 &amp; 100</span>
-          <span class="te-card-spec-item">BADGE: (?) QUIZ</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Multi-Method Fluency &amp; Confidence</div>
@@ -816,8 +605,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">FREE 3MF</span>
-            <span class="te-card-shipping-tag">Open Source</span>
+            <span class="te-card-price" style="color: #FA6B05; font-size: 0.88rem;">Free 3MF</span>
           </div>
           
           <div class="te-card-actions">
@@ -840,26 +628,16 @@ hide:
         <h2 class="te-section-title">Calculators &amp; Digital Twin</h2>
         <p class="text-sm text-gray-400 m-0">Dedicated tactile hardware and bit-accurate iOS/watchOS software.</p>
       </div>
-      <span class="te-section-badge">HARDWARE SILICON &bull; watchOS &bull; iOS</span>
     </div>
 
     <div class="te-grid-3">
 
       <!-- SC-32 Scientific RPN Calculator (Flagship Hardware) -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">SC-32 SCIENTIFIC</span>
-          <span class="te-card-status status-instock">● READY TO SHIP [24H]</span>
-        </div>
         <div class="te-card-viewport">
           <a href="sc32-calculator/">
             <img id="grid-sc32-img" src="../assets/renders/etsy/combo_sc32_cosmos-square.png" alt="StackCalc SC-32 Scientific RPN Calculator - Cosmos Champion Edition" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">CORE: RP2350</span>
-          <span class="te-card-spec-item">STACK: 4-LINE RPN</span>
-          <span class="te-card-spec-item">LCD: 132&times;65</span>
         </div>
         <div class="te-card-swatches">
           <span class="te-card-swatches-label">Finish:</span>
@@ -882,7 +660,6 @@ hide:
         <div class="te-card-footer">
           <div>
             <span class="te-card-price">$89.00</span>
-            <span class="te-card-shipping-tag">&bull; 100% Pre-Soldered</span>
           </div>
           
           <div class="te-card-actions">
@@ -896,19 +673,10 @@ hide:
 
       <!-- SC-6 Elementary Edition -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">SC-6 ELEMENTARY</span>
-          <span class="te-card-status status-preorder">○ IN PROTOTYPING</span>
-        </div>
         <div class="te-card-viewport">
           <a href="sc6-elementary/">
             <img src="../assets/renders/sc6-elementary-hero.png" alt="StackCalc SC-6 Elementary Edition" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">STACK: 4-LINE XYZT</span>
-          <span class="te-card-spec-item">GRADES: 1&ndash;6</span>
-          <span class="te-card-spec-item">KEYS: TACTILE TPU</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Elementary RPN Calculator</div>
@@ -919,8 +687,7 @@ hide:
         </div>
         <div class="te-card-footer">
           <div>
-            <span class="te-card-price">$49.00 &ndash; $59.00</span>
-            <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
+            <span class="te-card-price">$79.00</span>
           </div>
           
           <div class="te-card-actions">
@@ -934,19 +701,10 @@ hide:
 
       <!-- Digital Twin App -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">COMPANION APP</span>
-          <span class="te-card-status status-free">★ FREE DOWNLOAD</span>
-        </div>
         <div class="te-card-viewport">
           <a href="../ios_app/">
             <img src="../assets/renders/sc32-utility-ortho.png" alt="StackCalc Digital Twin for iPhone and Apple Watch" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">PLATFORM: iOS / watchOS</span>
-          <span class="te-card-spec-item">ENGINE: 1:1 C SWIFT</span>
-          <span class="te-card-spec-item">HAPTICS: FULL TACTILE</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Bit-Accurate Emulation</div>
@@ -958,7 +716,6 @@ hide:
         <div class="te-card-footer">
           <div>
             <span class="te-card-price">Free</span>
-            <span class="te-card-shipping-tag">App Store Download</span>
           </div>
           <a href="../ios_app/" class="te-card-btn">App Store &rarr;</a>
         </div>
@@ -976,26 +733,16 @@ hide:
         <h2 class="te-section-title">Stands, Pouches &amp; Accessories</h2>
         <p class="text-sm text-gray-400 m-0">Modular packaging that transforms into ergonomic stands and protective gear.</p>
       </div>
-      <span class="te-section-badge">ZERO-WASTE RECONFIGURABLE &bull; SHORE 95A TPU</span>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- Puzzle Stand System -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">CALCULATOR STAND</span>
-          <span class="te-card-status status-instock">● IN STOCK [SHIPS 24H]</span>
-        </div>
         <div class="te-card-viewport">
           <a href="stands-and-pouches/">
             <img src="../assets/renders/puzzle-stand-seated.png" alt="Modular 3-in-1 Puzzle Stand" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">ANGLES: 78° &amp; 10°</span>
-          <span class="te-card-spec-item">MATERIAL: PETG</span>
-          <span class="te-card-spec-item">DOCK: TPU POUCH</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Ergonomic Stands</div>
@@ -1007,7 +754,6 @@ hide:
         <div class="te-card-footer">
           <div>
             <span class="te-card-price">$24.00</span>
-            <span class="te-card-shipping-tag">✓ Free US Ship $35+</span>
           </div>
           
           <div class="te-card-actions">
@@ -1020,19 +766,10 @@ hide:
 
       <!-- TPU Travel Pouch -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">BUMPER CASE</span>
-          <span class="te-card-status status-instock">● IN STOCK [SHIPS 24H]</span>
-        </div>
         <div class="te-card-viewport">
           <a href="stands-and-pouches/">
             <img src="../assets/renders/tpu-travel-pouch-hero.png" alt="Shock-Absorbing TPU Travel Pouch" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">POLYMER: TPU 95A</span>
-          <span class="te-card-spec-item">DROP: 2.0 METERS</span>
-          <span class="te-card-spec-item">CLIP: BINDER HOOK</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Protective Cases</div>
@@ -1044,7 +781,6 @@ hide:
         <div class="te-card-footer">
           <div>
             <span class="te-card-price">$18.00</span>
-            <span class="te-card-shipping-tag">✓ Ships with Calculator</span>
           </div>
           
           <div class="te-card-actions">
@@ -1057,19 +793,10 @@ hide:
 
       <!-- Replacement Parts Service -->
       <article class="te-card">
-        <div class="te-card-header">
-          <span class="te-card-sku">REPLACEMENT PARTS</span>
-          <span class="te-card-status status-instock">● ON-DEMAND [SLANT 3D]</span>
-        </div>
         <div class="te-card-viewport">
           <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer">
             <img src="../assets/renders/etsy/infographic-guarantee-safety-square.png" alt="Lifetime Replacement Parts Service via Slant 3D" loading="lazy">
           </a>
-        </div>
-        <div class="te-card-specs">
-          <span class="te-card-spec-item">FULFILLMENT: SLANT 3D</span>
-          <span class="te-card-spec-item">CAD: ARCHIVAL MATCH</span>
-          <span class="te-card-spec-item">PORTAL: ACTIVE</span>
         </div>
         <div class="te-card-body">
           <div class="te-card-category">Lifetime Parts &amp; Refill Service</div>
@@ -1081,7 +808,6 @@ hide:
         <div class="te-card-footer">
           <div>
             <span class="te-card-price">On-Demand</span>
-            <span class="te-card-shipping-tag">✓ Slant 3D Additive</span>
           </div>
           <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="te-card-btn" style="background-color: #38BDF8; color: #080B10; font-weight: 800;">Slant 3D Portal ↗</a>
         </div>
@@ -1099,7 +825,6 @@ hide:
         <h2 class="te-section-title">Curriculum Workbooks &amp; Problem Decks</h2>
         <p class="text-sm text-gray-400 m-0">Structured problem cards and teacher guides designed around tactile manipulatives.</p>
       </div>
-      <span class="te-section-badge">CRA CONTINUUM &bull; CCSS ALIGNED &bull; 60 CHALLENGE CARDS</span>
     </div>
 
     <!-- SC-6 Book Spotlight Feature -->
@@ -1109,12 +834,12 @@ hide:
       </div>
       <div class="te-spotlight-right" style="border-right: 1px solid var(--te-border-subtle);">
         <div>
-          <div class="te-product-id text-amber-400">OFFICIAL BOOKSTORE EDITION • GRADES 3–6</div>
+          <div class="te-product-id text-amber-400">Grades 3–6 Companion</div>
           <h3 class="te-spotlight-title">From Blocks to the Stack</h3>
           <div class="text-sm font-semibold text-slate-300 mt-1">Hands-On Math &amp; the SC-6 Stack Calculator</div>
           <div class="te-price-headline" style="margin-top: 0.5rem;">
             <span class="te-price-main">$16.00</span>
-            <span class="te-price-note">✓ Print Book on Amazon Prime &bull; Spiral Workbooks on Lulu</span>
+            <span class="te-price-note">Paperback on Amazon &bull; Spiral on Lulu</span>
           </div>
           <p class="te-card-desc" style="font-size: 0.92rem; margin-top: 0.75rem;">
             The student handbook, parent guide, and classroom companion connecting 3D-printed math blocks with the 4-level number stack ($X, Y, Z, T$). 9 illustrated chapters, 25 complete teacher lesson plans, and engine-verified stack traces.
@@ -1146,12 +871,12 @@ hide:
       </div>
       <div class="te-spotlight-right" style="border-right: 1px solid var(--te-border-subtle);">
         <div>
-          <div class="te-product-id text-sky-400">OFFICIAL REFERENCE MANUAL • VOLUME II &bull; HIGH SCHOOL TO PRO</div>
+          <div class="te-product-id text-sky-400">High School &bull; College &bull; Pro</div>
           <h3 class="te-spotlight-title">Thinking in the Stack</h3>
           <div class="text-sm font-semibold text-slate-300 mt-1">Postfix Computation &amp; Algorithmic Thinking with the StackCalc SC-32</div>
           <div class="te-price-headline" style="margin-top: 0.5rem;">
             <span class="te-price-main">$16.00</span>
-            <span class="te-price-note">✓ Paperback $16 &bull; Hardcover $28 &bull; Kindle / Free Online</span>
+            <span class="te-price-note">Paperback $16 &bull; Hardcover $28 &bull; Free Online</span>
           </div>
           <p class="te-card-desc" style="font-size: 0.92rem; margin-top: 0.75rem;">
             The comprehensive reference manual for the StackCalc SC-32 scientific hardware calculator. Explores 16-level RPN stack architecture, scientific trigonometry, logarithms, complex numbers, statistical registers, and postfix program design.
@@ -1182,12 +907,12 @@ hide:
       </div>
       <div class="te-spotlight-right" style="border-right: 1px solid var(--te-border-subtle);">
         <div>
-          <div class="te-product-id text-emerald-400">CLASSROOM LAB WORKBOOK • VOLUME III &bull; GRADES 6–8</div>
+          <div class="te-product-id text-emerald-400">Grades 6–8 Lab Workbook</div>
           <h3 class="te-spotlight-title">Middle School Math Lab</h3>
           <div class="text-sm font-semibold text-slate-300 mt-1">Hands-On Fractions, Integers, &amp; RPN with the StackCalc SC-6</div>
           <div class="te-price-headline" style="margin-top: 0.5rem;">
             <span class="te-price-main">$16.00</span>
-            <span class="te-price-note">✓ 128-Page Reproducible Lab Workbook on Amazon Prime</span>
+            <span class="te-price-note">128-Page Reproducible Lab Workbook on Amazon Prime</span>
           </div>
           <p class="te-card-desc" style="font-size: 0.92rem; margin-top: 0.75rem;">
             128-page reproducible curriculum workbook connecting physical Fraction &amp; Prime Factor blocks directly to SC-6 calculator exercises. Features station activity worksheets, lab record sheets, and stepped problem sets covering ratios, proportions, integers, and pre-algebra.
@@ -1213,11 +938,10 @@ hide:
     <div class="te-spotlight-card">
       <div class="te-spotlight-right" style="border-right: 1px solid var(--te-border-subtle);">
         <div>
-          <div class="te-product-id">CONCRETE-REPRESENTATIONAL-ABSTRACT • K-12</div>
           <h3 class="te-spotlight-title">Manipulative Investigation Decks &amp; Lab Guides</h3>
           <div class="te-price-headline" style="margin-top: 0.5rem;">
             <span class="te-price-main">$18.00 &ndash; $28.00</span>
-            <span class="te-price-note">✓ Free Classroom PDF Downloads Included</span>
+            <span class="te-price-note">Free Classroom PDF Downloads Included</span>
           </div>
           <p class="te-card-desc" style="font-size: 0.92rem; margin-top: 0.75rem;">
             60-card tactile problem decks and spiral-bound student laboratory workbooks. Each card walks students through the Concrete-Representational-Abstract (CRA) continuum: first testing quantities with physical blocks, then sketching diagrams, and finally recording equations.
@@ -1247,7 +971,6 @@ hide:
   <section id="downloads" class="ec-section">
     <div class="ec-maker-box">
       <div class="ec-maker-info">
-        <span class="te-card-status status-free mb-2">★ 100% FREE OPEN HARDWARE</span>
         <h3 class="ec-maker-title">Self-Manufacture With Your 3D Printer</h3>
         <p class="ec-maker-desc">
           Every physical manipulative, calculator enclosure, and desk stand in the StackCalc ecosystem is open hardware. Download print-tested STLs and 3MFs calibrated on Prusa research printers with PrusaSlicer, or download directly from Printables.
@@ -1279,7 +1002,6 @@ hide:
         <h2 class="te-section-title">Safety, Compliance &amp; Educator Guarantees</h2>
         <p class="text-sm text-gray-400 m-0">Engineered to meet rigorous standards for classroom health, testing, and longevity.</p>
       </div>
-      <span class="te-section-badge">ASTM F963 &bull; CPSIA &bull; FOOD-CONTACT PLA</span>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -1391,7 +1113,6 @@ hide:
         <h2 class="te-section-title">The Architecture of Understanding: Postfix vs. In-Fix</h2>
         <p class="text-sm text-gray-400 m-0">Why physical stacking and Reverse Polish Notation outperform legacy calculating tools.</p>
       </div>
-      <span class="te-section-badge">DESIGN MANIFESTO</span>
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.75rem;">

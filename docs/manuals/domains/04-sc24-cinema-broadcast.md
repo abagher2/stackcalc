@@ -133,7 +133,7 @@ The resulting color subcarrier was:
 $$f_{\text{sc}} = \frac{455}{2} \times \frac{4{,}500{,}000}{286} = \frac{315}{88}\text{ MHz} \approx 3.57954545\dots\text{ MHz}$$
 This $3.579545\text{ MHz}$ subcarrier compromise saved the burgeoning television industry billions of dollars in retrofitting costs, but it introduced a subtle, permanent temporal asymmetry into broadcast engineering.
 
-Because the video frame rate is dialed back by exactly one part in a thousand, each broadcast second takes one thousand and one thousandths of a physical second to pass. A counter that increments thirty whole frames per second therefore lags behind atomic wall-clock time by exactly one tenth of a percent: one second of drift every thousand seconds, accumulating three point six seconds of wall-clock lag across every nominal broadcast hour:
+Because the video frame rate is dialed back by exactly one part in a thousand, each broadcast second takes one thousand and one thousandths of a physical second to pass. A counter that increments thirty whole frames per second therefore lags behind atomic wall-clock time by exactly one tenth of a percent: one second of drift every thousand seconds, accumulating $3.6\text{ seconds}$ of wall-clock lag across every nominal broadcast hour:
 
 **Eq. 10.3 — NTSC Color Pulldown and Wall-Clock Drift Rate**
 $$R_{\text{NTSC}} = \frac{30}{1.001} = \frac{30{,}000}{1001} \approx 29.97003\text{ fps}$$
@@ -190,7 +190,7 @@ On the **SC-24**, packed `HH.MMSSFF` timecode arithmetic ({{key:+TC}}, {{key:-TC
 
 ### Immediate Stack Trace: Packed Timecode Rollovers, Overcrank Scaling, and NTSC Drift
 
-Tracing through the four-register stack illustrates how timecode operations unfold at the broadcast console. Keying `1.142812` enters Reel A's packed timecode into Register X, and pressing Enter lifts it smoothly into Register Y. Zoe enters Reel B's address `0.524520` into X and strikes {{key:+TC}}. The calculator decomposes both sexagesimal timestamps, performs the modulo carries across frames, seconds, and minutes, and drops the unified master address `2.071402` (`02:07:14:02`) into Register X. Next, entering `30` and swapping registers brings the frame rate into position for {{key:▸FRM}}, instantly expanding the packed address into two hundred twenty-nine thousand twenty-two integer frames. Dividing by thirty yields nominal seconds in X, which the {{key:DF}} key scales by one point zero zero one, lifting true wall-clock time of seven thousand six hundred forty-one point seven seconds into X while revealing the seven-point-six-second broadcast drift. Finally, loading the playback rate twenty-four into Y and capture rate sixty into X before hitting {{key:FPS}} pushes the two-point-five-times speed ramp into X while placing the one-point-three-two-stop exposure deficit safely into Register Y:
+Reconciling multi-reel timecode, total frame counts, and NTSC drop-frame drift proceeds on the four-register stack:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -437,7 +437,7 @@ On the **SC-24**, optical framing ({{key:FOV}}, {{key:W:H}}, {{key:▸35}}, {{ke
 
 ### Immediate Stack Trace: Super 35 Framing, Conjugate Limits, and Dusk Photometry
 
-Hear the kinetic flow across the stack as Julian and Chloe configure the optical setup before sunset. Keying the Super 35 sensor width `24.89` into Register Y and the fifty-millimeter focal length into X allows the {{key:FOV}} command to calculate the twenty-seven-point-nine-five-degree horizontal coverage angle, resting smoothly in Register X. Entering fifty millimeters, f-stop two point eight, and the zero point zero three millimeter circle of confusion into the stack positions all three arguments for the {{key:DOF}} key, which evaluates the hyperfocal distance of twenty-nine point seven six meters in X while preserving the field of view in the upper registers. Loading the frame rate twenty-four and shutter angle one hundred eighty into registers Y and X before pressing {{key:SHT}} drops the fractional shutter time of zero point zero two zero eight seconds into X and the denominator forty-eight into Y. Swapping registers and calculating Exposure Value evaluates eight point five six stops in X. Finally, executing `3` {{key:▸ND}} computes optical density zero point nine in X with filter factor eight in Y, and keying the tungsten-to-daylight temperatures into {{key:GEL}} places the negative one hundred thirty-four Mired shift squarely into Register X:
+Configuring the camera optics ($W = 24.89\text{ mm}$, $F = 50\text{ mm}$), hyperfocal depth of field ($f/2.8$, $C = 0.03\text{ mm}$), and shutter exposure ($180^\circ$ at $24\text{ fps}$) resolves across the four registers:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -519,7 +519,7 @@ In dry air treated as an ideal diatomic gas ($\gamma = c_p / c_v \approx 1.400$,
 $$v_s = \sqrt{\frac{\gamma R T_K}{M}} = \sqrt{\frac{1.400 \times 8.31446 \times (273.15 + T_C)}{0.02897}} = 331.3 \sqrt{1 + \frac{T_C}{273.15}}\text{ m/s}$$
 Linearizing that square root across ambient outdoor and indoor temperatures ($-20^\circ\text{C}$ to $+40^\circ\text{C}$) via the binomial approximation $\sqrt{1 + x} \approx 1 + x/2$ yields the standard acoustic velocity law ({{key:vₛ}}).
 
-Sound is a mechanical pressure wave passed from air molecule to air molecule. Because higher temperatures increase the thermal speed of gas molecules, the speed of sound rises linearly with temperature, starting at three hundred thirty-one point three meters per second at freezing and adding roughly zero point six meters per second for every degree Celsius of warmth. The acoustic transit time across a venue is simply distance divided by velocity; multiplying by one thousand converts seconds into milliseconds. Dividing sound speed by the acoustic frequency yields the physical wavelength—the spatial distance between adjacent compression peaks:
+Sound is a mechanical pressure wave passed from air molecule to air molecule. Because higher temperatures increase the thermal speed of gas molecules, the speed of sound rises linearly with temperature, starting at $331.3\text{ m/s}$ at freezing and adding roughly $0.606\text{ m/s}$ for every degree Celsius of warmth. The acoustic transit time across a venue is simply distance divided by velocity; multiplying by one thousand converts seconds into milliseconds. Dividing sound speed by the acoustic frequency yields the physical wavelength—the spatial distance between adjacent compression peaks:
 
 **Eq. 12.1 — Thermal Speed of Sound and Acoustic Propagation Delay**
 $$v_s(T_C) = 331.3 + 0.606 \cdot T_C \quad \left[\frac{\text{m}}{\text{s}}\right]$$
@@ -662,7 +662,7 @@ On the **SC-24**, acoustic delay alignment ({{key:DLY}}), reference sound veloci
 
 ### Immediate Stack Trace: Thermal Delay Alignment, SPL Falloff, and Dual-Array Summation
 
-Follow the acoustic calculations through the four-register stack as the front-of-house engineer dials in the stadium delay tower. Entering the forty-five-meter throw distance into Register Y and the twenty-five-degree Celsius turf temperature into Register X readies the stack for the {{key:DLY}} command, which computes the acoustic transit time of one hundred twenty-nine point eight nine milliseconds in Register X. Adding twelve milliseconds for the Haas precedence offset lifts the DSP delay target to one hundred forty-one point eight nine milliseconds. Pushing the cabinet's reference output of one hundred four decibels at one meter and projecting it across thirty-two meters with {{key:SPL}} yields seventy-three point nine decibels of sound pressure level in X. Pressing Enter and combining the two speaker hangs with the incoherent decibel summation key pushes seventy-six point nine decibels into X. Finally, entering sixty-eight point six hertz and pressing {{key:λ}} pushes the reference sound speed into the numerator, resolving an exact five-meter acoustic bass wavelength in Register X:
+The acoustic delay calculations for the stadium sound towers ($D = 45\text{ m}, T = 25^\circ\text{C}$), Haas precedence offset ($+12\text{ ms}$), and sound pressure falloff resolve across the stack:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |

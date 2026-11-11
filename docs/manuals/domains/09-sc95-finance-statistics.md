@@ -267,7 +267,7 @@ Because $IRR = 10.42\% > 10.00\%$ (hurdle rate), both decision criteria concur: 
 
 ### Modified Internal Rate of Return (MIRR) and Terminal Value Dynamics
 
-To resolve the fatal flaws of classical IRR—namely, the multiple IRR problem under non-normal cash flows and the unrealistic reinvestment rate assumption—quantitative financial analysts utilize the **Modified Internal Rate of Return (MIRR)**.
+To resolve the mathematical limitations of classical IRR—namely, the multiple IRR problem under alternating cash flows and the unrealistic reinvestment rate assumption—quantitative financial analysts utilize the **Modified Internal Rate of Return (MIRR)**.
 
 #### The Multiple IRR Trap and Descartes' Rule of Signs
 Whenever a project's cash flow sequence changes sign more than once (e.g., negative investment, positive operating cash flows, followed by a massive negative environmental remediation or decommissioning outlay at the end of the project life), polynomial algebra dictates that multiple positive real roots may satisfy $NPV(r) = 0$. By René Descartes' Rule of Signs, a cash flow sequence with $k$ sign changes can have up to $k$ distinct internal rates of return. In such cases, classical IRR becomes mathematically ambiguous and operationally useless.
@@ -301,7 +301,7 @@ Converting between the two metrics:
 
 $$\text{Markup} = \frac{\text{Margin}}{1 - \text{Margin}} \iff \text{Margin} = \frac{\text{Markup}}{1 + \text{Markup}}$$
 
-Consider the catastrophic mistake: an executive believing that a $50\%$ markup produces a $50\%$ profit margin. In truth:
+Consider the costly commercial error: an executive assuming that a $50\%$ markup produces a $50\%$ profit margin. In truth:
 
 $$\text{Margin} = \frac{0.50}{1 + 0.50} = \frac{0.50}{1.50} = \mathbf{33.33\%}$$
 

@@ -115,9 +115,7 @@ nav:
   - Books & Reference Manuals:
     - Official Manuals & Reference Books ($16): manuals/index.md
     - From Blocks to the Stack (Book Page): products/sc6-book.md
-    - Bestseller Rubric & Editorial Guide: manuals/bestseller-rubric-and-editorial-guide.md
-    - Critical Editorial Review: manuals/critical-editorial-review-and-school-adoption.md
-    - Agent & OpenAPI Spec: api/index.md
+    - Middle School Math Lab Workbook: curriculum/big-ideas-middle-school-sc6-workbook.md
   - Documentation:
     - Engineering Blog: blog/index.md
     - Learning Lab: learning-lab.md
@@ -126,7 +124,6 @@ nav:
     - Mac & iOS Apps: ios_app.md
     - Tutorials: tutorials.md
     - Press & Editorial Kit: press.md
-    - Manufacturing & Sourcing: etsy-publishing-guide.md
     - Shipping & Packaging: shipping-and-packaging.md
     - Exam Compliance & Proctor Guide: exam-compliance.md
   - Build Logs ↗: https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator
@@ -143,6 +140,10 @@ not_in_nav: |
   manuals/sc32/**
   manuals/sc6/**
   manuals/domains/**
+  manuals/bestseller-rubric-and-editorial-guide.md
+  manuals/critical-editorial-review-and-school-adoption.md
+  api/**
+  etsy-publishing-guide.md
 
 validation:
   nav:

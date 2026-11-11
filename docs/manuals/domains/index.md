@@ -49,7 +49,7 @@ On the four-register RPN stack (**Figure 0.3**), four visible lines—Registers 
 
 ![The four-register RPN stack (T, Z, Y, X) staging intermediate physical quantities.](../assets/diagrams/domains/diagram_intro_stack.png)
 
-Watch how each physical step happens right in Register $X$ at the bottom of the screen:
+Each physical step evaluates directly in Register $X$ at the bottom of the screen:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
