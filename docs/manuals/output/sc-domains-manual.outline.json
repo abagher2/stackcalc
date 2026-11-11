@@ -142,7 +142,7 @@
   [
     2,
     25,
-    "1.4.3 Auditing Traverse Closure in @COGO ([g] [TBL]) and Solving Sub-Parcel Geometry ([g] [TRI], [f] [LVL])"
+    "1.4.3 Auditing Traverse Closure in @COGO ([g] [TBL]) and Solving Differential Leveling ([f] [LVL])"
   ],
   [
     2,
@@ -287,7 +287,7 @@
   [
     2,
     48,
-    "3.2.2 Endurance Time-Speed-Distance ([TSD]) and Aircraft Weight & Balance ([f] [CG])"
+    "3.2.2 Endurance Time-Speed-Distance ([TSD]) and Aircraft Weight & Balance"
   ],
   [
     2,
@@ -322,7 +322,7 @@
   [
     2,
     51,
-    "3.4.3 Inverse Solves in the [TSD], [f] [CG], [f] [WND], and [g] [ALT] Workspaces"
+    "3.4.3 Inverse Solves in the [TSD], [f] [WND], and [g] [ALT] Workspaces"
   ],
   [
     2,
@@ -657,7 +657,7 @@
   [
     2,
     98,
-    "6.4.3 Calibrating the Loop on the Stack and Solving Backward in [g] [Cv] and [PMP]"
+    "6.4.3 Calibrating the Loop on the Stack and Solving Sizing Equations"
   ],
   [
     2,
@@ -957,7 +957,7 @@
   [
     2,
     146,
-    "9.4.2 Solving Backward in the [f] [PWM], [f] [ADC], and [g] [τ] Workspaces"
+    "9.4.2 Solving Backward in the [g] [PWM], [f] [ADC], and [f] [τ] Workspaces"
   ],
   [
     2,
@@ -1047,7 +1047,7 @@
   [
     2,
     162,
-    "10.3.3 Bidirectional Solver Workspace ([TC]): Solving Backward for Frame Budgets"
+    "10.3.3 Evaluating Timeline Frame Budgets and Playback Durations on the Stack"
   ],
   [
     2,
@@ -1847,7 +1847,7 @@
   [
     2,
     315,
-    "20.2.4 Carbonation Physics and Henry's Law ([f] [CO₂])"
+    "20.2.4 Carbonation Physics and Henry's Law"
   ],
   [
     2,
@@ -1902,7 +1902,7 @@
   [
     2,
     321,
-    "21.1.2 Compounding Multi-Stage Fabrication Yields ([YLD])"
+    "21.1.2 Compounding Multi-Stage Fabrication Yields"
   ],
   [
     2,
@@ -1917,7 +1917,7 @@
   [
     2,
     323,
-    "21.1.5 Enological Stability: Henderson–Hasselbalch Sulfite Equilibrium ([g] [SO₂])"
+    "21.1.5 Enological Stability: Henderson–Hasselbalch Sulfite Equilibrium ([f] [MSO2])"
   ],
   [
     2,
@@ -2192,7 +2192,7 @@
   [
     2,
     368,
-    "24.2.2 The Serum Anion Gap ([g] [AG]) and the Figge Hypoalbuminemia Correction"
+    "24.2.2 The Serum Anion Gap and the Figge Hypoalbuminemia Correction"
   ],
   [
     2,
@@ -2202,7 +2202,7 @@
   [
     2,
     369,
-    "24.2.4 Albumin-Corrected Calcium ([f] [Ca²⁺]) and Hyperglycemic Sodium ([g] [Na⁺])"
+    "24.2.4 Albumin-Corrected Calcium and Hyperglycemic Sodium ([g] [Na⁺])"
   ],
   [
     2,
@@ -2212,7 +2212,7 @@
   [
     2,
     370,
-    "24.3.1 Horowitz Oxygenation Index and the Alveolar-Arterial Oxygen Gradient ([g] [ABG])"
+    "24.3.1 Horowitz Oxygenation Index and the Alveolar-Arterial Oxygen Gradient ([A-a])"
   ],
   [
     2,
@@ -2287,7 +2287,7 @@
   [
     2,
     386,
-    "25.1.4 Geometric Principal and Interest Decomposition Across Amortization Periods ([f] [AMR])"
+    "25.1.4 Geometric Principal and Interest Decomposition Across Amortization Periods"
   ],
   [
     2,
@@ -2312,7 +2312,7 @@
   [
     2,
     390,
-    "25.2.4 Gross Margin ([f] [MGN]), Markup on Cost ([g] [MKP]), Breakeven ([f] [BEP]), and Economic Order Quantity ([g] [EOQ])"
+    "25.2.4 Gross Margin ([f] [MGN]), Markup on Cost, Breakeven ([f] [BEP]), and Economic Order Quantity ([g] [EOQ])"
   ],
   [
     2,
@@ -3251,12 +3251,12 @@
   ],
   [
     1,
-    496,
+    497,
     "B.4 Systems Programming, Embedded, and Cyber Operations Keycaps"
   ],
   [
     1,
-    497,
+    498,
     "B.5 Cinema Optics, Broadcast Timecode, and Sound Keycaps"
   ],
   [

@@ -142,6 +142,9 @@ hide:
         <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-orange-400 border border-orange-500/30 hover:bg-slate-700">
           &bull; Order Book on Amazon ($16) ↗
         </a>
+        <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-orange-400 border border-orange-500/30 hover:bg-slate-700">
+          &bull; Teacher Guide on Amazon ↗
+        </a>
         <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-sky-400 border border-sky-500/30 hover:bg-slate-700">
           &bull; Order on Etsy (stackcalcmath.etsy.com) ↗
         </a>

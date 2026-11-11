@@ -1037,9 +1037,9 @@ The primary measured extracellular anions are chloride ($[\text{Cl}^-] \approx 1
 
 ![Serum electrolyte Gamblegram illustrating macroscopic cation-anion electroneutrality and the unmeasured Anion Gap (AGAP).](../assets/diagrams/domains/diagram_ch08_serum_gamblegram.png)
 
-### The Serum Anion Gap ({{key:AG}}) and the Figge Hypoalbuminemia Correction
+### The Serum Anion Gap and the Figge Hypoalbuminemia Correction
 
-Subtracting measured anions from measured sodium defines the **Serum Anion Gap** ({{key:AG}}, in $\text{mEq/L}$):
+Subtracting measured anions from measured sodium defines the **Serum Anion Gap** (in $\text{mEq/L}$):
 
 $$\text{AG} = [\text{Na}^+] - \left([\text{Cl}^-] + [\text{HCO}_3^-]\right)$$
 
@@ -1077,11 +1077,11 @@ $$P_a\text{CO}_2(\text{expected}) = 1.5(14) + 8 = 21 + 8 = \mathbf{29.0\text{ mm
 
 Because the patient\'s measured $P_a\text{CO}_2$ is $28\text{ mmHg}$, which falls perfectly within the expected compensation window ($27\text{--}31\text{ mmHg}$), the clinician confirms that respiratory compensation is intact, and that no secondary respiratory acidosis (due to ventilatory fatigue) or primary respiratory alkalosis is present.
 
-### Albumin-Corrected Calcium ({{key:Ca²⁺}}) and Hyperglycemic Sodium ({{key:Na⁺}})
+### Albumin-Corrected Calcium and Hyperglycemic Sodium ({{key:Na⁺}})
 
 Two additional macromolecular corrections prevent catastrophic diagnostic errors at the bedside:
 
-#### 1. Robert Payne\'s Albumin-Corrected Calcium ({{key:Ca²⁺}})
+#### 1. Robert Payne\'s Albumin-Corrected Calcium
 Approximately $40\%$ to $45\%$ of circulating calcium is bound to negatively charged binding sites on serum albumin, while $50\%$ circulates as biologically active, ionized calcium ($\text{Ca}^{2+}$). Routine clinical laboratories measure **Total Serum Calcium** ($\text{Ca}_{\text{meas}}$, in $\text{mg/dL}$), which sums both bound and free fractions.
 
 In severe hypoalbuminemia, the loss of albumin binding sites reduces total measured calcium, creating the false illusion of severe hypocalcemia (**pseudohypocalcemia**) while the physiologically critical ionized fraction remains entirely normal. In 1973, Robert B. Payne demonstrated that each $1.0\text{ g/dL}$ drop in albumin below the reference normal of $4.0\text{ g/dL}$ lowers total measured calcium by $0.8\text{ mg/dL}$:
@@ -1113,7 +1113,7 @@ The patient\'s true physiological extracellular sodium concentration is hypernat
 
 The final tri-axis of critical care transport encompasses arterial blood oxygenation, cardiac repolarization vulnerability, and life-support oxygen cylinder reserves.
 
-### Horowitz Oxygenation Index and the Alveolar-Arterial Oxygen Gradient ({{key:ABG}})
+### Horowitz Oxygenation Index and the Alveolar-Arterial Oxygen Gradient ({{key:sc80:A-a}})
 
 In mechanical ventilation and Acute Respiratory Distress Syndrome (ARDS) management, the **Horowitz Index**—the ratio of arterial oxygen partial pressure ($P_a\text{O}_2$, in $\text{mmHg}$) to the inspired oxygen fraction ($F_i\text{O}_2$, expressed as a decimal between $0.21$ and $1.00$)—provides an immediate, quantitative assessment of pulmonary oxygenation efficiency:
 
@@ -1206,30 +1206,30 @@ The transport team can safely deliver a maximum oxygen flow rate of $7.00\text{ 
 
 ## Compartment Kinetics, Blood Gases, and Transport Oxygen on the Stack and in the Solver Workspace
 
-On the **SC-80**, pharmacokinetic elimination ({{key:PK}}), acid-base and electrolyte corrections ({{key:AG}}, {{key:Ca²⁺}}, {{key:Na⁺}}, {{key:OSM}}), cardiopulmonary indices ({{key:ABG}}, {{key:QTc}}, {{key:ICU}}), and oxygen tank budgeting ({{key:O₂}}) execute both on the RPN stack and in bidirectional Equation Solver Workspaces.
+On the **SC-80**, pharmacokinetic elimination ({{key:PK}}), acid-base and electrolyte corrections ({{key:Na⁺}}, {{key:sc80:EOSM}}), cardiopulmonary indices ({{key:sc80:A-a}}, {{key:QTc}}, {{key:ICU}}), and oxygen tank budgeting ({{key:O₂}}) execute both on the RPN stack and in bidirectional Equation Solver Workspaces.
 
 | Key / Solver | Mode | Inputs / Workspace Softkeys | Governing Expression |
 | :--- | :--- | :--- | :--- |
 | {{key:PK}} | Stack / Solver | Stack: $X = T_{1/2}$ or $K$ • Solver: {{keycap:T}} {{keycap:V}} {{keycap:C}} | Stack: $K = \ln(2) / T_{1/2} \iff T_{1/2} = \ln(2) / K$; Solver: $T_{1/2} = 0.693147 \cdot V / C_{\text{CL}}$ |
-| {{key:AG}} / {{key:Ca²⁺}} / {{key:Na⁺}} | Immediate Stack | {{key:AG}}: $Y = \text{Na}^+, X = \text{Cl}^- + \text{HCO}_3^-$ • {{key:Ca²⁺}}: $Y = \text{Ca}, X = \text{Alb}$ • {{key:Na⁺}}: $Y = \text{Na}, X = \text{Glc}$ | $\text{AG} = Y - X$; $\text{Ca}_{\text{corr}} = Y + 0.8(4 - X)$; $\text{Na}_{\text{corr}} = Y + 0.016(X - 100)$ |
-| {{key:ABG}} / {{key:QTc}} | Immediate Stack | {{key:ABG}}: $Y = P_a\text{O}_2, X = F_i\text{O}_2$ • {{key:QTc}}: $Y = \text{QT}_{\text{ms}}, X = \text{HR}_{\text{bpm}}$ | Horowitz $P/F = Y / X$; Bazett $\text{QT}_c = Y / \sqrt{60/X}$ |
+| **`{{key:-}}`** / **`{{key:Na⁺}}`** | Immediate Stack | Anion Gap: $\text{Na}^+ - (\text{Cl}^- + \text{HCO}_3^-)$ • {{key:Na⁺}}: $Y = \text{Na}, X = \text{Glc}$ | $\text{AG} = Y - X$; $\text{Na}_{\text{corr}} = Y + 0.016(X - 100)$ |
+| **`{{key:÷}}`** / **`{{key:QTc}}`** | Immediate Stack | Horowitz $P/F$: $Y = P_a\text{O}_2, X = F_i\text{O}_2$ • {{key:QTc}}: $Y = \text{QT}_{\text{ms}}, X = \text{HR}_{\text{bpm}}$ | Horowitz $P/F = Y / X$; Bazett $\text{QT}_c = Y / \sqrt{60/X}$ |
 | {{key:O₂}} | Immediate Stack | Register $Y$: Pressure $P_{\text{psi}}$, Register $X$: Flow $F_{\text{L/min}}$ (or duration $T_{\text{min}}$) | E-cylinder $T = (P - 200) \times 0.28 / F \iff F = (P - 200) \times 0.28 / T$ |
 
 ### Multi-System ICU TDM, Acid-Base Analysis, and Transport Flight Oxygen Budgeting on the Stack
 
-In the critical care unit, the pharmacist tracks therapeutic drug monitoring for a $500\text{ mg}$ aminoglycoside dose in a $V_d = 25\text{ L}$ compartment ($C_0 = 20.0\text{ mg/L}$) with $t_{1/2} = 6.0\text{ hr}$ ($K = 0.1155\text{ hr}^{-1}$ via {{key:PK}}), computes the first-interval trough $C(12) = 5.0\text{ mg/L}$ and steady-state minimum $C_{\text{ss,min}} = 6.67\text{ mg/L}$, calculates albumin-corrected Anion Gap ($[\text{Na}^+] = 140, [\text{Cl}^-] = 102, [\text{HCO}_3^-] = 14\text{ mEq/L} \to \text{AG}_{\text{corr}} = 29.0\text{ mEq/L}$ via {{key:AG}}), evaluates Payne albumin-corrected calcium ($\text{Ca}_{\text{meas}} = 7.6\text{ mg/dL}, \text{Alb} = 2.0\text{ g/dL} \to \mathbf{9.20\text{ mg/dL}}$ via {{key:Ca²⁺}}), and checks the heart-rate corrected QT interval for $\text{QT} = 420\text{ ms}$ at $\text{HR} = 96\text{ bpm}$ ($\mathbf{531.26\text{ ms}}$ via {{key:QTc}}):
+In the critical care unit, the pharmacist tracks therapeutic drug monitoring for a $500\text{ mg}$ aminoglycoside dose in a $V_d = 25\text{ L}$ compartment ($C_0 = 20.0\text{ mg/L}$) with $t_{1/2} = 6.0\text{ hr}$ ($K = 0.1155\text{ hr}^{-1}$ via {{key:PK}}), computes the first-interval trough $C(12) = 5.0\text{ mg/L}$ and steady-state minimum $C_{\text{ss,min}} = 6.67\text{ mg/L}$, calculates albumin-corrected Anion Gap ($[\text{Na}^+] = 140, [\text{Cl}^-] = 102, [\text{HCO}_3^-] = 14\text{ mEq/L} \to \text{AG}_{\text{corr}} = 29.0\text{ mEq/L}$), evaluates Payne albumin-corrected calcium ($\text{Ca}_{\text{meas}} = 7.6\text{ mg/dL}, \text{Alb} = 2.0\text{ g/dL} \to \mathbf{9.20\text{ mg/dL}}$), and checks the heart-rate corrected QT interval for $\text{QT} = 420\text{ ms}$ at $\text{HR} = 96\text{ bpm}$ ($\mathbf{531.26\text{ ms}}$ via {{key:QTc}}):
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `500` {{key:ENTER}} `25` {{key:÷}} `6` {{key:PK}} | $0$ | $0$ | $20.0000$ | $0.1155$ | Peak $C_0 = 20.0\text{ mg/L}$ in $Y$; rate constant $K = \ln(2)/6 = 0.11552\text{ hr}^{-1}$ in $X$ |
 | `12` {{key:×}} {{key:+/-}} {{key:eˣ}} {{key:×}} `0.75` {{key:÷}} | $0$ | $0$ | $0$ | $6.6667$ | First trough $C(12) = 5.0\text{ mg/L}$ scaled by $1/(1-0.25) \to C_{\text{ss,min}} = 6.67\text{ mg/L}$ |
-| `140` {{key:ENTER}} `102` {{key:ENTER}} `14` {{key:+}} {{key:AG}} `5` {{key:+}} | $6.6667$ | $6.6667$ | $6.6667$ | $29.0000$ | Uncorrected $\text{AG} = 24.0$ plus $+5.0$ albumin correction $\to \text{AG}_{\text{corr}} = 29.0\text{ mEq/L}$ |
-| `7.6` {{key:ENTER}} `2.0` {{key:Ca²⁺}} | $6.6667$ | $6.6667$ | $29.0000$ | $9.2000$ | Payne Albumin-Corrected Calcium $\text{Ca}_{\text{corr}} = 7.6 + 0.8(4 - 2) = 9.20\text{ mg/dL}$ |
+| `140` {{key:ENTER}} `102` {{key:ENTER}} `14` {{key:+}} {{key:-}} `5` {{key:+}} | $6.6667$ | $6.6667$ | $6.6667$ | $29.0000$ | Uncorrected $\text{AG} = 24.0$ plus $+5.0$ albumin correction $\to \text{AG}_{\text{corr}} = 29.0\text{ mEq/L}$ |
+| `4` {{key:ENTER}} `2` {{key:-}} `0.8` {{key:×}} `7.6` {{key:+}} | $6.6667$ | $6.6667$ | $29.0000$ | $9.2000$ | Payne Albumin-Corrected Calcium $\text{Ca}_{\text{corr}} = 7.6 + 0.8(4 - 2) = 9.20\text{ mg/dL}$ |
 | `420` {{key:ENTER}} `96` {{key:QTc}} | $29$ | $29.0000$ | $9.2000$ | **$531.2627$** | Bazett corrected interval $\text{QT}_c = 420 / \sqrt{60/96} = 531.26\text{ ms}$ |
 
 #### Step-by-Step Architectural Walkthrough:
 - **Steps 1–5:** Calculating post-distribution peak $C_0 = 20.00\text{ mg/L}$ and using {{key:PK}} to obtain $K = 0.11552\text{ hr}^{-1}$. In Step 4, multiplying rate constant $K$ by elapsed time $12.0\text{ hr}$ and exponentiating directly computes the fraction remaining ($0.2500$), which in Step 5 evaluates the pre-dose trough $C(12) = 5.00\text{ mg/L}$.
-- **Steps 6–9:** Evaluating uncorrected Anion Gap $\text{AG} = 24.0\text{ mEq/L}$ via {{key:AG}}, then immediately applying Figge\'s hypoalbuminemia correction ($+2.5\text{ mEq/L}$ per $\text{g/dL}$ deficit) on the stack, uncovering the severe underlying high-anion-gap acidosis ($\text{AG}_{\text{corr}} = 29.0\text{ mEq/L}$).
+- **Steps 6–9:** Evaluating uncorrected Anion Gap $\text{AG} = 24.0\text{ mEq/L}$ on the stack via `140 {{key:ENTER}} 102 {{key:ENTER}} 14 {{key:+}} {{key:-}}`, then immediately applying Figge\'s hypoalbuminemia correction ($+2.5\text{ mEq/L}$ per $\text{g/dL}$ deficit) on the stack, uncovering the severe underlying high-anion-gap acidosis ($\text{AG}_{\text{corr}} = 29.0\text{ mEq/L}$).
 - **Steps 10–11:** Payne\'s calcium correction reveals true physiological calcium ($9.20\text{ mg/dL}$), averting an unnecessary and dangerous calcium push. Katz\'s sodium correction reveals true hypertonic sodium ($144.0\text{ mEq/L}$), identifying severe cellular dehydration.
 - **Steps 12–14:** In three swift dedicated operations, the clinician computes the Horowitz index ($275.0\text{ mmHg}$), diagnoses life-threatening repolarization prolongation ($\text{QT}_c = 531.26\text{ ms}$), and budgets the portable oxygen cylinder to ensure continuous ventilatory support throughout the $70\text{-minute}$ medevac flight.
 
@@ -1260,7 +1260,7 @@ Simultaneously, the respiratory therapist performs an arterial blood gas audit d
 | 8 | {{key:×}} | `46.0563` | `3.4657` | `0.0000` | `0.0000` | Steady-state peak $C_{\text{ss,max}} = \mathbf{46.06\text{ mg/L}}$ |
 | 9 | `0.39685` {{key:×}} | `18.2774` | `3.4657` | `0.0000` | `0.0000` | Steady-state trough $C_{\text{ss,min}} = \mathbf{18.28\text{ mg/L}}$ |
 | 10 | `2500` {{key:x⇄y}} {{key:÷}} | `721.3547` | `18.2774` | `0.0000` | `0.0000` | 24-hr exposure $\text{AUC}_{24} = 2500 / 3.4657 = \mathbf{721.35\text{ mg}\cdot\text{hr/L}}$ |
-| 11 | `85` {{key:ENTER}} `0.50` {{key:ABG}} | `170.0000` | `0.0000` | `0.0000` | `0.0000` | Horowitz $P/F = 85 / 0.50 = \mathbf{170.0\text{ mmHg}}$ (Moderate ARDS) |
+| 11 | `85` {{key:ENTER}} `0.50` {{key:÷}} | `170.0000` | `0.0000` | `0.0000` | `0.0000` | Horowitz $P/F = 85 / 0.50 = \mathbf{170.0\text{ mmHg}}$ (Moderate ARDS) |
 | 12 | `0.50` {{key:ENTER}} `713` {{key:×}} | `356.5000` | `0.0000` | `0.0000` | `0.0000` | Alveolar dry oxygen: $0.50 \times 713 = 356.5\text{ mmHg}$ |
 | 13 | `40` {{key:ENTER}} `0.8` {{key:÷}} {{key:-}} | `306.5000` | `0.0000` | `0.0000` | `0.0000` | Alveolar oxygen $P_A\text{O}_2 = 356.5 - 50 = \mathbf{306.5\text{ mmHg}}$ |
 | 14 | `85` {{key:-}} | `221.5000` | `0.0000` | `0.0000` | `0.0000` | Alveolar-arterial gradient $\Delta P_{A-a}\text{O}_2 = \mathbf{221.5\text{ mmHg}}$ |

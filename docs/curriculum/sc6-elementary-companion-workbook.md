@@ -28,6 +28,7 @@ This companion workbook houses the **253 extended chapter-by-chapter worked prob
 
 > **Get the Physical Book, Spiral Workbooks & 3D Math Manipulatives:**  
 > • **Order Print Book on Amazon:** [From Blocks to the Stack on Amazon ($16.00) ↗](https://link.amazon/B0f5cP0Ur)  
+> • **Order Teacher's Curriculum Guide on Amazon:** [Teacher's Curriculum Guide on Amazon ($16.00) ↗](https://link.amazon/B05RFHqeu)  
 > • **Order Spiral Curriculum Workbooks on Lulu:** [Lay-Flat Spiral Curriculum Books & Workbooks on Lulu ↗](https://www.lulu.com/spotlight/stackcalc)  
 > • **Order Handcrafted 3D Block Kits on Etsy:** [3D-Printed Manipulative Boxed Kits on Etsy ↗](https://stackcalcmath.etsy.com)  
 > • **Order Factory-Printed Math Blocks:** [On-Demand Additive Manufacturing via Slant 3D Portal ↗](https://teleportpod.com/portals/profile/StackCalc)  

@@ -95,14 +95,17 @@ Free downloadable teaching guides, pre-generated station companions, competition
       <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Master Teacher Guide &amp; K–12 Student Lab Workbook</h3>
       <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Book 1: 50-page Unified Master Teacher's Guide by Concept. Book 2: 29-page K–12 Hands-On Math Lab Student Workbook (with Self-Check Answer Key), plus 12 standalone 4-page Unit Packets.</p>
     </div>
-    <div style="display: flex; gap: 0.4rem;">
-      <a href="stackcalc-curriculum-guide-letter.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 191, 0, 0.15); border: 1px solid #FFBF00; color: #FFBF00; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
-        <span>Book 1 Teacher (50p) &darr;</span>
+    <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+      <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 100px; text-align: center; padding: 0.5rem 0.2rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>AMAZON ($16) ↗</span>
       </a>
-      <a href="stackcalc-student-lab-workbook-letter.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
-        <span>Book 2 Student (29p) &darr;</span>
+      <a href="stackcalc-curriculum-guide-letter.pdf" download style="flex: 1; min-width: 100px; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 191, 0, 0.15); border: 1px solid #FFBF00; color: #FFBF00; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>Book 1 (50p) &darr;</span>
       </a>
-      <a href="../curriculum/teacher-guide/#print-individual-curriculum-units-units-0112-separate-pdfs" style="flex: 0.9; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+      <a href="stackcalc-student-lab-workbook-letter.pdf" download style="flex: 1; min-width: 100px; text-align: center; padding: 0.5rem 0.2rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>Book 2 (29p) &darr;</span>
+      </a>
+      <a href="../curriculum/teacher-guide/#print-individual-curriculum-units-units-0112-separate-pdfs" style="flex: 0.9; min-width: 80px; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
         <span>12 Units &rarr;</span>
       </a>
     </div>
@@ -230,7 +233,7 @@ To make home, classroom, and print-shop binding effortless, every unit of the **
 
 ## 2. Official Calculator Manuals, Spiral Workbooks &amp; Machine-Readable Specs (Print &amp; .JSON)
 
-Official reference manuals, spiral-bound curriculum workbooks, structured JSON operational datasets, and view-only OpenAPI 3.1 specifications. Our flagship books are available in paperback and hardcover on **Amazon** ([SC-32 Paperback ↗](https://link.amazon/B07DqTRR5) • [SC-32 Hardcover ↗](https://link.amazon/B09AnTIQI) • [SC-6 ↗](https://link.amazon/B0f5cP0Ur) • [Middle School Workbook ↗](https://link.amazon/B07bxzYKq)), and our **coil-bound lay-flat spiral curriculum books &amp; workbooks** are published on **[Lulu Press ↗](https://www.lulu.com/spotlight/stackcalc)**.
+Official reference manuals, spiral-bound curriculum workbooks, structured JSON operational datasets, and view-only OpenAPI 3.1 specifications. Our flagship books are available in paperback and hardcover on **Amazon** ([SC-32 Paperback ↗](https://link.amazon/B07DqTRR5) • [SC-32 Hardcover ↗](https://link.amazon/B09AnTIQI) • [SC-6 ↗](https://link.amazon/B0f5cP0Ur) • [Middle School Workbook ↗](https://link.amazon/B07bxzYKq) • [Teacher's Guide ↗](https://link.amazon/B05RFHqeu)), and our **coil-bound lay-flat spiral curriculum books &amp; workbooks** are published on **[Lulu Press ↗](https://www.lulu.com/spotlight/stackcalc)**.
 
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
   <div>
@@ -347,6 +350,6 @@ Instead of charging for digital STL downloads or maintaining large ZIP files, we
 For schools, teachers, or parents who don't have access to a 3D printer:
 - **Order On-Demand from Slant 3D:** Our official manufacturing partner produces matching replacement parts, individual block refills, and classroom sets on industrial additive manufacturing farms: [Slant 3D Portal ↗](https://teleportpod.com/portals/profile/StackCalc)
 - **Order Handcrafted 3D-Printed Manipulative & Hardware Kits on Etsy:** Handcrafted 3D-printed manipulative block kits and pre-soldered calculator hardware kits ship within 48 hours: [Etsy Storefront (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
-- **Order Spiral-Bound Curriculum Books on Lulu & Print Textbooks on Amazon:** Lay-flat coil-bound curriculum guides and workbooks are on [Lulu Press ↗](https://www.lulu.com/spotlight/stackcalc), and flagship books are on Amazon for SC-32 ([Paperback ↗](https://link.amazon/B07DqTRR5) • [Hardcover ↗](https://link.amazon/B09AnTIQI)), [SC-6 ↗](https://link.amazon/B0f5cP0Ur), and the [Middle School Math Blocks Workbook ↗](https://link.amazon/B07bxzYKq).
+- **Order Spiral-Bound Curriculum Books on Lulu & Print Textbooks on Amazon:** Lay-flat coil-bound curriculum guides and workbooks are on [Lulu Press ↗](https://www.lulu.com/spotlight/stackcalc), and flagship books are on Amazon for SC-32 ([Paperback ↗](https://link.amazon/B07DqTRR5) • [Hardcover ↗](https://link.amazon/B09AnTIQI)), [SC-6 ↗](https://link.amazon/B0f5cP0Ur), the [Middle School Math Blocks Workbook ↗](https://link.amazon/B07bxzYKq), and the [Teacher's Curriculum Guide ↗](https://link.amazon/B05RFHqeu).
 - **Follow Hardware Build Logs on Hackaday:** For KiCad PCB schematics, RP2350 silicon bring-up, and engineering discussion: [Hackaday Project ↗](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)
 - **View Full Refill Instructions:** Read our dedicated [Replacement Parts & Refills Guide](parts.md).

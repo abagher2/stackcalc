@@ -228,6 +228,10 @@ hide:
           <span>Workbook (Amazon)</span>
           <span class="text-[#FF9900]">↗</span>
         </a>
+        <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Teacher Guide (Amazon)</span>
+          <span class="text-[#FF9900]">↗</span>
+        </a>
         <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
           <span>Free 3MF (Printables)</span>
           <span class="text-[#FA6B05]">↗</span>

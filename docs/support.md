@@ -21,6 +21,7 @@ If you need direct assistance, encountered a bug, or have a question:
   - **Amazon Bookstore (SC-32):** [Thinking in the Stack on Amazon: Paperback ↗](https://link.amazon/B07DqTRR5) &bull; [Hardcover Edition ↗](https://link.amazon/B09AnTIQI)
   - **Amazon Bookstore (SC-6):** [From Blocks to the Stack on Amazon (B0HPJN3KP9) ↗](https://link.amazon/B0f5cP0Ur)
   - **Amazon Bookstore (Middle School):** [Middle School Math Blocks Workbook on Amazon ↗](https://link.amazon/B07bxzYKq)
+  - **Amazon Bookstore (Teacher's Guide):** [Teacher's Curriculum Guide on Amazon (B05RFHqeu) ↗](https://link.amazon/B05RFHqeu)
   - **Lulu Press:** [Spiral-Bound Lay-Flat Curriculum Guides & Workbooks ↗](https://www.lulu.com/spotlight/stackcalc)
   - **Etsy Storefront:** [Handcrafted 3D-Printed Manipulative & Hardware Kits (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
   - **Slant 3D Portal:** [On-Demand Additive Manufacturing & Replacement Parts ↗](https://teleportpod.com/portals/profile/StackCalc)

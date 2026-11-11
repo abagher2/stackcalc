@@ -1273,11 +1273,11 @@ Returning to the instrument bench, the researchers execute quantitative spectrop
 
 ### Solving Cuvette Protein Concentration and Arrhenius Rate Ratios
 
-At the spectrophotometer, the biochemist converts a $50\%$ calibration filter ($T = 0.50$) to absorbance ({{key:%T}}), resolves the purified enzyme concentration $c$ from $A = 0.680\text{ AU}$ in the $b = 1.0\text{ cm}$ quartz cuvette for $\varepsilon = 42{,}500\text{ M}^{-1}\text{cm}^{-1}$ (and checks the forward product via {{key:εbc}}), and computes the Arrhenius rate acceleration between $T_1 = 298.15\text{ K}$ and $T_2 = 308.15\text{ K}$ for $E_a = 52{,}000\text{ J/mol}$ ({{key:Eₐ}}):
+At the spectrophotometer, the biochemist converts a $50\%$ calibration filter ($T = 0.50$) to absorbance via $A = -\log_{10}(T)$ (`0.5 {{key:LOG}} {{key:+/-}}`), resolves the purified enzyme concentration $c$ from $A = 0.680\text{ AU}$ in the $b = 1.0\text{ cm}$ quartz cuvette for $\varepsilon = 42{,}500\text{ M}^{-1}\text{cm}^{-1}$ (and checks the forward product via {{key:εbc}}), and computes the Arrhenius rate acceleration between $T_1 = 298.15\text{ K}$ and $T_2 = 308.15\text{ K}$ for $E_a = 52{,}000\text{ J/mol}$ ({{key:Eₐ}}):
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `0.5` {{key:%T}} | $0$ | $0$ | $0$ | $0.301$ | Verify $50\%$ transmittance ($T = 0.50$) equals $A = 0.3010\text{ AU}$ |
+| `0.5` {{key:LOG}} {{key:+/-}} | $0$ | $0$ | $0$ | $0.301$ | Verify $50\%$ transmittance ($T = 0.50$) equals $A = 0.3010\text{ AU}$ |
 | `0.68` {{key:ENTER}} `42500` {{key:÷}} | $0$ | $0$ | $0.301$ | $0.000016$ | Solve enzyme concentration $c = A / (\varepsilon b) = 0.680 / 42{,}500 = 1.60 \times 10^{-5}\text{ M}$ |
 | `42500` {{key:ENTER}} `1` {{key:x⇄y}} {{key:εbc}} | $0.30103$ | $0.30103$ | $0.301$ | $0.68$ | Forward {{key:εbc}} check: $\varepsilon(42{,}500) \times b(1.0) \times c(16\,\mu\text{M}) = 0.680\text{ AU}$ |
 | `52000` {{key:ENTER}} `308.15` {{key:Eₐ}} `52000` {{key:ENTER}} `298.15` {{key:Eₐ}} {{key:÷}} | $0.68$ | $0.68$ | $0.68$ | **$1.9753$** | Evaluate Arrhenius rate acceleration $k_2 / k_1 = 1.9753\times$ from $298.15\text{ K}$ to $308.15\text{ K}$ |
@@ -1424,15 +1424,15 @@ Next, the researcher evaluates $\Delta G$ for an exothermic binding step ($\Delt
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `100` {{key:+/-}} {{key:ENTER}} `300` {{key:ENTER}} `0.1` {{key:+/-}} {{key:ΔG}} | $0$ | $0$ | $0$ | $-70$ | Evaluate $\Delta G = -100 - 300(-0.10) = -70.0\text{ kJ/mol}$ |
-| `298.15` {{key:ENTER}} `10` {{key:Kₑq}} | $0$ | $0$ | $-70$ | $-5708.0$ | Standard free energy $\Delta G^\circ = -R(298.15)\ln(10) = -5708.0\text{ J/mol}$ |
-| {{key:E°}} `1.1` {{keycap:S}} `2` {{keycap:N}} `10` {{keycap:Q}} {{key:SOLVE}} {{keycap:E}} | $1.1$ | $2$ | $10$ | $1.0704$ | Nernst cell voltage $E = 1.10 - (0.05916/2)\log_{10}(10) = 1.0704\text{ V}$ |
-| `10` {{key:ENTER}} `10000` {{key:RCF}} | $10$ | $10$ | $1.0704$ | $11180$ | Relative Centrifugal Force $\text{RCF} = 11{,}180 \times g$ at $r = 10\text{ cm}, 10{,}000\text{ RPM}$ |
-| `12000` {{key:ENTER}} `1.118` {{key:E}} `5` {{key:+/-}} {{key:÷}} `9.5` {{key:÷}} {{key:√x}} | $1.0704$ | $1.0704$ | $11180$ | **$10629.4$** | Solve required rotor speed $\text{RPM} = \sqrt{12{,}000 / (1.118\times 10^{-5} \times 9.5)} = 10{,}629\text{ RPM}$ |
+| `100` {{key:+/-}} {{key:ENTER}} `300` {{key:ENTER}} `0.1` {{key:+/-}} {{key:ΔG}} | $0$ | $0$ | $0$ | **$-70$** | Evaluate $\Delta G = -100 - 300(-0.10) = -70.0\text{ kJ/mol}$ |
+| `298.15` {{key:ENTER}} `10` {{key:Kₑq}} | $0$ | $0$ | $-70$ | **$-5708.0$** | Standard free energy $\Delta G^\circ = -R(298.15)\ln(10) = -5708.0\text{ J/mol}$ |
+| `1.1` {{key:ENTER}} `0.05916` {{key:ENTER}} `2` {{key:÷}} `10` {{key:LOG}} {{key:×}} {{key:-}} | $-5708.0$ | $-5708.0$ | $-5708.0$ | **$1.0704$** | Nernst cell voltage $E = 1.10 - (0.05916/2)\log_{10}(10) = 1.0704\text{ V}$ |
+| `10000 {{key:x²}} 10 {{key:×}} 1.1182 {{key:E}} 5 {{key:+/-}} {{key:×}}` | $-5708.0$ | $-5708.0$ | $1.0704$ | **$11182$** | Relative Centrifugal Force $\text{RCF} = 11{,}182 \times g$ at $r = 10\text{ cm}, 10{,}000\text{ RPM}$ |
+| `12000` {{key:ENTER}} `1.118` {{key:E}} `5` {{key:+/-}} {{key:÷}} `9.5` {{key:÷}} {{key:√x}} | $1.0704$ | $1.0704$ | $11182$ | **$10629.4$** | Solve required rotor speed $\text{RPM} = \sqrt{12{,}000 / (1.118\times 10^{-5} \times 9.5)} = 10{,}629\text{ RPM}$ |
 
-The SC-60 features dedicated workspaces for spectrophotometry, thermodynamics, and centrifugation:
+The SC-60 features dedicated workspaces for spectrophotometry and thermodynamics:
 - **`εbc` Spectrophotometry Workspace ({{key:εbc}}):** Binds Absorbance ({{keycap:A}}), Molar Absorptivity ({{keycap:E}}), Path Length ({{keycap:B}}), and Concentration ({{keycap:C}}) across the softkeys. Striking {{key:SOLVE}} {{keycap:C}} solves for unknown concentration instantly.
-- **`PVT` / `CAL` / `RCF` Workspace ({{key:PVT}}):** Shift-blue {{key:RCF}} activates the centrifuge solver, binding RCF (LFU0), RPM (LFU1), and radius (LFU2).
+- **`PVT` / `CAL` Physical Chemistry Workspaces:** Dedicated solvers for ideal gas behavior ({{key:sc60:PVT}}) and solution calorimetry ({{key:sc60:CAL}}) streamline laboratory thermodynamic calculations.
 
 #### Back-Solving Unknown Extinction Coefficient in the Solver Workspace
 Suppose an uncharacterized synthetic dye ($c = 25.0\ \mu\text{M} = 2.50 \times 10^{-5}\text{ M}$) in a $b = 1.000\text{ cm}$ cuvette produces an absorbance reading of $A = 0.785$ at $550\text{ nm}$. What is its molar extinction coefficient?

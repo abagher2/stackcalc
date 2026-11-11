@@ -64,6 +64,9 @@ hide:
 
       <!-- Action Buttons -->
       <div class="ec-actions-row">
+        <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #FF9900; border-color: #FF9900; color: #111827; font-weight: 800;">
+          Teacher's Guide on Amazon ↗
+        </a>
         <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #F59E0B; border-color: #F59E0B; color: #0F172A; font-weight: 800;">
           Middle School Workbook on Amazon ↗
         </a>

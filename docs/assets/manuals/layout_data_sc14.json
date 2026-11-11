@@ -155,9 +155,9 @@
       "primaryLabel" : "AWG",
       "row" : 1,
       "w" : 7,
-      "yellowAction" : "elecMotor",
-      "yellowBitmapIdentifier" : "operation.374",
-      "yellowLabel" : "MTR"
+      "yellowAction" : "elecACVoltageDrop",
+      "yellowBitmapIdentifier" : "operation.689",
+      "yellowLabel" : "VDRP"
     },
     {
       "alphaLabel" : "C",
@@ -207,9 +207,9 @@
     },
     {
       "alphaLabel" : "E",
-      "blueAction" : "mechWallThickness",
-      "blueBitmapIdentifier" : "operation.370",
-      "blueLabel" : "WAL",
+      "blueAction" : "elecApparentPowerS",
+      "blueBitmapIdentifier" : "operation.675",
+      "blueLabel" : "S",
       "col" : 4,
       "cx" : 53.25,
       "cy" : 67.325,
@@ -218,21 +218,21 @@
       "isEnter" : false,
       "isShiftBlue" : false,
       "isShiftYellow" : false,
-      "primaryAction" : "mechPipeFlow",
-      "primaryBitmapIdentifier" : "operation.368",
-      "primaryLabel" : "PIP",
+      "primaryAction" : "elecReactanceInductive",
+      "primaryBitmapIdentifier" : "operation.673",
+      "primaryLabel" : "XL",
       "row" : 1,
       "w" : 7,
-      "yellowAction" : "mechPipeSchedule",
-      "yellowBitmapIdentifier" : "operation.369",
-      "yellowLabel" : "SCH"
+      "yellowAction" : "elecReactanceCapacitive",
+      "yellowBitmapIdentifier" : "operation.674",
+      "yellowLabel" : "XC"
     },
     {
       "alphaLabel" : "F",
-      "blueAction" : "ratio",
-      "blueBitmapIdentifier" : "operation.225",
-      "blueLabel" : "a:b",
-      "blueLatex" : "a:b",
+      "blueAction" : "constGravity",
+      "blueBitmapIdentifier" : "operation.270",
+      "blueLabel" : "g₀",
+      "blueLatex" : "g_0",
       "col" : 5,
       "cx" : 64.75,
       "cy" : 67.325,
@@ -241,14 +241,14 @@
       "isEnter" : false,
       "isShiftBlue" : false,
       "isShiftYellow" : false,
-      "primaryAction" : "mechPumpPower",
-      "primaryBitmapIdentifier" : "operation.371",
-      "primaryLabel" : "PMP",
+      "primaryAction" : "constSqrt3",
+      "primaryBitmapIdentifier" : "operation.627",
+      "primaryLabel" : "√3",
       "row" : 1,
       "w" : 7,
-      "yellowAction" : "mechTankVolume",
-      "yellowBitmapIdentifier" : "operation.372",
-      "yellowLabel" : "TNK"
+      "yellowAction" : "constCopperResistivity",
+      "yellowBitmapIdentifier" : "operation.628",
+      "yellowLabel" : "ρCu"
     },
     {
       "alphaLabel" : "G",
@@ -512,9 +512,9 @@
       "primaryLabel" : "XEQ",
       "row" : 4,
       "w" : 8.6,
-      "yellowAction" : "mechRiggingSling",
-      "yellowBitmapIdentifier" : "operation.386",
-      "yellowLabel" : "RIG"
+      "yellowAction" : "mechRiggingTension",
+      "yellowBitmapIdentifier" : "operation.718",
+      "yellowLabel" : "SLNG"
     },
     {
       "alphaLabel" : "Q",
@@ -534,9 +534,9 @@
       "primaryLabel" : "7",
       "row" : 4,
       "w" : 8.6,
-      "yellowAction" : "mechOrificeFlow",
-      "yellowBitmapIdentifier" : "operation.388",
-      "yellowLabel" : "ORF"
+      "yellowAction" : "elecTransformerShortCircuit",
+      "yellowBitmapIdentifier" : "operation.690",
+      "yellowLabel" : "Isc"
     },
     {
       "alphaLabel" : "R",
@@ -1034,11 +1034,6 @@
       ",",
       "FLGS"
     ],
-    "MTR" : [
-      "H",
-      "T",
-      "N"
-    ],
     "OHM" : [
       "P",
       "V",
@@ -1057,16 +1052,6 @@
       "V",
       "I",
       "F"
-    ],
-    "PIP" : [
-      "Q",
-      "A",
-      "V"
-    ],
-    "PMP" : [
-      "P",
-      "Q",
-      "H"
     ],
     "POLY" : [
       "A",

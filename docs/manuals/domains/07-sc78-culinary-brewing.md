@@ -266,7 +266,7 @@ $$q_{\text{sensible}} = m \cdot c_p \cdot \Delta T$$
 
 where $c_p = 1.00\text{ kcal/(kg}\cdot{^\circ\text{C})}$ ($4.184\text{ kJ/(kg}\cdot\text{K)}$). Each kilogram of chilled liquid water can absorb only $1\text{ kcal}$ of heat for every degree Celsius it warms. Mixing $21^\circ\text{C}$ tap water with $0^\circ\text{C}$ liquid water in equal proportions would yield water at $10.5^\circ\text{C}$—still warmer than the required $9.0^\circ\text{C}$ target. To hit $9.0^\circ\text{C}$ with $0^\circ\text{C}$ liquid water, more than $57\%$ of the water would have to be near freezing, requiring massive refrigeration tanks.
 
-When ambient summer heat pushes required strike water temperatures below available tap water, the trade turns to the massive thermodynamic sink of **phase-change latent heat**: replacing part of the liquid water with solid ice ({{key:ICE}}).
+When ambient summer heat pushes required strike water temperatures below available tap water, the trade turns to the massive thermodynamic sink of **phase-change latent heat**: replacing part of the liquid water with solid ice ($80\text{ cal/g}$, {{key:ΔHf}}).
 
 Solid ice at $0^\circ\text{C}$ absorbs approximately **eighty kilocalories per kilogram** ($80\text{ kcal/kg}$, or $144\text{ BTU/lb}$, $334\text{ kJ/kg}$) solely to undergo the phase transition from crystalline solid to liquid water at $0^\circ\text{C}$ without changing temperature by a single degree. This latent heat of fusion is eighty times greater than the sensible heat capacity of liquid water over a $1^\circ\text{C}$ change.
 
@@ -283,7 +283,7 @@ The remaining liquid tap-water addition is then simply the difference between to
 
 $$W_{\text{liquid}} = W_{\text{water}} - W_{\text{ice}}$$
 
-Applying {{key:ICE}} to Claire's $W_{\text{water}} = 65.3265\text{ kg}$ of mixer water with tap water at $T_{\text{tap}} = 21.0^\circ\text{C}$ and target strike temperature $W = 9.0^\circ\text{C}$ gives a sensible cooling deficit of:
+Balancing latent heat of fusion ($80\text{ kcal/kg}$) against Claire's $W_{\text{water}} = 65.3265\text{ kg}$ of mixer water with tap water at $T_{\text{tap}} = 21.0^\circ\text{C}$ and target strike temperature $W = 9.0^\circ\text{C}$ gives a sensible cooling deficit of:
 
 $$\Delta T = T_{\text{tap}} - W = 21.0 - 9.0 = 12.0^\circ\text{C}$$
 
@@ -309,7 +309,7 @@ Flake ice, by contrast, has a thickness of only $1.5\text{–}2.0\text{ mm}$ and
 
 ## Dough Scaling and Thermal Balancing on the Stack and in the Solver Workspace
 
-On the **SC-78**, entering the base flour weight in Register $Y$ and the first ingredient weight in Register $X$ before pressing {{key:BK%}} locks the base flour weight $F$ and activates the live `@BK%` recipe ledger in {{key:▦}}. Subsequent presses of {{key:BK%}} compute each ingredient's Baker's Percentage and append it to the ledger, while {{key:ΣW}}, {{key:SCL}}, {{key:DIV}}, {{key:Tw}}, and {{key:ICE}} handle batch scaling, portion dividing, and thermal balancing.
+On the **SC-78**, entering the base flour weight in Register $Y$ and the first ingredient weight in Register $X$ before pressing {{key:BK%}} locks the base flour weight $F$ and activates the live `@BK%` recipe ledger in {{key:▦}}. Subsequent presses of {{key:BK%}} compute each ingredient's Baker's Percentage and append it to the ledger, while {{key:ΣW}}, {{key:SCL}}, {{key:DIV}}, and {{key:Tw}} handle batch scaling, portion dividing, and thermal balancing.
 
 | Key / Solver | Mode | Inputs / Workspace Softkeys | Governing Expression |
 | :--- | :--- | :--- | :--- |
@@ -318,11 +318,11 @@ On the **SC-78**, entering the base flour weight in Register $Y$ and the first i
 | {{key:SCL}} | Immediate Ledger | Register $X$: Target dough mass $T_{\text{target}}$ (or multiplier factor) | Scales active flour $F$ and all `@BK%` rows in {{key:▦}} by $T_{\text{target}} / T$ |
 | {{key:DIV}} | Immediate Stack | Register $Y$: Total dough mass $T$, Register $X$: Count $N$ (or unit mass $W$) | $W = T / N \iff N = T / W$ |
 | {{key:Tw}} | Stack / Solver | Stack: $Y = D, X = T_{\text{avg}}$ • Solver: {{keycap:W}} {{keycap:D}} {{keycap:R}} {{keycap:F}} {{keycap:M}} | $W = 3 D - R - F - M$ (Strike Water / Mixer Friction Solver) |
-| {{key:ICE}} | Immediate Stack | Register $Y$: Water mass $W_{\text{water}}$, Register $X$: Cooling $\Delta T = T_{\text{tap}} - W$ | $W_{\text{ice}} = W_{\text{water}} \cdot (\Delta T / 80)$ ($80\text{ kcal/kg}$ latent heat of fusion) |
+| **`{{key:ΔHf}}`** | Fundamental Constant | — | — | Water latent heat of fusion: $80.0\text{ cal/g}$ ($80.0\text{ kcal/kg}$) |
 
 ### Building and Scaling the `@BK%` Recipe Ledger on the Stack
 
-To build the country sourdough ledger from a $1000\text{ g}$ test formula (`720 g` water, `200 g` levain, `22 g` salt), recall the cumulative test-batch dough weight with {{key:ΣW}}, scale the entire recipe to $200$ loaves at $0.881\text{ kg}$ ($176.2\text{ kg}$ total dough) with {{key:SCL}}, and compute the flake-ice weight for $W = 9.0^\circ\text{C}$ strike water with {{key:ICE}}, the baker chains:
+To build the country sourdough ledger from a $1000\text{ g}$ test formula (`720 g` water, `200 g` levain, `22 g` salt), recall the cumulative test-batch dough weight with {{key:ΣW}}, scale the entire recipe to $200$ loaves at $0.881\text{ kg}$ ($176.2\text{ kg}$ total dough) with {{key:SCL}}, and compute the flake-ice weight for $W = 9.0^\circ\text{C}$ strike water via latent heat ($W_{\text{ice}} = W_{\text{water}} \times \Delta T / 80$), the baker chains:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -330,7 +330,7 @@ To build the country sourdough ledger from a $1000\text{ g}$ test formula (`720 
 | `200` {{key:BK%}} `22` {{key:BK%}} | $0$ | $72.0000$ | $20.0000$ | $2.2000$ | Log levain ($20.0\%$) and sea salt ($2.2\%$) into `@BK%` (`P = 194.2%`) |
 | {{key:ΣW}} | $72.0000$ | $20.0000$ | $2.2000$ | $1942.000$ | Recall cumulative test-batch dough mass $T = 1942\text{ g}$ ($194.2\%$) from `@BK%` |
 | `176.2` {{key:x⇄y}} {{key:÷}} `1000` {{key:×}} | $20$ | $20$ | $2.2$ | $90.7312$ | Scale anchor flour to $176.2\text{ kg}$ batch: $F = 90.7312\text{ kg}$ |
-| `0.72` {{key:×}} `12` {{key:ICE}} | $20$ | $20$ | $2.2$ | **$9.7990$** | Compute mixer water ($65.3265\text{ kg}$) and flake ice $W_{\text{ice}} = 9.7990\text{ kg}$ at $\Delta T = 12^\circ\text{C}$ |
+| `0.72` {{key:×}} `12` {{key:×}} `80` {{key:÷}} | $20$ | $20$ | $2.2$ | **$9.7990$** | Compute mixer water ($65.3265\text{ kg}$) and flake ice $W_{\text{ice}} = 9.7990\text{ kg}$ at $\Delta T = 12^\circ\text{C}$ |
 
 ### High-Volume Bagel Dough Stiff Friction and Flake-Ice Shift on the Stack
 
@@ -646,7 +646,7 @@ $$\text{SRM} = 1.4922 \times (10.6452)^{0.6859} = 1.4922 \times 5.0663 = \mathbf
 
 An SRM of $7.56$ corresponds visually to a brilliant, glowing golden-copper hue—the hallmark of an authentic American pale ale.
 
-### Carbonation Physics and Henry's Law ({{key:CO₂}})
+### Carbonation Physics and Henry's Law
 
 In the bright tank, carbonating finished beer follows **Henry's Law**: at a constant temperature, the amount of dissolved gas in a liquid is directly proportional to the partial pressure of that gas in equilibrium above the liquid:
 
@@ -654,7 +654,7 @@ $$C_{\text{gas}} = k_H(T) \cdot P_{\text{head}}$$
 
 Brewers measure dissolved carbon dioxide in **volumes of $\text{CO}_2$** (the volume of gas at standard temperature and pressure dissolved per volume of liquid). Standard American draft ales target $2.4\text{–}2.6\text{ volumes}$, while British cask ales target $1.6\text{–}1.9\text{ volumes}$ and Belgian tripels reach $3.0\text{–}3.5\text{ volumes}$.
 
-Because gas solubility is inversely proportional to liquid temperature, holding beer at $1.0^\circ\text{C}$ ($33.8^\circ\text{F}$) requires a tank head pressure of approximately $10.5\text{ psi}$ to maintain $2.5\text{ volumes}$ of $\text{CO}_2$. If the cellar warms to $5.0^\circ\text{C}$ ($41.0^\circ\text{F}$), the head pressure must be increased to $13.5\text{ psi}$ (via {{key:CO₂}}) to prevent dissolved carbon dioxide from outgassing.
+Because gas solubility is inversely proportional to liquid temperature, holding beer at $1.0^\circ\text{C}$ ($33.8^\circ\text{F}$) requires a tank head pressure of approximately $10.5\text{ psi}$ to maintain $2.5\text{ volumes}$ of $\text{CO}_2$. If the cellar warms to $5.0^\circ\text{C}$ ($41.0^\circ\text{F}$), the head pressure must be increased to $13.5\text{ psi}$ to prevent dissolved carbon dioxide from outgassing.
 
 
 ### Late Whirlpool Extraction Kinetics and Isomerization at Sub-Boiling Temperatures
@@ -684,7 +684,7 @@ landing squarely in the sweet center of the Golden Cup envelope.
 
 ## Brewhouse Gravity, Attenuation, and Bitterness on the Stack and in the Solver Workspace
 
-On the **SC-78**, mash infusion thermodynamics ({{key:MSH}}), ASBC extract conversions ({{key:▸SG}}, {{key:▸Brx}}, {{key:▸°P}}, {{key:BRX}}, {{key:SGT}}), fermentation alcohol ({{key:ABV}}, {{key:▸PRF}}), hop isomerization ({{key:IBU}}), malt color ({{key:SRM}}), carbonation ({{key:CO₂}}), and coffee extraction ({{key:TDS}}) execute both as immediate two-register RPN stack operators and as multi-variable Equation Solver Workspaces ({{key:MSH}}, {{key:ABV}}, {{key:IBU}}).
+On the **SC-78**, mash infusion thermodynamics ({{key:MSH}}), ASBC extract conversions ({{key:▸SG}}, {{key:▸Brx}}, {{key:▸°P}}, {{key:BRX}}, {{key:SGT}}), fermentation alcohol ({{key:ABV}}, {{key:▸PRF}}), hop isomerization ({{key:IBU}}), malt color ({{key:SRM}}), carbonation thermodynamics, and coffee extraction ({{key:TDS}}) execute both as immediate two-register RPN stack operators and as multi-variable Equation Solver Workspaces ({{key:MSH}}, {{key:ABV}}, {{key:IBU}}).
 
 | Key / Solver | Mode | Inputs / Workspace Softkeys | Governing Expression |
 | :--- | :--- | :--- | :--- |
@@ -800,7 +800,7 @@ A dangerous accounting error common among novice culinary managers is the **line
 $$100\% - 20\% - 10\% = 70\%\text{ yield?}$$
 This linear subtraction is mathematically false. The second stage loss ($10.0\%$) does not act on the original $100\%$ delivered weight; it acts only on the $80\%$ mass that survived the butcher table.
 
-### Compounding Multi-Stage Fabrication Yields ({{key:YLD}})
+### Compounding Multi-Stage Fabrication Yields
 
 In culinary cost accounting, mass conservation dictates that sequential preparation stages **multiply geometrically** rather than subtracting linearly. 
 
@@ -872,9 +872,9 @@ In commercial food safety, water activity functions as a critical **biological h
 
 When curing artisan charcuterie (prosciutto, saucisson sec, bresaola), Henri uses the SC-78 to monitor equilibrium salt brine calculations ({{key:SAL}}) and water activity ({{key:Aw}}). Measuring an equilibrium relative humidity of $\text{ERH} = 85.0\%$ in the dry-curing chamber certifies that $a_w = 0.850$, confirming that the charcuterie has crossed the safety threshold into shelf stability.
 
-### Enological Stability: Henderson–Hasselbalch Sulfite Equilibrium ({{key:SO₂}})
+### Enological Stability: Henderson–Hasselbalch Sulfite Equilibrium ({{key:MSO2}})
 
-In the hotel's wine cellar, the sommelier and beverage director manage chemical oxidation and microbial spoilage (*Brettanomyces bruxellensis*, *Acetobacter aceti*) through **potassium metabisulfite** ($\text{K}_2\text{S}_2\text{O}_5$) additions ({{key:SO₂}}).
+In the hotel's wine cellar, the sommelier and beverage director manage chemical oxidation and microbial spoilage (*Brettanomyces bruxellensis*, *Acetobacter aceti*) through **potassium metabisulfite** ($\text{K}_2\text{S}_2\text{O}_5$) additions ({{key:MSO2}}).
 
 When sulfur dioxide dissolves in wine must, it exists in a dynamic pH-dependent equilibrium between three chemical species:
 $$\text{SO}_2 \cdot \text{H}_2\text{O} \rightleftharpoons \text{H}^+ + \text{HSO}_3^- \rightleftharpoons 2\text{H}^+ + \text{SO}_3^{2-}$$
@@ -902,7 +902,7 @@ Each gram of potassium metabisulfite delivers $576\text{ mg}$ of pure active $\t
 
 To raise a $V_{\text{L}} = 225\text{ L}$ French oak barrique by $\Delta\text{ppm} = 25\text{ mg/L}$ of free $\text{SO}_2$:
 $$W_{\text{SO}_2,\text{mg}} = \Delta\text{ppm} \times V_{\text{L}} = 25 \times 225 = \mathbf{5625\text{ mg}}\text{ (}5.625\text{ g)}$$
-Dividing by the $57.6\%$ active yield ({{key:SO₂}}):
+Dividing by the $57.6\%$ active yield (`576 {{key:÷}}`):
 $$W_{\text{K}_2\text{S}_2\text{O}_5,\text{g}} = \frac{5625}{576} = \mathbf{9.766\text{ g}}$$
 Adding $9.77\text{ g}$ of metabisulfite salt secures the barrel against oxidative browning and wild yeast spoilage.
 
@@ -1008,23 +1008,23 @@ Crucially, without the **yield-adjusted edible portion costing** ($C_{\text{EP}}
 
 ## Butcher Yield, Menu Costing, and Preservation on the Stack and in the Solver Workspace
 
-On the **SC-78**, fabrication yield ({{key:YLD}}), food-cost percentage and pricing ({{key:CST}}, {{key:PRC}}), water activity ({{key:Aw}}), sulfite dosing ({{key:SO₂}}), and utensil-snapping volume conversions ({{key:▸cup}}, {{key:▸pt}}, {{key:▸qt}}, {{key:▸dL}}, {{key:▸tb}}, {{key:▸tsp}}) operate across both the RPN stack and the bidirectional {{key:CST}} Solver Workspace.
+On the **SC-78**, fabrication yield, food-cost percentage and pricing ({{key:CST}}, {{key:PRC}}), water activity ({{key:Aw}}), molecular sulfite equilibrium ({{key:MSO2}}), and utensil-snapping volume conversions ({{key:▸cup}}, {{key:▸pt}}, {{key:▸tb}}, {{key:▸tsp}}) operate across both the RPN stack and the bidirectional {{key:CST}} Solver Workspace.
 
 | Key / Solver | Mode | Inputs / Workspace Softkeys | Governing Expression |
 | :--- | :--- | :--- | :--- |
-| {{key:YLD}} | Immediate Stack | Register $Y$: As-Purchased $W_{\text{AP}}$, Register $X$: Edible $W_{\text{EP}}$ | Trim yield percentage $Y_{\%} = (X / Y) \times 100$ |
+| **`{{key:%}}`** / **`{{key:÷}}`** | Immediate Stack | Register $Y$: As-Purchased $W_{\text{AP}}$, Register $X$: Edible $W_{\text{EP}}$ | Trim yield percentage $Y_{\%} = (X / Y) \times 100$ |
 | {{key:CST}} | Stack / Solver | Stack: $Y = C, X = P$ • Solver: {{keycap:P}} {{keycap:C}} `[F=30]` | Stack: Food cost $F_{\%} = (C / P) \times 100$; Solver: $P = C / (F / 100)$ |
 | {{key:PRC}} | Immediate Stack | Register $Y$: Plate cost $C$, Register $X$: Target food cost $F_{\%}$ | Menu selling price $P = C / (F_{\%} / 100)$ (Gross margin $M_{\%} = 100 - F_{\%}$) |
-| {{key:Aw}} / {{key:SO₂}} | Immediate Stack | {{key:Aw}}: $X = \text{ERH}_{\%}$ • {{key:SO₂}}: $Y = W_{\text{SO}_2,\text{mg}}, X = 576$ (or $V_{\text{L}}$) | Water activity $a_w = X / 100$; Sulfite ratio $Y / X$ |
+| {{key:Aw}} / {{key:MSO2}} | Immediate Stack | {{key:Aw}}: $X = \text{ERH}_{\%}$ • {{key:MSO2}}: Molecular $\text{SO}_2$ equilibrium | Water activity $a_w = X / 100$; Henderson–Hasselbalch sulfite |
 | {{key:▸cup}} {{key:▸tb}} {{key:▸tsp}} | Immediate Stack | Register $X$: Volume in $\text{mL}$ | Converts volume to cups, tablespoons, or teaspoons with fraction snap |
 
 ### Tenderloin Yield, Plate Costing, and Margin Audit on the Stack
 
-At the butcher table, the chef verifies the $72.0\%$ fabrication yield on $45.0\text{ lb}$ of tenderloin ({{key:YLD}}), calculates the $\$8.40$ yield-adjusted plate cost, prices the entrée at a $28.0\%$ food-cost target ({{key:PRC}}), and audits the achieved food cost percentage ({{key:CST}}) and gross margin ($100 - F_{\%}$) at a $\$32.00$ menu tariff:
+At the butcher table, the chef verifies the $72.0\%$ fabrication yield on $45.0\text{ lb}$ of tenderloin (`32.4 {{key:ENTER}} 45 {{key:÷}} 100 {{key:×}}`), calculates the $\$8.40$ yield-adjusted plate cost, prices the entrée at a $28.0\%$ food-cost target ({{key:PRC}}), and audits the achieved food cost percentage ({{key:CST}}) and gross margin ($100 - F_{\%}$) at a $\$32.00$ menu tariff:
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `45` {{key:ENTER}} `32.4` {{key:YLD}} | $0$ | $0$ | $0$ | $72.0000$ | Verify cumulative trim yield $Y_{\%} = (32.4 / 45.0) \times 100 = 72.0\%$ |
+| `32.4` {{key:ENTER}} `45` {{key:÷}} `100` {{key:×}} | $0$ | $0$ | $0$ | $72.0000$ | Verify cumulative trim yield $Y_{\%} = (32.4 / 45.0) \times 100 = 72.0\%$ |
 | `100` {{key:÷}} `16.20` {{key:x⇄y}} {{key:÷}} | $0$ | $0$ | $0$ | $22.5000$ | Compute true Edible Portion cost $C_{\text{EP}} = \$16.20 / 0.72 = \$22.50/\text{lb}$ |
 | `0.27` {{key:×}} `2.325` {{key:+}} | $0$ | $0$ | $0$ | $8.4000$ | Multiply by $0.27\text{ lb}$ ($4.32\text{ oz}$) and add $\$2.325$ garnish: $C = \$8.40$ |
 | {{key:ENTER}} {{key:ENTER}} `28` {{key:PRC}} | $0$ | $0$ | $8.4000$ | $30.0000$ | Price $\$8.40$ entrée at $F = 28.0\%$ food cost: $P = \$8.40 / 0.28 = \$30.00$ |

@@ -160,10 +160,9 @@
     },
     {
       "alphaLabel" : "C",
-      "blueAction" : "ratio",
-      "blueBitmapIdentifier" : "operation.225",
-      "blueLabel" : "a:b",
-      "blueLatex" : "a:b",
+      "blueAction" : "survMeridianConvergence",
+      "blueBitmapIdentifier" : "operation.704",
+      "blueLabel" : "CONV",
       "col" : 2,
       "cx" : 30.25,
       "cy" : 67.325,
@@ -230,9 +229,9 @@
     },
     {
       "alphaLabel" : "F",
-      "blueAction" : "survTriangle",
-      "blueBitmapIdentifier" : "operation.264",
-      "blueLabel" : "△",
+      "blueAction" : "survCurvatureRefraction",
+      "blueBitmapIdentifier" : "operation.686",
+      "blueLabel" : "C+R",
       "col" : 5,
       "cx" : 64.75,
       "cy" : 67.325,
@@ -246,9 +245,9 @@
       "primaryLabel" : "FLW",
       "row" : 1,
       "w" : 7,
-      "yellowAction" : "civilSoil",
-      "yellowBitmapIdentifier" : "operation.255",
-      "yellowLabel" : "SWL"
+      "yellowAction" : "survCombinedScaleFactor",
+      "yellowBitmapIdentifier" : "operation.687",
+      "yellowLabel" : "CSF"
     },
     {
       "alphaLabel" : "G",
@@ -312,9 +311,9 @@
       "primaryLabel" : "TSD",
       "row" : 2,
       "w" : 7,
-      "yellowAction" : "navWeightBalance",
-      "yellowBitmapIdentifier" : "operation.268",
-      "yellowLabel" : "CG"
+      "yellowAction" : "navDensityAltitude",
+      "yellowBitmapIdentifier" : "operation.703",
+      "yellowLabel" : "DALT"
     },
     {
       "alphaLabel" : "J",
@@ -496,9 +495,9 @@
     },
     {
       "alphaLabel" : "",
-      "blueAction" : "survGNSS",
-      "blueBitmapIdentifier" : "operation.271",
-      "blueLabel" : "GPS",
+      "blueAction" : "survGreatCircleHaversine",
+      "blueBitmapIdentifier" : "operation.688",
+      "blueLabel" : "GCD",
       "col" : 0,
       "cx" : 7.25,
       "cy" : 101.22500000000001,
@@ -540,9 +539,9 @@
     },
     {
       "alphaLabel" : "R",
-      "blueAction" : "toHectares",
-      "blueLabel" : "▸ha",
-      "blueSuffix" : "ha",
+      "blueAction" : "toFeetFromChains",
+      "blueLabel" : "▸ft",
+      "blueSuffix" : "ft",
       "col" : 2,
       "cx" : 37.369,
       "cy" : 101.22500000000001,
@@ -556,9 +555,9 @@
       "primaryLabel" : "8",
       "row" : 4,
       "w" : 8.6,
-      "yellowAction" : "toAcres",
-      "yellowLabel" : "▸ac",
-      "yellowSuffix" : "ac"
+      "yellowAction" : "toChainsFromFeet",
+      "yellowLabel" : "▸ch",
+      "yellowSuffix" : "ch"
     },
     {
       "alphaLabel" : "S",
@@ -742,9 +741,9 @@
     },
     {
       "alphaLabel" : "W",
-      "blueAction" : "toKnots",
-      "blueLabel" : "▸kt",
-      "blueSuffix" : "kt",
+      "blueAction" : "toStatuteMiles",
+      "blueLabel" : "▸SM",
+      "blueSuffix" : "SM",
       "col" : 1,
       "cx" : 23.679,
       "cy" : 123.82500000000002,
@@ -758,7 +757,7 @@
       "primaryLabel" : "1",
       "row" : 6,
       "w" : 8.6,
-      "yellowAction" : "toNauticalMiles",
+      "yellowAction" : "toNauticalMilesFromSM",
       "yellowLabel" : "▸NM",
       "yellowSuffix" : "NM"
     },
@@ -963,11 +962,6 @@
       "OCT",
       "BIN"
     ],
-    "CG" : [
-      "M",
-      "W",
-      "A"
-    ],
     "CLEAR" : [
       "CLEQN",
       "CLVARS",
@@ -1001,6 +995,11 @@
       "L",
       "R",
       "D"
+    ],
+    "ISC" : [
+      "N",
+      "D",
+      "A"
     ],
     "L.R." : [
       "ŷ",
@@ -1071,11 +1070,6 @@
       "Σy²",
       "Σxy",
       "n"
-    ],
-    "TRI" : [
-      "A",
-      "B",
-      "H"
     ],
     "TSD" : [
       "D",

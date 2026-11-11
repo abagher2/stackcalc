@@ -231,7 +231,7 @@ The **SC-50** combines **Native Complex RF Mode** ({{key:CMPLX}}, activating the
 
 | Button / Menu | Operation | Register Z | Register Y | Register X | Governing Expression & Solver Schema |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| `{{key:dBm}}` / `{{key:▸dBm}}` | Linear Power to dBm | — | — | Power $P_{\text{mW}}$ ($\text{mW}$) | $P_{\text{dBm}} = 10 \log_{10}(P_{\text{mW}})$ (paired with `{{key:▸dBW}}`, `{{key:▸dBV}}`, `{{key:▸μV}}`) |
+| `{{key:dBm}}` / `{{key:▸dBm}}` | Linear Power to dBm | — | — | Power $P_{\text{mW}}$ ($\text{mW}$) | $P_{\text{dBm}} = 10 \log_{10}(P_{\text{mW}})$ (paired with `{{key:▸dBW}}`, `{{key:▸W}}`, `{{key:▸dB}}`, `{{key:▸Lin}}`) |
 | `{{key:▸mW}}` | dBm to Linear Power | — | — | Power $P_{\text{dBm}}$ ($\text{dBm}$) | $P_{\text{mW}} = 10^{P_{\text{dBm}} / 10}$ |
 | `{{key:CMPLX}}` | Native Complex RF Menu | — | Resistance $R$ ($\Omega$) | Reactance $X$ ($\Omega$) | Softkeys: `{{keycap:Γ}}` `{{keycap:Z←Γ}}` `{{keycap:jX}}` `{{keycap:SWR}}` `{{keycap:RL}}` `{{keycap:Z₀}}` ($Z_L = R + jX \leftrightarrow \Gamma$) |
 | `{{key:SWR}}` | Standing Wave Ratio | — | — | $\lvert\Gamma\rvert$ or $Z_L = R + jX$ | Stack: $\text{VSWR} = \frac{1 + \lvert\Gamma\rvert}{1 - \lvert\Gamma\rvert}$ (fills `{{key:▦}}`); Solver: `S = (1+G)/(1-G)` (`{{keycap:S}}`,`{{keycap:G}}`) |

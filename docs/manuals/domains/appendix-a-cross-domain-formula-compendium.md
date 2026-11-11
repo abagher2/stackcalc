@@ -21,10 +21,10 @@ Every instrument in the StackCalc Domain Series provides IEEE 754 double-precisi
 | **Register $X$** | Active Display Line | Consumed as right operand; receives result $f(Y, X)$ | Remains in $X$ (lift disabled for next digit) |
 
 2. **Dual-Mode Domain Keys (Immediate RPN Stack Shortcuts + Bidirectional Equation Solver Workspaces):**
-   - **Immediate Stack Mode:** Pressing a domain key when arguments are staged in Registers $Z$, $Y$, and $X$ evaluates the forward physical transformation in a single keystroke while automatically injecting embedded physical constants ({{key:sc50:c}}, {{key:sc50:kB}}, {{key:sc60:R}}, {{key:sc60:F}}, {{key:sc35:g₀}}, {{key:sc14:ρw}}) and regulatory lookup tables (NEC Table 8 wire gauges, IUPAC atomic masses).
+   - **Immediate Stack Mode:** Pressing a domain key when arguments are staged in Registers $Z$, $Y$, and $X$ evaluates the forward physical transformation in a single keystroke while automatically injecting embedded physical constants ({{key:sc50:c}}, {{key:sc50:kB}}, {{key:sc60:R}}, {{key:sc60:h}}, {{key:sc35:g₀}}, {{key:sc14:ρw}}) and regulatory lookup tables (NEC Table 8 wire gauges, IUPAC atomic masses).
    - **Bidirectional Equation Solver Workspace ({{key:sc35:SOLVE}} / {{key:XEQ}} + Workspace Softkeys):** Opening a domain key's Equation Workspace renders the governing equation across Line 1 of the LCD and binds the top-row softkeys to its symbolic variables. Storing known values in any order and pressing {{key:sc35:SOLVE}} (or {{key:XEQ}}) followed by the target variable softkey solves the governing law **forward or backward for any unknown parameter** via exact algebraic isolation or Secant–Brent numerical root-finding.
    - **Zero-Value Parameter Binding & Shift-Softkey Unsetting:** Entering `0` into a variable softkey explicitly binds $0.0000$ to that parameter (indicated by `*` or `•`), enabling physical boundary conditions such as $FV = 0$ for fully paid loan amortizations or zero datum elevation. To unbind a variable (freeing it to be solved for as the unknown target), pressing Yellow Shift followed by the variable softkey ({{key:f}} `<SOFTKEY>`) unsets the parameter immediately across all Equation, TVM, and Polynomial workspaces.
-3. **Domain Modes, Native Input Parsers, and Live Reference Ledgers ({{key:sc35:▦}}):** Native domain entry modes ({{key:sc35:▸HMS}} via {{key:sc35:▸HR}}/{{key:sc35:▸HMS}}, {{key:sc14:f-i}} via {{key:sc14:f-i}}, {{key:sc16:HEX}}/{{key:sc16:DEC}}/{{key:sc16:OCT}}/{{key:sc16:BIN}} + {{key:sc16:WSZ}} + {{key:sc16:NEG}}, {{key:sc24:TC}} + {{key:sc24:FPS}}, chemical formula entry via {{key:sc60:Z}}) and the non-destructive Reference Table ({{key:sc35:▦}}) maintain live domain ledgers (`@COGO`, `@BK%`, `@PAT`/`@MAR`, and bivariate statistical accumulators).
+3. **Domain Modes, Native Input Parsers, and Live Reference Ledgers ({{key:sc35:▦}}):** Native domain entry modes ({{key:sc35:▸HMS}} via {{key:sc35:▸HR}}/{{key:sc35:▸HMS}}, {{key:sc14:f-i}} via {{key:sc14:f-i}}, {{key:sc16:HEX}}/{{key:sc16:DEC}}/{{key:sc16:OCT}}/{{key:sc16:BIN}} + {{key:sc16:WSZ}} + {{key:sc16:NEG}}, {{key:sc24:FPS}} + {{key:sc24:▸TC}}, chemical formula entry via {{key:sc60:Z}}) and the non-destructive Reference Table ({{key:sc35:▦}}) maintain live domain ledgers (`@COGO`, `@BK%`, `@PAT`/`@MAR`, and bivariate statistical accumulators).
 
 ### Cross-Domain Mathematical Isomorphisms
 
@@ -32,10 +32,10 @@ Across the nine physical trades, identical mathematical structures recur under d
 
 | Mathematical Structure | Governing Law Form | Domain Instantiations Across Units I–IX |
 | :--- | :--- | :--- |
-| **First-Order Exponential Decay & Discounting** | $y(t) = y_0 \, e^{-\lambda t}$ | **Unit III (`SC-16`):** RC settling $v_C(t) = V_{\text{in}}(1 - e^{-t/\tau})$ ({{key:sc16:τ}}, {{key:sc16:PWM}}, {{key:sc16:BPS}}) • **Unit VI (`SC-60`):** Beer–Lambert transmittance $I/I_0 = 10^{-\varepsilon \ell c}$ ({{key:sc60:εbc}}, {{key:sc60:C₁V₁}}) & Arrhenius kinetics $k = A e^{-E_a/(RT)}$ ({{key:sc60:Eₐ}}, {{key:sc60:t½}}, {{key:sc60:Kₑq}}, {{key:sc60:ΔG}}, {{key:sc60:E°}}) • **Unit VIII (`SC-80`):** One-compartment drug elimination $C(t) = C_0 e^{-k_e t}$ ({{key:sc80:PK}}, {{key:sc80:GFR}}, {{key:sc80:BSA}}, {{key:sc80:IBW}}, {{key:sc80:ABW}}, {{key:sc80:DOS}}, {{key:sc80:DRP}}, {{key:sc80:IV}}) • **Unit IX (`SC-95`):** Multi-period and continuous discounting ({{key:sc95:TVM}}, {{key:sc95:AMR}}, {{key:sc95:CF}}, {{key:sc95:BND}}, {{key:sc95:EAR}}, {{key:sc95:CGR}}, {{key:sc95:ROI}}, {{key:sc95:pN}}, {{key:sc95:qN}}) |
-| **Logarithmic Ratio Compression** | $L = \kappa \log_{10}(X / X_{\text{ref}})$ | **Unit IV (`SC-24`):** Acoustic sound pressure level $\text{SPL} = 20\log_{10}(p/p_0)$ ({{key:sc24:SPL}}, {{key:sc24:dB}}, {{key:sc24:EV}}, {{key:sc24:DOF}}, {{key:sc24:FOV}}, {{key:sc24:FOV}}, {{key:sc24:TC}}, {{key:sc24:+TC}}, {{key:sc24:-TC}}, {{key:sc24:FPS}}) • **Unit V (`SC-50`):** RF power ({{key:sc50:dBm}}, {{key:sc50:▸dBm}}), Friis path loss ({{key:sc50:FSL}}, {{key:sc50:LNK}}, {{key:sc50:F₁}}), and noise cascade ({{key:sc50:NF}}, {{key:sc50:Pₙ}}, {{key:sc50:IP3}}, {{key:sc50:FDR}}) • **Unit VI (`SC-60`):** Sørensen acidity $\text{pH} = -\log_{10}[\text{H}^+]$ ({{key:sc60:pH}}, {{key:sc60:pKₐ}}, {{key:sc60:BUF}}, {{key:sc60:EQV}}, {{key:sc60:MW}}, {{key:sc60:w/w}}, {{key:sc60:PVT}}, {{key:sc60:RCF}}) |
-| **Shannon Information & Quantization Capacity** | $C = B \log_2(1 + \text{SNR})$ | **Unit III (`SC-16`):** $N$-bit ADC dynamic range ({{key:sc16:ADC}}, {{key:sc16:DAC}}, {{key:sc16:CRC}}, {{key:sc16:NET}}, {{key:sc16:FLT}}, {{key:sc16:END}}, {{key:sc16:#B}}, {{key:sc16:CLZ}}, {{key:sc16:MSK}}, {{key:sc16:SB}}, {{key:sc16:CB}}, {{key:sc16:B?}}) • **Unit V (`SC-50`):** Shannon–Hartley channel capacity ({{key:sc50:C/B}}, {{key:sc50:Δf}}, {{key:sc50:RCS}}, {{key:sc50:f₀}}, {{key:sc50:λ/L}}) |
-| **Euclidean & Stoichiometric Decomposition** | $r = \sqrt{x^2 + y^2}$ | **Unit I (`SC-35`):** Survey inverse ({{key:sc35:INV}}, {{key:sc35:TRV}}, {{key:sc35:BRG}}, {{key:sc35:SLP}}, {{key:sc35:GR%}}, {{key:sc35:CUT}}, {{key:sc35:△}}, {{key:sc35:FLW}}) & wind triangle ({{key:sc35:WND}}, {{key:sc35:XWC}}, {{key:sc35:ALT}}, {{key:sc35:TSD}}) • **Unit II (`SC-14`):** Conduit & rafter geometry ({{key:sc14:OFS}}, {{key:sc14:MIT}}, {{key:sc14:FIT}}, {{key:sc14:BC}}, {{key:sc14:SFM}}, {{key:sc14:TAP}}), three-phase power ({{key:sc14:PF}}, {{key:sc14:AWG}}, {{key:sc14:FLA}}, {{key:sc14:MTR}}), and process hydraulics ({{key:sc14:PIP}}, {{key:sc14:Cᵥ}}, {{key:sc14:PMP}}, {{key:sc14:NPH}}, {{key:sc14:mA}}, {{key:sc14:RTD}}) • **Unit V (`SC-50`):** Complex impedance & VSWR ({{key:sc50:CMPLX}}, {{key:sc50:Z₀}}, {{key:sc50:Γ}}, {{key:sc50:SWR}}, {{key:sc50:RL}}, {{key:sc50:Z₀}}) • **Unit VII (`SC-78`):** Culinary & zymurgy scaling ({{key:sc78:BK%}}, {{key:sc78:ΣW}}, {{key:sc78:DIV}}, {{key:sc78:Tw}}, {{key:sc78:ICE}}, {{key:sc78:MSH}}, {{key:sc78:▸SG}}, {{key:sc78:ABV}}, {{key:sc78:IBU}}, {{key:sc78:SRM}}, {{key:sc78:TDS}}, {{key:sc78:YLD}}, {{key:sc78:CST}}, {{key:sc78:PRC}}, {{key:sc78:Aw}}, {{key:sc78:SO₂}}, {{key:sc78:CO₂}}) • **Unit IX (`SC-95`):** Unit economics & Six Sigma ({{key:sc95:MGN}}, {{key:sc95:MKP}}, {{key:sc95:BEP}}, {{key:sc95:EOQ}}, {{key:sc95:Cpk}}, {{key:sc95:SPC}}, {{key:sc95:CI}}, {{key:sc95:z₀}}, {{key:sc95:t₂}}, {{key:sc95:A/B}}, {{key:sc95:n*}}) |
+| **First-Order Exponential Decay & Discounting** | $y(t) = y_0 \, e^{-\lambda t}$ | **Unit III (`SC-16`):** RC settling $v_C(t) = V_{\text{in}}(1 - e^{-t/\tau})$ ({{key:sc16:τ}}, {{key:sc16:PWM}}, {{key:sc16:BPS}}) • **Unit VI (`SC-60`):** Beer–Lambert transmittance $I/I_0 = 10^{-\varepsilon \ell c}$ ({{key:sc60:εbc}}, {{key:sc60:C₁V₁}}) & Arrhenius kinetics $k = A e^{-E_a/(RT)}$ ({{key:sc60:Eₐ}}, {{key:sc60:Kₑq}}, {{key:sc60:ΔG}}, {{key:sc60:E°}}) • **Unit VIII (`SC-80`):** One-compartment drug elimination $C(t) = C_0 e^{-k_e t}$ ({{key:sc80:PK}}, {{key:sc80:GFR}}, {{key:sc80:BSA}}, {{key:sc80:IBW}}, {{key:sc80:ABW}}, {{key:sc80:DRP}}, {{key:sc80:IV}}) • **Unit IX (`SC-95`):** Multi-period and continuous discounting ({{key:sc95:TVM}}, {{key:sc95:CF}}, {{key:sc95:BND}}, {{key:sc95:EAR}}, {{key:sc95:CAGR}}, {{key:sc95:pN}}, {{key:sc95:qN}}) |
+| **Logarithmic Ratio Compression** | $L = \kappa \log_{10}(X / X_{\text{ref}})$ | **Unit IV (`SC-24`):** Acoustic sound pressure level $\text{SPL} = 20\log_{10}(p/p_0)$ ({{key:sc24:SPL}}, {{key:sc24:dB}}, {{key:sc24:EV}}, {{key:sc24:DOF}}, {{key:sc24:FOV}}, {{key:sc24:+TC}}, {{key:sc24:-TC}}, {{key:sc24:FPS}}, {{key:sc24:▸TC}}) • **Unit V (`SC-50`):** RF power ({{key:sc50:dBm}}, {{key:sc50:▸dBm}}), Friis path loss ({{key:sc50:FSL}}, {{key:sc50:LNK}}, {{key:sc50:F₁}}), and noise cascade ({{key:sc50:NF}}, {{key:sc50:Pₙ}}, {{key:sc50:IP3}}, {{key:sc50:FDR}}) • **Unit VI (`SC-60`):** Sørensen acidity $\text{pH} = -\log_{10}[\text{H}^+]$ ({{key:sc60:pH}}, {{key:sc60:pKₐ}}, {{key:sc60:BUF}}, {{key:sc60:EQV}}, {{key:sc60:MW}}, {{key:sc60:w/w}}, {{key:sc60:PVT}}) |
+| **Shannon Information & Quantization Capacity** | $C = B \log_2(1 + \text{SNR})$ | **Unit III (`SC-16`):** $N$-bit ADC dynamic range ({{key:sc16:ADC}}, {{key:sc16:DAC}}, {{key:sc16:CRC}}, {{key:sc16:NET}}, {{key:sc16:FLT}}, {{key:sc16:SWP}}, {{key:sc16:#B}}, {{key:sc16:CLZ}}, {{key:sc16:MSK}}, {{key:sc16:SB}}, {{key:sc16:CB}}, {{key:sc16:B?}}) • **Unit V (`SC-50`):** Shannon–Hartley channel capacity ({{key:sc50:C/B}}, {{key:sc50:Δf}}, {{key:sc50:RCS}}, {{key:sc50:f₀}}, {{key:sc50:λ/L}}) |
+| **Euclidean & Stoichiometric Decomposition** | $r = \sqrt{x^2 + y^2}$ | **Unit I (`SC-35`):** Survey inverse ({{key:sc35:INV}}, {{key:sc35:TRV}}, {{key:sc35:BRG}}, {{key:sc35:SLP}}, {{key:sc35:GR%}}, {{key:sc35:CUT}}, {{key:sc35:FLW}}) & wind triangle ({{key:sc35:WND}}, {{key:sc35:XWC}}, {{key:sc35:ALT}}, {{key:sc35:TSD}}) • **Unit II (`SC-14`):** Conduit & rafter geometry ({{key:sc14:OFS}}, {{key:sc14:MIT}}, {{key:sc14:FIT}}, {{key:sc14:BC}}, {{key:sc14:SFM}}, {{key:sc14:TAP}}), three-phase power ({{key:sc14:PF}}, {{key:sc14:AWG}}, {{key:sc14:FLA}}), and process hydraulics ({{key:sc14:Cᵥ}}, {{key:sc14:NPH}}, {{key:sc14:mA}}, {{key:sc14:RTD}}) • **Unit V (`SC-50`):** Complex impedance & VSWR ({{key:sc50:CMPLX}}, {{key:sc50:Z₀}}, {{key:sc50:Γ}}, {{key:sc50:SWR}}, {{keycap:RL}}, {{key:sc50:TLN}}) • **Unit VII (`SC-78`):** Culinary & zymurgy scaling ({{key:sc78:BK%}}, {{key:sc78:ΣW}}, {{key:sc78:DIV}}, {{key:sc78:Tw}}, {{key:sc78:MSH}}, {{key:sc78:▸SG}}, {{key:sc78:ABV}}, {{key:sc78:IBU}}, {{key:sc78:SRM}}, {{key:sc78:TDS}}, {{key:sc78:CST}}, {{key:sc78:PRC}}, {{key:sc78:Aw}}, {{key:sc78:MSO2}}) • **Unit IX (`SC-95`):** Unit economics & Six Sigma ({{key:sc95:MGN}}, {{key:sc95:BEP}}, {{key:sc95:EOQ}}, {{key:sc95:Cpk}}, {{key:sc95:SPC}}, {{key:sc95:CI}}, {{key:sc95:z₀}}, {{key:sc95:t₂}}, {{key:sc95:A/B}}, {{key:sc95:n*}}) |
 
 ---
 
@@ -113,13 +113,13 @@ For a four-leg rectangular boundary loop of total perimeter $P = 3{,}200.00\text
 
 ### Eq. 1.6 — Gauss Shoelace Parcel Area
 
-The additive coordinate corrections for each leg $i$ are $\delta N_i = -\Sigma_{\Delta N}(D_i / P)$ and $\delta E_i = -\Sigma_{\Delta E}(D_i / P)$. From the sequential vertex coordinates $(N_1, E_1), (N_2, E_2), \dots, (N_n, E_n)$ of a closed simple polygon (with $(N_{n+1}, E_{n+1}) = (N_1, E_1)$), **Gauss's Shoelace Formula** crosses adjacent coordinates around the perimeter to evaluate the enclosed planar area $A$ (displayed live as {{key:sc35:△}} alongside {{key:sc35:CLS}} inside the `@COGO` reference table {{key:sc35:▦}}, while {{key:sc35:△}} evaluates right-triangle and sub-parcel areas), which converts to statutory acreage via {{key:sc35:▸ac}} ($43{,}560\text{ ft}^2/\text{acre}$) and metric hectares via {{key:sc35:▸ha}} ($10{,}000\text{ m}^2/\text{ha}$):
+The additive coordinate corrections for each leg $i$ are $\delta N_i = -\Sigma_{\Delta N}(D_i / P)$ and $\delta E_i = -\Sigma_{\Delta E}(D_i / P)$. From the sequential vertex coordinates $(N_1, E_1), (N_2, E_2), \dots, (N_n, E_n)$ of a closed simple polygon (with $(N_{n+1}, E_{n+1}) = (N_1, E_1)$), **Gauss's Shoelace Formula** crosses adjacent coordinates around the perimeter to evaluate the enclosed planar area $A$ (displayed live alongside {{key:sc35:CLS}} inside the `@COGO` reference table {{key:sc35:▦}} via softkey {{keycap:AREA}}), which converts to statutory acreage ($43{,}560\text{ ft}^2/\text{acre}$) and metric hectares ($10{,}000\text{ m}^2/\text{ha}$):
 
 $$A = \frac{1}{2} \left\lvert \sum_{i=1}^{n} \left( E_i N_{i+1} - E_{i+1} N_i \right) \right\rvert$$
 
 For a four-leg rectangular boundary loop of total perimeter $P = 3{,}200.00\text{ ft}$ (spanning $600.00\text{ ft}$ North-South by $1{,}000.00\text{ ft}$ East-West) whose field measurements return with net latitude misclosure $\Sigma_{\Delta N} = -0.12\text{ ft}$ and net departure misclosure $\Sigma_{\Delta E} = +0.16\text{ ft}$, the linear error of closure is $E_c = \sqrt{(-0.12)^2 + 0.16^2} = \mathbf{0.20\text{ ft}}$ ({{key:sc35:CLS}}), yielding a relative precision ratio of $1 : (3200 / 0.20) = \mathbf{1 : 16{,}000}$, and Gauss's shoelace sum across the adjusted corners in {{key:sc35:▦}} gives an enclosed area of $A = \mathbf{600{,}000\text{ ft}^2}$, or $600{,}000 / 43{,}560 \approx \mathbf{13.7741\text{ acres}}$ ($5.5742\text{ ha}$).
 
-* **Calculator Interface:** Primary Key: {{key:sc35:△}} • Expression / Workspace: `Gauss Shoelace area in {{key:sc35:▦}}` • Softkeys: {{keycap:△}} {{keycap:▸ac}} {{keycap:▸ha}}
+* **Calculator Interface:** Primary Key: {{key:sc35:CLS}} / {{key:sc35:▦}} • Expression / Workspace: `Gauss Shoelace area in {{key:sc35:▦}}` • Softkeys: {{keycap:AREA}} {{keycap:CLOS}}
 
 
 ---
@@ -210,7 +210,7 @@ Carlos points across the canyon reservoir: over an extended 2-mile shot across t
 
 ### Eq. 3.1 — Orthogonal Wind Vector Decomposition
 
-When an aircraft aligns with a runway or flies a cross-country course of heading $\psi_{\text{course}}$, a wind of speed $V_w$ (in knots, converted via {{key:sc35:▸kt}}) blowing from direction $\psi_{\text{wind}}$ forms a relative wind angle $\theta = \psi_{\text{wind}} - \psi_{\text{course}}$ with the flight path. Staging wind speed $V_w$ in Register $Y$ and relative wind angle $\theta$ in Register $X$ and pressing {{key:sc35:WND}} decomposes the wind vector into orthogonal components: the cosine projection governs the longitudinal headwind along the fuselage, while the sine projection governs the lateral crosswind pushing the wings sideways:
+When an aircraft aligns with a runway or flies a cross-country course of heading $\psi_{\text{course}}$, a wind of speed $V_w$ (in knots, with statute miles converted via {{key:sc35:▸NM}}) blowing from direction $\psi_{\text{wind}}$ forms a relative wind angle $\theta = \psi_{\text{wind}} - \psi_{\text{course}}$ with the flight path. Staging wind speed $V_w$ in Register $Y$ and relative wind angle $\theta$ in Register $X$ and pressing {{key:sc35:WND}} decomposes the wind vector into orthogonal components: the cosine projection governs the longitudinal headwind along the fuselage, while the sine projection governs the lateral crosswind pushing the wings sideways:
 
 $$V_{\text{hw}} = V_w \cos(\theta)$$
 
@@ -388,7 +388,7 @@ Once a conduit run is installed, pulling insulated conductors around multiple be
 
 $$\text{Fill\%} = \left(\frac{\sum_{k=1}^{N} A_{\text{wire},k}}{A_{\text{conduit}}}\right) \times 100\% \le 40\%$$
 
-Here $A_{\text{conduit}}$ is the total internal cross-sectional area of the raceway from NEC Chapter 9, Table 4 (while {{key:sc14:SCH}} and {{key:sc14:WAL}} evaluate pipe inner diameter and wall thickness $OD - ID$), $A_{\text{wire}}$ is the insulated conductor area from NEC Chapter 9, Table 5, and $N_{\max}$ is the maximum whole number of identical conductors permitted at the $40\%$ ceiling:
+Here $A_{\text{conduit}}$ is the total internal cross-sectional area of the raceway from NEC Chapter 9, Table 4 (with raceway and conductor dimensions referenced from NEC tables or caliper readings), $A_{\text{wire}}$ is the insulated conductor area from NEC Chapter 9, Table 5, and $N_{\max}$ is the maximum whole number of identical conductors permitted at the $40\%$ ceiling:
 
 * **Calculator Interface:** Primary Key: {{key:sc14:AWG}} • Expression / Workspace: `NEC Chapter 9 Table 1 40% raceway fill` • Softkeys: {{keycap:AWG}} {{keycap:▦}}
 
@@ -423,11 +423,11 @@ Cartesian hole coordinates follow as $X_k = \frac{D_{\text{bolt}}}{2}\cos(\theta
 
 ### Eq. 6.3 — Control Valve Volumetric Flow and Pump Power
 
-In the cooling header supplying the machining center, incompressible fluid of cross-sectional pipe area $A$ moving at velocity $V$ obeys the **Pipe Flow Continuity Law** $Q = A \times V$ ({{key:sc14:PIP}}, opening the {{key:sc14:PIP}} workspace with softkeys {{keycap:Q}}, {{keycap:A}}, {{keycap:V}}). Downstream, a control valve of **Flow Coefficient** $C_v$ ({{key:sc14:Cᵥ}}) passes $Q\text{ GPM}$ ({{key:sc14:▸GPM}}) of fluid of specific gravity $G = \rho / \rho_w$ ({{key:sc14:ρw}}) across pressure drop $\Delta P$ (in $\text{psi}$, {{key:sc14:▸PSI}}), lifting $Q\text{ GPM}$ against $H\text{ feet}$ of total dynamic head requires hydraulic **Pump Power** $P_{\text{BHP}}$ ({{key:sc14:PMP}}, where $33{,}000\text{ ft}\cdot\text{lb/min} \div 8.333\text{ lb/gal} = 3{,}960$), and preventing cavitation at the pump impeller eye requires maintaining **Available Net Positive Suction Head** $\text{NPSH}_a$ ({{key:sc14:NPH}}) above the pump's required threshold:
+In the cooling header supplying the machining center, incompressible fluid of cross-sectional pipe area $A$ moving at velocity $V$ obeys the **Pipe Flow Continuity Law** $Q = A \times V$ (evaluated on the stack via $A \times V$). Downstream, a control valve of **Flow Coefficient** $C_v$ ({{key:sc14:Cᵥ}}) passes $Q\text{ GPM}$ ({{key:sc14:▸GPM}}) of fluid of specific gravity $G = \rho / \rho_w$ ({{key:sc14:ρw}}) across pressure drop $\Delta P$ (in $\text{psi}$, {{key:sc14:▸PSI}}), lifting $Q\text{ GPM}$ against $H\text{ feet}$ of total dynamic head requires hydraulic **Pump Power** $P_{\text{BHP}} = (Q \times H) / 3960$ (where $33{,}000\text{ ft}\cdot\text{lb/min} \div 8.333\text{ lb/gal} = 3{,}960$), and preventing cavitation at the pump impeller eye requires maintaining **Available Net Positive Suction Head** $\text{NPSH}_a$ ({{key:sc14:NPH}}) above the pump's required threshold:
 
 $$Q = C_v \sqrt{\frac{\Delta P}{G}}$$
 
-Continuity dictates $Q = A \cdot V$, while suction margin follows as $\text{NPSH}_a = P_{\text{atm}} - P_{\text{vap}} \pm z_s - h_f$. In these fluid-power relations, $Q$ scales with pipe area and velocity in {{key:sc14:PIP}} and with the square root of valve pressure drop $\Delta P$ in {{key:sc14:Cᵥ}} ({{key:sc14:Cᵥ}} workspace softkeys {{keycap:Q}}, {{keycap:C}}, {{keycap:P}}, {{keycap:G}}), $P_{\text{BHP}}$ measures the water horsepower delivered by {{key:sc14:PMP}} ({{key:sc14:PMP}} workspace softkeys {{keycap:P}}, {{keycap:Q}}, {{keycap:H}}), and {{key:sc14:NPH}} evaluates available suction head margin so vapor bubbles do not implode against the impeller vanes. Meanwhile, with the fixture's $\varnothing\,2.00\text{ in.}$ hydraulic clamping cylinder ($A_{\text{piston}} = \frac{\pi}{4}(2.00)^2 = \pi \approx 3.1416\text{ in}^2$) pressurized to $P_{\text{psi}} = 1{,}875\text{ psi}$, the clamping force holding the 4140 flange is $F_{\text{clamp}} = 1875 \times \pi \approx \mathbf{5{,}890.49\text{ lbf}}$ ({{key:sc14:▸lbf}}). A coolant control valve with $C_v = 25$ at $\Delta P = 16\text{ psi}$ ($G = 1.0$) delivers $Q = 25\sqrt{16} = \mathbf{100.0\text{ GPM}}$ via `25` {{key:sc14:ENTER}} `16` {{key:sc14:Cᵥ}}, and pumping $Q = 198\text{ GPM}$ against $H = 100\text{ ft}$ of head requires $P_{\text{BHP}} = (198 \times 100)/3960 = \mathbf{5.00\text{ HP}}$ via `198` {{key:sc14:ENTER}} `100` {{key:sc14:PMP}}.
+Continuity dictates $Q = A \cdot V$, while suction margin follows as $\text{NPSH}_a = P_{\text{atm}} - P_{\text{vap}} \pm z_s - h_f$. In these fluid-power relations, $Q$ scales with pipe area and velocity and with the square root of valve pressure drop $\Delta P$ in {{key:sc14:Cᵥ}} ({{key:sc14:Cᵥ}} workspace softkeys {{keycap:Q}}, {{keycap:C}}, {{keycap:P}}, {{keycap:G}}), $P_{\text{BHP}}$ measures the water horsepower delivered by the pump, and {{key:sc14:NPH}} evaluates available suction head margin so vapor bubbles do not implode against the impeller vanes. Meanwhile, with the fixture's $\varnothing\,2.00\text{ in.}$ hydraulic clamping cylinder ($A_{\text{piston}} = \frac{\pi}{4}(2.00)^2 = \pi \approx 3.1416\text{ in}^2$) pressurized to $P_{\text{psi}} = 1{,}875\text{ psi}$, the clamping force holding the 4140 flange is $F_{\text{clamp}} = 1875 \times \pi \approx \mathbf{5{,}890.49\text{ lbf}}$ ({{key:sc14:▸lbf}}). A coolant control valve with $C_v = 25$ at $\Delta P = 16\text{ psi}$ ($G = 1.0$) delivers $Q = 25\sqrt{16} = \mathbf{100.0\text{ GPM}}$ via `25` {{key:sc14:ENTER}} `16` {{key:sc14:Cᵥ}}, and pumping $Q = 198\text{ GPM}$ against $H = 100\text{ ft}$ of head requires $P_{\text{BHP}} = (198 \times 100)/3960 = \mathbf{5.00\text{ HP}}$ via `198` {{key:ENTER}} `100` {{key:×}} `3960` {{key:÷}}.
 
 * **Calculator Interface:** Primary Key: {{key:sc14:Cᵥ}} • Expression / Workspace: `CV: Q = C × √(P / G)` • Softkeys: {{keycap:Q}} {{keycap:C}} {{keycap:P}} {{keycap:G}}
 
@@ -638,7 +638,7 @@ $$S = 3600 \cdot \text{HH} + 60 \cdot \text{MM} + \text{SS} + \frac{\text{FF}}{R
 
 Here $S$ is the elapsed duration in seconds ($\text{s}$), $R$ is the frame rate in frames per second ($\text{fps}$), and $F$ is the exact count of frames since `00:00:00:00`. When adding ({{key:sc24:+TC}}) or subtracting ({{key:sc24:-TC}}) two packed timecode durations $A$ and $B$, arithmetic proceeds from right to left across the four radices, carrying $+1\text{ second}$ whenever the frame sum reaches or exceeds $R$, carrying $+1\text{ minute}$ whenever seconds reach $60$, and carrying $+1\text{ hour}$ whenever minutes reach $60$.
 
-* **Calculator Interface:** Primary Key: {{key:sc24:TC}} • Expression / Workspace: `SMPTE timecode sexagesimal frame expansion` • Softkeys: {{keycap:TC}} {{keycap:FPS}}
+* **Calculator Interface:** Primary Key: {{key:sc24:▸TC}} / {{key:sc24:▸FRM}} • Expression / Workspace: `SMPTE timecode frame conversion` • Softkeys: {{keycap:▸TC}} {{keycap:▸FRM}}
 
 
 ---
@@ -662,9 +662,9 @@ Because the video frame rate is dialed back by exactly one part in a thousand, e
 
 $$R_{\text{NTSC}} = \frac{30}{1.001} = \frac{30{,}000}{1001} \approx 29.97003\text{ fps}$$
 
-In this pulldown relationship, $t_{\text{nominal}} = F / 30$ is the apparent duration indicated by a Non-Drop-Frame (NDF) counter that increments one second every $30$ frames, $t_{\text{real}} = F / R_{\text{NTSC}}$ is the true wall-clock elapsed time in seconds ({{key:sc24:DF}}), and $\Delta t_{\text{drift}} = t_{\text{real}} - t_{\text{nominal}}$ is the cumulative clock error. Similarly, when theatrical $24\text{ fps}$ cinema masters are transferred to NTSC video via $2:3$ telecine pulldown ({{key:sc24:3:2}}), the cinema frame rate is pulled down by $1000/1001$ to $24 / 1.001 \approx 23.976024\text{ fps}$.
+In this pulldown relationship, $t_{\text{nominal}} = F / 30$ is the apparent duration indicated by a Non-Drop-Frame (NDF) counter that increments one second every $30$ frames, $t_{\text{real}} = F / R_{\text{NTSC}}$ is the true wall-clock elapsed time in seconds ({{key:sc24:DF}}), and $\Delta t_{\text{drift}} = t_{\text{real}} - t_{\text{nominal}}$ is the cumulative clock error. Similarly, when theatrical $24\text{ fps}$ cinema masters are transferred to NTSC video via $2:3$ telecine pulldown (scaled by $1.001$), the cinema frame rate is pulled down by $1000/1001$ to $24 / 1.001 \approx 23.976024\text{ fps}$.
 
-* **Calculator Interface:** Primary Key: {{key:sc24:DF}} • Expression / Workspace: `NTSC 29.97 color pulldown clock drift` • Softkeys: {{keycap:DF}} {{keycap:TC}}
+* **Calculator Interface:** Primary Key: {{key:sc24:DF}} • Expression / Workspace: `NTSC 29.97 color pulldown clock drift` • Softkeys: {{keycap:DF}} {{keycap:FPS}}
 
 
 ---
@@ -677,7 +677,7 @@ $$N_{\text{dropped}} = 2 \times \left(M_{\text{total}} - \left\lfloor \frac{M_{\
 
 Here $M_{\text{total}} = 60 \cdot \text{HH} + \text{MM}$ is the total number of elapsed minute boundaries, $N_{\text{dropped}}$ is the cumulative count of skipped frame numbers (labels `:00` and `:01` omitted at the start of every minute except minutes `00`, `10`, `20`, `30`, `40`, and `50`), and $F_{\text{DF}}$ is the exact physical frame index corresponding to a Drop-Frame address `HH:MM:SS;FF` (written by convention with a semicolon before the frame field).
 
-* **Calculator Interface:** Primary Key: {{key:sc24:TC}} • Expression / Workspace: `SMPTE drop-frame label skip compensation` • Softkeys: {{keycap:TC}} {{keycap:+TC}} {{keycap:-TC}}
+* **Calculator Interface:** Primary Key: {{key:sc24:DF}} • Expression / Workspace: `SMPTE drop-frame label skip compensation` • Softkeys: {{keycap:DF}} {{keycap:+TC}} {{keycap:-TC}}
 
 
 ---
@@ -723,7 +723,7 @@ In these photometric equations, $N$ is the lens f-number, $T$ is the exposure in
 
 ### Eq. 11.4 — Flicker-Free Shutter Angle and Integration Period
 
-When filming under alternating-current discharge lamps or LED drivers operating at line frequency $f_{\text{line}}$ ($60\text{ Hz}$ in North America or $50\text{ Hz}$ in Europe), the lamp intensity pulses at twice the utility line frequency ($2 f_{\text{line}}$: $120\text{ Hz}$ or $100\text{ Hz}$). Avoiding rolling exposure bands across the frame ({{key:sc24:FLK}}) requires choosing a shutter integration time $T$ that integrates an integer number $k \in \{1, 2, 3, \dots\}$ of half-cycles:
+When filming under alternating-current discharge lamps or LED drivers operating at line frequency $f_{\text{line}}$ ($60\text{ Hz}$ in North America or $50\text{ Hz}$ in Europe), the lamp intensity pulses at twice the utility line frequency ($2 f_{\text{line}}$: $120\text{ Hz}$ or $100\text{ Hz}$). Avoiding rolling exposure bands across the frame requires choosing a shutter integration time $T$ that integrates an integer number $k \in \{1, 2, 3, \dots\}$ of half-cycles:
 
 $$T_{\text{flicker-free}} = \frac{k}{2 f_{\text{line}}}$$
 
@@ -731,7 +731,7 @@ $$\theta_{\text{flicker-free}} = 360^\circ \cdot \text{FPS} \cdot \left(\frac{k}
 
 Under North American $60\text{ Hz}$ mains ($120\text{ Hz}$ pulses), shooting at $24\text{ fps}$ with $k = 2$ half-cycles sets $T = 1/60\text{ s}$ ($\theta_{\text{shutter}} = 144^\circ$). Under European $50\text{ Hz}$ mains ($100\text{ Hz}$ pulses), shooting at $24\text{ fps}$ requires an exact integration time of $T = 1/50\text{ s} = 20.0\text{ ms}$, corresponding to the classic European flicker-free rotary shutter angle of $\theta_{\text{shutter}} = \mathbf{172.8^\circ}$.
 
-* **Calculator Interface:** Primary Key: {{key:sc24:SHT}} / {{key:sc24:FLK}} • Expression / Workspace: `SHT: T = θ / (360 × FPS)` • Softkeys: {{keycap:SHT}} {{keycap:FLK}}
+* **Calculator Interface:** Primary Key: {{key:sc24:SHT}} • Expression / Workspace: `SHT: T = θ / (360 × FPS)` • Softkeys: {{keycap:SHT}} {{keycap:FPS}}
 
 
 ---
@@ -840,7 +840,7 @@ $$\text{RL}_{\text{dB}} = -20 \log_{10}|\Gamma|$$
 
 On real high-frequency transmission lines, distributed series conductor resistance from the radio-frequency skin effect and shunt dielectric conductance attenuate traveling waves exponentially as $e^{-\alpha z}$. In the complex plane, the Smith chart maps reflection coefficient $\Gamma = |\Gamma|e^{j\theta}$ directly to normalized impedance, where line attenuation causes impedance trajectories to spiral inward toward the $50\ \Omega$ center as reflected power diminishes.
 
-* **Calculator Interface:** Primary Key: {{key:sc50:RL}} • Expression / Workspace: `Return loss and mismatch loss` • Softkeys: {{keycap:RL}} {{keycap:SWR}}
+* **Calculator Interface:** Complex Menu Softkey: `{{keycap:RL}}` in {{key:sc50:CMPLX}} (or {{key:sc50:SWR}}) • Expression / Workspace: `Return loss and mismatch loss` • Softkeys: {{keycap:RL}} {{keycap:SWR}}
 
 
 ---
@@ -1172,13 +1172,13 @@ On the SC-60, pressing {{key:SOLVE}} {{key:sc60:Eₐ}} (or {{key:sc60:Eₐ}} wit
 
 ### Eq. 18.3 — Relative Centrifugal Force and Rotor Speed
 
-When a centrifuge spins a sample tube at angular velocity $\omega = 2\pi \cdot \text{RPM} / 60$ (in radians per second) at radial distance $r$ from the central spindle axis, the outward centripetal acceleration is $a_c = \omega^2 r$. Dividing this acceleration by standard Earth gravity ($g = 9.80665\text{ m/s}^2 = 980.665\text{ cm/s}^2$) defines the dimensionless **Relative Centrifugal Force** ({{key:sc60:RCF}}, expressed in multiples of Earth gravity, $\times g$):
+When a centrifuge spins a sample tube at angular velocity $\omega = 2\pi \cdot \text{RPM} / 60$ (in radians per second) at radial distance $r$ from the central spindle axis, the outward centripetal acceleration is $a_c = \omega^2 r$. Dividing this acceleration by standard Earth gravity ($g = 9.80665\text{ m/s}^2 = 980.665\text{ cm/s}^2$) defines the dimensionless **Relative Centrifugal Force** (expressed in multiples of Earth gravity, $\times g$, evaluated on the stack via $1.1182 \times 10^{-5} \cdot r \cdot \text{RPM}^2$):
 
 $$\text{RCF} \approx 1.118 \times 10^{-5} \cdot r_{\text{cm}} \cdot \text{RPM}^2$$
 
 Because centripetal acceleration scales quadratically with angular velocity, solving for the required spindle revolutions per minute takes the square root:
 
-* **Calculator Interface:** Primary Key: {{key:sc60:RCF}} • Expression / Workspace: `Relative centrifugal force and rotor RPM` • Softkeys: {{keycap:RCF}} {{keycap:RPM}}
+* **Calculator Interface:** Primary Key: Stack Arithmetic ({{key:x²}}, {{key:×}}, {{key:√x}}) • Expression / Workspace: `RCF = 1.1182e-5 × r × RPM²` • Softkeys: {{keycap:x²}} {{keycap:√x}}
 
 
 ---
@@ -1216,13 +1216,13 @@ Rearranging the balance enables backward calibration of the mixer's empirical fr
 
 ### Eq. 19.3 — Latent-Heat Flake Ice Mass Substitution
 
-When the required strike-water temperature $T_{\text{target}} = W$ falls below the temperature of municipal tap water ($T_{\text{tap}} = 21.0^\circ\text{C}$) and the bakery lacks a refrigerated water chiller, the baker substitutes crushed or flake ice ({{key:sc78:ICE}}) for part of the liquid water mass $W_{\text{water}}$. Liquid water cools sensibly by one kilocalorie per kilogram for each degree Celsius dropped. Solid ice at $0^\circ\text{C}$, by contrast, absorbs approximately eighty kilocalories per kilogram in latent heat solely to undergo the solid-to-liquid phase transition. Dividing the sensible cooling deficit by eighty determines the required flake-ice mass ({{key:sc78:ICE}}):
+When the required strike-water temperature $T_{\text{target}} = W$ falls below the temperature of municipal tap water ($T_{\text{tap}} = 21.0^\circ\text{C}$) and the bakery lacks a refrigerated water chiller, the baker substitutes crushed or flake ice for part of the liquid water mass $W_{\text{water}}$. Liquid water cools sensibly by one kilocalorie per kilogram for each degree Celsius dropped. Solid ice at $0^\circ\text{C}$, by contrast, absorbs approximately eighty kilocalories per kilogram in latent heat (recalled via {{key:sc78:ΔHf}}) solely to undergo the solid-to-liquid phase transition. Dividing the sensible cooling deficit by eighty determines the required flake-ice mass:
 
 $$W_{\text{ice}} = \frac{W_{\text{water}} \cdot \left(T_{\text{tap}} - W\right)}{80}$$
 
 The remaining liquid tap-water addition is then simply the difference between total water and ice mass:
 
-* **Calculator Interface:** Primary Key: {{key:sc78:ICE}} • Expression / Workspace: `Latent-heat flake ice mass substitution` • Softkeys: {{keycap:ICE}} {{keycap:Tw}}
+* **Calculator Interface:** Primary Key: {{key:sc78:Tw}} / {{key:sc78:ΔHf}} • Expression / Workspace: `Stack: W × ΔT / 80` • Softkeys: {{keycap:Tw}} {{keycap:ΔHf}}
 
 
 ---
@@ -1274,7 +1274,7 @@ $$y_{\text{cum}} = \prod_{k=1}^{m} y_k = \prod_{k=1}^{m} \left(1 - \ell_k\right)
 
 The resulting cumulative yield decimal $y_{\text{cum}} = Y_{\%} / 100$ determines the edible finished mass $W_{\text{EP}}$ from the gross delivery weight $W_{\text{AP}}$:
 
-* **Calculator Interface:** Primary Key: {{key:sc78:YLD}} • Expression / Workspace: `Butcher fabrication trim yield` • Softkeys: {{keycap:YLD}} {{keycap:SCL}}
+* **Calculator Interface:** Primary Key: {{key:sc78:%}} / Stack Arithmetic • Expression / Workspace: `Stack: EP / AP × 100` • Softkeys: {{keycap:%}} {{keycap:SCL}}
 
 
 ---
@@ -1446,7 +1446,7 @@ The **Compressed Oxygen Cylinder Law** ({{key:sc80:O₂}}) relates remaining tan
 
 $$T_{\text{min}} = \frac{\left(P_{\text{psi}} - 200\right) \times 0.28}{F}$$
 
-At $F_i\text{O}_2 = 0.40$, $P_a\text{CO}_2 = 28\text{ mmHg}$, and $P_a\text{O}_2 = 110\text{ mmHg}$, pressing `110` {{key:sc80:ENTER}} `0.40` {{key:sc80:ABG}} gives a Horowitz $P/F$ ratio of $\mathbf{275.0\text{ mmHg}}$, while alveolar oxygen is $P_A\text{O}_2 = 0.40(713) - 28/0.8 = 285.2 - 35.0 = 250.2\text{ mmHg}$, giving $\Delta P_{A-a}\text{O}_2 = 250.2 - 110 = \mathbf{140.2\text{ mmHg}}$. On the ECG monitor ($\text{QT} = 420\text{ ms}$ at $\text{HR} = 96\text{ bpm}$, so $RR = 60/96 = 0.625\text{ s}$), pressing `420` {{key:sc80:ENTER}} `96` {{key:sc80:QTc}} gives $\text{QT}_c = 420 / \sqrt{0.625} = \mathbf{531.26\text{ ms}}$ (alerting the team to pause QT-prolonging antiarrhythmics). Finally, because $T$ and $F$ are reciprocally symmetric in $T \cdot F = (P_{\text{psi}} - 200) \times 0.28$, for the $T = 70.0\text{-minute}$ helicopter transfer with an E-cylinder at $P_{\text{psi}} = 1950\text{ psi}$, pressing `1950` {{key:sc80:ENTER}} `70` {{key:sc80:O₂}} directly yields the maximum safe oxygen flow rate $F = (1950 - 200) \times 0.28 / 70.0 = 490.0 / 70.0 = \mathbf{7.00\text{ L/min}}$.
+At $F_i\text{O}_2 = 0.40$, $P_a\text{CO}_2 = 28\text{ mmHg}$, and $P_a\text{O}_2 = 110\text{ mmHg}$, pressing `110` {{key:sc80:ENTER}} `0.40` {{key:÷}} gives a Horowitz $P/F$ ratio of $\mathbf{275.0\text{ mmHg}}$, while alveolar oxygen is $P_A\text{O}_2 = 0.40(713) - 28/0.8 = 285.2 - 35.0 = 250.2\text{ mmHg}$, giving $\Delta P_{A-a}\text{O}_2 = 250.2 - 110 = \mathbf{140.2\text{ mmHg}}$. On the ECG monitor ($\text{QT} = 420\text{ ms}$ at $\text{HR} = 96\text{ bpm}$, so $RR = 60/96 = 0.625\text{ s}$), pressing `420` {{key:sc80:ENTER}} `96` {{key:sc80:QTc}} gives $\text{QT}_c = 420 / \sqrt{0.625} = \mathbf{531.26\text{ ms}}$ (alerting the team to pause QT-prolonging antiarrhythmics). Finally, because $T$ and $F$ are reciprocally symmetric in $T \cdot F = (P_{\text{psi}} - 200) \times 0.28$, for the $T = 70.0\text{-minute}$ helicopter transfer with an E-cylinder at $P_{\text{psi}} = 1950\text{ psi}$, pressing `1950` {{key:sc80:ENTER}} `70` {{key:sc80:O₂}} directly yields the maximum safe oxygen flow rate $F = (1950 - 200) \times 0.28 / 70.0 = 490.0 / 70.0 = \mathbf{7.00\text{ L/min}}$.
 
 * **Calculator Interface:** Primary Key: {{key:sc80:O₂}} • Expression / Workspace: `Compressed oxygen cylinder remaining time` • Softkeys: {{keycap:O₂}}
 
@@ -1587,7 +1587,7 @@ Evaluating under the standard normal integral yields:
 
 ### Eq. 27.1 — Sample Variance and Ordinary Least-Squares Linear Regression
 
-Given $n$ paired observations $(x_i, y_i)$ accumulated via the statistical summation operator ({{key:sc95:Σ+}}, with relative share {{key:sc95:%Σ}})—where $x_i$ represents elapsed production hours and $y_i$ represents measured shaft diameter—the sample means $(\bar{x}, \bar{y})$ ({{key:sc95:x̄,ȳ}}) and Bessel-corrected sample standard deviations $(s_x, s_y)$ ({{key:sc95:s,σ}}, with $n - 1$ degrees of freedom in the denominator) pair with the sample covariance $s_{xy}$ to determine the ordinary least-squares **Linear Regression** ({{key:sc95:L.R.}}, binding softkeys {{keycap:ŷ}}, {{keycap:x̂}}, {{keycap:m}}, {{keycap:b}}, {{keycap:r}}) slope $m$, intercept $b$, and Pearson correlation coefficient $r$:
+Given $n$ paired observations $(x_i, y_i)$ accumulated via the statistical summation operator ({{key:sc95:Σ+}}, removed via {{key:sc95:Σ-}})—where $x_i$ represents elapsed production hours and $y_i$ represents measured shaft diameter—the sample means $(\bar{x}, \bar{y})$ ({{key:sc95:x̄,ȳ}}) and Bessel-corrected sample standard deviations $(s_x, s_y)$ ({{key:sc95:s,σ}}, with $n - 1$ degrees of freedom in the denominator) pair with the sample covariance $s_{xy}$ to determine the ordinary least-squares **Linear Regression** ({{key:sc95:L.R.}}, binding softkeys {{keycap:ŷ}}, {{keycap:x̂}}, {{keycap:m}}, {{keycap:b}}, {{keycap:r}}) slope $m$, intercept $b$, and Pearson correlation coefficient $r$:
 
 $$\bar{y} = \frac{1}{n}\sum_{i=1}^{n} y_i$$
 

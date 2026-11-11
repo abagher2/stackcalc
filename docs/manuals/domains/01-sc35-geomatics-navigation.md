@@ -225,7 +225,7 @@ In an exact closed polygon of $n$ sides, the vector sum of all North latitudes $
 $$E_c = \sqrt{\left(\Sigma_{\Delta N}\right)^2 + \left(\Sigma_{\Delta E}\right)^2}$$
 $$\text{Precision Ratio} = 1 : \frac{P}{E_c}$$
 
-The additive coordinate corrections for each leg $i$ are $\delta N_i = -\Sigma_{\Delta N}(D_i / P)$ and $\delta E_i = -\Sigma_{\Delta E}(D_i / P)$. From the sequential vertex coordinates $(N_1, E_1), (N_2, E_2), \dots, (N_n, E_n)$ of a closed simple polygon (with $(N_{n+1}, E_{n+1}) = (N_1, E_1)$), **Gauss's Shoelace Formula** crosses adjacent coordinates around the perimeter to evaluate the enclosed planar area $A$ (displayed live as {{key:△}} alongside {{key:CLS}} inside the `@COGO` reference table {{key:▦}}, while {{key:△}} evaluates right-triangle and sub-parcel areas), which converts to statutory acreage via {{key:▸ac}} ($43{,}560\text{ ft}^2/\text{acre}$) and metric hectares via {{key:▸ha}} ($10{,}000\text{ m}^2/\text{ha}$):
+The additive coordinate corrections for each leg $i$ are $\delta N_i = -\Sigma_{\Delta N}(D_i / P)$ and $\delta E_i = -\Sigma_{\Delta E}(D_i / P)$. From the sequential vertex coordinates $(N_1, E_1), (N_2, E_2), \dots, (N_n, E_n)$ of a closed simple polygon (with $(N_{n+1}, E_{n+1}) = (N_1, E_1)$), **Gauss's Shoelace Formula** crosses adjacent coordinates around the perimeter to evaluate the enclosed planar area $A$ (displayed live alongside {{key:CLS}} inside the `@COGO` reference table {{key:▦}}, while right-triangle and sub-parcel areas evaluate on the stack via $A = \frac{1}{2} B \times H$), which converts to statutory acreage by dividing by $43{,}560\text{ ft}^2/\text{acre}$ (`43560 {{key:÷}}`) and metric hectares by dividing by $10{,}000\text{ m}^2/\text{ha}$ (`10000 {{key:÷}}`):
 
 **Eq. 1.6 — Gauss Shoelace Parcel Area**
 $$A = \frac{1}{2} \left\lvert \sum_{i=1}^{n} \left( E_i N_{i+1} - E_{i+1} N_i \right) \right\rvert$$
@@ -237,7 +237,7 @@ For a four-leg rectangular boundary loop of total perimeter $P = 3{,}200.00\text
 
 ## Retracing the Pine Barrens Boundary on the Stack and Solver Workspace
 
-On the **SC-35**, two-component survey operators ({{key:SLP}}, {{key:TRV}}, {{key:INV}}) and three-wire stadia leveling ({{key:LVL}}) execute immediately on the RPN stack while {{key:N⇄E}} and {{key:x⇄y}} swap $(N, E) \leftrightarrow (E, N)$ axes whenever needed. At the same time, the `@COGO` reference table ({{key:▦}}) provides live polygon {{key:△}} and {{key:CLS}} readouts, and pressing {{key:LVL}} or {{key:△}} when $X = 0, Y = 0$ (or after {{key:SOLVE}}) opens the bidirectional Equation Solver workspaces (`LVL: E = H + B - F` with variable softkeys {{keycap:E}}, {{keycap:H}}, {{keycap:B}}, {{keycap:F}}, and `TRI: A = B × H / 2` with variable softkeys {{keycap:A}}, {{keycap:B}}, {{keycap:H}}):
+On the **SC-35**, two-component survey operators ({{key:SLP}}, {{key:TRV}}, {{key:INV}}) and three-wire stadia leveling ({{key:LVL}}) execute immediately on the RPN stack while {{key:N⇄E}} and {{key:x⇄y}} swap $(N, E) \leftrightarrow (E, N)$ axes whenever needed. At the same time, the `@COGO` reference table ({{key:▦}}) provides live polygon area and {{key:CLS}} closure readouts, and pressing {{key:LVL}} when $X = 0, Y = 0$ (or after {{key:SOLVE}}) opens the bidirectional Equation Solver workspace (`LVL: E = H + B - F` with variable softkeys {{keycap:E}}, {{keycap:H}}, {{keycap:B}}, {{keycap:F}}):
 
 | Button | Operation | Register Z | Register Y | Register X | Governing Expression |
 | :--- | :--- | :---: | :---: | :---: | :--- |
@@ -250,7 +250,7 @@ On the **SC-35**, two-component survey operators ({{key:SLP}}, {{key:TRV}}, {{ke
 | **`{{key:LVL}}`** | 3-Wire Stadia & Leveling Solver | Top wire $T$ | Mid wire $M$ | Bot wire $B_w$ | $Y' = (T+B_w)/2,\; X' = 100(T-B_w)$; {{key:LVL}} workspace (`{{keycap:E}}`, `{{keycap:H}}`, `{{keycap:B}}`, `{{keycap:F}}`) |
 | **`{{key:PT+}}`** | Polygon Traverse Accumulator | — | Latitude $\Delta N$ | Departure $\Delta E$ | Appends vertex to `@COGO` (`{{key:▦}}`) & shoelace sum |
 | **`{{key:CLS}}`** | Linear Error of Closure | — | $\Sigma_{\Delta N}$ | $\Sigma_{\Delta E}$ | $E_c = \sqrt{(\Sigma_{\Delta N})^2 + (\Sigma_{\Delta E})^2}$ |
-| **`{{key:▦}}`** / **`{{key:△}}`** / **`{{key:▸ac}}`** / **`{{key:▸ha}}`** | Polygon `@COGO` Area & Land Units | — | Base $B$ | Height $H$ / $A_{\text{ft}^2}$ | `{{key:▦}}` displays shoelace {{key:△}} & {{key:CLS}}; `{{key:△}}` opens {{key:SOLVE}} (`{{keycap:A}}`, `{{keycap:B}}`, `{{keycap:H}}`) |
+| **`{{key:▦}}`** | Polygon `@COGO` Area & Closure Audit | — | — | — | Displays live shoelace parcel area & linear error of closure ({{key:CLS}}) |
 
 ### Reducing the Ravine Slope Shot, Projecting Coordinates, and Checking Three-Wire Stadia
 
@@ -287,7 +287,7 @@ The RPN stack maintains all intermediate results in memory without intermediate 
 
 The recovered iron pipe matches the colonial deed call within three-hundredths of a foot ($7/16\text{ inch}$). The stack resolved the entire multi-instrument reduction, angular addition, slope projection, coordinate accumulation, and inverse tolerance check in six lines of clean postfix execution.
 
-### Auditing Traverse Closure in `@COGO` ({{key:▦}}) and Solving Sub-Parcel Geometry ({{key:△}}, {{key:LVL}})
+### Auditing Traverse Closure in `@COGO` ({{key:▦}}) and Solving Differential Leveling ({{key:LVL}})
 
 Accumulating boundary vectors around the closed perimeter and evaluating polygon area proceeds through the traverse registers:
 
@@ -297,10 +297,10 @@ Accumulating boundary vectors around the closed perimeter and evaluating polygon
 | `0 {{key:ENTER}} 300 {{key:TRV}} {{key:PT+}}` | $0$ | $0$ | $0$ | $1$ | Project Leg 1 ($\alpha_1 = 0^\circ, D_1 = 300 \to \Delta N_1 = 300, \Delta E_1 = 0$) and store Vertex 1 |
 | `90 {{key:ENTER}} 400 {{key:TRV}} {{key:PT+}}` | $0$ | $0$ | $400$ | $2$ | Project Leg 2 ($\alpha_2 = 90^\circ, D_2 = 400 \to \Delta N_2 = 0, \Delta E_2 = 400$) and store Vertex 2 |
 | `233.1301 {{key:ENTER}} 500 {{key:TRV}} {{key:PT+}}` | $0$ | $400$ | $-400.00$ | $3$ | Project Leg 3 ($\Delta N_3 = -300, \Delta E_3 = -400$); `{{key:▦}}` reports `CLOS = 0`, `AREA = 60000` |
-| `60000 {{key:▸ac}}` | $0$ | $400$ | $-400.00$ | **$1.3774$** | Convert enclosed shoelace area $60{,}000\text{ ft}^2$ from `{{key:▦}}` to $1.3774\text{ acres}$ |
+| `60000 {{key:ENTER}} 43560 {{key:÷}}` | $400.00$ | $400.00$ | $-400.00$ | **$1.3774$** | Convert enclosed shoelace area $60{,}000\text{ ft}^2$ from `{{key:▦}}` to $1.3774\text{ acres}$ |
 
 When the full four-leg Pine Barrens traverse of total perimeter $P = 3{,}200.00\text{ ft}$ returns to the Point of Beginning with net latitude misclosure $\Sigma_{\Delta N} = -0.12\text{ ft}$ and net departure misclosure $\Sigma_{\Delta E} = +0.16\text{ ft}$, pressing {{key:CLS}} (or `0.12` {{key:+/-}} {{key:ENTER}} `0.16` {{key:CLS}}) resolves the linear error of closure $E_c = \mathbf{0.20\text{ ft}}$ in Register $X$, and keying `3200` {{key:x⇄y}} {{key:÷}} yields the relative precision denominator $\mathbf{16{,}000}$ ($1 : 16{,}000$). Furthermore:
-- **Triangle Sub-Parcel Solver ({{key:△}}):** If the county register requires carving off a triangular creekside easement of exact area $A = 43{,}560\text{ ft}^2$ ($1.0000\text{ acre}$) along a $B = 300.00\text{ ft}$ baseline, pressing {{key:SOLVE}} {{key:△}} opens the **{{key:SOLVE}} Equation Solver Workspace** displaying `A = B × H / 2` with variable softkeys {{keycap:A}}, {{keycap:B}}, and {{keycap:H}}. Storing `43560` {{keycap:A}} and `300` {{keycap:B}} and pressing {{key:SOLVE}} {{keycap:H}} solves the equation backward to return the required perpendicular easement offset $H = \frac{2 \times 43{,}560}{300} = \mathbf{290.40\text{ ft}}$.
+- **Triangle Sub-Parcel Partitioning:** If the county register requires carving off a triangular creekside easement of exact area $A = 43{,}560\text{ ft}^2$ ($1.0000\text{ acre}$) along a $B = 300.00\text{ ft}$ baseline, evaluating the geometric relation $A = \frac{1}{2} B \times H$ backward on the stack via `43560 {{key:ENTER}} 2 {{key:×}} 300 {{key:÷}}` returns the required perpendicular easement offset $H = \frac{2 \times 43{,}560}{300} = \mathbf{290.40\text{ ft}}$.
 - **Differential Leveling Solver ({{key:LVL}}):** Pressing {{key:SOLVE}} {{key:LVL}} opens the **{{key:LVL}} Equation Solver Workspace** displaying `E = H + B - F` with variable softkeys {{keycap:E}}, {{keycap:H}}, {{keycap:B}}, and {{keycap:F}}, allowing the crew to solve forward for new station elevation $E$ or backward for a target foresight rod reading $F$.
 - **Bearing-Bearing Intersection Solver ({{key:sc35:ISC}}):** When sighting an inaccessible boundary mark or monument from two known baseline stations along azimuths $\alpha_1$ and $\alpha_2$, pressing {{key:SOLVE}} {{key:sc35:ISC}} opens the **{{key:sc35:ISC}} Equation Solver Workspace** displaying `N = (N1·T2 - N2·T1 + ΔE) / ΔT` with variable softkeys {{keycap:N}} (Northing), {{keycap:D}} (distance), and {{keycap:A}} (azimuth). Alternatively, on the immediate stack, staging forward azimuth $\alpha_1$ in Register $Y$ and azimuth $\alpha_2$ in Register $X$ from occupied baseline stations $(N_1, E_1)$ and $(N_2, E_2)$ evaluates the intersection coordinates directly, displaying `N,E SOLVED` and placing Northing $N$ into Register $X$ and Easting $E$ into Register $Y$.
 - **Solver Mechanics & Zero-Value Parameter Binding:** Across all SC-35 Equation Workspaces, entering `0` into a variable softkey explicitly binds $0.0000$ to that variable (indicated by an asterisk `*`), enabling physical boundary conditions such as zero benchmark elevations or baseline offsets. To unbind a variable so that the calculator can solve for it as an unknown target, simply press Yellow Shift followed by the variable softkey ({{key:f}} `<SOFTKEY>`), immediately clearing its binding and displaying `UNSET <VAR>`.
@@ -802,7 +802,7 @@ An aircraft in flight moves within an air mass that is itself moving across the 
 
 ### Wind Vector Decomposition, Crosswind Limits, and Wind Correction Angles
 
-When an aircraft aligns with a runway or flies a cross-country course of heading $\psi_{\text{course}}$, a wind of speed $V_w$ (in knots, converted via {{key:▸kt}}) blowing from direction $\psi_{\text{wind}}$ forms a relative wind angle $\theta = \psi_{\text{wind}} - \psi_{\text{course}}$ with the flight path. Staging wind speed $V_w$ in Register $Y$ and relative wind angle $\theta$ in Register $X$ and pressing {{key:WND}} decomposes the wind vector into orthogonal components: the cosine projection governs the longitudinal headwind along the fuselage, while the sine projection governs the lateral crosswind pushing the wings sideways:
+When an aircraft aligns with a runway or flies a cross-country course of heading $\psi_{\text{course}}$, a wind of speed $V_w$ (in knots, $\text{NM/hr}$) blowing from direction $\psi_{\text{wind}}$ forms a relative wind angle $\theta = \psi_{\text{wind}} - \psi_{\text{course}}$ with the flight path. Staging wind speed $V_w$ in Register $Y$ and relative wind angle $\theta$ in Register $X$ and pressing {{key:WND}} decomposes the wind vector into orthogonal components: the cosine projection governs the longitudinal headwind along the fuselage, while the sine projection governs the lateral crosswind pushing the wings sideways:
 
 ![Aeronautical wind vector decomposition into longitudinal headwind and lateral runway crosswind components.](../assets/diagrams/domains/diagram_ch01_wind_triangle.png)
 
@@ -822,13 +822,13 @@ $$\text{GS} = V_{\text{TAS}} \cos(\text{WCA}) - V_{\text{hw}}$$
 
 With a $V_w = 28\text{ kt}$ wind blowing at $\theta = 40^\circ$ off the course (`28` {{key:ENTER}} `40` {{key:WND}}), the instrument places the headwind component $V_{\text{hw}} = 28\cos(40^\circ) = \mathbf{21.45\text{ kt}}$ into Register $Y$ and the crosswind component $V_{\text{xw}} = 28\sin(40^\circ) = \mathbf{18.00\text{ kt}}$ into Register $X$. Crabbing into the wind at $V_{\text{TAS}} = 145\text{ kt}$ by $\text{WCA} = \arcsin(18.00 / 145) \approx \mathbf{7.13^\circ}$ ({{key:ASIN}}) holds the desired track over the ridge at a net ground speed of $\text{GS} = 145\cos(7.13^\circ) - 21.45 \approx 143.88 - 21.45 = \mathbf{122.43\text{ kt}}$.
 
-### Endurance Time-Speed-Distance ({{key:TSD}}) and Aircraft Weight & Balance ({{key:CG}})
+### Endurance Time-Speed-Distance ({{key:TSD}}) and Aircraft Weight & Balance
 
-Across any navigation leg of distance $D$ (in nautical miles, {{key:▸NM}}, where $1\text{ NM} = 6{,}076.12\text{ ft} = 1{,}852\text{ m}$) flown at ground speed $S = \text{GS}$ (in knots, $\text{NM/hr}$) over elapsed time $T$ (in hours), the **Time–Speed–Distance** relation ({{key:TSD}}, workspace variables {{keycap:D}}, {{keycap:S}}, {{keycap:T}}) is $D = S \times T$. Simultaneously, loading passengers, medical litters, and fuel aboard the aircraft shifts the longitudinal **Center of Gravity (CG)** relative to the manufacturer's reference datum: each item of weight $W$ (in pounds) located at station arm $A$ (in inches aft of datum) generates a pitching **Moment** $M = W \times A$ ({{key:CG}}, workspace variables {{keycap:M}}, {{keycap:W}}, {{keycap:A}}), and dividing the total aircraft moment $\Sigma M$ by total gross weight $\Sigma W$ locates the center-of-gravity station: $A_{\text{CG}} = \sum M_i / \sum W_i$.
+Across any navigation leg of distance $D$ (in nautical miles, {{key:▸NM}}, where $1\text{ NM} = 6{,}076.12\text{ ft} = 1{,}852\text{ m}$) flown at ground speed $S = \text{GS}$ (in knots, $\text{NM/hr}$) over elapsed time $T$ (in hours), the **Time–Speed–Distance** relation ({{key:TSD}}, workspace variables {{keycap:D}}, {{keycap:S}}, {{keycap:T}}) is $D = S \times T$. Simultaneously, loading passengers, medical litters, and fuel aboard the aircraft shifts the longitudinal **Center of Gravity (CG)** relative to the manufacturer's reference datum: each item of weight $W$ (in pounds) located at station arm $A$ (in inches aft of datum) generates a pitching **Moment** $M = W \times A$, evaluated directly on the stack via `W {{key:ENTER}} A {{key:×}}`, and dividing the total aircraft moment $\Sigma M$ by total gross weight $\Sigma W$ locates the center-of-gravity station: $A_{\text{CG}} = \sum M_i / \sum W_i$.
 
 When evaluating this moment equilibrium, Captain Evans recognizes a direct mathematical equivalence: the weighted center-of-gravity formula $A_{\text{CG}} = \sum x_i W_i / \sum W_i$ is a universal first-moment balance that transcends aeronautics. Exactly this mathematical structure returns in Chapter 26 as Macaulay Bond Duration—where discounted cash-flow amounts replace physical station weights, and time horizons replace spatial moment arms along the fuselage. In both realms, stability depends on the center of mass: whether trimming an airframe against aerodynamic pitching stall or immunizing an investment portfolio against interest-rate shocks, equilibrium balances the weighted first moment of the distribution.
 
-Over the $D = 128.0\text{ NM}$ mountain leg at ground speed $S = 122.43\text{ kt}$, solving {{key:TSD}} (`D = S × T`) for time $T$ yields $T = 128.0 / 122.43 \approx \mathbf{1.0455\text{ hr}}$ ($62.7\text{ min}$). Meanwhile, a $W = 220\text{ lb}$ medical litter locked into cabin station arm $A = 145.0\text{ in}$ adds a pitching moment of $M = 220 \times 145.0 = \mathbf{31{,}900\text{ lb}\cdot\text{in}}$ via {{key:CG}}.
+Over the $D = 128.0\text{ NM}$ mountain leg at ground speed $S = 122.43\text{ kt}$, solving {{key:TSD}} (`D = S × T`) for time $T$ yields $T = 128.0 / 122.43 \approx \mathbf{1.0455\text{ hr}}$ ($62.7\text{ min}$). Meanwhile, a $W = 220\text{ lb}$ medical litter locked into cabin station arm $A = 145.0\text{ in}$ adds a pitching moment of $M = 220 \times 145.0 = \mathbf{31{,}900\text{ lb}\cdot\text{in}}$ (`220 {{key:ENTER}} 145 {{key:×}}`).
 
 ---
 
@@ -855,14 +855,14 @@ At the high-desert strip where Pressure Altitude is $P = 6{,}200\text{ ft}$ ($T_
 
 ## Flying the High-Desert Ridge on the Stack and Solver Workspace
 
-On the **SC-35**, flight-navigation keys operate both as immediate two-register stack shortcuts and as bidirectional Equation Solver workspaces ({{key:WND}} with variables {{keycap:X}}, {{keycap:V}}, {{keycap:A}}; {{key:ALT}} with variables {{keycap:D}}, {{keycap:P}}, {{keycap:T}}; {{key:TSD}} with variables {{keycap:D}}, {{keycap:S}}, {{keycap:T}}; and {{key:CG}} with variables {{keycap:M}}, {{keycap:W}}, {{keycap:A}}):
+On the **SC-35**, flight-navigation keys operate both as immediate two-register stack shortcuts and as bidirectional Equation Solver workspaces ({{key:WND}} with variables {{keycap:X}}, {{keycap:V}}, {{keycap:A}}; {{key:ALT}} with variables {{keycap:D}}, {{keycap:P}}, {{keycap:T}}; and {{key:TSD}} with variables {{keycap:D}}, {{keycap:S}}, {{keycap:T}}):
 
 | Button | Operation | Register Z | Register Y | Register X | Governing Expression |
 | :--- | :--- | :---: | :---: | :---: | :--- |
 | **`{{key:WND}}`** | Headwind, Crosswind & Solver | — | Wind $V_w\ (\text{kt})$ | Angle $\theta^\circ$ | $Y' = V_w\cos\theta,\; X' = V_w\sin\theta$; {{key:WND}} (`{{keycap:X}}`, `{{keycap:V}}`, `{{keycap:A}}`) |
 | **`{{key:XWC}}`** | Crosswind Component | — | Wind $V_w\ (\text{kt})$ | Angle $\theta^\circ$ | $V_{\text{xw}} = V_w\sin(\theta)$ |
 | **`{{key:TSD}}`** | Time–Speed–Distance Solver | — | Speed $S\ (\text{kt})$ | Time $T\ (\text{hr})$ | $D = S \times T$; {{key:TSD}} workspace (`{{keycap:D}}`, `{{keycap:S}}`, `{{keycap:T}}`) |
-| **`{{key:CG}}`** | Weight & Balance Moment Solver | — | Weight $W\ (\text{lb})$ | Arm $A\ (\text{in})$ | $M = W \times A$; {{key:CG}} workspace (`{{keycap:M}}`, `{{keycap:W}}`, `{{keycap:A}}`) |
+| **`{{key:sc35:DALT}}`** | Direct Density Altitude Shortcut | — | Press Alt $P\ (\text{ft})$ | OAT $T\ (^\circ\text{C})$ | $\text{DA} = P + 120(T - (15 - 0.002 P))$ |
 | **`{{key:ALT}}`** | Density Altitude & Solver | — | Press Alt $P\ (\text{ft})$ | OAT $T\ (^\circ\text{C})$ | $\text{DA} = P + 120(T - (15 - 0.002 P))$; {{key:ALT}} (`{{keycap:D}}`, `{{keycap:P}}`, `{{keycap:T}}`) |
 
 ### Solving the Wind Triangle, Density Altitude, and Weight & Balance on the Stack
@@ -874,7 +874,7 @@ Resolving the wind vector ($V_w = 28\text{ kt}, \theta = 40^\circ$), crab angle 
 | `28 {{key:ENTER}} 40 {{key:WND}}` | $0$ | $0$ | $21.45$ | $18.00$ | Resolve headwind $V_{\text{hw}} = 21.45\text{ kt}$ in $Y$ and crosswind $V_{\text{xw}} = 18.00\text{ kt}$ in $X$ |
 | `145 {{key:÷}} {{key:ASIN}}` | $0$ | $0$ | $21.45$ | $7.13$ | Compute Wind Correction Angle $\text{WCA} = \arcsin(18.00/145) \approx 7.13^\circ$ |
 | `6200 {{key:ENTER}} 28 {{key:ALT}}` | $21.4492$ | $21.45$ | $7.13$ | $9248$ | Compute Density Altitude $\text{DA} = 6200 + 120(28 - 2.6) = 9{,}248\text{ ft}$ |
-| `220 {{key:ENTER}} 145 {{key:CG}}` | $7.1302$ | $7.13$ | $9248$ | **$31900$** | Compute cabin litter moment $M = 220\text{ lb} \times 145\text{ in} = 31{,}900\text{ lb}\cdot\text{in}$ |
+| `220 {{key:ENTER}} 145 {{key:×}}` | $7.1302$ | $7.13$ | $9248$ | **$31900$** | Compute cabin litter moment $M = 220\text{ lb} \times 145\text{ in} = 31{,}900\text{ lb}\cdot\text{in}$ |
 
 ### High-Altitude Emergency Diversion and Critical Point Determination on the Stack
 
@@ -908,11 +908,11 @@ The stack answers all four critical questions:
 
 Captain Evans banks the King Air smoothly into a $180^\circ$ left turn, puts the $28\text{-knot}$ wind at their tail, and radios air traffic control for priority medical handling.
 
-### Inverse Solves in the {{key:TSD}}, {{key:CG}}, {{key:WND}}, and {{key:ALT}} Workspaces
+### Inverse Solves in the {{key:TSD}}, {{key:WND}}, and {{key:ALT}} Workspaces
 
 To verify fuel endurance, baggage station limits, crosswind limits, and thermal departure ceilings using the **Bidirectional Equation Solver Workspaces**:
 - **Inverse Groundspeed Solve in {{key:TSD}} ({{key:TSD}}, `D = S × T`):** When remaining non-reserve fuel fixes maximum leg endurance time to $T = 0.90\text{ hr}$ ($54.0\text{ min}$) across the $D = 128.0\text{ NM}$ mountain pass leg, opening {{key:SOLVE}} {{key:TSD}} displays `D = S × T` with variable softkeys {{keycap:D}}, {{keycap:S}}, and {{keycap:T}}. Keying `128` {{keycap:D}} and `0.90` {{keycap:T}} and pressing {{key:SOLVE}} {{keycap:S}} solves backward for the minimum required groundspeed $S = 128.0 / 0.90 \approx \mathbf{142.2222\text{ kt}}$.
-- **Inverse Cargo Weight Limit in {{key:CG}} ({{key:CG}}, `M = W × A`):** If the aft baggage bay at arm $A = 180.0\text{ in}$ (`180` {{keycap:A}}) is restricted to a maximum moment contribution of $M = 27{,}000\text{ lb}\cdot\text{in}$ (`27000` {{keycap:M}}), pressing {{key:SOLVE}} {{keycap:W}} solves backward for the maximum allowable aft cargo weight $W = 27{,}000 / 180.0 = \mathbf{150.00\text{ lb}}$.
+- **Inverse Cargo Weight Limit for Station Arms:** If the aft baggage bay at arm $A = 180.0\text{ in}$ is restricted to a maximum moment contribution of $M = 27{,}000\text{ lb}\cdot\text{in}$, solving $W = M / A$ on the stack via `27000 {{key:ENTER}} 180 {{key:÷}}` isolates the maximum allowable aft cargo weight $W = \mathbf{150.00\text{ lb}}$.
 - **Inverse Temperature Ceiling in {{key:ALT}}:** Opening {{key:SOLVE}} {{key:ALT}} binds softkeys {{keycap:D}}, {{keycap:P}}, and {{keycap:T}}, allowing the crew to store the maximum chart density altitude {{keycap:D}} and pressure altitude {{keycap:P}} and press {{key:SOLVE}} {{keycap:T}} for the maximum outside air temperature.
 
 Crabbed seven degrees into the crosswind and maintaining $145\text{ knots}$ airspeed, the turboprop cleared the basalt ridge with fifteen hundred feet to spare. Factoring the $9{,}248\text{-foot}$ density altitude into the approach profile, the captain executed a stabilized descent, touched down on the mountain runway centerline, and taxied to the clinic ramp with forty-eight gallons of reserve fuel intact.

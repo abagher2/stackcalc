@@ -390,7 +390,7 @@ On the **SC-14**, wire tables, voltage drop, power triangles, and motor calculat
 | **`{{key:PF}}`** | Power Factor & Power Triangle | Apparent $S\ (\text{kVA})$ | Real $P\ (\text{kW})$ | $\text{PF} = \cos\phi$ | $P = S\cos\phi,\; Q = \sqrt{S^2-P^2}$; {{key:PF}} workspace (`{{keycap:P}}`, `{{keycap:V}}`, `{{keycap:I}}`, `{{keycap:F}}`) |
 | **`{{key:kVA}}`** | 3-Phase Apparent Power Solver | — | Line Volts $V_{LL}$ | Line Current $I_L$ | $S = \sqrt{3} V_{LL} I_L / 1000$; {{key:kVA}} workspace (`{{keycap:S}}`, `{{keycap:V}}`, `{{keycap:I}}`) |
 | **`{{key:FLA}}`** | Motor Full-Load Amps & Solver | Horsepower $\text{HP}$ | Line Volts $V_{LL}$ | Efficiency $\eta$ | $I_{\text{FLA}} = (\text{HP} \times 746)/(\sqrt{3} V_{LL} \eta)$; {{key:FLA}} workspace (`{{keycap:I}}`, `{{keycap:P}}`, `{{keycap:V}}`, `{{keycap:E}}`) |
-| **`{{key:MTR}}`** | Motor Mechanical Torque Solver | — | Spindle $\text{RPM}$ | Horsepower $\text{HP}$ | $H = T \times N / 5252$; {{key:MTR}} workspace (`{{keycap:H}}`, `{{keycap:T}}`, `{{keycap:N}}`) |
+| **`{{key:sc14:XL}}`** / **`{{key:sc14:XC}}`** | AC Reactance ($X_L, X_C$) | — | Frequency $f\ (\text{Hz})$ | Inductance $L$ / Capacitance $C$ | $X_L = 2\pi f L,\; X_C = 1 / (2\pi f C)$ |
 | **`{{key:Ω}}`** | Ohm's Law Power & Impedance | — | Voltage $V$ | Current $I$ | $P = V \times I$; {{key:Ω}} workspace (`{{keycap:P}}`, `{{keycap:V}}`, `{{keycap:I}}`) |
 
 ### Evaluating Feeder Current, NEC Table 8 Resistance, and Line Voltage Drop on the Stack
@@ -1021,13 +1021,13 @@ Process engineers size valves, piping, and instrumentation loops to maintain hyd
 
 ### Pipe Continuity, Valve Flow Coefficient, Pump Power, and Suction Head
 
-Volumetric liquid flow rate $Q$ through a pipe of internal cross-sectional area $A$ at mean velocity $V$ is governed by continuity: $Q = A \times V$ (operational shorthand {{key:PIP}}). Sizing control valves across pressure drop $\Delta P$ (in PSI) with fluid specific gravity $G$ uses the valve flow coefficient $C_v$ ({{key:Cᵥ}}), while calculating hydraulic or brake horsepower $P_{\text{HP}}$ for a pump delivering flow $Q$ (in $\text{GPM}$) against total dynamic head $H$ (in feet of liquid) evaluates the hydraulic work ({{key:PMP}}):
+Volumetric liquid flow rate $Q$ through a pipe of internal cross-sectional area $A$ at mean velocity $V$ is governed by continuity: $Q = A \times V$ (evaluated directly on the stack via `A {{key:ENTER}} V {{key:×}}`). Sizing control valves across pressure drop $\Delta P$ (in PSI) with fluid specific gravity $G$ uses the valve flow coefficient $C_v$ ({{key:Cᵥ}}), while calculating hydraulic or brake horsepower $P_{\text{HP}}$ for a pump delivering flow $Q$ (in $\text{GPM}$) against total dynamic head $H$ (in feet of liquid) evaluates the hydraulic work via $P_{\text{HP}} = \frac{Q \cdot H}{3{,}960 \cdot \eta_{\text{pump}}}$:
 
 **Eq. 6.3 — Control Valve Volumetric Flow and Pump Power**
 $$Q = C_v \sqrt{\frac{\Delta P}{G}}$$
 $$P_{\text{HP}} = \frac{Q \cdot H}{3{,}960 \cdot \eta_{\text{pump}}}$$
 
-For a coolant valve with flow coefficient $C_v = 30.0$ operating across a pressure drop of $\Delta P = 9.0\text{ psi}$ with water ($G = 1.00$), pressing {{key:Cᵥ}} evaluates flow as $Q = 30.0 \sqrt{9.0} = \mathbf{90.00\text{ GPM}}$, while a pump delivering that $90\text{ GPM}$ against $H = 88.0\text{ ft}$ of dynamic head at $100\%$ efficiency requires $P = (90 \times 88)/3960 = \mathbf{2.00\text{ HP}}$ via {{key:PMP}}.
+For a coolant valve with flow coefficient $C_v = 30.0$ operating across a pressure drop of $\Delta P = 9.0\text{ psi}$ with water ($G = 1.00$), pressing {{key:Cᵥ}} evaluates flow as $Q = 30.0 \sqrt{9.0} = \mathbf{90.00\text{ GPM}}$, while a pump delivering that $90\text{ GPM}$ against $H = 88.0\text{ ft}$ of dynamic head at $100\%$ efficiency requires $P = (90 \times 88)/3960 = \mathbf{2.00\text{ HP}}$ (`90 {{key:ENTER}} 88 {{key:×}} 3960 {{key:÷}}`).
 
 ### Noise-Immune Four-to-Twenty Milliampere Loops and Platinum RTDs
 
@@ -1161,14 +1161,13 @@ To suppress water hammer, Sarah installs a **nitrogen-precharged bladder hydraul
 
 ## Dialing In the Milling Fixture and Fluid Loop on the Stack and Solver Workspaces
 
-On the **SC-14**, machining, fluid, and process operators work as immediate RPN stack functions and interactive Equation Solver workspaces ({{key:SFM}}, {{key:BC}}, {{key:Cᵥ}}, {{key:PMP}}, and {{key:mA}}):
+On the **SC-14**, machining, fluid, and process operators work as immediate RPN stack functions and interactive Equation Solver workspaces ({{key:SFM}}, {{key:BC}}, {{key:Cᵥ}}, and {{key:mA}}):
 
 | Button | Operation | Register Z | Register Y | Register X | Governing Expression |
 | :--- | :--- | :---: | :---: | :---: | :--- |
 | **`{{key:SFM}}`** | Spindle Speed & Feed Rate Solver | Flutes $Z$ | Surface Speed $\text{SFM}$ | Tool Diameter $D\ (\text{in.})$ | $N = 3.82\cdot\text{SFM}/D$; {{key:SFM}} (`{{keycap:N}}`, `{{keycap:S}}`, `{{keycap:D}}`) |
 | **`{{key:BC}}`** | Bolt Circle Chord Spacing | — | Pitch Diameter $D$ | Hole Count $N$ | $C = D\sin(180^\circ/N)$; {{key:BC}} workspace (`{{keycap:C}}`, `{{keycap:D}}`, `{{keycap:N}}`) |
 | **`{{key:Cᵥ}}`** | Control Valve Flow Solver | Specific Gravity $G$ | Valve Coeff $C_v$ | Pressure Drop $\Delta P$ | $Q = C_v\sqrt{\Delta P/G}$; {{key:Cᵥ}} workspace (`{{keycap:Q}}`, `{{keycap:C}}`, `{{keycap:P}}`, `{{keycap:G}}`) |
-| **`{{key:PMP}}`** | Pump Horsepower & Head Solver | Efficiency $\eta$ | Flow $Q\ (\text{GPM})$ | Total Head $H\ (\text{ft})$ | $P = (Q\cdot H)/(3960\cdot\eta)$; {{key:PMP}} workspace (`{{keycap:P}}`, `{{keycap:Q}}`, `{{keycap:H}}`) |
 | **`{{key:mA}}`** | 4–20 mA Process Signal Scaler | — | Span Max $P_{\max}$ | Span Min $P_{\min}$ / $\%$ | Scales $[0\%, 100\%] \leftrightarrow [4.00, 20.00]\text{ mA}$ |
 | **`{{key:RTD}}`** | Pt100 Temperature Sensor Lookup | — | — | Temp $T\ (^\circ\text{C})$ | $R(T) = 100(1 + 0.00385 T)$ |
 
@@ -1201,7 +1200,7 @@ The stack verified every critical machining and process parameter:
 3. Pump motor power was certified at $7.32\text{ BHP}$ (safely within the $10\text{ HP}$ motor rating).
 4. The transmitter's $16.8\text{ mA}$ signal was validated as an exact $80.0\text{ PSI}$ bearing pressure.
 
-### Calibrating the Loop on the Stack and Solving Backward in {{key:Cᵥ}} and {{key:PMP}}
+### Calibrating the Loop on the Stack and Solving Sizing Equations
 
 The hydraulic clamping pressure and shop cooling loop monitoring proceed on the stack:
 
@@ -1209,12 +1208,12 @@ The hydraulic clamping pressure and shop cooling loop monitoring proceed on the 
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | `1875 {{key:ENTER}} 3000 {{key:÷}} 100 {{key:×}} {{key:mA}}` | $0$ | $0$ | $0$ | $14$ | Convert $62.5\%$ pressure span to loop current $I_{\text{mA}} = 14.00\text{ mA}$ |
 | `150 {{key:RTD}}` | $0$ | $0$ | $14$ | $157.75$ | Compute $\text{Pt100}$ RTD resistance at $150^\circ\text{C}$ ($R = 157.75\ \Omega$) |
-| `30 {{key:ENTER}} 9 {{key:Cᵥ}} {{key:C}}` | $14$ | $14$ | $157.75$ | $90$ | Compute coolant valve flow $Q = 30\sqrt{9} = 90.00\text{ GPM}$ |
-| `88 {{key:PMP}} {{key:C}}` | $14$ | $14$ | $157.75$ | **$2$** | Compute pump hydraulic horsepower $P = (90 \times 88)/3960 = 2.00\text{ HP}$ |
+| `30 {{key:ENTER}} 9 {{key:Cᵥ}}` | $14$ | $14$ | $157.75$ | $90$ | Compute coolant valve flow $Q = 30\sqrt{9} = 90.00\text{ GPM}$ |
+| `88 {{key:×}} 3960 {{key:÷}}` | $14$ | $14$ | $157.75$ | **$2$** | Compute pump hydraulic horsepower $P = (90 \times 88)/3960 = 2.00\text{ HP}$ |
 
-When plant engineering upgrades the heat-exchanger manifold, the technician uses the **Bidirectional Equation Solver Workspaces** for {{key:PIP}} (`PIP: PIPE FLOW`, `Q = A × V`), {{key:Cᵥ}} (`CV: VALVE FLOW`, `Q = C × √(P / G)`), and {{key:PMP}} (`PMP: PUMP BHP`, `P = Q × H / 3960`) to solve backward for required component ratings:
+When plant engineering upgrades the heat-exchanger manifold, the technician uses the **Bidirectional Equation Solver Workspace** for {{key:Cᵥ}} (`CV: VALVE FLOW`, `Q = C × √(P / G)`) or solves piping continuity and hydraulic pump power directly on the postfix stack to determine required component ratings:
 - **Inverse Valve Pressure Drop & Minimum $C_v$ in {{key:Cᵥ}} (`Q = C × √(P / G)`):** Suppose a quench manifold requires $Q = 100.0\text{ GPM}$ (`100` {{keycap:Q}}) of synthetic heat-transfer brine of specific gravity $G = 1.08$ (`1.08` {{keycap:G}}) through a valve with $C_v = 35.0$ (`35` {{keycap:C}}). Pressing {{key:XEQ}} {{keycap:P}} solves backward for the required pressure drop across the valve: $\Delta P = G \cdot (Q / C_v)^2 = 1.08 \times (100.0 / 35.0)^2 \approx \mathbf{8.8163\text{ psi}}$. Conversely, if header pressure drop is limited to $\Delta P = 16.0\text{ psi}$ (`16` {{keycap:P}}) for $Q = 150.0\text{ GPM}$ (`150` {{keycap:Q}}) of water (`1` {{keycap:G}}), pressing {{key:XEQ}} {{keycap:C}} solves backward for the minimum required valve coefficient $C_v = 150.0 / \sqrt{16.0} = \mathbf{37.50}$.
-- **Inverse Discharge Head in {{key:PMP}} (`P = Q × H / 3960`):** When an existing $P = 5.00\text{ HP}$ (`5` {{keycap:P}}) coolant pump must deliver $Q = 180.0\text{ GPM}$ (`180` {{keycap:Q}}), pressing {{key:XEQ}} {{keycap:H}} solves backward for the maximum vertical discharge head the pump can sustain: $H_{\max} = \frac{3960 \times 5.00}{180.0} = \mathbf{110.00\text{ ft}}$.
+- **Inverse Pump Dynamic Head:** When an existing $P = 5.00\text{ HP}$ coolant pump must deliver $Q = 180.0\text{ GPM}$, solving the hydraulic power equation $H = \frac{3960 \times P}{Q}$ on the stack via `3960 {{key:ENTER}} 5 {{key:×}} 180 {{key:÷}}` isolates the maximum vertical discharge head the pump can sustain: $H_{\max} = \frac{3960 \times 5.00}{180.0} = \mathbf{110.00\text{ ft}}$.
 
 Dialing the CNC mill to the calculated $1{,}834\text{ RPM}$ spindle speed and $14.67\text{ in/min}$ feed rate completely silenced the tool chatter, producing a mirror-like $32\ \mu\text{in}$ surface finish across the stainless pump flange. Across the plant floor, the calibrated $4\text{--}20\text{ mA}$ transmitter reported a rock-solid $16.8\text{ mA}$ at $80.0\text{ PSI}$, certifying the hydraulic cooling loop for continuous production.
 

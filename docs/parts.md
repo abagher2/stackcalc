@@ -117,7 +117,7 @@ Quote these Part IDs when ordering via Slant 3D, searching Printables, or contac
 | **Etsy Storefront** | [`stackcalcmath.etsy.com`](https://stackcalcmath.etsy.com) | Handcrafted 3D-printed manipulative boxed sets and hardware calculators. |
 | **Lulu Press** | [`lulu.com/spotlight/stackcalc`](https://www.lulu.com/spotlight/stackcalc) | Spiral-bound lay-flat curriculum guides, student workbooks, and coach manuals. |
 | **Hackaday** | [`hackaday.io/project/206743`](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator) | Open hardware build logs, PCB fabrication notes, and firmware architecture. |
-| **Amazon** | [Amazon SC-32 (Paperback)](https://link.amazon/B07DqTRR5) &bull; [Amazon SC-32 (Hardcover)](https://link.amazon/B09AnTIQI) &bull; [Amazon SC-6](https://link.amazon/B0f5cP0Ur) &bull; [Amazon Middle School Workbook](https://link.amazon/B07bxzYKq) | *Thinking in the Stack* (SC-32 Scientific), *From Blocks to the Stack* (SC-6 Elementary), and Middle School Math Blocks Workbook official print publications. |
+| **Amazon** | [Amazon SC-32 (Paperback)](https://link.amazon/B07DqTRR5) &bull; [Amazon SC-32 (Hardcover)](https://link.amazon/B09AnTIQI) &bull; [Amazon SC-6](https://link.amazon/B0f5cP0Ur) &bull; [Amazon Middle School Workbook](https://link.amazon/B07bxzYKq) &bull; [Amazon Teacher's Guide](https://link.amazon/B05RFHqeu) | *Thinking in the Stack* (SC-32 Scientific), *From Blocks to the Stack* (SC-6 Elementary), Middle School Math Blocks Workbook, and Teacher's Curriculum Guide official print publications. |
 
 ---
 

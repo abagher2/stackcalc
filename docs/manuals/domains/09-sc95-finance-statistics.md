@@ -163,7 +163,7 @@ Total finance interest paid over 20 years equals $\$870{,}040.80 - \$450{,}000 =
 
 ![Amortization waterfall chart illustrating the exponential decay of interest payments and the corresponding geometric acceleration of principal equity retirement.](../assets/diagrams/domains/diagram_ch09_amortization_schedule.png)
 
-### Geometric Principal and Interest Decomposition Across Amortization Periods ({{key:AMR}})
+### Geometric Principal and Interest Decomposition Across Amortization Periods
 
 A common operational error is assuming that each monthly payment retires an equal fraction of the principal. In reality, loan amortization follows an **exponential geometric progression**.
 
@@ -191,7 +191,7 @@ For Month 12:
 - Using the geometric law: $\text{Principal}_{12} = 812.67 \times (1.00625)^{11} = 812.67 \times 1.070857 = \mathbf{\$870.25}$.
 - $\text{Interest}_{12} = 3625.17 - 870.25 = \mathbf{\$2{,}754.92}$.
 
-Summing all 12 months of Year 1 on the **SC-95** amortization engine ({{key:AMR}}):
+Summing all 12 months of Year 1 on the **SC-95** stack:
 - **Total Year 1 Interest:** $\mathbf{\$33{,}407.69}$
 - **Total Year 1 Principal:** $\mathbf{\$10{,}094.34}$
 - **Ending Balance after Month 12:** $\mathbf{\$439{,}905.66}$
@@ -286,7 +286,7 @@ $$V_{\text{terminal}} = \frac{CF_{N+1}}{r - g} = \frac{CF_N (1 + g)}{r - g}$$
 
 where $r$ is the cost of capital and $g$ is the sustainable perpetual long-term growth rate (which must be strictly less than the macroeconomic GDP growth rate, $g < r$). Capital budgeting decisions integrate this terminal value discounted back to the present, ensuring that long-lived industrial assets are valued with complete intertemporal consistency.
 
-### Gross Margin ({{key:MGN}}), Markup on Cost ({{key:MKP}}), Breakeven ({{key:BEP}}), and Economic Order Quantity ({{key:EOQ}})
+### Gross Margin ({{key:MGN}}), Markup on Cost, Breakeven ({{key:BEP}}), and Economic Order Quantity ({{key:EOQ}})
 
 At the level of individual manufactured components, operational solvency depends upon unit economics.
 
@@ -294,7 +294,7 @@ At the level of individual manufactured components, operational solvency depends
 One of the most frequent causes of commercial bankruptcy in manufacturing and distribution is confusing **Gross Margin** with **Markup on Cost**:
 - **Gross Margin ({{key:MGN}}):** The fraction of selling price retained after direct production costs:
   $$\text{Margin} = \frac{\text{Price} - \text{Cost}}{\text{Price}} = 1 - \frac{\text{Cost}}{\text{Price}}$$
-- **Markup on Cost ({{key:MKP}}):** The percentage added on top of direct cost to establish the selling price:
+- **Markup on Cost:** The percentage added on top of direct cost to establish the selling price, evaluated directly on the stack via `Cost {{key:ENTER}} Price {{key:Δ%}}` (or $(P - C)/C \times 100$):
   $$\text{Markup} = \frac{\text{Price} - \text{Cost}}{\text{Cost}} = \frac{\text{Price}}{\text{Cost}} - 1$$
 
 Converting between the two metrics:
@@ -412,27 +412,27 @@ This creates a front-loaded total expense profile: early lease periods exhibit s
 
 ## Mortgage Structuring and Capital Budgeting on the Stack and in the Solver Workspace
 
-On the **SC-95**, Time Value of Money schedules (accessed directly on Row 1 Col 2 via {{key:sc95:TVM}}), loan amortizations ({{key:sc95:AMR}}), discounted cash flow valuations ({{key:sc95:CF}}), margins, and order quantities operate across immediate stack operations and Bidirectional Equation Workspaces.
+On the **SC-95**, Time Value of Money schedules (accessed directly on Row 1 Col 2 via {{key:sc95:TVM}}), discounted cash flow valuations ({{key:sc95:CF}}), margins, and order quantities operate across immediate stack operations and Bidirectional Equation Workspaces.
 
 | Key / Solver | Mode | Inputs / Workspace Softkeys | Governing Expression |
 | :--- | :--- | :--- | :--- |
 | {{key:TVM}} | Solver Workspace | {{keycap:N}} {{keycap:I%}} {{keycap:PV}} {{keycap:PMT}} {{keycap:FV}} | $PV + PMT \left[\frac{1 - (1+i)^{-N}}{i}\right] + FV (1+i)^{-N} = 0$ |
-| {{key:AMR}} | Stack Function | Register $Y$: Start Period, Register $X$: End Period | Evaluates $\sum \text{Principal}$, $\sum \text{Interest}$, $\text{Balance}_{\text{end}}$ |
+| **`{{key:sc95:BS}}`** | Option Pricing | — | Stock $S$, Strike $K$ | Black-Scholes $d_1, d_2$ parameters |
 | {{key:CF}} | Solver Workspace | Cash flow list: $CF_0, CF_1, \dots, CF_N$ • {{keycap:I%}} | $NPV = \sum CF_t (1+r)^{-t}$; solves $IRR$ where $NPV = 0$ |
-| {{key:MGN}} / {{key:MKP}} | Immediate Stack | Register $Y$: Price, Register $X$: Cost | $\text{Margin} = (Y - X)/Y$; $\text{Markup} = (Y - X)/X$ |
+| {{key:MGN}} | Immediate Stack | Register $Y$: Price, Register $X$: Cost | Gross margin $\text{Margin} = (Y - X)/Y$ |
 | {{key:BEP}} / {{key:EOQ}} | Immediate Stack | {{key:BEP}}: $Y=FC, X=P-VC$ • {{key:EOQ}}: $Z=D, Y=S, X=H$ | $\text{BEP} = Y/X$; $EOQ = \sqrt{2 \cdot Z \cdot Y / X}$ |
 
 ---
 
 ### Solving the Commercial Mortgage and Year 1 Amortization on the Stack
 
-To structure the $PV = \$450{,}000$ mortgage across $20\text{ years}$ ($N = 240\text{ months}$) at $6.0\%$ nominal APR ($i = 0.50\%/\text{mo}$), the treasurer opens {{key:TVM}}, solves for the monthly payment $PMT \approx \mathbf{-\$3{,}223.94}$, evaluates Month 1 interest via {{key:AMR}} ($\$2{,}250.00$), subtracts from $\lvert PMT\rvert$ to find Month 1 principal ($P_1 = \mathbf{\$973.94}$), and evaluates Year 1 cumulative principal reduction ($\mathbf{\$12{,}014.09}$) and Year 1 total interest ($\mathbf{\$26{,}673.19}$):
+To structure the $PV = \$450{,}000$ mortgage across $20\text{ years}$ ($N = 240\text{ months}$) at $6.0\%$ nominal APR ($i = 0.50\%/\text{mo}$), the treasurer opens {{key:TVM}}, solves for the monthly payment $PMT \approx \mathbf{-\$3{,}223.94}$, evaluates Month 1 interest on the stack ($450{,}000 \times 0.005 = \$2{,}250.00$), subtracts from $\lvert PMT\rvert$ to find Month 1 principal ($P_1 = \mathbf{\$973.94}$), and evaluates Year 1 cumulative principal reduction ($\mathbf{\$12{,}014.09}$) and Year 1 total interest ($\mathbf{\$26{,}673.19}$):
 
 | Keystroke | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | {{key:TVM}} `20` {{key:ENTER}} `12` {{key:×}} {{keycap:N}} `6` {{key:ENTER}} `12` {{key:÷}} {{keycap:I%}} | $0$ | $0$ | $240$ | $0.5$ | Open {{key:TVM}} and store $N = 20 \times 12 = 240\text{ mo}$ and $i = 6 / 12 = 0.50\%\text{/mo}$ |
 | `450000` {{keycap:PV}} `0` {{keycap:FV}} {{key:SOLVE}} {{keycap:PMT}} | $240$ | $0.5$ | $450000$ | **$-3223.94$** | Store $\text{PV} = 450{,}000, \text{FV} = 0$ and solve $\text{PMT} = -\$3{,}223.94/\text{mo}$ |
-| {{key:+/-}} {{key:ENTER}} {{key:ENTER}} `450000` {{key:ENTER}} `0.5` {{key:AMR}} {{key:-}} | $3223.94$ | $3223.94$ | $3223.94$ | **$973.9398$** | Subtract Month 1 interest ($\$2{,}250.00$ via {{key:AMR}}) from $\lvert\text{PMT}\rvert$: $P_1 = \$973.94$ |
+| {{key:+/-}} {{key:ENTER}} {{key:ENTER}} `450000` {{key:ENTER}} `0.005` {{key:×}} {{key:-}} | $3223.94$ | $3223.94$ | $3223.94$ | **$973.9398$** | Subtract Month 1 interest ($450{,}000 \times 0.005 = \$2{,}250.00$) from $\lvert\text{PMT}\rvert$: $P_1 = \$973.94$ |
 | `1.005` {{key:ENTER}} `12` {{key:yˣ}} `1` {{key:-}} `0.005` {{key:÷}} {{key:×}} | $3223.94$ | $3223.94$ | $3223.94$ | **$12014.09$** | Accumulate Year 1 principal reduction $\Delta\text{Prin}_{1\text{–}12} = \$12{,}014.09$ |
 | {{key:x⇄y}} `12` {{key:×}} {{key:x⇄y}} {{key:-}} | $3223.94$ | $3223.94$ | $3223.94$ | **$26673.19$** | Subtract $\Delta\text{Prin}_{1\text{–}12}$ from $12\lvert\text{PMT}\rvert$: Year 1 interest $\Delta\text{Int}_{1\text{–}12} = \$26{,}673.19$ |
 
@@ -448,14 +448,14 @@ The corporate treasury team structures the commercial facility mortgage across t
 | 4 | `1` {{key:x⇄y}} {{key:-}} | `0.77584` | `0.00000` | `0.00000` | `0.00000` | Denominator $[1 - (1+i)^{-N}] = 0.775835$ |
 | 5 | `450000` {{key:ENTER}} `0.00625` {{key:×}} | `2812.5000` | `0.77584` | `0.00000` | `0.00000` | Numerator $PV \times i = \$2{,}812.50$ (Month 1 interest) |
 | 6 | {{key:x⇄y}} {{key:÷}} {{key:+/-}} | `-3625.1747` | `0.00000` | `0.00000` | `0.00000` | Monthly payment $PMT = \mathbf{-\$3{,}625.17}$ |
-| 7 | `1` {{key:ENTER}} `12` {{key:AMR}} | `33407.69` | `-3625.17` | `0.00000` | `0.00000` | Total Year 1 Interest paid $= \mathbf{\$33{,}407.69}$ |
-| 8 | {{key:R↓}} | `10094.34` | `439905.66` | `33407.69` | `-3625.17` | Total Year 1 Principal retired $= \mathbf{\$10{,}094.34}$ |
-| 9 | {{key:R↓}} | `439905.66` | `33407.69` | `-3625.17` | `10094.34` | Remaining Loan Balance after Month 12 $= \mathbf{\$439{,}905.66}$ |
+| 7 | `12` {{key:×}} `10094.34` {{key:-}} | `33407.69` | `-3625.17` | `0.00000` | `0.00000` | Total Year 1 Interest paid $= 12\lvert PMT\rvert - \Delta\text{Prin} = \mathbf{\$33{,}407.69}$ |
+| 8 | `450000` {{key:ENTER}} `10094.34` {{key:-}} | `439905.66` | `33407.69` | `-3625.17` | `0.00000` | Remaining Loan Balance after Month 12 $= \mathbf{\$439{,}905.66}$ |
+| 9 | `10094.34` | `10094.34` | `439905.66` | `33407.69` | `-3625.17` | Total Year 1 Principal retired $= \mathbf{\$10{,}094.34}$ |
 
 #### Step-by-Step Architectural Walkthrough:
 - **Steps 1–4:** Evaluating the annuity discount factor $[1 - (1+i)^{-N}]$ on the stack without storing intermediate terms.
 - **Steps 5–6:** Computing the monthly payment $PMT = -\$3{,}625.17$, correctly signed as a cash outflow.
-- **Steps 7–9:** Invoking {{key:AMR}} across periods 1 to 12 populates the stack with the three critical auditing metrics: total interest ($\$33{,}407.69$), total principal retired ($\$10{,}094.34$), and remaining loan principal ($\$439{,}905.66$), accessible via standard stack rotation ({{key:R↓}}).
+- **Steps 7–9:** Evaluating Year 1 cumulative interest ($\$33{,}407.69$), Year 1 principal retirement ($\$10{,}094.34$), and remaining loan principal ($\$439{,}905.66$) through postfix operations on the stack.
 
 ---
 
@@ -470,7 +470,7 @@ Moving to capital allocation, the CFO appraises the proposed robotic loading cel
 | 3 | `32000` {{key:×}} | `121305.18` | `0.00000` | `0.00000` | `0.00000` | Present value of savings $= \$121{,}305.18$ |
 | 4 | `120000` {{key:-}} | `1305.18` | `0.00000` | `0.00000` | `0.00000` | Net Present Value $NPV = \mathbf{+\$1{,}305.18}$ (Accept project) |
 | 5 | `85` {{key:ENTER}} `37` {{key:MGN}} | `0.5647` | `0.0000` | `0.0000` | `0.0000` | Valve Gross Margin $= \mathbf{56.47\%}$ |
-| 6 | `85` {{key:ENTER}} `37` {{key:MKP}} | `1.2973` | `0.0000` | `0.0000` | `0.0000` | Valve Markup on Cost $= \mathbf{129.73\%}$ |
+| 6 | `37` {{key:ENTER}} `85` {{key:Δ%}} | `129.7297` | `0.0000` | `0.0000` | `0.0000` | Valve Markup on Cost $= \mathbf{129.73\%}$ |
 | 7 | `48000` {{key:ENTER}} `48` {{key:÷}} | `1000.0000` | `0.0000` | `0.0000` | `0.0000` | Breakeven Volume $\text{BEP} = 48000 / 48 = \mathbf{1{,}000\text{ units}}$ |
 | 8 | `2` {{key:ENTER}} `12000` {{key:×}} `150` {{key:×}} | `3600000.00` | `0.0000` | `0.0000` | `0.0000` | EOQ numerator: $2 \times 12000 \times 150 = 3{,}600{,}000$ |
 | 9 | `4` {{key:÷}} {{key:√x}} | `948.6833` | `0.0000` | `0.0000` | `0.0000` | Wilson $\text{EOQ} = \sqrt{900000} = \mathbf{948.68\text{ units}}$ |
@@ -484,14 +484,14 @@ The investment generates a positive NPV of $\$1{,}305.18$, clearing the firm's $
 
 In financial negotiation and lease structuring, executives frequently need to solve multi-variable credit contracts backward—determining the maximum loan size supported by a fixed operating cash flow, or finding the hurdle rate where a project breaks even. Opening the {{key:CF}} Solver Workspace ({{key:C}} {{key:CF}}) solves forward for Net Present Value and backward for Internal Rate of Return:
 
-| Keystroke | Solver Display / Register X | What Happens in the {{key:CF}}, {{key:MGN}}, and {{key:MKP}} Workspaces |
+| Keystroke | Solver Display / Register X | What Happens in the {{key:CF}} and {{key:MGN}} Workspaces |
 | :--- | :---: | :--- |
 | {{key:C}} {{key:CF}} | `NPV: V = C×(1-(1+R)⁻ᴺ)/R - I` | Open the {{key:CF}} Solver Workspace with softkeys {{keycap:V}}, {{keycap:C}}, {{keycap:R}}, {{keycap:N}}, {{keycap:I}} |
 | `42000` {{keycap:C}} `10` {{keycap:R}} `4` {{keycap:N}} `120000` {{keycap:I}} {{key:SOLVE}} {{keycap:V}} | **$13{,}134.3515$** | Solve forward for Net Present Value $V = \mathbf{+\$13{,}134.35}$ at $R = 10.0\%$ hurdle rate |
 | `0` {{keycap:V}} {{key:SOLVE}} {{keycap:R}} | **$14.9631$** | Store break-even $V = 0$ and solve backward via root-finding for $\text{IRR} = \mathbf{14.9631\%/\text{yr}}$ |
 | `10` {{keycap:R}} {{key:SOLVE}} {{keycap:C}} | **$37{,}856.4965$** | Restore $R = 10.0\%$ and solve backward for break-even annual savings $C = \mathbf{\$37{,}856.50/\text{yr}}$ |
 | `72` {{key:ENTER}} `120` {{key:MGN}} | **$40.0000$** | Compute valve Gross Margin $\text{MGN}_{\%} = (120 - 72)/120 = \mathbf{40.00\%}$ (opens {{key:MGN}} workspace) |
-| `72` {{key:ENTER}} `120` {{key:MKP}} | **$66.6667$** | Compute valve Markup on Cost $\text{MKP}_{\%} = (120 - 72)/72 = \mathbf{66.67\%}$ (opens {{key:MKP}} workspace) |
+| `72` {{key:ENTER}} `120` {{key:Δ%}} | **$66.6667$** | Compute valve Markup on Cost via percent change: $(120 - 72)/72 = \mathbf{66.67\%}$ |
 
 The **SC-95** integrates dedicated Bidirectional Equation Solver Workspaces:
 

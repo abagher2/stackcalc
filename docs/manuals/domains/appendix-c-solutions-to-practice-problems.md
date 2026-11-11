@@ -15,7 +15,7 @@ This compendium provides complete step-by-step keystroke solutions, stack regist
    - **Keystrokes**: `1585.20` {{key:sc35:ENTER}} `1200` {{key:sc35:-}} `1912.60` {{key:sc35:ENTER}} `1500` {{key:sc35:-}} {{key:sc35:INV}} {{key:sc35:x⇄y}} {{key:sc35:BRG}} {{key:sc35:▸HMS}}
    - **Solution**: Calculates coordinate differences $\Delta N = 385.20\text{ ft}$ and $\Delta E = 412.60\text{ ft}$ to yield boundary distance $D = \mathbf{564.4624\text{ ft}}$, azimuth $\alpha = \mathbf{46.9669^\circ}$, and legal quadrant bearing $\mathbf{\text{N } 46^\circ 58' 01'' \text{ E}}$ (`46.5801`).
 3. **Traverse Closure Precision and Acreage Conversion**
-   - **Keystrokes**: `0.15` {{key:sc35:ENTER}} `0.20` {{key:sc35:+/-}} {{key:sc35:CLS}} `2500` {{key:sc35:x⇄y}} {{key:sc35:÷}} `326700` {{key:sc35:▸ac}}
+   - **Keystrokes**: `0.15` {{key:sc35:ENTER}} `0.20` {{key:sc35:+/-}} {{key:sc35:CLS}} `2500` {{key:sc35:x⇄y}} {{key:sc35:÷}} `326700` {{key:sc35:ENTER}} `43560` {{key:sc35:÷}}
    - **Solution**: Resolves linear error of closure $E_c = \sqrt{0.15^2 + (-0.20)^2} = \mathbf{0.25\text{ ft}}$, computes relative precision ratio $2500 / 0.25 = \mathbf{1 : 10{,}000}$, and converts $326{,}700\text{ ft}^2$ to $\mathbf{7.5000\text{ acres}}$.
 4. **Architectural Foot-Inch Reduction and Colonial Chain Conversions**
    - **Keystrokes**: `38` {{key:sc35:ENTER}} `7` {{key:sc35:ENTER}} `5` {{key:sc35:ENTER}} `8` {{key:sc35:÷}} {{key:sc35:+}} `12` {{key:sc35:÷}} {{key:sc35:+}} `14.75` {{key:sc35:ENTER}} `66` {{key:sc35:×}}
@@ -51,7 +51,7 @@ This compendium provides complete step-by-step keystroke solutions, stack regist
    - **Keystrokes**: `15` {{keycap:X}} `30` {{keycap:V}} {{key:sc35:SOLVE}} {{keycap:A}} `6200` {{key:sc35:ENTER}} `28` {{key:sc35:ALT}}
    - **Solution**: Solves crosswind limit backward to find $\theta_{\max} = \arcsin(15/30) = \mathbf{30.00^\circ}$. Evaluates atmospheric expansion to find Density Altitude $\text{DA} = \mathbf{9{,}248\text{ ft}}$.
 3. **Endurance Leg Check and Center of Gravity Moment**
-   - **Keystrokes**: `165` {{keycap:D}} `1.25` {{keycap:T}} {{key:sc35:SOLVE}} {{keycap:S}} `350` {{key:sc35:ENTER}} `120` {{key:sc35:CG}}
+   - **Keystrokes**: `165` {{keycap:D}} `1.25` {{keycap:T}} {{key:sc35:SOLVE}} {{keycap:S}} `350` {{key:sc35:ENTER}} `120` {{key:sc35:×}}
    - **Solution**: Solves time-speed-distance equation to yield required groundspeed $S = 165 / 1.25 = \mathbf{132.00\text{ kt}}$, and computes fuel moment $M = 350 \times 120 = \mathbf{42{,}000\text{ lb}\cdot\text{in}}$.
 4. **Point of Equal Time on Headwind Route**
    - **Keystrokes**: `360` {{key:sc35:ENTER}} `170` {{key:sc35:×}} `130` {{key:sc35:ENTER}} `170` {{key:sc35:+}} {{key:sc35:÷}} `130` {{key:sc35:÷}}
@@ -142,7 +142,7 @@ This compendium provides complete step-by-step keystroke solutions, stack regist
    - **Keystrokes**: {{key:sc16:DEC}} `12.5` {{key:sc16:NEG}} {{key:sc16:FLT}}
    - **Solution**: Decomposes $-12.50 = -1.1001_2 \times 2^3$ into sign $s=1$, biased exponent $e = 3 + 127 = 130$ (`0x82`), and mantissa fraction `0x480000` to assemble binary word $\mathbf{\text{0xC1480000}}$ in $X$.
 2. **32-Bit Endianness Reversal**
-   - **Keystrokes**: {{key:sc16:HEX}} `32` {{key:sc16:WSZ}} `00409642` {{key:sc16:END}}
+   - **Keystrokes**: {{key:sc16:HEX}} `32` {{key:sc16:WSZ}} `00409642` {{key:sc16:SWP}}
    - **Solution**: Executes 32-bit byte reversal, transposing byte sequence $[B_0, B_1, B_2, B_3] \to [B_3, B_2, B_1, B_0]$ to return $\mathbf{\text{0x42964000}}$ ($+75.125^\circ\text{C}$ in IEEE-754).
 3. **CIDR /28 Subnet Sizing**
    - **Keystrokes**: {{key:sc16:HEX}} `32` {{key:sc16:WSZ}} `FFFFFFFF` {{key:sc16:ENTER}} `4` {{key:sc16:≪}} {{key:sc16:DEC}} `2` {{key:sc16:ENTER}} `4` {{key:sc16:yˣ}} `2` {{key:sc16:-}}
@@ -351,7 +351,7 @@ This compendium provides complete step-by-step keystroke solutions, stack regist
    - **Keystrokes**: `1000` {{key:sc78:ENTER}} `200` {{key:sc78:+}} `620` {{key:sc78:ENTER}} `100` {{key:sc78:+}} {{key:sc78:HYD}}
    - **Solution**: Total formulation flour is $1000 + 200 = 1{,}200\text{ g}$ and total water is $620 + 100 = 720\text{ g}$. Evaluating true hydration yields $\text{HYDR}_{\text{true}} = (720 / 1200) \times 100 = \mathbf{60.00\%}$.
 3. **Bagel Spiral Mixer Friction and Flake-Ice Cooling**
-   - **Keystrokes**: `22` {{keycap:D}} `27` {{keycap:R}} `25` {{keycap:F}} `12` {{keycap:M}} {{key:sc78:XEQ}} {{keycap:W}} `24` {{key:sc78:ENTER}} `18` {{key:sc78:ICE}}
+   - **Keystrokes**: `22` {{keycap:D}} `27` {{keycap:R}} `25` {{keycap:F}} `12` {{keycap:M}} {{key:sc78:XEQ}} {{keycap:W}} `24` {{key:sc78:ENTER}} `18` {{key:sc78:×}} `80` {{key:sc78:÷}}
    - **Solution**: Evaluating strike water balance $W = 3D - (R + F + M)$ yields $W = 66.0 - 64.0 = \mathbf{2.0^\circ\text{C}}$. Applying the latent heat ice substitution formula ($W_{\text{ice}} = W_{\text{total}} \times \Delta T / 80$) yields flake-ice requirement $W_{\text{ice}} = 24.0 \times 18.0 / 80 = \mathbf{5.40\text{ kg}}$.
 4. **Multi-Flour Rustic Miche with 100% Hydration Levain**
    - **Keystrokes**: `150` {{key:sc78:ENTER}} `205.2` {{key:sc78:÷}} `100` {{key:sc78:×}} `0.25` {{key:sc78:×}} `2` {{key:sc78:÷}}
@@ -381,16 +381,16 @@ This compendium provides complete step-by-step keystroke solutions, stack regist
 ### Chapter 21: Trimming the Tenderloin and Pricing the Tasting Menu
 
 1. **Two-Stage Atlantic Halibut Fabrication and Portion Cost**
-   - **Keystrokes**: `19.25` {{key:sc78:ENTER}} `35` {{key:sc78:YLD}} `14.3` {{key:sc78:ENTER}} `0.55` {{key:sc78:÷}} `0.375` {{key:sc78:×}}
+   - **Keystrokes**: `19.25` {{key:sc78:ENTER}} `35` {{key:sc78:÷}} `100` {{key:sc78:×}} `14.3` {{key:sc78:ENTER}} `0.55` {{key:sc78:÷}} `0.375` {{key:sc78:×}}
    - **Solution**: Yield percentage is $19.25 / 35.0 = \mathbf{55.00\%}$. Edible Portion cost is $C_{\text{EP}} = 14.30 / 0.55 = \mathbf{\$26.00/\text{lb}}$. A $6.0\text{-oz}$ portion costs $0.375 \times \$26.00 = \mathbf{\$9.75}$.
 2. **Hyperbolic Margin versus Markup Audit**
    - **Keystrokes**: `3.15` {{key:sc78:ENTER}} `14` {{key:sc78:CST}} `14` {{key:sc78:ENTER}} `3.15` {{key:sc78:-}} `3.15` {{key:sc78:÷}} `100` {{key:sc78:×}}
    - **Solution**: Food cost percentage is $3.15 / 14.00 = \mathbf{22.50\%}$ and gross margin is $100 - 22.50 = \mathbf{77.50\%}$. Markup on cost is $(14.00 - 3.15)/3.15 = \mathbf{344.44\%}$.
 3. **Barrique Sulfite Addition and Water Activity**
-   - **Keystrokes**: `225` {{key:sc78:ENTER}} `35` {{key:sc78:SO₂}} `88.5` {{key:sc78:ENTER}} `100` {{key:sc78:÷}}
+   - **Keystrokes**: `225` {{key:sc78:ENTER}} `35` {{key:sc78:×}} `576` {{key:sc78:÷}} `88.5` {{key:sc78:ENTER}} `100` {{key:sc78:÷}}
    - **Solution**: Evaluates sulfite addition $m_{\text{KMBS}} = (225 \times 35) / (1000 \times 0.576) = \mathbf{13.67\text{ g}}$ of KMBS. Water activity is $a_w = 88.5 / 100 = \mathbf{0.885}$ (safely below the $0.910$ pathogenic bacterial threshold).
 4. **Three-Stage Pork Belly Porchetta Breakdown and Costing**
-   - **Keystrokes**: `15.3` {{key:sc78:ENTER}} `18.5` {{key:sc78:YLD}} `13.5` {{key:sc78:ENTER}} `15.3` {{key:sc78:YLD}} `77.70` {{key:sc78:ENTER}} `18` {{key:sc78:÷}}
+   - **Keystrokes**: `15.3` {{key:sc78:ENTER}} `18.5` {{key:sc78:÷}} `100` {{key:sc78:×}} `13.5` {{key:sc78:ENTER}} `15.3` {{key:sc78:÷}} `100` {{key:sc78:×}} `77.70` {{key:sc78:ENTER}} `18` {{key:sc78:÷}}
    - **Solution**: Raw fabrication yield is $15.3 / 18.5 = \mathbf{82.70\%}$ and cooking yield is $13.5 / 15.3 = \mathbf{88.24\%}$ (cumulative yield $72.97\%$). Dividing entire wholesale cost by 18 portions yields banquet plate cost $C_{\text{portion}} = 77.70 / 18 = \mathbf{\$4.32}$.
 5. **Molecular SO2 pH Compensation Across Cellar Tank Lots**
    - **Keystrokes**: `0.8` {{key:sc78:ENTER}} `1` {{key:sc78:ENTER}} `10` {{key:sc78:ENTER}} `3.3` {{key:sc78:ENTER}} `1.81` {{key:sc78:-}} {{key:sc78:yˣ}} {{key:sc78:+}} {{key:sc78:×}} `0.8` {{key:sc78:ENTER}} `1` {{key:sc78:ENTER}} `10` {{key:sc78:ENTER}} `3.8` {{key:sc78:ENTER}} `1.81` {{key:sc78:-}} {{key:sc78:yˣ}} {{key:sc78:+}} {{key:sc78:×}}

@@ -343,6 +343,11 @@ class KeyRegistry:
                 self.entries[sk] = KeyEntry(sk, None, "menu", 0, min(idx, 5))
                 self.menu_labels.add(sk)
 
+        if "E" in self.entries and "EEX" not in self.entries:
+            self.entries["EEX"] = self.entries["E"]
+        if "Δ%" in self.entries and "%CHG" not in self.entries:
+            self.entries["%CHG"] = self.entries["Δ%"]
+
     def resolve(self, key_name: str) -> KeyEntry:
         clean = key_name.strip().replace("&#124;", "|")
         if clean.lower().startswith(("softkey:", "sk:")):
@@ -959,7 +964,14 @@ def _expand_only_keys(markdown: str, is_sc32: bool, file_path: Optional[Path] = 
                 raw_name = raw_name[len(m) + 1:].strip()
                 break
         if explicit_model is not None:
-            entry = get_model_registry(explicit_model).resolve(raw_name)
+            try:
+                entry = get_model_registry(explicit_model).resolve(raw_name)
+            except ValueError as err:
+                if kind == "keycap":
+                    entry = KeyEntry(normalize_key_token(raw_name), None, "softkey", 0, 0)
+                else:
+                    loc = f" in {file_path}" if file_path else ""
+                    raise ValueError(f"{err}{loc}") from err
         else:
             try:
                 entry = registry.resolve(raw_name)
@@ -974,6 +986,8 @@ def _expand_only_keys(markdown: str, is_sc32: bool, file_path: Optional[Path] = 
                             continue
                     if resolved_entry is not None:
                         entry = resolved_entry
+                    elif kind == "keycap":
+                        entry = KeyEntry(normalize_key_token(raw_name), None, "softkey", 0, 0)
                     else:
                         loc = f" in {file_path}" if file_path else ""
                         raise ValueError(f"{err}{loc}") from err
@@ -981,11 +995,17 @@ def _expand_only_keys(markdown: str, is_sc32: bool, file_path: Optional[Path] = 
                     try:
                         entry = get_registry(not is_sc32).resolve(raw_name)
                     except ValueError:
+                        if kind == "keycap":
+                            entry = KeyEntry(normalize_key_token(raw_name), None, "softkey", 0, 0)
+                        else:
+                            loc = f" in {file_path}" if file_path else ""
+                            raise ValueError(f"{err}{loc}") from err
+                else:
+                    if kind == "keycap":
+                        entry = KeyEntry(normalize_key_token(raw_name), None, "softkey", 0, 0)
+                    else:
                         loc = f" in {file_path}" if file_path else ""
                         raise ValueError(f"{err}{loc}") from err
-                else:
-                    loc = f" in {file_path}" if file_path else ""
-                    raise ValueError(f"{err}{loc}") from err
         if kind == "keycap":
             return entry.format_keycap()
         return entry.format_keystroke()

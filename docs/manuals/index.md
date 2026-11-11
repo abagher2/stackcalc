@@ -98,6 +98,27 @@ description: "Spiral-bound lay-flat editions ($16.00) and complete online chapte
         "availability": "https://schema.org/InStock",
         "url": "https://link.amazon/B07bxzYKq"
       }
+    },
+    {
+      "@type": "Book",
+      "name": "Teaching with the Stack: Teacher's Guide & Classroom Lesson Plans",
+      "description": "Complete classroom facilitation and lesson plan guide for teachers using StackCalc Place Value, Fraction, and Prime Factor blocks with RPN calculators: concept-first stack pedagogy, 30-second misconception diagnostics, verbal cues, station rotations, and pacing guides.",
+      "bookFormat": "https://schema.org/Paperback",
+      "genre": "Mathematics / Education / Teaching Methods",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "name": "StackCalc",
+        "url": "https://www.stackcalc.io"
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "Amazon Print Edition",
+        "price": "16.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://link.amazon/B05RFHqeu"
+      }
     }
   ]
 }
@@ -233,6 +254,16 @@ Written specifically for middle school math classrooms, homeschool families, and
 - **[Order on Amazon: Middle School Math Workbook ↗](https://link.amazon/B07bxzYKq)**
 - **[Explore Online Workbook & 10 Chapter Packets (`../curriculum/big-ideas-middle-school-sc6-workbook.md`)](../curriculum/big-ideas-middle-school-sc6-workbook.md)**
 - **[Download Complete Student Workbook PDF (128 Pages)](../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf)**
+
+---
+
+### Volume IV: *Teaching with the Stack: Teacher's Curriculum Guide & Classroom Lesson Plans*
+
+The complete teacher facilitator guide and classroom lesson plan companion connecting 3D-printed math blocks with RPN calculator instruction. Features 12 unified curriculum units, 25 turnkey 45-minute lesson plans, concrete-representational-abstract (CRA) scaffolding, 30-second misconception diagnostics, and station rotation guides.
+
+- **[Order on Amazon: Teacher's Curriculum Guide ↗](https://link.amazon/B05RFHqeu)**
+- **[Explore Online Teacher Guide (`../curriculum/teacher-guide.md`)](../curriculum/teacher-guide.md)**
+- **[Download Master Teacher Guide PDF (46 Pages)](../downloads/stackcalc-curriculum-guide-letter.pdf)**
 
 ---
 

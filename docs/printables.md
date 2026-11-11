@@ -764,6 +764,7 @@ The SC-6 Elementary Calculator chassis is an ultra-rugged, drop-proof handheld e
 | **SC-32 Scientific Book on Amazon** | **Amazon Bookstore** | [Paperback](https://link.amazon/B07DqTRR5) &bull; [Hardcover](https://link.amazon/B09AnTIQI) | *Thinking in the Stack: The Art of Reverse Polish Notation* editions. |
 | **SC-6 Student Handbook on Amazon** | **Amazon Bookstore** | [Amazon Bookstore (B0HPJN3KP9)](https://link.amazon/B0f5cP0Ur) | *From Blocks to the Stack* illustrated paperback/hardcover textbook. |
 | **Middle School Workbook on Amazon** | **Amazon Bookstore** | [Amazon Bookstore (B07bxzYKq)](https://link.amazon/B07bxzYKq) | *Middle School Math Block Supplement & Student Workbook* (128 pages • Grades 6–8). |
+| **Teacher's Curriculum Guide on Amazon** | **Amazon Bookstore** | [Amazon Bookstore (B05RFHqeu)](https://link.amazon/B05RFHqeu) | *Teaching with the Stack & Manipulatives: Teacher's Guide & Lesson Plans*. |
 | **District Net-30 Purchase Orders** | **Direct Institutional Sales** | `quotes@stackcalc.io` | Formal Net-30 institutional billing, signed W-9, and volume tiered discounts. |
 
 ---

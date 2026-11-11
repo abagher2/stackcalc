@@ -139,7 +139,7 @@ Because the video frame rate is dialed back by exactly one part in a thousand, e
 $$R_{\text{NTSC}} = \frac{30}{1.001} = \frac{30{,}000}{1001} \approx 29.97003\text{ fps}$$
 $$\Delta t_{\text{drift}} = t_{\text{nominal}} \times 0.001 = t_{\text{real}} - t_{\text{nominal}}$$
 
-In this pulldown relationship, $t_{\text{nominal}} = F / 30$ is the apparent duration indicated by a Non-Drop-Frame (NDF) counter that increments one second every $30$ frames, $t_{\text{real}} = F / R_{\text{NTSC}}$ is the true wall-clock elapsed time in seconds ({{key:DF}}), and $\Delta t_{\text{drift}} = t_{\text{real}} - t_{\text{nominal}}$ is the cumulative clock error. Similarly, when theatrical $24\text{ fps}$ cinema masters are transferred to NTSC video via $2:3$ telecine pulldown ({{key:3:2}}), the cinema frame rate is pulled down by $1000/1001$ to $24 / 1.001 \approx 23.976024\text{ fps}$.
+In this pulldown relationship, $t_{\text{nominal}} = F / 30$ is the apparent duration indicated by a Non-Drop-Frame (NDF) counter that increments one second every $30$ frames, $t_{\text{real}} = F / R_{\text{NTSC}}$ is the true wall-clock elapsed time in seconds ({{key:DF}}), and $\Delta t_{\text{drift}} = t_{\text{real}} - t_{\text{nominal}}$ is the cumulative clock error. Similarly, when theatrical $24\text{ fps}$ cinema masters are transferred to NTSC video via $2:3$ telecine pulldown, the cinema frame rate is pulled down by $1000/1001$ on the stack (`24 {{key:ENTER}} 1.001 {{key:÷}}`) to $24 / 1.001 \approx 23.976024\text{ fps}$.
 
 In telecine $2:3$ pulldown, four cinema frames are expanded into ten television interlaced fields (five video frames) to convert $24\text{ fps}$ into $30\text{ fps}$ (or $23.976\text{ fps}$ to $29.97\text{ fps}$). The first film frame is scanned into two video fields (an "odd" field and an "even" field), while the second film frame is scanned into three video fields (odd, even, odd). This alternating cadence ($2\text{ fields}, 3\text{ fields}, 2\text{ fields}, 3\text{ fields}$) maps four original film frames across five video frames:
 $$4\text{ film frames} \times 2.5\text{ fields/frame} = 10\text{ video fields} = 5\text{ video frames}$$
@@ -176,7 +176,7 @@ At the end of the first minute, a Drop-Frame counter advances directly from `00:
 
 ## Synchronizing Broadcast Timelines on the Stack and in the Solver Workspace
 
-On the **SC-24**, packed `HH.MMSSFF` timecode arithmetic ({{key:+TC}}, {{key:-TC}}), immediate frame-to-timecode conversions ({{key:▸FRM}}, {{key:▸TC}}), overcrank playback and exposure scaling ({{key:FPS}}), Drop-Frame drift scaling ({{key:DF}}), and the bidirectional {{key:TC}} Equation Solver Workspace (`F = S × R`, equivalently `S = F / R`) work together across any configured stack depth ({{keycap:4-LV}}, {{keycap:8-LV}}, or {{keycap:INF}} via {{key:FLAGS}}) while logging cue points to the `@CUES` edit decision list in {{key:▦}}.
+On the **SC-24**, packed `HH.MMSSFF` timecode arithmetic ({{key:+TC}}, {{key:-TC}}), immediate frame-to-timecode conversions ({{key:▸FRM}}, {{key:▸TC}}), overcrank playback and exposure scaling ({{key:FPS}}), and Drop-Frame drift scaling ({{key:DF}}) work together seamlessly across any configured stack depth ({{keycap:4-LV}}, {{keycap:8-LV}}, or {{keycap:INF}} via {{key:FLAGS}}) while logging cue points to the `@CUES` edit decision list in {{key:▦}}.
 
 | Key / Solver | Mode | Inputs / Workspace Softkeys | Governing Expression |
 | :--- | :--- | :--- | :--- |
@@ -186,7 +186,7 @@ On the **SC-24**, packed `HH.MMSSFF` timecode arithmetic ({{key:+TC}}, {{key:-TC
 | `{{key:▸FRM}}` | Immediate Stack | Register $Y$: Rate $R$ (or $24\text{ fps}$ default), Register $X$: `HH.MMSSFF` | Expands `HH.MMSSFF` into integer frame count $F$ |
 | `{{key:▸TC}}` | Immediate Stack | Register $Y$: Rate $R$ (or $24\text{ fps}$ default), Register $X$: Frame count $F$ | Packs integer frame count $F$ into `HH.MMSSFF` |
 | `{{key:DF}}` | Immediate Stack | Register $X$: Nominal NDF duration $t_{\text{nom}}$ | Scales by $1.001$ NTSC pulldown: $t_{\text{real}} = 1.001 \cdot X$ |
-| `{{key:TC}}` | Stack / Solver | Softkeys: `{{keycap:F}}` Frames, `{{keycap:S}}` Seconds, `{{keycap:R}}` Rate | Bidirectional solver for $F = S \times R$ ($S = F / R$; default $R = 24$) |
+| **`{{key:÷}}`** / **`{{key:×}}`** | Immediate Stack | Register $Y$: Frames $F$ or Seconds $S$, Register $X$: Rate $R$ | $S = F / R$ (seconds from frames); $F = S \times R$ (frames from duration) |
 
 ### Immediate Stack Trace: Packed Timecode Rollovers, Overcrank Scaling, and NTSC Drift
 
@@ -224,20 +224,17 @@ The engineer must find the accumulated runtime across all three acts, expand to 
 
 By executing this continuous cascade, the team determines that trimming exactly twelve seconds and thirteen frames (`00:00:12:13`) from the commercial intermission pads will bring the broadcast to an exact, frame-accurate top-of-the-hour conclusion without leaving a single trailing video line unsynchronized.
 
-### Bidirectional Solver Workspace ({{key:TC}}): Solving Backward for Frame Budgets
+### Evaluating Timeline Frame Budgets and Playback Durations on the Stack
 
-Suppose the network's automated satellite switcher allocates a strict broadcast act window of $S = 1650.0\text{ seconds}$ ($27\text{ minutes } 30\text{ seconds}$ of real atomic time), and the editor needs to know the exact total frame budget $F$ available when delivering at fractional NTSC $R = 29.97003\text{ fps}$ versus cinema $R = 23.976024\text{ fps}$, and then solve forward for the playback duration $S$ of the $F = 180\text{-frame}$ falcon slow-motion insert at $R = 24\text{ fps}$. Pressing {{key:TC}} opens the `TC: TIMECODE` Equation Workspace on Line 1 (`F = S × R`, equivalently `S = F / R`) and binds softkeys to {{keycap:F}}, {{keycap:S}}, and {{keycap:R}}:
+Suppose the network's automated satellite switcher allocates a strict broadcast act window of $S = 1650.0\text{ seconds}$ ($27\text{ minutes } 30\text{ seconds}$ of real atomic time), and the editor needs to know the exact total frame budget $F$ available when delivering at fractional NTSC $R = 29.97003\text{ fps}$ versus cinema $R = 23.976024\text{ fps}$, and then solve forward for the playback duration $S$ of the $F = 180\text{-frame}$ falcon slow-motion insert at $R = 24\text{ fps}$. Evaluating $F = S \times R$ and $S = F / R$ directly on the postfix stack gives:
 
-| Step & Action | Line 1 Workspace Formula | Workspace Softkeys (`{{keycap:F}}`, `{{keycap:S}}`, `{{keycap:R}}`) | Register X Result & Physical Meaning |
-| :--- | :--- | :--- | :--- |
-| `{{key:TC}}` (open workspace) | `TC: F = S × R` | `{{keycap:F}}` `{{keycap:S}}` `{{keycap:R}}`=24 | Opens `{{key:TC}}` solver with cinema default $R = 24.0\text{ fps}$ pre-bound |
-| `1650` $\to$ `{{keycap:S}}` | `TC: F = S × R` | `{{keycap:F}}` `{{keycap:S}}`=1650 `{{keycap:R}}`=24 | Stores broadcast act duration $S = 1650.0\text{ s}$ |
-| `29.97003` $\to$ `{{keycap:R}}` | `TC: F = S × R` | `{{keycap:F}}` `{{keycap:S}}`=1650 `{{keycap:R}}`=29.97 | Stores fractional NTSC broadcast frame rate $R = 29.97003\text{ fps}$ |
-| `{{key:XEQ}}` $\to$ `{{keycap:F}}` | `F = 49450.55` | `{{keycap:F}}`=49451 `{{keycap:S}}`=1650 `{{keycap:R}}`=29.97 | Solves for exact NTSC act capacity $F = \mathbf{49{,}450.5\text{ frames}}$ (`00:27:30;00` DF) |
-| `23.976024` $\to$ `{{keycap:R}}`, `{{key:XEQ}}` $\to$ `{{keycap:F}}` | `F = 39560.44` | `{{keycap:F}}`=39560 `{{keycap:S}}`=1650 `{{keycap:R}}`=23.98 | Re-solves at $23.976\text{ fps}$ for cinema pulldown budget $F = \mathbf{39{,}560.4\text{ frames}}$ |
-| `180` $\to$ `{{keycap:F}}`, `24` $\to$ `{{keycap:R}}`, `{{key:XEQ}}` $\to$ `{{keycap:S}}` | `S = 7.5000` | `{{keycap:F}}`=180 `{{keycap:S}}`=7.5 `{{keycap:R}}`=24 | Solves backward for $24\text{ fps}$ playback duration $S = 180 / 24 = \mathbf{7.50\text{ s}}$ |
+| Keystroke Sequence | Register T | Register Z | Register Y | Register X | What Happens on the Stack |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `1650 {{key:ENTER}} 29.97003 {{key:×}}` | $0$ | $0$ | $0$ | **$49450.55$** | Evaluate exact NTSC act capacity $F = 1650 \times 29.97003 = \mathbf{49{,}450.55\text{ frames}}$ |
+| `1650 {{key:ENTER}} 23.976024 {{key:×}}` | $0$ | $0$ | $49450.55$ | **$39560.44$** | Re-evaluate at $23.976\text{ fps}$ for cinema pulldown budget $F = \mathbf{39{,}560.44\text{ frames}}$ |
+| `180 {{key:ENTER}} 24 {{key:÷}}` | $49450.55$ | $49450.55$ | $39560.44$ | **$7.5000$** | Solve for $24\text{ fps}$ insert playback duration $S = 180 / 24 = \mathbf{7.50\text{ s}}$ |
 
-Because {{keycap:S}}, {{keycap:R}}, and {{keycap:F}} remain bound in the workspace, changing a single delivery specification—such as switching {{keycap:R}} from `29.97003` to `23.976024` or `25` for European PAL delivery—recomputes the frame budget in two keystrokes without re-entering the segment duration.
+Because values remain intact on the stack, modifying delivery parameters recomputes the frame budget in two keystrokes without re-entering the segment duration.
 
 Conforming the timeline to Drop-Frame timecode and inserting the $7.5\text{-second}$ overcranked falcon sequence locked the program length to the satellite broadcast window with zero-frame drift, hitting the top-of-the-hour commercial break exactly as the network rubidium clock turned 8:00:00 p.m.
 
@@ -372,7 +369,7 @@ In these photometric equations, $N$ is the lens f-number, $T$ is the exposure in
 
 In cinematography optics, an essential distinction exists between geometric aperture and photometric transmission. The geometric f-number $N = F / D_{\text{iris}}$ dictates depth of field and blur disk geometry. However, because real cinema lenses contain fourteen to twenty-two separate glass elements, internal Fresnel surface reflections and bulk glass absorption attenuate incoming photons. Cinematography lenses are therefore calibrated in photometric **T-stops** ($T_{\text{stop}} = N / \sqrt{\tau_{\text{trans}}}$, where $\tau_{\text{trans}}$ is total optical transmittance). A cinema prime set to $T2.8$ delivers the exact same photon irradiance to the sensor plane as a hypothetical $100\%$ transmitting lens at $f/2.8$, guaranteeing that exposure remains identical when swapping between wide primes, telephotos, and complex zoom lenses.
 
-When filming under alternating-current discharge lamps or LED pulse-width-modulated drivers operating at line frequency $f_{\text{line}}$ ($60\text{ Hz}$ in North America or $50\text{ Hz}$ in Europe), the lamp intensity pulses at twice the utility line frequency ($2 f_{\text{line}}$: $120\text{ Hz}$ or $100\text{ Hz}$). Avoiding rolling exposure bands across the frame ({{key:FLK}}) requires choosing a shutter integration time $T$ that integrates an integer number $k \in \{1, 2, 3, \dots\}$ of half-cycles:
+When filming under alternating-current discharge lamps or LED pulse-width-modulated drivers operating at line frequency $f_{\text{line}}$ ($60\text{ Hz}$ in North America or $50\text{ Hz}$ in Europe), the lamp intensity pulses at twice the utility line frequency ($2 f_{\text{line}}$: $120\text{ Hz}$ or $100\text{ Hz}$). Avoiding rolling exposure bands across the frame requires choosing a shutter integration time $T$ that integrates an integer number $k \in \{1, 2, 3, \dots\}$ of half-cycles ($T = k / (2 f_{\text{line}})$):
 
 **Eq. 11.4 — Flicker-Free Shutter Angle and Integration Period**
 $$T_{\text{flicker-free}} = \frac{k}{2 f_{\text{line}}}$$
@@ -423,7 +420,7 @@ To prevent unnatural skin rendering, cinematography has moved beyond the obsolet
 
 ## Pulling Focus and Balancing Dusk Exposure on the Stack and in the Solver Workspace
 
-On the **SC-24**, optical framing ({{key:FOV}}, {{key:W:H}}, {{key:▸35}}, {{key:▸16}}), hyperfocal depth of field ({{key:DOF}}, {{key:HFD}}), exposure reciprocity ({{key:EV}}, {{key:SHT}}, {{key:▸EV}}, {{key:▸ND}}), and lighting photometry ({{key:LUX}}, {{key:▸lux}}, {{key:▸fc}}, {{key:GEL}}, {{key:▸MRD}}) operate both as immediate RPN stack shortcuts and as bidirectional Equation Solver Workspaces ({{key:FOV}}, {{key:DOF}}, {{key:EV}}, {{key:LUX}}).
+On the **SC-24**, optical framing ({{key:FOV}}, {{key:▸35}}, {{key:▸16}}), hyperfocal depth of field ({{key:DOF}}, {{key:HFD}}), exposure reciprocity ({{key:EV}}, {{key:SHT}}, {{key:▸EV}}, {{key:▸ND}}), and lighting photometry ({{key:LUX}}, {{key:▸lux}}, {{key:▸fc}}, {{key:GEL}}, {{key:▸MRD}}) operate both as immediate RPN stack shortcuts and as bidirectional Equation Solver Workspaces ({{key:FOV}}, {{key:DOF}}, {{key:EV}}, {{key:LUX}}).
 
 | Key / Solver | Mode | Inputs / Workspace Softkeys | Governing Expression |
 | :--- | :--- | :--- | :--- |
