@@ -8,8 +8,8 @@
       "book_virtual_panelmovement": 0
    },
    "content_hash": {
-      "resources/book.kdf": "1d25f4e52618f6ec3d247def18764c34",
-      "resources/res/rsrc0": "0cad68562d26c3151047a343d77c1cc9"
+      "resources/book.kdf": "5cb3ea57662220a788f81bb7eaaa9f2b",
+      "resources/res/rsrc0": "e7306df8e994de03f636e23fae88422b"
    },
    "metadata": {
       "book_path": "resources",
@@ -18,7 +18,7 @@
       ],
       "format": "yj",
       "global_styling": true,
-      "id": "4c5f4856-0f4d-4acf-8db9-6e2656f39158",
+      "id": "932e79d2-169a-4e8c-8209-4169f1836012",
       "log_path": "",
       "platform": "mac",
       "quality_report": "",

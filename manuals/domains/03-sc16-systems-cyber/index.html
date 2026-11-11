@@ -1819,53 +1819,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bestseller-rubric-and-editorial-guide/" class="md-nav__link">
+      <a href="../../../curriculum/big-ideas-middle-school-sc6-workbook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Bestseller Rubric & Editorial Guide
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../critical-editorial-review-and-school-adoption/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Critical Editorial Review
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../api/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Agent & OpenAPI Spec
+    Big Ideas Middle School Catch-Up (SC-6)
   </span>
   
 
@@ -2078,27 +2036,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../etsy-publishing-guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Manufacturing & Sourcing
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../shipping-and-packaging/" class="md-nav__link">
         
   
@@ -2153,10 +2090,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_10" >
         
           
-          <label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_10" id="__nav_5_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2167,8 +2104,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_11">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_10">
             <span class="md-nav__icon md-icon"></span>
             Archive
           </label>
@@ -2224,10 +2161,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_11" >
         
           
-          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2238,8 +2175,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_11">
             <span class="md-nav__icon md-icon"></span>
             Categories
           </label>
@@ -2930,10 +2867,10 @@
 <h1 id="unit-iii-digital-systems-bitwise-logic-embedded-timing">Unit III: Digital Systems, Bitwise Logic &amp; Embedded Timing</h1>
 <p>At a clock speed of one hundred megahertz, light travels barely three meters in a single instruction cycle. On a microchip, time is not an abstract dimension; it is physical distance etched in copper and silicon. In the winter of 1937, George Stibitz assembled two dry-cell batteries, two flashlight bulbs, a pair of telephone relays, and strips of tin cut from a tobacco can on the kitchen table of his Manhattan apartment. When he completed the circuit with a tin strip, the bulb glowed: the "Model K" adder was born, proving that Boolean algebra could execute in physical electronic circuits. In high-level software, computation is presented as an unconstrained world of infinite integers, frictionless floating-point types, and automatic garbage collection. But at the hardware boundary of embedded firmware, digital signal processing, and low-level kernel architecture, raw physical constraints govern every register: fixed word widths, finite propagation delays, and discrete voltage thresholds. Through George Boole's 1854 <em>An Investigation of the Laws of Thought</em>, Claude Shannon's 1937 master's thesis <em>A Symbolic Analysis of Relay and Switching Circuits</em>, and John von Neumann's 1945 EDVAC architecture, computing hardware established <strong>binary logic</strong>—the physical presence or absence of a voltage potential (<span class="arithmatex">\(0\text{ V}\)</span> vs. <span class="arithmatex">\(3.3\text{ V}\)</span>)—as the fundamental currency of modern civilization.</p>
 <p>Because microprocessors store numbers in fixed-width physical registers of 8, 16, 32, or 64 flip-flops, arithmetic is fundamentally <strong>modular</strong>. Numbers do not stretch endlessly to infinity; they wrap around a finite mathematical ring (<span class="arithmatex">\(\mathbb{Z} / 2^n \mathbb{Z}\)</span>). In signed arithmetic, the <strong>Two's Complement</strong> system maps the upper half of the unsigned integer range into negative values, permitting digital adders to execute subtraction using the exact same silicon logic gates as addition (<span class="arithmatex">\(A - B = A + (\sim B + 1)\)</span>) with zero execution time penalty and zero ambiguity between <span class="arithmatex">\(+0\)</span> and <span class="arithmatex">\(-0\)</span>. Meanwhile, peripheral control registers expose bare hardware pins directly into memory address space, demanding atomic <strong>bitwise masking</strong> (<code>&amp;= ~MASK</code>, <code>|= MASK</code>) to toggle safety flags without overwriting neighboring bits.</p>
-<p>The catastrophic vulnerability of digital systems when binary word boundaries, endian byte ordering, and clock drift are miscalculated was etched into military history on February 25, 1991, during Operation Desert Storm in Dhahran, Saudi Arabia. An American Patriot missile air-defense battery failed to track and intercept an incoming Iraqi Scud missile, which struck an army barracks, killing twenty-eight soldiers and injuring ninety-eight. The official Government Accountability Office (GAO) investigation revealed that the Patriot's radar tracking computer calculated time by multiplying an integer counter by <span class="arithmatex">\(0.1\)</span> seconds. But in binary arithmetic, one-tenth (<span class="arithmatex">\(1/10\)</span>) has an infinite repeating expansion:</p>
+<p>Finite-precision arithmetic, endian byte alignment, and clock-drift truncation present subtle failure modes in automated control systems, as demonstrated on February 25, 1991, during Operation Desert Storm in Dhahran, Saudi Arabia. An American Patriot missile air-defense battery failed to track and intercept an incoming Iraqi Scud missile, which struck an army barracks, killing twenty-eight soldiers and injuring ninety-eight. The official Government Accountability Office (GAO) investigation revealed that the Patriot's radar tracking computer calculated time by multiplying an integer counter by <span class="arithmatex">\(0.1\)</span> seconds. But in binary arithmetic, one-tenth (<span class="arithmatex">\(1/10\)</span>) has an infinite repeating expansion:</p>
 <div class="arithmatex">\[0.1_{10} = 0.0001100110011001100110011..._2\]</div>
 <p>The Patriot's 24-bit fixed-point register chopped this fraction at 24 bits, introducing an imperceptible timing error of <span class="arithmatex">\(0.000000095\)</span> seconds per tick. Over one hundred hours of continuous operation without a system reboot, that tiny fractional truncation accumulated into an absolute clock drift of <span class="arithmatex">\(\mathbf{0.3433\text{ seconds}}\)</span>. At Mach 5 (<span class="arithmatex">\(1{,}676\text{ m/s}\)</span>), the incoming Scud traveled more than <strong><span class="arithmatex">\(575\text{ meters}\)</span></strong> during that fractional second. When the Patriot's radar opened its range gate to track the missile, the Scud was over half a kilometer outside the calculation window. The computer discarded the radar return as false clutter, failed to launch an interceptor, and the Scud hit the barracks. The Dhahran disaster stands as the ultimate cautionary monument in computer systems engineering: fixed-width binary arithmetic, floating-point truncation, and timer prescalers are matters of life and death.</p>
-<p>Around those silicon microcontrollers, embedded engineers and cyber operators solve coupled low-level hardware, networking, and signal-processing problems across the industrial plant. Firmware engineers reverse endian byte ordering between big-endian network packet streams and little-endian ARM processors using single-cycle <code>BSWAP</code> primitives. Systems programmers unpack IEEE-754 floating-point bitfields, evaluate Galois-field cyclic redundancy checks (CRC-32) across noisy serial links, and synthesize ultrasonic pulse-width-modulated (PWM) motor frequencies using 16-bit hardware timer prescalers. Simultaneously, network architects partition Classless Inter-Domain Routing (CIDR) subnets and align direct memory access (DMA) buffers to natural cache-line boundaries.</p>
+<p>Interfacing microcontrollers with real-world sensors, actuators, and communication buses demands tight coordination between register logic, network protocols, and sampling rates. Firmware engineers reverse endian byte ordering between big-endian network packet streams and little-endian ARM processors using single-cycle <code>BSWAP</code> primitives. Systems programmers unpack IEEE-754 floating-point bitfields, evaluate Galois-field cyclic redundancy checks (CRC-32) across noisy serial links, and synthesize ultrasonic pulse-width-modulated (PWM) motor frequencies using 16-bit hardware timer prescalers. Simultaneously, network architects partition Classless Inter-Domain Routing (CIDR) subnets and align direct memory access (DMA) buffers to natural cache-line boundaries.</p>
 <p>At the interface between physical power and automated control, digital systems govern modern machinery through discrete logic, serialized telemetry, and network communication. The <strong>SC-16 Digital Systems, Bitwise Logic &amp; Cyber Operations</strong> calculator brings multi-base hexadecimal arithmetic, signed modular rings, bitfield manipulation, and network subnetting directly to the engineer's fingertips. Three diagnostic case studies trace the boundary between embedded software and physical silicon:</p>
 <p>In <strong>Chapter 7</strong>, we step into the cleanroom of a precision robotics laboratory to debug a stalled linear actuator, isolating stuck interrupt flags in memory-mapped timer registers, calculating signed two's complement velocities, and executing atomic bitmasking on the RPN stack.</p>
 <p>In <strong>Chapter 8</strong>, we connect a protocol analyzer across an RS-485 serial telemetry bus to unpack corrupted sensor frames, reversing network byte order via <code>BSWAP</code>, decoding IEEE-754 floating-point temperatures, verifying reflected CRC-32 checksums, and calculating 16-times oversampled UART baud divisors.</p>

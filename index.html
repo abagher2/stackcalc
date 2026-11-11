@@ -422,19 +422,14 @@
                     <div id="hero-render-viewport" class="w-full max-w-[440px] aspect-square rounded-2xl overflow-hidden border border-white/15 bg-[#11141A] shadow-2xl relative">
                         <img id="hero-main-photo" src="assets/renders/sc32-hero-keynote.png" alt="StackCalc SC-32 Hardware Studio Keynote" class="w-full h-full object-cover">
                         
-                        <div class="absolute bottom-3 left-3 right-3 p-3 rounded-lg bg-black/90 backdrop-blur-md border border-white/10 flex items-center justify-between gap-3 shadow-xl">
+                        <div class="absolute bottom-3 left-3 right-3 p-3 rounded-lg bg-black/85 backdrop-blur-md border border-white/10 flex items-center justify-between gap-3 shadow-xl">
                             <div class="min-w-0 flex-1">
-                                <div class="flex items-center gap-2">
-                                    <span id="hero-photo-tag" class="font-mono text-[9px] text-slate-400 font-bold uppercase tracking-wider">RP2350 HARDWARE</span>
-                                    <span id="hero-photo-badge" class="font-mono text-[9px] px-1 py-0.2 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">In Stock</span>
-                                </div>
-                                <div id="hero-photo-title" class="font-mono text-xs sm:text-sm font-bold text-white leading-tight mt-0.5 whitespace-nowrap">StackCalc SC-32 Maker Kit</div>
-                                <div id="hero-photo-price" class="font-mono text-[11px] text-slate-300 font-semibold mt-0.5">$89.00 USD <span class="text-[10px] text-slate-500 font-normal">(100% Pre-Soldered &bull; 5-Min Assembly)</span></div>
-                                <div id="hero-photo-dims" class="font-mono text-[10px] text-cyan-400 font-semibold mt-0.5">135&times;90&times;16mm &bull; 142g &bull; Tactile Switches &amp; TPU Keys &bull; 0.0s Boot</div>
+                                <div id="hero-photo-title" class="font-mono text-xs sm:text-sm font-bold text-white leading-tight truncate">StackCalc SC-32</div>
+                                <div id="hero-photo-price" class="font-mono text-xs text-slate-300 mt-0.5">$89.00</div>
                             </div>
-                            <div class="flex items-center gap-1.5 shrink-0">
-                                <a id="hero-photo-link" href="products/sc32-calculator/" class="px-2.5 py-1.5 rounded border border-white/20 hover:border-white text-white font-mono text-[11px] font-bold transition">Specs &rarr;</a>
-                                <a id="hero-photo-buy" href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded bg-[#FF5500] hover:bg-[#FF6611] text-white font-mono text-[11px] font-bold transition flex items-center gap-1 shadow-md shadow-orange-950/30">
+                            <div class="flex items-center gap-2 shrink-0">
+                                <a id="hero-photo-link" href="products/sc32-calculator/" class="px-2.5 py-1.5 rounded border border-white/20 hover:border-white text-white font-mono text-[11px] font-bold transition">Specs</a>
+                                <a id="hero-photo-buy" href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded bg-white hover:bg-slate-200 text-slate-950 font-mono text-[11px] font-bold transition flex items-center gap-1">
                                     <span id="hero-photo-btn-text">Order $89</span>
                                     <span>↗</span>
                                 </a>
@@ -489,9 +484,6 @@
                             <div>
                                 <div class="aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-[#080A0E] border border-white/10 relative">
                                     <img src="assets/renders/ten-frames-hero.png" alt="StackCalc Tactile Desk Workbench Manipulative" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                                    <div class="absolute top-3 left-3 px-2 py-0.5 rounded bg-black/75 backdrop-blur font-mono text-[10px] text-white border border-white/20 font-bold">
-                                        STAGE 01
-                                    </div>
                                 </div>
                                 <span class="font-mono text-[11px] text-slate-400 font-bold uppercase tracking-wider block mb-1">CONCRETE MANIPULATIVES</span>
                                 <h3 class="text-xl font-bold text-white mb-2">Desk Workbench Lids</h3>
@@ -510,13 +502,10 @@
                             <div>
                                 <div class="aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-[#080A0E] border border-white/10 relative flex flex-col justify-between p-3 select-none">
                                     <!-- Mini Bridge Mode Tabs -->
-                                    <div class="flex items-center justify-between gap-1 z-10 font-mono text-[9px]">
-                                        <div class="flex gap-1">
-                                            <button type="button" id="cra-tab-placevalue" onclick="switchCRABridge('placevalue')" class="cra-bridge-tab px-2 py-0.5 rounded bg-white text-slate-950 font-bold transition">PLACE VALUE</button>
-                                            <button type="button" id="cra-tab-fraction" onclick="switchCRABridge('fraction')" class="cra-bridge-tab px-2 py-0.5 rounded bg-white/5 text-slate-400 hover:text-white font-bold transition">FRACTION</button>
-                                            <button type="button" id="cra-tab-prime" onclick="switchCRABridge('prime')" class="cra-bridge-tab px-2 py-0.5 rounded bg-white/5 text-slate-400 hover:text-white font-bold transition">PRIME</button>
-                                        </div>
-                                        <span class="text-slate-400 font-bold text-[9px]">1:1 PARITY</span>
+                                    <div class="flex items-center justify-start gap-1 z-10 font-mono text-[9px]">
+                                        <button type="button" id="cra-tab-placevalue" onclick="switchCRABridge('placevalue')" class="cra-bridge-tab px-2 py-0.5 rounded bg-white text-slate-950 font-bold transition">PLACE VALUE</button>
+                                        <button type="button" id="cra-tab-fraction" onclick="switchCRABridge('fraction')" class="cra-bridge-tab px-2 py-0.5 rounded bg-white/5 text-slate-400 hover:text-white font-bold transition">FRACTION</button>
+                                        <button type="button" id="cra-tab-prime" onclick="switchCRABridge('prime')" class="cra-bridge-tab px-2 py-0.5 rounded bg-white/5 text-slate-400 hover:text-white font-bold transition">PRIME</button>
                                     </div>
 
                                     <!-- Interactive Concrete-to-Stack Visual Core -->
@@ -800,7 +789,6 @@
                             <div class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center font-mono text-white font-bold mb-4">
                                 01
                             </div>
-                            <span class="font-mono text-[10px] text-slate-400 uppercase font-bold tracking-wider">B2B &bull; INSTITUTIONAL</span>
                             <h3 class="text-lg font-bold text-white mt-1 mb-2">STEM Educators &amp; Dept Chairs</h3>
                             <p class="text-xs text-slate-400 leading-relaxed mb-4">
                                 End recurring software seat licenses and syntax error disruptions. Jerome Bruner CRA alignment, perpetual reproduction rights, and free self-repair via 3D printing.
@@ -827,7 +815,6 @@
                             <div class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center font-mono text-white font-bold mb-4">
                                 02
                             </div>
-                            <span class="font-mono text-[10px] text-slate-400 uppercase font-bold tracking-wider">B2C &bull; HOMESCHOOL &amp; FAMILIES</span>
                             <h3 class="text-lg font-bold text-white mt-1 mb-2">Homeschool Parents &amp; Tutors</h3>
                             <p class="text-xs text-slate-400 leading-relaxed mb-4">
                                 100% Screen-Free Sanctuary for children struggling with math anxiety, ADHD, or iPad fatigue. Dense, tactile instruments transform abstract frustration into physical confidence in 5 minutes.
@@ -843,8 +830,8 @@
                             <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded bg-[#FF5500] hover:bg-[#FF6611] text-white font-mono text-xs font-bold text-center block transition shadow-md shadow-orange-950/20">
                                 ORDER ON ETSY ↗
                             </a>
-                            <a href="products/ten-frames/" class="text-slate-400 font-mono text-[11px] text-center block hover:text-white transition">
-                                View Ten-Frames ($36) &rarr;
+                            <a href="products/fraction-studio/" class="text-slate-400 font-mono text-[11px] text-center block hover:text-white transition">
+                                View Fraction Towers ($24.99) &rarr;
                             </a>
                         </div>
                     </div>
@@ -855,7 +842,6 @@
                             <div class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center font-mono text-white font-bold mb-4">
                                 03
                             </div>
-                            <span class="font-mono text-[10px] text-slate-400 uppercase font-bold tracking-wider">ENTHUSIASTS &bull; ENGINEERS</span>
                             <h3 class="text-lg font-bold text-white mt-1 mb-2">Engineers &amp; Postfix Purists</h3>
                             <p class="text-xs text-slate-400 leading-relaxed mb-4">
                                 The modern realization of pure postfix handheld computing. Bare-metal RP2350 dual Cortex-M33, 400g snap-dome click, tool-free dovetail battery chassis, and open C/Swift firmware.
@@ -882,7 +868,6 @@
                             <div class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center font-mono text-white font-bold mb-4">
                                 04
                             </div>
-                            <span class="font-mono text-[10px] text-slate-400 uppercase font-bold tracking-wider">MAKERS &bull; OPEN HARDWARE</span>
                             <h3 class="text-lg font-bold text-white mt-1 mb-2">3D Printing Makers &amp; Gridfinity</h3>
                             <p class="text-xs text-slate-400 leading-relaxed mb-4">
                                 Tired of decorative trinkets? Download free, watertight, 100% support-free .3MF project files sliced with PrusaSlicer for Prusa printers and published on Printables.
@@ -917,15 +902,15 @@
                 <!-- Section Header -->
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-white/10">
                     <div>
-                        <div class="font-mono text-xs uppercase tracking-widest text-slate-400 font-bold mb-2">42MM GRIDFINITY STANDARD &bull; GRADES PRE-K THROUGH CALCULUS</div>
-                        <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Classroom Manipulatives</h2>
+                        <div class="font-mono text-xs uppercase tracking-widest text-slate-400 font-bold mb-2">HARDWARE &amp; TACTILE INSTRUMENTS</div>
+                        <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Products</h2>
                         <p class="text-slate-400 text-sm md:text-base mt-2 max-w-2xl">
-                            Tangible mathematical instruments designed to turn abstract concepts into physical spatial intuition. Manufactured in durable matte polymer with deep debossed markings and standard 42mm Gridfinity fit.
+                            Tangible mathematical instruments designed to turn abstract concepts into physical spatial intuition. Manufactured in durable matte polymer with deep debossed markings.
                         </p>
                     </div>
                     <div class="mt-4 md:mt-0">
                         <a href="products/" class="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-slate-400 hover:text-white transition">
-                            <span>VIEW FULL CATALOG (15 ITEMS)</span>
+                            <span>VIEW FULL CATALOG</span>
                             <span>&rarr;</span>
                         </a>
                     </div>
@@ -933,23 +918,17 @@
 
                 <!-- Category Filter Bar -->
                 <div class="flex flex-wrap gap-2 mb-8" role="tablist">
-                    <button type="button" class="filter-tab-pill active" onclick="filterHomeProducts('core', this)">★ TOP CORE (8)</button>
-                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('calc', this)">RPN HARDWARE (2)</button>
-                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('manip', this)">CORE MANIPULATIVES (3)</button>
-                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('book', this)">BOOKS &amp; MANUALS (3)</button>
-                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('archive', this)">FREE PRINTABLES (7)</button>
-                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('all', this)">ALL CATALOG (15)</button>
+                    <button type="button" class="filter-tab-pill active" onclick="filterHomeProducts('all', this)">All Products</button>
+                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('calc', this)">Calculators</button>
+                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('manip', this)">Manipulatives</button>
+                    <button type="button" class="filter-tab-pill" onclick="filterHomeProducts('book', this)">Books</button>
                 </div>
 
                 <!-- Product Showcase Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="home-product-grid">
 
                     <!-- 1. SC-32 Scientific RPN Calculator -->
-                    <article class="home-product-card" data-cat="core calc">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400 font-bold">SC-32 SCIENTIFIC</span>
-                            <span class="text-emerald-400 font-bold">● IN STOCK</span>
-                        </div>
+                    <article class="home-product-card" data-cat="calc">
                         <div class="home-card-viewport">
                             <a href="products/sc32-calculator/">
                                 <img src="assets/renders/sc32-hero-keynote.png" alt="SC-32 Scientific RPN Calculator Desktop View" loading="eager" decoding="async">
@@ -957,7 +936,6 @@
                         </div>
                         <div class="p-4 flex-1 flex flex-col justify-between">
                             <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">High School &bull; College &bull; Pro</div>
                                 <h3 class="font-bold text-base text-white mb-1.5"><a href="products/sc32-calculator/" class="hover:text-white">SC-32 Scientific RPN Maker Kit</a></h3>
                                 <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
                                     Pre-soldered RP2350 logic board, tactile microswitches, sculpted TPU keys, transflective ST7567A LCD, and dovetail chassis. 5-min snap assembly. SAT/ACT legal.
@@ -966,7 +944,7 @@
                             <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
                                 <span class="font-mono text-base font-bold text-white">$89.00</span>
                                 <div class="flex gap-2">
-                                    <a href="products/sc32-calculator/" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Specs</a>
+                                    <a href="products/sc32-calculator/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
                                     <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#f1641e] hover:bg-[#d95315] text-white font-mono text-xs font-bold rounded transition">Etsy ↗</a>
                                 </div>
                             </div>
@@ -974,11 +952,7 @@
                     </article>
 
                     <!-- 2. SC-6 Elementary Edition Calculator -->
-                    <article class="home-product-card" data-cat="core calc">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400 font-bold">SC-6 ELEMENTARY</span>
-                            <span class="text-emerald-400 font-bold">● IN STOCK</span>
-                        </div>
+                    <article class="home-product-card" data-cat="calc">
                         <div class="home-card-viewport">
                             <a href="products/sc6-elementary/">
                                 <img src="assets/renders/etsy/sc6-elementary-hero-square.png" alt="SC-6 Elementary Edition Calculator" loading="eager" decoding="async">
@@ -986,7 +960,6 @@
                         </div>
                         <div class="p-4 flex-1 flex flex-col justify-between">
                             <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades K&ndash;6 &bull; Concrete to Symbolic</div>
                                 <h3 class="font-bold text-base text-white mb-1.5"><a href="products/sc6-elementary/" class="hover:text-white">SC-6 Elementary RPN Calculator</a></h3>
                                 <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
                                     Kid-proof big-button tactile RPN computing engine with dedicated [PV] Place Value, [FDISP] Fraction, and [PRIME] Factor keys.
@@ -995,106 +968,15 @@
                             <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
                                 <span class="font-mono text-base font-bold text-white">$79.00</span>
                                 <div class="flex gap-2">
-                                    <a href="products/sc6-elementary/" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Specs</a>
+                                    <a href="products/sc6-elementary/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
                                     <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#f1641e] hover:bg-[#d95315] text-white font-mono text-xs font-bold rounded transition">Etsy ↗</a>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- 3. SC-6 Companion Book: From Blocks to the Stack -->
-                    <article class="home-product-card" data-cat="core book">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400 font-bold">SC-6 HANDBOOK</span>
-                            <span class="text-emerald-400 font-bold">● ON AMAZON</span>
-                        </div>
-                        <div class="home-card-viewport">
-                            <a href="products/sc6-book/">
-                                <img src="assets/manuals/sc6_book_cover_square.png" alt="From Blocks to the Stack Book Cover" loading="eager" decoding="async">
-                            </a>
-                        </div>
-                        <div class="p-4 flex-1 flex flex-col justify-between">
-                            <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Illustrated Handbook &bull; Grades K&ndash;8</div>
-                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/sc6-book/" class="hover:text-white">From Blocks to the Stack (SC-6 Book)</a></h3>
-                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    The definitive hands-on bridge connecting tactile manipulatives directly to postfix computation. 138 illustrated pages, 9 comprehensive chapters.
-                                </p>
-                            </div>
-                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-base font-bold text-white">$16.00</span>
-                                <div class="flex gap-2">
-                                    <a href="products/sc6-book/" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Overview</a>
-                                    <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#FF9900] hover:bg-[#FFaa22] text-slate-950 font-mono text-xs font-bold rounded transition">Amazon ↗</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 4. SC-32 Scientific Manual: Thinking in the Stack -->
-                    <article class="home-product-card" data-cat="core book">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400 font-bold">SC-32 MANUAL</span>
-                            <span class="text-emerald-400 font-bold">● ON AMAZON</span>
-                        </div>
-                        <div class="home-card-viewport">
-                            <a href="manuals/#sc-32-scientific">
-                                <img src="assets/manuals/sc32_book_cover_square.png" alt="Thinking in the Stack SC-32 Reference Manual" loading="eager" decoding="async">
-                            </a>
-                        </div>
-                        <div class="p-4 flex-1 flex flex-col justify-between">
-                            <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Reference Manual &bull; High School to Pro</div>
-                                <h3 class="font-bold text-base text-white mb-1.5"><a href="manuals/#sc-32-scientific" class="hover:text-white">Thinking in the Stack (SC-32 Book)</a></h3>
-                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    The definitive reference manual for postfix computation, 16-level stack architecture, scientific functions, and numerical algorithms with the SC-32.
-                                </p>
-                            </div>
-                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-base font-bold text-white">$16.00</span>
-                                <div class="flex gap-2">
-                                    <a href="manuals/#sc-32-scientific" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Manual</a>
-                                    <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#FF9900] hover:bg-[#FFaa22] text-slate-950 font-mono text-xs font-bold rounded transition">Amazon ↗</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 5. Middle School Math Lab Workbook -->
-                    <article class="home-product-card" data-cat="core book">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400 font-bold">STUDENT WORKBOOK</span>
-                            <span class="text-emerald-400 font-bold">● ON AMAZON</span>
-                        </div>
-                        <div class="home-card-viewport">
-                            <a href="curriculum/big-ideas-middle-school-sc6-workbook/">
-                                <img src="assets/manuals/middle_school_workbook_cover_square.png" alt="Middle School Math Lab Workbook Cover" loading="eager" decoding="async">
-                            </a>
-                        </div>
-                        <div class="p-4 flex-1 flex flex-col justify-between">
-                            <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Curriculum Workbook &bull; Grades 6&ndash;8</div>
-                                <h3 class="font-bold text-base text-white mb-1.5"><a href="curriculum/big-ideas-middle-school-sc6-workbook/" class="hover:text-white">Middle School Math Lab (Workbook)</a></h3>
-                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    128-page reproducible classroom workbook connecting physical Fraction &amp; Prime Factor blocks directly to SC-6 calculator exercises.
-                                </p>
-                            </div>
-                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-base font-bold text-white">$16.00</span>
-                                <div class="flex gap-2">
-                                    <a href="curriculum/big-ideas-middle-school-sc6-workbook/" class="px-3 py-1 bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold rounded transition">Curriculum</a>
-                                    <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#FF9900] hover:bg-[#FFaa22] text-slate-950 font-mono text-xs font-bold rounded transition">Amazon ↗</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 6. Fraction Tower Studio -->
-                    <article class="home-product-card" data-cat="core manip">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400 font-bold">FRACTION TOWERS</span>
-                            <span class="text-emerald-400 font-bold">● IN STOCK</span>
-                        </div>
+                    <!-- 3. Fraction Tower Studio -->
+                    <article class="home-product-card" data-cat="manip">
                         <div class="home-card-viewport">
                             <a href="products/fraction-studio/">
                                 <img src="assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg" alt="Fraction Studio Proportional Towers" loading="eager" decoding="async">
@@ -1102,7 +984,6 @@
                         </div>
                         <div class="p-4 flex-1 flex flex-col justify-between">
                             <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades 3&ndash;8 &bull; Equivalence</div>
                                 <h3 class="font-bold text-base text-white mb-1.5"><a href="products/fraction-studio/" class="hover:text-white">Fraction Studio Proportional Towers</a></h3>
                                 <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
                                     Freestanding proportional towers and debossed 4-face fraction blocks proving 1/2 = 2/4 = 4/8 through tangible height parity. 3x2 Gridfinity box.
@@ -1110,8 +991,7 @@
                             </div>
                             <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
                                 <div>
-                                    <span class="font-mono text-base font-bold text-white">$24.99</span>
-                                    <span class="font-mono text-[10px] text-slate-400 block -mt-1">Starter Kit</span>
+                                    <span class="font-mono text-base font-bold text-white">$24.99+</span>
                                 </div>
                                 <div class="flex gap-2">
                                     <a href="products/fraction-studio/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
@@ -1121,12 +1001,8 @@
                         </div>
                     </article>
 
-                    <!-- 7. Prime Factor Studio -->
-                    <article class="home-product-card" data-cat="core manip">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400 font-bold">PRIME FACTOR TOWERS</span>
-                            <span class="text-emerald-400 font-bold">● IN STOCK</span>
-                        </div>
+                    <!-- 4. Prime Factor Studio -->
+                    <article class="home-product-card" data-cat="manip">
                         <div class="home-card-viewport">
                             <a href="products/prime-factor-studio/">
                                 <img src="assets/renders/etsy/prime-factor-studio-real-staircase-iso-hero-tight.jpg" alt="Prime Factor Studio &amp; Factor Towers" loading="eager" decoding="async">
@@ -1134,7 +1010,6 @@
                         </div>
                         <div class="p-4 flex-1 flex flex-col justify-between">
                             <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades 3&ndash;9 &bull; Logarithmic Towers</div>
                                 <h3 class="font-bold text-base text-white mb-1.5"><a href="products/prime-factor-studio/" class="hover:text-white">Prime Factor Studio &amp; Factor Towers</a></h3>
                                 <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
                                     29 proportional logarithmic prime blocks ($h = k \cdot \log p$) in a 3x1 Gridfinity box with bilateral comparator stage. Stacking primes physically multiplies them.
@@ -1150,12 +1025,8 @@
                         </div>
                     </article>
 
-                    <!-- 8. Place Value Studio & Regrouping Trays -->
-                    <article class="home-product-card" data-cat="core manip">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400 font-bold">PLACE VALUE TRAYS</span>
-                            <span class="text-emerald-400 font-bold">● IN STOCK</span>
-                        </div>
+                    <!-- 5. Place Value Studio & Regrouping Trays -->
+                    <article class="home-product-card" data-cat="manip">
                         <div class="home-card-viewport">
                             <a href="products/place-value/">
                                 <img src="assets/renders/etsy/place-value-studio-hero-square.png" alt="Place Value Studio Dual Trays &amp; 53 Blocks" loading="eager" decoding="async">
@@ -1163,7 +1034,6 @@
                         </div>
                         <div class="p-4 flex-1 flex flex-col justify-between">
                             <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades 1&ndash;5 &bull; Regrouping &amp; Decimals</div>
                                 <h3 class="font-bold text-base text-white mb-1.5"><a href="products/place-value/" class="hover:text-white">Place Value Studio &amp; Regrouping Trays</a></h3>
                                 <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
                                     Dual 6&times;2 desktop activity trays (Whole Numbers 100k–1 and Decimals 0.1–0.000001) with 44 digit blocks and 9 stackable +1 regrouping tokens in a 3x1 Gridfinity box.
@@ -1179,204 +1049,73 @@
                         </div>
                     </article>
 
-                    <!-- 6. Ten-Frame Dual Stage (Printables) -->
-                    <article class="home-product-card hidden" data-cat="archive">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400 font-bold">TEN-FRAME STAGE</span>
-                            <span class="text-[#FA6B05] font-bold">● FREE 3MF</span>
-                        </div>
+                    <!-- 6. SC-6 Companion Book: From Blocks to the Stack -->
+                    <article class="home-product-card" data-cat="book">
                         <div class="home-card-viewport">
-                            <a href="products/ten-frames/">
-                                <img src="assets/renders/ten-frames-hero.png" alt="Ten-Frame Dual Stage Set" loading="eager" decoding="async">
+                            <a href="products/sc6-book/">
+                                <img src="assets/manuals/sc6_book_cover_square.png" alt="From Blocks to the Stack Book Cover" loading="eager" decoding="async">
                             </a>
                         </div>
                         <div class="p-4 flex-1 flex flex-col justify-between">
                             <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades K&ndash;3 &bull; Place Value</div>
-                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/ten-frames/" class="hover:text-white">Ten-Frame Dual Stage &amp; Carry Shelf</a></h3>
+                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/sc6-book/" class="hover:text-white">From Blocks to the Stack (Book)</a></h3>
                                 <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    Dual 2&times;5 counting stage with 20 square miniblock counters (18mm) and a solid green 2U Carry Cube for base-ten regrouping.
+                                    The definitive hands-on bridge connecting tactile manipulatives directly to postfix computation. 138 illustrated pages, 9 comprehensive chapters.
                                 </p>
                             </div>
                             <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-xs font-bold text-[#FA6B05] uppercase tracking-wider">FREE 3MF</span>
+                                <span class="font-mono text-base font-bold text-white">$16.00</span>
                                 <div class="flex gap-2">
-                                    <a href="products/ten-frames/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#FA6B05] hover:bg-[#FA6B05]/90 text-white font-mono text-xs font-bold rounded transition">Printables ↗</a>
+                                    <a href="products/sc6-book/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Overview</a>
+                                    <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#FF9900] hover:bg-[#FFaa22] text-slate-950 font-mono text-xs font-bold rounded transition">Amazon ↗</a>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- 7. Math Domino Studio (Printables) -->
-                    <article class="home-product-card hidden" data-cat="archive">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400 font-bold">MATH DOMINOES</span>
-                            <span class="text-[#FA6B05] font-bold">● FREE 3MF</span>
-                        </div>
+                    <!-- 7. SC-32 Scientific Manual: Thinking in the Stack -->
+                    <article class="home-product-card" data-cat="book">
                         <div class="home-card-viewport">
-                            <a href="products/math-dominoes/">
-                                <img src="assets/renders/dominoes-studio-hero.png" alt="Math Domino Studio &amp; 12-Frame Set" loading="eager" decoding="async">
+                            <a href="manuals/#sc-32-scientific">
+                                <img src="assets/manuals/sc32_book_cover_square.png" alt="Thinking in the Stack SC-32 Reference Manual" loading="eager" decoding="async">
                             </a>
                         </div>
                         <div class="p-4 flex-1 flex flex-col justify-between">
                             <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades Pre-K&ndash;4 &bull; Doubles Facts</div>
-                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/math-dominoes/" class="hover:text-white">Math Domino Studio &amp; 12-Frame Set</a></h3>
+                                <h3 class="font-bold text-base text-white mb-1.5"><a href="manuals/#sc-32-scientific" class="hover:text-white">Thinking in the Stack (Book)</a></h3>
                                 <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    30 miniblock dominoes with 1064nm IR laser-foamed pips, 12-frame tray with 10+2 divider, and a snap-in doubling lid.
+                                    The definitive reference manual for postfix computation, 16-level stack architecture, scientific functions, and numerical algorithms with the SC-32.
                                 </p>
                             </div>
                             <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-xs font-bold text-[#FA6B05] uppercase tracking-wider">FREE 3MF</span>
+                                <span class="font-mono text-base font-bold text-white">$16.00</span>
                                 <div class="flex gap-2">
-                                    <a href="products/math-dominoes/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#FA6B05] hover:bg-[#FA6B05]/90 text-white font-mono text-xs font-bold rounded transition">Printables ↗</a>
+                                    <a href="manuals/#sc-32-scientific" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Manual</a>
+                                    <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#FF9900] hover:bg-[#FFaa22] text-slate-950 font-mono text-xs font-bold rounded transition">Amazon ↗</a>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- 8. Classroom Planetary Clock (Printables) -->
-                    <article class="home-product-card hidden" data-cat="archive">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400 font-bold">GEARED CLOCK</span>
-                            <span class="text-[#FA6B05] font-bold">● FREE 3MF</span>
-                        </div>
+                    <!-- 8. Middle School Math Lab Workbook -->
+                    <article class="home-product-card" data-cat="book">
                         <div class="home-card-viewport">
-                            <a href="products/classroom-clock/">
-                                <img src="assets/renders/clock-classroom-hero.png" alt="Classroom Geared Clock Desktop View" loading="eager" decoding="async">
+                            <a href="curriculum/big-ideas-middle-school-sc6-workbook/">
+                                <img src="assets/manuals/middle_school_workbook_cover_square.png" alt="Middle School Math Lab Workbook Cover" loading="eager" decoding="async">
                             </a>
                         </div>
                         <div class="p-4 flex-1 flex flex-col justify-between">
                             <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades 1&ndash;5 &bull; Geared Time</div>
-                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/classroom-clock/" class="hover:text-white">Sectional Classroom Planetary Clock</a></h3>
+                                <h3 class="font-bold text-base text-white mb-1.5"><a href="curriculum/big-ideas-middle-school-sc6-workbook/" class="hover:text-white">Middle School Math Lab (Workbook)</a></h3>
                                 <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    12:1 internal planetary gear train and 4 modular quadrant inserts showing why 60 minutes physically equals one hour.
+                                    128-page reproducible classroom workbook connecting physical Fraction &amp; Prime Factor blocks directly to SC-6 calculator exercises.
                                 </p>
                             </div>
                             <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-xs font-bold text-[#FA6B05] uppercase tracking-wider">FREE 3MF</span>
+                                <span class="font-mono text-base font-bold text-white">$16.00</span>
                                 <div class="flex gap-2">
-                                    <a href="products/classroom-clock/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#FA6B05] hover:bg-[#FA6B05]/90 text-white font-mono text-xs font-bold rounded transition">Printables ↗</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 9. Algebra Factoring Studio (Printables) -->
-                    <article class="home-product-card hidden" data-cat="archive">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400 font-bold">ALGEBRA TILES</span>
-                            <span class="text-[#FA6B05] font-bold">● FREE 3MF</span>
-                        </div>
-                        <div class="home-card-viewport">
-                            <a href="products/algebra-boxes/">
-                                <img src="assets/renders/algebra-boxes-hero.png" alt="Algebra Factoring Studio Desktop View" loading="eager" decoding="async">
-                            </a>
-                        </div>
-                        <div class="p-4 flex-1 flex flex-col justify-between">
-                            <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades 7&ndash;12 &bull; Geometric Area</div>
-                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/algebra-boxes/" class="hover:text-white">Algebra Factoring Studio &amp; Tiles</a></h3>
-                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    32 Archimedean silk tiles and interlocking 90-degree area stage for factoring quadratics without algebraic confusion.
-                                </p>
-                            </div>
-                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-xs font-bold text-[#FA6B05] uppercase tracking-wider">FREE 3MF</span>
-                                <div class="flex gap-2">
-                                    <a href="products/algebra-boxes/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#FA6B05] hover:bg-[#FA6B05]/90 text-white font-mono text-xs font-bold rounded transition">Printables ↗</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 10. Probability Dice & Spinner Pack (Printables) -->
-                    <article class="home-product-card hidden" data-cat="archive">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400 font-bold">PROBABILITY DICE</span>
-                            <span class="text-[#FA6B05] font-bold">● FREE 3MF</span>
-                        </div>
-                        <div class="home-card-viewport">
-                            <a href="products/dice-and-spinner/">
-                                <img src="assets/renders/dice-spinner-hero.png" alt="Probability Spinner Desktop View" loading="eager" decoding="async">
-                            </a>
-                        </div>
-                        <div class="p-4 flex-1 flex flex-col justify-between">
-                            <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades 4&ndash;12 &bull; Probability</div>
-                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/dice-and-spinner/" class="hover:text-white">Probability Dice &amp; Spinner Pack</a></h3>
-                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    4 mass-balanced polyhedral dice and an ultra-low-friction plastic spinner in a compact 1x1 Gridfinity modular box.
-                                </p>
-                            </div>
-                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-xs font-bold text-[#FA6B05] uppercase tracking-wider">FREE 3MF</span>
-                                <div class="flex gap-2">
-                                    <a href="products/dice-and-spinner/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#FA6B05] hover:bg-[#FA6B05]/90 text-white font-mono text-xs font-bold rounded transition">Printables ↗</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 11. Unit Circle Volvelle (Printables) -->
-                    <article class="home-product-card hidden" data-cat="archive">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400 font-bold">TRIG VOLVELLE</span>
-                            <span class="text-[#FA6B05] font-bold">● FREE 3MF</span>
-                        </div>
-                        <div class="home-card-viewport">
-                            <a href="products/unit-circle-volvelle/">
-                                <img src="assets/renders/unit-circle-volvelle-hero.png" alt="Unit Circle Volvelle Desktop View" loading="eager" decoding="async">
-                            </a>
-                        </div>
-                        <div class="p-4 flex-1 flex flex-col justify-between">
-                            <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades 9&ndash;12 &bull; AP Exam Legal</div>
-                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/unit-circle-volvelle/" class="hover:text-white">Unit Circle Trigonometry Volvelle</a></h3>
-                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    Zero-battery dual-disc circular computer showing degree/radian transitions and exact radical coordinates through aperture windows.
-                                </p>
-                            </div>
-                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-xs font-bold text-[#FA6B05] uppercase tracking-wider">FREE 3MF</span>
-                                <div class="flex gap-2">
-                                    <a href="products/unit-circle-volvelle/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#FA6B05] hover:bg-[#FA6B05]/90 text-white font-mono text-xs font-bold rounded transition">Printables ↗</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 12. Counting Tiles & Planar Array Studio (Printables) -->
-                    <article class="home-product-card hidden" data-cat="archive">
-                        <div class="p-3 border-b border-white/5 flex items-center justify-between font-mono text-[11px]">
-                            <span class="text-slate-400 font-bold">COUNTING TILES</span>
-                            <span class="text-[#FA6B05] font-bold">● FREE 3MF</span>
-                        </div>
-                        <div class="home-card-viewport">
-                            <a href="products/counting-tiles/">
-                                <img src="assets/renders/counting-tiles-hero.png" alt="Counting Tiles in 3x1 Gridfinity Box" loading="eager" decoding="async">
-                            </a>
-                        </div>
-                        <div class="p-4 flex-1 flex flex-col justify-between">
-                            <div>
-                                <div class="font-mono text-[10px] text-slate-400 font-bold uppercase mb-1">Grades K&ndash;6 &bull; Arrays &amp; Maps</div>
-                                <h3 class="font-bold text-base text-white mb-1.5"><a href="products/counting-tiles/" class="hover:text-white">Counting Tiles &amp; Planar Array Studio</a></h3>
-                                <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                                    144 precision stacking tiles (4 colors &times; 36) in a 3x1x13U Gridfinity box. Bridges 1-to-1 counting, 12&times;12 multiplication, and planar maps.
-                                </p>
-                            </div>
-                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                                <span class="font-mono text-xs font-bold text-[#FA6B05] uppercase tracking-wider">FREE 3MF</span>
-                                <div class="flex gap-2">
-                                    <a href="products/counting-tiles/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Specs</a>
-                                    <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#FA6B05] hover:bg-[#FA6B05]/90 text-white font-mono text-xs font-bold rounded transition">Printables ↗</a>
+                                    <a href="curriculum/big-ideas-middle-school-sc6-workbook/" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Curriculum</a>
+                                    <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#FF9900] hover:bg-[#FFaa22] text-slate-950 font-mono text-xs font-bold rounded transition">Amazon ↗</a>
                                 </div>
                             </div>
                         </div>
@@ -1387,20 +1126,16 @@
                 <!-- Open Source 3D Printable Downloads Banner -->
                 <div class="mt-10 p-6 rounded-xl bg-gradient-to-r from-slate-900 to-[#11141A] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div>
-                        <span class="px-2.5 py-0.5 rounded bg-white/10 text-slate-300 font-mono text-xs font-bold border border-white/20 uppercase">100% Free Open Source</span>
-                        <h3 class="text-xl font-bold text-white mt-2 mb-1">Have a 3D Printer in Your Classroom or Lab?</h3>
-                        <p class="text-slate-400 text-xs md:text-sm">Download our complete, production-tested STL and 3MF print packs. Sliced with PrusaSlicer for Prusa MK3/MK4/MINI with zero bridge infill or support requirements, or grab them directly on Printables.</p>
+                        <div class="font-mono text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Open-Source Community Lab</div>
+                        <h3 class="text-xl font-bold text-white mb-1">3D Print in Your Classroom or Lab</h3>
+                        <p class="text-slate-400 text-xs md:text-sm">Download our complete, production-tested STL and 3MF print packs for Ten-Frames, Dominoes, Geared Clocks, Algebra Tiles, and more on Printables.</p>
                     </div>
-                    <div class="flex flex-wrap gap-3">
+                    <div class="flex flex-wrap gap-3 shrink-0">
                         <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded bg-[#FA6B05] hover:bg-[#FA6B05]/90 text-white font-mono text-xs font-bold transition flex items-center gap-1.5 shadow-md shadow-orange-950/20">
                             <span>ON PRINTABLES ↗</span>
                         </a>
                         <a href="printables/" class="px-4 py-2.5 rounded bg-white hover:bg-slate-200 text-slate-950 font-mono text-xs font-bold transition flex items-center gap-2">
-                            <span>MAKERSPACE KITS GUIDE</span>
-                            <span>&rarr;</span>
-                        </a>
-                        <a href="downloads/" class="px-4 py-2.5 rounded border border-white/20 hover:border-white text-white font-mono text-xs font-bold transition">
-                            PDF DOWNLOAD CENTER &rarr;
+                            <span>MAKERSPACE GUIDE &rarr;</span>
                         </a>
                     </div>
                 </div>
@@ -1415,7 +1150,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="max-w-3xl mb-14">
-                    <p class="font-mono text-slate-400 mb-2 uppercase tracking-widest text-xs font-bold">// THE PEDAGOGICAL BLUEPRINT</p>
+                    <p class="font-mono text-slate-400 mb-2 uppercase tracking-widest text-xs font-bold">Pedagogical Framework</p>
                     <h2 class="text-3xl sm:text-4xl font-bold mb-6 tracking-tight text-white">How Real Learning Happens: Hands, Mind, Machine.</h2>
                     <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
                         Modern math education has been swallowed whole by gamified smartphone apps and disposable paper worksheets. We build physical learning instruments grounded in the proven <strong>Concrete-Representational-Abstract (CRA)</strong> framework.
@@ -1427,32 +1162,32 @@
                     
                     <!-- Stage 1: Concrete -->
                     <div class="border-t-2 border-white/20 pt-6 bg-[#11141A]/50 p-6 rounded-b-xl border-x border-b border-white/5">
-                        <div class="font-mono text-slate-400 text-xs font-bold mb-2">// STAGE 01: CONCRETE</div>
+                        <div class="font-mono text-slate-400 text-xs font-bold mb-2">Stage 01: Concrete</div>
                         <h3 class="font-mono text-xl font-bold mb-3 text-white">Tactile Hands-On</h3>
                         <p class="text-slate-400 text-sm leading-relaxed mb-4">
                             Physical objects give weight, texture, and geometry to abstract numbers. Children don't memorize arbitrary regrouping rules; they slide 10 square miniblocks into the tray and physically place the solid 2U Carry Cube onto the upper shelf.
                         </p>
-                        <span class="font-mono text-xs text-slate-300 uppercase font-bold">&gt; PHYSICAL SPATIAL INTUITION</span>
+                        <span class="font-mono text-xs text-slate-300 uppercase font-bold">Physical Spatial Intuition</span>
                     </div>
 
                     <!-- Stage 2: Representational -->
                     <div class="border-t-2 border-white/20 pt-6 bg-[#11141A]/50 p-6 rounded-b-xl border-x border-b border-white/5">
-                        <div class="font-mono text-slate-400 text-xs font-bold mb-2">// STAGE 02: REPRESENTATIONAL</div>
+                        <div class="font-mono text-slate-400 text-xs font-bold mb-2">Stage 02: Representational</div>
                         <h3 class="font-mono text-xl font-bold mb-3 text-white">Visual &amp; Mental Models</h3>
                         <p class="text-slate-400 text-sm leading-relaxed mb-4">
                             High-contrast bi-color counters and 12-frame trays teach instant dot subitizing. Students decompose numbers into visual chunks (e.g. 8 is 5+3) and recognize fraction benchmark heights before writing a single equation.
                         </p>
-                        <span class="font-mono text-xs text-slate-300 uppercase font-bold">&gt; VISUAL NUMBER SENSE</span>
+                        <span class="font-mono text-xs text-slate-300 uppercase font-bold">Visual Number Sense</span>
                     </div>
 
                     <!-- Stage 3: Abstract -->
                     <div class="border-t-2 border-white/40 pt-6 bg-[#11141A]/50 p-6 rounded-b-xl border-x border-b border-white/5">
-                        <div class="font-mono text-white text-xs font-bold mb-2">// STAGE 03: ABSTRACT</div>
+                        <div class="font-mono text-white text-xs font-bold mb-2">Stage 03: Abstract</div>
                         <h3 class="font-mono text-xl font-bold mb-3 text-white">RPN Hardware Execution</h3>
                         <p class="text-slate-400 text-sm leading-relaxed mb-4">
                             Reverse Polish Notation mirrors how human working memory builds calculations. With the 4-level stack showing intermediate results at every keystroke, students unbind themselves from nested parentheses and equals-key confusion.
                         </p>
-                        <span class="font-mono text-xs text-slate-300 uppercase font-bold">&gt; 4-LEVEL POSTFIX CLARITY</span>
+                        <span class="font-mono text-xs text-slate-300 uppercase font-bold">4-Level Postfix Clarity</span>
                     </div>
                 </div>
 
@@ -1460,7 +1195,7 @@
                 <div class="p-8 rounded-2xl bg-gradient-to-br from-slate-900 via-[#11141A] to-[#0A0C10] border border-white/10">
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                         <div class="md:col-span-8">
-                            <span class="font-mono text-xs text-slate-400 font-bold uppercase tracking-wider">// DURABILITY, PACKAGING &amp; OPEN REPAIRABILITY</span>
+                            <span class="font-mono text-xs text-slate-400 font-bold uppercase tracking-wider">Durability &amp; Repairability</span>
                             <h3 class="text-2xl font-bold text-white mt-1 mb-3">Zero-Waste Kraft Packaging. "No Lost Piece Left Behind."</h3>
                             <p class="text-slate-300 text-sm leading-relaxed mb-4">
                                 Engineered in solid non-toxic matte polymers and shatterproof PETG. Every kit ships in a 200 lb-test stay-flat kraft mailer engineered for permanent desk storage without throwaway plastic films. If your child loses a counter or a block goes missing, our Anti-Heartbreak Lifetime Guarantee replaces the exact matching piece for just $2.49 with free domestic shipping.
@@ -1492,7 +1227,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="max-w-3xl mb-14">
-                    <p class="font-mono text-cyan-400 mb-2 uppercase tracking-widest text-xs font-bold">// THE CLASSROOM CURRICULUM &amp; COMPETITION PORTAL</p>
+                    <p class="font-mono text-cyan-400 mb-2 uppercase tracking-widest text-xs font-bold">Curriculum &amp; Competition Portal</p>
                     <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 tracking-tight text-white">Turnkey Classroom Math: Worksheets, Competition Tests &amp; Guides</h2>
                     <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
                         Engineered for real math teachers and coaches. Zero software subscriptions, zero python scripts required. 100% pre-generated PDF downloads aligned chapter-by-chapter with your district's curriculum.
@@ -1505,7 +1240,7 @@
                     <div class="p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-[#11141A] border border-cyan-500/30 flex flex-col justify-between shadow-xl hover:border-cyan-500/50 transition">
                         <div>
                             <div class="flex items-center justify-between mb-3">
-                                <span class="font-mono text-xs text-cyan-400 font-bold uppercase tracking-wider">PRE-GENERATED CATALOG</span>
+                                <span class="font-mono text-xs text-cyan-400 font-bold uppercase tracking-wider">Pre-Generated Catalog</span>
                                 <span class="text-xs px-2.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono font-bold">120 Master Editions</span>
                             </div>
                             <h3 class="text-2xl font-bold text-white mb-3">Classroom Station Guides &amp; Worksheets</h3>
@@ -1528,7 +1263,7 @@
                     <div class="p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-[#11141A] border border-emerald-500/30 flex flex-col justify-between shadow-xl hover:border-emerald-500/50 transition">
                         <div>
                             <div class="flex items-center justify-between mb-3">
-                                <span class="font-mono text-xs text-emerald-400 font-bold uppercase tracking-wider">ACADEMIC SPEED SPRINT</span>
+                                <span class="font-mono text-xs text-emerald-400 font-bold uppercase tracking-wider">Academic Speed Sprint</span>
                                 <span class="text-xs px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono font-bold">12 Editions &bull; 650 Problems</span>
                             </div>
                             <h3 class="text-2xl font-bold text-white mb-3">Texas UIL &amp; TMSCA Competition Center</h3>
@@ -1553,7 +1288,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <a href="curriculum/rpn-elementary-guide/" class="p-6 rounded-xl bg-[#11141A] border border-cyan-500/20 hover:border-cyan-400 transition flex items-center justify-between group">
                         <div>
-                            <span class="font-mono text-xs text-cyan-400 font-bold uppercase tracking-wider">// RPN PEDAGOGY</span>
+                            <span class="font-mono text-xs text-cyan-400 font-bold uppercase tracking-wider">RPN Pedagogy</span>
                             <h4 class="text-lg font-bold text-white mt-1">RPN Elementary Power Guide</h4>
                             <p class="text-xs text-slate-400 mt-1">4-stack XYZT, [REP] skip-counting, [÷R] division remainders, and [LAST X] proof.</p>
                         </div>
@@ -1561,7 +1296,7 @@
                     </a>
                     <a href="curriculum/alignment-matrix/" class="p-6 rounded-xl bg-[#11141A] border border-white/10 hover:border-white/25 transition flex items-center justify-between group">
                         <div>
-                            <span class="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider">// STANDARDS MAPPING</span>
+                            <span class="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider">Standards Mapping</span>
                             <h4 class="text-lg font-bold text-white mt-1">Curriculum &amp; Standards Matrix</h4>
                             <p class="text-xs text-slate-400 mt-1">Cross-referencing CCSS-M, TEKS, Bridges, Big Ideas, and Singapore Dimensions.</p>
                         </div>
@@ -1569,7 +1304,7 @@
                     </a>
                     <a href="curriculum/teacher-guide/" class="p-6 rounded-xl bg-[#11141A] border border-white/10 hover:border-white/25 transition flex items-center justify-between group">
                         <div>
-                            <span class="font-mono text-xs text-purple-400 font-bold uppercase tracking-wider">// TEACHER OPERATIONS</span>
+                            <span class="font-mono text-xs text-purple-400 font-bold uppercase tracking-wider">Teacher Operations</span>
                             <h4 class="text-lg font-bold text-white mt-1">Teacher Facilitator Guide</h4>
                             <p class="text-xs text-slate-400 mt-1">30-second misconception diagnostics, student verbal cues, and RTI pacing guides.</p>
                         </div>
@@ -1581,7 +1316,9 @@
                 <div class="mt-6 p-6 rounded-xl bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border border-amber-500/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                     <div>
                         <div class="flex items-center gap-2">
-                            <span class="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider">// OFFICIAL USER GUIDES &amp; MANUALS</span>
+                            <span class="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider">Official User Guides &amp; Manuals</span>
+                            <span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono font-bold">Spiral Print ($19) &amp; Free PDFs</span>
+                        </div>
                             <span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono font-bold">Spiral Print ($19) &amp; Free PDFs</span>
                         </div>
                         <h4 class="text-lg font-bold text-white mt-1">SC-32 &amp; SC-6 Calculator Owner's Manuals</h4>
@@ -1609,7 +1346,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="font-mono text-xs uppercase tracking-widest text-slate-400 font-bold">// 3-VIDEO MEDIA SUITE</span>
+                    <span class="font-mono text-xs uppercase tracking-widest text-slate-400 font-bold">Video Media Suite</span>
                     <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1 mb-3">See StackCalc in Motion</h2>
                     <p class="text-slate-400 text-sm">Experience the complete journey from 60 FPS CAD mechanical kinematics to unboxing and classroom lessons.</p>
                 </div>
@@ -1681,15 +1418,10 @@
                 <!-- Section Header with Real-Time Production Telemetry -->
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-white/10 gap-4">
                     <div>
-                        <span class="font-mono text-xs uppercase text-slate-400 tracking-widest font-bold">// HARDWARE STUDIO &amp; CMF CONFIGURATOR</span>
+                        <span class="font-mono text-xs uppercase text-slate-400 tracking-widest font-bold">Hardware Studio &amp; Finishes</span>
                         <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mt-1">Engineered for Lifelong Service.</h2>
                     </div>
                     <div class="font-mono text-xs text-slate-400 flex flex-wrap items-center gap-2">
-                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-bold">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                            BATCH 04 IN PRODUCTION
-                        </span>
-                        <span class="text-slate-500">&bull;</span>
                         <span>48H DISPATCH</span>
                         <span class="text-slate-500">&bull;</span>
                         <span>ZERO SOLDERING REQUIRED</span>
@@ -1706,16 +1438,16 @@
                             <div class="p-2 bg-black/90 backdrop-blur border-b border-white/10 flex flex-wrap items-center justify-between gap-1.5 font-mono text-xs select-none">
                                 <div class="flex flex-wrap items-center gap-1">
                                     <button type="button" id="hw-tab-editions" onclick="setHwViewMode('editions')" class="hw-view-tab px-3 py-1.5 rounded text-[11px] font-bold transition active bg-white text-slate-950">
-                                        01 // 8 EDITIONS
+                                        8 Finishes
                                     </button>
                                     <button type="button" id="hw-tab-bench" onclick="setHwViewMode('bench')" class="hw-view-tab px-3 py-1.5 rounded text-[11px] font-bold transition text-slate-400 hover:text-white hover:bg-white/5">
-                                        02 // BENCH LAB
+                                        Bench Lab
                                     </button>
                                     <button type="button" id="hw-tab-dovetail" onclick="setHwViewMode('dovetail')" class="hw-view-tab px-3 py-1.5 rounded text-[11px] font-bold transition text-slate-400 hover:text-white hover:bg-white/5">
-                                        03 // DOVETAIL SLIDE
+                                        Dovetail Slide
                                     </button>
                                     <button type="button" id="hw-tab-exploded" onclick="setHwViewMode('exploded')" class="hw-view-tab px-3 py-1.5 rounded text-[11px] font-bold transition text-slate-400 hover:text-white hover:bg-white/5">
-                                        04 // EXPLODED SILICON
+                                        Exploded View
                                     </button>
                                 </div>
                                 <span class="hidden sm:inline-block text-[10px] text-slate-400 pr-2">TACTILE MICROSWITCHES</span>
@@ -1728,17 +1460,18 @@
                                 <!-- Floating Telemetry Readout in Viewport -->
                                 <div class="absolute bottom-3 left-3 right-3 p-3 rounded-lg bg-black/85 backdrop-blur-md border border-white/10 flex items-center justify-between pointer-events-none">
                                     <div>
-                                        <div id="hardware-edition-tag" class="font-mono text-[10px] text-white/70 uppercase tracking-widest font-bold">EDITION 01 // COSMOS (CHAMPION)</div>
+                                        <div id="hardware-edition-tag" class="font-mono text-[10px] text-white/70 uppercase tracking-widest font-bold">Cosmos Edition</div>
                                         <div id="hardware-edition-cmf" class="font-mono text-[11px] text-slate-400 line-clamp-1">Sunlu Midnight PLA 2.0+ &bull; Tactile Light Gray TPU Keys &bull; 1064nm Stark White Foam (15.2:1 AAA)</div>
                                     </div>
-                                    <span class="font-mono text-[10px] text-emerald-400 font-bold hidden sm:inline-block">● READY FOR DISPATCH</span>
                                 </div>
                             </div>
                             
                             <!-- 8-Chip CMF Swatch Selector Palette (Visible in Editions mode) -->
                             <div id="hw-palette-container" class="p-3 bg-black/90 backdrop-blur border-t border-white/10">
                                 <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-2 px-1">
-                                    <span class="font-bold uppercase tracking-wider text-[10px] text-slate-400">// SELECT YOUR CMF FINISH:</span>
+                                    <span class="font-bold uppercase tracking-wider text-[10px] text-slate-400">Select Finish:</span>
+                                    <span class="text-[10px] text-slate-400">Tactile Microswitches &amp; Sculpted TPU Keys</span>
+                                </div>
                                     <span class="text-[10px] text-slate-400">Tactile Microswitches &amp; Sculpted TPU Keys</span>
                                 </div>
                                 
@@ -1823,7 +1556,7 @@
                     <!-- Right Column (5 cols): Silicon Architecture + Direct E-Commerce Module -->
                     <div class="lg:col-span-5 flex flex-col justify-between">
                         <div>
-                            <span class="font-mono text-xs uppercase text-slate-400 tracking-wider font-bold">// HARDWARE SILICON ARCHITECTURE</span>
+                            <span class="font-mono text-xs uppercase text-slate-400 tracking-wider font-bold">Hardware Architecture</span>
                             <h3 class="text-2xl md:text-3xl font-extrabold text-white mt-1 mb-3">Modular Mechanical Postfix.</h3>
                             <p class="text-slate-300 text-sm leading-relaxed mb-6 font-sans">
                                 Zero glue, zero single-use plastic clips, zero proprietary fasteners. The SC-32 chassis glides together along precision dovetail interlocking rails, permitting tool-free battery replacement and faceplate customisation in ten seconds.
@@ -1862,7 +1595,7 @@
                                     <span class="text-3xl font-extrabold text-white tracking-tight">$89.00</span>
                                     <span class="text-xs text-slate-300 ml-1">USD (Maker Kit)</span>
                                 </div>
-                                <div class="text-[11px] text-emerald-400 font-bold">&bull; Zero Soldering Required</div>
+                                <div class="text-[11px] text-slate-400">Zero Soldering Required</div>
                             </div>
 
                             <ul class="space-y-2 mb-5 text-[11px] text-slate-300">
@@ -1917,7 +1650,7 @@
 
                             <!-- Interactive Classroom Fleet Selector -->
                             <div class="space-y-2.5 font-mono text-xs bg-black/40 p-4 rounded-xl border border-white/10 mb-6">
-                                <div class="text-[11px] text-slate-400 font-bold uppercase tracking-wider mb-2">// CONFIGURE YOUR CLASSROOM REQUISITION:</div>
+                                <div class="text-[11px] text-slate-400 font-bold uppercase tracking-wider mb-2">Configure Classroom Package:</div>
                                 
                                 <label class="flex items-start gap-3 p-2 rounded hover:bg-white/5 cursor-pointer">
                                     <input type="checkbox" id="po-item-sc32" checked onchange="updatePOCalculator()" class="mt-1 accent-white">
@@ -2167,7 +1900,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="max-w-3xl mb-14">
-                    <span class="font-mono text-xs uppercase tracking-widest text-slate-400 font-bold">// 1:1 UNIFIED APPLE ECOSYSTEM</span>
+                    <span class="font-mono text-xs uppercase tracking-widest text-slate-400 font-bold">Unified Apple Ecosystem</span>
                     <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mt-1 mb-4">The Calculator on Your Wrist, Phone, and Mac.</h2>
                     <p class="text-slate-300 text-sm md:text-base leading-relaxed">
                         Start calculations on your Apple Watch in class, continue on your iPhone or Mac in the lab, and execute on your physical SC-32 at exam time. Every platform runs the identical RPNCore evaluation engine with native Terminus typography.
@@ -2181,8 +1914,7 @@
                     <div class="lg:col-span-5 p-8 rounded-2xl bg-[#11141A] border border-white/10 flex flex-col justify-between hover:border-white/20 transition relative overflow-hidden">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="font-mono text-xs text-slate-400 font-bold uppercase tracking-wider">// WATCHOS NATIVE</span>
-                                <span class="px-2 py-0.5 rounded bg-white/10 text-white font-mono text-[10px] font-bold">WRIST-READY</span>
+                                <span class="font-mono text-xs text-slate-400 font-bold uppercase tracking-wider">watchOS Native</span>
                             </div>
                             <h3 class="text-2xl font-bold text-white mb-2">Sub-millisecond Wrist Postfix</h3>
                             <p class="text-xs text-slate-400 leading-relaxed mb-6">
@@ -2208,8 +1940,7 @@
                     <div class="lg:col-span-7 p-8 rounded-2xl bg-[#11141A] border border-white/10 flex flex-col justify-between hover:border-white/20 transition relative overflow-hidden">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="font-mono text-xs text-slate-400 font-bold uppercase tracking-wider">// IOS &amp; IPADOS &amp; MACOS</span>
-                                <span class="px-2 py-0.5 rounded bg-white/10 text-white font-mono text-[10px] font-bold">1:1 DIGITAL TWIN</span>
+                                <span class="font-mono text-xs text-slate-400 font-bold uppercase tracking-wider">iOS, iPadOS &amp; macOS</span>
                             </div>
                             <h3 class="text-2xl font-bold text-white mb-2">Math Without Syntax Errors</h3>
                             <p class="text-xs text-slate-400 leading-relaxed mb-6">
@@ -2234,7 +1965,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="p-6 rounded-xl bg-[#11141A] border border-white/10 flex flex-col justify-between">
                         <div>
-                            <span class="font-mono text-xs text-slate-400 font-bold tracking-wider">// MACOS WORKSTATION</span>
+                            <span class="font-mono text-xs text-slate-400 font-bold tracking-wider">macOS Workstation</span>
                             <h4 class="text-lg font-bold text-white mt-1 mb-2">Full Numpad Desktop Ergonomics</h4>
                             <p class="text-xs text-slate-400 leading-relaxed mb-4">
                                 Windowed multi-register inspection (<code class="text-cyan-400 font-mono">X</code>, <code class="text-cyan-400 font-mono">Y</code>, <code class="text-cyan-400 font-mono">Z</code>, <code class="text-cyan-400 font-mono">T</code>, memory registers <code class="text-cyan-400 font-mono">R<sub>0</sub>&hellip;R<sub>25</sub></code>), menu-bar quick scratchpad, and global shortcut invocation for lab engineering work.
@@ -2245,7 +1976,7 @@
 
                     <div class="p-6 rounded-xl bg-[#11141A] border border-white/10 flex flex-col justify-between">
                         <div>
-                            <span class="font-mono text-xs text-slate-400 font-bold tracking-wider">// EMBEDDED MISSIONS</span>
+                            <span class="font-mono text-xs text-slate-400 font-bold tracking-wider">Interactive Tutorials</span>
                             <h4 class="text-lg font-bold text-white mt-1 mb-2">Interactive CRA Tutorial Hub</h4>
                             <p class="text-xs text-slate-400 leading-relaxed mb-4">
                                 Step-by-step training modules teaching stack evaluation, chained square roots, powers, trigonometry, and fraction reductions with instant visual register feedback.
@@ -2265,7 +1996,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="text-center max-w-2xl mx-auto mb-10">
-                    <span class="font-mono text-xs uppercase tracking-widest text-slate-400 font-bold">// HARDWARE &amp; LAB ACQUISITION</span>
+                    <span class="font-mono text-xs uppercase tracking-widest text-slate-400 font-bold">Storefront &amp; Acquisition</span>
                     <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mt-1 mb-3">Choose Your Instrument</h2>
                     <p class="text-slate-400 text-sm">Pre-soldered 5-minute hardware maker kits, modular tactile manipulatives, and institutional classroom fleet requisitions.</p>
                 </div>
@@ -2297,11 +2028,10 @@
                         <div>
                             <div class="flex justify-between items-center mb-4">
                                 <span class="font-mono text-xs uppercase text-slate-400 font-bold">Tactile Manipulatives</span>
-                                <span class="px-2 py-0.5 rounded bg-white/10 text-slate-300 font-mono text-[10px]">INDIVIDUAL LABS</span>
                             </div>
                             <h3 class="text-2xl font-bold text-white mb-1">Tactile Math Labs</h3>
-                            <div class="text-3xl font-bold text-white font-mono my-3">$19.00 &ndash; $48.00</div>
-                            <p class="text-xs text-slate-400 mb-6">Modular physical manipulatives engineered for tactile number sense: Ten-Frames ($36), Dominoes ($38), Counting Tiles ($44), Fraction Studio ($48), Clock ($44), Prime Studio ($46), and Algebra Boxes ($42).</p>
+                            <div class="text-3xl font-bold text-white font-mono my-3">$24.99 &ndash; $48.00</div>
+                            <p class="text-xs text-slate-400 mb-6">Modular physical manipulatives engineered for tactile number sense: Fraction Studio Proportional Towers ($24.99–$48), Prime Factor Studio ($46), and Place Value Studio ($38).</p>
                             <ul class="space-y-2.5 text-xs text-slate-300 font-mono mb-8">
                                 <li class="flex items-center gap-2"><span class="text-slate-400 font-bold">&check;</span> Standalone Gridfinity 3x1 Kits</li>
                                 <li class="flex items-center gap-2"><span class="text-slate-400 font-bold">&check;</span> Duplex Archival QR Lesson Cards</li>
@@ -2310,19 +2040,15 @@
                             </ul>
                         </div>
                         <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="w-full py-3 text-center rounded bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold transition flex items-center justify-center gap-2">
-                            <span>EXPLORE KITS ON ETSY ($19&ndash;$48) ↗</span>
+                            <span>ORDER MANIPULATIVES ON ETSY ↗</span>
                         </a>
                     </div>
 
                     <!-- Tier 2: SC-32 Maker Kit (FEATUREAL FLAGSHIP HARDWARE) -->
                     <div class="p-8 rounded-2xl bg-[#161B24] border-2 border-white/30 flex flex-col justify-between relative shadow-2xl">
-                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-white text-slate-950 font-mono text-[10px] font-bold uppercase tracking-wider">
-                            FLAGSHIP HARDWARE
-                        </div>
                         <div>
                             <div class="flex justify-between items-center mb-4 mt-2">
                                 <span class="font-mono text-xs uppercase text-slate-300 font-bold">Hardware Silicon</span>
-                                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] border border-emerald-500/30">ZERO SOLDERING</span>
                             </div>
                             <h3 class="text-2xl font-bold text-white mb-1">SC-32 Maker Kit</h3>
                             <div class="text-3xl font-bold text-white font-mono my-3">$89.00</div>
@@ -2346,7 +2072,6 @@
                         <div>
                             <div class="flex justify-between items-center mb-4">
                                 <span class="font-mono text-xs uppercase text-slate-400 font-bold">Schools &amp; Districts</span>
-                                <span class="px-2 py-0.5 rounded bg-white/10 text-slate-300 font-mono text-[10px]">NET-30 PO</span>
                             </div>
                             <h3 class="text-2xl font-bold text-white mb-1">Classroom Fleets</h3>
                             <div class="text-3xl font-bold text-white font-mono my-3">From $240</div>
@@ -2375,7 +2100,7 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="text-center mb-12">
-                    <span class="font-mono text-xs uppercase tracking-widest text-slate-400 font-bold">// SPECIFICATION &amp; PROCUREMENT FAQ</span>
+                    <span class="font-mono text-xs uppercase tracking-widest text-slate-400 font-bold">Frequently Asked Questions</span>
                     <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mt-1">Frequently Asked Questions</h2>
                 </div>
 
@@ -2498,7 +2223,6 @@
             <div class="min-w-0">
                 <div class="flex items-center gap-2">
                     <span class="font-bold text-white uppercase truncate text-[11px] sm:text-xs">SC-32 Maker Kit</span>
-                    <span class="text-[9px] px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0 font-bold hidden xs:inline-block">In Stock</span>
                 </div>
                 <div class="text-[10px] sm:text-[11px] text-slate-400 truncate">RP2350 Silicon &bull; Pre-Soldered &bull; 5-Min Build</div>
             </div>
@@ -2698,56 +2422,36 @@
         // Hero Showcase Switcher Data
         const showcaseData = {
             'sc32': {
-                tag: 'RP2350 HARDWARE',
-                title: 'StackCalc SC-32 Maker Kit',
-                price: '$89.00 USD',
-                subtitle: '100% Pre-Soldered • 5-Min Assembly',
-                dims: '135×90×16mm • 142g • Tactile Switches & TPU Keys • 0.0s Boot',
-                badge: 'In Stock',
+                title: 'StackCalc SC-32',
+                price: '$89.00',
                 btnText: 'Order $89',
                 src: 'assets/renders/sc32-hero-keynote.png',
                 link: 'products/sc32-calculator/'
             },
             'sc6': {
-                tag: 'ELEMENTARY RPN',
-                title: 'StackCalc SC-6 Elementary Edition',
-                price: '$79.00 USD',
-                subtitle: 'Big-Button Tactile Computing',
-                dims: '142×92×18mm • 155g • Tactile Switches & Big TPU Keys • 0.0s Boot',
-                badge: 'In Stock',
+                title: 'StackCalc SC-6 Elementary',
+                price: '$79.00',
                 btnText: 'Order $79',
                 src: 'assets/renders/etsy/sc6-elementary-hero-square.png',
                 link: 'products/sc6-elementary/'
             },
             'fraction': {
-                tag: 'FRACTION TOWERS',
                 title: 'Fraction Studio Towers',
-                price: '$24.99 – $48.00 USD',
-                subtitle: 'Authentic Dual-Tone Polymer • Reciprocal 84mm Datum',
-                dims: '10 Curriculum Denominators • 4-Face Conversions • Snap-Tight Case',
-                badge: 'In Stock',
+                price: '$24.99 – $48.00',
                 btnText: 'Order $24.99+',
                 src: 'assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg',
                 link: 'products/fraction-studio/'
             },
             'prime': {
-                tag: 'PRIME FACTOR TOWERS',
-                title: 'Prime Factor Studio & Towers',
-                price: '$46.00 USD',
-                subtitle: 'Ascending Prime Towers • Fundamental Theorem',
-                dims: 'Logarithmic Stacking • Commutative Proof • Dual-Well Stage Lid',
-                badge: 'In Stock',
+                title: 'Prime Factor Studio',
+                price: '$46.00',
                 btnText: 'Order $46',
                 src: 'assets/renders/etsy/prime-factor-studio-real-staircase-iso-hero-tight.jpg',
                 link: 'products/prime-factor-studio/'
             },
             'placevalue': {
-                tag: 'PLACE VALUE TRAYS',
-                title: 'Place Value Studio & Regrouping Trays',
-                price: '$38.00 USD',
-                subtitle: 'Dual 6×2 Desktop Trays',
-                dims: 'Dual 6×2 Trays • 53 Blocks • Whole (100k-1) & Decimals (0.1-10^-6)',
-                badge: 'In Stock',
+                title: 'Place Value Studio',
+                price: '$38.00',
                 btnText: 'Order $38',
                 src: 'assets/renders/etsy/place-value-studio-hero-square.png',
                 link: 'products/place-value/'
@@ -2766,18 +2470,12 @@
             if (data) {
                 const img = document.getElementById('hero-main-photo');
                 if (img) img.src = data.src;
-                const tagEl = document.getElementById('hero-photo-tag');
-                if (tagEl) tagEl.textContent = data.tag;
                 const titleEl = document.getElementById('hero-photo-title');
                 if (titleEl) titleEl.textContent = data.title;
                 const linkEl = document.getElementById('hero-photo-link');
                 if (linkEl) linkEl.href = data.link;
                 const priceEl = document.getElementById('hero-photo-price');
-                if (priceEl) priceEl.innerHTML = `${data.price} <span class="text-[10px] text-slate-500 font-normal">(${data.subtitle})</span>`;
-                const dimsEl = document.getElementById('hero-photo-dims');
-                if (dimsEl) dimsEl.textContent = data.dims || '';
-                const badgeEl = document.getElementById('hero-photo-badge');
-                if (badgeEl) badgeEl.textContent = data.badge;
+                if (priceEl) priceEl.textContent = data.price;
                 const btnTextEl = document.getElementById('hero-photo-btn-text');
                 if (btnTextEl) btnTextEl.textContent = data.btnText;
             }
