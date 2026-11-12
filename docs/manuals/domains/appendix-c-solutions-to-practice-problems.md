@@ -1,6 +1,6 @@
 # Appendix C: Solutions to Chapter Practice Problems
 
-This compendium provides complete step-by-step keystroke solutions, stack register traces, and intermediate mathematical verifications for all 135 practice problems across the 27 chapters of *The Stack in the Field*.
+This compendium provides complete step-by-step keystroke solutions, stack register traces, and intermediate mathematical verifications for all 135 practice problems across the 27 chapters of *The Operative Stack: Mathematics for the Real World*.
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Volume III — The Stack in the Field: When Mathematics Meets the Physical Trades"
+title: "Volume III — The Operative Stack: Mathematics for the Real World"
 description: "Applied mathematics across surveying, electrical trades, digital systems, cinema optics, radio engineering, analytical chemistry, culinary thermodynamics, clinical pharmacokinetics, and quantitative finance."
 ---
 
@@ -120,7 +120,7 @@ Each field in this volume represents a distinct physical domain where fundamenta
 
 Across all nine fields, the mathematical structures are isomorphic: vector projections that resolve an aircraft crab angle also balance a three-phase power factor; exponential decay that discharges an RC timing network also models renal antibiotic clearance and financial present-value discounting; and logarithmic scaling that measures sound pressure in an auditorium also governs radio-frequency path gain and aqueous chemical acidity.
 
-By mastering the operational stack, the practitioner commands this universal mathematical grammar across any physical trade.
+By mastering the operative stack, the practitioner commands this universal mathematical grammar across any physical trade.
 
 ---
 
