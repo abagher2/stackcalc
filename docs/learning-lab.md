@@ -161,6 +161,39 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
 
     <!-- VIEW 2: PLACE-VALUE STUDIO -->
     <div id="vlab-view-placevalue" style="display:none;">
+      
+      <!-- Top Horizontal Place Value Palette Shelf -->
+      <div class="vlab-palette-bar">
+        <span class="vlab-palette-label">BASE-10 BLOCKS:</span>
+        <button class="vlab-block-btn-chip" data-pv-palette="100" title="Click to add 100-Flat to Row 2">
+          <span class="vlab-block-chip" style="background:#D97706; border: 1px solid #FCD34D;"></span> 100 FLAT
+        </button>
+        <button class="vlab-block-btn-chip" data-pv-palette="10" title="Click to add 10-Rod to Row 2">
+          <span class="vlab-block-chip" style="background:#0284C7; border: 1px solid #38BDF8;"></span> 10 ROD
+        </button>
+        <button class="vlab-block-btn-chip" data-pv-palette="1" title="Click to add 1-Unit Cube to Row 2">
+          <span class="vlab-block-chip" style="background:#059669; border: 1px solid #34D399;"></span> 1 UNIT
+        </button>
+        <button class="vlab-block-btn-chip" data-pv-palette="0.1" title="Click to add .1 Tenth Strip to Row 2">
+          <span class="vlab-block-chip" style="background:#7C3AED; border: 1px solid #A78BFA;"></span> .1 TENTH
+        </button>
+        <button class="vlab-block-btn-chip" data-pv-palette="0.01" title="Click to add .01 Hundredth Tile to Row 2">
+          <span class="vlab-block-chip" style="background:#EC4899; border: 1px solid #F472B6;"></span> .01 HUNDREDTH
+        </button>
+        <button class="vlab-block-btn-chip" data-pv-palette="0.001" title="Click to add .001 Thousandth Token to Row 2">
+          <span class="vlab-block-chip" style="background:#06B6D4; border: 1px solid #22D3EE;"></span> .001 THOUSANDTH
+        </button>
+      </div>
+
+      <!-- Direct Number Input Bar -->
+      <div class="pv-direct-input-bar">
+        <span style="font-family:'Space Mono', monospace; font-size:0.75rem; color:#94A3B8; font-weight:700;">TYPE NUMBER:</span>
+        <input type="number" id="pv-num-input" class="pv-input-field" placeholder="e.g. 345 or 24.7" step="any" min="0" max="999.999">
+        <button id="pv-btn-load-x" class="vlab-btn-action" style="padding: 6px 12px; font-size:0.75rem; background:#0284C7; color:#FFFFFF; border-radius:4px; font-family:'Space Mono',monospace; font-weight:700; cursor:pointer;" title="Decompose number into Row 2 (X)">SET ROW 2 (X)</button>
+        <button id="pv-btn-load-y" class="vlab-btn-action" style="padding: 6px 12px; font-size:0.75rem; background:#161B22; color:#CBD5E1; border: 1px solid rgba(255,255,255,0.2); border-radius:4px; font-family:'Space Mono',monospace; font-weight:700; cursor:pointer;" title="Decompose number into Row 1 (Y)">SET ROW 1 (Y)</button>
+        <span style="font-size:0.7rem; color:#64748B; margin-left:auto;">Press Enter or click to populate blocks</span>
+      </div>
+
       <div class="vlab-grid">
         
         <!-- Left & Center: Place Value Desk Tray -->

@@ -791,6 +791,32 @@
   }
 
   // --- 7. Place-Value Studio Actions (PLACE-01 Multi-Row Desk) ---
+  function setPvNumber(num, row = 2) {
+    prepareForEntry();
+    const parsed = parseFloat(num);
+    if (isNaN(parsed) || parsed < 0) return;
+    const counts = numberToPvCounts(parsed);
+    if (row === 1) {
+      state.placeValue.row1Counts = counts;
+      state.stack.y = {
+        n: Math.round(parsed * 1000),
+        d: 1000,
+        val: parsed
+      };
+    } else {
+      state.placeValue.row2Counts = counts;
+      state.stack.x = {
+        n: Math.round(parsed * 1000),
+        d: 1000,
+        val: parsed
+      };
+    }
+    state.placeValue.carryCounts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
+    playSuccess();
+    checkPvRegroup();
+    renderAll();
+  }
+
   function changePvCount(colKey, delta, row = 2) {
     prepareForEntry();
     const val = parseFloat(colKey);
@@ -1339,6 +1365,11 @@
       const socketY = document.getElementById(`pv-socket-y-${k}`);
       if (socketY) {
         socketY.innerHTML = '';
+        socketY.onclick = (e) => {
+          if (e.target === socketY) {
+            changePvCount(k, 1, 1);
+          }
+        };
         const count = state.placeValue.row1Counts[k] || 0;
         const spec = blockSpecs[k];
         for (let i = 0; i < count; i++) {
@@ -1360,6 +1391,11 @@
       const socketX = document.getElementById(`pv-socket-x-${k}`) || document.getElementById(`pv-socket-${k}`);
       if (socketX) {
         socketX.innerHTML = '';
+        socketX.onclick = (e) => {
+          if (e.target === socketX) {
+            changePvCount(k, 1, 2);
+          }
+        };
         const count = state.placeValue.row2Counts[k] || 0;
         const spec = blockSpecs[k];
 
@@ -1587,6 +1623,36 @@
       };
     });
 
+    // Place-Value Palette Click-to-Add Buttons
+    const pvPaletteBtns = document.querySelectorAll('[data-pv-palette]');
+    pvPaletteBtns.forEach(btn => {
+      btn.onclick = () => {
+        const col = btn.getAttribute('data-pv-palette');
+        changePvCount(col, 1, 2);
+      };
+    });
+
+    // Place-Value Direct Number Input
+    const pvNumInput = document.getElementById('pv-num-input');
+    if (pvNumInput) {
+      pvNumInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          setPvNumber(pvNumInput.value, 2);
+        }
+      });
+    }
+
+    const pvBtnLoadX = document.getElementById('pv-btn-load-x');
+    if (pvBtnLoadX && pvNumInput) {
+      pvBtnLoadX.onclick = () => setPvNumber(pvNumInput.value, 2);
+    }
+
+    const pvBtnLoadY = document.getElementById('pv-btn-load-y');
+    if (pvBtnLoadY && pvNumInput) {
+      pvBtnLoadY.onclick = () => setPvNumber(pvNumInput.value, 1);
+    }
+
     // Prime Factor Buttons
     const pushPrimeBtn = document.getElementById('vlab-btn-push-prime');
     if (pushPrimeBtn) pushPrimeBtn.onclick = pushPrimeToStack;
@@ -1659,6 +1725,7 @@
     invertFraction: fractionInvert,
 
     changePvCount: changePvCount,
+    setPvNumber: setPvNumber,
     removePvBlock: removePvBlock,
     autoRegroupPv: autoRegroupPv,
     unbundlePv: unbundlePv,

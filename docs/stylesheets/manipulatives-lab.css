@@ -719,6 +719,38 @@
   letter-spacing: 0.04em;
 }
 
+/* Direct Number Input Bar */
+.pv-direct-input-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #11141A;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin-bottom: 8px;
+}
+
+.pv-input-field {
+  background: #080A0E;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  width: 140px;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.pv-input-field:focus {
+  border-color: #38BDF8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
+}
+
 .pv-grid-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr) 20px repeat(3, 1fr);
@@ -737,6 +769,13 @@
   gap: 4px;
   padding: 6px 4px;
   position: relative;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.pv-socket:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  background: rgba(56, 189, 248, 0.04);
 }
 
 .pv-socket.has-carry {
