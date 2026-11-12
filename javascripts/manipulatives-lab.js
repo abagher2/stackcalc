@@ -331,6 +331,13 @@
     const laserEl = document.getElementById('vlab-laser-line');
     const statusEl = document.getElementById('vlab-check-status');
 
+    if (laserEl) {
+      if (regX.val > 0) {
+        const hPx = Math.min(280, regX.val * 84.0 * 2.8);
+        laserEl.style.bottom = `${hPx + 4}px`;
+      }
+    }
+
     if (regX.val > 0 && diff < 0.001) {
       if (laserEl) laserEl.classList.add('active');
       if (statusEl) {
@@ -341,9 +348,15 @@
     } else {
       if (laserEl) laserEl.classList.remove('active');
       if (statusEl) {
-        if (targetTotalVal === 0) {
+        if (targetTotalVal === 0 && regX.val === 0) {
           statusEl.textContent = 'Awaiting verification tower...';
           statusEl.style.color = '#94A3B8';
+        } else if (regX.val === 0) {
+          statusEl.textContent = 'Push staged fraction to Stack to set datum line.';
+          statusEl.style.color = '#94A3B8';
+        } else if (targetTotalVal === 0) {
+          statusEl.textContent = `Datum line at ${(regX.val * 84.0).toFixed(1)} mm. Build verification tower to match.`;
+          statusEl.style.color = '#38BDF8';
         } else {
           const deltaMm = (regX.val - targetTotalVal) * 84.0;
           statusEl.textContent = `Δ Height: ${deltaMm > 0 ? '+' : ''}${deltaMm.toFixed(1)} mm`;
@@ -540,12 +553,8 @@
       });
     }
 
-    // 5. Update Laser Datum Line
-    const laserEl = document.getElementById('vlab-laser-line');
-    if (laserEl && state.stack.x.val > 0) {
-      const hPx = Math.min(280, state.stack.x.val * 84.0 * 2.8);
-      laserEl.style.bottom = `${hPx + 4}px`;
-    }
+    // 5. Update Laser Datum Line & Equivalence Status
+    checkEquivalence();
   }
 
   function renderPlaceValue() {
@@ -713,10 +722,18 @@
 
   // Export to window for inline calls if necessary
   window.StackCalcLab = {
+    state: state,
     addFraction: addStagingFraction,
+    clearStagingFractions: clearStagingFractions,
     addTargetFraction: addTargetFraction,
+    clearTargetFractions: clearTargetFractions,
     pushFraction: pushStagedFractionToStack,
+    changePvCount: changePvCount,
+    autoRegroupPv: autoRegroupPv,
+    getPvTotal: getPvTotal,
+    pushPvToStack: pushPvToStack,
     op: rpnOp,
+    clearStack: rpnClear,
     toggleFullscreen: toggleFullscreen
   };
 })();
