@@ -1263,6 +1263,7 @@ def clean_latex_math(text: str) -> str:
     text = re.sub(r'(<[^>]+>|&[a-zA-Z]+;|QQPH\d+QQ|\x00UP\d+\x00|[a-zA-Z][\u0304\u0302\u0307\u0308\u0303])|([a-zA-Z]+)', _italicize_math_vars, text)
     for k_up, v_up in reversed(list(upright_tokens.items())):
         text = text.replace(k_up, v_up)
+    text = text.replace("\x00ESC_US\x00", "_")
     text = text.replace("---", "—").replace("--", "–")
     text = re.sub(r'<i>(?:<i>)+', '<i>', text)
     text = re.sub(r'</i>(?:</i>)+', '</i>', text)
@@ -2430,8 +2431,8 @@ def draw_bestseller_front_cover(
     Renders a true minimalist NYT Bestseller 6x9 trade Front Cover ("very simple visuals with few words"):
     - Continuous Warm Archival Paper (#F7F4EB) across the entire cover with >65% open whitespace.
     - Only 11-14 words on the entire front cover:
-      1. Monumental Title: "THINKING IN THE STACK" / "FROM BLOCKS TO THE STACK" / "THE STACK IN THE FIELD"
-      2. Concise Subtitle: "The Art of Solving Equations from the Inside Out" / "How Hands-On Blocks Make Numbers Click" / "When Mathematics Meets the Physical Trades"
+      1. Monumental Title: "THINKING IN THE STACK" / "FROM BLOCKS TO THE STACK" / "THE OPERATIVE STACK"
+      2. Concise Subtitle: "The Art of Solving Equations from the Inside Out" / "How Hands-On Blocks Make Numbers Click" / "Mathematics for the Real World"
       3. One simple, clever, unboxed minimalist vector illustration floating in the center.
       4. Single-word imprint at the foot: "StackCalc"
     All live elements sit well inside KDP's cover safe zone (>= 0.50 in / 36 pt inside trim).
@@ -2460,10 +2461,10 @@ def draw_bestseller_front_cover(
     # 2. Monumental Centered Bestseller Title (Upper Third)
     c.setFillColor(to_color(ink_obsidian))
     if kind == "domains":
-        c.setFont(FONT_BODY_BOLD, 40.0)
-        c.drawCentredString(cx, oy + h - 118.0, "THE STACK")
-        c.drawCentredString(cx, oy + h - 166.0, "IN THE FIELD")
-        subtitle_str = "When Mathematics Meets the Physical Trades"
+        c.setFont(FONT_BODY_BOLD, 36.0)
+        c.drawCentredString(cx, oy + h - 118.0, "THE OPERATIVE")
+        c.drawCentredString(cx, oy + h - 166.0, "STACK")
+        subtitle_str = "Mathematics for the Real World"
     elif kind == "sc32":
         c.setFont(FONT_BODY_BOLD, 42.0)
         c.drawCentredString(cx, oy + h - 118.0, "THINKING IN")
@@ -2502,7 +2503,7 @@ def draw_bestseller_front_cover(
             c.setFillColor(to_color("#FFFFFF"))
             c.drawCentredString(px + pill_w * 0.5, pill_y + 5.0, sk_lbl)
 
-        # Part B: Four Minimalist Floating Stack Bars (T, Z, Y, X) holding live trade quantities
+        # Part B: Four Minimalist Floating Stack Bars (T, Z, Y, X) holding authentic unitless trade quantities (left-aligned)
         bar_w = 229.0
         bar_h = 24.0
         bar_gap = 10.0
@@ -2510,10 +2511,10 @@ def draw_bestseller_front_cover(
         top_bar_y = oy + 312.0
 
         stack_bars = [
-            ("T", "N 34°15'20\" E", "#E6E1D3", "#64748B", "#475569"),
-            ("Z", "0xDEADBEEF", "#DCD6C6", "#475569", "#334155"),
-            ("Y", "01:04:12:18", "#1E293B", "#94A3B8", "#FFFFFF"),
-            ("X", "VSWR: 1.5000", "#0284C7", "#E0F2FE", "#FFFFFF"),
+            ("T:", "50.0000", "#E6E1D3", "#64748B", "#475569"),
+            ("Z:", "75.0000", "#DCD6C6", "#475569", "#334155"),
+            ("Y:", "0.2000", "#1E293B", "#94A3B8", "#FFFFFF"),
+            ("X:", "1.5000", "#0284C7", "#E0F2FE", "#FFFFFF"),
         ]
         for idx_b, (lbl, val, fill_hex, lbl_hex, val_hex) in enumerate(stack_bars):
             by = top_bar_y - idx_b * (bar_h + bar_gap)
@@ -2521,11 +2522,11 @@ def draw_bestseller_front_cover(
             c.roundRect(bar_x, by, bar_w, bar_h, 4.0, fill=1, stroke=0)
             c.setFont(FONT_MONO_BOLD, 9.5)
             c.setFillColor(to_color(lbl_hex))
-            c.drawString(bar_x + 10.0, by + 8.0, lbl)
+            c.drawString(bar_x + 14.0, by + 7.5, lbl)
             if val:
                 c.setFont(FONT_MONO_BOLD, 10.5)
                 c.setFillColor(to_color(val_hex))
-                c.drawRightString(bar_x + bar_w - 12.0, by + 7.5, val)
+                c.drawString(bar_x + 38.0, by + 7.5, val)
     elif kind == "sc32":
         # Part A: The Parenthesis Trap — lightly struck through with a single bold orange slash
         expr_y = oy + 372.0
@@ -2539,7 +2540,7 @@ def draw_bestseller_front_cover(
         c.setLineCap(1)
         c.line(cx - 102.0, expr_y - 4.0, cx + 102.0, expr_y + 16.0)
 
-        # Part B: Four Minimalist Floating Stack Bars (T, Z, Y, X) — authentic RPN state after solving both inner branches 3 ENTER 4 + 5 ENTER 6 +
+        # Part B: Four Minimalist Floating Stack Bars (T, Z, Y, X) — authentic RPN state after solving both inner branches (left-aligned)
         bar_w = 188.0
         bar_h = 24.0
         bar_gap = 10.0
@@ -2547,10 +2548,10 @@ def draw_bestseller_front_cover(
         top_bar_y = oy + 306.0
 
         stack_bars = [
-            ("T", "0", "#E6E1D3", "#64748B", "#64748B"),
-            ("Z", "0", "#DCD6C6", "#475569", "#334155"),
-            ("Y", "7", "#1E293B", "#94A3B8", "#FFFFFF"),
-            ("X", "11", "#FF4F00", "#FFE4D6", "#FFFFFF"),
+            ("T:", "0", "#E6E1D3", "#64748B", "#64748B"),
+            ("Z:", "0", "#DCD6C6", "#475569", "#334155"),
+            ("Y:", "7", "#1E293B", "#94A3B8", "#FFFFFF"),
+            ("X:", "11", "#FF4F00", "#FFE4D6", "#FFFFFF"),
         ]
         for idx_b, (lbl, val, fill_hex, lbl_hex, val_hex) in enumerate(stack_bars):
             by = top_bar_y - idx_b * (bar_h + bar_gap)
@@ -2558,11 +2559,11 @@ def draw_bestseller_front_cover(
             c.roundRect(bar_x, by, bar_w, bar_h, 4.0, fill=1, stroke=0)
             c.setFont(FONT_MONO_BOLD, 9.5)
             c.setFillColor(to_color(lbl_hex))
-            c.drawString(bar_x + 10.0, by + 8.0, lbl)
+            c.drawString(bar_x + 14.0, by + 7.5, lbl)
             if val:
                 c.setFont(FONT_MONO_BOLD, 11.0)
                 c.setFillColor(to_color(val_hex))
-                c.drawRightString(bar_x + bar_w - 12.0, by + 7.5, val)
+                c.drawString(bar_x + 38.0, by + 7.5, val)
     else:
         # Minimalist Gauss 1-2-3-4 Tactile Block Staircase (Ten-Frame blocks stepping into the 4-level stack)
         block_sz = 34.0
@@ -2673,7 +2674,7 @@ def draw_bestseller_back_cover(
             "doses scale with body surface area and renal clearance rather than body weight alone?"
         )
         p2_html = (
-            "<b>The Stack in the Field</b> explores the first-principles mathematics behind nine physical disciplines—"
+            "<b>The Operative Stack</b> explores the first-principles mathematics behind nine physical disciplines—"
             "using compact operational acronyms (<b>FWD, INV, VD, BEND, HEX, TC, SWR, MW, BKR%, BSA, NPV</b>) to motivate "
             "each idea before showing how those equations unfold step by step across a four-register Reverse Polish Notation "
             "stack (<b>Registers T, Z, Y, X</b>) on the <b>SC-35, SC-14, SC-16, SC-24, SC-50, SC-60, SC-78, SC-80,</b> and <b>SC-95</b>."
@@ -2797,7 +2798,7 @@ def build_kdp_front_matter(
     kind = manual_kind or ("sc32" if is_sc32 else "sc6")
     sc6_isbn = "979-8-16-593829-0" if is_hardcover else "979-8-16-592706-5"
     sc32_isbn = "979-8-16-745932-8" if is_hardcover else "979-8-16-742684-9"
-    domains_isbn = "979-8-16-841932-1" if is_hardcover else "979-8-16-841205-6"
+    domains_isbn = "979-8-16-841932-1" if is_hardcover else "979-8-14-196167-0"
     binding_label = "Hardcover Edition" if is_hardcover else "Paperback Edition"
 
     half_title_style = ParagraphStyle(
@@ -2874,9 +2875,9 @@ def build_kdp_front_matter(
     )
 
     if kind == "domains":
-        main_title = "THE STACK IN THE FIELD"
+        main_title = "THE OPERATIVE STACK"
         vol_label = "THE STACKCALC LIBRARY  •  VOLUME III"
-        sub_line = "When Mathematics Meets the Physical Trades"
+        sub_line = "Mathematics for the Real World"
         desc_line = (
             "First-Principles Applied Mathematics, Operational Shorthand, and Four-Register RPN Stack Traces "
             "Across Surveying, Electrical Trades, Embedded Systems, Cinema, RF, Chemistry, Brewing, Clinical Dosing &amp; Finance"
@@ -2911,7 +2912,7 @@ def build_kdp_front_matter(
     elements.append(make_paragraph(vol_label, kicker_style))
     elements.append(Spacer(1, 10))
     if kind == "domains":
-        full_page_title = "THE STACK<br/>IN THE FIELD"
+        full_page_title = "THE OPERATIVE<br/>STACK"
     elif kind == "sc32":
         full_page_title = "THINKING IN<br/>THE STACK"
     else:
@@ -4540,8 +4541,9 @@ def compile_manual_pdf(is_sc32: bool = True, manual_kind: Optional[str] = None) 
             "09-sc95-finance-statistics.md",
             "appendix-a-cross-domain-formula-compendium.md",
             "appendix-b-domain-keycap-and-softkey-directory.md",
+            "appendix-c-solutions-to-practice-problems.md",
         ]
-        doc_title = "THE STACK IN THE FIELD"
+        doc_title = "THE OPERATIVE STACK: Mathematics for the Real World"
     elif is_sc32:
         manual_dir = MANUALS_ROOT / "sc32"
         chapter_files = [
@@ -4930,7 +4932,7 @@ def compile_full_wrap_cover_spread(
     else:
         manual_name = "sc32-scientific-manual.pdf" if is_sc32 else "sc6-elementary-manual.pdf"
     manual_path = OUTPUT_DIR / manual_name
-    actual_pages = 120 if kind == "domains" else (500 if is_sc32 else 440)
+    actual_pages = 540 if kind == "domains" else (500 if is_sc32 else 440)
     if manual_path.exists():
         try:
             actual_pages = len(pypdf.PdfReader(str(manual_path)).pages)
@@ -5026,7 +5028,7 @@ def compile_full_wrap_cover_spread(
         c.setFillColor(to_color(ink_obsidian))
         c.setFont(FONT_BODY_BOLD, spine_font_sz)
         if kind == "domains":
-            spine_main = "THE STACK IN THE FIELD"
+            spine_main = "THE OPERATIVE STACK"
         else:
             spine_main = (
                 "THINKING IN THE STACK"
@@ -5085,7 +5087,7 @@ def compile_lulu_coil_cover_spread(
         lulu_name = "sc6-lulu-cover.pdf"
 
     manual_path = OUTPUT_DIR / manual_name
-    actual_pages = 120 if kind == "domains" else (500 if is_sc32 else 440)
+    actual_pages = 540 if kind == "domains" else (500 if is_sc32 else 440)
     if manual_path.exists():
         try:
             actual_pages = len(pypdf.PdfReader(str(manual_path)).pages)

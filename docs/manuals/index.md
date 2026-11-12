@@ -163,7 +163,6 @@ Written directly for curious 3rd–6th graders, parents, and teachers, ***From B
 - **[Order Physical Math Blocks & Refills via Slant 3D Portal ↗](https://teleportpod.com/portals/profile/StackCalc)**
 - **[Explore Dedicated Book Product Page & TOC ↗](../products/sc6-book.md)**
 - **[Start Reading Online: Preface (`sc6/index.md`)](sc6/index.md)**
-- **[Download Complete Typeset Book PDF (`sc6-elementary-manual.pdf`)](output/sc6-elementary-manual.pdf)**
 - **[Open Companion Student Activity Workbook](../curriculum/sc6-elementary-companion-workbook.md)**
 
 | Chapter / Appendix | Story & Mathematical Journey |
@@ -207,7 +206,6 @@ Written in the narrative tradition of popular mathematics and classic Corvallis 
 - **[Order on Amazon: Hardcover Casebound Edition ↗](https://link.amazon/B09AnTIQI)**
 - **[Order on Etsy: Spiral-Bound Lay-Flat Bench Edition ($16.00) ↗](https://stackcalcmath.etsy.com)**
 - **[Start Reading Online: Prologue (`sc32/index.md`)](sc32/index.md)**
-- **[Download Complete Typeset Book PDF (`sc32-scientific-manual.pdf`)](output/sc32-scientific-manual.pdf)**
 - **[Explore the 100 Master STEM Equations (`sc32/appendix-d-constants-and-equations.md`)](sc32/appendix-d-constants-and-equations.md)**
 
 | Chapter / Appendix | Core Narrative & Engineering Focus |
@@ -243,8 +241,8 @@ Written in the narrative tradition of popular mathematics and classic Corvallis 
     </p>
     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
       <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: #FF9900; color: #111827; font-weight: 800; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Order on Amazon ($16) ↗</a>
-      <a href="../curriculum/big-ideas-middle-school-sc6-workbook.md" style="padding: 0.5rem 0.9rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; font-weight: 700; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Curriculum Alignment &rarr;</a>
-      <a href="../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" style="padding: 0.5rem 0.9rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-weight: 600; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Download PDF &darr;</a>
+      <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; font-weight: 700; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Lulu Spiral Edition ↗</a>
+      <a href="../curriculum/big-ideas-middle-school-sc6-workbook.md" style="padding: 0.5rem 0.9rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; font-weight: 700; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Browse Curriculum &rarr;</a>
     </div>
   </div>
 </div>
@@ -252,8 +250,7 @@ Written in the narrative tradition of popular mathematics and classic Corvallis 
 Written specifically for middle school math classrooms, homeschool families, and intervention specialists, the ***Middle School Math Block Supplement & Student Workbook*** bridges 3D-printed math blocks (Prime Factor Studio, Fraction Studio, Place Value Studio, and Algebra Factoring Tiles) with standard middle school math curricula (Big Ideas Math, Common Core, Texas TEKS, Florida B.E.S.T.). Features 10 units, 45 textbook sections, 90 daily practice worksheets (Practice A & B), 90 multi-way worked examples, and 900 practice problems.
 
 - **[Order on Amazon: Middle School Math Workbook ↗](https://link.amazon/B07bxzYKq)**
-- **[Explore Online Workbook & 10 Chapter Packets (`../curriculum/big-ideas-middle-school-sc6-workbook.md`)](../curriculum/big-ideas-middle-school-sc6-workbook.md)**
-- **[Download Complete Student Workbook PDF (128 Pages)](../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf)**
+- **[Explore Online Workbook & Practice Units (`../curriculum/big-ideas-middle-school-sc6-workbook.md`)](../curriculum/big-ideas-middle-school-sc6-workbook.md)**
 
 ---
 
@@ -263,7 +260,6 @@ The complete teacher facilitator guide and classroom lesson plan companion conne
 
 - **[Order on Amazon: Teacher's Curriculum Guide ↗](https://link.amazon/B05RFHqeu)**
 - **[Explore Online Teacher Guide (`../curriculum/teacher-guide.md`)](../curriculum/teacher-guide.md)**
-- **[Download Master Teacher Guide PDF (46 Pages)](../downloads/stackcalc-curriculum-guide-letter.pdf)**
 
 ---
 

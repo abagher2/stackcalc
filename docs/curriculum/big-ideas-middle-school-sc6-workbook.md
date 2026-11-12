@@ -20,11 +20,10 @@
 **Grade 6 Complete + Grade 7 Bridge • Title Page & Preface • 10 Unit Introductions • 45 Textbook Sections • 90 Printable Worksheets (Practice A & B) • 90 Multi-Way Worked Examples • 900 Practice Problems + 10 End-of-Unit Mastery Quizzes (100 Quiz Items) • 7 Reference Appendices (Answer Keys, Standards Crosswalk & Official 3D Block Studio Guides)**
 
 <div class="hero-buttons" style="margin: 1.25rem 0 1.75rem 0;">
-  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" class="md-button md-button--primary">📄 Download Complete Student Workbook PDF (128 Pages • pp. i–iv + 1–124)</a>
-  <a href="#print-individual-chapters-units-110-separate-pdfs-for-parents-teachers" class="md-button">🖨️ Print Individual Chapters (Units 1–10 Separate PDFs)</a>
-  <a href="../../downloads/worksheets/sc6_quest_token_scoring_guide.pdf" class="md-button">🏆 Download 1-Page Token Scoring & SC-6 Work-Check Guide PDF</a>
-  <a href="../../downloads/stackcalc-curriculum-guide-letter.pdf" class="md-button">🔑 Download Unified Master Teacher's Guide PDF (Includes Complete 900-Problem Worked Setups & Keys)</a>
-  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_workbook_kdp_cover.pdf" class="md-button">🎨 Student Workbook KDP Paperback Full-Wrap Cover PDF</a>
+  <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Student Workbook on Amazon ($16) ↗</a>
+  <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="md-button">🔑 Master Teacher's Guide on Amazon ($16) ↗</a>
+  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Spiral Lay-Flat Edition on Lulu ↗</a>
+  <a href="#curriculum-sections" class="md-button">📋 Browse All 10 Units &amp; 45 Sections Below</a>
 </div>
 
 !!! abstract "Built for Students Who Need Extra Practice: Two Textbook Ways, Hands-On Block Models & 100-Point Daily Goal"
@@ -37,22 +36,22 @@
 
 ---
 
-## 🖨️ Print Individual Chapters (Units 1–10 Separate PDFs for Parents & Teachers)
+## 📋 Curriculum Units (Units 1–10 Overview) {#curriculum-sections}
 
 Don't want to print all 127 pages at once? Each standalone **Chapter Packet PDF** below contains that unit's **1-Page Real-World Story & Concept Opener**, all **Practice A & Practice B Section Worksheets** (`20 problems per section`), the **1-Page Unscaffolded End-of-Unit Mastery Quiz**, and the **1-Page Parent & Teacher Coach Answer Key** at the back of the packet.
 
-| Unit | Big Ideas Math Chapter & Grade | Sections & Practice Load | *From Blocks to the Stack* Story & Block Listings | Standalone Printable Chapter PDF |
+| Unit | Big Ideas Math Chapter & Grade | Sections & Practice Load | *From Blocks to the Stack* Story & Block Listings | Unit Practice Sections |
 | :---: | :--- | :--- | :--- | :--- |
-| **[Unit 1](#unit-1)** | **Numerical Expressions & Factors**<br>*Big Ideas Math Grade 6 — Chapter 1* | Sections 1.1–1.5<br>(`10 Worksheets • 100 Problems + Quiz`) | **"Why 24 Is the Champion Packing Number & The 17-Year Cicada Mystery"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) ([Appendix B Lessons 9–12](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) | [**📄 Print Unit 1 PDF (13 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_01.pdf) |
-| **[Unit 2](#unit-2)** | **Fractions & Decimals**<br>*Big Ideas Math Grade 6 — Chapter 2* | Sections 2.1–2.5<br>(`10 Worksheets • 100 Problems + Quiz`) | **"The Pharaoh's Bakery, 84mm Fraction Towers & Simon Stevin's Decimals"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lessons 15–19](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [84mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) | [**📄 Print Unit 2 PDF (13 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_02.pdf) |
-| **[Unit 3](#unit-3)** | **Ratios, Rates & Percents**<br>*Big Ideas Math Grade 6 — Chapters 3, 4 & 5 (Ratios, Rates & Percents)* | Sections 3.1–3.5<br>(`10 Worksheets • 100 Problems + Quiz`) | **"Pythagoras's Guitar Strings & The Hunting-Tooth Bicycle Gear Secret"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lesson 18](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) | [**📄 Print Unit 3 PDF (13 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_03.pdf) |
-| **[Unit 4](#unit-4)** | **Algebraic Expressions & Properties**<br>*Big Ideas Math Grade 6 — Chapter 3 / Chapter 5 (Algebraic Expressions)* | Sections 4.1–4.4<br>(`8 Worksheets • 80 Problems + Quiz`) | **"Breaking Apart Rectangles, Frame Borders & Al-Khwarizmi's Squares"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [SC-32 Ch. 7: Polynomials](../manuals/sc32/07-polynomials-brent-solver.md)<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) | [**📄 Print Unit 4 PDF (11 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_04.pdf) |
-| **[Unit 5](#unit-5)** | **Areas of Polygons & Elapsed Time**<br>*Big Ideas Math Grade 6 — Chapter 4 (Areas of Polygons)* | Sections 5.1–5.4<br>(`8 Worksheets • 80 Problems + Quiz`) | **"Why Babylonians Counted to 60 & The Rope-Stretchers of the Nile"** — [SC-6 Ch. 6: Geometry, Time & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lessons 20–21](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) | [**📄 Print Unit 5 PDF (11 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_05.pdf) |
-| **[Unit 6](#unit-6)** | **Integers, Rational Numbers & The Coordinate Plane**<br>*Big Ideas Math Grade 6 — Chapter 6* | Sections 6.1–6.5<br>(`10 Worksheets • 100 Problems + Quiz`) | **"Zero-Pair Counters, Sub-Zero Number Lines & Descartes's Coordinate Fly"** — [SC-6 Ch. 3: Counting & Place Value](../manuals/sc6/03-counting-place-value.md) & [Ch. 6: Geometry](../manuals/sc6/06-geometry-surface-area.md)<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) | [**📄 Print Unit 6 PDF (13 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_06.pdf) |
-| **[Unit 7](#unit-7)** | **Equations & Inequalities**<br>*Big Ideas Math Grade 6 — Chapter 7* | Sections 7.1–7.5<br>(`10 Worksheets • 100 Problems + Quiz`) | **"Al-Jabr's Balanced Two-Pan Scale & Missing-Addend Mysteries"** — [SC-6 Ch. 8: Math Quiz Engine](../manuals/sc6/08-math-quiz-engine.md) & [SC-32 Ch. 3: Algebra](../manuals/sc32/03-algebra-transcendentals.md)<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) | [**📄 Print Unit 7 PDF (13 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_07.pdf) |
-| **[Unit 8](#unit-8)** | **Surface Area & Volume of 3D Solids**<br>*Big Ideas Math Grade 6 — Chapter 8* | Sections 8.1–8.4<br>(`8 Worksheets • 80 Problems + Quiz`) | **"Galileo's Giant Bone Mystery (The Square-Cube Law) & Archimedes's Crown"** — [SC-6 Ch. 6: Geometry & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lesson 22](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) | [**📄 Print Unit 8 PDF (11 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_08.pdf) |
-| **[Unit 9](#unit-9)** | **Statistical Measures & Data Displays**<br>*Big Ideas Math Grade 6 — Chapters 9 & 10 (Statistical Measures and Data Displays)* | Sections 9.1–9.4<br>(`8 Worksheets • 80 Problems + Quiz`) | **"Becoming a Data Detective: Leveling Mean Towers, Quartiles & Outliers"** — [SC-6 Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) ([Appendix B Lessons 23–25](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) | [**📄 Print Unit 9 PDF (11 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_09.pdf) |
-| **[Unit 10](#unit-10)** | **Grade 7 Bridge — Signed Rationals, 2-Step Equations & Probability**<br>*Big Ideas Math Grade 7 Bridge — Chapters 1–3 & Chapter 7* | Sections 10.1–10.4<br>(`8 Worksheets • 80 Problems + Quiz`) | **"Sir Francis Galton's 1873 Bean Machine & Fair Polyhedral Dice"** — [SC-6 Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) & [Ch. 9: Applied STEM Labs](../manuals/sc6/09-applied-stem-labs.md)<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) | [**📄 Print Unit 10 PDF (11 pp.)**](../downloads/worksheets/bigideas_middle_school_sc6_unit_10.pdf) |
+| **[Unit 1](#unit-1)** | **Numerical Expressions & Factors**<br>*Big Ideas Math Grade 6 — Chapter 1* | Sections 1.1–1.5<br>(`10 Worksheets • 100 Problems + Quiz`) | **"Why 24 Is the Champion Packing Number & The 17-Year Cicada Mystery"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) ([Appendix B Lessons 9–12](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) | [**Explore Unit 1 Sections &rarr;**](#unit-1) |
+| **[Unit 2](#unit-2)** | **Fractions & Decimals**<br>*Big Ideas Math Grade 6 — Chapter 2* | Sections 2.1–2.5<br>(`10 Worksheets • 100 Problems + Quiz`) | **"The Pharaoh's Bakery, 84mm Fraction Towers & Simon Stevin's Decimals"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lessons 15–19](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [84mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) | [**Explore Unit 2 Sections &rarr;**](#unit-2) |
+| **[Unit 3](#unit-3)** | **Ratios, Rates & Percents**<br>*Big Ideas Math Grade 6 — Chapters 3, 4 & 5 (Ratios, Rates & Percents)* | Sections 3.1–3.5<br>(`10 Worksheets • 100 Problems + Quiz`) | **"Pythagoras's Guitar Strings & The Hunting-Tooth Bicycle Gear Secret"** — [SC-6 Ch. 5: Fractions, Decimals & Ratios](../manuals/sc6/05-fractions-decimals-ratios.md) ([Appendix B Lesson 18](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) | [**Explore Unit 3 Sections &rarr;**](#unit-3) |
+| **[Unit 4](#unit-4)** | **Algebraic Expressions & Properties**<br>*Big Ideas Math Grade 6 — Chapter 3 / Chapter 5 (Algebraic Expressions)* | Sections 4.1–4.4<br>(`8 Worksheets • 80 Problems + Quiz`) | **"Breaking Apart Rectangles, Frame Borders & Al-Khwarizmi's Squares"** — [SC-6 Ch. 4: Operations & Skip-Counting](../manuals/sc6/04-operations-skip-counting.md) & [SC-32 Ch. 7: Polynomials](../manuals/sc32/07-polynomials-brent-solver.md)<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) | [**Explore Unit 4 Sections &rarr;**](#unit-4) |
+| **[Unit 5](#unit-5)** | **Areas of Polygons & Elapsed Time**<br>*Big Ideas Math Grade 6 — Chapter 4 (Areas of Polygons)* | Sections 5.1–5.4<br>(`8 Worksheets • 80 Problems + Quiz`) | **"Why Babylonians Counted to 60 & The Rope-Stretchers of the Nile"** — [SC-6 Ch. 6: Geometry, Time & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lessons 20–21](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) | [**Explore Unit 5 Sections &rarr;**](#unit-5) |
+| **[Unit 6](#unit-6)** | **Integers, Rational Numbers & The Coordinate Plane**<br>*Big Ideas Math Grade 6 — Chapter 6* | Sections 6.1–6.5<br>(`10 Worksheets • 100 Problems + Quiz`) | **"Zero-Pair Counters, Sub-Zero Number Lines & Descartes's Coordinate Fly"** — [SC-6 Ch. 3: Counting & Place Value](../manuals/sc6/03-counting-place-value.md) & [Ch. 6: Geometry](../manuals/sc6/06-geometry-surface-area.md)<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) | [**Explore Unit 6 Sections &rarr;**](#unit-6) |
+| **[Unit 7](#unit-7)** | **Equations & Inequalities**<br>*Big Ideas Math Grade 6 — Chapter 7* | Sections 7.1–7.5<br>(`10 Worksheets • 100 Problems + Quiz`) | **"Al-Jabr's Balanced Two-Pan Scale & Missing-Addend Mysteries"** — [SC-6 Ch. 8: Math Quiz Engine](../manuals/sc6/08-math-quiz-engine.md) & [SC-32 Ch. 3: Algebra](../manuals/sc32/03-algebra-transcendentals.md)<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) | [**Explore Unit 7 Sections &rarr;**](#unit-7) |
+| **[Unit 8](#unit-8)** | **Surface Area & Volume of 3D Solids**<br>*Big Ideas Math Grade 6 — Chapter 8* | Sections 8.1–8.4<br>(`8 Worksheets • 80 Problems + Quiz`) | **"Galileo's Giant Bone Mystery (The Square-Cube Law) & Archimedes's Crown"** — [SC-6 Ch. 6: Geometry & Surface Area](../manuals/sc6/06-geometry-surface-area.md) ([Appendix B Lesson 22](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) | [**Explore Unit 8 Sections &rarr;**](#unit-8) |
+| **[Unit 9](#unit-9)** | **Statistical Measures & Data Displays**<br>*Big Ideas Math Grade 6 — Chapters 9 & 10 (Statistical Measures and Data Displays)* | Sections 9.1–9.4<br>(`8 Worksheets • 80 Problems + Quiz`) | **"Becoming a Data Detective: Leveling Mean Towers, Quartiles & Outliers"** — [SC-6 Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) ([Appendix B Lessons 23–25](../manuals/sc6/appendix-b-teacher-lesson-plans.md))<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) | [**Explore Unit 9 Sections &rarr;**](#unit-9) |
+| **[Unit 10](#unit-10)** | **Grade 7 Bridge — Signed Rationals, 2-Step Equations & Probability**<br>*Big Ideas Math Grade 7 Bridge — Chapters 1–3 & Chapter 7* | Sections 10.1–10.4<br>(`8 Worksheets • 80 Problems + Quiz`) | **"Sir Francis Galton's 1873 Bean Machine & Fair Polyhedral Dice"** — [SC-6 Ch. 7: Data, Probability & Primes](../manuals/sc6/07-data-probability-primes.md) & [Ch. 9: Applied STEM Labs](../manuals/sc6/09-applied-stem-labs.md)<br>**Blocks:** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) | [**Explore Unit 10 Sections &rarr;**](#unit-10) |
 
 ---
 
@@ -73,7 +72,8 @@ Every worksheet encourages students to master two independent solution methods a
 *Big Ideas Math Grade 6 — Chapter 1 — Whole Number Operations, Powers & Exponents, Order of Operations, Prime Factorization, GCF & LCM*
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
-  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_01.pdf" class="md-button md-button--primary">📄 Print Unit 1 Chapter Packet PDF (13 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
+  <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
+  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Prime Factor Studio (PRIME-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)
@@ -414,7 +414,8 @@ Leo used to dread word problems with GCF and LCM because the two three-letter na
 *Big Ideas Math Grade 6 — Chapter 2 — Equivalent Fractions, Multiplying & Dividing Fractions, and All Four Decimal Operations*
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
-  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_02.pdf" class="md-button md-button--primary">📄 Print Unit 2 Chapter Packet PDF (13 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
+  <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
+  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)`):** [84mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
@@ -755,7 +756,8 @@ Looking at the 3D-printer screen, Marcus needed to find how many 0.20-millimeter
 *Big Ideas Math Grade 6 — Chapters 3, 4 & 5 (Ratios, Rates & Percents) — Ratios & Tape Diagrams, Ratio Tables, Unit Rates, Percents, Discounts & Unit Conversions*
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
-  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_03.pdf" class="md-button md-button--primary">📄 Print Unit 3 Chapter Packet PDF (13 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
+  <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
+  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Prime Factor Studio (PRIME-01) + Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)`):** [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
@@ -1096,7 +1098,8 @@ When a $100 bike helmet bundle went on sale for 20% off and Priya had an extra c
 *Big Ideas Math Grade 6 — Chapter 3 / Chapter 5 (Algebraic Expressions) — Evaluating Algebraic Expressions, Combining Like Terms, Distributive Property & Factoring with GCF*
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
-  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_04.pdf" class="md-button md-button--primary">📄 Print Unit 4 Chapter Packet PDF (11 Pages: Story Opener + 8 Worksheets + 1-Page Answer Key)</a>
+  <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
+  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Prime Factor Studio (PRIME-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)
@@ -1373,7 +1376,8 @@ At the end of the craft fair, Maya had (16x + 24) stickers to pack into the grea
 *Big Ideas Math Grade 6 — Chapter 4 (Areas of Polygons) — Areas of Parallelograms, Triangles, Trapezoids, Composite Figures, Coordinate Polygons & Base-60 Time*
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
-  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_05.pdf" class="md-button md-button--primary">📄 Print Unit 5 Chapter Packet PDF (11 Pages: Story Opener + 8 Worksheets + 1-Page Answer Key)</a>
+  <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
+  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)`):** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
@@ -1650,7 +1654,8 @@ When Sora plotted a rectangular park with corners at (1, 2) and (11, 8) on a map
 *Big Ideas Math Grade 6 — Chapter 6 — Positive & Negative Integers, Comparing Rational Numbers, Absolute Value, and the 4-Quadrant Coordinate Plane*
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
-  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_06.pdf" class="md-button md-button--primary">📄 Print Unit 6 Chapter Packet PDF (13 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
+  <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
+  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)
@@ -1991,7 +1996,8 @@ On a harbor coordinate map, Mia needed the length of a suspension bridge stretch
 *Big Ideas Math Grade 6 — Chapter 7 — Writing Equations, Solving One-Step Equations, Writing & Graphing Inequalities, and Two-Variable Relationships*
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
-  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_07.pdf" class="md-button md-button--primary">📄 Print Unit 7 Chapter Packet PDF (13 Pages: Story Opener + 10 Worksheets + 1-Page Answer Key)</a>
+  <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
+  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)
@@ -2332,7 +2338,8 @@ Devon always mixed up which variable was 'independent' and which was 'dependent,
 *Big Ideas Math Grade 6 — Chapter 8 — Surface Area of Rectangular & Triangular Prisms, Pyramids, Volume of Prisms, and Circles/Cones/Hypotenuse*
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
-  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_08.pdf" class="md-button md-button--primary">📄 Print Unit 8 Chapter Packet PDF (11 Pages: Story Opener + 8 Worksheets + 1-Page Answer Key)</a>
+  <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
+  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)
@@ -2609,7 +2616,8 @@ At the team pizza party, Marcus and his friends were sure that two 10-inch diame
 *Big Ideas Math Grade 6 — Chapters 9 & 10 (Statistical Measures and Data Displays) — Mean as Fair Share, Median, Mode, Range, Quartiles, Interquartile Range (IQR), Box Plots & MAD*
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
-  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_09.pdf" class="md-button md-button--primary">📄 Print Unit 9 Chapter Packet PDF (11 Pages: Story Opener + 8 Worksheets + 1-Page Answer Key)</a>
+  <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
+  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)
@@ -2886,7 +2894,8 @@ In the bird-cognition lab, Raven A solved four puzzle trials in 8, 9, 9, and 10 
 *Big Ideas Math Grade 7 Bridge — Chapters 1–3 & Chapter 7 — Adding, Subtracting, Multiplying & Dividing Signed Rationals, Two-Step Equations, and Probability/Combinatorics*
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
-  <a href="../../downloads/worksheets/bigideas_middle_school_sc6_unit_10.pdf" class="md-button md-button--primary">📄 Print Unit 10 Chapter Packet PDF (11 Pages: Story Opener + 8 Worksheets + 1-Page Answer Key)</a>
+  <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
+  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01) + Prime Factor Studio (PRIME-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)

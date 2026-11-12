@@ -122,9 +122,9 @@ Every station worksheet below aligns with the concepts in our flagship books (**
 
 | Published Block Studio & SKU | Aligned Teacher Curriculum Units & Printable PDFs | Flagship Book Chapters | Product Specs & Channels |
 | :--- | :--- | :--- | :--- |
-| **[Place Value Base-10 Studio (`PLACE-01`)](../products/place-value/index.md)** | [Units 01–05 & 12](../downloads/stackcalc-curriculum-guide-letter.pdf) ([Unit 01](../downloads/curriculum_units/stackcalc_curriculum_unit_01.pdf), [Unit 02](../downloads/curriculum_units/stackcalc_curriculum_unit_02.pdf), [Unit 03](../downloads/curriculum_units/stackcalc_curriculum_unit_03.pdf), [Unit 04](../downloads/curriculum_units/stackcalc_curriculum_unit_04.pdf), [Unit 05](../downloads/curriculum_units/stackcalc_curriculum_unit_05.pdf), [Unit 12](../downloads/curriculum_units/stackcalc_curriculum_unit_12.pdf)) | [SC-6 Ch. 2: The Number Elevator](../manuals/sc6/02-rpn-for-young-learners.md) &bull; [Ch. 3: Counting & Place Value](../manuals/sc6/03-counting-place-value.md) &bull; [SC-32 Ch. 10: Base-N](../manuals/sc32/10-computer-science-bases.md) | [Product Specs](../products/place-value/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) |
-| **[84.0 mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md)** | [Units 06, 09 & 11](../downloads/stackcalc-curriculum-guide-letter.pdf) ([Unit 06](../downloads/curriculum_units/stackcalc_curriculum_unit_06.pdf), [Unit 09](../downloads/curriculum_units/stackcalc_curriculum_unit_09.pdf), [Unit 11](../downloads/curriculum_units/stackcalc_curriculum_unit_11.pdf)) | [SC-6 Ch. 5: The Pharaoh's Bakery & 84mm Towers](../manuals/sc6/05-fractions-decimals-ratios.md) &bull; [SC-32 Ch. 4: Trig & Vectors](../manuals/sc32/04-trig-vectors-polar.md) | [Product Specs](../products/fraction-studio/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) |
-| **[Prime Factor Logarithmic Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)** | [Units 07, 08 & 10](../downloads/stackcalc-curriculum-guide-letter.pdf) ([Unit 07](../downloads/curriculum_units/stackcalc_curriculum_unit_07.pdf), [Unit 08](../downloads/curriculum_units/stackcalc_curriculum_unit_08.pdf), [Unit 10](../downloads/curriculum_units/stackcalc_curriculum_unit_10.pdf)) | [SC-6 Ch. 4: Factor Packing](../manuals/sc6/04-operations-skip-counting.md) &bull; [Ch. 7: Primes](../manuals/sc6/07-data-probability-primes.md) &bull; [SC-32 Ch. 3: Napier](../manuals/sc32/03-algebra-transcendentals.md) | [Product Specs](../products/prime-factor-studio/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) |
+| **[Place Value Base-10 Studio (`PLACE-01`)](../products/place-value/index.md)** | [Units 01–05 & 12](teacher-guide.md#unit-01) | [SC-6 Ch. 2: The Number Elevator](../manuals/sc6/02-rpn-for-young-learners.md) &bull; [Ch. 3: Counting & Place Value](../manuals/sc6/03-counting-place-value.md) &bull; [SC-32 Ch. 10: Base-N](../manuals/sc32/10-computer-science-bases.md) | [Product Specs](../products/place-value/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) |
+| **[84.0 mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md)** | [Units 06, 09 & 11](teacher-guide.md#unit-06) | [SC-6 Ch. 5: The Pharaoh's Bakery & 84mm Towers](../manuals/sc6/05-fractions-decimals-ratios.md) &bull; [SC-32 Ch. 4: Trig & Vectors](../manuals/sc32/04-trig-vectors-polar.md) | [Product Specs](../products/fraction-studio/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) |
+| **[Prime Factor Logarithmic Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)** | [Units 07, 08 & 10](teacher-guide.md#unit-07) | [SC-6 Ch. 4: Factor Packing](../manuals/sc6/04-operations-skip-counting.md) &bull; [Ch. 7: Primes](../manuals/sc6/07-data-probability-primes.md) &bull; [SC-32 Ch. 3: Napier](../manuals/sc32/03-algebra-transcendentals.md) | [Product Specs](../products/prime-factor-studio/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) |
 
 ---
 
@@ -197,10 +197,9 @@ Big Ideas Math (Ron Larson & Laurie Boswell) and Advanced Placement standards br
 !!! tip "114-Page Big Ideas Middle School Practice Supplement (90 Worksheets • 900 Problems) + 10 Printable Chapter PDFs"
     Aligned section-by-section with **Big Ideas Math Units 1–10 (Sections 1.1–10.4)**—featuring 10 Chapter Story Openers, 2 full worksheets per section (**Practice A: Key Ideas & Two-Method Practice** + **Practice B: Modeling Real Life Applications**), 90 Two-Method Worked Examples (`Method 1: +10 pts` vs. `Method 2: +20 pts DOUBLE`), step-by-step instructions for our 3 published block kits (`PLACE-01`, `FRAC-01`, `PRIME-01`), 900 clean open-workspace practice problems, **10 Separate Printable Chapter PDFs (`Unit 1`–`Unit 10`)**, and the **15-Page Teacher Coach Guide**:
 
-    - **[Read the Full 45-Section Interactive Curriculum & Print Individual Chapters (Units 1–10) &rarr;](big-ideas-middle-school-sc6-workbook.md)**
-    - **[Download Complete Student Practice Workbook (90 Worksheets • 900 Problems PDF) &darr;](../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf)**
-    - **[Download Unified Master Teacher & Homeschool Guide (Book 1 — Includes Complete 900-Problem Worked Key PDF) &darr;](../downloads/stackcalc-curriculum-guide-letter.pdf)**
-    - **[Order Bound Print Workbook on Amazon Prime ($14.99) ↗](https://link.amazon/B07bxzYKq)** &bull; **[Order Teacher's Curriculum Guide on Amazon Prime ↗](https://link.amazon/B05RFHqeu)**
+    - **[Read the Full 45-Section Interactive Curriculum &rarr;](big-ideas-middle-school-sc6-workbook.md)**
+    - **[Order Bound Print Workbook on Amazon ($16) ↗](https://link.amazon/B07bxzYKq)** &bull; **[Order Teacher's Curriculum Guide on Amazon ($16) ↗](https://link.amazon/B05RFHqeu)**
+    - **[Explore Spiral Lay-Flat Editions on Lulu Press ↗](https://www.lulu.com/spotlight/stackcalc)**
 
 | Grade Level | Chapter / Unit & Topic | Target Calculator | Published Block Kit / Visual Model | Form A (Classroom Master) | Form B (Retake / HW Variant) |
 | :--- | :--- | :--- | :--- | :---: | :---: |
@@ -223,12 +222,12 @@ Big Ideas Math (Ron Larson & Laurie Boswell) and Advanced Placement standards br
 
 ---
 
-## Master Classroom Curriculum Manuals & Printable Chapter Packets
+## Master Classroom Curriculum Manuals & Books
 
-* **[Download Complete 12-Unit Teacher Curriculum Manual (41-Page Letter PDF) &rarr;](../downloads/stackcalc-curriculum-guide-letter.pdf)**
-* **[Print Individual Teacher Curriculum Units (Units 01–12 Separate 4-Page PDFs) &rarr;](teacher-guide.md#print-individual-curriculum-units-units-0112-separate-pdfs)**
-* **[Print Individual Big Ideas Middle School Chapters (Units 1–10 Separate PDFs) &rarr;](big-ideas-middle-school-sc6-workbook.md#print-individual-chapters-units-110-separate-pdfs-for-parents-teachers)**
-* **[Download Timed Student Proficiency Trials (Letter PDF) &rarr;](../downloads/stackcalc-student-proficiency-trials.pdf)**
+* **[Master Teacher's Guide (Book 1) on Amazon ($16) ↗](https://link.amazon/B05RFHqeu)** &bull; [Explore Online Teacher Guide](teacher-guide.md)
+* **[Middle School Math Lab Workbook (Book 3) on Amazon ($16) ↗](https://link.amazon/B07bxzYKq)** &bull; [Explore Online Workbook](big-ideas-middle-school-sc6-workbook.md)
+* **[From Blocks to the Stack (SC-6 Elementary Companion) on Amazon ($16) ↗](https://link.amazon/B0f5cP0Ur)**
+* **[Thinking in the Stack (SC-32 Scientific Reference) on Amazon ($16) ↗](https://link.amazon/B07DqTRR5)**
 * **[Download 12-Page Quickstart Classroom Sample (Letter PDF) &rarr;](../downloads/stackcalc-curriculum-sample-v0.2.0.pdf)**
 
 ---

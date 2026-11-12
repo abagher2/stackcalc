@@ -76,11 +76,11 @@ hide:
         <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary">
           Elementary Book on Amazon ↗
         </a>
-        <a href="/downloads/stackcalc-curriculum-guide-letter.pdf" class="ec-btn-secondary">
-          Book 1: Master Teacher Guide PDF &darr;
+        <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="border-color: #F59E0B; color: #F59E0B; font-weight: 700;">
+          Teacher Guide on Amazon ($16) ↗
         </a>
-        <a href="/downloads/stackcalc-student-lab-workbook-letter.pdf" class="ec-btn-secondary">
-          Book 2: K–12 Student Lab Workbook PDF &darr;
+        <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="border-color: #10B981; color: #10B981; font-weight: 700;">
+          Student Lab on Amazon ($14.99) ↗
         </a>
       </div>
 
@@ -480,8 +480,8 @@ hide:
             <strong>Sample Page 14</strong> from the 50-page <em>StackCalc K–12 Teacher Curriculum &amp; Learning Lab Guide (Spiral Edition)</em>.
           </div>
           <div class="flex gap-2">
-            <a href="/downloads/stackcalc-curriculum-guide-letter.pdf" class="ec-btn-secondary text-xs">
-              &darr; Download Free 50-Page Guide (PDF)
+            <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary text-xs" style="border-color: #F59E0B; color: #F59E0B; font-weight: 700;">
+              Order Teacher Guide on Amazon ($16) ↗
             </a>
             <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary text-xs" style="background-color: #0284C7; border-color: #0284C7; color: #ffffff;">
               Order Spiral Workbook on Lulu ↗

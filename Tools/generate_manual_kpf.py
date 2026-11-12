@@ -63,6 +63,7 @@ EDUCATION_KDP_READY_DIR = EDUCATION_PDF_DIR / "kdp_upload_ready"
 KDP_UPLOAD_DIRS = [
     MANUAL_OUTPUT_DIR / "kdp_upload",
     STACKCALC_MANUAL_OUTPUT_DIR / "kdp_upload",
+    EDUCATION_PDF_DIR,
     EDUCATION_KDP_READY_DIR,
     EDUCATION_PDF_DIR / "kdp_upload",
 ]
@@ -112,8 +113,8 @@ MANUALS = [
         "kpf": MANUAL_OUTPUT_DIR / "sc-domains-manual.kpf",
         "kindle_cover_pdf": MANUAL_OUTPUT_DIR / "sc-domains-kindle-cover.pdf",
         "kindle_cover_jpg": MANUAL_OUTPUT_DIR / "sc-domains-kindle-cover.jpg",
-        "kdp_prefix": "Volume-III-SC-Domains-The-Stack-in-the-Field",
-        "title": "The Stack in the Field: When Mathematics Meets the Physical Trades",
+        "kdp_prefix": "Volume-III-SC-Domains-The-Operative-Stack",
+        "title": "The Operative Stack: Mathematics for the Real World",
         "author": "StackCalc",
     },
 ]
@@ -879,6 +880,22 @@ def sync_manual_to_outputs_and_kdp_upload(manual: dict[str, Any]) -> None:
             if kcb_project_dir.is_dir():
                 copy_kcb_project_dir(kcb_project_dir, kdp_dir / kcb_project_dir.name)
                 copy_kcb_project_dir(kcb_project_dir, kdp_dir / f"{prefix}-Kindle_KCB")
+
+            # Remove legacy Volume III working files or previous titles if this is domains
+            if manual["key"] == "domains":
+                for old_f in kdp_dir.glob("Volume-III-SC-Domains-The-Stack-in-the-Field*"):
+                    if old_f.is_file():
+                        old_f.unlink()
+                    elif old_f.is_dir():
+                        shutil.rmtree(old_f, ignore_errors=True)
+                for old_f in kdp_dir.glob("SC-DOMAINS_*"):
+                    if old_f.is_file():
+                        old_f.unlink()
+                for old_f in kdp_dir.glob("StackCalc_Domains_Volume3_*"):
+                    if old_f.is_file():
+                        old_f.unlink()
+                    elif old_f.is_dir():
+                        shutil.rmtree(old_f, ignore_errors=True)
 
             # Remove any stale descriptive Interior PDFs with a previous page count
             for old_interior in kdp_dir.glob(f"{prefix}-*Interior-*pp.pdf"):

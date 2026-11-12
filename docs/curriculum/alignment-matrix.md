@@ -128,14 +128,13 @@ This alignment matrix provides classroom educators and curriculum coordinators w
 
 ---
 
-## 3. Printable Reference Books, Teacher Solution Keys & Station Cards
+## 3. Official Curriculum Books, Reference Manuals & Station Guides
 
-Explore our spiral-bound reference handbooks ($16 print editions) and download our complete open-source classroom teacher guides and student station materials:
+Explore our complete bookstore and lay-flat spiral editions on Amazon and Lulu Press:
 
-* **[Explore Official Reference Books & Manuals ($16 Spiral Editions) &rarr;](../manuals/index.md)**
-* **[Download Book 1: Unified Master Teacher's Guide by Concept (50-Page Letter PDF) &rarr;](../downloads/stackcalc-curriculum-guide-letter.pdf)**
-* **[Download Book 2: K–12 Hands-On Math Lab Student Workbook (29-Page Letter PDF) &rarr;](../downloads/stackcalc-student-lab-workbook-letter.pdf)**
-* **[Download Book 3: Big Ideas Middle School Student Workbook (114-Page Letter PDF) &rarr;](../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf)**
-* **[Download Book 4: Student Speed & Proficiency Trials Workbook (21-Page Letter PDF) &rarr;](../downloads/stackcalc-student-proficiency-trials.pdf)**
-* **[Print Individual Teacher Curriculum Units (Units 01–12 Separate 4-Page PDFs) &rarr;](teacher-guide.md#print-individual-curriculum-units-units-0112-separate-pdfs)**
-* **[Print Individual Big Ideas Middle School Chapters (Units 1–10 Separate PDFs) &rarr;](big-ideas-middle-school-sc6-workbook.md#print-individual-chapters-units-110-separate-pdfs-for-parents-teachers)**
+* **[Master Teacher's Guide (Book 1) on Amazon ($16) ↗](https://link.amazon/B05RFHqeu)** &bull; [Online Teacher Guide](teacher-guide.md)
+* **[Middle School Math Lab Workbook (Book 3) on Amazon ($16) ↗](https://link.amazon/B07bxzYKq)** &bull; [Online Workbook](big-ideas-middle-school-sc6-workbook.md)
+* **[From Blocks to the Stack (SC-6 Elementary Companion) on Amazon ($16) ↗](https://link.amazon/B0f5cP0Ur)**
+* **[Thinking in the Stack (SC-32 Scientific Reference) on Amazon ($16) ↗](https://link.amazon/B07DqTRR5)**
+* **[Official Reference Manuals & Guides ($16 Spiral Editions) &rarr;](../manuals/index.md)**
+* **[Classroom Station Worksheets Center &rarr;](worksheets.md)**

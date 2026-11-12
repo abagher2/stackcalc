@@ -62,6 +62,10 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - 2D Interactive Labs:
+      - Virtual Manipulatives Suite: learning-lab.md
+      - Fraction Towers Lab: lab/fraction-studio.md
+      - Place Value & Regrouping Lab: lab/place-value.md
   - Catalog:
     - Master Directory: products.md
     - SC-32 Scientific Calculator:

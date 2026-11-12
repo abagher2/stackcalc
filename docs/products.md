@@ -124,6 +124,28 @@ hide:
     </div>
   </header>
 
+  <!-- Interactive 2D Virtual Manipulative Lab Callout Banner -->
+  <div style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(13, 17, 23, 0.95)); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1.5rem 0 2rem 0; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+    <div>
+      <div style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">CLASSROOM DIGITAL TWINS // 2D VIRTUAL LAB</div>
+      <h3 style="margin: 0.25rem 0; color: #FFFFFF; font-size: 1.25rem; font-weight: 800;">Launch Interactive 2D Virtual Manipulatives Suite</h3>
+      <p style="margin: 0; color: #94A3B8; font-size: 0.85rem; max-width: 680px;">
+        Model fraction towers and place-value regrouping directly in your browser. Staging blocks push automatically onto the live 4-line RPN calculator stack with real-time laser alignment and self-check operations.
+      </p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <a href="../learning-lab/" class="ec-btn-primary" style="background-color: #38BDF8; border-color: #38BDF8; color: #080A0E; font-weight: 800; white-space: nowrap;">
+        Launch 2D Suite ⛶
+      </a>
+      <a href="../lab/fraction-studio/" class="ec-btn-secondary" style="border-color: #38BDF8; color: #38BDF8; font-weight: 700; white-space: nowrap;">
+        Fraction Lab ⛶
+      </a>
+      <a href="../lab/place-value/" class="ec-btn-secondary" style="border-color: #10B981; color: #10B981; font-weight: 700; white-space: nowrap;">
+        Place Value Lab ⛶
+      </a>
+    </div>
+  </div>
+
   <!-- ==========================================================================
        FEATURED FLAGSHIP SHOWCASE: SC-32 SCIENTIFIC CALCULATOR
        Complete with real hardware faceplates and interactive swatch switcher
@@ -339,6 +361,7 @@ hide:
           </div>
           
           <div class="te-card-actions">
+            <a href="../lab/fraction-studio/" class="te-card-btn" style="background: rgba(56, 189, 248, 0.2); border-color: #38BDF8; color: #38BDF8;">Lab ⛶</a>
             <a href="fraction-studio/" class="te-card-btn">Specs &rarr;</a>
             <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="te-btn-stl-sm" style="background-color: #FA6B05; border-color: #FA6B05; color: #FFFFFF;">Printables ↗</a>
@@ -391,6 +414,7 @@ hide:
             <span class="te-card-price">$38.00</span>
           </div>
           <div class="te-card-actions">
+            <a href="../lab/place-value/" class="te-card-btn" style="background: rgba(16, 185, 129, 0.2); border-color: #10B981; color: #10B981;">Lab ⛶</a>
             <a href="place-value/" class="te-card-btn">Specs &rarr;</a>
             <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="te-btn-stl-sm" style="background-color: #FA6B05; border-color: #FA6B05; color: #FFFFFF;">Printables ↗</a>

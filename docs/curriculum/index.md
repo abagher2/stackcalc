@@ -181,14 +181,14 @@ All StackCalc educational literature is licensed under Creative Commons with **u
       <p class="text-xs text-slate-400 mb-4">Book 1: 57-page Unified Master Teacher's Guide by Concept (including Title Page &amp; Educator Prefaces <code>pp. i–iii</code> on stack motivation &amp; district textbook integration, 3-Minute RPN Primer <code>pp. v–vi</code>, and Studio Block Games &amp; Orthographic Checks <code>pp. vii–ix</code>). Book 2: 30-page K–12 Hands-On Math Lab Student Workbook (with Student Preface &amp; Appendix A Self-Check Answer Key), plus 12 standalone 4-page Unit Packets.</p>
     </div>
     <div class="space-y-2">
-      <a href="../downloads/stackcalc-curriculum-guide-letter.pdf" class="w-full py-2 text-center rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition block">
-        Book 1: Master Teacher Guide (57 pp.) &darr;
+      <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="w-full py-2 text-center rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition block">
+        Book 1: Master Teacher Guide (Amazon $16) ↗
       </a>
-      <a href="../downloads/stackcalc-student-lab-workbook-letter.pdf" class="w-full py-2 text-center rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-mono text-xs font-bold transition block">
-        Book 2: K–12 Student Lab Workbook (30 pp.) &darr;
+      <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="w-full py-2 text-center rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-mono text-xs font-bold transition block">
+        Book 2: Student Lab Workbook (Amazon $14.99) ↗
       </a>
-      <a href="teacher-guide/#print-individual-curriculum-units-units-0112-separate-pdfs" class="w-full py-2 text-center rounded bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold transition block">
-        Print Individual Units (01–12) &rarr;
+      <a href="teacher-guide/" class="w-full py-2 text-center rounded bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold transition block">
+        Explore Online Teacher Guide &rarr;
       </a>
     </div>
   </div>
@@ -197,17 +197,17 @@ All StackCalc educational literature is licensed under Creative Commons with **u
     <div>
       <span class="font-mono text-xs text-purple-400 font-bold uppercase">BOOK 3 &amp; BOOK 4 (MIDDLE / SPEED)</span>
       <h4 class="text-lg font-bold text-white mt-1 mb-2">Middle School Math Lab + Speed Trials</h4>
-      <p class="text-xs text-slate-400 mb-4">Book 3: 115-page Middle School Math Lab Student Workbook (900 two-method problems + Appendix E Student Self-Check Key) &amp; 10 Chapter PDFs. Book 4: 24-page Student Speed &amp; Proficiency Trials Workbook (Title, Copyright, Contents, Competitor Preface &amp; Appendices A–C).</p>
+      <p class="text-xs text-slate-400 mb-4">Book 3: 115-page Middle School Math Lab Student Workbook (900 two-method problems + Appendix E Student Self-Check Key). Book 4: 24-page Student Speed &amp; Proficiency Trials Workbook (Title, Copyright, Contents, Competitor Preface &amp; Appendices A–C).</p>
     </div>
     <div class="space-y-2">
-      <a href="../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" class="w-full py-2 text-center rounded bg-purple-500 hover:bg-purple-400 text-slate-950 font-mono text-xs font-bold transition block">
-        Book 3: Middle School Workbook (115 pp.) &darr;
+      <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="w-full py-2 text-center rounded bg-purple-500 hover:bg-purple-400 text-slate-950 font-mono text-xs font-bold transition block">
+        Book 3: Middle School Workbook (Amazon $16) ↗
       </a>
-      <a href="../downloads/stackcalc-student-proficiency-trials.pdf" class="w-full py-2 text-center rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 font-mono text-xs font-bold transition block">
-        Book 4: Student Speed Trials (24 pp.) &darr;
+      <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="w-full py-2 text-center rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 font-mono text-xs font-bold transition block">
+        SC-6 Elementary Book (Amazon $16) ↗
       </a>
-      <a href="big-ideas-middle-school-sc6-workbook/#print-individual-chapters-units-110-separate-pdfs-for-parents-teachers" class="w-full py-2 text-center rounded bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold transition block">
-        Print Chapters 1–10 Separately &rarr;
+      <a href="big-ideas-middle-school-sc6-workbook/" class="w-full py-2 text-center rounded bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold transition block">
+        Explore Middle School Lessons &rarr;
       </a>
     </div>
   </div>

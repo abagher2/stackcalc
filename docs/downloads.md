@@ -73,7 +73,7 @@ Free downloadable teaching guides, pre-generated station companions, competition
       <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Classroom Station Guides &amp; Worksheets</h3>
       <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">2-page visual station companions with CPA CAD blueprints and teacher rubrics for Singapore Dimensions, Bridges in Mathematics, and Big Ideas Math.</p>
     </div>
-    <a href="../curriculum/worksheets/" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+    <a href="curriculum/worksheets/" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
       <span>BROWSE 120 GUIDES &rarr;</span>
     </a>
   </div>
@@ -84,29 +84,26 @@ Free downloadable teaching guides, pre-generated station companions, competition
       <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Texas UIL &amp; TMSCA Competition Exams</h3>
       <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Official 30-min tournament test booklets and 3-sig-fig grading keys for High School (SC-32), Junior High (Grades 7–8), and Elementary (Grades 3–6 on SC-6).</p>
     </div>
-    <a href="../curriculum/uil-competition/" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+    <a href="curriculum/uil-competition/" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
       <span>VIEW 24 EXAMS &amp; KEYS &rarr;</span>
     </a>
   </div>
 
   <div style="background: #11141A; border: 1px solid rgba(255, 191, 0, 0.2); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #FFBF00; font-weight: 700;">SPIRAL BOOKS 1 &amp; 2 &bull; TEACHER GUIDE + STUDENT LAB</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #FFBF00; font-weight: 700;">PRINT BOOKS 1 &amp; 2 &bull; TEACHER GUIDE + STUDENT LAB</span>
       <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Master Teacher Guide &amp; K–12 Student Lab Workbook</h3>
-      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Book 1: 50-page Unified Master Teacher's Guide by Concept. Book 2: 29-page K–12 Hands-On Math Lab Student Workbook (with Self-Check Answer Key), plus 12 standalone 4-page Unit Packets.</p>
+      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Book 1: 50-page Unified Master Teacher's Guide by Concept. Book 2: 29-page K–12 Hands-On Math Lab Student Workbook with Self-Check Answer Key.</p>
     </div>
     <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
-      <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 100px; text-align: center; padding: 0.5rem 0.2rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
-        <span>AMAZON ($16) ↗</span>
+      <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 110px; text-align: center; padding: 0.5rem 0.2rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>BOOK 1 (AMAZON $16) ↗</span>
       </a>
-      <a href="stackcalc-curriculum-guide-letter.pdf" download style="flex: 1; min-width: 100px; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 191, 0, 0.15); border: 1px solid #FFBF00; color: #FFBF00; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
-        <span>Book 1 (50p) &darr;</span>
+      <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 110px; text-align: center; padding: 0.5rem 0.2rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>BOOK 2 (AMAZON $14.99) ↗</span>
       </a>
-      <a href="stackcalc-student-lab-workbook-letter.pdf" download style="flex: 1; min-width: 100px; text-align: center; padding: 0.5rem 0.2rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
-        <span>Book 2 (29p) &darr;</span>
-      </a>
-      <a href="../curriculum/teacher-guide/#print-individual-curriculum-units-units-0112-separate-pdfs" style="flex: 0.9; min-width: 80px; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
-        <span>12 Units &rarr;</span>
+      <a href="curriculum/teacher-guide/" style="flex: 0.8; min-width: 80px; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>GUIDE &rarr;</span>
       </a>
     </div>
   </div>
@@ -119,29 +116,23 @@ Free downloadable teaching guides, pre-generated station companions, competition
     </div>
     <div style="display: flex; gap: 0.4rem;">
       <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
-        <span>AMAZON ($16) ↗</span>
+        <span>ORDER ON AMAZON ($16) ↗</span>
       </a>
-      <a href="worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
-        <span>PDF (128p) &darr;</span>
-      </a>
-      <a href="../curriculum/big-ideas-middle-school-sc6-workbook/" style="flex: 0.9; text-align: center; padding: 0.5rem 0.2rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
-        <span>UNITS &rarr;</span>
+      <a href="curriculum/big-ideas-middle-school-sc6-workbook/" style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>ONLINE SECTIONS &rarr;</span>
       </a>
     </div>
   </div>
 
   <div style="background: #11141A; border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #10B981; font-weight: 700;">SPIRAL BOOK 4 &bull; 21 PAGES (US LETTER)</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #10B981; font-weight: 700;">FLUIDITY &amp; SPEED &bull; 15 TIMED SPRINTS</span>
       <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Student Proficiency Time Trials</h3>
-      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">21-page spiral timed sprint workbook (15 Sprints + Self-Check Answer Keys + RPN Speed Tactics &amp; Certificate) modeled on UIL speed rounds.</p>
+      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Timed sprint curriculum modeled on Texas UIL tournament calculation rounds with self-check answer keys and stack tactics.</p>
     </div>
     <div style="display: flex; gap: 0.5rem;">
-      <a href="stackcalc-student-proficiency-trials.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>Book 4 Speed Trials (21p Letter) &darr;</span>
-      </a>
-      <a href="stackcalc-proficiency-trials-lulu-cover.pdf" download style="flex: 0.8; text-align: center; padding: 0.5rem 0.25rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>Lulu Cover &darr;</span>
+      <a href="curriculum/uil-competition/" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        <span>TOURNAMENT SPRINTS &rarr;</span>
       </a>
     </div>
   </div>
@@ -193,17 +184,17 @@ Free downloadable teaching guides, pre-generated station companions, competition
     <div>
       <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #38BDF8; font-weight: 700;">MIDDLE SCHOOL MATH LAB &bull; BOOK 3 OF 4</span>
       <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Middle School Math Lab Workbook &amp; Master Teacher Guide</h3>
-      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">115-page Spiral Two-Method Student Practice Workbook (pp. i–iv + 1–111), 10 separate printable Chapter PDFs, + Unified Master Teacher &amp; Homeschool Guide (Book 1).</p>
+      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">128-page Two-Method Student Practice Workbook, 45 textbook sections, 90 daily worksheets + Unified Master Teacher &amp; Homeschool Guide (Book 1).</p>
     </div>
     <div style="display: flex; gap: 0.4rem;">
-      <a href="worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
-        <span>Workbook &darr;</span>
+      <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>Workbook ($16) ↗</span>
       </a>
-      <a href="stackcalc-curriculum-guide-letter.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 191, 0, 0.15); border: 1px solid #FFBF00; color: #FFBF00; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
-        <span>Teacher Guide &darr;</span>
+      <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 191, 0, 0.15); border: 1px solid #FFBF00; color: #FFBF00; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>Teacher Guide ($16) ↗</span>
       </a>
-      <a href="../curriculum/big-ideas-middle-school-sc6-workbook/#print-individual-chapters-units-110-separate-pdfs-for-parents-teachers" style="flex: 1.2; text-align: center; padding: 0.5rem 0.2rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
-        <span>10 Ch. PDFs &rarr;</span>
+      <a href="curriculum/big-ideas-middle-school-sc6-workbook/" style="flex: 1.2; text-align: center; padding: 0.5rem 0.2rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>Units Overview &rarr;</span>
       </a>
     </div>
   </div>
@@ -214,20 +205,21 @@ Free downloadable teaching guides, pre-generated station companions, competition
       <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Curriculum Alignment Matrix</h3>
       <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Cross-reference matrix matching every StackCalc tool and key sequence to Bridges, Big Ideas, Singapore Dimensions, and CCSS.</p>
     </div>
-    <a href="../curriculum/alignment-matrix/" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+    <a href="curriculum/alignment-matrix/" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
       <span>VIEW ALIGNMENT MATRIX &rarr;</span>
     </a>
   </div>
 
 </div>
 
-### Print Individual Chapters, Units &amp; Lulu Coil-Bound Cover PDFs
+### Official Printed Books &amp; Bookstore Editions
 
-To make home, classroom, and print-shop binding effortless, every unit of the **Big Ideas Math Middle School SC-6 Supplement (Units 1–10)** and the **K–12 Teacher Curriculum Guide (Units 01–12)** is pre-compiled as a standalone PDF packet, and our **Lulu Coil-Bound Front &amp; Back Covers (`8.5" × 11"` + `0.125"` bleed)** are available below:
+Our complete curriculum textbooks and workbooks are published in bookstore editions on Amazon and coil-bound lay-flat workbooks on Lulu Press:
 
-* **Big Ideas Middle School Chapter PDFs (Units 1–10, 10–12 pp. each):** [Unit 1: Numerical Expressions](downloads/worksheets/bigideas_middle_school_sc6_unit_01.pdf) &bull; [Unit 2: Fractions & Decimals](downloads/worksheets/bigideas_middle_school_sc6_unit_02.pdf) &bull; [Unit 3: Ratios & Rates](downloads/worksheets/bigideas_middle_school_sc6_unit_03.pdf) &bull; [Unit 4: Percents](downloads/worksheets/bigideas_middle_school_sc6_unit_04.pdf) &bull; [Unit 5: Algebraic Expressions](downloads/worksheets/bigideas_middle_school_sc6_unit_05.pdf) &bull; [Unit 6: Equations](downloads/worksheets/bigideas_middle_school_sc6_unit_06.pdf) &bull; [Unit 7: Area, Surface Area & Volume](downloads/worksheets/bigideas_middle_school_sc6_unit_07.pdf) &bull; [Unit 8: Integers & Coordinate Plane](downloads/worksheets/bigideas_middle_school_sc6_unit_08.pdf) &bull; [Unit 9: Statistical Measures](downloads/worksheets/bigideas_middle_school_sc6_unit_09.pdf) &bull; [Unit 10: Data Displays](downloads/worksheets/bigideas_middle_school_sc6_unit_10.pdf)
-* **K–12 Teacher Curriculum Unit PDFs (Units 01–12, 4 pp. each):** [Unit 01: Ten-Frames](downloads/curriculum_units/stackcalc_curriculum_unit_01.pdf) &bull; [Unit 02: Number Bonds](downloads/curriculum_units/stackcalc_curriculum_unit_02.pdf) &bull; [Unit 03: Number Rack](downloads/curriculum_units/stackcalc_curriculum_unit_03.pdf) &bull; [Unit 04: Counting & Arrays](downloads/curriculum_units/stackcalc_curriculum_unit_04.pdf) &bull; [Unit 05: Place Value](downloads/curriculum_units/stackcalc_curriculum_unit_05.pdf) &bull; [Unit 06: 84mm Fractions](downloads/curriculum_units/stackcalc_curriculum_unit_06.pdf) &bull; [Unit 07: Expression Trees](downloads/curriculum_units/stackcalc_curriculum_unit_07.pdf) &bull; [Unit 08: Algebra Factoring](downloads/curriculum_units/stackcalc_curriculum_unit_08.pdf) &bull; [Unit 09: Modulo-60 Clock](downloads/curriculum_units/stackcalc_curriculum_unit_09.pdf) &bull; [Unit 10: Probability Studio](downloads/curriculum_units/stackcalc_curriculum_unit_10.pdf) &bull; [Unit 11: Trig Volvelle](downloads/curriculum_units/stackcalc_curriculum_unit_11.pdf) &bull; [Unit 12: Calculus Integrals](downloads/curriculum_units/stackcalc_curriculum_unit_12.pdf)
-* **Lulu Coil-Bound Front &amp; Back Cover PDFs (`8.75" × 11.25"` with `0.125"` bleed &amp; `0.50"` coil-punch safety margin):** [Book 1: Master Teacher &amp; Homeschool Guide Cover](downloads/stackcalc-curriculum-guide-lulu-cover.pdf) &bull; [Book 2: Hands-On Math Lab Cover](downloads/stackcalc-student-lab-workbook-lulu-cover.pdf) &bull; [Book 3: Middle School Math Lab Cover](downloads/worksheets/bigideas_middle_school_sc6_workbook_lulu_cover.pdf) &bull; [Book 4: Stack Speed &amp; Fluency Cover](downloads/stackcalc-proficiency-trials-lulu-cover.pdf)
+* **Middle School Math Block Supplement &amp; Workbook (Grades 6–8):** [Order on Amazon ($16) ↗](https://link.amazon/B07bxzYKq) &bull; [Explore Online Curriculum Guide](curriculum/big-ideas-middle-school-sc6-workbook.md)
+* **Unified Master Teacher's Guide (Grades K–12):** [Order on Amazon ($16) ↗](https://link.amazon/B05RFHqeu) &bull; [Explore Online Teacher Facilitator Guide](curriculum/teacher-guide.md)
+* **From Blocks to the Stack (SC-6 Elementary Textbook):** [Order on Amazon ($16) ↗](https://link.amazon/B0f5cP0Ur) &bull; [Explore Book Overview](products/sc6-book.md)
+* **Thinking in the Stack (SC-32 Scientific Manual):** [Order on Amazon ($16) ↗](https://link.amazon/B07DqTRR5) &bull; [Hardcover ($28) ↗](https://link.amazon/B09AnTIQI)
 
 ---
 
@@ -241,7 +233,7 @@ Official reference manuals, spiral-bound curriculum workbooks, structured JSON o
     <p style="margin: 0.2rem 0 0 0; font-size: 0.8rem; color: #CBD5E1;">Order coil-bound lay-flat curriculum workbooks on Lulu Press or bookstore paperback/hardcover textbooks on Amazon.</p>
   </div>
   <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-    <a href="../manuals/" style="padding: 0.5rem 1rem; border-radius: 6px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+    <a href="manuals/" style="padding: 0.5rem 1rem; border-radius: 6px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
       EXPLORE MANUALS HUB &rarr;
     </a>
     <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background: #0284C7; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
@@ -262,7 +254,7 @@ Official reference manuals, spiral-bound curriculum workbooks, structured JSON o
       <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Complete operational reference: 4-stack XYZT, numerical solvers (SOLVE, ∫, POLY, TVM), vector plotting engine, and Texas UIL contest speed tactics.</p>
     </div>
     <div style="display: flex; gap: 0.5rem;">
-      <a href="../manuals/#sc-32-scientific" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+      <a href="manuals/#sc-32-scientific" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
         <span>PREVIEW &amp; TOC &rarr;</span>
       </a>
       <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
@@ -278,7 +270,7 @@ Official reference manuals, spiral-bound curriculum workbooks, structured JSON o
       <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Classroom and family companion: 4-stack XYZT secret, skip-counting [REP], [÷R] division remainders, concrete math block bridge, and math quiz engine.</p>
     </div>
     <div style="display: flex; gap: 0.5rem;">
-      <a href="../manuals/#sc-6-elementary" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+      <a href="manuals/#sc-6-elementary" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
         <span>PREVIEW &amp; TOC &rarr;</span>
       </a>
       <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
@@ -294,10 +286,10 @@ Official reference manuals, spiral-bound curriculum workbooks, structured JSON o
       <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">View-only machine-readable specification and structured JSON operation rubrics for AI agents, automated grading, and developer tools.</p>
     </div>
     <div style="display: flex; gap: 0.5rem;">
-      <a href="../api/openapi.json" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+      <a href="api/openapi.json" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
         <span>OPENAPI &darr;</span>
       </a>
-      <a href="../api/" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+      <a href="api/" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
         <span>API DOCS &rarr;</span>
       </a>
     </div>

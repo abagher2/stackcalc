@@ -145,24 +145,24 @@ hide:
           <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="flex: 1; min-width: 180px; text-align: center; border-color: #38BDF8; color: #38BDF8; font-weight: 700;">
             Factory Blocks on Slant 3D ↗
           </a>
-          <a href="../../manuals/output/sc6-elementary-manual.pdf" download class="ec-btn-secondary" style="flex: 1; min-width: 180px; text-align: center; font-weight: 700;">
-            Download Free Book PDF &darr;
+          <a href="../../manuals/sc6/" class="ec-btn-secondary" style="flex: 1; min-width: 180px; text-align: center; font-weight: 700;">
+            Read Online Chapters &rarr;
           </a>
         </div>
       </div>
 
       <!-- Read Free Online Link -->
       <div class="mt-4 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2">
-        <span class="text-xs text-slate-400">100% Free Open-Source Curriculum &amp; Printable Chapter PDFs</span>
+        <span class="text-xs text-slate-400">Complete Open Curriculum &amp; Aligned Standards</span>
         <div class="flex flex-wrap gap-3">
           <a href="../../manuals/sc6/" class="text-xs font-bold text-sky-400 hover:text-sky-300">
             Read Book Online &rarr;
           </a>
           <a href="../../curriculum/big-ideas-middle-school-sc6-workbook/" class="text-xs font-bold text-amber-400 hover:text-amber-300">
-            Big Ideas Chapter PDFs (Units 1–10) &rarr;
+            Middle School Workbook &rarr;
           </a>
           <a href="../../curriculum/teacher-guide/" class="text-xs font-bold text-emerald-400 hover:text-emerald-300">
-            Teacher Guide &amp; Unit PDFs &rarr;
+            Teacher Guide &rarr;
           </a>
         </div>
       </div>

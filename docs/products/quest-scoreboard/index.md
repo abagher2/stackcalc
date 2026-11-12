@@ -228,11 +228,11 @@ hide:
         <a href="../../downloads/worksheets/sc6_quest_token_scoring_guide.pdf" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-emerald-400 border border-emerald-500/30 hover:bg-slate-700">
           &bull; Free 1-Page Token Scoring Guide (PDF) &darr;
         </a>
-        <a href="../../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-cyan-400 border border-cyan-500/30 hover:bg-slate-700">
-          &bull; Free 102-Page Student Workbook (PDF) &darr;
+        <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-cyan-400 border border-cyan-500/30 hover:bg-slate-700">
+          &bull; Student Workbook on Amazon ($16) ↗
         </a>
-        <a href="../../downloads/stackcalc-curriculum-guide-letter.pdf" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-amber-400 border border-amber-500/30 hover:bg-slate-700">
-          &bull; Free Unified Master Teacher &amp; Coach Guide (PDF) &darr;
+        <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-amber-400 border border-amber-500/30 hover:bg-slate-700">
+          &bull; Master Teacher Guide on Amazon ($16) ↗
         </a>
         <a href="../../curriculum/big-ideas-middle-school-sc6-workbook/" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-emerald-400 border border-emerald-500/30 hover:bg-slate-700">
           &bull; Full Curriculum &amp; Section Guide &rarr;

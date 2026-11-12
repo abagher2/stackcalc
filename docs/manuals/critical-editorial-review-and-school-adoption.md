@@ -1,8 +1,8 @@
 # Comprehensive & Objective Review (Round 7): NYT Bestseller Judge & HP Calculator Purist Audit
 
 **Corpus Evaluated:**
-- **SC-6 Elementary Manual:** `docs/manuals/sc6/*.md` (14 files, [`sc6-elementary-manual.pdf`](file:///Users/abagher/Documents/GitHub/stackcalc/docs/downloads/manuals/sc6-elementary-manual.pdf) — **403 pages**, `26,459,956` bytes)
-- **SC-32 Scientific Manual:** `docs/manuals/sc32/*.md` (20 files, [`sc32-scientific-manual.pdf`](file:///Users/abagher/Documents/GitHub/stackcalc/docs/downloads/manuals/sc32-scientific-manual.pdf) — **454 pages**, `35,042,926` bytes)
+- **SC-6 Elementary Manual:** `docs/manuals/sc6/*.md` (14 files — **403 pages**)
+- **SC-32 Scientific Manual:** `docs/manuals/sc32/*.md` (20 files — **454 pages**)
 - **Canonical Sequence Registry:** [`docs/assets/manuals/sequences_registry.json`](file:///Users/abagher/Documents/GitHub/stackcalc/docs/assets/manuals/sequences_registry.json) (1,078 hardware-verified RPN sequences)
 - **Canonical Manipulative & Hardware Diagram Registry:** [`docs/assets/manuals/blocks_registry.json`](file:///Users/abagher/Documents/GitHub/stackcalc/docs/assets/manuals/blocks_registry.json) (42 rendered OpenSCAD/Blender diagrams — **100% embedded** across 70 figure placements)
 
