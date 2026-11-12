@@ -72,30 +72,21 @@ hide:
           <div class="vlab-comparator-bay">
             <div class="vlab-columns-wrapper">
               
-              <!-- Column 1: Prime Register Y (Stack) -->
+              <!-- Column 1 (Left): Prime Register X (Active Entry / Tower) -->
               <div class="vlab-column-container">
-                <div id="vlab-prime-stack-y" class="vlab-column"></div>
+                <div id="vlab-prime-stack-x" class="vlab-column vlab-column-entry"></div>
                 <div class="vlab-col-meta-box">
-                  <div class="vlab-column-title" style="color:#0284C7;">1. REGISTER Y (STACK)</div>
+                  <div class="vlab-column-title" style="color:#38BDF8;">1. REGISTER X (ENTRY)</div>
+                  <div id="vlab-prime-val" class="vlab-column-sub" style="font-weight: bold; color: #FFFFFF; font-size: 0.95rem;">0</div>
+                </div>
+              </div>
+
+              <!-- Column 2 (Right): Prime Register Y (Stack) -->
+              <div class="vlab-column-container">
+                <div id="vlab-prime-stack-y" class="vlab-column vlab-column-stack"></div>
+                <div class="vlab-col-meta-box">
+                  <div class="vlab-column-title" style="color:#0284C7;">2. REGISTER Y (STACK)</div>
                   <div id="vlab-prime-meta-y" class="vlab-column-sub">Y: 0</div>
-                </div>
-              </div>
-
-              <!-- Column 2: Prime Register X (Active Entry / Tower) -->
-              <div class="vlab-column-container">
-                <div id="vlab-prime-stack-x" class="vlab-column"></div>
-                <div class="vlab-col-meta-box">
-                  <div class="vlab-column-title" style="color:#38BDF8;">2. REGISTER X (ENTRY)</div>
-                  <div id="vlab-prime-val" class="vlab-column-sub" style="font-weight: bold; color: #FFFFFF; font-size: 0.9rem;">0</div>
-                </div>
-              </div>
-
-              <!-- Column 3: Prime Target / Decomposed Tower -->
-              <div class="vlab-column-container">
-                <div id="vlab-prime-target" class="vlab-column vlab-column-target"></div>
-                <div class="vlab-col-meta-box">
-                  <div class="vlab-column-title" style="color:#10B981;">3. TARGET / DECOMPOSED</div>
-                  <div class="vlab-column-sub" style="color:#10B981;">[FACT / GCD / LCM]</div>
                 </div>
               </div>
 
@@ -124,10 +115,10 @@ hide:
               <span>STACKCALC // PRIME MODE</span>
               <span>[PRIME-01]</span>
             </div>
-            <div class="vlab-lcd-register"><span>T:</span> <span id="vlab-reg-t">0.0000</span></div>
-            <div class="vlab-lcd-register"><span>Z:</span> <span id="vlab-reg-z">0.0000</span></div>
-            <div class="vlab-lcd-register" style="color:#0284C7;"><span>Y:</span> <span id="vlab-reg-y">0.0000</span></div>
-            <div class="vlab-lcd-register vlab-lcd-reg-x"><span>X:</span> <span id="vlab-reg-x">0.0000_</span></div>
+            <div class="vlab-lcd-register"><span>T:</span> <span id="vlab-reg-t" class="vlab-reg-t-val">0.0000</span></div>
+            <div class="vlab-lcd-register"><span>Z:</span> <span id="vlab-reg-z" class="vlab-reg-z-val">0.0000</span></div>
+            <div class="vlab-lcd-register" style="color:#0284C7;"><span>Y:</span> <span id="vlab-reg-y" class="vlab-reg-y-val">0.0000</span></div>
+            <div class="vlab-lcd-register vlab-lcd-reg-x"><span>X:</span> <span id="vlab-reg-x" class="vlab-reg-x-val">0_</span></div>
           </div>
 
           <!-- Operations Grid -->

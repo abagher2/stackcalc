@@ -180,6 +180,7 @@
     activeTab: 'fractions', // 'fractions' | 'placevalue' | 'primes'
     soundOn: true,
     fdisp: true, // Fraction display mode
+    stackLift: false, // RPN Stack Lift flag: true after operations to auto-lift on next entry
 
     // 4-Line RPN Stack (Stores rational objects: { n, d, val })
     stack: {
@@ -202,11 +203,11 @@
         { label: '1/10', n: 1, d: 10, mm: 8.4, cls: 'frac-1-10' },
         { label: '1/12', n: 1, d: 12, mm: 7.0, cls: 'frac-1-12' }
       ],
-      stackX: [],       // Blocks currently in Register X (Active Entry / Tower)
-      stackY: [],       // Blocks currently in Register Y (The Stack)
-      targetAnswer: [], // Blocks student builds to verify equivalence
-      laserHeight: 0,   // Current datum height in mm
-      isEquivalent: false,
+      stackX: [],       // Blocks in Register X (Column 1 - Active Entry)
+      stackY: [],       // Blocks in Register Y (Column 2 - Stack)
+      stackZ: [],       // Blocks in Register Z (Stack Level 3)
+      stackT: [],       // Blocks in Register T (Stack Level 4)
+      targetAnswer: [], // Compatibility shim
 
       // Compatibility getters
       get staging() { return this.stackX; },
@@ -242,9 +243,11 @@
         { p: 19, label: '[19]', mm: 76.5, color: '#F97316' },
         { p: 23, label: '[23]', mm: 81.3, color: '#64748B' }
       ],
-      stackX: [],       // Active prime blocks in Register X (Vertical Tower)
-      stackY: [],       // Pushed prime blocks in Register Y (Vertical Tower)
-      targetPrimes: [], // Comparison / Decomposed primes
+      stackX: [],       // Prime blocks in Register X (Column 1 - Active Entry)
+      stackY: [],       // Prime blocks in Register Y (Column 2 - Stack)
+      stackZ: [],       // Prime blocks in Register Z (Stack Level 3)
+      stackT: [],       // Prime blocks in Register T (Stack Level 4)
+      targetPrimes: [], // Compatibility shim
 
       // Compatibility getters
       get staging() { return this.stackX; },
@@ -254,13 +257,42 @@
     }
   };
 
-  // --- 4. RPN Calculator Stack Operations ---
+  // --- 4. RPN Calculator Stack Operations & Stack Lift ---
+  function prepareForEntry() {
+    if (state.stackLift) {
+      // Automatic RPN Stack Lift on new number/block entry following an operation
+      state.stack.t = { ...state.stack.z };
+      state.stack.z = { ...state.stack.y };
+      state.stack.y = { ...state.stack.x };
+      state.stack.x = { n: 0, d: 1, val: 0 };
+
+      if (state.activeTab === 'fractions') {
+        state.fractions.stackT = [...state.fractions.stackZ];
+        state.fractions.stackZ = [...state.fractions.stackY];
+        state.fractions.stackY = [...state.fractions.stackX];
+        state.fractions.stackX = [];
+      } else if (state.activeTab === 'primes') {
+        state.primes.stackT = [...state.primes.stackZ];
+        state.primes.stackZ = [...state.primes.stackY];
+        state.primes.stackY = [...state.primes.stackX];
+        state.primes.stackX = [];
+      } else if (state.activeTab === 'placevalue') {
+        for (let k in state.placeValue.stagingCounts) {
+          state.placeValue.stagingCounts[k] = 0;
+        }
+      }
+
+      state.stackLift = false;
+    }
+  }
+
   function rpnPushRaw(n, d, val) {
     if (val === undefined) val = n / d;
     state.stack.t = { ...state.stack.z };
     state.stack.z = { ...state.stack.y };
     state.stack.y = { ...state.stack.x };
     state.stack.x = { n, d, val };
+    state.stackLift = false;
     playPush();
   }
 
@@ -276,6 +308,7 @@
       }
       checkPvRegroup();
     }
+    state.stackLift = false;
     playClick();
     renderAll();
   }
@@ -287,11 +320,16 @@
     state.stack.t = { n: 0, d: 1, val: 0 };
     if (state.activeTab === 'fractions') {
       state.fractions.stackX = [...state.fractions.stackY];
-      state.fractions.stackY = [];
+      state.fractions.stackY = [...state.fractions.stackZ];
+      state.fractions.stackZ = [...state.fractions.stackT];
+      state.fractions.stackT = [];
     } else if (state.activeTab === 'primes') {
       state.primes.stackX = [...state.primes.stackY];
-      state.primes.stackY = [];
+      state.primes.stackY = [...state.primes.stackZ];
+      state.primes.stackZ = [...state.primes.stackT];
+      state.primes.stackT = [];
     }
+    state.stackLift = true;
     playClick();
     renderAll();
   }
@@ -310,6 +348,7 @@
       state.primes.stackX = [...state.primes.stackY];
       state.primes.stackY = tempPrimes;
     }
+    state.stackLift = true;
     playClick();
     renderAll();
   }
@@ -326,24 +365,32 @@
       // In Fraction mode: combine physical blocks from Y and X into X!
       if (state.activeTab === 'fractions') {
         state.fractions.stackX = [...state.fractions.stackY, ...state.fractions.stackX];
-        state.fractions.stackY = [];
+        state.fractions.stackY = [...state.fractions.stackZ];
+        state.fractions.stackZ = [...state.fractions.stackT];
+        state.fractions.stackT = [];
       }
     } else if (operator === '-') {
       resN = y.n * x.d - x.n * y.d;
       resD = y.d * x.d;
       resVal = y.val - x.val;
       if (state.activeTab === 'fractions') {
-        state.fractions.stackY = [];
+        state.fractions.stackY = [...state.fractions.stackZ];
+        state.fractions.stackZ = [...state.fractions.stackT];
+        state.fractions.stackT = [];
       }
     } else if (operator === '×') {
       resN = y.n * x.n;
       resD = y.d * x.d;
       resVal = y.val * x.val;
       if (state.activeTab === 'fractions') {
-        state.fractions.stackY = [];
+        state.fractions.stackY = [...state.fractions.stackZ];
+        state.fractions.stackZ = [...state.fractions.stackT];
+        state.fractions.stackT = [];
       } else if (state.activeTab === 'primes') {
         state.primes.stackX = [...state.primes.stackY, ...state.primes.stackX].sort((a, b) => a - b);
-        state.primes.stackY = [];
+        state.primes.stackY = [...state.primes.stackZ];
+        state.primes.stackZ = [...state.primes.stackT];
+        state.primes.stackT = [];
       }
     } else if (operator === '÷') {
       if (x.val !== 0) {
@@ -352,7 +399,9 @@
         resVal = y.val / x.val;
       }
       if (state.activeTab === 'fractions') {
-        state.fractions.stackY = [];
+        state.fractions.stackY = [...state.fractions.stackZ];
+        state.fractions.stackZ = [...state.fractions.stackT];
+        state.fractions.stackT = [];
       }
     }
 
@@ -362,12 +411,14 @@
     state.stack.z = { ...state.stack.t };
     state.stack.t = { n: 0, d: 1, val: 0 };
 
+    state.stackLift = true; // Results trigger automatic stack lift on subsequent number entry!
     playOp();
     renderAll();
   }
 
   // --- 5. Fraction Studio Actions ---
   function addFractionToX(blockSpec) {
+    prepareForEntry();
     state.fractions.stackX.push({
       ...blockSpec,
       id: Date.now() + Math.random()
@@ -402,6 +453,7 @@
   function clearFractionX() {
     state.fractions.stackX = [];
     state.stack.x = { n: 0, d: 1, val: 0 };
+    state.stackLift = false;
     playClick();
     renderAll();
   }
@@ -409,48 +461,41 @@
   function pushFractionToStack() {
     if (state.fractions.stackX.length === 0 && state.stack.x.val === 0) return;
 
-    // Push stack registers
+    // Push 4-line stack registers
     state.stack.t = { ...state.stack.z };
     state.stack.z = { ...state.stack.y };
     state.stack.y = { ...state.stack.x };
     state.stack.x = { n: 0, d: 1, val: 0 };
 
-    // Move visual blocks from X into Y
+    // Move visual block towers through stack registers
+    state.fractions.stackT = [...state.fractions.stackZ];
+    state.fractions.stackZ = [...state.fractions.stackY];
     state.fractions.stackY = [...state.fractions.stackX];
     state.fractions.stackX = [];
 
+    state.stackLift = false;
     playPush();
     renderAll();
   }
 
   function addTargetFraction(blockSpec) {
-    state.fractions.targetAnswer.push({
-      ...blockSpec,
-      id: Date.now() + Math.random()
-    });
-    playClick();
-    renderAll();
+    // Compatibility stub
   }
 
   function removeTargetFraction(index) {
-    if (index >= 0 && index < state.fractions.targetAnswer.length) {
-      state.fractions.targetAnswer.splice(index, 1);
-      playClick();
-      renderAll();
-    }
+    // Compatibility stub
   }
 
   function clearTargetFractions() {
-    state.fractions.targetAnswer = [];
-    playClick();
-    renderAll();
+    // Compatibility stub
   }
 
   // --- 6. Prime Factor Studio Actions ---
   function addPrimeToX(p) {
+    prepareForEntry();
     state.primes.stackX.push(p);
     const prod = getPrimeProduct(state.primes.stackX);
-    // Immediately update Register X on the LCD!
+    // Immediately update Register X on the LCD with the composite number!
     state.stack.x = { n: prod, d: 1, val: prod };
     playClick();
     renderAll();
@@ -479,6 +524,7 @@
   function clearPrimeX() {
     state.primes.stackX = [];
     state.stack.x = { n: 0, d: 1, val: 0 };
+    state.stackLift = false;
     playClick();
     renderAll();
   }
@@ -491,9 +537,12 @@
     state.stack.y = { ...state.stack.x };
     state.stack.x = { n: 0, d: 1, val: 0 };
 
+    state.primes.stackT = [...state.primes.stackZ];
+    state.primes.stackZ = [...state.primes.stackY];
     state.primes.stackY = [...state.primes.stackX];
     state.primes.stackX = [];
 
+    state.stackLift = false;
     playPush();
     renderAll();
   }
@@ -505,12 +554,14 @@
       const g = gcd(yVal, xVal);
       const factorsG = getPrimeFactorsList(g);
       state.primes.stackX = factorsG;
-      state.primes.stackY = [];
-      state.primes.targetPrimes = factorsG;
+      state.primes.stackY = [...state.primes.stackZ];
+      state.primes.stackZ = [...state.primes.stackT];
+      state.primes.stackT = [];
       state.stack.x = { n: g, d: 1, val: g };
       state.stack.y = { ...state.stack.z };
       state.stack.z = { ...state.stack.t };
       state.stack.t = { n: 0, d: 1, val: 0 };
+      state.stackLift = true;
       playOp();
       renderAll();
     }
@@ -523,12 +574,14 @@
       const l = lcm(yVal, xVal);
       const factorsL = getPrimeFactorsList(l);
       state.primes.stackX = factorsL;
-      state.primes.stackY = [];
-      state.primes.targetPrimes = factorsL;
+      state.primes.stackY = [...state.primes.stackZ];
+      state.primes.stackZ = [...state.primes.stackT];
+      state.primes.stackT = [];
       state.stack.x = { n: l, d: 1, val: l };
       state.stack.y = { ...state.stack.z };
       state.stack.z = { ...state.stack.t };
       state.stack.t = { n: 0, d: 1, val: 0 };
+      state.stackLift = true;
       playOp();
       renderAll();
     }
@@ -539,7 +592,7 @@
     if (xVal > 1) {
       const factors = getPrimeFactorsList(xVal);
       state.primes.stackX = factors;
-      state.primes.targetPrimes = factors;
+      state.stackLift = true;
       playOp();
       renderAll();
     }
@@ -547,6 +600,7 @@
 
   // --- 7. Place-Value Studio Actions ---
   function changePvCount(colKey, delta) {
+    prepareForEntry();
     const val = parseFloat(colKey);
     const curr = state.placeValue.stagingCounts[val] || 0;
     const next = Math.max(0, curr + delta);
@@ -642,27 +696,37 @@
 
   // --- 8. DOM Rendering & UI Presentation ---
   function renderStackLcd() {
-    const regT = document.getElementById('vlab-reg-t');
-    const regZ = document.getElementById('vlab-reg-z');
-    const regY = document.getElementById('vlab-reg-y');
-    const regX = document.getElementById('vlab-reg-x');
-
     const fmt = (item, isRegX) => {
       if (!item) return isRegX ? '0.0000_' : '0.0000';
       if (state.activeTab === 'fractions' && state.fdisp) {
         if (item.val === 0) return isRegX ? '0_' : '0';
-        return `${formatFrac(item.n, item.d)} &nbsp;<span style="color:#64748B; font-size:0.7em;">(${item.val.toFixed(4)})</span>${isRegX ? '_' : ''}`;
+        return `<span style="font-weight:700;">${formatFrac(item.n, item.d)}</span> &nbsp;<span style="color:#64748B; font-size:0.7em;">(${item.val.toFixed(4)})</span>${isRegX ? '_' : ''}`;
       } else if (state.activeTab === 'primes') {
         if (item.val === 0) return isRegX ? '0_' : '0';
-        const factors = getPrimeFactorsList(item.val);
+        const intVal = Math.round(item.val);
+        const factors = getPrimeFactorsList(intVal);
         const formula = formatPrimeFormula(factors);
-        return `${Math.round(item.val)} &nbsp;<span style="color:#64748B; font-size:0.7em;">[${formula}]</span>${isRegX ? '_' : ''}`;
+        if (formula && formula !== `${intVal}`) {
+          return `<strong style="color:#FFFFFF; font-size:1.05em;">${intVal}</strong> &nbsp;<span style="color:#38BDF8; font-size:0.75em;">(${formula})</span>${isRegX ? '_' : ''}`;
+        }
+        return `<strong style="color:#FFFFFF; font-size:1.05em;">${intVal}</strong>${isRegX ? '_' : ''}`;
       } else {
         if (item.val === 0) return isRegX ? '0.0000_' : '0.0000';
         return `${item.val.toFixed(4)}${isRegX ? '_' : ''}`;
       }
     };
 
+    // Update all instances across the page (handles tabbed and standalone pages)
+    document.querySelectorAll('.vlab-reg-t-val').forEach(el => el.innerHTML = fmt(state.stack.t, false));
+    document.querySelectorAll('.vlab-reg-z-val').forEach(el => el.innerHTML = fmt(state.stack.z, false));
+    document.querySelectorAll('.vlab-reg-y-val').forEach(el => el.innerHTML = fmt(state.stack.y, false));
+    document.querySelectorAll('.vlab-reg-x-val').forEach(el => el.innerHTML = fmt(state.stack.x, true));
+
+    // Fallback updates for elements with IDs
+    const regT = document.getElementById('vlab-reg-t');
+    const regZ = document.getElementById('vlab-reg-z');
+    const regY = document.getElementById('vlab-reg-y');
+    const regX = document.getElementById('vlab-reg-x');
     if (regT) regT.innerHTML = fmt(state.stack.t, false);
     if (regZ) regZ.innerHTML = fmt(state.stack.z, false);
     if (regY) regY.innerHTML = fmt(state.stack.y, false);
@@ -670,37 +734,14 @@
   }
 
   function renderFractions() {
-    // 1. Render Column 1: Register Y (The Stack)
-    const colY = document.getElementById('vlab-col-stack-y');
-    const metaY = document.getElementById('vlab-meta-stack-y');
-    if (colY) {
-      colY.innerHTML = '';
-      if (state.fractions.stackY.length === 0) {
-        colY.innerHTML = '<div class="vlab-empty-hint">Stack Y Empty<br>(Press [ENTER] to push)</div>';
-        if (metaY) metaY.textContent = 'Y: 0 (0.0 mm)';
-      } else {
-        const sumY = calcTowerSum(state.fractions.stackY);
-        state.fractions.stackY.forEach((b) => {
-          const blk = document.createElement('div');
-          blk.className = `frac-block-2d ${b.cls}`;
-          blk.style.height = `${Math.max(18, b.mm * 2.8)}px`;
-          blk.setAttribute('data-height', `${b.mm.toFixed(1)}mm`);
-          blk.textContent = b.label;
-          colY.appendChild(blk);
-        });
-        if (metaY) metaY.textContent = `Y: ${formatFrac(sumY.n, sumY.d)} (${sumY.mm.toFixed(1)} mm)`;
-      }
-    }
-
-    // 2. Render Column 2: Register X (Active Entry / Tower)
-    // Support both id 'vlab-col-stage' and 'vlab-col-stack-x' for compatibility
+    // 1. Column 1 (Left): Register X (Active Entry / Tower)
     const colX = document.getElementById('vlab-col-stack-x') || document.getElementById('vlab-col-stage');
     const metaX = document.getElementById('vlab-meta-stack-x') || document.getElementById('vlab-staged-val');
     const metaXSub = document.getElementById('vlab-staged-meta');
     if (colX) {
       colX.innerHTML = '';
       if (state.fractions.stackX.length === 0) {
-        colX.innerHTML = '<div class="vlab-empty-hint">Entry X Empty<br>(Tap blocks to stack)</div>';
+        colX.innerHTML = '<div class="vlab-empty-hint">Register X (Entry) Empty<br>(Tap fraction chips above to stack)</div>';
         if (metaX) metaX.textContent = '0';
         if (metaXSub) metaXSub.textContent = 'Height: 0.0 mm • Val: 0.000';
       } else {
@@ -723,106 +764,54 @@
       }
     }
 
-    // 3. Render Column 3: Verification Target
-    const colTarget = document.getElementById('vlab-col-target');
-    const metaTarget = document.getElementById('vlab-meta-target');
-    if (colTarget) {
-      colTarget.innerHTML = '';
-      if (state.fractions.targetAnswer.length === 0) {
-        colTarget.innerHTML = '<div class="vlab-empty-hint">Target Empty<br>(Build comparison)</div>';
-        if (metaTarget) metaTarget.textContent = 'Target: 0 mm';
+    // 2. Column 2 (Right): Register Y (The Stack)
+    const colY = document.getElementById('vlab-col-stack-y');
+    const metaY = document.getElementById('vlab-meta-stack-y');
+    if (colY) {
+      colY.innerHTML = '';
+      if (state.fractions.stackY.length === 0) {
+        colY.innerHTML = '<div class="vlab-empty-hint">Register Y (Stack) Empty<br>(Press [ENTER] to push)</div>';
+        if (metaY) metaY.textContent = 'Y: 0 (0.0 mm)';
       } else {
-        const sumT = calcTowerSum(state.fractions.targetAnswer);
-        state.fractions.targetAnswer.forEach((b, idx) => {
+        const sumY = calcTowerSum(state.fractions.stackY);
+        state.fractions.stackY.forEach((b) => {
           const blk = document.createElement('div');
-          blk.className = `frac-block-2d ${b.cls} removable`;
+          blk.className = `frac-block-2d ${b.cls}`;
           blk.style.height = `${Math.max(18, b.mm * 2.8)}px`;
           blk.setAttribute('data-height', `${b.mm.toFixed(1)}mm`);
-          blk.setAttribute('title', 'Click to remove this block');
           blk.textContent = b.label;
-          blk.onclick = (e) => {
-            e.stopPropagation();
-            removeTargetFraction(idx);
-          };
-          colTarget.appendChild(blk);
+          colY.appendChild(blk);
         });
-        if (metaTarget) metaTarget.textContent = `Target: ${formatFrac(sumT.n, sumT.d)} (${sumT.mm.toFixed(1)} mm)`;
+        if (metaY) metaY.textContent = `Y: ${formatFrac(sumY.n, sumY.d)} (${sumY.mm.toFixed(1)} mm)`;
       }
     }
 
-    // 4. Update Equivalence Datum Laser Line
-    checkEquivalence();
-  }
-
-  function checkEquivalence() {
-    const sumX = calcTowerSum(state.fractions.stackX);
-    const sumT = calcTowerSum(state.fractions.targetAnswer);
-    const laserEl = document.getElementById('vlab-laser-line');
-    const statusEl = document.getElementById('vlab-check-status');
-
-    const effectiveHeightX = sumX.mm > 0 ? sumX.mm : (state.stack.x.val > 0 ? state.stack.x.val * 84.0 : 0);
-    const effectiveHeightT = sumT.mm;
-
-    if (laserEl) {
-      if (effectiveHeightX > 0) {
-        const hPx = Math.min(300, effectiveHeightX * 2.8);
-        laserEl.style.bottom = `${hPx + 4}px`;
-        laserEl.style.display = 'block';
+    // 3. Dynamic Stack Z & T support if elements exist
+    const colZ = document.getElementById('vlab-col-stack-z');
+    const metaZ = document.getElementById('vlab-meta-stack-z');
+    const containerZ = document.getElementById('vlab-container-stack-z');
+    if (colZ) {
+      colZ.innerHTML = '';
+      if (state.fractions.stackZ && state.fractions.stackZ.length > 0) {
+        if (containerZ) containerZ.style.display = 'flex';
+        const sumZ = calcTowerSum(state.fractions.stackZ);
+        state.fractions.stackZ.forEach((b) => {
+          const blk = document.createElement('div');
+          blk.className = `frac-block-2d ${b.cls}`;
+          blk.style.height = `${Math.max(18, b.mm * 2.8)}px`;
+          blk.setAttribute('data-height', `${b.mm.toFixed(1)}mm`);
+          blk.textContent = b.label;
+          colZ.appendChild(blk);
+        });
+        if (metaZ) metaZ.textContent = `Z: ${formatFrac(sumZ.n, sumZ.d)}`;
       } else {
-        laserEl.style.display = 'none';
-      }
-    }
-
-    if (statusEl) {
-      if (effectiveHeightX === 0 && effectiveHeightT === 0) {
-        statusEl.textContent = 'Awaiting block entry...';
-        statusEl.style.color = '#94A3B8';
-        if (laserEl) laserEl.classList.remove('active');
-      } else if (effectiveHeightX > 0 && effectiveHeightT === 0) {
-        statusEl.textContent = `Datum line set at ${effectiveHeightX.toFixed(1)} mm. Build verification tower to match.`;
-        statusEl.style.color = '#38BDF8';
-        if (laserEl) laserEl.classList.remove('active');
-      } else if (Math.abs(effectiveHeightX - effectiveHeightT) < 0.2 && effectiveHeightX > 0) {
-        statusEl.innerHTML = '🎉 <strong>EXACT MATCH // PROVED!</strong>';
-        statusEl.style.color = '#10B981';
-        if (laserEl) laserEl.classList.add('active');
-        playSuccess();
-      } else {
-        const delta = effectiveHeightX - effectiveHeightT;
-        statusEl.textContent = `Δ Height: ${delta > 0 ? '+' : ''}${delta.toFixed(1)} mm (Tower difference)`;
-        statusEl.style.color = '#F59E0B';
-        if (laserEl) laserEl.classList.remove('active');
+        if (containerZ) containerZ.style.display = 'none';
       }
     }
   }
 
   function renderPrimes() {
-    // 1. Column 1: Prime Register Y (The Stack)
-    const colY = document.getElementById('vlab-prime-stack-y');
-    const metaY = document.getElementById('vlab-prime-meta-y');
-    if (colY) {
-      colY.innerHTML = '';
-      if (state.primes.stackY.length === 0) {
-        colY.innerHTML = '<div class="vlab-empty-hint">Prime Stack Y Empty<br>(Press [ENTER] to push)</div>';
-        if (metaY) metaY.textContent = 'Y: 0';
-      } else {
-        const prodY = getPrimeProduct(state.primes.stackY);
-        const mmY = getPrimeMm(state.primes.stackY);
-        state.primes.stackY.forEach((p) => {
-          const blk = document.createElement('div');
-          blk.className = 'prime-block-2d-vert';
-          const mm = primeLookupMm[p] || 20;
-          blk.style.height = `${Math.max(22, mm * 2.2)}px`;
-          blk.style.backgroundColor = primeLookupColors[p] || '#0284C7';
-          blk.innerHTML = `<span>[${p}]</span><span>${mm.toFixed(1)}mm</span>`;
-          colY.appendChild(blk);
-        });
-        if (metaY) metaY.textContent = `Y: ${prodY} (Log: ${mmY.toFixed(1)}mm)`;
-      }
-    }
-
-    // 2. Column 2: Prime Register X (Active Entry / Tower)
-    // Support both 'vlab-prime-stack-x' and 'vlab-prime-stage'
+    // 1. Column 1 (Left): Prime Register X (Active Entry / Tower)
     const colX = document.getElementById('vlab-prime-stack-x') || document.getElementById('vlab-prime-stage');
     const valEl = document.getElementById('vlab-prime-val');
     const formulaEl = document.getElementById('vlab-prime-formula');
@@ -834,7 +823,7 @@
     if (colX) {
       colX.innerHTML = '';
       if (state.primes.stackX.length === 0) {
-        colX.innerHTML = '<div class="vlab-empty-hint">Prime Entry X Empty<br>(Tap prime blocks below)</div>';
+        colX.innerHTML = '<div class="vlab-empty-hint">Register X (Entry) Empty<br>(Tap prime chips above to stack)</div>';
       } else {
         state.primes.stackX.forEach((p, idx) => {
           const blk = document.createElement('div');
@@ -853,26 +842,64 @@
       }
     }
 
-    if (valEl) valEl.textContent = prodX > 0 ? `${prodX}` : '0';
-    if (formulaEl) formulaEl.innerHTML = prodX > 0 ? formatPrimeFormula(state.primes.stackX) : 'No factors selected';
+    const effectiveValX = prodX > 0 ? prodX : (state.stack.x.val > 0 ? Math.round(state.stack.x.val) : 0);
+    if (valEl) valEl.textContent = effectiveValX > 0 ? `${effectiveValX}` : '0';
+    if (formulaEl) {
+      if (state.primes.stackX.length > 0) {
+        formulaEl.innerHTML = formatPrimeFormula(state.primes.stackX);
+      } else if (effectiveValX > 1) {
+        formulaEl.innerHTML = formatPrimeFormula(getPrimeFactorsList(effectiveValX));
+      } else {
+        formulaEl.innerHTML = 'No factors selected';
+      }
+    }
     if (metaEl) metaEl.textContent = `Logarithmic Height: ${mmX.toFixed(1)} mm • ${state.primes.stackX.length} Factors`;
 
-    // 3. Column 3: Prime Target / Decomposed Tower
-    const colTarget = document.getElementById('vlab-prime-target');
-    if (colTarget) {
-      colTarget.innerHTML = '';
-      if (state.primes.targetPrimes.length === 0) {
-        colTarget.innerHTML = '<div class="vlab-empty-hint">Target Tower Empty<br>(Press [FACT] on Reg X)</div>';
+    // 2. Column 2 (Right): Prime Register Y (The Stack)
+    const colY = document.getElementById('vlab-prime-stack-y');
+    const metaY = document.getElementById('vlab-prime-meta-y');
+    if (colY) {
+      colY.innerHTML = '';
+      if (state.primes.stackY.length === 0) {
+        colY.innerHTML = '<div class="vlab-empty-hint">Register Y (Stack) Empty<br>(Press [ENTER] to push)</div>';
+        if (metaY) metaY.textContent = 'Y: 0';
       } else {
-        state.primes.targetPrimes.forEach((p) => {
+        const prodY = getPrimeProduct(state.primes.stackY);
+        const mmY = getPrimeMm(state.primes.stackY);
+        state.primes.stackY.forEach((p) => {
           const blk = document.createElement('div');
           blk.className = 'prime-block-2d-vert';
           const mm = primeLookupMm[p] || 20;
           blk.style.height = `${Math.max(22, mm * 2.2)}px`;
-          blk.style.backgroundColor = primeLookupColors[p] || '#10B981';
+          blk.style.backgroundColor = primeLookupColors[p] || '#0284C7';
           blk.innerHTML = `<span>[${p}]</span><span>${mm.toFixed(1)}mm</span>`;
-          colTarget.appendChild(blk);
+          colY.appendChild(blk);
         });
+        if (metaY) metaY.textContent = `Y: ${prodY} (Log: ${mmY.toFixed(1)}mm)`;
+      }
+    }
+
+    // Dynamic Stack Z & T support if elements exist
+    const colZ = document.getElementById('vlab-prime-stack-z');
+    const metaZ = document.getElementById('vlab-prime-meta-z');
+    const containerZ = document.getElementById('vlab-prime-container-z');
+    if (colZ) {
+      colZ.innerHTML = '';
+      if (state.primes.stackZ && state.primes.stackZ.length > 0) {
+        if (containerZ) containerZ.style.display = 'flex';
+        const prodZ = getPrimeProduct(state.primes.stackZ);
+        state.primes.stackZ.forEach((p) => {
+          const blk = document.createElement('div');
+          blk.className = 'prime-block-2d-vert';
+          const mm = primeLookupMm[p] || 20;
+          blk.style.height = `${Math.max(22, mm * 2.2)}px`;
+          blk.style.backgroundColor = primeLookupColors[p] || '#0284C7';
+          blk.innerHTML = `<span>[${p}]</span><span>${mm.toFixed(1)}mm</span>`;
+          colZ.appendChild(blk);
+        });
+        if (metaZ) metaZ.textContent = `Z: ${prodZ}`;
+      } else {
+        if (containerZ) containerZ.style.display = 'none';
       }
     }
   }
