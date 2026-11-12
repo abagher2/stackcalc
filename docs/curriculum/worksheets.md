@@ -198,8 +198,7 @@ Big Ideas Math (Ron Larson & Laurie Boswell) and Advanced Placement standards br
     Aligned section-by-section with **Big Ideas Math Units 1–10 (Sections 1.1–10.4)**—featuring 10 Chapter Story Openers, 2 full worksheets per section (**Practice A: Key Ideas & Two-Method Practice** + **Practice B: Modeling Real Life Applications**), 90 Two-Method Worked Examples (`Method 1: +10 pts` vs. `Method 2: +20 pts DOUBLE`), step-by-step instructions for our 3 published block kits (`PLACE-01`, `FRAC-01`, `PRIME-01`), 900 clean open-workspace practice problems, **10 Separate Printable Chapter PDFs (`Unit 1`–`Unit 10`)**, and the **15-Page Teacher Coach Guide**:
 
     - **[Read the Full 45-Section Interactive Curriculum &rarr;](big-ideas-middle-school-sc6-workbook.md)**
-    - **[Order Bound Print Workbook on Amazon ($16) ↗](https://link.amazon/B07bxzYKq)** &bull; **[Order Teacher's Curriculum Guide on Amazon ($16) ↗](https://link.amazon/B05RFHqeu)**
-    - **[Explore Spiral Lay-Flat Editions on Lulu Press ↗](https://www.lulu.com/spotlight/stackcalc)**
+    - **[Order Bound Print Workbook on Amazon ($14.99) ↗](https://link.amazon/B07bxzYKq)** &bull; **[Order Teacher's Curriculum Guide on Amazon ($16) ↗](https://link.amazon/B05RFHqeu)**
 
 | Grade Level | Chapter / Unit & Topic | Target Calculator | Published Block Kit / Visual Model | Form A (Classroom Master) | Form B (Retake / HW Variant) |
 | :--- | :--- | :--- | :--- | :---: | :---: |
@@ -243,5 +242,4 @@ StackCalc seamlessly connects physical math blocks, handheld calculators, classr
 | **Handcrafted Boxed Sets on Etsy** | Finished classroom sets, pre-assembled calculators, and laminated cards | [Official Etsy Storefront ↗](https://stackcalcmath.etsy.com) |
 | **On-Demand Replacement Parts** | High-precision additive manufacturing for $2.49 piece refills and fleet sets | [Slant 3D Manufacturing Portal ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Parts Directory](../parts.md) |
 | **Flagship Amazon Bookstore Suite** | Bound paperback & hardcover volumes on Prime | • **Teacher's Curriculum Guide:** [Amazon (B05RFHqeu) ↗](https://link.amazon/B05RFHqeu)<br>• **Middle School Math Lab Workbook:** [Amazon (B07bxzYKq) ↗](https://link.amazon/B07bxzYKq)<br>• **SC-6 Illustrated Textbook:** [Amazon (B0f5cP0Ur) ↗](https://link.amazon/B0f5cP0Ur)<br>• **SC-32 Scientific Manual:** [Paperback ↗](https://link.amazon/B07DqTRR5) / [Hardcover ↗](https://link.amazon/B09AnTIQI) |
-| **Lulu Collector's Editions** | Full-wrap spiral-bound teacher desk manuals & casebound hardcovers | [Lulu Spotlight: StackCalc Press ↗](https://www.lulu.com/spotlight/stackcalc) |
 | **Open Hardware Build Logs** | RP2350 microcontroller schematics, KiCad PCBs, and firmware dev logs | [Hackaday Project Hub (206743) ↗](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator) |

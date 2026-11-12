@@ -76,7 +76,6 @@ StackCalc is a comprehensive open-hardware, educational, and computational ecosy
 - 🌐 **Official Website & Interactive Docs:** [stackcalc.io](https://stackcalc.io) — Interactive web calculator, technical manuals, and curriculum pacing guides.
 - 🖨️ **Printables 3D Models Hub:** [printables.com/@StackCalc_5593834](https://www.printables.com/@StackCalc_5593834) — 100% free open-source STLs and pre-sliced 3MF plates for school makerspaces, teachers, and enthusiasts.
 - 🛒 **Etsy Storefront:** [stackcalcmath.etsy.com](https://stackcalcmath.etsy.com) — Handcrafted 3D-printed boxed manipulative sets and pre-soldered hardware calculator kits.
-- 📘 **Lulu Press:** [lulu.com/spotlight/stackcalc](https://www.lulu.com/spotlight/stackcalc) — Lay-flat coil-bound curriculum guides, student workbooks, and coach manuals.
 - 🏭 **Slant 3D Manufacturing Portal:** [teleportpod.com/portals/profile/StackCalc](https://teleportpod.com/portals/profile/StackCalc) — Industrial on-demand 3D printing for single-piece replacement refills and classroom fleet sets.
 - 📖 **Companion Books on Amazon:** [*From Blocks to the Stack* (ASIN B0HPJN3KP9)](https://link.amazon/B0f5cP0Ur) — Illustrated K–8 popular math handbook and SC-6 student guide.
 - 📱 **Apple App Store:** [StackCalc on the App Store](https://apps.apple.com/app/id6801788040) — Native iOS, iPadOS, and standalone watchOS RPN calculator apps.

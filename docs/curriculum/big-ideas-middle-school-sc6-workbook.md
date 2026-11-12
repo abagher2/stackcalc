@@ -20,9 +20,8 @@
 **Grade 6 Complete + Grade 7 Bridge • Title Page & Preface • 10 Unit Introductions • 45 Textbook Sections • 90 Printable Worksheets (Practice A & B) • 90 Multi-Way Worked Examples • 900 Practice Problems + 10 End-of-Unit Mastery Quizzes (100 Quiz Items) • 7 Reference Appendices (Answer Keys, Standards Crosswalk & Official 3D Block Studio Guides)**
 
 <div class="hero-buttons" style="margin: 1.25rem 0 1.75rem 0;">
-  <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Student Workbook on Amazon ($16) ↗</a>
+  <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Student Workbook on Amazon ($14.99) ↗</a>
   <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="md-button">🔑 Master Teacher's Guide on Amazon ($16) ↗</a>
-  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Spiral Lay-Flat Edition on Lulu ↗</a>
   <a href="#curriculum-sections" class="md-button">📋 Browse All 10 Units &amp; 45 Sections Below</a>
 </div>
 
@@ -73,7 +72,6 @@ Every worksheet encourages students to master two independent solution methods a
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
   <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
-  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Prime Factor Studio (PRIME-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)
@@ -415,7 +413,6 @@ Leo used to dread word problems with GCF and LCM because the two three-letter na
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
   <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
-  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)`):** [84mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
@@ -757,7 +754,6 @@ Looking at the 3D-printer screen, Marcus needed to find how many 0.20-millimeter
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
   <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
-  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Prime Factor Studio (PRIME-01) + Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)`):** [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
@@ -1099,7 +1095,6 @@ When a $100 bike helmet bundle went on sale for 20% off and Priya had an extra c
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
   <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
-  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Prime Factor Studio (PRIME-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)
@@ -1377,7 +1372,6 @@ At the end of the craft fair, Maya had (16x + 24) stickers to pack into the grea
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
   <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
-  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Fraction Studio (FRAC-01) + Place Value Studio (PLACE-01)`):** [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Place Value Studio (`PLACE-01`)](../products/place-value/index.md)
@@ -1655,7 +1649,6 @@ When Sora plotted a rectangular park with corners at (1, 2) and (11, 8) on a map
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
   <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
-  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)
@@ -1997,7 +1990,6 @@ On a harbor coordinate map, Mia needed the length of a suspension bridge stretch
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
   <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
-  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)
@@ -2339,7 +2331,6 @@ Devon always mixed up which variable was 'independent' and which was 'dependent,
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
   <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
-  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)
@@ -2617,7 +2608,6 @@ At the team pizza party, Marcus and his friends were sure that two 10-inch diame
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
   <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
-  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md)
@@ -2895,7 +2885,6 @@ In the bird-cognition lab, Raven A solved four puzzle trials in 8, 9, 9, and 10 
 
 <div class="hero-buttons" style="margin: 0.75rem 0 1.25rem 0;">
   <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="md-button md-button--primary">📦 Order Printed Workbook on Amazon ($16) ↗</a>
-  <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="md-button">📖 Lay-Flat Spiral on Lulu ↗</a>
 </div>
 
 - **Hands-On Block Kits (When Applicable — `Place Value Studio (PLACE-01) + Fraction Studio (FRAC-01) + Prime Factor Studio (PRIME-01)`):** [Place Value Studio (`PLACE-01`)](../products/place-value/index.md) &bull; [84mm Fraction Studio (`FRAC-01`)](../products/fraction-studio/index.md) &bull; [Prime Factor Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)

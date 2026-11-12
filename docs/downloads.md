@@ -214,30 +214,27 @@ Free downloadable teaching guides, pre-generated station companions, competition
 
 ### Official Printed Books &amp; Bookstore Editions
 
-Our complete curriculum textbooks and workbooks are published in bookstore editions on Amazon and coil-bound lay-flat workbooks on Lulu Press:
+Our complete curriculum textbooks and workbooks are published in bookstore editions on Amazon:
 
-* **Middle School Math Block Supplement &amp; Workbook (Grades 6–8):** [Order on Amazon ($16) ↗](https://link.amazon/B07bxzYKq) &bull; [Explore Online Curriculum Guide](curriculum/big-ideas-middle-school-sc6-workbook.md)
+* **Middle School Math Block Supplement &amp; Workbook (Grades 6–8):** [Order on Amazon ($14.99) ↗](https://link.amazon/B07bxzYKq) &bull; [Explore Online Curriculum Guide](curriculum/big-ideas-middle-school-sc6-workbook.md)
 * **Unified Master Teacher's Guide (Grades K–12):** [Order on Amazon ($16) ↗](https://link.amazon/B05RFHqeu) &bull; [Explore Online Teacher Facilitator Guide](curriculum/teacher-guide.md)
 * **From Blocks to the Stack (SC-6 Elementary Textbook):** [Order on Amazon ($16) ↗](https://link.amazon/B0f5cP0Ur) &bull; [Explore Book Overview](products/sc6-book.md)
 * **Thinking in the Stack (SC-32 Scientific Manual):** [Order on Amazon ($16) ↗](https://link.amazon/B07DqTRR5) &bull; [Hardcover ($28) ↗](https://link.amazon/B09AnTIQI)
 
 ---
 
-## 2. Official Calculator Manuals, Spiral Workbooks &amp; Machine-Readable Specs (Print &amp; .JSON)
+## 2. Official Calculator Manuals &amp; Machine-Readable Specs (Print &amp; .JSON)
 
-Official reference manuals, spiral-bound curriculum workbooks, structured JSON operational datasets, and view-only OpenAPI 3.1 specifications. Our flagship books are available in paperback and hardcover on **Amazon** ([SC-32 Paperback ↗](https://link.amazon/B07DqTRR5) • [SC-32 Hardcover ↗](https://link.amazon/B09AnTIQI) • [SC-6 ↗](https://link.amazon/B0f5cP0Ur) • [Middle School Workbook ↗](https://link.amazon/B07bxzYKq) • [Teacher's Guide ↗](https://link.amazon/B05RFHqeu)), and our **coil-bound lay-flat spiral curriculum books &amp; workbooks** are published on **[Lulu Press ↗](https://www.lulu.com/spotlight/stackcalc)**.
+Official reference manuals, structured JSON operational datasets, and view-only OpenAPI 3.1 specifications. Our flagship books are available in paperback and hardcover on **Amazon** ([SC-32 Paperback ↗](https://link.amazon/B07DqTRR5) • [SC-32 Hardcover ↗](https://link.amazon/B09AnTIQI) • [SC-6 ↗](https://link.amazon/B0f5cP0Ur) • [Middle School Workbook ↗](https://link.amazon/B07bxzYKq) • [Teacher's Guide ↗](https://link.amazon/B05RFHqeu)).
 
 <div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
   <div>
-    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #F59E0B; text-transform: uppercase;">SPIRAL CURRICULUM BOOKS ON LULU &amp; FLAGSHIP BOOKS ON AMAZON</span>
-    <p style="margin: 0.2rem 0 0 0; font-size: 0.8rem; color: #CBD5E1;">Order coil-bound lay-flat curriculum workbooks on Lulu Press or bookstore paperback/hardcover textbooks on Amazon.</p>
+    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #F59E0B; text-transform: uppercase;">FLAGSHIP BOOKS ON AMAZON</span>
+    <p style="margin: 0.2rem 0 0 0; font-size: 0.8rem; color: #CBD5E1;">Order official paperback and hardcover companion books directly on Amazon.</p>
   </div>
   <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
     <a href="manuals/" style="padding: 0.5rem 1rem; border-radius: 6px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
       EXPLORE MANUALS HUB &rarr;
-    </a>
-    <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background: #0284C7; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
-      SPIRAL BOOKS ON LULU ↗
     </a>
     <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background: #F59E0B; color: #0F172A; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
       PRINT BOOKS ON AMAZON ↗
@@ -342,6 +339,6 @@ Instead of charging for digital STL downloads or maintaining large ZIP files, we
 For schools, teachers, or parents who don't have access to a 3D printer:
 - **Order On-Demand from Slant 3D:** Our official manufacturing partner produces matching replacement parts, individual block refills, and classroom sets on industrial additive manufacturing farms: [Slant 3D Portal ↗](https://teleportpod.com/portals/profile/StackCalc)
 - **Order Handcrafted 3D-Printed Manipulative & Hardware Kits on Etsy:** Handcrafted 3D-printed manipulative block kits and pre-soldered calculator hardware kits ship within 48 hours: [Etsy Storefront (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
-- **Order Spiral-Bound Curriculum Books on Lulu & Print Textbooks on Amazon:** Lay-flat coil-bound curriculum guides and workbooks are on [Lulu Press ↗](https://www.lulu.com/spotlight/stackcalc), and flagship books are on Amazon for SC-32 ([Paperback ↗](https://link.amazon/B07DqTRR5) • [Hardcover ↗](https://link.amazon/B09AnTIQI)), [SC-6 ↗](https://link.amazon/B0f5cP0Ur), the [Middle School Math Blocks Workbook ↗](https://link.amazon/B07bxzYKq), and the [Teacher's Curriculum Guide ↗](https://link.amazon/B05RFHqeu).
+- **Order Official Print Books on Amazon:** Flagship textbooks and workbooks are on Amazon for SC-32 ([Paperback ↗](https://link.amazon/B07DqTRR5) • [Hardcover ↗](https://link.amazon/B09AnTIQI)), [SC-6 ↗](https://link.amazon/B0f5cP0Ur), the [Middle School Math Blocks Workbook ↗](https://link.amazon/B07bxzYKq), and the [Teacher's Curriculum Guide ↗](https://link.amazon/B05RFHqeu).
 - **Follow Hardware Build Logs on Hackaday:** For KiCad PCB schematics, RP2350 silicon bring-up, and engineering discussion: [Hackaday Project ↗](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)
 - **View Full Refill Instructions:** Read our dedicated [Replacement Parts & Refills Guide](parts.md).

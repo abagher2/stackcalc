@@ -142,11 +142,11 @@ To provide students with rugged, lay-flat laboratory workbooks without maintaini
 flowchart TD
     Order["Incoming Workbook Order"] --> Branch{"Order Type"}
     
-    Branch -->|"Standalone Workbook (SC-BOOK-01)"| POD["Pathway A: Lulu Direct POD Drop-Ship"]
+    Branch -->|"Standalone Workbook (SC-BOOK-01)"| POD["Pathway A: Automated POD Drop-Ship"]
     Branch -->|"Tactile Kit Bundle (*-BNDL)"| Bench["Pathway B: Packing Bench Buffer (SHELF-BOOK-01)"]
-    Branch -->|"District Bulk Order (10-30+ copies)"| Bulk["Pathway C: Bulk POD Run (Mixam / Lulu)"]
+    Branch -->|"District Bulk Order (10-30+ copies)"| Bulk["Pathway C: Bulk POD Run"]
     
-    POD --> POD1["Automated Lulu Direct API / xPress"]
+    POD --> POD1["Automated POD Direct API"]
     POD1 --> POD2["Zero local touch • Shipped in 24-48h"]
     POD2 --> POD3["Digital PDF license link emailed to customer"]
     
@@ -183,7 +183,7 @@ sequenceDiagram
     actor District as School District / Teacher
     participant Hub as StackCalc Procurement Desk
     participant Farm as Farm Tracker / Slant 3D API
-    participant POD as Lulu / Mixam POD
+    participant POD as Commercial POD Partner
     actor Office as School Front Office (Attn: Teacher)
 
     District->>Hub: Submit PO Document (Web Quote STK-PO-xxxx or Direct PO)
@@ -205,7 +205,7 @@ sequenceDiagram
 - **24-Hour Vendor Onboarding SLA:** Signed IRS Form W-9, EFT/ACH Direct Deposit authorizations, and FERPA/Texas DIR compliance statements are dispatched within 24 business hours of request.
 - **Zero-Inventory Production Scalability:**
   - **Class Packs (1–15 Units):** Scheduled through the in-house Prusa MK4S sprint queue.
-  - **District Fleets (16–100+ Units):** Tactile Gridfinity trays and components are routed directly to **Slant 3D's distributed farm API**, while spiral workbooks drop-ship in volume via Mixam or Lulu.
+  - **District Fleets (16–100+ Units):** Tactile Gridfinity trays and components are routed directly to **Slant 3D's distributed farm API**, while companion workbooks drop-ship in volume via commercial print-on-demand.
 - **Perpetual District Reproduction License (`DIST-LIC-PERPETUAL`):** Includes perpetual multi-teacher reproduction rights, internal LMS hosting (Canvas, Google Classroom), and all 20 CRA unit answer keys.
 - **Farm Tracker Integration:** Operators can review institutional protocols and Net-30 remittance procedures via:
   ```bash

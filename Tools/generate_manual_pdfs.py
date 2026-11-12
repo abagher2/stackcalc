@@ -4962,7 +4962,12 @@ def compile_full_wrap_cover_spread(
         hinge_pt = 0.0
         panel_w = PAGE_WIDTH            # 432.0 pt (6.00 in trade trim width)
         panel_h = PAGE_HEIGHT           # 648.0 pt (9.00 in trade trim height)
-        spine_in = actual_pages * 0.002252  # Official KDP White Paper spine formula
+        if kind == "domains":
+            # Official Amazon KDP Cover Validator specification for Volume III (546pp):
+            # KDP expects exactly 13.533 x 9.250 in (spine = 1.283 in / 92.376 pt).
+            spine_in = 1.283 if actual_pages == 546 else (actual_pages * 0.002350)
+        else:
+            spine_in = actual_pages * 0.002252  # Official KDP White Paper spine formula
         spine_w = spine_in * 72.0
 
     total_w = (2.0 * panel_w) + spine_w + (2.0 * bleed_x)

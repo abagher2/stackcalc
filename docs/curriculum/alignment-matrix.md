@@ -130,11 +130,11 @@ This alignment matrix provides classroom educators and curriculum coordinators w
 
 ## 3. Official Curriculum Books, Reference Manuals & Station Guides
 
-Explore our complete bookstore and lay-flat spiral editions on Amazon and Lulu Press:
+Explore our official bookstore editions on Amazon:
 
 * **[Master Teacher's Guide (Book 1) on Amazon ($16) ↗](https://link.amazon/B05RFHqeu)** &bull; [Online Teacher Guide](teacher-guide.md)
-* **[Middle School Math Lab Workbook (Book 3) on Amazon ($16) ↗](https://link.amazon/B07bxzYKq)** &bull; [Online Workbook](big-ideas-middle-school-sc6-workbook.md)
+* **[Middle School Math Lab Workbook (Book 3) on Amazon ($14.99) ↗](https://link.amazon/B07bxzYKq)** &bull; [Online Workbook](big-ideas-middle-school-sc6-workbook.md)
 * **[From Blocks to the Stack (SC-6 Elementary Companion) on Amazon ($16) ↗](https://link.amazon/B0f5cP0Ur)**
 * **[Thinking in the Stack (SC-32 Scientific Reference) on Amazon ($16) ↗](https://link.amazon/B07DqTRR5)**
-* **[Official Reference Manuals & Guides ($16 Spiral Editions) &rarr;](../manuals/index.md)**
+* **[Official Reference Manuals & Guides ($16 Print Editions) &rarr;](../manuals/index.md)**
 * **[Classroom Station Worksheets Center &rarr;](worksheets.md)**

@@ -82,7 +82,7 @@ Links:
 - Main Site, Free Curriculum & Manuals: https://www.stackcalc.io
 - App Store (iOS, iPadOS & 100% Standalone Apple Watch App): https://apps.apple.com/app/id6801788040
 - Etsy Storefront (Founder's Batch Hardware & 3D-Printed Manipulative Block Kits): https://stackcalcmath.etsy.com
-- Spiral-Bound Curriculum Books on Lulu & Print Books on Amazon: https://www.lulu.com/spotlight/stackcalc / https://link.amazon/B0f5cP0Ur
+- Companion Books on Amazon: https://link.amazon/B0f5cP0Ur (SC-6) / https://link.amazon/B07DqTRR5 (SC-32)
 - Hackaday.io Build Logs & Free STLs: https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator
 
 I would love to hear your thoughts—especially from fellow 32SII, DM32, and C47 users!
@@ -132,7 +132,7 @@ Explore the launch:
 - Launch Day Engineering Post: https://www.stackcalc.io/blog/2026/10/28/launch-day-kid-friendly-rpn-calculator-and-ecosystem/
 - App Store (v1.1 — iOS, iPadOS & Standalone watchOS, $0 subscriptions/ads): https://apps.apple.com/app/id6801788040
 - Etsy Store (Batch 001 Hardware & 3D-Printed Manipulative Block Kits): https://stackcalcmath.etsy.com
-- Spiral-Bound Curriculum Books on Lulu & Print Books on Amazon: https://www.lulu.com/spotlight/stackcalc / https://link.amazon/B0f5cP0Ur
+- Companion Books on Amazon: https://link.amazon/B0f5cP0Ur (SC-6) / https://link.amazon/B07DqTRR5 (SC-32)
 - Free STLs & Printables / Hackaday Logs: https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator
 
 Happy to answer questions on Embedded Swift on RP2350, using AI for KiCad/OpenSCAD/FEA workflows, or teaching kids RPN!
@@ -169,7 +169,7 @@ Waiting for PCB fabrication and 3D prints usually slows down firmware UX iterati
 - **App Store (Universal iOS, iPadOS & watchOS):** https://apps.apple.com/app/id6801788040
 - **Hackaday Project & Open-Source STLs:** https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator
 - **Etsy Storefront (Hardware & 3D-Printed Math Block Kits):** https://stackcalcmath.etsy.com
-- **Lulu Press (Spiral Curriculum Workbooks) & Amazon (Print Textbooks):** https://www.lulu.com/spotlight/stackcalc / https://link.amazon/B0f5cP0Ur
+- **Companion Books on Amazon:** https://link.amazon/B0f5cP0Ur (SC-6) / https://link.amazon/B07DqTRR5 (SC-32)
 
 Happy to dive into any details on sharing code between SwiftUI and Embedded Swift or automating textbook verification with `XCTest`!
 ```
@@ -241,7 +241,7 @@ Now that Batch 1 proves out the 43-key matrix, TPU membrane feel, display driver
 ### Check Out the Launch:
 - **Website, Manuals & Free Curriculum:** https://www.stackcalc.io
 - **Etsy Store (Batch 001 Hardware & 3D-Printed Math Block Kits):** https://stackcalcmath.etsy.com
-- **Lulu Press (Spiral Curriculum Workbooks) & Amazon (Print Textbooks):** https://www.lulu.com/spotlight/stackcalc / https://link.amazon/B0f5cP0Ur
+- **Companion Books on Amazon:** https://link.amazon/B0f5cP0Ur (SC-6) / https://link.amazon/B07DqTRR5 (SC-32)
 - **Free Open-Source STLs (Enclosure + Gridfinity Math Lab):** https://www.stackcalc.io/downloads/
 - **iOS, iPadOS & Standalone Apple Watch App (v1.1):** https://apps.apple.com/app/id6801788040
 - **Hackaday Build Logs:** https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator
@@ -315,7 +315,7 @@ We designed the **StackCalc Tactile Math Lab** in parametric OpenSCAD so teacher
 
 ### Links & Complete Ecosystem
 - **Full Blog Post on How We Designed & Manufactured the Blocks:** https://www.stackcalc.io/blog/2026/10/26/manufacturing-math-blocks-and-reference-books/
-- **Don't Want to Print All the Multi-Color Silk Kits Yourself?** Grab our workshop-calibrated 3D block kits and hardware on **Etsy:** https://stackcalcmath.etsy.com (plus spiral-bound curriculum workbooks on **Lulu:** https://www.lulu.com/spotlight/stackcalc)
+- **Don't Want to Print All the Multi-Color Silk Kits Yourself?** Grab our workshop-calibrated 3D block kits and hardware on **Etsy:** https://stackcalcmath.etsy.com (plus official companion books on **Amazon:** https://link.amazon/B0f5cP0Ur)
 - **Free 43-Page Curriculum Guide, 120 Worksheets & 590+ Problem Workbooks:** https://www.stackcalc.io/curriculum/
 - **Universal iOS, iPadOS & Standalone Apple Watch App (v1.1):** https://apps.apple.com/app/id6801788040
 - **Engineering Blog (including our PCBWay DFM Photos & FEA Sweeps):** https://www.stackcalc.io/blog/

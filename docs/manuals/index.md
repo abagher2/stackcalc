@@ -67,14 +67,6 @@ description: "Spiral-bound lay-flat editions ($16.00) and complete online chapte
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
           "url": "https://link.amazon/B0f5cP0Ur"
-        },
-        {
-          "@type": "Offer",
-          "name": "Lulu Spiral-Bound Curriculum & Workbook Edition",
-          "price": "16.00",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "url": "https://www.lulu.com/spotlight/stackcalc"
         }
       ]
     },
@@ -126,12 +118,12 @@ description: "Spiral-bound lay-flat editions ($16.00) and complete online chapte
 
 # Official Reference Books & Companion Volumes
 
-Welcome to the **StackCalc Books & Reference Hub**. Both of our flagship volumes—***From Blocks to the Stack*** (for Grades 3–6 learners, parents, and teachers using the **SC-6 Elementary**) and ***Thinking in the Stack*** (for high school, university, and practicing engineers using the **SC-32 Scientific**)—are available to read online right here in full, as downloadable typeset PDFs, and as **spiral-bound lay-flat print editions ($16.00)** built to sit open beside your calculator and 3D-printed math blocks.
+Welcome to the **StackCalc Books & Reference Hub**. Both of our flagship volumes—***From Blocks to the Stack*** (for Grades 3–6 learners, parents, and teachers using the **SC-6 Elementary**) and ***Thinking in the Stack*** (for high school, university, and practicing engineers using the **SC-32 Scientific**)—are available to read online in preview, as typeset reference texts, and as official **print bookstore editions on Amazon** built to sit open beside your calculator and 3D-printed math blocks.
 
 Every worked example, story, and 4-register stack trace in both books is verified directly against the StackCalc calculation engine.
 
-> **Open-Source Curriculum & Printable 3D Studios:**  
-> While our spiral-bound print books are available for $16.00, all online chapters, the **Master Curriculum Guide**, **Printable Student Station Workbooks**, and **3D-Printable Manipulative Studio Files (`.stl` / `.3mf`)** are **100% free and open-source** in our [Curriculum Center](../curriculum/index.md) and [Download Center](../downloads.md).
+> **Open-Source Manipulative Blueprints & Digital Tools:**  
+> All 3D-printable manipulative studio files (`.stl` / `.3mf`), online reference materials, and interactive web tools are available in our [Download Center](../downloads.md) and [Catalog](../products.md). Official print companion books and student workbooks are available on Amazon.
 
 ---
 
@@ -149,7 +141,6 @@ Every worked example, story, and 4-register stack trace in both books is verifie
     </p>
     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
       <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: #FF9900; color: #111827; font-weight: 800; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Order on Amazon ($16) ↗</a>
-      <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; font-weight: 700; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Spiral Edition on Lulu ↗</a>
       <a href="../products/sc6-book.md" style="padding: 0.5rem 0.9rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-weight: 600; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Book Details &rarr;</a>
     </div>
   </div>
@@ -157,8 +148,7 @@ Every worked example, story, and 4-register stack trace in both books is verifie
 
 Written directly for curious 3rd–6th graders, parents, and teachers, ***From Blocks to the Stack*** begins with a simple observation: before you ever learned to write equations with parentheses and equals signs, your hands already knew how to do math by **stacking physical things**. Pairing the **StackCalc SC-6** with nine 3D-printed manipulative studios (Ten-Frames, Counting Tiles, $84\text{ mm}$ Fraction Towers, Prime Factor Blocks, and a Planetary Geared Clock), the book gently guides young learners from their very first stack addition to multi-step problem solving without parentheses.
 
-- **[Order on Amazon: Paperback & Hardcover Bookstore Editions ↗](https://link.amazon/B0f5cP0Ur)**
-- **[Order on Lulu: Spiral-Bound Lay-Flat Curriculum Books & Workbooks ↗](https://www.lulu.com/spotlight/stackcalc)**
+- **[Order on Amazon: Paperback Bookstore Edition ($16.00) ↗](https://link.amazon/B0f5cP0Ur)**
 - **[Order Handcrafted 3D-Printed Manipulative Boxed Kits on Etsy ↗](https://stackcalcmath.etsy.com)**
 - **[Order Physical Math Blocks & Refills via Slant 3D Portal ↗](https://teleportpod.com/portals/profile/StackCalc)**
 - **[Explore Dedicated Book Product Page & TOC ↗](../products/sc6-book.md)**
@@ -194,7 +184,6 @@ Written directly for curious 3rd–6th graders, parents, and teachers, ***From B
     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
       <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: #FF9900; color: #111827; font-weight: 800; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Paperback on Amazon ($16) ↗</a>
       <a href="https://link.amazon/B09AnTIQI" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: #FF9900; color: #111827; font-weight: 800; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Hardcover ($28) ↗</a>
-      <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; font-weight: 700; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Lulu Spiral Edition ↗</a>
       <a href="sc32/index.md" style="padding: 0.5rem 0.9rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-weight: 600; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Read Online &rarr;</a>
     </div>
   </div>
@@ -203,8 +192,7 @@ Written directly for curious 3rd–6th graders, parents, and teachers, ***From B
 Written in the narrative tradition of popular mathematics and classic Corvallis engineering handbooks, ***Thinking in the Stack*** explores why postfix stack computation mirrors physical causality—and how four visible registers ($X, Y, Z, T$) let you evaluate everything from parallel impedances and AC phasors to Richard Brent's root solver (`SOLVE`), adaptive Romberg integration (`∫`), bivariate curve fitting (`L.R.`), 36-bit binary/hex arithmetic, and Time Value of Money (`TVM`) without a single parenthesis.
 
 - **[Order on Amazon: Paperback Bookstore Edition ($16.00) ↗](https://link.amazon/B07DqTRR5)**
-- **[Order on Amazon: Hardcover Casebound Edition ↗](https://link.amazon/B09AnTIQI)**
-- **[Order on Etsy: Spiral-Bound Lay-Flat Bench Edition ($16.00) ↗](https://stackcalcmath.etsy.com)**
+- **[Order on Amazon: Hardcover Casebound Edition ($28.00) ↗](https://link.amazon/B09AnTIQI)**
 - **[Start Reading Online: Prologue (`sc32/index.md`)](sc32/index.md)**
 - **[Explore the 100 Master STEM Equations (`sc32/appendix-d-constants-and-equations.md`)](sc32/appendix-d-constants-and-equations.md)**
 
@@ -240,8 +228,7 @@ Written in the narrative tradition of popular mathematics and classic Corvallis 
       128-page reproducible curriculum workbook connecting physical Fraction &amp; Prime Factor blocks directly to SC-6 calculator exercises. Features 10 units, 45 textbook sections, 90 daily worksheets, and 900 practice problems.
     </p>
     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-      <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: #FF9900; color: #111827; font-weight: 800; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Order on Amazon ($16) ↗</a>
-      <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; font-weight: 700; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Lulu Spiral Edition ↗</a>
+      <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: #FF9900; color: #111827; font-weight: 800; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Order on Amazon ($14.99) ↗</a>
       <a href="../curriculum/big-ideas-middle-school-sc6-workbook.md" style="padding: 0.5rem 0.9rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; font-weight: 700; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Browse Curriculum &rarr;</a>
     </div>
   </div>
@@ -249,7 +236,7 @@ Written in the narrative tradition of popular mathematics and classic Corvallis 
 
 Written specifically for middle school math classrooms, homeschool families, and intervention specialists, the ***Middle School Math Block Supplement & Student Workbook*** bridges 3D-printed math blocks (Prime Factor Studio, Fraction Studio, Place Value Studio, and Algebra Factoring Tiles) with standard middle school math curricula (Big Ideas Math, Common Core, Texas TEKS, Florida B.E.S.T.). Features 10 units, 45 textbook sections, 90 daily practice worksheets (Practice A & B), 90 multi-way worked examples, and 900 practice problems.
 
-- **[Order on Amazon: Middle School Math Workbook ↗](https://link.amazon/B07bxzYKq)**
+- **[Order on Amazon: Middle School Math Workbook ($14.99) ↗](https://link.amazon/B07bxzYKq)**
 - **[Explore Online Workbook & Practice Units (`../curriculum/big-ideas-middle-school-sc6-workbook.md`)](../curriculum/big-ideas-middle-school-sc6-workbook.md)**
 
 ---
@@ -258,17 +245,17 @@ Written specifically for middle school math classrooms, homeschool families, and
 
 The complete teacher facilitator guide and classroom lesson plan companion connecting 3D-printed math blocks with RPN calculator instruction. Features 12 unified curriculum units, 25 turnkey 45-minute lesson plans, concrete-representational-abstract (CRA) scaffolding, 30-second misconception diagnostics, and station rotation guides.
 
-- **[Order on Amazon: Teacher's Curriculum Guide ↗](https://link.amazon/B05RFHqeu)**
+- **[Order on Amazon: Teacher's Curriculum Guide ($16.00) ↗](https://link.amazon/B05RFHqeu)**
 - **[Explore Online Teacher Guide (`../curriculum/teacher-guide.md`)](../curriculum/teacher-guide.md)**
 
 ---
 
 ## School District Procurement & Institutional Purchasing {: #school-district-procurement }
 
-We support school mathematics departments, STEM academies, and homeschool co-ops with direct institutional purchasing via formal Purchase Order (`orders@stackcalc.io`), individual print copies on [Amazon](https://link.amazon/B0f5cP0Ur), spiral-bound lay-flat curriculum workbooks on [Lulu](https://www.lulu.com/spotlight/stackcalc), handcrafted 3D-printed manipulative kits on [Etsy](https://stackcalcmath.etsy.com), and on-demand manipulative fleets through our [Slant 3D Portal](https://teleportpod.com/portals/profile/StackCalc).
+We support school mathematics departments, STEM academies, and homeschool co-ops with direct institutional purchasing via formal Purchase Order (`orders@stackcalc.io`), individual print copies on [Amazon](https://link.amazon/B0f5cP0Ur), handcrafted 3D-printed manipulative kits on [Etsy](https://stackcalcmath.etsy.com), and on-demand manipulative fleets through our [Slant 3D Portal](https://teleportpod.com/portals/profile/StackCalc).
 
 | Tier | Order Quantity | Unit Price | Savings | Benefits Included |
 | :--- | :---: | :---: | :---: | :--- |
-| **Individual Bench Copy** | 1–4 copies | **$16.00** | Standard Retail | Print edition on Amazon or spiral-bound lay-flat curriculum edition via Lulu |
+| **Individual Bench Copy** | 1–4 copies | **$16.00** | Standard Retail | Official print edition on Amazon |
 | **Classroom Lab Pack** | 5–19 copies | **$13.50** | **Save 15%** | Includes 1× Laminated Classroom Keypad Reference Chart |
 | **Department / District Fleet** | 20+ copies | **$11.00** | **Save 31%** | Teacher Facilitator Guide, signed W-9, Sole Source letter, and Net-30 invoicing |

@@ -72,8 +72,8 @@ StackCalc literature is built to drop directly into existing school district pac
       Aligned section-by-section with middle school standards, vocabulary, and methods across 10 units and 45 sections. Includes our <strong>115-Page Spiral Student Practice Supplement</strong> (Title Page <code>p. i</code>, Copyright Page <code>p. ii</code>, Table of Contents <code>p. iii</code>, Student Preface <code>p. iv</code>, 10 Chapter Story Openers, 90 worksheets = Practice A &amp; B per section, 90 Two-Method Worked Examples showing how to earn <code>+10</code> vs. <code>+20</code> Double Points, 900 open-workspace practice problems, and Reference Appendices A–E + Student Self-Check Key), <strong>10 Separate Printable Chapter PDFs (Units 1–10)</strong> for easy home &amp; classroom printing, and the <strong>16-Page Spiral Chapter Coach's Guide</strong>.
     </p>
     <div class="flex flex-wrap gap-4">
-      <a href="big-ideas-middle-school-sc6-workbook/" class="text-xs font-mono text-amber-400 hover:underline font-bold">Open 115-Page Big Ideas Supplement &amp; 10 Chapter PDFs &rarr;</a>
-      <a href="https://www.lulu.com/spotlight/stackcalc" class="text-xs font-mono text-sky-400 hover:underline font-bold">Order Spiral Workbook on Lulu ↗</a>
+      <a href="big-ideas-middle-school-sc6-workbook/" class="text-xs font-mono text-amber-400 hover:underline font-bold">Open Big Ideas Middle School Curriculum &rarr;</a>
+      <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-sky-400 hover:underline font-bold">Order Workbook on Amazon ($14.99) ↗</a>
       <a href="alignment-matrix/#big-ideas-math" class="text-xs font-mono text-slate-400 hover:underline font-bold">Standards Matrix &rarr;</a>
     </div>
   </div>
@@ -241,9 +241,6 @@ Every curriculum unit, manipulative studio, and station worksheet is anchored by
       <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition">
         Print Book on Amazon ↗
       </a>
-      <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded bg-white/10 hover:bg-white/20 text-white border border-white/20 font-mono text-xs font-bold transition">
-        Spiral Workbooks on Lulu ↗
-      </a>
     </div>
   </div>
 
@@ -265,8 +262,8 @@ Every curriculum unit, manipulative studio, and station worksheet is anchored by
       <a href="sc32-scientific-companion-workbook/" class="px-3 py-2 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 font-mono text-xs font-bold transition">
         Companion Casebook (339 Problems) &rarr;
       </a>
-      <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition">
-        Spiral Editions on Lulu ↗
+      <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition">
+        Order on Amazon ($16) ↗
       </a>
     </div>
   </div>
@@ -275,15 +272,14 @@ Every curriculum unit, manipulative studio, and station worksheet is anchored by
 
 ---
 
-## 🧱 Where to Get Our Spiral Curriculum Books, Flagship Textbooks & 3D Manipulative Blocks
+## 🧱 Where to Get Our Official Textbooks, Workbooks & 3D Manipulative Blocks
 
 Every lesson in our **12-Unit Teacher Curriculum Guide**, **45-Section Big Ideas Supplement**, and **120 Classroom Station Guides** uses the modular Gridfinity manipulative studios from *From Blocks to the Stack* and *Thinking in the Stack*. Each format is available through its dedicated distribution channel:
 
-1. **[Spiral-Bound Lay-Flat Curriculum Books & Workbooks on Lulu (`lulu.com/spotlight/stackcalc`) ↗](https://www.lulu.com/spotlight/stackcalc):** Coil-bound lay-flat classroom and homeschool editions of the *K–12 Teacher Curriculum Guide*, *Big Ideas Math Two-Method Student Workbook*, *Teacher Coach Guide*, and *Student Proficiency Trials*.
-2. **[Flagship Textbooks & Teacher Guides on Amazon (`link.amazon/B05RFHqeu`) ↗](https://link.amazon/B05RFHqeu):** Official print editions of the *Teacher's Curriculum Guide* ([Amazon B05RFHqeu](https://link.amazon/B05RFHqeu)), *From Blocks to the Stack (SC-6)* ([Amazon B0f5cP0Ur](https://link.amazon/B0f5cP0Ur)), *Thinking in the Stack (SC-32)* ([Paperback B07DqTRR5](https://link.amazon/B07DqTRR5) • [Hardcover B09AnTIQI](https://link.amazon/B09AnTIQI)), and *Middle School Math Blocks Workbook* ([Amazon B07bxzYKq](https://link.amazon/B07bxzYKq)).
-3. **[Handcrafted 3D-Printed Manipulative Boxed Kits & Hardware on Etsy (`stackcalcmath.etsy.com`) ↗](https://stackcalcmath.etsy.com):** Physical 3D-printed manipulative studios (`PLACE-01` Place Value Studio, `FRAC-01` Fraction Studio, and `PRIME-01` Prime Factor Studio) and calculator hardware kits (physical kits only; books are on Amazon and Lulu).
-4. **[On-Demand Factory Printed Manipulative Kits & Replacement Parts on Slant 3D (`teleportpod.com/portals/profile/StackCalc`) ↗](https://teleportpod.com/portals/profile/StackCalc):** Direct factory-printed manipulative kits and `$2.49` single-piece classroom refills.
-5. **[100% Free Open-Source STLs & 3MF Print Plates on Printables (`printables.com/@StackCalc_5593834`) ↗](https://www.printables.com/@StackCalc_5593834)** & **[Complete Product Specs (`stackcalc.io/products/`) &rarr;](../products/curriculum-and-decks.md)**.
+1. **[Flagship Textbooks & Teacher Guides on Amazon (`link.amazon/B05RFHqeu`) ↗](https://link.amazon/B05RFHqeu):** Official print editions of the *Teacher's Curriculum Guide* ([Amazon B05RFHqeu](https://link.amazon/B05RFHqeu)), *From Blocks to the Stack (SC-6)* ([Amazon B0f5cP0Ur](https://link.amazon/B0f5cP0Ur)), *Thinking in the Stack (SC-32)* ([Paperback B07DqTRR5](https://link.amazon/B07DqTRR5) • [Hardcover B09AnTIQI](https://link.amazon/B09AnTIQI)), and *Middle School Math Blocks Workbook* ([Amazon B07bxzYKq](https://link.amazon/B07bxzYKq)).
+2. **[Handcrafted 3D-Printed Manipulative Boxed Kits & Hardware on Etsy (`stackcalcmath.etsy.com`) ↗](https://stackcalcmath.etsy.com):** Physical 3D-printed manipulative studios (`PLACE-01` Place Value Studio, `FRAC-01` Fraction Studio, and `PRIME-01` Prime Factor Studio) and calculator hardware kits.
+3. **[On-Demand Factory Printed Manipulative Kits & Replacement Parts on Slant 3D (`teleportpod.com/portals/profile/StackCalc`) ↗](https://teleportpod.com/portals/profile/StackCalc):** Direct factory-printed manipulative kits and `$2.49` single-piece classroom refills.
+4. **[100% Free Open-Source STLs & 3MF Print Plates on Printables (`printables.com/@StackCalc_5593834`) ↗](https://www.printables.com/@StackCalc_5593834)** & **[Complete Product Specs (`stackcalc.io/products/`) &rarr;](../products/curriculum-and-decks.md)**.
 
 ---
 

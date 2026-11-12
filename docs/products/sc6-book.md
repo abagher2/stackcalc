@@ -37,18 +37,6 @@ hide:
             "@type": "Organization",
             "name": "Amazon"
           }
-        },
-        {
-          "@type": "Offer",
-          "name": "Lulu Spiral-Bound Curriculum & Companion Workbooks",
-          "url": "https://www.lulu.com/spotlight/stackcalc",
-          "priceCurrency": "USD",
-          "price": "16.00",
-          "availability": "https://schema.org/InStock",
-          "seller": {
-            "@type": "Organization",
-            "name": "Lulu Press"
-          }
         }
       ]
     }
@@ -100,7 +88,7 @@ hide:
 
       <div class="ec-price-box">
         <span class="ec-price-current">$16.00</span>
-        <span class="ec-shipping-note">&check; Print Book on Amazon Prime &bull; Spiral Workbooks on Lulu</span>
+        <span class="ec-shipping-note">&check; Print Book on Amazon Prime</span>
       </div>
 
       <p class="ec-short-summary">
@@ -127,14 +115,11 @@ hide:
         </div>
       </div>
 
-      <!-- Action Buttons: Amazon, Lulu, Etsy Blocks, Slant 3D, and Free Online Reading -->
+      <!-- Action Buttons: Amazon, Etsy Blocks, Slant 3D, and Free Online Reading -->
       <div class="ec-actions-row" style="flex-direction: column; gap: 0.75rem;">
         <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; width: 100%;">
           <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="flex: 1; min-width: 200px; text-align: center; background-color: #FF9900; border-color: #FF9900; color: #111827; font-weight: 800;">
             Order Print Book on Amazon ($16.00) ↗
-          </a>
-          <a href="https://www.lulu.com/spotlight/stackcalc" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="flex: 1; min-width: 200px; text-align: center; background-color: #0284C7; border-color: #0284C7; color: #ffffff; font-weight: 800;">
-            Order Spiral Workbooks on Lulu ↗
           </a>
         </div>
 

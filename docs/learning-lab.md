@@ -297,37 +297,86 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
 
 ---
 
-## The Physical Instrument Collection
+## Companion Books & Classroom Literature {: #download-the-prototype-materials }
 
-All manipulatives are built on the open-source **Gridfinity** modular standard with tactile detents, dual-color filament lettering, debossed cartouche badges, and weighted rubber feet:
+Pair your interactive lab investigations with StackCalc's official companion books and student workbooks, available in print on **Amazon**:
 
-| Instrument | Calculator Integration | What It Makes Visible | Direct Links |
-| :--- | :--- | :--- | :--- |
-| **Fraction Studio Towers** | `{{keycap:FDISP}}` key | Proportional stacking towers (1/1 to 1/12) where reciprocal millimeter heights prove fraction equivalence and common denominators. | [Product Page](products/fraction-studio/index.md) &bull; [Etsy Storefront ↗](https://stackcalcmath.etsy.com) &bull; [Printables 3MF ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Place Value Studio** | `{{keycap:123}}` Place Value key | Proportional base-10 units, rods, flats, and decimal strips matching register staging and regrouping. | [Product Page](products/place-value/index.md) &bull; [Etsy Storefront ↗](https://stackcalcmath.etsy.com) &bull; [Printables 3MF ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Ten-Frame Studio** | `{{keycap:▦}}` Ten-Frame key | Dual-color counters in 2×5 arrays and 8-bit register trays for place-value anchoring and base-10 decomposition. | [Product Page](products/ten-frames/index.md) &bull; [Etsy Storefront ↗](https://stackcalcmath.etsy.com) &bull; [Printables 3MF ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Prime Factor Studio** | `{{key:FACT}}` Prime Factor key | Proportional logarithmic prime factor blocks (`[2]` through `[23]`) that stack to sum logarithms and prove unique factorization. | [Product Page](products/prime-factor-studio/index.md) &bull; [Etsy Storefront ↗](https://stackcalcmath.etsy.com) &bull; [Printables 3MF ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Classroom Planetary Clock** | `{{keycap:CLK}}` Time key | Geared mechanical gear train with visible epicyclic movement linking 60-minute cycles directly to fractional hours. | [Product Page](products/classroom-clock/index.md) &bull; [Etsy Storefront ↗](https://stackcalcmath.etsy.com) &bull; [Printables 3MF ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Algebra Studio & Area Tiles** | `{{keycap:POLY}}` Polynomial solver | Quadratic factoring frames and area tiles ($x^2$, $x$, $1$) for tactile polynomial expansion and binomial root solving. | [Product Page](products/algebra-boxes/index.md) &bull; [Etsy Storefront ↗](https://stackcalcmath.etsy.com) &bull; [Printables 3MF ↗](https://www.printables.com/@StackCalc_5593834) |
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin: 1.5rem 0 2.5rem 0;">
 
----
+  <!-- Card 1: From Blocks to the Stack -->
+  <div style="background: #11141A; border: 1px solid rgba(255, 153, 0, 0.35); border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #FF9900; font-weight: 700; text-transform: uppercase;">GRADES 3–6 &bull; SC-6 ELEMENTARY</span>
+      <h3 style="margin: 0.35rem 0; font-size: 1.15rem; color: #FFFFFF;">From Blocks to the Stack</h3>
+      <p style="font-size: 0.84rem; color: #94A3B8; margin-bottom: 1.25rem; line-height: 1.5;">
+        The student handbook, parent guide, and classroom companion for the SC-6 Elementary calculator. Connects physical 3D-printed math blocks with the 4-level number stack ($X, Y, Z, T$), fraction towers, and skip-counting ladders.
+      </p>
+    </div>
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+      <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 120px; text-align: center; padding: 0.55rem 0.5rem; background: #FF9900; color: #111827; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
+        AMAZON ($16) ↗
+      </a>
+      <a href="products/sc6-book.md" style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        OVERVIEW &rarr;
+      </a>
+    </div>
+  </div>
 
-## Download Educational Literature & 3D Models {: #download-the-prototype-materials }
+  <!-- Card 2: Thinking in the Stack -->
+  <div style="background: #11141A; border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">HIGH SCHOOL &bull; SC-32 SCIENTIFIC</span>
+      <h3 style="margin: 0.35rem 0; font-size: 1.15rem; color: #FFFFFF;">Thinking in the Stack</h3>
+      <p style="font-size: 0.84rem; color: #94A3B8; margin-bottom: 1.25rem; line-height: 1.5;">
+        The definitive operational guide to scientific computing and RPN stack dynamics on the SC-32 Scientific calculator. Covers numerical root solvers, complex phasors, Romberg calculus, TVM finance, and vector plotting.
+      </p>
+    </div>
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+      <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 120px; text-align: center; padding: 0.55rem 0.5rem; background: #38BDF8; color: #0F172A; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
+        AMAZON ($16) ↗
+      </a>
+      <a href="products/sc32-calculator/index.md" style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        SC-32 OVERVIEW &rarr;
+      </a>
+    </div>
+  </div>
 
-All classroom curriculum, teacher guides, student proficiency trials, and 3D printing files are fully open-source:
+  <!-- Card 3: Middle School Workbook -->
+  <div style="background: #11141A; border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #10B981; font-weight: 700; text-transform: uppercase;">GRADES 6–8 &bull; STUDENT WORKBOOK</span>
+      <h3 style="margin: 0.35rem 0; font-size: 1.15rem; color: #FFFFFF;">Middle School Math Lab Workbook</h3>
+      <p style="font-size: 0.84rem; color: #94A3B8; margin-bottom: 1.25rem; line-height: 1.5;">
+        Hands-on middle school workbook connecting physical math blocks with two-method problem solving. 10 units, 45 textbook sections, 90 daily worksheets, and 900 practice problems.
+      </p>
+    </div>
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+      <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 120px; text-align: center; padding: 0.55rem 0.5rem; background: #10B981; color: #0F172A; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
+        AMAZON ($14.99) ↗
+      </a>
+      <a href="curriculum/big-ideas-middle-school-sc6-workbook.md" style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        CURRICULUM &rarr;
+      </a>
+    </div>
+  </div>
 
-| Literature & Print Files | Description | Format |
-| :--- | :--- | :--- |
-| **Book 1: Unified Master Teacher's Guide** | K–12 teacher guide organized by mathematical concept, including Middle School coaching, lesson transcripts, and 900 answer keys. | [Order on Amazon ($16) ↗](https://link.amazon/B05RFHqeu) &bull; [Teacher Guide Page](curriculum/teacher-guide.md) |
-| **Book 2: K–12 Student Hands-On Math Lab Workbook** | Student exploration workbook with Guided Stack Walkthroughs, 48 Lab Investigations, and Student Self-Check Answer Key. | [Order on Amazon ($14.99) ↗](https://link.amazon/B07bxzYKq) &bull; [Worksheets Center](curriculum/worksheets.md) |
-| **Book 3: From Blocks to the Stack (SC-6 Textbook)** | Illustrated elementary companion textbook guiding students from physical blocks to RPN stack computing. | [Order on Amazon ($16) ↗](https://link.amazon/B0f5cP0Ur) &bull; [Product Page](products/sc6-book.md) |
-| **Printable STL / 3MF Models** | Complete 3D manufacturing files for all manipulative kits on Printables with calibrated Bambu Lab and Prusa print profiles. | [Printables Hub ↗](https://www.printables.com/@StackCalc_5593834) &bull; [Downloads Center](downloads.md) |
+  <!-- Card 4: Unified Master Teacher's Guide -->
+  <div style="background: #11141A; border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #F59E0B; font-weight: 700; text-transform: uppercase;">GRADES K–12 &bull; TEACHER FACILITATOR</span>
+      <h3 style="margin: 0.35rem 0; font-size: 1.15rem; color: #FFFFFF;">Teaching with the Stack</h3>
+      <p style="font-size: 0.84rem; color: #94A3B8; margin-bottom: 1.25rem; line-height: 1.5;">
+        Comprehensive teacher facilitation guide: concept-first stack pedagogy, 30-second misconception diagnostics, verbal cues, station rotation schedules, and pacing guides.
+      </p>
+    </div>
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+      <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 120px; text-align: center; padding: 0.55rem 0.5rem; background: #F59E0B; color: #0F172A; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
+        AMAZON ($16) ↗
+      </a>
+      <a href="curriculum/teacher-guide.md" style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        TEACHER GUIDE &rarr;
+      </a>
+    </div>
+  </div>
 
-Read the related documentation and lesson guides:
-
-- [Curriculum Overview & Standards Alignment](curriculum/index.md)
-- [Big Ideas Middle School Catch-Up Supplement & Quest Scoreboard](curriculum/big-ideas-middle-school-sc6-workbook.md)
-- [Complete CCSS-M / Singapore / Bridges Alignment Matrix](curriculum/alignment-matrix.md)
-- [Classroom Worksheets & Lesson Transcripts](curriculum/worksheets.md)
-- [Teacher Facilitator Guide & Common Misconceptions](curriculum/teacher-guide.md)
-- [Master Product & Hardware Catalog](products.md)
+</div>
