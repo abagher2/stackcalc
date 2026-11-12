@@ -141,6 +141,7 @@ Every worked example, story, and 4-register stack trace in both books is verifie
     </p>
     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
       <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: #FF9900; color: #111827; font-weight: 800; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Order on Amazon ($16) ↗</a>
+      <a href="output/sc6-elementary-manual.pdf" download style="padding: 0.5rem 0.9rem; background: rgba(16, 185, 129, 0.2); border: 1px solid #10B981; color: #10B981; font-weight: 700; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Download PDF (286 pp.) &darr;</a>
       <a href="../products/sc6-book.md" style="padding: 0.5rem 0.9rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-weight: 600; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Book Details &rarr;</a>
     </div>
   </div>
@@ -149,25 +150,25 @@ Every worked example, story, and 4-register stack trace in both books is verifie
 Written directly for curious 3rd–6th graders, parents, and teachers, ***From Blocks to the Stack*** begins with a simple observation: before you ever learned to write equations with parentheses and equals signs, your hands already knew how to do math by **stacking physical things**. Pairing the **StackCalc SC-6** with nine 3D-printed manipulative studios (Ten-Frames, Counting Tiles, $84\text{ mm}$ Fraction Towers, Prime Factor Blocks, and a Planetary Geared Clock), the book gently guides young learners from their very first stack addition to multi-step problem solving without parentheses.
 
 - **[Order on Amazon: Paperback Bookstore Edition ($16.00) ↗](https://link.amazon/B0f5cP0Ur)**
+- **[Download Official Publication PDF Manual (286 pp.) &darr;](output/sc6-elementary-manual.pdf)**
 - **[Order Handcrafted 3D-Printed Manipulative Boxed Kits on Etsy ↗](https://stackcalcmath.etsy.com)**
 - **[Order Physical Math Blocks & Refills via Slant 3D Portal ↗](https://teleportpod.com/portals/profile/StackCalc)**
-- **[Explore Dedicated Book Product Page & TOC ↗](../products/sc6-book.md)**
-- **[Start Reading Online: Preface (`sc6/index.md`)](sc6/index.md)**
-- **[Open Companion Student Activity Workbook](../curriculum/sc6-elementary-companion-workbook.md)**
+- **[Explore Dedicated Book Product Page & TOC &rarr;](../products/sc6-book.md)**
+- **[Download Student Lab Companion Workbook PDF &darr;](../downloads/StackCalc-Book-2-Student-Lab-Workbook.pdf)**
 
 | Chapter / Appendix | Story & Mathematical Journey |
 | :--- | :--- |
-| **[Preface: Why Your Brain Already Thinks in a Stack](sc6/index.md)** | Why your hands already think in a stack, why regular calculators hide numbers, and your first stack moves |
-| **[Chapter 1: Meet Your SC-6 Stack Calculator & Math Blocks](sc6/01-hardware-architecture.md)** | How the 4 stack shelves ($X, Y, Z, T$) and `ENTER` work with your 3D-printed math blocks and daylight screen |
-| **[Chapter 2: Stacking Numbers Just Like Blocks](sc6/02-rpn-for-young-learners.md)** | Unlocking the 4-story Number Elevator, automatic stack lift, `LASTX` self-checks, and beating parentheses |
-| **[Chapter 3: Ten-Frames, Number Lines & Place Value](sc6/03-counting-place-value.md)** | Ten-Frame bridging (`▦`), the Number Rack (`COUNT`), place-value bundling (`PV`), and number-line jumps (`LINE`) |
-| **[Chapter 4: Tile Arrays, Skip-Counting & Remainders](sc6/04-operations-skip-counting.md)** | Multiplication tile arrays, skip-counting ladders (`REP`), and fair-share division with whole remainders (`÷R`) |
-| **[Chapter 5: Fractions, Decimals, Percents & Ratios](sc6/05-fractions-decimals-ratios.md)** | Comparing $84\text{ mm}$ Fraction Towers, simplifying step-by-step (`SIMP`), common denominators (`LCM`), and percents |
-| **[Chapter 6: Shapes, 3D Boxes & Geared Clock Time](sc6/06-geometry-surface-area.md)** | Unfolding 2D shapes and 3D boxes with the running-total basket (`Σ+`), volumes, and planetary clock gears (`🕒`) |
-| **[Chapter 7: Prime Numbers, Fair Dice & Data Detective](sc6/07-data-probability-primes.md)** | 17-year cicadas, prime factor towers (`FACT`), GCF & LCM, polyhedral dice (`🎲`), mean/MAD, and negative numbers |
-| **[Chapter 8: Mental Math Tricks & The Quiz Game](sc6/08-math-quiz-engine.md)** | Eight mental-math shortcuts you can see with tiles, plus 6 levels of timed fluency challenges (`?`) |
-| **[Chapter 9: Kitchen-Table Inventions & Maker Projects](sc6/09-applied-stem-labs.md)** | Weighing 3D-printed blocks, slicing printer layers, timing pendulums, scaling recipes, and testing gear ratios |
-| **[Appendices A–D](sc6/appendix-a-manipulative-blueprints.md)** | [App. A: 3D-Printing Guide](sc6/appendix-a-manipulative-blueprints.md) • [App. B: 25 Teacher Lesson Plans](sc6/appendix-b-teacher-lesson-plans.md) • [App. C: Word Rules & Conversions](sc6/appendix-c-formulas-and-conversions.md) • [App. D: 43-Key Directory](sc6/appendix-d-keycap-directory.md) |
+| **Preface: Why Your Brain Already Thinks in a Stack** | Why your hands already think in a stack, why regular calculators hide numbers, and your first stack moves |
+| **Chapter 1: Meet Your SC-6 Stack Calculator & Math Blocks** | How the 4 stack shelves ($X, Y, Z, T$) and `ENTER` work with your 3D-printed math blocks and daylight screen |
+| **Chapter 2: Stacking Numbers Just Like Blocks** | Unlocking the 4-story Number Elevator, automatic stack lift, `LASTX` self-checks, and beating parentheses |
+| **Chapter 3: Ten-Frames, Number Lines & Place Value** | Ten-Frame bridging (`▦`), the Number Rack (`COUNT`), place-value bundling (`PV`), and number-line jumps (`LINE`) |
+| **Chapter 4: Tile Arrays, Skip-Counting & Remainders** | Multiplication tile arrays, skip-counting ladders (`REP`), and fair-share division with whole remainders (`÷R`) |
+| **Chapter 5: Fractions, Decimals, Percents & Ratios** | Comparing $84\text{ mm}$ Fraction Towers, simplifying step-by-step (`SIMP`), common denominators (`LCM`), and percents |
+| **Chapter 6: Shapes, 3D Boxes & Geared Clock Time** | Unfolding 2D shapes and 3D boxes with the running-total basket (`Σ+`), volumes, and planetary clock gears (`🕒`) |
+| **Chapter 7: Prime Numbers, Fair Dice & Data Detective** | 17-year cicadas, prime factor towers (`FACT`), GCF & LCM, polyhedral dice (`🎲`), mean/MAD, and negative numbers |
+| **Chapter 8: Mental Math Tricks & The Quiz Game** | Eight mental-math shortcuts you can see with tiles, plus 6 levels of timed fluency challenges (`?`) |
+| **Chapter 9: Kitchen-Table Inventions & Maker Projects** | Weighing 3D-printed blocks, slicing printer layers, timing pendulums, scaling recipes, and testing gear ratios |
+| **Appendices A–D** | 3D-Printing Blueprints Guide • 25 Teacher Lesson Plans • Word Rules & Conversions • 43-Key Directory |
 
 ---
 
@@ -184,7 +185,8 @@ Written directly for curious 3rd–6th graders, parents, and teachers, ***From B
     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
       <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: #FF9900; color: #111827; font-weight: 800; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Paperback on Amazon ($16) ↗</a>
       <a href="https://link.amazon/B09AnTIQI" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: #FF9900; color: #111827; font-weight: 800; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Hardcover ($28) ↗</a>
-      <a href="sc32/index.md" style="padding: 0.5rem 0.9rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-weight: 600; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Read Online &rarr;</a>
+      <a href="output/sc32-scientific-manual.pdf" download style="padding: 0.5rem 0.9rem; background: rgba(56, 189, 248, 0.2); border: 1px solid #38BDF8; color: #38BDF8; font-weight: 700; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Download PDF (264 pp.) &darr;</a>
+      <a href="../products/sc32-calculator/index.md" style="padding: 0.5rem 0.9rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-weight: 600; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Hardware Specs &rarr;</a>
     </div>
   </div>
 </div>
@@ -193,27 +195,28 @@ Written in the narrative tradition of popular mathematics and classic Corvallis 
 
 - **[Order on Amazon: Paperback Bookstore Edition ($16.00) ↗](https://link.amazon/B07DqTRR5)**
 - **[Order on Amazon: Hardcover Casebound Edition ($28.00) ↗](https://link.amazon/B09AnTIQI)**
-- **[Start Reading Online: Prologue (`sc32/index.md`)](sc32/index.md)**
-- **[Explore the 100 Master STEM Equations (`sc32/appendix-d-constants-and-equations.md`)](sc32/appendix-d-constants-and-equations.md)**
+- **[Download Official Publication PDF Manual (264 pp.) &darr;](output/sc32-scientific-manual.pdf)**
+- **[Explore SC-32 Hardware & Architecture &rarr;](../products/sc32-calculator/index.md)**
+- **[Download High School STEM Lab Workbook PDF &darr;](../downloads/StackCalc-Book-4-High-School-Lab.pdf)**
 
 | Chapter / Appendix | Core Narrative & Engineering Focus |
 | :--- | :--- |
-| **[Prologue: Why We Write Equations One Way, Yet Solve Them Another](sc32/index.md)** | How a four-shelf stack eliminates parentheses, preserves working memory, and evaluates formulas from the inside out |
-| **[Chapter 01: Craftsmanship & Instrument Architecture](sc32/01-craftsmanship-hardware.md)** | Bill Hewlett's pocket challenge, a gentle introduction to the stack, tactile keys, $42\text{ mm}$ studios, and instrument physics |
-| **[Chapter 02: Principles of RPN & 4-Stack Dynamics](sc32/02-rpn-stack-dynamics.md)** | Stack lift, dyadic drop, $T$-register constant replication, `LASTX` recovery, recall arithmetic, and inside-out conservation |
-| **[Chapter 03: Algebra, Logarithms & Transcendentals](sc32/03-algebra-transcendentals.md)** | Napier's logarithms, decibels, Arrhenius kinetics, radioactive decay, hyperbolic catenaries, and part extraction |
-| **[Chapter 04: Trigonometry, Vectors & Coordinate Transforms](sc32/04-trig-vectors-polar.md)** | Surveying, the Unit Circle Volvelle, polar/rectangular vector conversions (`▸θ,r`, `▸y,x`), and 3D dot/cross products |
-| **[Chapter 05: Complex Numbers & AC Phasor Analysis](sc32/05-complex-numbers-phasors.md)** | Steinmetz's $90^\circ$ phasor breakthrough, Euler's formula, RLC impedance networks, and transmission lines (`CMPLX`) |
-| **[Chapter 06: Geometry, Mensuration & Surface Area](sc32/06-geometry-surface-area.md)** | Galileo's square-cube law, heat-sink fin arrays via `Σ+`, conic frustums, centroids (`x̄w`), and spherical geodesics |
-| **[Chapter 07: Polynomial Roots & Brent's Solver](sc32/07-polynomials-brent-solver.md)** | Quadratic and Cardano cubic roots (`POLY`), plus Richard Brent's hybrid solver (`SOLVE`) on implicit equations |
-| **[Chapter 08: Numerical Calculus & Romberg Quadrature](sc32/08-calculus-romberg-quadrature.md)** | Ridders's central-difference derivatives (`d/dx`) and adaptive Romberg Richardson extrapolation (`∫`) |
-| **[Chapter 09: Statistics, Regression & Probability](sc32/09-statistics-curve-fitting.md)** | Gauss's least squares, 4-model curve fitting (`L.R.`), normal/Weibull/Poisson distributions, and hypothesis testing |
-| **[Chapter 10: Computer Science, Bases & Bitwise Logic](sc32/10-computer-science-bases.md)** | 36-bit two's-complement architecture, `HEX`/`OCT`/`BIN` conversions, bitwise masks, and IEEE-754 floating-point layout |
-| **[Chapter 11: Financial Mathematics & Time Value of Money](sc32/11-financial-tvm.md)** | Base-preserving percentages (`%`, `%CHG`), 5-variable compounding (`TVM`), bond pricing, and NPV/IRR cash flows |
-| **[Chapter 12: Function & Scatter Plotting](sc32/12-function-scatter-plotting.md)** | 64-point vector LCD graphing (`PLOT`), interactive trace reticles, zero-crossing zoom, and statistical trend overlays |
-| **[Chapter 13: Applied STEM Case Studies](sc32/13-applied-stem-case-studies.md)** | Cross-disciplinary harmonic laws (`x∥y`, `▸θ,r`) and 11 multi-stage aerospace, civil, electrical, and chemical synthesis labs |
-| **[Chapter 14: Rapid Calculation & Contest Playbook](sc32/14-uil-contest-playbook.md)** | Mental estimation, inside-out keystroke conservation, Horner's method, and rapid tournament problem solving |
-| **[Appendices A–E](sc32/appendix-a-stack-lift-state-machine.md)** | [App. A: Stack-Lift State Machine](sc32/appendix-a-stack-lift-state-machine.md) • [App. B: Error Catalog](sc32/appendix-b-error-catalog.md) • [App. C: 43-Key Directory](sc32/appendix-c-keycap-directory.md) • [App. D: 100 STEM Equations](sc32/appendix-d-constants-and-equations.md) • [App. E: Annotated Bibliography](sc32/appendix-e-annotated-bibliography.md) |
+| **Prologue: Why We Write Equations One Way, Yet Solve Them Another** | How a four-shelf stack eliminates parentheses, preserves working memory, and evaluates formulas from the inside out |
+| **Chapter 01: Craftsmanship & Instrument Architecture** | Bill Hewlett's pocket challenge, a gentle introduction to the stack, tactile keys, $42\text{ mm}$ studios, and instrument physics |
+| **Chapter 02: Principles of RPN & 4-Stack Dynamics** | Stack lift, dyadic drop, $T$-register constant replication, `LASTX` recovery, recall arithmetic, and inside-out conservation |
+| **Chapter 03: Algebra, Logarithms & Transcendentals** | Napier's logarithms, decibels, Arrhenius kinetics, radioactive decay, hyperbolic catenaries, and part extraction |
+| **Chapter 04: Trigonometry, Vectors & Coordinate Transforms** | Surveying, the Unit Circle Volvelle, polar/rectangular vector conversions (`▸θ,r`, `▸y,x`), and 3D dot/cross products |
+| **Chapter 05: Complex Numbers & AC Phasor Analysis** | Steinmetz's $90^\circ$ phasor breakthrough, Euler's formula, RLC impedance networks, and transmission lines (`CMPLX`) |
+| **Chapter 06: Geometry, Mensuration & Surface Area** | Galileo's square-cube law, heat-sink fin arrays via `Σ+`, conic frustums, centroids (`x̄w`), and spherical geodesics |
+| **Chapter 07: Polynomial Roots & Brent's Solver** | Quadratic and Cardano cubic roots (`POLY`), plus Richard Brent's hybrid solver (`SOLVE`) on implicit equations |
+| **Chapter 08: Numerical Calculus & Romberg Quadrature** | Ridders's central-difference derivatives (`d/dx`) and adaptive Romberg Richardson extrapolation (`∫`) |
+| **Chapter 09: Statistics, Regression & Probability** | Gauss's least squares, 4-model curve fitting (`L.R.`), normal/Weibull/Poisson distributions, and hypothesis testing |
+| **Chapter 10: Computer Science, Bases & Bitwise Logic** | 36-bit two's-complement architecture, `HEX`/`OCT`/`BIN` conversions, bitwise masks, and IEEE-754 floating-point layout |
+| **Chapter 11: Financial Mathematics & Time Value of Money** | Base-preserving percentages (`%`, `%CHG`), 5-variable compounding (`TVM`), bond pricing, and NPV/IRR cash flows |
+| **Chapter 12: Function & Scatter Plotting** | 64-point vector LCD graphing (`PLOT`), interactive trace reticles, zero-crossing zoom, and statistical trend overlays |
+| **Chapter 13: Applied STEM Case Studies** | Cross-disciplinary harmonic laws (`x∥y`, `▸θ,r`) and 11 multi-stage aerospace, civil, electrical, and chemical synthesis labs |
+| **Chapter 14: Rapid Calculation & Contest Playbook** | Mental estimation, inside-out keystroke conservation, Horner's method, and rapid tournament problem solving |
+| **Appendices A–E** | Stack-Lift State Machine • Error Catalog • 43-Key Directory • 100 STEM Equations • Annotated Bibliography |
 
 ---
 
@@ -229,7 +232,8 @@ Written in the narrative tradition of popular mathematics and classic Corvallis 
     </p>
     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
       <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 0.9rem; background: #FF9900; color: #111827; font-weight: 800; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Order on Amazon ($14.99) ↗</a>
-      <a href="../curriculum/big-ideas-middle-school-sc6-workbook.md" style="padding: 0.5rem 0.9rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; font-weight: 700; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Browse Curriculum &rarr;</a>
+      <a href="../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf" download style="padding: 0.5rem 0.9rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; font-weight: 700; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Download PDF (128 pp.) &darr;</a>
+      <a href="../curriculum/index.md" style="padding: 0.5rem 0.9rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-weight: 600; font-size: 0.8rem; border-radius: 6px; text-decoration: none;">Curriculum Guide &rarr;</a>
     </div>
   </div>
 </div>
@@ -237,7 +241,8 @@ Written in the narrative tradition of popular mathematics and classic Corvallis 
 Written specifically for middle school math classrooms, homeschool families, and intervention specialists, the ***Middle School Math Block Supplement & Student Workbook*** bridges 3D-printed math blocks (Prime Factor Studio, Fraction Studio, Place Value Studio, and Algebra Factoring Tiles) with standard middle school math curricula (Big Ideas Math, Common Core, Texas TEKS, Florida B.E.S.T.). Features 10 units, 45 textbook sections, 90 daily practice worksheets (Practice A & B), 90 multi-way worked examples, and 900 practice problems.
 
 - **[Order on Amazon: Middle School Math Workbook ($14.99) ↗](https://link.amazon/B07bxzYKq)**
-- **[Explore Online Workbook & Practice Units (`../curriculum/big-ideas-middle-school-sc6-workbook.md`)](../curriculum/big-ideas-middle-school-sc6-workbook.md)**
+- **[Download Middle School Math Lab Workbook PDF (128 pp.) &darr;](../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf)**
+- **[Explore Curriculum Alignment Matrix &rarr;](../curriculum/alignment-matrix.md)**
 
 ---
 
@@ -246,7 +251,8 @@ Written specifically for middle school math classrooms, homeschool families, and
 The complete teacher facilitator guide and classroom lesson plan companion connecting 3D-printed math blocks with RPN calculator instruction. Features 12 unified curriculum units, 25 turnkey 45-minute lesson plans, concrete-representational-abstract (CRA) scaffolding, 30-second misconception diagnostics, and station rotation guides.
 
 - **[Order on Amazon: Teacher's Curriculum Guide ($16.00) ↗](https://link.amazon/B05RFHqeu)**
-- **[Explore Online Teacher Guide (`../curriculum/teacher-guide.md`)](../curriculum/teacher-guide.md)**
+- **[Download Teacher's Curriculum Guide PDF (46 pp.) &darr;](../downloads/StackCalc-Book-1-Teaching-with-the-Stack.pdf)**
+- **[Explore Teacher Facilitator Guide &rarr;](../curriculum/teacher-guide.md)**
 
 ---
 

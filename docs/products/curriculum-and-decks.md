@@ -106,7 +106,7 @@ hide:
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
       <a href="../../curriculum/worksheets/" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #38BDF8; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">120 STATION GUIDES &rarr;</a>
-      <a href="../../curriculum/big-ideas-middle-school-sc6-workbook/" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #F59E0B; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">102-PAGE BIG IDEAS + 10 CHAPTER PDFS &rarr;</a>
+      <a href="../../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf" download style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #F59E0B; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">MIDDLE SCHOOL WORKBOOK (.PDF) &darr;</a>
       <a href="../../curriculum/teacher-guide/#print-individual-curriculum-units-units-0112-separate-pdfs" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #A855F7; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">12 PRINTABLE UNIT PDFS &rarr;</a>
       <a href="../../curriculum/uil-competition/" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #10B981; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">24 UIL EXAMS &amp; KEYS &rarr;</a>
     </div>

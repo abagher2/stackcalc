@@ -947,7 +947,7 @@ hide:
         </div>
         <div class="te-actions-row" style="flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
           <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="te-btn-primary" style="background-color: #FF9900; border-color: #FF9900; color: #111827; font-weight: 800;">Order on Amazon ($16) ↗</a>
-          <a href="../curriculum/big-ideas-middle-school-sc6-workbook/" class="te-btn-secondary">Curriculum Alignment &rarr;</a>
+          <a href="../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf" download class="te-btn-secondary">Download PDF (128 pp.) &darr;</a>
           <a href="../curriculum/worksheets/" class="te-btn-secondary" style="border-color: #10B981; color: #10B981; font-weight: 700;">Station Worksheets &rarr;</a>
         </div>
       </div>

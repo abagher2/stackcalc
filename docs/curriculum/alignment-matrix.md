@@ -12,14 +12,13 @@ description: "Cross-reference index aligning StackCalc authentic physical manipu
 
 <nav class="curriculum-subnav flex flex-wrap gap-2 p-2.5 rounded-xl bg-[#0D1017] border border-white/10 mb-8 font-mono text-xs" aria-label="Curriculum Navigation">
   <a href="../" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📖 Master Guide</a>
-  <a href="../sc6-elementary-companion-workbook/" class="px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition font-bold">📗 SC-6 Companion Workbook (253 Problems)</a>
-  <a href="../sc32-scientific-companion-workbook/" class="px-3 py-1.5 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 transition font-bold">📘 SC-32 Companion Casebook (339 Problems)</a>
-  <a href="../big-ideas-middle-school-sc6-workbook/" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">🚀 Big Ideas 45-Day Catch-Up (SC-6)</a>
-  <a href="../rpn-elementary-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">⚡ RPN Power Guide</a>
-  <a href="../worksheets/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📝 120 Station Worksheets</a>
+  <a href="../teacher-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🧑‍🏫 Book 1: Teacher Guide</a>
   <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">🎯 Standards Matrix</a>
-  <a href="../teacher-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🧑‍🏫 Teacher Guide</a>
+  <a href="../worksheets/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📝 Worksheets</a>
+  <a href="../rpn-elementary-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">⚡ RPN Power Guide</a>
   <a href="../uil-competition/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🏆 UIL Competition</a>
+  <a href="../downloads/#print-books-1-2-teacher-guide-student-lab" class="px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition font-bold">📥 Student Workbooks (.PDF)</a>
+  <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">🛒 Print Books (Amazon) ↗</a>
 </nav>
 
 This alignment matrix provides classroom educators and curriculum coordinators with an exact, cross-referenced mapping of **StackCalc Published Block Studios (`PLACE-01`, `FRAC-01`, `PRIME-01`)**, **Handheld RPN Calculator Keystroke Flows**, and the corresponding chapters in major national curricula.
@@ -91,7 +90,7 @@ This alignment matrix provides classroom educators and curriculum coordinators w
 ### 2.3 Big Ideas Math (Larson &amp; Boswell) {: #big-ideas-math }
 
 > [!TIP] **Complete 45-Section Middle School Practice Supplement (114 Pages • 900 Problems), 10 Printable Chapter PDFs &amp; 15-Page Coach Guide:**  
-> For section-by-section coverage of **Big Ideas Math Units 1–10 (Sections 1.1–10.4)**—complete with 10 Chapter Story Openers, 90 Practice A &amp; B worksheets, Two-Method Worked Examples, step-by-step instructions for our 3 published block kits (`PLACE-01`, `FRAC-01`, `PRIME-01`), open workspace for 900 practice problems, **10 Separate Printable Chapter PDFs (`Unit 1`–`Unit 10`)**, and the **15-Page Chapter Coach's Guide**—visit the **[Big Ideas 45-Section SC-6 Practice Supplement &rarr;](big-ideas-middle-school-sc6-workbook.md)**.
+> For section-by-section coverage of **Big Ideas Math Units 1–10 (Sections 1.1–10.4)**—complete with 10 Chapter Story Openers, 90 Practice A &amp; B worksheets, Two-Method Worked Examples, step-by-step instructions for our 3 published block kits (`PLACE-01`, `FRAC-01`, `PRIME-01`), open workspace for 900 practice problems, **10 Separate Printable Chapter PDFs (`Unit 1`–`Unit 10`)**, and the **15-Page Chapter Coach's Guide**—download the **[Big Ideas Middle School Student Lab Workbook PDF &darr;](../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf)**.
 
 <div class="te-table-wrapper">
 | Big Ideas Grade &amp; Book | Chapter / Topic | Published Block Kit (When Applicable) | Exploratory Activity, Keystroke Flow &amp; Book Chapter |
@@ -101,7 +100,7 @@ This alignment matrix provides classroom educators and curriculum coordinators w
 | **Grade 2** | Chapter 3: Addition by Doubles | Place Value Studio (`PLACE-01`: Two-Row Tray) | Exploration: "Doubles &amp; Near-Doubles". Place matching digit blocks in Row 1 and Row 0, execute `N {{key:ENTER}} {{key:+}}` (**SC-6 Manual, Ch. 4**). |
 | **Grade 3** | Chapter 2: Multiplication Concepts | Prime Factor Studio (`PRIME-01`) &amp; Place Value Studio | Exploration: "Equal Groups &amp; Factor Products". Evaluate `12 {{key:ENTER}} 12 {{key:×}} = 144` (**SC-6 Manual, Ch. 4**). |
 | **Grade 4** | Chapter 7: Understand Fractions | Fraction Studio (`FRAC-01`: 84.0 mm Towers) | Exploration: "Decomposing Fractions". Match three 1/8 blocks (`31.5 mm`) to 3/8, verify with `{{key:.}} 3 {{key:.}} 8` (**SC-6 Manual, Ch. 5**). |
-| **Grades 5–7 (Units 1–10)** | Sections 1.1–10.4 (45 Sections) | `PRIME-01`, `FRAC-01` &amp; `PLACE-01` | **114-Page Student Practice Supplement**, **10 Separate Printable Chapter PDFs** &amp; **15-Page Coach's Guide**: `+10` (1st Way) / `+20` (2nd Way) verification &amp; `{{key:QUIZ}}` (`?`) Tutorial Mode (**[View Supplement &amp; Chapter PDFs &rarr;](big-ideas-middle-school-sc6-workbook.md)**). |
+| **Grades 5–7 (Units 1–10)** | Sections 1.1–10.4 (45 Sections) | `PRIME-01`, `FRAC-01` &amp; `PLACE-01` | **114-Page Student Practice Supplement**, **10 Separate Printable Chapter PDFs** &amp; **15-Page Coach's Guide**: `+10` (1st Way) / `+20` (2nd Way) verification &amp; `{{key:QUIZ}}` (`?`) Tutorial Mode (**[Download Student Workbook PDF &darr;](../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf)**). |
 | **Grade 6** | Chapter 1: Numerical Expressions &amp; Factors | Prime Factor Studio (`PRIME-01`) | Exploration: "Prime Factor Trees &amp; Factor Sockets". Stack prime factor blocks in comparator wells, verify with `{{key:FACT}}` (**SC-6 Manual, Ch. 7**). |
 | **Grade 6** | Chapter 3: Algebraic Expressions | SC-32 4-Line Hardware LCD Stack | Exploration: "Parentheses-Free Operations". Evaluate multi-step arithmetic via RPN stack (**SC-32 Manual, Ch. 2**). |
 | **Algebra 1** | Chapter 7: Polynomials &amp; Factoring | Place Value Studio (Base-$x$ Trays) &amp; `PRIME-01` | Exploration: "Base-$x$ Coefficients &amp; Quadratic Factoring". Model $x^2 + 5x + 6$, solve roots with `{{key:POLY}}` / `{{key:SOLVE}}` (**SC-32 Manual, Ch. 7**). |
@@ -133,7 +132,7 @@ This alignment matrix provides classroom educators and curriculum coordinators w
 Explore our official bookstore editions on Amazon:
 
 * **[Master Teacher's Guide (Book 1) on Amazon ($16) ↗](https://link.amazon/B05RFHqeu)** &bull; [Online Teacher Guide](teacher-guide.md)
-* **[Middle School Math Lab Workbook (Book 3) on Amazon ($14.99) ↗](https://link.amazon/B07bxzYKq)** &bull; [Online Workbook](big-ideas-middle-school-sc6-workbook.md)
+* **[Middle School Math Lab Workbook (Book 3) on Amazon ($14.99) ↗](https://link.amazon/B07bxzYKq)** &bull; [Download PDF (128 pp.) &darr;](../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf)
 * **[From Blocks to the Stack (SC-6 Elementary Companion) on Amazon ($16) ↗](https://link.amazon/B0f5cP0Ur)**
 * **[Thinking in the Stack (SC-32 Scientific Reference) on Amazon ($16) ↗](https://link.amazon/B07DqTRR5)**
 * **[Official Reference Manuals & Guides ($16 Print Editions) &rarr;](../manuals/index.md)**

@@ -197,8 +197,8 @@ hide:
 
       <!-- Navigation & Editions Grid -->
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 my-4 font-mono text-xs">
-        <a href="../../manuals/sc6/08-math-quiz-engine/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
-          <span>Aligned Chapter</span>
+        <a href="../../products/sc6-book/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>SC-6 Companion</span>
           <span class="text-sky-400">&rarr;</span>
         </a>
         <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
@@ -234,8 +234,8 @@ hide:
         <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-amber-400 border border-amber-500/30 hover:bg-slate-700">
           &bull; Master Teacher Guide on Amazon ($16) ↗
         </a>
-        <a href="../../curriculum/big-ideas-middle-school-sc6-workbook/" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-emerald-400 border border-emerald-500/30 hover:bg-slate-700">
-          &bull; Full Curriculum &amp; Section Guide &rarr;
+        <a href="../../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf" download class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-emerald-400 border border-emerald-500/30 hover:bg-slate-700">
+          &bull; Student Workbook PDF (128 pp.) &darr;
         </a>
       </div>
 

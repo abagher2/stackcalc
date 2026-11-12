@@ -13,14 +13,13 @@ description: "Pedagogical master guide for elementary educators: Leveraging the 
 
 <nav class="curriculum-subnav flex flex-wrap gap-2 p-2.5 rounded-xl bg-[#0D1017] border border-white/10 mb-8 font-mono text-xs" aria-label="Curriculum Navigation">
   <a href="../" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📖 Master Guide</a>
-  <a href="../sc6-elementary-companion-workbook/" class="px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition font-bold">📗 SC-6 Companion Workbook (253 Problems)</a>
-  <a href="../sc32-scientific-companion-workbook/" class="px-3 py-1.5 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 transition font-bold">📘 SC-32 Companion Casebook (339 Problems)</a>
-  <a href="../big-ideas-middle-school-sc6-workbook/" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">🚀 Big Ideas 45-Day Catch-Up (SC-6)</a>
-  <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">⚡ RPN Power Guide</a>
-  <a href="../worksheets/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📝 120 Station Worksheets</a>
+  <a href="../teacher-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🧑‍🏫 Book 1: Teacher Guide</a>
   <a href="../alignment-matrix/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🎯 Standards Matrix</a>
-  <a href="../teacher-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🧑‍🏫 Teacher Guide</a>
+  <a href="../worksheets/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📝 Worksheets</a>
+  <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">⚡ RPN Power Guide</a>
   <a href="../uil-competition/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🏆 UIL Competition</a>
+  <a href="../downloads/#print-books-1-2-teacher-guide-student-lab" class="px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition font-bold">📥 Student Workbooks (.PDF)</a>
+  <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">🛒 Print Books (Amazon) ↗</a>
 </nav>
 
 Traditional elementary calculators force children into an algebraic syntax that creates unnecessary cognitive barriers: students struggle with hidden memory registers (`M+`), syntax errors caused by nested parentheses, and decimal answers when they are learning division with remainders.
@@ -330,7 +329,7 @@ On the SC-6, students never type a parenthesis. Every sub-calculation is evaluat
   <strong>Published Block Studios:</strong> <code>PLACE-01</code>, <code>FRAC-01</code>, <code>PRIME-01</code> &bull; <strong>Tutorial Keycap:</strong> <code>[↰] [C]</code> (Question Mark in a Circle <code>?</code>)
 </div>
 
-Many upper-elementary and middle-school learners resist solving the same problem in multiple ways because traditional worksheets punish extra strategies with twice the handwriting. The **[114-Page Big Ideas Math Daily Supplement](big-ideas-middle-school-sc6-workbook.md)** turns multi-method verification into a structured two-step habit:
+Many upper-elementary and middle-school learners resist solving the same problem in multiple ways because traditional worksheets punish extra strategies with twice the handwriting. The **[114-Page Big Ideas Math Daily Supplement (.PDF)](../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf)** turns multi-method verification into a structured two-step habit:
 
 * **1st Way (`+10 pts`):** Solve Question $N$ using your primary method (Big Ideas textbook method, physical block kit—`PLACE-01`, `FRAC-01`, or `PRIME-01`—or SC-6 RPN) and record `+10 pts` in the worksheet scoring box.
 * **2nd Way (`+20 pts` Double Points):** Verify the exact same question using a second method (checking your block/paper work on the SC-6 stack or in `SC-6 Tutorial Mode` `[↰] [C]`) to earn `+20 pts`.

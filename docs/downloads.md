@@ -118,8 +118,8 @@ Free downloadable teaching guides, pre-generated station companions, competition
       <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
         <span>ORDER ON AMAZON ($16) ↗</span>
       </a>
-      <a href="curriculum/big-ideas-middle-school-sc6-workbook/" style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
-        <span>ONLINE SECTIONS &rarr;</span>
+      <a href="downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>DOWNLOAD PDF &darr;</span>
       </a>
     </div>
   </div>
@@ -193,8 +193,8 @@ Free downloadable teaching guides, pre-generated station companions, competition
       <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 191, 0, 0.15); border: 1px solid #FFBF00; color: #FFBF00; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
         <span>Teacher Guide ($16) ↗</span>
       </a>
-      <a href="curriculum/big-ideas-middle-school-sc6-workbook/" style="flex: 1.2; text-align: center; padding: 0.5rem 0.2rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
-        <span>Units Overview &rarr;</span>
+      <a href="downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf" download style="flex: 1.2; text-align: center; padding: 0.5rem 0.2rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+        <span>PDF (128 pp.) &darr;</span>
       </a>
     </div>
   </div>
@@ -216,7 +216,7 @@ Free downloadable teaching guides, pre-generated station companions, competition
 
 Our complete curriculum textbooks and workbooks are published in bookstore editions on Amazon:
 
-* **Middle School Math Block Supplement &amp; Workbook (Grades 6–8):** [Order on Amazon ($14.99) ↗](https://link.amazon/B07bxzYKq) &bull; [Explore Online Curriculum Guide](curriculum/big-ideas-middle-school-sc6-workbook.md)
+* **Middle School Math Block Supplement &amp; Workbook (Grades 6–8):** [Order on Amazon ($14.99) ↗](https://link.amazon/B07bxzYKq) &bull; [Download PDF (128 pp.) &darr;](downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf)
 * **Unified Master Teacher's Guide (Grades K–12):** [Order on Amazon ($16) ↗](https://link.amazon/B05RFHqeu) &bull; [Explore Online Teacher Facilitator Guide](curriculum/teacher-guide.md)
 * **From Blocks to the Stack (SC-6 Elementary Textbook):** [Order on Amazon ($16) ↗](https://link.amazon/B0f5cP0Ur) &bull; [Explore Book Overview](products/sc6-book.md)
 * **Thinking in the Stack (SC-32 Scientific Manual):** [Order on Amazon ($16) ↗](https://link.amazon/B07DqTRR5) &bull; [Hardcover ($28) ↗](https://link.amazon/B09AnTIQI)

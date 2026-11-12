@@ -219,8 +219,8 @@ hide:
           <span>Video Lessons</span>
           <span class="text-sky-400">&darr;</span>
         </a>
-        <a href="../../manuals/sc6/07-data-probability-primes/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
-          <span>Aligned Chapter</span>
+        <a href="../../lab/prime-factor-studio/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>2D Interactive Lab</span>
           <span class="text-emerald-400">&rarr;</span>
         </a>
         <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">

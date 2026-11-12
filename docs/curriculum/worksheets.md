@@ -12,14 +12,13 @@ description: "Pre-generated, publication-grade 2-page classroom station guides a
 
 <nav class="curriculum-subnav flex flex-wrap gap-2 p-2.5 rounded-xl bg-[#0D1017] border border-white/10 mb-8 font-mono text-xs" aria-label="Curriculum Navigation">
   <a href="../" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📖 Master Guide</a>
-  <a href="../sc6-elementary-companion-workbook/" class="px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition font-bold">📗 SC-6 Companion Workbook (253 Problems)</a>
-  <a href="../sc32-scientific-companion-workbook/" class="px-3 py-1.5 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 transition font-bold">📘 SC-32 Companion Casebook (339 Problems)</a>
-  <a href="../big-ideas-middle-school-sc6-workbook/" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">🚀 Big Ideas 45-Day Catch-Up (SC-6)</a>
-  <a href="../rpn-elementary-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">⚡ RPN Power Guide</a>
-  <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">📝 120 Station Worksheets</a>
+  <a href="../teacher-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🧑‍🏫 Book 1: Teacher Guide</a>
   <a href="../alignment-matrix/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🎯 Standards Matrix</a>
-  <a href="../teacher-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🧑‍🏫 Teacher Guide</a>
+  <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">📝 Worksheets</a>
+  <a href="../rpn-elementary-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">⚡ RPN Power Guide</a>
   <a href="../uil-competition/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🏆 UIL Competition</a>
+  <a href="../downloads/#print-books-1-2-teacher-guide-student-lab" class="px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition font-bold">📥 Student Workbooks (.PDF)</a>
+  <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">🛒 Print Books (Amazon) ↗</a>
 </nav>
 
 Welcome to the **StackCalc Visual Companion & Station Guide Library**. Unlike generic online worksheet generators that produce detached drill sheets that fight against district-adopted curricula, StackCalc companion guides operate as **Tactile Learning Lab Station Guides** aligned directly to textbook chapters across:
@@ -118,13 +117,13 @@ Zone 1 (Right Panel) illustrates worked-out examples with the stack after each k
 
 ## 🧱 The Three Published Manipulative Block Kits & Flagship Textbooks
 
-Every station worksheet below aligns with the concepts in our flagship books (**[From Blocks to the Stack](../manuals/sc6/index.md)** and **[Thinking in the Stack](../manuals/sc32/index.md)**) and pairs with our three published manipulative block studios (when concrete blocks apply):
+Every station worksheet below aligns with the concepts in our flagship books (**[From Blocks to the Stack](../products/sc6-book.md)** and **[Thinking in the Stack](../products/sc32-calculator/index.md)**) and pairs with our three published manipulative block studios (when concrete blocks apply):
 
 | Published Block Studio & SKU | Aligned Teacher Curriculum Units & Printable PDFs | Flagship Book Chapters | Product Specs & Channels |
 | :--- | :--- | :--- | :--- |
-| **[Place Value Base-10 Studio (`PLACE-01`)](../products/place-value/index.md)** | [Units 01–05 & 12](teacher-guide.md#unit-01) | [SC-6 Ch. 2: The Number Elevator](../manuals/sc6/02-rpn-for-young-learners.md) &bull; [Ch. 3: Counting & Place Value](../manuals/sc6/03-counting-place-value.md) &bull; [SC-32 Ch. 10: Base-N](../manuals/sc32/10-computer-science-bases.md) | [Product Specs](../products/place-value/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) |
-| **[84.0 mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md)** | [Units 06, 09 & 11](teacher-guide.md#unit-06) | [SC-6 Ch. 5: The Pharaoh's Bakery & 84mm Towers](../manuals/sc6/05-fractions-decimals-ratios.md) &bull; [SC-32 Ch. 4: Trig & Vectors](../manuals/sc32/04-trig-vectors-polar.md) | [Product Specs](../products/fraction-studio/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) |
-| **[Prime Factor Logarithmic Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)** | [Units 07, 08 & 10](teacher-guide.md#unit-07) | [SC-6 Ch. 4: Factor Packing](../manuals/sc6/04-operations-skip-counting.md) &bull; [Ch. 7: Primes](../manuals/sc6/07-data-probability-primes.md) &bull; [SC-32 Ch. 3: Napier](../manuals/sc32/03-algebra-transcendentals.md) | [Product Specs](../products/prime-factor-studio/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) |
+| **[Place Value Base-10 Studio (`PLACE-01`)](../products/place-value/index.md)** | [Units 01–05 & 12](teacher-guide.md#unit-01) | SC-6 Ch. 2: The Number Elevator &bull; Ch. 3: Counting & Place Value &bull; SC-32 Ch. 10: Base-N | [Product Specs](../products/place-value/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) |
+| **[84.0 mm Fraction Comparator Studio (`FRAC-01`)](../products/fraction-studio/index.md)** | [Units 06, 09 & 11](teacher-guide.md#unit-06) | SC-6 Ch. 5: The Pharaoh's Bakery & 84mm Towers &bull; SC-32 Ch. 4: Trig & Vectors | [Product Specs](../products/fraction-studio/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) |
+| **[Prime Factor Logarithmic Studio (`PRIME-01`)](../products/prime-factor-studio/index.md)** | [Units 07, 08 & 10](teacher-guide.md#unit-07) | SC-6 Ch. 4: Factor Packing &bull; Ch. 7: Primes &bull; SC-32 Ch. 3: Napier | [Product Specs](../products/prime-factor-studio/index.md) &bull; [Etsy ↗](https://stackcalcmath.etsy.com) &bull; [Slant 3D ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Printables ↗](https://www.printables.com/@StackCalc_5593834) |
 
 ---
 
@@ -197,7 +196,7 @@ Big Ideas Math (Ron Larson & Laurie Boswell) and Advanced Placement standards br
 !!! tip "114-Page Big Ideas Middle School Practice Supplement (90 Worksheets • 900 Problems) + 10 Printable Chapter PDFs"
     Aligned section-by-section with **Big Ideas Math Units 1–10 (Sections 1.1–10.4)**—featuring 10 Chapter Story Openers, 2 full worksheets per section (**Practice A: Key Ideas & Two-Method Practice** + **Practice B: Modeling Real Life Applications**), 90 Two-Method Worked Examples (`Method 1: +10 pts` vs. `Method 2: +20 pts DOUBLE`), step-by-step instructions for our 3 published block kits (`PLACE-01`, `FRAC-01`, `PRIME-01`), 900 clean open-workspace practice problems, **10 Separate Printable Chapter PDFs (`Unit 1`–`Unit 10`)**, and the **15-Page Teacher Coach Guide**:
 
-    - **[Read the Full 45-Section Interactive Curriculum &rarr;](big-ideas-middle-school-sc6-workbook.md)**
+    - **[Download the Full 128-Page Student Lab Workbook (.PDF) &darr;](../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf)**
     - **[Order Bound Print Workbook on Amazon ($14.99) ↗](https://link.amazon/B07bxzYKq)** &bull; **[Order Teacher's Curriculum Guide on Amazon ($16) ↗](https://link.amazon/B05RFHqeu)**
 
 | Grade Level | Chapter / Unit & Topic | Target Calculator | Published Block Kit / Visual Model | Form A (Classroom Master) | Form B (Retake / HW Variant) |
@@ -224,7 +223,7 @@ Big Ideas Math (Ron Larson & Laurie Boswell) and Advanced Placement standards br
 ## Master Classroom Curriculum Manuals & Books
 
 * **[Master Teacher's Guide (Book 1) on Amazon ($16) ↗](https://link.amazon/B05RFHqeu)** &bull; [Explore Online Teacher Guide](teacher-guide.md)
-* **[Middle School Math Lab Workbook (Book 3) on Amazon ($16) ↗](https://link.amazon/B07bxzYKq)** &bull; [Explore Online Workbook](big-ideas-middle-school-sc6-workbook.md)
+* **[Middle School Math Lab Workbook (Book 3) on Amazon ($16) ↗](https://link.amazon/B07bxzYKq)** &bull; [Download PDF (128 pp.) &darr;](../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf)
 * **[From Blocks to the Stack (SC-6 Elementary Companion) on Amazon ($16) ↗](https://link.amazon/B0f5cP0Ur)**
 * **[Thinking in the Stack (SC-32 Scientific Reference) on Amazon ($16) ↗](https://link.amazon/B07DqTRR5)**
 * **[Download 12-Page Quickstart Classroom Sample (Letter PDF) &rarr;](../downloads/stackcalc-curriculum-sample-v0.2.0.pdf)**

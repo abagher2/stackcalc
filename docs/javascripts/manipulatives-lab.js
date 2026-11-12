@@ -79,6 +79,11 @@
     return a;
   }
 
+  function lcm(a, b) {
+    if (a === 0 || b === 0) return 0;
+    return Math.abs(Math.round(a * b)) / gcd(a, b);
+  }
+
   function simplifyFrac(n, d) {
     if (d === 0) return { n: 0, d: 1 };
     const g = gcd(n, d);
@@ -146,6 +151,29 @@
       },
       hasCarry: false,
       regroupNote: ''
+    },
+
+    // Prime Factor Studio Specific State (PRIME-01)
+    primes: {
+      palette: [
+        { p: 2, label: '[2]', mm: 18.0, color: '#0284C7' },
+        { p: 3, label: '[3]', mm: 28.5, color: '#10B981' },
+        { p: 5, label: '[5]', mm: 41.8, color: '#F59E0B' },
+        { p: 7, label: '[7]', mm: 50.7, color: '#8B5CF6' },
+        { p: 11, label: '[11]', mm: 62.4, color: '#EC4899' },
+        { p: 13, label: '[13]', mm: 66.8, color: '#06B6D4' },
+        { p: 17, label: '[17]', mm: 73.6, color: '#E11D48' },
+        { p: 19, label: '[19]', mm: 76.5, color: '#F97316' },
+        { p: 23, label: '[23]', mm: 81.3, color: '#64748B' }
+      ],
+      staging: [],
+      targetPrimes: [],
+      get stagingProduct() {
+        return getPrimeProduct(this.staging);
+      },
+      get targetDecomp() {
+        return this.targetPrimes;
+      }
     },
 
     // Challenge & Verification Engine
@@ -595,12 +623,176 @@
     }
   }
 
+  // --- Prime Factor Studio Logic ---
+  function getPrimeProduct(list) {
+    if (!list || list.length === 0) return 0;
+    return list.reduce((acc, p) => acc * p, 1);
+  }
+
+  function getPrimeMm(list) {
+    if (!list || list.length === 0) return 0;
+    const lookup = {
+      2: 18.0, 3: 28.5, 5: 41.8, 7: 50.7, 11: 62.4, 13: 66.8, 17: 73.6, 19: 76.5, 23: 81.3
+    };
+    return list.reduce((acc, p) => acc + (lookup[p] || (15 * Math.log2(p))), 0);
+  }
+
+  function formatPrimeFormula(list) {
+    if (!list || list.length === 0) return '0';
+    const sorted = [...list].sort((a, b) => a - b);
+    const expanded = sorted.join(' × ');
+    const counts = {};
+    sorted.forEach(p => { counts[p] = (counts[p] || 0) + 1; });
+    const hasExponents = Object.values(counts).some(c => c > 1);
+    if (!hasExponents) {
+      return expanded;
+    }
+    const expParts = Object.keys(counts).map(Number).sort((a, b) => a - b).map(p => {
+      return counts[p] > 1 ? `${p}<sup>${counts[p]}</sup>` : `${p}`;
+    });
+    return `${expanded} &nbsp;<span style="color:#94A3B8; font-weight:normal;">(${expParts.join(' × ')})</span>`;
+  }
+
+  function getPrimeFactorsList(num) {
+    let n = Math.abs(Math.round(num));
+    if (n <= 1) return [];
+    const factors = [];
+    let d = 2;
+    while (d * d <= n) {
+      while (n % d === 0) {
+        factors.push(d);
+        n = Math.floor(n / d);
+      }
+      d++;
+    }
+    if (n > 1) factors.push(n);
+    return factors;
+  }
+
+  function addStagingPrime(p) {
+    state.primes.staging.push(p);
+    playClick();
+    renderPrimes();
+  }
+
+  function removeLastStagingPrime() {
+    state.primes.staging.pop();
+    playClick();
+    renderPrimes();
+  }
+
+  function clearStagingPrimes() {
+    state.primes.staging = [];
+    playClick();
+    renderPrimes();
+  }
+
+  function pushPrimesToStack() {
+    const prod = getPrimeProduct(state.primes.staging);
+    if (prod > 0) {
+      rpnPush(prod, 1, prod);
+      state.primes.staging = [];
+      renderPrimes();
+    }
+  }
+
+  function decomposeStackXPrimes() {
+    const xVal = Math.round(state.stack.x.val);
+    if (xVal > 1) {
+      state.primes.targetPrimes = getPrimeFactorsList(xVal);
+      playOp();
+      renderPrimes();
+    }
+  }
+
+  function calcGcdPrimes() {
+    const yVal = Math.round(state.stack.y.val);
+    const xVal = Math.round(state.stack.x.val);
+    if (yVal > 0 && xVal > 0) {
+      const g = gcd(yVal, xVal);
+      state.stack.x = { n: g, d: 1, val: g };
+      state.primes.targetPrimes = getPrimeFactorsList(g);
+      playOp();
+      renderAll();
+    }
+  }
+
+  function calcLcmPrimes() {
+    const yVal = Math.round(state.stack.y.val);
+    const xVal = Math.round(state.stack.x.val);
+    if (yVal > 0 && xVal > 0) {
+      const l = lcm(yVal, xVal);
+      state.stack.x = { n: l, d: 1, val: l };
+      state.primes.targetPrimes = getPrimeFactorsList(l);
+      playOp();
+      renderAll();
+    }
+  }
+
+  function renderPrimes() {
+    const stageEl = document.getElementById('vlab-prime-stage');
+    const targetEl = document.getElementById('vlab-prime-target');
+    const valEl = document.getElementById('vlab-prime-val');
+    const formulaEl = document.getElementById('vlab-prime-formula');
+    const metaEl = document.getElementById('vlab-prime-meta');
+
+    const lookupColors = {
+      2: '#0284C7', 3: '#10B981', 5: '#F59E0B', 7: '#8B5CF6',
+      11: '#EC4899', 13: '#06B6D4', 17: '#E11D48', 19: '#F97316', 23: '#64748B'
+    };
+    const lookupMm = {
+      2: 18.0, 3: 28.5, 5: 41.8, 7: 50.7, 11: 62.4, 13: 66.8, 17: 73.6, 19: 76.5, 23: 81.3
+    };
+
+    if (stageEl) {
+      stageEl.innerHTML = '';
+      if (state.primes.staging.length === 0) {
+        stageEl.innerHTML = '<div style="color:#64748B; font-family:\'Space Mono\',monospace; font-size:0.75rem; padding:12px;">Stage empty. Tap prime blocks below to build a composite number train.</div>';
+      } else {
+        state.primes.staging.forEach(p => {
+          const blk = document.createElement('div');
+          blk.className = 'prime-block-2d';
+          const mm = lookupMm[p] || 20;
+          blk.style.width = `${Math.max(38, mm * 2.2)}px`;
+          blk.style.backgroundColor = lookupColors[p] || '#38BDF8';
+          blk.innerHTML = `<span class="prime-block-title">[${p}]</span><span class="prime-block-sub">${mm.toFixed(1)}mm</span>`;
+          stageEl.appendChild(blk);
+        });
+      }
+    }
+
+    if (targetEl) {
+      targetEl.innerHTML = '';
+      if (state.primes.targetPrimes.length === 0) {
+        targetEl.innerHTML = '<div style="color:#64748B; font-family:\'Space Mono\',monospace; font-size:0.75rem; padding:12px;">Target rail empty. Press [FACT] on Register X or build a comparison train.</div>';
+      } else {
+        state.primes.targetPrimes.forEach(p => {
+          const blk = document.createElement('div');
+          blk.className = 'prime-block-2d';
+          const mm = lookupMm[p] || 20;
+          blk.style.width = `${Math.max(38, mm * 2.2)}px`;
+          blk.style.backgroundColor = lookupColors[p] || '#10B981';
+          blk.innerHTML = `<span class="prime-block-title">[${p}]</span><span class="prime-block-sub">${mm.toFixed(1)}mm</span>`;
+          targetEl.appendChild(blk);
+        });
+      }
+    }
+
+    const prod = getPrimeProduct(state.primes.staging);
+    const mmTotal = getPrimeMm(state.primes.staging);
+    if (valEl) valEl.textContent = prod > 0 ? `${prod}` : '0';
+    if (formulaEl) formulaEl.innerHTML = prod > 0 ? formatPrimeFormula(state.primes.staging) : 'No factors selected';
+    if (metaEl) metaEl.textContent = `Logarithmic Length: ${mmTotal.toFixed(1)} mm • ${state.primes.staging.length} Factors`;
+  }
+
   function renderAll() {
     renderStackLcd();
     if (state.activeTab === 'fractions') {
       renderFractions();
-    } else {
+    } else if (state.activeTab === 'placevalue') {
       renderPlaceValue();
+    } else if (state.activeTab === 'primes') {
+      renderPrimes();
     }
   }
 
@@ -612,29 +804,33 @@
     // Attach Tab Switching
     const tabFrac = document.getElementById('vlab-tab-fractions');
     const tabPv = document.getElementById('vlab-tab-placevalue');
+    const tabPrimes = document.getElementById('vlab-tab-primes');
     const viewFrac = document.getElementById('vlab-view-fractions');
     const viewPv = document.getElementById('vlab-view-placevalue');
+    const viewPrimes = document.getElementById('vlab-view-primes');
 
-    if (tabFrac && tabPv) {
-      tabFrac.onclick = () => {
-        state.activeTab = 'fractions';
-        tabFrac.classList.add('active');
-        tabPv.classList.remove('active');
+    function setActiveTab(tab) {
+      state.activeTab = tab;
+      [tabFrac, tabPv, tabPrimes].forEach(t => { if (t) t.classList.remove('active'); });
+      [viewFrac, viewPv, viewPrimes].forEach(v => { if (v) v.style.display = 'none'; });
+
+      if (tab === 'fractions') {
+        if (tabFrac) tabFrac.classList.add('active');
         if (viewFrac) viewFrac.style.display = 'block';
-        if (viewPv) viewPv.style.display = 'none';
-        playClick();
-        renderAll();
-      };
-      tabPv.onclick = () => {
-        state.activeTab = 'placevalue';
-        tabPv.classList.add('active');
-        tabFrac.classList.remove('active');
-        if (viewFrac) viewFrac.style.display = 'none';
+      } else if (tab === 'placevalue') {
+        if (tabPv) tabPv.classList.add('active');
         if (viewPv) viewPv.style.display = 'block';
-        playClick();
-        renderAll();
-      };
+      } else if (tab === 'primes') {
+        if (tabPrimes) tabPrimes.classList.add('active');
+        if (viewPrimes) viewPrimes.style.display = 'block';
+      }
+      playClick();
+      renderAll();
     }
+
+    if (tabFrac) tabFrac.onclick = () => setActiveTab('fractions');
+    if (tabPv) tabPv.onclick = () => setActiveTab('placevalue');
+    if (tabPrimes) tabPrimes.onclick = () => setActiveTab('primes');
 
     // Attach Audio Toggle
     const soundBtn = document.getElementById('vlab-btn-sound');
@@ -709,6 +905,33 @@
       };
     });
 
+    // Prime Factor Buttons
+    const pushPrimeBtn = document.getElementById('vlab-btn-push-prime');
+    if (pushPrimeBtn) pushPrimeBtn.onclick = pushPrimesToStack;
+
+    const clearPrimeBtn = document.getElementById('vlab-btn-clear-prime');
+    if (clearPrimeBtn) clearPrimeBtn.onclick = clearStagingPrimes;
+
+    const dropPrimeBtn = document.getElementById('vlab-btn-drop-prime');
+    if (dropPrimeBtn) dropPrimeBtn.onclick = removeLastStagingPrime;
+
+    const factBtn = document.getElementById('vlab-btn-fact');
+    if (factBtn) factBtn.onclick = decomposeStackXPrimes;
+
+    const gcdBtn = document.getElementById('vlab-btn-gcd');
+    if (gcdBtn) gcdBtn.onclick = calcGcdPrimes;
+
+    const lcmBtn = document.getElementById('vlab-btn-lcm');
+    if (lcmBtn) lcmBtn.onclick = calcLcmPrimes;
+
+    const primeBtns = document.querySelectorAll('[data-prime-p]');
+    primeBtns.forEach(btn => {
+      btn.onclick = () => {
+        const p = parseInt(btn.getAttribute('data-prime-p'), 10);
+        addStagingPrime(p);
+      };
+    });
+
     // Render Initial State
     renderAll();
   }
@@ -732,6 +955,14 @@
     autoRegroupPv: autoRegroupPv,
     getPvTotal: getPvTotal,
     pushPvToStack: pushPvToStack,
+    addPrime: addStagingPrime,
+    removeLastPrime: removeLastStagingPrime,
+    clearPrimes: clearStagingPrimes,
+    pushPrimes: pushPrimesToStack,
+    factorizeStackX: decomposeStackXPrimes,
+    calcGcd: calcGcdPrimes,
+    calcLcm: calcLcmPrimes,
+    pushValue: (v) => rpnPush(v, 1, v),
     op: rpnOp,
     clearStack: rpnClear,
     toggleFullscreen: toggleFullscreen

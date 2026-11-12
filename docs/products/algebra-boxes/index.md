@@ -220,8 +220,8 @@ hide:
           <span>Curriculum Lessons</span>
           <span class="text-emerald-400">&rarr;</span>
         </a>
-        <a href="../../manuals/sc32/07-polynomials-brent-solver/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
-          <span>Aligned Chapter</span>
+        <a href="../../products/sc32-calculator/index.md" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>SC-32 Calculator</span>
           <span class="text-amber-400">&rarr;</span>
         </a>
         <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">

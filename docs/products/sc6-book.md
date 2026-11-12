@@ -130,8 +130,8 @@ hide:
           <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="flex: 1; min-width: 180px; text-align: center; border-color: #38BDF8; color: #38BDF8; font-weight: 700;">
             Factory Blocks on Slant 3D ↗
           </a>
-          <a href="../../manuals/sc6/" class="ec-btn-secondary" style="flex: 1; min-width: 180px; text-align: center; font-weight: 700;">
-            Read Online Chapters &rarr;
+          <a href="../../downloads/manuals/sc6-elementary-manual.pdf" download class="ec-btn-secondary" style="flex: 1; min-width: 180px; text-align: center; font-weight: 700;">
+            Download Official PDF &darr;
           </a>
         </div>
       </div>
@@ -140,11 +140,11 @@ hide:
       <div class="mt-4 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2">
         <span class="text-xs text-slate-400">Complete Open Curriculum &amp; Aligned Standards</span>
         <div class="flex flex-wrap gap-3">
-          <a href="../../manuals/sc6/" class="text-xs font-bold text-sky-400 hover:text-sky-300">
-            Read Book Online &rarr;
+          <a href="../../downloads/manuals/sc6-elementary-manual.pdf" download class="text-xs font-bold text-sky-400 hover:text-sky-300">
+            Download Book PDF &darr;
           </a>
-          <a href="../../curriculum/big-ideas-middle-school-sc6-workbook/" class="text-xs font-bold text-amber-400 hover:text-amber-300">
-            Middle School Workbook &rarr;
+          <a href="../../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf" download class="text-xs font-bold text-amber-400 hover:text-amber-300">
+            Middle School Workbook (PDF) &darr;
           </a>
           <a href="../../curriculum/teacher-guide/" class="text-xs font-bold text-emerald-400 hover:text-emerald-300">
             Teacher Guide &rarr;
@@ -162,7 +162,7 @@ hide:
     <div class="te-section-bar">
       <div>
         <h2 class="te-section-title">Table of Contents &amp; Chapter Guide</h2>
-        <p class="text-sm text-gray-400 m-0">Explore each illustrated chapter online or follow along in your print copy.</p>
+        <p class="text-sm text-gray-400 m-0">Explore each illustrated chapter outline or follow along in your print / PDF edition.</p>
       </div>
       <span class="te-section-badge">GRADES 3–6 &bull; 9 CHAPTERS &bull; 4 APPENDICES</span>
     </div>
@@ -171,7 +171,7 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-white/10 space-y-2">
         <div class="font-mono text-xs text-amber-400 font-bold">PREFACE &bull; THE NUMBER STACK</div>
-        <h3 class="text-base font-bold text-white"><a href="../../manuals/sc6/index.md" class="hover:text-amber-400">Why Your Brain Already Thinks in a Stack &rarr;</a></h3>
+        <h3 class="text-base font-bold text-white">Why Your Brain Already Thinks in a Stack</h3>
         <p class="text-xs text-slate-300 leading-relaxed">
           How building with LEGO and stacking blocks taught your hands the stack before you ever saw an equation. Meet the four shelves ($X, Y, Z, T$).
         </p>
@@ -179,7 +179,7 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-white/10 space-y-2">
         <div class="font-mono text-xs text-sky-400 font-bold">CHAPTER 01 &bull; HARDWARE &amp; ARCHITECTURE</div>
-        <h3 class="text-base font-bold text-white"><a href="../../manuals/sc6/01-hardware-architecture.md" class="hover:text-sky-400">Meet Your SC-6 Stack Calculator &amp; Math Blocks &rarr;</a></h3>
+        <h3 class="text-base font-bold text-white">Meet Your SC-6 Stack Calculator &amp; Math Blocks</h3>
         <p class="text-xs text-slate-300 leading-relaxed">
           The sunlit transflective display, tactile TPU keys, sliding dovetail tool-free chassis, and how blocks nest onto 42 mm desk trays.
         </p>
@@ -187,7 +187,7 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-white/10 space-y-2">
         <div class="font-mono text-xs text-emerald-400 font-bold">CHAPTER 02 &bull; RPN FUNDAMENTALS</div>
-        <h3 class="text-base font-bold text-white"><a href="../../manuals/sc6/02-rpn-for-young-learners.md" class="hover:text-emerald-400">Stacking Numbers Just Like Blocks &rarr;</a></h3>
+        <h3 class="text-base font-bold text-white">Stacking Numbers Just Like Blocks</h3>
         <p class="text-xs text-slate-300 leading-relaxed">
           The 4-story Number Elevator, automatic stack lift, `LASTX` error recovery, dyadic operations, and evaluating formulas from the inside out.
         </p>
@@ -195,7 +195,7 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-white/10 space-y-2">
         <div class="font-mono text-xs text-purple-400 font-bold">CHAPTER 03 &bull; PLACE VALUE &amp; TEN-FRAMES</div>
-        <h3 class="text-base font-bold text-white"><a href="../../manuals/sc6/03-counting-place-value.md" class="hover:text-purple-400">Ten-Frames, Number Lines &amp; Place Value &rarr;</a></h3>
+        <h3 class="text-base font-bold text-white">Ten-Frames, Number Lines &amp; Place Value</h3>
         <p class="text-xs text-slate-300 leading-relaxed">
           Ten-frame dot arrays (`▦`), the 20-bead Number Rack (`COUNT`), base-ten regrouping trades (`PV`), and jumps on the number line (`LINE`).
         </p>
@@ -203,7 +203,7 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-white/10 space-y-2">
         <div class="font-mono text-xs text-pink-400 font-bold">CHAPTER 04 &bull; MULTIPLICATION &amp; REMAINDERS</div>
-        <h3 class="text-base font-bold text-white"><a href="../../manuals/sc6/04-operations-skip-counting.md" class="hover:text-pink-400">Tile Arrays, Skip-Counting &amp; Remainders &rarr;</a></h3>
+        <h3 class="text-base font-bold text-white">Tile Arrays, Skip-Counting &amp; Remainders</h3>
         <p class="text-xs text-slate-300 leading-relaxed">
           Multiplication tile arrays, skip-counting fact ladders (`REP`), and fair-share division with whole-number remainders (`÷R`).
         </p>
@@ -211,7 +211,7 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-white/10 space-y-2">
         <div class="font-mono text-xs text-cyan-400 font-bold">CHAPTER 05 &bull; FRACTIONS &amp; DECIMALS</div>
-        <h3 class="text-base font-bold text-white"><a href="../../manuals/sc6/05-fractions-decimals-ratios.md" class="hover:text-cyan-400">Fractions, Decimals, Percents &amp; Ratios &rarr;</a></h3>
+        <h3 class="text-base font-bold text-white">Fractions, Decimals, Percents &amp; Ratios</h3>
         <p class="text-xs text-slate-300 leading-relaxed">
           Physical height comparisons with 84 mm Fraction Towers, step-by-step simplification (`SIMP`), common denominators (`LCM`), and decimals.
         </p>
@@ -219,7 +219,7 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-white/10 space-y-2">
         <div class="font-mono text-xs text-orange-400 font-bold">CHAPTER 06 &bull; GEOMETRY &amp; CLOCK TIME</div>
-        <h3 class="text-base font-bold text-white"><a href="../../manuals/sc6/06-geometry-surface-area.md" class="hover:text-orange-400">Shapes, 3D Boxes &amp; Geared Clock Time &rarr;</a></h3>
+        <h3 class="text-base font-bold text-white">Shapes, 3D Boxes &amp; Geared Clock Time</h3>
         <p class="text-xs text-slate-300 leading-relaxed">
           Unfolding 2D shapes, 3D surface area with running accumulation (`Σ+`), and hands-on planetary clock gears (`🕒`).
         </p>
@@ -227,7 +227,7 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-white/10 space-y-2">
         <div class="font-mono text-xs text-teal-400 font-bold">CHAPTER 07 &bull; PRIMES &amp; PROBABILITY</div>
-        <h3 class="text-base font-bold text-white"><a href="../../manuals/sc6/07-data-probability-primes.md" class="hover:text-teal-400">Prime Numbers, Fair Dice &amp; Data Detective &rarr;</a></h3>
+        <h3 class="text-base font-bold text-white">Prime Numbers, Fair Dice &amp; Data Detective</h3>
         <p class="text-xs text-slate-300 leading-relaxed">
           17-year cicada prime cycles, prime factor towers (`FACT`), GCF and LCM comparator stages, polyhedral dice (`🎲`), and mean/MAD statistics.
         </p>
@@ -235,7 +235,7 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-white/10 space-y-2">
         <div class="font-mono text-xs text-yellow-400 font-bold">CHAPTER 08 &bull; MENTAL MATH &amp; QUIZ ENGINE</div>
-        <h3 class="text-base font-bold text-white"><a href="../../manuals/sc6/08-math-quiz-engine.md" class="hover:text-yellow-400">Mental Math Tricks &amp; The Quiz Game &rarr;</a></h3>
+        <h3 class="text-base font-bold text-white">Mental Math Tricks &amp; The Quiz Game</h3>
         <p class="text-xs text-slate-300 leading-relaxed">
           Eight visual mental-math shortcuts, plus 6 progressive difficulty levels of the built-in timed arithmetic fluency game (`?`).
         </p>
@@ -243,7 +243,7 @@ hide:
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-white/10 space-y-2">
         <div class="font-mono text-xs text-indigo-400 font-bold">CHAPTER 09 &bull; STEM LABS &amp; INVENTIONS</div>
-        <h3 class="text-base font-bold text-white"><a href="../../manuals/sc6/09-applied-stem-labs.md" class="hover:text-indigo-400">Kitchen-Table Inventions &amp; Maker Projects &rarr;</a></h3>
+        <h3 class="text-base font-bold text-white">Kitchen-Table Inventions &amp; Maker Projects</h3>
         <p class="text-xs text-slate-300 leading-relaxed">
           Weighing 3D-printed blocks, slicing printer layer heights, pendulum physics, recipe scaling, and testing compound gear reduction.
         </p>

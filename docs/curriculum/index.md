@@ -12,15 +12,13 @@ description: "Comprehensive K-12 STEM curriculum guide connecting tactile Gridfi
 
 <nav class="curriculum-subnav flex flex-wrap gap-2 p-2.5 rounded-xl bg-[#0D1017] border border-white/10 mb-8 font-mono text-xs" aria-label="Curriculum Navigation">
   <a href="./" class="px-3 py-1.5 rounded bg-white text-slate-950 font-bold transition">📖 Master Guide</a>
-  <a href="answers/" class="px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition font-bold">🔑 Online Answer Keys</a>
-  <a href="sc6-elementary-companion-workbook/" class="px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition font-bold">📗 Book 2A: Early Elementary (K–2)</a>
-  <a href="sc6-elementary-companion-workbook/" class="px-3 py-1.5 rounded bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 border border-teal-500/30 transition font-bold">📘 Book 2B: Upper Elementary (3–5)</a>
-  <a href="big-ideas-middle-school-sc6-workbook/" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">📙 Book 3: Middle School (6–8)</a>
-  <a href="sc32-scientific-companion-workbook/" class="px-3 py-1.5 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 transition font-bold">📕 Book 4: High School & STEM (9–12)</a>
   <a href="teacher-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🧑‍🏫 Book 1: Teacher Guide</a>
-  <a href="worksheets/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📝 Worksheets</a>
   <a href="alignment-matrix/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🎯 Standards Matrix</a>
+  <a href="worksheets/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">📝 Worksheets</a>
+  <a href="rpn-elementary-guide/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🧮 RPN Guide</a>
   <a href="uil-competition/" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition font-bold">🏆 UIL Competition</a>
+  <a href="../downloads/#print-books-1-2-teacher-guide-student-lab" class="px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition font-bold">📥 Student Workbooks (.PDF)</a>
+  <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition font-bold">🛒 Print Books (Amazon) ↗</a>
 </nav>
 
 Welcome to the **StackCalc Learning Lab Curriculum Hub**. At StackCalc, we believe that mathematical comprehension should not begin behind a flat pane of glass or inside abstract parentheses soup. 
@@ -206,8 +204,8 @@ All StackCalc educational literature is licensed under Creative Commons with **u
       <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="w-full py-2 text-center rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 font-mono text-xs font-bold transition block">
         SC-6 Elementary Book (Amazon $16) ↗
       </a>
-      <a href="big-ideas-middle-school-sc6-workbook/" class="w-full py-2 text-center rounded bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold transition block">
-        Explore Middle School Lessons &rarr;
+      <a href="../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf" download class="w-full py-2 text-center rounded bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold transition block">
+        Download Middle School PDF (128 pp.) &darr;
       </a>
     </div>
   </div>
@@ -232,11 +230,11 @@ Every curriculum unit, manipulative studio, and station worksheet is anchored by
       </p>
     </div>
     <div class="flex flex-wrap gap-2">
-      <a href="../manuals/#sc-6-elementary" class="px-3 py-2 rounded bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-mono text-xs font-bold transition">
+      <a href="../manuals/#volume-i-from-blocks-to-the-stack-hands-on-math-the-sc-6-stack-calculator-grades-36" class="px-3 py-2 rounded bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-mono text-xs font-bold transition">
         Book Showcase &amp; TOC &rarr;
       </a>
-      <a href="sc6-elementary-companion-workbook/" class="px-3 py-2 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-mono text-xs font-bold transition">
-        Companion Workbook (253 Problems) &rarr;
+      <a href="../downloads/StackCalc-Book-2-Student-Lab-Workbook.pdf" download class="px-3 py-2 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-mono text-xs font-bold transition">
+        Companion Workbook PDF &darr;
       </a>
       <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition">
         Print Book on Amazon ↗
@@ -256,11 +254,11 @@ Every curriculum unit, manipulative studio, and station worksheet is anchored by
       </p>
     </div>
     <div class="flex flex-wrap gap-2">
-      <a href="../manuals/#sc-32-scientific" class="px-3 py-2 rounded bg-sky-500 hover:bg-sky-400 text-slate-950 font-mono text-xs font-bold transition">
+      <a href="../manuals/#volume-ii-thinking-in-the-stack-the-art-of-reverse-polish-notation-sc-32-scientific" class="px-3 py-2 rounded bg-sky-500 hover:bg-sky-400 text-slate-950 font-mono text-xs font-bold transition">
         Book Showcase &amp; TOC &rarr;
       </a>
-      <a href="sc32-scientific-companion-workbook/" class="px-3 py-2 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 font-mono text-xs font-bold transition">
-        Companion Casebook (339 Problems) &rarr;
+      <a href="../downloads/StackCalc-Book-4-High-School-Lab.pdf" download class="px-3 py-2 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 font-mono text-xs font-bold transition">
+        Companion Casebook PDF &darr;
       </a>
       <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-bold transition">
         Order on Amazon ($16) ↗
@@ -287,8 +285,8 @@ Every lesson in our **12-Unit Teacher Curriculum Guide**, **45-Section Big Ideas
 
 Explore the comprehensive sub-sections of our curriculum and competition ecosystem:
 
-* **[SC-6 Elementary Companion Problem Workbook (253 Worked Problems) &rarr;](sc6-elementary-companion-workbook.md):** Chapter-by-chapter extended problem sets, physical Gridfinity manipulative setups, fluency drills, and applied STEM lab challenges accompanying the Bookstore Edition of *From Blocks to the Stack*.
-* **[SC-32 Scientific Companion Problem & Casebook Workbook (339 Worked Problems) &rarr;](sc32-scientific-companion-workbook.md):** Chapter-by-chapter extended engineering, scientific, corporate finance, and UIL competition problem sets accompanying the Bookstore Edition of *Thinking in the Stack*.
+* **[SC-6 Elementary Companion Problem Workbook (.PDF) &darr;](../downloads/StackCalc-Book-2-Student-Lab-Workbook.pdf):** Chapter-by-chapter extended problem sets, physical Gridfinity manipulative setups, fluency drills, and applied STEM lab challenges accompanying the Bookstore Edition of *From Blocks to the Stack*.
+* **[SC-32 Scientific Companion Problem & Casebook Workbook (.PDF) &darr;](../downloads/StackCalc-Book-4-High-School-Lab.pdf):** Chapter-by-chapter extended engineering, scientific, corporate finance, and UIL competition problem sets accompanying the Bookstore Edition of *Thinking in the Stack*.
 * **[RPN Elementary Power Guide (4-Stack XYZT, LastX & REP) &rarr;](rpn-elementary-guide.md):** The definitive pedagogical manual on why 4-stack XYZT RPN accelerates elementary math: default 4-stack XYZT operational display (with toggleable 2-stack mode for counting racks and dice), `{{key:÷R}}` simultaneous quotient and remainder division, `{{key:LASTX}}` instant inverse verification, and `{{key:REP}}` rhythmic skip-counting fact ladders.
 * **[Pre-Generated Classroom Station Guides & Worksheets (120 Editions) &rarr;](worksheets.md):** 2-page visual companions with CPA CAD diagrams, step-by-step LCD stack traces, authentic math workspace, and teacher rubrics for Singapore Dimensions, Bridges in Mathematics, and Big Ideas Math.
 * **[Texas UIL & TMSCA Calculator Applications Competition Center &rarr;](uil-competition.md):** 12 authentic 30-minute tournament practice exams and official 3-sig-fig scoring keys for High School (SC-32), Junior High (Grades 7–8 & 26MS/PSIA), and Elementary (Grades 3–6 on SC-6).

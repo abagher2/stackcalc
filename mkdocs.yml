@@ -66,6 +66,7 @@ nav:
       - Virtual Manipulatives Suite: learning-lab.md
       - Fraction Towers Lab: lab/fraction-studio.md
       - Place Value & Regrouping Lab: lab/place-value.md
+      - Prime Factor Studio Lab: lab/prime-factor-studio.md
   - Catalog:
     - Master Directory: products.md
     - SC-32 Scientific Calculator:
@@ -112,19 +113,15 @@ nav:
     - Download Center (PDFs & 3MFs): downloads.md
   - Curriculum & Standards:
     - Master Curriculum Guide: curriculum/index.md
-    - SC-6 Companion Workbook (253 Problems): curriculum/sc6-elementary-companion-workbook.md
-    - SC-32 Companion Casebook (339 Problems): curriculum/sc32-scientific-companion-workbook.md
-    - Big Ideas Middle School Catch-Up (SC-6): curriculum/big-ideas-middle-school-sc6-workbook.md
     - Standards Alignment Matrix: curriculum/alignment-matrix.md
     - Printable Student Worksheets: curriculum/worksheets.md
     - Teacher Facilitator Guide: curriculum/teacher-guide.md
-    - Master Answer Key (Books 2A–5): curriculum/answers.md
     - RPN Elementary Power Guide: curriculum/rpn-elementary-guide.md
     - Competitive STEM & Speed Calculation: curriculum/uil-competition.md
   - Books & Reference Manuals:
     - Official Manuals & Reference Books ($16): manuals/index.md
     - From Blocks to the Stack (Book Page): products/sc6-book.md
-    - Middle School Math Lab Workbook: curriculum/big-ideas-middle-school-sc6-workbook.md
+    - SC-32 Scientific Overview: products/sc32-calculator/index.md
   - Documentation:
     - Engineering Blog: blog/index.md
     - Learning Lab: learning-lab.md
@@ -142,6 +139,22 @@ nav:
     - Support: support.md
     - Replacement Parts: parts.md
 
+exclude_docs: |
+  hackaday/**
+  manuals/sc32-user-guide.md
+  manuals/sc6-user-guide.md
+  manuals/sc32/**
+  manuals/sc6/**
+  manuals/domains/**
+  manuals/bestseller-rubric-and-editorial-guide.md
+  manuals/critical-editorial-review-and-school-adoption.md
+  curriculum/sc6-elementary-companion-workbook.md
+  curriculum/sc32-scientific-companion-workbook.md
+  curriculum/big-ideas-middle-school-sc6-workbook.md
+  curriculum/answers.md
+  api/**
+  etsy-publishing-guide.md
+
 not_in_nav: |
   hackaday/**
   manuals/sc32-user-guide.md
@@ -151,6 +164,10 @@ not_in_nav: |
   manuals/domains/**
   manuals/bestseller-rubric-and-editorial-guide.md
   manuals/critical-editorial-review-and-school-adoption.md
+  curriculum/sc6-elementary-companion-workbook.md
+  curriculum/sc32-scientific-companion-workbook.md
+  curriculum/big-ideas-middle-school-sc6-workbook.md
+  curriculum/answers.md
   api/**
   etsy-publishing-guide.md
 

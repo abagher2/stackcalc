@@ -225,8 +225,8 @@ hide:
           <span>Curriculum Lessons</span>
           <span class="text-emerald-400">&rarr;</span>
         </a>
-        <a href="../../manuals/sc6/05-fractions-decimals-ratios/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
-          <span>Aligned Chapter</span>
+        <a href="../../lab/fraction-studio/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>2D Interactive Lab</span>
           <span class="text-amber-400">&rarr;</span>
         </a>
         <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
@@ -482,8 +482,8 @@ hide:
           View Fraction Lessons &rarr;
         </a>
         <span class="text-white/20">&bull;</span>
-        <a href="../../manuals/sc6/05-fractions-decimals-ratios/" class="text-slate-300 hover:text-white transition">
-          Chapter 5: Proportional Strings &rarr;
+        <a href="../../lab/fraction-studio/" class="text-slate-300 hover:text-white transition">
+          2D Fraction Towers Lab &rarr;
         </a>
         <span class="text-white/20">&bull;</span>
         <a href="../../downloads/" class="text-amber-400 hover:text-amber-300 transition">
