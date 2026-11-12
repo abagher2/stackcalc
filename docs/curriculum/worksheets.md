@@ -200,6 +200,7 @@ Big Ideas Math (Ron Larson & Laurie Boswell) and Advanced Placement standards br
     - **[Read the Full 45-Section Interactive Curriculum & Print Individual Chapters (Units 1–10) &rarr;](big-ideas-middle-school-sc6-workbook.md)**
     - **[Download Complete Student Practice Workbook (90 Worksheets • 900 Problems PDF) &darr;](../downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf)**
     - **[Download Unified Master Teacher & Homeschool Guide (Book 1 — Includes Complete 900-Problem Worked Key PDF) &darr;](../downloads/stackcalc-curriculum-guide-letter.pdf)**
+    - **[Order Bound Print Workbook on Amazon Prime ($14.99) ↗](https://link.amazon/B07bxzYKq)** &bull; **[Order Teacher's Curriculum Guide on Amazon Prime ↗](https://link.amazon/B05RFHqeu)**
 
 | Grade Level | Chapter / Unit & Topic | Target Calculator | Published Block Kit / Visual Model | Form A (Classroom Master) | Form B (Retake / HW Variant) |
 | :--- | :--- | :--- | :--- | :---: | :---: |
@@ -229,3 +230,19 @@ Big Ideas Math (Ron Larson & Laurie Boswell) and Advanced Placement standards br
 * **[Print Individual Big Ideas Middle School Chapters (Units 1–10 Separate PDFs) &rarr;](big-ideas-middle-school-sc6-workbook.md#print-individual-chapters-units-110-separate-pdfs-for-parents-teachers)**
 * **[Download Timed Student Proficiency Trials (Letter PDF) &rarr;](../downloads/stackcalc-student-proficiency-trials.pdf)**
 * **[Download 12-Page Quickstart Classroom Sample (Letter PDF) &rarr;](../downloads/stackcalc-curriculum-sample-v0.2.0.pdf)**
+
+---
+
+## 🌐 Complete Multi-Channel Ecosystem Directory
+
+StackCalc seamlessly connects physical math blocks, handheld calculators, classroom station printables, bound print volumes, and on-demand manufacturing:
+
+| Channel / Venue | Scope & Purpose | Destination Links |
+| :--- | :--- | :--- |
+| **Interactive Specs & 3D Renders** | Technical CAD diagrams, animations, and learning objectives | [Place Value Studio](../products/place-value/index.md) &bull; [Fraction Studio](../products/fraction-studio/index.md) &bull; [Prime Factor Studio](../products/prime-factor-studio/index.md) &bull; [Ten-Frames](../products/ten-frames/index.md) &bull; [Full Catalog](../products.md) |
+| **Free 3D Printables Hub** | Free open-source STLs & pre-sliced 3MF plates for school makerspaces | [Printables Hub: @StackCalc_5593834](https://www.printables.com/@StackCalc_5593834) &bull; [Makerspace 3D Print Directory](../printables.md) |
+| **Handcrafted Boxed Sets on Etsy** | Finished classroom sets, pre-assembled calculators, and laminated cards | [Official Etsy Storefront ↗](https://stackcalcmath.etsy.com) |
+| **On-Demand Replacement Parts** | High-precision additive manufacturing for $2.49 piece refills and fleet sets | [Slant 3D Manufacturing Portal ↗](https://teleportpod.com/portals/profile/StackCalc) &bull; [Parts Directory](../parts.md) |
+| **Flagship Amazon Bookstore Suite** | Bound paperback & hardcover volumes on Prime | • **Teacher's Curriculum Guide:** [Amazon (B05RFHqeu) ↗](https://link.amazon/B05RFHqeu)<br>• **Middle School Math Lab Workbook:** [Amazon (B07bxzYKq) ↗](https://link.amazon/B07bxzYKq)<br>• **SC-6 Illustrated Textbook:** [Amazon (B0f5cP0Ur) ↗](https://link.amazon/B0f5cP0Ur)<br>• **SC-32 Scientific Manual:** [Paperback ↗](https://link.amazon/B07DqTRR5) / [Hardcover ↗](https://link.amazon/B09AnTIQI) |
+| **Lulu Collector's Editions** | Full-wrap spiral-bound teacher desk manuals & casebound hardcovers | [Lulu Spotlight: StackCalc Press ↗](https://www.lulu.com/spotlight/stackcalc) |
+| **Open Hardware Build Logs** | RP2350 microcontroller schematics, KiCad PCBs, and firmware dev logs | [Hackaday Project Hub (206743) ↗](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator) |

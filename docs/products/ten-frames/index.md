@@ -206,6 +206,9 @@ hide:
         <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
           Order on Etsy ($36.00) ↗
         </a>
+        <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="border-color: #38BDF8; color: #38BDF8;">
+          On-Demand Parts (Slant 3D) ↗
+        </a>
         <a href="#downloads" class="ec-btn-secondary">
           Download Free 3MF / STLs &darr;
         </a>
@@ -972,7 +975,7 @@ hide:
     <div>
       <div class="ec-ecosystem-title">Part of the StackCalc Math Learning Ecosystem</div>
       <p class="ec-ecosystem-desc">
-        The Ten-Frame Dual Stage introduces early learners to base-ten place value and regrouping. As students develop computational speed, these physical groupings translate directly into the stack push/pop operations of our SC-6 and SC-32 calculators.
+        The Ten-Frame Dual Stage introduces early learners to base-ten place value and regrouping. As students develop computational speed, these physical groupings translate directly into the stack push/pop operations of our <a href="../sc6-elementary/" class="text-sky-400 hover:underline">SC-6 Elementary</a> and <a href="../sc32-calculator/" class="text-sky-400 hover:underline">SC-32 Scientific</a> calculators. Explore complete lesson modules in our <a href="../../curriculum/worksheets/" class="text-amber-400 hover:underline">120 Classroom Station Worksheets</a> and order on-demand precision refills at the <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Slant 3D Replacement Parts Center ↗</a>.
       </p>
     </div>
   </div>

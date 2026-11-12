@@ -183,6 +183,9 @@ hide:
         <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
           Order on Etsy ($44.00) ↗
         </a>
+        <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="border-color: #38BDF8; color: #38BDF8;">
+          On-Demand Parts (Slant 3D) ↗
+        </a>
         <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="border-color: #FA6B05; color: #FA6B05;">
           Download 3MF on Printables ↗
         </a>
@@ -409,5 +412,16 @@ hide:
     </div>
 
   </section>
+
+  <!-- Discreet Ecosystem Blurb -->
+  <div class="ec-ecosystem-callout">
+    <div class="ec-ecosystem-badge">&Delta;</div>
+    <div>
+      <div class="ec-ecosystem-title">Part of the StackCalc Math Learning Ecosystem</div>
+      <p class="ec-ecosystem-desc">
+        Counting Tiles &amp; Array Studio provides tactile planar arrays and skip-counting foundations harmonized with the 1U datum of <a href="../fraction-studio/" class="text-sky-400 hover:underline">Fraction Studio</a>. Its tactile grid movements connect directly with the skip-counting <code>[REP]</code> engine on our <a href="../sc6-elementary/" class="text-sky-400 hover:underline">SC-6 Elementary</a> and the matrix and register stack on our <a href="../sc32-calculator/" class="text-sky-400 hover:underline">SC-32 Scientific</a> calculators. Explore complete lesson modules in our <a href="../../curriculum/worksheets/" class="text-amber-400 hover:underline">120 Classroom Station Worksheets</a> and order on-demand precision refills at the <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Slant 3D Replacement Parts Center ↗</a>.
+      </p>
+    </div>
+  </div>
 
 </div>

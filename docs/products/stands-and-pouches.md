@@ -112,6 +112,9 @@ hide:
         <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
           Order on Etsy ($18.00 &ndash; $24.00) ↗
         </a>
+        <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="border-color: #38BDF8; color: #38BDF8;">
+          On-Demand Parts (Slant 3D) ↗
+        </a>
         <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="border-color: #FA6B05; color: #FA6B05;">
           Download 3MF on Printables ↗
         </a>
@@ -355,7 +358,7 @@ hide:
     <div>
       <div class="ec-ecosystem-title">Part of the StackCalc Math Learning Ecosystem</div>
       <p class="ec-ecosystem-desc">
-        Engineered to keep your tactile instruments protected in student backpacks and positioned at optimal ergonomic angles in classroom learning laboratories.
+        Engineered to keep your tactile instruments protected in student backpacks and positioned at optimal ergonomic angles in classroom learning laboratories. Designed to dock both the <a href="sc6-elementary/" class="text-sky-400 hover:underline">SC-6 Elementary</a> and <a href="sc32-calculator/" class="text-sky-400 hover:underline">SC-32 Scientific</a> calculators. Explore complete lesson modules in our <a href="../curriculum/worksheets/" class="text-amber-400 hover:underline">120 Classroom Station Worksheets</a> and order on-demand precision refills at the <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Slant 3D Replacement Parts Center ↗</a>.
       </p>
     </div>
   </div>
