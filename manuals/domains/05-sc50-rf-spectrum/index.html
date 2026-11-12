@@ -92,12 +92,13 @@
           theme: {
               extend: {
                   colors: {
-                      charcoal: '#181A1B',
-                      pitch: '#000000',
+                      charcoal: '#0D1117',
+                      pitch: '#080B10',
                       icyblue: '#E2E6EE',
                       mask: '#CBD1DC',
-                      accentCyan: '#32ADE6',
-                      accentOrange: '#FF9F0A',
+                      accentCyan: '#38BDF8',
+                      accentOrange: '#FF4400',
+                      accentGreen: '#10B981',
                       accentAmber: '#FFBF00'
                   },
                   fontFamily: {
@@ -3238,7 +3239,7 @@ $<span class="arithmatex">\(f_0 = \frac{1}{2\pi \sqrt{L \cdot C}}\)</span>$</p>
 <td style="text-align: left;">Shunt reactance $</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>2 [g] [π] [×] 14.2 [E] 6 [×] 40.826 [×] 1/x</code></td>
+<td style="text-align: left;"><code>2 [g] [π] [×] 14.2 [E] 6 [×] 40.826 [×] [g] [1/x]</code></td>
 <td style="text-align: center;"><span class="arithmatex">\(1.2247\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(24.495\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(40.826\)</span></td>
@@ -3248,6 +3249,108 @@ $<span class="arithmatex">\(f_0 = \frac{1}{2\pi \sqrt{L \cdot C}}\)</span>$</p>
 </tbody>
 </table>
 <p>To cancel the antenna's <span class="arithmatex">\(+j40\ \Omega\)</span> inductive reactance and simultaneously provide the required <span class="arithmatex">\(-j24.5\ \Omega\)</span> series capacitive matching reactance, Jackson installs a series variable capacitor providing <span class="arithmatex">\(X_C = -(40 + 24.5) = -64.5\ \Omega\)</span> (<span class="arithmatex">\(C_{\text{series}} = 1 / (2\pi \times 14.2\text{ MHz} \times 64.5) \approx \mathbf{173.9\text{ pF}}\)</span>) paired with the <span class="arithmatex">\(274.6\text{ pF}\)</span> shunt capacitor. The standing wave ratio drops immediately from <span class="arithmatex">\(4.27:1\)</span> to <span class="arithmatex">\(1.02:1\)</span>, restoring full <span class="arithmatex">\(100\text{ W}\)</span> radiation into the antenna without amplifier foldback.</p>
+<h3 id="cascaded-receiver-noise-figure-friis-formula-and-native-complex-inversion-on-the-stack">Cascaded Receiver Noise Figure (Friis Formula) and Native Complex Inversion on the Stack</h3>
+<p>In receiver front-end design, microwave engineers must balance the noise contributions of cryogenic low-noise amplifiers (LNAs), lossy bandpass preselection filters, and downstream mixer/IF stages. By Harald Friis' classical 1944 noise formula, the noise factor of the first amplification stage dominates the overall system noise temperature, provided its gain is sufficiently high to suppress subsequent stage noise:
+$<span class="arithmatex">\(F_{\text{casc}} = F_1 + \frac{F_2 - 1}{G_1} + \frac{F_3 - 1}{G_1 G_2}\)</span>$
+where <span class="arithmatex">\(F_i = 10^{NF_i / 10}\)</span> and <span class="arithmatex">\(G_i = 10^{G_{i,\text{dB}} / 10}\)</span> are linear noise factors and power gains.</p>
+<p>Simultaneously, evaluating complex antenna terminations on the <strong>SC-50</strong> utilizes <strong>Native Complex RF Mode</strong> ([f] [CMPLX]), which arms the top softkey row with dedicated reflection and impedance operators:
+- <code>[Γ]</code>: Evaluates the complex reflection phasor <span class="arithmatex">\(\Gamma = (Z_L - Z_0) / (Z_L + Z_0)\)</span> directly from complex load impedance <span class="arithmatex">\(Z_L\)</span>.
+- <code>[Z←Γ]</code>: Inverts a reflection coefficient phasor backward into its physical terminal impedance <span class="arithmatex">\(Z_L = Z_0 (1 + \Gamma) / (1 - \Gamma)\)</span>.
+- <code>[RL]</code>: Computes Return Loss in decibels (<span class="arithmatex">\(\text{RL} = -20 \log_{10}|\Gamma|\)</span>).
+- <code>[SWR]</code>: Evaluates Voltage Standing Wave Ratio (<span class="arithmatex">\(\text{VSWR} = (1 + |\Gamma|) / (1 - |\Gamma|)\)</span>).
+- <code>[Z₀]</code>: Selects or recalls the system characteristic impedance (toggleable between <span class="arithmatex">\(50\ \Omega\)</span> and <span class="arithmatex">\(75\ \Omega\)</span>, defaulting to <span class="arithmatex">\(50\ \Omega\)</span>).</p>
+<p>An RF systems architect designs an <span class="arithmatex">\(8.45\text{ GHz}\)</span> deep-space downlink receiver front-end with three cascaded stages into a <span class="arithmatex">\(Z_0 = 50\ \Omega\)</span> feed:
+- <strong>Stage 1 (Cryogenic LNA):</strong> Gain <span class="arithmatex">\(G_1 = +20.0\text{ dB}\)</span> (<span class="arithmatex">\(G_1 = 100.0\)</span>), Noise Figure <span class="arithmatex">\(NF_1 = 1.20\text{ dB}\)</span> (<span class="arithmatex">\(F_1 = 1.3183\)</span>)
+- <strong>Stage 2 (Bandpass Filter):</strong> Insertion Loss <span class="arithmatex">\(-2.00\text{ dB}\)</span> (<span class="arithmatex">\(G_2 = 0.6310\)</span>), Noise Figure <span class="arithmatex">\(NF_2 = 2.00\text{ dB}\)</span> (<span class="arithmatex">\(F_2 = 1.5849\)</span>)
+- <strong>Stage 3 (Mixer / IF Amp):</strong> Gain <span class="arithmatex">\(G_3 = +15.0\text{ dB}\)</span> (<span class="arithmatex">\(G_3 = 31.62\)</span>), Noise Figure <span class="arithmatex">\(NF_3 = 6.00\text{ dB}\)</span> (<span class="arithmatex">\(F_3 = 3.9811\)</span>)</p>
+<p>Follow the synthesis across the RPN stack:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke Sequence</th>
+<th style="text-align: center;">Reg T</th>
+<th style="text-align: center;">Reg Z</th>
+<th style="text-align: center;">Reg Y</th>
+<th style="text-align: center;">Reg X</th>
+<th style="text-align: left;">RF Systems Cascade &amp; Inversion Walkthrough</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>20 [ENTER] 2 [-] 15 [+]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(33.00\)</span></strong></td>
+<td style="text-align: left;">Compute total cascaded receiver gain: <span class="arithmatex">\(G_{\text{tot}} = 20 - 2 + 15 = \mathbf{33.00\text{ dB}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1.2 10 [÷] 10 [f] [10ˣ]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(33.00\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3183\)</span></td>
+<td style="text-align: left;">Linearize Stage 1 Noise Factor: <span class="arithmatex">\(F_1 = 10^{0.12} = \mathbf{1.3183}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>2.0 10 [÷] 10 [f] [10ˣ] 1 [-] 100 [÷] [+]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(33.00\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3183\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3241\)</span></td>
+<td style="text-align: left;">Add Stage 2 Friis term: <span class="arithmatex">\((F_2 - 1)/G_1 = 0.5849 / 100 = 0.00585 \implies F_{12} = 1.3241\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>6.0 10 [÷] 10 [f] [10ˣ] 1 [-] 63.096 [÷] [+]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(33.00\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3183\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3241\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(1.3714\)</span></strong></td>
+<td style="text-align: left;">Add Stage 3 Friis term: <span class="arithmatex">\((F_3 - 1)/(G_1 G_2) = 2.9811 / 63.096 \implies F_{\text{casc}} = \mathbf{1.3714}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[f] [LOG] 10 [×]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3183\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3241\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(33.00\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(1.3718\)</span></strong></td>
+<td style="text-align: left;">Convert to cascaded Noise Figure: <span class="arithmatex">\(NF_{\text{casc}} = 10 \log_{10}(1.3714) = \mathbf{1.37\text{ dB}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[f] [CMPLX] 35 [ENTER] 25 [+/-] [jX] [+]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3241\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(33.00\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3718\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(35 - j25\)</span></td>
+<td style="text-align: left;">Pack complex load impedance <span class="arithmatex">\(Z_L = 35 - j25\ \Omega\)</span> into Register <span class="arithmatex">\(X\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[Γ]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(33.00\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3718\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(35 - j25\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(-0.115 - j0.308\)</span></strong></td>
+<td style="text-align: left;">Compute complex reflection phasor <span class="arithmatex">\(\Gamma = (Z_L - 50)/(Z_L + 50) = \mathbf{0.3291\angle-110.5^\circ}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[Z←Γ]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3718\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(35 - j25\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-0.115 - j0.308\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(35 - j25\)</span></strong></td>
+<td style="text-align: left;">Invert reflection phasor back to load impedance: confirms <span class="arithmatex">\(Z_L = \mathbf{35 - j25\ \Omega}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[g] [▦]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.3718\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(35 - j25\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-0.115 - j0.308\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(35 - j25\)</span></td>
+<td style="text-align: left;">Open RF reference ledger: inspect <code>ZL REAL</code>, <code>ZL IMAG</code>, <code>|GAMMA|</code>, and <code>VSWR</code></td>
+</tr>
+</tbody>
+</table>
+<p>The stack proves that despite a noisy <span class="arithmatex">\(6.0\text{ dB}\)</span> mixer downstream, the <span class="arithmatex">\(20\text{ dB}\)</span> high-gain cryogenic LNA suppresses subsequent noise contributions to under <span class="arithmatex">\(0.05\text{ dB}\)</span>, yielding an exceptional cascaded system noise figure of <span class="arithmatex">\(\mathbf{1.37\text{ dB}}\)</span> with total front-end gain of <span class="arithmatex">\(\mathbf{33.0\text{ dB}}\)</span>. Tapping <code>[Z←Γ]</code> demonstrates how the SC-50 can mathematically round-trip reflection phasors back to physical ohms on the Smith chart in a single keystroke.</p>
 <h3 id="designing-quarter-wave-stubs-l-networks-and-resonant-tanks-on-the-stack">Designing Quarter-Wave Stubs, L-Networks, and Resonant Tanks on the Stack</h3>
 <p>Synthesizing quarter-wave coaxial transformers, reactive L-network parameters, and LC resonant tanks proceeds across the operational stack:</p>
 <table>
