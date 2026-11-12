@@ -492,7 +492,7 @@ Consider a multi-year manufacturing division turnaround audited by CFO Elena Van
 
 1. **Multi-Year Compound Annual Growth Rate (CAGR):** Over the three-year horizon ($N = 3$), revenue grew from $\$24.50\text{M}$ to $\$41.80\text{M}$. The annualized geometric growth rate is:
    $$\text{CAGR}_{\text{rev}} = \left( \frac{\$41.80\text{M}}{\$24.50\text{M}} \right)^{1/3} - 1 = (1.70612)^{0.33333} - 1 = \mathbf{19.49\%/\text{year}}$$
-   This can be evaluated on the stack via `41.80` {{key:ENTER}} `24.50` {{key:÷}} `3` {{key:1/x}} {{key:yˣ}} `1` {{key:-}} `100` {{key:×}} or in the dedicated `CGR: CAGR` solver workspace (`F = P × (1 + R%)^N`).
+   This can be evaluated on the stack via `41.80` {{key:ENTER}} `24.50` {{key:÷}} `3` {{key:sc95:𝑥⁻¹}} {{key:yˣ}} `1` {{key:-}} `100` {{key:×}} or in the dedicated `CGR: CAGR` solver workspace (`F = P × (1 + R%)^N`).
 2. **The Inflationary COGS Surge:** Concurrently, COGS grew from $\$15.20\text{M}$ to $\$28.50\text{M}$:
    $$\text{CAGR}_{\text{COGS}} = \left( \frac{\$28.50\text{M}}{\$15.20\text{M}} \right)^{1/3} - 1 = (1.87500)^{0.33333} - 1 = \mathbf{23.31\%/\text{year}}$$
    Because unit manufacturing costs compounded at $23.31\%$ while top-line revenue compounded at only $19.49\%$, the division experienced severe margin compression.
@@ -512,8 +512,8 @@ Consider a multi-year manufacturing division turnaround audited by CFO Elena Van
 | `24.50` {{key:ENTER}} `15.20` {{key:-}} `24.50` {{key:÷}} `100` {{key:×}} | $0.000$ | $0.000$ | $24.500$ | $37.959$ | Year 0 Gross Margin: $\text{MGN}_0 = (24.50 - 15.20)/24.50 \times 100 = \mathbf{37.96\%}$ |
 | `41.80` {{key:ENTER}} `28.50` {{key:-}} `41.80` {{key:÷}} `100` {{key:×}} | $0.000$ | $24.500$ | $37.959$ | $31.818$ | Year 3 Gross Margin: $\text{MGN}_3 = (41.80 - 28.50)/41.80 \times 100 = \mathbf{31.82\%}$ |
 | {{key:-}} | $0.000$ | $0.000$ | $24.500$ | **$6.141$** | Margin compression: $37.959\% - 31.818\% = \mathbf{6.14\%\text{ points}}$ gross margin decline |
-| `41.80` {{key:ENTER}} `24.50` {{key:÷}} `3` {{key:1/x}} {{key:yˣ}} `1` {{key:-}} `100` {{key:×}} | $0.000$ | $24.500$ | $6.141$ | **$19.491$** | 3-Year Revenue CAGR: $(41.80 / 24.50)^{1/3} - 1 = \mathbf{19.49\%/\text{year}}$ |
-| `28.50` {{key:ENTER}} `15.20` {{key:÷}} `3` {{key:1/x}} {{key:yˣ}} `1` {{key:-}} `100` {{key:×}} | $24.500$ | $6.141$ | $19.491$ | **$23.312$** | 3-Year COGS CAGR: $(28.50 / 15.20)^{1/3} - 1 = \mathbf{23.31\%/\text{year}}$ (outpacing revenue) |
+| `41.80` {{key:ENTER}} `24.50` {{key:÷}} `3` {{key:sc95:𝑥⁻¹}} {{key:yˣ}} `1` {{key:-}} `100` {{key:×}} | $0.000$ | $24.500$ | $6.141$ | **$19.491$** | 3-Year Revenue CAGR: $(41.80 / 24.50)^{1/3} - 1 = \mathbf{19.49\%/\text{year}}$ |
+| `28.50` {{key:ENTER}} `15.20` {{key:÷}} `3` {{key:sc95:𝑥⁻¹}} {{key:yˣ}} `1` {{key:-}} `100` {{key:×}} | $24.500$ | $6.141$ | $19.491$ | **$23.312$** | 3-Year COGS CAGR: $(28.50 / 15.20)^{1/3} - 1 = \mathbf{23.31\%/\text{year}}$ (outpacing revenue) |
 | `33.60` {{key:ENTER}} `41.80` {{key:sc95:Δ%}} | $6.141$ | $19.491$ | $23.312$ | **$24.405$** | Year-over-Year (YoY) revenue acceleration: Year 2 to Year 3 growth is $\mathbf{+24.40\%}$ |
 
 ---
@@ -1565,6 +1565,63 @@ Suppose the automotive customer tightens the quality audit protocol, requiring t
 | `1.96` {{keycap:Z}} `0.010` {{keycap:S}} `0.0025` {{keycap:E}} | $0.0025$ | Store $95\%$ critical quantile $Z = 1.96$, std dev $S = 0.010\text{ mm}$, target $E = 0.0025\text{ mm}$ |
 | {{key:SOLVE}} {{keycap:N}} | **$61.4656$** | Solve forward for required sample size $N = (1.96 \times 0.010 / 0.0025)^2 = \mathbf{61.47 \to 62\text{ shafts}}$ |
 | `25` {{keycap:N}} {{key:SOLVE}} {{keycap:E}} | **$0.00392$** | Store budget cap $N = 25$ and solve backward for achievable margin $E = \mathbf{0.00392\text{ mm}}$ |
+
+---
+
+### A/B Testing Conversion Significance and Two-Sample Student's t-Testing on the Stack
+
+In contemporary digital product engineering, quantitative marketing, and clinical trials, decision-makers cannot rely on subjective intuition. When evaluating product redesigns or promotional pricing, organizations deploy randomized controlled experiments (A/B tests). Evaluating the statistical significance of observed differences protects teams from celebrating random noise or missing genuine breakthroughs.
+
+#### 1. E-Commerce Checkout Funnel A/B Conversion Test ({{key:sc95:A/B}} / `PROP`)
+
+A digital commerce platform tests a streamlined one-page checkout against the legacy multi-step checkout flow across $50{,}000$ randomized sessions ($N = 25{,}000$ visitors per variant):
+- **Variant A (Control):** $n_A = 25{,}000$, completed purchases $x_A = 1{,}875 \implies p_A = \frac{1{,}875}{25{,}000} = \mathbf{7.50\%} = 0.0750$.
+- **Variant B (Redesign):** $n_B = 25{,}000$, completed purchases $x_B = 2{,}150 \implies p_B = \frac{2{,}150}{25{,}000} = \mathbf{8.60\%} = 0.0860$.
+
+The absolute conversion rate lift is $\Delta p = 8.60\% - 7.50\% = \mathbf{+1.10\%\text{ points}}$, representing a relative lift of:
+$$\text{Relative Lift} = \frac{8.60\% - 7.50\%}{7.50\%} \times 100\% = \mathbf{+14.67\%}$$
+
+To determine whether this $+14.67\%$ lift is statistically significant or merely sampling noise, the team tests the null hypothesis $H_0: p_B = p_A$ against $H_1: p_B > p_A$. 
+
+Under $H_0$, the pooled conversion proportion across all $50{,}000$ visitors is:
+$$\bar{p} = \frac{x_A + x_B}{n_A + n_B} = \frac{1{,}875 + 2{,}150}{50{,}000} = \frac{4{,}025}{50{,}000} = \mathbf{0.0805} \quad (8.05\%)$$
+
+The standard error of the difference between the two proportions is:
+$$SE_{\Delta p} = \sqrt{\bar{p}(1 - \bar{p}) \left( \frac{1}{n_A} + \frac{1}{n_B} \right)} = \sqrt{0.0805 \times 0.9195 \times \left( \frac{2}{25{,}000} \right)} = \sqrt{0.07402 \times 8.0 \times 10^{-5}} = \mathbf{0.002433}$$
+
+The two-proportion $Z$-test statistic is:
+$$Z = \frac{p_B - p_A}{SE_{\Delta p}} = \frac{0.0860 - 0.0750}{0.002433} = \mathbf{4.52}$$
+
+On the SC-95, this test can be executed directly on the stack or in the dedicated `PROP: PROP TEST` solver workspace (`Z = (P - Q) / √(Q(1 - Q)/N)` via {{key:sc95:A/B}}). At a 99% significance level ($\alpha = 0.01$, two-tailed critical value $Z_{\text{crit}} = 2.576$), the observed $Z = 4.52$ yields a $p$-value $p < 0.00001$. The conversion lift is overwhelmingly statistically significant, giving management total confidence to roll out Variant B globally.
+
+#### 2. Customer Spend Lift and the Two-Sample Student's $t$-Test ({{key:sc95:t₂}} / `TTEST`)
+
+Next, the executive committee investigates whether an AI-driven product recommendation engine increases average order value (AOV) among purchasing customers. They sample $n = 50$ transactions from each cohort:
+- **Cohort 1 (Control / Standard Recommendations):** $\bar{X}_1 = \$64.50$, sample standard deviation $s_1 = \$14.20$, $n_1 = 50$.
+- **Cohort 2 (Treatment / Personalized Engine):** $\bar{X}_2 = \$71.80$, sample standard deviation $s_2 = \$15.10$, $n_2 = 50$.
+
+The observed lift in average spend is $\Delta \bar{X} = \$71.80 - \$64.50 = \mathbf{+\$7.30}$ per order ($+11.32\%$).
+
+To verify statistical significance with unknown population variance, Gosset's two-sample Student's $t$-test pools the sample variances:
+$$s_p = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}} = \sqrt{\frac{49(14.20^2) + 49(15.10^2)}{98}} = \sqrt{\frac{201.64 + 228.01}{2}} = \sqrt{214.825} = \mathbf{\$14.657}$$
+
+The standard error of the difference in sample means is:
+$$SE_{\Delta \bar{X}} = s_p \sqrt{\frac{2}{n}} = 14.657 \times \sqrt{\frac{2}{50}} = 14.657 \times 0.200 = \mathbf{\$2.9314}$$
+
+The Student's $t$-statistic is:
+$$t = \frac{\bar{X}_2 - \bar{X}_1}{SE_{\Delta \bar{X}}} = \frac{\$7.30}{\$2.9314} = \mathbf{2.490}$$
+
+With degrees of freedom $df = n_1 + n_2 - 2 = 98$, the two-tailed critical $t$-value at $\alpha = 0.05$ is $t_{0.025, \, 98} = \mathbf{1.984}$. Because the calculated test statistic $t = 2.490 > 1.984$ ($p = 0.0145 < 0.05$), the null hypothesis of equal average spend is decisively rejected. The personalized recommendation engine delivers a proven, statistically verified lift in customer spending.
+
+| Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Statistical Scenario Stack Walkthrough |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `0.086` {{key:ENTER}} `0.075` {{key:-}} | $0.000$ | $0.000$ | $0.086$ | $0.011$ | Difference in checkout conversion rates: $\Delta p = 8.60\% - 7.50\% = \mathbf{+0.0110}$ |
+| `0.075` {{key:÷}} `100` {{key:×}} | $0.000$ | $0.000$ | $0.011$ | $14.667$ | Relative conversion lift: $(0.011 / 0.075) \times 100 = \mathbf{+14.67\%}$ |
+| `0.0805` {{key:ENTER}} `1` {{key:x⇄y}} {{key:-}} `0.0805` {{key:×}} `2` {{key:×}} `25000` {{key:÷}} {{key:√𝑥}} | $0.000$ | $0.000$ | $14.667$ | $0.002433$ | Pooled conversion standard error: $SE = \sqrt{0.0805(0.9195)(2/25000)} = \mathbf{0.002433}$ |
+| `0.011` {{key:x⇄y}} {{key:÷}} | $0.000$ | $0.000$ | $14.667$ | **$4.520$** | Two-proportion $Z$-statistic: $Z = 0.011 / 0.002433 = \mathbf{4.52}$ (significant at $p < 0.00001$) |
+| `71.80` {{key:ENTER}} `64.50` {{key:-}} | $0.000$ | $14.667$ | $4.520$ | $7.300$ | Average order value lift between customer cohorts: $\Delta \bar{X} = \mathbf{+\$7.30}$ |
+| `14.6569` {{key:ENTER}} `2` {{key:ENTER}} `50` {{key:÷}} {{key:√𝑥}} {{key:×}} | $14.667$ | $4.520$ | $7.300$ | $2.931$ | Standard error of difference in cohort means: $SE = 14.657\sqrt{2/50} = \mathbf{\$2.931}$ |
+| {{key:÷}} | $0.000$ | $14.667$ | $4.520$ | **$2.490$** | Two-sample Student's $t$-statistic: $t = 7.30 / 2.931 = \mathbf{2.490}$ (exceeds $t_{\text{crit}} = 1.984$) |
 
 ---
 
