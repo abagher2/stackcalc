@@ -417,6 +417,68 @@ If the oncologist had unthinkingly used Total Body Weight ($95.0\text{ kg}$), th
 
 ---
 
+### Bedside Patient Profile Mode ({{keycap:PAT}}) and Automated Clinical Parameter Binding
+
+In high-acuity intensive care units, rapid changes in patient physiology demand recalculating renal clearances, surface areas, and drug infusion titrations within seconds. Re-entering a patient's stature, weight, age, and serum creatinine across separate equation solvers invites transcribing errors during critical resuscitations. The **SC-80** eliminates redundant keystrokes through its dedicated **Patient Profile Mode** ({{keycap:PAT}}), which binds anthropometric and renal parameters into continuous persistent memory, immediately updating all downstream clinical solvers without manual re-entry.
+
+A clinical pharmacist at the ICU bedside admits a 62-year-old female patient presenting in septic shock and acute respiratory distress with secondary renal impairment. Triage records indicate:
+- Total Body Weight $W = 78.0\text{ kg}$ ($171.96\text{ lb}$)
+- Height $H = 165.0\text{ cm}$ ($64.96\text{ inches}$)
+- Chronological Age $A = 62\text{ years}$
+- Serum Creatinine $S_{\text{Cr}} = 1.40\text{ mg/dL}$
+- Biological Sex: Female
+
+The clinician initializes Patient Profile Mode through the contextual softkey {{keycap:PAT}} (accessible directly on the softkey row or within any clinical workspace such as {{key:sc80:BSA}}, {{key:sc80:GFR}}, or {{key:sc80:DRP}}):
+
+1. **Entering Patient Profile Mode ({{keycap:PAT}}):**
+   Tapping {{keycap:PAT}} surfaces the dedicated bedside patient profile softkeys:
+   `[*W/W]` `[*H/H]` `[*A/A]` `[*S/S]` `[MALE/FEM]` `[PAT]`
+   The active parameters are displayed in the status annunciator, ready for rapid single-touch binding.
+
+2. **Binding Patient Parameters to Profile Softkeys:**
+   - Enters `78` and taps {{keycap:W}}: locks weight $W = 78.0\text{ kg}$ into continuous memory (softkey updates to `*W`).
+   - Enters `165` and taps {{keycap:H}}: locks height $H = 165.0\text{ cm}$ (softkey updates to `*H`).
+   - Enters `62` and taps {{keycap:A}}: locks age $A = 62\text{ yr}$ (softkey updates to `*A`).
+   - Enters `1.40` and taps {{keycap:S}}: locks serum creatinine $S_{\text{Cr}} = 1.40\text{ mg/dL}$ (softkey updates to `*S`).
+   - Taps {{keycap:FEM}}: toggles biological sex to Female.
+   - The status annunciator confirms `PAT: 78K 165C 62F`. Tapping {{keycap:PAT}} exits the entry mode back to the primary operational stack.
+
+3. **Automated Downstream Solvers on the Active Profile:**
+   With the patient profile locked into continuous memory, the clinician executes primary clinical evaluations with single keypresses without retyping patient statistics:
+   - **Body Surface Area ({{key:sc80:BSA}}):** Evaluating Mosteller surface area requires no parameter entry; pressing {{key:sc80:BSA}} automatically pulls $W = 78.0\text{ kg}$ and $H = 165.0\text{ cm}$ from the profile to yield $B = \sqrt{165.0 \times 78.0 / 3600} = \mathbf{1.8908\text{ m}^2}$.
+   - **Ideal Body Weight ({{key:sc80:IBW}}):** Pressing {{key:sc80:IBW}} pulls $H = 165.0\text{ cm}$ and the female sex setting to compute Devine baseline lean mass: $\text{IBW} = 45.5 + 2.3 \times (64.96 - 60.0) = \mathbf{56.9094\text{ kg}}$.
+   - **Adjusted Body Weight ({{key:sc80:ABW}}):** Evaluating obesity adjustment with the $40\%$ adiposity coefficient evaluates $\text{ABW}_{0.40} = 56.9094 + 0.40(78.0 - 56.9094) = \mathbf{65.3457\text{ kg}}$ for aminoglycoside and glycopeptide therapeutic dosing.
+   - **Cockcroft–Gault Creatinine Clearance ({{key:sc80:GFR}}):** Pressing {{key:sc80:GFR}} executes the complete Cockcroft–Gault renal clearance, automatically incorporating the $0.85\times$ female multiplier:
+     $$\text{CrCl} = \frac{(140 - 62) \times 78.0}{72 \times 1.40} \times 0.85 = \frac{6084}{100.8} \times 0.85 = \mathbf{51.3036\text{ mL/min}}$$
+   - **Vasoactive Inotropic Infusion ({{key:sc80:DRP}}):** In Chapter 23, titrating dopamine at $5.0\ \mu\text{g/kg/min}$ in a standard $400\text{ mg} / 250\text{ mL}$ bag automatically multiplies the mass rate by the patient's bound $78.0\text{ kg}$ mass, programming the volumetric pump directly at $\mathbf{14.625\text{ mL/hr}}$.
+
+4. **Inspecting the Live Dynamic Reference Ledger ({{key:sc80:▦}}):**
+   Tapping {{key:sc80:▦}} displays the integrated clinical ledger `@PAT`, aggregating the patient's complete hemodynamic and pharmacokinetic profile:
+   - `PAT WT: 78KG`
+   - `PAT HT: 165CM`
+   - `PAT AGE: 62Y F`
+   - `PAT SEX: FEMALE`
+   - `PAT SCR: 1.4`
+   - `PAT BSA: 1.89M2`
+   - `PAT IBW: 56.91KG`
+   - `PAT GFR: 51.3ML`
+
+| Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Patient Profile Mode Clinical Walkthrough |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `{{keycap:PAT}}` | $0$ | $0$ | $0$ | $0$ | Open Patient Profile Mode; softkeys display `[W] [H] [A] [S] [FEM] [PAT]` |
+| `78 {{keycap:W}}` | $0$ | $0$ | $0$ | $78.0000$ | Bind weight $W = 78.0\text{ kg}$ into profile memory; softkey updates to `*W` |
+| `165 {{keycap:H}}` | $0$ | $0$ | $78.0000$ | $165.0000$ | Bind height $H = 165.0\text{ cm}$; softkey updates to `*H` |
+| `62 {{keycap:A}}` | $0$ | $78.0000$ | $165.0000$ | $62.0000$ | Bind chronological age $A = 62\text{ yr}$; softkey updates to `*A` |
+| `1.40 {{keycap:S}}` | $78.0000$ | $165.0000$ | $62.0000$ | $1.4000$ | Bind serum creatinine $S_{\text{Cr}} = 1.40\text{ mg/dL}$; softkey updates to `*S` |
+| `{{keycap:FEM}} {{keycap:PAT}}` | $78.0000$ | $165.0000$ | $62.0000$ | $1.4000$ | Set sex Female, lock prompt `PAT: 78K 165C 62F`, and exit profile softkeys |
+| `{{key:sc80:BSA}}` | $165.0000$ | $62.0000$ | $1.4000$ | **$1.8908$** | Auto-evaluate Mosteller surface area $B = \sqrt{165 \times 78 / 3600} = \mathbf{1.8908\text{ m}^2}$ |
+| `{{key:sc80:IBW}}` | $62.0000$ | $1.4000$ | $1.8908$ | **$56.9094$** | Auto-evaluate Devine female ideal weight $\text{IBW} = \mathbf{56.9094\text{ kg}}$ |
+| `78 {{key:ENTER}} {{key:sc80:ABW}}` | $1.4000$ | $1.8908$ | $56.9094$ | **$65.3457$** | Blend actual mass $78\text{ kg}$ and $\text{IBW}$: Adjusted Body Weight $\text{ABW}_{0.40} = \mathbf{65.3457\text{ kg}}$ |
+| `{{key:sc80:GFR}}` | $1.8908$ | $56.9094$ | $65.3457$ | **$51.3036$** | Auto-evaluate Cockcroft–Gault CrCl with female $0.85\times$ factor: $\mathbf{51.30\text{ mL/min}}$ |
+| `{{key:sc80:▦}}` | $1.8908$ | $56.9094$ | $65.3457$ | $51.3036$ | Open dynamic `@PAT` ledger: inspect active `WT`, `HT`, `BSA`, `IBW`, and `GFR` |
+
+---
+
 ### Bidirectional Solver Workspaces ({{key:BSA}} and {{key:GFR}}): Solving Backward for Weight Limits
 
 When chemotherapy guidelines cap total body surface area, or when a clinical protocol mandates a minimum patient weight to tolerate a standard dose, the **SC-80** Bidirectional Equation Solver Workspaces isolate unknown anthropometric variables:

@@ -236,6 +236,33 @@ Suppose the network's automated satellite switcher allocates a strict broadcast 
 
 Because values remain intact on the stack, modifying delivery parameters recomputes the frame budget in two keystrokes without re-entering the segment duration.
 
+### Multi-Take Production Timecode Accumulation and Storage Budgeting via {{key:sc24:+TC}}, {{key:sc24:▸FRM}}, and {{key:sc24:▦}}
+
+On a multi-camera commercial or feature film set, the Script Supervisor and Digital Imaging Technician (DIT) must log individual take durations in packed sexagesimal SMPTE timecode (`HH.MMSSFF`), compute cumulative runtime across scene takes, verify integer frame counts, and budget high-bitrate camera card capacity without interrupting the shooting rhythm.
+
+The **SC-24** executes timecode arithmetic and media storage budgeting directly on the operational stack:
+- **Sexagesimal Timecode Accumulation ({{key:sc24:+TC}}):** Adding packed timecode values automatically performs base-60 sexagesimal carries across seconds and minutes, rolling over sixty seconds into an integer minute and sixty minutes into an integer hour without manual radix conversion.
+- **Integer Frame Conversion ({{key:sc24:▸FRM}}):** Given frame rate $R$ in Register $Y$ and packed timecode in Register $X$, {{key:sc24:▸FRM}} calculates the exact cumulative frame budget $F$.
+- **Production Reference Ledger ({{key:sc24:▦}}):** Tapping {{key:sc24:▦}} surfaces standard camera rates (`23.976 NTSC DF`, `24.000 CINE`, `25.000 PAL/EBU`, `29.97 SMPTE`), neutral density filter transmission factors (`ND 0.3`, `ND 0.6`, `ND 0.9`), and color temperature references (`3200K TUNGST`, `5600K DAYLGT`).
+
+During an afternoon commercial shoot running $24.000\text{ fps}$ ProRes capture, four consecutive takes are called for Scene 14:
+- Take 1: $45\text{ seconds}$ (`00:00:45:00`, keyed as `0.004500`)
+- Take 2: $2\text{ minutes } 8\text{ seconds}$ (`00:02:08:00`, keyed as `0.020800`)
+- Take 3: $1\text{ minute } 22\text{ seconds}$ (`00:01:22:00`, keyed as `0.012200`)
+- Take 4: $3\text{ minutes } 30\text{ seconds}$ (`00:03:30:00`, keyed as `0.033000`)
+
+The DIT accumulates the timeline, evaluates total captured frames, and verifies remaining capacity on a $512\text{ GB}$ CFexpress card ($0.0275\text{ GB/s}$ data rate):
+
+| Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Production Timecode & Media Walkthrough |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `0.004500 {{key:ENTER}} 0.020800 {{key:sc24:+TC}}` | $0$ | $0$ | $0$ | $0.025300$ | Sum Take 1 and Take 2: `00:02:53:00` ($2\text{ min } 53\text{ s}$) |
+| `0.012200 {{key:sc24:+TC}}` | $0$ | $0$ | $0$ | $0.041500$ | Add Take 3: `00:04:15:00` ($4\text{ min } 15\text{ s}$) |
+| `0.033000 {{key:sc24:+TC}}` | $0$ | $0$ | $0$ | **$0.074500$** | Add Take 4: total cumulative timecode = `00:07:45:00` ($465\text{ s}$) |
+| `24 {{key:x⇄y}} {{key:sc24:▸FRM}}` | $0$ | $0$ | $24$ | **$11160$** | Expand `00:07:45:00` at $24\text{ fps}$: total integer frames = $\mathbf{11{,}160\text{ frames}}$ |
+| `24 {{key:÷}} 0.0275 {{key:×}}` | $0$ | $0$ | $24$ | **$12.7875$** | Evaluate ProRes storage generated: $465\text{ s} \times 0.0275\text{ GB/s} = \mathbf{12.79\text{ GB}}$ |
+| `512 {{key:x⇄y}} {{key:-}} 0.0275 {{key:÷}} 3600 {{key:÷}}` | $0$ | $24$ | $12.7875$ | **$5.0425$** | Settle $512\text{ GB}$ card balance: $\mathbf{5.04\text{ hours}}$ remaining shooting time |
+| `{{key:sc24:▦}}` | $0$ | $24$ | $12.7875$ | $5.0425$ | Open production reference ledger: inspect standard frame rates and ND factors |
+
 Conforming the timeline to Drop-Frame timecode and inserting the $7.5\text{-second}$ overcranked falcon sequence locked the program length to the satellite broadcast window with zero-frame drift, hitting the top-of-the-hour commercial break exactly as the network rubidium clock turned 8:00:00 p.m.
 
 ### Try It on the Stack

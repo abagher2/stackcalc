@@ -1066,6 +1066,37 @@ with a required markup on cost of $u = 0.76 / 0.24 = 3.1667$ ($316.67\%$).
 | `24` {{key:PRC}} | $0$ | $0$ | $60.0000$ | **$45.6796$** | Price plate at $F = 24.0\%$ food cost: menu price $P = \mathbf{\$45.68}$ |
 | `100` {{key:ENTER}} `24` {{key:-}} `24` {{key:÷}} `100` {{key:×}} | $0$ | $0$ | $45.6796$ | **$316.6667$** | Compute required markup on cost: $u = 76 / 24 = \mathbf{316.67\%}$ |
 
+### Practical Kitchen Utensil Snapping ({{key:sc78:▸cup}}, {{key:sc78:▸tb}}, {{key:sc78:▸tsp}}) and Dynamic Production Scaling
+
+When an executive pastry chef scales an artisanal formula by a non-integer production factor—such as multiplying a boutique dessert batch by $2.35\times$ to serve 140 banquet covers—standard scientific calculators produce decimal liquid quantities such as $1.589\text{ cups}$ or $2.146\text{ teaspoons}$. In a high-speed production kitchen, cooks cannot measure awkward decimal hundredths on a graduated measuring cup without risking textural variation in delicate emulsions or creams.
+
+The **SC-78** solves this physical kitchen dilemma through **Kitchen Utensil Snapping** embedded within its volume conversion keys ({{key:sc78:▸cup}}, {{key:sc78:▸tb}}, and {{key:sc78:▸tsp}}):
+- **Physical Utensil Discretization:** The engine maps raw decimal fractions to standard culinary measuring tools:
+  - Cups ({{key:sc78:▸cup}}): Discretizes to $1/4, 1/3, 1/2, 2/3, 3/4$, and $1\text{ cup}$, plus multi-utensil combinations ($1/4\text{ cup} + 2\text{ tbsp} = 3/8\text{ cup}$, $1/2\text{ cup} + 2\text{ tbsp} = 5/8\text{ cup}$).
+  - Tablespoons ({{key:sc78:▸tb}}): Discretizes to $1/4\text{ tbsp}$ ($3/4\text{ tsp}$), $1/3\text{ tbsp}$ ($1\text{ tsp}$), $1/2\text{ tbsp}$, $2/3\text{ tbsp}$ ($2\text{ tsp}$), and whole tablespoons ($1\text{ tbsp} = 3\text{ tsp}$).
+  - Teaspoons ({{key:sc78:▸tsp}}): Discretizes to $1/8, 1/4, 3/8, 1/2, 3/4$, and $1\text{ tsp}$.
+- **Transient Annotation and Full-Precision Recall:** Converting to a utensil automatically sets fraction display mode (`flags[7]`), formats Register $X$ to the nearest practical culinary measure, and flashes the exact physical utensil label (such as `"1 1/2C+2TB"` or `"2 1/4 TSP"`). Pressing {{key:sc78:SHOW}} reveals the full underlying 10-digit floating-point precision alongside the bracketed utensil designation (e.g. `1.5892606556 [1 1/2C+2TB]`).
+
+Executive pastry chef Claire Laurent scales a classic vanilla crème pâtissière base for banquet service ($2.35\times$ batch factor):
+- Whole Milk: Base formula $160\text{ mL}$. Scaled: $160 \times 2.35 = 376.0\text{ mL}$.
+- Heavy Cream: Base formula $75\text{ mL}$. Scaled: $75 \times 2.35 = 176.25\text{ mL}$.
+- Pure Bourbon Vanilla Extract: Base formula $4.5\text{ mL}$. Scaled: $4.5 \times 2.35 = 10.575\text{ mL}$.
+
+Claire executes the batch conversions on the RPN stack:
+
+| Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Kitchen Utensil Snapping Walkthrough |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `160 {{key:ENTER}} 2.35 {{key:×}}` | $0$ | $0$ | $0$ | **$376.00$** | Scale milk volume: $160\text{ mL} \times 2.35 = 376.0\text{ mL}$ |
+| `{{key:sc78:▸cup}}` | $0$ | $0$ | $0$ | **$1.6250$** | Convert to cups: snaps to $1\textstyle\frac{5}{8}\text{ cup}$, transient flashes `"1 1/2C+2TB"` |
+| `{{key:sc78:SHOW}}` | $0$ | $0$ | $0$ | $1.6250$ | Display full precision and utensil: `1.5892606556 [1 1/2C+2TB]` |
+| `75 {{key:ENTER}} 2.35 {{key:×}}` | $0$ | $0$ | $1.6250$ | **$176.25$** | Scale cream volume: $75\text{ mL} \times 2.35 = 176.25\text{ mL}$ |
+| `{{key:sc78:▸cup}}` | $0$ | $0$ | $1.6250$ | **$0.7500$** | Convert to cups: snaps to $3/4\text{ cup}$, transient flashes `"3/4 CUP"` |
+| `4.5 {{key:ENTER}} 2.35 {{key:×}}` | $0$ | $1.6250$ | $0.7500$ | **$10.5750$** | Scale vanilla extract: $4.5\text{ mL} \times 2.35 = 10.575\text{ mL}$ |
+| `{{key:sc78:▸tsp}}` | $0$ | $1.6250$ | $0.7500$ | **$2.2500$** | Convert to teaspoons: snaps to $2\textstyle\frac{1}{4}\text{ tsp}$, transient flashes `"2 1/4 TSP"` |
+| `{{key:sc78:▦}}` | $0$ | $1.6250$ | $0.7500$ | $2.2500$ | Open culinary ledger: inspect flour density (`120G/CP`), Brix, and pasteurization specs |
+
+By snapping decimal fluids directly to standard measuring cups and measuring spoons (`1 1/2C+2TB`, `3/4 CUP`, and `2 1/4 TSP`), the SC-78 eliminates prep-line hesitations while preserving formula stoichiometry and culinary precision.
+
 ### Bidirectional Solver Workspace ({{key:CST}}): Solving Backward for Maximum Plate Cost
 
 Suppose the banquet sales director locks the printed tasting-menu price for the beef course at $P = \$29.00$ per guest while the controller enforces a strict $F = 26.0\%$ food-cost ceiling ($M = 74.0\%$ gross margin). What is the maximum allowable kitchen plate cost $C$ that the chef can spend on meat and garnish? Opening the {{key:CST}} (`P = C / (F / 100)`) Equation Workspace on a cleared stack ({{key:C}}) solves backward via {{key:XEQ}} for {{keycap:C}} in one step:

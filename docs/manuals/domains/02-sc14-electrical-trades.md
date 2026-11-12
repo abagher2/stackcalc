@@ -412,6 +412,22 @@ Next, the engineer evaluates the real power of a single-phase $240\text{ V}$, $1
 | {{key:ENTER}} {{key:x∥y}} | $0$ | $0$ | $3672$ | $0.061$ | Combine two parallel `#1/0 AWG` wires per phase ($0.122 \parallel 0.122 = 0.061\ \Omega/\text{kft}$) |
 | `90.211` {{key:×}} `450` {{key:×}} `3` {{key:√x}} {{key:×}} `1000` {{key:÷}} | $0$ | $0$ | $3672$ | **$4.2889$** | Compute parallel 3-phase feeder drop $V_{\text{drop},3\phi} \approx 4.29\text{ V}$ ($0.89\%$) |
 
+### Live Electrical Branch Load Aggregation and Minimum Commercial Panel Sizing on the Stack
+
+When auditing an industrial distribution subpanel supplying diverse machinery, electricians must sum non-continuous and continuous loads, apply the National Electrical Code $125\%$ continuous duty multiplier (NEC Article 215 / 430), and select the standard commercial panelboard rating ($60, 100, 125, 150, 200, 225, 400, 600, 800\text{ A}$).
+
+On the **SC-14**, summing branch breaker currents ($16\text{ A}, 24\text{ A}, 32\text{ A}, 40\text{ A}$) on the RPN stack verifies total connected current ($112.0\text{ A}$), evaluates the $80\%$ continuous operating threshold ($112 \times 1.25 = 140.0\text{ A}$), and benchmarks the panel against NEC Table 8 copper resistances accessible via {{key:sc14:▦}}:
+
+| Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Electrical Subpanel Load Sizing Walkthrough |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `16 {{key:ENTER}} 24 {{key:+}}` | $0$ | $0$ | $0$ | $40.00$ | Sum Branch 1 ($16\text{ A}$) and Branch 2 ($24\text{ A}$): subtotal $40\text{ A}$ |
+| `32 {{key:+}} 40 {{key:+}}` | $0$ | $0$ | $0$ | **$112.00$** | Add Branch 3 ($32\text{ A}$) and Branch 4 ($40\text{ A}$): total connected load $\Sigma I = \mathbf{112.0\text{ A}}$ |
+| `1.25 {{key:×}}` | $0$ | $0$ | $0$ | **$140.00$** | Apply NEC $125\%$ continuous duty factor: minimum ampacity rating = $\mathbf{140.0\text{ A}}$ |
+| `{{key:sc14:AWG}}` | $0$ | $0$ | $0$ | $0.096$ | Open NEC conductor ledger: `#2/0 AWG` copper ($0.096\ \Omega/\text{kft}$, $175\text{ A}$ at $75^\circ\text{C}$) |
+| `{{key:sc14:▦}}` | $0$ | $0$ | $0$ | $0.096$ | Open reference ledger: inspect `CU RES`, `2/0 AWG`, and standard motor full-load currents |
+
+Since standard commercial panelboards are manufactured in $100\text{ A}, 125\text{ A}, 150\text{ A}, 200\text{ A}$, and $225\text{ A}$ ratings, the $140.0\text{ A}$ continuous duty threshold mandates specifying a minimum **$150\text{ A}$ panelboard** fed by `#2/0 AWG` copper conductors.
+
 ### Three-Phase Motor Branch Feeder Sizing, Inrush Protection, and Shunt Capacitor Correction on the Stack
 
 The RPN stack resolves the complete industrial motor branch design in one continuous sequence without scratchpad notes. A new $100\text{ HP}$, $480\text{ V}$ three-phase conveyor motor is being added to Pier 14. 
@@ -850,6 +866,34 @@ Follow the kinetic stack execution:
 | `0.0824 {{key:ENTER}} 4 {{key:×}} 0.864 {{key:÷}} 100 {{key:×}}` | $45.22$ | $57.22$ | $69.22$ | **$38.15$** | 4 wires $\times 0.0824\text{ in.}^2 / 0.864\text{ in.}^2 \times 100\% = \mathbf{38.15\%}$ (compliant $< 40\%$) |
 
 In seven operations, Jimmy computed every mark on the conduit pipe to a thirty-second of an inch and proved that the raceway fill satisfies NEC Chapter 9 limits. When bent and mounted, the saddle bridged the steam header with exactly one inch of thermal air clearance.
+
+### Architectural Feet-Inches-Sixteenths Entry ({{key:sc14:f-i}}) for Conduit Field Cuts
+
+On commercial job sites, architectural blueprints and building elevation drawings express run dimensions in feet, inches, and sixteenths of an inch (for example, $14'\text{--}8\textstyle\frac{3}{4}''$), while physical bending equations and cosecant multipliers require pure decimal feet or inches. Converting fractional dimensions to decimal fractions on scrap cardboard introduces rounding errors that leave conduit runs short of their pull boxes. The **SC-14** bridges structural blueprints and tape measures via its dedicated **Architectural Feet-Inches Mode** ({{key:sc14:f-i}}).
+
+The {{key:sc14:f-i}} key operates bidirectionally across packed architectural notation (`FF.IISS`, where $FF$ is feet, $II$ is inches $00\text{--}11$, and $SS$ is sixteenths of an inch $00\text{--}15$):
+- **Packed Entry to Decimal Feet:** Keying packed architectural dimensions into Register $X$ and tapping {{key:sc14:f-i}} unrolls the packed value into pure decimal feet:
+  $$14.0812 \xrightarrow{\text{{{key:sc14:f-i}}}} 14 + \frac{8 + 12/16}{12} = 14 + \frac{8.75}{12} = \mathbf{14.7292\text{ ft}}$$
+- **Two-Register Direct Entry:** Alternatively, keying feet into Register $Y$ and inches into Register $X$ (e.g. `14` {{key:ENTER}} `8.75` {{key:sc14:f-i}}) combines the registers directly into decimal feet.
+- **Decimal Feet to Formatted Architectural Measure:** Tapping {{key:sc14:f-i}} on any decimal feet value in Register $X$ repacks the quantity into canonical `FF.IISS` format while the transient LCD display flashes the exact tape-measure annotation (`14' 8-3/4"`).
+
+Suppose Frank Kowalski is laying out an overhead $2\text{-inch}$ EMT conduit run between two motor control cabinets suspended from concrete ceiling tees. The architectural blueprint specifies:
+- Distance from panel collar to first obstacle beam: $14'\text{--}8\textstyle\frac{3}{4}''$ ($14\text{ ft } 8\text{ in } 12/16\text{ in}$, keyed as `14.0812`)
+- Obstacle clearance traverse: $3'\text{--}4\textstyle\frac{1}{2}''$ ($3\text{ ft } 4\text{ in } 8/16\text{ in}$, keyed as `3.0408`)
+- Mechanical bender shrinkage allowance: $1.50\text{ in.}$ ($0.1250\text{ ft}$)
+
+Frank enters the blueprint dimensions directly into the SC-14:
+
+| Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Architectural Foot-Inch Field Walkthrough |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `14.0812 {{key:sc14:f-i}}` | $0$ | $0$ | $0$ | **$14.7292$** | Unpack $14'\text{--}8\textstyle\frac{3}{4}''$ (`14.0812`) to decimal feet ($14.7292\text{ ft}$) |
+| `3.0408 {{key:sc14:f-i}}` | $0$ | $0$ | $14.7292$ | **$3.3750$** | Unpack $3'\text{--}4\textstyle\frac{1}{2}''$ (`3.0408`) to decimal feet ($3.3750\text{ ft}$) |
+| `{{key:+}}` | $0$ | $0$ | $0$ | **$18.1042$** | Sum conduit run segments: $14.7292 + 3.3750 = 18.1042\text{ ft}$ |
+| `1.5 {{key:ENTER}} 12 {{key:÷}} {{key:+}}` | $0$ | $0$ | $0$ | **$18.2292$** | Add $1.5\text{ in.}$ bender shrinkage ($0.1250\text{ ft}$): total developed length = $18.2292\text{ ft}$ |
+| `{{key:sc14:f-i}}` | $0$ | $0$ | $0$ | **$18.0212$** | Repack to architectural notation: flashes `"18' 2-3/4\""` (`18.0212`) |
+| `{{key:sc14:▦}}` | $0$ | $0$ | $0$ | $18.0212$ | Open NEC reference ledger: inspect copper resistance and conduit fill limits |
+
+The SC-14 displays `18.0212` and flashes `"18' 2-3/4\""`. Frank hooks his steel tape measure onto the conduit end, marks the cut line at eighteen feet, two and three-quarters inches, and bands the conduit in the mechanical bender with zero fractional math errors.
 
 ### Inverse Bend Angle Solving in {{key:OFS}} and Verifying NEC Conduit Fill
 

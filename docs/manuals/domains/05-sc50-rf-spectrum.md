@@ -269,9 +269,43 @@ To experience how the operational RPN stack banishes scratchpad fatigue in the f
 | `50 {{key:ENTER}} 20 {{key:Γ}}` | $0$ | $4.266$ | $38.465$ | $1.2247$ | Evaluate L-network quality factor $Q = \sqrt{(50/20) - 1} = \mathbf{1.2247}$ |
 | `20 {{key:×}}` | $4.266$ | $38.465$ | $1.2247$ | $24.495$ | Series reactance $|X_{\text{series}}| = 1.2247 \times 20 = \mathbf{24.495\ \Omega}$ |
 | `50 {{key:ENTER}} 1.2247 {{key:÷}}` | $38.465$ | $1.2247$ | $24.495$ | $40.826$ | Shunt reactance $|X_{\text{shunt}}| = 50 / 1.2247 = \mathbf{40.826\ \Omega}$ |
-| `2 {{key:π}} {{key:×}} 14.2 {{key:E}} 6 {{key:×}} 40.826 {{key:×}} 1/x` | $1.2247$ | $24.495$ | $40.826$ | **$2.746\text{e}-10$** | Shunt capacitor $C = 1 / (2\pi \times 14.2\text{ MHz} \times 40.83) = \mathbf{274.6\text{ pF}}$ |
+| `2 {{key:π}} {{key:×}} 14.2 {{key:E}} 6 {{key:×}} 40.826 {{key:×}} {{key:sc50:𝑥⁻¹}}` | $1.2247$ | $24.495$ | $40.826$ | **$2.746\text{e}-10$** | Shunt capacitor $C = 1 / (2\pi \times 14.2\text{ MHz} \times 40.83) = \mathbf{274.6\text{ pF}}$ |
 
 To cancel the antenna's $+j40\ \Omega$ inductive reactance and simultaneously provide the required $-j24.5\ \Omega$ series capacitive matching reactance, Jackson installs a series variable capacitor providing $X_C = -(40 + 24.5) = -64.5\ \Omega$ ($C_{\text{series}} = 1 / (2\pi \times 14.2\text{ MHz} \times 64.5) \approx \mathbf{173.9\text{ pF}}$) paired with the $274.6\text{ pF}$ shunt capacitor. The standing wave ratio drops immediately from $4.27:1$ to $1.02:1$, restoring full $100\text{ W}$ radiation into the antenna without amplifier foldback.
+
+### Cascaded Receiver Noise Figure (Friis Formula) and Native Complex Inversion on the Stack
+
+In receiver front-end design, microwave engineers must balance the noise contributions of cryogenic low-noise amplifiers (LNAs), lossy bandpass preselection filters, and downstream mixer/IF stages. By Harald Friis' classical 1944 noise formula, the noise factor of the first amplification stage dominates the overall system noise temperature, provided its gain is sufficiently high to suppress subsequent stage noise:
+$$F_{\text{casc}} = F_1 + \frac{F_2 - 1}{G_1} + \frac{F_3 - 1}{G_1 G_2}$$
+where $F_i = 10^{NF_i / 10}$ and $G_i = 10^{G_{i,\text{dB}} / 10}$ are linear noise factors and power gains.
+
+Simultaneously, evaluating complex antenna terminations on the **SC-50** utilizes **Native Complex RF Mode** ({{key:sc50:CMPLX}}), which arms the top softkey row with dedicated reflection and impedance operators:
+- `{{keycap:Γ}}`: Evaluates the complex reflection phasor $\Gamma = (Z_L - Z_0) / (Z_L + Z_0)$ directly from complex load impedance $Z_L$.
+- `{{keycap:Z←Γ}}`: Inverts a reflection coefficient phasor backward into its physical terminal impedance $Z_L = Z_0 (1 + \Gamma) / (1 - \Gamma)$.
+- `{{keycap:RL}}`: Computes Return Loss in decibels ($\text{RL} = -20 \log_{10}|\Gamma|$).
+- `{{keycap:SWR}}`: Evaluates Voltage Standing Wave Ratio ($\text{VSWR} = (1 + |\Gamma|) / (1 - |\Gamma|)$).
+- `{{keycap:Z₀}}`: Selects or recalls the system characteristic impedance (toggleable between $50\ \Omega$ and $75\ \Omega$, defaulting to $50\ \Omega$).
+
+An RF systems architect designs an $8.45\text{ GHz}$ deep-space downlink receiver front-end with three cascaded stages into a $Z_0 = 50\ \Omega$ feed:
+- **Stage 1 (Cryogenic LNA):** Gain $G_1 = +20.0\text{ dB}$ ($G_1 = 100.0$), Noise Figure $NF_1 = 1.20\text{ dB}$ ($F_1 = 1.3183$)
+- **Stage 2 (Bandpass Filter):** Insertion Loss $-2.00\text{ dB}$ ($G_2 = 0.6310$), Noise Figure $NF_2 = 2.00\text{ dB}$ ($F_2 = 1.5849$)
+- **Stage 3 (Mixer / IF Amp):** Gain $G_3 = +15.0\text{ dB}$ ($G_3 = 31.62$), Noise Figure $NF_3 = 6.00\text{ dB}$ ($F_3 = 3.9811$)
+
+Follow the synthesis across the RPN stack:
+
+| Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | RF Systems Cascade & Inversion Walkthrough |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `20 {{key:ENTER}} 2 {{key:-}} 15 {{key:+}}` | $0$ | $0$ | $0$ | **$33.00$** | Compute total cascaded receiver gain: $G_{\text{tot}} = 20 - 2 + 15 = \mathbf{33.00\text{ dB}}$ |
+| `1.2 10 {{key:÷}} 10 {{key:sc50:10ˣ}}` | $0$ | $0$ | $33.00$ | $1.3183$ | Linearize Stage 1 Noise Factor: $F_1 = 10^{0.12} = \mathbf{1.3183}$ |
+| `2.0 10 {{key:÷}} 10 {{key:sc50:10ˣ}} 1 {{key:-}} 100 {{key:÷}} {{key:+}}` | $0$ | $33.00$ | $1.3183$ | $1.3241$ | Add Stage 2 Friis term: $(F_2 - 1)/G_1 = 0.5849 / 100 = 0.00585 \implies F_{12} = 1.3241$ |
+| `6.0 10 {{key:÷}} 10 {{key:sc50:10ˣ}} 1 {{key:-}} 63.096 {{key:÷}} {{key:+}}` | $33.00$ | $1.3183$ | $1.3241$ | **$1.3714$** | Add Stage 3 Friis term: $(F_3 - 1)/(G_1 G_2) = 2.9811 / 63.096 \implies F_{\text{casc}} = \mathbf{1.3714}$ |
+| `{{key:sc50:LOG}} 10 {{key:×}}` | $1.3183$ | $1.3241$ | $33.00$ | **$1.3718$** | Convert to cascaded Noise Figure: $NF_{\text{casc}} = 10 \log_{10}(1.3714) = \mathbf{1.37\text{ dB}}$ |
+| `{{key:sc50:CMPLX}} 35 {{key:ENTER}} 25 {{key:+/-}} {{keycap:jX}} {{key:+}}` | $1.3241$ | $33.00$ | $1.3718$ | $35 - j25$ | Pack complex load impedance $Z_L = 35 - j25\ \Omega$ into Register $X$ |
+| `{{keycap:Γ}}` | $33.00$ | $1.3718$ | $35 - j25$ | **$-0.115 - j0.308$** | Compute complex reflection phasor $\Gamma = (Z_L - 50)/(Z_L + 50) = \mathbf{0.3291\angle-110.5^\circ}$ |
+| `{{keycap:Z←Γ}}` | $1.3718$ | $35 - j25$ | $-0.115 - j0.308$ | **$35 - j25$** | Invert reflection phasor back to load impedance: confirms $Z_L = \mathbf{35 - j25\ \Omega}$ |
+| `{{key:sc50:▦}}` | $1.3718$ | $35 - j25$ | $-0.115 - j0.308$ | $35 - j25$ | Open RF reference ledger: inspect `ZL REAL`, `ZL IMAG`, `|GAMMA|`, and `VSWR` |
+
+The stack proves that despite a noisy $6.0\text{ dB}$ mixer downstream, the $20\text{ dB}$ high-gain cryogenic LNA suppresses subsequent noise contributions to under $0.05\text{ dB}$, yielding an exceptional cascaded system noise figure of $\mathbf{1.37\text{ dB}}$ with total front-end gain of $\mathbf{33.0\text{ dB}}$. Tapping `{{keycap:Z←Γ}}` demonstrates how the SC-50 can mathematically round-trip reflection phasors back to physical ohms on the Smith chart in a single keystroke.
 
 ### Designing Quarter-Wave Stubs, L-Networks, and Resonant Tanks on the Stack
 
