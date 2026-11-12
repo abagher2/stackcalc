@@ -48,43 +48,110 @@ hide:
               <div class="pv-col-header decimal">.001<br><span style="font-size:0.55rem; color:#94A3B8;">THOUSANDTHS</span></div>
             </div>
 
-            <!-- Block Sockets -->
-            <div class="pv-grid-row">
-              <div id="pv-socket-100" class="pv-socket"></div>
-              <div id="pv-socket-10" class="pv-socket"></div>
-              <div id="pv-socket-1" class="pv-socket"></div>
-              <div class="pv-decimal-sep">&bull;</div>
-              <div id="pv-socket-0.1" class="pv-socket"></div>
-              <div id="pv-socket-0.01" class="pv-socket"></div>
-              <div id="pv-socket-0.001" class="pv-socket"></div>
+            <!-- Shelf 0: Carry / Regroup Shelf -->
+            <div class="pv-shelf-container pv-shelf-carry">
+              <div class="pv-shelf-title-bar" style="color:#F59E0B;">
+                <span>CARRY / REGROUP SHELF</span>
+                <span style="font-size:0.65rem; color:#FCD34D;">[+1] TOKENS</span>
+              </div>
+              <div class="pv-grid-row">
+                <div id="pv-socket-carry-100" class="pv-socket pv-socket-carry"></div>
+                <div id="pv-socket-carry-10" class="pv-socket pv-socket-carry"></div>
+                <div id="pv-socket-carry-1" class="pv-socket pv-socket-carry"></div>
+                <div class="pv-decimal-sep">&bull;</div>
+                <div id="pv-socket-carry-0.1" class="pv-socket pv-socket-carry"></div>
+                <div id="pv-socket-carry-0.01" class="pv-socket pv-socket-carry"></div>
+                <div id="pv-socket-carry-0.001" class="pv-socket pv-socket-carry"></div>
+              </div>
             </div>
 
-            <!-- Add/Subtract Steppers -->
-            <div class="pv-controls-row">
-              <div class="pv-stepper">
-                <button class="pv-btn-step" data-pv-col="100" data-pv-delta="1">+</button>
-                <button class="pv-btn-step" data-pv-col="100" data-pv-delta="-1">&minus;</button>
+            <!-- Shelf 1: Row 1 / Waiting Shelf (Register Y) -->
+            <div class="pv-shelf-container pv-shelf-y">
+              <div class="pv-shelf-title-bar" style="color:#0284C7;">
+                <span>ROW 1: WAITING SHELF (Y)</span>
+                <span>TOTAL: <strong id="pv-row1-val" style="color:#FFFFFF; font-size:0.9rem;">0</strong></span>
               </div>
-              <div class="pv-stepper">
-                <button class="pv-btn-step" data-pv-col="10" data-pv-delta="1">+</button>
-                <button class="pv-btn-step" data-pv-col="10" data-pv-delta="-1">&minus;</button>
+              <div class="pv-grid-row">
+                <div id="pv-socket-y-100" class="pv-socket"></div>
+                <div id="pv-socket-y-10" class="pv-socket"></div>
+                <div id="pv-socket-y-1" class="pv-socket"></div>
+                <div class="pv-decimal-sep">&bull;</div>
+                <div id="pv-socket-y-0.1" class="pv-socket"></div>
+                <div id="pv-socket-y-0.01" class="pv-socket"></div>
+                <div id="pv-socket-y-0.001" class="pv-socket"></div>
               </div>
-              <div class="pv-stepper">
-                <button class="pv-btn-step" data-pv-col="1" data-pv-delta="1">+</button>
-                <button class="pv-btn-step" data-pv-col="1" data-pv-delta="-1">&minus;</button>
+              <!-- Row 1 Steppers -->
+              <div class="pv-controls-row">
+                <div class="pv-stepper">
+                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="100" data-pv-delta="1">+</button>
+                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="100" data-pv-delta="-1">&minus;</button>
+                </div>
+                <div class="pv-stepper">
+                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="10" data-pv-delta="1">+</button>
+                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="10" data-pv-delta="-1">&minus;</button>
+                </div>
+                <div class="pv-stepper">
+                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="1" data-pv-delta="1">+</button>
+                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="1" data-pv-delta="-1">&minus;</button>
+                </div>
+                <div></div>
+                <div class="pv-stepper">
+                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="0.1" data-pv-delta="1">+</button>
+                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="0.1" data-pv-delta="-1">&minus;</button>
+                </div>
+                <div class="pv-stepper">
+                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="0.01" data-pv-delta="1">+</button>
+                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="0.01" data-pv-delta="-1">&minus;</button>
+                </div>
+                <div class="pv-stepper">
+                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="0.001" data-pv-delta="1">+</button>
+                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="0.001" data-pv-delta="-1">&minus;</button>
+                </div>
               </div>
-              <div></div>
-              <div class="pv-stepper">
-                <button class="pv-btn-step" data-pv-col="0.1" data-pv-delta="1">+</button>
-                <button class="pv-btn-step" data-pv-col="0.1" data-pv-delta="-1">&minus;</button>
+            </div>
+
+            <!-- Shelf 2: Row 2 / Active Desk (Register X) -->
+            <div class="pv-shelf-container pv-shelf-x">
+              <div class="pv-shelf-title-bar" style="color:#38BDF8;">
+                <span>ROW 2: ACTIVE DESK (X)</span>
+                <span>TOTAL: <strong id="pv-total-val" style="color:#FFFFFF; font-size:0.9rem;">0</strong></span>
               </div>
-              <div class="pv-stepper">
-                <button class="pv-btn-step" data-pv-col="0.01" data-pv-delta="1">+</button>
-                <button class="pv-btn-step" data-pv-col="0.01" data-pv-delta="-1">&minus;</button>
+              <div class="pv-grid-row">
+                <div id="pv-socket-100" class="pv-socket"></div>
+                <div id="pv-socket-10" class="pv-socket"></div>
+                <div id="pv-socket-1" class="pv-socket"></div>
+                <div class="pv-decimal-sep">&bull;</div>
+                <div id="pv-socket-0.1" class="pv-socket"></div>
+                <div id="pv-socket-0.01" class="pv-socket"></div>
+                <div id="pv-socket-0.001" class="pv-socket"></div>
               </div>
-              <div class="pv-stepper">
-                <button class="pv-btn-step" data-pv-col="0.001" data-pv-delta="1">+</button>
-                <button class="pv-btn-step" data-pv-col="0.001" data-pv-delta="-1">&minus;</button>
+              <!-- Row 2 Steppers -->
+              <div class="pv-controls-row">
+                <div class="pv-stepper">
+                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="100" data-pv-delta="1">+</button>
+                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="100" data-pv-delta="-1">&minus;</button>
+                </div>
+                <div class="pv-stepper">
+                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="10" data-pv-delta="1">+</button>
+                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="10" data-pv-delta="-1">&minus;</button>
+                </div>
+                <div class="pv-stepper">
+                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="1" data-pv-delta="1">+</button>
+                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="1" data-pv-delta="-1">&minus;</button>
+                </div>
+                <div></div>
+                <div class="pv-stepper">
+                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="0.1" data-pv-delta="1">+</button>
+                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="0.1" data-pv-delta="-1">&minus;</button>
+                </div>
+                <div class="pv-stepper">
+                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="0.01" data-pv-delta="1">+</button>
+                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="0.01" data-pv-delta="-1">&minus;</button>
+                </div>
+                <div class="pv-stepper">
+                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="0.001" data-pv-delta="1">+</button>
+                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="0.001" data-pv-delta="-1">&minus;</button>
+                </div>
               </div>
             </div>
 
@@ -95,12 +162,14 @@ hide:
             <!-- Staging Toolbar for Place Value -->
             <div class="vlab-staging-bar">
               <div class="vlab-staged-readout">
-                <span class="vlab-staged-meta">ENTRY (X) VALUE:</span>
-                <span id="pv-total-val" class="vlab-staged-val">0</span>
+                <span class="vlab-staged-meta">ACTIVE (X):</span>
+                <span id="pv-readout-x" class="vlab-staged-val">0</span>
               </div>
               <div style="display:flex; flex-wrap:wrap; gap:8px;">
-                <button id="pv-btn-regroup" class="vlab-btn-secondary" style="border-color:#F59E0B; color:#F59E0B;">🔄 REGROUP (+1)</button>
-                <button id="pv-btn-push" class="vlab-btn-push">↵ ENTER (SAVE)</button>
+                <button id="pv-btn-regroup" class="vlab-btn-secondary" style="border-color:#F59E0B; color:#F59E0B;">🔄 REGROUP (10➔1)</button>
+                <button id="pv-btn-unbundle" class="vlab-btn-secondary" style="border-color:#38BDF8; color:#38BDF8;">✂️ UNBUNDLE (1➔10)</button>
+                <button id="pv-btn-push" class="vlab-btn-push">↵ ENTER (SAVE X➔Y)</button>
+                <button id="pv-btn-clear" class="vlab-btn-secondary">✕ CLEAR</button>
               </div>
             </div>
 
@@ -127,13 +196,19 @@ hide:
             <button class="vlab-btn-op" data-vlab-op="÷">&divide;</button>
           </div>
 
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
+            <button id="pv-console-regroup" class="vlab-btn-func"><span class="vlab-key-shift">[f]</span>REGROUP</button>
+            <button id="pv-console-unbundle" class="vlab-btn-func"><span class="vlab-key-shift-blue">[g]</span>UNBUNDLE</button>
+            <button id="vlab-btn-clx" class="vlab-btn-func">CLEAR</button>
+          </div>
+
           <!-- 3-Step Student Guide -->
           <div class="vlab-kid-guide">
-            <div class="vlab-step-pill"><span class="vlab-step-num">1</span> <strong>Tap + or &minus;</strong> to place number chips</div>
+            <div class="vlab-step-pill"><span class="vlab-step-num">1</span> <strong>Tap + / &minus;</strong> to place base-10 blocks</div>
             <div class="vlab-step-arrow">➔</div>
-            <div class="vlab-step-pill"><span class="vlab-step-num">2</span> <strong>Press ENTER</strong> to save into (Y)</div>
+            <div class="vlab-step-pill"><span class="vlab-step-num">2</span> <strong>Press ENTER</strong> to save into Row 1 (Y)</div>
             <div class="vlab-step-arrow">➔</div>
-            <div class="vlab-step-pill"><span class="vlab-step-num">3</span> <strong>Tap + or &minus;</strong> to add or subtract!</div>
+            <div class="vlab-step-pill"><span class="vlab-step-num">3</span> <strong>Tap +, &minus;, or &times;</strong> with carry/regroup!</div>
           </div>
         </div>
 

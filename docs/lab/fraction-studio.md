@@ -129,11 +129,12 @@ hide:
             <button class="vlab-btn-op" data-vlab-op="÷">&divide;</button>
           </div>
 
-          <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 6px;">
-            <button id="vlab-btn-swap" class="vlab-btn-func">SWAP</button>
-            <button id="vlab-btn-drop" class="vlab-btn-func">DROP</button>
-            <button id="vlab-btn-clx" class="vlab-btn-func">CLEAR</button>
-            <button id="vlab-btn-fdisp" class="vlab-btn-func">FRAC / DEC</button>
+          <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap: 6px;">
+            <button id="vlab-btn-simp" class="vlab-btn-func" title="Step-by-step fraction simplification"><span class="vlab-key-shift-blue">[g]</span>SIMP</button>
+            <button id="vlab-btn-mixed" class="vlab-btn-func" title="Mixed number display (e.g. 1 1/2)">a ᵇ/c</button>
+            <button id="vlab-btn-improper" class="vlab-btn-func" title="Improper fraction display (e.g. 3/2)"><span class="vlab-key-shift">[f]</span>d/c</button>
+            <button id="vlab-btn-invert" class="vlab-btn-func" title="Reciprocal inversion (1/x)">1/x</button>
+            <button id="vlab-btn-clx" class="vlab-btn-func" title="Clear Register X">CLEAR</button>
           </div>
 
           <!-- 3-Step Student Guide -->

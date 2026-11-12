@@ -103,6 +103,47 @@
     return `${s.n}/${s.d}`;
   }
 
+  function formatMixedFrac(n, d) {
+    const s = simplifyFrac(n, d);
+    if (s.d === 1) return `${s.n}`;
+    if (s.n === 0) return '0';
+    const absN = Math.abs(s.n);
+    const absD = Math.abs(s.d);
+    const sign = (s.n * s.d < 0) ? '-' : '';
+    const whole = Math.floor(absN / absD);
+    const rem = absN % absD;
+    if (whole > 0 && rem > 0) {
+      return `${sign}${whole} ${rem}/${absD}`;
+    } else if (whole > 0 && rem === 0) {
+      return `${sign}${whole}`;
+    }
+    return `${sign}${rem}/${absD}`;
+  }
+
+  function numberToPvCounts(num) {
+    const counts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
+    let n = Math.abs(Math.round(num * 1000) / 1000);
+    if (n === 0) return counts;
+
+    counts[100] = Math.floor(n / 100);
+    n = Math.round((n % 100) * 1000) / 1000;
+
+    counts[10] = Math.floor(n / 10);
+    n = Math.round((n % 10) * 1000) / 1000;
+
+    counts[1] = Math.floor(n);
+    n = Math.round((n - counts[1]) * 1000) / 1000;
+
+    counts[0.1] = Math.floor(n * 10);
+    n = Math.round((n - counts[0.1] * 0.1) * 1000) / 1000;
+
+    counts[0.01] = Math.floor(n * 100);
+    n = Math.round((n - counts[0.01] * 0.01) * 1000) / 1000;
+
+    counts[0.001] = Math.round(n * 1000);
+    return counts;
+  }
+
   function getPrimeProduct(list) {
     if (!list || list.length === 0) return 0;
     return list.reduce((acc, p) => acc * p, 1);
@@ -198,6 +239,7 @@
       stackZ: [],       // Blocks in Register Z (Stack Level 3)
       stackT: [],       // Blocks in Register T (Stack Level 4)
       targetAnswer: [], // Compatibility shim
+      mixedMode: false, // Mixed number display format (a b/c)
 
       // Compatibility getters
       get staging() { return this.stackX; },
@@ -206,9 +248,9 @@
       set comparatorY(v) { this.stackY = v; }
     },
 
-    // Place-Value Specific State
+    // Place-Value Specific State (PLACE-01 Multi-Row Desk)
     placeValue: {
-      stagingCounts: {
+      carryCounts: {
         100: 0,
         10: 0,
         1: 0,
@@ -216,6 +258,24 @@
         0.01: 0,
         0.001: 0
       },
+      row1Counts: {
+        100: 0,
+        10: 0,
+        1: 0,
+        0.1: 0,
+        0.01: 0,
+        0.001: 0
+      },
+      row2Counts: {
+        100: 0,
+        10: 0,
+        1: 0,
+        0.1: 0,
+        0.01: 0,
+        0.001: 0
+      },
+      get stagingCounts() { return this.row2Counts; },
+      set stagingCounts(v) { this.row2Counts = v; },
       hasCarry: false,
       regroupNote: ''
     },
@@ -344,6 +404,37 @@
   }
 
   function rpnOp(operator) {
+    if (state.activeTab === 'placevalue') {
+      if (operator === '+') {
+        addPvRows();
+        return;
+      } else if (operator === '-') {
+        subtractPvRows();
+        return;
+      } else if (operator === '×') {
+        multiplyPvRows();
+        return;
+      } else if (operator === '÷') {
+        const yVal = getPvTotal(1) || state.stack.y.val;
+        const xVal = getPvTotal(2) || state.stack.x.val;
+        if (xVal !== 0) {
+          const quot = Math.round((yVal / xVal) * 1000) / 1000;
+          state.placeValue.row2Counts = numberToPvCounts(quot);
+          for (let k in state.placeValue.row1Counts) state.placeValue.row1Counts[k] = 0;
+          for (let k in state.placeValue.carryCounts) state.placeValue.carryCounts[k] = 0;
+          state.stack.x = { n: Math.round(quot * 1000), d: 1000, val: quot };
+          state.stack.y = { ...state.stack.z };
+          state.stack.z = { ...state.stack.t };
+          state.stack.t = { n: 0, d: 1, val: 0 };
+          state.stackLift = true;
+          playOp();
+          checkPvRegroup();
+          renderAll();
+        }
+        return;
+      }
+    }
+
     const x = state.stack.x;
     const y = state.stack.y;
     let resN = 0, resD = 1, resVal = 0;
@@ -407,6 +498,84 @@
   }
 
   // --- 5. Fraction Studio Actions ---
+  function reconstructFracBlocks(n, d) {
+    state.fractions.stackX = [];
+    if (n <= 0) return;
+    const paletteMap = {
+      1: { label: '1/1', n: 1, d: 1, mm: 84.0, cls: 'frac-1-1' },
+      2: { label: '1/2', n: 1, d: 2, mm: 42.0, cls: 'frac-1-2' },
+      3: { label: '1/3', n: 1, d: 3, mm: 28.0, cls: 'frac-1-3' },
+      4: { label: '1/4', n: 1, d: 4, mm: 21.0, cls: 'frac-1-4' },
+      5: { label: '1/5', n: 1, d: 5, mm: 16.8, cls: 'frac-1-5' },
+      6: { label: '1/6', n: 1, d: 6, mm: 14.0, cls: 'frac-1-6' },
+      8: { label: '1/8', n: 1, d: 8, mm: 10.5, cls: 'frac-1-8' },
+      10: { label: '1/10', n: 1, d: 10, mm: 8.4, cls: 'frac-1-10' },
+      12: { label: '1/12', n: 1, d: 12, mm: 7.0, cls: 'frac-1-12' }
+    };
+    const spec = paletteMap[d] || { label: `1/${d}`, n: 1, d: d, mm: Math.max(7, 84 / d), cls: 'frac-custom' };
+    const count = Math.min(n, 24);
+    for (let i = 0; i < count; i++) {
+      state.fractions.stackX.push({ ...spec, id: Date.now() + Math.random() });
+    }
+  }
+
+  function fractionSimp() {
+    const x = state.stack.x;
+    if (x.n === 0) return;
+    const g = gcd(Math.abs(x.n), Math.abs(x.d));
+    if (g > 1) {
+      let p = g;
+      for (let factor of [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31]) {
+        if (g % factor === 0) {
+          p = factor;
+          break;
+        }
+      }
+      const newN = x.n / p;
+      const newD = x.d / p;
+      state.stack.x = { n: newN, d: newD, val: newN / newD };
+      reconstructFracBlocks(newN, newD);
+      state.stackLift = true;
+      playOp();
+      renderAll();
+
+      const metaX = document.getElementById('vlab-staged-meta');
+      if (metaX) {
+        metaX.innerHTML = `<span style="color:#10B981;">SIMP (÷${p}) ➔ ${newN}/${newD}</span>`;
+      }
+    } else {
+      playSuccess();
+      const metaX = document.getElementById('vlab-staged-meta');
+      if (metaX) {
+        metaX.innerHTML = `<span style="color:#F59E0B;">LOWEST TERMS</span>`;
+      }
+    }
+  }
+
+  function fractionMixedToggle() {
+    state.fractions.mixedMode = true;
+    playClick();
+    renderAll();
+  }
+
+  function fractionImproper() {
+    state.fractions.mixedMode = false;
+    playClick();
+    renderAll();
+  }
+
+  function fractionInvert() {
+    const x = state.stack.x;
+    if (x.n === 0) return;
+    const newN = x.d;
+    const newD = x.n;
+    const simp = simplifyFrac(newN, newD);
+    state.stack.x = { n: simp.n, d: simp.d, val: simp.n / simp.d };
+    reconstructFracBlocks(simp.n, simp.d);
+    state.stackLift = true;
+    playOp();
+    renderAll();
+  }
   function addFractionToX(blockSpec) {
     prepareForEntry();
     state.fractions.stackX.push({
@@ -588,38 +757,90 @@
     }
   }
 
-  // --- 7. Place-Value Studio Actions ---
-  function changePvCount(colKey, delta) {
+  function primeCommonFactors() {
+    const yVal = Math.round(state.stack.y.val);
+    const xVal = Math.round(state.stack.x.val);
+    if (yVal > 0 && xVal > 0) {
+      const fY = getPrimeFactorsList(yVal);
+      const fX = getPrimeFactorsList(xVal);
+      const common = [];
+      const tempY = [...fY];
+      for (let p of fX) {
+        const idx = tempY.indexOf(p);
+        if (idx !== -1) {
+          common.push(p);
+          tempY.splice(idx, 1);
+        }
+      }
+      state.primes.stackX = common;
+      const commonProd = getPrimeProduct(common);
+      state.stack.x = { n: commonProd, d: 1, val: commonProd };
+      state.stackLift = true;
+      playOp();
+      renderAll();
+
+      const formEl = document.getElementById('vlab-prime-formula');
+      if (formEl) {
+        if (common.length > 0) {
+          formEl.textContent = `COMMON: ${common.join(' × ')} = ${commonProd} (GCF)`;
+        } else {
+          formEl.textContent = 'NO COMMON FACTORS (RELATIVELY PRIME)';
+        }
+      }
+    }
+  }
+
+  // --- 7. Place-Value Studio Actions (PLACE-01 Multi-Row Desk) ---
+  function changePvCount(colKey, delta, row = 2) {
     prepareForEntry();
     const val = parseFloat(colKey);
-    const curr = state.placeValue.stagingCounts[val] || 0;
+    const counts = (row === 1) ? state.placeValue.row1Counts : state.placeValue.row2Counts;
+    const curr = counts[val] || 0;
     const next = Math.max(0, curr + delta);
-    state.placeValue.stagingCounts[val] = next;
+    counts[val] = next;
 
-    // Immediately update Register X on the LCD!
-    const total = getPvTotal();
-    state.stack.x = {
-      n: Math.round(total * 1000),
-      d: 1000,
-      val: total
-    };
+    if (row === 2) {
+      const total = getPvTotal(2);
+      state.stack.x = {
+        n: Math.round(total * 1000),
+        d: 1000,
+        val: total
+      };
+    } else if (row === 1) {
+      const totalY = getPvTotal(1);
+      state.stack.y = {
+        n: Math.round(totalY * 1000),
+        d: 1000,
+        val: totalY
+      };
+    }
 
     playClick();
     checkPvRegroup();
     renderAll();
   }
 
+  function removePvBlock(row, colKey) {
+    changePvCount(colKey, -1, row);
+  }
+
   function checkPvRegroup() {
     let hasExceed = false;
     let note = '';
-    const counts = state.placeValue.stagingCounts;
+    const r2 = state.placeValue.row2Counts;
+    const carry = state.placeValue.carryCounts;
 
-    for (let key in counts) {
-      if (counts[key] >= 10) {
+    for (let k of [0.001, 0.01, 0.1, 1, 10, 100]) {
+      if ((carry[k] || 0) > 0) {
         hasExceed = true;
-        const numVal = parseFloat(key);
+        note = `⚠️ Carried tokens waiting! Tap REGROUP to bundle into the next column.`;
+        break;
+      }
+      if ((r2[k] || 0) >= 10) {
+        hasExceed = true;
+        const numVal = parseFloat(k);
         const nextVal = (numVal * 10).toFixed(3);
-        note = `⚠️ ${counts[key]} units in [${key}] column! Stack a [+1] Carry Token into [${parseFloat(nextVal)}]!`;
+        note = `⚠️ ${r2[k]} units in [${k}] column! Tap REGROUP to bundle 10 blocks into [${parseFloat(nextVal)}]!`;
         break;
       }
     }
@@ -628,10 +849,21 @@
   }
 
   function autoRegroupPv() {
-    const counts = state.placeValue.stagingCounts;
+    const counts = state.placeValue.row2Counts;
+    const carry = state.placeValue.carryCounts;
     const keys = [0.001, 0.01, 0.1, 1, 10, 100];
     let changed = false;
 
+    // Merge carry tokens
+    keys.forEach(k => {
+      if ((carry[k] || 0) > 0) {
+        counts[k] = (counts[k] || 0) + carry[k];
+        carry[k] = 0;
+        changed = true;
+      }
+    });
+
+    // Bundle 10 units into 1 of the next column
     keys.forEach((k, idx) => {
       if (counts[k] >= 10) {
         const carryOver = Math.floor(counts[k] / 10);
@@ -646,7 +878,7 @@
 
     if (changed) {
       playSuccess();
-      const total = getPvTotal();
+      const total = getPvTotal(2);
       state.stack.x = {
         n: Math.round(total * 1000),
         d: 1000,
@@ -657,17 +889,49 @@
     }
   }
 
-  function getPvTotal() {
-    const counts = state.placeValue.stagingCounts;
+  function unbundlePv(colKey) {
+    const counts = state.placeValue.row2Counts;
+    const keys = [0.001, 0.01, 0.1, 1, 10, 100];
+    let targetIdx = -1;
+
+    if (colKey !== undefined) {
+      targetIdx = keys.indexOf(parseFloat(colKey));
+    } else {
+      for (let i = 1; i < keys.length; i++) {
+        if ((counts[keys[i]] || 0) > 0) {
+          targetIdx = i;
+          break;
+        }
+      }
+    }
+
+    if (targetIdx > 0 && (counts[keys[targetIdx]] || 0) > 0) {
+      counts[keys[targetIdx]] -= 1;
+      const lowerKey = keys[targetIdx - 1];
+      counts[lowerKey] = (counts[lowerKey] || 0) + 10;
+      playClick();
+      const total = getPvTotal(2);
+      state.stack.x = {
+        n: Math.round(total * 1000),
+        d: 1000,
+        val: total
+      };
+      checkPvRegroup();
+      renderAll();
+    }
+  }
+
+  function getPvTotal(row = 2) {
+    const counts = (row === 1) ? state.placeValue.row1Counts : state.placeValue.row2Counts;
     let total = 0;
     for (let k in counts) {
-      total += parseFloat(k) * counts[k];
+      total += parseFloat(k) * (counts[k] || 0);
     }
     return Math.round(total * 1000) / 1000;
   }
 
   function pushPvToStack() {
-    const total = getPvTotal();
+    const total = getPvTotal(2);
     if (total === 0 && state.stack.x.val === 0) return;
 
     state.stack.t = { ...state.stack.z };
@@ -675,11 +939,142 @@
     state.stack.y = { ...state.stack.x };
     state.stack.x = { n: 0, d: 1, val: 0 };
 
-    for (let k in state.placeValue.stagingCounts) {
-      state.placeValue.stagingCounts[k] = 0;
-    }
+    state.placeValue.row1Counts = { ...state.placeValue.row2Counts };
+    state.placeValue.row2Counts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
+    state.placeValue.carryCounts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
 
     playPush();
+    checkPvRegroup();
+    renderAll();
+  }
+
+  function clearPv(row) {
+    if (row === 1) {
+      state.placeValue.row1Counts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
+    } else if (row === 2) {
+      state.placeValue.row2Counts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
+      state.stack.x = { n: 0, d: 1, val: 0 };
+    } else {
+      state.placeValue.row1Counts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
+      state.placeValue.row2Counts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
+      state.placeValue.carryCounts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
+      state.stack.x = { n: 0, d: 1, val: 0 };
+    }
+    state.stackLift = false;
+    playClick();
+    checkPvRegroup();
+    renderAll();
+  }
+
+  function addPvRows() {
+    if (getPvTotal(1) === 0 && state.stack.y.val > 0) {
+      state.placeValue.row1Counts = numberToPvCounts(state.stack.y.val);
+    }
+    if (getPvTotal(2) === 0 && state.stack.x.val > 0) {
+      state.placeValue.row2Counts = numberToPvCounts(state.stack.x.val);
+    }
+
+    const r1 = state.placeValue.row1Counts;
+    const r2 = state.placeValue.row2Counts;
+    const carry = state.placeValue.carryCounts;
+    const keys = [0.001, 0.01, 0.1, 1, 10, 100];
+
+    keys.forEach((k, idx) => {
+      const sum = (r1[k] || 0) + (r2[k] || 0) + (carry[k] || 0);
+      carry[k] = 0;
+      if (sum >= 10 && idx + 1 < keys.length) {
+        const carryOver = Math.floor(sum / 10);
+        const rem = sum % 10;
+        r2[k] = rem;
+        carry[keys[idx + 1]] = carryOver;
+      } else {
+        r2[k] = sum;
+      }
+    });
+
+    for (let k in r1) r1[k] = 0;
+
+    let totalSum = getPvTotal(2);
+    keys.forEach(k => { totalSum += (carry[k] || 0) * k; });
+    const roundedSum = Math.round(totalSum * 1000) / 1000;
+
+    state.stack.x = {
+      n: Math.round(roundedSum * 1000),
+      d: 1000,
+      val: roundedSum
+    };
+    state.stack.y = { ...state.stack.z };
+    state.stack.z = { ...state.stack.t };
+    state.stack.t = { n: 0, d: 1, val: 0 };
+    state.stackLift = true;
+
+    playOp();
+    checkPvRegroup();
+    renderAll();
+  }
+
+  function subtractPvRows() {
+    if (getPvTotal(1) === 0 && state.stack.y.val > 0) {
+      state.placeValue.row1Counts = numberToPvCounts(state.stack.y.val);
+    }
+    if (getPvTotal(2) === 0 && state.stack.x.val > 0) {
+      state.placeValue.row2Counts = numberToPvCounts(state.stack.x.val);
+    }
+
+    const yVal = getPvTotal(1);
+    const xVal = getPvTotal(2);
+    const diff = Math.round((yVal - xVal) * 1000) / 1000;
+
+    if (diff >= 0) {
+      state.placeValue.row2Counts = numberToPvCounts(diff);
+    } else {
+      state.placeValue.row2Counts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
+    }
+    for (let k in state.placeValue.row1Counts) state.placeValue.row1Counts[k] = 0;
+    for (let k in state.placeValue.carryCounts) state.placeValue.carryCounts[k] = 0;
+
+    state.stack.x = {
+      n: Math.round(diff * 1000),
+      d: 1000,
+      val: diff
+    };
+    state.stack.y = { ...state.stack.z };
+    state.stack.z = { ...state.stack.t };
+    state.stack.t = { n: 0, d: 1, val: 0 };
+    state.stackLift = true;
+
+    playOp();
+    checkPvRegroup();
+    renderAll();
+  }
+
+  function multiplyPvRows() {
+    if (getPvTotal(1) === 0 && state.stack.y.val > 0) {
+      state.placeValue.row1Counts = numberToPvCounts(state.stack.y.val);
+    }
+    if (getPvTotal(2) === 0 && state.stack.x.val > 0) {
+      state.placeValue.row2Counts = numberToPvCounts(state.stack.x.val);
+    }
+
+    const yVal = getPvTotal(1);
+    const xVal = getPvTotal(2);
+    const prod = Math.round((yVal * xVal) * 1000) / 1000;
+
+    state.placeValue.row2Counts = numberToPvCounts(prod);
+    for (let k in state.placeValue.row1Counts) state.placeValue.row1Counts[k] = 0;
+    for (let k in state.placeValue.carryCounts) state.placeValue.carryCounts[k] = 0;
+
+    state.stack.x = {
+      n: Math.round(prod * 1000),
+      d: 1000,
+      val: prod
+    };
+    state.stack.y = { ...state.stack.z };
+    state.stack.z = { ...state.stack.t };
+    state.stack.t = { n: 0, d: 1, val: 0 };
+    state.stackLift = true;
+
+    playOp();
     checkPvRegroup();
     renderAll();
   }
@@ -690,6 +1085,9 @@
       if (!item) return isRegX ? '0_' : '0';
       if (state.activeTab === 'fractions') {
         if (item.val === 0) return isRegX ? '0_' : '0';
+        if (state.fractions.mixedMode) {
+          return `<strong style="font-size:1.25em; color:#FFFFFF;">${formatMixedFrac(item.n, item.d)}</strong>${isRegX ? '_' : ''}`;
+        }
         if (state.fdisp) {
           return `<strong style="font-size:1.25em; color:#FFFFFF;">${formatFrac(item.n, item.d)}</strong>${isRegX ? '_' : ''}`;
         } else {
@@ -902,30 +1300,106 @@
 
   function renderPlaceValue() {
     const keys = [100, 10, 1, 0.1, 0.01, 0.001];
+
+    const blockSpecs = {
+      100: { name: 'Hundreds Flat (100)', cls: 'pv-block-100', label: '100' },
+      10: { name: 'Tens Rod (10)', cls: 'pv-block-10', label: '10' },
+      1: { name: 'Unit Cube (1)', cls: 'pv-block-1', label: '1' },
+      0.1: { name: 'Tenths Strip (.1)', cls: 'pv-block-0-1', label: '.1' },
+      0.01: { name: 'Hundredths Tile (.01)', cls: 'pv-block-0-01', label: '.01' },
+      0.001: { name: 'Thousandths Token (.001)', cls: 'pv-block-0-001', label: '' }
+    };
+
+    // 1. Render Top Carry Shelf (+1 Regroup Tokens)
     keys.forEach(k => {
-      const socket = document.getElementById(`pv-socket-${k}`);
-      if (!socket) return;
-      socket.innerHTML = '';
-      const count = state.placeValue.stagingCounts[k] || 0;
-
-      if (count >= 10) {
-        socket.classList.add('has-carry');
-      } else {
-        socket.classList.remove('has-carry');
-      }
-
-      for (let i = 0; i < count; i++) {
-        const chip = document.createElement('div');
-        chip.className = `pv-chip pv-chip-${k}`;
-        chip.textContent = k >= 1 ? `${k}` : `${k}`.replace('0.', '.');
-        socket.appendChild(chip);
+      const socketCarry = document.getElementById(`pv-socket-carry-${k}`);
+      if (socketCarry) {
+        socketCarry.innerHTML = '';
+        const carryCount = state.placeValue.carryCounts[k] || 0;
+        for (let i = 0; i < carryCount; i++) {
+          const blk = document.createElement('div');
+          blk.className = 'pv-block pv-block-carry';
+          blk.textContent = '+1';
+          blk.title = `Carried +1 token in [${k}] (tap to trade)`;
+          blk.onclick = (e) => {
+            e.stopPropagation();
+            state.placeValue.carryCounts[k]--;
+            state.placeValue.row2Counts[k] = (state.placeValue.row2Counts[k] || 0) + 1;
+            playClick();
+            checkPvRegroup();
+            renderAll();
+          };
+          socketCarry.appendChild(blk);
+        }
       }
     });
 
-    const valEl = document.getElementById('pv-total-val');
-    if (valEl) {
-      const tot = getPvTotal();
-      valEl.textContent = tot === 0 ? '0' : Number(tot.toFixed(3));
+    // 2. Render Row 1: Waiting Shelf / Register Y (Top Addend / Minuend)
+    keys.forEach(k => {
+      const socketY = document.getElementById(`pv-socket-y-${k}`);
+      if (socketY) {
+        socketY.innerHTML = '';
+        const count = state.placeValue.row1Counts[k] || 0;
+        const spec = blockSpecs[k];
+        for (let i = 0; i < count; i++) {
+          const blk = document.createElement('div');
+          blk.className = `pv-block ${spec.cls}`;
+          blk.textContent = spec.label;
+          blk.title = `Row 1: ${spec.name} (tap to remove)`;
+          blk.onclick = (e) => {
+            e.stopPropagation();
+            removePvBlock(1, k);
+          };
+          socketY.appendChild(blk);
+        }
+      }
+    });
+
+    // 3. Render Row 2: Active Desk / Register X (Bottom Addend / Subtrahend)
+    keys.forEach(k => {
+      const socketX = document.getElementById(`pv-socket-x-${k}`) || document.getElementById(`pv-socket-${k}`);
+      if (socketX) {
+        socketX.innerHTML = '';
+        const count = state.placeValue.row2Counts[k] || 0;
+        const spec = blockSpecs[k];
+
+        if (count >= 10) {
+          socketX.classList.add('has-carry');
+        } else {
+          socketX.classList.remove('has-carry');
+        }
+
+        for (let i = 0; i < count; i++) {
+          const blk = document.createElement('div');
+          blk.className = `pv-block ${spec.cls}`;
+          blk.textContent = spec.label;
+          blk.title = `Row 2: ${spec.name} (tap to remove)`;
+          blk.onclick = (e) => {
+            e.stopPropagation();
+            removePvBlock(2, k);
+          };
+          socketX.appendChild(blk);
+        }
+      }
+    });
+
+    // Update Totals and Readouts
+    const row1ValEl = document.getElementById('pv-row1-val');
+    if (row1ValEl) {
+      const tot1 = getPvTotal(1);
+      row1ValEl.textContent = tot1 === 0 ? '0' : Number(tot1.toFixed(3));
+    }
+
+    const row2ValEl = document.getElementById('pv-total-val');
+    if (row2ValEl) {
+      const tot2 = getPvTotal(2);
+      row2ValEl.textContent = tot2 === 0 ? '0' : Number(tot2.toFixed(3));
+    }
+
+    const readoutXEl = document.getElementById('pv-readout-x');
+    if (readoutXEl) {
+      const tot2 = getPvTotal(2);
+      readoutXEl.textContent = tot2 === 0 ? '0' : Number(tot2.toFixed(3));
     }
 
     const noteEl = document.getElementById('pv-regroup-alert');
@@ -1045,6 +1519,18 @@
     const clearTargetBtn = document.getElementById('vlab-btn-clear-target');
     if (clearTargetBtn) clearTargetBtn.onclick = clearTargetFractions;
 
+    const simpFracBtn = document.getElementById('vlab-btn-simp');
+    if (simpFracBtn) simpFracBtn.onclick = fractionSimp;
+
+    const mixedFracBtn = document.getElementById('vlab-btn-mixed');
+    if (mixedFracBtn) mixedFracBtn.onclick = fractionMixedToggle;
+
+    const improperFracBtn = document.getElementById('vlab-btn-improper');
+    if (improperFracBtn) improperFracBtn.onclick = fractionImproper;
+
+    const invertFracBtn = document.getElementById('vlab-btn-invert');
+    if (invertFracBtn) invertFracBtn.onclick = fractionInvert;
+
     // Operation Keypads (All Tabs)
     const opBtns = document.querySelectorAll('[data-vlab-op]');
     opBtns.forEach(btn => {
@@ -1079,12 +1565,25 @@
     const pvRegroupBtn = document.getElementById('pv-btn-regroup');
     if (pvRegroupBtn) pvRegroupBtn.onclick = autoRegroupPv;
 
+    const pvConsoleRegroup = document.getElementById('pv-console-regroup');
+    if (pvConsoleRegroup) pvConsoleRegroup.onclick = autoRegroupPv;
+
+    const pvUnbundleBtn = document.getElementById('pv-btn-unbundle');
+    if (pvUnbundleBtn) pvUnbundleBtn.onclick = () => unbundlePv();
+
+    const pvConsoleUnbundle = document.getElementById('pv-console-unbundle');
+    if (pvConsoleUnbundle) pvConsoleUnbundle.onclick = () => unbundlePv();
+
+    const pvClearBtn = document.getElementById('pv-btn-clear');
+    if (pvClearBtn) pvClearBtn.onclick = () => clearPv(2);
+
     const pvSteps = document.querySelectorAll('[data-pv-col]');
     pvSteps.forEach(btn => {
       btn.onclick = () => {
         const col = btn.getAttribute('data-pv-col');
         const delta = parseInt(btn.getAttribute('data-pv-delta'), 10);
-        changePvCount(col, delta);
+        const row = parseInt(btn.getAttribute('data-pv-row') || '2', 10);
+        changePvCount(col, delta, row);
       };
     });
 
@@ -1100,6 +1599,9 @@
 
     const factBtn = document.getElementById('vlab-btn-fact');
     if (factBtn) factBtn.onclick = primeFactorizeX;
+
+    const cfacBtn = document.getElementById('vlab-btn-cfac');
+    if (cfacBtn) cfacBtn.onclick = primeCommonFactors;
 
     const gcdBtn = document.getElementById('vlab-btn-gcd');
     if (gcdBtn) gcdBtn.onclick = primeGcd;
@@ -1151,11 +1653,21 @@
     removeTargetFraction: removeTargetFraction,
     clearTargetFractions: clearTargetFractions,
     pushFraction: pushFractionToStack,
+    simpFraction: fractionSimp,
+    toggleMixed: fractionMixedToggle,
+    toggleImproper: fractionImproper,
+    invertFraction: fractionInvert,
 
     changePvCount: changePvCount,
+    removePvBlock: removePvBlock,
     autoRegroupPv: autoRegroupPv,
+    unbundlePv: unbundlePv,
+    clearPv: clearPv,
     getPvTotal: getPvTotal,
     pushPvToStack: pushPvToStack,
+    addPvRows: addPvRows,
+    subtractPvRows: subtractPvRows,
+    multiplyPvRows: multiplyPvRows,
 
     addPrime: addPrimeToX,
     removePrimeFromX: removePrimeFromX,
@@ -1164,6 +1676,7 @@
     clearPrimes: clearPrimeX,
     pushPrimes: pushPrimeToStack,
     factorizeStackX: primeFactorizeX,
+    commonFactors: primeCommonFactors,
     calcGcd: primeGcd,
     calcLcm: primeLcm,
 
