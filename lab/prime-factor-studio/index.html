@@ -6,30 +6,34 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How our 3D-printed math blocks, pcbnew-derived dummy_pcb test fits, and unit-tested reference manuals turn abstract math into concrete intuition.">
+        <meta name="description" content="Full-page interactive 2D Prime Factor Studio virtual manipulative. Logarithmic prime blocks, prime train builder, live 4-line RPN calculator stack, and real-time FACT / GCD / LCM decomposition engines for classroom displays.">
       
       
         <meta name="author" content="StackCalc Engineering">
       
       
-        <link rel="canonical" href="https://www.stackcalc.io/hackaday/logs/log-11-manufacturing-math-blocks-and-reference-books/">
+        <link rel="canonical" href="https://www.stackcalc.io/lab/prime-factor-studio/">
       
       
+        <link rel="prev" href="../place-value/">
       
       
-      <link rel="icon" href="../../../assets/stackcalc-logo.svg">
+        <link rel="next" href="../../products/">
+      
+      
+      <link rel="icon" href="../../assets/stackcalc-logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
-        <title>Log 11: 84mm Fraction Towers, Logarithmic Prime Blocks, 3D-Printed Dummy PCBs & Unit-Tested Books - StackCalc32</title>
+        <title>Prime Factor Studio 2D Classroom Simulator | StackCalc Virtual Manipulatives - StackCalc32</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,13 +52,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/brutalist.css">
+      <link rel="stylesheet" href="../../stylesheets/brutalist.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/ecommerce.css">
+      <link rel="stylesheet" href="../../stylesheets/ecommerce.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/manipulatives-lab.css">
+      <link rel="stylesheet" href="../../stylesheets/manipulatives-lab.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -79,13 +83,13 @@
   
   <meta property="og:site_name" content="StackCalc32">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Log 11: 84mm Fraction Towers, Logarithmic Prime Blocks, 3D-Printed Dummy PCBs &amp; Unit-Tested Books">
-  <meta property="og:description" content="How our 3D-printed math blocks, pcbnew-derived dummy_pcb test fits, and unit-tested reference manuals turn abstract math into concrete intuition.">
-  <meta property="og:url" content="https://www.stackcalc.io/hackaday/logs/log-11-manufacturing-math-blocks-and-reference-books/">
+  <meta property="og:title" content="Prime Factor Studio 2D Classroom Simulator | StackCalc Virtual Manipulatives">
+  <meta property="og:description" content="Full-page interactive 2D Prime Factor Studio virtual manipulative. Logarithmic prime blocks, prime train builder, live 4-line RPN calculator stack, and real-time FACT / GCD / LCM decomposition engines for classroom displays.">
+  <meta property="og:url" content="https://www.stackcalc.io/lab/prime-factor-studio/">
   <meta property="og:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Log 11: 84mm Fraction Towers, Logarithmic Prime Blocks, 3D-Printed Dummy PCBs &amp; Unit-Tested Books">
-  <meta name="twitter:description" content="How our 3D-printed math blocks, pcbnew-derived dummy_pcb test fits, and unit-tested reference manuals turn abstract math into concrete intuition.">
+  <meta name="twitter:title" content="Prime Factor Studio 2D Classroom Simulator | StackCalc Virtual Manipulatives">
+  <meta name="twitter:description" content="Full-page interactive 2D Prime Factor Studio virtual manipulative. Logarithmic prime blocks, prime train builder, live 4-line RPN calculator stack, and real-time FACT / GCD / LCM decomposition engines for classroom displays.">
   <meta name="twitter:image" content="https://www.stackcalc.io/assets/hero.jpg">
   <link rel="alternate" type="application/rss+xml" title="StackCalc32 Engineering Blog" href="https://www.stackcalc.io/blog/feed.xml">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -132,11 +136,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#log-11-84mm-fraction-towers-logarithmic-prime-blocks-3d-printed-dummy-pcbs-unit-tested-books" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -149,7 +148,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+    <a href="../.." title="StackCalc32" class="md-header__button md-logo" aria-label="StackCalc32" data-md-component="logo">
       <span style="display: inline-flex; align-items: center; gap: 8px;">
     <svg width="24" height="30" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
         <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
@@ -167,12 +166,12 @@
 
     <!-- Desktop Navigation Links: Harmonized 1:1 with Main Home Site -->
     <div class="header-nav-links">
-      <a href="../../../products/sc32-calculator/">INSTRUMENTS</a>
-      <a href="../../../products/">MANIPULATIVES</a>
-      <a href="../../../curriculum/">CURRICULUM</a>
-      <a href="../../../manuals/">MANUALS</a>
-      <a href="../../../downloads/">OPEN 3MFs</a>
-      <a href="../../../products/">CATALOG</a>
+      <a href="../../products/sc32-calculator/">INSTRUMENTS</a>
+      <a href="../../products/">MANIPULATIVES</a>
+      <a href="../../curriculum/">CURRICULUM</a>
+      <a href="../../manuals/">MANUALS</a>
+      <a href="../../downloads/">OPEN 3MFs</a>
+      <a href="../../products/">CATALOG</a>
     </div>
 
     <div class="md-header__title" data-md-component="header-title">
@@ -180,7 +179,7 @@
         <div class="md-header__topic md-header__topic--subpage" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Log 11: 84mm Fraction Towers, Logarithmic Prime Blocks, 3D-Printed Dummy PCBs & Unit-Tested Books
+              Prime Factor Studio 2D Classroom Simulator | StackCalc Virtual Manipulatives
             
           </span>
         </div>
@@ -240,7 +239,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -255,11 +254,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../learning-lab/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../learning-lab/" class="md-tabs__link">
           
   
   2D Interactive Labs
@@ -277,7 +278,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../products/" class="md-tabs__link">
+        <a href="../../products/" class="md-tabs__link">
           
   
   Catalog
@@ -295,7 +296,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../curriculum/" class="md-tabs__link">
+        <a href="../../curriculum/" class="md-tabs__link">
           
   
   Curriculum & Standards
@@ -313,7 +314,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../manuals/" class="md-tabs__link">
+        <a href="../../manuals/" class="md-tabs__link">
           
   
   Books & Reference Manuals
@@ -331,7 +332,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../blog/" class="md-tabs__link">
+        <a href="../../blog/" class="md-tabs__link">
           
   
   Documentation
@@ -366,7 +367,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../privacy/" class="md-tabs__link">
+        <a href="../../privacy/" class="md-tabs__link">
           
   
   Legal & Support
@@ -394,7 +395,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -405,7 +408,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
+    <a href="../.." title="StackCalc32" class="md-nav__button md-logo" aria-label="StackCalc32" data-md-component="logo">
       <span style="display: inline-flex; align-items: center; gap: 8px;">
     <svg width="24" height="30" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-container">
         <rect class="stack-rect" x="4" y="2" width="24" height="8" rx="2" fill="#E2E6EE"/>
@@ -428,7 +431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -445,25 +448,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -474,7 +482,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             2D Interactive Labs
@@ -488,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../learning-lab/" class="md-nav__link">
+      <a href="../../learning-lab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -509,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../lab/fraction-studio/" class="md-nav__link">
+      <a href="../fraction-studio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -530,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../lab/place-value/" class="md-nav__link">
+      <a href="../place-value/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -539,6 +547,35 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Prime Factor Studio Lab
+  </span>
+  
+
+      </a>
+      
     </li>
   
 
@@ -598,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/" class="md-nav__link">
+      <a href="../../products/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -659,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/sc32-calculator/" class="md-nav__link">
+      <a href="../../products/sc32-calculator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -680,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/sc32-calculator/assembly/" class="md-nav__link">
+      <a href="../../products/sc32-calculator/assembly/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -701,7 +738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/sc32-calculator/lessons/" class="md-nav__link">
+      <a href="../../products/sc32-calculator/lessons/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -730,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/sc6-elementary/" class="md-nav__link">
+      <a href="../../products/sc6-elementary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -751,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/sc6-book/" class="md-nav__link">
+      <a href="../../products/sc6-book/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -812,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/fraction-studio/" class="md-nav__link">
+      <a href="../../products/fraction-studio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -833,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../lab/fraction-studio/" class="md-nav__link">
+      <a href="../fraction-studio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -854,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/fraction-studio/assembly/" class="md-nav__link">
+      <a href="../../products/fraction-studio/assembly/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -875,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/fraction-studio/lessons/" class="md-nav__link">
+      <a href="../../products/fraction-studio/lessons/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -904,7 +941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/prime-factor-studio/" class="md-nav__link">
+      <a href="../../products/prime-factor-studio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -965,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/place-value/" class="md-nav__link">
+      <a href="../../products/place-value/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -986,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../lab/place-value/" class="md-nav__link">
+      <a href="../place-value/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1055,7 +1092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/classroom-clock/" class="md-nav__link">
+      <a href="../../products/classroom-clock/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1076,7 +1113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/classroom-clock/assembly/" class="md-nav__link">
+      <a href="../../products/classroom-clock/assembly/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1097,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/classroom-clock/lessons/" class="md-nav__link">
+      <a href="../../products/classroom-clock/lessons/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1166,7 +1203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/ten-frames/" class="md-nav__link">
+      <a href="../../products/ten-frames/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1187,7 +1224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/ten-frames/assembly/" class="md-nav__link">
+      <a href="../../products/ten-frames/assembly/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1208,7 +1245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/ten-frames/lessons/" class="md-nav__link">
+      <a href="../../products/ten-frames/lessons/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1237,7 +1274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/counting-tiles/" class="md-nav__link">
+      <a href="../../products/counting-tiles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1298,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/math-dominoes/" class="md-nav__link">
+      <a href="../../products/math-dominoes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1319,7 +1356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/math-dominoes/assembly/" class="md-nav__link">
+      <a href="../../products/math-dominoes/assembly/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1340,7 +1377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/math-dominoes/lessons/" class="md-nav__link">
+      <a href="../../products/math-dominoes/lessons/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1369,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/quest-scoreboard/" class="md-nav__link">
+      <a href="../../products/quest-scoreboard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1430,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/algebra-boxes/" class="md-nav__link">
+      <a href="../../products/algebra-boxes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1451,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/algebra-boxes/assembly/" class="md-nav__link">
+      <a href="../../products/algebra-boxes/assembly/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1472,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/algebra-boxes/lessons/" class="md-nav__link">
+      <a href="../../products/algebra-boxes/lessons/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1541,7 +1578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/dice-and-spinner/" class="md-nav__link">
+      <a href="../../products/dice-and-spinner/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1562,7 +1599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/dice-and-spinner/assembly/" class="md-nav__link">
+      <a href="../../products/dice-and-spinner/assembly/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1583,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/dice-and-spinner/lessons/" class="md-nav__link">
+      <a href="../../products/dice-and-spinner/lessons/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1612,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/unit-circle-volvelle/" class="md-nav__link">
+      <a href="../../products/unit-circle-volvelle/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1633,7 +1670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/stands-and-pouches/" class="md-nav__link">
+      <a href="../../products/stands-and-pouches/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1654,7 +1691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/curriculum-and-decks/" class="md-nav__link">
+      <a href="../../products/curriculum-and-decks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1675,7 +1712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../printables/" class="md-nav__link">
+      <a href="../../printables/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1696,7 +1733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../downloads/" class="md-nav__link">
+      <a href="../../downloads/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1764,7 +1801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../curriculum/" class="md-nav__link">
+      <a href="../../curriculum/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1785,70 +1822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../curriculum/sc6-elementary-companion-workbook/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    SC-6 Companion Workbook (253 Problems)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../curriculum/sc32-scientific-companion-workbook/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    SC-32 Companion Casebook (339 Problems)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../curriculum/big-ideas-middle-school-sc6-workbook/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Big Ideas Middle School Catch-Up (SC-6)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../curriculum/alignment-matrix/" class="md-nav__link">
+      <a href="../../curriculum/alignment-matrix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1869,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../curriculum/worksheets/" class="md-nav__link">
+      <a href="../../curriculum/worksheets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1890,7 +1864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../curriculum/teacher-guide/" class="md-nav__link">
+      <a href="../../curriculum/teacher-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1911,28 +1885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../curriculum/answers/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Master Answer Key (Books 2A–5)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../curriculum/rpn-elementary-guide/" class="md-nav__link">
+      <a href="../../curriculum/rpn-elementary-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1953,7 +1906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../curriculum/uil-competition/" class="md-nav__link">
+      <a href="../../curriculum/uil-competition/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2021,7 +1974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../manuals/" class="md-nav__link">
+      <a href="../../manuals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2042,7 +1995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../products/sc6-book/" class="md-nav__link">
+      <a href="../../products/sc6-book/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2063,11 +2016,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../curriculum/big-ideas-middle-school-sc6-workbook/" class="md-nav__link">
+      <a href="../../products/sc32-calculator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Big Ideas Middle School Catch-Up (SC-6)
+    Product Overview
   </span>
   
 
@@ -2133,7 +2086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/" class="md-nav__link">
+      <a href="../../blog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2154,7 +2107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../learning-lab/" class="md-nav__link">
+      <a href="../../learning-lab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2175,7 +2128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hardware/" class="md-nav__link">
+      <a href="../../hardware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2196,7 +2149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../firmware/" class="md-nav__link">
+      <a href="../../firmware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2217,7 +2170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ios_app/" class="md-nav__link">
+      <a href="../../ios_app/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2238,7 +2191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/" class="md-nav__link">
+      <a href="../../tutorials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2259,7 +2212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../press/" class="md-nav__link">
+      <a href="../../press/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2280,7 +2233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../shipping-and-packaging/" class="md-nav__link">
+      <a href="../../shipping-and-packaging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2301,7 +2254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exam-compliance/" class="md-nav__link">
+      <a href="../../exam-compliance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2364,7 +2317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/archive/2026/" class="md-nav__link">
+      <a href="../../blog/archive/2026/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2435,7 +2388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/3d-printing/" class="md-nav__link">
+      <a href="../../blog/category/3d-printing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2458,7 +2411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/cad/" class="md-nav__link">
+      <a href="../../blog/category/cad/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2481,7 +2434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/design/" class="md-nav__link">
+      <a href="../../blog/category/design/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2504,7 +2457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/documentation/" class="md-nav__link">
+      <a href="../../blog/category/documentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2527,7 +2480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/education/" class="md-nav__link">
+      <a href="../../blog/category/education/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2550,7 +2503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/firmware/" class="md-nav__link">
+      <a href="../../blog/category/firmware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2573,7 +2526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/hardware/" class="md-nav__link">
+      <a href="../../blog/category/hardware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2596,7 +2549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/kicad/" class="md-nav__link">
+      <a href="../../blog/category/kicad/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2619,7 +2572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/manufacturing/" class="md-nav__link">
+      <a href="../../blog/category/manufacturing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2642,7 +2595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/mathematics/" class="md-nav__link">
+      <a href="../../blog/category/mathematics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2665,7 +2618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/pcb/" class="md-nav__link">
+      <a href="../../blog/category/pcb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2688,7 +2641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/pedagogy/" class="md-nav__link">
+      <a href="../../blog/category/pedagogy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2711,7 +2664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/performance/" class="md-nav__link">
+      <a href="../../blog/category/performance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2734,7 +2687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/product-design/" class="md-nav__link">
+      <a href="../../blog/category/product-design/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2757,7 +2710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/rpn/" class="md-nav__link">
+      <a href="../../blog/category/rpn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2780,7 +2733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/simulation/" class="md-nav__link">
+      <a href="../../blog/category/simulation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2803,7 +2756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/software/" class="md-nav__link">
+      <a href="../../blog/category/software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2826,7 +2779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/swift/" class="md-nav__link">
+      <a href="../../blog/category/swift/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2849,7 +2802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/testing/" class="md-nav__link">
+      <a href="../../blog/category/testing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2872,7 +2825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/ios/" class="md-nav__link">
+      <a href="../../blog/category/ios/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2895,7 +2848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/watchos/" class="md-nav__link">
+      <a href="../../blog/category/watchos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2991,7 +2944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../privacy/" class="md-nav__link">
+      <a href="../../privacy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3012,7 +2965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terms/" class="md-nav__link">
+      <a href="../../terms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3033,7 +2986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../support/" class="md-nav__link">
+      <a href="../../support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3054,7 +3007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../parts/" class="md-nav__link">
+      <a href="../../parts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3083,7 +3036,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -3092,76 +3047,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-the-engineering-lesson" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. The Engineering Lesson
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. The Engineering Lesson">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-mathematical-cad-invariants-84mm-fraction-towers-logarithmic-prime-blocks" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Mathematical CAD Invariants: 84mm Fraction Towers &amp; Logarithmic Prime Blocks
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-exporting-dummy_pcbstl-from-kicad-pcbnew-for-physical-fit-checks" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Exporting dummy_pcb.stl from KiCad pcbnew for Physical Fit Checks
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-compiling-textbooks-like-firmware-book_enginepy" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Compiling Textbooks Like Firmware (book_engine.py)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-concrete-artifact" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Concrete Artifact
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-community-discussion-invitation" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Community Discussion Invitation
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -3176,39 +3061,159 @@
                   
 
 
-<h1 id="log-11-84mm-fraction-towers-logarithmic-prime-blocks-3d-printed-dummy-pcbs-unit-tested-books">Log 11: 84mm Fraction Towers, Logarithmic Prime Blocks, 3D-Printed Dummy PCBs &amp; Unit-Tested Books</h1>
-<div class="inline-block px-3 py-1 mb-6 border border-accentCyan text-accentCyan font-mono text-xs tracking-wider">// HACKADAY BUILD LOG 11 · BLOCK MANUFACTURING & DOCS PIPELINE</div>
+<div class="vlab-wrapper" style="margin: 0; max-width: 1200px; margin: 0 auto; padding: 1rem 0;">
 
-<p><strong>Canonical Article:</strong> <a href="../../../blog/2026/10/26/manufacturing-math-blocks-and-reference-books/">From OpenSCAD to the Classroom Desk: 84mm Fraction Towers, Logarithmic Prime Blocks, and Unit-Tested Books</a><br />
-<strong>Topic:</strong> Mathematical CAD Invariants, <code>dummy_pcb.stl</code> Fit Checks &amp; Unit-Tested Textbooks<br />
-<strong>Artifact:</strong> <code>Hardware/generate_scad.py</code>, <code>Tools/book_engine.py</code>, &amp; <code>TextbookVerificationTests_SC32.swift</code></p>
-<hr />
-<h2 id="1-the-engineering-lesson">1. The Engineering Lesson</h2>
-<p>Even in the age of AI, students still need to know how to think mathematically. While our first batch of PCBs finishes assembly at PCBWay, we moved our <strong>3D-printed Gridfinity math manipulatives</strong> (manufactured in-house and on <strong>Slant3D</strong>) and our <strong>unit-tested reference manuals</strong> into production:</p>
-<h3 id="1-mathematical-cad-invariants-84mm-fraction-towers-logarithmic-prime-blocks">1. Mathematical CAD Invariants: 84mm Fraction Towers &amp; Logarithmic Prime Blocks</h3>
-<ul>
-<li><strong>Fraction Studio (<span class="arithmatex">\(84\text{ mm}\)</span> Whole Datum):</strong> Engineered around an <span class="arithmatex">\(84\text{ mm}\)</span> unit height so <span class="arithmatex">\(\frac{1}{2}\)</span> (<span class="arithmatex">\(42\text{ mm}\)</span>), <span class="arithmatex">\(\frac{1}{3}\)</span> (<span class="arithmatex">\(28\text{ mm}\)</span>), <span class="arithmatex">\(\frac{1}{4}\)</span> (<span class="arithmatex">\(21\text{ mm}\)</span>), <span class="arithmatex">\(\frac{1}{6}\)</span> (<span class="arithmatex">\(14\text{ mm}\)</span>), <span class="arithmatex">\(\frac{1}{7}\)</span> (<span class="arithmatex">\(12\text{ mm}\)</span>), and <span class="arithmatex">\(\frac{1}{12}\)</span> (<span class="arithmatex">\(7\text{ mm}\)</span>) resolve to exact integer millimeters without slicer layer-rounding drift. Students stack <span class="arithmatex">\(\frac{1}{2} + \frac{1}{3}\)</span> (<span class="arithmatex">\(70\text{ mm}\)</span>) in the left comparator channel, match it with five <span class="arithmatex">\(\frac{1}{6}\)</span> blocks in the right channel, enter <code>.1.2 [ENTER] .1.3 [+]</code> on <code>StackCalc 6</code>, and step through prime reduction one divisor at a time on the <code>SC-6</code> <code>[SIMP]</code> key.</li>
-<li><strong>Prime Factor Studio &amp; Logarithmic Slide Rule:</strong> Prime blocks (<span class="arithmatex">\(2, 3, 5, 7\)</span>) are scaled logarithmically (<span class="arithmatex">\(\text{Length} \propto \log(p)\)</span>) so snapping a <code>2</code> block and a <code>3</code> block end-to-end physically equals the length of <code>6</code> (<span class="arithmatex">\(\log(2) + \log(3) = \log(6)\)</span>), making <code>GCD</code> and <code>LCM</code> tangible length-matching puzzles.</li>
-</ul>
-<h3 id="2-exporting-dummy_pcbstl-from-kicad-pcbnew-for-physical-fit-checks">2. Exporting <code>dummy_pcb.stl</code> from KiCad <code>pcbnew</code> for Physical Fit Checks</h3>
-<p>To verify enclosure tolerances before fiberglass boards arrived, <code>Hardware/generate_scad.py</code> reads <code>calculator.kicad_pcb</code> via <code>pcbnew</code> and generates <code>dummy_pcb.scad</code> <span class="arithmatex">\(\rightarrow\)</span> <code>dummy_pcb.stl</code>—an exact 3D-printable plastic replica of the populated PCB (including the <span class="arithmatex">\(1.6\text{ mm}\)</span> board, all 43 switches, rear Pico 2 envelope, and ZIF socket) that we printed in PLA to test rail slide clearances and TPU plunger reach.</p>
-<h3 id="3-compiling-textbooks-like-firmware-book_enginepy">3. Compiling Textbooks Like Firmware (<code>book_engine.py</code>)</h3>
-<p>Our <code>Makefile</code> and <code>book_engine.py</code> extract every worked keystroke sequence from the <strong>SC-32 Scientific Manual</strong>, <strong>SC-6 Elementary Manual</strong>, and <strong>590+ workbook problems</strong>, run them as unit tests against <code>RPNCore</code>, and auto-render simulator screenshots and OpenSCAD STL diagrams.</p>
-<p><img alt="The StackCalc ecosystem of calculators, Gridfinity math blocks, and reference manuals." src="../../../assets/renders/stackcalc-ecosystem-hero-4x3.png" />
-<em>Figure 1: The physical manipulatives and test-verified reference manuals manufactured alongside the calculator.</em></p>
-<hr />
-<h2 id="2-concrete-artifact">2. Concrete Artifact</h2>
-<p>The 5-stage dependency chain in our documentation <code>Makefile</code>:
-<div class="language-makefile highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># 1. OpenSCAD (.scad) -&gt; STL (.stl) -&gt; Orthographic Block Diagrams &amp; blocks_registry.json</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c"># 2. Swift Layout &amp; SwiftUI Tests (.swift) -&gt; layout_data*.json, sequences_registry.json, &amp; Screenshots</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c"># 3. Manuscript Chapters (.md) + Registries + book_engine.py -&gt; Validated Guides &amp; RPNCore Unit Tests</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c"># 4. Validated Guides + Assets + generate_manual_pdfs.py -&gt; Publication PDFs</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c"># 5. Publication PDFs + mkdocs.yml + Chapters -&gt; Strict MkDocs Site (site/index.html)</span>
-</span></code></pre></div></p>
-<hr />
-<h2 id="3-community-discussion-invitation">3. Community Discussion Invitation</h2>
-<p><strong>To the Hackaday Community:</strong><br />
-Have you ever exported a 3D-printable dummy PCB from KiCad to test-fit mechanical enclosures and key plungers before ordering boards? How do you keep hardware user manuals synchronized with firmware changes?</p>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+    <a href="../learning-lab/" style="font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #38BDF8; text-decoration: none;">&larr; Back to Learning Lab</a>
+    <div style="display: flex; gap: 8px;">
+      <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="font-family: 'Space Mono', monospace; font-size: 0.72rem; padding: 4px 10px; background: #FF4400; color: #FFFFFF; border-radius: 4px; text-decoration: none; font-weight: 700;">Buy Physical Kit on Etsy ↗</a>
+      <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="font-family: 'Space Mono', monospace; font-size: 0.72rem; padding: 4px 10px; background: #FA6B05; color: #FFFFFF; border-radius: 4px; text-decoration: none; font-weight: 700;">Free 3MFs (Printables) ↗</a>
+    </div>
+  </div>
+
+  <div id="vlab-main-container" class="vlab-container">
+
+    <!-- Top Telemetry & Control Bar -->
+    <div class="vlab-header">
+      <div class="vlab-title-group">
+        <span class="vlab-sku-badge">PRIME-01 // FULL-SCREEN CLASSROOM SIMULATOR</span>
+        <h1 class="vlab-title" style="font-size: 1.35rem;">Prime Factor Studio &amp; Logarithmic Slide Stage</h1>
+      </div>
+      <div class="vlab-controls">
+        <button id="vlab-btn-sound" class="vlab-btn-icon" title="Toggle Sound">🔊 AUDIO: ON</button>
+        <button id="vlab-btn-fullscreen" class="vlab-btn-icon active" title="Fullscreen Projector Mode">⛶ FULLSCREEN PROJECTOR</button>
+      </div>
+    </div>
+
+    <!-- PRIME FACTOR VIEW -->
+    <div id="vlab-view-primes">
+      <div class="vlab-grid">
+
+        <!-- Left: Prime Block Palette -->
+        <div class="vlab-panel">
+          <div class="vlab-panel-header">
+            <span>Prime Block Palette</span>
+            <span>Log(p) Ref</span>
+          </div>
+          <div class="vlab-rack-list">
+            <div class="vlab-block-btn" data-prime-p="2">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#0284C7;"></span><span class="vlab-block-label">[2]</span></div>
+              <span class="vlab-block-spec">18.0 mm</span>
+            </div>
+            <div class="vlab-block-btn" data-prime-p="3">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#10B981;"></span><span class="vlab-block-label">[3]</span></div>
+              <span class="vlab-block-spec">28.5 mm</span>
+            </div>
+            <div class="vlab-block-btn" data-prime-p="5">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#F59E0B;"></span><span class="vlab-block-label">[5]</span></div>
+              <span class="vlab-block-spec">41.8 mm</span>
+            </div>
+            <div class="vlab-block-btn" data-prime-p="7">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#8B5CF6;"></span><span class="vlab-block-label">[7]</span></div>
+              <span class="vlab-block-spec">50.7 mm</span>
+            </div>
+            <div class="vlab-block-btn" data-prime-p="11">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#EC4899;"></span><span class="vlab-block-label">[11]</span></div>
+              <span class="vlab-block-spec">62.4 mm</span>
+            </div>
+            <div class="vlab-block-btn" data-prime-p="13">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#06B6D4;"></span><span class="vlab-block-label">[13]</span></div>
+              <span class="vlab-block-spec">66.8 mm</span>
+            </div>
+            <div class="vlab-block-btn" data-prime-p="17">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#E11D48;"></span><span class="vlab-block-label">[17]</span></div>
+              <span class="vlab-block-spec">73.6 mm</span>
+            </div>
+            <div class="vlab-block-btn" data-prime-p="19">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#F97316;"></span><span class="vlab-block-label">[19]</span></div>
+              <span class="vlab-block-spec">76.5 mm</span>
+            </div>
+            <div class="vlab-block-btn" data-prime-p="23">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#64748B;"></span><span class="vlab-block-label">[23]</span></div>
+              <span class="vlab-block-spec">81.3 mm</span>
+            </div>
+          </div>
+          <div style="margin-top: 1rem; font-size: 0.68rem; color: #64748B; font-family: 'Space Mono', monospace;">
+            Lengths scale logarithmically: Log(a) + Log(b) = Log(a×b).
+          </div>
+        </div>
+
+        <!-- Center: Prime Factor Rails -->
+        <div class="vlab-stage-container">
+          <div class="prime-rail-container">
+            <div>
+              <div class="prime-rail-title">
+                <span>1. Staged Prime Factor Train (Active Product)</span>
+                <span id="vlab-prime-formula" style="color: #38BDF8;">No factors</span>
+              </div>
+              <div id="vlab-prime-stage" class="prime-rail"></div>
+            </div>
+
+            <div>
+              <div class="prime-rail-title">
+                <span>2. Target / Decomposed Register X Prime Train</span>
+                <span style="color: #10B981;">[FACT / GCD / LCM]</span>
+              </div>
+              <div id="vlab-prime-target" class="prime-rail"></div>
+            </div>
+          </div>
+
+          <!-- Staging Readout & Actions -->
+          <div class="vlab-staging-bar">
+            <div class="vlab-staged-readout">
+              <span class="vlab-staged-meta">COMPOSITE PRODUCT VALUE:</span>
+              <span id="vlab-prime-val" class="vlab-staged-val">0</span>
+              <span id="vlab-prime-meta" class="vlab-staged-meta">Logarithmic Length: 0.0 mm • 0 Factors</span>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              <button id="vlab-btn-push-prime" class="vlab-btn-push">↵ PUSH TO STACK [ENTER]</button>
+              <button id="vlab-btn-drop-prime" class="vlab-btn-secondary">⌫ DROP LAST PRIME</button>
+              <button id="vlab-btn-clear-prime" class="vlab-btn-secondary">✕ CLEAR</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 4-Line RPN Stack & Factor Operations -->
+        <div class="vlab-calc-console">
+          <div class="vlab-lcd">
+            <div class="vlab-lcd-annunciator">
+              <span>STACKCALC // PRIME MODE</span>
+              <span>[PRIME-01]</span>
+            </div>
+            <div class="vlab-lcd-register"><span>T:</span> <span>0.0000</span></div>
+            <div class="vlab-lcd-register"><span>Z:</span> <span>0.0000</span></div>
+            <div class="vlab-lcd-register" style="color:#0284C7;"><span>Y:</span> <span>0.0000</span></div>
+            <div class="vlab-lcd-register vlab-lcd-reg-x"><span>X:</span> <span>0.0000_</span></div>
+          </div>
+
+          <!-- Standard Operations -->
+          <div class="vlab-op-grid">
+            <button class="vlab-btn-op" data-vlab-op="+">+</button>
+            <button class="vlab-btn-op" data-vlab-op="-">&minus;</button>
+            <button class="vlab-btn-op" data-vlab-op="×">&times;</button>
+            <button class="vlab-btn-op" data-vlab-op="÷">&divide;</button>
+          </div>
+
+          <!-- Dedicated Prime & Factor Operations -->
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
+            <button id="vlab-btn-fact" class="vlab-btn-func" style="background: rgba(16, 185, 129, 0.2); border-color: #10B981; color: #10B981; font-weight: bold;">FACT</button>
+            <button id="vlab-btn-gcd" class="vlab-btn-func" style="background: rgba(56, 189, 248, 0.2); border-color: #38BDF8; color: #38BDF8; font-weight: bold;">GCD</button>
+            <button id="vlab-btn-lcm" class="vlab-btn-func" style="background: rgba(245, 158, 11, 0.2); border-color: #F59E0B; color: #F59E0B; font-weight: bold;">LCM</button>
+          </div>
+
+          <div style="margin-top: 0.75rem; font-size:0.75rem; color:#94A3B8; line-height:1.5; font-family:'Space Mono',monospace; background:#11141A; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.08);">
+            <strong style="color:#FFFFFF;">Prime Operations:</strong><br>
+            • <strong>[FACT]:</strong> Decomposes Reg X into prime blocks.<br>
+            • <strong>[GCD]:</strong> Greatest Common Divisor of Y and X.<br>
+            • <strong>[LCM]:</strong> Least Common Multiple of Y and X.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
 
 
 
@@ -3221,6 +3226,8 @@ Have you ever exported a 3D-printable dummy PCB from KiCad to test-fit mechanica
 
 
 
+
+  
 
 
 
@@ -3264,18 +3271,18 @@ Have you ever exported a 3D-printable dummy PCB from KiCad to test-fit mechanica
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../javascripts/ecommerce.js"></script>
+        <script src="../../javascripts/ecommerce.js"></script>
       
-        <script src="../../../javascripts/manipulatives-lab.js"></script>
+        <script src="../../javascripts/manipulatives-lab.js"></script>
       
     
   </body>
