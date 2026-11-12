@@ -302,84 +302,65 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
 
 ---
 
-## Official Companion Books & Literature {: #download-the-prototype-materials }
+## Physical Manipulative Studios {: #physical-manipulative-studios }
 
-Pair your interactive lab investigations with StackCalc's official companion books and student workbooks, available in print on **Amazon**:
+Bring these interactive mathematical concepts into real hands with our launched tactile kits:
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin: 1.5rem 0 2.5rem 0;">
 
-  <!-- Card 1: From Blocks to the Stack -->
-  <div style="background: #11141A; border: 1px solid rgba(255, 153, 0, 0.35); border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
+  <!-- Card 1: Fraction Studio -->
+  <div style="background: #11141A; border: 1px solid rgba(255, 107, 44, 0.35); border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #FF9900; font-weight: 700; text-transform: uppercase;">GRADES 3–6 &bull; SC-6 ELEMENTARY</span>
-      <h3 style="margin: 0.35rem 0; font-size: 1.15rem; color: #FFFFFF;">From Blocks to the Stack</h3>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #FF6B2C; font-weight: 700; text-transform: uppercase;">GRADES 2–6 &bull; FRAC-01</span>
+      <h3 style="margin: 0.35rem 0; font-size: 1.15rem; color: #FFFFFF;">Fraction Studio Towers</h3>
       <p style="font-size: 0.84rem; color: #94A3B8; margin-bottom: 1.25rem; line-height: 1.5;">
-        The student handbook, parent guide, and classroom companion for the SC-6 Elementary calculator. Connects physical 3D-printed math blocks with the 4-level number stack ($X, Y, Z, T$), fraction towers, and skip-counting ladders.
+        Interlocking fraction bars ($1$ to $1/12$) with calibrated millimeter heights and dual fraction/decimal faces for hands-on equivalence.
       </p>
     </div>
     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-      <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 120px; text-align: center; padding: 0.55rem 0.5rem; background: #FF9900; color: #111827; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
-        AMAZON ($16) ↗
+      <a href="../products/fraction-studio/" style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: #FF6B2C; color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
+        EXPLORE KIT &rarr;
       </a>
-      <a href="../products/sc6-book/" style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        OVERVIEW &rarr;
+      <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        ETSY ↗
       </a>
     </div>
   </div>
 
-  <!-- Card 2: Thinking in the Stack -->
-  <div style="background: #11141A; border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
-    <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">HIGH SCHOOL &bull; SC-32 SCIENTIFIC</span>
-      <h3 style="margin: 0.35rem 0; font-size: 1.15rem; color: #FFFFFF;">Thinking in the Stack</h3>
-      <p style="font-size: 0.84rem; color: #94A3B8; margin-bottom: 1.25rem; line-height: 1.5;">
-        The definitive operational guide to scientific computing and RPN stack dynamics on the SC-32 Scientific calculator. Covers numerical root solvers, complex phasors, Romberg calculus, TVM finance, and vector plotting.
-      </p>
-    </div>
-    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-      <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 120px; text-align: center; padding: 0.55rem 0.5rem; background: #38BDF8; color: #0F172A; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
-        AMAZON ($16) ↗
-      </a>
-      <a href="../products/sc32-calculator/" style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        SC-32 OVERVIEW &rarr;
-      </a>
-    </div>
-  </div>
-
-  <!-- Card 3: Middle School Workbook -->
+  <!-- Card 2: Prime Factor Studio -->
   <div style="background: #11141A; border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #10B981; font-weight: 700; text-transform: uppercase;">GRADES 6–8 &bull; STUDENT WORKBOOK</span>
-      <h3 style="margin: 0.35rem 0; font-size: 1.15rem; color: #FFFFFF;">Middle School Math Lab Workbook</h3>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #10B981; font-weight: 700; text-transform: uppercase;">GRADES 3–8 &bull; PRIME-01</span>
+      <h3 style="margin: 0.35rem 0; font-size: 1.15rem; color: #FFFFFF;">Prime Factor Studio</h3>
       <p style="font-size: 0.84rem; color: #94A3B8; margin-bottom: 1.25rem; line-height: 1.5;">
-        Hands-on middle school workbook connecting physical math blocks with two-method problem solving. 10 units, 45 textbook sections, 90 daily worksheets, and 900 practice problems.
+        Color-coded prime rods ($2, 3, 5, 7$) and interlocking factor blocks that turn composite multiplication, GCF, and LCM into physical 3D towers.
       </p>
     </div>
     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-      <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 120px; text-align: center; padding: 0.55rem 0.5rem; background: #10B981; color: #0F172A; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
-        AMAZON ($14.99) ↗
+      <a href="../products/prime-factor-studio/" style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: #10B981; color: #0F172A; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
+        EXPLORE KIT &rarr;
       </a>
-      <a href="../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf" download style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        WORKBOOK PDF &darr;
+      <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        ETSY ↗
       </a>
     </div>
   </div>
 
-  <!-- Card 4: Unified Master Teacher's Guide -->
-  <div style="background: #11141A; border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
+  <!-- Card 3: Place Value Studio -->
+  <div style="background: #11141A; border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #F59E0B; font-weight: 700; text-transform: uppercase;">GRADES K–12 &bull; TEACHER FACILITATOR</span>
-      <h3 style="margin: 0.35rem 0; font-size: 1.15rem; color: #FFFFFF;">Teaching with the Stack</h3>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">GRADES K–5 &bull; PLACE-01</span>
+      <h3 style="margin: 0.35rem 0; font-size: 1.15rem; color: #FFFFFF;">Place Value Studio</h3>
       <p style="font-size: 0.84rem; color: #94A3B8; margin-bottom: 1.25rem; line-height: 1.5;">
-        Comprehensive teacher facilitation guide: concept-first stack pedagogy, 30-second misconception diagnostics, verbal cues, station rotation schedules, and pacing guides.
+        Modular base-10 counting trays, unit cubes, tens rods, and hundred flats for regrouping, carrying, and multi-digit arithmetic.
       </p>
     </div>
     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-      <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 120px; text-align: center; padding: 0.55rem 0.5rem; background: #F59E0B; color: #0F172A; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
-        AMAZON ($16) ↗
+      <a href="../products/place-value/" style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: #38BDF8; color: #0F172A; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
+        EXPLORE KIT &rarr;
       </a>
-      <a href="../downloads/" style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        FREE PDFS &darr;
+      <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        ETSY ↗
       </a>
     </div>
   </div>

@@ -217,21 +217,21 @@ hide:
           <span>📐 2D Interactive Lab</span>
           <span class="text-sky-300">&rarr;</span>
         </a>
+        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-300 hover:text-white transition flex items-center justify-between font-bold">
+          <span>Order on Etsy</span>
+          <span class="text-[#f1641e]">↗</span>
+        </a>
         <a href="#downloads" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
           <span>Free 3MFs &amp; STLs</span>
           <span class="text-sky-400">&darr;</span>
         </a>
-        <a href="../../downloads/#1-classroom-curriculum--competition-downloads-pdf" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
-          <span>Curriculum Downloads</span>
+        <a href="../prime-factor-studio/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Prime Factor Studio</span>
           <span class="text-emerald-400">&rarr;</span>
         </a>
-        <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
-          <span>SC-6 Book (Amazon)</span>
-          <span class="text-[#FF9900]">↗</span>
-        </a>
-        <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
-          <span>Workbook (Amazon)</span>
-          <span class="text-[#FF9900]">↗</span>
+        <a href="../place-value/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+          <span>Place Value Studio</span>
+          <span class="text-amber-400">&rarr;</span>
         </a>
         <a href="#specifications" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
           <span>Technical Specs</span>
@@ -499,27 +499,7 @@ hide:
 
     <div class="cross-sell-grid">
 
-      <!-- Cross-Sell 1: SC-32 Calculator -->
-      <div class="cross-sell-card">
-        <div>
-          <img src="../../assets/renders/sc32-hero-keynote.png" alt="SC-32 Maker Kit" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">SC-32 Scientific RPN Maker Kit</h3>
-          <p class="cross-sell-card-desc">
-            Equipped with native fraction reduction, improper fraction toggling (), and a 4-line RPN stack. Students see both the exact fractional quotient and decimal approximation simultaneously.
-          </p>
-        </div>
-        <div>
-          <div class="cross-sell-price-row">
-            <span class="cross-sell-price">.00</span>
-            <span class="text-xs font-mono text-cyan-400">Maker Kit</span>
-          </div>
-          <a href="../sc32-calculator/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
-            View SC-32 Maker Kit &rarr;
-          </a>
-        </div>
-      </div>
-
-      <!-- Cross-Sell 2: Prime Factor Studio -->
+      <!-- Cross-Sell 1: Prime Factor Studio -->
       <div class="cross-sell-card">
         <div>
           <img src="../../assets/renders/etsy/prime-factor-studio-real-staircase-iso-hero-tight.jpg" alt="Prime Factor Studio" class="cross-sell-thumb" />
@@ -539,22 +519,22 @@ hide:
         </div>
       </div>
 
-      <!-- Cross-Sell 3: SC-6 Elementary Calculator -->
+      <!-- Cross-Sell 2: Place Value Studio -->
       <div class="cross-sell-card">
         <div>
-          <img src="../../assets/renders/sc6-elementary-hero.png" alt="SC-6 Elementary Calculator" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">SC-6 Elementary Calculator</h3>
+          <img src="../../assets/renders/etsy/place-value-studio-real-overview-hero-tight.jpg" alt="Place Value Studio" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">Place Value Studio</h3>
           <p class="cross-sell-card-desc">
-            The foundational calculator for elementary learners. Pairs physical fraction tower heights with on-screen fraction reduction and stack manipulation.
+            Dual 6x2 activity trays (Whole &amp; Decimals) with 44 digit blocks and stackable +1 regrouping tokens for hands-on base-ten arithmetic.
           </p>
         </div>
         <div>
           <div class="cross-sell-price-row">
             <span class="cross-sell-price">.00</span>
-            <span class="text-xs font-mono text-cyan-400">Standalone Kit</span>
+            <span class="text-xs font-mono text-amber-400">Standalone Kit</span>
           </div>
-          <a href="../sc6-elementary/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
-            Explore SC-6 Calculator &rarr;
+          <a href="../place-value/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
+            Explore Place Value Studio &rarr;
           </a>
         </div>
       </div>
@@ -832,7 +812,7 @@ hide:
     <div>
       <div class="ec-ecosystem-title">Part of the StackCalc Math Learning Ecosystem</div>
       <p class="ec-ecosystem-desc">
-        Fraction Studio functions as an independent, tactile math manipulative for elementary and middle school classrooms. When students advance to numeric calculations, these physical block models connect directly with the operational stack on our <a href="../sc6-elementary/" class="text-sky-400 hover:underline">SC-6 Elementary</a> and <a href="../sc32-calculator/" class="text-sky-400 hover:underline">SC-32 Scientific</a> calculators. Explore complete lesson modules in our <a href="../../downloads/#1-classroom-curriculum--competition-downloads-pdf" class="text-amber-400 hover:underline">120 Classroom Station Worksheets</a> and order on-demand precision refills at the <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Slant 3D Replacement Parts Center ↗</a>.
+        Fraction Studio functions as an independent, tactile math manipulative for elementary and middle school classrooms. It connects directly with our launched physical manipulative collection (<a href="../prime-factor-studio/" class="text-sky-400 hover:underline">Prime Factor Studio</a> and <a href="../place-value/" class="text-sky-400 hover:underline">Place Value Studio</a>), providing students with a seamless path from hands-on tactile models to deep mathematical mastery. Order on-demand precision refills at the <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Slant 3D Replacement Parts Center ↗</a> or download free open-source <a href="../../printables/" class="text-white hover:underline">3MF models</a>.
       </p>
     </div>
   </div>

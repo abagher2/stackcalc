@@ -18,12 +18,9 @@ If you need direct assistance, encountered a bug, or have a question:
 - **Direct Email Support:** [support@stackcalc.io](mailto:support@stackcalc.io) *(Fastest response for App Store customers and reviewers)*
 - **GitHub Issue Tracker:** [https://github.com/abagher2/stackcalc/issues](https://github.com/abagher2/stackcalc/issues) *(Best for bug reports, troubleshooting, and feature requests)*
 - **Official Storefronts & Fulfillment:**
-  - **Amazon Bookstore (SC-32):** [Thinking in the Stack on Amazon: Paperback ↗](https://link.amazon/B07DqTRR5) &bull; [Hardcover Edition ↗](https://link.amazon/B09AnTIQI)
-  - **Amazon Bookstore (SC-6):** [From Blocks to the Stack on Amazon (B0HPJN3KP9) ↗](https://link.amazon/B0f5cP0Ur)
-  - **Amazon Bookstore (Middle School):** [Middle School Math Blocks Workbook on Amazon ↗](https://link.amazon/B07bxzYKq)
-  - **Amazon Bookstore (Teacher's Guide):** [Teacher's Curriculum Guide on Amazon (B05RFHqeu) ↗](https://link.amazon/B05RFHqeu)
-  - **Etsy Storefront:** [Handcrafted 3D-Printed Manipulative & Hardware Kits (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
-  - **Slant 3D Portal:** [On-Demand Additive Manufacturing & Replacement Parts ↗](https://teleportpod.com/portals/profile/StackCalc)
+  - **Etsy Storefront:** [Handcrafted Complete Kits (Fraction Studio, Prime Factor Studio, Place Value Studio) ↗](https://stackcalcmath.etsy.com)
+  - **Printables Hub:** [Free Open-Source 3MF Project Files & Print Profiles ↗](https://www.printables.com/@StackCalc_5593834)
+  - **Slant 3D Portal:** [On-Demand Factory Replacement Parts & Refills ↗](https://teleportpod.com/portals/profile/StackCalc)
 - **Replacement Parts & Refills:** Missing a block or need hardware parts? Order directly from our [Etsy Storefront](https://stackcalcmath.etsy.com) or 3D print them locally.
 - **Documentation & Learning Lab:** Explore our in-depth [Learning Lab](learning-lab.md) and [Product Guides](products.md).
 - **Web Support & Help Desk:** Visit [https://stackcalc.io/support/](https://stackcalc.io/support/) for frequent updates.
@@ -88,12 +85,13 @@ StackCalc includes an equation solver based on classic Romberg numerical integra
 
 ---
 
-### 7. Physical Calculator and printable materials
+### 7. Physical Tactile Studios and Printable Materials
 
-- **Current physical status:** The SC-32 is offered as a tool-free Maker Kit with a 100% pre-soldered RP2350 logic board, sliding dovetail chassis, tactile TPU keycaps, and transflective monochrome LCD. Tool-free 5-minute snap assembly with zero soldering required.
-- **Public printable release:** Download the matching four-part STL/3MF set from our [Printables page](printables.md). It is intended for mechanical exploration and community fabrication.
-- **Teaching materials:** The [Learning Lab](learning-lab.md) provides 2D virtual manipulatives and links to companion books and workbooks.
-- **What is not public:** Electronics source, firmware source, CAD generators, manufacturing artwork, and production documentation are not public downloads.
+- **Current physical status:** We have officially launched three complete tactile manipulative studios: **Fraction Studio Proportional Towers** (`FRAC-01`), **Prime Factor Studio & Factor Towers** (`PRIME-01`), and **Place Value Studio & Regrouping Trays** (`PLACE-01`).
+- **Where to buy:** Complete handcrafted kits are available on [Etsy](https://stackcalcmath.etsy.com).
+- **Public printable release:** Download free, verified multi-plate `.3mf` project files and single-part STLs directly from our [Printables Hub](https://www.printables.com/@StackCalc_5593834).
+- **On-demand replacement parts:** Order matching individual blocks with zero order minimums via [Slant 3D](https://teleportpod.com/portals/profile/StackCalc).
+- **Interactive digital twin:** The [2D Virtual Learning Lab](learning-lab.md) provides zero-install interactive browser simulations of our fraction and prime factor studios.
 
 ---
 

@@ -62,16 +62,13 @@ nav:
       - Virtual Manipulatives Suite: learning-lab.md
       - Fraction Towers Simulator: lab/fraction-studio.md
       - Prime Factor Simulator: lab/prime-factor-studio.md
-  - Products & Store:
-      - All Products & Where to Buy: products.md
-      - SC-32 Scientific Calculator: products/sc32-calculator/index.md
-      - SC-6 Elementary Calculator: products/sc6-elementary.md
-      - Fraction Studio Towers: products/fraction-studio/index.md
+  - Tactile Manipulatives:
+      - All Launched Kits & Stores: products.md
+      - Fraction Studio: products/fraction-studio/index.md
       - Prime Factor Studio: products/prime-factor-studio/index.md
-      - Books & Workbooks: products/sc6-book.md
-  - Free Downloads & 3D Prints:
-      - Free 3D Print Models (3MF): printables.md
-      - Free PDF Downloads: downloads.md
+      - Place Value Studio: products/place-value/index.md
+  - Free 3D Printables (3MF): printables.md
+  - Free PDF Downloads: downloads.md
   - Engineering Blog & Build Logs ↗: https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator
   - Support & Legal:
       - Support & Contact: support.md
@@ -94,6 +91,9 @@ exclude_docs: |
   parts.md
   products/**/assembly.md
   products/**/lessons.md
+  products/sc32-calculator/**
+  products/sc6-elementary.md
+  products/sc6-book.md
   products/classroom-clock/**
   products/ten-frames/**
   products/counting-tiles/**
@@ -104,7 +104,6 @@ exclude_docs: |
   products/unit-circle-volvelle.md
   products/stands-and-pouches.md
   products/curriculum-and-decks.md
-  products/place-value/**
 
 not_in_nav: |
   hackaday/**
@@ -133,7 +132,6 @@ not_in_nav: |
   products/unit-circle-volvelle.md
   products/stands-and-pouches.md
   products/curriculum-and-decks.md
-  products/place-value/**
 
 validation:
   nav:

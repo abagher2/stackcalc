@@ -209,95 +209,13 @@ Free downloadable teaching guides, pre-generated station companions, competition
 
 </div>
 
-### Official Printed Books &amp; Bookstore Editions
-
-Our complete curriculum textbooks and workbooks are published in bookstore editions on Amazon:
-
-* **Middle School Math Block Supplement &amp; Workbook (Grades 6–8):** [Order on Amazon ($14.99) ↗](https://link.amazon/B07bxzYKq) &bull; [Download PDF (128 pp.) &darr;](downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf)
-* **Unified Master Teacher's Guide (Grades K–12):** [Order on Amazon ($16) ↗](https://link.amazon/B05RFHqeu)
-* **From Blocks to the Stack (SC-6 Elementary Textbook):** [Order on Amazon ($16) ↗](https://link.amazon/B0f5cP0Ur) &bull; [Explore Book Overview](products/sc6-book.md)
-* **Thinking in the Stack (SC-32 Scientific Manual):** [Order on Amazon ($16) ↗](https://link.amazon/B07DqTRR5) &bull; [Hardcover ($28) ↗](https://link.amazon/B09AnTIQI)
-
 ---
 
-## 2. Official Calculator Manuals &amp; Machine-Readable Specs (Print &amp; .JSON)
+## 2. 3D Printable Math Manipulatives on Printables {: #2-individual-manipulative-kit-archives }
 
-Official reference manuals, structured JSON operational datasets, and view-only OpenAPI 3.1 specifications. Our flagship books are available in paperback and hardcover on **Amazon** ([SC-32 Paperback ↗](https://link.amazon/B07DqTRR5) • [SC-32 Hardcover ↗](https://link.amazon/B09AnTIQI) • [SC-6 ↗](https://link.amazon/B0f5cP0Ur) • [Middle School Workbook ↗](https://link.amazon/B07bxzYKq) • [Teacher's Guide ↗](https://link.amazon/B05RFHqeu)).
+All StackCalc 3D models and Gridfinity storage bins are hosted 100% free and open-source on **[Printables](https://www.printables.com/@StackCalc_5593834)**.
 
-<div style="padding: 1rem 1.25rem; border-radius: 10px; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
-  <div>
-    <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #F59E0B; text-transform: uppercase;">FLAGSHIP BOOKS ON AMAZON</span>
-    <p style="margin: 0.2rem 0 0 0; font-size: 0.8rem; color: #CBD5E1;">Order official paperback and hardcover companion books directly on Amazon.</p>
-  </div>
-  <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-    <a href="../products/sc32-calculator/#manual" style="padding: 0.5rem 1rem; border-radius: 6px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-      EXPLORE MANUALS HUB &rarr;
-    </a>
-    <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background: #F59E0B; color: #0F172A; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
-      PRINT BOOKS ON AMAZON ↗
-    </a>
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem; margin-bottom: 2.5rem;">
-
-  <div style="background: #11141A; border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
-    <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #38BDF8; font-weight: 700;">OFFICIAL MANUAL &bull; SC-32</span>
-      <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">SC-32 Scientific Reference Manual ($16)</h3>
-      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Complete operational reference: 4-stack XYZT, numerical solvers (SOLVE, ∫, POLY, TVM), vector plotting engine, and Texas UIL contest speed tactics.</p>
-    </div>
-    <div style="display: flex; gap: 0.5rem;">
-      <a href="../products/sc32-calculator/#manual" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>PREVIEW &amp; TOC &rarr;</span>
-      </a>
-      <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>AMAZON ($16) ↗</span>
-      </a>
-    </div>
-  </div>
-
-  <div style="background: #11141A; border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
-    <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #10B981; font-weight: 700;">OFFICIAL MANUAL &bull; SC-6</span>
-      <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">SC-6 Elementary Companion ($16)</h3>
-      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Classroom and family companion: 4-stack XYZT secret, skip-counting [REP], [÷R] division remainders, concrete math block bridge, and math quiz engine.</p>
-    </div>
-    <div style="display: flex; gap: 0.5rem;">
-      <a href="../products/sc6-book/" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>PREVIEW &amp; TOC &rarr;</span>
-      </a>
-      <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>AMAZON ($16) ↗</span>
-      </a>
-    </div>
-  </div>
-
-  <div style="background: #11141A; border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
-    <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #F59E0B; font-weight: 700;">AI AGENTS &bull; OPENAPI 3.1</span>
-      <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">OpenAPI 3.1 &amp; JSON Datasets</h3>
-      <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">View-only machine-readable specification and structured JSON operation rubrics for AI agents, automated grading, and developer tools.</p>
-    </div>
-    <div style="display: flex; gap: 0.5rem;">
-      <a href="https://github.com/abagher/watch-calc-32" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>GITHUB REPO ↗</span>
-      </a>
-      <a href="https://github.com/abagher/watch-calc-32" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>SOURCE CODE ↗</span>
-      </a>
-    </div>
-  </div>
-
-</div>
-
----
-
-## 3. 3D Printable Math Manipulatives & Hardware on Printables {: #3-individual-manipulative-kit-archives }
-
-All StackCalc 3D models, Gridfinity storage bins, and calculator chassis parts are hosted 100% free and open-source on **[Printables](https://www.printables.com/@StackCalc_5593834)**.
-
-Instead of charging for digital STL downloads or maintaining large ZIP files, we publish pre-sliced multi-plate `.3mf` files (for Prusa, Bambu Lab, and OrcaSlicer) and single-part STLs directly to Printables.
+We publish pre-sliced multi-plate `.3mf` files (for Prusa, Bambu Lab, and OrcaSlicer) and single-part STLs directly to Printables.
 
 <div style="padding: 1.25rem 1.5rem; border-radius: 12px; background: rgba(250, 107, 5, 0.08); border: 1px solid rgba(250, 107, 5, 0.4); margin-bottom: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
   <div>
@@ -315,27 +233,15 @@ Instead of charging for digital STL downloads or maintaining large ZIP files, we
 
 | Instrument | Focus &amp; Grade Level | Gridfinity Envelope | 3D Model Destination |
 | :--- | :--- | :--- | :--- |
-| **Place Value Studio &amp; Regrouping Trays** | Grades 1–5 &bull; Place Value &amp; Decimals | 3x1 Bin + Snap Lid | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
 | **Fraction Studio Proportional Towers** | Grades 3–8 &bull; Equivalence &amp; Decimals | 3x1 Bin + Workbench Lid | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Prime Factor Studio &amp; Factor Towers** | Grades 3–9 &bull; Factorization &amp; Logarithms | 3x1x13U Bin + Slide Stage | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Ten-Frame Dual Stage &amp; Carry Shelf** | Grades K–3 &bull; Base-10 &amp; Regrouping | 3x1 Bin + 2U Carry Cube | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Counting Tiles &amp; Planar Array Studio** | Grades K–6 &bull; Cardinality, Arrays &amp; Maps | 3x1 Bin + 12-Tile Lid | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Math Domino Studio &amp; 12-Frame Set** | Grades Pre-K–4 &bull; Doubles &amp; Pips | 3x1 Bin + Doubling Lid | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Sectional Classroom Planetary Clock** | Grades K–5 &bull; 12:1 Gear Kinematics | 2x1 Stand + Quadrants | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Algebra Factoring Studio &amp; Tiles** | Grades 7–12 &bull; Quadratic Factoring | 3x1 Bin + 90° Area Stage | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Probability Dice &amp; Spinner Pack** | Grades 4–12 &bull; Dial Distributions | 1x1 Modular Pocket Bin | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Unit Circle Trigonometry Volvelle** | Grades 9–12 &bull; Degree/Radian Apertures | Pocket Dual-Disc Assembly | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
-| **SC-6 Quest Scoreboard &amp; +10 Token Kit** | Grades K–8 &bull; Multi-Method Mastery (`?`) | 3x1x7U Open Bin + Scoreboard | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Modular Stands &amp; Desk Pouches** | All Grades &bull; 3-in-1 Puzzle Stands | 1x1 &amp; 2x1 Desktop Stands | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
-| **SC-32 Hardware Chassis &amp; Keycaps** | Makers &bull; Tool-Free Dovetail Chassis | 5-Minute Snap Enclosure | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Prime Factor Studio &amp; Factor Towers** | Grades 3–9 &bull; Factorization &amp; Logarithms | 3x1x7U Bin + Slide Stage | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Place Value Studio &amp; Regrouping Trays** | Grades 1–5 &bull; Place Value &amp; Decimals | 3x1 Bin + Snap Lid | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
 
 ---
 
 ## Don't Have a 3D Printer?
 
 For schools, teachers, or parents who don't have access to a 3D printer:
+- **Order Complete Kits on Etsy:** Handcrafted 3D-printed manipulative block sets ship with durable Snapfinity storage bins: [Etsy Storefront (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
 - **Order On-Demand from Slant 3D:** Our official manufacturing partner produces matching replacement parts, individual block refills, and classroom sets on industrial additive manufacturing farms: [Slant 3D Portal ↗](https://teleportpod.com/portals/profile/StackCalc)
-- **Order Handcrafted 3D-Printed Manipulative & Hardware Kits on Etsy:** Handcrafted 3D-printed manipulative block kits and pre-soldered calculator hardware kits ship within 48 hours: [Etsy Storefront (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
-- **Order Official Print Books on Amazon:** Flagship textbooks and workbooks are on Amazon for SC-32 ([Paperback ↗](https://link.amazon/B07DqTRR5) • [Hardcover ↗](https://link.amazon/B09AnTIQI)), [SC-6 ↗](https://link.amazon/B0f5cP0Ur), the [Middle School Math Blocks Workbook ↗](https://link.amazon/B07bxzYKq), and the [Teacher's Curriculum Guide ↗](https://link.amazon/B05RFHqeu).
-- **Follow Hardware Build Logs on Hackaday:** For KiCad PCB schematics, RP2350 silicon bring-up, and engineering discussion: [Hackaday Project ↗](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)
-- **Replacement Parts & Refills:** Visit our [Etsy Storefront](https://stackcalcmath.etsy.com) for spare trays and block refills.
+- **Follow Engineering Build Logs on Hackaday:** For hardware build logs, manipulative tolerances, and manufacturing bring-up: [Hackaday Project ↗](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)
