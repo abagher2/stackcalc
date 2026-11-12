@@ -3623,11 +3623,11 @@
 <pre class="mermaid"><code>flowchart TD
     Order["Incoming Workbook Order"] --&gt; Branch{"Order Type"}
 
-    Branch --&gt;|"Standalone Workbook (SC-BOOK-01)"| POD["Pathway A: Lulu Direct POD Drop-Ship"]
+    Branch --&gt;|"Standalone Workbook (SC-BOOK-01)"| POD["Pathway A: Automated POD Drop-Ship"]
     Branch --&gt;|"Tactile Kit Bundle (*-BNDL)"| Bench["Pathway B: Packing Bench Buffer (SHELF-BOOK-01)"]
-    Branch --&gt;|"District Bulk Order (10-30+ copies)"| Bulk["Pathway C: Bulk POD Run (Mixam / Lulu)"]
+    Branch --&gt;|"District Bulk Order (10-30+ copies)"| Bulk["Pathway C: Bulk POD Run"]
 
-    POD --&gt; POD1["Automated Lulu Direct API / xPress"]
+    POD --&gt; POD1["Automated POD Direct API"]
     POD1 --&gt; POD2["Zero local touch • Shipped in 24-48h"]
     POD2 --&gt; POD3["Digital PDF license link emailed to customer"]
 
@@ -3658,7 +3658,7 @@
     actor District as School District / Teacher
     participant Hub as StackCalc Procurement Desk
     participant Farm as Farm Tracker / Slant 3D API
-    participant POD as Lulu / Mixam POD
+    participant POD as Commercial POD Partner
     actor Office as School Front Office (Attn: Teacher)
 
     District-&gt;&gt;Hub: Submit PO Document (Web Quote STK-PO-xxxx or Direct PO)
@@ -3679,7 +3679,7 @@
 <li><strong>24-Hour Vendor Onboarding SLA:</strong> Signed IRS Form W-9, EFT/ACH Direct Deposit authorizations, and FERPA/Texas DIR compliance statements are dispatched within 24 business hours of request.</li>
 <li><strong>Zero-Inventory Production Scalability:</strong></li>
 <li><strong>Class Packs (1–15 Units):</strong> Scheduled through the in-house Prusa MK4S sprint queue.</li>
-<li><strong>District Fleets (16–100+ Units):</strong> Tactile Gridfinity trays and components are routed directly to <strong>Slant 3D's distributed farm API</strong>, while spiral workbooks drop-ship in volume via Mixam or Lulu.</li>
+<li><strong>District Fleets (16–100+ Units):</strong> Tactile Gridfinity trays and components are routed directly to <strong>Slant 3D's distributed farm API</strong>, while companion workbooks drop-ship in volume via commercial print-on-demand.</li>
 <li><strong>Perpetual District Reproduction License (<code>DIST-LIC-PERPETUAL</code>):</strong> Includes perpetual multi-teacher reproduction rights, internal LMS hosting (Canvas, Google Classroom), and all 20 CRA unit answer keys.</li>
 <li><strong>Farm Tracker Integration:</strong> Operators can review institutional protocols and Net-30 remittance procedures via:
   <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3<span class="w"> </span>Tools/farm_tracker.py<span class="w"> </span>playbook<span class="w"> </span>district
