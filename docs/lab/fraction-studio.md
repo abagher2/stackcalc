@@ -37,31 +37,34 @@ hide:
       <div class="vlab-palette-bar">
         <span class="vlab-palette-label">FRACTION BLOCKS:</span>
         <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/1',n:1,d:1,mm:84.0,cls:'frac-1-1'})">
-          <span class="vlab-block-chip" style="background:#334155;"></span> 1/1
+          <span class="vlab-block-chip" style="background:#D49459; border: 1px solid #B37B42;"></span> 1/1
         </button>
         <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/2',n:1,d:2,mm:42.0,cls:'frac-1-2'})">
-          <span class="vlab-block-chip" style="background:#0284C7;"></span> 1/2
+          <span class="vlab-block-chip" style="background:#D49459; border: 1px solid #B37B42;"></span> 1/2
         </button>
         <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/3',n:1,d:3,mm:28.0,cls:'frac-1-3'})">
-          <span class="vlab-block-chip" style="background:#059669;"></span> 1/3
+          <span class="vlab-block-chip" style="background:#FF5F2D; border: 1px solid #E04B1D;"></span> 1/3
         </button>
         <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/4',n:1,d:4,mm:21.0,cls:'frac-1-4'})">
-          <span class="vlab-block-chip" style="background:#D97706;"></span> 1/4
+          <span class="vlab-block-chip" style="background:#1D4ED8; border: 1px solid #3B82F6;"></span> 1/4
         </button>
         <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/5',n:1,d:5,mm:16.8,cls:'frac-1-5'})">
-          <span class="vlab-block-chip" style="background:#7C3AED;"></span> 1/5
+          <span class="vlab-block-chip" style="background:#FFFFFF; border: 1px solid #CBD5E1;"></span> 1/5
         </button>
         <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/6',n:1,d:6,mm:14.0,cls:'frac-1-6'})">
-          <span class="vlab-block-chip" style="background:#E11D48;"></span> 1/6
+          <span class="vlab-block-chip" style="background:#FF5F2D; border: 1px solid #E04B1D;"></span> 1/6
         </button>
         <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/8',n:1,d:8,mm:10.5,cls:'frac-1-8'})">
-          <span class="vlab-block-chip" style="background:#0891B2;"></span> 1/8
+          <span class="vlab-block-chip" style="background:#1D4ED8; border: 1px solid #3B82F6;"></span> 1/8
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/9',n:1,d:9,mm:9.33,cls:'frac-1-9'})">
+          <span class="vlab-block-chip" style="background:#FF5F2D; border: 1px solid #E04B1D;"></span> 1/9
         </button>
         <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/10',n:1,d:10,mm:8.4,cls:'frac-1-10'})">
-          <span class="vlab-block-chip" style="background:#0D9488;"></span> 1/10
+          <span class="vlab-block-chip" style="background:#FFFFFF; border: 1px solid #CBD5E1;"></span> 1/10
         </button>
         <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/12',n:1,d:12,mm:7.0,cls:'frac-1-12'})">
-          <span class="vlab-block-chip" style="background:#4F46E5;"></span> 1/12
+          <span class="vlab-block-chip" style="background:#1D4ED8; border: 1px solid #3B82F6;"></span> 1/12
         </button>
       </div>
 

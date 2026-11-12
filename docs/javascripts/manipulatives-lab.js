@@ -171,8 +171,15 @@
   };
 
   const primeLookupColors = {
-    2: '#0284C7', 3: '#10B981', 5: '#F59E0B', 7: '#8B5CF6',
-    11: '#EC4899', 13: '#06B6D4', 17: '#E11D48', 19: '#F97316', 23: '#64748B'
+    2: '#1D4ED8', // PLA Matte Blue
+    3: '#FF5F2D', // PLA Matte Muted Red
+    5: '#FFFFFF', // PLA White
+    7: '#D49459', // PLA Tan
+    11: '#F5C211', // PLA Yellow
+    13: '#F5C211',
+    17: '#F5C211',
+    19: '#F5C211',
+    23: '#F5C211'
   };
 
   function formatPrimeFormula(list) {
@@ -218,7 +225,7 @@
     };
   }
 
-  // Standard fraction palette definitions
+  // Standard fraction palette definitions (Matching Slant 3D Physical Kits)
   const PALETTE_FRAC = {
     1: { label: '1/1', n: 1, d: 1, mm: 84.0, cls: 'frac-1-1' },
     2: { label: '1/2', n: 1, d: 2, mm: 42.0, cls: 'frac-1-2' },
@@ -227,6 +234,7 @@
     5: { label: '1/5', n: 1, d: 5, mm: 16.8, cls: 'frac-1-5' },
     6: { label: '1/6', n: 1, d: 6, mm: 14.0, cls: 'frac-1-6' },
     8: { label: '1/8', n: 1, d: 8, mm: 10.5, cls: 'frac-1-8' },
+    9: { label: '1/9', n: 1, d: 9, mm: 9.33, cls: 'frac-1-9' },
     10: { label: '1/10', n: 1, d: 10, mm: 8.4, cls: 'frac-1-10' },
     12: { label: '1/12', n: 1, d: 12, mm: 7.0, cls: 'frac-1-12' }
   };
@@ -262,18 +270,18 @@
       set comparatorY(v) { this.stackY = v; }
     },
 
-    // Prime Factor Studio Specific State (PRIME-01)
+    // Prime Factor Studio Specific State (PRIME-01 Slant 3D Eratosthenes Palette)
     primes: {
       palette: [
-        { p: 2, label: '[2]', mm: 18.0, color: '#0284C7' },
-        { p: 3, label: '[3]', mm: 28.5, color: '#10B981' },
-        { p: 5, label: '[5]', mm: 41.8, color: '#F59E0B' },
-        { p: 7, label: '[7]', mm: 50.7, color: '#8B5CF6' },
-        { p: 11, label: '[11]', mm: 62.4, color: '#EC4899' },
-        { p: 13, label: '[13]', mm: 66.8, color: '#06B6D4' },
-        { p: 17, label: '[17]', mm: 73.6, color: '#E11D48' },
-        { p: 19, label: '[19]', mm: 76.5, color: '#F97316' },
-        { p: 23, label: '[23]', mm: 81.3, color: '#64748B' }
+        { p: 2, label: '[2]', mm: 18.0, color: '#1D4ED8' },
+        { p: 3, label: '[3]', mm: 28.5, color: '#FF5F2D' },
+        { p: 5, label: '[5]', mm: 41.8, color: '#FFFFFF' },
+        { p: 7, label: '[7]', mm: 50.7, color: '#D49459' },
+        { p: 11, label: '[11]', mm: 62.4, color: '#F5C211' },
+        { p: 13, label: '[13]', mm: 66.8, color: '#F5C211' },
+        { p: 17, label: '[17]', mm: 73.6, color: '#F5C211' },
+        { p: 19, label: '[19]', mm: 76.5, color: '#F5C211' },
+        { p: 23, label: '[23]', mm: 81.3, color: '#F5C211' }
       ],
       stackX: [],       // Prime blocks in Register X (Column 1 - Active Entry)
       stackY: [],       // Prime blocks in Register Y (Column 2 - Saved Stack)
@@ -909,11 +917,25 @@
       } else {
         state.primes.stackX.forEach((p, idx) => {
           const blk = document.createElement('div');
-          blk.className = 'prime-block-2d-vert';
+          const pClass = p === 2 ? 'prime-p-2' : (p === 3 ? 'prime-p-3' : (p === 5 ? 'prime-p-5' : (p === 7 ? 'prime-p-7' : 'prime-p-higher')));
+          blk.className = `prime-block-2d-vert ${pClass}`;
           const mm = primeLookupMm[p] || 20;
           // Scale: 2=36px, 3=54px, 5=78px, 7=96px, etc.
           blk.style.height = `${Math.max(28, mm * 1.8)}px`;
-          blk.style.backgroundColor = primeLookupColors[p] || '#0284C7';
+          blk.style.backgroundColor = primeLookupColors[p] || (p >= 11 ? '#F5C211' : '#1D4ED8');
+          if (p === 5 || p >= 11) {
+            blk.style.color = '#0F172A';
+            blk.style.border = p === 5 ? '1px solid #CBD5E1' : '1px solid #D5B50E';
+          } else if (p === 7) {
+            blk.style.color = '#FFFFFF';
+            blk.style.border = '1px solid #B37B42';
+          } else if (p === 3) {
+            blk.style.color = '#FFFFFF';
+            blk.style.border = '1px solid #E04B1D';
+          } else {
+            blk.style.color = '#FFFFFF';
+            blk.style.border = '1px solid #3B82F6';
+          }
           blk.setAttribute('title', 'Tap to remove prime block');
           blk.innerHTML = `<span style="font-size:1.15em; font-weight:800;">${p}</span>`;
           blk.onclick = (e) => {
@@ -955,10 +977,24 @@
         const prodY = getPrimeProduct(state.primes.stackY);
         state.primes.stackY.forEach((p, idx) => {
           const blk = document.createElement('div');
-          blk.className = 'prime-block-2d-vert';
+          const pClass = p === 2 ? 'prime-p-2' : (p === 3 ? 'prime-p-3' : (p === 5 ? 'prime-p-5' : (p === 7 ? 'prime-p-7' : 'prime-p-higher')));
+          blk.className = `prime-block-2d-vert ${pClass}`;
           const mm = primeLookupMm[p] || 20;
           blk.style.height = `${Math.max(28, mm * 1.8)}px`;
-          blk.style.backgroundColor = primeLookupColors[p] || '#0284C7';
+          blk.style.backgroundColor = primeLookupColors[p] || (p >= 11 ? '#F5C211' : '#1D4ED8');
+          if (p === 5 || p >= 11) {
+            blk.style.color = '#0F172A';
+            blk.style.border = p === 5 ? '1px solid #CBD5E1' : '1px solid #D5B50E';
+          } else if (p === 7) {
+            blk.style.color = '#FFFFFF';
+            blk.style.border = '1px solid #B37B42';
+          } else if (p === 3) {
+            blk.style.color = '#FFFFFF';
+            blk.style.border = '1px solid #E04B1D';
+          } else {
+            blk.style.color = '#FFFFFF';
+            blk.style.border = '1px solid #3B82F6';
+          }
           blk.setAttribute('title', 'Tap to remove prime block from saved stack');
           blk.innerHTML = `<span style="font-size:1.15em; font-weight:800;">${p}</span>`;
           blk.onclick = (e) => {

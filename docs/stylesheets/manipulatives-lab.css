@@ -411,17 +411,33 @@
   font-size: 0.95rem;
 }
 
-/* Colors for Fraction Blocks (Matching Physical Kits) */
-.frac-1-1  { background: #334155; border: 1px solid #94A3B8; }
-.frac-1-2  { background: #0284C7; border: 1px solid #38BDF8; }
-.frac-1-3  { background: #059669; border: 1px solid #34D399; }
-.frac-1-4  { background: #D97706; border: 1px solid #FBBF24; }
-.frac-1-5  { background: #7C3AED; border: 1px solid #A78BFA; }
-.frac-1-6  { background: #E11D48; border: 1px solid #FB7185; }
-.frac-1-8  { background: #0891B2; border: 1px solid #22D3EE; }
-.frac-1-10 { background: #0D9488; border: 1px solid #2DD4BF; }
-.frac-1-12 { background: #4F46E5; border: 1px solid #818CF8; }
-.frac-custom { background: #475569; border: 1px solid #94A3B8; }
+/* Colors for Fraction Blocks (Matching Slant 3D Physical Kits) */
+/* PLA Tan (#D49459): Base-2 Unit Wholes and Halves */
+.frac-1-1  { background: #D49459; border: 1px solid #B37B42; color: #FFFFFF; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+.frac-1-2  { background: #D49459; border: 1px solid #B37B42; color: #FFFFFF; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+
+/* PLA Matte Blue (#1D4ED8): Base-4 Binary Family */
+.frac-1-4  { background: #1D4ED8; border: 1px solid #3B82F6; color: #FFFFFF; }
+.frac-1-8  { background: #1D4ED8; border: 1px solid #3B82F6; color: #FFFFFF; }
+.frac-1-12 { background: #1D4ED8; border: 1px solid #3B82F6; color: #FFFFFF; }
+
+/* PLA Matte Muted Red (#FF5F2D): Base-3 Ternary Family */
+.frac-1-3  { background: #FF5F2D; border: 1px solid #E04B1D; color: #FFFFFF; }
+.frac-1-6  { background: #FF5F2D; border: 1px solid #E04B1D; color: #FFFFFF; }
+.frac-1-9  { background: #FF5F2D; border: 1px solid #E04B1D; color: #FFFFFF; }
+
+/* PLA White (#FFFFFF): Base-5 Decimal Family */
+.frac-1-5  { background: #FFFFFF; border: 1px solid #CBD5E1; color: #0F172A !important; font-weight: 900; }
+.frac-1-10 { background: #FFFFFF; border: 1px solid #CBD5E1; color: #0F172A !important; font-weight: 900; }
+
+.frac-custom { background: #475569; border: 1px solid #94A3B8; color: #FFFFFF; }
+
+/* Colors for Prime Blocks (Matching Slant 3D Eratosthenes Palette) */
+.prime-p-2      { background-color: #1D4ED8 !important; border: 1px solid #3B82F6 !important; color: #FFFFFF !important; }
+.prime-p-3      { background-color: #FF5F2D !important; border: 1px solid #E04B1D !important; color: #FFFFFF !important; }
+.prime-p-5      { background-color: #FFFFFF !important; border: 1px solid #CBD5E1 !important; color: #0F172A !important; }
+.prime-p-7      { background-color: #D49459 !important; border: 1px solid #B37B42 !important; color: #FFFFFF !important; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+.prime-p-higher { background-color: #F5C211 !important; border: 1px solid #D5B50E !important; color: #0F172A !important; }
 
 /* --- 2D Proportional Prime Vertical Modular Rods (PRIME-01) --- */
 .prime-block-2d-vert {
