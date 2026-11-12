@@ -234,7 +234,6 @@ The Place Value Studio makes positional notation physical through dual 6x2 activ
     </div>
     <div style="display: flex; flex-direction: column; gap: 0.4rem; min-width: 175px;">
       <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.5rem 0.9rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD 3MF ↗</a>
-      <a href="../products/place-value/" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">SPECS &amp; LESSONS →</a>
       <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(241, 100, 30, 0.12); border: 1px solid rgba(241, 100, 30, 0.3); color: #f1641e; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">ORDER ON ETSY ↗</a>
       <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: #CBD5E1; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">REFILLS ON SLANT 3D ↗</a>
     </div>
@@ -375,7 +374,6 @@ The Ten-Frame Studio uses two modular 2x5 recessed grid stages and 40 tactile de
     </div>
     <div style="display: flex; flex-direction: column; gap: 0.4rem; min-width: 175px;">
       <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.5rem 0.9rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD 3MF ↗</a>
-      <a href="../products/ten-frames/" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">SPECS &amp; LESSONS →</a>
       <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(241, 100, 30, 0.12); border: 1px solid rgba(241, 100, 30, 0.3); color: #f1641e; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">ORDER ON ETSY ↗</a>
       <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: #CBD5E1; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">REFILLS ON SLANT 3D ↗</a>
     </div>
@@ -418,7 +416,6 @@ Rote multiplication tables on flashcards teach children that math is about rapid
     </div>
     <div style="display: flex; flex-direction: column; gap: 0.4rem; min-width: 175px;">
       <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.5rem 0.9rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD 3MF ↗</a>
-      <a href="../products/counting-tiles/" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">SPECS &amp; LESSONS →</a>
       <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(241, 100, 30, 0.12); border: 1px solid rgba(241, 100, 30, 0.3); color: #f1641e; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">ORDER ON ETSY ↗</a>
       <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: #CBD5E1; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">REFILLS ON SLANT 3D ↗</a>
     </div>
@@ -462,7 +459,6 @@ This set features 28 Double-Six MathBlock dominoes with deep debossed pips that 
     </div>
     <div style="display: flex; flex-direction: column; gap: 0.4rem; min-width: 175px;">
       <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.5rem 0.9rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD 3MF ↗</a>
-      <a href="../products/math-dominoes/" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">SPECS &amp; LESSONS →</a>
       <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(241, 100, 30, 0.12); border: 1px solid rgba(241, 100, 30, 0.3); color: #f1641e; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">ORDER ON ETSY ↗</a>
       <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: #CBD5E1; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">REFILLS ON SLANT 3D ↗</a>
     </div>
@@ -504,7 +500,6 @@ We engineered an authentic 12:1 epicyclic planetary gear train directly into a 2
     </div>
     <div style="display: flex; flex-direction: column; gap: 0.4rem; min-width: 175px;">
       <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.5rem 0.9rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD 3MF ↗</a>
-      <a href="../products/classroom-clock/" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">SPECS &amp; LESSONS →</a>
       <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(241, 100, 30, 0.12); border: 1px solid rgba(241, 100, 30, 0.3); color: #f1641e; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">ORDER ON ETSY ↗</a>
       <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: #CBD5E1; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">REFILLS ON SLANT 3D ↗</a>
     </div>
@@ -550,7 +545,6 @@ Archimedean algebra tiles transform abstract quadratic factoring into solving a 
     </div>
     <div style="display: flex; flex-direction: column; gap: 0.4rem; min-width: 175px;">
       <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.5rem 0.9rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD 3MF ↗</a>
-      <a href="../products/algebra-boxes/" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">SPECS &amp; LESSONS →</a>
       <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(241, 100, 30, 0.12); border: 1px solid rgba(241, 100, 30, 0.3); color: #f1641e; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">ORDER ON ETSY ↗</a>
       <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: #CBD5E1; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">REFILLS ON SLANT 3D ↗</a>
     </div>
@@ -594,7 +588,6 @@ Most school plastic spinners snag on plastic friction burrs, yielding biased res
     </div>
     <div style="display: flex; flex-direction: column; gap: 0.4rem; min-width: 175px;">
       <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.5rem 0.9rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD 3MF ↗</a>
-      <a href="../products/dice-and-spinner/" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">SPECS &amp; LESSONS →</a>
       <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(241, 100, 30, 0.12); border: 1px solid rgba(241, 100, 30, 0.3); color: #f1641e; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">ORDER ON ETSY ↗</a>
       <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: #CBD5E1; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">REFILLS ON SLANT 3D ↗</a>
     </div>
@@ -639,7 +632,6 @@ The Unit Circle Volvelle turns trigonometry into a precision rotating slide deco
     </div>
     <div style="display: flex; flex-direction: column; gap: 0.4rem; min-width: 175px;">
       <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.5rem 0.9rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD 3MF ↗</a>
-      <a href="../products/unit-circle-volvelle/" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">SPECS &amp; LESSONS →</a>
       <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(241, 100, 30, 0.12); border: 1px solid rgba(241, 100, 30, 0.3); color: #f1641e; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">ORDER ON ETSY ↗</a>
       <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: #CBD5E1; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">REFILLS ON SLANT 3D ↗</a>
     </div>
@@ -678,7 +670,6 @@ The SC-6 Quest Scoreboard is designed as the classroom companion to our 120 stat
     </div>
     <div style="display: flex; flex-direction: column; gap: 0.4rem; min-width: 175px;">
       <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.5rem 0.9rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD 3MF ↗</a>
-      <a href="../products/quest-scoreboard/" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">SPECS &amp; LESSONS →</a>
       <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(241, 100, 30, 0.12); border: 1px solid rgba(241, 100, 30, 0.3); color: #f1641e; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">ORDER ON ETSY ↗</a>
       <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: #CBD5E1; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">REFILLS ON SLANT 3D ↗</a>
     </div>
@@ -718,7 +709,6 @@ A 4-piece interlocking puzzle stand that snaps together in 10 seconds with zero 
     </div>
     <div style="display: flex; flex-direction: column; gap: 0.4rem; min-width: 175px;">
       <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.5rem 0.9rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">DOWNLOAD 3MF ↗</a>
-      <a href="../products/stands-and-pouches/" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); color: #38BDF8; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">SPECS &amp; LESSONS →</a>
       <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(241, 100, 30, 0.12); border: 1px solid rgba(241, 100, 30, 0.3); color: #f1641e; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">ORDER ON ETSY ↗</a>
       <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: #CBD5E1; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; text-decoration: none;">REFILLS ON SLANT 3D ↗</a>
     </div>
@@ -840,11 +830,11 @@ The SC-6 Elementary Calculator chassis is an ultra-rugged, drop-proof handheld e
 ---
 
 <div class="mt-8 pt-6 border-t border-mask/20 flex flex-wrap gap-4 font-mono text-xs text-mask">
-    <a href="parts.md" class="hover:text-accentCyan font-bold">&larr; REPLACEMENT PARTS DIRECTORY</a>
+    <a href="../products/" class="hover:text-accentCyan font-bold">&larr; PRODUCTS CATALOG</a>
     <span class="text-mask/40">·</span>
-    <a href="products.md" class="hover:text-accentCyan font-bold">MASTER PRODUCT CATALOG</a>
+    <a href="../learning-lab/" class="hover:text-accentCyan font-bold">LEARNING LAB</a>
     <span class="text-mask/40">·</span>
-    <a href="curriculum/index.md" class="hover:text-accentCyan font-bold">CURRICULUM &amp; STANDARDS</a>
+    <a href="../downloads/" class="hover:text-accentCyan font-bold">DOWNLOADS</a>
     <span class="text-mask/40">·</span>
-    <a href="index.md" class="hover:text-icyblue">HOME</a>
+    <a href="../" class="hover:text-icyblue">HOME</a>
 </div>

@@ -146,8 +146,8 @@ hide:
           <a href="../../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf" download class="text-xs font-bold text-amber-400 hover:text-amber-300">
             Middle School Workbook (PDF) &darr;
           </a>
-          <a href="../../curriculum/teacher-guide/" class="text-xs font-bold text-emerald-400 hover:text-emerald-300">
-            Teacher Guide &rarr;
+          <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-emerald-400 hover:text-emerald-300">
+            Teacher Guide (Amazon) ↗
           </a>
         </div>
       </div>

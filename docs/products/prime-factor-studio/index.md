@@ -219,7 +219,7 @@ hide:
           <span>Video Lessons</span>
           <span class="text-sky-400">&darr;</span>
         </a>
-        <a href="../../lab/prime-factor-studio/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
+        <a href="../../learning-lab/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
           <span>2D Interactive Lab</span>
           <span class="text-emerald-400">&rarr;</span>
         </a>
@@ -277,7 +277,7 @@ hide:
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/prime-factor-studio-hero.png">
-            <source src="/assets/videos/prime-factor-lesson-fundamental.mp4" type="video/mp4">
+            <source src="../../assets/videos/prime-factor-lesson-fundamental.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
           <span class="absolute top-3 left-3 bg-cyan-500/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">1. CURRICULUM LESSON 01</span>
@@ -298,7 +298,7 @@ hide:
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/prime-factor-studio-hero.png">
-            <source src="/assets/videos/prime-factor-lesson-lcm-gcd.mp4" type="video/mp4">
+            <source src="../../assets/videos/prime-factor-lesson-lcm-gcd.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
           <span class="absolute top-3 left-3 bg-amber-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">2. CURRICULUM LESSON 02</span>
@@ -319,7 +319,7 @@ hide:
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/prime-factor-studio-hero.png">
-            <source src="/assets/videos/prime-factor-lesson-factorization.mp4" type="video/mp4">
+            <source src="../../assets/videos/prime-factor-lesson-factorization.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
           <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. CURRICULUM LESSON 03</span>
@@ -341,16 +341,16 @@ hide:
     <!-- Reference Card Download Callout -->
     <div class="ec-feature-card bg-slate-900/40 border border-slate-800 rounded-xl p-5 mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-4">
-        <img src="/assets/reference_cards/reference_card_PRIME-01_paper.png" alt="PRIME-01 Card" class="w-24 h-auto rounded border border-slate-700 shadow" />
+        <img src="../../assets/reference_cards/reference_card_PRIME-01_paper.png" alt="PRIME-01 Card" class="w-24 h-auto rounded border border-slate-700 shadow" />
         <div>
           <h4 class="text-sm font-bold text-slate-100">Archival Reference &amp; Video QR Card (135&times;90mm)</h4>
           <p class="text-xs text-slate-400">Included inside every box. Scan Side B to jump straight to this animated video lesson portal or inspect Side A for replacement part dimensions.</p>
         </div>
       </div>
       <div class="flex flex-wrap gap-2">
-        <a href="/assets/reference_cards/reference_card_PRIME-01_paper.png" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-200 rounded border border-slate-700 transition">View Front (Side A)</a>
-        <a href="/assets/reference_cards/reference_card_PRIME-01_back_paper.png" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-cyan-950 hover:bg-cyan-900 text-xs font-mono text-cyan-300 rounded border border-cyan-800 transition">View Back (QR Side B)</a>
-        <a href="/downloads/packing_bench_cards.html" class="px-3 py-1.5 bg-emerald-950 hover:bg-emerald-900 text-xs font-mono text-emerald-300 rounded border border-emerald-800 transition">Print Duplex Sheet</a>
+        <a href="../../assets/reference_cards/reference_card_PRIME-01_paper.png" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-200 rounded border border-slate-700 transition">View Front (Side A)</a>
+        <a href="../../assets/reference_cards/reference_card_PRIME-01_back_paper.png" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-cyan-950 hover:bg-cyan-900 text-xs font-mono text-cyan-300 rounded border border-cyan-800 transition">View Back (QR Side B)</a>
+        <a href="../../downloads/packing_bench_cards.html" class="px-3 py-1.5 bg-emerald-950 hover:bg-emerald-900 text-xs font-mono text-emerald-300 rounded border border-emerald-800 transition">Print Duplex Sheet</a>
       </div>
     </div>
   </section>
@@ -478,7 +478,7 @@ hide:
     <div>
       <div class="ec-ecosystem-title">Part of the StackCalc Math Learning Ecosystem</div>
       <p class="ec-ecosystem-desc">
-        Prime Factor Studio models the Fundamental Theorem of Arithmetic and logarithmic geometry for elementary through middle school classrooms. It integrates natively with the dedicated <code>[FACT]</code> and prime factoring algorithms on our <a href="../sc6-elementary/" class="text-sky-400 hover:underline">SC-6 Elementary</a> and <a href="../sc32-calculator/" class="text-sky-400 hover:underline">SC-32 Scientific</a> calculators. Explore complete lesson modules in our <a href="../../curriculum/worksheets/" class="text-amber-400 hover:underline">120 Classroom Station Worksheets</a> and order on-demand precision refills at the <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Slant 3D Replacement Parts Center ↗</a>.
+        Prime Factor Studio models the Fundamental Theorem of Arithmetic and logarithmic geometry for elementary through middle school classrooms. It integrates natively with the dedicated <code>[FACT]</code> and prime factoring algorithms on our <a href="../sc6-elementary/" class="text-sky-400 hover:underline">SC-6 Elementary</a> and <a href="../sc32-calculator/" class="text-sky-400 hover:underline">SC-32 Scientific</a> calculators. Explore complete lesson modules in our <a href="../../downloads/#1-classroom-curriculum--competition-downloads-pdf" class="text-amber-400 hover:underline">120 Classroom Station Worksheets</a> and order on-demand precision refills at the <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Slant 3D Replacement Parts Center ↗</a>.
       </p>
     </div>
   </div>

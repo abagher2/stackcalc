@@ -115,7 +115,7 @@ Free downloadable teaching guides, pre-generated station companions, competition
       <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
         <span>ORDER ON AMAZON ($16) ↗</span>
       </a>
-      <a href="downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+      <a href="StackCalc-Book-3-Middle-School-Math-Lab.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
         <span>DOWNLOAD PDF &darr;</span>
       </a>
     </div>
@@ -128,8 +128,8 @@ Free downloadable teaching guides, pre-generated station companions, competition
       <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Timed sprint curriculum modeled on Texas UIL tournament calculation rounds with self-check answer keys and stack tactics.</p>
     </div>
     <div style="display: flex; gap: 0.5rem;">
-      <a href="curriculum/uil-competition/" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>TOURNAMENT SPRINTS &rarr;</span>
+      <a href="stackcalc-curriculum-sample-v0.2.0.pdf" download style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        <span>DOWNLOAD SPRINTS (PDF) &darr;</span>
       </a>
     </div>
   </div>
@@ -190,7 +190,7 @@ Free downloadable teaching guides, pre-generated station companions, competition
       <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 191, 0, 0.15); border: 1px solid #FFBF00; color: #FFBF00; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
         <span>Teacher Guide ($16) ↗</span>
       </a>
-      <a href="downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf" download style="flex: 1.2; text-align: center; padding: 0.5rem 0.2rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
+      <a href="StackCalc-Book-3-Middle-School-Math-Lab.pdf" download style="flex: 1.2; text-align: center; padding: 0.5rem 0.2rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
         <span>PDF (128 pp.) &darr;</span>
       </a>
     </div>
@@ -202,7 +202,7 @@ Free downloadable teaching guides, pre-generated station companions, competition
       <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Curriculum &amp; Learning Lab</h3>
       <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Cross-reference matrix matching every StackCalc tool and key sequence to Bridges, Big Ideas, Singapore Dimensions, and CCSS.</p>
     </div>
-    <a href="learning-lab/" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+    <a href="../learning-lab/" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
       <span>EXPLORE LEARNING LAB &rarr;</span>
     </a>
   </div>
@@ -230,7 +230,7 @@ Official reference manuals, structured JSON operational datasets, and view-only 
     <p style="margin: 0.2rem 0 0 0; font-size: 0.8rem; color: #CBD5E1;">Order official paperback and hardcover companion books directly on Amazon.</p>
   </div>
   <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-    <a href="manuals/" style="padding: 0.5rem 1rem; border-radius: 6px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+    <a href="../products/sc32-calculator/#manual" style="padding: 0.5rem 1rem; border-radius: 6px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
       EXPLORE MANUALS HUB &rarr;
     </a>
     <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1rem; border-radius: 6px; background: #F59E0B; color: #0F172A; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
@@ -248,7 +248,7 @@ Official reference manuals, structured JSON operational datasets, and view-only 
       <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Complete operational reference: 4-stack XYZT, numerical solvers (SOLVE, ∫, POLY, TVM), vector plotting engine, and Texas UIL contest speed tactics.</p>
     </div>
     <div style="display: flex; gap: 0.5rem;">
-      <a href="manuals/#sc-32-scientific" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+      <a href="../products/sc32-calculator/#manual" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
         <span>PREVIEW &amp; TOC &rarr;</span>
       </a>
       <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
@@ -264,7 +264,7 @@ Official reference manuals, structured JSON operational datasets, and view-only 
       <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Classroom and family companion: 4-stack XYZT secret, skip-counting [REP], [÷R] division remainders, concrete math block bridge, and math quiz engine.</p>
     </div>
     <div style="display: flex; gap: 0.5rem;">
-      <a href="manuals/#sc-6-elementary" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+      <a href="../products/sc6-book/" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
         <span>PREVIEW &amp; TOC &rarr;</span>
       </a>
       <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
@@ -280,11 +280,11 @@ Official reference manuals, structured JSON operational datasets, and view-only 
       <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">View-only machine-readable specification and structured JSON operation rubrics for AI agents, automated grading, and developer tools.</p>
     </div>
     <div style="display: flex; gap: 0.5rem;">
-      <a href="api/openapi.json" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>OPENAPI &darr;</span>
+      <a href="https://github.com/abagher/watch-calc-32" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(245, 158, 11, 0.15); border: 1px solid #F59E0B; color: #F59E0B; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        <span>GITHUB REPO ↗</span>
       </a>
-      <a href="api/" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        <span>API DOCS &rarr;</span>
+      <a href="https://github.com/abagher/watch-calc-32" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; padding: 0.5rem 0.25rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        <span>SOURCE CODE ↗</span>
       </a>
     </div>
   </div>
@@ -309,7 +309,7 @@ Instead of charging for digital STL downloads or maintaining large ZIP files, we
   </div>
   <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
     <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="padding: 0.75rem 1.25rem; border-radius: 6px; background-color: #FA6B05; color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700; text-decoration: none; white-space: nowrap; box-shadow: 0 4px 14px rgba(250, 107, 5, 0.4);">DOWNLOAD ON PRINTABLES ↗</a>
-    <a href="printables.md" style="padding: 0.75rem 1.25rem; border-radius: 6px; background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700; text-decoration: none; white-space: nowrap;">MAKERSPACE KITS GUIDE &rarr;</a>
+    <a href="../printables/" style="padding: 0.75rem 1.25rem; border-radius: 6px; background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700; text-decoration: none; white-space: nowrap;">MAKERSPACE KITS GUIDE &rarr;</a>
   </div>
 </div>
 

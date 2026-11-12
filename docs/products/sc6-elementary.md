@@ -237,7 +237,7 @@ hide:
         <strong style="color: #38BDF8; font-family: 'Space Mono', monospace; font-size: 0.8rem; text-transform: uppercase;">CLASSROOM TEACHER CURRICULUM MANUAL</strong>
         <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #CBD5E1;">Explore complete lesson modules, stack register diagrams, and classroom challenge cards for the SC-6.</p>
       </div>
-      <a href="../../curriculum/rpn-elementary-guide/" style="padding: 0.5rem 1rem; border-radius: 6px; background: #38BDF8; color: #020617; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none; white-space: nowrap;">READ RPN POWER GUIDE &rarr;</a>
+      <a href="../../downloads/stackcalc-curriculum-sample-v0.2.0.pdf" style="padding: 0.5rem 1rem; border-radius: 6px; background: #38BDF8; color: #020617; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none; white-space: nowrap;">READ RPN POWER GUIDE &rarr;</a>
     </div>
   </section>
 
@@ -254,7 +254,7 @@ hide:
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/sc6-elementary-hero.png">
-            <source src="/assets/videos/sc6-lesson-remainder.mp4" type="video/mp4">
+            <source src="../../assets/videos/sc6-lesson-remainder.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
           <span class="absolute top-3 left-3 bg-cyan-500/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">1. CURRICULUM LESSON 01</span>
@@ -275,7 +275,7 @@ hide:
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/sc6-elementary-hero.png">
-            <source src="/assets/videos/sc6-lesson-simplification.mp4" type="video/mp4">
+            <source src="../../assets/videos/sc6-lesson-simplification.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
           <span class="absolute top-3 left-3 bg-amber-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">2. CURRICULUM LESSON 02</span>
@@ -296,7 +296,7 @@ hide:
       <div class="ec-video-wrapper border border-slate-700/80 rounded-xl overflow-hidden bg-slate-900/60 shadow-lg flex flex-col">
         <div class="ec-video-player relative">
           <video controls playsinline preload="metadata" poster="../../assets/renders/sc6-elementary-hero.png">
-            <source src="/assets/videos/sc6-lesson-skip-counting.mp4" type="video/mp4">
+            <source src="../../assets/videos/sc6-lesson-skip-counting.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
           <span class="absolute top-3 left-3 bg-emerald-400/90 text-slate-950 text-[10px] font-mono font-bold px-2 py-0.5 rounded shadow">3. CURRICULUM LESSON 03</span>
@@ -318,15 +318,15 @@ hide:
     <!-- Curriculum Guide Callout -->
     <div class="ec-feature-card bg-slate-900/40 border border-slate-800 rounded-xl p-5 mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-4">
-        <img src="/assets/learning-lab-teacher-guide.png" alt="RPN Elementary Power Guide" class="w-24 h-auto rounded border border-slate-700 shadow" />
+        <img src="../../assets/learning-lab-teacher-guide.png" alt="RPN Elementary Power Guide" class="w-24 h-auto rounded border border-slate-700 shadow" />
         <div>
           <h4 class="text-sm font-bold text-slate-100">SC-6 RPN Elementary Power Guide &amp; Challenge Cards</h4>
           <p class="text-xs text-slate-400">Includes 24 quick-start challenge cards, 4-stack XYZT register flowcharts, and 30-second misconception diagnostics for teachers.</p>
         </div>
       </div>
       <div class="flex flex-wrap gap-2">
-        <a href="/curriculum/rpn-elementary-guide/" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-200 rounded border border-slate-700 transition">Read RPN Power Guide &rarr;</a>
-        <a href="/curriculum/worksheets/" class="px-3 py-1.5 bg-cyan-950 hover:bg-cyan-900 text-xs font-mono text-cyan-300 rounded border border-cyan-800 transition">Print Station Lab Sheets &rarr;</a>
+        <a href="../../downloads/stackcalc-curriculum-sample-v0.2.0.pdf" download class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-200 rounded border border-slate-700 transition">Read RPN Power Guide &rarr;</a>
+        <a href="../../downloads/#1-classroom-curriculum--competition-downloads-pdf" class="px-3 py-1.5 bg-cyan-950 hover:bg-cyan-900 text-xs font-mono text-cyan-300 rounded border border-cyan-800 transition">Curriculum Downloads &rarr;</a>
       </div>
     </div>
   </section>
@@ -479,62 +479,62 @@ hide:
 
     <div class="cross-sell-grid">
 
-      <!-- Cross-Sell 1: Ten-Frames Studio -->
-      <div class="cross-sell-card">
-        <div>
-          <img src="../../assets/renders/ten-frames-hero.png" alt="Ten-Frames Studio" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">Ten-Frames Studio Trays</h3>
-          <p class="cross-sell-card-desc">
-            Dual-tier 10-well tactile trays with 20 double-sided bicolor counters. Teaches five-and-ten structures, skip-counting, and base-10 regrouping.
-          </p>
-        </div>
-        <div>
-          <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$36.00</span>
-            <span class="text-xs font-mono text-cyan-400">Tactile Trays</span>
-          </div>
-          <a href="/products/ten-frames/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
-            View Ten-Frames &rarr;
-          </a>
-        </div>
-      </div>
-
-      <!-- Cross-Sell 2: Fraction Studio -->
+      <!-- Cross-Sell 1: Fraction Studio -->
       <div class="cross-sell-card">
         <div>
           <img src="../../assets/renders/fraction-studio-hero.png" alt="Fraction Studio" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">Fraction Studio Proportional Towers</h3>
+          <h3 class="cross-sell-card-title">Fraction Studio</h3>
           <p class="cross-sell-card-desc">
             Precision 84.0mm datum towers covering binary, ternary, and decimal subdivisions with debossed fraction markings and self-correcting alignment.
           </p>
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$48.00</span>
+            <span class="cross-sell-price">.00</span>
             <span class="text-xs font-mono text-amber-400">Proportional Heights</span>
           </div>
-          <a href="/products/fraction-studio/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
+          <a href="../fraction-studio/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
             View Fraction Studio &rarr;
           </a>
         </div>
       </div>
 
-      <!-- Cross-Sell 3: Curriculum Workbook & Decks -->
+      <!-- Cross-Sell 2: Prime Factor Studio -->
       <div class="cross-sell-card">
         <div>
-          <img src="../../assets/learning-lab-teacher-guide.png" alt="Curriculum Workbook" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">36-Page Spiral Student Workbook</h3>
+          <img src="../../assets/renders/etsy/prime-factor-studio-real-staircase-iso-hero-tight.jpg" alt="Prime Factor Studio" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">Prime Factor Studio</h3>
           <p class="cross-sell-card-desc">
-            Features 20 dedicated laboratory investigations with step-by-step CRA worksheets, tactile token diagrams, teacher diagnostic notes, and full solutions key.
+            Tactile prime number towers with snap-fit blocks. Visualizes prime factorization, LCM, GCD, and the fundamental theorem of arithmetic.
           </p>
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$24.00</span>
-            <span class="text-xs font-mono text-cyan-400">Print + Digital</span>
+            <span class="cross-sell-price">.00</span>
+            <span class="text-xs font-mono text-emerald-400">Standalone Kit</span>
           </div>
-          <a href="/products/curriculum-and-decks/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
-            View Workbook &amp; Decks &rarr;
+          <a href="../prime-factor-studio/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
+            View Prime Factor Studio &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Cross-Sell 3: SC-32 Scientific Calculator -->
+      <div class="cross-sell-card">
+        <div>
+          <img src="../../assets/renders/sc32-craftsmanship-pureblack.png" alt="SC-32 Scientific Calculator" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">SC-32 Scientific Calculator</h3>
+          <p class="cross-sell-card-desc">
+            Flagship 4-register RPN calculator for middle school through college STEM. Pure anodized aluminum faceplate, 680mAh USB-C battery.
+          </p>
+        </div>
+        <div>
+          <div class="cross-sell-price-row">
+            <span class="cross-sell-price">.00</span>
+            <span class="text-xs font-mono text-cyan-400">Flagship Hardware</span>
+          </div>
+          <a href="../sc32-calculator/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
+            Explore SC-32 &rarr;
           </a>
         </div>
       </div>
@@ -559,7 +559,7 @@ hide:
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6 font-mono text-xs">
-        <a href="/curriculum/uil-competition/#3-elementary-school-division-grades-36-sc-6-calculator" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-400 transition flex flex-col justify-between group">
+        <a href="../../downloads/#1-classroom-curriculum--competition-downloads-pdf" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-400 transition flex flex-col justify-between group">
           <div>
             <strong class="text-white group-hover:text-emerald-400 block mb-1">🏆 Elementary UIL Sprints</strong>
             <span class="text-[11px] text-slate-400">Download Grade 3, 4, 5 &amp; 6 contest test booklets and official 3-sig-fig scoring keys.</span>
@@ -567,7 +567,7 @@ hide:
           <span class="text-emerald-400 font-bold mt-3 block">&rarr; Practice Sprints</span>
         </a>
 
-        <a href="/curriculum/worksheets/" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400 transition flex flex-col justify-between group">
+        <a href="../../downloads/#1-classroom-curriculum--competition-downloads-pdf" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400 transition flex flex-col justify-between group">
           <div>
             <strong class="text-white group-hover:text-cyan-400 block mb-1">📝 120 Station Worksheets</strong>
             <span class="text-[11px] text-slate-400">Form A &amp; Form B guides for Singapore Dimensions, Bridges, and Big Ideas Math.</span>
@@ -575,7 +575,7 @@ hide:
           <span class="text-cyan-400 font-bold mt-3 block">&rarr; Station Guides</span>
         </a>
 
-        <a href="/curriculum/alignment-matrix/" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-amber-400 transition flex flex-col justify-between group">
+        <a href="../../downloads/#3-hardware-reference-manuals-cheat-sheets-pdf" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-amber-400 transition flex flex-col justify-between group">
           <div>
             <strong class="text-white group-hover:text-amber-400 block mb-1">🎯 Standards Matrix</strong>
             <span class="text-[11px] text-slate-400">Chapter-by-chapter pacing for early numeracy, fractions, and modulo-60 time.</span>
@@ -583,7 +583,7 @@ hide:
           <span class="text-amber-400 font-bold mt-3 block">&rarr; View Matrix</span>
         </a>
 
-        <a href="/curriculum/teacher-guide/" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400 transition flex flex-col justify-between group">
+        <a href="../sc6-book/" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400 transition flex flex-col justify-between group">
           <div>
             <strong class="text-white group-hover:text-purple-400 block mb-1">🧑‍🏫 Teacher Guide</strong>
             <span class="text-[11px] text-slate-400">Step-by-step simplification protocols, tactile station rotations, and diagnostics.</span>
@@ -596,7 +596,7 @@ hide:
         <div class="text-slate-400 text-[11px]">
           Perpetual Reproduction License &bull; Free Classroom Photocopy Rights
         </div>
-        <a href="/downloads/stackcalc-curriculum-sample-v0.2.0.pdf" download class="px-4 py-2 rounded bg-white/10 hover:bg-white/20 text-white font-bold transition flex items-center gap-1.5">
+        <a href="../../downloads/stackcalc-curriculum-sample-v0.2.0.pdf" download class="px-4 py-2 rounded bg-white/10 hover:bg-white/20 text-white font-bold transition flex items-center gap-1.5">
           <span>Download 36-Page Curriculum Sample (.PDF)</span>
           <span>&darr;</span>
         </a>
@@ -652,7 +652,7 @@ hide:
     <div>
       <div class="ec-ecosystem-title">Part of the StackCalc Math Learning Ecosystem</div>
       <p class="ec-ecosystem-desc">
-        The SC-6 is the entry point into tactile mathematical reasoning. It works harmoniously with our <a href="fraction-studio/" class="text-sky-400 hover:underline">Fraction Studio</a> and <a href="ten-frames/" class="text-sky-400 hover:underline">Ten-Frames</a> manipulatives, preparing young learners for the flagship <a href="sc32-calculator/" class="text-sky-400 hover:underline">SC-32 Scientific Calculator</a> when they reach middle school. Explore complete lesson modules in our <a href="../curriculum/worksheets/" class="text-amber-400 hover:underline">120 Classroom Station Worksheets</a> and order on-demand precision refills at the <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Slant 3D Replacement Parts Center ↗</a>.
+        The SC-6 is the entry point into tactile mathematical reasoning. It works harmoniously with our <a href="../fraction-studio/" class="text-sky-400 hover:underline">Fraction Studio</a> and <a href="../prime-factor-studio/" class="text-sky-400 hover:underline">Prime Factor Studio</a> manipulatives, preparing young learners for the flagship <a href="../sc32-calculator/" class="text-sky-400 hover:underline">SC-32 Scientific Calculator</a> when they reach middle school. Explore complete lesson modules in our <a href="../../downloads/#1-classroom-curriculum--competition-downloads-pdf" class="text-amber-400 hover:underline">Classroom Curriculum Downloads (PDF)</a> and order on-demand precision refills at the <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Slant 3D Replacement Parts Center ↗</a>.
       </p>
     </div>
   </div>
