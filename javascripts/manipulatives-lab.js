@@ -1327,16 +1327,16 @@
   function renderPlaceValue() {
     const keys = [100, 10, 1, 0.1, 0.01, 0.001];
 
-    const blockSpecs = {
-      100: { name: 'Hundreds Flat (100)', cls: 'pv-block-100', label: '100' },
-      10: { name: 'Tens Rod (10)', cls: 'pv-block-10', label: '10' },
-      1: { name: 'Unit Cube (1)', cls: 'pv-block-1', label: '1' },
-      0.1: { name: 'Tenths Strip (.1)', cls: 'pv-block-0-1', label: '.1' },
-      0.01: { name: 'Hundredths Tile (.01)', cls: 'pv-block-0-01', label: '.01' },
-      0.001: { name: 'Thousandths Token (.001)', cls: 'pv-block-0-001', label: '' }
+    const colNames = {
+      100: 'Hundreds Flat (H)',
+      10: 'Tens Rod (T)',
+      1: 'Ones Unit (O)',
+      0.1: 'Tenths (t)',
+      0.01: 'Hundredths (h)',
+      0.001: 'Thousandths (th)'
     };
 
-    // 1. Render Top Carry Shelf (+1 Regroup Tokens)
+    // 1. Render Top Carry Shelf (+1 Regroup Tokens & 10 Borrow Tokens)
     keys.forEach(k => {
       const socketCarry = document.getElementById(`pv-socket-carry-${k}`);
       if (socketCarry) {
@@ -1344,9 +1344,9 @@
         const carryCount = state.placeValue.carryCounts[k] || 0;
         for (let i = 0; i < carryCount; i++) {
           const blk = document.createElement('div');
-          blk.className = 'pv-block pv-block-carry';
+          blk.className = 'pv-block pv-token-carry pv-block-carry';
           blk.textContent = '+1';
-          blk.title = `Carried +1 token in [${k}] (tap to trade)`;
+          blk.title = `Stackable +1 Addition Carry Token in [${k}] (tap to trade into active row)`;
           blk.onclick = (e) => {
             e.stopPropagation();
             state.placeValue.carryCounts[k]--;
@@ -1360,7 +1360,7 @@
       }
     });
 
-    // 2. Render Row 1: Waiting Shelf / Register Y (Top Addend / Minuend)
+    // 2. Render Row 1: Waiting Shelf / Register Y (Top Addend / Minuend - PLA White Digits)
     keys.forEach(k => {
       const socketY = document.getElementById(`pv-socket-y-${k}`);
       if (socketY) {
@@ -1371,12 +1371,12 @@
           }
         };
         const count = state.placeValue.row1Counts[k] || 0;
-        const spec = blockSpecs[k];
-        for (let i = 0; i < count; i++) {
+        if (count > 0) {
           const blk = document.createElement('div');
-          blk.className = `pv-block ${spec.cls}`;
-          blk.textContent = spec.label;
-          blk.title = `Row 1: ${spec.name} (tap to remove)`;
+          const isOverflow = count >= 10;
+          blk.className = `pv-block pv-digit-tile pv-digit-white pv-block-${String(k).replace('.', '-')}${isOverflow ? ' pv-digit-overflow' : ''}`;
+          blk.textContent = count;
+          blk.title = `White Digit Block [${count}] in ${colNames[k]} (tap to remove)`;
           blk.onclick = (e) => {
             e.stopPropagation();
             removePvBlock(1, k);
@@ -1386,7 +1386,7 @@
       }
     });
 
-    // 3. Render Row 2: Active Desk / Register X (Bottom Addend / Subtrahend)
+    // 3. Render Row 2: Active Desk / Register X (Bottom Addend / Subtrahend - Slate Blue Digits)
     keys.forEach(k => {
       const socketX = document.getElementById(`pv-socket-x-${k}`) || document.getElementById(`pv-socket-${k}`);
       if (socketX) {
@@ -1397,7 +1397,6 @@
           }
         };
         const count = state.placeValue.row2Counts[k] || 0;
-        const spec = blockSpecs[k];
 
         if (count >= 10) {
           socketX.classList.add('has-carry');
@@ -1405,11 +1404,12 @@
           socketX.classList.remove('has-carry');
         }
 
-        for (let i = 0; i < count; i++) {
+        if (count > 0) {
           const blk = document.createElement('div');
-          blk.className = `pv-block ${spec.cls}`;
-          blk.textContent = spec.label;
-          blk.title = `Row 2: ${spec.name} (tap to remove)`;
+          const isOverflow = count >= 10;
+          blk.className = `pv-block pv-digit-tile pv-digit-blue pv-block-${String(k).replace('.', '-')}${isOverflow ? ' pv-digit-overflow' : ''}`;
+          blk.textContent = count;
+          blk.title = `Blue-Gray Digit Block [${count}] in ${colNames[k]} (tap to remove)`;
           blk.onclick = (e) => {
             e.stopPropagation();
             removePvBlock(2, k);
@@ -1624,6 +1624,29 @@
     });
 
     // Place-Value Palette Click-to-Add Buttons
+    const pvDigitBtns = document.querySelectorAll('[data-pv-digit]');
+    pvDigitBtns.forEach(btn => {
+      btn.onclick = () => {
+        const digit = parseInt(btn.getAttribute('data-pv-digit'), 10);
+        changePvCount('1', digit - (state.placeValue.row2Counts[1] || 0), 2);
+      };
+    });
+
+    const pvTokenBtns = document.querySelectorAll('[data-pv-token]');
+    pvTokenBtns.forEach(btn => {
+      btn.onclick = () => {
+        const token = btn.getAttribute('data-pv-token');
+        if (token === 'carry') {
+          state.placeValue.carryCounts[10] = (state.placeValue.carryCounts[10] || 0) + 1;
+          playSuccess();
+          checkPvRegroup();
+          renderAll();
+        } else if (token === 'borrow') {
+          unbundlePv();
+        }
+      };
+    });
+
     const pvPaletteBtns = document.querySelectorAll('[data-pv-palette]');
     pvPaletteBtns.forEach(btn => {
       btn.onclick = () => {
