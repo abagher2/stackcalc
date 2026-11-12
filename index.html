@@ -412,26 +412,26 @@
                 <div class="lg:col-span-5 flex flex-col items-center relative">
                     
                     <!-- Showcase Mode Selector (Sleek Segmented Instrument Toolbar) -->
-                    <div class="w-full max-w-[440px] bg-[#11141A] p-1 rounded-xl border border-white/10 grid grid-cols-3 gap-1 mb-3 font-mono text-[11px] select-none">
-                        <button type="button" class="hero-tab-btn active" id="hero-tab-fraction" onclick="switchHeroShowcase('fraction')">FRACTION</button>
+                    <div class="w-full max-w-[440px] bg-[#11141A] p-1 rounded-xl border border-white/10 grid grid-cols-4 gap-1 mb-3 font-mono text-[11px] select-none">
+                        <button type="button" class="hero-tab-btn active" id="hero-tab-sc32" onclick="switchHeroShowcase('sc32')">SC-32</button>
+                        <button type="button" class="hero-tab-btn" id="hero-tab-fraction" onclick="switchHeroShowcase('fraction')">FRACTION</button>
                         <button type="button" class="hero-tab-btn" id="hero-tab-prime" onclick="switchHeroShowcase('prime')">PRIME</button>
                         <button type="button" class="hero-tab-btn" id="hero-tab-place-value" onclick="switchHeroShowcase('place-value')">PLACE VALUE</button>
                     </div>
 
                     <!-- Viewport 1: High-Resolution Studio Render Photography -->
                     <div id="hero-render-viewport" class="w-full max-w-[440px] aspect-square rounded-2xl overflow-hidden border border-white/15 bg-[#11141A] shadow-2xl relative">
-                        <img id="hero-main-photo" src="assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg" alt="Fraction Studio Proportional Towers" class="w-full h-full object-cover">
+                        <img id="hero-main-photo" src="assets/renders/sc32-hero-keynote.png" alt="StackCalc SC-32 Scientific RPN Calculator" class="w-full h-full object-cover">
                         
                         <div class="absolute bottom-3 left-3 right-3 p-3 rounded-lg bg-black/85 backdrop-blur-md border border-white/10 flex items-center justify-between gap-3 shadow-xl">
                             <div class="min-w-0 flex-1">
-                                <div id="hero-photo-title" class="font-mono text-xs sm:text-sm font-bold text-white leading-tight truncate">Fraction Studio Towers</div>
-                                <div id="hero-photo-price" class="font-mono text-xs text-slate-300 mt-0.5">$24.99 – $48.00</div>
+                                <div id="hero-photo-title" class="font-mono text-xs sm:text-sm font-bold text-white leading-tight truncate">StackCalc SC-32 Scientific RPN</div>
+                                <div id="hero-photo-price" class="font-mono text-xs text-slate-300 mt-0.5">$89.00 &bull; Maker Edition</div>
                             </div>
                             <div class="flex items-center gap-2 shrink-0">
-                                <a id="hero-photo-link" href="products/fraction-studio/" class="px-2.5 py-1.5 rounded border border-white/20 hover:border-white text-white font-mono text-[11px] font-bold transition">Explore</a>
+                                <a id="hero-photo-link" href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 rounded border border-white/20 hover:border-white text-white font-mono text-[11px] font-bold transition">Build Log ↗</a>
                                 <a id="hero-photo-buy" href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded bg-white hover:bg-slate-200 text-slate-950 font-mono text-[11px] font-bold transition flex items-center gap-1">
-                                    <span id="hero-photo-btn-text">Order $24.99+</span>
-                                    <span>↗</span>
+                                    <span id="hero-photo-btn-text">Etsy Store ↗</span>
                                 </a>
                             </div>
                         </div>
@@ -961,13 +961,38 @@
                 <div class="flex items-center justify-between gap-4 mb-8">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono text-xs text-slate-300">
                         <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                        <span>3 LAUNCHED STUDIOS AVAILABLE NOW</span>
+                        <span>CALCULATORS &bull; TACTILE STUDIOS</span>
                     </div>
-                    <span class="font-mono text-xs text-slate-400 hidden sm:inline">ETSY &bull; PRINTABLES &bull; SLANT 3D</span>
+                    <span class="font-mono text-xs text-slate-400 hidden sm:inline">ETSY &bull; PRINTABLES &bull; SLANT 3D &bull; HACKADAY</span>
                 </div>
 
                 <!-- Product Showcase Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="home-product-grid">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="home-product-grid">
+
+                    <!-- 1. SC-32 Scientific RPN Calculator -->
+                    <article class="home-product-card" data-cat="calc">
+                        <div class="home-card-viewport">
+                            <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/renders/sc32-hero-keynote.png" alt="StackCalc SC-32 Scientific RPN Calculator" loading="eager" decoding="async">
+                            </a>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div>
+                                <span class="font-mono text-[10px] text-amber-400 font-bold uppercase tracking-wider block mb-1">OPEN HARDWARE &bull; SC-32</span>
+                                <h3 class="font-bold text-lg text-white mb-2"><a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" target="_blank" rel="noopener noreferrer" class="hover:text-white">SC-32 Scientific RPN</a></h3>
+                                <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                                    Tactile Reverse Polish Notation calculator with RP2350 dual-core silicon, mechanical switches, 4-line operational stack, and zero-radio exam compliance.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
+                                <span class="font-mono text-base font-bold text-white">$89.00</span>
+                                <div class="flex gap-2">
+                                    <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold rounded transition">Build Log ↗</a>
+                                    <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#f1641e] hover:bg-[#d95315] text-white font-mono text-xs font-bold rounded transition">Etsy ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
 
                     <!-- 1. Fraction Studio Proportional Towers -->
                     <article class="home-product-card" data-cat="manip">
@@ -2209,28 +2234,57 @@
             renderCalcStack();
         }
 
+        function calcClear() {
+            calcClx();
+        }
+
+        function calcReset() {
+            calcState.t = 0;
+            calcState.z = 0;
+            calcState.y = 0;
+            calcState.x = 0;
+            calcState.isEntering = false;
+            calcState.inputBuffer = '0';
+            renderCalcStack();
+        }
+
         // Hero Showcase Switcher Data
         const showcaseData = {
+            'sc32': {
+                title: 'StackCalc SC-32 Scientific RPN',
+                price: '$89.00 • Maker Edition',
+                detailsLink: 'https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator',
+                detailsText: 'Build Log ↗',
+                buyLink: 'https://stackcalcmath.etsy.com',
+                buyText: 'Etsy Store ↗',
+                src: 'assets/renders/sc32-hero-keynote.png'
+            },
             'fraction': {
                 title: 'Fraction Studio Towers',
                 price: '$24.99 – $48.00',
-                btnText: 'Order $24.99+',
-                src: 'assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg',
-                link: 'products/fraction-studio/'
+                detailsLink: 'products/fraction-studio/',
+                detailsText: 'Kit Specs →',
+                buyLink: 'https://stackcalcmath.etsy.com',
+                buyText: 'Order $24.99+ ↗',
+                src: 'assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg'
             },
             'prime': {
                 title: 'Prime Factor Studio',
                 price: '$46.00',
-                btnText: 'Order $46',
-                src: 'assets/renders/etsy/prime-factor-studio-real-staircase-iso-hero-tight.jpg',
-                link: 'products/prime-factor-studio/'
+                detailsLink: 'products/prime-factor-studio/',
+                detailsText: 'Kit Specs →',
+                buyLink: 'https://stackcalcmath.etsy.com',
+                buyText: 'Order $46 ↗',
+                src: 'assets/renders/etsy/prime-factor-studio-real-staircase-iso-hero-tight.jpg'
             },
             'place-value': {
                 title: 'Place Value Studio',
                 price: '$38.00',
-                btnText: 'Order $38',
-                src: 'assets/renders/etsy/place-value-studio-real-overview-hero-tight.jpg',
-                link: 'products/place-value/'
+                detailsLink: 'products/place-value/',
+                detailsText: 'Kit Specs →',
+                buyLink: 'https://stackcalcmath.etsy.com',
+                buyText: 'Order $38 ↗',
+                src: 'assets/renders/etsy/place-value-studio-real-overview-hero-tight.jpg'
             }
         };
 
@@ -2248,12 +2302,24 @@
                 if (img) img.src = data.src;
                 const titleEl = document.getElementById('hero-photo-title');
                 if (titleEl) titleEl.textContent = data.title;
-                const linkEl = document.getElementById('hero-photo-link');
-                if (linkEl) linkEl.href = data.link;
                 const priceEl = document.getElementById('hero-photo-price');
                 if (priceEl) priceEl.textContent = data.price;
+                const linkEl = document.getElementById('hero-photo-link');
+                if (linkEl) {
+                    linkEl.href = data.detailsLink || data.link;
+                    linkEl.textContent = data.detailsText || 'Details →';
+                    if ((data.detailsLink || '').startsWith('http')) {
+                        linkEl.setAttribute('target', '_blank');
+                        linkEl.setAttribute('rel', 'noopener noreferrer');
+                    } else {
+                        linkEl.removeAttribute('target');
+                        linkEl.removeAttribute('rel');
+                    }
+                }
+                const buyEl = document.getElementById('hero-photo-buy');
+                if (buyEl) buyEl.href = data.buyLink || 'https://stackcalcmath.etsy.com';
                 const btnTextEl = document.getElementById('hero-photo-btn-text');
-                if (btnTextEl) btnTextEl.textContent = data.btnText;
+                if (btnTextEl) btnTextEl.textContent = data.buyText || data.btnText || 'Etsy Store ↗';
             }
         }
 
@@ -2575,7 +2641,7 @@
                 </div>
             </body>
             </html>
-            \`;
+            `;
 
             const printWindow = window.open('', '_blank', 'width=880,height=960');
             if (printWindow) {
