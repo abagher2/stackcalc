@@ -3325,6 +3325,102 @@ $<span class="arithmatex">\(\xi_{\text{osm}} = i \cdot m = \frac{\Delta T_f}{K_f
 </table>
 <p>Lucas places a clean glass weighing boat onto the balance pan, presses the tare bar to zero the display, and spatulas exactly <span class="arithmatex">\(7.3054\text{ g}\)</span> of <span class="arithmatex">\(\text{NaCl}\)</span> and <span class="arithmatex">\(3.0284\text{ g}\)</span> of Tris base into a <span class="arithmatex">\(400\text{ mL}\)</span> beaker with <span class="arithmatex">\(180\text{ mL}\)</span> of Milli-Q water. Once dissolved, he transfers the clear solution into a <span class="arithmatex">\(250.0\text{ mL}\)</span> Class A volumetric flask, brings it precisely to the graduation mark, stoppers the neck, and inverts it twenty times to complete the primary stock.</p>
 <hr />
+<h3 id="rapid-element-lookup-and-iupac-standard-atomic-weights-z">Rapid Element Lookup and IUPAC Standard Atomic Weights ([Z])</h3>
+<p>Before assembling complex organic reagents or inorganic salts, the chemist frequently needs the precise IUPAC standard atomic weight of an individual element. Striking the primary key <code>[Z]</code> (Row 1, Column 3) with an integer atomic number <span class="arithmatex">\(Z \in [1, 118]\)</span> in Register X recalls the standard atomic weight directly from the calculator's internal periodic table ledger without requiring alphanumeric entry:
+- <strong>Carbon (<span class="arithmatex">\(Z = 6\)</span>):</strong> <code>6</code> [Z] <span class="arithmatex">\(\to \mathbf{12.011\text{ g/mol}}\)</span>
+- <strong>Sodium (<span class="arithmatex">\(Z = 11\)</span>):</strong> <code>11</code> [Z] <span class="arithmatex">\(\to \mathbf{22.990\text{ g/mol}}\)</span>
+- <strong>Chlorine (<span class="arithmatex">\(Z = 17\)</span>):</strong> <code>17</code> [Z] <span class="arithmatex">\(\to \mathbf{35.453\text{ g/mol}}\)</span>
+- <strong>Copper (<span class="arithmatex">\(Z = 29\)</span>):</strong> <code>29</code> [Z] <span class="arithmatex">\(\to \mathbf{63.546\text{ g/mol}}\)</span></p>
+<p>Summing atomic weights on the operational stack allows rapid stoichiometric synthesis: entering <code>11</code> [Z] <code>17</code> [Z] [+] evaluates the molar mass of sodium chloride (<span class="arithmatex">\(M(\text{NaCl}) = 22.990 + 35.453 = \mathbf{58.443\text{ g/mol}}\)</span>). Striking <code>[Z]</code> with <span class="arithmatex">\(X = 0\)</span> (or tapping <code>[FML]</code> in the <code>[MW]</code> workspace) enters Chemical Formula Mode (<code>FML: _</code>) to parse multi-atom compounds and hydrates.</p>
+<hr />
+<h3 id="beyond-molar-mass-multi-step-reaction-stoichiometry-limiting-reactants-and-isolation-yield">Beyond Molar Mass: Multi-Step Reaction Stoichiometry, Limiting Reactants, and Isolation Yield</h3>
+<p>A common misconception is that Formula Mode (<code>FML</code>) serves merely as an electronic molecular weight table. In reality, once a compound is parsed in <code>FML</code>, its molar mass <span class="arithmatex">\(M\)</span> and stoichiometric atom counts are latched into engine memory (<code>activeChemFormulaMolarMass</code> and variable <code>M</code>), transforming the calculator into a real-time stoichiometric engine:
+1. <strong>Direct Mole and Mass Conversions (<code>▸mol</code> / <code>▸g</code>):</strong> With an active formula, the unit conversion keys <code>[g] [▸mol]</code> (Row 6, Col 3 Blue) and <code>[f] [▸g]</code> (Row 6, Col 3 Yellow) convert weighed grams directly into chemical moles (<span class="arithmatex">\(n = W / M\)</span>) and target moles back into balance grams (<span class="arithmatex">\(W = n \cdot M\)</span>).
+2. <strong>Concentration Scaling (<code>▸M</code> / <code>▸g/L</code>):</strong> The concentration converters <code>[f] [▸M]</code> (Row 5, Col 2 Yellow) and <code>[g] [▸g/L]</code> (Row 5, Col 2 Blue) transpose solution mass concentration (<span class="arithmatex">\(\text{g/L}\)</span>) to molarity (<span class="arithmatex">\(\text{mol/L}\)</span>) and vice versa.
+3. <strong>Hydrate Water and Elemental Mass Auditing (<code>w/w</code>):</strong> Striking <code>[f] [w/w]</code> (Row 1, Col 4 Yellow) immediately audits the mass percentage of crystallization water in hydrates, or follows an element lookup (<code>&lt;Z&gt;</code> [Z] [f] [w/w]) to evaluate that element's stoichiometric mass percentage in the active compound.
+4. <strong>Live Reference Ledger (<code>▦</code>):</strong> Pressing the reference table key <code>[g] [▦]</code> (Row 3, Col 3 Blue) displays the active compound's complete elemental breakdown, molar mass, and percentage composition.
+5. <strong>Limiting Reactant Determination and Isolation Yield (<code>%Y</code>):</strong> Comparing reacting moles across stoichiometric coefficients reveals the limiting reactant on the stack, computes theoretical product yield, and audits actual percent yield (<code>[f] [%Y]</code>, Row 2, Col 5 Yellow):
+   $<span class="arithmatex">\(\%Y = \frac{\text{Actual Isolated Mass}}{\text{Theoretical Mass}} \times 100\%\)</span>$</p>
+<p>Consider an authentic laboratory synthesis: Dr. Cross and Lucas synthesize <strong>aspirin</strong> (acetylsalicylic acid, <span class="arithmatex">\(\text{C}_9\text{H}_8\text{O}_4\)</span>, <span class="arithmatex">\(M = 180.159\text{ g/mol}\)</span>) by reacting salicylic acid (<span class="arithmatex">\(\text{C}_7\text{H}_6\text{O}_3\)</span>, <span class="arithmatex">\(M = 138.122\text{ g/mol}\)</span>) with acetic anhydride (<span class="arithmatex">\(\text{C}_4\text{H}_6\text{O}_3\)</span>, <span class="arithmatex">\(M = 102.089\text{ g/mol}\)</span>, density <span class="arithmatex">\(\rho = 1.082\text{ g/mL}\)</span>):</p>
+<div class="arithmatex">\[\text{C}_7\text{H}_6\text{O}_3 + \text{C}_4\text{H}_6\text{O}_3 \xrightarrow{\text{H}_2\text{SO}_4} \text{C}_9\text{H}_8\text{O}_4 + \text{C}_2\text{H}_4\text{O}_2\]</div>
+<p>Lucas weighs <span class="arithmatex">\(W_1 = 3.000\text{ g}\)</span> of salicylic acid and dispenses <span class="arithmatex">\(V_2 = 5.00\text{ mL}\)</span> of acetic anhydride:
+1. <strong>Salicylic Acid Moles:</strong> Parsing <code>C7H6O3</code> in <code>FML</code> yields <span class="arithmatex">\(M_1 = 138.122\text{ g/mol}\)</span>. Converting <span class="arithmatex">\(3.000\text{ g}\)</span> via <code>3.000</code> [ENTER] <code>138.122</code> [÷] yields <span class="arithmatex">\(n_1 = \mathbf{0.02172\text{ mol}}\)</span>.
+2. <strong>Acetic Anhydride Moles:</strong> Mass is <span class="arithmatex">\(5.00\text{ mL} \times 1.082\text{ g/mL} = 5.410\text{ g}\)</span>. Parsing <code>C4H6O3</code> yields <span class="arithmatex">\(M_2 = 102.089\text{ g/mol}\)</span>. Converting mass to moles yields <span class="arithmatex">\(n_2 = 5.410 / 102.089 = \mathbf{0.05299\text{ mol}}\)</span>.
+3. <strong>Limiting Reactant Identification:</strong> Because the stoichiometry is <span class="arithmatex">\(1:1\)</span>, salicylic acid (<span class="arithmatex">\(0.02172\text{ mol}\)</span>) is the limiting reactant; acetic anhydride is in excess (<span class="arithmatex">\(0.05299 &gt; 0.02172\)</span>).
+4. <strong>Theoretical Yield:</strong> The theoretical maximum yield is <span class="arithmatex">\(n_{\text{theor}} = 0.02172\text{ mol}\)</span> of aspirin. Parsing product <code>C9H8O4</code> gives <span class="arithmatex">\(M_{\text{prod}} = 180.159\text{ g/mol}\)</span>. Multiplying <span class="arithmatex">\(0.02172 \times 180.159\)</span> evaluates the theoretical yield: <span class="arithmatex">\(W_{\text{theor}} = \mathbf{3.9130\text{ g}}\)</span>.
+5. <strong>Isolation and Percent Yield:</strong> After quenching with cold water, crystallizing on ice, Buchner funnel filtration, and desiccator drying, the analytical balance reads <span class="arithmatex">\(W_{\text{actual}} = 3.425\text{ g}\)</span> of white needle crystals. Staging <span class="arithmatex">\(W_{\text{theor}} = 3.9130\text{ g}\)</span> and <span class="arithmatex">\(W_{\text{actual}} = 3.425\text{ g}\)</span> evaluates the percent yield:
+   $<span class="arithmatex">\(\%Y = \frac{3.425\text{ g}}{3.9130\text{ g}} \times 100\% = \mathbf{87.53\%}\)</span>$</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke Sequence</th>
+<th style="text-align: center;">Reg T</th>
+<th style="text-align: center;">Reg Z</th>
+<th style="text-align: center;">Reg Y</th>
+<th style="text-align: center;">Reg X</th>
+<th style="text-align: left;">Chemistry Scenario Stack Walkthrough</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>11</code> [Z] <code>17</code> [Z] [+]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(22.990\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(58.443\)</span></td>
+<td style="text-align: left;">IUPAC element lookup for Na (<span class="arithmatex">\(22.990\)</span>) and Cl (<span class="arithmatex">\(35.453\)</span>): <span class="arithmatex">\(M(\text{NaCl}) = \mathbf{58.443\text{ g/mol}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>3.000</code> [ENTER] <code>138.122</code> [÷]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(58.443\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.02172\)</span></td>
+<td style="text-align: left;">Convert <span class="arithmatex">\(3.000\text{ g}\)</span> salicylic acid to moles: <span class="arithmatex">\(n_1 = \mathbf{0.02172\text{ mol}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>5.00</code> [ENTER] <code>1.082</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(58.443\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.02172\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(5.4100\)</span></td>
+<td style="text-align: left;">Density conversion: <span class="arithmatex">\(5.00\text{ mL} \times 1.082\text{ g/mL} = \mathbf{5.410\text{ g}}\)</span> acetic anhydride</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>102.089</code> [÷]</td>
+<td style="text-align: center;"><span class="arithmatex">\(58.443\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.02172\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.05299\)</span></td>
+<td style="text-align: left;">Convert acetic anhydride mass to moles: <span class="arithmatex">\(n_2 = \mathbf{0.05299\text{ mol}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[x⇄y]</td>
+<td style="text-align: center;"><span class="arithmatex">\(58.443\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.05299\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.02172\)</span></td>
+<td style="text-align: left;">Swap <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(X\)</span>: confirm salicylic acid (<span class="arithmatex">\(0.02172\text{ mol}\)</span>) is the limiting reactant</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>180.159</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.0000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.05299\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(3.9130\)</span></strong></td>
+<td style="text-align: left;">Multiply limiting moles by product molar mass: theoretical yield is <span class="arithmatex">\(\mathbf{3.9130\text{ g}}\)</span> aspirin</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>3.425</code> [ENTER] <code>3.9130</code> [÷] <code>100</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.05299\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.9130\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3.4250\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(87.529\)</span></strong></td>
+<td style="text-align: left;">Evaluate percent yield: <span class="arithmatex">\(\frac{3.425}{3.9130} \times 100 = \mathbf{87.53\%}\)</span> yield</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h3 id="preparing-a-crystallization-mother-liquor-and-auditing-serial-dilution-error">Preparing a Crystallization Mother Liquor and Auditing Serial Dilution Error</h3>
 <p>Now consider a second, more intricate wet-lab scenario. Lucas must prepare a protein crystallization mother liquor containing:
 1. <span class="arithmatex">\(0.200\text{ M}\)</span> magnesium chloride (<span class="arithmatex">\(\text{Mg}^{2+}\)</span>) from crystalline magnesium chloride hexahydrate (<span class="arithmatex">\(\text{MgCl}_2\cdot 6\text{H}_2\text{O}\)</span>).

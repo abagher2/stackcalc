@@ -3425,6 +3425,94 @@ $<span class="arithmatex">\(\text{BEP} = \frac{FC}{P - VC} \qquad EOQ = \sqrt{\f
 <h4 id="strategic-interpretation">Strategic Interpretation:</h4>
 <p>The investment generates a positive NPV of <span class="arithmatex">\(\$1{,}305.18\)</span>, clearing the firm's <span class="arithmatex">\(10\%\)</span> cost of capital. The valve line exhibits a healthy <span class="arithmatex">\(56.47\%\)</span> gross margin, requiring <span class="arithmatex">\(1{,}000\)</span> units to break even against facility overhead, and casting procurement should be batched at approximately <span class="arithmatex">\(949\)</span> units per order to minimize combined ordering and carrying costs.</p>
 <hr />
+<h3 id="executive-boardroom-capital-allocation-multi-year-cagr-yoy-growth-and-margin-compression">Executive Boardroom Capital Allocation: Multi-Year CAGR, YoY Growth, and Margin Compression</h3>
+<p>Corporate capital allocation decisions rarely hinge on single-period financial statements. During executive strategic reviews, chief financial officers and board committees track performance across multi-year trajectories: auditing Compound Annual Growth Rates (CAGR), Year-over-Year (YoY) revenue and cost acceleration, and operating margin health to decide whether to authorize multi-million-dollar capital expenditures.</p>
+<p>Consider a multi-year manufacturing division turnaround audited by CFO Elena Vance:
+- <strong>Year 0:</strong> Revenue <span class="arithmatex">\(R_0 = \$24.50\text{M}\)</span>, Cost of Goods Sold <span class="arithmatex">\(\text{COGS}_0 = \$15.20\text{M}\)</span>.
+- <strong>Year 1:</strong> Revenue <span class="arithmatex">\(R_1 = \$28.20\text{M}\)</span>, <span class="arithmatex">\(\text{COGS}_1 = \$18.00\text{M}\)</span>.
+- <strong>Year 2:</strong> Revenue <span class="arithmatex">\(R_2 = \$33.60\text{M}\)</span>, <span class="arithmatex">\(\text{COGS}_2 = \$22.10\text{M}\)</span>.
+- <strong>Year 3:</strong> Revenue <span class="arithmatex">\(R_3 = \$41.80\text{M}\)</span>, <span class="arithmatex">\(\text{COGS}_3 = \$28.50\text{M}\)</span>.</p>
+<ol>
+<li><strong>Multi-Year Compound Annual Growth Rate (CAGR):</strong> Over the three-year horizon (<span class="arithmatex">\(N = 3\)</span>), revenue grew from <span class="arithmatex">\(\$24.50\text{M}\)</span> to <span class="arithmatex">\(\$41.80\text{M}\)</span>. The annualized geometric growth rate is:
+   $<span class="arithmatex">\(\text{CAGR}_{\text{rev}} = \left( \frac{\$41.80\text{M}}{\$24.50\text{M}} \right)^{1/3} - 1 = (1.70612)^{0.33333} - 1 = \mathbf{19.49\%/\text{year}}\)</span>$
+   This can be evaluated on the stack via <code>41.80</code> [ENTER] <code>24.50</code> [÷] <code>3</code> [g] [1/x] [g] [yˣ] <code>1</code> [-] <code>100</code> [×] or in the dedicated <code>CGR: CAGR</code> solver workspace (<code>F = P × (1 + R%)^N</code>).</li>
+<li><strong>The Inflationary COGS Surge:</strong> Concurrently, COGS grew from <span class="arithmatex">\(\$15.20\text{M}\)</span> to <span class="arithmatex">\(\$28.50\text{M}\)</span>:
+   $<span class="arithmatex">\(\text{CAGR}_{\text{COGS}} = \left( \frac{\$28.50\text{M}}{\$15.20\text{M}} \right)^{1/3} - 1 = (1.87500)^{0.33333} - 1 = \mathbf{23.31\%/\text{year}}\)</span>$
+   Because unit manufacturing costs compounded at <span class="arithmatex">\(23.31\%\)</span> while top-line revenue compounded at only <span class="arithmatex">\(19.49\%\)</span>, the division experienced severe margin compression.</li>
+<li><strong>Gross Margin Compression Audit ([f] [MGN]):</strong></li>
+<li>Year 0 Gross Margin: <span class="arithmatex">\(\text{MGN}_0 = \frac{24.50 - 15.20}{24.50} \times 100 = \mathbf{37.96\%}\)</span>.</li>
+<li>Year 3 Gross Margin: <span class="arithmatex">\(\text{MGN}_3 = \frac{41.80 - 28.50}{41.80} \times 100 = \mathbf{31.82\%}\)</span>.</li>
+<li>Gross margin compressed by <span class="arithmatex">\(\Delta = 37.96\% - 31.82\% = \mathbf{-6.14\%\text{ points}}\)</span>.</li>
+<li><strong>Year-over-Year (YoY) Revenue Acceleration ([f] [Δ%]):</strong></li>
+<li>Year 0 to Year 1: <code>24.50</code> [ENTER] <code>28.20</code> [f] [Δ%] <span class="arithmatex">\(\to \mathbf{+15.10\%}\)</span>.</li>
+<li>Year 1 to Year 2: <code>28.20</code> [ENTER] <code>33.60</code> [f] [Δ%] <span class="arithmatex">\(\to \mathbf{+19.15\%}\)</span>.</li>
+<li>Year 2 to Year 3: <code>33.60</code> [ENTER] <code>41.80</code> [f] [Δ%] <span class="arithmatex">\(\to \mathbf{+24.40\%}\)</span>.
+   Top-line demand is accelerating rapidly (<span class="arithmatex">\(15.1\% \to 19.2\% \to 24.4\%\)</span>), proving strong market pull.</li>
+<li><strong>Executive Board Decision:</strong> Raising product prices risks stalling this accelerating <span class="arithmatex">\(24.4\%\)</span> market momentum. Instead, the CFO presents a business case for a <span class="arithmatex">\(\$4.50\text{M}\)</span> robotic machining and automated assembly cell (<span class="arithmatex">\(NPV = +\$1.85\text{M}, IRR = 21.4\%\)</span>). The automation drops unit variable costs, reversing the <span class="arithmatex">\(6.14\%\)</span> margin loss and lifting gross margins above <span class="arithmatex">\(42\%\)</span>. The board unanimously approves the capital allocation.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke Sequence</th>
+<th style="text-align: center;">Reg T</th>
+<th style="text-align: center;">Reg Z</th>
+<th style="text-align: center;">Reg Y</th>
+<th style="text-align: center;">Reg X</th>
+<th style="text-align: left;">Financial Scenario Stack Walkthrough</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>24.50</code> [ENTER] <code>15.20</code> [-] <code>24.50</code> [÷] <code>100</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(24.500\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(37.959\)</span></td>
+<td style="text-align: left;">Year 0 Gross Margin: <span class="arithmatex">\(\text{MGN}_0 = (24.50 - 15.20)/24.50 \times 100 = \mathbf{37.96\%}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>41.80</code> [ENTER] <code>28.50</code> [-] <code>41.80</code> [÷] <code>100</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(24.500\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(37.959\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(31.818\)</span></td>
+<td style="text-align: left;">Year 3 Gross Margin: <span class="arithmatex">\(\text{MGN}_3 = (41.80 - 28.50)/41.80 \times 100 = \mathbf{31.82\%}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[-]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(24.500\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(6.141\)</span></strong></td>
+<td style="text-align: left;">Margin compression: <span class="arithmatex">\(37.959\% - 31.818\% = \mathbf{6.14\%\text{ points}}\)</span> gross margin decline</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>41.80</code> [ENTER] <code>24.50</code> [÷] <code>3</code> [g] [1/x] [g] [yˣ] <code>1</code> [-] <code>100</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(24.500\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(6.141\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(19.491\)</span></strong></td>
+<td style="text-align: left;">3-Year Revenue CAGR: <span class="arithmatex">\((41.80 / 24.50)^{1/3} - 1 = \mathbf{19.49\%/\text{year}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>28.50</code> [ENTER] <code>15.20</code> [÷] <code>3</code> [g] [1/x] [g] [yˣ] <code>1</code> [-] <code>100</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(24.500\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(6.141\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(19.491\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(23.312\)</span></strong></td>
+<td style="text-align: left;">3-Year COGS CAGR: <span class="arithmatex">\((28.50 / 15.20)^{1/3} - 1 = \mathbf{23.31\%/\text{year}}\)</span> (outpacing revenue)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>33.60</code> [ENTER] <code>41.80</code> [f] [Δ%]</td>
+<td style="text-align: center;"><span class="arithmatex">\(6.141\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(19.491\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(23.312\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(24.405\)</span></strong></td>
+<td style="text-align: left;">Year-over-Year (YoY) revenue acceleration: Year 2 to Year 3 growth is <span class="arithmatex">\(\mathbf{+24.40\%}\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h3 id="bidirectional-solver-workspaces-tvm-g-cf-g-eoq">Bidirectional Solver Workspaces ([TVM], [g] [CF], [g] [EOQ])</h3>
 <p>In financial negotiation and lease structuring, executives frequently need to solve multi-variable credit contracts backward—determining the maximum loan size supported by a fixed operating cash flow, or finding the hurdle rate where a project breaks even. Opening the [g] [CF] Solver Workspace ([C] [g] [CF]) solves forward for Net Present Value and backward for Internal Rate of Return:</p>
 <table>
@@ -4706,6 +4794,105 @@ $<span class="arithmatex">\(p_{\text{scrap}} = \left[1 - N(Z_{\text{USL}})\right
 <td style="text-align: left;"><code>25</code> [N] [g] [SOLVE] [E]</td>
 <td style="text-align: center;"><strong><span class="arithmatex">\(0.00392\)</span></strong></td>
 <td style="text-align: left;">Store budget cap <span class="arithmatex">\(N = 25\)</span> and solve backward for achievable margin <span class="arithmatex">\(E = \mathbf{0.00392\text{ mm}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="ab-testing-conversion-significance-and-two-sample-students-t-testing-on-the-stack">A/B Testing Conversion Significance and Two-Sample Student's t-Testing on the Stack</h3>
+<p>In contemporary digital product engineering, quantitative marketing, and clinical trials, decision-makers cannot rely on subjective intuition. When evaluating product redesigns or promotional pricing, organizations deploy randomized controlled experiments (A/B tests). Evaluating the statistical significance of observed differences protects teams from celebrating random noise or missing genuine breakthroughs.</p>
+<h4 id="1-e-commerce-checkout-funnel-ab-conversion-test-g-ab-prop">1. E-Commerce Checkout Funnel A/B Conversion Test ([g] [A/B] / <code>PROP</code>)</h4>
+<p>A digital commerce platform tests a streamlined one-page checkout against the legacy multi-step checkout flow across <span class="arithmatex">\(50{,}000\)</span> randomized sessions (<span class="arithmatex">\(N = 25{,}000\)</span> visitors per variant):
+- <strong>Variant A (Control):</strong> <span class="arithmatex">\(n_A = 25{,}000\)</span>, completed purchases <span class="arithmatex">\(x_A = 1{,}875 \implies p_A = \frac{1{,}875}{25{,}000} = \mathbf{7.50\%} = 0.0750\)</span>.
+- <strong>Variant B (Redesign):</strong> <span class="arithmatex">\(n_B = 25{,}000\)</span>, completed purchases <span class="arithmatex">\(x_B = 2{,}150 \implies p_B = \frac{2{,}150}{25{,}000} = \mathbf{8.60\%} = 0.0860\)</span>.</p>
+<p>The absolute conversion rate lift is <span class="arithmatex">\(\Delta p = 8.60\% - 7.50\% = \mathbf{+1.10\%\text{ points}}\)</span>, representing a relative lift of:
+$<span class="arithmatex">\(\text{Relative Lift} = \frac{8.60\% - 7.50\%}{7.50\%} \times 100\% = \mathbf{+14.67\%}\)</span>$</p>
+<p>To determine whether this <span class="arithmatex">\(+14.67\%\)</span> lift is statistically significant or merely sampling noise, the team tests the null hypothesis <span class="arithmatex">\(H_0: p_B = p_A\)</span> against <span class="arithmatex">\(H_1: p_B &gt; p_A\)</span>. </p>
+<p>Under <span class="arithmatex">\(H_0\)</span>, the pooled conversion proportion across all <span class="arithmatex">\(50{,}000\)</span> visitors is:
+$<span class="arithmatex">\(\bar{p} = \frac{x_A + x_B}{n_A + n_B} = \frac{1{,}875 + 2{,}150}{50{,}000} = \frac{4{,}025}{50{,}000} = \mathbf{0.0805} \quad (8.05\%)\)</span>$</p>
+<p>The standard error of the difference between the two proportions is:
+$<span class="arithmatex">\(SE_{\Delta p} = \sqrt{\bar{p}(1 - \bar{p}) \left( \frac{1}{n_A} + \frac{1}{n_B} \right)} = \sqrt{0.0805 \times 0.9195 \times \left( \frac{2}{25{,}000} \right)} = \sqrt{0.07402 \times 8.0 \times 10^{-5}} = \mathbf{0.002433}\)</span>$</p>
+<p>The two-proportion <span class="arithmatex">\(Z\)</span>-test statistic is:
+$<span class="arithmatex">\(Z = \frac{p_B - p_A}{SE_{\Delta p}} = \frac{0.0860 - 0.0750}{0.002433} = \mathbf{4.52}\)</span>$</p>
+<p>On the SC-95, this test can be executed directly on the stack or in the dedicated <code>PROP: PROP TEST</code> solver workspace (<code>Z = (P - Q) / √(Q(1 - Q)/N)</code> via [g] [A/B]). At a 99% significance level (<span class="arithmatex">\(\alpha = 0.01\)</span>, two-tailed critical value <span class="arithmatex">\(Z_{\text{crit}} = 2.576\)</span>), the observed <span class="arithmatex">\(Z = 4.52\)</span> yields a <span class="arithmatex">\(p\)</span>-value <span class="arithmatex">\(p &lt; 0.00001\)</span>. The conversion lift is overwhelmingly statistically significant, giving management total confidence to roll out Variant B globally.</p>
+<h4 id="2-customer-spend-lift-and-the-two-sample-students-t-test-f-t2-ttest">2. Customer Spend Lift and the Two-Sample Student's <span class="arithmatex">\(t\)</span>-Test ([f] [t₂] / <code>TTEST</code>)</h4>
+<p>Next, the executive committee investigates whether an AI-driven product recommendation engine increases average order value (AOV) among purchasing customers. They sample <span class="arithmatex">\(n = 50\)</span> transactions from each cohort:
+- <strong>Cohort 1 (Control / Standard Recommendations):</strong> <span class="arithmatex">\(\bar{X}_1 = \$64.50\)</span>, sample standard deviation <span class="arithmatex">\(s_1 = \$14.20\)</span>, <span class="arithmatex">\(n_1 = 50\)</span>.
+- <strong>Cohort 2 (Treatment / Personalized Engine):</strong> <span class="arithmatex">\(\bar{X}_2 = \$71.80\)</span>, sample standard deviation <span class="arithmatex">\(s_2 = \$15.10\)</span>, <span class="arithmatex">\(n_2 = 50\)</span>.</p>
+<p>The observed lift in average spend is <span class="arithmatex">\(\Delta \bar{X} = \$71.80 - \$64.50 = \mathbf{+\$7.30}\)</span> per order (<span class="arithmatex">\(+11.32\%\)</span>).</p>
+<p>To verify statistical significance with unknown population variance, Gosset's two-sample Student's <span class="arithmatex">\(t\)</span>-test pools the sample variances:
+$<span class="arithmatex">\(s_p = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}} = \sqrt{\frac{49(14.20^2) + 49(15.10^2)}{98}} = \sqrt{\frac{201.64 + 228.01}{2}} = \sqrt{214.825} = \mathbf{\$14.657}\)</span>$</p>
+<p>The standard error of the difference in sample means is:
+$<span class="arithmatex">\(SE_{\Delta \bar{X}} = s_p \sqrt{\frac{2}{n}} = 14.657 \times \sqrt{\frac{2}{50}} = 14.657 \times 0.200 = \mathbf{\$2.9314}\)</span>$</p>
+<p>The Student's <span class="arithmatex">\(t\)</span>-statistic is:
+$<span class="arithmatex">\(t = \frac{\bar{X}_2 - \bar{X}_1}{SE_{\Delta \bar{X}}} = \frac{\$7.30}{\$2.9314} = \mathbf{2.490}\)</span>$</p>
+<p>With degrees of freedom <span class="arithmatex">\(df = n_1 + n_2 - 2 = 98\)</span>, the two-tailed critical <span class="arithmatex">\(t\)</span>-value at <span class="arithmatex">\(\alpha = 0.05\)</span> is <span class="arithmatex">\(t_{0.025, \, 98} = \mathbf{1.984}\)</span>. Because the calculated test statistic <span class="arithmatex">\(t = 2.490 &gt; 1.984\)</span> (<span class="arithmatex">\(p = 0.0145 &lt; 0.05\)</span>), the null hypothesis of equal average spend is decisively rejected. The personalized recommendation engine delivers a proven, statistically verified lift in customer spending.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Keystroke Sequence</th>
+<th style="text-align: center;">Reg T</th>
+<th style="text-align: center;">Reg Z</th>
+<th style="text-align: center;">Reg Y</th>
+<th style="text-align: center;">Reg X</th>
+<th style="text-align: left;">Statistical Scenario Stack Walkthrough</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>0.086</code> [ENTER] <code>0.075</code> [-]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.086\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.011\)</span></td>
+<td style="text-align: left;">Difference in checkout conversion rates: <span class="arithmatex">\(\Delta p = 8.60\% - 7.50\% = \mathbf{+0.0110}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.075</code> [÷] <code>100</code> [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.011\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(14.667\)</span></td>
+<td style="text-align: left;">Relative conversion lift: <span class="arithmatex">\((0.011 / 0.075) \times 100 = \mathbf{+14.67\%}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.0805</code> [ENTER] <code>1</code> [x⇄y] [-] <code>0.0805</code> [×] <code>2</code> [×] <code>25000</code> [÷] [√x]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(14.667\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.002433\)</span></td>
+<td style="text-align: left;">Pooled conversion standard error: <span class="arithmatex">\(SE = \sqrt{0.0805(0.9195)(2/25000)} = \mathbf{0.002433}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.011</code> [x⇄y] [÷]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(14.667\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(4.520\)</span></strong></td>
+<td style="text-align: left;">Two-proportion <span class="arithmatex">\(Z\)</span>-statistic: <span class="arithmatex">\(Z = 0.011 / 0.002433 = \mathbf{4.52}\)</span> (significant at <span class="arithmatex">\(p &lt; 0.00001\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>71.80</code> [ENTER] <code>64.50</code> [-]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(14.667\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4.520\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(7.300\)</span></td>
+<td style="text-align: left;">Average order value lift between customer cohorts: <span class="arithmatex">\(\Delta \bar{X} = \mathbf{+\$7.30}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>14.6569</code> [ENTER] <code>2</code> [ENTER] <code>50</code> [÷] [√x] [×]</td>
+<td style="text-align: center;"><span class="arithmatex">\(14.667\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4.520\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(7.300\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2.931\)</span></td>
+<td style="text-align: left;">Standard error of difference in cohort means: <span class="arithmatex">\(SE = 14.657\sqrt{2/50} = \mathbf{\$2.931}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">[÷]</td>
+<td style="text-align: center;"><span class="arithmatex">\(0.000\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(14.667\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4.520\)</span></td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(2.490\)</span></strong></td>
+<td style="text-align: left;">Two-sample Student's <span class="arithmatex">\(t\)</span>-statistic: <span class="arithmatex">\(t = 7.30 / 2.931 = \mathbf{2.490}\)</span> (exceeds <span class="arithmatex">\(t_{\text{crit}} = 1.984\)</span>)</td>
 </tr>
 </tbody>
 </table>
