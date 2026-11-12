@@ -757,142 +757,197 @@
   gap: 6px;
 }
 
+/* ==========================================================================
+   AUTHENTIC PLACE-01 GRIDFINITY DIGIT BLOCKS & REGROUPING TOKENS
+   Matches Hardware/open_scad_packages/01_place_value_studio/lib/place_value_blocks.scad
+   ========================================================================== */
+
 .pv-socket {
   background: #080A0E;
-  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border: 1.5px dashed rgba(255, 255, 255, 0.2);
   border-radius: 6px;
-  min-height: 70px;
+  min-height: 60px;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  padding: 6px 4px;
+  padding: 4px;
   position: relative;
   cursor: pointer;
   transition: all 0.12s ease;
 }
 
 .pv-socket:hover {
-  border-color: rgba(56, 189, 248, 0.5);
-  background: rgba(56, 189, 248, 0.04);
+  border-color: #38BDF8;
+  background: rgba(56, 189, 248, 0.06);
 }
 
 .pv-socket.has-carry {
   border-color: #EF4444;
-  background: rgba(239, 68, 68, 0.08);
+  background: rgba(239, 68, 68, 0.12);
 }
 
 .pv-socket-carry {
   min-height: 38px;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px dashed rgba(245, 158, 11, 0.25);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px dashed rgba(245, 158, 11, 0.35);
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3px;
+  gap: 4px;
 }
 
-/* Real Physical Base-10 Blocks */
-.pv-block {
-  cursor: pointer;
-  transition: transform 0.1s ease, filter 0.1s ease;
-  user-select: none;
+/* Authentic 19mm Gridfinity Square Digit Tile */
+.pv-digit-tile, .pv-block {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Space Mono', monospace;
-  font-weight: 900;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.9);
+  font-size: 1.35rem;
+  font-weight: 800;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.4);
 }
 
-.pv-block:hover {
-  filter: brightness(1.2);
+.pv-digit-tile:hover, .pv-block:hover {
+  transform: translateY(-2px) scale(1.05);
+  filter: brightness(1.15);
+}
+
+/* Color Group A: PLA White Digit Blocks (Operand A / Row 1 / Stack Y) */
+.pv-digit-white {
+  background: linear-gradient(145deg, #FFFFFF 0%, #E2E8F0 100%);
+  border: 1.5px solid #CBD5E1;
+  color: #0F172A;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), inset 0 2px 3px rgba(255, 255, 255, 0.8), inset 0 -2px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Color Group B: Slate Blue-Gray Digit Blocks (Operand B / Row 2 / Stack X) */
+.pv-digit-blue {
+  background: linear-gradient(145deg, #1E293B 0%, #0F172A 100%);
+  border: 1.5px solid #38BDF8;
+  color: #FFFFFF;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(56, 189, 248, 0.4), inset 0 -2px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Un-regrouped Column State (e.g. 12 before regrouping) */
+.pv-digit-tile.pv-digit-overflow {
+  border-color: #EF4444;
+  background: linear-gradient(145deg, #7F1D1D 0%, #450A0A 100%);
+  color: #FEE2E2;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.85);
+  animation: pv-pulse-carry 1.4s infinite;
+}
+
+@keyframes pv-pulse-carry {
+  0%, 100% { box-shadow: 0 0 8px rgba(239, 68, 68, 0.6); }
+  50% { box-shadow: 0 0 16px rgba(239, 68, 68, 0.95); }
+}
+
+/* Stackable +1 Addition Carry Token (Glow Yellow) */
+.pv-token-carry, .pv-block-carry {
+  width: 44px;
+  height: 28px;
+  border-radius: 4px;
+  background: linear-gradient(145deg, #FBBF24 0%, #D97706 100%);
+  border: 1.5px solid #FEF08A;
+  color: #080A0E;
+  font-family: 'Space Mono', monospace;
+  font-weight: 900;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.pv-token-carry:hover, .pv-block-carry:hover {
   transform: scale(1.1);
 }
 
-/* 100-Flat: 10x10 Unit Square Grid */
-.pv-block-100 {
-  width: 36px;
-  height: 36px;
-  background-color: #D97706;
-  background-image: 
-    linear-gradient(to right, rgba(0,0,0,0.35) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,0,0,0.35) 1px, transparent 1px);
-  background-size: 3.6px 3.6px;
-  border: 1.5px solid #FCD34D;
+/* Stackable 10 Subtraction Borrow Token (Coral Orange) */
+.pv-token-borrow, .pv-block-borrow {
+  width: 44px;
+  height: 28px;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  font-size: 0.62rem;
+  background: linear-gradient(145deg, #FB923C 0%, #C2410C 100%);
+  border: 1.5px solid #FFEDD5;
+  color: #FFFFFF;
+  font-family: 'Space Mono', monospace;
+  font-weight: 900;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(234, 88, 12, 0.6);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.pv-token-borrow:hover, .pv-block-borrow:hover {
+  transform: scale(1.1);
+}
+
+/* Palette Buttons */
+.pv-digit-palette-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.12s ease;
+}
+
+.pv-digit-palette-btn.pv-digit-blue {
+  background: #161B22;
+  border: 1px solid #38BDF8;
   color: #FFFFFF;
 }
 
-/* 10-Rod: 1x10 Segmented Vertical Rod */
-.pv-block-10 {
-  width: 14px;
-  height: 40px;
-  background-color: #0284C7;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 1px, transparent 1px);
-  background-size: 14px 4px;
-  border: 1.5px solid #38BDF8;
-  border-radius: 3px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-  font-size: 0.58rem;
+.pv-digit-palette-btn.pv-digit-blue:hover {
+  background: #0284C7;
   color: #FFFFFF;
+  transform: translateY(-2px);
 }
 
-/* 1-Unit Cube */
-.pv-block-1 {
-  width: 14px;
-  height: 14px;
-  background-color: #059669;
-  border: 1.5px solid #34D399;
-  border-radius: 3px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  font-size: 0.62rem;
+.pv-token-carry-palette {
+  background: #D97706;
+  border: 1px solid #FDE68A;
+  color: #080A0E;
+  font-family: 'Space Mono', monospace;
+  font-weight: 900;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pv-token-borrow-palette {
+  background: #EA580C;
+  border: 1px solid #FED7AA;
   color: #FFFFFF;
+  font-family: 'Space Mono', monospace;
+  font-weight: 900;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
 }
-
-/* Decimal Tenths Strip */
-.pv-block-0-1 {
-  width: 12px;
-  height: 34px;
-  background-color: #7C3AED;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.35) 1px, transparent 1px);
-  background-size: 12px 3.4px;
-  border: 1.5px solid #A78BFA;
-  border-radius: 2px;
-  box-shadow: 0 2px 3px rgba(0,0,0,0.5);
-  font-size: 0.55rem;
-  color: #FFFFFF;
-}
-
-/* Decimal Hundredths Tile */
-.pv-block-0-01 {
-  width: 11px;
-  height: 11px;
-  background-color: #EC4899;
-  border: 1.5px solid #F472B6;
-  border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-  font-size: 0.5rem;
-  color: #FFFFFF;
-}
-
-/* Decimal Thousandths Token */
-.pv-block-0-001 {
-  width: 7px;
-  height: 7px;
-  background-color: #06B6D4;
-  border: 1px solid #22D3EE;
-  border-radius: 1px;
-}
-
-/* Carry Token */
-.pv-block-carry {
-  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-  border: 1.5px solid #FDE68A;
   color: #080A0E;
   font-weight: 900;
   font-size: 0.65rem;

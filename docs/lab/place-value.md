@@ -35,25 +35,22 @@ hide:
       
       <!-- Top Horizontal Place Value Palette Shelf -->
       <div class="vlab-palette-bar">
-        <span class="vlab-palette-label">BASE-10 BLOCKS:</span>
-        <button class="vlab-block-btn-chip" data-pv-palette="100" title="Click to add 100-Flat to Row 2">
-          <span class="vlab-block-chip" style="background:#D97706; border: 1px solid #FCD34D;"></span> 100 FLAT
-        </button>
-        <button class="vlab-block-btn-chip" data-pv-palette="10" title="Click to add 10-Rod to Row 2">
-          <span class="vlab-block-chip" style="background:#0284C7; border: 1px solid #38BDF8;"></span> 10 ROD
-        </button>
-        <button class="vlab-block-btn-chip" data-pv-palette="1" title="Click to add 1-Unit Cube to Row 2">
-          <span class="vlab-block-chip" style="background:#059669; border: 1px solid #34D399;"></span> 1 UNIT
-        </button>
-        <button class="vlab-block-btn-chip" data-pv-palette="0.1" title="Click to add .1 Tenth Strip to Row 2">
-          <span class="vlab-block-chip" style="background:#7C3AED; border: 1px solid #A78BFA;"></span> .1 TENTH
-        </button>
-        <button class="vlab-block-btn-chip" data-pv-palette="0.01" title="Click to add .01 Hundredth Tile to Row 2">
-          <span class="vlab-block-chip" style="background:#EC4899; border: 1px solid #F472B6;"></span> .01 HUNDREDTH
-        </button>
-        <button class="vlab-block-btn-chip" data-pv-palette="0.001" title="Click to add .001 Thousandth Token to Row 2">
-          <span class="vlab-block-chip" style="background:#06B6D4; border: 1px solid #22D3EE;"></span> .001 THOUSANDTH
-        </button>
+        <span class="vlab-palette-label">PLACE-01 DIGIT BLOCKS &amp; TOKENS:</span>
+        <div style="display:flex; flex-wrap:wrap; gap:5px; align-items:center;">
+          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="0" title="Digit Block 0">0</button>
+          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="1" title="Digit Block 1">1</button>
+          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="2" title="Digit Block 2">2</button>
+          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="3" title="Digit Block 3">3</button>
+          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="4" title="Digit Block 4">4</button>
+          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="5" title="Digit Block 5">5</button>
+          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="6" title="Digit Block 6">6</button>
+          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="7" title="Digit Block 7">7</button>
+          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="8" title="Digit Block 8">8</button>
+          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="9" title="Digit Block 9">9</button>
+          <span style="border-left: 1px solid rgba(255,255,255,0.2); height: 20px; margin: 0 4px;"></span>
+          <button class="pv-token-carry-palette" data-pv-token="carry" title="Stackable +1 Addition Carry Token">+1 CARRY</button>
+          <button class="pv-token-borrow-palette" data-pv-token="borrow" title="Stackable 10 Subtraction Borrow Token">10 BORROW</button>
+        </div>
       </div>
 
       <!-- Direct Number Input Bar -->
