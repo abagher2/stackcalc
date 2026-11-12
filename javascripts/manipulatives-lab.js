@@ -125,17 +125,7 @@
   function formatPrimeFormula(list) {
     if (!list || list.length === 0) return '0';
     const sorted = [...list].sort((a, b) => a - b);
-    const expanded = sorted.join(' × ');
-    const counts = {};
-    sorted.forEach(p => { counts[p] = (counts[p] || 0) + 1; });
-    const hasExponents = Object.values(counts).some(c => c > 1);
-    if (!hasExponents) {
-      return expanded;
-    }
-    const expParts = Object.keys(counts).map(Number).sort((a, b) => a - b).map(p => {
-      return counts[p] > 1 ? `${p}<sup>${counts[p]}</sup>` : `${p}`;
-    });
-    return `${expanded} &nbsp;<span style="color:#94A3B8; font-weight:normal;">(${expParts.join(' × ')})</span>`;
+    return sorted.join(' × ');
   }
 
   function getPrimeFactorsList(num) {
@@ -697,22 +687,27 @@
   // --- 8. DOM Rendering & UI Presentation ---
   function renderStackLcd() {
     const fmt = (item, isRegX) => {
-      if (!item) return isRegX ? '0.0000_' : '0.0000';
-      if (state.activeTab === 'fractions' && state.fdisp) {
+      if (!item) return isRegX ? '0_' : '0';
+      if (state.activeTab === 'fractions') {
         if (item.val === 0) return isRegX ? '0_' : '0';
-        return `<span style="font-weight:700;">${formatFrac(item.n, item.d)}</span> &nbsp;<span style="color:#64748B; font-size:0.7em;">(${item.val.toFixed(4)})</span>${isRegX ? '_' : ''}`;
+        if (state.fdisp) {
+          return `<strong style="font-size:1.25em; color:#FFFFFF;">${formatFrac(item.n, item.d)}</strong>${isRegX ? '_' : ''}`;
+        } else {
+          return `<strong style="font-size:1.25em; color:#FFFFFF;">${Number(item.val.toFixed(2))}</strong>${isRegX ? '_' : ''}`;
+        }
       } else if (state.activeTab === 'primes') {
         if (item.val === 0) return isRegX ? '0_' : '0';
         const intVal = Math.round(item.val);
         const factors = getPrimeFactorsList(intVal);
-        const formula = formatPrimeFormula(factors);
-        if (formula && formula !== `${intVal}`) {
-          return `<strong style="color:#FFFFFF; font-size:1.05em;">${intVal}</strong> &nbsp;<span style="color:#38BDF8; font-size:0.75em;">(${formula})</span>${isRegX ? '_' : ''}`;
+        const formula = factors.length > 1 ? factors.join(' × ') : '';
+        if (formula) {
+          return `<strong style="font-size:1.25em; color:#FFFFFF;">${intVal}</strong> <span style="color:#38BDF8; font-size:0.8em; margin-left:8px;">(${formula})</span>${isRegX ? '_' : ''}`;
         }
-        return `<strong style="color:#FFFFFF; font-size:1.05em;">${intVal}</strong>${isRegX ? '_' : ''}`;
+        return `<strong style="font-size:1.25em; color:#FFFFFF;">${intVal}</strong>${isRegX ? '_' : ''}`;
       } else {
-        if (item.val === 0) return isRegX ? '0.0000_' : '0.0000';
-        return `${item.val.toFixed(4)}${isRegX ? '_' : ''}`;
+        if (item.val === 0) return isRegX ? '0_' : '0';
+        const cleanNum = Number(item.val.toFixed(3));
+        return `<strong style="font-size:1.25em; color:#FFFFFF;">${cleanNum}</strong>${isRegX ? '_' : ''}`;
       }
     };
 
@@ -741,17 +736,16 @@
     if (colX) {
       colX.innerHTML = '';
       if (state.fractions.stackX.length === 0) {
-        colX.innerHTML = '<div class="vlab-empty-hint">Register X (Entry) Empty<br>(Tap fraction chips above to stack)</div>';
+        colX.innerHTML = '<div class="vlab-empty-hint">Build your number here<br><span style="color:#64748B; font-size:0.85em;">Tap fraction blocks above</span></div>';
         if (metaX) metaX.textContent = '0';
-        if (metaXSub) metaXSub.textContent = 'Height: 0.0 mm • Val: 0.000';
+        if (metaXSub) metaXSub.textContent = '0';
       } else {
         const sumX = calcTowerSum(state.fractions.stackX);
         state.fractions.stackX.forEach((b, idx) => {
           const blk = document.createElement('div');
           blk.className = `frac-block-2d ${b.cls} removable`;
-          blk.style.height = `${Math.max(18, b.mm * 2.8)}px`;
-          blk.setAttribute('data-height', `${b.mm.toFixed(1)}mm`);
-          blk.setAttribute('title', 'Click to remove this block');
+          blk.style.height = `${Math.max(26, b.mm * 2.8)}px`;
+          blk.setAttribute('title', 'Tap to remove block');
           blk.textContent = b.label;
           blk.onclick = (e) => {
             e.stopPropagation();
@@ -759,8 +753,9 @@
           };
           colX.appendChild(blk);
         });
-        if (metaX) metaX.textContent = formatFrac(sumX.n, sumX.d);
-        if (metaXSub) metaXSub.textContent = `Height: ${sumX.mm.toFixed(1)} mm • Val: ${sumX.val.toFixed(3)}`;
+        const fracStr = formatFrac(sumX.n, sumX.d);
+        if (metaX) metaX.textContent = fracStr;
+        if (metaXSub) metaXSub.textContent = fracStr;
       }
     }
 
@@ -770,19 +765,18 @@
     if (colY) {
       colY.innerHTML = '';
       if (state.fractions.stackY.length === 0) {
-        colY.innerHTML = '<div class="vlab-empty-hint">Register Y (Stack) Empty<br>(Press [ENTER] to push)</div>';
-        if (metaY) metaY.textContent = 'Y: 0 (0.0 mm)';
+        colY.innerHTML = '<div class="vlab-empty-hint">Saved number appears here<br><span style="color:#64748B; font-size:0.85em;">Press [ENTER] to save</span></div>';
+        if (metaY) metaY.textContent = '0';
       } else {
         const sumY = calcTowerSum(state.fractions.stackY);
         state.fractions.stackY.forEach((b) => {
           const blk = document.createElement('div');
           blk.className = `frac-block-2d ${b.cls}`;
-          blk.style.height = `${Math.max(18, b.mm * 2.8)}px`;
-          blk.setAttribute('data-height', `${b.mm.toFixed(1)}mm`);
+          blk.style.height = `${Math.max(26, b.mm * 2.8)}px`;
           blk.textContent = b.label;
           colY.appendChild(blk);
         });
-        if (metaY) metaY.textContent = `Y: ${formatFrac(sumY.n, sumY.d)} (${sumY.mm.toFixed(1)} mm)`;
+        if (metaY) metaY.textContent = formatFrac(sumY.n, sumY.d);
       }
     }
 
@@ -798,8 +792,7 @@
         state.fractions.stackZ.forEach((b) => {
           const blk = document.createElement('div');
           blk.className = `frac-block-2d ${b.cls}`;
-          blk.style.height = `${Math.max(18, b.mm * 2.8)}px`;
-          blk.setAttribute('data-height', `${b.mm.toFixed(1)}mm`);
+          blk.style.height = `${Math.max(26, b.mm * 2.8)}px`;
           blk.textContent = b.label;
           colZ.appendChild(blk);
         });
@@ -818,21 +811,20 @@
     const metaEl = document.getElementById('vlab-prime-meta');
 
     const prodX = getPrimeProduct(state.primes.stackX);
-    const mmX = getPrimeMm(state.primes.stackX);
 
     if (colX) {
       colX.innerHTML = '';
       if (state.primes.stackX.length === 0) {
-        colX.innerHTML = '<div class="vlab-empty-hint">Register X (Entry) Empty<br>(Tap prime chips above to stack)</div>';
+        colX.innerHTML = '<div class="vlab-empty-hint">Build your number here<br><span style="color:#64748B; font-size:0.85em;">Tap prime numbers above</span></div>';
       } else {
         state.primes.stackX.forEach((p, idx) => {
           const blk = document.createElement('div');
           blk.className = 'prime-block-2d-vert removable';
           const mm = primeLookupMm[p] || 20;
-          blk.style.height = `${Math.max(22, mm * 2.2)}px`;
+          blk.style.height = `${Math.max(26, mm * 2.2)}px`;
           blk.style.backgroundColor = primeLookupColors[p] || '#0284C7';
-          blk.setAttribute('title', 'Click to remove this prime block');
-          blk.innerHTML = `<span>[${p}]</span><span>${mm.toFixed(1)}mm</span>`;
+          blk.setAttribute('title', 'Tap to remove prime block');
+          blk.innerHTML = `<span style="font-size:1.15em; font-weight:800;">${p}</span>`;
           blk.onclick = (e) => {
             e.stopPropagation();
             removePrimeFromX(idx);
@@ -846,14 +838,19 @@
     if (valEl) valEl.textContent = effectiveValX > 0 ? `${effectiveValX}` : '0';
     if (formulaEl) {
       if (state.primes.stackX.length > 0) {
-        formulaEl.innerHTML = formatPrimeFormula(state.primes.stackX);
+        const factors = state.primes.stackX.sort((a, b) => a - b);
+        formulaEl.innerHTML = factors.length > 1 ? `${prodX} <span style="font-size:0.85em; color:#94A3B8;">(${factors.join(' × ')})</span>` : `${prodX}`;
       } else if (effectiveValX > 1) {
-        formulaEl.innerHTML = formatPrimeFormula(getPrimeFactorsList(effectiveValX));
+        const factors = getPrimeFactorsList(effectiveValX);
+        formulaEl.innerHTML = factors.length > 1 ? `${effectiveValX} <span style="font-size:0.85em; color:#94A3B8;">(${factors.join(' × ')})</span>` : `${effectiveValX}`;
       } else {
-        formulaEl.innerHTML = 'No factors selected';
+        formulaEl.innerHTML = '0';
       }
     }
-    if (metaEl) metaEl.textContent = `Logarithmic Height: ${mmX.toFixed(1)} mm • ${state.primes.stackX.length} Factors`;
+    if (metaEl) {
+      const count = state.primes.stackX.length;
+      metaEl.textContent = count > 0 ? `${count} ${count === 1 ? 'Prime Factor' : 'Prime Factors'}` : '';
+    }
 
     // 2. Column 2 (Right): Prime Register Y (The Stack)
     const colY = document.getElementById('vlab-prime-stack-y');
@@ -861,21 +858,20 @@
     if (colY) {
       colY.innerHTML = '';
       if (state.primes.stackY.length === 0) {
-        colY.innerHTML = '<div class="vlab-empty-hint">Register Y (Stack) Empty<br>(Press [ENTER] to push)</div>';
-        if (metaY) metaY.textContent = 'Y: 0';
+        colY.innerHTML = '<div class="vlab-empty-hint">Saved number appears here<br><span style="color:#64748B; font-size:0.85em;">Press [ENTER] to save</span></div>';
+        if (metaY) metaY.textContent = '0';
       } else {
         const prodY = getPrimeProduct(state.primes.stackY);
-        const mmY = getPrimeMm(state.primes.stackY);
         state.primes.stackY.forEach((p) => {
           const blk = document.createElement('div');
           blk.className = 'prime-block-2d-vert';
           const mm = primeLookupMm[p] || 20;
-          blk.style.height = `${Math.max(22, mm * 2.2)}px`;
+          blk.style.height = `${Math.max(26, mm * 2.2)}px`;
           blk.style.backgroundColor = primeLookupColors[p] || '#0284C7';
-          blk.innerHTML = `<span>[${p}]</span><span>${mm.toFixed(1)}mm</span>`;
+          blk.innerHTML = `<span style="font-size:1.15em; font-weight:800;">${p}</span>`;
           colY.appendChild(blk);
         });
-        if (metaY) metaY.textContent = `Y: ${prodY} (Log: ${mmY.toFixed(1)}mm)`;
+        if (metaY) metaY.textContent = `${prodY}`;
       }
     }
 
@@ -892,9 +888,9 @@
           const blk = document.createElement('div');
           blk.className = 'prime-block-2d-vert';
           const mm = primeLookupMm[p] || 20;
-          blk.style.height = `${Math.max(22, mm * 2.2)}px`;
+          blk.style.height = `${Math.max(26, mm * 2.2)}px`;
           blk.style.backgroundColor = primeLookupColors[p] || '#0284C7';
-          blk.innerHTML = `<span>[${p}]</span><span>${mm.toFixed(1)}mm</span>`;
+          blk.innerHTML = `<span style="font-size:1.15em; font-weight:800;">${p}</span>`;
           colZ.appendChild(blk);
         });
         if (metaZ) metaZ.textContent = `Z: ${prodZ}`;
@@ -927,7 +923,10 @@
     });
 
     const valEl = document.getElementById('pv-total-val');
-    if (valEl) valEl.textContent = getPvTotal().toFixed(3);
+    if (valEl) {
+      const tot = getPvTotal();
+      valEl.textContent = tot === 0 ? '0' : Number(tot.toFixed(3));
+    }
 
     const noteEl = document.getElementById('pv-regroup-alert');
     if (noteEl) {
