@@ -2618,36 +2618,26 @@
 
       <div class="vlab-grid">
 
-        <!-- Left: Staging & Comparison Stage -->
+        <!-- Left: Staging Stage -->
         <div class="vlab-stage-container">
           <div class="vlab-comparator-bay">
-            <div id="vlab-laser-line" class="vlab-laser-line"></div>
             <div class="vlab-columns-wrapper">
 
-              <!-- Column 1: Register Y (The Stack) -->
+              <!-- Column 1 (Left): Register X (Active Entry / Tower) -->
               <div class="vlab-column-container">
-                <div id="vlab-col-stack-y" class="vlab-column"></div>
+                <div id="vlab-col-stack-x" class="vlab-column vlab-column-entry"></div>
                 <div class="vlab-col-meta-box">
-                  <div class="vlab-column-title" style="color:#0284C7;">1. REGISTER Y (STACK)</div>
-                  <div id="vlab-meta-stack-y" class="vlab-column-sub">Y: 0 (0.0 mm)</div>
-                </div>
-              </div>
-
-              <!-- Column 2: Register X (Active Entry / Tower) -->
-              <div class="vlab-column-container">
-                <div id="vlab-col-stack-x" class="vlab-column"></div>
-                <div class="vlab-col-meta-box">
-                  <div class="vlab-column-title" style="color:#38BDF8;">2. REGISTER X (ENTRY)</div>
+                  <div class="vlab-column-title" style="color:#38BDF8;">1. REGISTER X (ENTRY)</div>
                   <div id="vlab-staged-val" class="vlab-column-sub" style="font-weight: bold; color: #FFFFFF;">0</div>
                 </div>
               </div>
 
-              <!-- Column 3: Verification Target -->
+              <!-- Column 2 (Right): Register Y (The Stack) -->
               <div class="vlab-column-container">
-                <div id="vlab-col-target" class="vlab-column vlab-column-target"></div>
+                <div id="vlab-col-stack-y" class="vlab-column vlab-column-stack"></div>
                 <div class="vlab-col-meta-box">
-                  <div class="vlab-column-title" style="color:#10B981;">3. VERIFICATION TARGET</div>
-                  <div id="vlab-meta-target" class="vlab-column-sub" style="color:#10B981;">Target: 0 mm</div>
+                  <div class="vlab-column-title" style="color:#0284C7;">2. REGISTER Y (STACK)</div>
+                  <div id="vlab-meta-stack-y" class="vlab-column-sub">Y: 0 (0.0 mm)</div>
                 </div>
               </div>
 
@@ -2675,10 +2665,10 @@
               <span>STACKCALC // RPN ENGINE</span>
               <span>[↰ FDISP: ON]</span>
             </div>
-            <div class="vlab-lcd-register"><span>T:</span> <span id="vlab-reg-t">0.0000</span></div>
-            <div class="vlab-lcd-register"><span>Z:</span> <span id="vlab-reg-z">0.0000</span></div>
-            <div class="vlab-lcd-register" style="color:#0284C7;"><span>Y:</span> <span id="vlab-reg-y">0.0000</span></div>
-            <div class="vlab-lcd-register vlab-lcd-reg-x"><span>X:</span> <span id="vlab-reg-x">0.0000_</span></div>
+            <div class="vlab-lcd-register"><span>T:</span> <span id="vlab-reg-t" class="vlab-reg-t-val">0.0000</span></div>
+            <div class="vlab-lcd-register"><span>Z:</span> <span id="vlab-reg-z" class="vlab-reg-z-val">0.0000</span></div>
+            <div class="vlab-lcd-register" style="color:#0284C7;"><span>Y:</span> <span id="vlab-reg-y" class="vlab-reg-y-val">0.0000</span></div>
+            <div class="vlab-lcd-register vlab-lcd-reg-x"><span>X:</span> <span id="vlab-reg-x" class="vlab-reg-x-val">0_</span></div>
           </div>
 
           <!-- Operation Keypad -->
@@ -2696,18 +2686,13 @@
             <button id="vlab-btn-fdisp" class="vlab-btn-func">FDISP</button>
           </div>
 
-          <!-- Verification Trigger Box -->
-          <div style="background:#11141A; border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:12px;">
-            <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#94A3B8; margin-bottom:6px; font-weight:700;">
-              VERIFICATION ENGINE
-            </div>
-            <div id="vlab-check-status" style="font-family:'Space Mono',monospace; font-size:0.72rem; color:#94A3B8; margin-bottom:8px; min-height: 28px;">
-              Awaiting calculation...
-            </div>
-            <div style="display:flex; gap:6px;">
-              <button id="vlab-btn-check-frac" class="vlab-btn-verify" style="flex:1;">CHECK EQUIVALENCE</button>
-              <button id="vlab-btn-clear-target" class="vlab-btn-secondary">RESET</button>
-            </div>
+          <!-- RPN Stack Mechanics Guide -->
+          <div style="background:#11141A; border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:12px; font-family:'Space Mono',monospace; font-size:0.72rem; color:#94A3B8; line-height:1.5;">
+            <strong style="color:#38BDF8;">RPN STACK MECHANICS:</strong><br>
+            • <strong>Register X (Left):</strong> Active entry tower. Tap chips to stack.<br>
+            • <strong>[ENTER]:</strong> Pushes X into Register Y (Right).<br>
+            • <strong>[+] [&minus;] [&times;] [&divide;]:</strong> Compute Y and X on the stack.<br>
+            • <strong>Stack Lift:</strong> Entering a new block after calculation automatically lifts X to Y!
           </div>
         </div>
 
@@ -2798,10 +2783,10 @@
               <span>STACKCALC // PV MODE</span>
               <span>[123 DECIMAL]</span>
             </div>
-            <div class="vlab-lcd-register"><span>T:</span> <span>0.0000</span></div>
-            <div class="vlab-lcd-register"><span>Z:</span> <span>0.0000</span></div>
-            <div class="vlab-lcd-register" style="color:#0284C7;"><span>Y:</span> <span>0.0000</span></div>
-            <div class="vlab-lcd-register vlab-lcd-reg-x"><span>X:</span> <span>0.0000_</span></div>
+            <div class="vlab-lcd-register"><span>T:</span> <span class="vlab-reg-t-val">0.0000</span></div>
+            <div class="vlab-lcd-register"><span>Z:</span> <span class="vlab-reg-z-val">0.0000</span></div>
+            <div class="vlab-lcd-register" style="color:#0284C7;"><span>Y:</span> <span class="vlab-reg-y-val">0.0000</span></div>
+            <div class="vlab-lcd-register vlab-lcd-reg-x"><span>X:</span> <span class="vlab-reg-x-val">0.0000_</span></div>
           </div>
 
           <div class="vlab-op-grid">
@@ -2866,30 +2851,21 @@
           <div class="vlab-comparator-bay">
             <div class="vlab-columns-wrapper">
 
-              <!-- Column 1: Prime Register Y (Stack) -->
+              <!-- Column 1 (Left): Prime Register X (Active Entry / Tower) -->
               <div class="vlab-column-container">
-                <div id="vlab-prime-stack-y" class="vlab-column"></div>
+                <div id="vlab-prime-stack-x" class="vlab-column vlab-column-entry"></div>
                 <div class="vlab-col-meta-box">
-                  <div class="vlab-column-title" style="color:#0284C7;">1. REGISTER Y (STACK)</div>
+                  <div class="vlab-column-title" style="color:#38BDF8;">1. REGISTER X (ENTRY)</div>
+                  <div id="vlab-prime-val" class="vlab-column-sub" style="font-weight: bold; color: #FFFFFF; font-size: 0.95rem;">0</div>
+                </div>
+              </div>
+
+              <!-- Column 2 (Right): Prime Register Y (Stack) -->
+              <div class="vlab-column-container">
+                <div id="vlab-prime-stack-y" class="vlab-column vlab-column-stack"></div>
+                <div class="vlab-col-meta-box">
+                  <div class="vlab-column-title" style="color:#0284C7;">2. REGISTER Y (STACK)</div>
                   <div id="vlab-prime-meta-y" class="vlab-column-sub">Y: 0</div>
-                </div>
-              </div>
-
-              <!-- Column 2: Prime Register X (Active Entry / Tower) -->
-              <div class="vlab-column-container">
-                <div id="vlab-prime-stack-x" class="vlab-column"></div>
-                <div class="vlab-col-meta-box">
-                  <div class="vlab-column-title" style="color:#38BDF8;">2. REGISTER X (ENTRY)</div>
-                  <div id="vlab-prime-val" class="vlab-column-sub" style="font-weight: bold; color: #FFFFFF; font-size: 0.9rem;">0</div>
-                </div>
-              </div>
-
-              <!-- Column 3: Prime Target / Decomposed Tower -->
-              <div class="vlab-column-container">
-                <div id="vlab-prime-target" class="vlab-column vlab-column-target"></div>
-                <div class="vlab-col-meta-box">
-                  <div class="vlab-column-title" style="color:#10B981;">3. TARGET / DECOMPOSED</div>
-                  <div class="vlab-column-sub" style="color:#10B981;">[FACT / GCD / LCM]</div>
                 </div>
               </div>
 
@@ -2918,10 +2894,10 @@
               <span>STACKCALC // PRIME MODE</span>
               <span>[PRIME-01]</span>
             </div>
-            <div class="vlab-lcd-register"><span>T:</span> <span>0.0000</span></div>
-            <div class="vlab-lcd-register"><span>Z:</span> <span>0.0000</span></div>
-            <div class="vlab-lcd-register" style="color:#0284C7;"><span>Y:</span> <span>0.0000</span></div>
-            <div class="vlab-lcd-register vlab-lcd-reg-x"><span>X:</span> <span>0.0000_</span></div>
+            <div class="vlab-lcd-register"><span>T:</span> <span class="vlab-reg-t-val">0.0000</span></div>
+            <div class="vlab-lcd-register"><span>Z:</span> <span class="vlab-reg-z-val">0.0000</span></div>
+            <div class="vlab-lcd-register" style="color:#0284C7;"><span>Y:</span> <span class="vlab-reg-y-val">0.0000</span></div>
+            <div class="vlab-lcd-register vlab-lcd-reg-x"><span>X:</span> <span class="vlab-reg-x-val">0.0000_</span></div>
           </div>
 
           <!-- Operations Grid -->
