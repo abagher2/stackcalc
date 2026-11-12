@@ -480,6 +480,44 @@ The investment generates a positive NPV of $\$1{,}305.18$, clearing the firm's $
 
 ---
 
+### Executive Boardroom Capital Allocation: Multi-Year CAGR, YoY Growth, and Margin Compression
+
+Corporate capital allocation decisions rarely hinge on single-period financial statements. During executive strategic reviews, chief financial officers and board committees track performance across multi-year trajectories: auditing Compound Annual Growth Rates (CAGR), Year-over-Year (YoY) revenue and cost acceleration, and operating margin health to decide whether to authorize multi-million-dollar capital expenditures.
+
+Consider a multi-year manufacturing division turnaround audited by CFO Elena Vance:
+- **Year 0:** Revenue $R_0 = \$24.50\text{M}$, Cost of Goods Sold $\text{COGS}_0 = \$15.20\text{M}$.
+- **Year 1:** Revenue $R_1 = \$28.20\text{M}$, $\text{COGS}_1 = \$18.00\text{M}$.
+- **Year 2:** Revenue $R_2 = \$33.60\text{M}$, $\text{COGS}_2 = \$22.10\text{M}$.
+- **Year 3:** Revenue $R_3 = \$41.80\text{M}$, $\text{COGS}_3 = \$28.50\text{M}$.
+
+1. **Multi-Year Compound Annual Growth Rate (CAGR):** Over the three-year horizon ($N = 3$), revenue grew from $\$24.50\text{M}$ to $\$41.80\text{M}$. The annualized geometric growth rate is:
+   $$\text{CAGR}_{\text{rev}} = \left( \frac{\$41.80\text{M}}{\$24.50\text{M}} \right)^{1/3} - 1 = (1.70612)^{0.33333} - 1 = \mathbf{19.49\%/\text{year}}$$
+   This can be evaluated on the stack via `41.80` {{key:ENTER}} `24.50` {{key:÷}} `3` {{key:1/x}} {{key:yˣ}} `1` {{key:-}} `100` {{key:×}} or in the dedicated `CGR: CAGR` solver workspace (`F = P × (1 + R%)^N`).
+2. **The Inflationary COGS Surge:** Concurrently, COGS grew from $\$15.20\text{M}$ to $\$28.50\text{M}$:
+   $$\text{CAGR}_{\text{COGS}} = \left( \frac{\$28.50\text{M}}{\$15.20\text{M}} \right)^{1/3} - 1 = (1.87500)^{0.33333} - 1 = \mathbf{23.31\%/\text{year}}$$
+   Because unit manufacturing costs compounded at $23.31\%$ while top-line revenue compounded at only $19.49\%$, the division experienced severe margin compression.
+3. **Gross Margin Compression Audit ({{key:sc95:MGN}}):**
+   - Year 0 Gross Margin: $\text{MGN}_0 = \frac{24.50 - 15.20}{24.50} \times 100 = \mathbf{37.96\%}$.
+   - Year 3 Gross Margin: $\text{MGN}_3 = \frac{41.80 - 28.50}{41.80} \times 100 = \mathbf{31.82\%}$.
+   - Gross margin compressed by $\Delta = 37.96\% - 31.82\% = \mathbf{-6.14\%\text{ points}}$.
+4. **Year-over-Year (YoY) Revenue Acceleration ({{key:sc95:Δ%}}):**
+   - Year 0 to Year 1: `24.50` {{key:ENTER}} `28.20` {{key:sc95:Δ%}} $\to \mathbf{+15.10\%}$.
+   - Year 1 to Year 2: `28.20` {{key:ENTER}} `33.60` {{key:sc95:Δ%}} $\to \mathbf{+19.15\%}$.
+   - Year 2 to Year 3: `33.60` {{key:ENTER}} `41.80` {{key:sc95:Δ%}} $\to \mathbf{+24.40\%}$.
+   Top-line demand is accelerating rapidly ($15.1\% \to 19.2\% \to 24.4\%$), proving strong market pull.
+5. **Executive Board Decision:** Raising product prices risks stalling this accelerating $24.4\%$ market momentum. Instead, the CFO presents a business case for a $\$4.50\text{M}$ robotic machining and automated assembly cell ($NPV = +\$1.85\text{M}, IRR = 21.4\%$). The automation drops unit variable costs, reversing the $6.14\%$ margin loss and lifting gross margins above $42\%$. The board unanimously approves the capital allocation.
+
+| Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Financial Scenario Stack Walkthrough |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `24.50` {{key:ENTER}} `15.20` {{key:-}} `24.50` {{key:÷}} `100` {{key:×}} | $0.000$ | $0.000$ | $24.500$ | $37.959$ | Year 0 Gross Margin: $\text{MGN}_0 = (24.50 - 15.20)/24.50 \times 100 = \mathbf{37.96\%}$ |
+| `41.80` {{key:ENTER}} `28.50` {{key:-}} `41.80` {{key:÷}} `100` {{key:×}} | $0.000$ | $24.500$ | $37.959$ | $31.818$ | Year 3 Gross Margin: $\text{MGN}_3 = (41.80 - 28.50)/41.80 \times 100 = \mathbf{31.82\%}$ |
+| {{key:-}} | $0.000$ | $0.000$ | $24.500$ | **$6.141$** | Margin compression: $37.959\% - 31.818\% = \mathbf{6.14\%\text{ points}}$ gross margin decline |
+| `41.80` {{key:ENTER}} `24.50` {{key:÷}} `3` {{key:1/x}} {{key:yˣ}} `1` {{key:-}} `100` {{key:×}} | $0.000$ | $24.500$ | $6.141$ | **$19.491$** | 3-Year Revenue CAGR: $(41.80 / 24.50)^{1/3} - 1 = \mathbf{19.49\%/\text{year}}$ |
+| `28.50` {{key:ENTER}} `15.20` {{key:÷}} `3` {{key:1/x}} {{key:yˣ}} `1` {{key:-}} `100` {{key:×}} | $24.500$ | $6.141$ | $19.491$ | **$23.312$** | 3-Year COGS CAGR: $(28.50 / 15.20)^{1/3} - 1 = \mathbf{23.31\%/\text{year}}$ (outpacing revenue) |
+| `33.60` {{key:ENTER}} `41.80` {{key:sc95:Δ%}} | $6.141$ | $19.491$ | $23.312$ | **$24.405$** | Year-over-Year (YoY) revenue acceleration: Year 2 to Year 3 growth is $\mathbf{+24.40\%}$ |
+
+---
+
 ### Bidirectional Solver Workspaces ({{key:TVM}}, {{key:CF}}, {{key:EOQ}})
 
 In financial negotiation and lease structuring, executives frequently need to solve multi-variable credit contracts backward—determining the maximum loan size supported by a fixed operating cash flow, or finding the hurdle rate where a project breaks even. Opening the {{key:CF}} Solver Workspace ({{key:C}} {{key:CF}}) solves forward for Net Present Value and backward for Internal Rate of Return:

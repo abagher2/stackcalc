@@ -380,6 +380,52 @@ Lucas places a clean glass weighing boat onto the balance pan, presses the tare 
 
 ---
 
+### Rapid Element Lookup and IUPAC Standard Atomic Weights ({{key:sc60:Z}})
+
+Before assembling complex organic reagents or inorganic salts, the chemist frequently needs the precise IUPAC standard atomic weight of an individual element. Striking the primary key `{{key:sc60:Z}}` (Row 1, Column 3) with an integer atomic number $Z \in [1, 118]$ in Register X recalls the standard atomic weight directly from the calculator's internal periodic table ledger without requiring alphanumeric entry:
+- **Carbon ($Z = 6$):** `6` {{key:sc60:Z}} $\to \mathbf{12.011\text{ g/mol}}$
+- **Sodium ($Z = 11$):** `11` {{key:sc60:Z}} $\to \mathbf{22.990\text{ g/mol}}$
+- **Chlorine ($Z = 17$):** `17` {{key:sc60:Z}} $\to \mathbf{35.453\text{ g/mol}}$
+- **Copper ($Z = 29$):** `29` {{key:sc60:Z}} $\to \mathbf{63.546\text{ g/mol}}$
+
+Summing atomic weights on the operational stack allows rapid stoichiometric synthesis: entering `11` {{key:sc60:Z}} `17` {{key:sc60:Z}} {{key:+}} evaluates the molar mass of sodium chloride ($M(\text{NaCl}) = 22.990 + 35.453 = \mathbf{58.443\text{ g/mol}}$). Striking `{{key:sc60:Z}}` with $X = 0$ (or tapping `[FML]` in the `{{key:sc60:MW}}` workspace) enters Chemical Formula Mode (`FML: _`) to parse multi-atom compounds and hydrates.
+
+---
+
+### Beyond Molar Mass: Multi-Step Reaction Stoichiometry, Limiting Reactants, and Isolation Yield
+
+A common misconception is that Formula Mode (`FML`) serves merely as an electronic molecular weight table. In reality, once a compound is parsed in `FML`, its molar mass $M$ and stoichiometric atom counts are latched into engine memory (`activeChemFormulaMolarMass` and variable `M`), transforming the calculator into a real-time stoichiometric engine:
+1. **Direct Mole and Mass Conversions (`▸mol` / `▸g`):** With an active formula, the unit conversion keys `{{key:sc60:▸mol}}` (Row 6, Col 3 Blue) and `{{key:sc60:▸g}}` (Row 6, Col 3 Yellow) convert weighed grams directly into chemical moles ($n = W / M$) and target moles back into balance grams ($W = n \cdot M$).
+2. **Concentration Scaling (`▸M` / `▸g/L`):** The concentration converters `{{key:sc60:▸M}}` (Row 5, Col 2 Yellow) and `{{key:sc60:▸g/L}}` (Row 5, Col 2 Blue) transpose solution mass concentration ($\text{g/L}$) to molarity ($\text{mol/L}$) and vice versa.
+3. **Hydrate Water and Elemental Mass Auditing (`w/w`):** Striking `{{key:sc60:w/w}}` (Row 1, Col 4 Yellow) immediately audits the mass percentage of crystallization water in hydrates, or follows an element lookup (`<Z>` {{key:sc60:Z}} {{key:sc60:w/w}}) to evaluate that element's stoichiometric mass percentage in the active compound.
+4. **Live Reference Ledger (`▦`):** Pressing the reference table key `{{key:sc60:▦}}` (Row 3, Col 3 Blue) displays the active compound's complete elemental breakdown, molar mass, and percentage composition.
+5. **Limiting Reactant Determination and Isolation Yield (`%Y`):** Comparing reacting moles across stoichiometric coefficients reveals the limiting reactant on the stack, computes theoretical product yield, and audits actual percent yield (`{{key:sc60:%Y}}`, Row 2, Col 5 Yellow):
+   $$\%Y = \frac{\text{Actual Isolated Mass}}{\text{Theoretical Mass}} \times 100\%$$
+
+Consider an authentic laboratory synthesis: Dr. Cross and Lucas synthesize **aspirin** (acetylsalicylic acid, $\text{C}_9\text{H}_8\text{O}_4$, $M = 180.159\text{ g/mol}$) by reacting salicylic acid ($\text{C}_7\text{H}_6\text{O}_3$, $M = 138.122\text{ g/mol}$) with acetic anhydride ($\text{C}_4\text{H}_6\text{O}_3$, $M = 102.089\text{ g/mol}$, density $\rho = 1.082\text{ g/mL}$):
+
+$$\text{C}_7\text{H}_6\text{O}_3 + \text{C}_4\text{H}_6\text{O}_3 \xrightarrow{\text{H}_2\text{SO}_4} \text{C}_9\text{H}_8\text{O}_4 + \text{C}_2\text{H}_4\text{O}_2$$
+
+Lucas weighs $W_1 = 3.000\text{ g}$ of salicylic acid and dispenses $V_2 = 5.00\text{ mL}$ of acetic anhydride:
+1. **Salicylic Acid Moles:** Parsing `C7H6O3` in `FML` yields $M_1 = 138.122\text{ g/mol}$. Converting $3.000\text{ g}$ via `3.000` {{key:ENTER}} `138.122` {{key:÷}} yields $n_1 = \mathbf{0.02172\text{ mol}}$.
+2. **Acetic Anhydride Moles:** Mass is $5.00\text{ mL} \times 1.082\text{ g/mL} = 5.410\text{ g}$. Parsing `C4H6O3` yields $M_2 = 102.089\text{ g/mol}$. Converting mass to moles yields $n_2 = 5.410 / 102.089 = \mathbf{0.05299\text{ mol}}$.
+3. **Limiting Reactant Identification:** Because the stoichiometry is $1:1$, salicylic acid ($0.02172\text{ mol}$) is the limiting reactant; acetic anhydride is in excess ($0.05299 > 0.02172$).
+4. **Theoretical Yield:** The theoretical maximum yield is $n_{\text{theor}} = 0.02172\text{ mol}$ of aspirin. Parsing product `C9H8O4` gives $M_{\text{prod}} = 180.159\text{ g/mol}$. Multiplying $0.02172 \times 180.159$ evaluates the theoretical yield: $W_{\text{theor}} = \mathbf{3.9130\text{ g}}$.
+5. **Isolation and Percent Yield:** After quenching with cold water, crystallizing on ice, Buchner funnel filtration, and desiccator drying, the analytical balance reads $W_{\text{actual}} = 3.425\text{ g}$ of white needle crystals. Staging $W_{\text{theor}} = 3.9130\text{ g}$ and $W_{\text{actual}} = 3.425\text{ g}$ evaluates the percent yield:
+   $$\%Y = \frac{3.425\text{ g}}{3.9130\text{ g}} \times 100\% = \mathbf{87.53\%}$$
+
+| Keystroke Sequence | Reg T | Reg Z | Reg Y | Reg X | Chemistry Scenario Stack Walkthrough |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `11` {{key:sc60:Z}} `17` {{key:sc60:Z}} {{key:+}} | $0.000$ | $0.000$ | $22.990$ | $58.443$ | IUPAC element lookup for Na ($22.990$) and Cl ($35.453$): $M(\text{NaCl}) = \mathbf{58.443\text{ g/mol}}$ |
+| `3.000` {{key:ENTER}} `138.122` {{key:÷}} | $0.000$ | $58.443$ | $3.0000$ | $0.02172$ | Convert $3.000\text{ g}$ salicylic acid to moles: $n_1 = \mathbf{0.02172\text{ mol}}$ |
+| `5.00` {{key:ENTER}} `1.082` {{key:×}} | $58.443$ | $3.0000$ | $0.02172$ | $5.4100$ | Density conversion: $5.00\text{ mL} \times 1.082\text{ g/mL} = \mathbf{5.410\text{ g}}$ acetic anhydride |
+| `102.089` {{key:÷}} | $58.443$ | $3.0000$ | $0.02172$ | $0.05299$ | Convert acetic anhydride mass to moles: $n_2 = \mathbf{0.05299\text{ mol}}$ |
+| {{key:x⇄y}} | $58.443$ | $3.0000$ | $0.05299$ | $0.02172$ | Swap $Y$ and $X$: confirm salicylic acid ($0.02172\text{ mol}$) is the limiting reactant |
+| `180.159` {{key:×}} | $0.000$ | $3.0000$ | $0.05299$ | **$3.9130$** | Multiply limiting moles by product molar mass: theoretical yield is $\mathbf{3.9130\text{ g}}$ aspirin |
+| `3.425` {{key:ENTER}} `3.9130` {{key:÷}} `100` {{key:×}} | $0.05299$ | $3.9130$ | $3.4250$ | **$87.529$** | Evaluate percent yield: $\frac{3.425}{3.9130} \times 100 = \mathbf{87.53\%}$ yield |
+
+---
+
 ### Preparing a Crystallization Mother Liquor and Auditing Serial Dilution Error
 
 Now consider a second, more intricate wet-lab scenario. Lucas must prepare a protein crystallization mother liquor containing:

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.stackcalc.io/sitemap.xml
+Sitemap: https://www.stackcalc.io/sitemap.xml.gz
