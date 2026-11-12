@@ -13,14 +13,20 @@
       {% set icon = config.theme.icon.menu or "material/menu" %}
       {% include ".icons/" ~ icon ~ ".svg" %}
     </label>
+
+    <!-- Desktop Navigation Links: Harmonized 1:1 with Main Home Site -->
+    <div class="header-nav-links">
+      <a href="{{ 'products/sc32-calculator/' | url }}">INSTRUMENTS</a>
+      <a href="{{ 'products/' | url }}">MANIPULATIVES</a>
+      <a href="{{ 'curriculum/' | url }}">CURRICULUM</a>
+      <a href="{{ 'manuals/' | url }}">MANUALS</a>
+      <a href="{{ 'downloads/' | url }}">OPEN 3MFs</a>
+      <a href="{{ 'products/' | url }}">CATALOG</a>
+    </div>
+
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            {{ config.site_name }}
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
+        <div class="md-header__topic md-header__topic--subpage" data-md-component="header-topic">
           <span class="md-ellipsis">
             {% if page.meta and page.meta.title %}
               {{ page.meta.title }}
@@ -38,7 +44,8 @@
       </label>
       {% include "partials/search.html" %}
     {% endif %}
-    <a href="{{ 'learning-lab/' | url }}" class="brutalist-button-header">LEARNING LAB</a>
+    <!-- Unified Call to Action matching Home Site -->
+    <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="header-shop-button">SHOP ON ETSY ↗</a>
     {% if config.repo_url %}
       <div class="md-header__source">
         {% include "partials/source.html" %}

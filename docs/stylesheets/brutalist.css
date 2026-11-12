@@ -131,18 +131,91 @@ body,
   color: #000000 !important;
 }
 
-/* --- Header --- */
+/* --- Header Harmonization with Home Site --- */
 .md-header {
-  background-color: #181A1B !important;
-  border-bottom: 2px solid #E2E6EE !important;
+  background-color: #0A0C10 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: none !important;
+  height: 64px !important;
+}
+
+.md-header__inner {
+  height: 64px !important;
+  align-items: center !important;
+  max-width: 1280px !important;
+  padding: 0 16px !important;
+}
+
+.header-nav-links {
+  display: none;
+  align-items: center;
+  gap: 22px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  margin-inline-start: 28px;
+  margin-inline-end: auto;
+}
+
+@media screen and (min-width: 960px) {
+  .header-nav-links {
+    display: flex !important;
+  }
+}
+
+.header-nav-links a {
+  color: #94A3B8 !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease-in-out;
+}
+
+.header-nav-links a:hover {
+  color: #FFFFFF !important;
+}
+
+.header-shop-button {
+  background-color: #FFFFFF !important;
+  color: #020617 !important;
+  font-family: 'Space Mono', monospace !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  padding: 6px 14px !important;
+  border-radius: 4px !important;
+  text-decoration: none !important;
+  transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  margin-inline-start: 12px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.header-shop-button:hover {
+  background-color: #E2E6EE !important;
+  color: #020617 !important;
+  transform: translateY(-1px) !important;
+}
+
+@media screen and (max-width: 768px) {
+  .header-shop-button {
+    display: none !important;
+  }
 }
 
 .md-header__title {
-  font-family: 'Space Mono', monospace !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.02em !important;
-  color: #E2E6EE !important;
+  display: none !important;
+}
+
+@media screen and (max-width: 959px) {
+  .md-header__title {
+    display: block !important;
+    font-family: 'Space Mono', monospace !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+    color: #E2E6EE !important;
+  }
 }
 
 .md-header__button {
@@ -150,38 +223,7 @@ body,
 }
 
 .md-header__button:hover {
-  color: #32ADE6 !important;
-}
-
-/* Header Reserve Button */
-.brutalist-button-header {
-  background-color: #E2E6EE !important;
-  color: #181A1B !important;
-  border: 2px solid #E2E6EE !important;
-  box-shadow: 2px 2px 0px #32ADE6 !important;
-  font-family: 'Space Mono', monospace !important;
-  font-size: 0.75rem !important;
-  font-weight: 700 !important;
-  padding: 4px 12px !important;
-  text-decoration: none !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  margin-inline-start: 12px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  transition: all 0.1s ease-in-out !important;
-}
-
-.brutalist-button-header:hover {
-  transform: translate(1px, 1px) !important;
-  box-shadow: 1px 1px 0px #32ADE6 !important;
-  color: #181A1B !important;
-}
-
-@media screen and (max-width: 768px) {
-  .brutalist-button-header {
-    display: none !important;
-  }
+  color: #38BDF8 !important;
 }
 
 /* Tactile Brutalist Primary Action Button */
@@ -229,33 +271,33 @@ body,
 }
 
 .md-search__output {
-  background-color: #181A1B !important;
-  border: 2px solid #CBD1DC !important;
-  border-radius: 0 !important;
-  box-shadow: 4px 4px 0px #000000 !important;
+  background-color: #0D1117 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* --- Navigation Tabs --- */
+/* --- Navigation Tabs Harmonized --- */
 .md-tabs {
-  background-color: #181A1B !important;
-  border-bottom: 1px solid #282C30 !important;
+  background-color: #080A0E !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 .md-tabs__link {
   font-family: 'Space Mono', monospace !important;
-  font-size: 0.82rem !important;
-  font-weight: 700 !important;
+  font-size: 0.74rem !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  color: #CBD1DC !important;
+  letter-spacing: 0.04em !important;
+  color: #94A3B8 !important;
   transition: color 0.15s ease-in-out !important;
   opacity: 1 !important;
 }
 
 .md-tabs__link--active,
 .md-tabs__link:hover {
-  color: #32ADE6 !important;
-  border-bottom: 2px solid #32ADE6 !important;
+  color: #38BDF8 !important;
+  border-bottom: 2px solid #38BDF8 !important;
 }
 
 /* --- Typography & Headings --- */
