@@ -334,17 +334,11 @@
 
                 <!-- Desktop Right Utility Cluster -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <button id="audio-toggle-btn" type="button" onclick="toggleGlobalAudio()" class="px-2.5 py-1.5 rounded-md bg-white/5 border border-white/10 hover:border-white/25 text-slate-300 hover:text-white font-mono text-xs flex items-center gap-1.5 transition" title="Toggle Mechanical Audio FX">
-                        <span id="audio-icon">🔊</span><span id="audio-label">FX</span>
-                    </button>
                     <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="bg-white hover:bg-slate-200 text-slate-950 px-4 py-2 font-mono text-xs font-bold tracking-wider uppercase rounded transition shadow-sm">SHOP ON ETSY ↗</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="flex md:hidden items-center gap-2">
-                    <button id="audio-toggle-btn-mobile" type="button" onclick="toggleGlobalAudio()" class="px-2 py-1 rounded bg-white/5 border border-white/10 text-slate-300 text-xs font-mono">
-                        🔊
-                    </button>
                     <button id="mobile-menu-btn" type="button" class="font-mono px-3 py-1.5 rounded bg-white/5 border border-white/10 text-xs text-white uppercase" aria-label="Toggle navigation menu">
                         MENU
                     </button>
@@ -657,7 +651,12 @@
                             <div>
                                 <div class="flex justify-between items-center mb-3">
                                     <span class="font-mono text-xs font-bold text-white uppercase">STACKCALC POSTFIX (RPN)</span>
-                                    <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-white/10 text-white border border-white/20" id="rpn-status">ZERO PARENTHESES</span>
+                                    <div class="flex items-center gap-2">
+                                        <button id="calc-sound-btn" type="button" onclick="toggleCalcAudio()" class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[10px] font-mono font-bold hover:bg-emerald-500/30 transition flex items-center gap-1 cursor-pointer" title="Toggle Tactile Mechanical Sound FX">
+                                            <span id="calc-sound-icon">🔊</span><span id="calc-sound-label">CLICK: ON</span>
+                                        </button>
+                                        <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-white/10 text-white border border-white/20" id="rpn-status">ZERO PARENTHESES</span>
+                                    </div>
                                 </div>
                                 <!-- Authentic ST7567A Hardware LCD Visualizer -->
                                 <div class="lcd-screen rounded-lg p-3.5 font-terminus border-2 border-slate-900/60 shadow-inner mb-4 text-left bg-[#DCE2EC]">
@@ -699,6 +698,48 @@
                                     <div class="flex justify-between">
                                         <span>Keystroke Stream:</span>
                                         <span class="text-white font-bold" id="rpn-sequence">12 ↵ 4 + 9 ↵ 3 &minus; &times;</span>
+                                    </div>
+                                </div>
+
+                                <!-- Live Interactive Tactile RPN Keypad -->
+                                <div class="mt-4 pt-3 border-t border-white/10">
+                                    <div class="flex justify-between items-center mb-2 font-mono text-[10px] text-slate-400">
+                                        <span class="font-bold text-slate-300">LIVE TACTILE HARDWARE KEYPAD</span>
+                                        <span class="text-slate-400">Tap to Calculate Live</span>
+                                    </div>
+                                    <div class="grid grid-cols-5 gap-1.5 font-mono text-xs select-none">
+                                        <!-- Row 1: Function keys -->
+                                        <button type="button" onclick="calcSwap()" class="p-2 rounded bg-slate-800 hover:bg-slate-700 text-sky-400 font-bold border border-white/10 active:scale-95 transition shadow-sm" title="Swap X and Y">x⇄y</button>
+                                        <button type="button" onclick="calcUnary('sq')" class="p-2 rounded bg-slate-800 hover:bg-slate-700 text-sky-400 font-bold border border-white/10 active:scale-95 transition shadow-sm" title="Square (x²)">x²</button>
+                                        <button type="button" onclick="calcUnary('sqrt')" class="p-2 rounded bg-slate-800 hover:bg-slate-700 text-sky-400 font-bold border border-white/10 active:scale-95 transition shadow-sm" title="Square Root (√x)">√x</button>
+                                        <button type="button" onclick="calcUnary('inv')" class="p-2 rounded bg-slate-800 hover:bg-slate-700 text-sky-400 font-bold border border-white/10 active:scale-95 transition shadow-sm" title="Reciprocal (1/x)">1/x</button>
+                                        <button type="button" onclick="calcClx()" class="p-2 rounded bg-rose-950/70 hover:bg-rose-900 text-rose-300 font-bold border border-rose-500/30 active:scale-95 transition shadow-sm" title="Clear Register X">CLx</button>
+
+                                        <!-- Row 2 -->
+                                        <button type="button" onclick="calcDigit('7')" class="p-2.5 rounded bg-white/10 hover:bg-white/20 text-white font-bold text-sm active:scale-95 transition shadow-sm">7</button>
+                                        <button type="button" onclick="calcDigit('8')" class="p-2.5 rounded bg-white/10 hover:bg-white/20 text-white font-bold text-sm active:scale-95 transition shadow-sm">8</button>
+                                        <button type="button" onclick="calcDigit('9')" class="p-2.5 rounded bg-white/10 hover:bg-white/20 text-white font-bold text-sm active:scale-95 transition shadow-sm">9</button>
+                                        <button type="button" onclick="calcOp('÷')" class="p-2 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold text-sm border border-amber-500/30 active:scale-95 transition shadow-sm">÷</button>
+                                        <button type="button" onclick="calcDrop()" class="p-2 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold border border-white/10 active:scale-95 transition shadow-sm" title="Drop Register X">DROP</button>
+
+                                        <!-- Row 3 -->
+                                        <button type="button" onclick="calcDigit('4')" class="p-2.5 rounded bg-white/10 hover:bg-white/20 text-white font-bold text-sm active:scale-95 transition shadow-sm">4</button>
+                                        <button type="button" onclick="calcDigit('5')" class="p-2.5 rounded bg-white/10 hover:bg-white/20 text-white font-bold text-sm active:scale-95 transition shadow-sm">5</button>
+                                        <button type="button" onclick="calcDigit('6')" class="p-2.5 rounded bg-white/10 hover:bg-white/20 text-white font-bold text-sm active:scale-95 transition shadow-sm">6</button>
+                                        <button type="button" onclick="calcOp('×')" class="p-2 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold text-sm border border-amber-500/30 active:scale-95 transition shadow-sm">×</button>
+                                        <button type="button" onclick="calcUnary('chs')" class="p-2 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold border border-white/10 active:scale-95 transition shadow-sm" title="Change Sign (+/-)">+/−</button>
+
+                                        <!-- Row 4 -->
+                                        <button type="button" onclick="calcDigit('1')" class="p-2.5 rounded bg-white/10 hover:bg-white/20 text-white font-bold text-sm active:scale-95 transition shadow-sm">1</button>
+                                        <button type="button" onclick="calcDigit('2')" class="p-2.5 rounded bg-white/10 hover:bg-white/20 text-white font-bold text-sm active:scale-95 transition shadow-sm">2</button>
+                                        <button type="button" onclick="calcDigit('3')" class="p-2.5 rounded bg-white/10 hover:bg-white/20 text-white font-bold text-sm active:scale-95 transition shadow-sm">3</button>
+                                        <button type="button" onclick="calcOp('-')" class="p-2 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold text-sm border border-amber-500/30 active:scale-95 transition shadow-sm">−</button>
+                                        <button type="button" onclick="calcEnter()" class="row-span-2 p-2 rounded bg-[#FF4400] hover:bg-[#FF5511] text-white font-bold text-xs flex items-center justify-center border border-white/20 active:scale-95 shadow-lg transition" title="Push X into Y (LIFO Stack Lift)">ENTER ↵</button>
+
+                                        <!-- Row 5 -->
+                                        <button type="button" onclick="calcDigit('0')" class="col-span-2 p-2.5 rounded bg-white/10 hover:bg-white/20 text-white font-bold text-sm active:scale-95 transition shadow-sm">0</button>
+                                        <button type="button" onclick="calcDot()" class="p-2.5 rounded bg-white/10 hover:bg-white/20 text-white font-bold text-sm active:scale-95 transition shadow-sm">.</button>
+                                        <button type="button" onclick="calcOp('+')" class="p-2 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold text-sm border border-amber-500/30 active:scale-95 transition shadow-sm">+</button>
                                     </div>
                                 </div>
                             </div>
@@ -2370,90 +2411,224 @@
 
     <!-- INTERACTIVE SCRIPTS -->
     <script>
-        // Global Web Audio Synthesizer Haptic Click (Apollo-era Mechanical Acoustics)
-        let globalAudioEnabled = localStorage.getItem('sc_audio') !== '0';
-        const audioCtx = (window.AudioContext || window.webkitAudioContext) ? new (window.AudioContext || window.webkitAudioContext)() : null;
-        
-        function updateAudioButtonUI() {
-            const icon = document.getElementById('audio-icon');
-            const label = document.getElementById('audio-label');
-            const mobileBtn = document.getElementById('audio-toggle-btn-mobile');
-            if (icon && label) {
-                icon.textContent = globalAudioEnabled ? '🔊' : '🔇';
-                label.textContent = globalAudioEnabled ? 'FX: ON' : 'FX: OFF';
+        // =========================================================================
+        // LOCAL INTERACTIVE RPN CALCULATOR & TACTILE ACOUSTIC ENGINE
+        // =========================================================================
+        let calcState = {
+            t: 0.0000,
+            z: 0.0000,
+            y: 16.0000,
+            x: 96.0000,
+            isEntering: false,
+            inputBuffer: '96'
+        };
+        let calcAudioEnabled = true;
+        let calcAudioCtx = null;
+
+        function getCalcAudioContext() {
+            if (!calcAudioCtx) {
+                const AudioClass = window.AudioContext || window.webkitAudioContext;
+                if (AudioClass) {
+                    calcAudioCtx = new AudioClass();
+                }
             }
-            if (mobileBtn) {
-                mobileBtn.textContent = globalAudioEnabled ? '🔊' : '🔇';
+            if (calcAudioCtx && calcAudioCtx.state === 'suspended') {
+                calcAudioCtx.resume();
             }
+            return calcAudioCtx;
         }
 
-        function toggleGlobalAudio() {
-            globalAudioEnabled = !globalAudioEnabled;
-            localStorage.setItem('sc_audio', globalAudioEnabled ? '1' : '0');
-            updateAudioButtonUI();
-            if (globalAudioEnabled) {
-                playToneChirp(523.25, 1046.5);
-            }
-        }
-
-        // Apollo-Era Mechanical Acoustic Synthesizer (Snap-Dome Buckle + Chassis Resonance)
-        function playHapticClick(frequency = 600, type = 'mechanical') {
-            if (!globalAudioEnabled || !audioCtx) return;
+        function playCalcClick(frequency = 600, type = 'mechanical') {
+            if (!calcAudioEnabled) return;
             try {
-                if (audioCtx.state === 'suspended') audioCtx.resume();
-                const t = audioCtx.currentTime;
+                const ctx = getCalcAudioContext();
+                if (!ctx) return;
+                const t = ctx.currentTime;
 
                 // 1. Sharp buckle impulse (metallic snap-dome transient)
-                const osc1 = audioCtx.createOscillator();
-                const gain1 = audioCtx.createGain();
+                const osc1 = ctx.createOscillator();
+                const gain1 = ctx.createGain();
                 osc1.type = 'triangle';
                 const fStart = type === 'enter' ? 880 : type === 'clear' ? 340 : frequency * 1.5;
                 const fEnd = type === 'enter' ? 220 : type === 'clear' ? 70 : 80;
                 osc1.frequency.setValueAtTime(fStart, t);
                 osc1.frequency.exponentialRampToValueAtTime(fEnd, t + 0.024);
-                gain1.gain.setValueAtTime(0.20, t);
+                gain1.gain.setValueAtTime(0.22, t);
                 gain1.gain.exponentialRampToValueAtTime(0.0001, t + 0.024);
                 osc1.connect(gain1);
-                gain1.connect(audioCtx.destination);
+                gain1.connect(ctx.destination);
                 osc1.start(t);
                 osc1.stop(t + 0.026);
 
-                // 2. Tactile chassis resonance thump (Gridfinity chassis acoustic body)
-                const osc2 = audioCtx.createOscillator();
-                const gain2 = audioCtx.createGain();
+                // 2. Tactile chassis resonance thump
+                const osc2 = ctx.createOscillator();
+                const gain2 = ctx.createGain();
                 osc2.type = 'sine';
                 osc2.frequency.setValueAtTime(145, t);
                 osc2.frequency.exponentialRampToValueAtTime(42, t + 0.040);
-                gain2.gain.setValueAtTime(0.10, t);
+                gain2.gain.setValueAtTime(0.09, t);
                 gain2.gain.exponentialRampToValueAtTime(0.0001, t + 0.040);
                 osc2.connect(gain2);
-                gain2.connect(audioCtx.destination);
+                gain2.connect(ctx.destination);
                 osc2.start(t);
                 osc2.stop(t + 0.045);
             } catch (e) {}
         }
 
-        function playToneChirp(startFreq, endFreq) {
-            if (!audioCtx) return;
-            try {
-                if (audioCtx.state === 'suspended') audioCtx.resume();
-                const t = audioCtx.currentTime;
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(startFreq, t);
-                osc.frequency.exponentialRampToValueAtTime(endFreq, t + 0.08);
-                gain.gain.setValueAtTime(0.12, t);
-                gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.08);
-                osc.connect(gain);
-                gain.connect(audioCtx.destination);
-                osc.start(t);
-                osc.stop(t + 0.09);
-            } catch (e) {}
+        function playHapticClick(frequency = 600, type = 'mechanical') {
+            playCalcClick(frequency, type);
         }
 
-        // Initialize Audio UI state on load
-        updateAudioButtonUI();
+        function toggleCalcAudio() {
+            calcAudioEnabled = !calcAudioEnabled;
+            const icon = document.getElementById('calc-sound-icon');
+            const label = document.getElementById('calc-sound-label');
+            const btn = document.getElementById('calc-sound-btn');
+            if (icon && label && btn) {
+                icon.textContent = calcAudioEnabled ? '🔊' : '🔇';
+                label.textContent = calcAudioEnabled ? 'CLICK: ON' : 'CLICK: OFF';
+                btn.className = calcAudioEnabled 
+                    ? 'px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[10px] font-mono font-bold hover:bg-emerald-500/30 transition flex items-center gap-1 cursor-pointer'
+                    : 'px-2 py-0.5 rounded bg-white/5 text-slate-400 border border-white/10 text-[10px] font-mono font-bold hover:bg-white/10 transition flex items-center gap-1 cursor-pointer';
+            }
+            if (calcAudioEnabled) {
+                playCalcClick(880, 'enter');
+            }
+        }
+
+        function renderCalcStack() {
+            const elT = document.getElementById('stack-t');
+            const elZ = document.getElementById('stack-z');
+            const elY = document.getElementById('stack-y');
+            const elX = document.getElementById('stack-x');
+            if (elT) elT.textContent = Number(calcState.t.toFixed(4)).toFixed(4);
+            if (elZ) elZ.textContent = Number(calcState.z.toFixed(4)).toFixed(4);
+            if (elY) elY.textContent = Number(calcState.y.toFixed(4)).toFixed(4);
+            if (elX) {
+                if (calcState.isEntering) {
+                    elX.textContent = calcState.inputBuffer + '_';
+                } else {
+                    elX.textContent = Number(calcState.x.toFixed(4)).toFixed(4) + '_';
+                }
+            }
+        }
+
+        function calcDigit(d) {
+            playCalcClick(650);
+            const stepEl = document.getElementById('rpn-eval-step');
+            if (stepEl) stepEl.textContent = 'KEY: ' + d + ' • ENTRY';
+            if (!calcState.isEntering) {
+                calcState.inputBuffer = d;
+                calcState.isEntering = true;
+            } else {
+                if (calcState.inputBuffer === '0') {
+                    calcState.inputBuffer = d;
+                } else if (calcState.inputBuffer.length < 12) {
+                    calcState.inputBuffer += d;
+                }
+            }
+            renderCalcStack();
+        }
+
+        function calcDot() {
+            playCalcClick(650);
+            if (!calcState.isEntering) {
+                calcState.inputBuffer = '0.';
+                calcState.isEntering = true;
+            } else if (!calcState.inputBuffer.includes('.')) {
+                calcState.inputBuffer += '.';
+            }
+            renderCalcStack();
+        }
+
+        function calcEnter() {
+            playCalcClick(720, 'enter');
+            const stepEl = document.getElementById('rpn-eval-step');
+            if (stepEl) stepEl.textContent = 'KEY: ENTER ↵ • LIFO STACK LIFT';
+            if (calcState.isEntering) {
+                calcState.x = parseFloat(calcState.inputBuffer) || 0;
+                calcState.isEntering = false;
+            }
+            calcState.t = calcState.z;
+            calcState.z = calcState.y;
+            calcState.y = calcState.x;
+            renderCalcStack();
+        }
+
+        function calcOp(op) {
+            playCalcClick(620, 'enter');
+            if (calcState.isEntering) {
+                calcState.x = parseFloat(calcState.inputBuffer) || 0;
+                calcState.isEntering = false;
+            }
+            const x = calcState.x;
+            const y = calcState.y;
+            let res = 0;
+            if (op === '+') res = y + x;
+            else if (op === '-') res = y - x;
+            else if (op === '×') res = y * x;
+            else if (op === '÷') res = x !== 0 ? y / x : 0;
+
+            const stepEl = document.getElementById('rpn-eval-step');
+            if (stepEl) stepEl.textContent = 'OP: ' + op + ' (' + y + ' ' + op + ' ' + x + ')';
+
+            calcState.x = res;
+            calcState.y = calcState.z;
+            calcState.z = calcState.t;
+            renderCalcStack();
+        }
+
+        function calcUnary(type) {
+            playCalcClick(600);
+            if (calcState.isEntering) {
+                calcState.x = parseFloat(calcState.inputBuffer) || 0;
+                calcState.isEntering = false;
+            }
+            let x = calcState.x;
+            let label = type;
+            if (type === 'sq') { calcState.x = x * x; label = 'x²'; }
+            else if (type === 'sqrt') { calcState.x = x >= 0 ? Math.sqrt(x) : 0; label = '√x'; }
+            else if (type === 'inv') { calcState.x = x !== 0 ? 1 / x : 0; label = '1/x'; }
+            else if (type === 'chs') { calcState.x = -x; label = '+/-'; }
+            const stepEl = document.getElementById('rpn-eval-step');
+            if (stepEl) stepEl.textContent = 'UNARY: ' + label;
+            renderCalcStack();
+        }
+
+        function calcSwap() {
+            playCalcClick(580);
+            if (calcState.isEntering) {
+                calcState.x = parseFloat(calcState.inputBuffer) || 0;
+                calcState.isEntering = false;
+            }
+            const temp = calcState.x;
+            calcState.x = calcState.y;
+            calcState.y = temp;
+            const stepEl = document.getElementById('rpn-eval-step');
+            if (stepEl) stepEl.textContent = 'REGISTER SWAP: X ⇄ Y';
+            renderCalcStack();
+        }
+
+        function calcDrop() {
+            playCalcClick(520);
+            calcState.isEntering = false;
+            calcState.x = calcState.y;
+            calcState.y = calcState.z;
+            calcState.z = calcState.t;
+            const stepEl = document.getElementById('rpn-eval-step');
+            if (stepEl) stepEl.textContent = 'STACK DROP: Y → X';
+            renderCalcStack();
+        }
+
+        function calcClx() {
+            playCalcClick(340, 'clear');
+            calcState.isEntering = false;
+            calcState.inputBuffer = '0';
+            calcState.x = 0;
+            const stepEl = document.getElementById('rpn-eval-step');
+            if (stepEl) stepEl.textContent = 'CLEAR REGISTER X';
+            renderCalcStack();
+        }
 
         // Hero Showcase Switcher Data
         const showcaseData = {
@@ -2733,11 +2908,12 @@
             if (stepEl) stepEl.textContent = 'STEP: CALCULATING...';
 
             setTimeout(() => {
-                playHapticClick(820);
-                document.getElementById('stack-t').textContent = data.stackT;
-                document.getElementById('stack-z').textContent = data.stackZ;
-                document.getElementById('stack-y').textContent = data.stackY;
-                document.getElementById('stack-x').textContent = data.stackX;
+                playCalcClick(820);
+                if (idx === 0) { calcState.t = 0; calcState.z = 0; calcState.y = 16; calcState.x = 96; }
+                else if (idx === 1) { calcState.t = 0; calcState.z = 0; calcState.y = 25; calcState.x = 5; }
+                else if (idx === 2) { calcState.t = 0; calcState.z = 0; calcState.y = 8; calcState.x = 53; }
+                calcState.isEntering = false;
+                renderCalcStack();
                 if (stepEl) stepEl.textContent = 'STEP: EVALUATION COMPLETE';
             }, 120);
         }
