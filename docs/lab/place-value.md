@@ -34,13 +34,8 @@ hide:
     <div id="vlab-view-placevalue">
       <div class="vlab-grid">
         
-        <!-- Left & Center: 12-Column Place Value Desk Tray -->
-        <div style="grid-column: span 2;" class="vlab-panel">
-          <div class="vlab-panel-header">
-            <span>Place Value Desk Tray (Whole Numbers &amp; Decimals)</span>
-            <span>Base-10 Regrouping</span>
-          </div>
-
+        <!-- Left & Center: Place Value Desk Tray -->
+        <div class="vlab-stage-container">
           <div class="pv-tray">
             <!-- Headers -->
             <div class="pv-grid-header">
@@ -98,9 +93,9 @@ hide:
             </div>
 
             <!-- Staging Toolbar for Place Value -->
-            <div class="vlab-staging-bar" style="margin-top:1rem;">
+            <div class="vlab-staging-bar">
               <div class="vlab-staged-readout">
-                <span class="vlab-staged-meta">CURRENT NUMBER BUILDER:</span>
+                <span class="vlab-staged-meta">ACTIVE VALUE IN REGISTER X:</span>
                 <span id="pv-total-val" class="vlab-staged-val">0.000</span>
               </div>
               <div style="display:flex; flex-wrap:wrap; gap:8px;">
@@ -132,20 +127,13 @@ hide:
             <button class="vlab-btn-op" data-vlab-op="÷">&divide;</button>
           </div>
 
-          <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 6px;">
-            <button id="vlab-btn-swap" class="vlab-btn-func">x⇄y</button>
-            <button id="vlab-btn-drop" class="vlab-btn-func">DROP</button>
-            <button id="vlab-btn-clx" class="vlab-btn-func">CLx</button>
-            <button id="vlab-btn-fdisp" class="vlab-btn-func">FDISP</button>
-          </div>
-
-          <div style="font-size:0.75rem; color:#94A3B8; line-height:1.5; font-family:'Space Mono',monospace; background:#11141A; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.08);">
-            <strong style="color:#FFFFFF;">CRA Classroom Steps:</strong><br>
-            1. Tap [+] to add base-10 chips.<br>
-            2. Push 1st number to stack.<br>
-            3. Build 2nd number &amp; push.<br>
-            4. Press [+] or [&minus;] to calculate.<br>
-            5. Observe regrouping / carrying!
+          <div style="font-size:0.72rem; color:#94A3B8; line-height:1.5; font-family:'Space Mono',monospace; background:#11141A; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.08);">
+            <strong style="color:#FFFFFF;">CRA Workflow:</strong><br>
+            1. Tap [+] to stack base-10 chips into Reg X.<br>
+            2. Press [ENTER] to push 1st number to Stack (Reg Y).<br>
+            3. Build 2nd number into Reg X.<br>
+            4. Press [+] or [&minus;] to calculate on the stack.<br>
+            5. Observe regrouping &amp; carrying!
           </div>
         </div>
 

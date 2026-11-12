@@ -34,13 +34,9 @@ theme:
 
 plugins:
   - search
-  - blog:
-      post_date_format: full
-      draft_if_future_date: true
 
 hooks:
   - hooks/book_macros.py
-  - hooks/generate_feed.py
 
 markdown_extensions:
   - attr_list
@@ -123,7 +119,6 @@ nav:
     - From Blocks to the Stack (Book Page): products/sc6-book.md
     - SC-32 Scientific Overview: products/sc32-calculator/index.md
   - Documentation:
-    - Engineering Blog: blog/index.md
     - Learning Lab: learning-lab.md
     - Hardware & Rubric: hardware.md
     - Firmware: firmware.md
@@ -132,7 +127,7 @@ nav:
     - Press & Editorial Kit: press.md
     - Shipping & Packaging: shipping-and-packaging.md
     - Exam Compliance & Proctor Guide: exam-compliance.md
-  - Build Logs ↗: https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator
+  - Engineering Blog & Build Logs ↗: https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator
   - Legal & Support:
     - Privacy Policy: privacy.md
     - Terms of Service: terms.md

@@ -32,76 +32,72 @@ hide:
 
     <!-- FRACTION STUDIO VIEW -->
     <div id="vlab-view-fractions">
+
+      <!-- Top Horizontal Fraction Palette Shelf -->
+      <div class="vlab-palette-bar">
+        <span class="vlab-palette-label">FRACTION PALETTE:</span>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/1',n:1,d:1,mm:84.0,cls:'frac-1-1'})">
+          <span class="vlab-block-chip" style="background:#334155;"></span> 1/1 <span class="vlab-block-spec">84mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/2',n:1,d:2,mm:42.0,cls:'frac-1-2'})">
+          <span class="vlab-block-chip" style="background:#0284C7;"></span> 1/2 <span class="vlab-block-spec">42mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/3',n:1,d:3,mm:28.0,cls:'frac-1-3'})">
+          <span class="vlab-block-chip" style="background:#059669;"></span> 1/3 <span class="vlab-block-spec">28mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/4',n:1,d:4,mm:21.0,cls:'frac-1-4'})">
+          <span class="vlab-block-chip" style="background:#D97706;"></span> 1/4 <span class="vlab-block-spec">21mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/5',n:1,d:5,mm:16.8,cls:'frac-1-5'})">
+          <span class="vlab-block-chip" style="background:#7C3AED;"></span> 1/5 <span class="vlab-block-spec">16.8mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/6',n:1,d:6,mm:14.0,cls:'frac-1-6'})">
+          <span class="vlab-block-chip" style="background:#E11D48;"></span> 1/6 <span class="vlab-block-spec">14mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/8',n:1,d:8,mm:10.5,cls:'frac-1-8'})">
+          <span class="vlab-block-chip" style="background:#0891B2;"></span> 1/8 <span class="vlab-block-spec">10.5mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/10',n:1,d:10,mm:8.4,cls:'frac-1-10'})">
+          <span class="vlab-block-chip" style="background:#0D9488;"></span> 1/10 <span class="vlab-block-spec">8.4mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/12',n:1,d:12,mm:7.0,cls:'frac-1-12'})">
+          <span class="vlab-block-chip" style="background:#4F46E5;"></span> 1/12 <span class="vlab-block-spec">7mm</span>
+        </button>
+      </div>
+
       <div class="vlab-grid">
         
-        <!-- Left: Fraction Rack / Palette -->
-        <div class="vlab-panel">
-          <div class="vlab-panel-header">
-            <span>Fraction Palette</span>
-            <span>84mm Ref</span>
-          </div>
-          <div id="vlab-frac-rack" class="vlab-rack-list">
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/1',n:1,d:1,mm:84.0,cls:'frac-1-1'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#334155;"></span><span class="vlab-block-label">1/1</span></div>
-              <span class="vlab-block-spec">84.0 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/2',n:1,d:2,mm:42.0,cls:'frac-1-2'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#0284C7;"></span><span class="vlab-block-label">1/2</span></div>
-              <span class="vlab-block-spec">42.0 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/3',n:1,d:3,mm:28.0,cls:'frac-1-3'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#059669;"></span><span class="vlab-block-label">1/3</span></div>
-              <span class="vlab-block-spec">28.0 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/4',n:1,d:4,mm:21.0,cls:'frac-1-4'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#D97706;"></span><span class="vlab-block-label">1/4</span></div>
-              <span class="vlab-block-spec">21.0 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/5',n:1,d:5,mm:16.8,cls:'frac-1-5'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#7C3AED;"></span><span class="vlab-block-label">1/5</span></div>
-              <span class="vlab-block-spec">16.8 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/6',n:1,d:6,mm:14.0,cls:'frac-1-6'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#E11D48;"></span><span class="vlab-block-label">1/6</span></div>
-              <span class="vlab-block-spec">14.0 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/8',n:1,d:8,mm:10.5,cls:'frac-1-8'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#0891B2;"></span><span class="vlab-block-label">1/8</span></div>
-              <span class="vlab-block-spec">10.5 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/10',n:1,d:10,mm:8.4,cls:'frac-1-10'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#0D9488;"></span><span class="vlab-block-label">1/10</span></div>
-              <span class="vlab-block-spec">8.4 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/12',n:1,d:12,mm:7.0,cls:'frac-1-12'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#4F46E5;"></span><span class="vlab-block-label">1/12</span></div>
-              <span class="vlab-block-spec">7.0 mm</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Center: Staging Bay & Comparison Stage -->
+        <!-- Left: Staging & Comparison Stage -->
         <div class="vlab-stage-container">
           <div class="vlab-comparator-bay">
             <div id="vlab-laser-line" class="vlab-laser-line"></div>
             <div class="vlab-columns-wrapper">
               
-              <!-- Column 1: Staging Builder -->
-              <div>
-                <div id="vlab-col-stage" class="vlab-column"></div>
-                <div class="vlab-column-title">1. STAGING TOWER</div>
+              <!-- Column 1: Register Y (The Stack) -->
+              <div class="vlab-column-container">
+                <div id="vlab-col-stack-y" class="vlab-column"></div>
+                <div class="vlab-col-meta-box">
+                  <div class="vlab-column-title" style="color:#0284C7;">1. REGISTER Y (STACK)</div>
+                  <div id="vlab-meta-stack-y" class="vlab-column-sub">Y: 0 (0.0 mm)</div>
+                </div>
               </div>
 
-              <!-- Column 2: Live Calculator Result (Register X) -->
-              <div>
+              <!-- Column 2: Register X (Active Entry / Tower) -->
+              <div class="vlab-column-container">
                 <div id="vlab-col-stack-x" class="vlab-column"></div>
-                <div class="vlab-column-title" style="color:#38BDF8;">2. STACK (REG X)</div>
+                <div class="vlab-col-meta-box">
+                  <div class="vlab-column-title" style="color:#38BDF8;">2. REGISTER X (ENTRY)</div>
+                  <div id="vlab-staged-val" class="vlab-column-sub" style="font-weight: bold; color: #FFFFFF;">0</div>
+                </div>
               </div>
 
               <!-- Column 3: Verification Target -->
-              <div>
+              <div class="vlab-column-container">
                 <div id="vlab-col-target" class="vlab-column vlab-column-target"></div>
-                <div class="vlab-column-title" style="color:#10B981;">3. EQUIVALENCE TARGET</div>
+                <div class="vlab-col-meta-box">
+                  <div class="vlab-column-title" style="color:#10B981;">3. VERIFICATION TARGET</div>
+                  <div id="vlab-meta-target" class="vlab-column-sub" style="color:#10B981;">Target: 0 mm</div>
+                </div>
               </div>
 
             </div>
@@ -110,14 +106,13 @@ hide:
           <!-- Staging Action Toolbar -->
           <div class="vlab-staging-bar">
             <div class="vlab-staged-readout">
-              <span class="vlab-staged-meta">STAGED FRACTION:</span>
-              <span id="vlab-staged-val" class="vlab-staged-val">0</span>
-              <span id="vlab-staged-meta" class="vlab-staged-meta">Height: 0.0 mm • Val: 0.000</span>
+              <span class="vlab-staged-meta">ACTIVE VALUE IN REGISTER X:</span>
+              <span id="vlab-staged-meta" class="vlab-staged-meta" style="color: #E2E8F0; font-weight: 700;">Height: 0.0 mm • Val: 0.000</span>
             </div>
             <div style="display:flex; flex-wrap:wrap; gap:8px;">
               <button id="vlab-btn-push-frac" class="vlab-btn-push">↵ PUSH TO STACK [ENTER]</button>
-              <button id="vlab-btn-drop-frac" class="vlab-btn-secondary">⌫ DROP TOP</button>
-              <button id="vlab-btn-clear-frac" class="vlab-btn-secondary">✕ CLEAR</button>
+              <button id="vlab-btn-drop-frac" class="vlab-btn-secondary" title="Pop topmost block">⌫ DROP TOP</button>
+              <button id="vlab-btn-clear-frac" class="vlab-btn-secondary" title="Clear Register X">✕ CLEAR</button>
             </div>
           </div>
         </div>
@@ -152,10 +147,10 @@ hide:
 
           <!-- Verification Trigger Box -->
           <div style="background:#11141A; border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:12px;">
-            <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#94A3B8; margin-bottom:8px; font-weight:700;">
+            <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#94A3B8; margin-bottom:6px; font-weight:700;">
               VERIFICATION ENGINE
             </div>
-            <div id="vlab-check-status" style="font-family:'Space Mono',monospace; font-size:0.75rem; color:#94A3B8; margin-bottom:10px;">
+            <div id="vlab-check-status" style="font-family:'Space Mono',monospace; font-size:0.72rem; color:#94A3B8; margin-bottom:8px; min-height: 28px;">
               Awaiting calculation...
             </div>
             <div style="display:flex; gap:6px;">

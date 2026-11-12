@@ -1200,8 +1200,8 @@ hide:
     </div>
 
     <div style="margin-top: 1.5rem; text-align: center;">
-      <a href="../blog/2026/10/12/the-postfix-manifesto/" style="font-family: 'Space Mono', monospace; font-size: 0.8rem; color: #38BDF8; text-decoration: none; font-weight: 700;">
-        Read the Full Essay: The Postfix Manifesto &rarr;
+      <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" target="_blank" rel="noopener noreferrer" style="font-family: 'Space Mono', monospace; font-size: 0.8rem; color: #38BDF8; text-decoration: none; font-weight: 700;">
+        Read Our Engineering Build Logs on Hackaday ↗
       </a>
     </div>
   </section>

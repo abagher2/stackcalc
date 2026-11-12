@@ -92,7 +92,7 @@ StackCalc includes an equation solver based on classic Romberg numerical integra
 
 - **Current physical status:** The SC-32 is offered as a tool-free Maker Kit with a 100% pre-soldered RP2350 logic board, sliding dovetail chassis, tactile TPU keycaps, and transflective monochrome LCD. Tool-free 5-minute snap assembly with zero soldering required.
 - **Public printable release:** Download the matching four-part STL/3MF set from the [hardware guide](hardware.md). It is intended for mechanical exploration and community fabrication.
-- **Teaching materials:** The [Learning Lab](learning-lab.md#download-the-prototype-materials) provides printable curriculum materials and teacher PDFs.
+- **Teaching materials:** The [Learning Lab](learning-lab.md) provides 2D virtual manipulatives and links to companion books and workbooks.
 - **What is not public:** Electronics source, firmware source, CAD generators, manufacturing artwork, and production documentation are not public downloads.
 
 ---

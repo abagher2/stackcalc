@@ -1,14 +1,17 @@
 ---
 title: "StackCalc Learning Lab | 2D Virtual Manipulatives & Stack Computing"
-description: "Interactive 2D virtual manipulatives lab for schools: Fraction Towers (FRAC-01) and Place-Value Decimal Trays (PLACE-01). Build quantities with tactile blocks, push values onto the 4-line RPN stack, execute operations, and verify mathematical equivalence."
+description: "Interactive 2D virtual manipulatives lab for schools: Fraction Towers (FRAC-01), Place-Value Decimal Trays (PLACE-01), and Prime Factor Studio (PRIME-01). Build quantities with tactile blocks, push values onto the 4-line RPN stack, execute operations, and verify mathematical equivalence."
+hide:
+  - navigation
+  - toc
 ---
 
 # StackCalc Learning Lab
 
 The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract (CRA)** framework with the mechanical clarity of **Reverse Polish Notation (RPN)**:
-1. **Concrete:** Physical 3D-printed Gridfinity math manipulatives on classroom desks.
+1. **Concrete:** Physical 3D-printed math blocks and tactile kits on classroom desks.
 2. **Representational (2D Interactive Lab Below):** Virtual proportional blocks and place-value trays for interactive whiteboards and 1:1 Chromebooks.
-3. **Abstract:** Dedicated 4-line operational stack registers on the **SC-6 Elementary** and **SC-32 Scientific** handheld calculators.
+3. **Abstract:** Dedicated 4-line operational stack registers ($X, Y, Z, T$) on the **SC-6 Elementary** and **SC-32 Scientific** calculators.
 
 ---
 
@@ -39,79 +42,72 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
 
     <!-- VIEW 1: FRACTION STUDIO -->
     <div id="vlab-view-fractions">
+      
+      <!-- Top Horizontal Fraction Palette Shelf -->
+      <div class="vlab-palette-bar">
+        <span class="vlab-palette-label">FRACTION PALETTE:</span>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/1',n:1,d:1,mm:84.0,cls:'frac-1-1'})">
+          <span class="vlab-block-chip" style="background:#334155;"></span> 1/1 <span class="vlab-block-spec">84mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/2',n:1,d:2,mm:42.0,cls:'frac-1-2'})">
+          <span class="vlab-block-chip" style="background:#0284C7;"></span> 1/2 <span class="vlab-block-spec">42mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/3',n:1,d:3,mm:28.0,cls:'frac-1-3'})">
+          <span class="vlab-block-chip" style="background:#059669;"></span> 1/3 <span class="vlab-block-spec">28mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/4',n:1,d:4,mm:21.0,cls:'frac-1-4'})">
+          <span class="vlab-block-chip" style="background:#D97706;"></span> 1/4 <span class="vlab-block-spec">21mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/5',n:1,d:5,mm:16.8,cls:'frac-1-5'})">
+          <span class="vlab-block-chip" style="background:#7C3AED;"></span> 1/5 <span class="vlab-block-spec">16.8mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/6',n:1,d:6,mm:14.0,cls:'frac-1-6'})">
+          <span class="vlab-block-chip" style="background:#E11D48;"></span> 1/6 <span class="vlab-block-spec">14mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/8',n:1,d:8,mm:10.5,cls:'frac-1-8'})">
+          <span class="vlab-block-chip" style="background:#0891B2;"></span> 1/8 <span class="vlab-block-spec">10.5mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/10',n:1,d:10,mm:8.4,cls:'frac-1-10'})">
+          <span class="vlab-block-chip" style="background:#0D9488;"></span> 1/10 <span class="vlab-block-spec">8.4mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/12',n:1,d:12,mm:7.0,cls:'frac-1-12'})">
+          <span class="vlab-block-chip" style="background:#4F46E5;"></span> 1/12 <span class="vlab-block-spec">7mm</span>
+        </button>
+      </div>
+
       <div class="vlab-grid">
         
-        <!-- Left: Fraction Rack / Palette -->
-        <div class="vlab-panel">
-          <div class="vlab-panel-header">
-            <span>Fraction Palette</span>
-            <span>84mm Ref</span>
-          </div>
-          <div id="vlab-frac-rack" class="vlab-rack-list">
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/1',n:1,d:1,mm:84.0,cls:'frac-1-1'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#334155;"></span><span class="vlab-block-label">1/1</span></div>
-              <span class="vlab-block-spec">84.0 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/2',n:1,d:2,mm:42.0,cls:'frac-1-2'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#0284C7;"></span><span class="vlab-block-label">1/2</span></div>
-              <span class="vlab-block-spec">42.0 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/3',n:1,d:3,mm:28.0,cls:'frac-1-3'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#059669;"></span><span class="vlab-block-label">1/3</span></div>
-              <span class="vlab-block-spec">28.0 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/4',n:1,d:4,mm:21.0,cls:'frac-1-4'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#D97706;"></span><span class="vlab-block-label">1/4</span></div>
-              <span class="vlab-block-spec">21.0 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/5',n:1,d:5,mm:16.8,cls:'frac-1-5'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#7C3AED;"></span><span class="vlab-block-label">1/5</span></div>
-              <span class="vlab-block-spec">16.8 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/6',n:1,d:6,mm:14.0,cls:'frac-1-6'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#E11D48;"></span><span class="vlab-block-label">1/6</span></div>
-              <span class="vlab-block-spec">14.0 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/8',n:1,d:8,mm:10.5,cls:'frac-1-8'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#0891B2;"></span><span class="vlab-block-label">1/8</span></div>
-              <span class="vlab-block-spec">10.5 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/10',n:1,d:10,mm:8.4,cls:'frac-1-10'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#0D9488;"></span><span class="vlab-block-label">1/10</span></div>
-              <span class="vlab-block-spec">8.4 mm</span>
-            </div>
-            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/12',n:1,d:12,mm:7.0,cls:'frac-1-12'})">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#4F46E5;"></span><span class="vlab-block-label">1/12</span></div>
-              <span class="vlab-block-spec">7.0 mm</span>
-            </div>
-          </div>
-          <div style="margin-top: 1rem; font-size: 0.68rem; color: #64748B; font-family: 'Space Mono', monospace;">
-            Tap blocks above to construct numbers in the Staging Column.
-          </div>
-        </div>
-
-        <!-- Center: Staging Bay & Comparison Stage -->
+        <!-- Left: Staging & Comparison Stage -->
         <div class="vlab-stage-container">
           <div class="vlab-comparator-bay">
             <div id="vlab-laser-line" class="vlab-laser-line"></div>
             <div class="vlab-columns-wrapper">
               
-              <!-- Column 1: Staging Builder -->
-              <div>
-                <div id="vlab-col-stage" class="vlab-column"></div>
-                <div class="vlab-column-title">1. STAGING TOWER</div>
+              <!-- Column 1: Register Y (The Stack) -->
+              <div class="vlab-column-container">
+                <div id="vlab-col-stack-y" class="vlab-column"></div>
+                <div class="vlab-col-meta-box">
+                  <div class="vlab-column-title" style="color:#0284C7;">1. REGISTER Y (STACK)</div>
+                  <div id="vlab-meta-stack-y" class="vlab-column-sub">Y: 0 (0.0 mm)</div>
+                </div>
               </div>
 
-              <!-- Column 2: Live Calculator Result (Register X) -->
-              <div>
+              <!-- Column 2: Register X (Active Entry / Tower) -->
+              <div class="vlab-column-container">
                 <div id="vlab-col-stack-x" class="vlab-column"></div>
-                <div class="vlab-column-title" style="color:#38BDF8;">2. STACK (REG X)</div>
+                <div class="vlab-col-meta-box">
+                  <div class="vlab-column-title" style="color:#38BDF8;">2. REGISTER X (ENTRY)</div>
+                  <div id="vlab-staged-val" class="vlab-column-sub" style="font-weight: bold; color: #FFFFFF;">0</div>
+                </div>
               </div>
 
               <!-- Column 3: Verification Target -->
-              <div>
+              <div class="vlab-column-container">
                 <div id="vlab-col-target" class="vlab-column vlab-column-target"></div>
-                <div class="vlab-column-title" style="color:#10B981;">3. VERIFICATION TARGET</div>
+                <div class="vlab-col-meta-box">
+                  <div class="vlab-column-title" style="color:#10B981;">3. VERIFICATION TARGET</div>
+                  <div id="vlab-meta-target" class="vlab-column-sub" style="color:#10B981;">Target: 0 mm</div>
+                </div>
               </div>
 
             </div>
@@ -120,14 +116,13 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
           <!-- Staging Action Toolbar -->
           <div class="vlab-staging-bar">
             <div class="vlab-staged-readout">
-              <span class="vlab-staged-meta">STAGED NUMBER VALUE:</span>
-              <span id="vlab-staged-val" class="vlab-staged-val">0</span>
-              <span id="vlab-staged-meta" class="vlab-staged-meta">Height: 0.0 mm • Val: 0.000</span>
+              <span class="vlab-staged-meta">REGISTER X ACTIVE VALUE:</span>
+              <span id="vlab-staged-meta" class="vlab-staged-meta" style="color: #E2E8F0; font-weight: 700;">Height: 0.0 mm • Val: 0.000</span>
             </div>
             <div style="display:flex; flex-wrap:wrap; gap:8px;">
               <button id="vlab-btn-push-frac" class="vlab-btn-push">↵ PUSH TO STACK [ENTER]</button>
-              <button id="vlab-btn-drop-frac" class="vlab-btn-secondary">⌫ DROP TOP</button>
-              <button id="vlab-btn-clear-frac" class="vlab-btn-secondary">✕ CLEAR</button>
+              <button id="vlab-btn-drop-frac" class="vlab-btn-secondary" title="Pop topmost block">⌫ DROP TOP</button>
+              <button id="vlab-btn-clear-frac" class="vlab-btn-secondary" title="Clear Register X">✕ CLEAR</button>
             </div>
           </div>
         </div>
@@ -162,10 +157,10 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
 
           <!-- Verification Trigger Box -->
           <div style="background:#11141A; border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:12px;">
-            <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#94A3B8; margin-bottom:8px; font-weight:700;">
+            <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#94A3B8; margin-bottom:6px; font-weight:700;">
               VERIFICATION ENGINE
             </div>
-            <div id="vlab-check-status" style="font-family:'Space Mono',monospace; font-size:0.75rem; color:#94A3B8; margin-bottom:10px;">
+            <div id="vlab-check-status" style="font-family:'Space Mono',monospace; font-size:0.72rem; color:#94A3B8; margin-bottom:8px; min-height: 28px;">
               Awaiting calculation...
             </div>
             <div style="display:flex; gap:6px;">
@@ -182,13 +177,8 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
     <div id="vlab-view-placevalue" style="display:none;">
       <div class="vlab-grid">
         
-        <!-- Left & Center: 12-Column Place Value Desk Tray -->
-        <div style="grid-column: span 2;" class="vlab-panel">
-          <div class="vlab-panel-header">
-            <span>Place Value Desk Tray (Whole Numbers &amp; Decimals)</span>
-            <span>Base-10 Regrouping</span>
-          </div>
-
+        <!-- Left & Center: Place Value Desk Tray -->
+        <div class="vlab-stage-container">
           <div class="pv-tray">
             <!-- Headers -->
             <div class="pv-grid-header">
@@ -246,9 +236,9 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
             </div>
 
             <!-- Staging Toolbar for Place Value -->
-            <div class="vlab-staging-bar" style="margin-top:1rem;">
+            <div class="vlab-staging-bar">
               <div class="vlab-staged-readout">
-                <span class="vlab-staged-meta">CURRENT NUMBER BUILDER:</span>
+                <span class="vlab-staged-meta">ACTIVE VALUE IN REGISTER X:</span>
                 <span id="pv-total-val" class="vlab-staged-val">0.000</span>
               </div>
               <div style="display:flex; flex-wrap:wrap; gap:8px;">
@@ -280,13 +270,13 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
             <button class="vlab-btn-op" data-vlab-op="÷">&divide;</button>
           </div>
 
-          <div style="font-size:0.75rem; color:#94A3B8; line-height:1.5; font-family:'Space Mono',monospace; background:#11141A; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.08);">
+          <div style="font-size:0.72rem; color:#94A3B8; line-height:1.5; font-family:'Space Mono',monospace; background:#11141A; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.08);">
             <strong style="color:#FFFFFF;">CRA Workflow:</strong><br>
-            1. Tap [+] to add base-10 chips.<br>
-            2. Push 1st number to stack.<br>
-            3. Build 2nd number &amp; push.<br>
-            4. Press [+] or [&minus;] to calculate.<br>
-            5. Observe regrouping / carrying!
+            1. Tap [+] to stack base-10 chips into Reg X.<br>
+            2. Press [ENTER] to push 1st number to Stack (Reg Y).<br>
+            3. Build 2nd number into Reg X.<br>
+            4. Press [+] or [&minus;] to calculate on the stack.<br>
+            5. Observe regrouping &amp; carrying!
           </div>
         </div>
 
@@ -295,88 +285,87 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
 
     <!-- VIEW 3: PRIME FACTOR STUDIO -->
     <div id="vlab-view-primes" style="display:none;">
+      
+      <!-- Top Horizontal Prime Palette Shelf -->
+      <div class="vlab-palette-bar">
+        <span class="vlab-palette-label">PRIME PALETTE:</span>
+        <button class="vlab-block-btn-chip" data-prime-p="2">
+          <span class="vlab-block-chip" style="background:#0284C7;"></span> [2] <span class="vlab-block-spec">18mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" data-prime-p="3">
+          <span class="vlab-block-chip" style="background:#10B981;"></span> [3] <span class="vlab-block-spec">28.5mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" data-prime-p="5">
+          <span class="vlab-block-chip" style="background:#F59E0B;"></span> [5] <span class="vlab-block-spec">41.8mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" data-prime-p="7">
+          <span class="vlab-block-chip" style="background:#8B5CF6;"></span> [7] <span class="vlab-block-spec">50.7mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" data-prime-p="11">
+          <span class="vlab-block-chip" style="background:#EC4899;"></span> [11] <span class="vlab-block-spec">62.4mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" data-prime-p="13">
+          <span class="vlab-block-chip" style="background:#06B6D4;"></span> [13] <span class="vlab-block-spec">66.8mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" data-prime-p="17">
+          <span class="vlab-block-chip" style="background:#E11D48;"></span> [17] <span class="vlab-block-spec">73.6mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" data-prime-p="19">
+          <span class="vlab-block-chip" style="background:#F97316;"></span> [19] <span class="vlab-block-spec">76.5mm</span>
+        </button>
+        <button class="vlab-block-btn-chip" data-prime-p="23">
+          <span class="vlab-block-chip" style="background:#64748B;"></span> [23] <span class="vlab-block-spec">81.3mm</span>
+        </button>
+      </div>
+
       <div class="vlab-grid">
         
-        <!-- Left: Prime Palette -->
-        <div class="vlab-panel">
-          <div class="vlab-panel-header">
-            <span>Prime Block Palette</span>
-            <span>Log(p) Ref</span>
-          </div>
-          <div class="vlab-rack-list">
-            <div class="vlab-block-btn" data-prime-p="2">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#0284C7;"></span><span class="vlab-block-label">[2]</span></div>
-              <span class="vlab-block-spec">18.0 mm</span>
-            </div>
-            <div class="vlab-block-btn" data-prime-p="3">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#10B981;"></span><span class="vlab-block-label">[3]</span></div>
-              <span class="vlab-block-spec">28.5 mm</span>
-            </div>
-            <div class="vlab-block-btn" data-prime-p="5">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#F59E0B;"></span><span class="vlab-block-label">[5]</span></div>
-              <span class="vlab-block-spec">41.8 mm</span>
-            </div>
-            <div class="vlab-block-btn" data-prime-p="7">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#8B5CF6;"></span><span class="vlab-block-label">[7]</span></div>
-              <span class="vlab-block-spec">50.7 mm</span>
-            </div>
-            <div class="vlab-block-btn" data-prime-p="11">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#EC4899;"></span><span class="vlab-block-label">[11]</span></div>
-              <span class="vlab-block-spec">62.4 mm</span>
-            </div>
-            <div class="vlab-block-btn" data-prime-p="13">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#06B6D4;"></span><span class="vlab-block-label">[13]</span></div>
-              <span class="vlab-block-spec">66.8 mm</span>
-            </div>
-            <div class="vlab-block-btn" data-prime-p="17">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#E11D48;"></span><span class="vlab-block-label">[17]</span></div>
-              <span class="vlab-block-spec">73.6 mm</span>
-            </div>
-            <div class="vlab-block-btn" data-prime-p="19">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#F97316;"></span><span class="vlab-block-label">[19]</span></div>
-              <span class="vlab-block-spec">76.5 mm</span>
-            </div>
-            <div class="vlab-block-btn" data-prime-p="23">
-              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#64748B;"></span><span class="vlab-block-label">[23]</span></div>
-              <span class="vlab-block-spec">81.3 mm</span>
-            </div>
-          </div>
-          <div style="margin-top: 1rem; font-size: 0.68rem; color: #64748B; font-family: 'Space Mono', monospace;">
-            Lengths scale logarithmically: Log(a) + Log(b) = Log(a×b).
-          </div>
-        </div>
-
-        <!-- Center: Prime Factor Rails -->
+        <!-- Left: Vertical Prime Factor Columns -->
         <div class="vlab-stage-container">
-          <div class="prime-rail-container">
-            <div>
-              <div class="prime-rail-title">
-                <span>1. Staged Prime Factor Train (Active Product)</span>
-                <span id="vlab-prime-formula" style="color: #38BDF8;">No factors</span>
+          <div class="vlab-comparator-bay">
+            <div class="vlab-columns-wrapper">
+              
+              <!-- Column 1: Prime Register Y (Stack) -->
+              <div class="vlab-column-container">
+                <div id="vlab-prime-stack-y" class="vlab-column"></div>
+                <div class="vlab-col-meta-box">
+                  <div class="vlab-column-title" style="color:#0284C7;">1. REGISTER Y (STACK)</div>
+                  <div id="vlab-prime-meta-y" class="vlab-column-sub">Y: 0</div>
+                </div>
               </div>
-              <div id="vlab-prime-stage" class="prime-rail"></div>
-            </div>
 
-            <div>
-              <div class="prime-rail-title">
-                <span>2. Target / Decomposed Register X Prime Train</span>
-                <span style="color: #10B981;">[FACT / GCD / LCM]</span>
+              <!-- Column 2: Prime Register X (Active Entry / Tower) -->
+              <div class="vlab-column-container">
+                <div id="vlab-prime-stack-x" class="vlab-column"></div>
+                <div class="vlab-col-meta-box">
+                  <div class="vlab-column-title" style="color:#38BDF8;">2. REGISTER X (ENTRY)</div>
+                  <div id="vlab-prime-val" class="vlab-column-sub" style="font-weight: bold; color: #FFFFFF; font-size: 0.9rem;">0</div>
+                </div>
               </div>
-              <div id="vlab-prime-target" class="prime-rail"></div>
+
+              <!-- Column 3: Prime Target / Decomposed Tower -->
+              <div class="vlab-column-container">
+                <div id="vlab-prime-target" class="vlab-column vlab-column-target"></div>
+                <div class="vlab-col-meta-box">
+                  <div class="vlab-column-title" style="color:#10B981;">3. TARGET / DECOMPOSED</div>
+                  <div class="vlab-column-sub" style="color:#10B981;">[FACT / GCD / LCM]</div>
+                </div>
+              </div>
+
             </div>
           </div>
 
           <!-- Staging Readout & Actions -->
           <div class="vlab-staging-bar">
             <div class="vlab-staged-readout">
-              <span class="vlab-staged-meta">COMPOSITE PRODUCT VALUE:</span>
-              <span id="vlab-prime-val" class="vlab-staged-val">0</span>
-              <span id="vlab-prime-meta" class="vlab-staged-meta">Logarithmic Length: 0.0 mm • 0 Factors</span>
+              <span class="vlab-staged-meta">PRIME FACTOR COMPOSITION:</span>
+              <span id="vlab-prime-formula" style="color:#38BDF8; font-weight:800; font-family:'Space Mono',monospace; font-size:0.95rem;">No factors selected</span>
+              <span id="vlab-prime-meta" class="vlab-staged-meta">Logarithmic Height: 0.0 mm • 0 Factors</span>
             </div>
             <div style="display:flex; flex-wrap:wrap; gap:8px;">
               <button id="vlab-btn-push-prime" class="vlab-btn-push">↵ PUSH TO STACK [ENTER]</button>
-              <button id="vlab-btn-drop-prime" class="vlab-btn-secondary">⌫ DROP LAST PRIME</button>
-              <button id="vlab-btn-clear-prime" class="vlab-btn-secondary">✕ CLEAR</button>
+              <button id="vlab-btn-drop-prime" class="vlab-btn-secondary" title="Pop topmost prime block">⌫ DROP TOP</button>
+              <button id="vlab-btn-clear-prime" class="vlab-btn-secondary" title="Clear prime blocks">✕ CLEAR</button>
             </div>
           </div>
         </div>
@@ -394,7 +383,7 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
             <div class="vlab-lcd-register vlab-lcd-reg-x"><span>X:</span> <span>0.0000_</span></div>
           </div>
 
-          <!-- Standard Operations -->
+          <!-- Operations Grid -->
           <div class="vlab-op-grid">
             <button class="vlab-btn-op" data-vlab-op="+">+</button>
             <button class="vlab-btn-op" data-vlab-op="-">&minus;</button>
@@ -409,9 +398,10 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
             <button id="vlab-btn-lcm" class="vlab-btn-func" style="background: rgba(245, 158, 11, 0.2); border-color: #F59E0B; color: #F59E0B; font-weight: bold;">LCM</button>
           </div>
 
-          <div style="margin-top: 0.75rem; font-size:0.75rem; color:#94A3B8; line-height:1.5; font-family:'Space Mono',monospace; background:#11141A; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.08);">
+          <div style="font-size:0.72rem; color:#94A3B8; line-height:1.5; font-family:'Space Mono',monospace; background:#11141A; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.08);">
             <strong style="color:#FFFFFF;">Prime Operations:</strong><br>
-            • <strong>[FACT]:</strong> Decomposes Reg X into prime blocks.<br>
+            • <strong>Vertical Stacking:</strong> Blocks stack vertically with logarithmic heights ($\log a + \log b = \log ab$).<br>
+            • <strong>[FACT]:</strong> Decomposes Reg X into a vertical prime tower.<br>
             • <strong>[GCD]:</strong> Greatest Common Divisor of Y and X.<br>
             • <strong>[LCM]:</strong> Least Common Multiple of Y and X.
           </div>
@@ -425,7 +415,7 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
 
 ---
 
-## Companion Books & Classroom Literature {: #download-the-prototype-materials }
+## Official Companion Books & Literature {: #download-the-prototype-materials }
 
 Pair your interactive lab investigations with StackCalc's official companion books and student workbooks, available in print on **Amazon**:
 
