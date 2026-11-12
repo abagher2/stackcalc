@@ -65,6 +65,14 @@ hide:
         </button>
       </div>
 
+      <!-- Direct Number Input Bar for Primes -->
+      <div class="vlab-direct-input-bar">
+        <span class="vlab-palette-label">TYPE NUMBER:</span>
+        <input type="number" id="vlab-prime-input" class="vlab-quick-input" placeholder="e.g. 42 or 120" min="2" max="99999">
+        <button id="vlab-btn-prime-add" class="vlab-btn-quick-add">+ FACTORIZE TOWER</button>
+        <span style="font-size: 0.72rem; color: #64748B; margin-left: auto;">Press Enter or click to build prime blocks</span>
+      </div>
+
       <div class="vlab-grid">
         
         <!-- Left: Vertical Prime Factor Columns -->

@@ -73,8 +73,8 @@ Free downloadable teaching guides, pre-generated station companions, competition
       <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Classroom Station Guides &amp; Worksheets</h3>
       <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">2-page visual station companions with CPA CAD blueprints and teacher rubrics for Singapore Dimensions, Bridges in Mathematics, and Big Ideas Math.</p>
     </div>
-    <a href="curriculum/worksheets/" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-      <span>BROWSE 120 GUIDES &rarr;</span>
+    <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(56, 189, 248, 0.15); border: 1px solid #38BDF8; color: #38BDF8; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+      <span>ORDER ON AMAZON ($14.99) ↗</span>
     </a>
   </div>
 
@@ -84,8 +84,8 @@ Free downloadable teaching guides, pre-generated station companions, competition
       <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Texas UIL &amp; TMSCA Competition Exams</h3>
       <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Official 30-min tournament test booklets and 3-sig-fig grading keys for High School (SC-32), Junior High (Grades 7–8), and Elementary (Grades 3–6 on SC-6).</p>
     </div>
-    <a href="curriculum/uil-competition/" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-      <span>VIEW 24 EXAMS &amp; KEYS &rarr;</span>
+    <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+      <span>VIEW EXAM WORKBOOKS ↗</span>
     </a>
   </div>
 
@@ -101,9 +101,6 @@ Free downloadable teaching guides, pre-generated station companions, competition
       </a>
       <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 110px; text-align: center; padding: 0.5rem 0.2rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
         <span>BOOK 2 (AMAZON $14.99) ↗</span>
-      </a>
-      <a href="curriculum/teacher-guide/" style="flex: 0.8; min-width: 80px; text-align: center; padding: 0.5rem 0.2rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-decoration: none;">
-        <span>GUIDE &rarr;</span>
       </a>
     </div>
   </div>
@@ -202,11 +199,11 @@ Free downloadable teaching guides, pre-generated station companions, competition
   <div style="background: #11141A; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
     <div>
       <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #38BDF8; font-weight: 700;">STANDARDS MAPPING &bull; CCSS &amp; TEKS</span>
-      <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Curriculum Alignment Matrix</h3>
+      <h3 style="margin: 0.35rem 0; font-size: 1.05rem; color: #FFFFFF;">Curriculum &amp; Learning Lab</h3>
       <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem;">Cross-reference matrix matching every StackCalc tool and key sequence to Bridges, Big Ideas, Singapore Dimensions, and CCSS.</p>
     </div>
-    <a href="curriculum/alignment-matrix/" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-      <span>VIEW ALIGNMENT MATRIX &rarr;</span>
+    <a href="learning-lab/" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+      <span>EXPLORE LEARNING LAB &rarr;</span>
     </a>
   </div>
 
@@ -217,7 +214,7 @@ Free downloadable teaching guides, pre-generated station companions, competition
 Our complete curriculum textbooks and workbooks are published in bookstore editions on Amazon:
 
 * **Middle School Math Block Supplement &amp; Workbook (Grades 6–8):** [Order on Amazon ($14.99) ↗](https://link.amazon/B07bxzYKq) &bull; [Download PDF (128 pp.) &darr;](downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf)
-* **Unified Master Teacher's Guide (Grades K–12):** [Order on Amazon ($16) ↗](https://link.amazon/B05RFHqeu) &bull; [Explore Online Teacher Facilitator Guide](curriculum/teacher-guide.md)
+* **Unified Master Teacher's Guide (Grades K–12):** [Order on Amazon ($16) ↗](https://link.amazon/B05RFHqeu)
 * **From Blocks to the Stack (SC-6 Elementary Textbook):** [Order on Amazon ($16) ↗](https://link.amazon/B0f5cP0Ur) &bull; [Explore Book Overview](products/sc6-book.md)
 * **Thinking in the Stack (SC-32 Scientific Manual):** [Order on Amazon ($16) ↗](https://link.amazon/B07DqTRR5) &bull; [Hardcover ($28) ↗](https://link.amazon/B09AnTIQI)
 
@@ -341,4 +338,4 @@ For schools, teachers, or parents who don't have access to a 3D printer:
 - **Order Handcrafted 3D-Printed Manipulative & Hardware Kits on Etsy:** Handcrafted 3D-printed manipulative block kits and pre-soldered calculator hardware kits ship within 48 hours: [Etsy Storefront (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
 - **Order Official Print Books on Amazon:** Flagship textbooks and workbooks are on Amazon for SC-32 ([Paperback ↗](https://link.amazon/B07DqTRR5) • [Hardcover ↗](https://link.amazon/B09AnTIQI)), [SC-6 ↗](https://link.amazon/B0f5cP0Ur), the [Middle School Math Blocks Workbook ↗](https://link.amazon/B07bxzYKq), and the [Teacher's Curriculum Guide ↗](https://link.amazon/B05RFHqeu).
 - **Follow Hardware Build Logs on Hackaday:** For KiCad PCB schematics, RP2350 silicon bring-up, and engineering discussion: [Hackaday Project ↗](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)
-- **View Full Refill Instructions:** Read our dedicated [Replacement Parts & Refills Guide](parts.md).
+- **Replacement Parts & Refills:** Visit our [Etsy Storefront](https://stackcalcmath.etsy.com) for spare trays and block refills.

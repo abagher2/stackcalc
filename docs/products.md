@@ -41,12 +41,6 @@ hide:
         "position": 4,
         "name": "Prime Factor Studio & Slide Rule Comparator",
         "url": "https://www.stackcalc.io/products/prime-factor-studio/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 5,
-        "name": "Place Value Blocks & Regrouping Trays",
-        "url": "https://www.stackcalc.io/products/place-value/"
       }
     ]
   }
@@ -130,7 +124,7 @@ hide:
       <div style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">CLASSROOM DIGITAL TWINS // 2D VIRTUAL LAB</div>
       <h3 style="margin: 0.25rem 0; color: #FFFFFF; font-size: 1.25rem; font-weight: 800;">Launch Interactive 2D Virtual Manipulatives Suite</h3>
       <p style="margin: 0; color: #94A3B8; font-size: 0.85rem; max-width: 680px;">
-        Model fraction towers and place-value regrouping directly in your browser. Staging blocks push automatically onto the live 4-line RPN calculator stack with real-time laser alignment and self-check operations.
+        Model fraction towers and prime factorizations directly in your browser. Staging blocks push automatically onto the live 4-line RPN calculator stack with step-by-step simplification and common factor operations.
       </p>
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 8px;">
@@ -140,8 +134,8 @@ hide:
       <a href="../lab/fraction-studio/" class="ec-btn-secondary" style="border-color: #38BDF8; color: #38BDF8; font-weight: 700; white-space: nowrap;">
         Fraction Lab ⛶
       </a>
-      <a href="../lab/place-value/" class="ec-btn-secondary" style="border-color: #10B981; color: #10B981; font-weight: 700; white-space: nowrap;">
-        Place Value Lab ⛶
+      <a href="../lab/prime-factor-studio/" class="ec-btn-secondary" style="border-color: #10B981; color: #10B981; font-weight: 700; white-space: nowrap;">
+        Prime Factor Lab ⛶
       </a>
     </div>
   </div>
@@ -316,8 +310,8 @@ hide:
           <a href="https://link.amazon/B09AnTIQI" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #FF9900; color: #FF9900; font-weight: 700;">
             <span>Book (Hardcover) ↗</span>
           </a>
-          <a href="../manuals/#sc-32-scientific" class="te-btn-secondary">
-            <span>Reference Manual &amp; Print ($16) &rarr;</span>
+          <a href="sc32-calculator/" class="te-btn-secondary">
+            <span>SC-32 Hardware Specs &rarr;</span>
           </a>
           <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-secondary">
             <span>Order on Etsy Storefront ↗</span>
@@ -389,33 +383,6 @@ hide:
           </div>
           <div class="te-card-actions">
             <a href="prime-factor-studio/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
-            <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="te-btn-stl-sm" style="background-color: #FA6B05; border-color: #FA6B05; color: #FFFFFF;">Printables ↗</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 3. Place Value Studio -->
-      <article class="te-card">
-        <div class="te-card-viewport">
-          <a href="place-value/">
-            <img src="../assets/renders/etsy/place-value-studio-real-overview-hero-tight.jpg" alt="Place Value Studio Dual Trays & 53 Blocks" loading="lazy">
-          </a>
-        </div>
-        <div class="te-card-body">
-          <div class="te-card-category">Place Value, Addition &amp; Decimals</div>
-          <h3 class="te-card-title"><a href="place-value/">Place Value Studio &amp; Regrouping Trays</a></h3>
-          <p class="te-card-desc">
-            Dual 6&times;2 desktop activity trays (Whole Numbers 100k–1 and Decimals 0.1–0.000001) with 44 contoured digit blocks and 9 stackable +1 regrouping tokens. Two operational rows provide physical column alignment for multi-digit addition, subtraction, carries, borrows, and decimal conversions.
-          </p>
-        </div>
-        <div class="te-card-footer">
-          <div>
-            <span class="te-card-price">$38.00</span>
-          </div>
-          <div class="te-card-actions">
-            <a href="../lab/place-value/" class="te-card-btn" style="background: rgba(16, 185, 129, 0.2); border-color: #10B981; color: #10B981;">Lab ⛶</a>
-            <a href="place-value/" class="te-card-btn">Specs &rarr;</a>
             <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="te-btn-stl-sm" style="background-color: #FA6B05; border-color: #FA6B05; color: #FFFFFF;">Printables ↗</a>
           </div>
@@ -693,7 +660,7 @@ hide:
           
           <div class="te-card-actions">
             <a href="sc32-calculator/" class="te-card-btn">Specs &rarr;</a>
-            <a href="../manuals/#sc-32-scientific" class="te-card-btn" title="Reference Manual & Spiral Print Edition ($16)">Manual 📖</a>
+            <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="te-card-btn" title="Thinking in the Stack Book on Amazon ($16)">Book 📖</a>
             <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="te-btn-stl-sm" style="background-color: #FA6B05; border-color: #FA6B05; color: #FFFFFF;">Printables ↗</a>
           </div>
@@ -721,7 +688,7 @@ hide:
           
           <div class="te-card-actions">
             <a href="sc6-elementary/" class="te-card-btn">Specs &rarr;</a>
-            <a href="../manuals/#sc-6-elementary" class="te-card-btn" title="Reference Manual & Spiral Print Edition ($16)">Manual 📖</a>
+            <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="te-card-btn" title="From Blocks to the Stack Book on Amazon ($16)">Book 📖</a>
             <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
             <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="te-btn-stl-sm" style="background-color: #FA6B05; border-color: #FA6B05; color: #FFFFFF;">Printables ↗</a>
           </div>
@@ -913,7 +880,7 @@ hide:
         <div class="te-actions-row" style="flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
           <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="te-btn-primary" style="background-color: #FF9900; border-color: #FF9900; color: #111827; font-weight: 800;">Order on Amazon ($16) ↗</a>
           <a href="https://link.amazon/B09AnTIQI" target="_blank" rel="noopener noreferrer" class="te-btn-secondary" style="border-color: #FF9900; color: #FF9900; font-weight: 700;">Hardcover ($28) ↗</a>
-          <a href="../manuals/#sc-32-scientific" class="te-btn-secondary">Online Reference Manual &rarr;</a>
+          <a href="sc32-calculator/" class="te-btn-secondary">SC-32 Specs &rarr;</a>
         </div>
       </div>
       <div class="p-8 bg-black/40 flex flex-col justify-center">
@@ -948,7 +915,7 @@ hide:
         <div class="te-actions-row" style="flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
           <a href="https://link.amazon/B07bxzYKq" target="_blank" rel="noopener noreferrer" class="te-btn-primary" style="background-color: #FF9900; border-color: #FF9900; color: #111827; font-weight: 800;">Order on Amazon ($16) ↗</a>
           <a href="../downloads/StackCalc-Book-3-Middle-School-Math-Lab.pdf" download class="te-btn-secondary">Download PDF (128 pp.) &darr;</a>
-          <a href="../curriculum/worksheets/" class="te-btn-secondary" style="border-color: #10B981; color: #10B981; font-weight: 700;">Station Worksheets &rarr;</a>
+          <a href="../downloads/" class="te-btn-secondary" style="border-color: #10B981; color: #10B981; font-weight: 700;">Free Downloads &rarr;</a>
         </div>
       </div>
       <div class="p-8 bg-black/40 flex flex-col justify-center">
@@ -982,8 +949,7 @@ hide:
         </div>
         <div class="te-actions-row" style="flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
           <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="te-btn-primary" style="background-color: #FF9900; border-color: #FF9900; color: #111827; font-weight: 800;">Order on Amazon ($16) ↗</a>
-          <a href="../curriculum/teacher-guide/" class="te-btn-secondary">Online Teacher Guide &rarr;</a>
-          <a href="../curriculum/" class="te-btn-secondary" style="border-color: #F59E0B; color: #F59E0B; font-weight: 700;">Curriculum Portal &rarr;</a>
+          <a href="../downloads/" class="te-btn-secondary">Free PDF Resources &rarr;</a>
         </div>
       </div>
       <div class="p-8 bg-black/40 flex flex-col justify-center">
@@ -1010,9 +976,7 @@ hide:
           </p>
         </div>
         <div class="te-actions-row" style="flex-wrap: wrap; gap: 0.5rem;">
-          <a href="curriculum-and-decks/" class="te-btn-primary">Explore Curriculum Guides &rarr;</a>
-          <a href="../curriculum/worksheets/" class="te-btn-secondary" style="border: 1px solid rgba(56, 189, 248, 0.4); color: #38BDF8;">120 Free Station Guides &rarr;</a>
-          <a href="../curriculum/uil-competition/" class="te-btn-secondary" style="border: 1px solid rgba(16, 185, 129, 0.4); color: #10B981;">24 UIL Practice Exams &rarr;</a>
+          <a href="../downloads/" class="te-btn-primary">Free Classroom Worksheets &amp; Guides &rarr;</a>
         </div>
       </div>
       <div class="p-8 bg-black/40 flex flex-col justify-center">
@@ -1212,7 +1176,7 @@ hide:
     <div>
       <div class="ec-ecosystem-title">The StackCalc Mathematical Ecosystem</div>
       <p class="ec-ecosystem-desc">
-        StackCalc connects tactile physical manipulatives, dedicated hardware calculators (<a href="sc6-elementary/" class="text-sky-400 hover:underline">SC-6 Elementary</a> and <a href="sc32-calculator/" class="text-sky-400 hover:underline">SC-32 Scientific</a>), bound print manuals, and modern software into a single unified learning path. Each manipulative stands on its own for classroom instruction, with <a href="../curriculum/worksheets/" class="text-amber-400 hover:underline">120 Classroom Station Worksheets</a>, open-source 3D models on <a href="../printables/" class="text-[#FA6B05] hover:underline">Printables</a>, handcrafted kits on <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="text-[#f1641e] hover:underline">Etsy</a>, and on-demand parts on <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Slant 3D</a>.
+        StackCalc connects tactile physical manipulatives, dedicated hardware calculators (<a href="sc6-elementary/" class="text-sky-400 hover:underline">SC-6 Elementary</a> and <a href="sc32-calculator/" class="text-sky-400 hover:underline">SC-32 Scientific</a>), bound print manuals, and modern software into a single unified learning path. Each manipulative stands on its own for classroom instruction, with <a href="../downloads/" class="text-amber-400 hover:underline">Classroom Station Worksheets</a>, open-source 3D models on <a href="../printables/" class="text-[#FA6B05] hover:underline">Printables</a>, handcrafted kits on <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="text-[#f1641e] hover:underline">Etsy</a>, and on-demand parts on <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Slant 3D</a>.
       </p>
     </div>
   </div>

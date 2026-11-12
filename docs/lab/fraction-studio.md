@@ -65,12 +65,19 @@ hide:
         </button>
       </div>
 
+      <!-- Direct Fraction Input Bar -->
+      <div class="vlab-direct-input-bar">
+        <span class="vlab-palette-label">TYPE FRACTION:</span>
+        <input type="text" id="vlab-frac-input" class="vlab-quick-input" placeholder="e.g. 3/4 or 1 1/2">
+        <button id="vlab-btn-frac-add" class="vlab-btn-quick-add">+ BUILD TOWER</button>
+        <span style="font-size: 0.72rem; color: #64748B; margin-left: auto;">Press Enter or click to build blocks</span>
+      </div>
+
       <div class="vlab-grid">
         
         <!-- Left: Staging & Comparison Stage -->
         <div class="vlab-stage-container">
           <div class="vlab-comparator-bay">
-            <div id="vlab-laser-line" class="vlab-laser-line"></div>
             <div class="vlab-columns-wrapper">
               
               <!-- Column 1 (Left): Register X (Active Entry / Tower) -->

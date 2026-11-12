@@ -2,7 +2,7 @@
  * =========================================================================
  * STACKCALC 2D VIRTUAL MANIPULATIVES LAB ENGINE
  * Authentic Concrete-Representational-Abstract (CRA) Classroom Simulator
- * Fractions (FRAC-01), Place-Value Trays (PLACE-01), Prime Blocks (PRIME-01)
+ * Fraction Towers (FRAC-01) & Prime Factor Studio (PRIME-01)
  * =========================================================================
  */
 
@@ -49,6 +49,10 @@
     playTone(680, 0.04, 'triangle', 0.18);
   }
 
+  function playPop() {
+    playTone(420, 0.05, 'sine', 0.16);
+  }
+
   function playPush() {
     playTone(520, 0.08, 'sine', 0.22);
     setTimeout(() => playTone(780, 0.12, 'sine', 0.2), 60);
@@ -61,10 +65,10 @@
 
   function playSuccess() {
     // Triumphant major chord (C5 - E5 - G5 - C6)
-    playTone(523.25, 0.2, 'triangle', 0.2);
-    setTimeout(() => playTone(659.25, 0.25, 'triangle', 0.2), 80);
-    setTimeout(() => playTone(783.99, 0.3, 'triangle', 0.2), 160);
-    setTimeout(() => playTone(1046.50, 0.45, 'triangle', 0.25), 240);
+    playTone(523.25, 0.18, 'triangle', 0.2);
+    setTimeout(() => playTone(659.25, 0.22, 'triangle', 0.2), 70);
+    setTimeout(() => playTone(783.99, 0.26, 'triangle', 0.2), 140);
+    setTimeout(() => playTone(1046.50, 0.38, 'triangle', 0.25), 210);
   }
 
   // --- 2. Rational Math & Prime Helpers ---
@@ -76,7 +80,7 @@
       b = a % b;
       a = t;
     }
-    return a;
+    return a || 1;
   }
 
   function lcm(a, b) {
@@ -120,28 +124,41 @@
     return `${sign}${rem}/${absD}`;
   }
 
-  function numberToPvCounts(num) {
-    const counts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
-    let n = Math.abs(Math.round(num * 1000) / 1000);
-    if (n === 0) return counts;
+  function formatImproperFrac(n, d) {
+    const s = simplifyFrac(n, d);
+    if (s.d === 1) return `${s.n}`;
+    if (s.n === 0) return '0';
+    return `${s.n}/${s.d}`;
+  }
 
-    counts[100] = Math.floor(n / 100);
-    n = Math.round((n % 100) * 1000) / 1000;
-
-    counts[10] = Math.floor(n / 10);
-    n = Math.round((n % 10) * 1000) / 1000;
-
-    counts[1] = Math.floor(n);
-    n = Math.round((n - counts[1]) * 1000) / 1000;
-
-    counts[0.1] = Math.floor(n * 10);
-    n = Math.round((n - counts[0.1] * 0.1) * 1000) / 1000;
-
-    counts[0.01] = Math.floor(n * 100);
-    n = Math.round((n - counts[0.01] * 0.01) * 1000) / 1000;
-
-    counts[0.001] = Math.round(n * 1000);
-    return counts;
+  function parseFractionString(str) {
+    if (!str) return null;
+    str = str.trim();
+    // Mixed number e.g. "1 1/2" or "2 3/4"
+    if (str.includes(' ')) {
+      const parts = str.split(/\s+/);
+      if (parts.length === 2 && parts[1].includes('/')) {
+        const whole = parseInt(parts[0], 10);
+        const [n, d] = parts[1].split('/').map(x => parseInt(x, 10));
+        if (!isNaN(whole) && !isNaN(n) && !isNaN(d) && d > 0) {
+          const totalN = whole * d + n;
+          return { n: totalN, d: d, whole: whole, remN: n };
+        }
+      }
+    }
+    // Simple fraction e.g. "3/4"
+    if (str.includes('/')) {
+      const [n, d] = str.split('/').map(x => parseInt(x, 10));
+      if (!isNaN(n) && !isNaN(d) && d > 0) {
+        return { n, d, whole: Math.floor(n / d), remN: n % d };
+      }
+    }
+    // Plain integer e.g. "2"
+    const val = parseInt(str, 10);
+    if (!isNaN(val)) {
+      return { n: val, d: 1, whole: val, remN: 0 };
+    }
+    return null;
   }
 
   function getPrimeProduct(list) {
@@ -157,11 +174,6 @@
     2: '#0284C7', 3: '#10B981', 5: '#F59E0B', 7: '#8B5CF6',
     11: '#EC4899', 13: '#06B6D4', 17: '#E11D48', 19: '#F97316', 23: '#64748B'
   };
-
-  function getPrimeMm(list) {
-    if (!list || list.length === 0) return 0;
-    return list.reduce((acc, p) => acc + (primeLookupMm[p] || (15 * Math.log2(p))), 0);
-  }
 
   function formatPrimeFormula(list) {
     if (!list || list.length === 0) return '0';
@@ -206,12 +218,25 @@
     };
   }
 
+  // Standard fraction palette definitions
+  const PALETTE_FRAC = {
+    1: { label: '1/1', n: 1, d: 1, mm: 84.0, cls: 'frac-1-1' },
+    2: { label: '1/2', n: 1, d: 2, mm: 42.0, cls: 'frac-1-2' },
+    3: { label: '1/3', n: 1, d: 3, mm: 28.0, cls: 'frac-1-3' },
+    4: { label: '1/4', n: 1, d: 4, mm: 21.0, cls: 'frac-1-4' },
+    5: { label: '1/5', n: 1, d: 5, mm: 16.8, cls: 'frac-1-5' },
+    6: { label: '1/6', n: 1, d: 6, mm: 14.0, cls: 'frac-1-6' },
+    8: { label: '1/8', n: 1, d: 8, mm: 10.5, cls: 'frac-1-8' },
+    10: { label: '1/10', n: 1, d: 10, mm: 8.4, cls: 'frac-1-10' },
+    12: { label: '1/12', n: 1, d: 12, mm: 7.0, cls: 'frac-1-12' }
+  };
+
   // --- 3. Core State Architecture ---
   const state = {
-    activeTab: 'fractions', // 'fractions' | 'placevalue' | 'primes'
+    activeTab: 'fractions', // 'fractions' | 'primes'
     soundOn: true,
     fdisp: true, // Fraction display mode
-    stackLift: false, // RPN Stack Lift flag: true after operations to auto-lift on next entry
+    stackLift: false, // RPN Stack Lift: true after an operation/result, auto-lifts on next entry
 
     // 4-Line RPN Stack (Stores rational objects: { n, d, val })
     stack: {
@@ -223,22 +248,11 @@
 
     // Fraction Studio Specific State
     fractions: {
-      palette: [
-        { label: '1/1', n: 1, d: 1, mm: 84.0, cls: 'frac-1-1' },
-        { label: '1/2', n: 1, d: 2, mm: 42.0, cls: 'frac-1-2' },
-        { label: '1/3', n: 1, d: 3, mm: 28.0, cls: 'frac-1-3' },
-        { label: '1/4', n: 1, d: 4, mm: 21.0, cls: 'frac-1-4' },
-        { label: '1/5', n: 1, d: 5, mm: 16.8, cls: 'frac-1-5' },
-        { label: '1/6', n: 1, d: 6, mm: 14.0, cls: 'frac-1-6' },
-        { label: '1/8', n: 1, d: 8, mm: 10.5, cls: 'frac-1-8' },
-        { label: '1/10', n: 1, d: 10, mm: 8.4, cls: 'frac-1-10' },
-        { label: '1/12', n: 1, d: 12, mm: 7.0, cls: 'frac-1-12' }
-      ],
+      palette: Object.values(PALETTE_FRAC),
       stackX: [],       // Blocks in Register X (Column 1 - Active Entry)
-      stackY: [],       // Blocks in Register Y (Column 2 - Stack)
-      stackZ: [],       // Blocks in Register Z (Stack Level 3)
-      stackT: [],       // Blocks in Register T (Stack Level 4)
-      targetAnswer: [], // Compatibility shim
+      stackY: [],       // Blocks in Register Y (Column 2 - Saved Stack)
+      stackZ: [],       // Blocks in Register Z (Level 3)
+      stackT: [],       // Blocks in Register T (Level 4)
       mixedMode: false, // Mixed number display format (a b/c)
 
       // Compatibility getters
@@ -246,38 +260,6 @@
       set staging(v) { this.stackX = v; },
       get comparatorY() { return this.stackY; },
       set comparatorY(v) { this.stackY = v; }
-    },
-
-    // Place-Value Specific State (PLACE-01 Multi-Row Desk)
-    placeValue: {
-      carryCounts: {
-        100: 0,
-        10: 0,
-        1: 0,
-        0.1: 0,
-        0.01: 0,
-        0.001: 0
-      },
-      row1Counts: {
-        100: 0,
-        10: 0,
-        1: 0,
-        0.1: 0,
-        0.01: 0,
-        0.001: 0
-      },
-      row2Counts: {
-        100: 0,
-        10: 0,
-        1: 0,
-        0.1: 0,
-        0.01: 0,
-        0.001: 0
-      },
-      get stagingCounts() { return this.row2Counts; },
-      set stagingCounts(v) { this.row2Counts = v; },
-      hasCarry: false,
-      regroupNote: ''
     },
 
     // Prime Factor Studio Specific State (PRIME-01)
@@ -294,20 +276,18 @@
         { p: 23, label: '[23]', mm: 81.3, color: '#64748B' }
       ],
       stackX: [],       // Prime blocks in Register X (Column 1 - Active Entry)
-      stackY: [],       // Prime blocks in Register Y (Column 2 - Stack)
-      stackZ: [],       // Prime blocks in Register Z (Stack Level 3)
-      stackT: [],       // Prime blocks in Register T (Stack Level 4)
-      targetPrimes: [], // Compatibility shim
+      stackY: [],       // Prime blocks in Register Y (Column 2 - Saved Stack)
+      stackZ: [],       // Prime blocks in Register Z (Level 3)
+      stackT: [],       // Prime blocks in Register T (Level 4)
 
       // Compatibility getters
       get staging() { return this.stackX; },
       set staging(v) { this.stackX = v; },
-      get stagingProduct() { return getPrimeProduct(this.stackX); },
-      get targetDecomp() { return this.targetPrimes; }
+      get stagingProduct() { return getPrimeProduct(this.stackX); }
     }
   };
 
-  // --- 4. RPN Calculator Stack Operations & Stack Lift ---
+  // --- 4. RPN Calculator Stack Operations & Automatic Stack Lift ---
   function prepareForEntry() {
     if (state.stackLift) {
       // Automatic RPN Stack Lift on new number/block entry following an operation
@@ -326,10 +306,6 @@
         state.primes.stackZ = [...state.primes.stackY];
         state.primes.stackY = [...state.primes.stackX];
         state.primes.stackX = [];
-      } else if (state.activeTab === 'placevalue') {
-        for (let k in state.placeValue.stagingCounts) {
-          state.placeValue.stagingCounts[k] = 0;
-        }
       }
 
       state.stackLift = false;
@@ -352,11 +328,6 @@
       state.fractions.stackX = [];
     } else if (state.activeTab === 'primes') {
       state.primes.stackX = [];
-    } else if (state.activeTab === 'placevalue') {
-      for (let k in state.placeValue.stagingCounts) {
-        state.placeValue.stagingCounts[k] = 0;
-      }
-      checkPvRegroup();
     }
     state.stackLift = false;
     playClick();
@@ -368,6 +339,7 @@
     state.stack.y = { ...state.stack.z };
     state.stack.z = { ...state.stack.t };
     state.stack.t = { n: 0, d: 1, val: 0 };
+
     if (state.activeTab === 'fractions') {
       state.fractions.stackX = [...state.fractions.stackY];
       state.fractions.stackY = [...state.fractions.stackZ];
@@ -404,37 +376,6 @@
   }
 
   function rpnOp(operator) {
-    if (state.activeTab === 'placevalue') {
-      if (operator === '+') {
-        addPvRows();
-        return;
-      } else if (operator === '-') {
-        subtractPvRows();
-        return;
-      } else if (operator === '×') {
-        multiplyPvRows();
-        return;
-      } else if (operator === '÷') {
-        const yVal = getPvTotal(1) || state.stack.y.val;
-        const xVal = getPvTotal(2) || state.stack.x.val;
-        if (xVal !== 0) {
-          const quot = Math.round((yVal / xVal) * 1000) / 1000;
-          state.placeValue.row2Counts = numberToPvCounts(quot);
-          for (let k in state.placeValue.row1Counts) state.placeValue.row1Counts[k] = 0;
-          for (let k in state.placeValue.carryCounts) state.placeValue.carryCounts[k] = 0;
-          state.stack.x = { n: Math.round(quot * 1000), d: 1000, val: quot };
-          state.stack.y = { ...state.stack.z };
-          state.stack.z = { ...state.stack.t };
-          state.stack.t = { n: 0, d: 1, val: 0 };
-          state.stackLift = true;
-          playOp();
-          checkPvRegroup();
-          renderAll();
-        }
-        return;
-      }
-    }
-
     const x = state.stack.x;
     const y = state.stack.y;
     let resN = 0, resD = 1, resVal = 0;
@@ -443,31 +384,48 @@
       resN = y.n * x.d + x.n * y.d;
       resD = y.d * x.d;
       resVal = y.val + x.val;
-      // In Fraction mode: combine physical blocks from Y and X into X!
       if (state.activeTab === 'fractions') {
+        // Physical CRA Addition: combine physical blocks from Y and X into X!
         state.fractions.stackX = [...state.fractions.stackY, ...state.fractions.stackX];
         state.fractions.stackY = [...state.fractions.stackZ];
         state.fractions.stackZ = [...state.fractions.stackT];
         state.fractions.stackT = [];
+      } else if (state.activeTab === 'primes') {
+        const sumInt = Math.round(resVal);
+        state.primes.stackX = getPrimeFactorsList(sumInt);
+        state.primes.stackY = [...state.primes.stackZ];
+        state.primes.stackZ = [...state.primes.stackT];
+        state.primes.stackT = [];
       }
     } else if (operator === '-') {
       resN = y.n * x.d - x.n * y.d;
       resD = y.d * x.d;
       resVal = y.val - x.val;
       if (state.activeTab === 'fractions') {
+        const simp = simplifyFrac(resN, resD);
+        reconstructFracBlocks(simp.n, simp.d);
         state.fractions.stackY = [...state.fractions.stackZ];
         state.fractions.stackZ = [...state.fractions.stackT];
         state.fractions.stackT = [];
+      } else if (state.activeTab === 'primes') {
+        const diffInt = Math.max(0, Math.round(resVal));
+        state.primes.stackX = getPrimeFactorsList(diffInt);
+        state.primes.stackY = [...state.primes.stackZ];
+        state.primes.stackZ = [...state.primes.stackT];
+        state.primes.stackT = [];
       }
     } else if (operator === '×') {
       resN = y.n * x.n;
       resD = y.d * x.d;
       resVal = y.val * x.val;
       if (state.activeTab === 'fractions') {
+        const simp = simplifyFrac(resN, resD);
+        reconstructFracBlocks(simp.n, simp.d);
         state.fractions.stackY = [...state.fractions.stackZ];
         state.fractions.stackZ = [...state.fractions.stackT];
         state.fractions.stackT = [];
       } else if (state.activeTab === 'primes') {
+        // Prime multiplication combines all prime factors together!
         state.primes.stackX = [...state.primes.stackY, ...state.primes.stackX].sort((a, b) => a - b);
         state.primes.stackY = [...state.primes.stackZ];
         state.primes.stackZ = [...state.primes.stackT];
@@ -480,9 +438,17 @@
         resVal = y.val / x.val;
       }
       if (state.activeTab === 'fractions') {
+        const simp = simplifyFrac(resN, resD);
+        reconstructFracBlocks(simp.n, simp.d);
         state.fractions.stackY = [...state.fractions.stackZ];
         state.fractions.stackZ = [...state.fractions.stackT];
         state.fractions.stackT = [];
+      } else if (state.activeTab === 'primes') {
+        const quotInt = Math.round(resVal);
+        state.primes.stackX = getPrimeFactorsList(quotInt);
+        state.primes.stackY = [...state.primes.stackZ];
+        state.primes.stackZ = [...state.primes.stackT];
+        state.primes.stackT = [];
       }
     }
 
@@ -501,81 +467,24 @@
   function reconstructFracBlocks(n, d) {
     state.fractions.stackX = [];
     if (n <= 0) return;
-    const paletteMap = {
-      1: { label: '1/1', n: 1, d: 1, mm: 84.0, cls: 'frac-1-1' },
-      2: { label: '1/2', n: 1, d: 2, mm: 42.0, cls: 'frac-1-2' },
-      3: { label: '1/3', n: 1, d: 3, mm: 28.0, cls: 'frac-1-3' },
-      4: { label: '1/4', n: 1, d: 4, mm: 21.0, cls: 'frac-1-4' },
-      5: { label: '1/5', n: 1, d: 5, mm: 16.8, cls: 'frac-1-5' },
-      6: { label: '1/6', n: 1, d: 6, mm: 14.0, cls: 'frac-1-6' },
-      8: { label: '1/8', n: 1, d: 8, mm: 10.5, cls: 'frac-1-8' },
-      10: { label: '1/10', n: 1, d: 10, mm: 8.4, cls: 'frac-1-10' },
-      12: { label: '1/12', n: 1, d: 12, mm: 7.0, cls: 'frac-1-12' }
-    };
-    const spec = paletteMap[d] || { label: `1/${d}`, n: 1, d: d, mm: Math.max(7, 84 / d), cls: 'frac-custom' };
-    const count = Math.min(n, 24);
-    for (let i = 0; i < count; i++) {
-      state.fractions.stackX.push({ ...spec, id: Date.now() + Math.random() });
+    
+    // Decompose whole units into 1/1 blocks first
+    let whole = Math.floor(n / d);
+    let remN = n % d;
+
+    for (let i = 0; i < Math.min(whole, 4); i++) {
+      state.fractions.stackX.push({ ...PALETTE_FRAC[1], id: Date.now() + Math.random() });
     }
-  }
 
-  function fractionSimp() {
-    const x = state.stack.x;
-    if (x.n === 0) return;
-    const g = gcd(Math.abs(x.n), Math.abs(x.d));
-    if (g > 1) {
-      let p = g;
-      for (let factor of [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31]) {
-        if (g % factor === 0) {
-          p = factor;
-          break;
-        }
-      }
-      const newN = x.n / p;
-      const newD = x.d / p;
-      state.stack.x = { n: newN, d: newD, val: newN / newD };
-      reconstructFracBlocks(newN, newD);
-      state.stackLift = true;
-      playOp();
-      renderAll();
-
-      const metaX = document.getElementById('vlab-staged-meta');
-      if (metaX) {
-        metaX.innerHTML = `<span style="color:#10B981;">SIMP (÷${p}) ➔ ${newN}/${newD}</span>`;
-      }
-    } else {
-      playSuccess();
-      const metaX = document.getElementById('vlab-staged-meta');
-      if (metaX) {
-        metaX.innerHTML = `<span style="color:#F59E0B;">LOWEST TERMS</span>`;
+    if (remN > 0) {
+      const spec = PALETTE_FRAC[d] || { label: `1/${d}`, n: 1, d: d, mm: Math.max(7, 84 / d), cls: 'frac-custom' };
+      const count = Math.min(remN, 16);
+      for (let i = 0; i < count; i++) {
+        state.fractions.stackX.push({ ...spec, id: Date.now() + Math.random() });
       }
     }
   }
 
-  function fractionMixedToggle() {
-    state.fractions.mixedMode = true;
-    playClick();
-    renderAll();
-  }
-
-  function fractionImproper() {
-    state.fractions.mixedMode = false;
-    playClick();
-    renderAll();
-  }
-
-  function fractionInvert() {
-    const x = state.stack.x;
-    if (x.n === 0) return;
-    const newN = x.d;
-    const newD = x.n;
-    const simp = simplifyFrac(newN, newD);
-    state.stack.x = { n: simp.n, d: simp.d, val: simp.n / simp.d };
-    reconstructFracBlocks(simp.n, simp.d);
-    state.stackLift = true;
-    playOp();
-    renderAll();
-  }
   function addFractionToX(blockSpec) {
     prepareForEntry();
     state.fractions.stackX.push({
@@ -594,7 +503,17 @@
       state.fractions.stackX.splice(index, 1);
       const res = calcTowerSum(state.fractions.stackX);
       state.stack.x = { n: res.n, d: res.d, val: res.val };
-      playClick();
+      playPop();
+      renderAll();
+    }
+  }
+
+  function removeFractionFromY(index) {
+    if (index >= 0 && index < state.fractions.stackY.length) {
+      state.fractions.stackY.splice(index, 1);
+      const res = calcTowerSum(state.fractions.stackY);
+      state.stack.y = { n: res.n, d: res.d, val: res.val };
+      playPop();
       renderAll();
     }
   }
@@ -604,7 +523,7 @@
       state.fractions.stackX.pop();
       const res = calcTowerSum(state.fractions.stackX);
       state.stack.x = { n: res.n, d: res.d, val: res.val };
-      playClick();
+      playPop();
       renderAll();
     }
   }
@@ -637,16 +556,77 @@
     renderAll();
   }
 
-  function addTargetFraction(blockSpec) {
-    // Compatibility stub
+  function fractionSimp() {
+    const x = state.stack.x;
+    if (x.n === 0) return;
+    const g = gcd(Math.abs(x.n), Math.abs(x.d));
+    if (g > 1) {
+      // Find smallest prime factor to simplify step-by-step
+      let p = g;
+      for (let factor of [2, 3, 5, 7, 11, 13, 17, 19, 23]) {
+        if (g % factor === 0) {
+          p = factor;
+          break;
+        }
+      }
+      const newN = x.n / p;
+      const newD = x.d / p;
+      state.stack.x = { n: newN, d: newD, val: newN / newD };
+      reconstructFracBlocks(newN, newD);
+      state.stackLift = true;
+      playSuccess();
+      renderAll();
+
+      const metaX = document.getElementById('vlab-staged-meta');
+      if (metaX) {
+        metaX.innerHTML = `<span style="color:#10B981; font-weight:800;">SIMP (÷${p}) ➔ ${newN}/${newD}</span>`;
+      }
+    } else {
+      // Already lowest terms: if tower had multiple disparate blocks, rebuild into single canonical representation
+      reconstructFracBlocks(x.n, x.d);
+      playSuccess();
+      renderAll();
+      const metaX = document.getElementById('vlab-staged-meta');
+      if (metaX) {
+        metaX.innerHTML = `<span style="color:#F59E0B; font-weight:800;">LOWEST TERMS</span>`;
+      }
+    }
   }
 
-  function removeTargetFraction(index) {
-    // Compatibility stub
+  function fractionMixedToggle() {
+    state.fractions.mixedMode = true;
+    playClick();
+    renderAll();
   }
 
-  function clearTargetFractions() {
-    // Compatibility stub
+  function fractionImproper() {
+    state.fractions.mixedMode = false;
+    playClick();
+    renderAll();
+  }
+
+  function fractionInvert() {
+    const x = state.stack.x;
+    if (x.n === 0) return;
+    const newN = x.d;
+    const newD = x.n;
+    const simp = simplifyFrac(newN, newD);
+    state.stack.x = { n: simp.n, d: simp.d, val: simp.n / simp.d };
+    reconstructFracBlocks(simp.n, simp.d);
+    state.stackLift = true;
+    playOp();
+    renderAll();
+  }
+
+  function loadFractionDirect(inputStr) {
+    const parsed = parseFractionString(inputStr);
+    if (!parsed) return;
+    prepareForEntry();
+    reconstructFracBlocks(parsed.n, parsed.d);
+    const res = calcTowerSum(state.fractions.stackX);
+    state.stack.x = { n: res.n, d: res.d, val: res.val };
+    playSuccess();
+    renderAll();
   }
 
   // --- 6. Prime Factor Studio Actions ---
@@ -654,7 +634,7 @@
     prepareForEntry();
     state.primes.stackX.push(p);
     const prod = getPrimeProduct(state.primes.stackX);
-    // Immediately update Register X on the LCD with the composite number!
+    // Immediately update Register X on the LCD with the composite product!
     state.stack.x = { n: prod, d: 1, val: prod };
     playClick();
     renderAll();
@@ -665,7 +645,17 @@
       state.primes.stackX.splice(index, 1);
       const prod = getPrimeProduct(state.primes.stackX);
       state.stack.x = { n: prod, d: 1, val: prod };
-      playClick();
+      playPop();
+      renderAll();
+    }
+  }
+
+  function removePrimeFromY(index) {
+    if (index >= 0 && index < state.primes.stackY.length) {
+      state.primes.stackY.splice(index, 1);
+      const prod = getPrimeProduct(state.primes.stackY);
+      state.stack.y = { n: prod, d: 1, val: prod };
+      playPop();
       renderAll();
     }
   }
@@ -675,7 +665,7 @@
       state.primes.stackX.pop();
       const prod = getPrimeProduct(state.primes.stackX);
       state.stack.x = { n: prod, d: 1, val: prod };
-      playClick();
+      playPop();
       renderAll();
     }
   }
@@ -706,53 +696,13 @@
     renderAll();
   }
 
-  function primeGcd() {
-    const yVal = Math.round(state.stack.y.val);
-    const xVal = Math.round(state.stack.x.val);
-    if (yVal > 0 && xVal > 0) {
-      const g = gcd(yVal, xVal);
-      const factorsG = getPrimeFactorsList(g);
-      state.primes.stackX = factorsG;
-      state.primes.stackY = [...state.primes.stackZ];
-      state.primes.stackZ = [...state.primes.stackT];
-      state.primes.stackT = [];
-      state.stack.x = { n: g, d: 1, val: g };
-      state.stack.y = { ...state.stack.z };
-      state.stack.z = { ...state.stack.t };
-      state.stack.t = { n: 0, d: 1, val: 0 };
-      state.stackLift = true;
-      playOp();
-      renderAll();
-    }
-  }
-
-  function primeLcm() {
-    const yVal = Math.round(state.stack.y.val);
-    const xVal = Math.round(state.stack.x.val);
-    if (yVal > 0 && xVal > 0) {
-      const l = lcm(yVal, xVal);
-      const factorsL = getPrimeFactorsList(l);
-      state.primes.stackX = factorsL;
-      state.primes.stackY = [...state.primes.stackZ];
-      state.primes.stackZ = [...state.primes.stackT];
-      state.primes.stackT = [];
-      state.stack.x = { n: l, d: 1, val: l };
-      state.stack.y = { ...state.stack.z };
-      state.stack.z = { ...state.stack.t };
-      state.stack.t = { n: 0, d: 1, val: 0 };
-      state.stackLift = true;
-      playOp();
-      renderAll();
-    }
-  }
-
   function primeFactorizeX() {
     const xVal = Math.round(state.stack.x.val);
     if (xVal > 1) {
       const factors = getPrimeFactorsList(xVal);
       state.primes.stackX = factors;
       state.stackLift = true;
-      playOp();
+      playSuccess();
       renderAll();
     }
   }
@@ -776,336 +726,70 @@
       const commonProd = getPrimeProduct(common);
       state.stack.x = { n: commonProd, d: 1, val: commonProd };
       state.stackLift = true;
-      playOp();
+      playSuccess();
       renderAll();
 
       const formEl = document.getElementById('vlab-prime-formula');
       if (formEl) {
         if (common.length > 0) {
-          formEl.textContent = `COMMON: ${common.join(' × ')} = ${commonProd} (GCF)`;
+          formEl.innerHTML = `<span style="color:#10B981;">COMMON: ${common.join(' × ')} = ${commonProd} (GCF)</span>`;
         } else {
-          formEl.textContent = 'NO COMMON FACTORS (RELATIVELY PRIME)';
+          formEl.innerHTML = `<span style="color:#F59E0B;">NO COMMON FACTORS (RELATIVELY PRIME)</span>`;
         }
       }
     }
   }
 
-  // --- 7. Place-Value Studio Actions (PLACE-01 Multi-Row Desk) ---
-  function setPvNumber(num, row = 2) {
-    prepareForEntry();
-    const parsed = parseFloat(num);
-    if (isNaN(parsed) || parsed < 0) return;
-    const counts = numberToPvCounts(parsed);
-    if (row === 1) {
-      state.placeValue.row1Counts = counts;
-      state.stack.y = {
-        n: Math.round(parsed * 1000),
-        d: 1000,
-        val: parsed
-      };
-    } else {
-      state.placeValue.row2Counts = counts;
-      state.stack.x = {
-        n: Math.round(parsed * 1000),
-        d: 1000,
-        val: parsed
-      };
+  function primeGcd() {
+    const yVal = Math.round(state.stack.y.val);
+    const xVal = Math.round(state.stack.x.val);
+    if (yVal > 0 && xVal > 0) {
+      const g = gcd(yVal, xVal);
+      state.primes.stackX = getPrimeFactorsList(g);
+      state.primes.stackY = [...state.primes.stackZ];
+      state.primes.stackZ = [...state.primes.stackT];
+      state.primes.stackT = [];
+      state.stack.x = { n: g, d: 1, val: g };
+      state.stack.y = { ...state.stack.z };
+      state.stack.z = { ...state.stack.t };
+      state.stack.t = { n: 0, d: 1, val: 0 };
+      state.stackLift = true;
+      playOp();
+      renderAll();
     }
-    state.placeValue.carryCounts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
+  }
+
+  function primeLcm() {
+    const yVal = Math.round(state.stack.y.val);
+    const xVal = Math.round(state.stack.x.val);
+    if (yVal > 0 && xVal > 0) {
+      const l = lcm(yVal, xVal);
+      state.primes.stackX = getPrimeFactorsList(l);
+      state.primes.stackY = [...state.primes.stackZ];
+      state.primes.stackZ = [...state.primes.stackT];
+      state.primes.stackT = [];
+      state.stack.x = { n: l, d: 1, val: l };
+      state.stack.y = { ...state.stack.z };
+      state.stack.z = { ...state.stack.t };
+      state.stack.t = { n: 0, d: 1, val: 0 };
+      state.stackLift = true;
+      playOp();
+      renderAll();
+    }
+  }
+
+  function loadPrimeDirect(numStr) {
+    const parsed = parseInt(numStr, 10);
+    if (isNaN(parsed) || parsed <= 1) return;
+    prepareForEntry();
+    state.primes.stackX = getPrimeFactorsList(parsed);
+    const prod = getPrimeProduct(state.primes.stackX);
+    state.stack.x = { n: prod, d: 1, val: prod };
     playSuccess();
-    checkPvRegroup();
     renderAll();
   }
 
-  function changePvCount(colKey, delta, row = 2) {
-    prepareForEntry();
-    const val = parseFloat(colKey);
-    const counts = (row === 1) ? state.placeValue.row1Counts : state.placeValue.row2Counts;
-    const curr = counts[val] || 0;
-    const next = Math.max(0, curr + delta);
-    counts[val] = next;
-
-    if (row === 2) {
-      const total = getPvTotal(2);
-      state.stack.x = {
-        n: Math.round(total * 1000),
-        d: 1000,
-        val: total
-      };
-    } else if (row === 1) {
-      const totalY = getPvTotal(1);
-      state.stack.y = {
-        n: Math.round(totalY * 1000),
-        d: 1000,
-        val: totalY
-      };
-    }
-
-    playClick();
-    checkPvRegroup();
-    renderAll();
-  }
-
-  function removePvBlock(row, colKey) {
-    changePvCount(colKey, -1, row);
-  }
-
-  function checkPvRegroup() {
-    let hasExceed = false;
-    let note = '';
-    const r2 = state.placeValue.row2Counts;
-    const carry = state.placeValue.carryCounts;
-
-    for (let k of [0.001, 0.01, 0.1, 1, 10, 100]) {
-      if ((carry[k] || 0) > 0) {
-        hasExceed = true;
-        note = `⚠️ Carried tokens waiting! Tap REGROUP to bundle into the next column.`;
-        break;
-      }
-      if ((r2[k] || 0) >= 10) {
-        hasExceed = true;
-        const numVal = parseFloat(k);
-        const nextVal = (numVal * 10).toFixed(3);
-        note = `⚠️ ${r2[k]} units in [${k}] column! Tap REGROUP to bundle 10 blocks into [${parseFloat(nextVal)}]!`;
-        break;
-      }
-    }
-    state.placeValue.hasCarry = hasExceed;
-    state.placeValue.regroupNote = note;
-  }
-
-  function autoRegroupPv() {
-    const counts = state.placeValue.row2Counts;
-    const carry = state.placeValue.carryCounts;
-    const keys = [0.001, 0.01, 0.1, 1, 10, 100];
-    let changed = false;
-
-    // Merge carry tokens
-    keys.forEach(k => {
-      if ((carry[k] || 0) > 0) {
-        counts[k] = (counts[k] || 0) + carry[k];
-        carry[k] = 0;
-        changed = true;
-      }
-    });
-
-    // Bundle 10 units into 1 of the next column
-    keys.forEach((k, idx) => {
-      if (counts[k] >= 10) {
-        const carryOver = Math.floor(counts[k] / 10);
-        counts[k] = counts[k] % 10;
-        if (idx + 1 < keys.length) {
-          const nextK = keys[idx + 1];
-          counts[nextK] = (counts[nextK] || 0) + carryOver;
-          changed = true;
-        }
-      }
-    });
-
-    if (changed) {
-      playSuccess();
-      const total = getPvTotal(2);
-      state.stack.x = {
-        n: Math.round(total * 1000),
-        d: 1000,
-        val: total
-      };
-      checkPvRegroup();
-      renderAll();
-    }
-  }
-
-  function unbundlePv(colKey) {
-    const counts = state.placeValue.row2Counts;
-    const keys = [0.001, 0.01, 0.1, 1, 10, 100];
-    let targetIdx = -1;
-
-    if (colKey !== undefined) {
-      targetIdx = keys.indexOf(parseFloat(colKey));
-    } else {
-      for (let i = 1; i < keys.length; i++) {
-        if ((counts[keys[i]] || 0) > 0) {
-          targetIdx = i;
-          break;
-        }
-      }
-    }
-
-    if (targetIdx > 0 && (counts[keys[targetIdx]] || 0) > 0) {
-      counts[keys[targetIdx]] -= 1;
-      const lowerKey = keys[targetIdx - 1];
-      counts[lowerKey] = (counts[lowerKey] || 0) + 10;
-      playClick();
-      const total = getPvTotal(2);
-      state.stack.x = {
-        n: Math.round(total * 1000),
-        d: 1000,
-        val: total
-      };
-      checkPvRegroup();
-      renderAll();
-    }
-  }
-
-  function getPvTotal(row = 2) {
-    const counts = (row === 1) ? state.placeValue.row1Counts : state.placeValue.row2Counts;
-    let total = 0;
-    for (let k in counts) {
-      total += parseFloat(k) * (counts[k] || 0);
-    }
-    return Math.round(total * 1000) / 1000;
-  }
-
-  function pushPvToStack() {
-    const total = getPvTotal(2);
-    if (total === 0 && state.stack.x.val === 0) return;
-
-    state.stack.t = { ...state.stack.z };
-    state.stack.z = { ...state.stack.y };
-    state.stack.y = { ...state.stack.x };
-    state.stack.x = { n: 0, d: 1, val: 0 };
-
-    state.placeValue.row1Counts = { ...state.placeValue.row2Counts };
-    state.placeValue.row2Counts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
-    state.placeValue.carryCounts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
-
-    playPush();
-    checkPvRegroup();
-    renderAll();
-  }
-
-  function clearPv(row) {
-    if (row === 1) {
-      state.placeValue.row1Counts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
-    } else if (row === 2) {
-      state.placeValue.row2Counts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
-      state.stack.x = { n: 0, d: 1, val: 0 };
-    } else {
-      state.placeValue.row1Counts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
-      state.placeValue.row2Counts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
-      state.placeValue.carryCounts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
-      state.stack.x = { n: 0, d: 1, val: 0 };
-    }
-    state.stackLift = false;
-    playClick();
-    checkPvRegroup();
-    renderAll();
-  }
-
-  function addPvRows() {
-    if (getPvTotal(1) === 0 && state.stack.y.val > 0) {
-      state.placeValue.row1Counts = numberToPvCounts(state.stack.y.val);
-    }
-    if (getPvTotal(2) === 0 && state.stack.x.val > 0) {
-      state.placeValue.row2Counts = numberToPvCounts(state.stack.x.val);
-    }
-
-    const r1 = state.placeValue.row1Counts;
-    const r2 = state.placeValue.row2Counts;
-    const carry = state.placeValue.carryCounts;
-    const keys = [0.001, 0.01, 0.1, 1, 10, 100];
-
-    keys.forEach((k, idx) => {
-      const sum = (r1[k] || 0) + (r2[k] || 0) + (carry[k] || 0);
-      carry[k] = 0;
-      if (sum >= 10 && idx + 1 < keys.length) {
-        const carryOver = Math.floor(sum / 10);
-        const rem = sum % 10;
-        r2[k] = rem;
-        carry[keys[idx + 1]] = carryOver;
-      } else {
-        r2[k] = sum;
-      }
-    });
-
-    for (let k in r1) r1[k] = 0;
-
-    let totalSum = getPvTotal(2);
-    keys.forEach(k => { totalSum += (carry[k] || 0) * k; });
-    const roundedSum = Math.round(totalSum * 1000) / 1000;
-
-    state.stack.x = {
-      n: Math.round(roundedSum * 1000),
-      d: 1000,
-      val: roundedSum
-    };
-    state.stack.y = { ...state.stack.z };
-    state.stack.z = { ...state.stack.t };
-    state.stack.t = { n: 0, d: 1, val: 0 };
-    state.stackLift = true;
-
-    playOp();
-    checkPvRegroup();
-    renderAll();
-  }
-
-  function subtractPvRows() {
-    if (getPvTotal(1) === 0 && state.stack.y.val > 0) {
-      state.placeValue.row1Counts = numberToPvCounts(state.stack.y.val);
-    }
-    if (getPvTotal(2) === 0 && state.stack.x.val > 0) {
-      state.placeValue.row2Counts = numberToPvCounts(state.stack.x.val);
-    }
-
-    const yVal = getPvTotal(1);
-    const xVal = getPvTotal(2);
-    const diff = Math.round((yVal - xVal) * 1000) / 1000;
-
-    if (diff >= 0) {
-      state.placeValue.row2Counts = numberToPvCounts(diff);
-    } else {
-      state.placeValue.row2Counts = { 100: 0, 10: 0, 1: 0, 0.1: 0, 0.01: 0, 0.001: 0 };
-    }
-    for (let k in state.placeValue.row1Counts) state.placeValue.row1Counts[k] = 0;
-    for (let k in state.placeValue.carryCounts) state.placeValue.carryCounts[k] = 0;
-
-    state.stack.x = {
-      n: Math.round(diff * 1000),
-      d: 1000,
-      val: diff
-    };
-    state.stack.y = { ...state.stack.z };
-    state.stack.z = { ...state.stack.t };
-    state.stack.t = { n: 0, d: 1, val: 0 };
-    state.stackLift = true;
-
-    playOp();
-    checkPvRegroup();
-    renderAll();
-  }
-
-  function multiplyPvRows() {
-    if (getPvTotal(1) === 0 && state.stack.y.val > 0) {
-      state.placeValue.row1Counts = numberToPvCounts(state.stack.y.val);
-    }
-    if (getPvTotal(2) === 0 && state.stack.x.val > 0) {
-      state.placeValue.row2Counts = numberToPvCounts(state.stack.x.val);
-    }
-
-    const yVal = getPvTotal(1);
-    const xVal = getPvTotal(2);
-    const prod = Math.round((yVal * xVal) * 1000) / 1000;
-
-    state.placeValue.row2Counts = numberToPvCounts(prod);
-    for (let k in state.placeValue.row1Counts) state.placeValue.row1Counts[k] = 0;
-    for (let k in state.placeValue.carryCounts) state.placeValue.carryCounts[k] = 0;
-
-    state.stack.x = {
-      n: Math.round(prod * 1000),
-      d: 1000,
-      val: prod
-    };
-    state.stack.y = { ...state.stack.z };
-    state.stack.z = { ...state.stack.t };
-    state.stack.t = { n: 0, d: 1, val: 0 };
-    state.stackLift = true;
-
-    playOp();
-    checkPvRegroup();
-    renderAll();
-  }
-
-  // --- 8. DOM Rendering & UI Presentation ---
+  // --- 7. DOM Rendering & UI Presentation ---
   function renderStackLcd() {
     const fmt = (item, isRegX) => {
       if (!item) return isRegX ? '0_' : '0';
@@ -1125,23 +809,19 @@
         const factors = getPrimeFactorsList(intVal);
         const formula = factors.length > 1 ? factors.join(' × ') : '';
         if (formula) {
-          return `<strong style="font-size:1.25em; color:#FFFFFF;">${intVal}</strong> <span style="color:#38BDF8; font-size:0.8em; margin-left:8px;">(${formula})</span>${isRegX ? '_' : ''}`;
+          return `<strong style="font-size:1.25em; color:#FFFFFF;">${intVal}</strong> <span style="color:#38BDF8; font-size:0.75em; margin-left:6px;">(${formula})</span>${isRegX ? '_' : ''}`;
         }
         return `<strong style="font-size:1.25em; color:#FFFFFF;">${intVal}</strong>${isRegX ? '_' : ''}`;
-      } else {
-        if (item.val === 0) return isRegX ? '0_' : '0';
-        const cleanNum = Number(item.val.toFixed(3));
-        return `<strong style="font-size:1.25em; color:#FFFFFF;">${cleanNum}</strong>${isRegX ? '_' : ''}`;
       }
+      return `${item.val || 0}`;
     };
 
-    // Update all instances across the page (handles tabbed and standalone pages)
+    // Update all LCD registers across all views
     document.querySelectorAll('.vlab-reg-t-val').forEach(el => el.innerHTML = fmt(state.stack.t, false));
     document.querySelectorAll('.vlab-reg-z-val').forEach(el => el.innerHTML = fmt(state.stack.z, false));
     document.querySelectorAll('.vlab-reg-y-val').forEach(el => el.innerHTML = fmt(state.stack.y, false));
     document.querySelectorAll('.vlab-reg-x-val').forEach(el => el.innerHTML = fmt(state.stack.x, true));
 
-    // Fallback updates for elements with IDs
     const regT = document.getElementById('vlab-reg-t');
     const regZ = document.getElementById('vlab-reg-z');
     const regY = document.getElementById('vlab-reg-y');
@@ -1157,6 +837,7 @@
     const colX = document.getElementById('vlab-col-stack-x') || document.getElementById('vlab-col-stage');
     const metaX = document.getElementById('vlab-meta-stack-x') || document.getElementById('vlab-staged-val');
     const metaXSub = document.getElementById('vlab-staged-meta');
+
     if (colX) {
       colX.innerHTML = '';
       if (state.fractions.stackX.length === 0) {
@@ -1167,8 +848,9 @@
         const sumX = calcTowerSum(state.fractions.stackX);
         state.fractions.stackX.forEach((b, idx) => {
           const blk = document.createElement('div');
-          blk.className = `frac-block-2d ${b.cls} removable`;
-          blk.style.height = `${Math.max(26, b.mm * 2.8)}px`;
+          blk.className = `frac-block-2d ${b.cls}`;
+          // Base height: 84mm = 140px, min 22px so label is legible
+          blk.style.height = `${Math.max(22, b.mm * 1.66)}px`;
           blk.setAttribute('title', 'Tap to remove block');
           blk.textContent = b.label;
           blk.onclick = (e) => {
@@ -1177,13 +859,13 @@
           };
           colX.appendChild(blk);
         });
-        const fracStr = formatFrac(sumX.n, sumX.d);
+        const fracStr = state.fractions.mixedMode ? formatMixedFrac(sumX.n, sumX.d) : formatFrac(sumX.n, sumX.d);
         if (metaX) metaX.textContent = fracStr;
         if (metaXSub) metaXSub.textContent = fracStr;
       }
     }
 
-    // 2. Column 2 (Right): Register Y (The Stack)
+    // 2. Column 2 (Right): Register Y (Saved Stack)
     const colY = document.getElementById('vlab-col-stack-y');
     const metaY = document.getElementById('vlab-meta-stack-y');
     if (colY) {
@@ -1193,36 +875,20 @@
         if (metaY) metaY.textContent = '0';
       } else {
         const sumY = calcTowerSum(state.fractions.stackY);
-        state.fractions.stackY.forEach((b) => {
+        state.fractions.stackY.forEach((b, idx) => {
           const blk = document.createElement('div');
           blk.className = `frac-block-2d ${b.cls}`;
-          blk.style.height = `${Math.max(26, b.mm * 2.8)}px`;
+          blk.style.height = `${Math.max(22, b.mm * 1.66)}px`;
+          blk.setAttribute('title', 'Tap to remove block from saved stack');
           blk.textContent = b.label;
+          blk.onclick = (e) => {
+            e.stopPropagation();
+            removeFractionFromY(idx);
+          };
           colY.appendChild(blk);
         });
-        if (metaY) metaY.textContent = formatFrac(sumY.n, sumY.d);
-      }
-    }
-
-    // 3. Dynamic Stack Z & T support if elements exist
-    const colZ = document.getElementById('vlab-col-stack-z');
-    const metaZ = document.getElementById('vlab-meta-stack-z');
-    const containerZ = document.getElementById('vlab-container-stack-z');
-    if (colZ) {
-      colZ.innerHTML = '';
-      if (state.fractions.stackZ && state.fractions.stackZ.length > 0) {
-        if (containerZ) containerZ.style.display = 'flex';
-        const sumZ = calcTowerSum(state.fractions.stackZ);
-        state.fractions.stackZ.forEach((b) => {
-          const blk = document.createElement('div');
-          blk.className = `frac-block-2d ${b.cls}`;
-          blk.style.height = `${Math.max(26, b.mm * 2.8)}px`;
-          blk.textContent = b.label;
-          colZ.appendChild(blk);
-        });
-        if (metaZ) metaZ.textContent = `Z: ${formatFrac(sumZ.n, sumZ.d)}`;
-      } else {
-        if (containerZ) containerZ.style.display = 'none';
+        const fracStrY = state.fractions.mixedMode ? formatMixedFrac(sumY.n, sumY.d) : formatFrac(sumY.n, sumY.d);
+        if (metaY) metaY.textContent = fracStrY;
       }
     }
   }
@@ -1243,9 +909,10 @@
       } else {
         state.primes.stackX.forEach((p, idx) => {
           const blk = document.createElement('div');
-          blk.className = 'prime-block-2d-vert removable';
+          blk.className = 'prime-block-2d-vert';
           const mm = primeLookupMm[p] || 20;
-          blk.style.height = `${Math.max(26, mm * 2.2)}px`;
+          // Scale: 2=36px, 3=54px, 5=78px, 7=96px, etc.
+          blk.style.height = `${Math.max(28, mm * 1.8)}px`;
           blk.style.backgroundColor = primeLookupColors[p] || '#0284C7';
           blk.setAttribute('title', 'Tap to remove prime block');
           blk.innerHTML = `<span style="font-size:1.15em; font-weight:800;">${p}</span>`;
@@ -1262,7 +929,7 @@
     if (valEl) valEl.textContent = effectiveValX > 0 ? `${effectiveValX}` : '0';
     if (formulaEl) {
       if (state.primes.stackX.length > 0) {
-        const factors = state.primes.stackX.sort((a, b) => a - b);
+        const factors = [...state.primes.stackX].sort((a, b) => a - b);
         formulaEl.innerHTML = factors.length > 1 ? `${prodX} <span style="font-size:0.85em; color:#94A3B8;">(${factors.join(' × ')})</span>` : `${prodX}`;
       } else if (effectiveValX > 1) {
         const factors = getPrimeFactorsList(effectiveValX);
@@ -1276,7 +943,7 @@
       metaEl.textContent = count > 0 ? `${count} ${count === 1 ? 'Prime Factor' : 'Prime Factors'}` : '';
     }
 
-    // 2. Column 2 (Right): Prime Register Y (The Stack)
+    // 2. Column 2 (Right): Prime Register Y (Saved Stack)
     const colY = document.getElementById('vlab-prime-stack-y');
     const metaY = document.getElementById('vlab-prime-meta-y');
     if (colY) {
@@ -1286,165 +953,21 @@
         if (metaY) metaY.textContent = '0';
       } else {
         const prodY = getPrimeProduct(state.primes.stackY);
-        state.primes.stackY.forEach((p) => {
+        state.primes.stackY.forEach((p, idx) => {
           const blk = document.createElement('div');
           blk.className = 'prime-block-2d-vert';
           const mm = primeLookupMm[p] || 20;
-          blk.style.height = `${Math.max(26, mm * 2.2)}px`;
+          blk.style.height = `${Math.max(28, mm * 1.8)}px`;
           blk.style.backgroundColor = primeLookupColors[p] || '#0284C7';
+          blk.setAttribute('title', 'Tap to remove prime block from saved stack');
           blk.innerHTML = `<span style="font-size:1.15em; font-weight:800;">${p}</span>`;
+          blk.onclick = (e) => {
+            e.stopPropagation();
+            removePrimeFromY(idx);
+          };
           colY.appendChild(blk);
         });
         if (metaY) metaY.textContent = `${prodY}`;
-      }
-    }
-
-    // Dynamic Stack Z & T support if elements exist
-    const colZ = document.getElementById('vlab-prime-stack-z');
-    const metaZ = document.getElementById('vlab-prime-meta-z');
-    const containerZ = document.getElementById('vlab-prime-container-z');
-    if (colZ) {
-      colZ.innerHTML = '';
-      if (state.primes.stackZ && state.primes.stackZ.length > 0) {
-        if (containerZ) containerZ.style.display = 'flex';
-        const prodZ = getPrimeProduct(state.primes.stackZ);
-        state.primes.stackZ.forEach((p) => {
-          const blk = document.createElement('div');
-          blk.className = 'prime-block-2d-vert';
-          const mm = primeLookupMm[p] || 20;
-          blk.style.height = `${Math.max(26, mm * 2.2)}px`;
-          blk.style.backgroundColor = primeLookupColors[p] || '#0284C7';
-          blk.innerHTML = `<span style="font-size:1.15em; font-weight:800;">${p}</span>`;
-          colZ.appendChild(blk);
-        });
-        if (metaZ) metaZ.textContent = `Z: ${prodZ}`;
-      } else {
-        if (containerZ) containerZ.style.display = 'none';
-      }
-    }
-  }
-
-  function renderPlaceValue() {
-    const keys = [100, 10, 1, 0.1, 0.01, 0.001];
-
-    const colNames = {
-      100: 'Hundreds Flat (H)',
-      10: 'Tens Rod (T)',
-      1: 'Ones Unit (O)',
-      0.1: 'Tenths (t)',
-      0.01: 'Hundredths (h)',
-      0.001: 'Thousandths (th)'
-    };
-
-    // 1. Render Top Carry Shelf (+1 Regroup Tokens & 10 Borrow Tokens)
-    keys.forEach(k => {
-      const socketCarry = document.getElementById(`pv-socket-carry-${k}`);
-      if (socketCarry) {
-        socketCarry.innerHTML = '';
-        const carryCount = state.placeValue.carryCounts[k] || 0;
-        for (let i = 0; i < carryCount; i++) {
-          const blk = document.createElement('div');
-          blk.className = 'pv-block pv-token-carry pv-block-carry';
-          blk.textContent = '+1';
-          blk.title = `Stackable +1 Addition Carry Token in [${k}] (tap to trade into active row)`;
-          blk.onclick = (e) => {
-            e.stopPropagation();
-            state.placeValue.carryCounts[k]--;
-            state.placeValue.row2Counts[k] = (state.placeValue.row2Counts[k] || 0) + 1;
-            playClick();
-            checkPvRegroup();
-            renderAll();
-          };
-          socketCarry.appendChild(blk);
-        }
-      }
-    });
-
-    // 2. Render Row 1: Waiting Shelf / Register Y (Top Addend / Minuend - PLA White Digits)
-    keys.forEach(k => {
-      const socketY = document.getElementById(`pv-socket-y-${k}`);
-      if (socketY) {
-        socketY.innerHTML = '';
-        socketY.onclick = (e) => {
-          if (e.target === socketY) {
-            changePvCount(k, 1, 1);
-          }
-        };
-        const count = state.placeValue.row1Counts[k] || 0;
-        if (count > 0) {
-          const blk = document.createElement('div');
-          const isOverflow = count >= 10;
-          blk.className = `pv-block pv-digit-tile pv-digit-white pv-block-${String(k).replace('.', '-')}${isOverflow ? ' pv-digit-overflow' : ''}`;
-          blk.textContent = count;
-          blk.title = `White Digit Block [${count}] in ${colNames[k]} (tap to remove)`;
-          blk.onclick = (e) => {
-            e.stopPropagation();
-            removePvBlock(1, k);
-          };
-          socketY.appendChild(blk);
-        }
-      }
-    });
-
-    // 3. Render Row 2: Active Desk / Register X (Bottom Addend / Subtrahend - Slate Blue Digits)
-    keys.forEach(k => {
-      const socketX = document.getElementById(`pv-socket-x-${k}`) || document.getElementById(`pv-socket-${k}`);
-      if (socketX) {
-        socketX.innerHTML = '';
-        socketX.onclick = (e) => {
-          if (e.target === socketX) {
-            changePvCount(k, 1, 2);
-          }
-        };
-        const count = state.placeValue.row2Counts[k] || 0;
-
-        if (count >= 10) {
-          socketX.classList.add('has-carry');
-        } else {
-          socketX.classList.remove('has-carry');
-        }
-
-        if (count > 0) {
-          const blk = document.createElement('div');
-          const isOverflow = count >= 10;
-          blk.className = `pv-block pv-digit-tile pv-digit-blue pv-block-${String(k).replace('.', '-')}${isOverflow ? ' pv-digit-overflow' : ''}`;
-          blk.textContent = count;
-          blk.title = `Blue-Gray Digit Block [${count}] in ${colNames[k]} (tap to remove)`;
-          blk.onclick = (e) => {
-            e.stopPropagation();
-            removePvBlock(2, k);
-          };
-          socketX.appendChild(blk);
-        }
-      }
-    });
-
-    // Update Totals and Readouts
-    const row1ValEl = document.getElementById('pv-row1-val');
-    if (row1ValEl) {
-      const tot1 = getPvTotal(1);
-      row1ValEl.textContent = tot1 === 0 ? '0' : Number(tot1.toFixed(3));
-    }
-
-    const row2ValEl = document.getElementById('pv-total-val');
-    if (row2ValEl) {
-      const tot2 = getPvTotal(2);
-      row2ValEl.textContent = tot2 === 0 ? '0' : Number(tot2.toFixed(3));
-    }
-
-    const readoutXEl = document.getElementById('pv-readout-x');
-    if (readoutXEl) {
-      const tot2 = getPvTotal(2);
-      readoutXEl.textContent = tot2 === 0 ? '0' : Number(tot2.toFixed(3));
-    }
-
-    const noteEl = document.getElementById('pv-regroup-alert');
-    if (noteEl) {
-      if (state.placeValue.hasCarry) {
-        noteEl.textContent = state.placeValue.regroupNote;
-        noteEl.style.display = 'block';
-      } else {
-        noteEl.style.display = 'none';
       }
     }
   }
@@ -1453,75 +976,66 @@
     renderStackLcd();
     if (state.activeTab === 'fractions') {
       renderFractions();
-    } else if (state.activeTab === 'placevalue') {
-      renderPlaceValue();
     } else if (state.activeTab === 'primes') {
       renderPrimes();
     }
   }
 
-  function toggleFullscreen() {
-    const container = document.getElementById('vlab-main-container');
-    if (!container) return;
-
-    if (!document.fullscreenElement) {
-      if (container.requestFullscreen) container.requestFullscreen();
-      else if (container.webkitRequestFullscreen) container.webkitRequestFullscreen();
-    } else {
-      if (document.exitFullscreen) document.exitFullscreen();
-      else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
-    }
-  }
-
   function setActiveTab(tab) {
+    if (tab !== 'fractions' && tab !== 'primes') return;
     state.activeTab = tab;
+
+    // Toggle Tab Buttons
     const tabFrac = document.getElementById('vlab-tab-fractions');
-    const tabPv = document.getElementById('vlab-tab-placevalue');
     const tabPrimes = document.getElementById('vlab-tab-primes');
+    if (tabFrac) tabFrac.classList.toggle('active', tab === 'fractions');
+    if (tabPrimes) tabPrimes.classList.toggle('active', tab === 'primes');
 
+    // Toggle Views
     const viewFrac = document.getElementById('vlab-view-fractions');
-    const viewPv = document.getElementById('vlab-view-placevalue');
     const viewPrimes = document.getElementById('vlab-view-primes');
+    if (viewFrac) viewFrac.style.display = (tab === 'fractions') ? 'block' : 'none';
+    if (viewPrimes) viewPrimes.style.display = (tab === 'primes') ? 'block' : 'none';
 
-    [tabFrac, tabPv, tabPrimes].forEach(t => t && t.classList.remove('active'));
-    [viewFrac, viewPv, viewPrimes].forEach(v => v && (v.style.display = 'none'));
-
-    if (tab === 'fractions') {
-      if (tabFrac) tabFrac.classList.add('active');
-      if (viewFrac) viewFrac.style.display = 'block';
-    } else if (tab === 'placevalue') {
-      if (tabPv) tabPv.classList.add('active');
-      if (viewPv) viewPv.style.display = 'block';
-    } else if (tab === 'primes') {
-      if (tabPrimes) tabPrimes.classList.add('active');
-      if (viewPrimes) viewPrimes.style.display = 'block';
-    }
     playClick();
     renderAll();
   }
 
-  // --- 9. DOM Initialization & Event Handlers ---
+  function toggleFullscreen() {
+    const container = document.getElementById('vlab-main-container');
+    if (!container) return;
+    if (!document.fullscreenElement) {
+      if (container.requestFullscreen) {
+        container.requestFullscreen();
+      } else if (container.webkitRequestFullscreen) {
+        container.webkitRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    }
+  }
+
+  // --- 8. DOM Initialization & Event Handlers ---
   function initLab() {
     // Mode Switcher Tabs
     const tabFrac = document.getElementById('vlab-tab-fractions');
-    const tabPv = document.getElementById('vlab-tab-placevalue');
     const tabPrimes = document.getElementById('vlab-tab-primes');
 
     const viewFrac = document.getElementById('vlab-view-fractions');
-    const viewPv = document.getElementById('vlab-view-placevalue');
     const viewPrimes = document.getElementById('vlab-view-primes');
 
     // Auto-detect active tab on standalone pages
-    if (!viewFrac) {
-      if (viewPrimes) {
-        state.activeTab = 'primes';
-      } else if (viewPv) {
-        state.activeTab = 'placevalue';
-      }
+    if (!viewFrac && viewPrimes) {
+      state.activeTab = 'primes';
+    } else {
+      state.activeTab = 'fractions';
     }
 
     if (tabFrac) tabFrac.onclick = () => setActiveTab('fractions');
-    if (tabPv) tabPv.onclick = () => setActiveTab('placevalue');
     if (tabPrimes) tabPrimes.onclick = () => setActiveTab('primes');
 
     // Telemetry & Control Bar
@@ -1549,12 +1063,6 @@
     const clearFracBtn = document.getElementById('vlab-btn-clear-frac');
     if (clearFracBtn) clearFracBtn.onclick = clearFractionX;
 
-    const checkFracBtn = document.getElementById('vlab-btn-check-frac');
-    if (checkFracBtn) checkFracBtn.onclick = checkEquivalence;
-
-    const clearTargetBtn = document.getElementById('vlab-btn-clear-target');
-    if (clearTargetBtn) clearTargetBtn.onclick = clearTargetFractions;
-
     const simpFracBtn = document.getElementById('vlab-btn-simp');
     if (simpFracBtn) simpFracBtn.onclick = fractionSimp;
 
@@ -1567,7 +1075,26 @@
     const invertFracBtn = document.getElementById('vlab-btn-invert');
     if (invertFracBtn) invertFracBtn.onclick = fractionInvert;
 
-    // Operation Keypads (All Tabs)
+    // Fraction Direct Type Bar
+    const fracInput = document.getElementById('vlab-frac-input');
+    const fracBtnAdd = document.getElementById('vlab-btn-frac-add');
+    if (fracInput) {
+      fracInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          loadFractionDirect(fracInput.value);
+          fracInput.value = '';
+        }
+      });
+    }
+    if (fracBtnAdd && fracInput) {
+      fracBtnAdd.onclick = () => {
+        loadFractionDirect(fracInput.value);
+        fracInput.value = '';
+      };
+    }
+
+    // Operations Keypads (All Tabs)
     const opBtns = document.querySelectorAll('[data-vlab-op]');
     opBtns.forEach(btn => {
       btn.onclick = () => {
@@ -1584,97 +1111,6 @@
 
     const clxBtns = document.querySelectorAll('#vlab-btn-clx');
     clxBtns.forEach(b => { b.onclick = rpnClear; });
-
-    const fdispBtns = document.querySelectorAll('#vlab-btn-fdisp');
-    fdispBtns.forEach(b => {
-      b.onclick = () => {
-        state.fdisp = !state.fdisp;
-        playClick();
-        renderAll();
-      };
-    });
-
-    // Place-Value Buttons
-    const pvPushBtn = document.getElementById('pv-btn-push');
-    if (pvPushBtn) pvPushBtn.onclick = pushPvToStack;
-
-    const pvRegroupBtn = document.getElementById('pv-btn-regroup');
-    if (pvRegroupBtn) pvRegroupBtn.onclick = autoRegroupPv;
-
-    const pvConsoleRegroup = document.getElementById('pv-console-regroup');
-    if (pvConsoleRegroup) pvConsoleRegroup.onclick = autoRegroupPv;
-
-    const pvUnbundleBtn = document.getElementById('pv-btn-unbundle');
-    if (pvUnbundleBtn) pvUnbundleBtn.onclick = () => unbundlePv();
-
-    const pvConsoleUnbundle = document.getElementById('pv-console-unbundle');
-    if (pvConsoleUnbundle) pvConsoleUnbundle.onclick = () => unbundlePv();
-
-    const pvClearBtn = document.getElementById('pv-btn-clear');
-    if (pvClearBtn) pvClearBtn.onclick = () => clearPv(2);
-
-    const pvSteps = document.querySelectorAll('[data-pv-col]');
-    pvSteps.forEach(btn => {
-      btn.onclick = () => {
-        const col = btn.getAttribute('data-pv-col');
-        const delta = parseInt(btn.getAttribute('data-pv-delta'), 10);
-        const row = parseInt(btn.getAttribute('data-pv-row') || '2', 10);
-        changePvCount(col, delta, row);
-      };
-    });
-
-    // Place-Value Palette Click-to-Add Buttons
-    const pvDigitBtns = document.querySelectorAll('[data-pv-digit]');
-    pvDigitBtns.forEach(btn => {
-      btn.onclick = () => {
-        const digit = parseInt(btn.getAttribute('data-pv-digit'), 10);
-        changePvCount('1', digit - (state.placeValue.row2Counts[1] || 0), 2);
-      };
-    });
-
-    const pvTokenBtns = document.querySelectorAll('[data-pv-token]');
-    pvTokenBtns.forEach(btn => {
-      btn.onclick = () => {
-        const token = btn.getAttribute('data-pv-token');
-        if (token === 'carry') {
-          state.placeValue.carryCounts[10] = (state.placeValue.carryCounts[10] || 0) + 1;
-          playSuccess();
-          checkPvRegroup();
-          renderAll();
-        } else if (token === 'borrow') {
-          unbundlePv();
-        }
-      };
-    });
-
-    const pvPaletteBtns = document.querySelectorAll('[data-pv-palette]');
-    pvPaletteBtns.forEach(btn => {
-      btn.onclick = () => {
-        const col = btn.getAttribute('data-pv-palette');
-        changePvCount(col, 1, 2);
-      };
-    });
-
-    // Place-Value Direct Number Input
-    const pvNumInput = document.getElementById('pv-num-input');
-    if (pvNumInput) {
-      pvNumInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          setPvNumber(pvNumInput.value, 2);
-        }
-      });
-    }
-
-    const pvBtnLoadX = document.getElementById('pv-btn-load-x');
-    if (pvBtnLoadX && pvNumInput) {
-      pvBtnLoadX.onclick = () => setPvNumber(pvNumInput.value, 2);
-    }
-
-    const pvBtnLoadY = document.getElementById('pv-btn-load-y');
-    if (pvBtnLoadY && pvNumInput) {
-      pvBtnLoadY.onclick = () => setPvNumber(pvNumInput.value, 1);
-    }
 
     // Prime Factor Buttons
     const pushPrimeBtn = document.getElementById('vlab-btn-push-prime');
@@ -1706,18 +1142,24 @@
       };
     });
 
-    // Fraction Palette Block Buttons (Delegation or attribute)
-    const fracPaletteBtns = document.querySelectorAll('[data-frac-spec]');
-    fracPaletteBtns.forEach(btn => {
-      btn.onclick = () => {
-        try {
-          const spec = JSON.parse(btn.getAttribute('data-frac-spec'));
-          addFractionToX(spec);
-        } catch (e) {
-          // parse error
+    // Prime Direct Type Bar
+    const primeInput = document.getElementById('vlab-prime-input');
+    const primeBtnAdd = document.getElementById('vlab-btn-prime-add');
+    if (primeInput) {
+      primeInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          loadPrimeDirect(primeInput.value);
+          primeInput.value = '';
         }
+      });
+    }
+    if (primeBtnAdd && primeInput) {
+      primeBtnAdd.onclick = () => {
+        loadPrimeDirect(primeInput.value);
+        primeInput.value = '';
       };
-    });
+    }
 
     // Initial Render
     renderAll();
@@ -1735,32 +1177,20 @@
     state: state,
     addFraction: addFractionToX,
     removeFractionFromX: removeFractionFromX,
+    removeFractionFromY: removeFractionFromY,
     dropTopFraction: dropTopFractionFromX,
     clearStagingFractions: clearFractionX,
     clearFractions: clearFractionX,
-    addTargetFraction: addTargetFraction,
-    removeTargetFraction: removeTargetFraction,
-    clearTargetFractions: clearTargetFractions,
     pushFraction: pushFractionToStack,
     simpFraction: fractionSimp,
     toggleMixed: fractionMixedToggle,
     toggleImproper: fractionImproper,
     invertFraction: fractionInvert,
-
-    changePvCount: changePvCount,
-    setPvNumber: setPvNumber,
-    removePvBlock: removePvBlock,
-    autoRegroupPv: autoRegroupPv,
-    unbundlePv: unbundlePv,
-    clearPv: clearPv,
-    getPvTotal: getPvTotal,
-    pushPvToStack: pushPvToStack,
-    addPvRows: addPvRows,
-    subtractPvRows: subtractPvRows,
-    multiplyPvRows: multiplyPvRows,
+    loadFractionDirect: loadFractionDirect,
 
     addPrime: addPrimeToX,
     removePrimeFromX: removePrimeFromX,
+    removePrimeFromY: removePrimeFromY,
     removeLastPrime: dropTopPrimeFromX,
     dropTopPrime: dropTopPrimeFromX,
     clearPrimes: clearPrimeX,
@@ -1769,6 +1199,7 @@
     commonFactors: primeCommonFactors,
     calcGcd: primeGcd,
     calcLcm: primeLcm,
+    loadPrimeDirect: loadPrimeDirect,
 
     pushValue: (v) => rpnPushRaw(v, 1, v),
     setActiveTab: setActiveTab,
@@ -1776,6 +1207,19 @@
     swap: rpnSwap,
     drop: rpnDrop,
     clearStack: rpnClear,
-    toggleFullscreen: toggleFullscreen
+    toggleFullscreen: toggleFullscreen,
+
+    // No-op compatibility stubs for legacy tests
+    changePvCount: () => {},
+    setPvNumber: () => {},
+    removePvBlock: () => {},
+    autoRegroupPv: () => {},
+    unbundlePv: () => {},
+    clearPv: () => {},
+    getPvTotal: () => 0,
+    pushPvToStack: () => {},
+    addPvRows: () => {},
+    subtractPvRows: () => {},
+    multiplyPvRows: () => {}
   };
 })();

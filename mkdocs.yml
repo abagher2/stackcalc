@@ -58,113 +58,82 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - 2D Interactive Labs:
+  - 2D Learning Lab:
       - Virtual Manipulatives Suite: learning-lab.md
-      - Fraction Towers Lab: lab/fraction-studio.md
-      - Place Value & Regrouping Lab: lab/place-value.md
-      - Prime Factor Studio Lab: lab/prime-factor-studio.md
-  - Catalog:
-    - Master Directory: products.md
-    - SC-32 Scientific Calculator:
-        - Product Overview: products/sc32-calculator/index.md
-        - Hardware Assembly: products/sc32-calculator/assembly.md
-        - Operational Lessons: products/sc32-calculator/lessons.md
-    - SC-6 Elementary Calculator: products/sc6-elementary.md
-    - From Blocks to the Stack (SC-6 Book): products/sc6-book.md
-    - Fraction Studio Towers:
-        - Product Overview: products/fraction-studio/index.md
-        - Interactive 2D Lab: lab/fraction-studio.md
-        - Assembly Guide: products/fraction-studio/assembly.md
-        - Classroom Lessons: products/fraction-studio/lessons.md
-    - Prime Factor Studio: products/prime-factor-studio/index.md
-    - Place Value Studio & Regrouping Trays:
-        - Product Overview: products/place-value/index.md
-        - Interactive 2D Lab: lab/place-value.md
-    - Classroom Planetary Clock:
-        - Product Overview: products/classroom-clock/index.md
-        - Assembly Guide: products/classroom-clock/assembly.md
-        - Classroom Lessons: products/classroom-clock/lessons.md
-    - Ten Frames & Counters:
-        - Product Overview: products/ten-frames/index.md
-        - Assembly Guide: products/ten-frames/assembly.md
-        - Classroom Lessons: products/ten-frames/lessons.md
-    - Counting & Array Tiles: products/counting-tiles/index.md
-    - Math Domino Studio:
-        - Product Overview: products/math-dominoes/index.md
-        - Assembly Guide: products/math-dominoes/assembly.md
-        - Classroom Lessons: products/math-dominoes/lessons.md
-    - SC-6 Quest Scoreboard: products/quest-scoreboard/index.md
-    - Algebra Boxes & Tiles:
-        - Product Overview: products/algebra-boxes/index.md
-        - Assembly Guide: products/algebra-boxes/assembly.md
-        - Classroom Lessons: products/algebra-boxes/lessons.md
-    - Probability Dice & Spinner:
-        - Product Overview: products/dice-and-spinner/index.md
-        - Assembly Guide: products/dice-and-spinner/assembly.md
-        - Classroom Lessons: products/dice-and-spinner/lessons.md
-    - Unit Circle & Trig Volvelle: products/unit-circle-volvelle.md
-    - Stands & Pouches: products/stands-and-pouches.md
-    - Curriculum & Decks: products/curriculum-and-decks.md
-    - Makerspace 3D Print Kits: printables.md
-    - Download Center (PDFs & 3MFs): downloads.md
-  - Curriculum & Standards:
-    - Master Curriculum Guide: curriculum/index.md
-    - Standards Alignment Matrix: curriculum/alignment-matrix.md
-    - Printable Student Worksheets: curriculum/worksheets.md
-    - Teacher Facilitator Guide: curriculum/teacher-guide.md
-    - RPN Elementary Power Guide: curriculum/rpn-elementary-guide.md
-    - Competitive STEM & Speed Calculation: curriculum/uil-competition.md
-  - Books & Reference Manuals:
-    - Official Manuals & Reference Books ($16): manuals/index.md
-    - From Blocks to the Stack (Book Page): products/sc6-book.md
-    - SC-32 Scientific Overview: products/sc32-calculator/index.md
-  - Documentation:
-    - Learning Lab: learning-lab.md
-    - Hardware & Rubric: hardware.md
-    - Firmware: firmware.md
-    - Mac & iOS Apps: ios_app.md
-    - Tutorials: tutorials.md
-    - Press & Editorial Kit: press.md
-    - Shipping & Packaging: shipping-and-packaging.md
-    - Exam Compliance & Proctor Guide: exam-compliance.md
+      - Fraction Towers Simulator: lab/fraction-studio.md
+      - Prime Factor Simulator: lab/prime-factor-studio.md
+  - Products & Store:
+      - All Products & Where to Buy: products.md
+      - SC-32 Scientific Calculator: products/sc32-calculator/index.md
+      - SC-6 Elementary Calculator: products/sc6-elementary.md
+      - Fraction Studio Towers: products/fraction-studio/index.md
+      - Prime Factor Studio: products/prime-factor-studio/index.md
+      - Books & Workbooks: products/sc6-book.md
+  - Free Downloads & 3D Prints:
+      - Free 3D Print Models (3MF): printables.md
+      - Free PDF Downloads: downloads.md
   - Engineering Blog & Build Logs ↗: https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator
-  - Legal & Support:
-    - Privacy Policy: privacy.md
-    - Terms of Service: terms.md
-    - Support: support.md
-    - Replacement Parts: parts.md
+  - Support & Legal:
+      - Support & Contact: support.md
+      - Privacy Policy: privacy.md
 
 exclude_docs: |
   hackaday/**
-  manuals/sc32-user-guide.md
-  manuals/sc6-user-guide.md
-  manuals/sc32/**
-  manuals/sc6/**
-  manuals/domains/**
-  manuals/bestseller-rubric-and-editorial-guide.md
-  manuals/critical-editorial-review-and-school-adoption.md
-  curriculum/sc6-elementary-companion-workbook.md
-  curriculum/sc32-scientific-companion-workbook.md
-  curriculum/big-ideas-middle-school-sc6-workbook.md
-  curriculum/answers.md
+  curriculum/**
+  manuals/**
   api/**
   etsy-publishing-guide.md
+  hardware.md
+  firmware.md
+  ios_app.md
+  tutorials.md
+  press.md
+  shipping-and-packaging.md
+  exam-compliance.md
+  terms.md
+  parts.md
+  products/**/assembly.md
+  products/**/lessons.md
+  products/classroom-clock/**
+  products/ten-frames/**
+  products/counting-tiles/**
+  products/math-dominoes/**
+  products/quest-scoreboard/**
+  products/algebra-boxes/**
+  products/dice-and-spinner/**
+  products/unit-circle-volvelle.md
+  products/stands-and-pouches.md
+  products/curriculum-and-decks.md
+  products/place-value/**
 
 not_in_nav: |
   hackaday/**
-  manuals/sc32-user-guide.md
-  manuals/sc6-user-guide.md
-  manuals/sc32/**
-  manuals/sc6/**
-  manuals/domains/**
-  manuals/bestseller-rubric-and-editorial-guide.md
-  manuals/critical-editorial-review-and-school-adoption.md
-  curriculum/sc6-elementary-companion-workbook.md
-  curriculum/sc32-scientific-companion-workbook.md
-  curriculum/big-ideas-middle-school-sc6-workbook.md
-  curriculum/answers.md
+  curriculum/**
+  manuals/**
   api/**
   etsy-publishing-guide.md
+  hardware.md
+  firmware.md
+  ios_app.md
+  tutorials.md
+  press.md
+  shipping-and-packaging.md
+  exam-compliance.md
+  terms.md
+  parts.md
+  products/**/assembly.md
+  products/**/lessons.md
+  products/classroom-clock/**
+  products/ten-frames/**
+  products/counting-tiles/**
+  products/math-dominoes/**
+  products/quest-scoreboard/**
+  products/algebra-boxes/**
+  products/dice-and-spinner/**
+  products/unit-circle-volvelle.md
+  products/stands-and-pouches.md
+  products/curriculum-and-decks.md
+  products/place-value/**
 
 validation:
   nav:

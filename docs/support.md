@@ -24,8 +24,8 @@ If you need direct assistance, encountered a bug, or have a question:
   - **Amazon Bookstore (Teacher's Guide):** [Teacher's Curriculum Guide on Amazon (B05RFHqeu) ↗](https://link.amazon/B05RFHqeu)
   - **Etsy Storefront:** [Handcrafted 3D-Printed Manipulative & Hardware Kits (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
   - **Slant 3D Portal:** [On-Demand Additive Manufacturing & Replacement Parts ↗](https://teleportpod.com/portals/profile/StackCalc)
-- **Replacement Parts & Refills:** Missing a block or need hardware parts? See our [Replacement Parts Guide](parts.md).
-- **Community Documentation:** Explore our in-depth guides for [Hardware](hardware.md), [Firmware](firmware.md), [iOS App](ios_app.md), and [Interactive Tutorials](tutorials.md).
+- **Replacement Parts & Refills:** Missing a block or need hardware parts? Order directly from our [Etsy Storefront](https://stackcalcmath.etsy.com) or 3D print them locally.
+- **Documentation & Learning Lab:** Explore our in-depth [Learning Lab](learning-lab.md) and [Product Guides](products.md).
 - **Web Support & Help Desk:** Visit [https://stackcalc.io/support/](https://stackcalc.io/support/) for frequent updates.
 
 ---
@@ -91,7 +91,7 @@ StackCalc includes an equation solver based on classic Romberg numerical integra
 ### 7. Physical Calculator and printable materials
 
 - **Current physical status:** The SC-32 is offered as a tool-free Maker Kit with a 100% pre-soldered RP2350 logic board, sliding dovetail chassis, tactile TPU keycaps, and transflective monochrome LCD. Tool-free 5-minute snap assembly with zero soldering required.
-- **Public printable release:** Download the matching four-part STL/3MF set from the [hardware guide](hardware.md). It is intended for mechanical exploration and community fabrication.
+- **Public printable release:** Download the matching four-part STL/3MF set from our [Printables page](printables.md). It is intended for mechanical exploration and community fabrication.
 - **Teaching materials:** The [Learning Lab](learning-lab.md) provides 2D virtual manipulatives and links to companion books and workbooks.
 - **What is not public:** Electronics source, firmware source, CAD generators, manufacturing artwork, and production documentation are not public downloads.
 
@@ -99,8 +99,7 @@ StackCalc includes an equation solver based on classic Romberg numerical integra
 
 ### 8. What should I do if a manipulative piece or calculator part goes missing?
 Every StackCalc educational kit includes an Archival Reference Card with component Part IDs. If a piece ever goes missing:
-- Refer to our [Replacement Parts Guide](parts.md).
-- Order replacements, spare docking trays, and batch refills directly through our [Slant 3D Portal](https://teleportpod.com/portals/profile/StackCalc).
+- Order replacements, spare docking trays, and batch refills directly through our [Etsy Storefront](https://stackcalcmath.etsy.com) or [Slant 3D Portal](https://teleportpod.com/portals/profile/StackCalc).
 - Contact us at [support@stackcalc.io](mailto:support@stackcalc.io) with your Part ID if you need custom fulfillment assistance.
 - Download 100% free open models and 3MF print profiles from our [Printables Hub](https://www.printables.com/@StackCalc_5593834) or explore our [Makerspace 3D Print Kits Guide](printables.md) to 3D print replacement parts locally in your school or home makerspace.
 
@@ -119,7 +118,7 @@ When submitting an issue via our [GitHub Issue Tracker](https://github.com/abagh
 <div class="mt-8 pt-6 border-t border-mask/20 flex flex-wrap gap-4 font-mono text-xs text-mask">
     <a href="../privacy/" class="hover:text-accentCyan font-bold">&larr; PRIVACY POLICY</a>
     <span class="text-mask/40">·</span>
-    <a href="../terms/" class="hover:text-accentCyan font-bold">TERMS OF SERVICE</a>
+    <a href="../products/" class="hover:text-accentCyan font-bold">PRODUCTS DIRECTORY</a>
     <span class="text-mask/40">·</span>
     <a href="../" class="hover:text-icyblue">HOME</a>
 </div>

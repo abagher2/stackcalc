@@ -1,6 +1,6 @@
 ---
 title: "StackCalc Learning Lab | 2D Virtual Manipulatives & Stack Computing"
-description: "Interactive 2D virtual manipulatives lab for schools: Fraction Towers (FRAC-01), Place-Value Decimal Trays (PLACE-01), and Prime Factor Studio (PRIME-01). Build quantities with tactile blocks, push values onto the 4-line RPN stack, execute operations, and verify mathematical equivalence."
+description: "Interactive 2D virtual manipulatives lab for schools: Fraction Towers (FRAC-01) and Prime Factor Studio (PRIME-01). Build quantities with tactile blocks, push values onto the 4-line RPN stack, execute operations, and verify mathematical equivalence."
 hide:
   - navigation
   - toc
@@ -10,7 +10,7 @@ hide:
 
 The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract (CRA)** framework with the mechanical clarity of **Reverse Polish Notation (RPN)**:
 1. **Concrete:** Physical 3D-printed math blocks and tactile kits on classroom desks.
-2. **Representational (2D Interactive Lab Below):** Virtual proportional blocks and place-value trays for interactive whiteboards and 1:1 Chromebooks.
+2. **Representational (2D Interactive Lab Below):** Virtual proportional fraction towers and vertical prime factor blocks for interactive whiteboards and 1:1 Chromebooks.
 3. **Abstract:** Dedicated 4-line operational stack registers ($X, Y, Z, T$) on the **SC-6 Elementary** and **SC-32 Scientific** calculators.
 
 ---
@@ -36,7 +36,6 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
     <!-- Mode Selector Tabs -->
     <div class="vlab-nav-tabs">
       <button id="vlab-tab-fractions" class="vlab-nav-tab active">📐 Fraction Towers</button>
-      <button id="vlab-tab-placevalue" class="vlab-nav-tab">🔢 Place Value Blocks</button>
       <button id="vlab-tab-primes" class="vlab-nav-tab">🔬 Prime Factors</button>
     </div>
 
@@ -73,6 +72,14 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
         <button class="vlab-block-btn-chip" onclick="window.StackCalcLab.addFraction({label:'1/12',n:1,d:12,mm:7.0,cls:'frac-1-12'})">
           <span class="vlab-block-chip" style="background:#4F46E5;"></span> 1/12
         </button>
+      </div>
+
+      <!-- Direct Fraction Input Bar -->
+      <div class="vlab-direct-input-bar">
+        <span class="vlab-palette-label">TYPE FRACTION:</span>
+        <input type="text" id="vlab-frac-input" class="vlab-quick-input" placeholder="e.g. 3/4 or 1 1/2">
+        <button id="vlab-btn-frac-add" class="vlab-btn-quick-add">+ BUILD TOWER</button>
+        <span style="font-size: 0.72rem; color: #64748B; margin-left: auto;">Press Enter or click to build blocks</span>
       </div>
 
       <div class="vlab-grid">
@@ -159,222 +166,7 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
       </div>
     </div>
 
-    <!-- VIEW 2: PLACE-VALUE STUDIO -->
-    <div id="vlab-view-placevalue" style="display:none;">
-      
-      <!-- Top Horizontal Place Value Palette Shelf -->
-      <div class="vlab-palette-bar">
-        <span class="vlab-palette-label">PLACE-01 DIGIT BLOCKS &amp; TOKENS:</span>
-        <div style="display:flex; flex-wrap:wrap; gap:5px; align-items:center;">
-          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="0" title="Digit Block 0">0</button>
-          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="1" title="Digit Block 1">1</button>
-          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="2" title="Digit Block 2">2</button>
-          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="3" title="Digit Block 3">3</button>
-          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="4" title="Digit Block 4">4</button>
-          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="5" title="Digit Block 5">5</button>
-          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="6" title="Digit Block 6">6</button>
-          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="7" title="Digit Block 7">7</button>
-          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="8" title="Digit Block 8">8</button>
-          <button class="pv-digit-palette-btn pv-digit-blue" data-pv-digit="9" title="Digit Block 9">9</button>
-          <span style="border-left: 1px solid rgba(255,255,255,0.2); height: 20px; margin: 0 4px;"></span>
-          <button class="pv-token-carry-palette" data-pv-token="carry" title="Stackable +1 Addition Carry Token">+1 CARRY</button>
-          <button class="pv-token-borrow-palette" data-pv-token="borrow" title="Stackable 10 Subtraction Borrow Token">10 BORROW</button>
-        </div>
-      </div>
-
-      <!-- Direct Number Input Bar -->
-      <div class="pv-direct-input-bar">
-        <span style="font-family:'Space Mono', monospace; font-size:0.75rem; color:#94A3B8; font-weight:700;">TYPE NUMBER:</span>
-        <input type="number" id="pv-num-input" class="pv-input-field" placeholder="e.g. 345 or 24.7" step="any" min="0" max="999.999">
-        <button id="pv-btn-load-x" class="vlab-btn-action" style="padding: 6px 12px; font-size:0.75rem; background:#0284C7; color:#FFFFFF; border-radius:4px; font-family:'Space Mono',monospace; font-weight:700; cursor:pointer;" title="Decompose number into Row 2 (X)">SET ROW 2 (X)</button>
-        <button id="pv-btn-load-y" class="vlab-btn-action" style="padding: 6px 12px; font-size:0.75rem; background:#161B22; color:#CBD5E1; border: 1px solid rgba(255,255,255,0.2); border-radius:4px; font-family:'Space Mono',monospace; font-weight:700; cursor:pointer;" title="Decompose number into Row 1 (Y)">SET ROW 1 (Y)</button>
-        <span style="font-size:0.7rem; color:#64748B; margin-left:auto;">Press Enter or click to populate blocks</span>
-      </div>
-
-      <div class="vlab-grid">
-        
-        <!-- Left & Center: Place Value Desk Tray -->
-        <div class="vlab-stage-container">
-          <div class="pv-tray">
-            <!-- Headers -->
-            <div class="pv-grid-header">
-              <div class="pv-col-header">100<br><span style="font-size:0.55rem; color:#94A3B8;">HUNDREDS</span></div>
-              <div class="pv-col-header">10<br><span style="font-size:0.55rem; color:#94A3B8;">TENS</span></div>
-              <div class="pv-col-header">1<br><span style="font-size:0.55rem; color:#94A3B8;">ONES</span></div>
-              <div class="pv-decimal-sep">&bull;</div>
-              <div class="pv-col-header decimal">.1<br><span style="font-size:0.55rem; color:#94A3B8;">TENTHS</span></div>
-              <div class="pv-col-header decimal">.01<br><span style="font-size:0.55rem; color:#94A3B8;">HUNDREDTHS</span></div>
-              <div class="pv-col-header decimal">.001<br><span style="font-size:0.55rem; color:#94A3B8;">THOUSANDTHS</span></div>
-            </div>
-
-            <!-- Shelf 0: Carry / Regroup Shelf -->
-            <div class="pv-shelf-container pv-shelf-carry">
-              <div class="pv-shelf-title-bar" style="color:#F59E0B;">
-                <span>CARRY / REGROUP SHELF</span>
-                <span style="font-size:0.65rem; color:#FCD34D;">[+1] TOKENS</span>
-              </div>
-              <div class="pv-grid-row">
-                <div id="pv-socket-carry-100" class="pv-socket pv-socket-carry"></div>
-                <div id="pv-socket-carry-10" class="pv-socket pv-socket-carry"></div>
-                <div id="pv-socket-carry-1" class="pv-socket pv-socket-carry"></div>
-                <div class="pv-decimal-sep">&bull;</div>
-                <div id="pv-socket-carry-0.1" class="pv-socket pv-socket-carry"></div>
-                <div id="pv-socket-carry-0.01" class="pv-socket pv-socket-carry"></div>
-                <div id="pv-socket-carry-0.001" class="pv-socket pv-socket-carry"></div>
-              </div>
-            </div>
-
-            <!-- Shelf 1: Row 1 / Waiting Shelf (Register Y) -->
-            <div class="pv-shelf-container pv-shelf-y">
-              <div class="pv-shelf-title-bar" style="color:#0284C7;">
-                <span>ROW 1: WAITING SHELF (Y)</span>
-                <span>TOTAL: <strong id="pv-row1-val" style="color:#FFFFFF; font-size:0.9rem;">0</strong></span>
-              </div>
-              <div class="pv-grid-row">
-                <div id="pv-socket-y-100" class="pv-socket"></div>
-                <div id="pv-socket-y-10" class="pv-socket"></div>
-                <div id="pv-socket-y-1" class="pv-socket"></div>
-                <div class="pv-decimal-sep">&bull;</div>
-                <div id="pv-socket-y-0.1" class="pv-socket"></div>
-                <div id="pv-socket-y-0.01" class="pv-socket"></div>
-                <div id="pv-socket-y-0.001" class="pv-socket"></div>
-              </div>
-              <!-- Row 1 Steppers -->
-              <div class="pv-controls-row">
-                <div class="pv-stepper">
-                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="100" data-pv-delta="1">+</button>
-                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="100" data-pv-delta="-1">&minus;</button>
-                </div>
-                <div class="pv-stepper">
-                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="10" data-pv-delta="1">+</button>
-                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="10" data-pv-delta="-1">&minus;</button>
-                </div>
-                <div class="pv-stepper">
-                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="1" data-pv-delta="1">+</button>
-                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="1" data-pv-delta="-1">&minus;</button>
-                </div>
-                <div></div>
-                <div class="pv-stepper">
-                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="0.1" data-pv-delta="1">+</button>
-                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="0.1" data-pv-delta="-1">&minus;</button>
-                </div>
-                <div class="pv-stepper">
-                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="0.01" data-pv-delta="1">+</button>
-                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="0.01" data-pv-delta="-1">&minus;</button>
-                </div>
-                <div class="pv-stepper">
-                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="0.001" data-pv-delta="1">+</button>
-                  <button class="pv-btn-step" data-pv-row="1" data-pv-col="0.001" data-pv-delta="-1">&minus;</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Shelf 2: Row 2 / Active Desk (Register X) -->
-            <div class="pv-shelf-container pv-shelf-x">
-              <div class="pv-shelf-title-bar" style="color:#38BDF8;">
-                <span>ROW 2: ACTIVE DESK (X)</span>
-                <span>TOTAL: <strong id="pv-total-val" style="color:#FFFFFF; font-size:0.9rem;">0</strong></span>
-              </div>
-              <div class="pv-grid-row">
-                <div id="pv-socket-100" class="pv-socket"></div>
-                <div id="pv-socket-10" class="pv-socket"></div>
-                <div id="pv-socket-1" class="pv-socket"></div>
-                <div class="pv-decimal-sep">&bull;</div>
-                <div id="pv-socket-0.1" class="pv-socket"></div>
-                <div id="pv-socket-0.01" class="pv-socket"></div>
-                <div id="pv-socket-0.001" class="pv-socket"></div>
-              </div>
-              <!-- Row 2 Steppers -->
-              <div class="pv-controls-row">
-                <div class="pv-stepper">
-                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="100" data-pv-delta="1">+</button>
-                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="100" data-pv-delta="-1">&minus;</button>
-                </div>
-                <div class="pv-stepper">
-                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="10" data-pv-delta="1">+</button>
-                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="10" data-pv-delta="-1">&minus;</button>
-                </div>
-                <div class="pv-stepper">
-                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="1" data-pv-delta="1">+</button>
-                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="1" data-pv-delta="-1">&minus;</button>
-                </div>
-                <div></div>
-                <div class="pv-stepper">
-                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="0.1" data-pv-delta="1">+</button>
-                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="0.1" data-pv-delta="-1">&minus;</button>
-                </div>
-                <div class="pv-stepper">
-                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="0.01" data-pv-delta="1">+</button>
-                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="0.01" data-pv-delta="-1">&minus;</button>
-                </div>
-                <div class="pv-stepper">
-                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="0.001" data-pv-delta="1">+</button>
-                  <button class="pv-btn-step" data-pv-row="2" data-pv-col="0.001" data-pv-delta="-1">&minus;</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Regroup Alert Note -->
-            <div id="pv-regroup-alert" style="display:none; background:rgba(255,68,0,0.15); border:1px solid #FF4400; color:#FF9900; padding:8px 12px; border-radius:6px; font-family:'Space Mono',monospace; font-size:0.75rem;">
-            </div>
-
-            <!-- Staging Toolbar for Place Value -->
-            <div class="vlab-staging-bar">
-              <div class="vlab-staged-readout">
-                <span class="vlab-staged-meta">ACTIVE (X):</span>
-                <span id="pv-readout-x" class="vlab-staged-val">0</span>
-              </div>
-              <div style="display:flex; flex-wrap:wrap; gap:8px;">
-                <button id="pv-btn-regroup" class="vlab-btn-secondary" style="border-color:#F59E0B; color:#F59E0B;">🔄 REGROUP (10➔1)</button>
-                <button id="pv-btn-unbundle" class="vlab-btn-secondary" style="border-color:#38BDF8; color:#38BDF8;">✂️ UNBUNDLE (1➔10)</button>
-                <button id="pv-btn-push" class="vlab-btn-push">↵ ENTER (SAVE X➔Y)</button>
-                <button id="pv-btn-clear" class="vlab-btn-secondary">✕ CLEAR</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Right Console (Shares the 4-Line RPN Stack) -->
-        <div class="vlab-calc-console">
-          <div class="vlab-lcd">
-            <div class="vlab-lcd-annunciator">
-              <span>STACKCALC // PLACE VALUE</span>
-              <span>[BASE 10]</span>
-            </div>
-            <div class="vlab-lcd-register"><span>T:</span> <span class="vlab-reg-t-val">0</span></div>
-            <div class="vlab-lcd-register"><span>Z:</span> <span class="vlab-reg-z-val">0</span></div>
-            <div class="vlab-lcd-register" style="color:#0284C7;"><span>Y:</span> <span class="vlab-reg-y-val">0</span></div>
-            <div class="vlab-lcd-register vlab-lcd-reg-x"><span>X:</span> <span class="vlab-reg-x-val">0_</span></div>
-          </div>
-
-          <div class="vlab-op-grid">
-            <button class="vlab-btn-op" data-vlab-op="+">+</button>
-            <button class="vlab-btn-op" data-vlab-op="-">&minus;</button>
-            <button class="vlab-btn-op" data-vlab-op="×">&times;</button>
-            <button class="vlab-btn-op" data-vlab-op="÷">&divide;</button>
-          </div>
-
-          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
-            <button id="pv-console-regroup" class="vlab-btn-func"><span class="vlab-key-shift">[f]</span>REGROUP</button>
-            <button id="pv-console-unbundle" class="vlab-btn-func"><span class="vlab-key-shift-blue">[g]</span>UNBUNDLE</button>
-            <button id="vlab-btn-clx" class="vlab-btn-func">CLEAR</button>
-          </div>
-
-          <!-- 3-Step Student Guide -->
-          <div class="vlab-kid-guide">
-            <div class="vlab-step-pill"><span class="vlab-step-num">1</span> <strong>Tap + / &minus;</strong> to place base-10 blocks</div>
-            <div class="vlab-step-arrow">➔</div>
-            <div class="vlab-step-pill"><span class="vlab-step-num">2</span> <strong>Press ENTER</strong> to save into Row 1 (Y)</div>
-            <div class="vlab-step-arrow">➔</div>
-            <div class="vlab-step-pill"><span class="vlab-step-num">3</span> <strong>Tap +, &minus;, or &times;</strong> with carry/regroup!</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- VIEW 3: PRIME FACTOR STUDIO -->
+    <!-- VIEW 2: PRIME FACTOR STUDIO -->
     <div id="vlab-view-primes" style="display:none;">
       
       <!-- Top Horizontal Prime Palette Shelf -->
@@ -407,6 +199,14 @@ The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract 
         <button class="vlab-block-btn-chip" data-prime-p="23">
           <span class="vlab-block-chip" style="background:#64748B;"></span> 23
         </button>
+      </div>
+
+      <!-- Direct Number Input Bar for Primes -->
+      <div class="vlab-direct-input-bar">
+        <span class="vlab-palette-label">TYPE NUMBER:</span>
+        <input type="number" id="vlab-prime-input" class="vlab-quick-input" placeholder="e.g. 42 or 120" min="2" max="99999">
+        <button id="vlab-btn-prime-add" class="vlab-btn-quick-add">+ FACTORIZE TOWER</button>
+        <span style="font-size: 0.72rem; color: #64748B; margin-left: auto;">Press Enter or click to build prime blocks</span>
       </div>
 
       <div class="vlab-grid">
@@ -578,8 +378,8 @@ Pair your interactive lab investigations with StackCalc's official companion boo
       <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 120px; text-align: center; padding: 0.55rem 0.5rem; background: #F59E0B; color: #0F172A; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 800; text-decoration: none;">
         AMAZON ($16) ↗
       </a>
-      <a href="curriculum/teacher-guide.md" style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
-        TEACHER GUIDE &rarr;
+      <a href="downloads.md" style="flex: 1; min-width: 100px; text-align: center; padding: 0.55rem 0.5rem; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;">
+        FREE PDFS &darr;
       </a>
     </div>
   </div>
