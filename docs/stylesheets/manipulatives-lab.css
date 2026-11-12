@@ -1,0 +1,705 @@
+/* ==========================================================================
+   STACKCALC 2D VIRTUAL MANIPULATIVES LAB
+   Precision Classroom Simulator: Fraction Towers & Place-Value Trays
+   ========================================================================== */
+
+.vlab-wrapper {
+  margin: 2rem 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #E2E8F0;
+}
+
+.vlab-container {
+  background-color: #080A0E;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- Fullscreen Mode for Classroom Projectors & Whiteboards --- */
+.vlab-container:fullscreen,
+.vlab-container:-webkit-full-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: none !important;
+  background-color: #080A0E !important;
+  padding: 2rem !important;
+  overflow-y: auto !important;
+  border-radius: 0 !important;
+  border: none !important;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Top Header & Telemetry Bar --- */
+.vlab-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.vlab-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vlab-sku-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: rgba(56, 189, 248, 0.12);
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.vlab-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.vlab-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vlab-btn-icon {
+  background: #11141A;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #CBD5E1;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+}
+
+.vlab-btn-icon:hover {
+  background: #181D26;
+  border-color: #38BDF8;
+  color: #FFFFFF;
+}
+
+.vlab-btn-icon.active {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #38BDF8;
+  color: #38BDF8;
+}
+
+/* --- Studio Mode Switcher Tabs --- */
+.vlab-nav-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  background: #0D1117;
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: fit-content;
+}
+
+.vlab-nav-tab {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: transparent;
+  color: #94A3B8;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.vlab-nav-tab:hover {
+  color: #FFFFFF;
+}
+
+.vlab-nav-tab.active {
+  background: #FFFFFF;
+  color: #080A0E;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Main Grid Layout --- */
+.vlab-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr 300px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .vlab-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Left Panel: Block Rack (Palette) --- */
+.vlab-panel {
+  background: #0D1117;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.vlab-panel-header {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vlab-rack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vlab-block-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #11141A;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.12s ease;
+  user-select: none;
+}
+
+.vlab-block-btn:hover {
+  transform: translateX(4px);
+  border-color: var(--block-color, #38BDF8);
+  background: #161B22;
+}
+
+.vlab-block-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.vlab-block-spec {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  color: #94A3B8;
+}
+
+.vlab-block-chip {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--block-color, #38BDF8);
+  margin-inline-end: 8px;
+  display: inline-block;
+}
+
+/* --- Center Panel: Staging Bay & Visual Comparator --- */
+.vlab-stage-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.vlab-comparator-bay {
+  background: #0E1118;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 1.25rem;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.vlab-columns-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  flex: 1;
+  align-items: end;
+  position: relative;
+  min-height: 280px;
+  border-bottom: 2px solid #334155;
+  padding-bottom: 4px;
+}
+
+.vlab-column {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  position: relative;
+  min-height: 260px;
+}
+
+.vlab-column-target {
+  border-left: 1px dashed rgba(255, 255, 255, 0.1);
+  border-right: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.vlab-column-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94A3B8;
+  text-transform: uppercase;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* 2D Proportional Fraction Block Rendering */
+.frac-block-2d {
+  width: 100%;
+  max-width: 110px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #FFFFFF;
+  margin-bottom: 2px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 2px 4px rgba(0, 0, 0, 0.4);
+  position: relative;
+  transition: all 0.15s ease;
+  user-select: none;
+  cursor: pointer;
+}
+
+.frac-block-2d:hover {
+  filter: brightness(1.15);
+}
+
+.frac-block-2d::after {
+  content: attr(data-height);
+  position: absolute;
+  right: 4px;
+  font-size: 0.55rem;
+  opacity: 0.65;
+}
+
+/* Colors for Fraction Blocks */
+.frac-1-1  { background: #334155; border: 1px solid #94A3B8; }
+.frac-1-2  { background: #0284C7; border: 1px solid #38BDF8; }
+.frac-1-3  { background: #059669; border: 1px solid #34D399; }
+.frac-1-4  { background: #D97706; border: 1px solid #FBBF24; }
+.frac-1-5  { background: #7C3AED; border: 1px solid #A78BFA; }
+.frac-1-6  { background: #E11D48; border: 1px solid #FB7185; }
+.frac-1-8  { background: #0891B2; border: 1px solid #22D3EE; }
+.frac-1-10 { background: #0D9488; border: 1px solid #2DD4BF; }
+.frac-1-12 { background: #4F46E5; border: 1px solid #818CF8; }
+
+/* Laser Datum Alignment Line */
+.vlab-laser-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #10B981;
+  box-shadow: 0 0 12px #10B981, 0 0 4px #10B981;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, bottom 0.2s ease;
+  z-index: 10;
+}
+
+.vlab-laser-line.active {
+  opacity: 1;
+}
+
+/* Staging Action Toolbar */
+.vlab-staging-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #11141A;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.vlab-staged-readout {
+  display: flex;
+  flex-direction: column;
+}
+
+.vlab-staged-val {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #38BDF8;
+}
+
+.vlab-staged-meta {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  color: #94A3B8;
+}
+
+.vlab-btn-push {
+  background: #38BDF8;
+  color: #080A0E;
+  border: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 10px rgba(56, 189, 248, 0.35);
+}
+
+.vlab-btn-push:hover {
+  background: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.vlab-btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #CBD5E1;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.vlab-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+/* --- Right Panel: 4-Line RPN Stack & Operational Console --- */
+.vlab-calc-console {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.vlab-lcd {
+  background: #E2E6EE;
+  border: 3px solid #1E293B;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.vlab-lcd::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(#CBD1DC 1.5px, transparent 1.5px);
+  background-size: 3px 3px;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.vlab-lcd-register {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Terminus', 'Space Mono', monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.35;
+  position: relative;
+  z-index: 1;
+}
+
+.vlab-lcd-reg-x {
+  border-top: 1px dashed rgba(15, 23, 42, 0.4);
+  padding-top: 4px;
+  margin-top: 4px;
+  font-size: 1.3rem;
+  color: #000000;
+}
+
+.vlab-lcd-annunciator {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Operation Keypad */
+.vlab-op-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.vlab-btn-op {
+  background: #161B22;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 800;
+  padding: 14px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  user-select: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.vlab-btn-op:hover {
+  background: #FF4400;
+  border-color: #FF4400;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.vlab-btn-op:active {
+  transform: translateY(1px);
+}
+
+.vlab-btn-func {
+  background: #11141A;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94A3B8;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 10px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.vlab-btn-func:hover {
+  background: #1F2937;
+  color: #38BDF8;
+}
+
+/* --- Place-Value Tray Layout --- */
+.pv-tray {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pv-grid-header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 24px repeat(3, 1fr);
+  gap: 8px;
+  text-align: center;
+}
+
+.pv-col-header {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #38BDF8;
+  background: #11141A;
+  padding: 6px 4px;
+  border-radius: 4px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.pv-col-header.decimal {
+  color: #F59E0B;
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.pv-decimal-sep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #FF4400;
+}
+
+.pv-grid-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 24px repeat(3, 1fr);
+  gap: 8px;
+}
+
+.pv-socket {
+  background: #0B0E14;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  min-height: 120px;
+  padding: 8px 4px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.pv-socket.has-carry::after {
+  content: "+1 CARRY";
+  position: absolute;
+  top: -8px;
+  background: #FF4400;
+  color: #FFFFFF;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.55rem;
+  font-weight: 800;
+  padding: 1px 4px;
+  border-radius: 3px;
+  animation: pulseCarry 1.2s infinite;
+}
+
+@keyframes pulseCarry {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.85; }
+}
+
+.pv-chip {
+  width: 100%;
+  max-width: 44px;
+  height: 18px;
+  border-radius: 3px;
+  background: #38BDF8;
+  color: #080A0E;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  user-select: none;
+  cursor: pointer;
+}
+
+.pv-chip.hundred { background: #E2E8F0; color: #080A0E; }
+.pv-chip.ten { background: #38BDF8; color: #080A0E; }
+.pv-chip.one { background: #34D399; color: #080A0E; }
+.pv-chip.tenth { background: #FBBF24; color: #080A0E; }
+.pv-chip.hundredth { background: #A78BFA; color: #080A0E; }
+.pv-chip.thousandth { background: #F472B6; color: #080A0E; }
+
+.pv-controls-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 24px repeat(3, 1fr);
+  gap: 8px;
+}
+
+.pv-stepper {
+  display: flex;
+  gap: 2px;
+}
+
+.pv-btn-step {
+  flex: 1;
+  background: #161B22;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #CBD5E1;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.pv-btn-step:hover {
+  background: #38BDF8;
+  color: #080A0E;
+}
+
+/* --- Challenge & Verification Banner --- */
+.vlab-challenge-card {
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(16, 185, 129, 0.08));
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vlab-challenge-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #38BDF8;
+  text-transform: uppercase;
+}
+
+.vlab-challenge-prompt {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 4px 0 0 0;
+}
+
+.vlab-challenge-status {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #10B981;
+}
+
+.vlab-btn-verify {
+  background: #10B981;
+  color: #022C22;
+  border: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.vlab-btn-verify:hover {
+  background: #FFFFFF;
+  color: #022C22;
+}

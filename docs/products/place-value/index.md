@@ -217,6 +217,10 @@ hide:
 
       <!-- Navigation & Editions Grid -->
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 my-4 font-mono text-xs">
+        <a href="../../lab/place-value/" class="p-2.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/40 text-emerald-300 hover:text-white transition flex items-center justify-between font-bold">
+          <span>🧮 2D Interactive Lab</span>
+          <span class="text-emerald-300">&rarr;</span>
+        </a>
         <a href="../../manuals/sc6/02-rpn-for-young-learners/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
           <span>Aligned Chapter</span>
           <span class="text-sky-400">&rarr;</span>
@@ -265,6 +269,22 @@ hide:
 
     </div>
 
+  </div>
+
+  <!-- Interactive 2D Simulator Launcher -->
+  <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(13, 17, 23, 0.95)); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+    <div>
+      <div style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #10B981; font-weight: 700; text-transform: uppercase;">CLASSROOM DIGITAL TWIN // 2D SIMULATOR</div>
+      <h3 style="margin: 0.25rem 0; color: #FFFFFF; font-size: 1.25rem; font-weight: 800;">Launch Interactive 2D Place-Value &amp; Regrouping Lab</h3>
+      <p style="margin: 0; color: #94A3B8; font-size: 0.85rem; max-width: 650px;">
+        Model multi-digit integers and 3-decimal fractions, test automated carrying/regrouping across place-value columns, and push results into the live RPN accumulator stack.
+      </p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <a href="../../lab/place-value/" class="ec-btn-primary" style="background-color: #10B981; border-color: #10B981; color: #080A0E; font-weight: 800; white-space: nowrap;">
+        Launch 2D Lab (Projector Mode) ⛶
+      </a>
+    </div>
   </div>
 
   <!-- ==========================================================================

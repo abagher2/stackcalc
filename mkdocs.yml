@@ -6,11 +6,13 @@ site_url: "https://www.stackcalc.io"
 extra_css:
   - stylesheets/brutalist.css
   - stylesheets/ecommerce.css
+  - stylesheets/manipulatives-lab.css
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/ecommerce.js
+  - javascripts/manipulatives-lab.js
 
 theme:
   name: material
@@ -70,10 +72,13 @@ nav:
     - From Blocks to the Stack (SC-6 Book): products/sc6-book.md
     - Fraction Studio Towers:
         - Product Overview: products/fraction-studio/index.md
+        - Interactive 2D Lab: lab/fraction-studio.md
         - Assembly Guide: products/fraction-studio/assembly.md
         - Classroom Lessons: products/fraction-studio/lessons.md
     - Prime Factor Studio: products/prime-factor-studio/index.md
-    - Place Value Studio & Regrouping Trays: products/place-value/index.md
+    - Place Value Studio & Regrouping Trays:
+        - Product Overview: products/place-value/index.md
+        - Interactive 2D Lab: lab/place-value.md
     - Classroom Planetary Clock:
         - Product Overview: products/classroom-clock/index.md
         - Assembly Guide: products/classroom-clock/assembly.md

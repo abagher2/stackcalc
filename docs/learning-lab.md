@@ -1,38 +1,316 @@
 ---
-title: "StackCalc Learning Lab"
+title: "StackCalc Learning Lab | 2D Virtual Manipulatives & Stack Computing"
+description: "Interactive 2D virtual manipulatives lab for schools: Fraction Towers (FRAC-01) and Place-Value Decimal Trays (PLACE-01). Build quantities with tactile blocks, push values onto the 4-line RPN stack, execute operations, and verify mathematical equivalence."
 ---
 
 # StackCalc Learning Lab
 
-The Learning Lab is the physical STEM education ecosystem engineered by StackCalc. Rather than generic novelty toys, every manipulative in the Learning Lab is an authentic, tactile instrument designed to pair 1:1 with the physical keys and dedicated register displays of our **SC-6 Elementary** and **SC-32 Scientific** RPN calculators.
+The Learning Lab bridges Jerome Bruner’s **Concrete-Representational-Abstract (CRA)** framework with the mechanical clarity of **Reverse Polish Notation (RPN)**:
+1. **Concrete:** Physical 3D-printed Gridfinity math manipulatives on classroom desks.
+2. **Representational (2D Interactive Lab Below):** Virtual proportional blocks and place-value trays for interactive whiteboards and 1:1 Chromebooks.
+3. **Abstract:** Dedicated 4-line operational stack registers on the **SC-6 Elementary** and **SC-32 Scientific** handheld calculators.
 
-The calculator's high-contrast, four-line reflective LCD screen is the real operational stack. Students manipulate physical models on their desk, observe how values are staged, and verify calculations on the live stack registers without hidden parenthesis logic.
+---
+
+<!-- ==========================================================================
+     STACKCALC 2D VIRTUAL MANIPULATIVES LAB (CLASSROOM SIMULATOR)
+     ========================================================================== -->
+<div class="vlab-wrapper">
+  <div id="vlab-main-container" class="vlab-container">
+    
+    <!-- Top Telemetry & Control Bar -->
+    <div class="vlab-header">
+      <div class="vlab-title-group">
+        <span class="vlab-sku-badge">CRA DIGITAL TWIN // 2D LAB</span>
+        <h2 class="vlab-title">Virtual Manipulatives &amp; Stack Computing Lab</h2>
+      </div>
+      <div class="vlab-controls">
+        <button id="vlab-btn-sound" class="vlab-btn-icon" title="Toggle Sound">🔊 AUDIO: ON</button>
+        <button id="vlab-btn-fullscreen" class="vlab-btn-icon active" title="Fullscreen Projector Mode">⛶ FULLSCREEN PROJECTOR</button>
+      </div>
+    </div>
+
+    <!-- Mode Selector Tabs -->
+    <div class="vlab-nav-tabs">
+      <button id="vlab-tab-fractions" class="vlab-nav-tab active">📐 Fraction Towers (FRAC-01)</button>
+      <button id="vlab-tab-placevalue" class="vlab-nav-tab">🔢 Place Value Trays (PLACE-01)</button>
+    </div>
+
+    <!-- VIEW 1: FRACTION STUDIO -->
+    <div id="vlab-view-fractions">
+      <div class="vlab-grid">
+        
+        <!-- Left: Fraction Rack / Palette -->
+        <div class="vlab-panel">
+          <div class="vlab-panel-header">
+            <span>Fraction Palette</span>
+            <span>84mm Ref</span>
+          </div>
+          <div id="vlab-frac-rack" class="vlab-rack-list">
+            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/1',n:1,d:1,mm:84.0,cls:'frac-1-1'})">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#334155;"></span><span class="vlab-block-label">1/1</span></div>
+              <span class="vlab-block-spec">84.0 mm</span>
+            </div>
+            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/2',n:1,d:2,mm:42.0,cls:'frac-1-2'})">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#0284C7;"></span><span class="vlab-block-label">1/2</span></div>
+              <span class="vlab-block-spec">42.0 mm</span>
+            </div>
+            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/3',n:1,d:3,mm:28.0,cls:'frac-1-3'})">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#059669;"></span><span class="vlab-block-label">1/3</span></div>
+              <span class="vlab-block-spec">28.0 mm</span>
+            </div>
+            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/4',n:1,d:4,mm:21.0,cls:'frac-1-4'})">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#D97706;"></span><span class="vlab-block-label">1/4</span></div>
+              <span class="vlab-block-spec">21.0 mm</span>
+            </div>
+            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/5',n:1,d:5,mm:16.8,cls:'frac-1-5'})">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#7C3AED;"></span><span class="vlab-block-label">1/5</span></div>
+              <span class="vlab-block-spec">16.8 mm</span>
+            </div>
+            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/6',n:1,d:6,mm:14.0,cls:'frac-1-6'})">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#E11D48;"></span><span class="vlab-block-label">1/6</span></div>
+              <span class="vlab-block-spec">14.0 mm</span>
+            </div>
+            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/8',n:1,d:8,mm:10.5,cls:'frac-1-8'})">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#0891B2;"></span><span class="vlab-block-label">1/8</span></div>
+              <span class="vlab-block-spec">10.5 mm</span>
+            </div>
+            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/10',n:1,d:10,mm:8.4,cls:'frac-1-10'})">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#0D9488;"></span><span class="vlab-block-label">1/10</span></div>
+              <span class="vlab-block-spec">8.4 mm</span>
+            </div>
+            <div class="vlab-block-btn" onclick="window.StackCalcLab.addFraction({label:'1/12',n:1,d:12,mm:7.0,cls:'frac-1-12'})">
+              <div style="display:flex; align-items:center;"><span class="vlab-block-chip" style="background:#4F46E5;"></span><span class="vlab-block-label">1/12</span></div>
+              <span class="vlab-block-spec">7.0 mm</span>
+            </div>
+          </div>
+          <div style="margin-top: 1rem; font-size: 0.68rem; color: #64748B; font-family: 'Space Mono', monospace;">
+            Tap blocks above to construct numbers in the Staging Column.
+          </div>
+        </div>
+
+        <!-- Center: Staging Bay & Comparison Stage -->
+        <div class="vlab-stage-container">
+          <div class="vlab-comparator-bay">
+            <div id="vlab-laser-line" class="vlab-laser-line"></div>
+            <div class="vlab-columns-wrapper">
+              
+              <!-- Column 1: Staging Builder -->
+              <div>
+                <div id="vlab-col-stage" class="vlab-column"></div>
+                <div class="vlab-column-title">1. STAGING TOWER</div>
+              </div>
+
+              <!-- Column 2: Live Calculator Result (Register X) -->
+              <div>
+                <div id="vlab-col-stack-x" class="vlab-column"></div>
+                <div class="vlab-column-title" style="color:#38BDF8;">2. STACK (REG X)</div>
+              </div>
+
+              <!-- Column 3: Verification Target -->
+              <div>
+                <div id="vlab-col-target" class="vlab-column vlab-column-target"></div>
+                <div class="vlab-column-title" style="color:#10B981;">3. VERIFICATION TARGET</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Staging Action Toolbar -->
+          <div class="vlab-staging-bar">
+            <div class="vlab-staged-readout">
+              <span class="vlab-staged-meta">STAGED NUMBER VALUE:</span>
+              <span id="vlab-staged-val" class="vlab-staged-val">0</span>
+              <span id="vlab-staged-meta" class="vlab-staged-meta">Height: 0.0 mm • Val: 0.000</span>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              <button id="vlab-btn-push-frac" class="vlab-btn-push">↵ PUSH TO STACK [ENTER]</button>
+              <button id="vlab-btn-drop-frac" class="vlab-btn-secondary">⌫ DROP TOP</button>
+              <button id="vlab-btn-clear-frac" class="vlab-btn-secondary">✕ CLEAR</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 4-Line RPN Stack & Operational Console -->
+        <div class="vlab-calc-console">
+          <div class="vlab-lcd">
+            <div class="vlab-lcd-annunciator">
+              <span>STACKCALC // RPN ENGINE</span>
+              <span>[↰ FDISP: ON]</span>
+            </div>
+            <div class="vlab-lcd-register"><span>T:</span> <span id="vlab-reg-t">0.0000</span></div>
+            <div class="vlab-lcd-register"><span>Z:</span> <span id="vlab-reg-z">0.0000</span></div>
+            <div class="vlab-lcd-register" style="color:#0284C7;"><span>Y:</span> <span id="vlab-reg-y">0.0000</span></div>
+            <div class="vlab-lcd-register vlab-lcd-reg-x"><span>X:</span> <span id="vlab-reg-x">0.0000_</span></div>
+          </div>
+
+          <!-- Operation Keypad -->
+          <div class="vlab-op-grid">
+            <button class="vlab-btn-op" data-vlab-op="+">+</button>
+            <button class="vlab-btn-op" data-vlab-op="-">&minus;</button>
+            <button class="vlab-btn-op" data-vlab-op="×">&times;</button>
+            <button class="vlab-btn-op" data-vlab-op="÷">&divide;</button>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 6px;">
+            <button id="vlab-btn-swap" class="vlab-btn-func">x⇄y</button>
+            <button id="vlab-btn-drop" class="vlab-btn-func">DROP</button>
+            <button id="vlab-btn-clx" class="vlab-btn-func">CLx</button>
+            <button id="vlab-btn-fdisp" class="vlab-btn-func">FDISP</button>
+          </div>
+
+          <!-- Verification Trigger Box -->
+          <div style="background:#11141A; border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:12px;">
+            <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#94A3B8; margin-bottom:8px; font-weight:700;">
+              VERIFICATION ENGINE
+            </div>
+            <div id="vlab-check-status" style="font-family:'Space Mono',monospace; font-size:0.75rem; color:#94A3B8; margin-bottom:10px;">
+              Awaiting calculation...
+            </div>
+            <div style="display:flex; gap:6px;">
+              <button id="vlab-btn-check-frac" class="vlab-btn-verify" style="flex:1;">CHECK EQUIVALENCE</button>
+              <button id="vlab-btn-clear-target" class="vlab-btn-secondary">RESET</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VIEW 2: PLACE-VALUE STUDIO -->
+    <div id="vlab-view-placevalue" style="display:none;">
+      <div class="vlab-grid">
+        
+        <!-- Left & Center: 12-Column Place Value Desk Tray -->
+        <div style="grid-column: span 2;" class="vlab-panel">
+          <div class="vlab-panel-header">
+            <span>Place Value Desk Tray (Whole Numbers &amp; Decimals)</span>
+            <span>Base-10 Regrouping</span>
+          </div>
+
+          <div class="pv-tray">
+            <!-- Headers -->
+            <div class="pv-grid-header">
+              <div class="pv-col-header">100<br><span style="font-size:0.55rem; color:#94A3B8;">HUNDREDS</span></div>
+              <div class="pv-col-header">10<br><span style="font-size:0.55rem; color:#94A3B8;">TENS</span></div>
+              <div class="pv-col-header">1<br><span style="font-size:0.55rem; color:#94A3B8;">ONES</span></div>
+              <div class="pv-decimal-sep">&bull;</div>
+              <div class="pv-col-header decimal">.1<br><span style="font-size:0.55rem; color:#94A3B8;">TENTHS</span></div>
+              <div class="pv-col-header decimal">.01<br><span style="font-size:0.55rem; color:#94A3B8;">HUNDREDTHS</span></div>
+              <div class="pv-col-header decimal">.001<br><span style="font-size:0.55rem; color:#94A3B8;">THOUSANDTHS</span></div>
+            </div>
+
+            <!-- Block Sockets -->
+            <div class="pv-grid-row">
+              <div id="pv-socket-100" class="pv-socket"></div>
+              <div id="pv-socket-10" class="pv-socket"></div>
+              <div id="pv-socket-1" class="pv-socket"></div>
+              <div class="pv-decimal-sep">&bull;</div>
+              <div id="pv-socket-0.1" class="pv-socket"></div>
+              <div id="pv-socket-0.01" class="pv-socket"></div>
+              <div id="pv-socket-0.001" class="pv-socket"></div>
+            </div>
+
+            <!-- Add/Subtract Steppers -->
+            <div class="pv-controls-row">
+              <div class="pv-stepper">
+                <button class="pv-btn-step" data-pv-col="100" data-pv-delta="1">+</button>
+                <button class="pv-btn-step" data-pv-col="100" data-pv-delta="-1">&minus;</button>
+              </div>
+              <div class="pv-stepper">
+                <button class="pv-btn-step" data-pv-col="10" data-pv-delta="1">+</button>
+                <button class="pv-btn-step" data-pv-col="10" data-pv-delta="-1">&minus;</button>
+              </div>
+              <div class="pv-stepper">
+                <button class="pv-btn-step" data-pv-col="1" data-pv-delta="1">+</button>
+                <button class="pv-btn-step" data-pv-col="1" data-pv-delta="-1">&minus;</button>
+              </div>
+              <div></div>
+              <div class="pv-stepper">
+                <button class="pv-btn-step" data-pv-col="0.1" data-pv-delta="1">+</button>
+                <button class="pv-btn-step" data-pv-col="0.1" data-pv-delta="-1">&minus;</button>
+              </div>
+              <div class="pv-stepper">
+                <button class="pv-btn-step" data-pv-col="0.01" data-pv-delta="1">+</button>
+                <button class="pv-btn-step" data-pv-col="0.01" data-pv-delta="-1">&minus;</button>
+              </div>
+              <div class="pv-stepper">
+                <button class="pv-btn-step" data-pv-col="0.001" data-pv-delta="1">+</button>
+                <button class="pv-btn-step" data-pv-col="0.001" data-pv-delta="-1">&minus;</button>
+              </div>
+            </div>
+
+            <!-- Regroup Alert Note -->
+            <div id="pv-regroup-alert" style="display:none; background:rgba(255,68,0,0.15); border:1px solid #FF4400; color:#FF9900; padding:8px 12px; border-radius:6px; font-family:'Space Mono',monospace; font-size:0.75rem;">
+            </div>
+
+            <!-- Staging Toolbar for Place Value -->
+            <div class="vlab-staging-bar" style="margin-top:1rem;">
+              <div class="vlab-staged-readout">
+                <span class="vlab-staged-meta">CURRENT NUMBER BUILDER:</span>
+                <span id="pv-total-val" class="vlab-staged-val">0.000</span>
+              </div>
+              <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                <button id="pv-btn-regroup" class="vlab-btn-secondary" style="border-color:#F59E0B; color:#F59E0B;">🔄 AUTO-REGROUP (+1)</button>
+                <button id="pv-btn-push" class="vlab-btn-push">↵ PUSH TO STACK [ENTER]</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Console (Shares the 4-Line RPN Stack) -->
+        <div class="vlab-calc-console">
+          <div class="vlab-lcd">
+            <div class="vlab-lcd-annunciator">
+              <span>STACKCALC // PV MODE</span>
+              <span>[123 DECIMAL]</span>
+            </div>
+            <div class="vlab-lcd-register"><span>T:</span> <span>0.0000</span></div>
+            <div class="vlab-lcd-register"><span>Z:</span> <span>0.0000</span></div>
+            <div class="vlab-lcd-register" style="color:#0284C7;"><span>Y:</span> <span>0.0000</span></div>
+            <div class="vlab-lcd-register vlab-lcd-reg-x"><span>X:</span> <span>0.0000_</span></div>
+          </div>
+
+          <div class="vlab-op-grid">
+            <button class="vlab-btn-op" data-vlab-op="+">+</button>
+            <button class="vlab-btn-op" data-vlab-op="-">&minus;</button>
+            <button class="vlab-btn-op" data-vlab-op="×">&times;</button>
+            <button class="vlab-btn-op" data-vlab-op="÷">&divide;</button>
+          </div>
+
+          <div style="font-size:0.75rem; color:#94A3B8; line-height:1.5; font-family:'Space Mono',monospace; background:#11141A; padding:12px; border-radius:6px; border:1px solid rgba(255,255,255,0.08);">
+            <strong style="color:#FFFFFF;">CRA Workflow:</strong><br>
+            1. Tap [+] to add base-10 chips.<br>
+            2. Push 1st number to stack.<br>
+            3. Build 2nd number &amp; push.<br>
+            4. Press [+] or [&minus;] to calculate.<br>
+            5. Observe regrouping / carrying!
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+---
 
 ## The Physical Instrument Collection
 
 All manipulatives are built on the open-source **Gridfinity** modular standard with tactile detents, dual-color filament lettering, debossed cartouche badges, and weighted rubber feet:
 
-| Instrument | Calculator Integration | What It Makes Visible |
-| :--- | :--- | :--- |
-| **Fraction Studio Towers** | `{{keycap:FDISP}}` key | Proportional stacking towers (1/1 to 1/8) where equivalent heights demonstrate common denominators and fraction reduction. |
-| **Ten-Frame Studio** | `{{keycap:▦}}` Ten-Frame key | Dual-color counters in 2×5 arrays and 8-bit register trays for place-value anchoring and base-10 decomposition. |
-| **Math Domino Studio** | Doubles facts / Part-part-whole | Precision dominoes in 12-frame debossed trays illustrating additive composition and associative grouping. |
-| **Place Value Studio** | `{{keycap:123}}` Place Value key | Proportional base-10 units, rods, flats, and thousands cubes matching register staging. |
-| **Algebra Studio & Factoring Stage** | `{{keycap:POLY}}` Polynomial solver | Quadratic factoring frames and area tiles ($x^2$, $x$, $1$) for tactile polynomial expansion and binomial root solving. |
-| **Classroom Planetary Clock** | `{{keycap:CLK}}` Time key | Geared mechanical gear train with visible epicyclic movement linking 60-minute cycles directly to fractional hours. |
-| **Unit Circle Trig Volvelle** | `{{keycap:SIN}}`, `{{keycap:COS}}`, `{{keycap:RAD}}`, `{{keycap:π}}` keys | Dual-rotor rotating dial showing exact radian-degree equivalents, coordinates, and exact radical ratios. |
-| **Probability Dice & Spinner** | `{{keycap:Σ+}}`, `{{keycap:x̄}}` Statistics keys | Weighted dice sets and calibrated spinner for empirical frequency logging and real-time mean/standard deviation. |
-| **Prime Factor Studio** | `{{key:FACT}}` Prime Factor key | Proportional logarithmic prime factor blocks (`[2]` through `[23]`) that stack to sum logarithms and prove unique factorization. |
-| **Counting & Array Tiles** | `{{key:ENTER}}` & `{{key:×}}` Array keys | 144 1U counting tiles across 4 colors for rectangular arrays, partial products, and Four-Color Map Theorem investigations. |
-| **SC-6 Quest Scoreboard & +10 Token Kit** | `{{key:QUIZ}}` (`?`) Tutorial / Quiz key | Simplified 2-piece 3×1×7U scoreboard lid (`1`–`10`, `100` Mastery Tower, and `?` badge) with 60 universal `+10` tokens (`1 block = +10 pts / 1st Way`, `2 stacked = +20 pts / 2nd Way`). |
+| Instrument | Calculator Integration | What It Makes Visible | Direct Links |
+| :--- | :--- | :--- | :--- |
+| **Fraction Studio Towers** | `{{keycap:FDISP}}` key | Proportional stacking towers (1/1 to 1/12) where reciprocal millimeter heights prove fraction equivalence and common denominators. | [Product Page](products/fraction-studio/index.md) &bull; [Etsy Storefront ↗](https://stackcalcmath.etsy.com) &bull; [Printables 3MF ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Place Value Studio** | `{{keycap:123}}` Place Value key | Proportional base-10 units, rods, flats, and decimal strips matching register staging and regrouping. | [Product Page](products/place-value/index.md) &bull; [Etsy Storefront ↗](https://stackcalcmath.etsy.com) &bull; [Printables 3MF ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Ten-Frame Studio** | `{{keycap:▦}}` Ten-Frame key | Dual-color counters in 2×5 arrays and 8-bit register trays for place-value anchoring and base-10 decomposition. | [Product Page](products/ten-frames/index.md) &bull; [Etsy Storefront ↗](https://stackcalcmath.etsy.com) &bull; [Printables 3MF ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Prime Factor Studio** | `{{key:FACT}}` Prime Factor key | Proportional logarithmic prime factor blocks (`[2]` through `[23]`) that stack to sum logarithms and prove unique factorization. | [Product Page](products/prime-factor-studio/index.md) &bull; [Etsy Storefront ↗](https://stackcalcmath.etsy.com) &bull; [Printables 3MF ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Classroom Planetary Clock** | `{{keycap:CLK}}` Time key | Geared mechanical gear train with visible epicyclic movement linking 60-minute cycles directly to fractional hours. | [Product Page](products/classroom-clock/index.md) &bull; [Etsy Storefront ↗](https://stackcalcmath.etsy.com) &bull; [Printables 3MF ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Algebra Studio & Area Tiles** | `{{keycap:POLY}}` Polynomial solver | Quadratic factoring frames and area tiles ($x^2$, $x$, $1$) for tactile polynomial expansion and binomial root solving. | [Product Page](products/algebra-boxes/index.md) &bull; [Etsy Storefront ↗](https://stackcalcmath.etsy.com) &bull; [Printables 3MF ↗](https://www.printables.com/@StackCalc_5593834) |
 
-## Concrete-Pictorial-Abstract (CPA) Pedagogy
-
-StackCalc directly implements Jerome Bruner’s CPA progression and Singapore Math methodologies:
-
-1. **Concrete:** Students physically construct quantities, group counters, rotate volvelles, or factor algebraic tiles.
-2. **Pictorial:** Students sketch representations, tape diagrams, or area models into their printed lab sheets.
-3. **Abstract:** Students push values onto the calculator's hardware stack (`{{key:ENTER}}`), apply operations, and inspect register state.
+---
 
 ## Download Educational Literature & 3D Models {: #download-the-prototype-materials }
 
@@ -40,12 +318,10 @@ All classroom curriculum, teacher guides, student proficiency trials, and 3D pri
 
 | Literature & Print Files | Description | Format |
 | :--- | :--- | :--- |
-| **Book 1: Unified Master Teacher's Guide** | 50-page K–12 teacher guide organized by mathematical concept, including Middle School coaching & 900 keys, plus **12 Separate Printable 4-Page Unit PDFs**. | [Letter PDF](downloads/stackcalc-curriculum-guide-letter.pdf) · [Print Units 01–12](curriculum/teacher-guide.md#print-individual-curriculum-units-units-0112-separate-pdfs) |
-| **Book 2: K–12 Student Hands-On Math Lab Workbook** | 29-page student exploration workbook for Units 01–12 with Guided Stack Walkthroughs, 48 Lab Investigations, and Student Self-Check Answer Key. | [Letter PDF](downloads/stackcalc-student-lab-workbook-letter.pdf) |
-| **Book 3: Big Ideas Middle School Supplement (45 Sections)** | 114-page Two-Method Student Workbook (10 Chapter Openers, 90 Practice A & B worksheets, 900 problems, Student Self-Check Key) + **10 Separate Printable Chapter PDFs**. | [Full Workbook (114p PDF)](downloads/worksheets/bigideas_middle_school_sc6_daily_student_workbook.pdf) · [Print Chapters 1–10](curriculum/big-ideas-middle-school-sc6-workbook.md#print-individual-chapters-units-110-separate-pdfs-for-parents-teachers) |
-| **Book 4: Student Speed & Proficiency Trials** | 21-page timed RPN speed sprint workbook (15 Sprints + Self-Check Answer Keys + Speed Tactics). | [Letter PDF](downloads/stackcalc-student-proficiency-trials.pdf) |
-| **Hardware Reference Cards** | Desk cards summarizing RPN stack operations, Quest Scoreboard +10/+20 scoring, trigonometry volvelle reading, and fraction conversions. | [Letter PDF](downloads/reference-cards-letter.pdf) |
-| **Printable STL / 3MF Models** | Complete 3D manufacturing files for all manipulative kits on Printables with calibrated Bambu Lab and Prusa print profiles. | [Printables Hub ↗](https://www.printables.com/@StackCalc_5593834) · [Makerspace Kits Guide](printables.md) |
+| **Book 1: Unified Master Teacher's Guide** | K–12 teacher guide organized by mathematical concept, including Middle School coaching, lesson transcripts, and 900 answer keys. | [Order on Amazon ($16) ↗](https://link.amazon/B05RFHqeu) &bull; [Teacher Guide Page](curriculum/teacher-guide.md) |
+| **Book 2: K–12 Student Hands-On Math Lab Workbook** | Student exploration workbook with Guided Stack Walkthroughs, 48 Lab Investigations, and Student Self-Check Answer Key. | [Order on Amazon ($14.99) ↗](https://link.amazon/B07bxzYKq) &bull; [Worksheets Center](curriculum/worksheets.md) |
+| **Book 3: From Blocks to the Stack (SC-6 Textbook)** | Illustrated elementary companion textbook guiding students from physical blocks to RPN stack computing. | [Order on Amazon ($16) ↗](https://link.amazon/B0f5cP0Ur) &bull; [Product Page](products/sc6-book.md) |
+| **Printable STL / 3MF Models** | Complete 3D manufacturing files for all manipulative kits on Printables with calibrated Bambu Lab and Prusa print profiles. | [Printables Hub ↗](https://www.printables.com/@StackCalc_5593834) &bull; [Downloads Center](downloads.md) |
 
 Read the related documentation and lesson guides:
 

@@ -213,6 +213,10 @@ hide:
 
       <!-- Navigation & Editions Grid -->
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 my-4 font-mono text-xs">
+        <a href="../../lab/fraction-studio/" class="p-2.5 rounded bg-sky-500/20 hover:bg-sky-500/30 border border-sky-500/40 text-sky-300 hover:text-white transition flex items-center justify-between font-bold">
+          <span>📐 2D Interactive Lab</span>
+          <span class="text-sky-300">&rarr;</span>
+        </a>
         <a href="assembly/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
           <span>Assembly Guide</span>
           <span class="text-sky-400">&rarr;</span>
@@ -261,6 +265,22 @@ hide:
 
     </div>
 
+  </div>
+
+  <!-- Interactive 2D Simulator Launcher -->
+  <div style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(13, 17, 23, 0.95)); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+    <div>
+      <div style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">CLASSROOM DIGITAL TWIN // 2D SIMULATOR</div>
+      <h3 style="margin: 0.25rem 0; color: #FFFFFF; font-size: 1.25rem; font-weight: 800;">Launch Interactive 2D Fraction Towers Lab</h3>
+      <p style="margin: 0; color: #94A3B8; font-size: 0.85rem; max-width: 650px;">
+        Build fractions with proportional blocks, push values onto the live 4-line RPN calculator stack, and verify mathematical equivalence datum lines directly in your browser.
+      </p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <a href="../../lab/fraction-studio/" class="ec-btn-primary" style="background-color: #38BDF8; border-color: #38BDF8; color: #080A0E; font-weight: 800; white-space: nowrap;">
+        Launch 2D Lab (Projector Mode) ⛶
+      </a>
+    </div>
   </div>
 
   <!-- ==========================================================================
