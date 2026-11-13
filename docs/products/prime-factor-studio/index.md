@@ -1,6 +1,6 @@
 ---
 title: "Prime Factor Studio & Logarithmic Factor Towers | Math Manipulatives"
-description: "Tactile number theory manipulative with 29 proportional logarithmic prime factor blocks and a 3x1x13U Snapfinity Gridfinity box. Proves the Fundamental Theorem of Arithmetic and prime factorization through tangible height. Grades 3–9."
+description: "Tactile number theory manipulative with 43 proportional logarithmic prime factor blocks (2, 3, 5, 7) in a 3x1x7U stepped-floor Snapfinity Gridfinity box (45-piece set). Proves the Fundamental Theorem of Arithmetic, GCF, and LCM through tangible height. Grades 3–9."
 hide:
   - navigation
   - toc
@@ -13,7 +13,7 @@ hide:
   "@graph": [
     {
       "@type": "Product",
-      "name": "Prime Factor Studio & Logarithmic Factor Towers - 29 Proportional Stacking Blocks",
+      "name": "Prime Factor Studio & Logarithmic Factor Towers - 45-Piece Set (43 Stacking Prime Blocks)",
       "image": [
         "https://www.stackcalc.io/assets/renders/etsy/prime-factor-studio-real-staircase-iso-hero-tight.jpg",
         "https://www.stackcalc.io/assets/renders/etsy/prime-factor-studio-real-staircase-front-hero-tight.jpg",
@@ -23,7 +23,7 @@ hide:
         "https://www.stackcalc.io/assets/reference_cards/reference_card_PRIME-01_paper.png"
       ],
       "keywords": "prime factorization manipulatives, prime factor blocks, logarithmic factor towers, prime vs composite, Fundamental Theorem of Arithmetic, GCF LCM hands on math, tactile number theory, CCSS.MATH.CONTENT.4.OA.B.4, CCSS.MATH.CONTENT.6.NS.B.4",
-      "description": "29 precision proportional logarithmic prime factor blocks with a 3x1x13U Snapfinity Gridfinity box with prime power storage sockets. Stacking prime factors physically multiplies them, proving the Fundamental Theorem of Arithmetic with 0.000mm error.",
+      "description": "45-piece tactile number theory set featuring 43 proportional logarithmic prime factor blocks (24x [2], 9x [3], 6x [5], 4x [7]) in a 3x1x7U stepped-floor Snapfinity Gridfinity box with dual-well comparator stage lid. Stacking prime factors physically multiplies them with 0.000mm error.",
       "sku": "PRIME-01",
       "mpn": "PRIME-01",
       "brand": {
@@ -80,7 +80,7 @@ hide:
           "name": "How does stacking prime blocks physically multiply numbers?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Every prime block has a visible height equal to 42.0 * log10(p) mm. Because logarithms convert multiplication into addition (log(a * b) = log(a) + log(b)), stacking a [2] block (12.64mm) and a [3] block (20.04mm) creates a total visible height of 32.68mm—which matches Composite Factor Tower [6] with 0.000mm error."
+            "text": "Every prime block has a visible height equal to 7.00 * log2(p) mm. Because logarithms convert multiplication into addition (log(a * b) = log(a) + log(b)), stacking a [2] block (7.00mm) and a [3] block (11.10mm) creates a total visible height of 18.10mm—which matches the exact height of product 6 regardless of stacking order."
           }
         },
         {
@@ -88,7 +88,7 @@ hide:
           "name": "How does the kit prove the Fundamental Theorem of Arithmetic?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The Fundamental Theorem states that every integer greater than 1 has a unique prime factorization. Students discover this physically: whether building 36 from 4 x 9 or 6 x 6, both factor trees decompose into the exact same prime blocks: two [2]s and two [3]s (2^2 x 3^2 = 36). No other combination of prime blocks can ever match that height."
+            "text": "The Fundamental Theorem states that every integer greater than 1 has a unique prime factorization. Students discover this physically: whether building 36 from 4 x 9 or 6 x 6, both factor trees decompose into the exact same prime blocks: two [2]s and two [3]s (2^2 x 3^2 = 36, reaching 36.20mm visible height). No other combination of prime blocks can ever match that height."
           }
         },
         {
@@ -96,7 +96,7 @@ hide:
           "name": "How does the set demonstrate Greatest Common Factor (GCF) and Least Common Multiple (LCM)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "To find GCF(12, 18), students build the tower for 12 ([2]+[2]+[3]) and 18 ([2]+[3]+[3]). The identical overlapping blocks shared by both towers are one [2] and one [3], giving GCF = 2 x 3 = 6. For LCM, students build the shortest combined tower containing all factors of both, reaching height 36."
+            "text": "To find GCF(12, 18), students build the tower for 12 ([2]+[2]+[3]) and 18 ([2]+[3]+[3]). The identical overlapping blocks shared by both towers are one [2] and one [3], giving GCF = 2 x 3 = 6. For LCM, students build the shortest combined tower containing all factors of both, reaching product 36."
           }
         }
       ]
@@ -124,7 +124,7 @@ hide:
     <!-- Left Column: Product Gallery -->
     <div class="ec-gallery">
       <div class="ec-gallery-main">
-        <img id="main-product-image" src="../../assets/renders/etsy/prime-factor-studio-real-staircase-iso-hero-tight.jpg" alt="StackCalc Prime Factor Studio 29 Blocks with Snapfinity Box" loading="eager">
+        <img id="main-product-image" src="../../assets/renders/etsy/prime-factor-studio-real-staircase-iso-hero-tight.jpg" alt="StackCalc Prime Factor Studio 45-Piece Set with Stepped-Floor Snapfinity Box" loading="eager">
       </div>
 
       <!-- Thumbnail Selector Strip (Includes Authentic Studio Photography & Infographics) -->
@@ -372,7 +372,7 @@ hide:
         <thead class="bg-black/60 text-white border-b border-white/10">
           <tr>
             <th class="p-3">Target Number \(N\)</th>
-            <th class="p-3">Prime Blocks Stacked</th>
+            <th class="p-3">Prime Blocks Stacked (Slant 3D Palette)</th>
             <th class="p-3">Visible Height \(\sum h_{\text{vis}}\)</th>
             <th class="p-3">Desk Stacking Top \(Z_{\text{top}}\)</th>
             <th class="p-3">Target Height \(Z_{\text{target}}\)</th>
@@ -382,59 +382,59 @@ hide:
         <tbody class="divide-y divide-white/5 text-slate-300">
           <tr>
             <td class="p-3 font-bold text-white">\(N = 2\)</td>
-            <td class="p-3"><kbd class="px-1 rounded bg-teal-500/20 text-teal-300">[2]</kbd></td>
-            <td class="p-3">12.64 mm</td>
-            <td class="p-3">14.49 mm</td>
-            <td class="p-3">14.49 mm</td>
+            <td class="p-3"><kbd class="px-1.5 py-0.5 rounded bg-[#1D4ED8] text-white font-bold">[2]</kbd></td>
+            <td class="p-3">7.00 mm</td>
+            <td class="p-3">8.85 mm</td>
+            <td class="p-3">8.85 mm</td>
             <td class="p-3 text-emerald-400 font-bold">0.000 mm (Exact)</td>
           </tr>
           <tr>
             <td class="p-3 font-bold text-white">\(N = 4\)</td>
-            <td class="p-3"><kbd class="px-1 rounded bg-teal-500/20 text-teal-300">[2]</kbd> + <kbd class="px-1 rounded bg-teal-500/20 text-teal-300">[2]</kbd></td>
-            <td class="p-3">25.29 mm</td>
-            <td class="p-3">27.14 mm</td>
-            <td class="p-3">27.14 mm</td>
+            <td class="p-3"><kbd class="px-1.5 py-0.5 rounded bg-[#1D4ED8] text-white font-bold">[2]</kbd> + <kbd class="px-1.5 py-0.5 rounded bg-[#1D4ED8] text-white font-bold">[2]</kbd></td>
+            <td class="p-3">14.00 mm</td>
+            <td class="p-3">15.85 mm</td>
+            <td class="p-3">15.85 mm</td>
             <td class="p-3 text-emerald-400 font-bold">0.000 mm (Exact)</td>
           </tr>
           <tr>
             <td class="p-3 font-bold text-white">\(N = 6\)</td>
-            <td class="p-3"><kbd class="px-1 rounded bg-teal-500/20 text-teal-300">[2]</kbd> + <kbd class="px-1 rounded bg-amber-500/20 text-amber-300">[3]</kbd></td>
-            <td class="p-3">32.68 mm</td>
-            <td class="p-3">34.53 mm</td>
-            <td class="p-3">34.53 mm</td>
+            <td class="p-3"><kbd class="px-1.5 py-0.5 rounded bg-[#1D4ED8] text-white font-bold">[2]</kbd> + <kbd class="px-1.5 py-0.5 rounded bg-[#FF5F2D] text-white font-bold">[3]</kbd></td>
+            <td class="p-3">18.10 mm</td>
+            <td class="p-3">19.95 mm</td>
+            <td class="p-3">19.95 mm</td>
             <td class="p-3 text-emerald-400 font-bold">0.000 mm (Exact)</td>
           </tr>
           <tr>
             <td class="p-3 font-bold text-white">\(N = 10\)</td>
-            <td class="p-3"><kbd class="px-1 rounded bg-teal-500/20 text-teal-300">[2]</kbd> + <kbd class="px-1 rounded bg-blue-500/20 text-blue-300">[5]</kbd></td>
+            <td class="p-3"><kbd class="px-1.5 py-0.5 rounded bg-[#1D4ED8] text-white font-bold">[2]</kbd> + <kbd class="px-1.5 py-0.5 rounded bg-white text-slate-950 font-bold">[5]</kbd></td>
+            <td class="p-3">23.25 mm</td>
+            <td class="p-3">25.10 mm</td>
+            <td class="p-3">25.10 mm</td>
+            <td class="p-3 text-emerald-400 font-bold">0.000 mm (Exact)</td>
+          </tr>
+          <tr>
+            <td class="p-3 font-bold text-white">\(N = 14\)</td>
+            <td class="p-3"><kbd class="px-1.5 py-0.5 rounded bg-[#1D4ED8] text-white font-bold">[2]</kbd> + <kbd class="px-1.5 py-0.5 rounded bg-[#D49459] text-white font-bold">[7]</kbd></td>
+            <td class="p-3">26.65 mm</td>
+            <td class="p-3">28.50 mm</td>
+            <td class="p-3">28.50 mm</td>
+            <td class="p-3 text-emerald-400 font-bold">0.000 mm (Exact)</td>
+          </tr>
+          <tr>
+            <td class="p-3 font-bold text-white">\(N = 36\)</td>
+            <td class="p-3"><kbd class="px-1.5 py-0.5 rounded bg-[#1D4ED8] text-white font-bold">[2]</kbd>&sup2; + <kbd class="px-1.5 py-0.5 rounded bg-[#FF5F2D] text-white font-bold">[3]</kbd>&sup2;</td>
+            <td class="p-3">36.20 mm</td>
+            <td class="p-3">38.05 mm</td>
+            <td class="p-3">38.05 mm</td>
+            <td class="p-3 text-emerald-400 font-bold">0.000 mm (Exact)</td>
+          </tr>
+          <tr>
+            <td class="p-3 font-bold text-white">\(N = 64\) (Box Waterline)</td>
+            <td class="p-3">6&times; <kbd class="px-1.5 py-0.5 rounded bg-[#1D4ED8] text-white font-bold">[2]</kbd></td>
             <td class="p-3">42.00 mm</td>
             <td class="p-3">43.85 mm</td>
             <td class="p-3">43.85 mm</td>
-            <td class="p-3 text-emerald-400 font-bold">0.000 mm (Exact)</td>
-          </tr>
-          <tr>
-            <td class="p-3 font-bold text-white">\(N = 20\)</td>
-            <td class="p-3"><kbd class="px-1 rounded bg-teal-500/20 text-teal-300">[2]</kbd> + <kbd class="px-1 rounded bg-teal-500/20 text-teal-300">[2]</kbd> + <kbd class="px-1 rounded bg-blue-500/20 text-blue-300">[5]</kbd></td>
-            <td class="p-3">54.64 mm</td>
-            <td class="p-3">56.49 mm</td>
-            <td class="p-3">56.49 mm</td>
-            <td class="p-3 text-emerald-400 font-bold">0.000 mm (Exact)</td>
-          </tr>
-          <tr>
-            <td class="p-3 font-bold text-white">\(N = 50\)</td>
-            <td class="p-3"><kbd class="px-1 rounded bg-teal-500/20 text-teal-300">[2]</kbd> + <kbd class="px-1 rounded bg-blue-500/20 text-blue-300">[5]</kbd> + <kbd class="px-1 rounded bg-blue-500/20 text-blue-300">[5]</kbd></td>
-            <td class="p-3">71.36 mm</td>
-            <td class="p-3">73.21 mm</td>
-            <td class="p-3">73.21 mm</td>
-            <td class="p-3 text-emerald-400 font-bold">0.000 mm (Exact)</td>
-          </tr>
-          <tr>
-            <td class="p-3 font-bold text-white">\(N = 100\)</td>
-            <td class="p-3"><kbd class="px-1 rounded bg-teal-500/20 text-teal-300">[2]</kbd>&sup2; + <kbd class="px-1 rounded bg-blue-500/20 text-blue-300">[5]</kbd>&sup2;</td>
-            <td class="p-3">84.00 mm</td>
-            <td class="p-3">85.85 mm</td>
-            <td class="p-3">85.85 mm</td>
-            <td class="p-3 text-emerald-400 font-bold">0.000 mm (Exact)</td>
+            <td class="p-3 text-emerald-400 font-bold">0.000 mm (Flush Lid)</td>
           </tr>
         </tbody>
       </table>
@@ -485,16 +485,16 @@ hide:
       <!-- Cross-Sell 1: Fraction Studio -->
       <div class="cross-sell-card">
         <div>
-          <img src="../../assets/renders/fraction-studio-hero.png" alt="Fraction Studio" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">Fraction Studio</h3>
+          <img src="../../assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg" alt="Fraction Studio" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">Fraction Studio Towers</h3>
           <p class="cross-sell-card-desc">
-            Tactile proportional fraction towers (84mm Whole) with snap-fit segments. Bridges arithmetic fractions directly into spatial intuition.
+            63 proportional fraction towers (84.0mm Whole) across 10 denominators. Bridges arithmetic fractions directly into spatial intuition.
           </p>
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">.00</span>
-            <span class="text-xs font-mono text-cyan-400">Standalone Kit</span>
+            <span class="cross-sell-price">$24.99 &ndash; $48.00</span>
+            <span class="text-xs font-mono text-cyan-400">65-Piece Kit</span>
           </div>
           <a href="../fraction-studio/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
             Explore Fraction Studio &rarr;
@@ -508,13 +508,13 @@ hide:
           <img src="../../assets/renders/etsy/place-value-studio-real-overview-hero-tight.jpg" alt="Place Value Studio" class="cross-sell-thumb" />
           <h3 class="cross-sell-card-title">Place Value Studio</h3>
           <p class="cross-sell-card-desc">
-            Dual 6x2 activity trays (Whole &amp; Decimals) with 44 digit blocks and stackable +1 regrouping tokens for hands-on base-ten arithmetic.
+            Dual 6&times;2 activity trays (Whole &amp; Decimals) with 44 digit blocks and stackable +1 regrouping tokens for hands-on base-ten arithmetic.
           </p>
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">.00</span>
-            <span class="text-xs font-mono text-amber-400">Standalone Kit</span>
+            <span class="cross-sell-price">$38.00</span>
+            <span class="text-xs font-mono text-amber-400">52-Piece Kit</span>
           </div>
           <a href="../place-value/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
             Explore Place Value Studio &rarr;
