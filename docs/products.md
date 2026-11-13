@@ -56,32 +56,32 @@ hide:
     <div class="te-header-meta">
       <span class="te-header-meta-tag">OFFICIAL STORE</span>
       <span>•</span>
-      <span>TACTILE MANIPULATIVE KITS</span>
+      <span>HANDS-ON MATH STUDIOS (GRADES 1&ndash;9) &amp; RPN HARDWARE</span>
     </div>
-    <h1 class="te-catalog-headline">Tactile Math Manipulative Studios</h1>
+    <h1 class="te-catalog-headline">Tactile Math Studios That Self-Correct By Touch</h1>
     <p class="te-catalog-subhead">
-      Physical mathematical instruments engineered for spatial intuition, tactile feedback, and concrete comprehension. Available as fully assembled kits on Etsy, on-demand replacement parts on Slant 3D, and 100% free open-source 3MF printables on Printables.
+      Turn homework frustration into 10-minute hands-on wins. Every boxed kit ships ready for your kitchen table or classroom with solid matte polymer blocks, a self-auditing flat-top storage box (so you know in 3 seconds no pieces are missing), and a 4&times;6&Prime; Activity &amp; Reference Card.
     </p>
 
     <!-- Storefront Quick Links -->
     <div class="te-trust-strip">
       <div class="te-trust-item">
         <span class="text-emerald-400 font-bold">&check;</span>
-        <span>Non-Toxic Food-Contact PLA/PETG</span>
+        <span>Includes 4&times;6&Prime; Activity Cards</span>
       </div>
       <div class="te-trust-item">
         <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-trust-link-etsy">
-          <span>Etsy Storefront ↗</span>
+          <span>Order Boxed Kits on Etsy ↗</span>
         </a>
       </div>
       <div class="te-trust-item">
         <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="color: #FA6B05; font-weight: 700; text-decoration: none;">
-          <span>Free 3MFs on Printables ↗</span>
+          <span>Have a 3D Printer? Free 3MFs ↗</span>
         </a>
       </div>
       <div class="te-trust-item">
         <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="color: #10B981; font-weight: 700; text-decoration: none;">
-          <span>Slant 3D On-Demand Portal ↗</span>
+          <span>$2.49 Lost-Piece Refills (Slant 3D) ↗</span>
         </a>
       </div>
     </div>
@@ -137,13 +137,13 @@ hide:
   </section>
 
   <!-- ==========================================================================
-       SECTION 01: LAUNCHED PHYSICAL MANIPULATIVES (3 CORE STUDIOS)
+       SECTION 01: LAUNCHED PHYSICAL MANIPULATIVES (3 CORE STUDIOS + BUNDLE)
        ========================================================================== -->
   <section id="manipulatives" class="ec-section">
     <div class="te-section-bar">
       <div>
         <h2 class="te-section-title">Launched Tactile Math Studios</h2>
-        <p class="text-sm text-gray-400 m-0">Three complete hands-on math laboratories available now on Etsy, Printables (Free 3MF), and Slant 3D.</p>
+        <p class="text-sm text-gray-400 m-0">Three complete hands-on math laboratories. Every boxed kit ships with a flat-top storage box and 4&times;6&Prime; Activity &amp; Reference Card.</p>
       </div>
     </div>
 
@@ -160,19 +160,21 @@ hide:
           <div class="te-card-category">Grades 2–6 (Ages 7–12) &bull; 65-Piece Kit</div>
           <h3 class="te-card-title"><a href="fraction-studio/">Fraction Studio Proportional Towers</a></h3>
           <p class="te-card-desc">
-            <strong>Ends fraction confusion in 5 minutes:</strong> 63 freestanding proportional towers across 10 denominators (\(1\) to \(1/12\)) calibrated to an 84.0 mm Whole. Two \(1/4\) blocks physically stand flush next to one \(1/2\) block, making equivalence and common denominators self-correcting by touch. Includes a 3&times;1&times;13U socketed Gridfinity box and comparator stage lid.
+            <strong>Ends fraction confusion in 5 minutes:</strong> 63 freestanding proportional towers across 10 denominators (\(1\) to \(1/12\)) calibrated to an 84.0 mm Whole. Two \(1/4\) blocks physically stand flush next to one \(1/2\) block, making equivalence and common denominators self-correcting by touch. Includes a 3&times;1&times;13U flat-top box, comparator lid, and 4&times;6&Prime; Activity Card.
           </p>
         </div>
-        <div class="te-card-footer">
-          <div>
+        <div class="te-card-footer" style="flex-direction: column; align-items: stretch; gap: 0.6rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
             <span class="te-card-price">$24.99 &ndash; $48.00</span>
+            <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #34D399; font-weight: 700;">&check; Ships in 48h</span>
           </div>
-          
-          <div class="te-card-actions">
-            <a href="fraction-studio/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
-            <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="te-btn-stl-sm" style="background-color: #FA6B05; border-color: #FA6B05; color: #FFFFFF;">Printables ↗</a>
-            <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-stl-sm" style="background-color: #059669; border-color: #059669; color: #FFFFFF;">Slant 3D ↗</a>
+          <div class="te-card-actions" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem;">
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm" style="text-align: center; justify-content: center; padding: 0.5rem 0.6rem;">Order on Etsy ↗</a>
+            <a href="fraction-studio/" class="te-card-btn" style="text-align: center; justify-content: center; padding: 0.5rem 0.6rem;">Specs &amp; Guide &rarr;</a>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 0.68rem; color: #94A3B8; padding-top: 0.35rem; border-top: 1px solid rgba(255,255,255,0.06);">
+            <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="color: #FA6B05; text-decoration: none; font-weight: 700;">Free 3MF Files ↗</a>
+            <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="color: #34D399; text-decoration: none; font-weight: 700;">$2.49 Spare Parts ↗</a>
           </div>
         </div>
       </article>
@@ -188,18 +190,21 @@ hide:
           <div class="te-card-category">Grades 3–9 (Ages 8–14) &bull; 45-Piece Kit</div>
           <h3 class="te-card-title"><a href="prime-factor-studio/">Prime Factor Studio &amp; Factor Towers</a></h3>
           <p class="te-card-desc">
-            <strong>Stacking blocks physically multiplies them:</strong> 43 color-coded logarithmic prime blocks (24&times; <code>[2]</code>, 9&times; <code>[3]</code>, 6&times; <code>[5]</code>, 4&times; <code>[7]</code>). Stacking <code>[2]</code> and <code>[3]</code> reaches the exact height of <code>6</code>; stacking <code>[2]</code>, <code>[2]</code>, and <code>[3]</code> reaches <code>12</code>. Makes prime factorization, GCF, and LCM tangible inside a 3&times;1&times;7U stepped-floor Gridfinity box with comparator lid.
+            <strong>Stacking blocks physically multiplies them:</strong> 43 color-coded logarithmic prime blocks (24&times; <code>[2]</code>, 9&times; <code>[3]</code>, 6&times; <code>[5]</code>, 4&times; <code>[7]</code>). Stacking <code>[2]</code> and <code>[3]</code> reaches the exact height of <code>6</code>; stacking <code>[2]</code>, <code>[2]</code>, and <code>[3]</code> reaches <code>12</code>. Makes prime factorization, GCF, and LCM tangible inside a 3&times;1&times;7U stepped-floor box with comparator lid and 4&times;6&Prime; Activity Card.
           </p>
         </div>
-        <div class="te-card-footer">
-          <div>
+        <div class="te-card-footer" style="flex-direction: column; align-items: stretch; gap: 0.6rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
             <span class="te-card-price">$46.00</span>
+            <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #34D399; font-weight: 700;">&check; Ships in 48h</span>
           </div>
-          <div class="te-card-actions">
-            <a href="prime-factor-studio/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
-            <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="te-btn-stl-sm" style="background-color: #FA6B05; border-color: #FA6B05; color: #FFFFFF;">Printables ↗</a>
-            <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-stl-sm" style="background-color: #059669; border-color: #059669; color: #FFFFFF;">Slant 3D ↗</a>
+          <div class="te-card-actions" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem;">
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm" style="text-align: center; justify-content: center; padding: 0.5rem 0.6rem;">Order on Etsy ↗</a>
+            <a href="prime-factor-studio/" class="te-card-btn" style="text-align: center; justify-content: center; padding: 0.5rem 0.6rem;">Specs &amp; Guide &rarr;</a>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 0.68rem; color: #94A3B8; padding-top: 0.35rem; border-top: 1px solid rgba(255,255,255,0.06);">
+            <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="color: #FA6B05; text-decoration: none; font-weight: 700;">Free 3MF Files ↗</a>
+            <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="color: #34D399; text-decoration: none; font-weight: 700;">$2.49 Spare Parts ↗</a>
           </div>
         </div>
       </article>
@@ -215,22 +220,45 @@ hide:
           <div class="te-card-category">Grades 1–5 (Ages 6–11) &bull; 52-Piece Kit</div>
           <h3 class="te-card-title"><a href="place-value/">Place Value Studio &amp; Regrouping Trays</a></h3>
           <p class="te-card-desc">
-            <strong>Makes carrying, borrowing, and decimals click:</strong> Dual 6&times;2 pull-out activity trays for Whole Numbers (<code>100K</code> down to <code>1</code>) and Decimals (<code>.1</code> down to <code>10^-6</code>). Includes 44 symmetric <code>0–9</code> digit blocks and 4 stackable <code>+1</code> regrouping carry tokens housed in a 3&times;1&times;7U socketed Gridfinity box.
+            <strong>Makes carrying, borrowing, and decimals click:</strong> Dual 6&times;2 pull-out activity trays for Whole Numbers (<code>100K</code> down to <code>1</code>) and Decimals (<code>.1</code> down to <code>10^-6</code>). Includes 44 symmetric <code>0–9</code> digit blocks, 4 stackable <code>+1</code> carry tokens, a 3&times;1&times;7U flat-top box, and 4&times;6&Prime; Activity Card.
           </p>
         </div>
-        <div class="te-card-footer">
-          <div>
+        <div class="te-card-footer" style="flex-direction: column; align-items: stretch; gap: 0.6rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
             <span class="te-card-price">$38.00</span>
+            <span style="font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #34D399; font-weight: 700;">&check; Ships in 48h</span>
           </div>
-          <div class="te-card-actions">
-            <a href="place-value/" class="te-card-btn">Specs &rarr;</a>
-            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm">Etsy ↗</a>
-            <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="te-btn-stl-sm" style="background-color: #FA6B05; border-color: #FA6B05; color: #FFFFFF;">Printables ↗</a>
-            <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="te-btn-stl-sm" style="background-color: #059669; border-color: #059669; color: #FFFFFF;">Slant 3D ↗</a>
+          <div class="te-card-actions" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem;">
+            <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="te-btn-etsy-sm" style="text-align: center; justify-content: center; padding: 0.5rem 0.6rem;">Order on Etsy ↗</a>
+            <a href="place-value/" class="te-card-btn" style="text-align: center; justify-content: center; padding: 0.5rem 0.6rem;">Specs &amp; Guide &rarr;</a>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 0.68rem; color: #94A3B8; padding-top: 0.35rem; border-top: 1px solid rgba(255,255,255,0.06);">
+            <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" style="color: #FA6B05; text-decoration: none; font-weight: 700;">Free 3MF Files ↗</a>
+            <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="color: #34D399; text-decoration: none; font-weight: 700;">$2.49 Spare Parts ↗</a>
           </div>
         </div>
       </article>
 
+    </div>
+
+    <!-- Complete 3-Studio Home & Classroom Math Mastery Bundle -->
+    <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(17, 20, 26, 0.96)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1.5rem; margin-top: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.25rem;">
+      <div style="flex: 1; min-width: 280px;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #34D399; font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">★ COMPLETE GRADES 1&ndash;9 PROGRESSION // 162 PIECES ACROSS 3 MODULAR BOXES</div>
+        <h3 style="margin: 0 0 0.4rem 0; color: #FFFFFF; font-size: 1.35rem; font-weight: 800;">Complete 3-Studio Home &amp; Classroom Math Mastery Bundle</h3>
+        <p style="margin: 0; color: #CBD5E1; font-size: 0.88rem; line-height: 1.55;">
+          Get all three launched tactile studios together—<strong>Place Value Studio</strong> (52 pcs, Grades 1–5) + <strong>Fraction Studio Towers</strong> (65 pcs, Grades 2–6) + <strong>Prime Factor Studio</strong> (45 pcs, Grades 3–9). Covers every core arithmetic and pre-algebra milestone with 3 interlocking Gridfinity desk boxes and all 3 physical 4&times;6&Prime; Activity &amp; Reference Cards.
+        </p>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem; min-width: 220px;">
+        <div style="font-family: 'Space Mono', monospace; text-align: right;">
+          <div style="font-size: 0.72rem; color: #94A3B8;">All 3 Boxed Studios</div>
+          <div style="font-size: 1.5rem; font-weight: 800; color: #FFFFFF;">$108.99+</div>
+        </div>
+        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #10B981; border-color: #10B981; color: #080A0E; font-weight: 800; white-space: nowrap; width: 100%; text-align: center; justify-content: center;">
+          Bundle All 3 Studios on Etsy ↗
+        </a>
+      </div>
     </div>
   </section>
 
