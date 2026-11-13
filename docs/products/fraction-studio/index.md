@@ -170,8 +170,8 @@ hide:
       </div>
 
       <div class="ec-price-box">
-        <span class="ec-price-current">$24.99 &ndash; $48.00</span>
-        <span class="ec-shipping-note">&check; Beta Kit ($24.99) &bull; Standard Full Set ($48.00) &bull; Free US Shipping $35+</span>
+        <span class="ec-price-current">$48.00</span>
+        <span class="ec-shipping-note">&check; Free US Shipping &bull; In Stock</span>
       </div>
 
       <p class="ec-short-summary">
@@ -205,19 +205,19 @@ hide:
       <!-- Clear Primary CTA Hierarchy -->
       <div class="ec-actions-row" style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.85rem;">
         <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff; flex: 1; min-width: 220px; text-align: center; justify-content: center; font-weight: 800;">
-          Order Complete Boxed Kit on Etsy ($24.99+) ↗
+          Order Complete Boxed Kit on Etsy ($48.00) ↗
         </a>
         <a href="../../lab/fraction-studio/" class="ec-btn-secondary" style="border-color: #38BDF8; color: #38BDF8; font-weight: 700;">
           Try Free 2D Fraction Lab ⛶
         </a>
       </div>
 
-      <!-- Secondary Helper Box: 3D Printing & $2.49 Replacement Parts -->
+      <!-- Secondary Helper Box: 3D Printing & Slant 3D Direct Order -->
       <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 0.78rem; color: #94A3B8; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem;">
-        <span><strong>Own a 3D printer or lost a block?</strong></span>
+        <span><strong>Own a 3D printer or ordering direct?</strong></span>
         <div style="display: flex; gap: 1rem; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700;">
           <a href="#downloads" style="color: #FA6B05; text-decoration: none;">Free 3MF Files &darr;</a>
-          <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" style="color: #34D399; text-decoration: none;">$2.49 Spare Parts (Slant 3D) ↗</a>
+          <a href="https://teleportpod.com/portal/1f920134-0b62-47ed-b7d7-46b9ca77f23d?item=9139&template=bold" target="_blank" rel="noopener noreferrer" style="color: #34D399; text-decoration: none;">Order on Slant 3D ($48) ↗</a>
         </div>
       </div>
 
@@ -236,7 +236,7 @@ hide:
           <span class="text-emerald-400">&rarr;</span>
         </a>
         <a href="../place-value/" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
-          <span>Place Value ($38)</span>
+          <span>Place Value ($48)</span>
           <span class="text-amber-400">&rarr;</span>
         </a>
         <a href="../" class="p-2.5 rounded bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 text-emerald-300 hover:text-white transition flex items-center justify-between font-bold col-span-2 sm:col-span-2">
@@ -566,7 +566,7 @@ hide:
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">$38.00</span>
+            <span class="cross-sell-price">$48.00</span>
             <span class="text-xs font-mono text-amber-400">52-Piece Kit</span>
           </div>
           <a href="../place-value/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
