@@ -77,9 +77,33 @@ Every StackCalc physical manipulative kit and calculator Maker Kit includes a he
 
 ---
 
-## 📋 Common Part IDs by Kit
+## 📦 Single-Color Block Refill Packs & Replacement Boxes ($12–$16)
 
-Quote these Part IDs when ordering via Slant 3D, searching Printables, or contacting support:
+Rather than charging shipping and handling for a single tiny block, our on-demand replacement service groups spares by **single-color production plates** (`$12.00 – $16.00` with Free US Shipping on Etsy). When you order a refill pack, you receive the full set of blocks in that color group for your studio—giving you immediate replacements plus backup blocks for the future.
+
+| Studio | Refill Pack / Replacement Component | SKU | Contents Included | Price (Free US Ship) |
+| :--- | :--- | :--- | :--- | :---: |
+| **Fraction Studio** | **Tan Blocks Pack** | `SC-REP-FRAC-TAN` | 4× `1/4` + 9× `1/9` blocks (13 pcs in Tan) | **$13.00** |
+| **Fraction Studio** | **Red Blocks Pack** | `SC-REP-FRAC-RED` | 3× `1/3` + 6× `1/6` + 12× `1/12` blocks (21 pcs in Muted Red) | **$15.00** |
+| **Fraction Studio** | **Blue Blocks Pack** | `SC-REP-FRAC-BLUE` | 4× `1/2` + 5× `1/5` + 10× `1/10` blocks (19 pcs in Matte Blue) | **$16.00** |
+| **Fraction Studio** | **White Stage Lid + Blocks** | `SC-REP-FRAC-WHITE` | Comparator Stage Lid + 2× `1-Whole` + 8× `1/8` blocks (Pure White) | **$16.00** |
+| **Fraction Studio** | **13U Storage Box Only** | `SC-REP-FRAC-BOX` | 3×1×13U Gridfinity Box with 12 labeled floor sockets | **$16.00** |
+| **Prime Factor Studio** | **Tan `[7]` Blocks Pack** | `SC-REP-PRIME-TAN` | 4× `[7]` prime factor blocks (Tan) | **$12.00** |
+| **Prime Factor Studio** | **Red `[3]` Blocks Pack** | `SC-REP-PRIME-RED` | 9× `[3]` prime factor blocks (Muted Red) | **$14.00** |
+| **Prime Factor Studio** | **Blue `[2]` Blocks Pack** | `SC-REP-PRIME-BLUE` | 24× `[2]` prime factor blocks (Matte Blue) | **$15.00** |
+| **Prime Factor Studio** | **White Stage Lid + 6× `[5]` Blocks** | `SC-REP-PRIME-WHITE` | Comparator Stage Lid + 6× `[5]` prime factor blocks (Pure White) | **$15.00** |
+| **Prime Factor Studio** | **7U Stepped Storage Box Only** | `SC-REP-PRIME-BOX` | 3×1×7U Stepped-Floor Gridfinity Storage Box | **$16.00** |
+| **Place Value Studio** | **Red `+1` Carry Tokens Pack** | `SC-REP-PV-RED` | 8× stackable `+1` regrouping carry tokens (Muted Red) | **$12.00** |
+| **Place Value Studio** | **Dual 6×2 Activity Trays** | `SC-REP-PV-TRAYS` | Whole Numbers (`100K..1`) & Decimal Numbers (`.1..10^-6`) Trays | **$15.00** |
+| **Place Value Studio** | **Tan Digit Blocks Set B** | `SC-REP-PV-TAN` | 22× contoured `0–9` digit blocks (Tan) | **$16.00** |
+| **Place Value Studio** | **White Lid + Digit Blocks Set A** | `SC-REP-PV-WHITE` | `[123]` Lid + 22× contoured `0–9` digit blocks (Pure White) | **$16.00** |
+| **Place Value Studio** | **7U Storage Box Only** | `SC-REP-PV-BOX` | 3×1×7U Gridfinity Storage Box with 12 labeled floor sockets | **$16.00** |
+
+---
+
+## 📋 Common Part IDs by Kit (For Free 3D Printing on Printables)
+
+Quote these Part IDs when searching our free STL/3MF library on Printables or contacting support:
 
 | Kit | SKU | Common Replacement Part IDs | Typical Print Time |
 | :--- | :--- | :--- | :--- |
