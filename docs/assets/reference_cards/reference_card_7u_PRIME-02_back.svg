@@ -7,132 +7,152 @@
     </style>
   </defs>
 
-  <!-- 114.0 x 35.0 mm Cut Cell Background & Inset Safe Frame -->
+  <!-- 114.0 x 35.0 mm Cut Cell Background (2.6mm L/R & 2.2mm T/B symmetric white bleed/safe margin) -->
   <rect x="0" y="0" width="1140" height="350" fill="#ffffff" />
-  <rect x="16" y="14" width="1108" height="322" rx="16" fill="#ffffff" stroke="#0f172a" stroke-width="2.2" />
 
-  <!-- Top Header Strip -->
-  <rect x="26" y="20" width="1088" height="38" rx="8" fill="#0f172a" />
-  <text x="38" y="36" class="font-mono" font-size="14.5px" font-weight="700" fill="#ffffff">PRIME EXPANSION (11–97) — COMPOSITE &amp; SEMIPRIME PUZZLES</text>
-  <text x="38" y="51" class="font-mono" font-size="9.5px" fill="#94a3b8">SIDE B • ILLUSTRATED CLASSROOM EXPLORATIONS &amp; SELF-CHECKING PACK-UP • STACKCALC LABS</text>
-  <rect x="866" y="25" width="238" height="28" rx="6" fill="#059669" />
-  <text x="985" y="43" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#ffffff">84mm CHECKSUM • PRIME-02</text>
+  <!-- Top Header Strip (x=26..1114, y=22..60) -->
+  <rect x="26" y="22" width="1088" height="38" rx="8" fill="#0f172a" />
+  <text x="38" y="38" class="font-mono" font-size="14.5px" font-weight="700" fill="#ffffff">PRIME EXPANSION (11–97) — FACTORING &amp; FULL-STACK PUZZLE</text>
+  <text x="38" y="53" class="font-mono" font-size="9.5px" fill="#94a3b8">HANDS-ON MATHEMATICAL EXPLORATIONS • STACKCALC.IO</text>
+  <rect x="866" y="27" width="238" height="28" rx="6" fill="#334155" />
+  <text x="985" y="45" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#ffffff">12-STACK PUZZLE • PRIME-02</text>
 
   
-  <!-- ACTIVITY 1 PANEL -->
-  <g transform="translate(26, 64)">
+  <!-- ACTIVITY 1 PANEL (y=66..294) -->
+  <g transform="translate(26, 66)">
     <rect x="0" y="0" width="539" height="228" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
-    <rect x="0" y="0" width="539" height="24" rx="8" fill="#eff6ff" stroke="#cbd5e1" stroke-width="1" />
-    <rect x="6" y="3.5" width="76" height="17" rx="4" fill="#0284c7" />
-    <text x="44" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">ACTIVITY 1</text>
-    <text x="90" y="15.5" class="font-mono" font-size="10.5px" font-weight="700" fill="#0f172a">3-PRIME WATERLINE PUZZLE (3289 = 11·13·23)</text>
-    <text x="531" y="15.5" class="font-mono" font-size="9px" font-weight="700" text-anchor="end" fill="#0284c7">COMPOSITE FACTORING</text>
+    <rect x="0" y="0" width="539" height="24" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="6" y="3.5" width="76" height="17" rx="4" fill="#0f172a" />
+    <text x="44.0" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">ACTIVITY 1</text>
+    <text x="88" y="15.5" class="font-mono" font-size="10.5px" font-weight="700" fill="#0f172a">3-PRIME COMPOSITE FACTORING (3289 = 11·13·23)</text>
 
-    <!-- Left Illustrated Block Diagram (190 x 162) -->
+    <!-- Left Illustrated Block Diagram (190 x 161) -->
     <g transform="translate(8, 28)">
       <rect x="0" y="0" width="190" height="161" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1" />
       
-      <text x="95" y="14" class="font-mono" font-size="9px" font-weight="700" text-anchor="middle" fill="#0369a1">SOCKET 3289 = 11 × 13 × 23</text>
-      <line x1="18" y1="28" x2="172" y2="28" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,2" />
-      <text x="95" y="24" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#15803d">84.0mm WATERLINE</text>
-      <!-- [23] (31.7mm), [13] (25.9mm), [11] (24.2mm) + +2.2mm pedestal -->
-      <rect x="48" y="28" width="94" height="38" rx="3" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.3" />
-      <text x="95" y="51" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#854d0e">[23] 31.7mm</text>
-      <rect x="48" y="66" width="94" height="31" rx="3" fill="#fef08a" stroke="#ca8a04" stroke-width="1.3" />
-      <text x="95" y="86" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#854d0e">[13] 25.9mm</text>
-      <rect x="48" y="97" width="94" height="29" rx="3" fill="#fde047" stroke="#ca8a04" stroke-width="1.3" />
-      <text x="95" y="116" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#854d0e">[11] 24.2mm</text>
-      <!-- Floor step +2.2mm -->
-      <rect x="34" y="126" width="122" height="12" rx="2" fill="#cbd5e1" stroke="#475569" stroke-width="1.2" />
-      <text x="95" y="135" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#1e293b">STEP +2.2mm • SOCKET 3289</text>
-      <text x="95" y="151" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#15803d">11 × 13 × 23 = 3,289 ✓</text>
+      <text x="95" y="13" class="font-mono" font-size="9px" font-weight="700" text-anchor="middle" fill="#0f172a">SOCKET 3289 = 11 × 13 × 23</text>
+      <text x="95" y="24" class="font-mono" font-size="8.2px" font-weight="700" text-anchor="middle" fill="#334155">FULL STACK = 3,289</text>
+      <line x1="18" y1="28" x2="172" y2="28" stroke="#0f172a" stroke-width="1.3" stroke-dasharray="4,2" />
+      <!-- [23], [13], [11] in socket 3289 -->
+      <rect x="48" y="31" width="94" height="36" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+      <text x="95" y="53" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#0f172a">[23]</text>
+      <rect x="48" y="67" width="94" height="30" rx="3" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
+      <text x="95" y="86" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#0f172a">[13]</text>
+      <rect x="48" y="97" width="94" height="28" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+      <text x="95" y="115" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#0f172a">[11]</text>
+      <!-- Socket Base -->
+      <rect x="34" y="125" width="122" height="13" rx="2" fill="#cbd5e1" stroke="#334155" stroke-width="1.2" />
+      <text x="95" y="134.5" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#0f172a">SOCKET 3289 BASE</text>
+      <text x="95" y="151" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">11 × 13 × 23 = 3,289 ✓</text>
     </g>
 
     <!-- Right 3-Step Walkthrough -->
     
       <g transform="translate(202, 28)">
         <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#0284c7" />
+        <circle cx="13" cy="13" r="8" fill="#0f172a" />
         <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">READ SOCKET 3289</text>
-        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Inspect the 4-digit composite target embossed on the</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">back-left floor socket (3289).</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">READ TARGET 3289</text>
+        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Inspect the 4-digit composite target 3,289 (or stage [11],</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">[13], and [23] on the lid).</text>
       </g>
       <g transform="translate(202, 83)">
         <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#0284c7" />
+        <circle cx="13" cy="13" r="8" fill="#0f172a" />
         <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
         <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">TEST DIVISIBILITY</text>
-        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">3 − 2 + 8 − 9 = 0 (multiple of 11!): 3289 ÷ 11 = 299,</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">and 299 = 13 × 23.</text>
+        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Alternating digit sum: 3 − 2 + 8 − 9 = 0 (divisible by 11!):</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">3289 ÷ 11 = 299 = 13 × 23.</text>
       </g>
       <g transform="translate(202, 138)">
         <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#0284c7" />
+        <circle cx="13" cy="13" r="8" fill="#0f172a" />
         <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">VERIFY 84mm FLUSH</text>
-        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Stack [11] + [13] + [23] in socket 3289—with its +2.2mm</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">floor step, it hits 84.0mm!</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">BUILD THE FULL STACK</text>
+        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Stack [11] + [13] + [23] in socket 3289—only the true prime</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">factors form a full stack!</text>
       </g>
 
     <!-- Bottom Concept Takeaway Bar -->
-    <rect x="8" y="195" width="523" height="26" rx="5" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.0" />
-    <text x="14" y="211.5" class="font-sans" font-size="9.2px" font-weight="700" fill="#0369a1">★ KEY CONCEPT: <tspan font-weight="400" fill="#0f172a">Logarithmic heights + stepped floors form a physical checksum: only true factors hit 84.0mm.</tspan></text>
+    <rect x="8" y="195" width="523" height="26" rx="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.0" />
+    <text x="14" y="211.5" class="font-sans" font-size="9.2px" font-weight="700" fill="#0f172a">★ KEY CONCEPT: <tspan font-weight="400" fill="#0f172a">Adding logarithmic prime blocks multiplies their values: [11] + [13] + [23] = 11 × 13 × 23 = 3,289.</tspan></text>
   </g>
-  <!-- ACTIVITY 2 PANEL -->
-  <g transform="translate(575, 64)">
+  <!-- ACTIVITY 2 PANEL (y=66..294) -->
+  <g transform="translate(575, 66)">
     <rect x="0" y="0" width="539" height="228" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
-    <rect x="0" y="0" width="539" height="24" rx="8" fill="#f0fdf4" stroke="#cbd5e1" stroke-width="1" />
-    <rect x="6" y="3.5" width="76" height="17" rx="4" fill="#059669" />
-    <text x="44" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">ACTIVITY 2</text>
-    <text x="90" y="15.5" class="font-mono" font-size="10.5px" font-weight="700" fill="#0f172a">RSA SEMIPRIME LOCK (3599 = 59 × 61)</text>
-    <text x="531" y="15.5" class="font-mono" font-size="9px" font-weight="700" text-anchor="end" fill="#059669">CRYPTO TRAPDOOR</text>
+    <rect x="0" y="0" width="539" height="24" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="6" y="3.5" width="64" height="17" rx="4" fill="#0f172a" />
+    <text x="38.0" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">PUZZLE</text>
+    <text x="76" y="15.5" class="font-mono" font-size="9.2px" font-weight="700" fill="#0f172a">HOW CAN WE STACK ALL 28 PRIMES INTO 12 NEAR-FULL STACKS?</text>
 
-    <!-- Left Illustrated Block Diagram (190 x 162) -->
+    <!-- Left Illustrated Block Diagram (190 x 161) -->
     <g transform="translate(8, 28)">
       <rect x="0" y="0" width="190" height="161" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1" />
       
-      <text x="95" y="14" class="font-mono" font-size="9px" font-weight="700" text-anchor="middle" fill="#047857">SEMIPRIME LOCK: 3599 = 59 × 61</text>
-      <line x1="18" y1="28" x2="172" y2="28" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,2" />
-      <text x="95" y="24" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#15803d">84.0mm FLUSH CHECKSUM</text>
-      <rect x="44" y="28" width="102" height="49" rx="3" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.3" />
-      <text x="95" y="56" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#854d0e">[61] 41.5mm</text>
-      <rect x="44" y="77" width="102" height="49" rx="3" fill="#fde047" stroke="#ca8a04" stroke-width="1.3" />
-      <text x="95" y="105" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#854d0e">[59] 41.2mm</text>
-      <rect x="34" y="126" width="122" height="12" rx="2" fill="#cbd5e1" stroke="#475569" stroke-width="1.2" />
-      <text x="95" y="135" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#1e293b">STEP +1.3mm • SOCKET 3599</text>
-      <text x="95" y="151" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#047857">60² − 1² = 59 × 61 = 3,599</text>
+      <text x="95" y="12" class="font-mono" font-size="8.6px" font-weight="700" text-anchor="middle" fill="#0f172a">97.4% FILL: 4 TRIPLES + 8 PAIRS</text>
+      <text x="95" y="23" class="font-mono" font-size="7.8px" font-weight="700" text-anchor="middle" fill="#334155">FULL-STACK CEILING (PRODUCT ≤ 4,096)</text>
+      <line x1="10" y1="27" x2="180" y2="27" stroke="#0f172a" stroke-width="1.2" stroke-dasharray="3,2" />
+      <!-- Col 1 (x=12..49): 11 * 19 * 19 = 3971 (y=30..134) -->
+      <rect x="12" y="30" width="37" height="37" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="1.1" />
+      <text x="30.5" y="52" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">19</text>
+      <rect x="12" y="67" width="37" height="37" rx="2" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.1" />
+      <text x="30.5" y="89" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">19</text>
+      <rect x="12" y="104" width="37" height="30" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.1" />
+      <text x="30.5" y="123" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">11</text>
+      <!-- Col 2 (x=54..91): 13 * 13 * 23 = 3887 (y=31..134) -->
+      <rect x="54" y="31" width="37" height="39" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="1.1" />
+      <text x="72.5" y="54" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">23</text>
+      <rect x="54" y="70" width="37" height="32" rx="2" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.1" />
+      <text x="72.5" y="90" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">13</text>
+      <rect x="54" y="102" width="37" height="32" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.1" />
+      <text x="72.5" y="122" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">13</text>
+      <!-- Col 3 (x=96..134): 29 * 97 = 2813 (y=35..134) -->
+      <rect x="96" y="35" width="38" height="57" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="1.1" />
+      <text x="115" y="67" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">97</text>
+      <rect x="96" y="92" width="38" height="42" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.1" />
+      <text x="115" y="117" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">29</text>
+      <!-- Col 4 (x=140..178): 59 * 61 = 3599 (y=32..134) -->
+      <rect x="140" y="32" width="38" height="51" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="1.1" />
+      <text x="159" y="61" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">61</text>
+      <rect x="140" y="83" width="38" height="51" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.1" />
+      <text x="159" y="112" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">59</text>
+      <line x1="10" y1="134" x2="180" y2="134" stroke="#0f172a" stroke-width="2" />
+      <text x="30.5" y="145" class="font-mono" font-size="7.6px" font-weight="700" text-anchor="middle" fill="#334155">3,971</text>
+      <text x="72.5" y="145" class="font-mono" font-size="7.6px" font-weight="700" text-anchor="middle" fill="#334155">3,887</text>
+      <text x="115" y="145" class="font-mono" font-size="7.6px" font-weight="700" text-anchor="middle" fill="#334155">2,813</text>
+      <text x="159" y="145" class="font-mono" font-size="7.6px" font-weight="700" text-anchor="middle" fill="#334155">3,599</text>
+      <text x="95" y="156.5" class="font-mono" font-size="7.6px" font-weight="700" text-anchor="middle" fill="#0f172a">4× TRIPLES + 8× OUTSIDE-IN PAIRS</text>
     </g>
 
     <!-- Right 3-Step Walkthrough -->
     
       <g transform="translate(202, 28)">
         <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#059669" />
+        <circle cx="13" cy="13" r="8" fill="#0f172a" />
         <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">FAST FORWARD LOCK</text>
-        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Stack twin primes [59] (41.2mm) + [61]</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">(41.5mm)—multiplication is instant (3599).</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">THE 12-STACK PROBLEM</text>
+        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Can you group all 28 prime blocks (11 to 97) into the 12</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">sockets with minimal space left at the top?</text>
       </g>
       <g transform="translate(202, 83)">
         <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#059669" />
+        <circle cx="13" cy="13" r="8" fill="#0f172a" />
         <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">REVERSE CHALLENGE</text>
-        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Use difference of squares: 3599 = 60² − 1² = (60 − 1)(60</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">+ 1) = 59 × 61!</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">KEEP PRODUCT ≤ 4,096</text>
+        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">A full 12-unit stack equals a product of 4,096. To leave</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">minimal space, keep each stack's product close to 4,096!</text>
       </g>
       <g transform="translate(202, 138)">
         <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#059669" />
+        <circle cx="13" cy="13" r="8" fill="#0f172a" />
         <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">CHECK FLOOR FIT</text>
-        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Seat [59] + [61] in socket 3599 (+1.3mm step) → exact</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">84.0mm flush lock!</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">TRIPLES &amp; OUTSIDE-IN PAIRS</text>
+        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Form 4 triples from 11–23, then pair 29–97 outside-in</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">(smallest + largest)! Check the solution below ↓</text>
       </g>
 
     <!-- Bottom Concept Takeaway Bar -->
-    <rect x="8" y="195" width="523" height="26" rx="5" fill="#ecfdf5" stroke="#059669" stroke-width="1.0" />
-    <text x="14" y="211.5" class="font-sans" font-size="9.2px" font-weight="700" fill="#047857">★ KEY CONCEPT: <tspan font-weight="400" fill="#0f172a">Multiplying two large primes (stacking) is instant; factoring their product is a one-way puzzle.</tspan></text>
+    <rect x="8" y="195" width="523" height="26" rx="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.0" />
+    <text x="14" y="211.5" class="font-sans" font-size="9.2px" font-weight="700" fill="#0f172a">★ KEY CONCEPT: <tspan font-weight="400" fill="#0f172a">Pairing 29–97 outside-in keeps products near 3,000–3,600 so all 12 stacks nearly reach the top!</tspan></text>
   </g>
 
-  <!-- Bottom 10-Second Self-Checking Waterline Pack-Up Strip -->
-  <rect x="26" y="298" width="1088" height="28" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.1" />
-  <rect x="30" y="302" width="166" height="20" rx="4" fill="#0f172a" />
-  <text x="113" y="315.5" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#38bdf8">10-SEC BOX PACK-UP</text>
-  <text x="206" y="316" class="font-sans" font-size="10.5px" font-weight="700" fill="#0f172a">Factor all 12 floor numbers (4× 3-prime triples + 8× 2-prime semiprimes) into their sockets → All 12 level flush at 84.0mm!</text>
+  <!-- Bottom Solution & Storage Strip (x=26..1114, y=300..328) -->
+  <rect x="26" y="300" width="1088" height="28" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.1" />
+  <rect x="30" y="304" width="166" height="20" rx="4" fill="#0f172a" />
+  <text x="113" y="317.5" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">12-STACK SOLUTION</text>
+  <text x="206" y="318" class="font-sans" font-size="10.2px" font-weight="700" fill="#0f172a">4 Triples: 11·13·23 | 13·13·23 | 11·17·17 | 11·19·19   •   8 Pairs: 29·97 | 31·89 | 37·83 | 41·79 | 43·73 | 47·71 | 53·67 | 59·61</text>
 </svg>

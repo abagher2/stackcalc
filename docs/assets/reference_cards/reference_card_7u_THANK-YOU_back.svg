@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="114.0mm" height="35.0mm" viewBox="0 0 1140 350">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+      .font-mono { font-family: 'Space Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- 114.0 x 35.0 mm Cut Cell Background (2.6mm L/R & 2.2mm T/B symmetric white bleed/safe margin) -->
+  <rect x="0" y="0" width="1140" height="350" fill="#ffffff" />
+
+  <!-- Top Header Strip (x=26..1114, y=22..60) -->
+  <rect x="26" y="22" width="1088" height="38" rx="8" fill="#0f172a" />
+  <text x="38" y="38" class="font-mono" font-size="14.5px" font-weight="700" fill="#ffffff">STACKCALC STUDIO — HOW THE MODULAR SYSTEM WORKS</text>
+  <text x="38" y="53" class="font-mono" font-size="9.5px" fill="#94a3b8">HANDS-ON MATHEMATICAL EXPLORATIONS • STACKCALC.IO</text>
+  <rect x="866" y="27" width="238" height="28" rx="6" fill="#334155" />
+  <text x="985" y="45" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#ffffff">MODULAR ECOSYSTEM</text>
+
+  
+  <!-- ACTIVITY 1 PANEL (y=66..294) -->
+  <g transform="translate(26, 66)">
+    <rect x="0" y="0" width="539" height="228" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+    <rect x="0" y="0" width="539" height="24" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="6" y="3.5" width="64" height="17" rx="4" fill="#0f172a" />
+    <text x="38.0" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">SYSTEM</text>
+    <text x="76" y="15.5" class="font-mono" font-size="10.5px" font-weight="700" fill="#0f172a">SELF-CHECKING STAGE &amp; FULL STACKS</text>
+
+    <!-- Left Illustrated Block Diagram (190 x 161) -->
+    <g transform="translate(8, 28)">
+      <rect x="0" y="0" width="190" height="161" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1" />
+      
+      <text x="95" y="14" class="font-mono" font-size="8.8px" font-weight="700" text-anchor="middle" fill="#0f172a">EQUAL STACKS = EQUAL VALUE</text>
+      <text x="95" y="25" class="font-mono" font-size="7.8px" font-weight="700" text-anchor="middle" fill="#334155">FLUSH COMPARISON STAGE</text>
+      <line x1="18" y1="30" x2="172" y2="30" stroke="#0f172a" stroke-width="1.3" stroke-dasharray="4,2" />
+      <!-- Left Stack: 3 blocks -->
+      <rect x="24" y="34" width="60" height="28" rx="2.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+      <text x="54" y="52" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">PART C</text>
+      <rect x="24" y="62" width="60" height="32" rx="2.5" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
+      <text x="54" y="82" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">PART B</text>
+      <rect x="24" y="94" width="60" height="36" rx="2.5" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2" />
+      <text x="54" y="116" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">PART A</text>
+      <!-- Right Stack: 2 blocks -->
+      <rect x="106" y="34" width="60" height="48" rx="2.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+      <text x="136" y="62" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">BLOCK Y</text>
+      <rect x="106" y="82" width="60" height="48" rx="2.5" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2" />
+      <text x="136" y="110" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">BLOCK X</text>
+      <!-- Stage Lid Base -->
+      <rect x="14" y="130" width="162" height="12" rx="2" fill="#0f172a" />
+      <text x="95" y="139" class="font-mono" font-size="7.5px" font-weight="700" text-anchor="middle" fill="#ffffff">12-SOCKET STAGE LID</text>
+      <text x="95" y="154" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#334155">12 FULL STACKS SNAP SHUT</text>
+    </g>
+
+    <!-- Right 3-Step Walkthrough -->
+    
+      <g transform="translate(202, 28)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#0f172a" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">THE LID IS YOUR STAGE</text>
+        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Flip the lid over to use its 12 recessed sockets as an</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">active comparison stage where equal values stand level.</text>
+      </g>
+      <g transform="translate(202, 83)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#0f172a" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">FULL-STACK PACKING PUZZLE</text>
+        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Every base is a self-checking puzzle: when stacked properly,</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">all 12 columns form level full stacks!</text>
+      </g>
+      <g transform="translate(202, 138)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#0f172a" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">UNIVERSAL FOOTPRINT</text>
+        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">All StackCalc kits share the same interlocking block</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">footprint, so blocks from different kits work together.</text>
+      </g>
+
+    <!-- Bottom Concept Takeaway Bar -->
+    <rect x="8" y="195" width="523" height="26" rx="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.0" />
+    <text x="14" y="211.5" class="font-sans" font-size="9.2px" font-weight="700" fill="#0f172a">★ KEY CONCEPT: <tspan font-weight="400" fill="#0f172a">Physical height and geometry let learners verify their own answers without an answer key.</tspan></text>
+  </g>
+  <!-- ACTIVITY 2 PANEL (y=66..294) -->
+  <g transform="translate(575, 66)">
+    <rect x="0" y="0" width="539" height="228" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+    <rect x="0" y="0" width="539" height="24" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="6" y="3.5" width="64" height="17" rx="4" fill="#0f172a" />
+    <text x="38.0" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">STUDIO</text>
+    <text x="76" y="15.5" class="font-mono" font-size="10.5px" font-weight="700" fill="#0f172a">EXPLORE THE STACKCALC COLLECTION</text>
+
+    <!-- Left Illustrated Block Diagram (190 x 161) -->
+    <g transform="translate(8, 28)">
+      <rect x="0" y="0" width="190" height="161" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1" />
+      
+      <text x="95" y="14" class="font-mono" font-size="8.8px" font-weight="700" text-anchor="middle" fill="#0f172a">MODULAR STUDIO COLLECTION</text>
+      <!-- Card 1: Place Value -->
+      <rect x="10" y="22" width="81" height="54" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+      <rect x="10" y="22" width="81" height="15" rx="4" fill="#e2e8f0" />
+      <text x="50.5" y="32.5" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#0f172a">PLACE-01</text>
+      <text x="50.5" y="49" class="font-sans" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">Place Value</text>
+      <text x="50.5" y="61" class="font-mono" font-size="7.5px" text-anchor="middle" fill="#475569">100|10|1 • Dec</text>
+      <!-- Card 2: Ten-Frames -->
+      <rect x="99" y="22" width="81" height="54" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+      <rect x="99" y="22" width="81" height="15" rx="4" fill="#e2e8f0" />
+      <text x="139.5" y="32.5" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#0f172a">BASE-10</text>
+      <text x="139.5" y="49" class="font-sans" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">Ten-Frames</text>
+      <text x="139.5" y="61" class="font-mono" font-size="7.5px" text-anchor="middle" fill="#475569">5×2 Make-a-10</text>
+      <!-- Card 3: Fractions -->
+      <rect x="10" y="82" width="81" height="54" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+      <rect x="10" y="82" width="81" height="15" rx="4" fill="#e2e8f0" />
+      <text x="50.5" y="92.5" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#0f172a">FRAC-01</text>
+      <text x="50.5" y="109" class="font-sans" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">Fraction Towers</text>
+      <text x="50.5" y="121" class="font-mono" font-size="7.5px" text-anchor="middle" fill="#475569">1 to 1/12 • % • °</text>
+      <!-- Card 4: Primes -->
+      <rect x="99" y="82" width="81" height="54" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+      <rect x="99" y="82" width="81" height="15" rx="4" fill="#e2e8f0" />
+      <text x="139.5" y="92.5" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#0f172a">PRIME-01 / 02</text>
+      <text x="139.5" y="109" class="font-sans" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">Prime Towers</text>
+      <text x="139.5" y="121" class="font-mono" font-size="7.5px" text-anchor="middle" fill="#475569">Log Height Add</text>
+      <text x="95" y="151" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#0f172a">ALL KITS SHARE ONE STAGE</text>
+    </g>
+
+    <!-- Right 3-Step Walkthrough -->
+    
+      <g transform="translate(202, 28)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#0f172a" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">NUMBER SENSE &amp; PLACE VALUE</text>
+        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Ten-Frames Lab • Number Rack (Rekenrek) • Math Dominoes •</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">Place Value Studio (Whole &amp; Decimal Regrouping).</text>
+      </g>
+      <g transform="translate(202, 83)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#0f172a" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">FRACTIONS &amp; PRIME THEORY</text>
+        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Fraction Tower Studio (4-Way Notation) • Prime Factor Studio</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">(2–7) • Prime Expansion Tower (11–97).</text>
+      </g>
+      <g transform="translate(202, 138)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#0f172a" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">ALGEBRA, TIME &amp; PROBABILITY</text>
+        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Algebra Factoring Studio • Planetary Geared Clock •</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">Probability Dice &amp; Spinner • Unit Circle Trig Volvelle.</text>
+      </g>
+
+    <!-- Bottom Concept Takeaway Bar -->
+    <rect x="8" y="195" width="523" height="26" rx="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.0" />
+    <text x="14" y="211.5" class="font-sans" font-size="9.2px" font-weight="700" fill="#0f172a">★ KEY CONCEPT: <tspan font-weight="400" fill="#0f172a">Visit stackcalc.io to explore lessons, new kits, and interactive 3D demonstrations.</tspan></text>
+  </g>
+
+  <!-- Bottom Solution & Storage Strip (x=26..1114, y=300..328) -->
+  <rect x="26" y="300" width="1088" height="28" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.1" />
+  <rect x="30" y="304" width="166" height="20" rx="4" fill="#0f172a" />
+  <text x="113" y="317.5" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">THANK YOU</text>
+  <text x="206" y="318" class="font-sans" font-size="10.2px" font-weight="700" fill="#0f172a">Questions, classroom requests, or feedback? Reach us anytime at stackcalc.io — we love hearing how you use your blocks!</text>
+</svg>

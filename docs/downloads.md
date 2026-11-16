@@ -231,11 +231,11 @@ We publish pre-sliced multi-plate `.3mf` files (for Prusa, Bambu Lab, and OrcaSl
   </div>
 </div>
 
-| Instrument | Focus &amp; Grade Level | Gridfinity Envelope | 3D Model Destination |
+| Instrument | Focus &amp; Grade Level | Product Specs &amp; Guide | 3D Model Destination |
 | :--- | :--- | :--- | :--- |
-| **Fraction Studio Proportional Towers** | Grades 3–8 &bull; Equivalence &amp; Decimals | 3x1 Bin + Workbench Lid | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Prime Factor Studio &amp; Factor Towers** | Grades 3–9 &bull; Factorization &amp; Logarithms | 3x1x7U Bin + Slide Stage | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Place Value Studio &amp; Regrouping Trays** | Grades 1–5 &bull; Place Value &amp; Decimals | 3x1 Bin + Snap Lid | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Fraction Studio Proportional Towers** | Grades 2–6 &bull; Equivalence &amp; Decimals | [Fraction Studio Page &rarr;](products/fraction-studio/index.md) | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Prime Factor Studio &amp; Factor Towers** | Grades 3–9 &bull; Factorization &amp; Logarithms | [Prime Factor Studio Page &rarr;](products/prime-factor-studio/index.md) | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Place Value Studio &amp; Regrouping Trays** | Grades 1–5 &bull; Place Value &amp; Decimals | [Place Value Studio Page &rarr;](products/place-value/index.md) | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
 
 ---
 
@@ -244,4 +244,5 @@ We publish pre-sliced multi-plate `.3mf` files (for Prusa, Bambu Lab, and OrcaSl
 For schools, teachers, or parents who don't have access to a 3D printer:
 - **Order Complete Kits on Etsy:** Handcrafted 3D-printed manipulative block sets ship with durable Snapfinity storage bins: [Etsy Storefront (stackcalcmath.etsy.com) ↗](https://stackcalcmath.etsy.com)
 - **Order On-Demand from Slant 3D:** Our official manufacturing partner produces matching replacement parts, individual block refills, and classroom sets on industrial additive manufacturing farms: [Slant 3D Portal ↗](https://teleportpod.com/portals/profile/StackCalc)
+- **Download the Companion App on the Apple App Store:** Native iOS, iPadOS, standalone Apple Watch, and macOS RPN calculator & visual math companion: [StackCalc on the App Store ↗](https://apps.apple.com/app/id6801788040)
 - **Follow Engineering Build Logs on Hackaday:** For hardware build logs, manipulative tolerances, and manufacturing bring-up: [Hackaday Project ↗](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator)

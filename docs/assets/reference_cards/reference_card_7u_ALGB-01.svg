@@ -7,11 +7,10 @@
     </style>
   </defs>
 
-  <!-- 114.0 x 35.0 mm Cut Cell Background & Inset Safe Frame (1.6mm bleed margin for clean guillotine cutting) -->
+  <!-- 114.0 x 35.0 mm Cut Cell Background (2.6mm L/R & 2.2mm T/B symmetric white bleed/safe margin) -->
   <rect x="0" y="0" width="1140" height="350" fill="#ffffff" />
-  <rect x="16" y="14" width="1108" height="322" rx="16" fill="#ffffff" stroke="#0f172a" stroke-width="2.2" />
 
-  <!-- Top Header Strip -->
+  <!-- Top Header Strip (x=26..1114, y=22..62) -->
   <rect x="26" y="22" width="1088" height="40" rx="8" fill="#0f172a" />
   
   <!-- Stack Logo Icon -->
@@ -23,15 +22,15 @@
   </g>
 
   <text x="72" y="39" class="font-mono" font-size="15px" font-weight="700" fill="#ffffff">STACKCALC • ALGEBRA FACTORING STUDIO</text>
-  <text x="72" y="54" class="font-mono" font-size="10px" fill="#94a3b8">7U IN-BOX PACKING LIST &amp; QR GUIDE • FITS INSIDE 3×1×7U BOX (114.0 × 35.0 mm)</text>
+  <text x="72" y="54" class="font-mono" font-size="10px" fill="#94a3b8">GEOMETRIC AREA MODELS, POLYNOMIAL FACTORING &amp; ZERO PAIRS</text>
 
   <!-- Right Header Badge -->
-  <rect x="846" y="27" width="258" height="30" rx="6" fill="#0284c7" />
-  <text x="975" y="46" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#ffffff">ALGB-01 • 3×1×7U BOX • 51 PCS</text>
+  <rect x="880" y="27" width="224" height="30" rx="6" fill="#0284c7" />
+  <text x="992" y="46" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#ffffff">ALGB-01 • 51 PIECES</text>
 
-  <!-- PANEL 1 (LEFT): SINGLE QR CODE FOR STACKCALC.IO WITH GA UTM TAG (x=26..256) -->
+  <!-- PANEL 1 (LEFT): SINGLE QR CODE FOR STACKCALC.IO WITH GA UTM TAG (x=26..256, y=68..328) -->
   <g transform="translate(26, 68)">
-    <rect x="0" y="0" width="230" height="258" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+    <rect x="0" y="0" width="230" height="260" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
     <rect x="0" y="0" width="230" height="24" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
     <text x="115" y="16" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#0f172a">SCAN FOR 3D GUIDE</text>
 
@@ -738,62 +737,56 @@
 <rect x="206.35" y="259.78" width="4.27" height="4.27" fill="#0f172a" />
 <rect x="210.57" y="259.78" width="4.27" height="4.27" fill="#0f172a" />
 <rect x="214.78" y="259.78" width="4.27" height="4.27" fill="#0f172a" />
-  <text x="141" y="292" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#0284c7">stackcalc.io</text>
+  <text x="141" y="292" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#0f172a">stackcalc.io</text>
   <text x="141" y="309" class="font-sans" font-size="10.5px" text-anchor="middle" fill="#475569">Guides, 3D Videos &amp; Spare Parts</text>
 
-  <!-- PANEL 2 (RIGHT): COMPLETE BLOCK PACKING LIST (x=266..1114) -->
+  <!-- PANEL 2 (RIGHT): KIT COMPONENTS OR STUDIO STORY (x=266..1114, y=68..328) -->
   <g transform="translate(266, 68)">
-    <rect x="0" y="0" width="848" height="258" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+    
+    <rect x="0" y="0" width="848" height="260" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
     <rect x="0" y="0" width="848" height="24" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
-    <text x="12" y="16" class="font-mono" font-size="11px" font-weight="700" fill="#0f172a">HOW MANY OF EACH BLOCK GO IN THE PACK (COMPLETE KIT INVENTORY)</text>
+    <text x="12" y="16" class="font-mono" font-size="11px" font-weight="700" fill="#0f172a">INCLUDED BLOCKS &amp; COMPONENTS</text>
     <text x="836" y="16" class="font-mono" font-size="10px" font-weight="700" text-anchor="end" fill="#0284c7">FLIP OVER FOR HANDS-ON GUIDE →</text>
 
-    <text x="34" y="42" class="font-mono" font-size="10.5px" font-weight="700" text-anchor="middle" fill="#475569">QTY</text>
-    <text x="68" y="42" class="font-mono" font-size="10.5px" font-weight="700" fill="#475569">BLOCK / COMPONENT</text>
-    <text x="355" y="42" class="font-mono" font-size="10.5px" font-weight="700" fill="#475569">PACK BREAKDOWN &amp; DIMENSIONS</text>
-    <text x="834" y="42" class="font-mono" font-size="10.5px" font-weight="700" text-anchor="end" fill="#475569">COLOR</text>
+    <text x="35" y="42" class="font-mono" font-size="10.5px" font-weight="700" text-anchor="middle" fill="#475569">QTY</text>
+    <text x="70" y="42" class="font-mono" font-size="10.5px" font-weight="700" fill="#475569">COMPONENT</text>
+    <text x="370" y="42" class="font-mono" font-size="10.5px" font-weight="700" fill="#475569">DETAILS &amp; BREAKDOWN</text>
     <line x1="12" y1="47" x2="836" y2="47" stroke="#94a3b8" stroke-width="1" />
 
     
-      <rect x="12" y="52" width="44" height="19" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="0.9" />
-      <text x="34" y="66" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#0369a1">2×</text>
-      <text x="68" y="66" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">Quadratic (+x²)</text>
-      <text x="355" y="66" class="font-sans" font-size="12px" fill="#475569">38.6×38.6 mm</text>
-      <text x="834" y="66" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="end" fill="#0284c7">Matte Blue</text>
+      <rect x="12" y="52" width="46" height="19" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.0" />
+      <text x="35" y="66" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#0f172a">2×</text>
+      <text x="70" y="66" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">Quadratic (+x²)</text>
+      <text x="370" y="66" class="font-sans" font-size="12px" fill="#334155">38.6×38.6 mm</text>
       <line x1="12" y1="72" x2="836" y2="72" stroke="#e2e8f0" stroke-width="0.9" />
-      <rect x="12" y="78" width="44" height="19" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="0.9" />
-      <text x="34" y="92" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#0369a1">2×</text>
-      <text x="68" y="92" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">Quadratic (-x²)</text>
-      <text x="355" y="92" class="font-sans" font-size="12px" fill="#475569">38.6×38.6 mm</text>
-      <text x="834" y="92" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="end" fill="#0284c7">Muted Red</text>
+      <rect x="12" y="78" width="46" height="19" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.0" />
+      <text x="35" y="92" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#0f172a">2×</text>
+      <text x="70" y="92" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">Quadratic (-x²)</text>
+      <text x="370" y="92" class="font-sans" font-size="12px" fill="#334155">38.6×38.6 mm</text>
       <line x1="12" y1="98" x2="836" y2="98" stroke="#e2e8f0" stroke-width="0.9" />
-      <rect x="12" y="104" width="44" height="19" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="0.9" />
-      <text x="34" y="118" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#0369a1">6×</text>
-      <text x="68" y="118" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">Linear Rod (+x)</text>
-      <text x="355" y="118" class="font-sans" font-size="12px" fill="#475569">38.6×19.0 mm</text>
-      <text x="834" y="118" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="end" fill="#0284c7">Matte Blue</text>
+      <rect x="12" y="104" width="46" height="19" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.0" />
+      <text x="35" y="118" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#0f172a">6×</text>
+      <text x="70" y="118" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">Linear Rod (+x)</text>
+      <text x="370" y="118" class="font-sans" font-size="12px" fill="#334155">38.6×19.0 mm</text>
       <line x1="12" y1="124" x2="836" y2="124" stroke="#e2e8f0" stroke-width="0.9" />
-      <rect x="12" y="130" width="44" height="19" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="0.9" />
-      <text x="34" y="144" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#0369a1">6×</text>
-      <text x="68" y="144" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">Linear Rod (-x)</text>
-      <text x="355" y="144" class="font-sans" font-size="12px" fill="#475569">38.6×19.0 mm</text>
-      <text x="834" y="144" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="end" fill="#0284c7">Muted Red</text>
+      <rect x="12" y="130" width="46" height="19" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.0" />
+      <text x="35" y="144" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#0f172a">6×</text>
+      <text x="70" y="144" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">Linear Rod (-x)</text>
+      <text x="370" y="144" class="font-sans" font-size="12px" fill="#334155">38.6×19.0 mm</text>
       <line x1="12" y1="150" x2="836" y2="150" stroke="#e2e8f0" stroke-width="0.9" />
-      <rect x="12" y="156" width="44" height="19" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="0.9" />
-      <text x="34" y="170" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#0369a1">12×</text>
-      <text x="68" y="170" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">Constant (+1)</text>
-      <text x="355" y="170" class="font-sans" font-size="12px" fill="#475569">19.0×19.0 mm</text>
-      <text x="834" y="170" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="end" fill="#0284c7">Matte Blue</text>
+      <rect x="12" y="156" width="46" height="19" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.0" />
+      <text x="35" y="170" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#0f172a">12×</text>
+      <text x="70" y="170" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">Constant (+1)</text>
+      <text x="370" y="170" class="font-sans" font-size="12px" fill="#334155">19.0×19.0 mm</text>
       <line x1="12" y1="176" x2="836" y2="176" stroke="#e2e8f0" stroke-width="0.9" />
-      <rect x="12" y="182" width="44" height="19" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="0.9" />
-      <text x="34" y="196" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#0369a1">12×</text>
-      <text x="68" y="196" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">Constant (-1)</text>
-      <text x="355" y="196" class="font-sans" font-size="12px" fill="#475569">19.0×19.0 mm</text>
-      <text x="834" y="196" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="end" fill="#0284c7">Muted Red</text>
+      <rect x="12" y="182" width="46" height="19" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="1.0" />
+      <text x="35" y="196" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#0f172a">12×</text>
+      <text x="70" y="196" class="font-mono" font-size="12.5px" font-weight="700" fill="#0f172a">Constant (-1)</text>
+      <text x="370" y="196" class="font-sans" font-size="12px" fill="#334155">19.0×19.0 mm</text>
       <line x1="12" y1="202" x2="836" y2="202" stroke="#e2e8f0" stroke-width="0.9" />
 
     <!-- Total Verified Strip -->
-    <rect x="12" y="224" width="824" height="26" rx="5" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.1" />
-    <text x="424" y="241" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#166534">✓ TOTAL: 48 REVERSIBLE POLYNOMIAL TILES (+/−) + L-FRAME + BOX &amp; LID = 51 PCS</text>
+    <rect x="12" y="226" width="824" height="26" rx="5" fill="#f8fafc" stroke="#0f172a" stroke-width="1.1" />
+    <text x="424" y="243" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#0f172a">✓ COMPLETE KIT: 48 REVERSIBLE POLYNOMIAL TILES (+/−) + L-FRAME + BASE &amp; LID = 51 PCS</text>
   </g>
 </svg>

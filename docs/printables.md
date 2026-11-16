@@ -30,6 +30,9 @@ Instead of charging for digital STL downloads or hosting cumbersome raw files ac
     <a href="https://www.etsy.com/shop/StackCalcMath" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.75rem 1.25rem; border-radius: 8px; background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #FFFFFF; font-family: 'Space Mono', monospace; font-size: 0.85rem; font-weight: 700; text-decoration: none;">
       ETSY STORE ↗
     </a>
+    <a href="https://apps.apple.com/app/id6801788040" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.75rem 1.25rem; border-radius: 8px; background-color: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #38BDF8; font-family: 'Space Mono', monospace; font-size: 0.85rem; font-weight: 700; text-decoration: none;">
+      APP STORE (iOS / WATCH / MAC) ↗
+    </a>
   </div>
 </div>
 
@@ -365,6 +368,7 @@ The Prime Factor Studio is the world's first logarithmic manipulative where stac
 | **Self-Service 3D Printing (Free)** | **Printables Community Hub** | [Printables @StackCalc_5593834](https://www.printables.com/@StackCalc_5593834) | 100% free open-source STLs and pre-sliced 3MF profiles. Zero paywalls. |
 | **On-Demand Replacement Refills** | **Slant 3D Portals Store** | [Slant 3D Storefront](https://teleportpod.com/portals/profile/StackCalc) | Industrial high-precision 3D printing dispatched directly to your school front office. |
 | **Complete Boxed Kits** | **Etsy Handcrafted Store** | [Etsy Storefront](https://www.etsy.com/shop/StackCalcMath) | Handcrafted boxed manipulative sets with Snapfinity Gridfinity storage boxes. |
+| **Companion Software App** | **Apple App Store** | [StackCalc App (iOS, Watch & Mac)](https://apps.apple.com/app/id6801788040) | Native iOS, iPadOS, Apple Watch, and macOS RPN calculator & visual math modes. |
 | **Open Hardware Build Logs** | **Hackaday Engineering Hub** | [Hackaday Project (206743)](https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator) | Engineering build logs, manipulative tolerances, and manufacturing bring-up. |
 | **District Net-30 Purchase Orders** | **Direct Institutional Sales** | `quotes@stackcalc.io` | Formal Net-30 institutional billing, signed W-9, and volume tiered discounts. |
 
