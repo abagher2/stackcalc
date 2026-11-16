@@ -15,10 +15,10 @@ hide:
       "@type": "Product",
       "name": "Classroom Teaching Clock & Planetary Gear Time Manipulative - 12:1 Synchronized Clock",
       "image": [
-        "https://www.stackcalc.io/assets/renders/clock-classroom-hero.png",
-        "https://www.stackcalc.io/assets/reference_cards/reference_card_TIME-01_paper.png",
-        "https://www.stackcalc.io/assets/renders/etsy/clock-specs-infographic-square.png",
-        "https://www.stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png"
+        "https://stackcalc.io/assets/renders/clock-classroom-hero.png",
+        "https://stackcalc.io/assets/reference_cards/reference_card_TIME-01_paper.png",
+        "https://stackcalc.io/assets/renders/etsy/clock-specs-infographic-square.png",
+        "https://stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png"
       ],
       "keywords": "teaching clock manipulative, geared classroom clock, analog clock learning tool, telling time manipulatives, planetary gear math clock, elapsed time clock, CCSS.MATH.CONTENT.1.MD.B.3, TEKS 111.3.b.7",
       "description": "Tactile mechanical time-telling manipulative with an internal 12:1 herringbone planetary gear core, synchronized hands, and removable 15-minute quadrant sectors.",
@@ -30,7 +30,7 @@ hide:
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.stackcalc.io/products/classroom-clock/",
+        "url": "https://stackcalc.io/products/classroom-clock/",
         "priceCurrency": "USD",
         "price": "44.00",
         "priceValidUntil": "2027-12-31",
@@ -54,19 +54,19 @@ hide:
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.stackcalc.io/"
+          "item": "https://stackcalc.io/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Products & Manipulatives",
-          "item": "https://www.stackcalc.io/products/"
+          "item": "https://stackcalc.io/products/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Sectional Classroom Planetary Clock",
-          "item": "https://www.stackcalc.io/products/classroom-clock/"
+          "item": "https://stackcalc.io/products/classroom-clock/"
         }
       ]
     },

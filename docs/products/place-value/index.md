@@ -15,15 +15,15 @@ hide:
       "@type": "Product",
       "name": "Place Value Studio & Regrouping Trays - 52-Piece Whole Number & Decimal Math Set",
       "image": [
-        "https://www.stackcalc.io/assets/renders/etsy/place-value-studio-real-overview-hero-tight.jpg",
-        "https://www.stackcalc.io/assets/renders/etsy/place-value-studio-real-pi-trays-hero-tight.jpg",
-        "https://www.stackcalc.io/assets/renders/etsy/place-value-studio-real-packed-box-hero-tight.jpg",
-        "https://www.stackcalc.io/assets/renders/etsy/place-value-studio-real-regrouping-hero-tight.jpg",
-        "https://www.stackcalc.io/assets/renders/etsy/place-value-studio-real-desk-context-4x3.jpg",
-        "https://www.stackcalc.io/assets/renders/etsy/place-value-specs-infographic-square.png",
-        "https://www.stackcalc.io/assets/reference_cards/reference_card_PLACE-01-PACK_paper.png",
-        "https://www.stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png",
-        "https://www.stackcalc.io/assets/renders/etsy/infographic-guarantee-safety-square.png"
+        "https://stackcalc.io/assets/renders/etsy/place-value-studio-real-overview-hero-tight.jpg",
+        "https://stackcalc.io/assets/renders/etsy/place-value-studio-real-pi-trays-hero-tight.jpg",
+        "https://stackcalc.io/assets/renders/etsy/place-value-studio-real-packed-box-hero-tight.jpg",
+        "https://stackcalc.io/assets/renders/etsy/place-value-studio-real-regrouping-hero-tight.jpg",
+        "https://stackcalc.io/assets/renders/etsy/place-value-studio-real-desk-context-4x3.jpg",
+        "https://stackcalc.io/assets/renders/etsy/place-value-specs-infographic-square.png",
+        "https://stackcalc.io/assets/reference_cards/reference_card_PLACE-01-PACK_paper.png",
+        "https://stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png",
+        "https://stackcalc.io/assets/renders/etsy/infographic-guarantee-safety-square.png"
       ],
       "keywords": "place value blocks, base ten blocks, math manipulatives, place value tray, regrouping math, decimal manipulative, elementary math tool, homeschool math kit, base 10 blocks, subtraction regroup, carrying addition, second grade math, CCSS.MATH.CONTENT.2.NBT.B.5, CCSS.MATH.CONTENT.4.NBT.A.1",
       "description": "52-piece tactile place-value and decimal laboratory featuring dual 6x2 desktop trays, 44 symmetric digit blocks (0-9 in two color sets), and 4 stackable +1 regrouping carry tokens in a 3x1x7U Gridfinity storage box. Physically models addition carrying, subtraction borrowing, and decimal place value.",
@@ -35,7 +35,7 @@ hide:
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.stackcalc.io/products/place-value/",
+        "url": "https://stackcalc.io/products/place-value/",
         "priceCurrency": "USD",
         "price": "48.00",
         "priceValidUntil": "2027-12-31",
@@ -59,19 +59,19 @@ hide:
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.stackcalc.io/"
+          "item": "https://stackcalc.io/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Products & Manipulatives",
-          "item": "https://www.stackcalc.io/products/"
+          "item": "https://stackcalc.io/products/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Place Value Studio",
-          "item": "https://www.stackcalc.io/products/place-value/"
+          "item": "https://stackcalc.io/products/place-value/"
         }
       ]
     },

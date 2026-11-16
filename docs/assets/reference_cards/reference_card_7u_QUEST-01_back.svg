@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="114.0mm" height="35.0mm" viewBox="0 0 1140 350">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+      .font-mono { font-family: 'Space Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- 114.0 x 35.0 mm Cut Cell Background & Inset Safe Frame -->
+  <rect x="0" y="0" width="1140" height="350" fill="#ffffff" />
+  <rect x="16" y="14" width="1108" height="322" rx="16" fill="#ffffff" stroke="#0f172a" stroke-width="2.2" />
+
+  <!-- Top Header Strip -->
+  <rect x="26" y="20" width="1088" height="38" rx="8" fill="#0f172a" />
+  <text x="38" y="36" class="font-mono" font-size="14.5px" font-weight="700" fill="#ffffff">QUEST SCOREBOARD — TWO-WAY PROOF &amp; 100-POINT MASTERY</text>
+  <text x="38" y="51" class="font-mono" font-size="9.5px" fill="#94a3b8">SIDE B • ILLUSTRATED CLASSROOM EXPLORATIONS &amp; SELF-CHECKING PACK-UP • STACKCALC LABS</text>
+  <rect x="866" y="25" width="238" height="28" rx="6" fill="#059669" />
+  <text x="985" y="43" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#ffffff">2-WAY PROOF • QUEST-01</text>
+
+  
+  <!-- ACTIVITY 1 PANEL -->
+  <g transform="translate(26, 64)">
+    <rect x="0" y="0" width="539" height="228" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+    <rect x="0" y="0" width="539" height="24" rx="8" fill="#eff6ff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="6" y="3.5" width="76" height="17" rx="4" fill="#0284c7" />
+    <text x="44" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">ACTIVITY 1</text>
+    <text x="90" y="15.5" class="font-mono" font-size="10.5px" font-weight="700" fill="#0f172a">TWO-WAY PROOF CHALLENGE (+10 &amp; +20 PTS)</text>
+    <text x="531" y="15.5" class="font-mono" font-size="9px" font-weight="700" text-anchor="end" fill="#0284c7">DUAL VERIFICATION</text>
+
+    <!-- Left Illustrated Block Diagram (190 x 162) -->
+    <g transform="translate(8, 28)">
+      <rect x="0" y="0" width="190" height="161" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1" />
+      
+      <text x="95" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0369a1">2-WAY PROOF = +20 PTS/SOCKET</text>
+      <!-- Lid Sockets 1, 2, 3 -->
+      <rect x="18" y="96" width="44" height="22" rx="3" fill="#fee2e2" stroke="#b91c1c" stroke-width="1.3" />
+      <text x="40" y="111" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#991b1b">+10</text>
+      <rect x="18" y="72" width="44" height="22" rx="3" fill="#fef08a" stroke="#ca8a04" stroke-width="1.3" />
+      <text x="40" y="87" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#854d0e">+10</text>
+      <text x="40" y="64" class="font-mono" font-size="9px" font-weight="700" text-anchor="middle" fill="#15803d">+20!</text>
+
+      <rect x="73" y="96" width="44" height="22" rx="3" fill="#fee2e2" stroke="#b91c1c" stroke-width="1.3" />
+      <text x="95" y="111" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#991b1b">+10</text>
+      <rect x="73" y="72" width="44" height="22" rx="3" fill="#fef08a" stroke="#ca8a04" stroke-width="1.3" />
+      <text x="95" y="87" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#854d0e">+10</text>
+
+      <rect x="128" y="96" width="44" height="22" rx="3" fill="#fee2e2" stroke="#b91c1c" stroke-width="1.3" />
+      <text x="150" y="111" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#991b1b">+10</text>
+
+      <rect x="12" y="120" width="166" height="16" rx="3" fill="#e2e8f0" stroke="#475569" stroke-width="1.2" />
+      <text x="40" y="131" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">Q1</text>
+      <text x="95" y="131" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">Q2</text>
+      <text x="150" y="131" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">Q3</text>
+      <text x="95" y="150" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#475569">GOLD = 1ST WAY • GLOW = 2ND WAY</text>
+    </g>
+
+    <!-- Right 3-Step Walkthrough -->
+    
+      <g transform="translate(202, 28)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#0284c7" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">SOLVE 1ST WAY (+10)</text>
+        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Solve Problem #1–#10 and seat a Gold [+10] token in</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">Socket [1]–[10] on the lid.</text>
+      </g>
+      <g transform="translate(202, 83)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#0284c7" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">PROVE 2ND WAY (+20)</text>
+        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Verify using physical blocks or SC-6 RPN and stack a</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">Glow [+10] token right on top!</text>
+      </g>
+      <g transform="translate(202, 138)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#0284c7" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">SCORE DAILY RUN</text>
+        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Each dual-verified problem stands 2U (14mm) tall for +20</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">pts (up to 200 pts/day).</text>
+      </g>
+
+    <!-- Bottom Concept Takeaway Bar -->
+    <rect x="8" y="195" width="523" height="26" rx="5" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.0" />
+    <text x="14" y="211.5" class="font-sans" font-size="9.2px" font-weight="700" fill="#0369a1">★ KEY CONCEPT: <tspan font-weight="400" fill="#0f172a">Rewarding a second independent method shifts focus from speed to deep mathematical proof.</tspan></text>
+  </g>
+  <!-- ACTIVITY 2 PANEL -->
+  <g transform="translate(575, 64)">
+    <rect x="0" y="0" width="539" height="228" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+    <rect x="0" y="0" width="539" height="24" rx="8" fill="#f0fdf4" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="6" y="3.5" width="76" height="17" rx="4" fill="#059669" />
+    <text x="44" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">ACTIVITY 2</text>
+    <text x="90" y="15.5" class="font-mono" font-size="10.5px" font-weight="700" fill="#0f172a">100-POINT MASTERY TOWER (10 × 10 = 100)</text>
+    <text x="531" y="15.5" class="font-mono" font-size="9px" font-weight="700" text-anchor="end" fill="#059669">BASE-10 SCALING</text>
+
+    <!-- Left Illustrated Block Diagram (190 x 162) -->
+    <g transform="translate(8, 28)">
+      <rect x="0" y="0" width="190" height="161" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1" />
+      
+      <text x="95" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#047857">10 × [+10] = [100] TOWER</text>
+      <!-- 10-block vertical tower in Socket [100] -->
+      <rect x="65" y="24" width="60" height="100" rx="3" fill="#fef08a" stroke="#ca8a04" stroke-width="1.4" />
+      <line x1="65" y1="34" x2="125" y2="34" stroke="#ca8a04" stroke-width="1" />
+      <line x1="65" y1="44" x2="125" y2="44" stroke="#ca8a04" stroke-width="1" />
+      <line x1="65" y1="54" x2="125" y2="54" stroke="#ca8a04" stroke-width="1" />
+      <line x1="65" y1="64" x2="125" y2="64" stroke="#ca8a04" stroke-width="1" />
+      <line x1="65" y1="74" x2="125" y2="74" stroke="#ca8a04" stroke-width="1" />
+      <line x1="65" y1="84" x2="125" y2="84" stroke="#ca8a04" stroke-width="1" />
+      <line x1="65" y1="94" x2="125" y2="94" stroke="#ca8a04" stroke-width="1" />
+      <line x1="65" y1="104" x2="125" y2="104" stroke="#ca8a04" stroke-width="1" />
+      <line x1="65" y1="114" x2="125" y2="114" stroke="#ca8a04" stroke-width="1" />
+      <text x="95" y="78" class="font-mono" font-size="12px" font-weight="700" text-anchor="middle" fill="#854d0e">10×+10</text>
+      <rect x="45" y="124" width="100" height="16" rx="3" fill="#0f172a" />
+      <text x="95" y="135" class="font-mono" font-size="9px" font-weight="700" text-anchor="middle" fill="#ffffff">SOCKET [100]</text>
+      <text x="95" y="152" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#047857">70.0mm (10U) MASTERY TOWER</text>
+    </g>
+
+    <!-- Right 3-Step Walkthrough -->
+    
+      <g transform="translate(202, 28)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#059669" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">SKIP-COUNT BY 10</text>
+        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Count filled sockets across the lid: 10, 20, 30, 40, 50,</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">60, 70, 80, 90, 100!</text>
+      </g>
+      <g transform="translate(202, 83)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#059669" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">REGROUP TO [100]</text>
+        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Every 10 tokens (100 pts), stack them into a 10-block</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">tower (70mm) in Socket [100].</text>
+      </g>
+      <g transform="translate(202, 138)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#059669" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">WEEKLY 600 STREAK</text>
+        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Use all 60 tokens across the week to build 6 full</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">100-point Mastery Towers!</text>
+      </g>
+
+    <!-- Bottom Concept Takeaway Bar -->
+    <rect x="8" y="195" width="523" height="26" rx="5" fill="#ecfdf5" stroke="#059669" stroke-width="1.0" />
+    <text x="14" y="211.5" class="font-sans" font-size="9.2px" font-weight="700" fill="#047857">★ KEY CONCEPT: <tspan font-weight="400" fill="#0f172a">Trading ten [+10] tokens for one 10-high tower in [100] makes 10 × 10 = 100 physically concrete.</tspan></text>
+  </g>
+
+  <!-- Bottom 10-Second Self-Checking Waterline Pack-Up Strip -->
+  <rect x="26" y="298" width="1088" height="28" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.1" />
+  <rect x="30" y="302" width="166" height="20" rx="4" fill="#0f172a" />
+  <text x="113" y="315.5" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#38bdf8">10-SEC BOX PACK-UP</text>
+  <text x="206" y="316" class="font-sans" font-size="10.5px" font-weight="700" fill="#0f172a">Sweep all 60 universal +10 tokens (30 Gold + 30 Glow) into the open 3×1×7U bin, lay this card on top, and snap the lid shut!</text>
+</svg>

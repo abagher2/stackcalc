@@ -15,11 +15,11 @@ hide:
       "@type": "Product",
       "name": "Fraction Studio Proportional Towers - 65-Piece Tactile Math Manipulative Set",
       "image": [
-        "https://www.stackcalc.io/assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg",
-        "https://www.stackcalc.io/assets/renders/etsy/fraction-studio-real-towers-iso-hero-tight.jpg",
-        "https://www.stackcalc.io/assets/renders/etsy/fraction-studio-real-packed-box-hero-tight.jpg",
-        "https://www.stackcalc.io/assets/renders/etsy/fraction-studio-real-equivalence-proof-hero-tight.jpg",
-        "https://www.stackcalc.io/assets/reference_cards/reference_card_FRAC-01_paper.png"
+        "https://stackcalc.io/assets/renders/etsy/fraction-studio-real-towers-front-hero-tight.jpg",
+        "https://stackcalc.io/assets/renders/etsy/fraction-studio-real-towers-iso-hero-tight.jpg",
+        "https://stackcalc.io/assets/renders/etsy/fraction-studio-real-packed-box-hero-tight.jpg",
+        "https://stackcalc.io/assets/renders/etsy/fraction-studio-real-equivalence-proof-hero-tight.jpg",
+        "https://stackcalc.io/assets/reference_cards/reference_card_FRAC-01_paper.png"
       ],
       "keywords": "fraction towers manipulatives, fraction tiles, fraction bars, equivalent fractions visual tool, common denominators manipulative, tactile math manipulatives, STEM fractions, CCSS.MATH.CONTENT.3.NF.A.1, TEKS 111.5.b.3",
       "description": "65-piece tactile STEM fraction manipulative set with 63 precision proportional blocks across 10 denominators (1 to 1/12). Inverse millimeter height ratios (84.0mm Whole) ensure self-correcting mathematical equivalence on any flat desk.",
@@ -31,7 +31,7 @@ hide:
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.stackcalc.io/products/fraction-studio/",
+        "url": "https://stackcalc.io/products/fraction-studio/",
         "priceCurrency": "USD",
         "price": "48.00",
         "priceValidUntil": "2027-12-31",
@@ -55,19 +55,19 @@ hide:
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.stackcalc.io/"
+          "item": "https://stackcalc.io/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Products & Manipulatives",
-          "item": "https://www.stackcalc.io/products/"
+          "item": "https://stackcalc.io/products/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Fraction Studio Proportional Towers",
-          "item": "https://www.stackcalc.io/products/fraction-studio/"
+          "item": "https://stackcalc.io/products/fraction-studio/"
         }
       ]
     },

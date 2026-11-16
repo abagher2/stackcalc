@@ -14,7 +14,7 @@ hide:
       "@type": "Product",
       "name": "Modular 3-in-1 Desk Stand & TPU Travel Pouch",
       "image": [
-        "https://www.stackcalc.io/assets/renders/puzzle-stand-hero.png"
+        "https://stackcalc.io/assets/renders/puzzle-stand-hero.png"
       ],
       "description": "Field accessories for StackCalc instruments: the 3-piece flat-pack Interlocking Puzzle Stand (mailer insert, 78° shelf stand, 10° desk wedge), and shock-absorbing Shore 95A TPU Travel Pouch.",
       "sku": "ACC-STAND-POUCH",
@@ -25,7 +25,7 @@ hide:
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.stackcalc.io/products/stands-and-pouches/",
+        "url": "https://stackcalc.io/products/stands-and-pouches/",
         "priceCurrency": "USD",
         "price": "18.00",
         "priceValidUntil": "2027-12-31",

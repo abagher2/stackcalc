@@ -61,12 +61,12 @@
   <text x="165" y="93" class="font-mono" font-size="12.5px" font-weight="700" fill="#0284c7">SERIES 1 • CARD 10 / 12 • DOMAIN: MULTI-METHOD MASTERY &amp; DAILY FLUENCY</text>
 
   <!-- Top-Right SKU Badges -->
-  <g transform="translate(975, 36)">
-    <rect x="0" y="0" width="190" height="28" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
-    <text x="95" y="19" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#0f172a">CARD 10 / 12 • QUEST-01</text>
+  <g transform="translate(950, 36)">
+    <rect x="0" y="0" width="215" height="28" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+    <text x="107.5" y="19" class="font-mono" font-size="14px" font-weight="700" text-anchor="middle" fill="#0f172a">CARD 10 / 12 • QUEST-01</text>
     
-    <rect x="0" y="34" width="190" height="26" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.2" />
-    <text x="95" y="52" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#059669">MATHEMATICAL GUIDE</text>
+    <rect x="0" y="34" width="215" height="26" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.2" />
+    <text x="107.5" y="52" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#059669">MATHEMATICAL GUIDE</text>
   </g>
 
   <!-- COLUMN 1: CONCEPT & PROOF (Width: 390) -->
@@ -153,47 +153,47 @@
     <line x1="12" y1="58" x2="438" y2="58" stroke="#cbd5e1" stroke-width="1" />
 
     
-      <text x="14" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">1st-Way Tokens</text>
-      <text x="180" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">30x</text>
-      <text x="215" y="64" class="font-mono" font-size="12.5px" fill="#0f172a">10.25 mm</text>
-      <text x="436" y="64" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Red+Gold Silk</text>
-      <line x1="12" y1="69" x2="438" y2="69" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="76" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">1st-Way Tokens</text>
+      <text x="180" y="76" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">30x</text>
+      <text x="215" y="76" class="font-mono" font-size="12.5px" fill="#0f172a">10.25 mm</text>
+      <text x="436" y="76" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Red+Gold Silk</text>
+      <line x1="12" y1="81" x2="438" y2="81" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">2nd-Way Tokens</text>
-      <text x="180" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">30x</text>
-      <text x="215" y="86" class="font-mono" font-size="12.5px" fill="#0f172a">10.25 mm</text>
-      <text x="436" y="86" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Glow Yellow</text>
-      <line x1="12" y1="91" x2="438" y2="91" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="98" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">2nd-Way Tokens</text>
+      <text x="180" y="98" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">30x</text>
+      <text x="215" y="98" class="font-mono" font-size="12.5px" fill="#0f172a">10.25 mm</text>
+      <text x="436" y="98" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Glow Yellow</text>
+      <line x1="12" y1="103" x2="438" y2="103" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">3x1 Storage Bin</text>
-      <text x="180" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
-      <text x="215" y="108" class="font-mono" font-size="12.5px" fill="#0f172a">49.0 mm</text>
-      <text x="436" y="108" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
-      <line x1="12" y1="113" x2="438" y2="113" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="120" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">3x1 Storage Bin</text>
+      <text x="180" y="120" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="120" class="font-mono" font-size="12.5px" fill="#0f172a">49.0 mm (7U)</text>
+      <text x="436" y="120" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
+      <line x1="12" y1="125" x2="438" y2="125" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Scoreboard Lid</text>
-      <text x="180" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
-      <text x="215" y="130" class="font-mono" font-size="12.5px" fill="#0f172a">Scoreboard</text>
-      <text x="436" y="130" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
-      <line x1="12" y1="135" x2="438" y2="135" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="142" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Scoreboard Lid</text>
+      <text x="180" y="142" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">1x</text>
+      <text x="215" y="142" class="font-mono" font-size="12.5px" fill="#0f172a">Scoreboard</text>
+      <text x="436" y="142" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
+      <line x1="12" y1="147" x2="438" y2="147" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
 
     <!-- Total Pieces Summary -->
-    <text x="14" y="168" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">TOTAL: 60 Universal +10 Tokens + 7U Bin +</text>
-    <text x="14" y="184" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">Lid = 62 Parts</text>
+    <text x="14" y="180" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">TOTAL: 60 Universal +10 Tokens + 7U Bin +</text>
+    <text x="14" y="196" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">Lid = 62 Parts</text>
 
     <!-- Palette Box -->
-    <g transform="translate(12, 210)">
+    <g transform="translate(12, 222)">
       <rect x="0" y="0" width="426" height="172" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#0f172a">DUAL-TONE +10 TOKEN PALETTE</text>
     </g>
-    <text x="24" y="246" class="font-sans" font-size="13.5px" fill="#475569">• Interchangeable Tokens: All 60 quarter-blocks are</text>
-    <text x="24" y="264" class="font-sans" font-size="13.5px" fill="#475569">+10 pts.</text>
-    <text x="24" y="282" class="font-sans" font-size="13.5px" fill="#475569">• Red+Gold Silk (30x): Seat for 1st Way solution (+10</text>
-    <text x="24" y="300" class="font-sans" font-size="13.5px" fill="#475569">pts).</text>
-    <text x="24" y="318" class="font-sans" font-size="13.5px" fill="#475569">• Glow-in-the-Dark Yellow (30x): Stack on top for 2nd</text>
-    <text x="24" y="336" class="font-sans" font-size="13.5px" fill="#475569">Way (+20 pts)!</text>
-    <text x="24" y="354" class="font-sans" font-size="13.5px" fill="#475569">• High Visibility: Easy to tally scores at a glance.</text>
+    <text x="24" y="258" class="font-sans" font-size="13.5px" fill="#475569">• Interchangeable Tokens: All 60 quarter-blocks are</text>
+    <text x="24" y="276" class="font-sans" font-size="13.5px" fill="#475569">+10 pts.</text>
+    <text x="24" y="294" class="font-sans" font-size="13.5px" fill="#475569">• Red+Gold Silk (30x): Seat for 1st Way solution (+10</text>
+    <text x="24" y="312" class="font-sans" font-size="13.5px" fill="#475569">pts).</text>
+    <text x="24" y="330" class="font-sans" font-size="13.5px" fill="#475569">• Glow-in-the-Dark Yellow (30x): Stack on top for 2nd</text>
+    <text x="24" y="348" class="font-sans" font-size="13.5px" fill="#475569">Way (+20 pts)!</text>
+    <text x="24" y="366" class="font-sans" font-size="13.5px" fill="#475569">• High Visibility: Easy to tally scores at a glance.</text>
   </g>
 
   <!-- COLUMN 3: WHY KEEP CARD (Width: 290) -->

@@ -15,12 +15,12 @@ hide:
       "@type": "Product",
       "name": "Prime Factor Studio & Logarithmic Factor Towers - 45-Piece Set (43 Stacking Prime Blocks)",
       "image": [
-        "https://www.stackcalc.io/assets/renders/etsy/prime-factor-studio-real-staircase-iso-hero-tight.jpg",
-        "https://www.stackcalc.io/assets/renders/etsy/prime-factor-studio-real-staircase-front-hero-tight.jpg",
-        "https://www.stackcalc.io/assets/renders/etsy/prime-factor-studio-real-front-plaque-hero-tight.jpg",
-        "https://www.stackcalc.io/assets/renders/etsy/prime-factor-studio-real-stacked-stage-hero-tight.jpg",
-        "https://www.stackcalc.io/assets/renders/etsy/prime-factor-studio-real-overview-hero-tight.jpg",
-        "https://www.stackcalc.io/assets/reference_cards/reference_card_PRIME-01_paper.png"
+        "https://stackcalc.io/assets/renders/etsy/prime-factor-studio-real-staircase-iso-hero-tight.jpg",
+        "https://stackcalc.io/assets/renders/etsy/prime-factor-studio-real-staircase-front-hero-tight.jpg",
+        "https://stackcalc.io/assets/renders/etsy/prime-factor-studio-real-front-plaque-hero-tight.jpg",
+        "https://stackcalc.io/assets/renders/etsy/prime-factor-studio-real-stacked-stage-hero-tight.jpg",
+        "https://stackcalc.io/assets/renders/etsy/prime-factor-studio-real-overview-hero-tight.jpg",
+        "https://stackcalc.io/assets/reference_cards/reference_card_PRIME-01_paper.png"
       ],
       "keywords": "prime factorization manipulatives, prime factor blocks, logarithmic factor towers, prime vs composite, Fundamental Theorem of Arithmetic, GCF LCM hands on math, tactile number theory, CCSS.MATH.CONTENT.4.OA.B.4, CCSS.MATH.CONTENT.6.NS.B.4",
       "description": "45-piece tactile number theory set featuring 43 proportional logarithmic prime factor blocks (24x [2], 9x [3], 6x [5], 4x [7]) in a 3x1x7U stepped-floor Snapfinity Gridfinity box with dual-well comparator stage lid. Stacking prime factors physically multiplies them with 0.000mm error.",
@@ -32,7 +32,7 @@ hide:
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.stackcalc.io/products/prime-factor-studio/",
+        "url": "https://stackcalc.io/products/prime-factor-studio/",
         "priceCurrency": "USD",
         "price": "46.00",
         "priceValidUntil": "2027-12-31",
@@ -56,19 +56,19 @@ hide:
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.stackcalc.io/"
+          "item": "https://stackcalc.io/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Products & Manipulatives",
-          "item": "https://www.stackcalc.io/products/"
+          "item": "https://stackcalc.io/products/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Prime Factor Studio",
-          "item": "https://www.stackcalc.io/products/prime-factor-studio/"
+          "item": "https://stackcalc.io/products/prime-factor-studio/"
         }
       ]
     },

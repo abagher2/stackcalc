@@ -15,9 +15,9 @@ hide:
       "@type": "Product",
       "name": "Counting Tiles & Planar Array Studio - 144 Stacking Math Manipulatives",
       "image": [
-        "https://www.stackcalc.io/assets/renders/counting-tiles-hero.png",
-        "https://www.stackcalc.io/assets/renders/counting-tiles-box.png",
-        "https://www.stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png"
+        "https://stackcalc.io/assets/renders/counting-tiles-hero.png",
+        "https://stackcalc.io/assets/renders/counting-tiles-box.png",
+        "https://stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png"
       ],
       "keywords": "counting tiles math manipulatives, stacking math tiles, unifix cubes alternative, planar array manipulatives, multiplication array model, four color map theorem, elementary math tools, CCSS.MATH.CONTENT.K.CC.B.4, CCSS.MATH.CONTENT.2.OA.C.4, CCSS.MATH.CONTENT.3.OA.B.5",
       "description": "144 precision stacking counting tiles across four vibrant colors housed in a 3x1x13U Gridfinity box with a docking lid grid. Engineered for one-to-one counting, rectangular arrays, partial product area models, and skip counting.",
@@ -29,7 +29,7 @@ hide:
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.stackcalc.io/products/counting-tiles/",
+        "url": "https://stackcalc.io/products/counting-tiles/",
         "priceCurrency": "USD",
         "price": "44.00",
         "priceValidUntil": "2027-12-31",
@@ -53,19 +53,19 @@ hide:
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.stackcalc.io/"
+          "item": "https://stackcalc.io/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Products & Manipulatives",
-          "item": "https://www.stackcalc.io/products/"
+          "item": "https://stackcalc.io/products/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Counting Tiles & Array Studio",
-          "item": "https://www.stackcalc.io/products/counting-tiles/"
+          "item": "https://stackcalc.io/products/counting-tiles/"
         }
       ]
     },

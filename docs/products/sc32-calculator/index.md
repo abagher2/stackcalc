@@ -15,9 +15,9 @@ hide:
       "@type": "Product",
       "name": "StackCalc SC-32 Scientific RPN Calculator",
       "image": [
-        "https://www.stackcalc.io/assets/renders/sc32-hero-keynote.png",
-        "https://www.stackcalc.io/assets/renders/etsy/sc32-specs-infographic-square.png",
-        "https://www.stackcalc.io/assets/renders/sc32-rpn-calculation.png"
+        "https://stackcalc.io/assets/renders/sc32-hero-keynote.png",
+        "https://stackcalc.io/assets/renders/etsy/sc32-specs-infographic-square.png",
+        "https://stackcalc.io/assets/renders/sc32-rpn-calculation.png"
       ],
       "description": "Tactile handheld Reverse Polish Notation scientific calculator. Raspberry Pi RP2350 silicon, 43 tactile microswitches with sculpted TPU keys, high-contrast reflective ST7567A monochrome LCD, and SAT/ACT exam compliance.",
       "sku": "SC-32-HW",
@@ -28,7 +28,7 @@ hide:
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.stackcalc.io/products/sc32-calculator/",
+        "url": "https://stackcalc.io/products/sc32-calculator/",
         "priceCurrency": "USD",
         "price": "89.00",
         "priceValidUntil": "2027-12-31",
@@ -51,19 +51,19 @@ hide:
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.stackcalc.io/"
+          "item": "https://stackcalc.io/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Products & Manipulatives",
-          "item": "https://www.stackcalc.io/products/"
+          "item": "https://stackcalc.io/products/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "SC-32 Scientific Calculator",
-          "item": "https://www.stackcalc.io/products/sc32-calculator/"
+          "item": "https://stackcalc.io/products/sc32-calculator/"
         }
       ]
     },

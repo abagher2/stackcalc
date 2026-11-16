@@ -14,7 +14,7 @@ hide:
   "name": "StackCalc Tactile Math Manipulatives Collection",
   "description": "Precision physical math manipulatives engineered for tactile mathematical understanding, open-source 3MF maker files, and on-demand manufacturing.",
   "keywords": "math manipulatives, tactile math manipulatives, fraction towers, prime factor blocks, place value blocks, base ten blocks, STEM classroom tools, CRA framework, 3MF printables",
-  "url": "https://www.stackcalc.io/products/",
+  "url": "https://stackcalc.io/products/",
   "mainEntity": {
     "@type": "ItemList",
     "itemListElement": [
@@ -22,19 +22,19 @@ hide:
         "@type": "ListItem",
         "position": 1,
         "name": "Fraction Studio Proportional Towers",
-        "url": "https://www.stackcalc.io/products/fraction-studio/"
+        "url": "https://stackcalc.io/products/fraction-studio/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Prime Factor Studio & Factor Towers",
-        "url": "https://www.stackcalc.io/products/prime-factor-studio/"
+        "url": "https://stackcalc.io/products/prime-factor-studio/"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Place Value Studio & Regrouping Trays",
-        "url": "https://www.stackcalc.io/products/place-value/"
+        "url": "https://stackcalc.io/products/place-value/"
       }
     ]
   }

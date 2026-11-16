@@ -14,7 +14,7 @@ hide:
       "@type": "Book",
       "name": "From Blocks to the Stack: Hands-On Math & the SC-6 Stack Calculator",
       "image": [
-        "https://www.stackcalc.io/assets/manuals/sc6_book_cover.png"
+        "https://stackcalc.io/assets/manuals/sc6_book_cover.png"
       ],
       "description": "The student handbook, parent guide, and classroom companion for the StackCalc SC-6 Elementary RPN Calculator. Connects 3D-printed math blocks with the 4-level number stack, skip-counting ladders, whole-number remainders, fraction towers, geometry, primes, and mental-math sprints.",
       "bookFormat": "https://schema.org/Paperback",
@@ -23,7 +23,7 @@ hide:
       "publisher": {
         "@type": "Organization",
         "name": "StackCalc",
-        "url": "https://www.stackcalc.io"
+        "url": "https://stackcalc.io"
       },
       "offers": [
         {

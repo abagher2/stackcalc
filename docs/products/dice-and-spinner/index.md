@@ -15,10 +15,10 @@ hide:
       "@type": "Product",
       "name": "Probability Dice & Modular Spinner Manipulatives Set - Discrete Probability Lab",
       "image": [
-        "https://www.stackcalc.io/assets/renders/dice-spinner-hero.png",
-        "https://www.stackcalc.io/assets/renders/dice-spinner-craftsmanship.png",
-        "https://www.stackcalc.io/assets/reference_cards/reference_card_PROB-01_paper.png",
-        "https://www.stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png"
+        "https://stackcalc.io/assets/renders/dice-spinner-hero.png",
+        "https://stackcalc.io/assets/renders/dice-spinner-craftsmanship.png",
+        "https://stackcalc.io/assets/reference_cards/reference_card_PROB-01_paper.png",
+        "https://stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png"
       ],
       "keywords": "probability dice manipulatives, classroom math spinners, discrete probability tools, polyhedral math dice, sample spaces manipulative, statistics learning tools, CCSS.MATH.CONTENT.7.SP.C.5, TEKS 111.27.b.6",
       "description": "Tactile probability and statistics laboratory featuring 4 mass-balanced 18mm dice and a 10-sector rotary spinner housed in a modular 1x1 Gridfinity box.",
@@ -30,7 +30,7 @@ hide:
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.stackcalc.io/products/dice-and-spinner/",
+        "url": "https://stackcalc.io/products/dice-and-spinner/",
         "priceCurrency": "USD",
         "price": "36.00",
         "priceValidUntil": "2027-12-31",
@@ -54,19 +54,19 @@ hide:
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.stackcalc.io/"
+          "item": "https://stackcalc.io/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Products & Manipulatives",
-          "item": "https://www.stackcalc.io/products/"
+          "item": "https://stackcalc.io/products/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Probability Dice & Spinner",
-          "item": "https://www.stackcalc.io/products/dice-and-spinner/"
+          "item": "https://stackcalc.io/products/dice-and-spinner/"
         }
       ]
     },

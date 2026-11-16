@@ -23,12 +23,12 @@ description: "Copy-paste launch announcements for the Museum of HP Calculators, 
 
 | Community / Forum | Canonical Blog Post in Repository | Published URL on `stackcalc.io` |
 | :--- | :--- | :--- |
-| **1. Museum of HP Calculators Forum** | [Shipping StackCalc v1.1 (SC-6 to SC-32)](../blog/posts/2026-10-23-shipping-stackcalc-v1-1-sc32-and-sc6.md) | `https://www.stackcalc.io/blog/2026/10/23/shipping-stackcalc-v1-1-sc32-and-sc6/` |
-| **2. Hacker News (`Show HN`)** | [Launch Day: Kid-Friendly RPN Calculator & Ecosystem](../blog/posts/2026-10-28-launch-day-kid-friendly-rpn-calculator-and-ecosystem.md) | `https://www.stackcalc.io/blog/2026/10/28/launch-day-kid-friendly-rpn-calculator-and-ecosystem/` |
-| **3. Official Swift Forums** | [Co-Developing SwiftUI & Embedded Swift with STL Digital Twin](../blog/posts/2026-10-25-co-developing-swiftui-and-embedded-swift-with-stl-digital-twin.md) | `https://www.stackcalc.io/blog/2026/10/25/co-developing-swiftui-and-embedded-swift-with-stl-digital-twin/` |
-| **4. KiCad.info Forum** & **5. Raspberry Pi Forum** | [Notes from the PCBWay Assembly Floor & `dummy_pcb.stl`](../blog/posts/2026-10-20-pcbway-dfm-photos-and-jumper-fixes.md) | `https://www.stackcalc.io/blog/2026/10/20/pcbway-dfm-photos-and-jumper-fixes/` |
-| **6. Teacher / Homeschool Forums** & **7. Printables** | [84mm Fraction Towers, Logarithmic Prime Blocks & Books](../blog/posts/2026-10-26-manufacturing-math-blocks-and-reference-books.md) | `https://www.stackcalc.io/blog/2026/10/26/manufacturing-math-blocks-and-reference-books/` |
-| **TPU Button 280-Condition FEA Sweep** | [We Pressed One TPU Key 280 Ways](../blog/posts/2026-09-24-tpu-keypad-280-presses.md) | `https://www.stackcalc.io/blog/2026/09/24/we-pressed-one-tpu-key-280-ways-before-the-pcb-arrived/` |
+| **1. Museum of HP Calculators Forum** | [Shipping StackCalc v1.1 (SC-6 to SC-32)](../blog/posts/2026-10-23-shipping-stackcalc-v1-1-sc32-and-sc6.md) | `https://stackcalc.io/blog/2026/10/23/shipping-stackcalc-v1-1-sc32-and-sc6/` |
+| **2. Hacker News (`Show HN`)** | [Launch Day: Kid-Friendly RPN Calculator & Ecosystem](../blog/posts/2026-10-28-launch-day-kid-friendly-rpn-calculator-and-ecosystem.md) | `https://stackcalc.io/blog/2026/10/28/launch-day-kid-friendly-rpn-calculator-and-ecosystem/` |
+| **3. Official Swift Forums** | [Co-Developing SwiftUI & Embedded Swift with STL Digital Twin](../blog/posts/2026-10-25-co-developing-swiftui-and-embedded-swift-with-stl-digital-twin.md) | `https://stackcalc.io/blog/2026/10/25/co-developing-swiftui-and-embedded-swift-with-stl-digital-twin/` |
+| **4. KiCad.info Forum** & **5. Raspberry Pi Forum** | [Notes from the PCBWay Assembly Floor & `dummy_pcb.stl`](../blog/posts/2026-10-20-pcbway-dfm-photos-and-jumper-fixes.md) | `https://stackcalc.io/blog/2026/10/20/pcbway-dfm-photos-and-jumper-fixes/` |
+| **6. Teacher / Homeschool Forums** & **7. Printables** | [84mm Fraction Towers, Logarithmic Prime Blocks & Books](../blog/posts/2026-10-26-manufacturing-math-blocks-and-reference-books.md) | `https://stackcalc.io/blog/2026/10/26/manufacturing-math-blocks-and-reference-books/` |
+| **TPU Button 280-Condition FEA Sweep** | [We Pressed One TPU Key 280 Ways](../blog/posts/2026-09-24-tpu-keypad-280-presses.md) | `https://stackcalc.io/blog/2026/09/24/we-pressed-one-tpu-key-280-ways-before-the-pcb-arrived/` |
 
 ---
 
@@ -36,7 +36,7 @@ description: "Copy-paste launch announcements for the Museum of HP Calculators, 
 
 ### Post 1: The Museum of HP Calculators Forum (`hpmuseum.org/forum`)
 * **Where to Post:** `General Forum` (`https://www.hpmuseum.org/forum/forum-2.html`)
-* **Canonical Website Post:** [Shipping StackCalc v1.1 on the App Store: A Clean-Room RPN Calculator That Grows With Your Kid (SC-6 to SC-32)](../blog/posts/2026-10-23-shipping-stackcalc-v1-1-sc32-and-sc6.md) (`https://www.stackcalc.io/blog/2026/10/23/shipping-stackcalc-v1-1-sc32-and-sc6/`)
+* **Canonical Website Post:** [Shipping StackCalc v1.1 on the App Store: A Clean-Room RPN Calculator That Grows With Your Kid (SC-6 to SC-32)](../blog/posts/2026-10-23-shipping-stackcalc-v1-1-sc32-and-sc6.md) (`https://stackcalc.io/blog/2026/10/23/shipping-stackcalc-v1-1-sc32-and-sc6/`)
 
 **Title:**
 `StackCalc 32: Why I Built a Kid-Friendly, Clean-Room HP-32SII Successor (and Ecosystem) After Training My Kids on a DM41CC`
@@ -77,9 +77,9 @@ Surrounding the calculator is a complete learning ecosystem:
 We just got our first 5 physical RP2350 calculators running on the bench (and wrote a blog post with the factory DFM photos PCBWay sent us when they caught our rear header pins colliding with a front softkey).
 
 Links:
-- Full Article on Why We Chose the HP-32SII Architecture (SC-32 & SC-6): https://www.stackcalc.io/blog/2026/10/23/shipping-stackcalc-v1-1-sc32-and-sc6/
-- PCBWay Assembly Floor DFM & Switch Jumper Post: https://www.stackcalc.io/blog/2026/10/20/pcbway-dfm-photos-and-jumper-fixes/
-- Main Site, Free Curriculum & Manuals: https://www.stackcalc.io
+- Full Article on Why We Chose the HP-32SII Architecture (SC-32 & SC-6): https://stackcalc.io/blog/2026/10/23/shipping-stackcalc-v1-1-sc32-and-sc6/
+- PCBWay Assembly Floor DFM & Switch Jumper Post: https://stackcalc.io/blog/2026/10/20/pcbway-dfm-photos-and-jumper-fixes/
+- Main Site, Free Curriculum & Manuals: https://stackcalc.io
 - App Store (iOS, iPadOS & 100% Standalone Apple Watch App): https://apps.apple.com/app/id6801788040
 - Etsy Storefront (Founder's Batch Hardware & 3D-Printed Manipulative Block Kits): https://stackcalcmath.etsy.com
 - Companion Books on Amazon: https://link.amazon/B0f5cP0Ur (SC-6) / https://link.amazon/B07DqTRR5 (SC-32)
@@ -92,13 +92,13 @@ I would love to hear your thoughts—especially from fellow 32SII, DM32, and C47
 
 ### Post 2: Hacker News (`news.ycombinator.com/submit`) — `Show HN`
 * **Where to Post:** `https://news.ycombinator.com/submit` (Tuesday morning, 6:30–8:30 AM PT)
-* **Canonical Website Post:** [Launch Day: Why the World Needs a Kid-Friendly RPN Calculator That Grows With Them](../blog/posts/2026-10-28-launch-day-kid-friendly-rpn-calculator-and-ecosystem.md) (`https://www.stackcalc.io/blog/2026/10/28/launch-day-kid-friendly-rpn-calculator-and-ecosystem/`)
+* **Canonical Website Post:** [Launch Day: Why the World Needs a Kid-Friendly RPN Calculator That Grows With Them](../blog/posts/2026-10-28-launch-day-kid-friendly-rpn-calculator-and-ecosystem.md) (`https://stackcalc.io/blog/2026/10/28/launch-day-kid-friendly-rpn-calculator-and-ecosystem/`)
 
 **Title (Under 80 chars):**
 `Show HN: StackCalc – Using AI to build an open RPN calculator and math lab`
 
 **URL:**
-`https://www.stackcalc.io`
+`https://stackcalc.io`
 
 **First Comment to Post Immediately After Submitting:**
 ```text
@@ -117,8 +117,8 @@ We wrote a zero-dependency RPN engine in Swift that compiles to iOS, iPadOS, a 1
 
 2. Physics Simulations for the TPU Membrane Buttons & Screwless Enclosure:
 Because 3D-printed calculator buttons often feel mushy or bind when pressed on a corner, we modeled our 43-key Shore 95A TPU keypad membrane in parametric OpenSCAD and ran a **280-condition Finite Element Analysis (FEA) physics sweep** (7 off-axis thumb angles up to 15° × 8 compass directions × 5 strike offsets):
-- We simulated off-center corner presses to tune our faceplate aperture chamfers and membrane webbing thickness—guaranteeing that even a 15° diagonal thumb strike transmits clean vertical force to the SMD tactile switch plunger underneath without wedging against the wall or causing parasitic cross-talk on neighboring keys: https://www.stackcalc.io/blog/2026/09/24/we-pressed-one-tpu-key-280-ways-before-the-pcb-arrived/
-- We also ran structural FEA on our 4-part screwless sliding enclosure to design a zero-preload serpentine top latch (0.0 MPa static stress when closed so PLA never creeps over time) and used KiCad's `pcbnew` Python API to generate a 3D-printable `dummy_pcb.stl` for physical fit checks—which helped us catch a factory floor DFM collision when PCBWay sent us photos of our rear Pico 2 header pins poking between the front SMD pads of a softkey: https://www.stackcalc.io/blog/2026/10/20/pcbway-dfm-photos-and-jumper-fixes/
+- We simulated off-center corner presses to tune our faceplate aperture chamfers and membrane webbing thickness—guaranteeing that even a 15° diagonal thumb strike transmits clean vertical force to the SMD tactile switch plunger underneath without wedging against the wall or causing parasitic cross-talk on neighboring keys: https://stackcalc.io/blog/2026/09/24/we-pressed-one-tpu-key-280-ways-before-the-pcb-arrived/
+- We also ran structural FEA on our 4-part screwless sliding enclosure to design a zero-preload serpentine top latch (0.0 MPa static stress when closed so PLA never creeps over time) and used KiCad's `pcbnew` Python API to generate a 3D-printable `dummy_pcb.stl` for physical fit checks—which helped us catch a factory floor DFM collision when PCBWay sent us photos of our rear Pico 2 header pins poking between the front SMD pads of a softkey: https://stackcalc.io/blog/2026/10/20/pcbway-dfm-photos-and-jumper-fixes/
 
 3. 3D-Printed Math Blocks Engineered Around Mathematical Invariants:
 To bridge physical intuition with the calculator's stack (especially in our `StackCalc 6` Common Core K–6 mode), we designed a modular suite of 42mm Gridfinity manipulatives manufactured in-house and on Slant3D (with free STLs on Printables):
@@ -129,7 +129,7 @@ To bridge physical intuition with the calculator's stack (especially in our `Sta
 We wrote two owner's manuals and 590+ graded workbook problems (covering `SC-6` Common Core K–6 visual math and `SC-32` scientific/calculus). Our `Makefile` extracts every worked keystroke sequence from the Markdown prose, runs it as an `XCTest` unit test against `RPNCore`, and auto-renders the exact 132×65 LCD screenshots and STL orthographic diagrams. If a book example disagrees with the engine, the build fails.
 
 Explore the launch:
-- Launch Day Engineering Post: https://www.stackcalc.io/blog/2026/10/28/launch-day-kid-friendly-rpn-calculator-and-ecosystem/
+- Launch Day Engineering Post: https://stackcalc.io/blog/2026/10/28/launch-day-kid-friendly-rpn-calculator-and-ecosystem/
 - App Store (v1.1 — iOS, iPadOS & Standalone watchOS, $0 subscriptions/ads): https://apps.apple.com/app/id6801788040
 - Etsy Store (Batch 001 Hardware & 3D-Printed Manipulative Block Kits): https://stackcalcmath.etsy.com
 - Companion Books on Amazon: https://link.amazon/B0f5cP0Ur (SC-6) / https://link.amazon/B07DqTRR5 (SC-32)
@@ -142,7 +142,7 @@ Happy to answer questions on Embedded Swift on RP2350, using AI for KiCad/OpenSC
 
 ### Post 3: Official Swift Forums (`forums.swift.org`)
 * **Where to Post:** `Community Showcase` (`https://forums.swift.org/c/community-showcase/`) & `Embedded`
-* **Canonical Website Post:** [Co-Developing an App Store App and Bare-Metal RP2350 Firmware with a Shared Swift Core and STL-Backed Digital Twin](../blog/posts/2026-10-25-co-developing-swiftui-and-embedded-swift-with-stl-digital-twin.md) (`https://www.stackcalc.io/blog/2026/10/25/co-developing-swiftui-and-embedded-swift-with-stl-digital-twin/`)
+* **Canonical Website Post:** [Co-Developing an App Store App and Bare-Metal RP2350 Firmware with a Shared Swift Core and STL-Backed Digital Twin](../blog/posts/2026-10-25-co-developing-swiftui-and-embedded-swift-with-stl-digital-twin.md) (`https://stackcalc.io/blog/2026/10/25/co-developing-swiftui-and-embedded-swift-with-stl-digital-twin/`)
 
 **Title:**
 `StackCalc: Co-Developing an App Store App and Bare-Metal RP2350 Firmware with a Shared Swift Core and STL-Backed Digital Twin`
@@ -165,7 +165,7 @@ Waiting for PCB fabrication and 3D prints usually slows down firmware UX iterati
 - Our test suite (`SwiftUIVisualFuzzTests.swift` and our 40 Hz differential grammar fuzzer) runs keystroke sequences across the replica and exports live screenshots directly into our 590-problem companion workbooks and owner's manuals.
 
 ### Links & Resources
-- **Full Swift + STL Digital Twin Architecture Post:** https://www.stackcalc.io/blog/2026/10/25/co-developing-swiftui-and-embedded-swift-with-stl-digital-twin/
+- **Full Swift + STL Digital Twin Architecture Post:** https://stackcalc.io/blog/2026/10/25/co-developing-swiftui-and-embedded-swift-with-stl-digital-twin/
 - **App Store (Universal iOS, iPadOS & watchOS):** https://apps.apple.com/app/id6801788040
 - **Hackaday Project & Open-Source STLs:** https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator
 - **Etsy Storefront (Hardware & 3D-Printed Math Block Kits):** https://stackcalcmath.etsy.com
@@ -178,7 +178,7 @@ Happy to dive into any details on sharing code between SwiftUI and Embedded Swif
 
 ### Post 4: KiCad.info Forum (`forum.kicad.info`)
 * **Where to Post:** `Projects` (`https://forum.kicad.info/c/projects/12`)
-* **Canonical Website Post:** [Notes from the PCBWay Assembly Floor: Header Pins, JST Footprints, and Switch Jumper Routing](../blog/posts/2026-10-20-pcbway-dfm-photos-and-jumper-fixes.md) (`https://www.stackcalc.io/blog/2026/10/20/pcbway-dfm-photos-and-jumper-fixes/`)
+* **Canonical Website Post:** [Notes from the PCBWay Assembly Floor: Header Pins, JST Footprints, and Switch Jumper Routing](../blog/posts/2026-10-20-pcbway-dfm-photos-and-jumper-fixes.md) (`https://stackcalc.io/blog/2026/10/20/pcbway-dfm-photos-and-jumper-fixes/`)
 
 **Title:**
 `StackCalc 32: Generating 3D-Printable Dummy PCBs from pcbnew for Test-Fitting + Real PCBWay Assembly Floor DFM Photos`
@@ -205,16 +205,16 @@ Even with zero DRC errors and a perfect `dummy_pcb` fit, our first turnkey PCBA 
 3. **4-Pad Tactile Switch Internal Jumpers:** Disabled implicit pass-through switch jumpers (`(duplicate_pad_numbers_are_jumpers no)`), marked the mechanical anchor pads `NC`, and routed explicit $0.25\text{ mm}$ copper buses across the matrix.
 
 ### Links & Files
-- **PCBWay DFM Bench Photos & `pcbnew` Scripts Post:** https://www.stackcalc.io/blog/2026/10/20/pcbway-dfm-photos-and-jumper-fixes/
-- **Hardware CAD Reference & Free Enclosure STLs:** https://www.stackcalc.io/hardware/
-- **Full Project & Storefront:** https://www.stackcalc.io
+- **PCBWay DFM Bench Photos & `pcbnew` Scripts Post:** https://stackcalc.io/blog/2026/10/20/pcbway-dfm-photos-and-jumper-fixes/
+- **Hardware CAD Reference & Free Enclosure STLs:** https://stackcalc.io/hardware/
+- **Full Project & Storefront:** https://stackcalc.io
 ```
 
 ---
 
 ### Post 5: Raspberry Pi Forums (`forums.raspberrypi.com`)
 * **Where to Post:** `Raspberry Pi Pico / RP2350 -> Projects`
-* **Canonical Website Post:** [Notes from the PCBWay Assembly Floor: Header Pins, JST Footprints, and Switch Jumper Routing](../blog/posts/2026-10-20-pcbway-dfm-photos-and-jumper-fixes.md) (`https://www.stackcalc.io/blog/2026/10/20/pcbway-dfm-photos-and-jumper-fixes/`)
+* **Canonical Website Post:** [Notes from the PCBWay Assembly Floor: Header Pins, JST Footprints, and Switch Jumper Routing](../blog/posts/2026-10-20-pcbway-dfm-photos-and-jumper-fixes.md) (`https://stackcalc.io/blog/2026/10/20/pcbway-dfm-photos-and-jumper-fixes/`)
 
 **Title:**
 `StackCalc 32: From Slapping a Pico 2 on the Back of the PCB (Batch 1) to Bare RP2350A Integration (Batch 2)`
@@ -229,7 +229,7 @@ Our long-term goal is a durable, kid-friendly RPN calculator that students can t
 
 ### Batch 1 (First 5 Units): Slapping a Pico 2 onto the Back of the PCB
 To get our first 5 physical calculators built and verified as fast as possible, we designed a 4-layer board where a Raspberry Pi Pico 2 (`MCU1`) solders directly onto the rear (`B.Cu`) behind the LCD area, scanning 43 tactile switches on the front (`F.Cu`) and driving a 2.5" 132×65 EastRising ST7567 transflective LCD over SPI.
-- Funny DFM lesson from the factory floor: We initially listed `SC1632` (Pico 2 *with headers*) in our PCBWay BOM with through-hole pads. PCBWay sent us a photo showing the header pins poking straight through the front of the board right between the SMD pads of softkey `SOFT6`! Switching to the bare castellated Pico 2 (`SC1631`) and converting the footprint to pure bottom-side SMD pads solved it cleanly: https://www.stackcalc.io/blog/2026/10/20/pcbway-dfm-photos-and-jumper-fixes/
+- Funny DFM lesson from the factory floor: We initially listed `SC1632` (Pico 2 *with headers*) in our PCBWay BOM with through-hole pads. PCBWay sent us a photo showing the header pins poking straight through the front of the board right between the SMD pads of softkey `SOFT6`! Switching to the bare castellated Pico 2 (`SC1631`) and converting the footprint to pure bottom-side SMD pads solved it cleanly: https://stackcalc.io/blog/2026/10/20/pcbway-dfm-photos-and-jumper-fixes/
 
 ### Batch 2 (Next 20 Units — Hardware V2 Specification Ready): Full Bare-Silicon Integration
 Now that Batch 1 proves out the 43-key matrix, TPU membrane feel, display driver, and our Embedded Swift firmware, our next 20-unit order moves to our **Hardware V2** layout—which keeps the exact same exterior enclosure and switch coordinates while eliminating the Pico 2 carrier board completely:
@@ -239,10 +239,10 @@ Now that Batch 1 proves out the 43-key matrix, TPU membrane feel, display driver
 - **RP2350 Erratum E9 Immunity:** Active-LOW open-drain matrix scanning (`gpio_pull_up()` on columns, High-Z inactive rows) in `hardware_wrapper.c`.
 
 ### Check Out the Launch:
-- **Website, Manuals & Free Curriculum:** https://www.stackcalc.io
+- **Website, Manuals & Free Curriculum:** https://stackcalc.io
 - **Etsy Store (Batch 001 Hardware & 3D-Printed Math Block Kits):** https://stackcalcmath.etsy.com
 - **Companion Books on Amazon:** https://link.amazon/B0f5cP0Ur (SC-6) / https://link.amazon/B07DqTRR5 (SC-32)
-- **Free Open-Source STLs (Enclosure + Gridfinity Math Lab):** https://www.stackcalc.io/downloads/
+- **Free Open-Source STLs (Enclosure + Gridfinity Math Lab):** https://stackcalc.io/downloads/
 - **iOS, iPadOS & Standalone Apple Watch App (v1.1):** https://apps.apple.com/app/id6801788040
 - **Hackaday Build Logs:** https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator
 ```
@@ -251,7 +251,7 @@ Now that Batch 1 proves out the 43-key matrix, TPU membrane feel, display driver
 
 ### Post 6: Teacher, Homeschool & STEM Co-Op Forums (`Well-Trained Mind Forum` / Math Educator Groups)
 * **Where to Post:** `The Well-Trained Mind Community` (`K-8 Curriculum` / `High School` boards), Homeschool Co-op networks, and UIL Coach groups
-* **Canonical Website Post:** [From OpenSCAD to the Classroom Desk: 84mm Fraction Towers, Logarithmic Prime Blocks, and Unit-Tested Books](../blog/posts/2026-10-26-manufacturing-math-blocks-and-reference-books.md) (`https://www.stackcalc.io/blog/2026/10/26/manufacturing-math-blocks-and-reference-books/`)
+* **Canonical Website Post:** [From OpenSCAD to the Classroom Desk: 84mm Fraction Towers, Logarithmic Prime Blocks, and Unit-Tested Books](../blog/posts/2026-10-26-manufacturing-math-blocks-and-reference-books.md) (`https://stackcalc.io/blog/2026/10/26/manufacturing-math-blocks-and-reference-books/`)
 
 **Title:**
 `Why the World Needs a Kid-Friendly Calculator That Grows With Them (Plus Our 3D-Printed Fraction & Prime Number Blocks)`
@@ -282,11 +282,11 @@ Every physical kit we manufacture is built around a 42mm Gridfinity storage box 
    - **What the calculator does:** In `StackCalc 6`, students verify their physical trains directly with dedicated one-touch `[PRIME]` (prime factorization), `[GCD]`, `[LCM]`, and `[÷R]` (integer division with remainder) keys, alongside live on-screen Ten-Frames, a 20-bead Rekenrek rack, a proportional Number Line, and a 5-level Adaptive Mental Math Quiz (`?`).
 
 ### Explore the Ecosystem (Free Downloads & Printed Kits)
-- **Full Article on Our 84mm Fraction Towers, Prime Blocks & Books:** https://www.stackcalc.io/blog/2026/10/26/manufacturing-math-blocks-and-reference-books/
-- **Free 43-Page Teacher Curriculum Guide & 120 Station Worksheets (PDF):** https://www.stackcalc.io/curriculum/
-- **253-Problem SC-6 Elementary Workbook & 339-Problem SC-32 Casebook:** https://www.stackcalc.io/manuals/
+- **Full Article on Our 84mm Fraction Towers, Prime Blocks & Books:** https://stackcalc.io/blog/2026/10/26/manufacturing-math-blocks-and-reference-books/
+- **Free 43-Page Teacher Curriculum Guide & 120 Station Worksheets (PDF):** https://stackcalc.io/curriculum/
+- **253-Problem SC-6 Elementary Workbook & 339-Problem SC-32 Casebook:** https://stackcalc.io/manuals/
 - **Etsy Store (Pre-Printed Multi-Color Fraction & Prime Kits + Hardware):** https://www.etsy.com/shop/StackCalc
-- **Have a 3D Printer? Download the Open-Source 3MF/STL Files Free:** https://www.stackcalc.io/downloads/
+- **Have a 3D Printer? Download the Open-Source 3MF/STL Files Free:** https://stackcalc.io/downloads/
 - **App Store (iPhone, iPad & Standalone Apple Watch — 100% Offline, No Ads/Subs):** https://apps.apple.com/app/id6801788040
 
 I would love to hear what math concepts give your students the most trouble and how we can add more station worksheets to help!
@@ -296,7 +296,7 @@ I would love to hear what math concepts give your students the most trouble and 
 
 ### Post 7: Printables.com, Bambu MakerWorld & Lemmy (`!3dprinting@lemmy.world`)
 * **Where to Post:** Upload to **Printables.com**, **Bambu MakerWorld**, and share on `!3dprinting@lemmy.world` / `!opensource@lemmy.world`
-* **Canonical Website Post:** [From OpenSCAD to the Classroom Desk: 84mm Fraction Towers, Logarithmic Prime Blocks, and Unit-Tested Books](../blog/posts/2026-10-26-manufacturing-math-blocks-and-reference-books.md) (`https://www.stackcalc.io/blog/2026/10/26/manufacturing-math-blocks-and-reference-books/`)
+* **Canonical Website Post:** [From OpenSCAD to the Classroom Desk: 84mm Fraction Towers, Logarithmic Prime Blocks, and Unit-Tested Books](../blog/posts/2026-10-26-manufacturing-math-blocks-and-reference-books.md) (`https://stackcalc.io/blog/2026/10/26/manufacturing-math-blocks-and-reference-books/`)
 
 **Title:**
 `StackCalc Open-Source Tactile Math Lab (Fraction Towers, Logarithmic Prime Slide Rule, & Screwless RPN Calculator Enclosure)`
@@ -314,9 +314,9 @@ We designed the **StackCalc Tactile Math Lab** in parametric OpenSCAD so teacher
 3. **4-Part Screwless Calculator Mechanical Prototype & Flat-Pack Puzzle Stand:** Uses 0.20mm sliding dovetail rails, a Shore 95A TPU membrane, a zero-preload serpentine snap latch (0.0 MPa static stress while latched so PLA never creeps), and a 6mm flat-packing desk stand.
 
 ### Links & Complete Ecosystem
-- **Full Blog Post on How We Designed & Manufactured the Blocks:** https://www.stackcalc.io/blog/2026/10/26/manufacturing-math-blocks-and-reference-books/
+- **Full Blog Post on How We Designed & Manufactured the Blocks:** https://stackcalc.io/blog/2026/10/26/manufacturing-math-blocks-and-reference-books/
 - **Don't Want to Print All the Multi-Color Silk Kits Yourself?** Grab our workshop-calibrated 3D block kits and hardware on **Etsy:** https://stackcalcmath.etsy.com (plus official companion books on **Amazon:** https://link.amazon/B0f5cP0Ur)
-- **Free 43-Page Curriculum Guide, 120 Worksheets & 590+ Problem Workbooks:** https://www.stackcalc.io/curriculum/
+- **Free 43-Page Curriculum Guide, 120 Worksheets & 590+ Problem Workbooks:** https://stackcalc.io/curriculum/
 - **Universal iOS, iPadOS & Standalone Apple Watch App (v1.1):** https://apps.apple.com/app/id6801788040
-- **Engineering Blog (including our PCBWay DFM Photos & FEA Sweeps):** https://www.stackcalc.io/blog/
+- **Engineering Blog (including our PCBWay DFM Photos & FEA Sweeps):** https://stackcalc.io/blog/
 ```

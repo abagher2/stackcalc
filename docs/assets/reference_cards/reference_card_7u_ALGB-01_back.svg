@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="114.0mm" height="35.0mm" viewBox="0 0 1140 350">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+      .font-mono { font-family: 'Space Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- 114.0 x 35.0 mm Cut Cell Background & Inset Safe Frame -->
+  <rect x="0" y="0" width="1140" height="350" fill="#ffffff" />
+  <rect x="16" y="14" width="1108" height="322" rx="16" fill="#ffffff" stroke="#0f172a" stroke-width="2.2" />
+
+  <!-- Top Header Strip -->
+  <rect x="26" y="20" width="1088" height="38" rx="8" fill="#0f172a" />
+  <text x="38" y="36" class="font-mono" font-size="14.5px" font-weight="700" fill="#ffffff">ALGEBRA FACTORING STUDIO — AREA MODELS &amp; ZERO PAIRS</text>
+  <text x="38" y="51" class="font-mono" font-size="9.5px" fill="#94a3b8">SIDE B • ILLUSTRATED CLASSROOM EXPLORATIONS &amp; SELF-CHECKING PACK-UP • STACKCALC LABS</text>
+  <rect x="866" y="25" width="238" height="28" rx="6" fill="#059669" />
+  <text x="985" y="43" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#ffffff">REVERSIBLE +/− • ALGB-01</text>
+
+  
+  <!-- ACTIVITY 1 PANEL -->
+  <g transform="translate(26, 64)">
+    <rect x="0" y="0" width="539" height="228" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+    <rect x="0" y="0" width="539" height="24" rx="8" fill="#eff6ff" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="6" y="3.5" width="76" height="17" rx="4" fill="#0284c7" />
+    <text x="44" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">ACTIVITY 1</text>
+    <text x="90" y="15.5" class="font-mono" font-size="10.5px" font-weight="700" fill="#0f172a">AREA MODEL FACTORING (x² + 5x + 6)</text>
+    <text x="531" y="15.5" class="font-mono" font-size="9px" font-weight="700" text-anchor="end" fill="#0284c7">QUADRATIC RECTANGLE</text>
+
+    <!-- Left Illustrated Block Diagram (190 x 162) -->
+    <g transform="translate(8, 28)">
+      <rect x="0" y="0" width="190" height="161" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1" />
+      
+      <rect x="14" y="20" width="162" height="112" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="24" y="32" width="66" height="42" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.3" />
+      <text x="57" y="57" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#1e3a8a">PART A</text>
+      <rect x="100" y="32" width="66" height="42" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.3" />
+      <text x="133" y="57" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#92400e">PART B</text>
+      <rect x="24" y="82" width="142" height="38" rx="4" fill="#dcfce7" stroke="#15803d" stroke-width="1.3" />
+      <text x="95" y="105" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#166534">VERIFIED EQUIVALENCE</text>
+      <text x="95" y="148" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#475569">STAGE ON 12-SOCKET LID</text>
+    </g>
+
+    <!-- Right 3-Step Walkthrough -->
+    
+      <g transform="translate(202, 28)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#0284c7" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">PLACE x² &amp; 6 UNITS</text>
+        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Seat the [x²] square in the top-left corner of the</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">L-Frame and 6×[1] tiles in a 2×3 grid.</text>
+      </g>
+      <g transform="translate(202, 83)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#0284c7" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">FILL x BORDERS</text>
+        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Place 3×[x] bars along the top and 2×[x] bars along the</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">left to complete a full rectangle.</text>
+      </g>
+      <g transform="translate(202, 138)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#0284c7" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">READ DIMENSIONS</text>
+        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Read the outer edge lengths along the L-Frame axes: (x +</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">2)(x + 3) = x² + 5x + 6!</text>
+      </g>
+
+    <!-- Bottom Concept Takeaway Bar -->
+    <rect x="8" y="195" width="523" height="26" rx="5" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.0" />
+    <text x="14" y="211.5" class="font-sans" font-size="9.2px" font-weight="700" fill="#0369a1">★ KEY CONCEPT: <tspan font-weight="400" fill="#0f172a">A quadratic factors over the integers if and only if its x², x, and 1 tiles form a closed rectangle.</tspan></text>
+  </g>
+  <!-- ACTIVITY 2 PANEL -->
+  <g transform="translate(575, 64)">
+    <rect x="0" y="0" width="539" height="228" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+    <rect x="0" y="0" width="539" height="24" rx="8" fill="#f0fdf4" stroke="#cbd5e1" stroke-width="1" />
+    <rect x="6" y="3.5" width="76" height="17" rx="4" fill="#059669" />
+    <text x="44" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">ACTIVITY 2</text>
+    <text x="90" y="15.5" class="font-mono" font-size="10.5px" font-weight="700" fill="#0f172a">ZERO-PAIR CANCELLATION (+x + (−x) = 0)</text>
+    <text x="531" y="15.5" class="font-mono" font-size="9px" font-weight="700" text-anchor="end" fill="#059669">ADDITIVE INVERSE</text>
+
+    <!-- Left Illustrated Block Diagram (190 x 162) -->
+    <g transform="translate(8, 28)">
+      <rect x="0" y="0" width="190" height="161" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1" />
+      
+      <rect x="14" y="20" width="162" height="112" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="24" y="32" width="66" height="42" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.3" />
+      <text x="57" y="57" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#1e3a8a">PART A</text>
+      <rect x="100" y="32" width="66" height="42" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.3" />
+      <text x="133" y="57" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#92400e">PART B</text>
+      <rect x="24" y="82" width="142" height="38" rx="4" fill="#dcfce7" stroke="#15803d" stroke-width="1.3" />
+      <text x="95" y="105" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#166534">VERIFIED EQUIVALENCE</text>
+      <text x="95" y="148" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#475569">STAGE ON 12-SOCKET LID</text>
+    </g>
+
+    <!-- Right 3-Step Walkthrough -->
+    
+      <g transform="translate(202, 28)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#059669" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">MODEL 2x − 2 = x + 1</text>
+        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Place 2×[+x] and 2×[−1] (red side up) on the left; place</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">1×[+x] and 1×[+1] on the right.</text>
+      </g>
+      <g transform="translate(202, 83)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#059669" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">ADD ZERO PAIRS</text>
+        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Add 2×[+1] to both sides. Pair each [+1] with a [−1]</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">(Zero Pair = 0) and remove them!</text>
+      </g>
+      <g transform="translate(202, 138)">
+        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
+        <circle cx="13" cy="13" r="8" fill="#059669" />
+        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
+        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">ISOLATE x = 3</text>
+        <text x="26" y="30" class="font-sans" font-size="9.6px" fill="#1e293b">Remove 1×[+x] from both sides to reveal the solution</text><text x="26" y="42.5" class="font-sans" font-size="9.6px" fill="#1e293b">directly: x = 3!</text>
+      </g>
+
+    <!-- Bottom Concept Takeaway Bar -->
+    <rect x="8" y="195" width="523" height="26" rx="5" fill="#ecfdf5" stroke="#059669" stroke-width="1.0" />
+    <text x="14" y="211.5" class="font-sans" font-size="9.2px" font-weight="700" fill="#047857">★ KEY CONCEPT: <tspan font-weight="400" fill="#0f172a">Flipping any tile to its red (−) face models the additive inverse so equations balance visually.</tspan></text>
+  </g>
+
+  <!-- Bottom 10-Second Self-Checking Waterline Pack-Up Strip -->
+  <rect x="26" y="298" width="1088" height="28" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.1" />
+  <rect x="30" y="302" width="166" height="20" rx="4" fill="#0f172a" />
+  <text x="113" y="315.5" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#38bdf8">10-SEC BOX PACK-UP</text>
+  <text x="206" y="316" class="font-sans" font-size="10.5px" font-weight="700" fill="#0f172a">Return x², x, and 1 tiles to their recessed bays in the 3×1×7U box, place this card on top, and snap the lid shut!</text>
+</svg>

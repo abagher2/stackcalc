@@ -49,7 +49,7 @@ StackCalc is designed for learners of all ages, from elementary school students 
 
 ## 5. Website Privacy (stackcalc.io)
 
-Our documentation and storefront website (`https://www.stackcalc.io`) is hosted via GitHub Pages. Standard server access logs (such as IP addresses and browser user-agent headers) may be automatically processed by GitHub to ensure infrastructure security and deliver the web service. We do not inject tracking cookies or third-party marketing trackers on this documentation site.
+Our documentation and storefront website (`https://stackcalc.io`) is hosted via GitHub Pages. Standard server access logs (such as IP addresses and browser user-agent headers) may be automatically processed by GitHub to ensure infrastructure security and deliver the web service. We do not inject tracking cookies or third-party marketing trackers on this documentation site.
 
 StackCalc does not currently process direct physical-product purchases through this website. If a future product links to a named marketplace, that marketplace's privacy policy will describe its checkout, payment, and shipping-data practices.
 
@@ -66,7 +66,7 @@ Because StackCalc collects no data on remote servers:
 
 ## 7. Changes to This Policy
 
-We may update this Privacy Policy to reflect future updates or legal compliance. Any changes will be posted immediately to this URL (`https://www.stackcalc.io/privacy/`) with an updated effective date.
+We may update this Privacy Policy to reflect future updates or legal compliance. Any changes will be posted immediately to this URL (`https://stackcalc.io/privacy/`) with an updated effective date.
 
 ---
 
@@ -75,6 +75,6 @@ We may update this Privacy Policy to reflect future updates or legal compliance.
 If you have questions or inquiries regarding this Privacy Policy, please reach out through our public channels:
 
 - **GitHub Issue Tracker:** [https://github.com/abagher2/stackcalc/issues](https://github.com/abagher2/stackcalc/issues)
-- **Web Support & Help Desk:** [https://www.stackcalc.io/support/](https://www.stackcalc.io/support/)
-- **Documentation & public downloads:** [https://www.stackcalc.io](https://www.stackcalc.io)
+- **Web Support & Help Desk:** [https://stackcalc.io/support/](https://stackcalc.io/support/)
+- **Documentation & public downloads:** [https://stackcalc.io](https://stackcalc.io)
 

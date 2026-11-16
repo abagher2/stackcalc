@@ -7,7 +7,7 @@ description: StackCalc Terms of Service — Terms of use, software licensing, ma
 
 <div class="inline-block px-3 py-1 mb-6 border border-accentCyan text-accentCyan font-mono text-xs tracking-wider">// LEGAL PROTOCOL · APPLICATION & SERVICE TERMS · EFFECTIVE SEPTEMBER 14, 2026</div>
 
-Welcome to **StackCalc**. These Terms of Service ("Terms") govern your access to and use of the **StackCalc32** application on iOS, iPadOS, and watchOS, the **https://www.stackcalc.io** website, and associated physical hardware documentation and assembly kits (collectively, the "Services").
+Welcome to **StackCalc**. These Terms of Service ("Terms") govern your access to and use of the **StackCalc32** application on iOS, iPadOS, and watchOS, the **https://stackcalc.io** website, and associated physical hardware documentation and assembly kits (collectively, the "Services").
 
 By downloading, installing, accessing, or purchasing products through StackCalc, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use the application or website.
 
@@ -75,7 +75,7 @@ These Terms shall be governed by and construed in accordance with the laws of th
 
 ## 8. Modifications to Terms
 
-We reserve the right to revise these Terms at any time. Any changes will be published directly to this page (`https://www.stackcalc.io/terms/`) with an updated effective date. Continued use of the Services following posted changes signifies your acceptance of the updated Terms.
+We reserve the right to revise these Terms at any time. Any changes will be published directly to this page (`https://stackcalc.io/terms/`) with an updated effective date. Continued use of the Services following posted changes signifies your acceptance of the updated Terms.
 
 ---
 
@@ -84,5 +84,5 @@ We reserve the right to revise these Terms at any time. Any changes will be publ
 If you have questions regarding these Terms of Service:
 
 - **GitHub Issue Tracker:** [https://github.com/abagher2/stackcalc/issues](https://github.com/abagher2/stackcalc/issues)
-- **Help Desk & Support:** [https://www.stackcalc.io/support/](https://www.stackcalc.io/support/)
+- **Help Desk & Support:** [https://stackcalc.io/support/](https://stackcalc.io/support/)
 - **Repository:** [https://github.com/abagher2/stackcalc](https://github.com/abagher2/stackcalc)

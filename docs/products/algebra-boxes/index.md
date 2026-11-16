@@ -15,10 +15,10 @@ hide:
       "@type": "Product",
       "name": "Algebra Tiles & Factoring Quadratics Manipulatives Set - 3x1 Gridfinity Polynomial Studio",
       "image": [
-        "https://www.stackcalc.io/assets/renders/algebra-boxes-hero.png",
-        "https://www.stackcalc.io/assets/reference_cards/reference_card_ALGB-01_paper.png",
-        "https://www.stackcalc.io/assets/renders/etsy/algebra-specs-infographic-square.png",
-        "https://www.stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png"
+        "https://stackcalc.io/assets/renders/algebra-boxes-hero.png",
+        "https://stackcalc.io/assets/reference_cards/reference_card_ALGB-01_paper.png",
+        "https://stackcalc.io/assets/renders/etsy/algebra-specs-infographic-square.png",
+        "https://stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png"
       ],
       "keywords": "algebra tiles manipulatives, factoring quadratics visual, binomial multiplication area model, polynomial algebra tiles, high school math manipulatives, algebra 1 tools, CCSS.MATH.CONTENT.HSA.SSE.A.2, TEKS 111.39.c.10",
       "description": "Tactile polynomial factoring frame and chamfered algebraic tiles in a modular 3x1 Gridfinity storage box. Teaches the geometric area model for binomial multiplication and quadratic trinomial factoring.",
@@ -30,7 +30,7 @@ hide:
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.stackcalc.io/products/algebra-boxes/",
+        "url": "https://stackcalc.io/products/algebra-boxes/",
         "priceCurrency": "USD",
         "price": "42.00",
         "priceValidUntil": "2027-12-31",
@@ -54,19 +54,19 @@ hide:
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.stackcalc.io/"
+          "item": "https://stackcalc.io/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Products & Manipulatives",
-          "item": "https://www.stackcalc.io/products/"
+          "item": "https://stackcalc.io/products/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Algebra Factoring Studio",
-          "item": "https://www.stackcalc.io/products/algebra-boxes/"
+          "item": "https://stackcalc.io/products/algebra-boxes/"
         }
       ]
     },

@@ -18,7 +18,7 @@ description: "Spiral-bound lay-flat editions ($16.00) and complete online chapte
       "publisher": {
         "@type": "Organization",
         "name": "StackCalc",
-        "url": "https://www.stackcalc.io"
+        "url": "https://stackcalc.io"
       },
       "offers": [
         {
@@ -57,7 +57,7 @@ description: "Spiral-bound lay-flat editions ($16.00) and complete online chapte
       "publisher": {
         "@type": "Organization",
         "name": "StackCalc",
-        "url": "https://www.stackcalc.io"
+        "url": "https://stackcalc.io"
       },
       "offers": [
         {
@@ -80,7 +80,7 @@ description: "Spiral-bound lay-flat editions ($16.00) and complete online chapte
       "publisher": {
         "@type": "Organization",
         "name": "StackCalc",
-        "url": "https://www.stackcalc.io"
+        "url": "https://stackcalc.io"
       },
       "offers": {
         "@type": "Offer",
@@ -101,7 +101,7 @@ description: "Spiral-bound lay-flat editions ($16.00) and complete online chapte
       "publisher": {
         "@type": "Organization",
         "name": "StackCalc",
-        "url": "https://www.stackcalc.io"
+        "url": "https://stackcalc.io"
       },
       "offers": {
         "@type": "Offer",

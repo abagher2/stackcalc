@@ -1,7 +1,7 @@
 site_name: StackCalc32
 site_description: "StackCalc: Handheld Reverse Polish Notation (RPN) calculators, precision physical math manipulatives (Ten-Frames, Fraction Towers, Math Dominoes, Algebra Tiles), and open-source STEM learning systems."
 site_author: "StackCalc Engineering"
-site_url: "https://www.stackcalc.io"
+site_url: "https://stackcalc.io"
 
 extra_css:
   - stylesheets/brutalist.css

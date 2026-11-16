@@ -15,10 +15,10 @@ hide:
       "@type": "Product",
       "name": "SC-6 Quest Scoreboard & +10 Token Kit - 60 Universal Quarter-Block Tokens",
       "image": [
-        "https://www.stackcalc.io/assets/manuals/quest_scoreboard_lid.png",
-        "https://www.stackcalc.io/assets/manuals/quest_scoreboard_box.png",
-        "https://www.stackcalc.io/assets/manuals/quest_scoreboard_parts.png",
-        "https://www.stackcalc.io/assets/reference_cards/reference_card_QUEST-01.png"
+        "https://stackcalc.io/assets/manuals/quest_scoreboard_lid.png",
+        "https://stackcalc.io/assets/manuals/quest_scoreboard_box.png",
+        "https://stackcalc.io/assets/manuals/quest_scoreboard_parts.png",
+        "https://stackcalc.io/assets/reference_cards/reference_card_QUEST-01.png"
       ],
       "keywords": "math scoreboard, tactile math tokens, multi-method problem solving, Big Ideas Math supplement, middle school math intervention, elementary math confidence, RPN calculator quest mode, Gridfinity math manipulatives",
       "description": "Simplified 2-piece 3x1x7U Gridfinity storage enclosure and Snapfinity Scoreboard Lid featuring sockets 1–10, a 100-Point Mastery Tower socket, the Question Mark in a Circle (?) tutorial keycap badge, and 60 universal +10 quarter-block score tokens.",
@@ -30,7 +30,7 @@ hide:
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.stackcalc.io/products/quest-scoreboard/",
+        "url": "https://stackcalc.io/products/quest-scoreboard/",
         "priceCurrency": "USD",
         "price": "24.00",
         "priceValidUntil": "2027-12-31",
@@ -54,19 +54,19 @@ hide:
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.stackcalc.io/"
+          "item": "https://stackcalc.io/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Products & Manipulatives",
-          "item": "https://www.stackcalc.io/products/"
+          "item": "https://stackcalc.io/products/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "SC-6 Quest Scoreboard & +10 Token Kit",
-          "item": "https://www.stackcalc.io/products/quest-scoreboard/"
+          "item": "https://stackcalc.io/products/quest-scoreboard/"
         }
       ]
     },

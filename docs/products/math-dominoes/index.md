@@ -15,13 +15,13 @@ hide:
       "@type": "Product",
       "name": "Math Dominoes & 12-Frame Regrouping Manipulatives Set - 30 Laser-Foamed Miniblocks",
       "image": [
-        "https://www.stackcalc.io/assets/renders/dominoes-studio-hero.png",
-        "https://www.stackcalc.io/assets/renders/etsy/dominoes-studio-hero-square.png",
-        "https://www.stackcalc.io/assets/renders/etsy/dominoes-studio-midnight_navy-square.png",
-        "https://www.stackcalc.io/assets/renders/etsy/dominoes-studio-stealth_black-square.png",
-        "https://www.stackcalc.io/assets/renders/ten-frames-real-front-white-square-badged.png",
-        "https://www.stackcalc.io/assets/reference_cards/reference_card_DOMI-01_paper.png",
-        "https://www.stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png"
+        "https://stackcalc.io/assets/renders/dominoes-studio-hero.png",
+        "https://stackcalc.io/assets/renders/etsy/dominoes-studio-hero-square.png",
+        "https://stackcalc.io/assets/renders/etsy/dominoes-studio-midnight_navy-square.png",
+        "https://stackcalc.io/assets/renders/etsy/dominoes-studio-stealth_black-square.png",
+        "https://stackcalc.io/assets/renders/ten-frames-real-front-white-square-badged.png",
+        "https://stackcalc.io/assets/reference_cards/reference_card_DOMI-01_paper.png",
+        "https://stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png"
       ],
       "keywords": "math dominoes manipulatives, double six dominoes for math, subitizing dominoes, addition doubles manipulatives, 12 frame regrouping tray, discrete probability dominoes, early childhood math tools, CCSS.MATH.CONTENT.1.OA.C.6, TEKS 111.3.b.3",
       "description": "Tactile early numeracy math dominoes (28 double-six + 2 blanks) with 12-frame regrouping tray and doubling snap lid housed in a 3x1 Gridfinity box. Bridges dot subitizing to addition doubles and discrete probability.",
@@ -33,7 +33,7 @@ hide:
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.stackcalc.io/products/math-dominoes/",
+        "url": "https://stackcalc.io/products/math-dominoes/",
         "priceCurrency": "USD",
         "price": "38.00",
         "priceValidUntil": "2027-12-31",
@@ -57,19 +57,19 @@ hide:
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.stackcalc.io/"
+          "item": "https://stackcalc.io/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Products & Manipulatives",
-          "item": "https://www.stackcalc.io/products/"
+          "item": "https://stackcalc.io/products/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Math Domino Studio",
-          "item": "https://www.stackcalc.io/products/math-dominoes/"
+          "item": "https://stackcalc.io/products/math-dominoes/"
         }
       ]
     },

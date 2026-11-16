@@ -15,11 +15,11 @@ hide:
       "@type": "Product",
       "name": "Ten-Frame Math Manipulatives & Dual-Stage Regrouping Set - 3x1 Gridfinity Box with 20 Bi-Color Counters",
       "image": [
-        "https://www.stackcalc.io/assets/renders/ten-frames-hero.png",
-        "https://www.stackcalc.io/assets/renders/ten-frames-make-ten-concept.png",
-        "https://www.stackcalc.io/assets/reference_cards/reference_card_BASE-10_paper.png",
-        "https://www.stackcalc.io/assets/renders/ten-frames-real-front-white-square-badged.png",
-        "https://www.stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png"
+        "https://stackcalc.io/assets/renders/ten-frames-hero.png",
+        "https://stackcalc.io/assets/renders/ten-frames-make-ten-concept.png",
+        "https://stackcalc.io/assets/reference_cards/reference_card_BASE-10_paper.png",
+        "https://stackcalc.io/assets/renders/ten-frames-real-front-white-square-badged.png",
+        "https://stackcalc.io/assets/renders/etsy/infographic-gridfinity-system-square.png"
       ],
       "keywords": "ten frames math manipulatives, ten frame counting trays, subitizing counters, making 10 addition, place value manipulatives, early elementary math tools, CRA math, CCSS.MATH.CONTENT.K.OA.A.4, TEKS 111.2.b.3",
       "description": "Tactile early numeracy ten-frame counting frame and two-tone counters housed in a modular 3x1 Gridfinity box. Builds intuitive mental math, five/ten structures, and addition regrouping for Grades K–3.",
@@ -31,7 +31,7 @@ hide:
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.stackcalc.io/products/ten-frames/",
+        "url": "https://stackcalc.io/products/ten-frames/",
         "priceCurrency": "USD",
         "price": "36.00",
         "priceValidUntil": "2027-12-31",
@@ -55,19 +55,19 @@ hide:
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.stackcalc.io/"
+          "item": "https://stackcalc.io/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Products & Manipulatives",
-          "item": "https://www.stackcalc.io/products/"
+          "item": "https://stackcalc.io/products/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Ten-Frame Dual Stage",
-          "item": "https://www.stackcalc.io/products/ten-frames/"
+          "item": "https://stackcalc.io/products/ten-frames/"
         }
       ]
     },

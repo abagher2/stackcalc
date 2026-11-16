@@ -477,7 +477,7 @@ All generated files will update synchronously in both `documentation/etsy/images
 
 ## 8. Multi-Marketplace Visual Asset Strategy & Blender Physics Pipeline
 
-StackCalc products are syndicated across Etsy, Amazon Handmade, eBay, and our direct website ([`stackcalc.io`](https://www.stackcalc.io)). Each channel requires distinct visual asset standards:
+StackCalc products are syndicated across Etsy, Amazon Handmade, eBay, and our direct website ([`stackcalc.io`](https://stackcalc.io)). Each channel requires distinct visual asset standards:
 
 ### 1. Amazon Main Image Compliance Standard (Pure White `#FFFFFF`)
 - **TOS Requirement:** Amazon Seller Central and Handmade policies require MAIN listing images to feature a **100% pure white background (`RGB 255, 255, 255` / `#FFFFFF`)**. Images with off-white backgrounds, props, or text overlays are algorithmically suppressed.

@@ -156,8 +156,8 @@ Every theme in StackCalc is modeled after either a landmark historical instrumen
 * **Media & Editorial Inquiries:** [press@stackcalc.io](mailto:press@stackcalc.io)
 * **Direct Customer & App Support:** [support@stackcalc.io](mailto:support@stackcalc.io)
 * **App Store Review Promo Codes:** Review promo codes and TestFlight evaluation builds are readily provided for App Store review staff, tech journalists, and STEM educators upon request to [press@stackcalc.io](mailto:press@stackcalc.io).
-* **Official Website:** [https://www.stackcalc.io](https://www.stackcalc.io)
-* **Privacy Policy (App Store Required):** [https://www.stackcalc.io/privacy/](https://www.stackcalc.io/privacy/)
-* **Support & FAQ (App Store Required):** [https://www.stackcalc.io/support/](https://www.stackcalc.io/support/)
-* **Terms of Service:** [https://www.stackcalc.io/terms/](https://www.stackcalc.io/terms/)
+* **Official Website:** [https://stackcalc.io](https://stackcalc.io)
+* **Privacy Policy (App Store Required):** [https://stackcalc.io/privacy/](https://stackcalc.io/privacy/)
+* **Support & FAQ (App Store Required):** [https://stackcalc.io/support/](https://stackcalc.io/support/)
+* **Terms of Service:** [https://stackcalc.io/terms/](https://stackcalc.io/terms/)
 * **Open Source Repository:** [https://github.com/abagher2/watch-calc-32](https://github.com/abagher2/watch-calc-32)

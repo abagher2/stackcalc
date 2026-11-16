@@ -15,10 +15,10 @@ hide:
       "@type": "Product",
       "name": "Unit Circle Manipulative & Trigonometry Volvelle Tool - Exact Radical Coordinate Dial",
       "image": [
-        "https://www.stackcalc.io/assets/renders/unit-circle-volvelle-hero.png",
-        "https://www.stackcalc.io/assets/renders/etsy/unit-circle-volvelle-hero-square.png",
-        "https://www.stackcalc.io/assets/reference_cards/reference_card_VOLV-01_paper.png",
-        "https://www.stackcalc.io/assets/renders/etsy/infographic-guarantee-safety-square.png"
+        "https://stackcalc.io/assets/renders/unit-circle-volvelle-hero.png",
+        "https://stackcalc.io/assets/renders/etsy/unit-circle-volvelle-hero-square.png",
+        "https://stackcalc.io/assets/reference_cards/reference_card_VOLV-01_paper.png",
+        "https://stackcalc.io/assets/renders/etsy/infographic-guarantee-safety-square.png"
       ],
       "keywords": "unit circle manipulative, trigonometry volvelle tool, unit circle wheel, exact trig values visualizer, radians degrees converter, precalculus tools, high school trig manipulatives, CCSS.MATH.CONTENT.HSF.TF.A.2",
       "description": "Zero-battery rotary trigonometric calculator. Dual concentric rotating discs with laser-engraved degree/radian scales revealing exact sine, cosine, and tangent coordinate identities.",
@@ -30,7 +30,7 @@ hide:
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.stackcalc.io/products/unit-circle-volvelle/",
+        "url": "https://stackcalc.io/products/unit-circle-volvelle/",
         "priceCurrency": "USD",
         "price": "19.00",
         "priceValidUntil": "2027-12-31",
@@ -54,19 +54,19 @@ hide:
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.stackcalc.io/"
+          "item": "https://stackcalc.io/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Products & Manipulatives",
-          "item": "https://www.stackcalc.io/products/"
+          "item": "https://stackcalc.io/products/"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Unit Circle Volvelle",
-          "item": "https://www.stackcalc.io/products/unit-circle-volvelle/"
+          "item": "https://stackcalc.io/products/unit-circle-volvelle/"
         }
       ]
     },

@@ -14,7 +14,7 @@ hide:
       "@type": "Product",
       "name": "StackCalc SC-6 Elementary Edition Calculator",
       "image": [
-        "https://www.stackcalc.io/assets/renders/sc6-elementary-hero.png"
+        "https://stackcalc.io/assets/renders/sc6-elementary-hero.png"
       ],
       "description": "Foundational early numeracy and fraction calculator for Grades K–6 classrooms. Features tactile ten-frame visual math, skip-counting [REP], and step-by-step [SIMP] fraction reduction.",
       "sku": "SC-6-ELEM",
@@ -25,7 +25,7 @@ hide:
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.stackcalc.io/products/sc6-elementary/",
+        "url": "https://stackcalc.io/products/sc6-elementary/",
         "priceCurrency": "USD",
         "price": "49.00",
         "priceValidUntil": "2027-12-31",
