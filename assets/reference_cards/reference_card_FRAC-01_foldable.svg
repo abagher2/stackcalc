@@ -61,12 +61,12 @@
   <text x="165" y="93" class="font-mono" font-size="12.5px" font-weight="700" fill="#0284c7">SERIES 1 • CARD 04 / 12 • DOMAIN: PROPORTIONAL TOWERS &amp; MULTI-NOTATION EQUIVALENCE</text>
 
   <!-- Top-Right SKU Badges -->
-  <g transform="translate(975, 36)">
-    <rect x="0" y="0" width="190" height="28" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
-    <text x="95" y="19" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#0f172a">CARD 04 / 12 • FRAC-01</text>
+  <g transform="translate(950, 36)">
+    <rect x="0" y="0" width="215" height="28" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+    <text x="107.5" y="19" class="font-mono" font-size="14px" font-weight="700" text-anchor="middle" fill="#0f172a">CARD 04 / 12 • FRAC-01</text>
     
-    <rect x="0" y="34" width="190" height="26" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.2" />
-    <text x="95" y="52" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#059669">MATHEMATICAL GUIDE</text>
+    <rect x="0" y="34" width="215" height="26" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.2" />
+    <text x="107.5" y="52" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#059669">MATHEMATICAL GUIDE</text>
   </g>
 
   <!-- COLUMN 1: CONCEPT & PROOF (Width: 390) -->
@@ -146,90 +146,90 @@
     <line x1="12" y1="58" x2="438" y2="58" stroke="#cbd5e1" stroke-width="1" />
 
     
-      <text x="14" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Whole [1/1]</text>
-      <text x="180" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">2x</text>
-      <text x="215" y="64" class="font-mono" font-size="12.5px" fill="#0f172a">84.00 mm</text>
-      <text x="436" y="64" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Tan</text>
-      <line x1="12" y1="69" x2="438" y2="69" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="76" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Whole [1/1]</text>
+      <text x="180" y="76" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">2x</text>
+      <text x="215" y="76" class="font-mono" font-size="12.5px" fill="#0f172a">84.00 mm</text>
+      <text x="436" y="76" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Tan</text>
+      <line x1="12" y1="81" x2="438" y2="81" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Halves [1/2]</text>
-      <text x="180" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">4x</text>
-      <text x="215" y="86" class="font-mono" font-size="12.5px" fill="#0f172a">42.00 mm</text>
-      <text x="436" y="86" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Tan</text>
-      <line x1="12" y1="91" x2="438" y2="91" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="98" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Halves [1/2]</text>
+      <text x="180" y="98" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">4x</text>
+      <text x="215" y="98" class="font-mono" font-size="12.5px" fill="#0f172a">42.00 mm</text>
+      <text x="436" y="98" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Tan</text>
+      <line x1="12" y1="103" x2="438" y2="103" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Thirds [1/3]</text>
-      <text x="180" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">3x</text>
-      <text x="215" y="108" class="font-mono" font-size="12.5px" fill="#0f172a">28.00 mm</text>
-      <text x="436" y="108" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Muted Red</text>
-      <line x1="12" y1="113" x2="438" y2="113" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="120" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Thirds [1/3]</text>
+      <text x="180" y="120" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">3x</text>
+      <text x="215" y="120" class="font-mono" font-size="12.5px" fill="#0f172a">28.00 mm</text>
+      <text x="436" y="120" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Muted Red</text>
+      <line x1="12" y1="125" x2="438" y2="125" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Fourths [1/4]</text>
-      <text x="180" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">4x</text>
-      <text x="215" y="130" class="font-mono" font-size="12.5px" fill="#0f172a">21.00 mm</text>
-      <text x="436" y="130" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Matte Blue</text>
-      <line x1="12" y1="135" x2="438" y2="135" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="142" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Fourths [1/4]</text>
+      <text x="180" y="142" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">4x</text>
+      <text x="215" y="142" class="font-mono" font-size="12.5px" fill="#0f172a">21.00 mm</text>
+      <text x="436" y="142" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Matte Blue</text>
+      <line x1="12" y1="147" x2="438" y2="147" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Fifths [1/5]</text>
-      <text x="180" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">5x</text>
-      <text x="215" y="152" class="font-mono" font-size="12.5px" fill="#0f172a">16.80 mm</text>
-      <text x="436" y="152" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
-      <line x1="12" y1="157" x2="438" y2="157" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="164" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Fifths [1/5]</text>
+      <text x="180" y="164" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">5x</text>
+      <text x="215" y="164" class="font-mono" font-size="12.5px" fill="#0f172a">16.80 mm</text>
+      <text x="436" y="164" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
+      <line x1="12" y1="169" x2="438" y2="169" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Sixths [1/6]</text>
-      <text x="180" y="174" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">6x</text>
-      <text x="215" y="174" class="font-mono" font-size="12.5px" fill="#0f172a">14.00 mm</text>
-      <text x="436" y="174" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Muted Red</text>
-      <line x1="12" y1="179" x2="438" y2="179" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="186" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Sixths [1/6]</text>
+      <text x="180" y="186" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">6x</text>
+      <text x="215" y="186" class="font-mono" font-size="12.5px" fill="#0f172a">14.00 mm</text>
+      <text x="436" y="186" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Muted Red</text>
+      <line x1="12" y1="191" x2="438" y2="191" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="196" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Eighths [1/8]</text>
-      <text x="180" y="196" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">8x</text>
-      <text x="215" y="196" class="font-mono" font-size="12.5px" fill="#0f172a">10.50 mm</text>
-      <text x="436" y="196" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Matte Blue</text>
-      <line x1="12" y1="201" x2="438" y2="201" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="208" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Eighths [1/8]</text>
+      <text x="180" y="208" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">8x</text>
+      <text x="215" y="208" class="font-mono" font-size="12.5px" fill="#0f172a">10.50 mm</text>
+      <text x="436" y="208" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Matte Blue</text>
+      <line x1="12" y1="213" x2="438" y2="213" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="218" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Ninths [1/9]</text>
-      <text x="180" y="218" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">9x</text>
-      <text x="215" y="218" class="font-mono" font-size="12.5px" fill="#0f172a">9.33 mm</text>
-      <text x="436" y="218" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Muted Red</text>
-      <line x1="12" y1="223" x2="438" y2="223" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="230" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Ninths [1/9]</text>
+      <text x="180" y="230" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">9x</text>
+      <text x="215" y="230" class="font-mono" font-size="12.5px" fill="#0f172a">9.33 mm</text>
+      <text x="436" y="230" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Muted Red</text>
+      <line x1="12" y1="235" x2="438" y2="235" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="240" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Tenths [1/10]</text>
-      <text x="180" y="240" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">10x</text>
-      <text x="215" y="240" class="font-mono" font-size="12.5px" fill="#0f172a">8.40 mm</text>
-      <text x="436" y="240" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
-      <line x1="12" y1="245" x2="438" y2="245" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="252" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Tenths [1/10]</text>
+      <text x="180" y="252" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">10x</text>
+      <text x="215" y="252" class="font-mono" font-size="12.5px" fill="#0f172a">8.40 mm</text>
+      <text x="436" y="252" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA White</text>
+      <line x1="12" y1="257" x2="438" y2="257" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="262" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Twelfths [1/12]</text>
-      <text x="180" y="262" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">12x</text>
-      <text x="215" y="262" class="font-mono" font-size="12.5px" fill="#0f172a">7.00 mm</text>
-      <text x="436" y="262" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Matte Blue</text>
-      <line x1="12" y1="267" x2="438" y2="267" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="274" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">Twelfths [1/12]</text>
+      <text x="180" y="274" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">12x</text>
+      <text x="215" y="274" class="font-mono" font-size="12.5px" fill="#0f172a">7.00 mm</text>
+      <text x="436" y="274" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">Matte Blue</text>
+      <line x1="12" y1="279" x2="438" y2="279" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="284" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">13U Box &amp; Lid</text>
-      <text x="180" y="284" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">2x</text>
-      <text x="215" y="284" class="font-mono" font-size="12.5px" fill="#0f172a">98.4 mm</text>
-      <text x="436" y="284" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Gray/White</text>
-      <line x1="12" y1="289" x2="438" y2="289" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="296" class="font-mono" font-size="13px" font-weight="700" fill="#0f172a">13U Box &amp; Lid</text>
+      <text x="180" y="296" class="font-mono" font-size="13px" font-weight="700" fill="#0284c7">2x</text>
+      <text x="215" y="296" class="font-mono" font-size="12.5px" fill="#0f172a">98.4 mm (13U)</text>
+      <text x="436" y="296" class="font-mono" font-size="12px" text-anchor="end" fill="#475569">PLA Gray/White</text>
+      <line x1="12" y1="301" x2="438" y2="301" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2" />
 
 
     <!-- Total Pieces Summary -->
-    <text x="14" y="322" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">TOTAL: 63 Blocks (12 Columns × 84mm) + 13U</text>
-    <text x="14" y="338" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">Box + Stage Lid = 65 Parts</text>
+    <text x="14" y="334" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">TOTAL: 63 Blocks (12 Columns × 84mm) + 13U</text>
+    <text x="14" y="350" class="font-mono" font-size="12px" font-weight="700" fill="#0f172a">Box + Stage Lid = 65 Parts</text>
 
     <!-- Palette Box -->
-    <g transform="translate(12, 364)">
+    <g transform="translate(12, 376)">
       <rect x="0" y="0" width="426" height="190" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#0f172a">SLANT 3D PRODUCTION PALETTE</text>
     </g>
-    <text x="24" y="400" class="font-sans" font-size="13.5px" fill="#475569">• PLA White: Base-10 fractions (5x 1/5, 10x 1/10) &amp;</text>
-    <text x="24" y="418" class="font-sans" font-size="13.5px" fill="#475569">Stage Lid.</text>
-    <text x="24" y="436" class="font-sans" font-size="13.5px" fill="#475569">• PLA Matte Blue: Binary/duodecimal family (4x 1/4, 8x</text>
-    <text x="24" y="454" class="font-sans" font-size="13.5px" fill="#475569">1/8, 12x 1/12).</text>
-    <text x="24" y="472" class="font-sans" font-size="13.5px" fill="#475569">• PLA Matte Muted Red: Ternary fraction family (3x</text>
-    <text x="24" y="490" class="font-sans" font-size="13.5px" fill="#475569">1/3, 6x 1/6, 9x 1/9).</text>
-    <text x="24" y="508" class="font-sans" font-size="13.5px" fill="#475569">• PLA Tan: Unit wholes &amp; halves (2x 1, 4x 1/2) • PLA</text>
-    <text x="24" y="526" class="font-sans" font-size="13.5px" fill="#475569">Gray: 13U Box Body.</text>
+    <text x="24" y="412" class="font-sans" font-size="13.5px" fill="#475569">• PLA White: Base-10 fractions (5x 1/5, 10x 1/10) &amp;</text>
+    <text x="24" y="430" class="font-sans" font-size="13.5px" fill="#475569">Stage Lid.</text>
+    <text x="24" y="448" class="font-sans" font-size="13.5px" fill="#475569">• PLA Matte Blue: Binary/duodecimal family (4x 1/4, 8x</text>
+    <text x="24" y="466" class="font-sans" font-size="13.5px" fill="#475569">1/8, 12x 1/12).</text>
+    <text x="24" y="484" class="font-sans" font-size="13.5px" fill="#475569">• PLA Matte Muted Red: Ternary fraction family (3x</text>
+    <text x="24" y="502" class="font-sans" font-size="13.5px" fill="#475569">1/3, 6x 1/6, 9x 1/9).</text>
+    <text x="24" y="520" class="font-sans" font-size="13.5px" fill="#475569">• PLA Tan: Unit wholes &amp; halves (2x 1, 4x 1/2) • PLA</text>
+    <text x="24" y="538" class="font-sans" font-size="13.5px" fill="#475569">Gray: 13U Box Body.</text>
   </g>
 
   <!-- COLUMN 3: WHY KEEP CARD (Width: 290) -->

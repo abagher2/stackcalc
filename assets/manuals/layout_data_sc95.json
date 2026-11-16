@@ -885,9 +885,9 @@
     },
     {
       "alphaLabel" : "i",
-      "blueAction" : "rnd",
-      "blueBitmapIdentifier" : "operation.92",
-      "blueLabel" : "RND",
+      "blueAction" : "formatCurrency",
+      "blueBitmapIdentifier" : "operation.180",
+      "blueLabel" : "$",
       "col" : 2,
       "cx" : 37.369,
       "cy" : 135.125,
@@ -1012,7 +1012,8 @@
       "FIX",
       "SCI",
       "ENG",
-      "ALL"
+      "ALL",
+      "$"
     ],
     "EAR" : [
       "E",

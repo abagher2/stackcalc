@@ -47,12 +47,12 @@
   <text x="165" y="93" class="font-mono" font-size="12.5px" font-weight="700" fill="#ffffff">SERIES 1 • CARD 02 / 12 • DOMAIN: DISCRETE COMBINATORICS &amp; PARTITIONS</text>
 
   <!-- Top-Right SKU Badges -->
-  <g transform="translate(975, 36)">
-    <rect x="0" y="0" width="190" height="28" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <text x="95" y="19" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#ffffff">CARD 02 / 12 • DOMI-01</text>
+  <g transform="translate(950, 36)">
+    <rect x="0" y="0" width="215" height="28" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="107.5" y="19" class="font-mono" font-size="14px" font-weight="700" text-anchor="middle" fill="#ffffff">CARD 02 / 12 • DOMI-01</text>
     
-    <rect x="0" y="34" width="190" height="26" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
-    <text x="95" y="52" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#ffffff">MATHEMATICAL GUIDE</text>
+    <rect x="0" y="34" width="215" height="26" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1.2" />
+    <text x="107.5" y="52" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#ffffff">MATHEMATICAL GUIDE</text>
   </g>
 
   <!-- COLUMN 1: CONCEPT & PROOF (Width: 390) -->
@@ -141,53 +141,53 @@
     <line x1="12" y1="58" x2="438" y2="58" stroke="#ffffff" stroke-width="1" />
 
     
-      <text x="14" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Double-Six Tiles</text>
-      <text x="180" y="64" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">28x</text>
-      <text x="215" y="64" class="font-mono" font-size="12.5px" fill="#ffffff">28×14×7 mm</text>
-      <text x="436" y="64" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Stealth Black</text>
-      <line x1="12" y1="69" x2="438" y2="69" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="76" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Double-Six Tiles</text>
+      <text x="180" y="76" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">28x</text>
+      <text x="215" y="76" class="font-mono" font-size="12.5px" fill="#ffffff">28×14×7 mm</text>
+      <text x="436" y="76" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Stealth Black</text>
+      <line x1="12" y1="81" x2="438" y2="81" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Wildcard Blanks</text>
-      <text x="180" y="86" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">2x</text>
-      <text x="215" y="86" class="font-mono" font-size="12.5px" fill="#ffffff">28×14×7 mm</text>
-      <text x="436" y="86" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Stealth Black</text>
-      <line x1="12" y1="91" x2="438" y2="91" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="98" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Wildcard Blanks</text>
+      <text x="180" y="98" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">2x</text>
+      <text x="215" y="98" class="font-mono" font-size="12.5px" fill="#ffffff">28×14×7 mm</text>
+      <text x="436" y="98" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Stealth Black</text>
+      <line x1="12" y1="103" x2="438" y2="103" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">12-Frame Tray</text>
-      <text x="180" y="108" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">1x</text>
-      <text x="215" y="108" class="font-mono" font-size="12.5px" fill="#ffffff">Dual 6-Bay</text>
-      <text x="436" y="108" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Matte Charcoal</text>
-      <line x1="12" y1="113" x2="438" y2="113" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="120" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">12-Frame Tray</text>
+      <text x="180" y="120" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">1x</text>
+      <text x="215" y="120" class="font-mono" font-size="12.5px" fill="#ffffff">Dual 6-Bay</text>
+      <text x="436" y="120" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Matte Charcoal</text>
+      <line x1="12" y1="125" x2="438" y2="125" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Doubles Lid</text>
-      <text x="180" y="130" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">1x</text>
-      <text x="215" y="130" class="font-mono" font-size="12.5px" fill="#ffffff">7-Slot Rail</text>
-      <text x="436" y="130" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Matte Charcoal</text>
-      <line x1="12" y1="135" x2="438" y2="135" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="142" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">Doubles Lid</text>
+      <text x="180" y="142" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">1x</text>
+      <text x="215" y="142" class="font-mono" font-size="12.5px" fill="#ffffff">7-Slot Rail</text>
+      <text x="436" y="142" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Matte Charcoal</text>
+      <line x1="12" y1="147" x2="438" y2="147" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
-      <text x="14" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">3x1 Storage Bin</text>
-      <text x="180" y="152" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">1x</text>
-      <text x="215" y="152" class="font-mono" font-size="12.5px" fill="#ffffff">49.0 mm</text>
-      <text x="436" y="152" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Matte Charcoal</text>
-      <line x1="12" y1="157" x2="438" y2="157" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
+      <text x="14" y="164" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">3x1 Storage Bin</text>
+      <text x="180" y="164" class="font-mono" font-size="13px" font-weight="700" fill="#ffffff">1x</text>
+      <text x="215" y="164" class="font-mono" font-size="12.5px" fill="#ffffff">49.0 mm (7U)</text>
+      <text x="436" y="164" class="font-mono" font-size="12px" text-anchor="end" fill="#cccccc">Matte Charcoal</text>
+      <line x1="12" y1="169" x2="438" y2="169" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2,2" />
 
 
     <!-- Total Pieces Summary -->
-    <text x="14" y="190" class="font-mono" font-size="12px" font-weight="700" fill="#ffffff">TOTAL: 30 Domino Tiles + 12-Frame Tray +</text>
-    <text x="14" y="206" class="font-mono" font-size="12px" font-weight="700" fill="#ffffff">Doubles Lid + Storage Bin = 33 Parts</text>
+    <text x="14" y="202" class="font-mono" font-size="12px" font-weight="700" fill="#ffffff">TOTAL: 30 Domino Tiles + 12-Frame Tray +</text>
+    <text x="14" y="218" class="font-mono" font-size="12px" font-weight="700" fill="#ffffff">Doubles Lid + Storage Bin = 33 Parts</text>
 
     <!-- Palette Box -->
-    <g transform="translate(12, 232)">
+    <g transform="translate(12, 244)">
       <rect x="0" y="0" width="426" height="172" rx="6" fill="#000000" stroke="#ffffff" stroke-width="1" />
       <text x="12" y="20" class="font-mono" font-size="14px" font-weight="700" fill="#ffffff">HIGH-CONTRAST PIPS &amp; TEXTURE</text>
     </g>
-    <text x="24" y="268" class="font-sans" font-size="13.5px" fill="#cccccc">• Stealth Black Matte: Low glare, fingerprint</text>
-    <text x="24" y="286" class="font-sans" font-size="13.5px" fill="#cccccc">resistant polymer.</text>
-    <text x="24" y="304" class="font-sans" font-size="13.5px" fill="#cccccc">• Brilliant White Pips: Standard dice quincunx</text>
-    <text x="24" y="322" class="font-sans" font-size="13.5px" fill="#cccccc">configurations.</text>
-    <text x="24" y="340" class="font-sans" font-size="13.5px" fill="#cccccc">• Doubles Spine: Labeled slots [0|0] to [6|6] for</text>
-    <text x="24" y="358" class="font-sans" font-size="13.5px" fill="#cccccc">organizing.</text>
-    <text x="24" y="376" class="font-sans" font-size="13.5px" fill="#cccccc">• High Durability: Scratch-resistant tactile surfaces.</text>
+    <text x="24" y="280" class="font-sans" font-size="13.5px" fill="#cccccc">• Stealth Black Matte: Low glare, fingerprint</text>
+    <text x="24" y="298" class="font-sans" font-size="13.5px" fill="#cccccc">resistant polymer.</text>
+    <text x="24" y="316" class="font-sans" font-size="13.5px" fill="#cccccc">• Brilliant White Pips: Standard dice quincunx</text>
+    <text x="24" y="334" class="font-sans" font-size="13.5px" fill="#cccccc">configurations.</text>
+    <text x="24" y="352" class="font-sans" font-size="13.5px" fill="#cccccc">• Doubles Spine: Labeled slots [0|0] to [6|6] for</text>
+    <text x="24" y="370" class="font-sans" font-size="13.5px" fill="#cccccc">organizing.</text>
+    <text x="24" y="388" class="font-sans" font-size="13.5px" fill="#cccccc">• High Durability: Scratch-resistant tactile surfaces.</text>
   </g>
 
   <!-- COLUMN 3: WHY KEEP CARD (Width: 290) -->
