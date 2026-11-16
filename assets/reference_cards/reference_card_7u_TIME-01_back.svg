@@ -7,121 +7,110 @@
     </style>
   </defs>
 
-  <!-- 114.0 x 35.0 mm Cut Cell Background (2.6mm L/R & 2.2mm T/B symmetric white bleed/safe margin) -->
+  <!-- 114.0 x 35.0 mm Cut Cell Background (2.6mm L/R & 2.2mm T/B symmetric white safe margin) -->
   <rect x="0" y="0" width="1140" height="350" fill="#ffffff" />
 
-  <!-- Top Header Strip (x=26..1114, y=22..60) -->
-  <rect x="26" y="22" width="1088" height="38" rx="8" fill="#0f172a" />
-  <text x="38" y="38" class="font-mono" font-size="14.5px" font-weight="700" fill="#ffffff">PLANETARY CLOCK LAB — 12:1 GEARED HANDS &amp; SECTOR WEDGES</text>
-  <text x="38" y="53" class="font-mono" font-size="9.5px" fill="#94a3b8">HANDS-ON MATHEMATICAL EXPLORATIONS • STACKCALC.IO</text>
-  <rect x="866" y="27" width="238" height="28" rx="6" fill="#334155" />
-  <text x="985" y="45" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#ffffff">12:1 GEAR RATIO • TIME-01</text>
-
   
-  <!-- ACTIVITY 1 PANEL (y=66..294) -->
-  <g transform="translate(26, 66)">
-    <rect x="0" y="0" width="539" height="228" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
-    <rect x="0" y="0" width="539" height="24" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
-    <rect x="6" y="3.5" width="76" height="17" rx="4" fill="#0f172a" />
-    <text x="44.0" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">ACTIVITY 1</text>
-    <text x="88" y="15.5" class="font-mono" font-size="10.5px" font-weight="700" fill="#0f172a">GEARED 12:1 HAND SYNC (3:45)</text>
+  <!-- ACTIVITY 1 PANEL (x=26..565, y=22..282) -->
+  <g transform="translate(26, 22)">
+    <rect x="0" y="0" width="539" height="260" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4" />
+    <rect x="0" y="0" width="539" height="38" rx="8" fill="#0f172a" />
+    <rect x="6" y="5" width="118" height="28" rx="5" fill="#0284c7" />
+    <text x="65.0" y="24" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#ffffff">ACTIVITY 1</text>
+    <text x="132" y="25" class="font-mono" font-size="17.5px" font-weight="700" fill="#ffffff">12:1 GEARED HAND SYNC (3:45)</text>
 
-    <!-- Left Illustrated Block Diagram (190 x 161) -->
-    <g transform="translate(8, 28)">
-      <rect x="0" y="0" width="190" height="161" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1" />
-      
-      <rect x="14" y="20" width="162" height="112" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.3" />
-      <rect x="24" y="32" width="66" height="42" rx="4" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
-      <text x="57" y="57" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#0f172a">PART A</text>
-      <rect x="100" y="32" width="66" height="42" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
-      <text x="133" y="57" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#0f172a">PART B</text>
-      <rect x="24" y="82" width="142" height="38" rx="4" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2" />
-      <text x="95" y="105" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#0f172a">VERIFIED EQUIVALENCE</text>
-      <text x="95" y="148" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#334155">STAGE ON COMPARISON LID</text>
+    <!-- Left Illustrated Block Diagram (198 x 208) -->
+    <g transform="translate(8, 44)">
+      <rect x="0" y="0" width="198" height="208" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+      <svg x="4" y="4" width="190" height="200" viewBox="0 0 190 165" preserveAspectRatio="xMidYMid meet">
+        
+      <rect x="14" y="18" width="162" height="114" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.4" />
+      <rect x="22" y="28" width="68" height="44" rx="4" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.3" />
+      <text x="56" y="55" class="font-mono" font-size="13.5px" font-weight="700" text-anchor="middle" fill="#0f172a">PART A</text>
+      <rect x="100" y="28" width="68" height="44" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.3" />
+      <text x="134" y="55" class="font-mono" font-size="13.5px" font-weight="700" text-anchor="middle" fill="#0f172a">PART B</text>
+      <rect x="22" y="80" width="146" height="40" rx="4" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.3" />
+      <text x="95" y="105" class="font-mono" font-size="13.5px" font-weight="700" text-anchor="middle" fill="#0f172a">EQUAL HEIGHT</text>
+      <text x="95" y="152" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#0f172a">COMPARISON STAGE</text>
+      </svg>
     </g>
 
     <!-- Right 3-Step Walkthrough -->
     
-      <g transform="translate(202, 28)">
-        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#0f172a" />
-        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">DIAL MINUTE HAND</text>
-        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Rotate the outer minute ring to 45 minutes (3/4 of a full</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">turn past 3:00).</text>
+      <g transform="translate(214, 44)">
+        <rect x="0" y="0" width="317" height="66" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+        <circle cx="18" cy="16" r="11" fill="#0f172a" />
+        <text x="18" y="21" class="font-mono" font-size="14.5px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
+        <text x="35" y="21" class="font-mono" font-size="16px" font-weight="700" fill="#0f172a">DIAL MINUTE HAND</text>
+        <text x="12" y="42" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">Turn outer minute ring to 45 min</text><text x="12" y="59.5" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">(3/4 turn past 3:00).</text>
       </g>
-      <g transform="translate(202, 83)">
-        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#0f172a" />
-        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">OBSERVE HOUR HAND</text>
-        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">The internal 12:1 planetary gear automatically advances the</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">hour hand 3/4 of the way from 3 to 4!</text>
+      <g transform="translate(214, 115)">
+        <rect x="0" y="0" width="317" height="66" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+        <circle cx="18" cy="16" r="11" fill="#0f172a" />
+        <text x="18" y="21" class="font-mono" font-size="14.5px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
+        <text x="35" y="21" class="font-mono" font-size="16px" font-weight="700" fill="#0f172a">WATCH HOUR HAND</text>
+        <text x="12" y="42" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">12:1 planetary gear advances hour</text><text x="12" y="59.5" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">hand 3/4 toward 4!</text>
       </g>
-      <g transform="translate(202, 138)">
-        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#0f172a" />
-        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">READ BOTH SCALES</text>
-        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Read 3 hours (inner ring) + 45 minutes (outer ring) = 3:45</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">with zero hand ambiguity.</text>
+      <g transform="translate(214, 186)">
+        <rect x="0" y="0" width="317" height="66" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+        <circle cx="18" cy="16" r="11" fill="#0f172a" />
+        <text x="18" y="21" class="font-mono" font-size="14.5px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
+        <text x="35" y="21" class="font-mono" font-size="16px" font-weight="700" fill="#0f172a">READ BOTH SCALES</text>
+        <text x="12" y="42" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">Read 3 hr (inner) + 45 min (outer) =</text><text x="12" y="59.5" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">3:45 accurately.</text>
       </g>
-
-    <!-- Bottom Concept Takeaway Bar -->
-    <rect x="8" y="195" width="523" height="26" rx="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.0" />
-    <text x="14" y="211.5" class="font-sans" font-size="9.2px" font-weight="700" fill="#0f172a">★ KEY CONCEPT: <tspan font-weight="400" fill="#0f172a">Real 12:1 planetary gearing physically links minute rotation (360°) to hour progression (30°).</tspan></text>
   </g>
-  <!-- ACTIVITY 2 PANEL (y=66..294) -->
-  <g transform="translate(575, 66)">
-    <rect x="0" y="0" width="539" height="228" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
-    <rect x="0" y="0" width="539" height="24" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
-    <rect x="6" y="3.5" width="76" height="17" rx="4" fill="#0f172a" />
-    <text x="44.0" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">ACTIVITY 2</text>
-    <text x="88" y="15.5" class="font-mono" font-size="10.5px" font-weight="700" fill="#0f172a">ELAPSED TIME WEDGES (30m + 15m = 45m)</text>
+  <!-- ACTIVITY 2 PANEL (x=575..1114, y=22..282) -->
+  <g transform="translate(575, 22)">
+    <rect x="0" y="0" width="539" height="260" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4" />
+    <rect x="0" y="0" width="539" height="38" rx="8" fill="#0f172a" />
+    <rect x="6" y="5" width="118" height="28" rx="5" fill="#0284c7" />
+    <text x="65.0" y="24" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#ffffff">ACTIVITY 2</text>
+    <text x="132" y="25" class="font-mono" font-size="17.5px" font-weight="700" fill="#ffffff">ELAPSED TIME WEDGES (30m + 15m)</text>
 
-    <!-- Left Illustrated Block Diagram (190 x 161) -->
-    <g transform="translate(8, 28)">
-      <rect x="0" y="0" width="190" height="161" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1" />
-      
-      <rect x="14" y="20" width="162" height="112" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.3" />
-      <rect x="24" y="32" width="66" height="42" rx="4" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
-      <text x="57" y="57" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#0f172a">PART A</text>
-      <rect x="100" y="32" width="66" height="42" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
-      <text x="133" y="57" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#0f172a">PART B</text>
-      <rect x="24" y="82" width="142" height="38" rx="4" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2" />
-      <text x="95" y="105" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#0f172a">VERIFIED EQUIVALENCE</text>
-      <text x="95" y="148" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#334155">STAGE ON COMPARISON LID</text>
+    <!-- Left Illustrated Block Diagram (198 x 208) -->
+    <g transform="translate(8, 44)">
+      <rect x="0" y="0" width="198" height="208" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+      <svg x="4" y="4" width="190" height="200" viewBox="0 0 190 165" preserveAspectRatio="xMidYMid meet">
+        
+      <rect x="14" y="18" width="162" height="114" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.4" />
+      <rect x="22" y="28" width="68" height="44" rx="4" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.3" />
+      <text x="56" y="55" class="font-mono" font-size="13.5px" font-weight="700" text-anchor="middle" fill="#0f172a">PART A</text>
+      <rect x="100" y="28" width="68" height="44" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.3" />
+      <text x="134" y="55" class="font-mono" font-size="13.5px" font-weight="700" text-anchor="middle" fill="#0f172a">PART B</text>
+      <rect x="22" y="80" width="146" height="40" rx="4" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.3" />
+      <text x="95" y="105" class="font-mono" font-size="13.5px" font-weight="700" text-anchor="middle" fill="#0f172a">EQUAL HEIGHT</text>
+      <text x="95" y="152" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#0f172a">COMPARISON STAGE</text>
+      </svg>
     </g>
 
     <!-- Right 3-Step Walkthrough -->
     
-      <g transform="translate(202, 28)">
-        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#0f172a" />
-        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">PLACE 30-MIN WEDGE</text>
-        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Seat a [30 MIN / 1/2 HR] sector wedge (180°) onto the clock</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">face from 12 to 6.</text>
+      <g transform="translate(214, 44)">
+        <rect x="0" y="0" width="317" height="66" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+        <circle cx="18" cy="16" r="11" fill="#0f172a" />
+        <text x="18" y="21" class="font-mono" font-size="14.5px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
+        <text x="35" y="21" class="font-mono" font-size="16px" font-weight="700" fill="#0f172a">PLACE 30m WEDGE</text>
+        <text x="12" y="42" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">Seat a [30m / 1/2 hr] wedge (180°)</text><text x="12" y="59.5" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">from 12 to 6.</text>
       </g>
-      <g transform="translate(202, 83)">
-        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#0f172a" />
-        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">ADD 15-MIN WEDGE</text>
-        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Snap a [15 MIN / 1/4 HR] wedge (90°) directly after it,</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">reaching the 9 (45 min).</text>
+      <g transform="translate(214, 115)">
+        <rect x="0" y="0" width="317" height="66" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+        <circle cx="18" cy="16" r="11" fill="#0f172a" />
+        <text x="18" y="21" class="font-mono" font-size="14.5px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
+        <text x="35" y="21" class="font-mono" font-size="16px" font-weight="700" fill="#0f172a">ADD 15m WEDGE</text>
+        <text x="12" y="42" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">Snap a [15m / 1/4 hr] wedge (90°)</text><text x="12" y="59.5" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">after it to reach 9.</text>
       </g>
-      <g transform="translate(202, 138)">
-        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#0f172a" />
-        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">CONVERT TO FRACTION</text>
-        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Compare against the full 60-minute circle: 1/2 + 1/4 = 3/4</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">hour = 45 minutes!</text>
+      <g transform="translate(214, 186)">
+        <rect x="0" y="0" width="317" height="66" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+        <circle cx="18" cy="16" r="11" fill="#0f172a" />
+        <text x="18" y="21" class="font-mono" font-size="14.5px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
+        <text x="35" y="21" class="font-mono" font-size="16px" font-weight="700" fill="#0f172a">READ FRACTION</text>
+        <text x="12" y="42" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">Compare to full circle: 1/2 + 1/4 =</text><text x="12" y="59.5" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">3/4 hr = 45 min!</text>
       </g>
-
-    <!-- Bottom Concept Takeaway Bar -->
-    <rect x="8" y="195" width="523" height="26" rx="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.0" />
-    <text x="14" y="211.5" class="font-sans" font-size="9.2px" font-weight="700" fill="#0f172a">★ KEY CONCEPT: <tspan font-weight="400" fill="#0f172a">Sector wedges bridge base-60 clock arithmetic with proportional fractions (1/2, 1/3, 1/4, 1/6, 1/12).</tspan></text>
   </g>
 
-  <!-- Bottom Solution & Storage Strip (x=26..1114, y=300..328) -->
-  <rect x="26" y="300" width="1088" height="28" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.1" />
-  <rect x="30" y="304" width="166" height="20" rx="4" fill="#0f172a" />
-  <text x="113" y="317.5" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">QUICK CLEANUP</text>
-  <text x="206" y="318" class="font-sans" font-size="10.2px" font-weight="700" fill="#0f172a">Seat the Planetary Clock and fraction-of-an-hour sector wedges into the storage base and snap the lid shut!</text>
+  <!-- Bottom Solution & Storage Strip (x=26..1114, y=288..328, w=1088, h=40) -->
+  <rect x="26" y="288" width="1088" height="40" rx="7" fill="#f8fafc" stroke="#0f172a" stroke-width="1.4" />
+  <rect x="32" y="293" width="214" height="30" rx="5" fill="#0f172a" />
+  <text x="139" y="313.5" class="font-mono" font-size="16px" font-weight="700" text-anchor="middle" fill="#ffffff">QUICK CLEANUP</text>
+  <text x="258" y="314" class="font-sans" font-size="17px" font-weight="700" fill="#0f172a">Seat the Planetary Clock and sector wedges into the storage base and snap the lid shut!</text>
 </svg>
