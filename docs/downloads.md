@@ -233,9 +233,9 @@ We publish pre-sliced multi-plate `.3mf` files (for Prusa, Bambu Lab, and OrcaSl
 
 | Instrument | Focus &amp; Grade Level | Product Specs &amp; Guide | 3D Model Destination |
 | :--- | :--- | :--- | :--- |
-| **Fraction Studio Proportional Towers** | Grades 2–6 &bull; Equivalence &amp; Decimals | [Fraction Studio Page &rarr;](products/fraction-studio/index.md) | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Prime Factor Studio &amp; Factor Towers** | Grades 3–9 &bull; Factorization &amp; Logarithms | [Prime Factor Studio Page &rarr;](products/prime-factor-studio/index.md) | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
-| **Place Value Studio &amp; Regrouping Trays** | Grades 1–5 &bull; Place Value &amp; Decimals | [Place Value Studio Page &rarr;](products/place-value/index.md) | [Printables Model Page ↗](https://www.printables.com/@StackCalc_5593834) |
+| **Fraction Studio Proportional Towers** | Grades 2–6 &bull; Equivalence &amp; Decimals | [Fraction Studio Page &rarr;](products/fraction-studio/index.md) | [Printables Model #1894428 ↗](https://www.printables.com/model/1894428-montessori-fraction-towers-equivalence-blocks-3d-m) |
+| **Prime Factor Studio &amp; Factor Towers** | Grades 3–9 &bull; Factorization &amp; Logarithms | [Prime Factor Studio Page &rarr;](products/prime-factor-studio/index.md) | [Printables Model #1894455 ↗](https://www.printables.com/model/1894455-montessori-prime-factor-towers-factoring-blocks-ma) |
+| **Place Value Studio &amp; Regrouping Trays** | Grades 1–5 &bull; Place Value &amp; Decimals | [Place Value Studio Page &rarr;](products/place-value/index.md) | [Printables Model #1894258 ↗](https://www.printables.com/model/1894258-montessori-place-value-base-10-counting-trays-math) |
 
 ---
 

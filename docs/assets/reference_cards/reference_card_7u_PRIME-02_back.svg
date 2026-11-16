@@ -7,152 +7,136 @@
     </style>
   </defs>
 
-  <!-- 114.0 x 35.0 mm Cut Cell Background (2.6mm L/R & 2.2mm T/B symmetric white bleed/safe margin) -->
+  <!-- 114.0 x 35.0 mm Cut Cell Background (2.6mm L/R & 2.2mm T/B symmetric white safe margin) -->
   <rect x="0" y="0" width="1140" height="350" fill="#ffffff" />
 
-  <!-- Top Header Strip (x=26..1114, y=22..60) -->
-  <rect x="26" y="22" width="1088" height="38" rx="8" fill="#0f172a" />
-  <text x="38" y="38" class="font-mono" font-size="14.5px" font-weight="700" fill="#ffffff">PRIME EXPANSION (11–97) — FACTORING &amp; FULL-STACK PUZZLE</text>
-  <text x="38" y="53" class="font-mono" font-size="9.5px" fill="#94a3b8">HANDS-ON MATHEMATICAL EXPLORATIONS • STACKCALC.IO</text>
-  <rect x="866" y="27" width="238" height="28" rx="6" fill="#334155" />
-  <text x="985" y="45" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#ffffff">12-STACK PUZZLE • PRIME-02</text>
-
   
-  <!-- ACTIVITY 1 PANEL (y=66..294) -->
-  <g transform="translate(26, 66)">
-    <rect x="0" y="0" width="539" height="228" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
-    <rect x="0" y="0" width="539" height="24" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
-    <rect x="6" y="3.5" width="76" height="17" rx="4" fill="#0f172a" />
-    <text x="44.0" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">ACTIVITY 1</text>
-    <text x="88" y="15.5" class="font-mono" font-size="10.5px" font-weight="700" fill="#0f172a">3-PRIME COMPOSITE FACTORING (3289 = 11·13·23)</text>
+  <!-- ACTIVITY 1 PANEL (x=26..565, y=22..282) -->
+  <g transform="translate(26, 22)">
+    <rect x="0" y="0" width="539" height="260" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4" />
+    <rect x="0" y="0" width="539" height="38" rx="8" fill="#0f172a" />
+    <rect x="6" y="5" width="118" height="28" rx="5" fill="#0284c7" />
+    <text x="65.0" y="24" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#ffffff">ACTIVITY 1</text>
+    <text x="132" y="25" class="font-mono" font-size="17.5px" font-weight="700" fill="#ffffff">FACTORING 3,289 = 11 × 13 × 23</text>
 
-    <!-- Left Illustrated Block Diagram (190 x 161) -->
-    <g transform="translate(8, 28)">
-      <rect x="0" y="0" width="190" height="161" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1" />
-      
-      <text x="95" y="13" class="font-mono" font-size="9px" font-weight="700" text-anchor="middle" fill="#0f172a">SOCKET 3289 = 11 × 13 × 23</text>
-      <text x="95" y="24" class="font-mono" font-size="8.2px" font-weight="700" text-anchor="middle" fill="#334155">FULL STACK = 3,289</text>
-      <line x1="18" y1="28" x2="172" y2="28" stroke="#0f172a" stroke-width="1.3" stroke-dasharray="4,2" />
-      <!-- [23], [13], [11] in socket 3289 -->
-      <rect x="48" y="31" width="94" height="36" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
-      <text x="95" y="53" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#0f172a">[23]</text>
-      <rect x="48" y="67" width="94" height="30" rx="3" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
-      <text x="95" y="86" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#0f172a">[13]</text>
-      <rect x="48" y="97" width="94" height="28" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
-      <text x="95" y="115" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#0f172a">[11]</text>
-      <!-- Socket Base -->
-      <rect x="34" y="125" width="122" height="13" rx="2" fill="#cbd5e1" stroke="#334155" stroke-width="1.2" />
-      <text x="95" y="134.5" class="font-mono" font-size="8px" font-weight="700" text-anchor="middle" fill="#0f172a">SOCKET 3289 BASE</text>
-      <text x="95" y="151" class="font-mono" font-size="8.5px" font-weight="700" text-anchor="middle" fill="#0f172a">11 × 13 × 23 = 3,289 ✓</text>
+    <!-- Left Illustrated Block Diagram (198 x 208) -->
+    <g transform="translate(8, 44)">
+      <rect x="0" y="0" width="198" height="208" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+      <svg x="4" y="4" width="190" height="200" viewBox="0 0 190 165" preserveAspectRatio="xMidYMid meet">
+        
+      <text x="95" y="16" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#0f172a">FULL STACK = 3,289</text>
+      <line x1="18" y1="23" x2="172" y2="23" stroke="#0f172a" stroke-width="1.5" stroke-dasharray="4,2" />
+      <rect x="42" y="27" width="106" height="36" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="1.3" />
+      <text x="95" y="50" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#0f172a">[23]</text>
+      <rect x="42" y="63" width="106" height="32" rx="3" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.3" />
+      <text x="95" y="84" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#0f172a">[13]</text>
+      <rect x="42" y="95" width="106" height="30" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="1.3" />
+      <text x="95" y="115" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#0f172a">[11]</text>
+      <rect x="28" y="125" width="134" height="16" rx="2" fill="#cbd5e1" stroke="#334155" stroke-width="1.3" />
+      <text x="95" y="137" class="font-mono" font-size="11px" font-weight="700" text-anchor="middle" fill="#0f172a">SOCKET 3289</text>
+      <text x="95" y="157" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#0f172a">11 × 13 × 23 = 3,289</text>
+      </svg>
     </g>
 
     <!-- Right 3-Step Walkthrough -->
     
-      <g transform="translate(202, 28)">
-        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#0f172a" />
-        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">READ TARGET 3289</text>
-        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Inspect the 4-digit composite target 3,289 (or stage [11],</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">[13], and [23] on the lid).</text>
+      <g transform="translate(214, 44)">
+        <rect x="0" y="0" width="317" height="66" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+        <circle cx="18" cy="16" r="11" fill="#0f172a" />
+        <text x="18" y="21" class="font-mono" font-size="14.5px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
+        <text x="35" y="21" class="font-mono" font-size="16px" font-weight="700" fill="#0f172a">TARGET 3,289</text>
+        <text x="12" y="42" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">Inspect socket 3289 (or stage [11],</text><text x="12" y="59.5" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">[13], [23] on lid).</text>
       </g>
-      <g transform="translate(202, 83)">
-        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#0f172a" />
-        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">TEST DIVISIBILITY</text>
-        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Alternating digit sum: 3 − 2 + 8 − 9 = 0 (divisible by 11!):</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">3289 ÷ 11 = 299 = 13 × 23.</text>
+      <g transform="translate(214, 115)">
+        <rect x="0" y="0" width="317" height="66" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+        <circle cx="18" cy="16" r="11" fill="#0f172a" />
+        <text x="18" y="21" class="font-mono" font-size="14.5px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
+        <text x="35" y="21" class="font-mono" font-size="16px" font-weight="700" fill="#0f172a">DIVISIBLE BY 11</text>
+        <text x="12" y="42" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">3 − 2 + 8 − 9 = 0 → 3,289 ÷ 11 = 299</text><text x="12" y="59.5" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">= 13 × 23.</text>
       </g>
-      <g transform="translate(202, 138)">
-        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#0f172a" />
-        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">BUILD THE FULL STACK</text>
-        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Stack [11] + [13] + [23] in socket 3289—only the true prime</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">factors form a full stack!</text>
+      <g transform="translate(214, 186)">
+        <rect x="0" y="0" width="317" height="66" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+        <circle cx="18" cy="16" r="11" fill="#0f172a" />
+        <text x="18" y="21" class="font-mono" font-size="14.5px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
+        <text x="35" y="21" class="font-mono" font-size="16px" font-weight="700" fill="#0f172a">BUILD FULL STACK</text>
+        <text x="12" y="42" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">Stack [11]+[13]+[23] in socket 3289</text><text x="12" y="59.5" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">for a full stack!</text>
       </g>
-
-    <!-- Bottom Concept Takeaway Bar -->
-    <rect x="8" y="195" width="523" height="26" rx="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.0" />
-    <text x="14" y="211.5" class="font-sans" font-size="9.2px" font-weight="700" fill="#0f172a">★ KEY CONCEPT: <tspan font-weight="400" fill="#0f172a">Adding logarithmic prime blocks multiplies their values: [11] + [13] + [23] = 11 × 13 × 23 = 3,289.</tspan></text>
   </g>
-  <!-- ACTIVITY 2 PANEL (y=66..294) -->
-  <g transform="translate(575, 66)">
-    <rect x="0" y="0" width="539" height="228" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
-    <rect x="0" y="0" width="539" height="24" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
-    <rect x="6" y="3.5" width="64" height="17" rx="4" fill="#0f172a" />
-    <text x="38.0" y="15" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">PUZZLE</text>
-    <text x="76" y="15.5" class="font-mono" font-size="9.2px" font-weight="700" fill="#0f172a">HOW CAN WE STACK ALL 28 PRIMES INTO 12 NEAR-FULL STACKS?</text>
+  <!-- ACTIVITY 2 PANEL (x=575..1114, y=22..282) -->
+  <g transform="translate(575, 22)">
+    <rect x="0" y="0" width="539" height="260" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4" />
+    <rect x="0" y="0" width="539" height="38" rx="8" fill="#0f172a" />
+    <rect x="6" y="5" width="92" height="28" rx="5" fill="#0284c7" />
+    <text x="52.0" y="24" class="font-mono" font-size="15px" font-weight="700" text-anchor="middle" fill="#ffffff">PUZZLE</text>
+    <text x="106" y="25" class="font-mono" font-size="16.5px" font-weight="700" fill="#ffffff">STACK ALL 28 PRIMES IN 12 STACKS?</text>
 
-    <!-- Left Illustrated Block Diagram (190 x 161) -->
-    <g transform="translate(8, 28)">
-      <rect x="0" y="0" width="190" height="161" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1" />
-      
-      <text x="95" y="12" class="font-mono" font-size="8.6px" font-weight="700" text-anchor="middle" fill="#0f172a">97.4% FILL: 4 TRIPLES + 8 PAIRS</text>
-      <text x="95" y="23" class="font-mono" font-size="7.8px" font-weight="700" text-anchor="middle" fill="#334155">FULL-STACK CEILING (PRODUCT ≤ 4,096)</text>
-      <line x1="10" y1="27" x2="180" y2="27" stroke="#0f172a" stroke-width="1.2" stroke-dasharray="3,2" />
-      <!-- Col 1 (x=12..49): 11 * 19 * 19 = 3971 (y=30..134) -->
-      <rect x="12" y="30" width="37" height="37" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="1.1" />
-      <text x="30.5" y="52" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">19</text>
-      <rect x="12" y="67" width="37" height="37" rx="2" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.1" />
-      <text x="30.5" y="89" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">19</text>
-      <rect x="12" y="104" width="37" height="30" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.1" />
-      <text x="30.5" y="123" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">11</text>
-      <!-- Col 2 (x=54..91): 13 * 13 * 23 = 3887 (y=31..134) -->
-      <rect x="54" y="31" width="37" height="39" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="1.1" />
-      <text x="72.5" y="54" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">23</text>
-      <rect x="54" y="70" width="37" height="32" rx="2" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.1" />
-      <text x="72.5" y="90" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">13</text>
-      <rect x="54" y="102" width="37" height="32" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.1" />
-      <text x="72.5" y="122" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">13</text>
-      <!-- Col 3 (x=96..134): 29 * 97 = 2813 (y=35..134) -->
-      <rect x="96" y="35" width="38" height="57" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="1.1" />
-      <text x="115" y="67" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">97</text>
-      <rect x="96" y="92" width="38" height="42" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.1" />
-      <text x="115" y="117" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">29</text>
-      <!-- Col 4 (x=140..178): 59 * 61 = 3599 (y=32..134) -->
-      <rect x="140" y="32" width="38" height="51" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="1.1" />
-      <text x="159" y="61" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">61</text>
-      <rect x="140" y="83" width="38" height="51" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.1" />
-      <text x="159" y="112" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#0f172a">59</text>
+    <!-- Left Illustrated Block Diagram (198 x 208) -->
+    <g transform="translate(8, 44)">
+      <rect x="0" y="0" width="198" height="208" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+      <svg x="4" y="4" width="190" height="200" viewBox="0 0 190 165" preserveAspectRatio="xMidYMid meet">
+        
+      <text x="95" y="15" class="font-mono" font-size="11.5px" font-weight="700" text-anchor="middle" fill="#0f172a">4 TRIPLES + 8 PAIRS</text>
+      <line x1="10" y1="22" x2="180" y2="22" stroke="#0f172a" stroke-width="1.4" stroke-dasharray="3,2" />
+      <!-- Col 1: 19, 19, 11 -->
+      <rect x="12" y="26" width="38" height="38" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+      <text x="31" y="50" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">19</text>
+      <rect x="12" y="64" width="38" height="38" rx="2" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
+      <text x="31" y="88" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">19</text>
+      <rect x="12" y="102" width="38" height="32" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2" />
+      <text x="31" y="123" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">11</text>
+      <!-- Col 2: 23, 13, 13 -->
+      <rect x="54" y="27" width="38" height="41" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+      <text x="73" y="52" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">23</text>
+      <rect x="54" y="68" width="38" height="33" rx="2" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2" />
+      <text x="73" y="89" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">13</text>
+      <rect x="54" y="101" width="38" height="33" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2" />
+      <text x="73" y="122" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">13</text>
+      <!-- Col 3: 97, 29 -->
+      <rect x="96" y="31" width="38" height="59" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+      <text x="115" y="65" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">97</text>
+      <rect x="96" y="90" width="38" height="44" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2" />
+      <text x="115" y="117" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">29</text>
+      <!-- Col 4: 61, 59 -->
+      <rect x="138" y="28" width="38" height="53" rx="2" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+      <text x="157" y="59" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">61</text>
+      <rect x="138" y="81" width="38" height="53" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.2" />
+      <text x="157" y="112" class="font-mono" font-size="13px" font-weight="700" text-anchor="middle" fill="#0f172a">59</text>
       <line x1="10" y1="134" x2="180" y2="134" stroke="#0f172a" stroke-width="2" />
-      <text x="30.5" y="145" class="font-mono" font-size="7.6px" font-weight="700" text-anchor="middle" fill="#334155">3,971</text>
-      <text x="72.5" y="145" class="font-mono" font-size="7.6px" font-weight="700" text-anchor="middle" fill="#334155">3,887</text>
-      <text x="115" y="145" class="font-mono" font-size="7.6px" font-weight="700" text-anchor="middle" fill="#334155">2,813</text>
-      <text x="159" y="145" class="font-mono" font-size="7.6px" font-weight="700" text-anchor="middle" fill="#334155">3,599</text>
-      <text x="95" y="156.5" class="font-mono" font-size="7.6px" font-weight="700" text-anchor="middle" fill="#0f172a">4× TRIPLES + 8× OUTSIDE-IN PAIRS</text>
+      <text x="31" y="151" class="font-mono" font-size="10.5px" font-weight="700" text-anchor="middle" fill="#0f172a">3971</text>
+      <text x="73" y="151" class="font-mono" font-size="10.5px" font-weight="700" text-anchor="middle" fill="#0f172a">3887</text>
+      <text x="115" y="151" class="font-mono" font-size="10.5px" font-weight="700" text-anchor="middle" fill="#0f172a">2813</text>
+      <text x="157" y="151" class="font-mono" font-size="10.5px" font-weight="700" text-anchor="middle" fill="#0f172a">3599</text>
+      </svg>
     </g>
 
     <!-- Right 3-Step Walkthrough -->
     
-      <g transform="translate(202, 28)">
-        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#0f172a" />
-        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">THE 12-STACK PROBLEM</text>
-        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Can you group all 28 prime blocks (11 to 97) into the 12</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">sockets with minimal space left at the top?</text>
+      <g transform="translate(214, 44)">
+        <rect x="0" y="0" width="317" height="66" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+        <circle cx="18" cy="16" r="11" fill="#0f172a" />
+        <text x="18" y="21" class="font-mono" font-size="14.5px" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
+        <text x="35" y="21" class="font-mono" font-size="16px" font-weight="700" fill="#0f172a">THE 12-STACK PUZZLE</text>
+        <text x="12" y="42" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">Group all 28 primes (11–97) into 12</text><text x="12" y="59.5" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">near-full stacks!</text>
       </g>
-      <g transform="translate(202, 83)">
-        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#0f172a" />
-        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">KEEP PRODUCT ≤ 4,096</text>
-        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">A full 12-unit stack equals a product of 4,096. To leave</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">minimal space, keep each stack's product close to 4,096!</text>
+      <g transform="translate(214, 115)">
+        <rect x="0" y="0" width="317" height="66" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+        <circle cx="18" cy="16" r="11" fill="#0f172a" />
+        <text x="18" y="21" class="font-mono" font-size="14.5px" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
+        <text x="35" y="21" class="font-mono" font-size="16px" font-weight="700" fill="#0f172a">PRODUCT ≤ 4,096</text>
+        <text x="12" y="42" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">Full stack = 4,096. Keep each</text><text x="12" y="59.5" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">stack's product near 4,096.</text>
       </g>
-      <g transform="translate(202, 138)">
-        <rect x="0" y="0" width="329" height="51" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0" />
-        <circle cx="13" cy="13" r="8" fill="#0f172a" />
-        <text x="13" y="16.5" class="font-mono" font-size="10px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
-        <text x="26" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#0f172a">TRIPLES &amp; OUTSIDE-IN PAIRS</text>
-        <text x="26" y="30" class="font-sans" font-size="9.5px" fill="#1e293b">Form 4 triples from 11–23, then pair 29–97 outside-in</text><text x="26" y="42.5" class="font-sans" font-size="9.5px" fill="#1e293b">(smallest + largest)! Check the solution below ↓</text>
+      <g transform="translate(214, 186)">
+        <rect x="0" y="0" width="317" height="66" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+        <circle cx="18" cy="16" r="11" fill="#0f172a" />
+        <text x="18" y="21" class="font-mono" font-size="14.5px" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
+        <text x="35" y="21" class="font-mono" font-size="16px" font-weight="700" fill="#0f172a">TRIPLES &amp; PAIRS</text>
+        <text x="12" y="42" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">4 triples (11–23) + 8 outside-in</text><text x="12" y="59.5" class="font-sans" font-size="15.2px" font-weight="500" fill="#1e293b">pairs! Solution below ↓</text>
       </g>
-
-    <!-- Bottom Concept Takeaway Bar -->
-    <rect x="8" y="195" width="523" height="26" rx="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.0" />
-    <text x="14" y="211.5" class="font-sans" font-size="9.2px" font-weight="700" fill="#0f172a">★ KEY CONCEPT: <tspan font-weight="400" fill="#0f172a">Pairing 29–97 outside-in keeps products near 3,000–3,600 so all 12 stacks nearly reach the top!</tspan></text>
   </g>
 
-  <!-- Bottom Solution & Storage Strip (x=26..1114, y=300..328) -->
-  <rect x="26" y="300" width="1088" height="28" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.1" />
-  <rect x="30" y="304" width="166" height="20" rx="4" fill="#0f172a" />
-  <text x="113" y="317.5" class="font-mono" font-size="9.5px" font-weight="700" text-anchor="middle" fill="#ffffff">12-STACK SOLUTION</text>
-  <text x="206" y="318" class="font-sans" font-size="10.2px" font-weight="700" fill="#0f172a">4 Triples: 11·13·23 | 13·13·23 | 11·17·17 | 11·19·19   •   8 Pairs: 29·97 | 31·89 | 37·83 | 41·79 | 43·73 | 47·71 | 53·67 | 59·61</text>
+  <!-- Bottom Solution & Storage Strip (x=26..1114, y=288..328, w=1088, h=40) -->
+  <rect x="26" y="288" width="1088" height="40" rx="7" fill="#f8fafc" stroke="#0f172a" stroke-width="1.4" />
+  <rect x="32" y="293" width="214" height="30" rx="5" fill="#0f172a" />
+  <text x="139" y="313.5" class="font-mono" font-size="16px" font-weight="700" text-anchor="middle" fill="#ffffff">12-STACK SOLUTION</text>
+  <text x="258" y="314" class="font-sans" font-size="15.8px" font-weight="700" fill="#0f172a">4 Triples: 11·13·23 | 13·13·23 | 11·17·17 | 11·19·19  •  8 Pairs: 29·97 | 31·89 | 37·83 | 41·79 | 43·73 | 47·71 | 53·67 | 59·61</text>
 </svg>

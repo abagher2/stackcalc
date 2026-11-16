@@ -204,7 +204,7 @@ hide:
 
       <!-- Clear Primary CTA Hierarchy -->
       <div class="ec-actions-row" style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.85rem;">
-        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff; flex: 1; min-width: 220px; text-align: center; justify-content: center; font-weight: 800;">
+        <a href="https://www.etsy.com/listing/4600567381/fraction-towers-equivalency-blocks-4-in" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff; flex: 1; min-width: 220px; text-align: center; justify-content: center; font-weight: 800;">
           Order Complete Boxed Kit on Etsy ($48.00) ↗
         </a>
         <a href="../../lab/fraction-studio/" class="ec-btn-secondary" style="border-color: #38BDF8; color: #38BDF8; font-weight: 700;">
@@ -216,7 +216,7 @@ hide:
       <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 0.78rem; color: #94A3B8; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem;">
         <span><strong>Own a 3D printer or ordering direct?</strong></span>
         <div style="display: flex; gap: 1rem; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700;">
-          <a href="#downloads" style="color: #FA6B05; text-decoration: none;">Free 3MF Files &darr;</a>
+          <a href="https://www.printables.com/model/1894428-montessori-fraction-towers-equivalence-blocks-3d-m" target="_blank" rel="noopener noreferrer" style="color: #FA6B05; text-decoration: none;">Free 3MF Files ↗</a>
           <a href="https://teleportpod.com/portal/1f920134-0b62-47ed-b7d7-46b9ca77f23d?item=9139&template=bold" target="_blank" rel="noopener noreferrer" style="color: #34D399; text-decoration: none;">Order on Slant 3D ($48) ↗</a>
         </div>
       </div>
@@ -835,7 +835,7 @@ hide:
         </p>
       </div>
       <div class="flex flex-wrap gap-3">
-        <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #FA6B05; border-color: #FA6B05; color: #FFFFFF;">
+        <a href="https://www.printables.com/model/1894428-montessori-fraction-towers-equivalence-blocks-3d-m" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #FA6B05; border-color: #FA6B05; color: #FFFFFF;">
           Download 3MF on Printables ↗
         </a>
       </div>
