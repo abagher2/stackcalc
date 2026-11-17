@@ -77,27 +77,38 @@ Every StackCalc physical manipulative kit and calculator Maker Kit includes a he
 
 ---
 
-## 📦 Single-Color Block Refill Packs & Replacement Boxes ($12–$16)
+## 📦 Single-Color Block Refill Plates ($10) & Replacement Boxes ($20)
 
-Rather than charging shipping and handling for a single tiny block, our on-demand replacement service groups spares by **single-color production plates** (`$12.00 – $16.00` with Free US Shipping on Etsy). When you order a refill pack, you receive the full set of blocks in that color group for your studio—giving you immediate replacements plus backup blocks for the future.
+Rather than charging shipping and handling for a single tiny block, our on-demand replacement service groups spares by **single-color production plates** (**`$10.00`** for any Block, Lid, Tray, or Rail Plate, and **`$20.00`** for any Replacement Storage Box, with Free US Shipping on Etsy). Simply select the exact plate you need from the listing photos and dropdown menu—no personalization codes required.
 
-| Studio | Refill Pack / Replacement Component | SKU | Contents Included | Price (Free US Ship) |
-| :--- | :--- | :--- | :--- | :---: |
-| **Fraction Studio** | **Tan Blocks Pack** | `SC-REP-FRAC-TAN` | 4× `1/4` + 9× `1/9` blocks (13 pcs in Tan) | **$13.00** |
-| **Fraction Studio** | **Red Blocks Pack** | `SC-REP-FRAC-RED` | 3× `1/3` + 6× `1/6` + 12× `1/12` blocks (21 pcs in Muted Red) | **$15.00** |
-| **Fraction Studio** | **Blue Blocks Pack** | `SC-REP-FRAC-BLUE` | 4× `1/2` + 5× `1/5` + 10× `1/10` blocks (19 pcs in Matte Blue) | **$16.00** |
-| **Fraction Studio** | **White Stage Lid + Blocks** | `SC-REP-FRAC-WHITE` | Comparator Stage Lid + 2× `1-Whole` + 8× `1/8` blocks (Pure White) | **$16.00** |
-| **Fraction Studio** | **13U Storage Box Only** | `SC-REP-FRAC-BOX` | 3×1×13U Gridfinity Box with 12 labeled floor sockets | **$16.00** |
-| **Prime Factor Studio** | **Tan `[7]` Blocks Pack** | `SC-REP-PRIME-TAN` | 4× `[7]` prime factor blocks (Tan) | **$12.00** |
-| **Prime Factor Studio** | **Red `[3]` Blocks Pack** | `SC-REP-PRIME-RED` | 9× `[3]` prime factor blocks (Muted Red) | **$14.00** |
-| **Prime Factor Studio** | **Blue `[2]` Blocks Pack** | `SC-REP-PRIME-BLUE` | 24× `[2]` prime factor blocks (Matte Blue) | **$15.00** |
-| **Prime Factor Studio** | **White Stage Lid + 6× `[5]` Blocks** | `SC-REP-PRIME-WHITE` | Comparator Stage Lid + 6× `[5]` prime factor blocks (Pure White) | **$15.00** |
-| **Prime Factor Studio** | **7U Stepped Storage Box Only** | `SC-REP-PRIME-BOX` | 3×1×7U Stepped-Floor Gridfinity Storage Box | **$16.00** |
-| **Place Value Studio** | **Red `+1` Carry Tokens Pack** | `SC-REP-PV-RED` | 8× stackable `+1` regrouping carry tokens (Muted Red) | **$12.00** |
-| **Place Value Studio** | **Dual 6×2 Activity Trays** | `SC-REP-PV-TRAYS` | Whole Numbers (`100K..1`) & Decimal Numbers (`.1..10^-6`) Trays | **$15.00** |
-| **Place Value Studio** | **Tan Digit Blocks Set B** | `SC-REP-PV-TAN` | 22× contoured `0–9` digit blocks (Tan) | **$16.00** |
-| **Place Value Studio** | **White Lid + Digit Blocks Set A** | `SC-REP-PV-WHITE` | `[123]` Lid + 22× contoured `0–9` digit blocks (Pure White) | **$16.00** |
-| **Place Value Studio** | **7U Storage Box Only** | `SC-REP-PV-BOX` | 3×1×7U Gridfinity Storage Box with 12 labeled floor sockets | **$16.00** |
+| Studio | Refill Pack / Replacement Component | SKU | Contents Included | Slant 3D Color | Price (Free US Ship) |
+| :--- | :--- | :--- | :--- | :--- | :---: |
+| **Fraction Studio (`FRAC-01`)** | **Tan Whole & Half Blocks Pack** | `SC-REP-FRAC-TAN` | `2× [1]` Whole + `4× [1/2]` Half towers (6 pcs) | **PLA Tan** | **$10.00** |
+| **Fraction Studio (`FRAC-01`)** | **White Stage Lid + Base-5 Blocks** | `SC-REP-FRAC-WHITE` | Stage Lid + `5× [1/5]` + `10× [1/10]` blocks (16 pcs) | **PLA White** | **$10.00** |
+| **Fraction Studio (`FRAC-01`)** | **Red Ternary Blocks Pack** | `SC-REP-FRAC-RED` | `3× [1/3]` + `6× [1/6]` + `9× [1/9]` blocks (18 pcs) | **PLA Matte Muted Red** | **$10.00** |
+| **Fraction Studio (`FRAC-01`)** | **Blue Binary Blocks Pack** | `SC-REP-FRAC-BLUE` | `4× [1/4]` + `8× [1/8]` + `12× [1/12]` blocks (24 pcs) | **PLA Matte Blue** | **$10.00** |
+| **Fraction Studio (`FRAC-01`)** | **13U Socketed Storage Box Only** | `SC-REP-FRAC-BOX` | 3×1×13U Gridfinity Box with 12 labeled floor sockets | **PLA Gray** | **$20.00** |
+| **Prime Studio (`PRIME-01`)** | **Tan `[7]` Blocks Pack** | `SC-REP-PRIME-TAN` | `4× [7]` logarithmic prime factor blocks | **PLA Tan** | **$10.00** |
+| **Prime Studio (`PRIME-01`)** | **Red `[3]` Blocks Pack** | `SC-REP-PRIME-RED` | `9× [3]` logarithmic prime factor blocks | **PLA Matte Muted Red** | **$10.00** |
+| **Prime Studio (`PRIME-01`)** | **Blue `[2]` Blocks Pack** | `SC-REP-PRIME-BLUE` | `24× [2]` logarithmic prime factor blocks | **PLA Matte Blue** | **$10.00** |
+| **Prime Studio (`PRIME-01`)** | **White Stage Lid + 6× `[5]` Blocks** | `SC-REP-PRIME-WHITE` | 12-Socket Stage Lid + `6× [5]` prime blocks (7 pcs) | **PLA White** | **$10.00** |
+| **Prime Studio (`PRIME-01`)** | **7U Stepped Storage Box Only** | `SC-REP-PRIME-BOX` | 3×1×7U Stepped-Floor Gridfinity Storage Box (`4-3-3-2`) | **PLA Gray** | **$20.00** |
+| **Prime Expansion (`PRIME-02`)** | **White Ratio & Factor Stage Lid** | `SC-REP-PRIME13-LID` | Ratio & Factor Stage Lid (`A1..A6` / `B1..B5` + `FACT`) | **PLA White** | **$10.00** |
+| **Prime Expansion (`PRIME-02`)** | **13U Micro-Stepped Box Only** | `SC-REP-PRIME13-BOX` | 3×1×13U Storage Box (`3289..3599` product floor sockets) | **PLA Gray** | **$20.00** |
+| **Prime Expansion (`PRIME-02`)** | **28 Higher Prime Blocks (`11–97`)** | `SC-REP-PRIME13-YEL` | All 28 blocks covering primes `11` through `97` | **PLA Yellow / Tan** | **$10.00** |
+| **Place Value (`PLACE-01`)** | **Red Regrouping (`+1` & `10`) Pack** | `SC-REP-PV-RED` | `4× [+1]` Carry + `4× [10]` Borrow blocks (8 pcs) | **PLA Matte Muted Red** | **$10.00** |
+| **Place Value (`PLACE-01`)** | **Dual 5×2 Activity Trays** | `SC-REP-PV-TRAYS` | Whole Numbers (`10,000..1`) & Decimal (`0.1..10^-5`) Trays | **PLA Gray** | **$10.00** |
+| **Place Value (`PLACE-01`)** | **Tan Digit Blocks Set B** | `SC-REP-PV-TAN` | 22× contoured `0–9` digit blocks (`4× 0`, `2× 1–9`) | **PLA Tan** | **$10.00** |
+| **Place Value (`PLACE-01`)** | **White Lid + Digit Blocks Set A** | `SC-REP-PV-WHITE` | `[123]` Lid + 22× contoured `0–9` digit blocks (23 pcs) | **PLA White** | **$10.00** |
+| **Place Value (`PLACE-01`)** | **7U Storage Box Only** | `SC-REP-PV-BOX` | 3×1×7U Gridfinity Storage Box (`0–9, +1, 10` floor) | **PLA Gray** | **$20.00** |
+| **Ten-Frames (`BASE-10`)** | **Dual 5×2 Ten-Frame Trays** | `SC-REP-TF-TRAYS` | 2× modular 5×2 Ten-Frame Activity Trays | **PLA Gray** | **$10.00** |
+| **Ten-Frames (`BASE-10`)** | **Tan Counters Set B + `10`s** | `SC-REP-TF-TAN` | `20×` Ones Counters (Set B) + `6× [10]` blocks (26 pcs) | **PLA Tan** | **$10.00** |
+| **Ten-Frames (`BASE-10`)** | **White Lid + Counters Set A + `10`s** | `SC-REP-TF-WHITE` | `[10]` Lid + `20×` Counters (Set A) + `6× [10]` (27 pcs) | **PLA White** | **$10.00** |
+| **Ten-Frames (`BASE-10`)** | **7U Storage Box Only** | `SC-REP-TF-BOX` | 3×1×7U Gridfinity Ten-Frames Storage Box Body | **PLA Gray** | **$20.00** |
+| **Algebra Studio (`ALGB-01`)** | **Dual 90° Cartesian L-Rails** | `SC-REP-ALG-RAILS` | 2× interlocking Long & Short Factoring Stage L-Rails | **PLA White** | **$10.00** |
+| **Algebra Studio (`ALGB-01`)** | **Blue Positive Tiles Pack** | `SC-REP-ALG-BLUE` | `2× [+x²]` + `6× [+x]` + `12× [+1]` tiles (20 pcs) | **PLA Matte Blue** | **$10.00** |
+| **Algebra Studio (`ALGB-01`)** | **Red Negative Tiles Pack** | `SC-REP-ALG-RED` | `2× [-x²]` + `6× [-x]` + `12× [-1]` tiles (20 pcs) | **PLA Matte Muted Red** | **$10.00** |
+| **Algebra Studio (`ALGB-01`)** | **7U Storage Box & `[x²]` Lid** | `SC-REP-ALG-BOX` | 3×1×7U Gridfinity Storage Box with `[x²]` Lid | **PLA Gray** | **$20.00** |
 
 ---
 
