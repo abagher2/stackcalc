@@ -886,7 +886,6 @@
     {
       "alphaLabel" : "i",
       "blueAction" : "formatCurrency",
-      "blueBitmapIdentifier" : "operation.180",
       "blueLabel" : "$",
       "col" : 2,
       "cx" : 37.369,

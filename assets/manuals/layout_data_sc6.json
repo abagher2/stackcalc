@@ -135,8 +135,8 @@
       "primaryLabel" : "",
       "row" : 0,
       "w" : 7,
-      "yellowAction" : "dispAll",
-      "yellowLabel" : "ALL"
+      "yellowAction" : "formatCurrency",
+      "yellowLabel" : "$"
     },
     {
       "alphaLabel" : "",
