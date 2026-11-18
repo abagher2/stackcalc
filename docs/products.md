@@ -263,21 +263,25 @@ hide:
   </section>
 
   <!-- ==========================================================================
-       SECTION 01B: OPEN-HARDWARE SCIENTIFIC RPN CALCULATOR (SC-32)
+       SECTION 01B: OPEN-HARDWARE SCIENTIFIC & SPECIALIST RPN CALCULATORS (SC-SERIES)
        ========================================================================== -->
   <section id="calculators" class="ec-section">
     <div style="background: rgba(17, 20, 26, 0.9); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem;">
-      <img src="../assets/renders/sc32-hero-keynote.png" alt="StackCalc SC-32 Scientific RPN Calculator" style="width: 180px; height: 180px; object-fit: cover; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15);">
+      <a href="sc32-calculator/">
+        <img src="../assets/renders/models/sc-series-podium-9.png" alt="StackCalc SC-32 &amp; 9 Specialist Domain Calculators" style="width: 180px; height: 180px; object-fit: cover; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15);">
+      </a>
       <div style="flex: 1; min-width: 260px;">
-        <div style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #F59E0B; font-weight: 700; text-transform: uppercase;">HIGH SCHOOL, COLLEGE &amp; ENGINEERING // OPEN HARDWARE</div>
-        <h3 style="margin: 0.25rem 0 0.5rem 0; color: #FFFFFF; font-size: 1.35rem; font-weight: 800;">StackCalc SC-32 Scientific RPN Calculator</h3>
+        <div style="font-family: 'Space Mono', monospace; font-size: 0.72rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">STEM, TRADES &amp; CLASSROOM // 9+2 DEDICATED MODELS</div>
+        <h3 style="margin: 0.25rem 0 0.5rem 0; color: #FFFFFF; font-size: 1.35rem; font-weight: 800;"><a href="sc32-calculator/" style="color: inherit; text-decoration: none;">StackCalc SC-32 &amp; Specialist RPN Series</a></h3>
         <p style="margin: 0 0 0.75rem 0; color: #CBD5E1; font-size: 0.88rem; line-height: 1.55;">
-          The tactile Reverse Polish Notation scientific instrument powered by dual-core RP2350 silicon, mechanical switches, a 4-line daylight-readable LCD stack (<code>T, Z, Y, X</code>), and zero-radio exam compliance. Companion to our native iOS, watchOS, and macOS digital twins.
+          One deterministic RP2350 RPN stack across <strong>9 specialist domain calculators</strong> (<code>SC-14</code> Electrical, <code>SC-80</code> ICU, <code>SC-78</code> Bakery, <code>SC-35</code> Avionics, <code>SC-95</code> Quant, <code>SC-50</code> RF, <code>SC-16</code> CS, <code>SC-24</code> Cinema, <code>SC-60</code> Lab) plus the core <strong>SC-32 Scientific</strong> and <strong>SC-6 Elementary</strong> instruments. Switch between any model in the iOS, watchOS, and macOS app via the <code>[FLAGS]</code> menu (<code>[g] [FLAGS]</code>).
         </p>
         <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem;">
-          <span style="font-family: 'Space Mono', monospace; font-size: 1.1rem; font-weight: 800; color: #FFFFFF;">$89.00 <span style="font-size: 0.75rem; color: #94A3B8; font-weight: 400;">&bull; Maker Edition</span></span>
-          <a href="https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator" target="_blank" rel="noopener noreferrer" class="te-card-btn">Hackaday Build Logs ↗</a>
-          <a href="https://apps.apple.com/app/id6801788040" target="_blank" rel="noopener noreferrer" class="te-card-btn">iOS / Watch / Mac App ↗</a>
+          <span style="font-family: 'Space Mono', monospace; font-size: 1.1rem; font-weight: 800; color: #FFFFFF;">$89.00 <span style="font-size: 0.75rem; color: #94A3B8; font-weight: 400;">&bull; HW In Production</span></span>
+          <a href="sc32-calculator/" class="te-card-btn" style="border-color: #38BDF8; color: #38BDF8;">Explore 9+2 Models &rarr;</a>
+          <a href="sc6-elementary/" class="te-card-btn">SC-6 Elementary &rarr;</a>
+          <a href="https://apps.apple.com/app/id6801788040" target="_blank" rel="noopener noreferrer" class="te-card-btn">App Store (Scientific) ↗</a>
+          <a href="https://apps.apple.com/us/app/stackcalc-calculator/id6801788040?ppid=adb09508-b8f0-4e64-9913-15c8eabb57a8" target="_blank" rel="noopener noreferrer" class="te-card-btn" style="border-color: #34D399; color: #34D399;">App Store (SC-6 Visual Mode) ↗</a>
         </div>
       </div>
     </div>
@@ -346,7 +350,7 @@ hide:
           <span>⚙</span> NO LOST PIECE GUARANTEE
         </strong>
         <p class="text-gray-300 text-xs m-0 leading-relaxed">
-          Classrooms lose pieces. If any tile, token, or block ever goes missing or gets damaged, order individual replacement components anytime starting at $2.49 through our Slant 3D manufacturing portal or download free 3MFs.
+          Classrooms lose pieces. If any tile, token, or block ever goes missing or gets damaged, download free 3MFs to print a replacement at school or order single-color replacement plates ($12&ndash;$16) through our Slant 3D manufacturing portal.
         </p>
       </div>
     </div>

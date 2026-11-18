@@ -118,14 +118,20 @@ hide:
 
     <!-- Left Column: Product Gallery -->
     <div class="ec-gallery">
-<div class="ec-gallery-main">
+      <div class="ec-gallery-main">
         <img id="main-product-image" src="../../assets/renders/edition_stealth_industrial.png" alt="StackCalc SC-32 Scientific RPN Calculator - Stealth Industrial Edition" loading="eager">
       </div>
 
-      <!-- Thumbnail Selector Strip (Includes Real High-Res Editions & Infographics) -->
+      <!-- Thumbnail Selector Strip (Includes Real High-Res Editions, Ep 5 9-Model Lineup & Infographics) -->
       <div class="ec-gallery-thumbs">
         <div class="ec-gallery-thumb active" onclick="switchPDPMainImage('../../assets/renders/edition_stealth_industrial.png', this)">
-          <img src="../../assets/renders/edition_stealth_industrial.png" alt="Stealth Industrial Assembly">
+          <img src="../../assets/renders/edition_stealth_industrial.png" alt="SC-32 Core Scientific Assembly">
+        </div>
+        <div class="ec-gallery-thumb" onclick="switchPDPMainImage('../../assets/renders/models/sc-series-grid-9.png', this)">
+          <img src="../../assets/renders/models/sc-series-grid-9.png" alt="SC-Series 9 Dedicated Domain Calculators Grid">
+        </div>
+        <div class="ec-gallery-thumb" onclick="switchPDPMainImage('../../assets/renders/models/sc-series-podium-9.png', this)">
+          <img src="../../assets/renders/models/sc-series-podium-9.png" alt="SC-Series 9 Dedicated Calculators Studio Lineup">
         </div>
         <div class="ec-gallery-thumb" onclick="switchPDPMainImage('../../assets/renders/sc32-hero-keynote.png', this)">
           <img src="../../assets/renders/sc32-hero-keynote.png" alt="Keynote Hero Angle">
@@ -136,12 +142,6 @@ hide:
         <div class="ec-gallery-thumb" onclick="switchPDPMainImage('../../assets/renders/sc32-dovetail-service.png', this)">
           <img src="../../assets/renders/sc32-dovetail-service.png" alt="Tool-Free Dovetail Battery Service">
         </div>
-        <div class="ec-gallery-thumb" onclick="switchPDPMainImage('../../assets/renders/sc32-craftsmanship-pureblack.png', this)">
-          <img src="../../assets/renders/sc32-craftsmanship-pureblack.png" alt="Pure Black Craftsmanship Macro">
-        </div>
-        <div class="ec-gallery-thumb" onclick="switchPDPMainImage('../../assets/renders/etsy/puzzle-stand-seated-square.png', this)">
-          <img src="../../assets/renders/etsy/puzzle-stand-seated-square.png" alt="Ergonomic 22° Folding Desktop Puzzle Stand">
-        </div>
         <div class="ec-gallery-thumb" onclick="switchPDPMainImage('../../assets/renders/etsy/sc32-specs-infographic-square.png', this)">
           <img src="../../assets/renders/etsy/sc32-specs-infographic-square.png" alt="SC-32 Hardware Specs Infographic">
         </div>
@@ -150,87 +150,77 @@ hide:
 
     <!-- Right Column: Buy Box & Product Info -->
     <div class="ec-buybox">
-      <h1 class="ec-product-title">SC-32 Scientific RPN Maker Kit</h1>
+      <h1 class="ec-product-title">SC-32 &amp; Specialist RPN Series</h1>
 
       <!-- Technical Telemetry & Compliance -->
       <div class="flex items-center gap-2 mb-3 font-mono text-xs">
         <span class="text-emerald-400 font-bold">&check; SAT &bull; ACT &bull; AP Exam Permitted</span>
         <span class="text-slate-400">&bull; RP2350 Dual-Core ARM</span>
-        <span class="text-slate-400">&bull; Zero Soldering Required</span>
+        <span class="text-slate-400">&bull; 9+2 Dedicated Models</span>
       </div>
 
       <div class="ec-price-box">
         <span class="ec-price-current">$89.00</span>
-        <span class="ec-shipping-note">&check; 100% Pre-Soldered Maker Kit &bull; Batch 04 In Production</span>
+        <span class="ec-shipping-note">&bull; Hardware Maker Kit In Production &bull; App Live Now on iOS, Watch &amp; Mac</span>
       </div>
 
-      <!-- Interactive Tactile Faceplate Architecture Selector -->
-      <div class="te-faceplate-section" style="margin-top: 0.5rem; margin-bottom: 1.25rem;">
-        <div class="te-faceplate-header">
-          <span class="te-faceplate-label">Select Modular Faceplate:</span>
-          <span class="text-xs text-sky-400 font-mono">10s Tool-Free Swap</span>
+      <!-- Minimalist Retrofuturist SC-Series Dedicated Model Selector -->
+      <div class="te-faceplate-section" style="margin-top: 0.5rem; margin-bottom: 1.25rem; background: #080A0E; border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 0.5rem; padding: 0.85rem;">
+        <div class="te-faceplate-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
+          <span class="te-faceplate-label" style="font-family: 'Space Mono', monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: #94A3B8;">Select Dedicated Instrument:</span>
+          <span class="text-xs text-sky-400 font-mono">In-App Switch: [g] [FLAGS]</span>
         </div>
-        <div class="te-swatches-grid">
-          <button type="button" class="te-swatch-btn active" id="pdp-swatch-stealth" onclick="switchPDPFaceplate('stealth', '../../assets/renders/edition_stealth_industrial.png', 'Technical Matte Black PLA', 'Technical Matte Black', 'Tactile Light Gray TPU 95A', 'Direct Laser-Foamed')">
-            <span class="te-swatch-chip chip-stealth"></span>
-            <span class="te-swatch-name">Stealth</span>
-          </button>
-          <button type="button" class="te-swatch-btn" id="pdp-swatch-voyager" onclick="switchPDPFaceplate('voyager', '../../assets/renders/edition_voyager.png', 'Optical Frosted Translucent PETG', 'Technical Matte Black', 'Tactile Light Gray TPU 95A', 'Direct Laser-Foamed')">
-            <span class="te-swatch-chip chip-voyager"></span>
-            <span class="te-swatch-name">Voyager</span>
-          </button>
-          <button type="button" class="te-swatch-btn" id="pdp-swatch-supernova" onclick="switchPDPFaceplate('supernova', '../../assets/renders/edition_supernova.png', 'Red+Gold Silk PLA (Anisotropic)', 'Technical Matte Black', 'Tactile Light Gray TPU 95A', 'Direct Laser-Foamed')">
-            <span class="te-swatch-chip chip-supernova"></span>
-            <span class="te-swatch-name">Supernova</span>
-          </button>
-          <button type="button" class="te-swatch-btn" id="pdp-swatch-deepspace" onclick="switchPDPFaceplate('deepspace', '../../assets/renders/edition_deep_space.png', 'Purp+Grn+Blu Trichromatic Silk PLA', 'Technical Matte Black', 'Tactile Light Gray TPU 95A', 'Direct Laser-Foamed')">
-            <span class="te-swatch-chip chip-deepspace"></span>
-            <span class="te-swatch-name">Deep Space</span>
-          </button>
-          <button type="button" class="te-swatch-btn" id="pdp-swatch-synthwave" onclick="switchPDPFaceplate('synthwave', '../../assets/renders/edition_synthwave.png', 'Purple+Black Silk PLA', 'Technical Matte Black', 'Tactile Light Gray TPU 95A', 'Direct Laser-Foamed')">
-            <span class="te-swatch-chip chip-synthwave"></span>
-            <span class="te-swatch-name">Synthwave</span>
-          </button>
+        <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.35rem; margin-bottom: 0.65rem;">
+          <button type="button" class="te-swatch-btn active" id="pdp-swatch-sc32" style="padding: 0.4rem 0.25rem; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-align: center; justify-content: center;" onclick="switchPDPFaceplate('sc32', '../../assets/renders/edition_stealth_industrial.png', 'SC-32 Scientific Core', 'SIN / COS / SOLVE / ∫ / POLY', 'Matte Black + Azure TPU 95A', '[g] [FLAGS] → SC-32')">SC-32</button>
+          <button type="button" class="te-swatch-btn" id="pdp-swatch-sc14" style="padding: 0.4rem 0.25rem; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-align: center; justify-content: center;" onclick="switchPDPFaceplate('sc14', '../../assets/renders/models/model_sc14.png', 'SC-14 Trades &amp; Electrical', 'AWG: VOLT DROP / OFS / PF / XL', 'Matte Black + Cobalt TPU 95A', '[g] [FLAGS] → SC-14')">SC-14</button>
+          <button type="button" class="te-swatch-btn" id="pdp-swatch-sc80" style="padding: 0.4rem 0.25rem; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-align: center; justify-content: center;" onclick="switchPDPFaceplate('sc80', '../../assets/renders/models/model_sc80.png', 'SC-80 Clinical &amp; ICU', 'DRP: VASO DRIP / BSA / GFR / IV', 'Clinical White + Obsidian Plate', '[g] [FLAGS] → SC-80')">SC-80</button>
+          <button type="button" class="te-swatch-btn" id="pdp-swatch-sc78" style="padding: 0.4rem 0.25rem; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-align: center; justify-content: center;" onclick="switchPDPFaceplate('sc78', '../../assets/renders/models/model_sc78.png', 'SC-78 Culinary &amp; Bakery', 'TW: WATER TEMP / BK% / LEV / ABV', 'Heritage Espresso + Slate TPU', '[g] [FLAGS] → SC-78')">SC-78</button>
+          <button type="button" class="te-swatch-btn" id="pdp-swatch-sc35" style="padding: 0.4rem 0.25rem; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-align: center; justify-content: center;" onclick="switchPDPFaceplate('sc35', '../../assets/renders/models/model_sc35.png', 'SC-35 Avionics &amp; Survey', 'WIND: CROSSWIND / TSD / BRG / CRV', 'Cockpit Slate Gray + Matte TPU', '[g] [FLAGS] → SC-35')">SC-35</button>
+          <button type="button" class="te-swatch-btn" id="pdp-swatch-sc95" style="padding: 0.4rem 0.25rem; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-align: center; justify-content: center;" onclick="switchPDPFaceplate('sc95', '../../assets/renders/models/model_sc95.png', 'SC-95 Quant &amp; Finance', 'NORM: NORMAL CDF / TVM / BS / CF', 'Monolith Pure Black + White Foil', '[g] [FLAGS] → SC-95')">SC-95</button>
+          <button type="button" class="te-swatch-btn" id="pdp-swatch-sc50" style="padding: 0.4rem 0.25rem; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-align: center; justify-content: center;" onclick="switchPDPFaceplate('sc50', '../../assets/renders/models/model_sc50.png', 'SC-50 RF &amp; Telecom', 'SWR: VSWR &amp; GAMMA / FSL / dBm', 'Deep Voyager Navy + Slate TPU', '[g] [FLAGS] → SC-50')">SC-50</button>
+          <button type="button" class="te-swatch-btn" id="pdp-swatch-sc16" style="padding: 0.4rem 0.25rem; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-align: center; justify-content: center;" onclick="switchPDPFaceplate('sc16', '../../assets/renders/models/model_sc16.png', 'SC-16 Computer Scientist', 'HEX / BIT / ASH / ROR / CRC', 'Cosmos Dark Indigo + Charcoal TPU', '[g] [FLAGS] → SC-16')">SC-16</button>
+          <button type="button" class="te-swatch-btn" id="pdp-swatch-sc24" style="padding: 0.4rem 0.25rem; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-align: center; justify-content: center;" onclick="switchPDPFaceplate('sc24', '../../assets/renders/models/model_sc24.png', 'SC-24 Optics &amp; Cinema', 'FOV: LENS ANGLE / EV / LUX / DOF', 'Crimson-Amber Plate + Slate TPU', '[g] [FLAGS] → SC-24')">SC-24</button>
+          <button type="button" class="te-swatch-btn" id="pdp-swatch-sc60" style="padding: 0.4rem 0.25rem; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; text-align: center; justify-content: center;" onclick="switchPDPFaceplate('sc60', '../../assets/renders/models/model_sc60.png', 'SC-60 Chemistry &amp; Lab', 'MW: MOLAR MASS / pH / BUF / C1V1', 'Ultraviolet Lab Plate + Slate TPU', '[g] [FLAGS] → SC-60')">SC-60</button>
         </div>
-        <div class="te-cmf-readout" id="pdp-cmf-readout">
-          <strong>[ACTIVE CMF]</strong> <span id="pdp-cmf-text">FACEPLATE: Technical Matte Black PLA &bull; CHASSIS: Technical Matte Black &bull; KEYS: Tactile Light Gray TPU 95A &bull; MARKINGS: Direct Laser-Foamed</span>
+        <div class="te-cmf-readout" id="pdp-cmf-readout" style="font-family: 'Space Mono', monospace; font-size: 0.72rem; line-height: 1.45;">
+          <strong>[ACTIVE INSTRUMENT]</strong> <span id="pdp-cmf-text">MODEL: SC-32 Scientific Core &bull; KEYS: SIN / COS / SOLVE / &int; / POLY &bull; FINISH: Matte Black + Azure TPU 95A &bull; APP MODE: [g] [FLAGS] &rarr; SC-32</span>
         </div>
       </div>
 
       <p class="ec-short-summary">
-        The dedicated tactile handheld Reverse Polish Notation scientific instrument engineered for STEM students and technical professionals. Features Raspberry Pi RP2350 silicon, 43 tactile microswitches with sculpted Shore 90A TPU keys, a high-contrast reflective ST7567A monochrome LCD with native Terminus typography, and a 4-part tool-free sliding dovetail chassis.
+        One deterministic RPN stack engine across <strong>9 specialist domain instruments</strong> plus the core <strong>SC-32 Scientific</strong> and <strong>SC-6 Elementary</strong> calculators. Physical hardware kits feature Raspberry Pi RP2350 silicon, 43 snap-dome microswitches (400g), a reflective 132&times;65 ST7567A monochrome LCD, and tool-free sliding dovetail faceplates. While Batch 04 hardware is in production, test every model today in the native iOS, watchOS, and macOS app via the <code>[FLAGS]</code> menu.
       </p>
 
       <!-- Highlights Checklist -->
       <div class="ec-highlights-list">
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Zero Distraction, Total Privacy:</strong> No Bluetooth, Wi-Fi, cameras, or games. 100% legal in testing centers.</span>
+          <span><strong>All Models Live in the App Store:</strong> Switch between SC-32 and any specialist model in the app via <code>[g] [FLAGS]</code>.</span>
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Physical Tactile Feedback:</strong> 400 grams of snap-dome actuation force for rapid, confident blind touch-typing.</span>
+          <span><strong>Zero Distraction, Total Privacy:</strong> No Bluetooth, Wi-Fi, cameras, or games on hardware. 100% legal in exam halls.</span>
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Live 4-Line RPN Stack:</strong> Evaluates intermediate values instantly without nested parentheses traps.</span>
+          <span><strong>Physical Tactile Feedback:</strong> 400 grams of snap-dome actuation force with 10-second tool-free dovetail faceplate swaps.</span>
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Months of Battery Life:</strong> Powered by a single standard CR2032 3V coin cell (3&ndash;6 months typical daily use).</span>
+          <span><strong>Live 4-Line RPN Stack:</strong> Evaluates intermediate trade, clinical, and scientific values without parentheses traps.</span>
         </div>
       </div>
 
       <!-- Action Buttons -->
       <div class="ec-actions-row">
-        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
-          Order Maker Kit on Etsy ($89.00) ↗
+        <a href="https://apps.apple.com/app/id6801788040" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #38BDF8; border-color: #38BDF8; color: #080A0E; font-weight: 800;">
+          Try on iPhone, iPad, Watch &amp; Mac (App Store) ↗
         </a>
-        <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="border-color: #38BDF8; color: #38BDF8;">
-          On-Demand Parts (Slant 3D) ↗
+        <a href="https://apps.apple.com/us/app/stackcalc-calculator/id6801788040?ppid=adb09508-b8f0-4e64-9913-15c8eabb57a8" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="border-color: #34D399; color: #34D399;">
+          App Store: Visual Learning Mode (SC-6) ↗
         </a>
-        <a href="#downloads" class="ec-btn-secondary">
-          Download Open-Source STLs &darr;
+        <a href="#sc-series-models" class="ec-btn-secondary">
+          Explore All 9+2 Models &darr;
         </a>
       </div>
 
@@ -518,7 +508,7 @@ hide:
         </a>
         <span class="text-white/20">&bull;</span>
         <a href="https://link.amazon/B07DqTRR5" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition">
-          Amazon Print () ↗
+          Amazon Print ($16) ↗
         </a>
       </div>
     </div>
@@ -549,8 +539,8 @@ hide:
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">.00</span>
-            <span class="text-xs font-mono text-cyan-400">Standalone Kit</span>
+            <span class="cross-sell-price">$48.00</span>
+            <span class="text-xs font-mono text-cyan-400">65-Piece Kit</span>
           </div>
           <a href="../fraction-studio/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
             Explore Fraction Studio &rarr;
@@ -569,8 +559,8 @@ hide:
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">.00</span>
-            <span class="text-xs font-mono text-emerald-400">Standalone Kit</span>
+            <span class="cross-sell-price">$46.00</span>
+            <span class="text-xs font-mono text-emerald-400">50-Piece Kit</span>
           </div>
           <a href="../prime-factor-studio/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
             Explore Prime Factor Studio &rarr;
@@ -578,22 +568,22 @@ hide:
         </div>
       </div>
 
-      <!-- Cross-Sell 3: SC-6 Elementary Calculator -->
+      <!-- Cross-Sell 3: Place Value Studio -->
       <div class="cross-sell-card">
         <div>
-          <img src="../../assets/renders/sc6-elementary-hero.png" alt="SC-6 Elementary Calculator" class="cross-sell-thumb" />
-          <h3 class="cross-sell-card-title">SC-6 Elementary Calculator</h3>
+          <img src="../../assets/renders/etsy/place-value-studio-real-overview-hero-tight.jpg" alt="Place Value Studio" class="cross-sell-thumb" />
+          <h3 class="cross-sell-card-title">Place Value Studio</h3>
           <p class="cross-sell-card-desc">
-            The bridge calculator for grades 2–6. Pure algebraic and RPN dual mode with large high-contrast display and simplified 6-key core.
+            Base-10 counting trays, snap-fit tens rods, and hundreds flats. Builds concrete decimal regrouping before entering the RPN stack.
           </p>
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">.00</span>
-            <span class="text-xs font-mono text-cyan-400">Standalone Kit</span>
+            <span class="cross-sell-price">$48.00</span>
+            <span class="text-xs font-mono text-amber-400">83-Piece Kit</span>
           </div>
-          <a href="../sc6-elementary/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
-            Explore SC-6 Calculator &rarr;
+          <a href="../place-value/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
+            Explore Place Value Studio &rarr;
           </a>
         </div>
       </div>
@@ -675,123 +665,180 @@ FORCE (g)
   </section>
 
   <!-- ==========================================================================
-       SECTION: CURATED FACEPLATE ARCHITECTURES & CMF FINISHES
+       SECTION: DEDICATED SC-SERIES DOMAIN INSTRUMENTS (9+2 MODELS)
        ========================================================================== -->
-  <section class="ec-section">
+  <section id="sc-series-models" class="ec-section">
     <div class="te-section-bar">
       <div>
-        <h2 class="te-section-title">Curated Faceplate Architectures &amp; CMF Finishes</h2>
-        <p class="text-sm text-gray-400 m-0">Modular faceplates slide on in under 10 seconds along internal dovetail rails without tools.</p>
+        <span class="text-xs font-mono uppercase text-sky-400 font-bold tracking-wider">&bull; All Trades, One Stack &bull; In-App Mode Switch via [g] [FLAGS]</span>
+        <h2 class="te-section-title mt-1">SC-Series Dedicated Domain Calculators (9+2 Models)</h2>
+        <p class="text-sm text-gray-400 m-0">
+          Every SC-Series calculator runs on the same deterministic RP2350 RPN stack architecture with domain-dedicated top-row keys and laser-foamed faceplates. Switch between all models inside the iOS, watchOS, and macOS app via the <code>[FLAGS]</code> menu (<code>[g] [FLAGS]</code>).
+        </p>
       </div>
     </div>
 
     <div class="te-grid-3">
 
-      <!-- 1. Stealth Industrial -->
+      <!-- 1. SC-14 Trades & Electrical -->
       <article class="te-card">
         <div class="te-card-viewport">
-          <img src="../../assets/renders/edition_stealth_industrial.png" alt="Stealth Industrial SC-32 Edition" loading="lazy">
+          <img src="../../assets/renders/models/model_sc14.png" alt="SC-14 Trades and Electrical RPN Calculator" loading="lazy">
         </div>
         <div class="te-card-body">
-          <div class="te-card-category">Concentric Micro-Grooves</div>
-          <h3 class="te-card-title">Stealth Industrial</h3>
+          <div class="te-card-category">SC-14 &bull; Trades &amp; Electrical</div>
+          <h3 class="te-card-title">NEC Wire Gauge, Conduit &amp; Power</h3>
           <p class="te-card-desc">
-            Concentric Archimedean spiral grooved Black PLA 2.0+ faceplate, impact-resistant Black PETG unibody chassis, electric Azure TPU 95A keycaps, and dual-layer laser-etched Silver Chrome &amp; Gold foil markings.
+            Dedicated <code>AWG</code> voltage drop solver, 3-point conduit offset/saddle bends (<code>OFS</code>), power factor &amp; reactive impedance (<code>PF</code>, <code>XL</code>, <code>XC</code>), and fractional inch <code>f-i</code> stack entry.
           </p>
         </div>
         <div class="te-card-footer">
-          <span class="te-card-price">$89.00</span>
-          <button type="button" class="te-card-btn" onclick="switchPDPFaceplate('stealth', '../../assets/renders/edition_stealth_industrial.png', 'Black PLA 2.0+ (Concentric Micro-Grooves)', 'Black PETG', 'Electric Azure TPU 95A', 'Silver Chrome &amp; Gold')">Preview &uarr;</button>
+          <span class="te-card-price" style="font-size: 0.75rem; color: #38BDF8;">[g] [FLAGS] &rarr; SC-14</span>
+          <button type="button" class="te-card-btn" onclick="switchPDPFaceplate('sc14', '../../assets/renders/models/model_sc14.png', 'SC-14 Trades &amp; Electrical', 'AWG: VOLT DROP / OFS / PF / XL', 'Matte Black + Cobalt TPU 95A', '[g] [FLAGS] → SC-14')">Preview &uarr;</button>
         </div>
       </article>
 
-      <!-- 2. Retrofuturism -->
+      <!-- 2. SC-80 Clinical & ICU -->
       <article class="te-card">
         <div class="te-card-viewport">
-          <img src="../../assets/renders/edition_retrofuturism.png" alt="Retrofuturism SC-32 Edition" loading="lazy">
+          <img src="../../assets/renders/models/model_sc80.png" alt="SC-80 Clinical and ICU RPN Calculator" loading="lazy">
         </div>
         <div class="te-card-body">
-          <div class="te-card-category">Archival Polar White</div>
-          <h3 class="te-card-title">Retrofuturism</h3>
+          <div class="te-card-category">SC-80 &bull; Clinical &amp; ICU</div>
+          <h3 class="te-card-title">Vasoactive Drip, Dosing &amp; Renal</h3>
           <p class="te-card-desc">
-            Monolithic Ivory/Polar White PLA 2.0+ faceplate and chassis, pure Polar White Shore 95A TPU keycaps, and high-contrast Deep Navy &amp; Antique Bronze foil hot-stamped legends.
+            Weight-based vasoactive infusion rate solver (<code>DRP</code>), Body Surface Area (<code>BSA</code>), Cockcroft-Gault / CKD-EPI filtration (<code>GFR</code>), pharmacokinetic half-life (<code>PK</code>), and A-a gradient.
           </p>
         </div>
         <div class="te-card-footer">
-          <span class="te-card-price">$89.00</span>
-          <button type="button" class="te-card-btn" onclick="switchPDPFaceplate('retro', '../../assets/renders/edition_retrofuturism.png', 'Polar White PLA 2.0+ (Ivory Matte)', 'Polar White PLA 2.0+', 'Polar White TPU 95A', 'Navy &amp; Bronze')">Preview &uarr;</button>
+          <span class="te-card-price" style="font-size: 0.75rem; color: #38BDF8;">[g] [FLAGS] &rarr; SC-80</span>
+          <button type="button" class="te-card-btn" onclick="switchPDPFaceplate('sc80', '../../assets/renders/models/model_sc80.png', 'SC-80 Clinical &amp; ICU', 'DRP: VASO DRIP / BSA / GFR / IV', 'Clinical White + Obsidian Plate', '[g] [FLAGS] → SC-80')">Preview &uarr;</button>
         </div>
       </article>
 
-      <!-- 3. Voyager -->
+      <!-- 3. SC-78 Culinary & Bakery -->
       <article class="te-card">
         <div class="te-card-viewport">
-          <img src="../../assets/renders/edition_voyager.png" alt="Voyager SC-32 Edition" loading="lazy">
+          <img src="../../assets/renders/models/model_sc78.png" alt="SC-78 Culinary and Bakery RPN Calculator" loading="lazy">
         </div>
         <div class="te-card-body">
-          <div class="te-card-category">Optical Translucent</div>
-          <h3 class="te-card-title">Voyager</h3>
+          <div class="te-card-category">SC-78 &bull; Culinary &amp; Fermentation</div>
+          <h3 class="te-card-title">Baker's Percentage &amp; Desired Dough Temp</h3>
           <p class="te-card-desc">
-            Optical Frosted Clear PETG faceplate revealing the internal matte black motherboard traces and immersion gold test pads, Matte Midnight Navy PLA chassis, Azure TPU keys, and Sky Blue foil.
+            4-factor Desired Dough Temperature water solver (<code>Tw</code>), Baker's Percentage scaling (<code>BK%</code>), levain inoculation (<code>LEV</code>), pan volume ratios (<code>PAN</code>), and Plato/Brix fermentation (<code>ABV</code>).
           </p>
         </div>
         <div class="te-card-footer">
-          <span class="te-card-price">$109.00</span>
-          <button type="button" class="te-card-btn" onclick="switchPDPFaceplate('voyager', '../../assets/renders/edition_voyager.png', 'Optical Frosted Translucent PETG', 'Midnight Navy PLA 2.0+', 'Electric Azure TPU 95A', 'Navy &amp; Sky Blue')">Preview &uarr;</button>
+          <span class="te-card-price" style="font-size: 0.75rem; color: #38BDF8;">[g] [FLAGS] &rarr; SC-78</span>
+          <button type="button" class="te-card-btn" onclick="switchPDPFaceplate('sc78', '../../assets/renders/models/model_sc78.png', 'SC-78 Culinary &amp; Bakery', 'TW: WATER TEMP / BK% / LEV / ABV', 'Heritage Espresso + Slate TPU', '[g] [FLAGS] → SC-78')">Preview &uarr;</button>
         </div>
       </article>
 
-      <!-- 4. Supernova -->
+      <!-- 4. SC-35 Avionics & Survey -->
       <article class="te-card">
         <div class="te-card-viewport">
-          <img src="../../assets/renders/edition_supernova.png" alt="Supernova SC-32 Edition" loading="lazy">
+          <img src="../../assets/renders/models/model_sc35.png" alt="SC-35 Avionics and Survey RPN Calculator" loading="lazy">
         </div>
         <div class="te-card-body">
-          <div class="te-card-category">Anisotropic Silk Sheen</div>
-          <h3 class="te-card-title">Supernova</h3>
+          <div class="te-card-category">SC-35 &bull; Avionics &amp; Geomatics</div>
+          <h3 class="te-card-title">Crosswind, COGO Traverse &amp; Density Altitude</h3>
           <p class="te-card-desc">
-            Dual-Color Silk PLA faceplate transitioning from Crimson Red to Warm Amber Gold with anisotropic light sheen, Midnight Navy PLA chassis, Light Gray TPU keys, and mirrored Silver &amp; Gold foil.
+            Runway crosswind/headwind vector decomposition (<code>WIND</code>), forward/inverse COGO survey traverse (<code>TRV</code>, <code>INV</code>), horizontal curve geometry (<code>CRV</code>), and Time-Speed-Distance (<code>TSD</code>).
           </p>
         </div>
         <div class="te-card-footer">
-          <span class="te-card-price">$109.00</span>
-          <button type="button" class="te-card-btn" onclick="switchPDPFaceplate('supernova', '../../assets/renders/edition_supernova.png', 'Red+Gold Silk PLA (Anisotropic)', 'Midnight Navy PLA 2.0+', 'Light Gray TPU 95A', 'Mirror Silver &amp; Gold')">Preview &uarr;</button>
+          <span class="te-card-price" style="font-size: 0.75rem; color: #38BDF8;">[g] [FLAGS] &rarr; SC-35</span>
+          <button type="button" class="te-card-btn" onclick="switchPDPFaceplate('sc35', '../../assets/renders/models/model_sc35.png', 'SC-35 Avionics &amp; Survey', 'WIND: CROSSWIND / TSD / BRG / CRV', 'Cockpit Slate Gray + Matte TPU', '[g] [FLAGS] → SC-35')">Preview &uarr;</button>
         </div>
       </article>
 
-      <!-- 5. Deep Space -->
+      <!-- 5. SC-95 Quant & Finance -->
       <article class="te-card">
         <div class="te-card-viewport">
-          <img src="../../assets/renders/edition_deep_space.png" alt="Deep Space SC-32 Edition" loading="lazy">
+          <img src="../../assets/renders/models/model_sc95.png" alt="SC-95 Quant and Finance RPN Calculator" loading="lazy">
         </div>
         <div class="te-card-body">
-          <div class="te-card-category">Trichromatic Silk PLA</div>
-          <h3 class="te-card-title">Deep Space</h3>
+          <div class="te-card-category">SC-95 &bull; Quant &amp; Institutional Finance</div>
+          <h3 class="te-card-title">TVM, Black-Scholes &amp; Normal CDF</h3>
           <p class="te-card-desc">
-            Trichromatic co-extruded Silk PLA faceplate shifting continuously between Indigo Purple, Emerald Green, and Deep Cobalt Blue, Solid Black PLA chassis, Azure TPU keys, and gold foil accents.
+            5-register Time Value of Money solver (<code>TVM</code>: <code>rN</code>, <code>rI</code>, <code>rP</code>, <code>rM</code>, <code>rF</code>), Gaussian cumulative normal probability (<code>NORM</code>), Black-Scholes option pricing (<code>BS</code>), and bond duration.
           </p>
         </div>
         <div class="te-card-footer">
-          <span class="te-card-price">$109.00</span>
-          <button type="button" class="te-card-btn" onclick="switchPDPFaceplate('deepspace', '../../assets/renders/edition_deep_space.png', 'Purp+Grn+Blu Trichromatic Silk PLA', 'Black PLA 2.0+', 'Electric Azure TPU 95A', 'Foam White &amp; Gold')">Preview &uarr;</button>
+          <span class="te-card-price" style="font-size: 0.75rem; color: #38BDF8;">[g] [FLAGS] &rarr; SC-95</span>
+          <button type="button" class="te-card-btn" onclick="switchPDPFaceplate('sc95', '../../assets/renders/models/model_sc95.png', 'SC-95 Quant &amp; Finance', 'NORM: NORMAL CDF / TVM / BS / CF', 'Monolith Pure Black + White Foil', '[g] [FLAGS] → SC-95')">Preview &uarr;</button>
         </div>
       </article>
 
-      <!-- 6. Synthwave -->
+      <!-- 6. SC-50 RF & Telecom -->
       <article class="te-card">
         <div class="te-card-viewport">
-          <img src="../../assets/renders/edition_synthwave.png" alt="Synthwave SC-32 Edition" loading="lazy">
+          <img src="../../assets/renders/models/model_sc50.png" alt="SC-50 RF and Telecom RPN Calculator" loading="lazy">
         </div>
         <div class="te-card-body">
-          <div class="te-card-category">Dichromatic Violet Silk</div>
-          <h3 class="te-card-title">Synthwave</h3>
+          <div class="te-card-category">SC-50 &bull; RF &amp; Microwave Engineering</div>
+          <h3 class="te-card-title">VSWR, Friis Link Budget &amp; Cascaded Noise</h3>
           <p class="te-card-desc">
-            Dichromatic Silk PLA faceplate in Electric Magenta and Deep Obsidian Violet, Solid Black PLA chassis, Azure TPU keys, and laser-foamed stark white &amp; neon cyan markings.
+            Standing wave ratio &amp; reflection coefficient (<code>SWR</code>, <code>&Gamma;</code>), Free-Space Path Loss (<code>FSL</code>), cascaded Noise Figure (<code>NF</code>), L-network impedance matching, and <code>dBm &harr; mW</code> conversions.
           </p>
         </div>
         <div class="te-card-footer">
-          <span class="te-card-price">$109.00</span>
-          <button type="button" class="te-card-btn" onclick="switchPDPFaceplate('synthwave', '../../assets/renders/edition_synthwave.png', 'Purple+Black Silk PLA', 'Black PLA 2.0+', 'Electric Azure TPU 95A', 'Foam White &amp; Cyan')">Preview &uarr;</button>
+          <span class="te-card-price" style="font-size: 0.75rem; color: #38BDF8;">[g] [FLAGS] &rarr; SC-50</span>
+          <button type="button" class="te-card-btn" onclick="switchPDPFaceplate('sc50', '../../assets/renders/models/model_sc50.png', 'SC-50 RF &amp; Telecom', 'SWR: VSWR &amp; GAMMA / FSL / dBm', 'Deep Voyager Navy + Slate TPU', '[g] [FLAGS] → SC-50')">Preview &uarr;</button>
+        </div>
+      </article>
+
+      <!-- 7. SC-16 Computer Scientist -->
+      <article class="te-card">
+        <div class="te-card-viewport">
+          <img src="../../assets/renders/models/model_sc16.png" alt="SC-16 Computer Scientist RPN Calculator" loading="lazy">
+        </div>
+        <div class="te-card-body">
+          <div class="te-card-category">SC-16 &bull; Systems &amp; Firmware</div>
+          <h3 class="te-card-title">64-Bit Integer, Bitwise &amp; IEEE-754 Float</h3>
+          <p class="te-card-desc">
+            Instant radix switching (<code>HEX</code>, <code>DEC</code>, <code>OCT</code>, <code>BIN</code>), configurable word widths (8/16/32/64-bit, 2's complement / unsigned), barrel shifts (<code>ASR</code>, <code>ROR</code>), and CRC checksums.
+          </p>
+        </div>
+        <div class="te-card-footer">
+          <span class="te-card-price" style="font-size: 0.75rem; color: #38BDF8;">[g] [FLAGS] &rarr; SC-16</span>
+          <button type="button" class="te-card-btn" onclick="switchPDPFaceplate('sc16', '../../assets/renders/models/model_sc16.png', 'SC-16 Computer Scientist', 'HEX / BIT / ASH / ROR / CRC', 'Cosmos Dark Indigo + Charcoal TPU', '[g] [FLAGS] → SC-16')">Preview &uarr;</button>
+        </div>
+      </article>
+
+      <!-- 8. SC-24 Optics & Cinema -->
+      <article class="te-card">
+        <div class="te-card-viewport">
+          <img src="../../assets/renders/models/model_sc24.png" alt="SC-24 Optics and Cinema RPN Calculator" loading="lazy">
+        </div>
+        <div class="te-card-body">
+          <div class="te-card-category">SC-24 &bull; Cinematography &amp; Acoustics</div>
+          <h3 class="te-card-title">Lens Field of View, Hyperfocal &amp; Exposure</h3>
+          <p class="te-card-desc">
+            Sensor/lens Field of View solver (<code>FOV</code>), Exposure Value &amp; ND filter compensation (<code>EV</code>, <code>LUX</code>), Depth of Field &amp; hyperfocal distance (<code>DOF</code>, <code>HFD</code>), and SMPTE timecode arithmetic.
+          </p>
+        </div>
+        <div class="te-card-footer">
+          <span class="te-card-price" style="font-size: 0.75rem; color: #38BDF8;">[g] [FLAGS] &rarr; SC-24</span>
+          <button type="button" class="te-card-btn" onclick="switchPDPFaceplate('sc24', '../../assets/renders/models/model_sc24.png', 'SC-24 Optics &amp; Cinema', 'FOV: LENS ANGLE / EV / LUX / DOF', 'Crimson-Amber Plate + Slate TPU', '[g] [FLAGS] → SC-24')">Preview &uarr;</button>
+        </div>
+      </article>
+
+      <!-- 9. SC-60 Chemistry & Lab -->
+      <article class="te-card">
+        <div class="te-card-viewport">
+          <img src="../../assets/renders/models/model_sc60.png" alt="SC-60 Chemistry and Analytical Lab RPN Calculator" loading="lazy">
+        </div>
+        <div class="te-card-body">
+          <div class="te-card-category">SC-60 &bull; Analytical Chemistry &amp; Wet Lab</div>
+          <h3 class="te-card-title">Molar Mass, Dilutions &amp; Buffer pH</h3>
+          <p class="te-card-desc">
+            Stoichiometric Molar Mass solver (<code>MW</code>), stock dilution aliquots (<code>C1V1</code>), Beer-Lambert spectrophotometry (<code>&epsilon;bc</code>), Henderson-Hasselbalch buffer capacity (<code>pH</code>, <code>BUF</code>), and ideal gas laws.
+          </p>
+        </div>
+        <div class="te-card-footer">
+          <span class="te-card-price" style="font-size: 0.75rem; color: #38BDF8;">[g] [FLAGS] &rarr; SC-60</span>
+          <button type="button" class="te-card-btn" onclick="switchPDPFaceplate('sc60', '../../assets/renders/models/model_sc60.png', 'SC-60 Chemistry &amp; Lab', 'MW: MOLAR MASS / pH / BUF / C1V1', 'Ultraviolet Lab Plate + Slate TPU', '[g] [FLAGS] → SC-60')">Preview &uarr;</button>
         </div>
       </article>
 
@@ -1110,9 +1157,9 @@ FORCE (g)
     </div>
   </div>
 
-<!-- Vanilla JS for PDP Interactive Faceplate and Main Image Switcher -->
+<!-- Vanilla JS for PDP Interactive Model and Main Image Switcher -->
 <script>
-function switchPDPFaceplate(id, imagePath, faceplateMat, chassisMat, keysMat, foilMat) {
+function switchPDPFaceplate(id, imagePath, modelName, domainKeys, finishMat, appFlag) {
   var img = document.getElementById('main-product-image');
   if (img) {
     img.style.opacity = '0.4';
@@ -1133,7 +1180,7 @@ function switchPDPFaceplate(id, imagePath, faceplateMat, chassisMat, keysMat, fo
 
   var txt = document.getElementById('pdp-cmf-text');
   if (txt) {
-    txt.innerHTML = 'FACEPLATE: ' + faceplateMat + ' &bull; CHASSIS: ' + chassisMat + ' &bull; KEYS: ' + keysMat + ' &bull; FOIL: ' + foilMat;
+    txt.innerHTML = 'MODEL: ' + modelName + ' &bull; KEYS: ' + domainKeys + ' &bull; FINISH: ' + finishMat + ' &bull; APP MODE: ' + appFlag;
   }
 
   var thumbs = document.querySelectorAll('.ec-gallery-thumb');

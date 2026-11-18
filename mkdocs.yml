@@ -58,6 +58,11 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Calculators & App:
+      - SC-32 & Specialist Series (9+2 Models): products/sc32-calculator/index.md
+      - SC-6 Elementary Calculator: products/sc6-elementary.md
+      - App Store (Scientific Mode) ↗: https://apps.apple.com/app/id6801788040
+      - App Store (Visual Learning Mode) ↗: https://apps.apple.com/us/app/stackcalc-calculator/id6801788040?ppid=adb09508-b8f0-4e64-9913-15c8eabb57a8
   - 2D Learning Lab:
       - Virtual Manipulatives Suite: learning-lab.md
       - Fraction Towers Simulator: lab/fraction-studio.md
@@ -69,7 +74,6 @@ nav:
       - Place Value Studio: products/place-value/index.md
   - Free 3D Printables (3MF): printables.md
   - Free PDF Downloads: downloads.md
-  - App Store (iOS / Watch / Mac) ↗: https://apps.apple.com/app/id6801788040
   - Engineering Blog & Build Logs ↗: https://hackaday.io/project/206743-stackcalc32-a-tactile-rpn-calculator
   - Support & Legal:
       - Support & Contact: support.md
@@ -92,8 +96,6 @@ exclude_docs: |
   parts.md
   products/**/assembly.md
   products/**/lessons.md
-  products/sc32-calculator/**
-  products/sc6-elementary.md
   products/sc6-book.md
   products/classroom-clock/**
   products/ten-frames/**

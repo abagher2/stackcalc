@@ -85,12 +85,12 @@ hide:
       <h1 class="ec-product-title">SC-6 Elementary Calculator</h1>
 
       <div class="ec-price-box">
-        <span class="ec-price-current">$49.00 &ndash; $59.00</span>
-        <span class="ec-shipping-note">&check; Free Tracked US Shipping</span>
+        <span class="ec-price-current">$49.00</span>
+        <span class="ec-shipping-note">&bull; Hardware In Production &bull; App Live Now on iOS, Watch &amp; Mac</span>
       </div>
 
       <p class="ec-short-summary">
-        The foundational tactile calculator engineered specifically for Grades K&ndash;6 classrooms and homeschool math. Bridges concrete visual manipulatives (ten-frames, fraction towers) directly to symbolic math with dedicated step-by-step simplification, skip counting, and friendly tactile keys.
+        The foundational tactile calculator engineered specifically for Grades K&ndash;6 classrooms and homeschool math. Bridges concrete visual manipulatives (ten-frames, fraction towers, prime factor blocks) directly to symbolic math with dedicated step-by-step simplification, skip counting, and friendly tactile keys. While physical hardware is in production, test SC-6 mode today in the iOS, watchOS, and macOS app via the <code>[FLAGS]</code> menu (<code>[g] [FLAGS]</code>).
       </p>
 
       <!-- Highlights Checklist -->
@@ -123,30 +123,27 @@ hide:
 
       <!-- Action Buttons -->
       <div class="ec-actions-row">
-        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #f1641e; border-color: #f1641e; color: #ffffff;">
-          Order on Etsy ($49.00) ↗
-        </a>
-        <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="border: 1px solid rgba(56, 189, 248, 0.4); color: #38BDF8;">
-          Order on Slant 3D ↗
+        <a href="https://apps.apple.com/us/app/stackcalc-calculator/id6801788040?ppid=adb09508-b8f0-4e64-9913-15c8eabb57a8" target="_blank" rel="noopener noreferrer" class="ec-btn-primary" style="background-color: #34D399; border-color: #34D399; color: #080A0E; font-weight: 800;">
+          Try SC-6 Visual Mode on App Store ↗
         </a>
         <a href="https://www.printables.com/@StackCalc_5593834" target="_blank" rel="noopener noreferrer" class="ec-btn-secondary" style="border: 1px solid #FA6B05; color: #FA6B05;">
           Download 3MF on Printables ↗
+        </a>
+        <a href="../sc32-calculator/" class="ec-btn-secondary">
+          Explore SC-32 &amp; 9 Specialist Models &rarr;
         </a>
       </div>
 
       <!-- Quick Subpage Links -->
       <div class="flex flex-wrap gap-2 my-4">
-        <a href="../sc6-book/" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-amber-400 border border-amber-500/30 hover:bg-slate-700">
-          &bull; Companion Book Product Page &rarr;
+        <a href="../../downloads/#3-hardware-reference-manuals-cheat-sheets-pdf" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-amber-400 border border-amber-500/30 hover:bg-slate-700">
+          &bull; Free PDF Owner's Manual &rarr;
         </a>
         <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-orange-400 border border-orange-500/30 hover:bg-slate-700">
           &bull; Order Book on Amazon ($16) ↗
         </a>
         <a href="https://link.amazon/B05RFHqeu" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-orange-400 border border-orange-500/30 hover:bg-slate-700">
           &bull; Teacher Guide on Amazon ↗
-        </a>
-        <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded bg-slate-800 text-sky-400 border border-sky-500/30 hover:bg-slate-700">
-          &bull; Order on Etsy (stackcalcmath.etsy.com) ↗
         </a>
       </div>
 
@@ -450,7 +447,7 @@ hide:
           <span>&#9874;</span> "Anti-Heartbreak" Lifetime Guarantee for Parents &amp; Classrooms
         </strong>
         <p class="text-gray-300 text-xs m-0 leading-relaxed">
-          Elementary classrooms and homes see active use! If a child misplaces or damages a keypad cover or faceplate, order replacement modular parts anytime for just $2.49 with free envelope shipping.
+          Elementary classrooms and homes see active use! If a child misplaces or damages a modular part, download the free 3MF files on Printables to print a replacement at home or school, or order single-color replacement plates ($12&ndash;$16).
         </p>
       </div>
 
@@ -490,8 +487,8 @@ hide:
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">.00</span>
-            <span class="text-xs font-mono text-amber-400">Proportional Heights</span>
+            <span class="cross-sell-price">$48.00</span>
+            <span class="text-xs font-mono text-amber-400">65-Piece Kit</span>
           </div>
           <a href="../fraction-studio/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
             View Fraction Studio &rarr;
@@ -510,8 +507,8 @@ hide:
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">.00</span>
-            <span class="text-xs font-mono text-emerald-400">Standalone Kit</span>
+            <span class="cross-sell-price">$46.00</span>
+            <span class="text-xs font-mono text-emerald-400">50-Piece Kit</span>
           </div>
           <a href="../prime-factor-studio/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
             View Prime Factor Studio &rarr;
@@ -525,13 +522,13 @@ hide:
           <img src="../../assets/renders/sc32-craftsmanship-pureblack.png" alt="SC-32 Scientific Calculator" class="cross-sell-thumb" />
           <h3 class="cross-sell-card-title">SC-32 Scientific Calculator</h3>
           <p class="cross-sell-card-desc">
-            Flagship 4-register RPN calculator for middle school through college STEM. Pure anodized aluminum faceplate, 680mAh USB-C battery.
+            Flagship 4-register RPN calculator and 9 specialist domain models for middle school through college STEM and technical trades.
           </p>
         </div>
         <div>
           <div class="cross-sell-price-row">
-            <span class="cross-sell-price">.00</span>
-            <span class="text-xs font-mono text-cyan-400">Flagship Hardware</span>
+            <span class="cross-sell-price">$89.00</span>
+            <span class="text-xs font-mono text-cyan-400">Flagship Series</span>
           </div>
           <a href="../sc32-calculator/" class="ec-btn-secondary w-full text-center mt-3 text-xs block">
             Explore SC-32 &rarr;
@@ -583,7 +580,7 @@ hide:
           <span class="text-amber-400 font-bold mt-3 block">&rarr; View Matrix</span>
         </a>
 
-        <a href="../sc6-book/" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400 transition flex flex-col justify-between group">
+        <a href="../../downloads/#3-hardware-reference-manuals-cheat-sheets-pdf" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400 transition flex flex-col justify-between group">
           <div>
             <strong class="text-white group-hover:text-purple-400 block mb-1">🧑‍🏫 Teacher Guide</strong>
             <span class="text-[11px] text-slate-400">Step-by-step simplification protocols, tactile station rotations, and diagnostics.</span>
@@ -610,7 +607,7 @@ hide:
       <div class="space-y-2">
         <div class="flex items-center gap-2">
           <span class="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider">OFFICIAL DOCUMENTATION</span>
-          <span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono font-bold">Print Edition Available ($19.00)</span>
+          <span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono font-bold">Print Edition Available ($16.00)</span>
         </div>
         <h3 class="text-xl font-bold text-white">SC-6 Elementary Calculator Owner's Manual</h3>
         <p class="text-sm text-slate-300 max-w-2xl leading-relaxed">
@@ -618,8 +615,8 @@ hide:
         </p>
       </div>
       <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
-        <a href="../sc6-book/" class="px-4 py-2.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-mono text-xs font-bold transition text-center whitespace-nowrap">
-          Book Details &amp; TOC &rarr;
+        <a href="../../downloads/#3-hardware-reference-manuals-cheat-sheets-pdf" class="px-4 py-2.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-mono text-xs font-bold transition text-center whitespace-nowrap">
+          Free PDF Manual &amp; TOC &rarr;
         </a>
         <a href="https://link.amazon/B0f5cP0Ur" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-lg bg-[#FF9900] hover:bg-[#e68a00] text-slate-950 font-mono text-xs font-bold transition text-center shadow-md whitespace-nowrap">
           Order on Amazon ($16) ↗
@@ -652,7 +649,7 @@ hide:
     <div>
       <div class="ec-ecosystem-title">Part of the StackCalc Math Learning Ecosystem</div>
       <p class="ec-ecosystem-desc">
-        The SC-6 is the entry point into tactile mathematical reasoning. It works harmoniously with our <a href="../fraction-studio/" class="text-sky-400 hover:underline">Fraction Studio</a> and <a href="../prime-factor-studio/" class="text-sky-400 hover:underline">Prime Factor Studio</a> manipulatives, preparing young learners for the flagship <a href="../sc32-calculator/" class="text-sky-400 hover:underline">SC-32 Scientific Calculator</a> when they reach middle school. Explore complete lesson modules in our <a href="../../downloads/#1-classroom-curriculum--competition-downloads-pdf" class="text-amber-400 hover:underline">Classroom Curriculum Downloads (PDF)</a> and order on-demand precision refills at the <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Slant 3D Replacement Parts Center ↗</a>.
+        The SC-6 is the entry point into tactile mathematical reasoning. It works harmoniously with our <a href="../fraction-studio/" class="text-sky-400 hover:underline">Fraction Studio</a>, <a href="../prime-factor-studio/" class="text-sky-400 hover:underline">Prime Factor Studio</a>, and <a href="../place-value/" class="text-sky-400 hover:underline">Place Value Studio</a> manipulatives, preparing young learners for the flagship <a href="../sc32-calculator/" class="text-sky-400 hover:underline">SC-32 Scientific Calculator</a> when they reach middle school. Explore complete lesson modules in our <a href="../../downloads/#1-classroom-curriculum--competition-downloads-pdf" class="text-amber-400 hover:underline">Classroom Curriculum Downloads (PDF)</a>.
       </p>
     </div>
   </div>
@@ -663,21 +660,17 @@ hide:
       <div>
         <div class="flex items-center gap-2">
           <span class="font-bold text-white uppercase tracking-wider">SC-6 ELEMENTARY RPN</span>
-          <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">○ PRE-ORDER</span>
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">● LIVE ON APP STORE</span>
         </div>
-        <div class="text-[11px] text-slate-400 hidden sm:block">DEFAULT 4-STACK XYZT &bull; QUIZ ENGINE &bull; GRADES K–6</div>
+        <div class="text-[11px] text-slate-400 hidden sm:block">IN-APP MODE: [g] [FLAGS] &rarr; SC-6 &bull; HARDWARE IN PRODUCTION ($49)</div>
       </div>
     </div>
     <div class="flex items-center gap-2 shrink-0">
-      <span class="text-sm font-bold text-white mr-1">$49.00</span>
-      <a href="https://stackcalcmath.etsy.com" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded bg-[#f1641e] hover:bg-[#e0530d] text-white font-bold transition shadow-md whitespace-nowrap">
-        Order on Etsy ($49) ↗
+      <a href="https://apps.apple.com/us/app/stackcalc-calculator/id6801788040?ppid=adb09508-b8f0-4e64-9913-15c8eabb57a8" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold transition shadow-md whitespace-nowrap">
+        Try SC-6 on App Store ↗
       </a>
-      <a href="https://teleportpod.com/portals/profile/StackCalc" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block px-3.5 py-1.5 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-bold transition whitespace-nowrap">
-        Slant 3D ↗
-      </a>
-      <a href="../../#school-po" class="hidden md:inline-block px-3 py-1.5 rounded bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 font-bold transition whitespace-nowrap">
-        District PO →
+      <a href="../sc32-calculator/" class="hidden sm:inline-block px-3.5 py-1.5 rounded bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 font-bold transition whitespace-nowrap">
+        All 9+2 Models &rarr;
       </a>
     </div>
   </div>
