@@ -1,6 +1,6 @@
 ---
 title: "SC-32 Scientific RPN Calculator"
-description: "Tactile handheld Reverse Polish Notation scientific calculator. Raspberry Pi RP2350 silicon, 43 tactile microswitches with sculpted TPU keys, high-contrast reflective ST7567A LCD, and SAT/ACT exam compliance."
+description: "Tactile handheld Reverse Polish Notation scientific calculator. Raspberry Pi RP2350 silicon, 43 tactile microswitches with sculpted TPU keys, high-contrast reflective ST7567A LCD, and 100% offline zero-radio architecture."
 hide:
   - navigation
   - toc
@@ -16,10 +16,10 @@ hide:
       "name": "StackCalc SC-32 Scientific RPN Calculator",
       "image": [
         "https://stackcalc.io/assets/renders/sc32-hero-keynote.png",
-        "https://stackcalc.io/assets/renders/etsy/sc32-specs-infographic-square.png",
+        "https://stackcalc.io/assets/renders/models/sc-series-grid-9.png",
         "https://stackcalc.io/assets/renders/sc32-rpn-calculation.png"
       ],
-      "description": "Tactile handheld Reverse Polish Notation scientific calculator. Raspberry Pi RP2350 silicon, 43 tactile microswitches with sculpted TPU keys, high-contrast reflective ST7567A monochrome LCD, and SAT/ACT exam compliance.",
+      "description": "Tactile handheld Reverse Polish Notation scientific calculator. Raspberry Pi RP2350 silicon, 43 tactile microswitches with sculpted TPU keys, high-contrast reflective ST7567A monochrome LCD, and 100% offline zero-radio hardware architecture.",
       "sku": "SC-32-HW",
       "mpn": "SC32-RP2350",
       "brand": {
@@ -41,7 +41,7 @@ hide:
       },
       "audience": {
         "@type": "Audience",
-        "audienceType": "STEM Students, Engineers, Physicists, Actuaries, AP/SAT Test Takers"
+        "audienceType": "STEM Students, Engineers, Physicists, Actuaries, Technical Trades"
       }
     },
     {
@@ -72,10 +72,10 @@ hide:
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Is the SC-32 calculator permitted on SAT, ACT, and AP exams?",
+          "name": "Is the SC-32 calculator approved for standardized exams?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. The SC-32 contains zero wireless transmitters (no Wi-Fi, Bluetooth, or cellular), zero camera/microphone hardware, and no QWERTY keyboard. It is fully compliant with College Board (SAT/AP) and ACT calculator policy guidelines."
+            "text": "The SC-32 is designed to align with standard scientific calculator hardware requirements (zero wireless transmitters, no camera/microphone, no QWERTY keyboard, and non-CAS numerical evaluation), though no explicit approval or certification has been sought from or granted by testing organizations."
           }
         },
         {
@@ -142,8 +142,8 @@ hide:
         <div class="ec-gallery-thumb" onclick="switchPDPMainImage('../../assets/renders/sc32-dovetail-service.png', this)">
           <img src="../../assets/renders/sc32-dovetail-service.png" alt="Tool-Free Dovetail Battery Service">
         </div>
-        <div class="ec-gallery-thumb" onclick="switchPDPMainImage('../../assets/renders/etsy/sc32-specs-infographic-square.png', this)">
-          <img src="../../assets/renders/etsy/sc32-specs-infographic-square.png" alt="SC-32 Hardware Specs Infographic">
+        <div class="ec-gallery-thumb" onclick="switchPDPMainImage('../../assets/renders/sc32-craftsmanship-pureblack.png', this)">
+          <img src="../../assets/renders/sc32-craftsmanship-pureblack.png" alt="Pure Black Craftsmanship Macro">
         </div>
       </div>
     </div>
@@ -154,7 +154,7 @@ hide:
 
       <!-- Technical Telemetry & Compliance -->
       <div class="flex items-center gap-2 mb-3 font-mono text-xs">
-        <span class="text-emerald-400 font-bold">&check; SAT &bull; ACT &bull; AP Exam Permitted</span>
+        <span class="text-emerald-400 font-bold">&check; Zero Wireless Radios &bull; Offline Hardware</span>
         <span class="text-slate-400">&bull; RP2350 Dual-Core ARM</span>
         <span class="text-slate-400">&bull; 9+2 Dedicated Models</span>
       </div>
@@ -199,7 +199,7 @@ hide:
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
-          <span><strong>Zero Distraction, Total Privacy:</strong> No Bluetooth, Wi-Fi, cameras, or games on hardware. 100% legal in exam halls.</span>
+          <span><strong>Zero Distraction, Total Privacy:</strong> No Bluetooth, Wi-Fi, cameras, or games on hardware. Designed for focused offline work.</span>
         </div>
         <div class="ec-highlight-item">
           <span class="ec-highlight-icon">&check;</span>
@@ -247,7 +247,7 @@ hide:
           <span class="text-[#FF9900]">↗</span>
         </a>
         <a href="#faq" class="p-2.5 rounded bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white transition flex items-center justify-between">
-          <span>Exam Rules &amp; FAQ</span>
+          <span>Hardware &amp; FAQ</span>
           <span class="text-slate-400">&darr;</span>
         </a>
       </div>
@@ -256,7 +256,7 @@ hide:
       <div class="ec-trust-strip">
         <div class="ec-trust-item">
           <span class="ec-trust-icon">&check;</span>
-          <span class="ec-trust-text"><a href="#faq" style="color: inherit; text-decoration: underline;">Approved for SAT, ACT, and AP Tests &rarr;</a></span>
+          <span class="ec-trust-text"><a href="#faq" style="color: inherit; text-decoration: underline;">100% Offline &bull; Zero Wireless Radios &rarr;</a></span>
         </div>
         <div class="ec-trust-item">
           <span class="ec-trust-icon">&circlearrowright;</span>
@@ -848,9 +848,9 @@ FORCE (g)
   <!-- ==========================================================================
        SECTION: FULL TECHNICAL SPECIFICATIONS
        ========================================================================== -->
-  <section class="ec-section">
+  <section id="specifications" class="ec-section">
     <h2 class="ec-section-title">Technical Specifications</h2>
-    <p class="ec-section-subtitle">Engineered for durability, speed, and standard test compliance.</p>
+    <p class="ec-section-subtitle">Engineered for durability, speed, and distraction-free offline computation.</p>
 
     <table class="ec-spec-table">
       <tbody>
@@ -887,8 +887,8 @@ FORCE (g)
           <td class="ec-spec-v">115 grams (including coin cell and faceplate)</td>
         </tr>
         <tr>
-          <td class="ec-spec-k">Testing Compliance</td>
-          <td class="ec-spec-v"><span class="text-emerald-400 font-semibold">&check; Permitted on SAT, ACT, PSAT, AP Calculus, and AP Physics</span> (Zero wireless radios, Non-CAS)</td>
+          <td class="ec-spec-k">Offline Hardware Design</td>
+          <td class="ec-spec-v"><span class="text-emerald-400 font-semibold">100% Offline &bull; Zero Wireless Radios</span> (No Wi-Fi/Bluetooth, no camera/audio, no QWERTY keyboard, non-CAS numerical engine—aligned with standard exam calculator requirements; no formal testing-board approval has been sought)</td>
         </tr>
         <tr>
           <td class="ec-spec-k">Industrial Design &amp; CMF</td>
@@ -953,8 +953,8 @@ FORCE (g)
        SECTION: SAFETY, COMPLIANCE & GUARANTEES
        ========================================================================== -->
   <section class="ec-section">
-    <h2 class="ec-section-title">Safety, Compliance &amp; Guarantees</h2>
-    <p class="ec-section-subtitle">Certified for testing integrity, electrical safety, and classroom durability.</p>
+    <h2 class="ec-section-title">Safety, Architecture &amp; Guarantees</h2>
+    <p class="ec-section-subtitle">Engineered for electrical safety, offline focus, and classroom durability.</p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="p-4 rounded-lg bg-amber-950/30 border border-amber-500/40 text-sm">
@@ -968,10 +968,10 @@ FORCE (g)
 
       <div class="p-4 rounded-lg bg-slate-900/60 border border-slate-700/60 text-sm">
         <strong class="text-sky-400 flex items-center gap-2 mb-1">
-          <span>&#10003;</span> Standardized Test Compliant (SAT, ACT, AP)
+          <span>&#10003;</span> Exam-Aligned Offline Architecture
         </strong>
         <p class="text-gray-300 text-xs m-0 leading-relaxed">
-          Approved for official college entrance exams. Non-CAS calculation engine with zero wireless antennas, Bluetooth radios, or network capabilities. Retains full exam integrity in all proctored testing halls.
+          Non-CAS numerical calculation engine with zero wireless antennas, Bluetooth radios, cameras, or network capabilities. Designed to align with standard exam calculator guidelines (note: formal testing-board approval has not been sought or granted).
         </p>
       </div>
 
@@ -1002,7 +1002,7 @@ FORCE (g)
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 pb-4 border-b border-white/10">
       <div>
         <h2 class="ec-section-title m-0">Bench Verification &amp; Validation</h2>
-        <p class="ec-section-subtitle m-0">Laboratory test parameters, switch endurance, and testing board regulatory compliance.</p>
+        <p class="ec-section-subtitle m-0">Laboratory test parameters, switch endurance, and hardware architecture verification.</p>
       </div>
       <div class="flex items-center gap-2 mt-3 md:mt-0 font-mono text-xs text-slate-400">
         <span class="text-emerald-400 font-bold">&bull; 100% TESTED PRE-SOLDERED SILICON</span>
@@ -1025,14 +1025,14 @@ FORCE (g)
 
       <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col justify-between">
         <div>
-          <span class="font-mono text-xs uppercase text-slate-400 font-bold">Regulatory Compliance</span>
+          <span class="font-mono text-xs uppercase text-slate-400 font-bold">Hardware Isolation</span>
           <h3 class="font-bold text-base text-white mt-1 mb-2">Zero Wireless Radios</h3>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
-            Zero Bluetooth, zero Wi-Fi, zero RF transmission hardware. Meets College Board SAT, AP Calculus, AP Physics, and ACT testing center calculator security standards.
+            Zero Bluetooth, zero Wi-Fi, zero RF transmission hardware, and non-CAS numerical evaluation—aligned with standard scientific calculator hardware requirements without network distractions.
           </p>
         </div>
         <div class="border-t border-white/10 pt-3 text-xs font-mono text-slate-400">
-          Permitted: SAT &bull; ACT &bull; AP Exams
+          Zero Wi-Fi &bull; Zero Bluetooth &bull; Non-CAS
         </div>
       </div>
 
@@ -1054,18 +1054,18 @@ FORCE (g)
   <!-- ==========================================================================
        SECTION: FREQUENTLY ASKED QUESTIONS (FAQ)
        ========================================================================== -->
-  <section class="ec-section">
+  <section id="faq" class="ec-section">
     <h2 class="ec-section-title">Frequently Asked Questions</h2>
-    <p class="ec-section-subtitle">Examination compliance, hardware architecture, and firmware details.</p>
+    <p class="ec-section-subtitle">Hardware architecture, RPN stack logic, and firmware details.</p>
 
     <div class="space-y-4">
       <details class="p-4 rounded-lg bg-slate-900/50 border border-slate-700/60 group">
         <summary class="font-semibold text-gray-100 cursor-pointer flex justify-between items-center">
-          <span>Can I bring the SC-32 into College Board (SAT/AP) or ACT exam rooms?</span>
+          <span>Is the SC-32 approved for standardized exams?</span>
           <span class="text-cyan-400 text-lg group-open:rotate-45 transition-transform">+</span>
         </summary>
         <p class="mt-3 text-sm text-gray-300 leading-relaxed">
-          Yes. Testing authorities prohibit calculators with wireless communication (Wi-Fi/Bluetooth), cameras, sound recorders, audio jacks, or computer-style QWERTY keyboards. The SC-32 possesses none of these features, making it fully compliant for standardized testing environments.
+          The SC-32 is designed to align with standard scientific calculator hardware requirements: it has zero wireless communication (no Wi-Fi or Bluetooth), no camera or audio recording, no QWERTY keyboard, and a non-CAS numerical engine. However, no explicit approval or certification has been sought from or granted by testing organizations, so always verify with your exam proctor or testing body beforehand.
         </p>
       </details>
 

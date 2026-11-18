@@ -1,38 +1,37 @@
 ---
-title: "Standardized Testing & Exam Compliance Guide | SAT, ACT & AP Permitted"
-description: "Official testing regulations compliance guide for StackCalc SC-32 and SC-6 hardware calculators. Fully compliant with College Board (SAT, AP), ACT, and state math exam policies."
+title: "Offline Hardware Architecture & Exam Guidelines | StackCalc"
+description: "Hardware specification overview for StackCalc SC-32 and SC-6 calculators: zero wireless radios, no camera/audio, no QWERTY keyboard, and non-CAS numerical evaluation."
 ---
 
-# Standardized Testing & Exam Compliance Guide
+# Offline Hardware Architecture & Exam Guidelines
 
 <div class="te-header-meta" style="margin-bottom: 1.5rem; font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #94A3B8;">
-  <span>SAT &bull; ACT &bull; AP EXAMS PERMITTED</span> &bull; 
+  <span>EXAM-ALIGNED ARCHITECTURE</span> &bull; 
   <span>ZERO RF / NO WIRELESS</span> &bull; 
   <span>NON-CAS NUMERICAL EVALUATION</span>
 </div>
 
-<div style="padding: 1.25rem 1.5rem; border-radius: 12px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(24, 27, 34, 0.9)); border: 1px solid rgba(16, 185, 129, 0.35); margin-bottom: 2rem;">
+<div style="padding: 1.25rem 1.5rem; border-radius: 12px; background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(24, 27, 34, 0.9)); border: 1px solid rgba(56, 189, 248, 0.35); margin-bottom: 2rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
     <div>
-      <span style="font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; color: #10B981; text-transform: uppercase;">// EXAM PROCTOR VERIFICATION</span>
-      <h3 style="margin: 0.25rem 0 0.25rem 0; font-size: 1.25rem; font-weight: 800; color: #FFFFFF;">100% Permitted for Standardized Exam Testing</h3>
-      <p style="margin: 0; font-size: 0.85rem; color: #CBD5E1;">The StackCalc SC-32 and SC-6 hardware calculators are purpose-built to comply with all College Board (SAT, PSAT, AP), ACT, and state testing regulatory guidelines.</p>
+      <span style="font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; color: #38BDF8; text-transform: uppercase;">// HARDWARE SPECIFICATION NOTICE</span>
+      <h3 style="margin: 0.25rem 0 0.25rem 0; font-size: 1.25rem; font-weight: 800; color: #FFFFFF;">Designed Around Standard Exam Calculator Requirements</h3>
+      <p style="margin: 0; font-size: 0.85rem; color: #CBD5E1;">The StackCalc SC-32 and SC-6 hardware calculators are designed to align with standard scientific calculator guidelines (zero wireless radios, no camera/audio, no QWERTY keyboard, and non-CAS numerical evaluation). Note: No explicit approval or certification has been sought from or granted by testing organizations.</p>
     </div>
-    <a href="mailto:compliance@stackcalc.io?subject=Exam%20Proctor%20Verification%20Letter%20Request" style="padding: 0.65rem 1.25rem; border-radius: 6px; background-color: #10B981; color: #080B10; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 800; text-decoration: none; white-space: nowrap;">REQUEST OFFICIAL LETTER ↗</a>
   </div>
 </div>
 
 ---
 
-## 1. Compliance Matrix: Major Testing Organizations
+## 1. Hardware Alignment Summary
 
-| Testing Body | Examination | Status | Applicable Regulation / Rationale |
-| :--- | :--- | :---: | :--- |
-| **The College Board** | **SAT &amp; PSAT/NMSQT** | **PERMITTED** | Any scientific calculator that does not possess a QWERTY keyboard, internet access, wireless communication, or audio/video recording capabilities is approved. |
-| **The College Board** | **AP Calculus AB &amp; BC** | **PERMITTED** | Permitted for Section I Part B and Section II Part A. Does not possess prohibited CAS symbolic algebra capabilities. |
-| **The College Board** | **AP Statistics, Physics, Chemistry** | **PERMITTED** | Approved scientific calculator with two-variable statistics ($\Sigma x, \Sigma y, s, \sigma$) and linear regression. |
-| **ACT, Inc.** | **ACT Mathematics** | **PERMITTED** | Complies with the ACT Calculator Policy. Contains no computer algebra system (CAS), no wireless communication, and operates on battery power. |
-| **State Assessments** | **STAAR, CAASPP, Regents, SOL** | **PERMITTED** | Approved for middle and high school calculator-active sessions across state standards assessments. |
+| Hardware Requirement | StackCalc Design | Details |
+| :--- | :---: | :--- |
+| **No Wireless Communication** | **ALIGNED** | Zero Wi-Fi, Bluetooth, cellular, NFC, or infrared optical transceivers on the PCB. |
+| **No Computer Algebra System (CAS)** | **ALIGNED** | Evaluates strictly numerical floating-point results; no symbolic algebraic manipulation. |
+| **No QWERTY Keyboard** | **ALIGNED** | 43-key (SC-32) or 28-key (SC-6) scientific keypad layout; no typewriter keyboard. |
+| **No Camera / Audio Recording** | **ALIGNED** | Zero microphones, speakers, buzzers, or image sensors. |
+| **Formal Testing-Board Certification** | **NOT SOUGHT** | Explicit approval from testing boards (such as College Board or ACT) has not been sought or granted; always verify with your exam proctor beforehand. |
 
 ---
 
@@ -76,26 +75,25 @@ Standardized testing proctors require verification that electronic handheld calc
 
 ---
 
-## 3. Printable Proctor Verification Letter
+## 3. Hardware Specification Summary Sheet
 
-Testing coordinators and teachers may print this verification statement for student exam folders:
+Educators and students may print this hardware specification summary for reference:
 
 <div style="background: #11141A; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 10px; padding: 2rem; margin-top: 1.5rem; margin-bottom: 2rem; font-family: 'Inter', sans-serif;">
   <div style="border-bottom: 2px solid rgba(255, 255, 255, 0.1); padding-bottom: 1rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
     <div>
-      <h3 style="margin: 0; font-size: 1.2rem; font-weight: 800; color: #FFFFFF; font-family: 'Space Mono', monospace;">STACKCALC ENGINEERING // EXAM COMPLIANCE STATEMENT</h3>
-      <span style="font-size: 0.75rem; color: #94A3B8; font-family: 'Space Mono', monospace;">DOCUMENT IDENTIFIER: SC-REG-2026-01</span>
+      <h3 style="margin: 0; font-size: 1.2rem; font-weight: 800; color: #FFFFFF; font-family: 'Space Mono', monospace;">STACKCALC ENGINEERING // HARDWARE SPECIFICATION SHEET</h3>
+      <span style="font-size: 0.75rem; color: #94A3B8; font-family: 'Space Mono', monospace;">DOCUMENT IDENTIFIER: SC-SPEC-2026-01</span>
     </div>
-    <span style="padding: 0.25rem 0.5rem; border-radius: 4px; background: rgba(16, 185, 129, 0.2); color: #10B981; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700;">APPROVED STATUS</span>
+    <span style="padding: 0.25rem 0.5rem; border-radius: 4px; background: rgba(56, 189, 248, 0.2); color: #38BDF8; font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700;">OFFLINE HARDWARE</span>
   </div>
 
   <p style="font-size: 0.85rem; line-height: 1.6; color: #CBD5E1;">
-    <strong>TO TESTING PROCTORS AND EXAM ADMINISTRATORS:</strong><br><br>
-    This letter certifies that the <strong>StackCalc SC-32 Scientific Calculator</strong> is a non-graphing, non-programmable (in exam firmware mode) scientific computing instrument. It operates strictly via numerical evaluation algorithms and Reverse Polish Notation (RPN).
+    The <strong>StackCalc SC-32 Scientific Calculator</strong> is an offline, non-CAS scientific computing instrument operating via numerical evaluation algorithms and Reverse Polish Notation (RPN).
   </p>
 
   <p style="font-size: 0.85rem; line-height: 1.6; color: #CBD5E1;">
-    <strong>Hardware Specifications &amp; Regulatory Verification:</strong>
+    <strong>Hardware Specifications:</strong>
   </p>
   <ul style="font-size: 0.82rem; line-height: 1.6; color: #94A3B8; margin-left: 1.25rem;">
     <li><strong>No Communication Hardware:</strong> The device contains no Wi-Fi, Bluetooth, NFC, cellular, or optical communication hardware.</li>
@@ -105,19 +103,8 @@ Testing coordinators and teachers may print this verification statement for stud
   </ul>
 
   <p style="font-size: 0.85rem; line-height: 1.6; color: #CBD5E1; margin-top: 1rem;">
-    The StackCalc SC-32 complies with the published calculator policies of <strong>The College Board (SAT, PSAT, AP)</strong> and <strong>ACT, Inc.</strong> as an approved scientific calculator.
+    <em>Note: While the SC-32 hardware architecture is aligned with standard scientific calculator requirements, no explicit approval or certification has been sought from or granted by testing organizations.</em>
   </p>
-
-  <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px dashed rgba(255, 255, 255, 0.15); display: flex; flex-wrap: wrap; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #94A3B8;">
-    <div>
-      <div>ISSUED BY: StackCalc Engineering Compliance</div>
-      <div>SUPPORT CONTACT: compliance@stackcalc.io</div>
-    </div>
-    <div style="text-align: right;">
-      <div>VERIFICATION WEBSITE: stackcalc.io/exam-compliance/</div>
-      <div>VALIDITY: Academic Years 2026&ndash;2028</div>
-    </div>
-  </div>
 </div>
 
 ---
